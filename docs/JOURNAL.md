@@ -1,4 +1,5 @@
-21.02.2026
+## 21.02.2026
+
 Initialized the reproducible SPS-review repository structure and added source reference exports for downstream extraction and verification.
 Then implemented and iteratively improved the PDF-to-JSON text extraction pipeline in `src/pipelines/01_extract_text.py`.
 
