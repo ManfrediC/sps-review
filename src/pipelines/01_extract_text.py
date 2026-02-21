@@ -8,13 +8,20 @@ from pathlib import Path
 from pypdf import PdfReader
 from tqdm import tqdm
 
-
+# Implement relative paths
+# REPO_ROOT = Path.cwd()
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# function to extract paper ID from filename (number preceding underscore)
+def paper_id_from_filename(name: str) -> str:
+    # e.g. "11849_Stiff person syndrome ....pdf" -> "11849"
+    stem = Path(name).stem # stem: filename without final extension
+    return stem.split("_", 1)[0] # #split max once, return initial[0] element of resulting list 
 
+# function: checksums
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -22,16 +29,10 @@ def sha256_file(path: Path) -> str:
             h.update(chunk)
     return h.hexdigest()
 
-
-def paper_id_from_filename(name: str) -> str:
-    # e.g. "11849_Stiff person syndrome ....pdf" -> "11849"
-    stem = Path(name).stem
-    return stem.split("_", 1)[0]
-
-
+# function: extract PDF text
 def extract_pdf_text(pdf_path: Path) -> dict:
-    reader = PdfReader(str(pdf_path))
-    pages = []
+    reader = PdfReader(str(pdf_path)) # creates "reader" object from Path converted to string
+    pages = [] # placeholder
     char_counts = []
 
     for i, page in enumerate(reader.pages):
