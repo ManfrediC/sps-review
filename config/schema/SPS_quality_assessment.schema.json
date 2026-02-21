@@ -1,0 +1,2398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPS Study Quality Assessment Record",
+  "description": "Schema generated from SPS_quality_dictionary.csv for constraining structured extraction outputs (e.g., LangExtract). Fields are optional unless listed in 'required'.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ID": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "Section: Study Details | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: Study ID"
+    },
+    "extractor": {
+      "type": "string",
+      "description": "Section: Study Details / Use this tab for case reports, case series, or studies that report individual patients characteristics instead of grouped data. | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Report Form, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: Initials of extractor"
+    },
+    "first_author": {
+      "type": "string",
+      "description": "Section: STUDY DETAILS / Study Details | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: First author's last name"
+    },
+    "pub_year": {
+      "type": "integer",
+      "description": "Section: STUDY DETAILS / Study Details | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: Publication Year (multiple variants)",
+      "minimum": 1800,
+      "maximum": 2100
+    },
+    "objective_stated": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Observ Cohort & Cross sect | Criterion: Was the study question or objective clearly stated? (multiple variants) | Guidance: 1. Was the study question or objective clearly stated? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported (multiple variants)"
+    },
+    "criteria_stated": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Observ Cohort & Cross sect | Criterion: Were eligibility/selection criteria for the study population prespecified and clearly described? | Guidance: 2. Were eligibility/selection criteria for the study population prespecified and clearly described? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "participation_50": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Was the participation rate of eligible persons at least 50%? | Guidance: 3. Was the participation rate of eligible persons at least 50%? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "same_population": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: 1. Were all the subjects selected or recruited from the same or similar populations (including the same time period)? | Guidance: 4.1. Were all the subjects selected or recruited from the same or similar populations (including the same time period)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "criteria_specified": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: 2. Were inclusion and exclusion criteria for being in the study prespecified and applied uniformly to all participants? | Guidance: 4.2. Were inclusion and exclusion criteria for being in the study prespecified and applied uniformly to all participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "samplesize_estimate": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Was a sample size justification, power description, or variance and effect estimates provided? | Guidance: 5. Was a sample size justification, power description, or variance and effect estimates provided? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "exposures_measured_prior": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: For the analyses in this paper, were the exposure(s) of interest measured prior to the outcome(s) being measured? | Guidance: 6. For the analyses in this paper, were the exposure(s) of interest measured prior to the outcome(s) being measured? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "timeframe_sufficient": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Was the timeframe sufficient so that one could reasonably expect to see an association between exposure and outcome if it existed? | Guidance: 7. Was the timeframe sufficient so that one could reasonably expect to see an association between exposure and outcome if it existed? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "exposure_levels": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: For exposures that can vary in amount or level, did the study examine different levels of the exposure as related to the outcome (e.g., categories of exposure, or exposure measured as continuous variable)? | Guidance: 8. For exposures that can vary in amount or level, did the study examine different levels of the exposure as related to the outcome (e.g., categories of exposure, or exposure measured as continuous variable)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "exposure_measures_defined": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Were the exposure measures (independent variables) clearly defined, valid, reliable, and implemented consistently across all study participants? | Guidance: 9. Were the exposure measures (independent variables) clearly defined, valid, reliable, and implemented consistently across all study participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "exposure_multiple_assessment": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Was the exposure(s) assessed more than once over time? | Guidance: 10. Was the exposure(s) assessed more than once over time? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "outcome_defined": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Series & Reports, Observ Cohort & Cross sect | Criterion: Were the outcome measures (dependent variables) clearly defined, valid, reliable, and implemented consistently across all study participants? (multiple variants) | Guidance: 11. Were the outcome measures (dependent variables) clearly defined, valid, reliable, and implemented consistently across all study participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported (multiple variants)"
+    },
+    "blinded": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Observ Cohort & Cross sect | Criterion: Were the outcome assessors blinded to the exposure status of participants? (multiple variants) | Guidance: 12. Were the outcome assessors blinded to the exposure status of participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported (multiple variants)"
+    },
+    "LTFU_20": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Was loss to follow-up after baseline 20% or less? | Guidance: 13. Was loss to follow-up after baseline 20% or less? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "confounders_adjusted": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect | Criterion: Were key potential confounding variables measured and adjusted statistically for their impact on the relationship between exposure(s) and outcome(s)? | Guidance: 14. Were key potential confounding variables measured and adjusted statistically for their impact on the relationship between exposure(s) and outcome(s)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "quality_assessment": {
+      "type": "string",
+      "enum": [
+        "fair",
+        "good",
+        "poor",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Observ Cohort & Cross sect | Guidance: Quality assessment: select one of the following: - poor - fair - good"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Section: 8.section: comments / Notes | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Report Form, Case Series & Reports, Controlled Intervention Studies, Observ Cohort & Cross sect | Guidance: Notes/Comments (if POOR, state why) (multiple variants)"
+    },
+    "population_defined": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Was the study population clearly specified and defined? | Guidance: 2. Was the study population clearly specified and defined? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "sample_size_justification": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Did the authors include a sample size justification? | Guidance: 3. Did the authors include a sample size justification? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "controls_same_population": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Were controls selected or recruited from the same or similar population that gave rise to the cases (including the same timeframe)? | Guidance: 4. Were controls selected or recruited from the same or similar population that gave rise to the cases (including the same timeframe)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "consistent_criteria": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Were the definitions, inclusion and exclusion criteria, algorithms or processes used to identify or select cases and controls valid, reliable, and implemented consistently across all study participants? | Guidance: 5. Were the definitions, inclusion and exclusion criteria, algorithms or processes used to identify or select cases and controls valid, reliable, and implemented consistently across all study participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "cases_clearly_defined": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Were the cases clearly defined and differentiated from controls? | Guidance: 6. Were the cases clearly defined and differentiated from controls? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "random_selection": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: If less than 100 percent of eligible cases and/or controls were selected for the study, were the cases and/or controls randomly selected from those eligible? | Guidance: 7. If less than 100 percent of eligible cases and/or controls were selected for the study, were the cases and/or controls randomly selected from those eligible? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "concurrent_controls": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Was there use of concurrent controls? | Guidance: 8. Was there use of concurrent controls? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "exposure_occurred_prior": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Were the investigators able to confirm that the exposure/risk occurred prior to the development of the condition or event that defined a participant as a case? | Guidance: 9. Were the investigators able to confirm that the exposure/risk occurred prior to the development of the condition or event that defined a participant as a case? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "clear_measures_exposure": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: Were the measures of exposure/risk clearly defined, valid, reliable, and implemented consistently (including the same time period) across all study participants? | Guidance: 10. Were the measures of exposure/risk clearly defined, valid, reliable, and implemented consistently (including the same time period) across all study participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "confounders_measured": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: 1. Were key potential confounding variables measured and adjusted statistically in the analyses? | Guidance: 12.1. Were key potential confounding variables measured and adjusted statistically in the analyses? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "matching_analysis": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Control | Criterion: 2. If matching was used, did the investigators account for matching during study analysis? | Guidance: 12.2. If matching was used, did the investigators account for matching during study analysis? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "population_described": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Was the study population clearly and fully described, including a case definition? | Guidance: 2. Was the study population clearly and fully described, including a case definition? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "cases_consecutive": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Were the cases consecutive? | Guidance: 3. Were the cases consecutive? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "subjects_comparable": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Were the subjects comparable? | Guidance: 4. Were the subjects comparable? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "intervention_described": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Was the intervention clearly described? | Guidance: 5. Was the intervention clearly described? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "adequate_FU": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Was the length of follow-up adequate? | Guidance: 7. Was the length of follow-up adequate? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "stats_welldescribed": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Were the statistical methods well-described? | Guidance: 8. Were the statistical methods well-described? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "results_welldescribed": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Case Series & Reports | Criterion: Were the results well-described? | Guidance: 9. Were the results well-described? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "representative": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: Were the participants in the study representative of those who would be eligible for the test/service/intervention in the general or clinical population of interest? | Guidance: 3. Were the participants in the study representative of those who would be eligible for the test/service/intervention in the general or clinical population of interest? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "all_enrolled": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: Were all eligible participants that met the prespecified entry criteria enrolled? | Guidance: 4. Were all eligible participants that met the prespecified entry criteria enrolled? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "size_adequate": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: Was the sample size sufficiently large to provide confidence in the findings? | Guidance: 5. Was the sample size sufficiently large to provide confidence in the findings? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "clearly_described": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: Was the test/service/intervention clearly described and delivered consistently across the study population? | Guidance: 6. Was the test/service/intervention clearly described and delivered consistently across the study population? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "loss_to_FU": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: 1. Was the loss to follow-up after baseline 20% or less? | Guidance: 9.1. Was the loss to follow-up after baseline 20% or less? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "LTFU_accounted": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: 2. Were those lost to follow-up accounted for in the analysis? | Guidance: 9.2. Were those lost to follow-up accounted for in the analysis? 0 = no 1 = yes (including studies with NO loss to follow-up) NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "stats_for_change": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: 1. Did the statistical methods examine changes in outcome measures from before to after the intervention? | Guidance: 10.1. Did the statistical methods examine changes in outcome measures from before to after the intervention? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "pvalues_provided": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: 2. Were statistical tests done that provided p-values for the pre-to-post changes? | Guidance: 10.2. Were statistical tests done that provided p-values for the pre-to-post changes? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "interrupted_timeseries": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: Were outcome measures of interest taken multiple times before the intervention and multiple times after the intervention (i.e., did they use an interrupted time-series design)? | Guidance: 11. Were outcome measures of interest taken multiple times before the intervention and multiple times after the intervention (i.e., did they use an interrupted time-series design)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "group_effects": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr | Criterion: If the intervention was conducted at a group level (e.g., a whole hospital, a community, etc.) did the statistical analysis take into account the use of individual-level data to determine effects at the group level? | Guidance: 12. If the intervention was conducted at a group level (e.g., a whole hospital, a community, etc.) did the statistical analysis take into account the use of individual-level data to determine effects at the group level? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "randomised": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Was the study described as randomized, a randomized trial, a randomized clinical trial, or an RCT? | Guidance: 1. Was the study described as randomized, a randomized trial, a randomized clinical trial, or an RCT? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "adequate_randomisation": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Was the method of randomization adequate (i.e., use of randomly generated assignment)? | Guidance: 2. Was the method of randomization adequate (i.e., use of randomly generated assignment)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "treatment_allocation_concealed": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Was the treatment allocation concealed (so that assignments could not be predicted)? | Guidance: 3. Was the treatment allocation concealed (so that assignments could not be predicted)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "participants_blinded": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were study participants and providers blinded to treatment group assignment? | Guidance: 4. Were study participants and providers blinded to treatment group assignment? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "assessors_blinded": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were the people assessing the outcomes blinded to the participants' group assignments? | Guidance: 5. Were the people assessing the outcomes blinded to the participants' group assignments? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "similar_baseline": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were the groups similar at baseline on important characteristics that could affect outcomes (e.g., demographics, risk factors, co-morbid conditions)? | Guidance: 6. Were the groups similar at baseline on important characteristics that could affect outcomes (e.g., demographics, risk factors, co-morbid conditions)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "dropout_20": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Was the overall drop-out rate from the study at endpoint 20% or lower of the number allocated to treatment? | Guidance: 7. Was the overall drop-out rate from the study at endpoint 20% or lower of the number allocated to treatment? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "diff_dropout_15": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Was the differential drop-out rate (between treatment groups) at endpoint 15 percentage points or lower? | Guidance: 8. Was the differential drop-out rate (between treatment groups) at endpoint 15 percentage points or lower? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "intervention_high_adherence": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Was there high adherence to the intervention protocols for each treatment group? | Guidance: 9. Was there high adherence to the intervention protocols for each treatment group? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "other_interventions_avoided": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were other interventions avoided or similar in the groups (e.g., similar background treatments)? | Guidance: 10. Were other interventions avoided or similar in the groups (e.g., similar background treatments)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "realiable_measures": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were outcomes assessed using valid and reliable measures, implemented consistently across all study participants? | Guidance: 11. Were outcomes assessed using valid and reliable measures, implemented consistently across all study participants? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "sufficient_sample_size": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Did the authors report that the sample size was sufficiently large to be able to detect a difference in the main outcome between groups with at least 80% power? | Guidance: 12. Did the authors report that the sample size was sufficiently large to be able to detect a difference in the main outcome between groups with at least 80% power? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "outcomes_prespecified": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were outcomes reported or subgroups analyzed prespecified (i.e., identified before analyses were conducted)? | Guidance: 13. Were outcomes reported or subgroups analyzed prespecified (i.e., identified before analyses were conducted)? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "intention_to_treat": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were all randomized participants analyzed in the group to which they were originally assigned, i.e., did they use an intention-to-treat analysis? | Guidance: 14. Were all randomized participants analyzed in the group to which they were originally assigned, i.e., did they use an intention-to-treat analysis? 0 = no 1 = yes NA = CD, cannot determine; NA, not applicable; NR, not reported"
+    },
+    "country": {
+      "type": "string",
+      "description": "Section: STUDY DETAILS | Applies to publication types: Data Extraction | Guidance: Country/Countries where study was conducted"
+    },
+    "study_design": {
+      "type": "string",
+      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Study Design (for case reports or small series, use the case report form)"
+    },
+    "aims": {
+      "type": "string",
+      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Aims of the Study"
+    },
+    "participant_number": {
+      "type": "string",
+      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Number of participants"
+    },
+    "age_central_measure": {
+      "type": "string",
+      "enum": [
+        "NA",
+        "NR",
+        "mean",
+        "median",
+        "CD"
+      ],
+      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Age - measure of central tendency. Select one of the following: - mean - median NA = not available, NR, not reported"
+    },
+    "age_central": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Age - value of central tendency (numeric)"
+    },
+    "age_variability_measure": {
+      "type": "string",
+      "enum": [
+        "95CI",
+        "IQR",
+        "NA",
+        "SD",
+        "SE",
+        "range",
+        "NR",
+        "CD"
+      ],
+      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Age - measure of variability (listed in order of preference) SD = standard deviation (1st preference) SE = standard error (2nd) 95CI = 95% confidence interval (3rd) IQR = interquartile range range = range (5th) NA = not available, not reported (6th)"
+    },
+    "age_variability": {
+      "type": "string",
+      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Age - value(s) of variability"
+    },
+    "ethnicity": {
+      "type": "string",
+      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Ethnicity (select one) - white = White/Caucasian - africa = African/ Afro-Caribbean - E_asia = East Asia (Japan, Korea, China) - S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka) - SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore) - latin = Latin American (non-African origin; central and S America, without Caribbean) - other = other (specify in next column)"
+    },
+    "ethnicity_specify": {
+      "type": "string",
+      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Ethnicity (specify) If you selected \"other\", specify with text. Otherwise leave blank."
+    },
+    "percent_males": {
+      "type": "string",
+      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Percent Males Male patients/Total patients. List the value to two decimal places (e.g. \"45.55\")"
+    },
+    "included_diagnosis": {
+      "type": "string",
+      "enum": [
+        "PERM",
+        "Stiff_Limb",
+        "Stiff_Person",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Diagnosis of participants included (select) - Stiff_Person - Stiff_Limb - PERM - new_category = new category if identified, specify - mixed = mixed population - other = other, specify in next column - NA = not available, NR, not reported"
+    },
+    "included_diagnosis_specify": {
+      "type": "string",
+      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Diagnosis (specify) If you selected new_category or other, specify with text"
+    },
+    "diagnostic_criteria": {
+      "type": "string",
+      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Criteria used to make the diagnosis Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters) (multiple variants)"
+    },
+    "disease_severity": {
+      "type": "string",
+      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Disease Severity If the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined."
+    },
+    "first_manifestation": {
+      "type": "string",
+      "enum": [
+        "First manifestation If study reports first symptoms of a group of participants",
+        "copy and paste below from the manuscript. If details for individual cases provided",
+        "spasms",
+        "stiffness",
+        "use case report form.",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: First manifestation If study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form. (multiple variants)"
+    },
+    "spsd_symptom": {
+      "type": "string",
+      "enum": [
+        "spasms",
+        "stiffness",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in early disease (select) - stiffness - spasms - startle = excessive startle - multiple = multiple, specify in next col - other = other, specify in next col"
+    },
+    "spsd_symptom_multiple": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Additional data for previous column - if multiple symptoms reported List symptoms as text, separated with semicolons. Otherwise, leave blank."
+    },
+    "spsd_symptom_other": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Additional data for previous column - if other symptoms reported List symptoms as text, separated with semicolons. Otherwise, leave blank."
+    },
+    "stiffness_onset_distribution": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness distribution at onset (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - multiple = multiple, but not generalised (specify in next col) - generalised = generalised - other = other, specify in next col"
+    },
+    "stiffness_onset_distribution_multiple": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness at onset (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+    },
+    "stiffness_onset_distribution_other": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness at onset (other) If \"other\" was selected, specify with text. Otherwise, leave blank."
+    },
+    "startle_stimulus": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli"
+    },
+    "symptoms_established": {
+      "type": "string",
+      "enum": [
+        "anxiety",
+        "cerebellar",
+        "cognitive",
+        "spasms",
+        "stiffness",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in established disease (select single option from list) - stiffness - spasms - startle = excessive startle - anxiety - oculomotor = oculomotor disturbance - cerebellar - visual = visual symptoms (e.g. photosensitivity) - cognitive - gastrointestinal = other than abdominal wall muscle cramps) - multiple = multiple, specify in next col - other = other, specify in overnext col"
+    },
+    "symptoms_established_multiple": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in established disease (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+    },
+    "symptoms_established_other": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in established disease (other) If \"other\" was selected, list as text. Otherwise, leave blank."
+    },
+    "stiffness_established_distribution": {
+      "type": "string",
+      "enum": [
+        "trismus",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness distribution in established disease (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - trismus - multiple = multiple, but not generalised - generalised = generalised - other = other, specify in next col"
+    },
+    "stiffness_established_distribution_multiple": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD distribution in established disease (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+    },
+    "stiffness_established_distribution_other": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD distribution in established disease (other) If \"other\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+    },
+    "established_mRS": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Disability when disease fully established (SPSD symptoms established; mRS) 0 - No symptoms. 1 - No significant disability. 2 - Slight disability. 3 - Moderate disability. 4 - Moderately severe disability. 5 - Severe disability. incontinent. 6 - Dead (multiple variants)"
+    },
+    "spasms_distribution": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Spasms distribution - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - multiple = multiple, but not generalised - generalised = generalised - other = other, specify in next col"
+    },
+    "spasms_distribution_multiple": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Spasms distribution (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+    },
+    "spasms_distribution_other": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Spasms distribution (other) If \"other\" was selected, list as text. Otherwise, leave blank."
+    },
+    "duration_FU": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Duration of follow up (months)"
+    },
+    "treatment": {
+      "type": "string",
+      "enum": [
+        "immunotherapy",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Course / symptoms potentially influenced by treatment ? (select) - none = no treatment - BZD = benzodiazepine or similar - immunotherapy - both = both symptomatic and immunotherapy - NA = not available, not reported"
+    },
+    "antibody_status": {
+      "type": "string",
+      "enum": [
+        "DPPX",
+        "GAD",
+        "GlyR",
+        "amphiphysin",
+        "seronegative",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody status (select) - GAD - GlyR - amphiphysin - DPPX - seronegative - multiple = multiple, specify in next col - other = other, specify in next col - not_tested = no test performed - NA = not available, not reported, unclear if tested"
+    },
+    "antibody_status_multiple": {
+      "type": "string",
+      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Antibody status (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+    },
+    "antibody_status_other": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody status (other) If \"other\" was selected, list as text. Otherwise, leave blank."
+    },
+    "antibody_titre": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody titre"
+    },
+    "antibody_units": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody units"
+    },
+    "antibody_testsystem": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody test system"
+    },
+    "antibody_tests": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibodies tested list all antibodies that were tested, separated by semicolons"
+    },
+    "antibody_notes": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody notes If not covered by columns to the left, give as text note. Otherwise, leave blank."
+    },
+    "CSF_status": {
+      "type": "string",
+      "enum": [
+        "inflammatory",
+        "isolated protein elevation",
+        "normal",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: CSF (select) - normal - inflammatory - isolated protein elevation - not_done = no CSF analysis performed - antibody_present = antibody present in CSF (specify Ab and titre in next cols) - NA = not available / NR"
+    },
+    "CSF_antibody": {
+      "type": "string",
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: CSF antibody (specify)"
+    },
+    "CSF_antibody_titre": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: CSF antibody titre (numeric)"
+    },
+    "CMUA": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: continuous motor unit activity (CMUA) 0 = not detected 1 = present NA = no EMG, NR, unknown"
+    },
+    "exteroceptive_refl": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: enhanced exteroceptive reflexes 0 = not detected 1 = present NA = not done, NR, unknown"
+    },
+    "brainstem_refl": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: brainstem reflexes 0 = not detected 1 = present NA = not done, NR, unknown"
+    },
+    "MRI_normal": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: MRI 0 = normal 1 = abnormal (specify in next col) NA = no MRI performed, not reported, unclear"
+    },
+    "MRI_abnormalities": {
+      "type": "string",
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: MRI abnormalities (text)"
+    },
+    "tu_screening": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "string",
+          "enum": [
+            "0",
+            "1",
+            "CD",
+            "NA",
+            "NR"
+          ]
+        }
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Tumour screening 0 = normal / no tumour detected 1 = abnormal (specify in next col) NA = not performed, NR"
+    },
+    "tu_screening_abnormal": {
+      "type": "string",
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Tumour screening abnormal specify tumour entity with text"
+    },
+    "family_history": {
+      "type": "string",
+      "description": "Section: 8.section: comments / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Family history (select) - none = no fhx for SPSD or autoimmunity - autoimmune = fhx for autoimmunity (specify in next col) - SPSD = fhx for SPSD (specify in next col) - NA = unknown, not reported"
+    },
+    "family_history_abnormal": {
+      "type": "string",
+      "description": "Section: 8.section: comments / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Family history (text) if autoimmune diseases and/or SPSD are present, specify with text"
+    },
+    "autoimmunity": {
+      "type": "string",
+      "enum": [
+        "diabetes",
+        "none",
+        "vitiligo",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 7. section: concomittant disease and family history / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Concomitant autoimmunity (select) - none - thyroid = thyroid disease/thyroid antibodies - diabetes - vitiligo - gastric = pernicious anaemia/parietal cell antibodies - other= other, specify in next col"
+    },
+    "autoimmunity_specify": {
+      "type": "string",
+      "description": "Section: 7. section: concomittant disease and family history / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Concomitant autoimmunity (specify with text)"
+    },
+    "immunotherapy": {
+      "type": "string",
+      "enum": [
+        "HSCT",
+        "IVIG",
+        "PLEX",
+        "steroids",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Immunotherapy (specify) - none = not done - steroids - IVIG - PLEX - RXB = Rituximab - CP = Cyclophopsphamide - Aza = Azathioprine - multiple = specify in next col - other = specify in next col - NA = unknown, NR (multiple variants)"
+    },
+    "immunotherapy_multiple": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If more than one type of treatment, report here from previous column"
+    },
+    "immunotherapy_other": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If other treatment, report here from previous column"
+    },
+    "immunotherapy_detail": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Immunotherapy in detail (text) report the immunotherapy protocol in detail"
+    },
+    "immunotherapy_effect": {
+      "type": "string",
+      "enum": [
+        "improvement",
+        "none",
+        "stabilisation",
+        "worsening",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Effect of immunotherapy (select) - none - worsening - improvement - stabilisation - NA = not known"
+    },
+    "sympt_treatment": {
+      "type": "string",
+      "enum": [
+        "baclofen",
+        "clonazepam",
+        "gabapentin",
+        "none",
+        "other",
+        "pregabalin",
+        "tizanidine",
+        "valproate",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Symptomatic treatment (select) - none - clonazepam - benzo = other benzodiazepines - baclofen - gabapentin - pregabalin - tizanidine - valproate - other (specify)"
+    },
+    "sympt_treatment_multiple": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If more than one type of symptomatic treatment, report here from previous column, separate with semicolons"
+    },
+    "sympt_treatment_other": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If other symptomatic treatment, report here from previous column"
+    },
+    "sympt_treatment_detail": {
+      "type": "string",
+      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Symptomatic treatment in detail (text) please describe way of administration and dose (multiple variants)"
+    },
+    "sympt_treatment_effect": {
+      "type": "string",
+      "enum": [
+        "improvement",
+        "none",
+        "stabilisation",
+        "worsening",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Effect of symptomatic treatment (select) - none - improvement - NA = not known, NR (multiple variants)"
+    },
+    "other_treatment": {
+      "type": "string",
+      "description": "Section: 7. section: concomittant disease and family history / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Other treatment (text) (e.g. tumour therapy)"
+    },
+    "different_treatment": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details."
+    },
+    "different_treatment_duration": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Different treatment: duration (days)"
+    },
+    "different_treatment_response": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Different treatment: response (text)"
+    },
+    "different_treatment_extra": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Results of treatment, if more than one type of response and differential responses to types of treatments"
+    },
+    "adverse_events": {
+      "type": "string",
+      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Adverse events (text) Copy paste the definition(s) of adverse events if one is provided by the authors."
+    },
+    "sampling": {
+      "type": "string",
+      "description": "Section: Sampling and Analysis | Applies to publication types: Data Extraction | Guidance: Sampling (text) Copy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details."
+    },
+    "sample_size_calc": {
+      "type": "string",
+      "description": "Section: Sampling and Analysis | Applies to publication types: Data Extraction | Guidance: Sample size calculation, study power (text) Does the study provide a sample size calculation, power, and other additional information about sampling and analysis? Copy and pasted if available."
+    },
+    "stat_methods": {
+      "type": "string",
+      "description": "Section: Sampling and Analysis | Applies to publication types: Data Extraction | Guidance: Analysis (text) Statistical tests used to find the results - Copy and pasted if available."
+    },
+    "additional_relevant": {
+      "type": "string",
+      "description": "Section: Additional Relevant Information | Applies to publication types: Data Extraction | Guidance: Use this column to add any finding or comments that can be relevant"
+    },
+    "limitations": {
+      "type": "string",
+      "description": "Section: Additional Relevant Information | Applies to publication types: Data Extraction | Guidance: Use this column to make comments related to study limitations"
+    },
+    "weaknesses": {
+      "type": "string",
+      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Use this column to make comments related to study weaknesses"
+    },
+    "strengths": {
+      "type": "string",
+      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Use this column to make comments related to study strenghts."
+    },
+    "initial_diagnosis": {
+      "type": "string",
+      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Initial diagnosis (text) state which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis)"
+    },
+    "differential_diagnosis": {
+      "type": "string",
+      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Differential diagnosis (text) Which DDx were considered?"
+    },
+    "Reference": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: ID"
+    },
+    "case_ID": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: Case reference within the article (case#)"
+    },
+    "age_description": {
+      "type": "string",
+      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: Age at description"
+    },
+    "sex": {
+      "type": "string",
+      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: Sex: M or F"
+    },
+    "age_onset": {
+      "type": "string",
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Age at onset"
+    },
+    "FU_duration_years": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Follow Up (years) | Original field name: FU_duration"
+    },
+    "time_to_diagnosis": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Time to diagnosis (years)"
+    },
+    "first_manifestation_multiple": {
+      "type": "string",
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: First manifestation (multiple)"
+    },
+    "first_manifestation_mother": {
+      "type": "string",
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: First manifestation (other)"
+    },
+    "early_symptoms": {
+      "type": "string",
+      "enum": [
+        "spasms",
+        "stiffness",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Overview_SPSD symptoms / early disease (select) - stiffness - spasms - startle = excessive startle"
+    },
+    "stiffness_distribution_onset": {
+      "type": "string",
+      "enum": [
+        "trismus",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Stiffness distribution (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - trismus - multiple = multiple, but not generalised (specify in next col) - generalised = generalised - other = other, specify in next col"
+    },
+    "stiffness_distribution_onset_multiple": {
+      "type": "string",
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Stiffness distribution: multiple (text)"
+    },
+    "stiffness_distribution_onset_other": {
+      "type": "string",
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Stiffness distribution: other (text)"
+    },
+    "spasms_distribution_onset": {
+      "type": "string",
+      "enum": [
+        "generalised",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Spasms distribution (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - generalised - multiple = multiple, but not generalised (specify in next col) - other = other, specify in next col"
+    },
+    "spasms_distribution_onset_multiple": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: multiple (text)"
+    },
+    "spasms_distribution_onset_other": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: other (text)"
+    },
+    "excessive_startle_onset": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "multiple",
+              "other"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli - multiple (specify in next col) - other (specify in next col)"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "multiple",
+            "other",
+            "NR",
+            "NA",
+            "CD"
+          ],
+          "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli - multiple (specify in next col) - other (specify in next col)"
+        }
+      ]
+    },
+    "excessive_startle_onset_multiple": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle: multiple (text)"
+    },
+    "excessive_startle_onset_other": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle: other (text)"
+    },
+    "anxiety_onset": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety (select) - walking = anxiety related to walking unaided - generalised = specify in next col"
+    },
+    "anxiety_onset_generalised": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety: generalised (text)"
+    },
+    "other_symptoms_onset": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "allodynia",
+              "babinski",
+              "dysgeusia",
+              "dysphagia",
+              "encephalopathy",
+              "hyperhidrosis",
+              "hyperreflexia",
+              "lower_motor_neuron",
+              "ptosis",
+              "weakness"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory) - hyperhidrosis - autonomic = other autonomic symptoms (see legend and specify in next col) - hyperreflexia - babinski - weakness - lower_motor_neuron - encephalopathy - seizures = specify type - oculomotor = specify type - ptosis - dysphagia - dysgeusia - sensory = hyp/paraesthesia - allodynia - freezing = freezing episodes - LPR = lead pipe rigidity - other = specify in next col"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "allodynia",
+            "babinski",
+            "dysgeusia",
+            "dysphagia",
+            "encephalopathy",
+            "hyperhidrosis",
+            "hyperreflexia",
+            "lower_motor_neuron",
+            "ptosis",
+            "weakness",
+            "NR",
+            "NA",
+            "CD"
+          ],
+          "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory) - hyperhidrosis - autonomic = other autonomic symptoms (see legend and specify in next col) - hyperreflexia - babinski - weakness - lower_motor_neuron - encephalopathy - seizures = specify type - oculomotor = specify type - ptosis - dysphagia - dysgeusia - sensory = hyp/paraesthesia - allodynia - freezing = freezing episodes - LPR = lead pipe rigidity - other = specify in next col"
+        }
+      ]
+    },
+    "other_symptoms_onset_auto": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: autonomic (text)"
+    },
+    "other_symptoms_onset_oculo": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: oculomotor (text)"
+    },
+    "other_symptoms_onset_seizures": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: seizures (text)"
+    },
+    "onset_mRS": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Disability at onset - SPSD symptoms established; mRS 0 - No symptoms. 1 - No significant disability. Able to carry out all usual activities, despite some symptoms. 2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities. 3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person). 4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted. 5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent. 6 - Dead"
+    },
+    "timecourse_onset": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Time course of onset (select) - insidious = insidious/subacute - RR = relapsing-remitting - fulminant = fulimant/peracute"
+    },
+    "diagnosis_onset": {
+      "type": "string",
+      "enum": [
+        "SPSD",
+        "functional",
+        "orthopaedic",
+        "seizure",
+        "stroke",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Diagnosis at onset (select) - SPSD - functional - orthopaedic - stroke - seizure - other = specify in next col"
+    },
+    "diagnosis_onset_other": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Diagnosis at onset - other (text)"
+    },
+    "timecourse_subsequent": {
+      "type": "string",
+      "enum": [
+        "chronic-progressive",
+        "chronic_stable",
+        "monophasic",
+        "rapidly-progressive",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Subsequent disease course (select) - monophasic - RR = relapsing-remitting - chronic_stable - chronic-progressive - rapidly-progressive"
+    },
+    "onset_to_established": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Time from onset to fully established disease (months)"
+    },
+    "FU_duration_months": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NR",
+            "NA",
+            "CD"
+          ]
+        }
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Duration of follow up (months) | Original field name: FU_duration"
+    },
+    "overview_established": {
+      "type": "string",
+      "enum": [
+        "spasms",
+        "stiffness",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Overview_SPSD symptoms / established disease - stiffness - spasms - startle = excessive startle"
+    },
+    "stiffness_distribution_established": {
+      "type": "string",
+      "enum": [
+        "trismus",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Stiffness distribution in established disease (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - trismus - multiple = multiple, but not generalised - generalised = generalised - other = other, specify in next col"
+    },
+    "stiffness_distribution_established_multiple": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Stiffness distribution in established disease: multiple (text). Numbers: Dalakas distribution score"
+    },
+    "stiffness_distribution_established_other": {
+      "type": "string",
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Stiffness distribution in established disease: other (text)"
+    },
+    "spasms_distribution_established": {
+      "type": "string",
+      "enum": [
+        "generalised",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - generalised - multiple = multiple, but not generalised (specify in next col) - other = other, specify in next col"
+    },
+    "spasms_distribution_established_multiple": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: multiple (text)"
+    },
+    "spasms_distribution_established_other": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: other (text)"
+    },
+    "excessive_startle_established": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "multiple"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli - multiple (specify in next col)"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "multiple",
+            "NR",
+            "NA",
+            "CD"
+          ],
+          "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli - multiple (specify in next col)"
+        }
+      ]
+    },
+    "excessive_startle_established_multipleother": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle: multiple or other (text). Numbers: heightened sensitivity (Dalakas)"
+    },
+    "anxiety_established": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety (select) - walking = anxiety related to walking unaided - generalised = specify in next col"
+    },
+    "anxiety_established_generalised": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety: generalised (text)"
+    },
+    "other_symptoms_established": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "allodynia",
+              "babinski",
+              "dysgeusia",
+              "dysphagia",
+              "encephalopathy",
+              "hyperhidrosis",
+              "hyperreflexia",
+              "lower_motor_neuron",
+              "ptosis",
+              "weakness"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory) - hyperhidrosis - autonomic = other autonomic symptoms (see legend and specify in next cols) - hyperreflexia - babinski - weakness - lower_motor_neuron - encephalopathy - seizures = specify type in next cols - oculomotor = specify type in next cols - ptosis - dysphagia - dysgeusia - sensory = hyp/paraesthesia - allodynia - freezing = freezing episodes - other = specify in next cols"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "allodynia",
+            "babinski",
+            "dysgeusia",
+            "dysphagia",
+            "encephalopathy",
+            "hyperhidrosis",
+            "hyperreflexia",
+            "lower_motor_neuron",
+            "ptosis",
+            "weakness",
+            "NR",
+            "NA",
+            "CD"
+          ],
+          "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory) - hyperhidrosis - autonomic = other autonomic symptoms (see legend and specify in next cols) - hyperreflexia - babinski - weakness - lower_motor_neuron - encephalopathy - seizures = specify type in next cols - oculomotor = specify type in next cols - ptosis - dysphagia - dysgeusia - sensory = hyp/paraesthesia - allodynia - freezing = freezing episodes - other = specify in next cols"
+        }
+      ]
+    },
+    "other_symptoms_established_auto": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: autonomic (text)"
+    },
+    "other_symptoms_established_oculo": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: oculomotor (text)"
+    },
+    "other_symptoms_established_seizures": {
+      "type": "string",
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: seizures (text)"
+    },
+    "course_treatment": {
+      "type": "string",
+      "enum": [
+        "immunotherapy",
+        "NR",
+        "NA",
+        "CD"
+      ],
+      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Course / symptoms potentially influenced by treatment (select) - none = no treatment - sympt = benzodiazepine or similar - immunotherapy - both = both symptomatic and immunotherapy"
+    },
+    "immuntherapy_detail": {
+      "type": "string",
+      "description": "Section: 6. section: treatment | Applies to publication types: Case Report Form | Guidance: Immunotherapy in detail (please describe dose, how many cycles, intervals)"
+    },
+    "publication_type": {
+      "type": "string",
+      "enum": [
+        "Before-After (Pre-Post) N contr",
+        "Case Control",
+        "Case Report Form",
+        "Case Series & Reports",
+        "Controlled Intervention Studies",
+        "Data Extraction",
+        "Observ Cohort & Cross sect"
+      ],
+      "description": "Which NHLBI tool variant this record corresponds to (as in the dictionary)."
+    }
+  },
+  "required": [
+    "publication_type",
+    "ID",
+    "extractor",
+    "first_author",
+    "pub_year"
+  ],
+  "x_field_aliases": {
+    "FU_duration_years": {
+      "original_field": "FU_duration",
+      "publication_types": [
+        "Case Report Form"
+      ]
+    },
+    "FU_duration_months": {
+      "original_field": "FU_duration",
+      "publication_types": [
+        "Case Report Form"
+      ]
+    }
+  }
+}
