@@ -26,3 +26,30 @@ From repo root:
 ```bash
 python src/pipelines/01_extract_text.py
 ```
+
+## `02_LangExtract.py`
+
+This script reads text JSON files from `data/extraction_json/text`, runs
+LangExtract with an OpenAI model, and writes:
+
+- Raw LangExtract entities to `data/extraction_json/langextract/{paper_id}.json`
+- Section summaries + overall summary to `data/extraction_json/summary/{paper_id}.json`
+
+### Requirements
+
+- `langextract[openai]` installed in your virtual environment
+- `OPENAI_API_KEY` set in your shell environment
+
+### Run
+
+Dry run (no API calls):
+
+```bash
+python src/pipelines/02_LangExtract.py --dry-run --limit 2
+```
+
+Real run:
+
+```bash
+python src/pipelines/02_LangExtract.py
+```
