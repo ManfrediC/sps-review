@@ -1,0 +1,31 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Logs
+*.log
+logs/
+runs/
+
+# Data (keep structure, not the bulk)
+data/pdf_original/*
+data/pdf_annotated/*
+data/extraction_json/*
+data/excel/*
+results/*
+
+# Allow placeholder files so folders exist in git
+!data/pdf_original/.gitkeep
+!data/pdf_annotated/.gitkeep
+!data/extraction_json/.gitkeep
+!data/excel/.gitkeep
+!results/.gitkeep
