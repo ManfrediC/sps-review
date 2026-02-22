@@ -1,28 +1,18 @@
-sheet,excel_col,field,section,definition,data_type,accepted,entry_guidance
-Data Extraction Cohorts,A,ID,Study Details,Study ID,integer or string ID,Must be present (integer or string ID),Study ID
-Data Extraction Cohorts,B,extractor,Study Details,Initials of extractor,free text (initials),Extractor initials (two capitals preferred),Initials of extractor
-Data Extraction Cohorts,C,first_author,Study Details,First author's last name,free text,Free text; NA if not available/reported,First author's last name
-Data Extraction Cohorts,D,pub_year,Study Details,Publication year,integer (year),4-digit year; NA if not available/reported,Publication year
-Data Extraction Cohorts,E,country,Study Details,Country/Countries where study was conducted,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,Country/Countries where study was conducted
-Data Extraction Cohorts,F,study_design,Study Characteristics,"Study Design (for case reports or small series, use the case report form)",free text,Free text; NA if not available/reported,"Study Design (for case reports or small series, use the case report form)"
-Data Extraction Cohorts,G,aims,Study Characteristics,Aims of the Study,free text,Free text; NA if not available/reported,Aims of the Study
-Data Extraction Cohorts,H,participant_number,Study Characteristics,Number of participants,integer (NA allowed),Integer; NA if not available/reported,Number of participants
-Data Extraction Cohorts,I,age_central_measure,Study Characteristics,"Age - measure of central tendency. Select one of the following:
+field,section,data_type,accepted,entry_guidance
+ID,Study Details,integer,Must be present (integer),Study ID
+extractor,Study Details,free text (initials),Extractor initials (two capitals preferred),Initials of extractor
+first_author,Study Details,free text,Free text; NA if not available/reported,First author's last name
+pub_year,Study Details,integer (year),4-digit year; NA if not available/reported,Publication year
+country,Study Details,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,Country/Countries where study was conducted
+study_design,Study Characteristics,free text,Free text; NA if not available/reported,"Study Design (for case reports or small series, use the case report form)"
+aims,Study Characteristics,free text,Free text; NA if not available/reported,Aims of the Study
+participant_number,Study Characteristics,integer (NA allowed),Integer; NA if not available/reported,Number of participants
+age_central_measure,Study Characteristics,categorical (single-select),"mean, median, NA","Age - measure of central tendency. Select one of the following:
 - mean
 - median
-NA = not available, NR, not reported",categorical (single-select),"mean, median, NA","Age - measure of central tendency. Select one of the following:
-- mean
-- median
-NA = not available, NR, not reported"
-Data Extraction Cohorts,J,age_central,Study Characteristics,Age - value of central tendency (numeric),numeric (NA allowed),Numeric; NA if not available/reported,Age - value of central tendency (numeric)
-Data Extraction Cohorts,K,age_variability_measure,Population Characteristics,"Age - measure of variability (listed in order of preference)
-
-SD = standard deviation (1st preference)
-SE = standard error (2nd)
-95CI = 95% confidence interval (3rd)
-IQR = interquartile range
-range = range (5th)
-NA = not available, not reported (6th)",categorical (single-select),"SD, SE, 95CI, IQR, range, NA","Age - measure of variability (listed in order of preference)
+NA = not available, NA, not reported"
+age_central,Study Characteristics,numeric (NA allowed),Numeric; NA if not available/reported,Age - value of central tendency (numeric)
+age_variability_measure,Population Characteristics,categorical (single-select),"SD, SE, 95CI, IQR, range, NA","Age - measure of variability (listed in order of preference)
 
 SD = standard deviation (1st preference)
 SE = standard error (2nd)
@@ -30,15 +20,8 @@ SE = standard error (2nd)
 IQR = interquartile range
 range = range (5th)
 NA = not available, not reported (6th)"
-Data Extraction Cohorts,L,age_variability,Population Characteristics,Age - value(s) of variability,free text,Free text; NA if not available/reported,Age - value(s) of variability
-Data Extraction Cohorts,M,ethnicity,Population Characteristics,"Ethnicity (select one)
-- white = White/Caucasian
-- africa = African/ Afro-Caribbean
-- E_asia = East Asia (Japan, Korea, China)
-- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)
-- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)
-- latin = Latin American (non-African origin; central and S America, without Caribbean)
-- other = other (specify in next column)",categorical (single-select),"white, africa, E_asia, S_asia, SE_asia, latin, mixed, other, NA","Ethnicity (select one)
+age_variability,Population Characteristics,free text,Free text; NA if not available/reported,Age - value(s) of variability
+ethnicity,Population Characteristics,categorical (single-select),"white, africa, E_asia, S_asia, SE_asia, latin, mixed, other, NA","Ethnicity (select one)
 - white = White/Caucasian
 - africa = African/ Afro-Caribbean
 - E_asia = East Asia (Japan, Korea, China)
@@ -46,64 +29,37 @@ Data Extraction Cohorts,M,ethnicity,Population Characteristics,"Ethnicity (selec
 - SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)
 - latin = Latin American (non-African origin; central and S America, without Caribbean)
 - other = other (specify in next column)"
-Data Extraction Cohorts,N,ethnicity_specify,Population Characteristics,"Ethnicity (specify)
-If you selected ""other"", specify with text. Otherwise leave blank.",free text,Free text; NA if not available/reported,"Ethnicity (specify)
+ethnicity_specify,Population Characteristics,free text,Free text; NA if not available/reported,"Ethnicity (specify)
 If you selected ""other"", specify with text. Otherwise leave blank."
-Data Extraction Cohorts,O,percent_males,Population Characteristics,"Percent Males
-Male patients/Total patients. List the value to two decimal places (e.g. ""45.55"")",numeric percent 0-100 (NA allowed),Numeric 0-100; decimals allowed; NA if not available/reported,"Percent Males
+percent_males,Population Characteristics,numeric percent 0-100 (NA allowed),Numeric 0-100; decimals allowed; NA if not available/reported,"Percent Males
 Male patients/Total patients. List the value to two decimal places (e.g. ""45.55"")"
-Data Extraction Cohorts,P,included_diagnosis,Population Characteristics,"Diagnosis of participants included (select)
+included_diagnosis,Population Characteristics,categorical (single-select),"Stiff_Person, Stiff_Limb, PERM, SPSD, mixed, new_category, other, NA","Diagnosis of participants included (select)
 - Stiff_Person
 - Stiff_Limb
 - PERM
 - new_category = new category if identified, specify
 - mixed = mixed population
 - other = other, specify in next column
-- NA = not available, NR, not reported",categorical (single-select),"Stiff_Person, Stiff_Limb, PERM, SPSD, mixed, new_category, other, NA","Diagnosis of participants included (select)
-- Stiff_Person
-- Stiff_Limb
-- PERM
-- new_category = new category if identified, specify
-- mixed = mixed population
-- other = other, specify in next column
-- NA = not available, NR, not reported"
-Data Extraction Cohorts,Q,included_diagnosis_specify,Population Characteristics,"Diagnosis (specify)
-If you selected new_category or other, specify with text",free text,Free text; NA if not available/reported,"Diagnosis (specify)
+- NA = not available, NA, not reported"
+included_diagnosis_specify,Population Characteristics,free text,Free text; NA if not available/reported,"Diagnosis (specify)
 If you selected new_category or other, specify with text"
-Data Extraction Cohorts,R,diagnostic_criteria,Population Characteristics,"Criteria used to make the diagnosis
-Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters)",free text,Free text; NA if not available/reported,"Criteria used to make the diagnosis
+diagnostic_criteria,Population Characteristics,free text,Free text; NA if not available/reported,"Criteria used to make the diagnosis
 Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters)"
-Data Extraction Cohorts,S,disease_severity,Population Characteristics,"Disease Severity
-If the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined.",free text,Free text; NA if not available/reported,"Disease Severity
+disease_severity,Population Characteristics,free text,Free text; NA if not available/reported,"Disease Severity
 If the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined."
-Data Extraction Cohorts,T,first_manifestation,Population Characteristics,"First manifestation
-If study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form.",free text,Free text; NA if not available/reported,"First manifestation
+first_manifestation,Population Characteristics,free text,Free text; NA if not available/reported,"First manifestation
 If study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form."
-Data Extraction Cohorts,U,spsd_symptom,Disease Characteristics,"SPSD symptoms in early disease (select)
-- stiffness
-- spasms
-- startle = excessive startle
-- multiple = multiple, specify in next col
-- other = other, specify in next col",categorical (single-select),"stiffness, spasms, startle, multiple, other, NA","SPSD symptoms in early disease (select)
+spsd_symptom,Disease Characteristics,categorical (single-select),"stiffness, spasms, startle, multiple, other, NA","SPSD symptoms in early disease (select)
 - stiffness
 - spasms
 - startle = excessive startle
 - multiple = multiple, specify in next col
 - other = other, specify in next col"
-Data Extraction Cohorts,V,spsd_symptom_multiple,Disease Characteristics,"Additional data for previous column - if multiple symptoms reported
-List symptoms as text, separated with semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Additional data for previous column - if multiple symptoms reported
+spsd_symptom_multiple,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Additional data for previous column - if multiple symptoms reported
 List symptoms as text, separated with semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,W,spsd_symptom_other,Disease Characteristics,"Additional data for previous column - if other symptoms reported
-List symptoms as text, separated with semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Additional data for previous column - if other symptoms reported
+spsd_symptom_other,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Additional data for previous column - if other symptoms reported
 List symptoms as text, separated with semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,X,stiffness_onset_distribution,Disease Characteristics,"Stiffness distribution at onset (select)
-- lumb_prox_LE = lumbar/proximal legs
-- distal_LE = distal leg(s)
-- UE = arm(s) / upper extremity
-- axial = axial(thoracic,neck)
-- multiple = multiple, but not generalised (specify in next col)
-- generalised = generalised
-- other = other, specify in next col",categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other, NA","Stiffness distribution at onset (select)
+stiffness_onset_distribution,Disease Characteristics,categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other, NA","Stiffness distribution at onset (select)
 - lumb_prox_LE = lumbar/proximal legs
 - distal_LE = distal leg(s)
 - UE = arm(s) / upper extremity
@@ -111,31 +67,15 @@ Data Extraction Cohorts,X,stiffness_onset_distribution,Disease Characteristics,"
 - multiple = multiple, but not generalised (specify in next col)
 - generalised = generalised
 - other = other, specify in next col"
-Data Extraction Cohorts,Y,stiffness_onset_distribution_multiple,Disease Characteristics,"Stiffness at onset (multiple)
-If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Stiffness at onset (multiple)
+stiffness_onset_distribution_multiple,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Stiffness at onset (multiple)
 If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,Z,stiffness_onset_distribution_other,Disease Characteristics,"Stiffness at onset (other)
-If ""other"" was selected, specify with text. Otherwise, leave blank.",free text,Free text; NA if not available/reported,"Stiffness at onset (other)
+stiffness_onset_distribution_other,Disease Characteristics,free text,Free text; NA if not available/reported,"Stiffness at onset (other)
 If ""other"" was selected, specify with text. Otherwise, leave blank."
-Data Extraction Cohorts,AA,startle_stimulus,Disease Characteristics,"Excessive startle (select)
-- touch = to touch
-- noise = to noise
-- visual = to visual stimuli",categorical (single-select),"touch, noise, visual, present, multiple, other, NA","Excessive startle (select)
+startle_stimulus,Disease Characteristics,categorical (single-select),"touch, noise, visual, present, multiple, other, NA","Excessive startle (select)
 - touch = to touch
 - noise = to noise
 - visual = to visual stimuli"
-Data Extraction Cohorts,AB,symptoms_established,Disease Characteristics,"SPSD symptoms in established disease (select single option from list)
-- stiffness
-- spasms
-- startle = excessive startle
-- anxiety
-- oculomotor = oculomotor disturbance
-- cerebellar
-- visual = visual symptoms (e.g. photosensitivity)
-- cognitive
-- gastrointestinal = other than abdominal wall muscle cramps)
-- multiple = multiple, specify in next col
-- other = other, specify in overnext col",categorical (single-select),"stiffness, spasms, startle, anxiety, oculomotor, cerebellar, visual, cognitive, gastrointestinal, ataxia, multiple, other, NA","SPSD symptoms in established disease (select single option from list)
+symptoms_established,Disease Characteristics,categorical (single-select),"stiffness, spasms, startle, anxiety, oculomotor, cerebellar, visual, cognitive, gastrointestinal, ataxia, multiple, other, NA","SPSD symptoms in established disease (select single option from list)
 - stiffness
 - spasms
 - startle = excessive startle
@@ -147,21 +87,11 @@ Data Extraction Cohorts,AB,symptoms_established,Disease Characteristics,"SPSD sy
 - gastrointestinal = other than abdominal wall muscle cramps)
 - multiple = multiple, specify in next col
 - other = other, specify in overnext col"
-Data Extraction Cohorts,AC,symptoms_established_multiple,Disease Characteristics,"SPSD symptoms in established disease (multiple)
-If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"SPSD symptoms in established disease (multiple)
+symptoms_established_multiple,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"SPSD symptoms in established disease (multiple)
 If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,AD,symptoms_established_other,Disease Characteristics,"SPSD symptoms in established disease (other)
-If ""other"" was selected, list as text. Otherwise, leave blank.",free text,Free text; NA if not available/reported,"SPSD symptoms in established disease (other)
+symptoms_established_other,Disease Characteristics,free text,Free text; NA if not available/reported,"SPSD symptoms in established disease (other)
 If ""other"" was selected, list as text. Otherwise, leave blank."
-Data Extraction Cohorts,AE,stiffness_established_distribution,Disease Characteristics,"Stiffness distribution in established disease (select)
-- lumb_prox_LE = lumbar/proximal legs
-- distal_LE = distal leg(s)
-- UE = arm(s) / upper extremity
-- axial = axial(thoracic,neck)
-- trismus
-- multiple = multiple, but not generalised
-- generalised = generalised
-- other = other, specify in next col",categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other, NA","Stiffness distribution in established disease (select)
+stiffness_established_distribution,Disease Characteristics,categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other, NA","Stiffness distribution in established disease (select)
 - lumb_prox_LE = lumbar/proximal legs
 - distal_LE = distal leg(s)
 - UE = arm(s) / upper extremity
@@ -170,21 +100,11 @@ Data Extraction Cohorts,AE,stiffness_established_distribution,Disease Characteri
 - multiple = multiple, but not generalised
 - generalised = generalised
 - other = other, specify in next col"
-Data Extraction Cohorts,AF,stiffness_established_distribution_multiple,Disease Characteristics,"SPSD distribution in established disease (multiple)
-If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"SPSD distribution in established disease (multiple)
+stiffness_established_distribution_multiple,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"SPSD distribution in established disease (multiple)
 If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,AG,stiffness_established_distribution_other,Disease Characteristics,"SPSD distribution in established disease (other)
-If ""other"" was selected, list as text, separated by semicolons. Otherwise, leave blank.",free text,Free text; NA if not available/reported,"SPSD distribution in established disease (other)
+stiffness_established_distribution_other,Disease Characteristics,free text,Free text; NA if not available/reported,"SPSD distribution in established disease (other)
 If ""other"" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,AH,established_mRS,Disease Characteristics,"Disability when disease fully established
-(SPSD symptoms established; mRS)
-0 - No symptoms.
-1 - No significant disability.
-2 - Slight disability.
-3 - Moderate disability.
-4 - Moderately severe disability.
-5 - Severe disability.  incontinent.
-6 - Dead",numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,"Disability when disease fully established
+established_mRS,Disease Characteristics,numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,"Disability when disease fully established
 (SPSD symptoms established; mRS)
 0 - No symptoms.
 1 - No significant disability.
@@ -193,14 +113,7 @@ Data Extraction Cohorts,AH,established_mRS,Disease Characteristics,"Disability w
 4 - Moderately severe disability.
 5 - Severe disability.  incontinent.
 6 - Dead"
-Data Extraction Cohorts,AI,spasms_distribution,Disease Characteristics,"Spasms distribution
-- lumb_prox_LE = lumbar/proximal legs
-- distal_LE = distal leg(s)
-- UE = arm(s) / upper extremity
-- axial = axial(thoracic,neck)
-- multiple = multiple, but not generalised
-- generalised = generalised
-- other = other, specify in next col",categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, generalised, multiple, other, NA","Spasms distribution
+spasms_distribution,Disease Characteristics,categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, generalised, multiple, other, NA","Spasms distribution
 - lumb_prox_LE = lumbar/proximal legs
 - distal_LE = distal leg(s)
 - UE = arm(s) / upper extremity
@@ -208,34 +121,18 @@ Data Extraction Cohorts,AI,spasms_distribution,Disease Characteristics,"Spasms d
 - multiple = multiple, but not generalised
 - generalised = generalised
 - other = other, specify in next col"
-Data Extraction Cohorts,AJ,spasms_distribution_multiple,Disease Characteristics,"Spasms distribution (multiple)
-If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Spasms distribution (multiple)
+spasms_distribution_multiple,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Spasms distribution (multiple)
 If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,AK,spasms_distribution_other,Disease Characteristics,"Spasms distribution (other)
-If ""other"" was selected, list as text. Otherwise, leave blank.",free text,Free text; NA if not available/reported,"Spasms distribution (other)
+spasms_distribution_other,Disease Characteristics,free text,Free text; NA if not available/reported,"Spasms distribution (other)
 If ""other"" was selected, list as text. Otherwise, leave blank."
-Data Extraction Cohorts,AL,duration_FU,Disease Characteristics,Duration of follow up (months),numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,Duration of follow up (months)
-Data Extraction Cohorts,AM,treatment,Disease Characteristics,"Course / symptoms potentially influenced by treatment ? (select)
-- none = no treatment
-- BZD = benzodiazepine or similar
-- immunotherapy
-- both = both symptomatic and immunotherapy
-- NA = not available, not reported",categorical (single-select),"none, sympt, immunotherapy, both, NA","Course / symptoms potentially influenced by treatment ? (select)
+FU_duration,Disease Characteristics,numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,Duration of follow up (months)
+treatment,Disease Characteristics,categorical (single-select),"none, sympt, immunotherapy, both, NA","Course / symptoms potentially influenced by treatment ? (select)
 - none = no treatment
 - BZD = benzodiazepine or similar
 - immunotherapy
 - both = both symptomatic and immunotherapy
 - NA = not available, not reported"
-Data Extraction Cohorts,AN,antibody_status,Disease Characteristics,"Antibody status (select)
-- GAD
-- GlyR
-- amphiphysin
-- DPPX
-- seronegative
-- multiple = multiple, specify in next col
-- other = other, specify in next col
-- not_tested = no test performed
-- NA = not available, not reported, unclear if tested",categorical (single-select),"GAD, GAD65, GlyR, amphiphysin, DPPX, seronegative, multiple, mixed, other, not_tested, NA","Antibody status (select)
+antibody_status,Disease Characteristics,categorical (single-select),"GAD, GAD65, GlyR, amphiphysin, DPPX, seronegative, multiple, mixed, other, not_tested, NA","Antibody status (select)
 - GAD
 - GlyR
 - amphiphysin
@@ -245,102 +142,65 @@ Data Extraction Cohorts,AN,antibody_status,Disease Characteristics,"Antibody sta
 - other = other, specify in next col
 - not_tested = no test performed
 - NA = not available, not reported, unclear if tested"
-Data Extraction Cohorts,AO,antibody_status_multiple,Disease Characteristics,"Antibody status (multiple)
-If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank.",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Antibody status (multiple)
+antibody_status_multiple,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Antibody status (multiple)
 If ""multiple"" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-Data Extraction Cohorts,AP,antibody_status_other,Disease Characteristics,"Antibody status (other)
-If ""other"" was selected, list as text. Otherwise, leave blank.",free text,Free text; NA if not available/reported,"Antibody status (other)
+antibody_status_other,Disease Characteristics,free text,Free text; NA if not available/reported,"Antibody status (other)
 If ""other"" was selected, list as text. Otherwise, leave blank."
-Data Extraction Cohorts,AQ,antibody_titre,Disease Characteristics,Antibody titre,numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,Antibody titre
-Data Extraction Cohorts,AR,antibody_units,Disease Characteristics,Antibody units,free text,Free text; NA if not available/reported,Antibody units
-Data Extraction Cohorts,AS,antibody_testsystem,Disease Characteristics,Antibody test system,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,Antibody test system
-Data Extraction Cohorts,AT,antibody_tests,Disease Characteristics,"Antibodies tested
-list all antibodies that were tested, separated by semicolons",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Antibodies tested
+antibody_titre,Disease Characteristics,numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,Antibody titre
+antibody_units,Disease Characteristics,free text,Free text; NA if not available/reported,Antibody units
+antibody_testsystem,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,Antibody test system
+antibody_tests,Disease Characteristics,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"Antibodies tested
 list all antibodies that were tested, separated by semicolons"
-Data Extraction Cohorts,AU,antibody_notes,Disease Characteristics,"Antibody notes
-If not covered by columns to the left, give as text note. Otherwise, leave blank.",free text,Free text; NA if not available/reported,"Antibody notes
+antibody_notes,Disease Characteristics,free text,Free text; NA if not available/reported,"Antibody notes
 If not covered by columns to the left, give as text note. Otherwise, leave blank."
-Data Extraction Cohorts,AV,CSF_status,Disease Characteristics,"CSF (select)
+CSF_status,Disease Characteristics,categorical (single-select),"normal, inflammatory, isolated protein elevation, not_done, antibody_present, NA","CSF (select)
 - normal
 - inflammatory
 - isolated protein elevation
 - not_done = no CSF analysis performed
 - antibody_present = antibody present in CSF (specify Ab and titre in next cols)
-- NA = not available / NR",categorical (single-select),"normal, inflammatory, isolated protein elevation, not_done, antibody_present, NA","CSF (select)
-- normal
-- inflammatory
-- isolated protein elevation
-- not_done = no CSF analysis performed
-- antibody_present = antibody present in CSF (specify Ab and titre in next cols)
-- NA = not available / NR"
-Data Extraction Cohorts,AW,CSF_antibody,Disease Characteristics,CSF antibody (specify),free text,Free text; NA if not available/reported,CSF antibody (specify)
-Data Extraction Cohorts,AX,CSF_antibody_titre,Disease Characteristics,CSF antibody titre (numeric),numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,CSF antibody titre (numeric)
-Data Extraction Cohorts,AY,CMUA,Disease Characteristics,"continuous motor unit activity (CMUA)
+- NA = not available / NA"
+CSF_antibody,Disease Characteristics,free text,Free text; NA if not available/reported,CSF antibody (specify)
+CSF_antibody_titre,Disease Characteristics,numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,CSF antibody titre (numeric)
+CMUA,Disease Characteristics,categorical (0/1/NA),"0, 1, NA","continuous motor unit activity (CMUA)
 0 = not detected
 1 = present
-NA = no EMG, NR, unknown",categorical (0/1/NA),"0, 1, NA","continuous motor unit activity (CMUA)
+NA = no EMG, NA, unknown"
+exteroceptive_refl,Disease Characteristics,categorical (0/1/NA),"0, 1, NA","enhanced exteroceptive reflexes
 0 = not detected
 1 = present
-NA = no EMG, NR, unknown"
-Data Extraction Cohorts,AZ,exteroceptive_refl,Disease Characteristics,"enhanced exteroceptive reflexes
+NA = not done, NA, unknown"
+brainstem_refl,Investigations and Tests,categorical (0/1/NA),"0, 1, NA","brainstem reflexes
 0 = not detected
 1 = present
-NA = not done, NR, unknown",categorical (0/1/NA),"0, 1, NA","enhanced exteroceptive reflexes
-0 = not detected
-1 = present
-NA = not done, NR, unknown"
-Data Extraction Cohorts,BA,brainstem_refl,Investigations and Tests,"brainstem reflexes
-0 = not detected
-1 = present
-NA = not done, NR, unknown",categorical (0/1/NA),"0, 1, NA","brainstem reflexes
-0 = not detected
-1 = present
-NA = not done, NR, unknown"
-Data Extraction Cohorts,BB,MRI_normal,Investigations and Tests,"MRI
-0 = normal
-1 = abnormal (specify in next col)
-NA = no MRI performed, not reported, unclear",categorical (0/1/NA),"0, 1, NA","MRI
+NA = not done, NA, unknown"
+MRI_normal,Investigations and Tests,categorical (0/1/NA),"0, 1, NA","MRI
 0 = normal
 1 = abnormal (specify in next col)
 NA = no MRI performed, not reported, unclear"
-Data Extraction Cohorts,BC,MRI_abnormalities,Investigations and Tests,MRI abnormalities (text),free text,Free text; NA if not available/reported,MRI abnormalities (text)
-Data Extraction Cohorts,BD,tu_screening,Investigations and Tests,"Tumour screening
+MRI_abnormalities,Investigations and Tests,free text,Free text; NA if not available/reported,MRI abnormalities (text)
+tu_screening,Investigations and Tests,categorical (0/1/NA),"0, 1, NA","Tumour screening
 0 = normal / no tumour detected
 1 = abnormal (specify in next col)
-NA = not performed, NR",categorical (0/1/NA),"0, 1, NA","Tumour screening
-0 = normal / no tumour detected
-1 = abnormal (specify in next col)
-NA = not performed, NR"
-Data Extraction Cohorts,BE,tu_screening_abnormal,Investigations and Tests,"Tumour screening abnormal
-specify tumour entity with text",free text,Free text; NA if not available/reported,"Tumour screening abnormal
+NA = not performed, NA"
+tu_screening_abnormal,Investigations and Tests,free text,Free text; NA if not available/reported,"Tumour screening abnormal
 specify tumour entity with text"
-Data Extraction Cohorts,BF,family_history,Investigations and Tests,"Family history (select)
-- none = no fhx for SPSD or autoimmunity
-- autoimmune = fhx for autoimmunity (specify in next col)
-- SPSD = fhx for SPSD (specify in next col)
-- NA = unknown, not reported",categorical (single-select),"none, autoimmune, SPSD, NA","Family history (select)
+family_history,Investigations and Tests,categorical (single-select),"none, autoimmune, SPSD, NA","Family history (select)
 - none = no fhx for SPSD or autoimmunity
 - autoimmune = fhx for autoimmunity (specify in next col)
 - SPSD = fhx for SPSD (specify in next col)
 - NA = unknown, not reported"
-Data Extraction Cohorts,BG,family_history_abnormal,Investigations and Tests,"Family history (text)
-if autoimmune diseases and/or SPSD are present, specify with text",free text,Free text; NA if not available/reported,"Family history (text)
+family_history_abnormal,Investigations and Tests,free text,Free text; NA if not available/reported,"Family history (text)
 if autoimmune diseases and/or SPSD are present, specify with text"
-Data Extraction Cohorts,BH,autoimmunity,Investigations and Tests,"Concomitant autoimmunity (select)
-- none
-- thyroid = thyroid disease/thyroid antibodies
-- diabetes
-- vitiligo
-- gastric = pernicious anaemia/parietal cell antibodies
-- other= other, specify in next col",categorical (single-select),"none, thyroid, diabetes, vitiligo, gastric, other, NA","Concomitant autoimmunity (select)
+autoimmunity,Investigations and Tests,categorical (single-select),"none, thyroid, diabetes, vitiligo, gastric, other, NA","Concomitant autoimmunity (select)
 - none
 - thyroid = thyroid disease/thyroid antibodies
 - diabetes
 - vitiligo
 - gastric = pernicious anaemia/parietal cell antibodies
 - other= other, specify in next col"
-Data Extraction Cohorts,BI,autoimmunity_specify,Investigations and Tests,Concomitant autoimmunity (specify with text),free text,Free text; NA if not available/reported,Concomitant autoimmunity (specify with text)
-Data Extraction Cohorts,BJ,immunotherapy,Investigations and Tests,"Immunotherapy (specify)
+autoimmunity_specify,Investigations and Tests,free text,Free text; NA if not available/reported,Concomitant autoimmunity (specify with text)
+immunotherapy,Investigations and Tests,categorical (single-select),"none, steroids, IVIG, PLEX, RXB, CP, Aza, HSCT, multiple, other, NA","Immunotherapy (specify)
 - none = not done
 - steroids
 - IVIG
@@ -350,43 +210,18 @@ Data Extraction Cohorts,BJ,immunotherapy,Investigations and Tests,"Immunotherapy
 - Aza = Azathioprine
 - multiple = specify in next col
 - other = specify in next col
-- NA = unknown, NR",categorical (single-select),"none, steroids, IVIG, PLEX, RXB, CP, Aza, HSCT, multiple, other, NA","Immunotherapy (specify)
-- none = not done
-- steroids
-- IVIG
-- PLEX
-- RXB = Rituximab
-- CP = Cyclophosphamide
-- Aza = Azathioprine
-- multiple = specify in next col
-- other = specify in next col
-- NA = unknown, NR"
-Data Extraction Cohorts,BK,immunotherapy_multiple,Investigations and Tests,"If more than one type of treatment, report here from previous column",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"If more than one type of treatment, report here from previous column"
-Data Extraction Cohorts,BL,immunotherapy_other,Investigations and Tests,"If other treatment, report here from previous column",free text,Free text; NA if not available/reported,"If other treatment, report here from previous column"
-Data Extraction Cohorts,BM,immunotherapy_detail,Investigations and Tests,"Immunotherapy in detail (text)
-report the immunotherapy protocol in detail",free text,Free text; NA if not available/reported,"Immunotherapy in detail (text)
+- NA = unknown, NA"
+immunotherapy_multiple,Investigations and Tests,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"If more than one type of treatment, report here from previous column"
+immunotherapy_other,Investigations and Tests,free text,Free text; NA if not available/reported,"If other treatment, report here from previous column"
+immunotherapy_detail,Investigations and Tests,free text,Free text; NA if not available/reported,"Immunotherapy in detail (text)
 report the immunotherapy protocol in detail"
-Data Extraction Cohorts,BN,immunotherapy_effect,Investigations and Tests,"Effect of immunotherapy (select)
-- none
-- worsening
-- improvement
-- stabilisation
-- NA = not known",categorical (single-select),"none, worsening, improvement, stabilisation, partial, mixed, NA","Effect of immunotherapy (select)
+immunotherapy_effect,Investigations and Tests,categorical (single-select),"none, worsening, improvement, stabilisation, partial, mixed, NA","Effect of immunotherapy (select)
 - none
 - worsening
 - improvement
 - stabilisation
 - NA = not known"
-Data Extraction Cohorts,BO,sympt_treatment,Investigations and Tests,"Symptomatic treatment (select)
-- none
-- clonazepam
-- benzo = other benzodiazepines
-- baclofen
-- gabapentin
-- pregabalin
-- tizanidine
-- valproate
-- other (specify)",categorical (single-select),"none, clonazepam, benzo, baclofen, gabapentin, pregabalin, tizanidine, valproate, botulinumtoxin, multiple, other, NA","Symptomatic treatment (select)
+sympt_treatment,Investigations and Tests,categorical (single-select),"none, clonazepam, benzo, baclofen, gabapentin, pregabalin, tizanidine, valproate, botulinumtoxin, multiple, other, NA","Symptomatic treatment (select)
 - none
 - clonazepam
 - benzo = other benzodiazepines
@@ -396,44 +231,33 @@ Data Extraction Cohorts,BO,sympt_treatment,Investigations and Tests,"Symptomatic
 - tizanidine
 - valproate
 - other (specify)"
-Data Extraction Cohorts,BP,sympt_treatment_multiple,Investigations and Tests,"If more than one type of symptomatic treatment, report here from previous column, separate with semicolons",free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"If more than one type of symptomatic treatment, report here from previous column, separate with semicolons"
-Data Extraction Cohorts,BQ,sympt_treatment_other,Investigations and Tests,"If other symptomatic treatment, report here from previous column",free text,Free text; NA if not available/reported,"If other symptomatic treatment, report here from previous column"
-Data Extraction Cohorts,BR,sympt_treatment_detail,Investigations and Tests,"Symptomatic treatment in detail (text)
-please describe way of administration and dose",free text,Free text; NA if not available/reported,"Symptomatic treatment in detail (text)
+sympt_treatment_multiple,Investigations and Tests,free text (semicolon-separated for multiple entries),Free text; separate multiple entries with semicolons; NA if not available/reported,"If more than one type of symptomatic treatment, report here from previous column, separate with semicolons"
+sympt_treatment_other,Investigations and Tests,free text,Free text; NA if not available/reported,"If other symptomatic treatment, report here from previous column"
+sympt_treatment_detail,Investigations and Tests,free text,Free text; NA if not available/reported,"Symptomatic treatment in detail (text)
 please describe way of administration and dose"
-Data Extraction Cohorts,BS,sympt_treatment_effect,Investigations and Tests,"Effect of symptomatic treatment (select)
+sympt_treatment_effect,Investigations and Tests,categorical (single-select),"none, worsening, improvement, stabilisation, mixed, NA","Effect of symptomatic treatment (select)
 - none
 - improvement
-- NA = not known, NR",categorical (single-select),"none, worsening, improvement, stabilisation, mixed, NA","Effect of symptomatic treatment (select)
-- none
-- improvement
-- NA = not known, NR"
-Data Extraction Cohorts,BT,other_treatment,Investigations and Tests,"Other treatment (text)
-(e.g. tumour therapy)",free text,Free text; NA if not available/reported,"Other treatment (text)
+- NA = not known, NA"
+other_treatment,Investigations and Tests,free text,Free text; NA if not available/reported,"Other treatment (text)
 (e.g. tumour therapy)"
-Data Extraction Cohorts,BU,different_treatment,Investigations and Tests,"If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details.",free text,Free text; NA if not available/reported,"If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details."
-Data Extraction Cohorts,BV,different_treatment_duration,Investigations and Tests,Different treatment: duration (days),numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,Different treatment: duration (days)
-Data Extraction Cohorts,BW,different_treatment_response,Investigations and Tests,Different treatment: response (text),free text,Free text; NA if not available/reported,Different treatment: response (text)
-Data Extraction Cohorts,BX,different_treatment_extra,Investigations and Tests,"Results of treatment, if more than one type of response and differential responses to types of treatments",free text,Free text; NA if not available/reported,"Results of treatment, if more than one type of response and differential responses to types of treatments"
-Data Extraction Cohorts,BY,adverse_events,Investigations and Tests,"Adverse events (text)
-Copy paste the definition(s) of adverse events if one is provided by the authors.",free text,Free text; NA if not available/reported,"Adverse events (text)
+different_treatment,Investigations and Tests,free text,Free text; NA if not available/reported,"If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details."
+different_treatment_duration,Investigations and Tests,numeric or free text (NA allowed),Numeric where directly reported; otherwise concise summary text; NA if not available/reported,Different treatment: duration (days)
+different_treatment_response,Investigations and Tests,free text,Free text; NA if not available/reported,Different treatment: response (text)
+different_treatment_extra,Investigations and Tests,free text,Free text; NA if not available/reported,"Results of treatment, if more than one type of response and differential responses to types of treatments"
+adverse_events,Investigations and Tests,free text,Free text; NA if not available/reported,"Adverse events (text)
 Copy paste the definition(s) of adverse events if one is provided by the authors."
-Data Extraction Cohorts,BZ,sampling,Sampling and Analysis,"Sampling (text)
-Copy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details.",free text,Free text; NA if not available/reported,"Sampling (text)
+sampling,Sampling and Analysis,free text,Free text; NA if not available/reported,"Sampling (text)
 Copy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details."
-Data Extraction Cohorts,CA,sample_size_calc,Sampling and Analysis,"Sample size calculation, study power (text)
-Does the study provide a sample size calculation, power,   and other additional information about sampling and analysis? Copy and pasted if available.",free text,Free text; NA if not available/reported,"Sample size calculation, study power (text)
+sample_size_calc,Sampling and Analysis,free text,Free text; NA if not available/reported,"Sample size calculation, study power (text)
 Does the study provide a sample size calculation, power,   and other additional information about sampling and analysis? Copy and pasted if available."
-Data Extraction Cohorts,CB,stat_methods,Sampling and Analysis,"Analysis (text)
-Statistical tests used to find the results - Copy and pasted if available.",free text,Free text; NA if not available/reported,"Analysis (text)
+stat_methods,Sampling and Analysis,free text,Free text; NA if not available/reported,"Analysis (text)
 Statistical tests used to find the results - Copy and pasted if available."
-Data Extraction Cohorts,CC,additional_relevant,Additional Relevant Information,Use this column to add any finding or comments that can be relevant,free text,Free text; NA if not available/reported,Use this column to add any finding or comments that can be relevant
-Data Extraction Cohorts,CD,limitations,Additional Relevant Information,Use this column to make comments related to study limitations,free text,Free text; NA if not available/reported,Use this column to make comments related to study limitations
-Data Extraction Cohorts,CE,weaknesses,Notes,Use this column to make comments related to study weaknesses,free text,Free text; NA if not available/reported,Use this column to make comments related to study weaknesses
-Data Extraction Cohorts,CF,strengths,Notes,Use this column to make comments related to study strengths.,free text,Free text; NA if not available/reported,Use this column to make comments related to study strengths.
-Data Extraction Cohorts,CG,initial_diagnosis,Notes,"Initial diagnosis (text)
-state which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis)",free text,Free text; NA if not available/reported,"Initial diagnosis (text)
+additional_relevant,Additional Relevant Information,free text,Free text; NA if not available/reported,Use this column to add any finding or comments that can be relevant
+limitations,Additional Relevant Information,free text,Free text; NA if not available/reported,Use this column to make comments related to study limitations
+weaknesses,Notes,free text,Free text; NA if not available/reported,Use this column to make comments related to study weaknesses
+strengths,Notes,free text,Free text; NA if not available/reported,Use this column to make comments related to study strengths.
+initial_diagnosis,Notes,free text,Free text; NA if not available/reported,"Initial diagnosis (text)
 state which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis)"
-Data Extraction Cohorts,CH,differential_diagnosis,Notes,"Differential diagnosis (text)
-Which DDx were considered?",free text,Free text; NA if not available/reported,"Differential diagnosis (text)
+differential_diagnosis,Notes,free text,Free text; NA if not available/reported,"Differential diagnosis (text)
 Which DDx were considered?"
