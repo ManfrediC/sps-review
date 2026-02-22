@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "SPS Study Quality Assessment Record",
-  "description": "Schema generated from SPS_quality_dictionary.csv for constraining structured extraction outputs (e.g., LangExtract). Fields are optional unless listed in 'required'.",
+  "description": "Schema generated from SPS_quality_dictionary.csv for constraining structured extraction outputs (e.g., LangExtract). Fields are optional unless listed in \"required\".",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -14,21 +14,21 @@
           "type": "string"
         }
       ],
-      "description": "Section: Study Details | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: Study ID"
+      "description": "Section: Study Details | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr, Controlled Intervention Studies | Guidance: Study ID"
     },
     "extractor": {
       "type": "string",
-      "description": "Section: Study Details / Use this tab for case reports, case series, or studies that report individual patients characteristics instead of grouped data. | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Report Form, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: Initials of extractor"
+      "description": "Section: Study Details | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr, Controlled Intervention Studies | Guidance: Initials of extractor"
     },
     "first_author": {
       "type": "string",
-      "description": "Section: STUDY DETAILS / Study Details | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: First author's last name"
+      "description": "Section: Study Details | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr, Controlled Intervention Studies | Guidance: First author's last name"
     },
     "pub_year": {
       "type": "integer",
-      "description": "Section: STUDY DETAILS / Study Details | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Data Extraction, Observ Cohort & Cross sect | Guidance: Publication Year (multiple variants)",
       "minimum": 1800,
-      "maximum": 2100
+      "maximum": 2100,
+      "description": "Section: Study Details | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr, Controlled Intervention Studies | Guidance: Publication Year"
     },
     "objective_stated": {
       "anyOf": [
@@ -48,7 +48,7 @@
           ]
         }
       ],
-      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Observ Cohort & Cross sect | Criterion: Was the study question or objective clearly stated? (multiple variants) | Guidance: 1. Was the study question or objective clearly stated? 0 = no 1 = yes NA = not available / not applicable (multiple variants)"
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr | Criterion: multiple variants | Guidance: multiple variants"
     },
     "criteria_stated": {
       "anyOf": [
@@ -68,7 +68,7 @@
           ]
         }
       ],
-      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Observ Cohort & Cross sect | Criterion: Were eligibility/selection criteria for the study population prespecified and clearly described? | Guidance: 2. Were eligibility/selection criteria for the study population prespecified and clearly described? 0 = no 1 = yes NA = not available / not applicable"
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect, Before-After (Pre-Post) N contr | Criterion: Were eligibility/selection criteria for the study population prespecified and clearly described? | Guidance: 2. Were eligibility/selection criteria for the study population prespecified and clearly described? 0 = no 1 = yes NA = not available / not applicable"
     },
     "participation_50": {
       "anyOf": [
@@ -268,7 +268,7 @@
           ]
         }
       ],
-      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Series & Reports, Observ Cohort & Cross sect | Criterion: Were the outcome measures (dependent variables) clearly defined, valid, reliable, and implemented consistently across all study participants? (multiple variants) | Guidance: 11. Were the outcome measures (dependent variables) clearly defined, valid, reliable, and implemented consistently across all study participants? 0 = no 1 = yes NA = not available / not applicable (multiple variants)"
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect, Case Series & Reports, Before-After (Pre-Post) N contr | Criterion: multiple variants | Guidance: multiple variants"
     },
     "blinded": {
       "anyOf": [
@@ -288,7 +288,7 @@
           ]
         }
       ],
-      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Observ Cohort & Cross sect | Criterion: Were the outcome assessors blinded to the exposure status of participants? (multiple variants) | Guidance: 12. Were the outcome assessors blinded to the exposure status of participants? 0 = no 1 = yes NA = not available / not applicable (multiple variants)"
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect, Case Control, Before-After (Pre-Post) N contr | Criterion: multiple variants | Guidance: multiple variants"
     },
     "LTFU_20": {
       "anyOf": [
@@ -333,16 +333,15 @@
     "quality_assessment": {
       "type": "string",
       "enum": [
-        "fair",
-        "good",
         "poor",
-        "NA"
+        "fair",
+        "good"
       ],
-      "description": "Section: Risk of Bias Assessment | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Series & Reports, Controlled Intervention Studies, Observ Cohort & Cross sect | Guidance: Quality assessment: select one of the following: - poor - fair - good"
+      "description": "Section: Risk of Bias Assessment | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr, Controlled Intervention Studies | Guidance: Quality assessment: select one of the following: - poor - fair - good"
     },
     "notes": {
       "type": "string",
-      "description": "Section: 8.section: comments / Notes | Applies to publication types: Before-After (Pre-Post) N contr, Case Control, Case Report Form, Case Series & Reports, Controlled Intervention Studies, Observ Cohort & Cross sect | Guidance: Notes/Comments (if POOR, state why) (multiple variants)"
+      "description": "Section: Notes | Applies to publication types: Observ Cohort & Cross sect, Case Control, Case Series & Reports, Before-After (Pre-Post) N contr, Controlled Intervention Studies | Guidance: Notes/Comments (if POOR, state why)"
     },
     "population_defined": {
       "anyOf": [
@@ -1184,861 +1183,16 @@
       ],
       "description": "Section: Risk of Bias Assessment | Applies to publication types: Controlled Intervention Studies | Criterion: Were all randomized participants analyzed in the group to which they were originally assigned, i.e., did they use an intention-to-treat analysis? | Guidance: 14. Were all randomized participants analyzed in the group to which they were originally assigned, i.e., did they use an intention-to-treat analysis? 0 = no 1 = yes NA = not available / not applicable"
     },
-    "country": {
-      "type": "string",
-      "description": "Section: STUDY DETAILS | Applies to publication types: Data Extraction | Guidance: Country/Countries where study was conducted"
-    },
-    "study_design": {
-      "type": "string",
-      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Study Design (for case reports or small series, use the case report form)"
-    },
-    "aims": {
-      "type": "string",
-      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Aims of the Study"
-    },
-    "participant_number": {
-      "type": "string",
-      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Number of participants"
-    },
-    "age_central_measure": {
-      "type": "string",
-      "enum": [
-        "NA",
-        "mean",
-        "median"
-      ],
-      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Age - measure of central tendency. Select one of the following: - mean - median NA = not available, NA, not reported"
-    },
-    "age_central": {
-      "anyOf": [
-        {
-          "type": "number"
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: Study Characteristics | Applies to publication types: Data Extraction | Guidance: Age - value of central tendency (numeric)"
-    },
-    "age_variability_measure": {
-      "type": "string",
-      "enum": [
-        "95CI",
-        "IQR",
-        "NA",
-        "SD",
-        "SE",
-        "range"
-      ],
-      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Age - measure of variability (listed in order of preference) SD = standard deviation (1st preference) SE = standard error (2nd) 95CI = 95% confidence interval (3rd) IQR = interquartile range range = range (5th) NA = not available, not reported (6th)"
-    },
-    "age_variability": {
-      "type": "string",
-      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Age - value(s) of variability"
-    },
-    "ethnicity": {
-      "type": "string",
-      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Ethnicity (select one) - white = White/Caucasian - africa = African/ Afro-Caribbean - E_asia = East Asia (Japan, Korea, China) - S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka) - SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore) - latin = Latin American (non-African origin; central and S America, without Caribbean) - other = other (specify in next column)"
-    },
-    "ethnicity_specify": {
-      "type": "string",
-      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Ethnicity (specify) If you selected \"other\", specify with text. Otherwise leave blank."
-    },
-    "percent_males": {
-      "type": "string",
-      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Percent Males Male patients/Total patients. List the value to two decimal places (e.g. \"45.55\")"
-    },
-    "included_diagnosis": {
-      "type": "string",
-      "enum": [
-        "PERM",
-        "Stiff_Limb",
-        "Stiff_Person",
-        "NA"
-      ],
-      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Diagnosis of participants included (select) - Stiff_Person - Stiff_Limb - PERM - new_category = new category if identified, specify - mixed = mixed population - other = other, specify in next column - NA = not available, NA, not reported"
-    },
-    "included_diagnosis_specify": {
-      "type": "string",
-      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Diagnosis (specify) If you selected new_category or other, specify with text"
-    },
-    "diagnostic_criteria": {
-      "type": "string",
-      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: Criteria used to make the diagnosis Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters) (multiple variants)"
-    },
-    "disease_severity": {
-      "type": "string",
-      "description": "Section: Population Characteristics | Applies to publication types: Data Extraction | Guidance: Disease Severity If the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined."
-    },
-    "first_manifestation": {
-      "type": "string",
-      "enum": [
-        "First manifestation If study reports first symptoms of a group of participants",
-        "copy and paste below from the manuscript. If details for individual cases provided",
-        "spasms",
-        "stiffness",
-        "use case report form.",
-        "NA"
-      ],
-      "description": "Section: Population Characteristics / section: basic demographic data | Applies to publication types: Case Report Form, Data Extraction | Guidance: First manifestation If study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form. (multiple variants)"
-    },
-    "spsd_symptom": {
-      "type": "string",
-      "enum": [
-        "spasms",
-        "stiffness",
-        "NA"
-      ],
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in early disease (select) - stiffness - spasms - startle = excessive startle - multiple = multiple, specify in next col - other = other, specify in next col"
-    },
-    "spsd_symptom_multiple": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Additional data for previous column - if multiple symptoms reported List symptoms as text, separated with semicolons. Otherwise, leave blank."
-    },
-    "spsd_symptom_other": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Additional data for previous column - if other symptoms reported List symptoms as text, separated with semicolons. Otherwise, leave blank."
-    },
-    "stiffness_onset_distribution_multiple": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness at onset (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-    },
-    "stiffness_onset_distribution_other": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness at onset (other) If \"other\" was selected, specify with text. Otherwise, leave blank."
-    },
-    "symptoms_established": {
-      "type": "string",
-      "enum": [
-        "anxiety",
-        "cerebellar",
-        "cognitive",
-        "spasms",
-        "stiffness",
-        "NA"
-      ],
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in established disease (select single option from list) - stiffness - spasms - startle = excessive startle - anxiety - oculomotor = oculomotor disturbance - cerebellar - visual = visual symptoms (e.g. photosensitivity) - cognitive - gastrointestinal = other than abdominal wall muscle cramps) - multiple = multiple, specify in next col - other = other, specify in overnext col"
-    },
-    "symptoms_established_multiple": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in established disease (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-    },
-    "symptoms_established_other": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD symptoms in established disease (other) If \"other\" was selected, list as text. Otherwise, leave blank."
-    },
-    "stiffness_established_distribution": {
-      "type": "string",
-      "enum": [
-        "trismus",
-        "NA"
-      ],
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Stiffness distribution in established disease (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - trismus - multiple = multiple, but not generalised - generalised = generalised - other = other, specify in next col"
-    },
-    "stiffness_established_distribution_multiple": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD distribution in established disease (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-    },
-    "stiffness_established_distribution_other": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: SPSD distribution in established disease (other) If \"other\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-    },
-    "established_mRS": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 6
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Disability when disease fully established (SPSD symptoms established; mRS) 0 - No symptoms. 1 - No significant disability. 2 - Slight disability. 3 - Moderate disability. 4 - Moderately severe disability. 5 - Severe disability. incontinent. 6 - Dead (multiple variants)"
-    },
-    "spasms_distribution": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Spasms distribution - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - multiple = multiple, but not generalised - generalised = generalised - other = other, specify in next col"
-    },
-    "spasms_distribution_multiple": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Spasms distribution (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-    },
-    "spasms_distribution_other": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Spasms distribution (other) If \"other\" was selected, list as text. Otherwise, leave blank."
-    },
-    "treatment": {
-      "type": "string",
-      "enum": [
-        "immunotherapy",
-        "NA"
-      ],
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Course / symptoms potentially influenced by treatment ? (select) - none = no treatment - BZD = benzodiazepine or similar - immunotherapy - both = both symptomatic and immunotherapy - NA = not available, not reported"
-    },
-    "antibody_status": {
-      "type": "string",
-      "enum": [
-        "DPPX",
-        "GAD",
-        "GlyR",
-        "amphiphysin",
-        "seronegative",
-        "NA"
-      ],
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody status (select) - GAD - GlyR - amphiphysin - DPPX - seronegative - multiple = multiple, specify in next col - other = other, specify in next col - not_tested = no test performed - NA = not available, not reported, unclear if tested"
-    },
-    "antibody_status_multiple": {
-      "type": "string",
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Antibody status (multiple) If \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
-    },
-    "antibody_status_other": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody status (other) If \"other\" was selected, list as text. Otherwise, leave blank."
-    },
-    "antibody_titre": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody titre"
-    },
-    "antibody_units": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody units"
-    },
-    "antibody_testsystem": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody test system"
-    },
-    "antibody_tests": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibodies tested list all antibodies that were tested, separated by semicolons"
-    },
-    "antibody_notes": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: Antibody notes If not covered by columns to the left, give as text note. Otherwise, leave blank."
-    },
-    "CSF_status": {
-      "type": "string",
-      "enum": [
-        "inflammatory",
-        "isolated protein elevation",
-        "normal",
-        "NA"
-      ],
-      "description": "Section: 4. section: established disease, signs and symptoms / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: CSF (select) - normal - inflammatory - isolated protein elevation - not_done = no CSF analysis performed - antibody_present = antibody present in CSF (specify Ab and titre in next cols) - NA = not available"
-    },
-    "CSF_antibody": {
-      "type": "string",
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: CSF antibody (specify)"
-    },
-    "CSF_antibody_titre": {
-      "anyOf": [
-        {
-          "type": "number"
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: CSF antibody titre (numeric)"
-    },
-    "CMUA": {
-      "type": "string",
-      "enum": [
-        "0",
-        "1",
-        "NA"
-      ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: continuous motor unit activity (CMUA) 0 = not detected 1 = present NA = no EMG / unknown"
-    },
-    "exteroceptive_refl": {
-      "type": "string",
-      "enum": [
-        "0",
-        "1",
-        "NA"
-      ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Disease Characteristics | Applies to publication types: Case Report Form, Data Extraction | Guidance: enhanced exteroceptive reflexes 0 = not detected 1 = present NA = not done / unknown"
-    },
-    "brainstem_refl": {
-      "type": "string",
-      "enum": [
-        "0",
-        "1",
-        "NA"
-      ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: brainstem reflexes 0 = not detected 1 = present NA = not done / unknown"
-    },
-    "MRI_normal": {
-      "type": "string",
-      "enum": [
-        "0",
-        "1",
-        "NA"
-      ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: MRI 0 = normal 1 = abnormal (specify in next col) NA = no MRI performed, not reported, unclear"
-    },
-    "MRI_abnormalities": {
-      "type": "string",
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: MRI abnormalities (text)"
-    },
-    "tu_screening": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "enum": [
-            0,
-            1
-          ]
-        },
-        {
-          "type": "string",
-          "enum": [
-            "0",
-            "1",
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Tumour screening 0 = normal / no tumour detected 1 = abnormal (specify in next col) NA = not performed"
-    },
-    "tu_screening_abnormal": {
-      "type": "string",
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Tumour screening abnormal specify tumour entity with text"
-    },
-    "family_history": {
-      "type": "string",
-      "enum": [
-        "none",
-        "autoimmune",
-        "SPSD",
-        "NA"
-      ],
-      "description": "Section: 8.section: comments / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Family history (select) - none = no fhx for SPSD or autoimmunity - autoimmune = fhx for autoimmunity (specify in next col) - SPSD = fhx for SPSD (specify in next col) - NA = unknown, not reported"
-    },
-    "family_history_abnormal": {
-      "type": "string",
-      "description": "Section: 8.section: comments / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Family history (text) if autoimmune diseases and/or SPSD are present, specify with text"
-    },
-    "autoimmunity": {
-      "type": "string",
-      "enum": [
-        "diabetes",
-        "none",
-        "vitiligo",
-        "NA"
-      ],
-      "description": "Section: 7. section: concomittant disease and family history / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Concomitant autoimmunity (select) - none - thyroid = thyroid disease/thyroid antibodies - diabetes - vitiligo - gastric = pernicious anaemia/parietal cell antibodies - other= other, specify in next col"
-    },
-    "autoimmunity_specify": {
-      "type": "string",
-      "description": "Section: 7. section: concomittant disease and family history / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Concomitant autoimmunity (specify with text)"
-    },
-    "immunotherapy": {
-      "type": "string",
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Immunotherapy (specify) - none = not done - steroids - IVIG - PLEX - RXB = Rituximab - CP = Cyclophopsphamide - Aza = Azathioprine - multiple = specify in next col - other = specify in next col - NA = unknown (multiple variants)"
-    },
-    "immunotherapy_multiple": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If more than one type of treatment, report here from previous column"
-    },
-    "immunotherapy_other": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If other treatment, report here from previous column"
-    },
-    "immunotherapy_detail": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Immunotherapy in detail (text) report the immunotherapy protocol in detail"
-    },
-    "immunotherapy_effect": {
-      "type": "string",
-      "enum": [
-        "improvement",
-        "none",
-        "stabilisation",
-        "worsening",
-        "NA"
-      ],
-      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Effect of immunotherapy (select) - none - worsening - improvement - stabilisation - NA = not known"
-    },
-    "sympt_treatment": {
-      "type": "string",
-      "enum": [
-        "baclofen",
-        "clonazepam",
-        "gabapentin",
-        "none",
-        "other",
-        "pregabalin",
-        "tizanidine",
-        "valproate",
-        "NA"
-      ],
-      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Symptomatic treatment (select) - none - clonazepam - benzo = other benzodiazepines - baclofen - gabapentin - pregabalin - tizanidine - valproate - other (specify)"
-    },
-    "sympt_treatment_multiple": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If more than one type of symptomatic treatment, report here from previous column, separate with semicolons"
-    },
-    "sympt_treatment_other": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If other symptomatic treatment, report here from previous column"
-    },
-    "sympt_treatment_detail": {
-      "type": "string",
-      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Symptomatic treatment in detail (text) please describe way of administration and dose (multiple variants)"
-    },
-    "sympt_treatment_effect": {
-      "type": "string",
-      "enum": [
-        "improvement",
-        "none",
-        "stabilisation",
-        "worsening",
-        "NA"
-      ],
-      "description": "Section: 6. section: treatment / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Effect of symptomatic treatment (select) - none - improvement - NA = not known, NA (multiple variants)"
-    },
-    "other_treatment": {
-      "type": "string",
-      "description": "Section: 7. section: concomittant disease and family history / Investigations and Tests | Applies to publication types: Case Report Form, Data Extraction | Guidance: Other treatment (text) (e.g. tumour therapy)"
-    },
-    "different_treatment": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details."
-    },
-    "different_treatment_duration": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Different treatment: duration (days)"
-    },
-    "different_treatment_response": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Different treatment: response (text)"
-    },
-    "different_treatment_extra": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Results of treatment, if more than one type of response and differential responses to types of treatments"
-    },
-    "adverse_events": {
-      "type": "string",
-      "description": "Section: Investigations and Tests | Applies to publication types: Data Extraction | Guidance: Adverse events (text) Copy paste the definition(s) of adverse events if one is provided by the authors."
-    },
-    "sampling": {
-      "type": "string",
-      "description": "Section: Sampling and Analysis | Applies to publication types: Data Extraction | Guidance: Sampling (text) Copy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details."
-    },
-    "sample_size_calc": {
-      "type": "string",
-      "description": "Section: Sampling and Analysis | Applies to publication types: Data Extraction | Guidance: Sample size calculation, study power (text) Does the study provide a sample size calculation, power, and other additional information about sampling and analysis? Copy and pasted if available."
-    },
-    "stat_methods": {
-      "type": "string",
-      "description": "Section: Sampling and Analysis | Applies to publication types: Data Extraction | Guidance: Analysis (text) Statistical tests used to find the results - Copy and pasted if available."
-    },
-    "additional_relevant": {
-      "type": "string",
-      "description": "Section: Additional Relevant Information | Applies to publication types: Data Extraction | Guidance: Use this column to add any finding or comments that can be relevant"
-    },
-    "limitations": {
-      "type": "string",
-      "description": "Section: Additional Relevant Information | Applies to publication types: Data Extraction | Guidance: Use this column to make comments related to study limitations"
-    },
-    "weaknesses": {
-      "type": "string",
-      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Use this column to make comments related to study weaknesses"
-    },
-    "strengths": {
-      "type": "string",
-      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Use this column to make comments related to study strenghts."
-    },
-    "initial_diagnosis": {
-      "type": "string",
-      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Initial diagnosis (text) state which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis)"
-    },
-    "differential_diagnosis": {
-      "type": "string",
-      "description": "Section: Notes | Applies to publication types: Data Extraction | Guidance: Differential diagnosis (text) Which DDx were considered?"
-    },
-    "Reference": {
-      "anyOf": [
-        {
-          "type": "integer"
-        },
-        {
-          "type": "string"
-        }
-      ],
-      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: ID"
-    },
-    "case_ID": {
-      "anyOf": [
-        {
-          "type": "integer"
-        },
-        {
-          "type": "string"
-        }
-      ],
-      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: Case reference within the article (case#)"
-    },
-    "age_description": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: Age at description"
-    },
-    "sex": {
-      "type": "string",
-      "description": "Section: 1.section: Identifier and case vignette | Applies to publication types: Case Report Form | Guidance: Sex: M or F"
-    },
-    "age_onset": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Age at onset"
-    },
-    "time_to_diagnosis": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Time to diagnosis (years)"
-    },
-    "first_manifestation_multiple": {
-      "type": "string",
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: First manifestation (multiple)"
-    },
-    "first_manifestation_mother": {
-      "type": "string",
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: First manifestation (other)"
-    },
-    "early_symptoms": {
-      "type": "string",
-      "enum": [
-        "spasms",
-        "stiffness",
-        "NA"
-      ],
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Overview_SPSD symptoms / early disease (select) - stiffness - spasms - startle = excessive startle"
-    },
-    "stiffness_distribution_onset": {
-      "type": "string",
-      "enum": [
-        "lumb_prox_LE",
-        "distal_LE",
-        "UE",
-        "axial",
-        "trismus",
-        "multiple",
-        "generalised",
-        "other",
-        "NA"
-      ],
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Stiffness distribution (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - trismus - multiple = multiple, but not generalised (specify in next col) - generalised = generalised - other = other, specify in next col"
-    },
-    "stiffness_distribution_onset_multiple": {
-      "type": "string",
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Stiffness distribution: multiple (text)"
-    },
-    "stiffness_distribution_onset_other": {
-      "type": "string",
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Stiffness distribution: other (text)"
-    },
-    "spasms_distribution_onset": {
-      "type": "string",
-      "enum": [
-        "generalised",
-        "NA"
-      ],
-      "description": "Section: section: basic demographic data | Applies to publication types: Case Report Form | Guidance: Spasms distribution (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - generalised - multiple = multiple, but not generalised (specify in next col) - other = other, specify in next col"
-    },
-    "spasms_distribution_onset_multiple": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: multiple (text)"
-    },
-    "spasms_distribution_onset_other": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: other (text)"
-    },
-    "excessive_startle_onset": {
-      "type": "string",
-      "enum": [
-        "touch",
-        "noise",
-        "visual",
-        "multiple",
-        "other",
-        "NA"
-      ]
-    },
-    "excessive_startle_onset_multiple": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle: multiple (text)"
-    },
-    "excessive_startle_onset_other": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle: other (text)"
-    },
-    "anxiety_onset": {
-      "type": "string",
-      "enum": [
-        "walking",
-        "generalised",
-        "NA"
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety (select) - walking = anxiety related to walking unaided - generalised = specify in next col"
-    },
-    "anxiety_onset_generalised": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety: generalised (text)"
-    },
-    "other_symptoms_onset": {
-      "type": "string"
-    },
-    "other_symptoms_onset_auto": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: autonomic (text)"
-    },
-    "other_symptoms_onset_oculo": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: oculomotor (text)"
-    },
-    "other_symptoms_onset_seizures": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: seizures (text)"
-    },
-    "onset_mRS": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 6
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Disability at onset - SPSD symptoms established; mRS 0 - No symptoms. 1 - No significant disability. Able to carry out all usual activities, despite some symptoms. 2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities. 3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person). 4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted. 5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent. 6 - Dead"
-    },
-    "timecourse_onset": {
-      "type": "string",
-      "enum": [
-        "insidious",
-        "relapsing-remitting",
-        "fulminant",
-        "NA"
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Time course of onset (select) - insidious = insidious/subacute - relapsing-remitting = relapsing-remitting - fulminant = fulimant/peracute"
-    },
-    "diagnosis_onset": {
-      "type": "string",
-      "enum": [
-        "SPSD",
-        "functional",
-        "orthopaedic",
-        "seizure",
-        "stroke",
-        "NA"
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Diagnosis at onset (select) - SPSD - functional - orthopaedic - stroke - seizure - other = specify in next col"
-    },
-    "diagnosis_onset_other": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Diagnosis at onset - other (text)"
-    },
-    "timecourse_subsequent": {
-      "type": "string",
-      "enum": [
-        "chronic-progressive",
-        "chronic_stable",
-        "monophasic",
-        "rapidly-progressive",
-        "NA"
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Subsequent disease course (select) - monophasic - relapsing-remitting = relapsing-remitting - chronic_stable - chronic-progressive - rapidly-progressive"
-    },
-    "onset_to_established": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Time from onset to fully established disease (months)"
-    },
-    "overview_established": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Overview_SPSD symptoms / established disease - stiffness - spasms - startle = excessive startle"
-    },
-    "stiffness_distribution_established": {
-      "type": "string",
-      "enum": [
-        "trismus",
-        "NA"
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Stiffness distribution in established disease (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - trismus - multiple = multiple, but not generalised - generalised = generalised - other = other, specify in next col"
-    },
-    "stiffness_distribution_established_multiple": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Stiffness distribution in established disease: multiple (text). Numbers: Dalakas distribution score"
-    },
-    "stiffness_distribution_established_other": {
-      "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Stiffness distribution in established disease: other (text)"
-    },
-    "spasms_distribution_established": {
-      "type": "string",
-      "enum": [
-        "generalised",
-        "NA"
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution (select) - lumb_prox_LE = lumbar/proximal legs - distal_LE = distal leg(s) - UE = arm(s) / upper extremity - axial = axial(thoracic,neck) - generalised - multiple = multiple, but not generalised (specify in next col) - other = other, specify in next col"
-    },
-    "spasms_distribution_established_multiple": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: multiple (text)"
-    },
-    "spasms_distribution_established_other": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Spasms distribution: other (text)"
-    },
-    "excessive_startle_established": {
-      "anyOf": [
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "multiple"
-            ]
-          },
-          "uniqueItems": true,
-          "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli - multiple (specify in next col)"
-        },
-        {
-          "type": "string",
-          "enum": [
-            "multiple",
-            "NA"
-          ],
-          "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle (select) - touch = to touch - noise = to noise - visual = to visual stimuli - multiple (specify in next col)"
-        }
-      ]
-    },
-    "excessive_startle_established_multipleother": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Excessive startle: multiple or other (text). Numbers: heightened sensitivity (Dalakas)"
-    },
-    "anxiety_established": {
-      "type": "string",
-      "enum": [
-        "walking",
-        "generalised",
-        "NA"
-      ],
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety (select) - walking = anxiety related to walking unaided - generalised = specify in next col"
-    },
-    "anxiety_established_generalised": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Anxiety: generalised (text)"
-    },
-    "other_symptoms_established": {
-      "type": "string"
-    },
-    "other_symptoms_established_auto": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: autonomic (text)"
-    },
-    "other_symptoms_established_oculo": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: oculomotor (text)"
-    },
-    "other_symptoms_established_seizures": {
-      "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Other symptoms: seizures (text)"
-    },
-    "course_treatment": {
-      "type": "string",
-      "enum": [
-        "immunotherapy",
-        "NA"
-      ],
-      "description": "Section: 4. section: established disease, signs and symptoms | Applies to publication types: Case Report Form | Guidance: Course / symptoms potentially influenced by treatment (select) - none = no treatment - sympt = benzodiazepine or similar - immunotherapy - both = both symptomatic and immunotherapy"
-    },
-    "immuntherapy_detail": {
-      "type": "string",
-      "description": "Section: 6. section: treatment | Applies to publication types: Case Report Form | Guidance: Immunotherapy in detail (please describe dose, how many cycles, intervals)"
-    },
     "publication_type": {
       "type": "string",
       "enum": [
-        "Before-After (Pre-Post) N contr",
+        "Observ Cohort & Cross sect",
         "Case Control",
-        "Case Report Form",
         "Case Series & Reports",
-        "Controlled Intervention Studies",
-        "Data Extraction",
-        "Observ Cohort & Cross sect"
+        "Before-After (Pre-Post) N contr",
+        "Controlled Intervention Studies"
       ],
-      "description": "Which NHLBI tool variant this record corresponds to (as in the dictionary)."
-    },
-    "FU_duration": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NA"
-          ]
-        }
-      ],
-      "description": "Section: Disease Characteristics | Applies to publication types: Data Extraction | Guidance: Duration of follow up (months)"
+      "description": "Which quality-tool variant this record corresponds to (as in the dictionary)."
     }
   },
   "required": [
@@ -2047,19 +1201,5 @@
     "extractor",
     "first_author",
     "pub_year"
-  ],
-  "x_field_aliases": {
-    "FU_duration_years": {
-      "original_field": "FU_duration",
-      "publication_types": [
-        "Case Report Form"
-      ]
-    },
-    "FU_duration_months": {
-      "original_field": "FU_duration",
-      "publication_types": [
-        "Case Report Form"
-      ]
-    }
-  }
+  ]
 }

@@ -1,4 +1,4 @@
-﻿sheet,excel_col,field,section,definition,data_type,accepted,entry_guidance
+sheet,excel_col,field,section,definition,data_type,accepted,entry_guidance
 Case Report Form,A,extractor,0. General / extraction metadata,Initials of extractor,free text,Initials (two capital letters),Initials of extractor
 Case Report Form,B,Reference,1.section: Identifier and case vignette,ID,numeric,must be present,ID
 Case Report Form,C,case_ID,1.section: Identifier and case vignette,Case reference within the article (case#),free text,Free text (keep concise); NA if not applicable/reported,Case reference within the article (case#)
@@ -102,7 +102,7 @@ Case Report Form,AF,onset_mRS,"3. section: disease onset, signs and symptoms",Di
 Case Report Form,AG,timecourse_onset,"3. section: disease onset, signs and symptoms",Time course of onset (select),categorical (single-select),"insidious, relapsing-remitting, fulminant, NA","Time course of onset (select)
 - insidious = insidious/subacute
 - relapsing-remitting = relapsing-remitting
-- fulminant = fulimant/peracute"
+- fulminant = fulminant/peracute"
 Case Report Form,AH,diagnosis_onset,"3. section: disease onset, signs and symptoms",Diagnosis at onset (select),categorical (single-select),"SPSD, functional, orthopaedic, stroke, seizure, other, NA","Diagnosis at onset (select)
 - SPSD
 - functional
@@ -118,7 +118,6 @@ Case Report Form,AJ,timecourse_subsequent,"3. section: disease onset, signs and 
 - chronic-progressive
 - rapidly-progressive"
 Case Report Form,AK,onset_to_established,"3. section: disease onset, signs and symptoms",Time from onset to fully established disease (months),numeric,numeric; NA if not applicable/reported,Time from onset to fully established disease (months)
-Case Report Form,AL,FU_duration,"3. section: disease onset, signs and symptoms",Duration of follow up (years),numeric (years; integer or decimal),Numeric; decimals allowed (years),Duration of follow up (years)
 Case Report Form,AM,overview_established,"3. section: disease onset, signs and symptoms",Overview_SPSD symptoms / established disease,free text,Free text; separate multiple entries with semicolons; NA if not available,"Overview_SPSD symptoms / established disease
 - stiffness
 - spasms
@@ -230,7 +229,7 @@ Case Report Form,BQ,MRI_normal,"5. section: investigations (antibodies, electrop
 1 = abnormal (specify in next col)
 NA = no MRI performed, not reported, unclear"
 Case Report Form,BR,MRI_abnormalities,"5. section: investigations (antibodies, electrophysiology, other)",MRI abnormalities (text),free text,Free text (keep concise); NA if not applicable/reported,MRI abnormalities (text)
-Case Report Form,BS,tu_screening,"5. section: investigations (antibodies, electrophysiology, other)",Tumour screening,categorical,Free text (keep concise); NA if not applicable/reported,"Tumour screening
+Case Report Form,BS,tu_screening,"5. section: investigations (antibodies, electrophysiology, other)",Tumour screening,categorical,"0, 1, NA","Tumour screening
 0 = normal / no tumour detected
 1 = abnormal (specify in next col)
 NA = not performed"
@@ -242,13 +241,13 @@ Case Report Form,BU,immunotherapy,"5. section: investigations (antibodies, elect
 - IVIG
 - PLEX
 - RXB = Rituximab
-- CP = Cyclophopsphamide
+- CP = Cyclophosphamide
 - Aza = Azathioprine
 - HSCT
 - multiple = specify in next col
 - other = specify in next col
 - NA = unknown If multiple items are present, separate entries with semicolons."
-Case Report Form,BV,immuntherapy_detail,6. section: treatment,"Immunotherapy in detail (please describe dose, how many cycles, intervals)",free text,Free text (keep concise); NA if not applicable/reported,"Immunotherapy in detail (please describe dose, how many cycles, intervals)"
+Case Report Form,BV,immunotherapy_detail,6. section: treatment,"Immunotherapy in detail (please describe dose, how many cycles, intervals)",free text,Free text (keep concise); NA if not applicable/reported,"Immunotherapy in detail (please describe dose, how many cycles, intervals)"
 Case Report Form,BW,immunotherapy_effect,6. section: treatment,Effect of immunotherapy (select),categorical (single-select),"none, worsening, improvement, stabilisation, NA","Effect of immunotherapy (select)
 - none
 - worsening
@@ -272,16 +271,16 @@ Case Report Form,BZ,sympt_treatment_effect,6. section: treatment,Effect of sympt
 - improvement
 - stabilisation
 - NA = not known"
-Case Report Form,CA,other_treatment,7. section: concomittant disease and family history,Other treatment (text),free text,Free text (keep concise); NA if not applicable/reported,"Other treatment (text)
+Case Report Form,CA,other_treatment,7. section: concomitant disease and family history,Other treatment (text),free text,Free text (keep concise); NA if not applicable/reported,"Other treatment (text)
 (e.g. tumour therapy)"
-Case Report Form,CB,autoimmunity,7. section: concomittant disease and family history,Concomitant autoimmunity (select),categorical (single-select),"none, thyroid, diabetes, vitiligo, gastric, other, NA","Concomitant autoimmunity (select)
+Case Report Form,CB,autoimmunity,7. section: concomitant disease and family history,Concomitant autoimmunity (select),categorical (single-select),"none, thyroid, diabetes, vitiligo, gastric, other, NA","Concomitant autoimmunity (select)
 - none
 - thyroid = thyroid disease/thyroid antibodies
 - diabetes
 - vitiligo
 - gastric = pernicious anaemia/parietal cell antibodies
 - other= other, specify in next col"
-Case Report Form,CC,autoimmunity_specify,7. section: concomittant disease and family history,Concomitant autoimmunity (specify with text),free text,Free text (keep concise); NA if not applicable/reported,Concomitant autoimmunity (specify with text)
+Case Report Form,CC,autoimmunity_specify,7. section: concomitant disease and family history,Concomitant autoimmunity (specify with text),free text,Free text (keep concise); NA if not applicable/reported,Concomitant autoimmunity (specify with text)
 Case Report Form,CD,family_history,8.section: comments,Family history (select),categorical (single-select),"none, autoimmune, SPSD, NA","Family history (select)
 - none = no fhx for SPSD or autoimmunity
 - autoimmune = fhx for autoimmunity (specify in next col)

@@ -306,7 +306,7 @@
         "fulminant",
         "NA"
       ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Time course of onset (select) | Guidance: Time course of onset (select)\n- insidious = insidious/subacute\n- relapsing-remitting = relapsing-remitting\n- fulminant = fulimant/peracute"
+      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Time course of onset (select) | Guidance: Time course of onset (select)\n- insidious = insidious/subacute\n- relapsing-remitting = relapsing-remitting\n- fulminant = fulminant/peracute"
     },
     "diagnosis_onset": {
       "type": "string",
@@ -638,8 +638,8 @@
     "tu_screening": {
       "type": "string",
       "enum": [
-        "Free text",
-        "NA if not applicable/reported",
+        "0",
+        "1",
         "NA"
       ],
       "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Tumour screening | Guidance: Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed"
@@ -650,9 +650,9 @@
     },
     "immunotherapy": {
       "type": "string",
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Immunotherapy (specify) | Guidance: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophopsphamide\n- Aza = Azathioprine\n- HSCT\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown"
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Immunotherapy (specify) | Guidance: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophosphamide\n- Aza = Azathioprine\n- HSCT\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown"
     },
-    "immuntherapy_detail": {
+    "immunotherapy_detail": {
       "type": "string",
       "description": "Section: 6. section: treatment | Meaning: Immunotherapy in detail (please describe dose, how many cycles, intervals) | Guidance: Immunotherapy in detail (please describe dose, how many cycles, intervals)"
     },
@@ -700,7 +700,7 @@
     },
     "other_treatment": {
       "type": "string",
-      "description": "Section: 7. section: concomittant disease and family history | Meaning: Other treatment (text) | Guidance: Other treatment (text)\n(e.g. tumour therapy)"
+      "description": "Section: 7. section: concomitant disease and family history | Meaning: Other treatment (text) | Guidance: Other treatment (text)\n(e.g. tumour therapy)"
     },
     "autoimmunity": {
       "type": "string",
@@ -713,11 +713,11 @@
         "other",
         "NA"
       ],
-      "description": "Section: 7. section: concomittant disease and family history | Meaning: Concomitant autoimmunity (select) | Guidance: Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col"
+      "description": "Section: 7. section: concomitant disease and family history | Meaning: Concomitant autoimmunity (select) | Guidance: Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col"
     },
     "autoimmunity_specify": {
       "type": "string",
-      "description": "Section: 7. section: concomittant disease and family history | Meaning: Concomitant autoimmunity (specify with text) | Guidance: Concomitant autoimmunity (specify with text)"
+      "description": "Section: 7. section: concomitant disease and family history | Meaning: Concomitant autoimmunity (specify with text) | Guidance: Concomitant autoimmunity (specify with text)"
     },
     "family_history": {
       "type": "string",
@@ -761,11 +761,6 @@
       "original_field": "FU_duration",
       "excel_col": "H",
       "sheet": "Case Report Form"
-    },
-    "FU_duration_months": {
-      "original_field": "FU_duration",
-      "excel_col": "AL",
-      "sheet": "Case Report Form"
-    }
-  }
+    }}
 }
+
