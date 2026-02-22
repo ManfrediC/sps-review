@@ -1,29 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "SPS Cohort Extraction Record",
-  "description": "Draft schema generated from datasheet_examples_MC_Cohorts.csv for group-level cohort extraction.",
+  "description": "Schema generated from SPS_cohort_dictionary.csv.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "ID": {
-      "anyOf": [
-        {
-          "type": "integer"
-        },
-        {
-          "type": "string"
-        }
-      ],
-      "description": "Section: Study Details | Meaning: Study ID | Guidance: Study ID"
+      "type": "integer",
+      "description": "Section: Study Details | Guidance: Study ID"
     },
     "extractor": {
       "type": "string",
       "pattern": "^[A-Z]{2}$",
-      "description": "Section: Study Details | Meaning: Initials of extractor | Guidance: Initials of extractor"
+      "description": "Section: Study Details | Guidance: Initials of extractor"
     },
     "first_author": {
       "type": "string",
-      "description": "Section: Study Details | Meaning: First author's last name | Guidance: First author's last name"
+      "description": "Section: Study Details | Guidance: First author's last name"
     },
     "pub_year": {
       "anyOf": [
@@ -39,25 +32,24 @@
           ]
         }
       ],
-      "description": "Section: Study Details | Meaning: Publication year | Guidance: Publication year"
+      "description": "Section: Study Details | Guidance: Publication year"
     },
     "country": {
       "type": "string",
-      "description": "Section: Study Details | Meaning: Country/Countries where study was conducted | Guidance: Country/Countries where study was conducted"
+      "description": "Section: Study Details | Guidance: Country/Countries where study was conducted"
     },
     "study_design": {
       "type": "string",
-      "description": "Section: Study Characteristics | Meaning: Study Design (for case reports or small series, use the case report form) | Guidance: Study Design (for case reports or small series, use the case report form)"
+      "description": "Section: Study Characteristics | Guidance: Study Design (for case reports or small series, use the case report form)"
     },
     "aims": {
       "type": "string",
-      "description": "Section: Study Characteristics | Meaning: Aims of the Study | Guidance: Aims of the Study"
+      "description": "Section: Study Characteristics | Guidance: Aims of the Study"
     },
     "participant_number": {
       "anyOf": [
         {
-          "type": "integer",
-          "minimum": 0
+          "type": "integer"
         },
         {
           "type": "string",
@@ -66,7 +58,7 @@
           ]
         }
       ],
-      "description": "Section: Study Characteristics | Meaning: Number of participants | Guidance: Number of participants"
+      "description": "Section: Study Characteristics | Guidance: Number of participants"
     },
     "age_central_measure": {
       "type": "string",
@@ -75,13 +67,12 @@
         "median",
         "NA"
       ],
-      "description": "Section: Study Characteristics | Meaning: Age - measure of central tendency. Select one of the following:\n- mean\n- median\nNA = not available, NR, not reported | Guidance: Age - measure of central tendency. Select one of the following:\n- mean\n- median\nNA = not available, NR, not reported"
+      "description": "Section: Study Characteristics | Guidance: Age - measure of central tendency. Select one of the following:\n- mean\n- median\nNA = not available, NA, not reported"
     },
     "age_central": {
       "anyOf": [
         {
-          "type": "number",
-          "minimum": 0
+          "type": "number"
         },
         {
           "type": "string",
@@ -90,7 +81,7 @@
           ]
         }
       ],
-      "description": "Section: Study Characteristics | Meaning: Age - value of central tendency (numeric) | Guidance: Age - value of central tendency (numeric)"
+      "description": "Section: Study Characteristics | Guidance: Age - value of central tendency (numeric)"
     },
     "age_variability_measure": {
       "type": "string",
@@ -102,11 +93,11 @@
         "range",
         "NA"
       ],
-      "description": "Section: Population Characteristics | Meaning: Age - measure of variability (listed in order of preference)\n\nSD = standard deviation (1st preference)\nSE = standard error (2nd)\n95CI = 95% confidence interval (3rd)\nIQR = interquartile range\nrange = range (5th)\nNA = not available, not reported (6th) | Guidance: Age - measure of variability (listed in order of preference)\n\nSD = standard deviation (1st preference)\nSE = standard error (2nd)\n95CI = 95% confidence interval (3rd)\nIQR = interquartile range\nrange = range (5th)\nNA = not available, not reported (6th)"
+      "description": "Section: Population Characteristics | Guidance: Age - measure of variability (listed in order of preference)\n\nSD = standard deviation (1st preference)\nSE = standard error (2nd)\n95CI = 95% confidence interval (3rd)\nIQR = interquartile range\nrange = range (5th)\nNA = not available, not reported (6th)"
     },
     "age_variability": {
       "type": "string",
-      "description": "Section: Population Characteristics | Meaning: Age - value(s) of variability | Guidance: Age - value(s) of variability"
+      "description": "Section: Population Characteristics | Guidance: Age - value(s) of variability"
     },
     "ethnicity": {
       "type": "string",
@@ -121,11 +112,11 @@
         "other",
         "NA"
       ],
-      "description": "Section: Population Characteristics | Meaning: Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column) | Guidance: Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column)"
+      "description": "Section: Population Characteristics | Guidance: Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column)"
     },
     "ethnicity_specify": {
       "type": "string",
-      "description": "Section: Population Characteristics | Meaning: Ethnicity (specify)\nIf you selected \"other\", specify with text. Otherwise leave blank. | Guidance: Ethnicity (specify)\nIf you selected \"other\", specify with text. Otherwise leave blank."
+      "description": "Section: Population Characteristics | Guidance: Ethnicity (specify)\nIf you selected \"other\", specify with text. Otherwise leave blank."
     },
     "percent_males": {
       "anyOf": [
@@ -141,7 +132,7 @@
           ]
         }
       ],
-      "description": "Section: Population Characteristics | Meaning: Percent Males\nMale patients/Total patients. List the value to two decimal places (e.g. \"45.55\") | Guidance: Percent Males\nMale patients/Total patients. List the value to two decimal places (e.g. \"45.55\")"
+      "description": "Section: Population Characteristics | Guidance: Percent Males\nMale patients/Total patients. List the value to two decimal places (e.g. \"45.55\")"
     },
     "included_diagnosis": {
       "type": "string",
@@ -155,23 +146,23 @@
         "other",
         "NA"
       ],
-      "description": "Section: Population Characteristics | Meaning: Diagnosis of participants included (select)\n- Stiff_Person\n- Stiff_Limb\n- PERM\n- new_category = new category if identified, specify\n- mixed = mixed population\n- other = other, specify in next column\n- NA = not available, NR, not reported | Guidance: Diagnosis of participants included (select)\n- Stiff_Person\n- Stiff_Limb\n- PERM\n- new_category = new category if identified, specify\n- mixed = mixed population\n- other = other, specify in next column\n- NA = not available, NR, not reported"
+      "description": "Section: Population Characteristics | Guidance: Diagnosis of participants included (select)\n- Stiff_Person\n- Stiff_Limb\n- PERM\n- new_category = new category if identified, specify\n- mixed = mixed population\n- other = other, specify in next column\n- NA = not available, NA, not reported"
     },
     "included_diagnosis_specify": {
       "type": "string",
-      "description": "Section: Population Characteristics | Meaning: Diagnosis (specify)\nIf you selected new_category or other, specify with text | Guidance: Diagnosis (specify)\nIf you selected new_category or other, specify with text"
+      "description": "Section: Population Characteristics | Guidance: Diagnosis (specify)\nIf you selected new_category or other, specify with text"
     },
     "diagnostic_criteria": {
       "type": "string",
-      "description": "Section: Population Characteristics | Meaning: Criteria used to make the diagnosis\nProvide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters) | Guidance: Criteria used to make the diagnosis\nProvide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters)"
+      "description": "Section: Population Characteristics | Guidance: Criteria used to make the diagnosis\nProvide below the details of the criteria used to make the diagnosis - copy and paste from text if needed (no special characters)"
     },
     "disease_severity": {
       "type": "string",
-      "description": "Section: Population Characteristics | Meaning: Disease Severity\nIf the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined. | Guidance: Disease Severity\nIf the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined."
+      "description": "Section: Population Characteristics | Guidance: Disease Severity\nIf the study recruited patients with a specified severity - Copy and paste from manuscript the explanation of severity and how this was defined."
     },
     "first_manifestation": {
       "type": "string",
-      "description": "Section: Population Characteristics | Meaning: First manifestation\nIf study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form. | Guidance: First manifestation\nIf study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form."
+      "description": "Section: Population Characteristics | Guidance: First manifestation\nIf study reports first symptoms of a group of participants, copy and paste below from the manuscript. If details for individual cases provided, use case report form."
     },
     "spsd_symptom": {
       "type": "string",
@@ -183,15 +174,15 @@
         "other",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: SPSD symptoms in early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next col\n- other = other, specify in next col | Guidance: SPSD symptoms in early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next col\n- other = other, specify in next col"
+      "description": "Section: Disease Characteristics | Guidance: SPSD symptoms in early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next col\n- other = other, specify in next col"
     },
     "spsd_symptom_multiple": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Additional data for previous column - if multiple symptoms reported\nList symptoms as text, separated with semicolons. Otherwise, leave blank. | Guidance: Additional data for previous column - if multiple symptoms reported\nList symptoms as text, separated with semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Additional data for previous column - if multiple symptoms reported\nList symptoms as text, separated with semicolons. Otherwise, leave blank."
     },
     "spsd_symptom_other": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Additional data for previous column - if other symptoms reported\nList symptoms as text, separated with semicolons. Otherwise, leave blank. | Guidance: Additional data for previous column - if other symptoms reported\nList symptoms as text, separated with semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Additional data for previous column - if other symptoms reported\nList symptoms as text, separated with semicolons. Otherwise, leave blank."
     },
     "stiffness_onset_distribution": {
       "type": "string",
@@ -206,15 +197,15 @@
         "other",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: Stiffness distribution at onset (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col | Guidance: Stiffness distribution at onset (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col"
+      "description": "Section: Disease Characteristics | Guidance: Stiffness distribution at onset (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col"
     },
     "stiffness_onset_distribution_multiple": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Stiffness at onset (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank. | Guidance: Stiffness at onset (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Stiffness at onset (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
     },
     "stiffness_onset_distribution_other": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Stiffness at onset (other)\nIf \"other\" was selected, specify with text. Otherwise, leave blank. | Guidance: Stiffness at onset (other)\nIf \"other\" was selected, specify with text. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Stiffness at onset (other)\nIf \"other\" was selected, specify with text. Otherwise, leave blank."
     },
     "startle_stimulus": {
       "type": "string",
@@ -227,7 +218,7 @@
         "other",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli | Guidance: Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli"
+      "description": "Section: Disease Characteristics | Guidance: Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli"
     },
     "symptoms_established": {
       "type": "string",
@@ -246,15 +237,15 @@
         "other",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: SPSD symptoms in established disease (select single option from list)\n- stiffness\n- spasms\n- startle = excessive startle\n- anxiety\n- oculomotor = oculomotor disturbance\n- cerebellar\n- visual = visual symptoms (e.g. photosensitivity)\n- cognitive\n- gastrointestinal = other than abdominal wall muscle cramps)\n- multiple = multiple, specify in next col\n- other = other, specify in overnext col | Guidance: SPSD symptoms in established disease (select single option from list)\n- stiffness\n- spasms\n- startle = excessive startle\n- anxiety\n- oculomotor = oculomotor disturbance\n- cerebellar\n- visual = visual symptoms (e.g. photosensitivity)\n- cognitive\n- gastrointestinal = other than abdominal wall muscle cramps)\n- multiple = multiple, specify in next col\n- other = other, specify in overnext col"
+      "description": "Section: Disease Characteristics | Guidance: SPSD symptoms in established disease (select single option from list)\n- stiffness\n- spasms\n- startle = excessive startle\n- anxiety\n- oculomotor = oculomotor disturbance\n- cerebellar\n- visual = visual symptoms (e.g. photosensitivity)\n- cognitive\n- gastrointestinal = other than abdominal wall muscle cramps)\n- multiple = multiple, specify in next col\n- other = other, specify in overnext col"
     },
     "symptoms_established_multiple": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: SPSD symptoms in established disease (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank. | Guidance: SPSD symptoms in established disease (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: SPSD symptoms in established disease (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
     },
     "symptoms_established_other": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: SPSD symptoms in established disease (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank. | Guidance: SPSD symptoms in established disease (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: SPSD symptoms in established disease (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
     },
     "stiffness_established_distribution": {
       "type": "string",
@@ -269,15 +260,15 @@
         "other",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: Stiffness distribution in established disease (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col | Guidance: Stiffness distribution in established disease (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col"
+      "description": "Section: Disease Characteristics | Guidance: Stiffness distribution in established disease (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col"
     },
     "stiffness_established_distribution_multiple": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: SPSD distribution in established disease (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank. | Guidance: SPSD distribution in established disease (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: SPSD distribution in established disease (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
     },
     "stiffness_established_distribution_other": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: SPSD distribution in established disease (other)\nIf \"other\" was selected, list as text, separated by semicolons. Otherwise, leave blank. | Guidance: SPSD distribution in established disease (other)\nIf \"other\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: SPSD distribution in established disease (other)\nIf \"other\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
     },
     "established_mRS": {
       "anyOf": [
@@ -285,10 +276,13 @@
           "type": "number"
         },
         {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "NA"
+          ]
         }
       ],
-      "description": "Section: Disease Characteristics | Meaning: Disability when disease fully established\n(SPSD symptoms established; mRS)\n0 - No symptoms.\n1 - No significant disability.\n2 - Slight disability.\n3 - Moderate disability.\n4 - Moderately severe disability.\n5 - Severe disability.  incontinent.\n6 - Dead | Guidance: Disability when disease fully established\n(SPSD symptoms established; mRS)\n0 - No symptoms.\n1 - No significant disability.\n2 - Slight disability.\n3 - Moderate disability.\n4 - Moderately severe disability.\n5 - Severe disability.  incontinent.\n6 - Dead"
+      "description": "Section: Disease Characteristics | Guidance: Disability when disease fully established\n(SPSD symptoms established; mRS)\n0 - No symptoms.\n1 - No significant disability.\n2 - Slight disability.\n3 - Moderate disability.\n4 - Moderately severe disability.\n5 - Severe disability.  incontinent.\n6 - Dead"
     },
     "spasms_distribution": {
       "type": "string",
@@ -302,26 +296,29 @@
         "other",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: Spasms distribution\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col | Guidance: Spasms distribution\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col"
+      "description": "Section: Disease Characteristics | Guidance: Spasms distribution\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col"
     },
     "spasms_distribution_multiple": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Spasms distribution (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank. | Guidance: Spasms distribution (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Spasms distribution (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
     },
     "spasms_distribution_other": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Spasms distribution (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank. | Guidance: Spasms distribution (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Spasms distribution (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
     },
-    "duration_FU": {
+    "FU_duration": {
       "anyOf": [
         {
           "type": "number"
         },
         {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "NA"
+          ]
         }
       ],
-      "description": "Section: Disease Characteristics | Meaning: Duration of follow up (months) | Guidance: Duration of follow up (months)"
+      "description": "Section: Disease Characteristics | Guidance: Duration of follow up (months)"
     },
     "treatment": {
       "type": "string",
@@ -332,7 +329,7 @@
         "both",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: Course / symptoms potentially influenced by treatment ? (select)\n- none = no treatment\n- BZD = benzodiazepine or similar\n- immunotherapy\n- both = both symptomatic and immunotherapy\n- NA = not available, not reported | Guidance: Course / symptoms potentially influenced by treatment ? (select)\n- none = no treatment\n- BZD = benzodiazepine or similar\n- immunotherapy\n- both = both symptomatic and immunotherapy\n- NA = not available, not reported"
+      "description": "Section: Disease Characteristics | Guidance: Course / symptoms potentially influenced by treatment ? (select)\n- none = no treatment\n- BZD = benzodiazepine or similar\n- immunotherapy\n- both = both symptomatic and immunotherapy\n- NA = not available, not reported"
     },
     "antibody_status": {
       "type": "string",
@@ -349,15 +346,15 @@
         "not_tested",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: Antibody status (select)\n- GAD\n- GlyR\n- amphiphysin\n- DPPX\n- seronegative\n- multiple = multiple, specify in next col\n- other = other, specify in next col\n- not_tested = no test performed\n- NA = not available, not reported, unclear if tested | Guidance: Antibody status (select)\n- GAD\n- GlyR\n- amphiphysin\n- DPPX\n- seronegative\n- multiple = multiple, specify in next col\n- other = other, specify in next col\n- not_tested = no test performed\n- NA = not available, not reported, unclear if tested"
+      "description": "Section: Disease Characteristics | Guidance: Antibody status (select)\n- GAD\n- GlyR\n- amphiphysin\n- DPPX\n- seronegative\n- multiple = multiple, specify in next col\n- other = other, specify in next col\n- not_tested = no test performed\n- NA = not available, not reported, unclear if tested"
     },
     "antibody_status_multiple": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Antibody status (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank. | Guidance: Antibody status (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Antibody status (multiple)\nIf \"multiple\" was selected, list as text, separated by semicolons. Otherwise, leave blank."
     },
     "antibody_status_other": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Antibody status (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank. | Guidance: Antibody status (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Antibody status (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
     },
     "antibody_titre": {
       "anyOf": [
@@ -365,26 +362,29 @@
           "type": "number"
         },
         {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "NA"
+          ]
         }
       ],
-      "description": "Section: Disease Characteristics | Meaning: Antibody titre | Guidance: Antibody titre"
+      "description": "Section: Disease Characteristics | Guidance: Antibody titre"
     },
     "antibody_units": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Antibody units | Guidance: Antibody units"
+      "description": "Section: Disease Characteristics | Guidance: Antibody units"
     },
     "antibody_testsystem": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Antibody test system | Guidance: Antibody test system"
+      "description": "Section: Disease Characteristics | Guidance: Antibody test system"
     },
     "antibody_tests": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Antibodies tested\nlist all antibodies that were tested, separated by semicolons | Guidance: Antibodies tested\nlist all antibodies that were tested, separated by semicolons"
+      "description": "Section: Disease Characteristics | Guidance: Antibodies tested\nlist all antibodies that were tested, separated by semicolons"
     },
     "antibody_notes": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: Antibody notes\nIf not covered by columns to the left, give as text note. Otherwise, leave blank. | Guidance: Antibody notes\nIf not covered by columns to the left, give as text note. Otherwise, leave blank."
+      "description": "Section: Disease Characteristics | Guidance: Antibody notes\nIf not covered by columns to the left, give as text note. Otherwise, leave blank."
     },
     "CSF_status": {
       "type": "string",
@@ -396,11 +396,11 @@
         "antibody_present",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: CSF (select)\n- normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available / NR | Guidance: CSF (select)\n- normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available / NR"
+      "description": "Section: Disease Characteristics | Guidance: CSF (select)\n- normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available / NA"
     },
     "CSF_antibody": {
       "type": "string",
-      "description": "Section: Disease Characteristics | Meaning: CSF antibody (specify) | Guidance: CSF antibody (specify)"
+      "description": "Section: Disease Characteristics | Guidance: CSF antibody (specify)"
     },
     "CSF_antibody_titre": {
       "anyOf": [
@@ -408,10 +408,13 @@
           "type": "number"
         },
         {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "NA"
+          ]
         }
       ],
-      "description": "Section: Disease Characteristics | Meaning: CSF antibody titre (numeric) | Guidance: CSF antibody titre (numeric)"
+      "description": "Section: Disease Characteristics | Guidance: CSF antibody titre (numeric)"
     },
     "CMUA": {
       "type": "string",
@@ -420,7 +423,7 @@
         "1",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG, NR, unknown | Guidance: continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG, NR, unknown"
+      "description": "Section: Disease Characteristics | Guidance: continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG, NA, unknown"
     },
     "exteroceptive_refl": {
       "type": "string",
@@ -429,7 +432,7 @@
         "1",
         "NA"
       ],
-      "description": "Section: Disease Characteristics | Meaning: enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown | Guidance: enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown"
+      "description": "Section: Disease Characteristics | Guidance: enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done, NA, unknown"
     },
     "brainstem_refl": {
       "type": "string",
@@ -438,7 +441,7 @@
         "1",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: brainstem reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown | Guidance: brainstem reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown"
+      "description": "Section: Investigations and Tests | Guidance: brainstem reflexes\n0 = not detected\n1 = present\nNA = not done, NA, unknown"
     },
     "MRI_normal": {
       "type": "string",
@@ -447,11 +450,11 @@
         "1",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: MRI\n0 = normal\n1 = abnormal (specify in next col)\nNA = no MRI performed, not reported, unclear | Guidance: MRI\n0 = normal\n1 = abnormal (specify in next col)\nNA = no MRI performed, not reported, unclear"
+      "description": "Section: Investigations and Tests | Guidance: MRI\n0 = normal\n1 = abnormal (specify in next col)\nNA = no MRI performed, not reported, unclear"
     },
     "MRI_abnormalities": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: MRI abnormalities (text) | Guidance: MRI abnormalities (text)"
+      "description": "Section: Investigations and Tests | Guidance: MRI abnormalities (text)"
     },
     "tu_screening": {
       "type": "string",
@@ -460,11 +463,11 @@
         "1",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed, NR | Guidance: Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed, NR"
+      "description": "Section: Investigations and Tests | Guidance: Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed, NA"
     },
     "tu_screening_abnormal": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Tumour screening abnormal\nspecify tumour entity with text | Guidance: Tumour screening abnormal\nspecify tumour entity with text"
+      "description": "Section: Investigations and Tests | Guidance: Tumour screening abnormal\nspecify tumour entity with text"
     },
     "family_history": {
       "type": "string",
@@ -474,11 +477,11 @@
         "SPSD",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Family history (select)\n- none = no fhx for SPSD or autoimmunity\n- autoimmune = fhx for autoimmunity (specify in next col)\n- SPSD = fhx for SPSD (specify in next col)\n- NA = unknown, not reported | Guidance: Family history (select)\n- none = no fhx for SPSD or autoimmunity\n- autoimmune = fhx for autoimmunity (specify in next col)\n- SPSD = fhx for SPSD (specify in next col)\n- NA = unknown, not reported"
+      "description": "Section: Investigations and Tests | Guidance: Family history (select)\n- none = no fhx for SPSD or autoimmunity\n- autoimmune = fhx for autoimmunity (specify in next col)\n- SPSD = fhx for SPSD (specify in next col)\n- NA = unknown, not reported"
     },
     "family_history_abnormal": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Family history (text)\nif autoimmune diseases and/or SPSD are present, specify with text | Guidance: Family history (text)\nif autoimmune diseases and/or SPSD are present, specify with text"
+      "description": "Section: Investigations and Tests | Guidance: Family history (text)\nif autoimmune diseases and/or SPSD are present, specify with text"
     },
     "autoimmunity": {
       "type": "string",
@@ -491,11 +494,11 @@
         "other",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col | Guidance: Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col"
+      "description": "Section: Investigations and Tests | Guidance: Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col"
     },
     "autoimmunity_specify": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Concomitant autoimmunity (specify with text) | Guidance: Concomitant autoimmunity (specify with text)"
+      "description": "Section: Investigations and Tests | Guidance: Concomitant autoimmunity (specify with text)"
     },
     "immunotherapy": {
       "type": "string",
@@ -512,19 +515,19 @@
         "other",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophosphamide\n- Aza = Azathioprine\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown, NR | Guidance: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophosphamide\n- Aza = Azathioprine\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown, NR"
+      "description": "Section: Investigations and Tests | Guidance: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophosphamide\n- Aza = Azathioprine\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown, NA"
     },
     "immunotherapy_multiple": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: If more than one type of treatment, report here from previous column | Guidance: If more than one type of treatment, report here from previous column"
+      "description": "Section: Investigations and Tests | Guidance: If more than one type of treatment, report here from previous column"
     },
     "immunotherapy_other": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: If other treatment, report here from previous column | Guidance: If other treatment, report here from previous column"
+      "description": "Section: Investigations and Tests | Guidance: If other treatment, report here from previous column"
     },
     "immunotherapy_detail": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Immunotherapy in detail (text)\nreport the immunotherapy protocol in detail | Guidance: Immunotherapy in detail (text)\nreport the immunotherapy protocol in detail"
+      "description": "Section: Investigations and Tests | Guidance: Immunotherapy in detail (text)\nreport the immunotherapy protocol in detail"
     },
     "immunotherapy_effect": {
       "type": "string",
@@ -537,7 +540,7 @@
         "mixed",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Effect of immunotherapy (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known | Guidance: Effect of immunotherapy (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known"
+      "description": "Section: Investigations and Tests | Guidance: Effect of immunotherapy (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known"
     },
     "sympt_treatment": {
       "type": "string",
@@ -555,19 +558,19 @@
         "other",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Symptomatic treatment (select)\n- none\n- clonazepam\n- benzo = other benzodiazepines\n- baclofen\n- gabapentin\n- pregabalin\n- tizanidine\n- valproate\n- other (specify) | Guidance: Symptomatic treatment (select)\n- none\n- clonazepam\n- benzo = other benzodiazepines\n- baclofen\n- gabapentin\n- pregabalin\n- tizanidine\n- valproate\n- other (specify)"
+      "description": "Section: Investigations and Tests | Guidance: Symptomatic treatment (select)\n- none\n- clonazepam\n- benzo = other benzodiazepines\n- baclofen\n- gabapentin\n- pregabalin\n- tizanidine\n- valproate\n- other (specify)"
     },
     "sympt_treatment_multiple": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: If more than one type of symptomatic treatment, report here from previous column, separate with semicolons | Guidance: If more than one type of symptomatic treatment, report here from previous column, separate with semicolons"
+      "description": "Section: Investigations and Tests | Guidance: If more than one type of symptomatic treatment, report here from previous column, separate with semicolons"
     },
     "sympt_treatment_other": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: If other symptomatic treatment, report here from previous column | Guidance: If other symptomatic treatment, report here from previous column"
+      "description": "Section: Investigations and Tests | Guidance: If other symptomatic treatment, report here from previous column"
     },
     "sympt_treatment_detail": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Symptomatic treatment in detail (text)\nplease describe way of administration and dose | Guidance: Symptomatic treatment in detail (text)\nplease describe way of administration and dose"
+      "description": "Section: Investigations and Tests | Guidance: Symptomatic treatment in detail (text)\nplease describe way of administration and dose"
     },
     "sympt_treatment_effect": {
       "type": "string",
@@ -579,15 +582,15 @@
         "mixed",
         "NA"
       ],
-      "description": "Section: Investigations and Tests | Meaning: Effect of symptomatic treatment (select)\n- none\n- improvement\n- NA = not known, NR | Guidance: Effect of symptomatic treatment (select)\n- none\n- improvement\n- NA = not known, NR"
+      "description": "Section: Investigations and Tests | Guidance: Effect of symptomatic treatment (select)\n- none\n- improvement\n- NA = not known, NA"
     },
     "other_treatment": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Other treatment (text)\n(e.g. tumour therapy) | Guidance: Other treatment (text)\n(e.g. tumour therapy)"
+      "description": "Section: Investigations and Tests | Guidance: Other treatment (text)\n(e.g. tumour therapy)"
     },
     "different_treatment": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details. | Guidance: If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details."
+      "description": "Section: Investigations and Tests | Guidance: If treatment description does not fit the previous columns, specify the treatment as text and use the next columns to provide details."
     },
     "different_treatment_duration": {
       "anyOf": [
@@ -595,58 +598,61 @@
           "type": "number"
         },
         {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "NA"
+          ]
         }
       ],
-      "description": "Section: Investigations and Tests | Meaning: Different treatment: duration (days) | Guidance: Different treatment: duration (days)"
+      "description": "Section: Investigations and Tests | Guidance: Different treatment: duration (days)"
     },
     "different_treatment_response": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Different treatment: response (text) | Guidance: Different treatment: response (text)"
+      "description": "Section: Investigations and Tests | Guidance: Different treatment: response (text)"
     },
     "different_treatment_extra": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Results of treatment, if more than one type of response and differential responses to types of treatments | Guidance: Results of treatment, if more than one type of response and differential responses to types of treatments"
+      "description": "Section: Investigations and Tests | Guidance: Results of treatment, if more than one type of response and differential responses to types of treatments"
     },
     "adverse_events": {
       "type": "string",
-      "description": "Section: Investigations and Tests | Meaning: Adverse events (text)\nCopy paste the definition(s) of adverse events if one is provided by the authors. | Guidance: Adverse events (text)\nCopy paste the definition(s) of adverse events if one is provided by the authors."
+      "description": "Section: Investigations and Tests | Guidance: Adverse events (text)\nCopy paste the definition(s) of adverse events if one is provided by the authors."
     },
     "sampling": {
       "type": "string",
-      "description": "Section: Sampling and Analysis | Meaning: Sampling (text)\nCopy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details. | Guidance: Sampling (text)\nCopy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details."
+      "description": "Section: Sampling and Analysis | Guidance: Sampling (text)\nCopy from methods how recruitment was performed, such as single site or multicentric, consecutive patients, clinic, community, and other details."
     },
     "sample_size_calc": {
       "type": "string",
-      "description": "Section: Sampling and Analysis | Meaning: Sample size calculation, study power (text)\nDoes the study provide a sample size calculation, power,   and other additional information about sampling and analysis? Copy and pasted if available. | Guidance: Sample size calculation, study power (text)\nDoes the study provide a sample size calculation, power,   and other additional information about sampling and analysis? Copy and pasted if available."
+      "description": "Section: Sampling and Analysis | Guidance: Sample size calculation, study power (text)\nDoes the study provide a sample size calculation, power,   and other additional information about sampling and analysis? Copy and pasted if available."
     },
     "stat_methods": {
       "type": "string",
-      "description": "Section: Sampling and Analysis | Meaning: Analysis (text)\nStatistical tests used to find the results - Copy and pasted if available. | Guidance: Analysis (text)\nStatistical tests used to find the results - Copy and pasted if available."
+      "description": "Section: Sampling and Analysis | Guidance: Analysis (text)\nStatistical tests used to find the results - Copy and pasted if available."
     },
     "additional_relevant": {
       "type": "string",
-      "description": "Section: Additional Relevant Information | Meaning: Use this column to add any finding or comments that can be relevant | Guidance: Use this column to add any finding or comments that can be relevant"
+      "description": "Section: Additional Relevant Information | Guidance: Use this column to add any finding or comments that can be relevant"
     },
     "limitations": {
       "type": "string",
-      "description": "Section: Additional Relevant Information | Meaning: Use this column to make comments related to study limitations | Guidance: Use this column to make comments related to study limitations"
+      "description": "Section: Additional Relevant Information | Guidance: Use this column to make comments related to study limitations"
     },
     "weaknesses": {
       "type": "string",
-      "description": "Section: Notes | Meaning: Use this column to make comments related to study weaknesses | Guidance: Use this column to make comments related to study weaknesses"
+      "description": "Section: Notes | Guidance: Use this column to make comments related to study weaknesses"
     },
     "strengths": {
       "type": "string",
-      "description": "Section: Notes | Meaning: Use this column to make comments related to study strengths. | Guidance: Use this column to make comments related to study strengths."
+      "description": "Section: Notes | Guidance: Use this column to make comments related to study strengths."
     },
     "initial_diagnosis": {
       "type": "string",
-      "description": "Section: Notes | Meaning: Initial diagnosis (text)\nstate which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis) | Guidance: Initial diagnosis (text)\nstate which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis)"
+      "description": "Section: Notes | Guidance: Initial diagnosis (text)\nstate which diagnosis was suspected at symptom onset (SPSD or specific other diagnosis)"
     },
     "differential_diagnosis": {
       "type": "string",
-      "description": "Section: Notes | Meaning: Differential diagnosis (text)\nWhich DDx were considered? | Guidance: Differential diagnosis (text)\nWhich DDx were considered?"
+      "description": "Section: Notes | Guidance: Differential diagnosis (text)\nWhich DDx were considered?"
     }
   },
   "required": [
