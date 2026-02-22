@@ -14,6 +14,7 @@ from tqdm import tqdm
 
 # Resolve repository-relative paths once so CLI defaults stay stable.
 REPO_ROOT = Path(__file__).resolve().parents[2]
+PROMPTS_DIR = REPO_ROOT / "config" / "prompts"
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
@@ -40,7 +41,7 @@ GROUP_SECTION_ORDER = [
 ]
 
 # Individual-level prompt (case/patient-level evidence).
-INDIVIDUAL_PROMPT_DESCRIPTION = """
+DEFAULT_INDIVIDUAL_PROMPT_DESCRIPTION = """
 Extract concise, evidence-grounded snippets about individual-level (case-level) data.
 
 Return extraction classes:
@@ -57,7 +58,7 @@ Rules:
 """.strip()
 
 # Group-level prompt (cohort/aggregate evidence).
-GROUP_PROMPT_DESCRIPTION = """
+DEFAULT_GROUP_PROMPT_DESCRIPTION = """
 Extract concise, evidence-grounded snippets about group-level (cohort/aggregate) data.
 
 Return extraction classes:
@@ -75,7 +76,7 @@ Rules:
 
 
 # Build a minimal few-shot example for individual-level extraction.
-def build_individual_examples() -> list[Any]:
+def default_individual_examples_payload() -> list[dict[str, Any]]:
     # Few-shot guidance: this strongly improves extraction consistency.
     text = (
         "A 45-year-old woman presented with progressive axial stiffness and painful spasms. "
@@ -85,32 +86,32 @@ def build_individual_examples() -> list[Any]:
     )
 
     return [
-        lx.data.ExampleData(
-            text=text,
-            extractions=[
-                lx.data.Extraction(
-                    extraction_class="individual_presentation",
-                    extraction_text="progressive axial stiffness and painful spasms",
-                ),
-                lx.data.Extraction(
-                    extraction_class="individual_diagnostics",
-                    extraction_text="EMG showed continuous motor unit activity and serum anti-GAD antibodies were positive",
-                ),
-                lx.data.Extraction(
-                    extraction_class="individual_treatment",
-                    extraction_text="received diazepam and monthly IVIG",
-                ),
-                lx.data.Extraction(
-                    extraction_class="individual_outcome",
-                    extraction_text="After 6 months, spasms were less frequent and she could walk independently with mild residual stiffness",
-                ),
+        {
+            "text": text,
+            "extractions": [
+                {
+                    "extraction_class": "individual_presentation",
+                    "extraction_text": "progressive axial stiffness and painful spasms",
+                },
+                {
+                    "extraction_class": "individual_diagnostics",
+                    "extraction_text": "EMG showed continuous motor unit activity and serum anti-GAD antibodies were positive",
+                },
+                {
+                    "extraction_class": "individual_treatment",
+                    "extraction_text": "received diazepam and monthly IVIG",
+                },
+                {
+                    "extraction_class": "individual_outcome",
+                    "extraction_text": "After 6 months, spasms were less frequent and she could walk independently with mild residual stiffness",
+                },
             ],
-        )
+        }
     ]
 
 
 # Build a minimal few-shot example for group-level extraction.
-def build_group_examples() -> list[Any]:
+def default_group_examples_payload() -> list[dict[str, Any]]:
     text = (
         "In this retrospective cohort of 48 patients, 68% had classic SPSD and 28% had partial SPSD. "
         "Mean age was 47 years and 42% were male. Anti-GAD antibodies were detected in 85% of cases. "
@@ -119,32 +120,104 @@ def build_group_examples() -> list[Any]:
     )
 
     return [
-        lx.data.ExampleData(
-            text=text,
-            extractions=[
-                lx.data.Extraction(
-                    extraction_class="group_design",
-                    extraction_text="retrospective cohort",
-                ),
-                lx.data.Extraction(
-                    extraction_class="group_characteristics",
-                    extraction_text="48 patients, mean age 47 years, 42% male",
-                ),
-                lx.data.Extraction(
-                    extraction_class="group_findings",
-                    extraction_text="Anti-GAD antibodies were detected in 85% of cases",
-                ),
-                lx.data.Extraction(
-                    extraction_class="group_treatment_outcomes",
-                    extraction_text="IVIG was used in 73%, and 38% of treated patients had moderate or marked improvement",
-                ),
-                lx.data.Extraction(
-                    extraction_class="group_limitations",
-                    extraction_text="single-centre and retrospective, limiting generalisability",
-                ),
+        {
+            "text": text,
+            "extractions": [
+                {
+                    "extraction_class": "group_design",
+                    "extraction_text": "retrospective cohort",
+                },
+                {
+                    "extraction_class": "group_characteristics",
+                    "extraction_text": "48 patients, mean age 47 years, 42% male",
+                },
+                {
+                    "extraction_class": "group_findings",
+                    "extraction_text": "Anti-GAD antibodies were detected in 85% of cases",
+                },
+                {
+                    "extraction_class": "group_treatment_outcomes",
+                    "extraction_text": "IVIG was used in 73%, and 38% of treated patients had moderate or marked improvement",
+                },
+                {
+                    "extraction_class": "group_limitations",
+                    "extraction_text": "single-centre and retrospective, limiting generalisability",
+                },
             ],
-        )
+        }
     ]
+
+
+# Convert example payload dictionaries into LangExtract ExampleData objects.
+def to_example_data(payload: list[dict[str, Any]]) -> list[Any]:
+    examples: list[Any] = []
+    for item in payload:
+        text = (item.get("text") or "").strip()
+        extraction_payload = item.get("extractions") or []
+        if not text or not isinstance(extraction_payload, list):
+            continue
+        extractions = []
+        for row in extraction_payload:
+            extraction_class = (row.get("extraction_class") or "").strip()
+            extraction_text = (row.get("extraction_text") or "").strip()
+            if extraction_class and extraction_text:
+                extractions.append(
+                    lx.data.Extraction(
+                        extraction_class=extraction_class,
+                        extraction_text=extraction_text,
+                    )
+                )
+        if extractions:
+            examples.append(lx.data.ExampleData(text=text, extractions=extractions))
+    return examples
+
+
+# Load prompt text from file, with fallback to in-code defaults.
+def load_prompt_text(path: Path, fallback: str) -> str:
+    if not path.exists():
+        return fallback
+    text = path.read_text(encoding="utf-8").strip()
+    return text or fallback
+
+
+# Load example payload from JSON file, with fallback defaults.
+def load_examples_payload(path: Path, fallback: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if not path.exists():
+        return fallback
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(payload, list):
+        return payload
+    raise ValueError(f"Examples JSON must be a list: {path}")
+
+
+# Resolve all prompt/example assets once per run.
+def load_prompt_assets(prompt_dir: Path) -> dict[str, Any]:
+    individual_prompt = load_prompt_text(
+        prompt_dir / "02_individual_prompt.md",
+        DEFAULT_INDIVIDUAL_PROMPT_DESCRIPTION,
+    )
+    group_prompt = load_prompt_text(
+        prompt_dir / "02_group_prompt.md",
+        DEFAULT_GROUP_PROMPT_DESCRIPTION,
+    )
+    individual_examples = to_example_data(
+        load_examples_payload(
+            prompt_dir / "examples" / "02_individual_examples.json",
+            default_individual_examples_payload(),
+        )
+    )
+    group_examples = to_example_data(
+        load_examples_payload(
+            prompt_dir / "examples" / "02_group_examples.json",
+            default_group_examples_payload(),
+        )
+    )
+    return {
+        "individual_prompt": individual_prompt,
+        "group_prompt": group_prompt,
+        "individual_examples": individual_examples,
+        "group_examples": group_examples,
+    }
 
 
 # Parse all runtime controls so the script can run single-file or batch modes.
@@ -169,6 +242,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=SUMMARY_OUT_DIR,
         help="Directory for summarised outputs.",
+    )
+    parser.add_argument(
+        "--prompt-dir",
+        type=Path,
+        default=PROMPTS_DIR,
+        help="Directory containing prompt markdown and example JSON files.",
     )
     parser.add_argument(
         "--paper-id",
@@ -298,6 +377,7 @@ def run_langextract(
     )
 
 
+# Decide whether to run the individual-level pass from CLI flags.
 def should_run_individual(args: argparse.Namespace) -> bool:
     # If neither flag is set, run both passes by default.
     if not args.include_individual and not args.include_group:
@@ -305,6 +385,7 @@ def should_run_individual(args: argparse.Namespace) -> bool:
     return args.include_individual
 
 
+# Decide whether to run the group-level pass from CLI flags.
 def should_run_group(args: argparse.Namespace) -> bool:
     # If neither flag is set, run both passes by default.
     if not args.include_individual and not args.include_group:
@@ -313,7 +394,7 @@ def should_run_group(args: argparse.Namespace) -> bool:
 
 
 # Process a single paper JSON: extract snippets, then save raw + summary outputs.
-def process_file(path: Path, args: argparse.Namespace) -> str:
+def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, Any]) -> str:
     # Read source record and derive output locations from paper_id.
     record = load_text_record(path)
     paper_id = str(record.get("paper_id") or path.stem)
@@ -333,6 +414,7 @@ def process_file(path: Path, args: argparse.Namespace) -> str:
     if args.dry_run:
         return "validated"
 
+    # Resolve which extraction modes are active for this run.
     individual_enabled = should_run_individual(args)
     group_enabled = should_run_group(args)
 
@@ -344,8 +426,8 @@ def process_file(path: Path, args: argparse.Namespace) -> str:
         individual_annotated = run_langextract(
             text=text,
             args=args,
-            prompt_description=INDIVIDUAL_PROMPT_DESCRIPTION,
-            examples=build_individual_examples(),
+            prompt_description=prompt_assets["individual_prompt"],
+            examples=prompt_assets["individual_examples"],
         )
         individual_extractions = [
             serialise_extraction(x) for x in (individual_annotated.extractions or [])
@@ -382,8 +464,8 @@ def process_file(path: Path, args: argparse.Namespace) -> str:
         group_annotated = run_langextract(
             text=text,
             args=args,
-            prompt_description=GROUP_PROMPT_DESCRIPTION,
-            examples=build_group_examples(),
+            prompt_description=prompt_assets["group_prompt"],
+            examples=prompt_assets["group_examples"],
         )
         group_extractions = [
             serialise_extraction(x) for x in (group_annotated.extractions or [])
@@ -463,6 +545,7 @@ def main() -> None:
     args = parse_args()
     args.raw_out_dir.mkdir(parents=True, exist_ok=True)
     args.summary_out_dir.mkdir(parents=True, exist_ok=True)
+    prompt_assets = load_prompt_assets(args.prompt_dir)
 
     # Resolve input set before running.
     files = collect_input_files(args.input_dir, args.paper_id, args.limit)
@@ -475,7 +558,7 @@ def main() -> None:
     # Continue past single-paper failures so batch runs are resilient.
     for path in tqdm(files, desc="LangExtract summaries"):
         try:
-            outcome = process_file(path, args)
+            outcome = process_file(path, args, prompt_assets)
             stats[outcome] = stats.get(outcome, 0) + 1
         except Exception as exc:  # keep batch running even if one paper fails
             # Surface per-paper errors and continue the batch.

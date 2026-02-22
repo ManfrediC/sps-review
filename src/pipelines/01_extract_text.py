@@ -11,35 +11,38 @@ from pathlib import Path
 from pypdf import PdfReader
 from tqdm import tqdm
 
-# Implement relative paths
-# REPO_ROOT = Path.cwd()
+# Resolve repository-relative paths once for stable script behaviour.
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# Toggle OCR fallback for PDFs with poor native text extraction.
 ENABLE_OCR = True
 
-# function to extract paper ID from filename (number preceding underscore)
+# Extract paper ID from filename (digits before first underscore).
 def paper_id_from_filename(name: str) -> str:
     # e.g. "11849_Stiff person syndrome ....pdf" -> "11849"
-    stem = Path(name).stem # stem: filename without final extension
-    return stem.split("_", 1)[0] # #split max once, return initial[0] element of resulting list 
+    stem = Path(name).stem  # stem: filename without final extension
+    return stem.split("_", 1)[0]  # split once; return prefix before "_"
 
-# function: checksums
+# Compute file checksum for provenance and deduplication checks.
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
+    # Stream file in chunks to avoid high memory usage on large PDFs.
     with path.open("rb") as f:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
 
-# function: detect weak text extraction quality
+# Heuristic to decide whether OCR is likely needed.
 def needs_ocr_from_char_counts(char_counts: list[int]) -> bool:
     # heuristic: if most pages have little extracted text, OCR is likely needed
     small_pages = sum(1 for c in char_counts if c < 50)
     return len(char_counts) > 0 and (small_pages / len(char_counts)) > 0.5
 
 
+# Extract page text plus per-page character counts from one PDF.
 def extract_pages_and_counts(pdf_path: Path) -> tuple[list[dict], list[int]]:
     # shared low-level extraction used before and after OCR
     reader = PdfReader(str(pdf_path))
@@ -55,6 +58,7 @@ def extract_pages_and_counts(pdf_path: Path) -> tuple[list[dict], list[int]]:
     return pages, char_counts
 
 
+# Run OCRmyPDF to produce a text-searchable PDF copy.
 def run_ocr(input_pdf: Path, output_pdf: Path) -> None:
     # run OCRmyPDF via the current Python env to avoid PATH/venv mismatches
     subprocess.run(
@@ -76,7 +80,7 @@ def run_ocr(input_pdf: Path, output_pdf: Path) -> None:
     )
 
 
-# function: extract PDF text
+# Extract text record for one PDF, with optional OCR fallback.
 def extract_pdf_text(pdf_path: Path) -> dict:
     # first pass: try native PDF text extraction
     pages, char_counts = extract_pages_and_counts(pdf_path)
@@ -114,11 +118,13 @@ def extract_pdf_text(pdf_path: Path) -> dict:
     }
 
 
+# Batch all PDFs in PDF_DIR and write one JSON record per paper_id.
 def main() -> None:
     pdfs = sorted(PDF_DIR.glob("*.pdf"))
     if not pdfs:
         raise SystemExit(f"No PDFs found in: {PDF_DIR}")
 
+    # Process every PDF and save a structured text extraction JSON.
     for pdf_path in tqdm(pdfs, desc="Extracting PDF text"):
         record = extract_pdf_text(pdf_path)
         out_path = OUT_DIR / f"{record['paper_id']}.json"
@@ -128,5 +134,6 @@ def main() -> None:
         )
 
 
+# Standard Python entry point.
 if __name__ == "__main__":
     main()
