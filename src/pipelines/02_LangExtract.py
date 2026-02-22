@@ -12,14 +12,17 @@ import langextract as lx
 from tqdm import tqdm
 
 
+# Resolve repository-relative paths once so CLI defaults stay stable.
 REPO_ROOT = Path(__file__).resolve().parents[2]
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 
+# Ensure output folders exist even on first run.
 RAW_OUT_DIR.mkdir(parents=True, exist_ok=True)
 SUMMARY_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Canonical order used for both section rendering and overall summary text.
 SECTION_ORDER = [
     "clinical_presentation",
     "diagnostics",
@@ -45,7 +48,9 @@ Rules:
 """.strip()
 
 
+# Build a minimal, domain-relevant few-shot example for extraction guidance.
 def build_examples() -> list[Any]:
+    # Few-shot guidance: this strongly improves extraction consistency.
     text = (
         "A 45-year-old woman presented with progressive axial stiffness and painful spasms. "
         "EMG showed continuous motor unit activity and serum anti-GAD antibodies were positive. "
@@ -78,6 +83,7 @@ def build_examples() -> list[Any]:
     ]
 
 
+# Parse all runtime controls so the script can run single-file or batch modes.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Summarise extracted paper text JSONs with LangExtract + OpenAI."
@@ -127,11 +133,14 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Load one upstream text-extraction JSON file.
 def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Convert page-wise text into one model input while preserving page markers.
 def normalise_text(record: dict[str, Any]) -> str:
+    # Join pages into one document while preserving page boundaries.
     pages = record.get("pages", [])
     chunks: list[str] = []
     for page in pages:
@@ -142,7 +151,9 @@ def normalise_text(record: dict[str, Any]) -> str:
     return "\n\n".join(chunks).strip()
 
 
+# Convert LangExtract dataclass objects into plain JSON-serialisable dicts.
 def serialise_extraction(extraction: Any) -> dict[str, Any]:
+    # LangExtract objects are dataclasses; normalise enum-like fields for JSON.
     data = asdict(extraction)
     status = data.get("alignment_status")
     if status is not None:
@@ -150,7 +161,9 @@ def serialise_extraction(extraction: Any) -> dict[str, Any]:
     return data
 
 
+# Group extracted snippets by target summary section.
 def section_texts(extractions: list[dict[str, Any]]) -> dict[str, list[str]]:
+    # Group snippets by extraction class and drop duplicates.
     grouped: dict[str, list[str]] = {key: [] for key in SECTION_ORDER}
     for item in extractions:
         cls = item.get("extraction_class")
@@ -160,7 +173,9 @@ def section_texts(extractions: list[dict[str, Any]]) -> dict[str, list[str]]:
     return grouped
 
 
+# Render section summaries using deterministic snippet concatenation.
 def render_summary(sections: dict[str, list[str]]) -> dict[str, str]:
+    # Keep section summaries short and deterministic.
     rendered: dict[str, str] = {}
     for key in SECTION_ORDER:
         snippets = sections.get(key, [])
@@ -168,6 +183,7 @@ def render_summary(sections: dict[str, list[str]]) -> dict[str, str]:
     return rendered
 
 
+# Combine section summaries into one compact overall narrative.
 def build_overall_summary(rendered_sections: dict[str, str]) -> str:
     return (
         f"Clinical presentation: {rendered_sections['clinical_presentation']} "
@@ -178,7 +194,9 @@ def build_overall_summary(rendered_sections: dict[str, str]) -> str:
     ).strip()
 
 
+# Run LangExtract with OpenAI settings and return one annotated document.
 def run_langextract(text: str, args: argparse.Namespace) -> Any:
+    # OpenAI path for LangExtract: raw JSON mode is more reliable here.
     api_key = args.api_key or os.getenv("OPENAI_API_KEY")
     return lx.extract(
         text_or_documents=text,
@@ -197,28 +215,35 @@ def run_langextract(text: str, args: argparse.Namespace) -> Any:
     )
 
 
+# Process a single paper JSON: extract snippets, then save raw + summary outputs.
 def process_file(path: Path, args: argparse.Namespace) -> str:
+    # Read source record and derive output locations from paper_id.
     record = load_text_record(path)
     paper_id = str(record.get("paper_id") or path.stem)
     out_raw = args.raw_out_dir / f"{paper_id}.json"
     out_summary = args.summary_out_dir / f"{paper_id}.json"
 
+    # Skip work when outputs already exist unless user forces overwrite.
     if not args.force and out_raw.exists() and out_summary.exists():
         return "skipped"
 
+    # Build model input text and guard against empty inputs.
     text = normalise_text(record)
     if not text:
         raise ValueError(f"No extractable text found in {path}")
 
+    # Dry-run validates inputs without spending tokens.
     if args.dry_run:
         return "validated"
 
+    # 1) extract evidence snippets, 2) map to sections, 3) build summaries.
     annotated = run_langextract(text, args)
     extractions = [serialise_extraction(x) for x in (annotated.extractions or [])]
     grouped = section_texts(extractions)
     rendered = render_summary(grouped)
     overall = build_overall_summary(rendered)
 
+    # Save full extraction payload for auditability and downstream debugging.
     raw_payload = {
         "paper_id": paper_id,
         "source_filename": record.get("source_filename"),
@@ -230,6 +255,7 @@ def process_file(path: Path, args: argparse.Namespace) -> str:
     }
     out_raw.write_text(json.dumps(raw_payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    # Save compact section summaries for reviewer-facing consumption.
     summary_payload = {
         "paper_id": paper_id,
         "source_filename": record.get("source_filename"),
@@ -248,7 +274,9 @@ def process_file(path: Path, args: argparse.Namespace) -> str:
     return "processed"
 
 
+# Collect candidate input files, with optional ID filter and row-limit.
 def collect_input_files(input_dir: Path, paper_ids: list[str], limit: int) -> list[Path]:
+    # Optional filtering lets us run focused tests before full-batch runs.
     files = sorted(input_dir.glob("*.json"))
     if paper_ids:
         wanted = set(paper_ids)
@@ -258,25 +286,32 @@ def collect_input_files(input_dir: Path, paper_ids: list[str], limit: int) -> li
     return files
 
 
+# Entry point: batch orchestration, error accounting, and run summary reporting.
 def main() -> None:
+    # Parse args and guarantee output folders exist.
     args = parse_args()
     args.raw_out_dir.mkdir(parents=True, exist_ok=True)
     args.summary_out_dir.mkdir(parents=True, exist_ok=True)
 
+    # Resolve input set before running.
     files = collect_input_files(args.input_dir, args.paper_id, args.limit)
     if not files:
         raise SystemExit(f"No input JSON files found in: {args.input_dir}")
 
+    # Track outcomes to give a clear end-of-run status.
     stats = {"processed": 0, "validated": 0, "skipped": 0, "failed": 0}
 
+    # Continue past single-paper failures so batch runs are resilient.
     for path in tqdm(files, desc="LangExtract summaries"):
         try:
             outcome = process_file(path, args)
             stats[outcome] = stats.get(outcome, 0) + 1
         except Exception as exc:  # keep batch running even if one paper fails
+            # Surface per-paper errors and continue the batch.
             stats["failed"] += 1
             print(f"[ERROR] {path.name}: {exc}")
 
+    # Print machine-readable run totals for quick review.
     print(
         "Run summary:",
         f"processed={stats['processed']}",
@@ -285,9 +320,11 @@ def main() -> None:
         f"failed={stats['failed']}",
     )
 
+    # Non-zero exit code if any file failed, for CI/script chaining.
     if stats["failed"] > 0:
         raise SystemExit(1)
 
 
+# Standard Python script entry point.
 if __name__ == "__main__":
     main()
