@@ -23,15 +23,12 @@
       "anyOf": [
         {
           "type": "number",
-          "minimum": 0,
-          "maximum": 130
+          "minimum": 0
         },
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
@@ -42,47 +39,15 @@
       "enum": [
         "M",
         "F",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
       "description": "Section: 1.section: Identifier and case vignette | Meaning: Sex: M or F | Guidance: Sex: M or F"
     },
     "ethnicity": {
       "type": "string",
-      "enum": [
-        "white",
-        "africa",
-        "E_asia",
-        "S_asia",
-        "SE_asia",
-        "latin",
-        "other",
-        "NA",
-        "NR",
-        "CD"
-      ],
-      "description": "Section: section:  basic demographic data | Meaning: Ethnicity (select one) | Guidance: Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column)"
+      "description": "Section: section: basic demographic data | Meaning: Ethnicity (select one) | Guidance: Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column)"
     },
     "age_onset": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 130
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NR",
-            "NA",
-            "CD"
-          ]
-        }
-      ],
-      "description": "Section: section:  basic demographic data | Meaning: Age at onset | Guidance: Age at onset"
-    },
-    "FU_duration_years": {
       "anyOf": [
         {
           "type": "number",
@@ -91,13 +56,11 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
-      "description": "Section: section:  basic demographic data | Meaning: Follow Up (years) | Guidance: Follow Up (years) | Original column header: FU_duration (Excel column H)"
+      "description": "Section: section: basic demographic data | Meaning: Age at onset | Guidance: Age at onset"
     },
     "time_to_diagnosis": {
       "anyOf": [
@@ -108,13 +71,11 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
-      "description": "Section: section:  basic demographic data | Meaning: Time to diagnosis (years) | Guidance: Time to diagnosis (years)"
+      "description": "Section: section: basic demographic data | Meaning: Time to diagnosis (years) | Guidance: Time to diagnosis (years)"
     },
     "first_manifestation": {
       "type": "string",
@@ -124,11 +85,9 @@
         "startle",
         "multiple",
         "other",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
-      "description": "Section: section:  basic demographic data | Meaning: First manifestation (select) | Guidance: First manifestation (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next cols\n- other = other, specify in next cols"
+      "description": "Section: section: basic demographic data | Meaning: First manifestation (select) | Guidance: First manifestation (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next cols\n- other = other, specify in next cols"
     },
     "first_manifestation_multiple": {
       "anyOf": [
@@ -141,17 +100,17 @@
             ]
           },
           "uniqueItems": true,
-          "description": "Section: section:  basic demographic data | Meaning: First manifestation (multiple) | Guidance: First manifestation (multiple)"
+          "description": "Section: section: basic demographic data | Meaning: First manifestation (multiple) | Guidance: First manifestation (multiple)"
         },
         {
           "type": "string",
-          "description": "Section: section:  basic demographic data | Meaning: First manifestation (multiple) | Guidance: First manifestation (multiple)"
+          "description": "Section: section: basic demographic data | Meaning: First manifestation (multiple) | Guidance: First manifestation (multiple)"
         }
       ]
     },
     "first_manifestation_other": {
       "type": "string",
-      "description": "Section: section:  basic demographic data | Meaning: First manifestation (other) | Guidance: First manifestation (other)"
+      "description": "Section: section: basic demographic data | Meaning: First manifestation (other) | Guidance: First manifestation (other)"
     },
     "included_diagnosis": {
       "type": "string",
@@ -162,19 +121,17 @@
         "new_category",
         "mixed",
         "other",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
-      "description": "Section: section:  basic demographic data | Meaning: Diagnosis of participants included (select) | Guidance: Diagnosis of participants included (select)\n- Stiff_Person\n- Stiff_Limb\n- PERM\n- new_category = new category if identified, specify\n- mixed = mixed population\n- other = other, specify in next column\n- NA = not available, NR, not reported"
+      "description": "Section: section: basic demographic data | Meaning: Diagnosis of participants included (select) | Guidance: Diagnosis of participants included (select)\n- Stiff_Person\n- Stiff_Limb\n- PERM\n- new_category = new category if identified, specify\n- mixed = mixed population\n- other = other, specify in next column\n- NA = not available, NA, not reported"
     },
     "included_diagnosis_specify": {
       "type": "string",
-      "description": "Section: section:  basic demographic data | Meaning: Diagnosis (specify) | Guidance: Diagnosis (specify) If you selected new_category or other, specify with text"
+      "description": "Section: section: basic demographic data | Meaning: Diagnosis (specify) | Guidance: Diagnosis (specify) If you selected new_category or other, specify with text"
     },
     "diagnostic_criteria": {
       "type": "string",
-      "description": "Section: section:  basic demographic data | Meaning: Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed | Guidance: Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed"
+      "description": "Section: section: basic demographic data | Meaning: Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed | Guidance: Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed"
     },
     "early_symptoms": {
       "type": "string",
@@ -182,11 +139,9 @@
         "stiffness",
         "spasms",
         "startle",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
-      "description": "Section: section:  basic demographic data | Meaning: Overview_SPSD symptoms / early disease (select) | Guidance: Overview_SPSD symptoms / early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle"
+      "description": "Section: section: basic demographic data | Meaning: Overview_SPSD symptoms / early disease (select) | Guidance: Overview_SPSD symptoms / early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle"
     },
     "stiffness_distribution_onset": {
       "type": "string",
@@ -199,11 +154,9 @@
         "multiple",
         "generalised",
         "other",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
-      "description": "Section: section:  basic demographic data | Meaning: Stiffness distribution (select) | Guidance: Stiffness distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col"
+      "description": "Section: section: basic demographic data | Meaning: Stiffness distribution (select) | Guidance: Stiffness distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col"
     },
     "stiffness_distribution_onset_multiple": {
       "anyOf": [
@@ -216,17 +169,17 @@
             ]
           },
           "uniqueItems": true,
-          "description": "Section: section:  basic demographic data | Meaning: Stiffness distribution: multiple (text) | Guidance: Stiffness distribution: multiple (text)"
+          "description": "Section: section: basic demographic data | Meaning: Stiffness distribution: multiple (text) | Guidance: Stiffness distribution: multiple (text)"
         },
         {
           "type": "string",
-          "description": "Section: section:  basic demographic data | Meaning: Stiffness distribution: multiple (text) | Guidance: Stiffness distribution: multiple (text)"
+          "description": "Section: section: basic demographic data | Meaning: Stiffness distribution: multiple (text) | Guidance: Stiffness distribution: multiple (text)"
         }
       ]
     },
     "stiffness_distribution_onset_other": {
       "type": "string",
-      "description": "Section: section:  basic demographic data | Meaning: Stiffness distribution: other (text) | Guidance: Stiffness distribution: other (text)"
+      "description": "Section: section: basic demographic data | Meaning: Stiffness distribution: other (text) | Guidance: Stiffness distribution: other (text)"
     },
     "spasms_distribution_onset": {
       "type": "string",
@@ -238,11 +191,9 @@
         "generalised",
         "multiple",
         "other",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
-      "description": "Section: section:  basic demographic data | Meaning: Spasms distribution (select) | Guidance: Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col"
+      "description": "Section: section: basic demographic data | Meaning: Spasms distribution (select) | Guidance: Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col"
     },
     "spasms_distribution_onset_multiple": {
       "anyOf": [
@@ -275,9 +226,7 @@
         "visual",
         "multiple",
         "other",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
       "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Excessive startle (select) | Guidance: Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli\n- multiple (specify in next col)\n- other (specify in next col)"
     },
@@ -309,9 +258,7 @@
       "enum": [
         "walking",
         "generalised",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Anxiety (select) | Guidance: Anxiety (select)\n- walking = anxiety related to walking unaided\n- generalised = specify in next col"
     },
@@ -321,7 +268,7 @@
     },
     "other_symptoms_onset": {
       "type": "string",
-      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Other symptoms: list all that apply within 1 cell, separated by semicolons | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons \n(example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next col)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type\n- oculomotor = specify type\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- LPR = lead pipe rigidity\n- other = specify in next col"
+      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Other symptoms: list all that apply within 1 cell, separated by semicolons | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next col)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type\n- oculomotor = specify type\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- LPR = lead pipe rigidity\n- other = specify in next col"
     },
     "other_symptoms_onset_auto": {
       "type": "string",
@@ -345,9 +292,7 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
@@ -357,13 +302,11 @@
       "type": "string",
       "enum": [
         "insidious",
-        "RR",
+        "relapsing-remitting",
         "fulminant",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Time course of onset (select) | Guidance: Time course of onset (select)\n- insidious = insidious/subacute\n- RR = relapsing-remitting\n- fulminant = fulimant/peracute"
+      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Time course of onset (select) | Guidance: Time course of onset (select)\n- insidious = insidious/subacute\n- relapsing-remitting = relapsing-remitting\n- fulminant = fulimant/peracute"
     },
     "diagnosis_onset": {
       "type": "string",
@@ -374,9 +317,7 @@
         "stroke",
         "seizure",
         "other",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Diagnosis at onset (select) | Guidance: Diagnosis at onset (select)\n- SPSD\n- functional\n- orthopaedic\n- stroke\n- seizure\n- other = specify in next col"
     },
@@ -388,15 +329,13 @@
       "type": "string",
       "enum": [
         "monophasic",
-        "RR",
+        "relapsing-remitting",
         "chronic_stable",
         "chronic-progressive",
         "rapidly-progressive",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Subsequent disease course (select) | Guidance: Subsequent disease course (select)\n- monophasic\n- RR = relapsing-remitting\n- chronic_stable\n- chronic-progressive\n- rapidly-progressive"
+      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Subsequent disease course (select) | Guidance: Subsequent disease course (select)\n- monophasic\n- relapsing-remitting = relapsing-remitting\n- chronic_stable\n- chronic-progressive\n- rapidly-progressive"
     },
     "onset_to_established": {
       "anyOf": [
@@ -406,30 +345,11 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
       "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Time from onset to fully established disease (months) | Guidance: Time from onset to fully established disease (months)"
-    },
-    "FU_duration_months": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": 0
-        },
-        {
-          "type": "string",
-          "enum": [
-            "NR",
-            "NA",
-            "CD"
-          ]
-        }
-      ],
-      "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Duration of follow up (months) | Guidance: Duration of follow up (months) | Original column header: FU_duration (Excel column AL)"
     },
     "overview_established": {
       "type": "string",
@@ -446,9 +366,7 @@
         "multiple",
         "generalised",
         "other",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
       "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Stiffness distribution in established disease (select) | Guidance: Stiffness distribution in established disease (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col"
     },
@@ -485,9 +403,7 @@
         "generalised",
         "multiple",
         "other",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
       "description": "Section: 3. section: disease onset, signs and symptoms | Meaning: Spasms distribution (select) | Guidance: Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col"
     },
@@ -521,9 +437,7 @@
         "noise",
         "visual",
         "multiple",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
       "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Excessive startle (select) | Guidance: Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli\n- multiple (specify in next col)"
     },
@@ -551,9 +465,7 @@
       "enum": [
         "walking",
         "generalised",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Anxiety (select) | Guidance: Anxiety (select)\n- walking = anxiety related to walking unaided\n- generalised = specify in next col"
     },
@@ -563,7 +475,7 @@
     },
     "other_symptoms_established": {
       "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Other symptoms: list all that apply within 1 cell, separated by semicolons | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons \n(example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next cols)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type in next cols\n- oculomotor = specify type in next cols\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- other = specify in next cols"
+      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Other symptoms: list all that apply within 1 cell, separated by semicolons | Guidance: Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next cols)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type in next cols\n- oculomotor = specify type in next cols\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- other = specify in next cols"
     },
     "other_symptoms_established_auto": {
       "type": "string",
@@ -587,13 +499,11 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
-      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Disability when disease fully established                                  (SPSD symptoms established; mRS | Guidance: Disability when disease fully established                                  (SPSD symptoms established; mRS\n0 - No symptoms.\n1 - No significant disability. Able to carry out all usual activities, despite some symptoms.\n2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.\n3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).\n4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.\n5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.\n6 - Dead"
+      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Disability when disease fully established (SPSD symptoms established; mRS | Guidance: Disability when disease fully established (SPSD symptoms established; mRS\n0 - No symptoms.\n1 - No significant disability. Able to carry out all usual activities, despite some symptoms.\n2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.\n3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).\n4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.\n5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.\n6 - Dead"
     },
     "course_treatment": {
       "type": "string",
@@ -602,9 +512,7 @@
         "sympt",
         "immunotherapy",
         "both",
-        "NR",
-        "NA",
-        "CD"
+        "NA"
       ],
       "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Course / symptoms potentially influenced by treatment (select) | Guidance: Course / symptoms potentially influenced by treatment (select)\n- none = no treatment\n- sympt = benzodiazepine or similar\n- immunotherapy\n- both = both symptomatic and immunotherapy"
     },
@@ -619,9 +527,7 @@
         "multiple",
         "other",
         "not_tested",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Antibody status (select) | Guidance: Antibody status (select)\n- GAD\n- GlyR\n- amphiphysin\n- DPPX\n- seronegative\n- multiple = multiple, specify in next col\n- other = other, specify in next col\n- not_tested = no test performed\n- NA = not available, not reported, unclear if tested"
     },
@@ -637,9 +543,7 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
@@ -651,7 +555,7 @@
     },
     "antibody_tests": {
       "type": "string",
-      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Antibodies tested | Guidance: Antibodies tested \nlist all antibodies that were tested, separated by semicolons"
+      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: Antibodies tested | Guidance: Antibodies tested list all antibodies that were tested, separated by semicolons"
     },
     "antibody_testsystem": {
       "type": "string",
@@ -669,11 +573,9 @@
         "isolated protein elevation",
         "not_done",
         "antibody_present",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
-      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: CSF (select) | Guidance: CSF (select)\n - normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available / NR"
+      "description": "Section: 4. section: established disease, signs and symptoms | Meaning: CSF (select) | Guidance: CSF (select) - normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available"
     },
     "CSF_antibody": {
       "type": "string",
@@ -687,9 +589,7 @@
         {
           "type": "string",
           "enum": [
-            "NR",
-            "NA",
-            "CD"
+            "NA"
           ]
         }
       ],
@@ -698,44 +598,36 @@
     "CMUA": {
       "type": "string",
       "enum": [
-        "Free text",
-        "NA if not applicable/reported",
-        "NA",
-        "NR",
-        "CD"
+        "0",
+        "1",
+        "NA"
       ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: continuous motor unit activity (CMUA) | Guidance: continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG, NR, unknown"
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: continuous motor unit activity (CMUA) | Guidance: continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG / unknown"
     },
     "exteroceptive_refl": {
       "type": "string",
       "enum": [
-        "Free text",
-        "NA if not applicable/reported",
-        "NA",
-        "NR",
-        "CD"
+        "0",
+        "1",
+        "NA"
       ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: enhanced exteroceptive reflexes | Guidance: enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown"
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: enhanced exteroceptive reflexes | Guidance: enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done / unknown"
     },
     "brainstem_refl": {
       "type": "string",
       "enum": [
-        "Free text",
-        "NA if not applicable/reported",
-        "NA",
-        "NR",
-        "CD"
+        "0",
+        "1",
+        "NA"
       ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: brainstem reflexes | Guidance: brainstem reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown"
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: brainstem reflexes | Guidance: brainstem reflexes\n0 = not detected\n1 = present\nNA = not done / unknown"
     },
     "MRI_normal": {
       "type": "string",
       "enum": [
-        "Free text",
-        "NA if not applicable/reported",
-        "NA",
-        "NR",
-        "CD"
+        "0",
+        "1",
+        "NA"
       ],
       "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: MRI | Guidance: MRI\n0 = normal\n1 = abnormal (specify in next col)\nNA = no MRI performed, not reported, unclear"
     },
@@ -748,11 +640,9 @@
       "enum": [
         "Free text",
         "NA if not applicable/reported",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Tumour screening | Guidance: Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed, NR"
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Tumour screening | Guidance: Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed"
     },
     "tu_screening_abnormal": {
       "type": "string",
@@ -760,7 +650,7 @@
     },
     "immunotherapy": {
       "type": "string",
-      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Immunotherapy (specify) | Guidance: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophopsphamide\n- Aza = Azathioprine\n- HSCT\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown, NR"
+      "description": "Section: 5. section: investigations (antibodies, electrophysiology, other) | Meaning: Immunotherapy (specify) | Guidance: Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophopsphamide\n- Aza = Azathioprine\n- HSCT\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown"
     },
     "immuntherapy_detail": {
       "type": "string",
@@ -773,9 +663,7 @@
         "worsening",
         "improvement",
         "stabilisation",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 6. section: treatment | Meaning: Effect of immunotherapy (select) | Guidance: Effect of immunotherapy (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known"
     },
@@ -791,9 +679,7 @@
         "tizanidine",
         "valproate",
         "other",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 6. section: treatment | Meaning: Symptomatic treatment (select) | Guidance: Symptomatic treatment (select)\n- none\n- clonazepam\n- benzo = other benzodiazepines\n- baclofen\n- gabapentin\n- pregabalin\n- tizanidine\n- valproate\n- other (specify)"
     },
@@ -808,9 +694,7 @@
         "worsening",
         "improvement",
         "stabilisation",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 6. section: treatment | Meaning: Effect of symptomatic treatment (select) | Guidance: Effect of symptomatic treatment (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known"
     },
@@ -827,9 +711,7 @@
         "vitiligo",
         "gastric",
         "other",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 7. section: concomittant disease and family history | Meaning: Concomitant autoimmunity (select) | Guidance: Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col"
     },
@@ -843,9 +725,7 @@
         "none",
         "autoimmune",
         "SPSD",
-        "NA",
-        "NR",
-        "CD"
+        "NA"
       ],
       "description": "Section: 8.section: comments | Meaning: Family history (select) | Guidance: Family history (select)\n- none = no fhx for SPSD or autoimmunity\n- autoimmune = fhx for autoimmunity (specify in next col)\n- SPSD = fhx for SPSD (specify in next col)\n- NA = unknown, not reported"
     },
@@ -856,6 +736,21 @@
     "notes": {
       "type": "string",
       "description": "Section: 8.section: comments | Meaning: Any observations or aspects not covered but worth mentioning | Guidance: Any observations or aspects not covered but worth mentioning"
+    },
+    "FU_duration": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": [
+            "NA"
+          ]
+        }
+      ],
+      "description": "Section: section: basic demographic data | Meaning: Follow Up (years) | Guidance: Follow Up (years) | Original column header: FU_duration (Excel column H)"
     }
   },
   "required": [

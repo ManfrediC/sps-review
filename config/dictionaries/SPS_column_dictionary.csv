@@ -1,10 +1,10 @@
-sheet,excel_col,field,section,definition,data_type,accepted,entry_guidance
+﻿sheet,excel_col,field,section,definition,data_type,accepted,entry_guidance
 Case Report Form,A,extractor,0. General / extraction metadata,Initials of extractor,free text,Initials (two capital letters),Initials of extractor
 Case Report Form,B,Reference,1.section: Identifier and case vignette,ID,numeric,must be present,ID
 Case Report Form,C,case_ID,1.section: Identifier and case vignette,Case reference within the article (case#),free text,Free text (keep concise); NA if not applicable/reported,Case reference within the article (case#)
 Case Report Form,D,age_description,1.section: Identifier and case vignette,Age at description,numeric (years; integer or decimal),Numeric; decimals allowed (years),Age at description
-Case Report Form,E,sex,1.section: Identifier and case vignette,Sex: M or F,categorical (M/F/NR),"M, F, NR",Sex: M or F
-Case Report Form,F,ethnicity,section:  basic demographic data,Ethnicity (select one),categorical (single-select),"white, africa, E_asia, S_asia, SE_asia, latin, other, NA","Ethnicity (select one)
+Case Report Form,E,sex,1.section: Identifier and case vignette,Sex: M or F,categorical (M/F/NA),"M, F, NA",Sex: M or F
+Case Report Form,F,ethnicity,section:  basic demographic data,Ethnicity (select one),free text,Free text; NA if not available,"Ethnicity (select one)
 - white = White/Caucasian
 - africa = African/ Afro-Caribbean
 - E_asia = East Asia (Japan, Korea, China)
@@ -30,14 +30,14 @@ Case Report Form,M,included_diagnosis,section:  basic demographic data,Diagnosis
 - new_category = new category if identified, specify
 - mixed = mixed population
 - other = other, specify in next column
-- NA = not available, NR, not reported"
+- NA = not available, NA, not reported"
 Case Report Form,N,included_diagnosis_specify,section:  basic demographic data,Diagnosis (specify),free text,Free text (keep concise); NA if not applicable/reported,"Diagnosis (specify) If you selected new_category or other, specify with text"
 Case Report Form,O,diagnostic_criteria,section:  basic demographic data,Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed,free text,Free text (keep concise); NA if not applicable/reported,Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed
 Case Report Form,P,early_symptoms,section:  basic demographic data,Overview_SPSD symptoms / early disease (select),categorical (single-select),"stiffness, spasms, startle","Overview_SPSD symptoms / early disease (select)
 - stiffness
 - spasms
 - startle = excessive startle"
-Case Report Form,Q,stiffness_distribution_onset,section:  basic demographic data,Stiffness distribution (select),categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other","Stiffness distribution (select)
+Case Report Form,Q,stiffness_distribution_onset,section:  basic demographic data,Stiffness distribution (select),categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other, NA","Stiffness distribution (select)
 - lumb_prox_LE = lumbar/proximal legs
 - distal_LE = distal leg(s)
 - UE = arm(s) / upper extremity
@@ -58,7 +58,7 @@ Case Report Form,T,spasms_distribution_onset,section:  basic demographic data,Sp
 - other = other, specify in next col"
 Case Report Form,U,spasms_distribution_onset_multiple,"3. section: disease onset, signs and symptoms",Spasms distribution: multiple (text),categorical (multi-select) or free text,As per code list in the column description,Spasms distribution: multiple (text)
 Case Report Form,V,spasms_distribution_onset_other,"3. section: disease onset, signs and symptoms",Spasms distribution: other (text),free text,Free text (keep concise); NA if not applicable/reported,Spasms distribution: other (text)
-Case Report Form,W,excessive_startle_onset,"3. section: disease onset, signs and symptoms",Excessive startle (select),categorical (single-select),"touch, noise, visual, multiple, other","Excessive startle (select)
+Case Report Form,W,excessive_startle_onset,"3. section: disease onset, signs and symptoms",Excessive startle (select),categorical (single-select),"touch, noise, visual, multiple, other, NA","Excessive startle (select)
 - touch = to touch
 - noise = to noise
 - visual = to visual stimuli
@@ -70,8 +70,7 @@ Case Report Form,Z,anxiety_onset,"3. section: disease onset, signs and symptoms"
 - walking = anxiety related to walking unaided
 - generalised = specify in next col"
 Case Report Form,AA,anxiety_onset_generalised,"3. section: disease onset, signs and symptoms",Anxiety: generalised (text),free text,Free text (keep concise); NA if not applicable/reported,Anxiety: generalised (text)
-Case Report Form,AB,other_symptoms_onset,"3. section: disease onset, signs and symptoms","Other symptoms: list all that apply within 1 cell, separated by semicolons",free text,Free text (keep concise); NA if not applicable/reported,"Other symptoms: list all that apply within 1 cell, separated by semicolons 
-(example: hyperhidrosis; babinski; sensory)
+Case Report Form,AB,other_symptoms_onset,"3. section: disease onset, signs and symptoms","Other symptoms: list all that apply within 1 cell, separated by semicolons",free text,Free text; separate multiple entries with semicolons; NA if not available,"Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory)
 - hyperhidrosis
 - autonomic = other autonomic symptoms (see legend and specify in next col)
 - hyperreflexia
@@ -92,17 +91,17 @@ Case Report Form,AB,other_symptoms_onset,"3. section: disease onset, signs and s
 Case Report Form,AC,other_symptoms_onset_auto,"3. section: disease onset, signs and symptoms",Other symptoms: autonomic (text),free text,Free text (keep concise); NA if not applicable/reported,Other symptoms: autonomic (text)
 Case Report Form,AD,other_symptoms_onset_oculo,"3. section: disease onset, signs and symptoms",Other symptoms: oculomotor (text),free text,Free text (keep concise); NA if not applicable/reported,Other symptoms: oculomotor (text)
 Case Report Form,AE,other_symptoms_onset_seizures,"3. section: disease onset, signs and symptoms",Other symptoms: seizures (text),free text,Free text (keep concise); NA if not applicable/reported,Other symptoms: seizures (text)
-Case Report Form,AF,onset_mRS,"3. section: disease onset, signs and symptoms",Disability at onset - SPSD symptoms established; mRS,free text,0-6 (modified Rankin Scale),"Disability at onset - SPSD symptoms established; mRS. Only report if mRS is explicitly mentioned or if mRS can be clearly inferred from description.
+Case Report Form,AF,onset_mRS,"3. section: disease onset, signs and symptoms",Disability at onset - SPSD symptoms established; mRS,integer (0-6; NA if missing),0; 1; 2; 3; 4; 5; 6; NA,"Disability at onset - SPSD symptoms established; mRS. Only report if mRS is explicitly mentioned or if mRS can be clearly inferred from description.
 0 - No symptoms.
 1 - No significant disability. Able to carry out all usual activities, despite some symptoms.
 2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.
 3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).
 4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.
 5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.
-6 - Dead"
-Case Report Form,AG,timecourse_onset,"3. section: disease onset, signs and symptoms",Time course of onset (select),categorical (single-select),"insidious, RR, fulminant, NA","Time course of onset (select)
+6 - Dead Use NA if not available."
+Case Report Form,AG,timecourse_onset,"3. section: disease onset, signs and symptoms",Time course of onset (select),categorical (single-select),"insidious, relapsing-remitting, fulminant, NA","Time course of onset (select)
 - insidious = insidious/subacute
-- RR = relapsing-remitting
+- relapsing-remitting = relapsing-remitting
 - fulminant = fulimant/peracute"
 Case Report Form,AH,diagnosis_onset,"3. section: disease onset, signs and symptoms",Diagnosis at onset (select),categorical (single-select),"SPSD, functional, orthopaedic, stroke, seizure, other, NA","Diagnosis at onset (select)
 - SPSD
@@ -112,18 +111,18 @@ Case Report Form,AH,diagnosis_onset,"3. section: disease onset, signs and sympto
 - seizure
 - other = specify in next col"
 Case Report Form,AI,diagnosis_onset_other,"3. section: disease onset, signs and symptoms",Diagnosis at onset - other (text),free text,Free text (keep concise); NA if not applicable/reported,Diagnosis at onset - other (text)
-Case Report Form,AJ,timecourse_subsequent,"3. section: disease onset, signs and symptoms",Subsequent disease course (select),categorical (single-select),"monophasic, RR, chronic_stable, chronic-progressive, rapidly-progressive","Subsequent disease course (select)
+Case Report Form,AJ,timecourse_subsequent,"3. section: disease onset, signs and symptoms",Subsequent disease course (select),categorical (single-select),"monophasic, relapsing-remitting, chronic_stable, chronic-progressive, rapidly-progressive","Subsequent disease course (select)
 - monophasic
-- RR = relapsing-remitting
+- relapsing-remitting = relapsing-remitting
 - chronic_stable
 - chronic-progressive
 - rapidly-progressive"
 Case Report Form,AK,onset_to_established,"3. section: disease onset, signs and symptoms",Time from onset to fully established disease (months),numeric,numeric; NA if not applicable/reported,Time from onset to fully established disease (months)
-Case Report Form,AL,FU_duration,"3. section: disease onset, signs and symptoms",Duration of follow up (months),numeric (years; integer or decimal),Numeric; decimals allowed (months),Duration of follow up (months)
-Case Report Form,AM,overview_established,"3. section: disease onset, signs and symptoms",Overview_SPSD symptoms / established disease,free text,Free text (keep concise); NA if not applicable/reported,"Overview_SPSD symptoms / established disease
+Case Report Form,AL,FU_duration,"3. section: disease onset, signs and symptoms",Duration of follow up (years),numeric (years; integer or decimal),Numeric; decimals allowed (years),Duration of follow up (years)
+Case Report Form,AM,overview_established,"3. section: disease onset, signs and symptoms",Overview_SPSD symptoms / established disease,free text,Free text; separate multiple entries with semicolons; NA if not available,"Overview_SPSD symptoms / established disease
 - stiffness
 - spasms
-- startle = excessive startle"
+- startle = excessive startle If multiple items are present, separate entries with semicolons."
 Case Report Form,AN,stiffness_distribution_established,"3. section: disease onset, signs and symptoms",Stiffness distribution in established disease (select),categorical (single-select),"lumb_prox_LE, distal_LE, UE, axial, trismus, multiple, generalised, other","Stiffness distribution in established disease (select)
 - lumb_prox_LE = lumbar/proximal legs
 - distal_LE = distal leg(s)
@@ -155,8 +154,7 @@ Case Report Form,AV,anxiety_established,"4. section: established disease, signs 
 - walking = anxiety related to walking unaided
 - generalised = specify in next col"
 Case Report Form,AW,anxiety_established_generalised,"4. section: established disease, signs and symptoms",Anxiety: generalised (text),free text,Free text (keep concise); NA if not applicable/reported,Anxiety: generalised (text)
-Case Report Form,AX,other_symptoms_established,"4. section: established disease, signs and symptoms","Other symptoms: list all that apply within 1 cell, separated by semicolons",free text,Free text (keep concise); NA if not applicable/reported,"Other symptoms: list all that apply within 1 cell, separated by semicolons 
-(example: hyperhidrosis; babinski; sensory)
+Case Report Form,AX,other_symptoms_established,"4. section: established disease, signs and symptoms","Other symptoms: list all that apply within 1 cell, separated by semicolons",free text,Free text; separate multiple entries with semicolons; NA if not available,"Other symptoms: list all that apply within 1 cell, separated by semicolons (example: hyperhidrosis; babinski; sensory)
 - hyperhidrosis
 - autonomic = other autonomic symptoms (see legend and specify in next cols)
 - hyperreflexia
@@ -176,14 +174,14 @@ Case Report Form,AX,other_symptoms_established,"4. section: established disease,
 Case Report Form,AY,other_symptoms_established_auto,"4. section: established disease, signs and symptoms",Other symptoms: autonomic (text),free text,Free text (keep concise); NA if not applicable/reported,Other symptoms: autonomic (text)
 Case Report Form,AZ,other_symptoms_established_oculo,"4. section: established disease, signs and symptoms",Other symptoms: oculomotor (text),free text,Free text (keep concise); NA if not applicable/reported,Other symptoms: oculomotor (text)
 Case Report Form,BA,other_symptoms_established_seizures,"4. section: established disease, signs and symptoms",Other symptoms: seizures (text),free text,Free text (keep concise); NA if not applicable/reported,Other symptoms: seizures (text)
-Case Report Form,BB,established_mRS,"4. section: established disease, signs and symptoms",Disability when disease fully established                                  (SPSD symptoms established; mRS,free text,0–6 (modified Rankin Scale),"Disability when disease fully established                                  (SPSD symptoms established; mRS
+Case Report Form,BB,established_mRS,"4. section: established disease, signs and symptoms",Disability when disease fully established (SPSD symptoms established; mRS,integer (0-6; NA if missing),0; 1; 2; 3; 4; 5; 6; NA,"Disability when disease fully established (SPSD symptoms established; mRS
 0 - No symptoms.
 1 - No significant disability. Able to carry out all usual activities, despite some symptoms.
 2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.
 3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).
 4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.
 5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.
-6 - Dead"
+6 - Dead Use NA if not available."
 Case Report Form,BC,course_treatment,"4. section: established disease, signs and symptoms",Course / symptoms potentially influenced by treatment (select),categorical (single-select),"none, sympt, immunotherapy, both","Course / symptoms potentially influenced by treatment (select)
 - none = no treatment
 - sympt = benzodiazepine or similar
@@ -203,33 +201,31 @@ Case Report Form,BE,antibody_status_other,"4. section: established disease, sign
 If ""other"" was selected, list as text. Otherwise, leave blank."
 Case Report Form,BF,antibody_titre,"4. section: established disease, signs and symptoms",Antibody titre,numeric,numeric,Antibody titre
 Case Report Form,BG,antibody_units,"4. section: established disease, signs and symptoms",Antibody units,free text,Free text (keep concise); NA if not applicable/reported,Antibody units
-Case Report Form,BH,antibody_tests,"4. section: established disease, signs and symptoms",Antibodies tested,free text,Free text (keep concise); NA if not applicable/reported,"Antibodies tested 
-list all antibodies that were tested, separated by semicolons"
+Case Report Form,BH,antibody_tests,"4. section: established disease, signs and symptoms",Antibodies tested,free text,Free text (keep concise); NA if not applicable/reported,"Antibodies tested list all antibodies that were tested, separated by semicolons"
 Case Report Form,BI,antibody_testsystem,"4. section: established disease, signs and symptoms",Antibody test system,free text,Free text (keep concise); NA if not applicable/reported,Antibody test system
 Case Report Form,BJ,antibody_notes,"4. section: established disease, signs and symptoms",Antibody notes,free text,Free text (keep concise); NA if not applicable/reported,"Antibody notes
 If not covered by columns to the left, give as text note. Otherwise, leave blank."
-Case Report Form,BK,CSF_status,"4. section: established disease, signs and symptoms",CSF (select),categorical (single-select),"normal, inflammatory, isolated protein elevation, not_done, antibody_present, NA, NR","CSF (select)
- - normal
+Case Report Form,BK,CSF_status,"4. section: established disease, signs and symptoms",CSF (select),categorical (single-select),"normal, inflammatory, isolated protein elevation, not_done, antibody_present, NA","CSF (select) - normal
 - inflammatory
 - isolated protein elevation
 - not_done = no CSF analysis performed
 - antibody_present = antibody present in CSF (specify Ab and titre in next cols)
-- NA = not available / NR"
+- NA = not available"
 Case Report Form,BL,CSF_antibody,"5. section: investigations (antibodies, electrophysiology, other)",CSF antibody (specify),free text,Free text (keep concise); NA if not applicable/reported,CSF antibody (specify)
 Case Report Form,BM,CSF_antibody_titre,"5. section: investigations (antibodies, electrophysiology, other)",CSF antibody titre (numeric),numeric,Numeric (as reported),CSF antibody titre (numeric)
-Case Report Form,BN,CMUA,"5. section: investigations (antibodies, electrophysiology, other)",continuous motor unit activity (CMUA),categorical,Free text (keep concise); NA if not applicable/reported,"continuous motor unit activity (CMUA)
+Case Report Form,BN,CMUA,"5. section: investigations (antibodies, electrophysiology, other)",continuous motor unit activity (CMUA),categorical (single-select),"0, 1, NA","continuous motor unit activity (CMUA)
 0 = not detected
 1 = present
-NA = no EMG, NR, unknown"
-Case Report Form,BO,exteroceptive_refl,"5. section: investigations (antibodies, electrophysiology, other)",enhanced exteroceptive reflexes,categorical,Free text (keep concise); NA if not applicable/reported,"enhanced exteroceptive reflexes
+NA = no EMG / unknown"
+Case Report Form,BO,exteroceptive_refl,"5. section: investigations (antibodies, electrophysiology, other)",enhanced exteroceptive reflexes,categorical (single-select),"0, 1, NA","enhanced exteroceptive reflexes
 0 = not detected
 1 = present
-NA = not done, NR, unknown"
-Case Report Form,BP,brainstem_refl,"5. section: investigations (antibodies, electrophysiology, other)",brainstem reflexes,categorical,Free text (keep concise); NA if not applicable/reported,"brainstem reflexes
+NA = not done / unknown"
+Case Report Form,BP,brainstem_refl,"5. section: investigations (antibodies, electrophysiology, other)",brainstem reflexes,categorical (single-select),"0, 1, NA","brainstem reflexes
 0 = not detected
 1 = present
-NA = not done, NR, unknown"
-Case Report Form,BQ,MRI_normal,"5. section: investigations (antibodies, electrophysiology, other)",MRI,categorical,Free text (keep concise); NA if not applicable/reported,"MRI
+NA = not done / unknown"
+Case Report Form,BQ,MRI_normal,"5. section: investigations (antibodies, electrophysiology, other)",MRI,categorical (single-select),"0, 1, NA","MRI
 0 = normal
 1 = abnormal (specify in next col)
 NA = no MRI performed, not reported, unclear"
@@ -237,10 +233,10 @@ Case Report Form,BR,MRI_abnormalities,"5. section: investigations (antibodies, e
 Case Report Form,BS,tu_screening,"5. section: investigations (antibodies, electrophysiology, other)",Tumour screening,categorical,Free text (keep concise); NA if not applicable/reported,"Tumour screening
 0 = normal / no tumour detected
 1 = abnormal (specify in next col)
-NA = not performed, NR"
+NA = not performed"
 Case Report Form,BT,tu_screening_abnormal,"5. section: investigations (antibodies, electrophysiology, other)",Tumour screening abnormal,free text,Free text (keep concise); NA if not applicable/reported,"Tumour screening abnormal
 specify tumour entity with text"
-Case Report Form,BU,immunotherapy,"5. section: investigations (antibodies, electrophysiology, other)",Immunotherapy (specify),free text,Free text (keep concise); NA if not applicable/reported,"Immunotherapy (specify)
+Case Report Form,BU,immunotherapy,"5. section: investigations (antibodies, electrophysiology, other)",Immunotherapy (specify),free text,Free text; separate multiple entries with semicolons; NA if not available,"Immunotherapy (specify)
 - none = not done
 - steroids
 - IVIG
@@ -251,7 +247,7 @@ Case Report Form,BU,immunotherapy,"5. section: investigations (antibodies, elect
 - HSCT
 - multiple = specify in next col
 - other = specify in next col
-- NA = unknown, NR"
+- NA = unknown If multiple items are present, separate entries with semicolons."
 Case Report Form,BV,immuntherapy_detail,6. section: treatment,"Immunotherapy in detail (please describe dose, how many cycles, intervals)",free text,Free text (keep concise); NA if not applicable/reported,"Immunotherapy in detail (please describe dose, how many cycles, intervals)"
 Case Report Form,BW,immunotherapy_effect,6. section: treatment,Effect of immunotherapy (select),categorical (single-select),"none, worsening, improvement, stabilisation, NA","Effect of immunotherapy (select)
 - none
