@@ -1,157 +1,167 @@
-# LangExtract Example Development Plan
+# LangExtract Example Compendium Plan
 
-## Objective
+## Goal
 
-Build a robust, quote-grounded example bank for LangExtract that supports:
-- individual-level (case report/case series) extraction
-- group-level (cohort/aggregate) extraction
-- publication-type detection for quality assessment
-- quality assessment extraction across study designs
+Use your manually extracted datasheet examples as the primary source of truth, pair each extracted value with supporting PDF quotes, and build a large reviewed compendium of examples for LangExtract.
 
-The immediate target is a 10-PDF, manually grounded pilot set.
+This compendium will support:
+- individual-level extraction (case report and case series content)
+- group-level extraction (cohort/aggregate content)
+- quality assessment extraction (publication-type specific)
+- publication-type classification
 
-## What I Reviewed
+## Current State (After Your Cleanup)
 
-### Local data
-- `config/prompts/examples` currently has:
-  - `02_individual_examples.json` (1 example)
-  - `02_group_examples.json` (1 example)
-  - `03_publication_type_examples.json` (2 examples)
-- `data/extraction_json/text` currently has 8 extracted papers:
-  - `11849`, `118492`, `133`, `184`, `42`, `5676`, `5718`, `975`
-- Text characteristics (current batch):
-  - character count range: about 3.3k to 52.3k per paper
-  - page count range: 1 to 11 pages
-  - OCR flagged pre-extraction in 1/8 papers
-  - one OCR-derived file shows visible artefacts/noise, so examples must include noisy text patterns.
+I rechecked the CSV exports in `examples/`:
+- trailing empty rows: none found
+- headers: now single-row/regular in the exported files
 
-### Online guidance (official and related)
-- Official LangExtract repository/documentation: few-shot examples, source grounding, long-document batching/chunking, multi-pass extraction, OpenAI provider support.
-- LangExtract medical examples: medication extraction and radiology-style structuring show quote-level grounding and class-then-attribute extraction patterns.
-- LangExtract prompt validation code/docs: warning modes exist to detect prompt/example misalignment.
-- Case report/case series quality frameworks:
-  - JBI Case Report Checklist
-  - JBI Case Series Checklist
-  - Murad-style case report/series appraisal structure (selection, ascertainment, causality, reporting)
+Current file sizes and usable row counts:
+- `examples/datasheet_examples_MC_Case_Report_Form.csv`: 288 data rows
+- `examples/datasheet_examples_MC_Case_Series_Reports.csv`: 181 data rows
+- `examples/datasheet_examples_MC_Cohorts.csv`: 23 data rows
+- `examples/datasheet_examples_MC_Observ_Cohort_Cross_sect.csv`: 16 data rows
 
-## Key Gaps To Address
+Prompt-example status remains minimal:
+- `config/prompts/examples/02_individual_examples.json`: 1 example
+- `config/prompts/examples/02_group_examples.json`: 1 example
+- `config/prompts/examples/03_publication_type_examples.json`: 2 examples
 
-1. Example coverage is currently too thin.
-- One example per major extraction mode is not enough for heterogeneous clinical literature.
+## Core Principle
 
-2. Publication-type coverage is incomplete.
-- Current publication-type examples cover only 2 categories, while your quality dictionary expects 5:
-  - `Observ Cohort & Cross sect`
-  - `Case Control`
-  - `Case Series & Reports`
-  - `Before-After (Pre-Post) N contr`
-  - `Controlled Intervention Studies`
+Do not train from synthetic examples first. Start from your manually curated rows, attach real evidence quotes from source PDFs, manually review, then convert accepted rows into LangExtract few-shot examples.
 
-3. Clinical narrative variability is not represented yet.
-- Mixed papers (individual anecdotes plus aggregate results), OCR artefacts, and vague reporting need explicit examples.
+## Target Artefacts
 
-4. Quality extraction examples are under-specified.
-- Current script dynamically builds small examples; stronger publication-type-specific few-shot examples are needed, including explicit `NA` behaviour and evidence snippets.
+### 1) Master compendium table
+Create a single review table (CSV) at:
+- `data/training_compendium/langextract_example_compendium.csv`
 
-## Example Strategy (Target State)
+Proposed columns:
+- `paper_id`
+- `source_pdf`
+- `publication_type`
+- `task` (`individual`, `group`, `quality`, `pubtype`)
+- `field`
+- `target_value`
+- `quote`
+- `page_index`
+- `quote_char_start`
+- `quote_char_end`
+- `evidence_strength` (`high`, `medium`, `low`)
+- `status` (`draft`, `reviewed`, `accepted`, `rejected`)
+- `review_notes`
 
-### A) Individual-level extraction examples (`02`)
-Create 8-12 examples covering:
-- classic single-case narrative
-- case series sentence with one patient-level detail embedded
-- atypical presentation wording
-- treatment sequence with timeline
-- outcomes with ambiguous improvement wording
-- missing data to `NA`
-- multi-item outputs requiring semicolon-separated values
-- noisy OCR-like sentence fragments
+### 2) Source registry
+Track PDF provenance and retrieval status in:
+- `data/training_compendium/pdf_source_registry.csv`
 
-### B) Group-level extraction examples (`02`)
-Create 8-12 examples covering:
-- retrospective/prospective cohorts
-- cross-sectional summaries
-- case-control aggregate reporting
-- mixed denominator formats (`n/N`, `%`, subgroup counts)
-- treatment exposure and response rates
-- study limitations and bias caveats
-- aggregate-only extraction when patient anecdotes are present
-- noisy table-like text converted to prose
+Columns:
+- `paper_id`
+- `reference`
+- `doi_or_url`
+- `pdf_filename`
+- `download_status`
+- `copyright_notes`
 
-### C) Publication-type classification examples (`03`)
-Create at least 3 examples per publication type (minimum 15 total):
-- include one clear-positive and one borderline wording per type
-- include confuser wording (for example, case-series language inside observational cohort papers)
-- ensure exact label text matches dictionary categories
+### 3) Accepted LangExtract example files
+Generate from accepted compendium rows:
+- `config/prompts/examples/02_individual_examples.json`
+- `config/prompts/examples/02_group_examples.json`
+- `config/prompts/examples/03_publication_type_examples.json`
+- `config/prompts/examples/03_quality_examples_<publication_type>.json` (recommended split)
 
-### D) Quality-assessment extraction examples (`03`)
-Create publication-type-specific examples that show:
-- binary items (`0`, `1`, `NA`) with short evidence
-- categorical quality judgement (`poor`/`fair`/`good`)
-- free-text notes where justified
-- explicit handling of "not reported", "unclear", "not applicable"
+## Phased Plan
 
-For `Case Series & Reports`, anchor examples to JBI/Murad-style quality signals:
-- clear inclusion criteria/case definition
-- standard, valid condition measurement
-- consecutive/incomplete inclusion clarity
-- demographics/clinical information completeness
-- outcome reporting completeness
-- takeaway and adverse event reporting
+### Phase 1: Normalise and map the manual datasets
+- Standardise keys across the four datasheet exports (`paper_id`, `reference`, publication type).
+- Harmonise field names to dictionary/schema names where needed.
+- Produce one merged intermediate table with source sheet tags.
 
-## 10-PDF Quote-Grounded Pilot Workflow
+### Phase 2: Acquire and register source PDFs
+- Download or collect PDFs corresponding to the manual rows.
+- Populate `pdf_source_registry.csv` with DOI/URL and file mapping.
+- Store PDFs in your raw PDF input directory for pipeline compatibility.
 
-### Phase 1: Select the 10-paper set
-- Stratify by target use:
-  - 4 case report/case series dominant papers
-  - 4 cohort/group dominant papers
-  - 2 mixed or difficult papers (OCR/noisy/ambiguous design)
-- If fewer than 10 are currently ready, start with available papers and top up after additional extraction.
+### Phase 3: Process PDFs to text JSON
+- Run `src/pipelines/01_extract_text.py` on the acquired PDFs.
+- Keep OCR fallback enabled for image-based files.
+- Verify each paper has:
+  - text JSON output
+  - stable `paper_id`
+  - usable page text coverage
 
-### Phase 2: Build a quote bank from your existing datasheet entries
-- For each extracted variable, capture:
-  - `paper_id`
-  - `publication_type`
-  - `field`
-  - `value` (your curated value)
-  - `evidence_quote` (verbatim text span)
-  - `page_index` (or page label)
-  - `notes` (why this quote supports the value)
-- Keep quotes short and directly evidential.
+### Phase 4: Build draft quote links from manual values
+- For each manual row and target field, find candidate quote spans in extracted text.
+- Record best candidate quote plus page index and character offsets.
+- Mark confidence as `high`/`medium`/`low`.
+- Save everything as `draft` in the compendium.
 
-### Phase 3: Convert quote bank into LangExtract examples
-- Create task-specific example JSON files in `config/prompts/examples`:
-  - `02_individual_examples.json`
-  - `02_group_examples.json`
-  - `03_publication_type_examples.json`
-  - `03_quality_examples_<pubtype>.json` (recommended split) or one merged file
-- Each example should use realistic text snippets and extraction labels exactly matching pipeline expectations.
+### Phase 5: Manual review loop (critical)
+- Review draft quote-value matches in batches (for example, 100 rows at a time).
+- Keep only high-quality, directly evidential mappings.
+- Set status to `accepted` or `rejected`, with notes for failures.
 
-### Phase 4: Dry-run and iterative refinement
-- Run both pipelines in `--dry-run` first.
-- Then run on the 10-paper set and review:
-  - false positives from boilerplate text
-  - missed fields (especially nuanced clinical features)
-  - incorrect `NA` assignment
-  - publication-type misclassification
-- Update examples first; update prompt text second.
+### Phase 6: Compile accepted rows into LangExtract examples
+- Convert accepted rows into task-specific few-shot JSON.
+- Ensure extraction class names match pipeline expectations exactly.
+- Preserve realistic, noisy, and ambiguous examples (not only clean sentences).
 
-### Phase 5: Acceptance criteria for the pilot
-- Publication type correct for at least 9/10 papers.
-- For each mode (individual/group/quality), extracted evidence is visibly quote-grounded and auditable.
-- Missingness coding follows project rule (`NA` only).
-- No schema-validation failures in quality records.
+### Phase 7: Validate with held-out papers
+- Reserve a held-out subset not used for example creation.
+- Run:
+  - `src/pipelines/02_LangExtract.py`
+  - `src/pipelines/03_quality_assessment.py`
+- Compare outputs to manual gold rows and record error patterns.
+
+### Phase 8: Iterate examples first, prompts second
+- First fix performance by improving example coverage/diversity.
+- Only then adjust prompt wording when a pattern cannot be solved by examples alone.
+
+## Coverage Targets
+
+### Publication-type classification (`03`)
+Minimum 3 accepted examples per quality publication type:
+- `Observ Cohort & Cross sect`
+- `Case Control`
+- `Case Series & Reports`
+- `Before-After (Pre-Post) N contr`
+- `Controlled Intervention Studies`
+
+### Individual extraction (`02`)
+At least 10 accepted examples spanning:
+- symptom onset language variation
+- treatment sequences and timing
+- outcome trajectories
+- explicit missingness (`NA`)
+- OCR noise and imperfect wording
+
+### Group extraction (`02`)
+At least 10 accepted examples spanning:
+- cohort descriptors and sample composition
+- percentages and denominators
+- treatment response summaries
+- limitations and bias language
+
+### Quality extraction (`03`)
+At least 8 accepted examples per publication type, including:
+- binary items (`0`, `1`, `NA`)
+- quality category (`poor`, `fair`, `good` where applicable)
+- free-text notes when required by the dictionary
+
+## Acceptance Criteria
+
+- Every example in prompt JSON is traceable to at least one reviewed quote in the compendium.
+- No unresolved header/key mismatches between manual data and dictionaries.
+- `NA` handling is consistent with project rules.
+- Quality outputs pass schema validation.
+- Publication-type classification is robust across held-out papers.
 
 ## Practical Notes
 
-- Keep one held-out subset (for example, 2/10 papers) for validation only.
-- Prefer examples that include ambiguity and reporting imperfections, not only clean textbook phrasing.
-- Maintain a changelog entry in `doc/JOURNAL.md` when examples/prompts are materially updated.
-
-## Suggested Deliverables
-
-1. `doc/example_quote_bank_template.csv` (simple annotation template)
-2. expanded example JSON files under `config/prompts/examples`
-3. one short evaluation note in `doc/` after the 10-paper pilot run
+- Start with a 10-PDF pilot, then scale once review workflow is stable.
+- Keep compendium rows small and auditable rather than building oversized unreviewed examples.
+- Add concise progress entries to `doc/JOURNAL.md` after each completed phase.
 
 ## References
 
@@ -160,6 +170,6 @@ For `Case Series & Reports`, anchor examples to JBI/Murad-style quality signals:
 - LangExtract medication example (raw): https://raw.githubusercontent.com/google/langextract/main/docs/examples/medication_examples.md
 - LangExtract long-text example (raw): https://raw.githubusercontent.com/google/langextract/main/docs/examples/longer_text_example.md
 - LangExtract prompt validation source (raw): https://raw.githubusercontent.com/google/langextract/main/langextract/prompting/prompt_validation.py
-- Google Health AI Foundations: LangExtract page: https://developers.google.com/health-ai-developer-foundations/libraries/langextract
+- Google Health AI Foundations: https://developers.google.com/health-ai-developer-foundations/libraries/langextract
 - JBI Case Report Checklist: https://jbi-global-wiki.refined.site/space/MANUAL/4687452/Checklist+for+Case+Reports
 - JBI Case Series Checklist: https://jbi-global-wiki.refined.site/space/MANUAL/4687453/Checklist+for+Case+Series
