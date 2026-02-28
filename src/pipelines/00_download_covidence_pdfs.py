@@ -232,17 +232,43 @@ def control_disabled(locator: Locator) -> bool:
     return any(token == "true" or "disabled" in token for token in disabled_tokens)
 
 
-def scroll_page(page: Page, settle_ms: int) -> None:
-    previous_height = -1
-    for _ in range(8):
-        height = page.evaluate("document.body.scrollHeight")
-        if height == previous_height:
-            break
-        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+def progressive_scroll_for_cards(
+    page: Page,
+    settle_ms: int,
+    seen_ids: set[str],
+    max_steps: int = 18,
+) -> list[ReferenceCard]:
+    discovered: dict[str, ReferenceCard] = {}
+    stagnant_steps = 0
+
+    for _ in range(max_steps):
+        cards = discover_reference_cards(page)
+        new_this_round = 0
+        for card in cards:
+            if card.covidence_id in seen_ids or card.covidence_id in discovered:
+                continue
+            discovered[card.covidence_id] = card
+            new_this_round += 1
+
+        if new_this_round == 0:
+            stagnant_steps += 1
+        else:
+            stagnant_steps = 0
+
+        before_y = page.evaluate("window.scrollY")
+        viewport_height = page.evaluate("window.innerHeight")
+        document_height = page.evaluate("document.body.scrollHeight")
+        target_y = min(before_y + max(600, int(viewport_height * 0.85)), document_height)
+        page.evaluate("(y) => window.scrollTo(0, y)", target_y)
         page.wait_for_timeout(settle_ms)
-        previous_height = height
-    page.evaluate("window.scrollTo(0, 0)")
-    page.wait_for_timeout(max(200, settle_ms // 2))
+        after_y = page.evaluate("window.scrollY")
+        new_document_height = page.evaluate("document.body.scrollHeight")
+
+        at_bottom = (after_y + viewport_height + 50) >= new_document_height
+        if stagnant_steps >= 3 and at_bottom:
+            break
+
+    return list(discovered.values())
 
 
 def extraction_list_ready(page: Page) -> bool:
@@ -565,6 +591,7 @@ def should_process(card_info: ReferenceCard, args: argparse.Namespace) -> bool:
 def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]:
     processed_ids: set[str] = set()
     manifest_rows: list[dict[str, Any]] = []
+    exhausted_scroll_passes = 0
 
     while True:
         wait_for_reference_list(
@@ -572,10 +599,13 @@ def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]
             timeout_ms=max(args.download_timeout_ms, 45000),
             settle_ms=args.settle_ms,
         )
-        scroll_page(page, args.settle_ms)
-        cards = discover_reference_cards(page)
+        cards = progressive_scroll_for_cards(page, args.settle_ms, processed_ids)
         if not cards:
-            raise RuntimeError("No reference cards with 'View full text' controls were found on the page.")
+            exhausted_scroll_passes += 1
+            if exhausted_scroll_passes >= 2:
+                break
+        else:
+            exhausted_scroll_passes = 0
 
         for card_info in cards:
             if card_info.covidence_id in processed_ids:
@@ -607,7 +637,14 @@ def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]
 
         next_control = next_page_control(page)
         if next_control is None:
-            break
+            if exhausted_scroll_passes >= 1:
+                break
+            page.wait_for_timeout(args.settle_ms * 2)
+            cards_after_wait = progressive_scroll_for_cards(page, args.settle_ms, processed_ids)
+            if not cards_after_wait:
+                break
+            cards = cards_after_wait
+            continue
 
         seen_before = sorted(processed_ids)
         next_control.scroll_into_view_if_needed(timeout=args.timeout_ms)
