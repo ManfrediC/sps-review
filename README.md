@@ -210,6 +210,18 @@ It focuses exclusively on **case-level data extraction and verification infrastr
 
 ---
 
+## Covidence PDF acquisition
+
+This review stores full texts in Covidence, but Covidence does not provide the project with a simple bulk PDF export step. The repository therefore includes a browser-based downloader at `src/pipelines/00_download_covidence_pdfs.py`.
+
+Workflow:
+1. Open the extraction review in Covidence.
+2. Run the downloader script.
+3. Let the script reveal each `View full text` link and save the PDF into `data/pdf_original/` as `<Covidence_ID>_<original_filename>.pdf`.
+4. Feed those PDFs into the existing text-extraction pipeline.
+
+---
+
 ## End goal
 
 A scalable, reviewer-centred system that converts narrative SPS case reports into a high-quality, fully auditable dataset suitable for systematic synthesis, while preserving methodological rigour and dramatically reducing manual workload.

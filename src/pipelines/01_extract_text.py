@@ -15,6 +15,7 @@ from tqdm import tqdm
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Toggle OCR fallback for PDFs with poor native text extraction.
@@ -132,6 +133,12 @@ def main() -> None:
             json.dumps(record, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+
+    subprocess.run(
+        [sys.executable, str(ARTIFACT_REGISTRY_SCRIPT)],
+        check=True,
+        cwd=str(REPO_ROOT),
+    )
 
 
 # Standard Python entry point.

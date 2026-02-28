@@ -5,6 +5,8 @@ import csv
 import json
 import os
 import re
+import subprocess
+import sys
 from collections import defaultdict
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -23,6 +25,7 @@ QUALITY_DICT_PATH = REPO_ROOT / "config" / "dictionaries" / "SPS_quality_diction
 QUALITY_SCHEMA_PATH = REPO_ROOT / "config" / "schema" / "SPS_quality_assessment.schema.json"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 RECORD_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
 
 # Ensure output folders exist even on first run.
 RAW_OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -892,6 +895,12 @@ def main() -> None:
         f"skipped={stats['skipped']}",
         f"failed={stats['failed']}",
     )
+    subprocess.run(
+        [sys.executable, str(ARTIFACT_REGISTRY_SCRIPT)],
+        check=True,
+        cwd=str(REPO_ROOT),
+    )
+
     if stats["failed"] > 0:
         raise SystemExit(1)
 

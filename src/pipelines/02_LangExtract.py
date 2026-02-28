@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import subprocess
+import sys
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -18,6 +20,7 @@ PROMPTS_DIR = REPO_ROOT / "config" / "prompts"
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
 
 # Ensure output folders exist even on first run.
 RAW_OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -572,6 +575,12 @@ def main() -> None:
         f"validated={stats['validated']}",
         f"skipped={stats['skipped']}",
         f"failed={stats['failed']}",
+    )
+
+    subprocess.run(
+        [sys.executable, str(ARTIFACT_REGISTRY_SCRIPT)],
+        check=True,
+        cwd=str(REPO_ROOT),
     )
 
     # Non-zero exit code if any file failed, for CI/script chaining.
