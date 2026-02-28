@@ -24,3 +24,34 @@ Session progress completed today:
 - Installed OpenAI-ready LangExtract stack in `.venv`:
   - `langextract[openai]`
   - verified imports for `langextract` and `openai`.
+
+## 28.02.2026
+
+Added a browser-based Covidence full-text acquisition workflow and started building the project-wide provenance layer linking references, PDFs, and downstream extraction artifacts.
+
+Key progress on this date:
+- Implemented `src/pipelines/00_download_covidence_pdfs.py` using Playwright against the Covidence extraction view.
+- Validated the live workflow end-to-end on Covidence:
+  - successful single-reference test for `#13799`
+  - successful batch download of 5 additional references (`5020`, `816`, `800`, `5029`, `12807`)
+- Standardized saved filenames as `<Covidence_ID>_<original_filename>.pdf` in `data/pdf_original/`.
+- Added Covidence operator documentation in:
+  - `doc/COVIDENCE_DOWNLOAD_AGENT.md`
+  - `src/pipelines/README.md`
+  - top-level `README.md`
+- Built `src/pipelines/00_build_pdf_source_registry.py` and generated `data/references/pdf_source_registry.csv` to link Covidence references to local PDF files and download status.
+- Built `src/pipelines/00_build_paper_artifact_registry.py` and generated `data/references/paper_artifact_registry.csv` as the larger source-of-truth table linking:
+  - reference metadata
+  - local PDF files
+  - text extraction JSON
+  - LangExtract raw/summary outputs
+  - quality raw/record outputs
+- Wired automatic registry refresh so the following scripts now rebuild the artifact registry after successful runs:
+  - `src/pipelines/00_download_covidence_pdfs.py`
+  - `src/pipelines/01_extract_text.py`
+  - `src/pipelines/02_LangExtract.py`
+  - `src/pipelines/03_quality_assessment.py`
+
+Observed issues / notes:
+- Covidence study cards do not hydrate immediately after page load; explicit wait logic was needed before scanning for `View full text`.
+- At this point, the artifact registry is populated mainly for reference, PDF, and text stages; LangExtract and quality columns will fill as those pipelines are run on the newly downloaded PDFs.
