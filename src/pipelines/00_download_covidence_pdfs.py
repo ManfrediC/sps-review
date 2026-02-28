@@ -30,6 +30,7 @@ DEFAULT_REVIEW_URL = "https://app.covidence.org/reviews/128778/extraction/index"
 DEFAULT_DOWNLOAD_DIR = REPO_ROOT / "data" / "pdf_original"
 DEFAULT_STATE_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "playwright_state.json"
 DEFAULT_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
+DEFAULT_LOGIN_ENV_PATH = REPO_ROOT / "env" / "covidence_login.env"
 DEFAULT_REGISTRY_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "00_build_pdf_source_registry.py"
 DEFAULT_ARTIFACT_REGISTRY_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
 
@@ -72,6 +73,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=DEFAULT_MANIFEST_PATH,
         help="JSONL manifest written after each attempted download.",
+    )
+    parser.add_argument(
+        "--login-env-path",
+        type=Path,
+        default=DEFAULT_LOGIN_ENV_PATH,
+        help="Optional .env-style file containing COVIDENCE_EMAIL and COVIDENCE_PASSWORD.",
     )
     parser.add_argument(
         "--email",
@@ -156,9 +163,37 @@ def existing_pdf_for_id(download_dir: Path, covidence_id: str) -> Path | None:
     return matches[0] if matches else None
 
 
+def load_simple_env_file(path: Path) -> dict[str, str]:
+    values: dict[str, str] = {}
+    if not path.exists():
+        return values
+
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+            value = value[1:-1]
+        if key:
+            values[key] = value
+    return values
+
+
 def collect_credentials(args: argparse.Namespace) -> tuple[str, str]:
-    email = (args.email or "").strip() or (os.environ.get("COVIDENCE_EMAIL") or "").strip()
-    password = (args.password or "").strip() or (os.environ.get("COVIDENCE_PASSWORD") or "").strip()
+    file_values = load_simple_env_file(args.login_env_path)
+    email = (
+        (args.email or "").strip()
+        or (os.environ.get("COVIDENCE_EMAIL") or "").strip()
+        or file_values.get("COVIDENCE_EMAIL", "").strip()
+    )
+    password = (
+        (args.password or "").strip()
+        or (os.environ.get("COVIDENCE_PASSWORD") or "").strip()
+        or file_values.get("COVIDENCE_PASSWORD", "").strip()
+    )
     return email, password
 
 

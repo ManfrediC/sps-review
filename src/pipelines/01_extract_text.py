@@ -15,6 +15,7 @@ from tqdm import tqdm
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
+TEXT_TRIM_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_trim_proceedings_text.py"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -43,6 +44,26 @@ def needs_ocr_from_char_counts(char_counts: list[int]) -> bool:
     return len(char_counts) > 0 and (small_pages / len(char_counts)) > 0.5
 
 
+# Count suspicious embedded control characters in extracted text.
+def suspicious_control_char_count(text: str) -> int:
+    return sum(1 for char in text if ord(char) < 32 and char not in "\n\r\t")
+
+
+# Detect native-text quality issues that justify an OCR retry.
+def text_quality_flags(pages: list[dict], char_counts: list[int]) -> list[str]:
+    flags: list[str] = []
+    if needs_ocr_from_char_counts(char_counts):
+        flags.append("low_text")
+
+    full_text = "\n".join((page.get("text") or "") for page in pages)
+    control_chars = suspicious_control_char_count(full_text)
+    total_chars = sum(char_counts)
+    if control_chars >= 10 or (control_chars > 0 and total_chars > 0 and (control_chars / total_chars) > 0.002):
+        flags.append("control_chars")
+
+    return flags
+
+
 # Extract page text plus per-page character counts from one PDF.
 def extract_pages_and_counts(pdf_path: Path) -> tuple[list[dict], list[int]]:
     # shared low-level extraction used before and after OCR
@@ -60,21 +81,21 @@ def extract_pages_and_counts(pdf_path: Path) -> tuple[list[dict], list[int]]:
 
 
 # Run OCRmyPDF to produce a text-searchable PDF copy.
-def run_ocr(input_pdf: Path, output_pdf: Path) -> None:
+def run_ocr(input_pdf: Path, output_pdf: Path, *, force_ocr: bool) -> None:
     # run OCRmyPDF via the current Python env to avoid PATH/venv mismatches
+    command = [
+        sys.executable,
+        "-m",
+        "ocrmypdf",
+        "--output-type",
+        "pdf",
+        "--rasterizer",
+        "pypdfium",
+    ]
+    command.append("--force-ocr" if force_ocr else "--skip-text")
+    command.extend([str(input_pdf), str(output_pdf)])
     subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "ocrmypdf",
-            "--skip-text",
-            "--output-type",
-            "pdf",
-            "--rasterizer",
-            "pypdfium",
-            str(input_pdf),
-            str(output_pdf),
-        ],
+        command,
         check=True,
         capture_output=True,
         text=True,
@@ -85,22 +106,31 @@ def run_ocr(input_pdf: Path, output_pdf: Path) -> None:
 def extract_pdf_text(pdf_path: Path) -> dict:
     # first pass: try native PDF text extraction
     pages, char_counts = extract_pages_and_counts(pdf_path)
-    initial_needs_ocr = needs_ocr_from_char_counts(char_counts)
+    initial_quality_flags = text_quality_flags(pages, char_counts)
+    initial_needs_ocr = bool(initial_quality_flags)
     needs_ocr = initial_needs_ocr
     ocr_applied = False
     ocr_error = None
+    ocr_mode = ""
 
     if ENABLE_OCR and initial_needs_ocr:
         # OCR to a temp file, then re-extract text from OCR output
         with tempfile.TemporaryDirectory(prefix="ocr_") as tmp_dir:
             ocr_path = Path(tmp_dir) / f"{pdf_path.stem}_ocr.pdf"
             try:
-                run_ocr(pdf_path, ocr_path)
+                force_ocr = "control_chars" in initial_quality_flags
+                ocr_mode = "force-ocr" if force_ocr else "skip-text"
+                run_ocr(pdf_path, ocr_path, force_ocr=force_ocr)
                 pages, char_counts = extract_pages_and_counts(ocr_path)
-                needs_ocr = needs_ocr_from_char_counts(char_counts)
                 ocr_applied = True
             except Exception as exc:
                 ocr_error = str(exc)
+
+    final_quality_flags = text_quality_flags(pages, char_counts)
+    needs_ocr = bool(final_quality_flags)
+    suspicious_control_chars = suspicious_control_char_count(
+        "\n".join((page.get("text") or "") for page in pages)
+    )
 
     return {
         "paper_id": paper_id_from_filename(pdf_path.name),
@@ -111,9 +141,13 @@ def extract_pdf_text(pdf_path: Path) -> dict:
         "n_pages": len(pages),
         # track OCR decision and result for debugging/auditing
         "needs_ocr_before_ocr": initial_needs_ocr,
+        "ocr_trigger_reasons": initial_quality_flags,
         "page_char_counts": char_counts,
+        "suspicious_control_chars": suspicious_control_chars,
         "needs_ocr": needs_ocr,
+        "remaining_text_quality_flags": final_quality_flags,
         "ocr_applied": ocr_applied,
+        "ocr_mode": ocr_mode,
         "ocr_error": ocr_error,
         "pages": pages,
     }
@@ -134,6 +168,11 @@ def main() -> None:
             encoding="utf-8",
         )
 
+    subprocess.run(
+        [sys.executable, str(TEXT_TRIM_SCRIPT)],
+        check=True,
+        cwd=str(REPO_ROOT),
+    )
     subprocess.run(
         [sys.executable, str(ARTIFACT_REGISTRY_SCRIPT)],
         check=True,

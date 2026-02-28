@@ -21,6 +21,7 @@ from tqdm import tqdm
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = REPO_ROOT / "config" / "prompts"
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
+TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 QUALITY_DICT_PATH = REPO_ROOT / "config" / "dictionaries" / "SPS_quality_dictionary.csv"
 QUALITY_SCHEMA_PATH = REPO_ROOT / "config" / "schema" / "SPS_quality_assessment.schema.json"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
@@ -295,6 +296,13 @@ def collect_input_files(input_dir: Path, paper_ids: list[str], limit: int) -> li
 # Load one upstream text-extraction record.
 def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def preferred_text_record_path(path: Path) -> Path:
+    trimmed_path = TEXT_TRIMMED_DIR / path.name
+    if trimmed_path.exists():
+        return trimmed_path
+    return path
 
 
 # Load and parse the JSON schema used for structured-record validation.
@@ -750,7 +758,8 @@ def process_file(
     prompt_assets: dict[str, Any],
 ) -> str:
     # Resolve IO paths for this paper and skip if outputs already exist.
-    record = load_text_record(path)
+    source_path = preferred_text_record_path(path)
+    record = load_text_record(source_path)
     paper_id = str(record.get("paper_id") or path.stem)
     out_raw = args.raw_out_dir / f"{paper_id}.json"
     out_record = args.record_out_dir / f"{paper_id}.json"
@@ -819,6 +828,8 @@ def process_file(
         "paper_id": paper_id,
         "source_filename": record.get("source_filename"),
         "source_sha256": record.get("source_sha256"),
+        "source_text_json_path": str(source_path),
+        "used_trimmed_text": source_path != path,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "publication_type": publication_type,
@@ -835,6 +846,8 @@ def process_file(
         "paper_id": paper_id,
         "source_filename": record.get("source_filename"),
         "source_sha256": record.get("source_sha256"),
+        "source_text_json_path": str(source_path),
+        "used_trimmed_text": source_path != path,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "publication_type": publication_type,

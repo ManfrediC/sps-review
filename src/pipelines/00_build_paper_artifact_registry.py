@@ -11,11 +11,13 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
+TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 LANGEXTRACT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 QUALITY_RAW_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 QUALITY_RECORD_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
 COVIENCE_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
+TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "paper_artifact_registry.csv"
 
 
@@ -75,6 +77,19 @@ def load_latest_manifest_by_id(path: Path) -> dict[str, dict[str, Any]]:
     return latest
 
 
+def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        latest: dict[str, dict[str, str]] = {}
+        for row in reader:
+            key = (row.get(key_column) or "").strip()
+            if key:
+                latest[key] = row
+    return latest
+
+
 def load_prefixed_pdfs(path: Path) -> dict[str, list[Path]]:
     pdfs_by_id: dict[str, list[Path]] = {}
     for pdf_path in sorted(path.glob("*.pdf")):
@@ -101,6 +116,7 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "reference": row["reference_present"] == "true",
         "pdf": row["pdf_present"] == "true",
         "text": row["text_json_present"] == "true",
+        "text_trimmed": row["text_trimmed_present"] == "true",
         "langextract": row["langextract_raw_present"] == "true",
         "summary": row["summary_json_present"] == "true",
         "quality_raw": row["quality_raw_present"] == "true",
@@ -126,6 +142,9 @@ def build_row(
     pdf_paths: list[Path],
     text_record: dict[str, Any],
     text_path: Path | None,
+    text_trim_record: dict[str, Any],
+    text_trim_path: Path | None,
+    text_trim_registry_row: dict[str, str],
     langextract_record: dict[str, Any],
     langextract_path: Path | None,
     summary_record: dict[str, Any],
@@ -172,6 +191,17 @@ def build_row(
         "text_needs_ocr": str(text_record.get("needs_ocr") or ""),
         "text_ocr_applied": str(text_record.get("ocr_applied") or ""),
         "text_ocr_error": str(text_record.get("ocr_error") or ""),
+        "text_trim_status": str(text_trim_registry_row.get("trim_status") or ""),
+        "text_trim_reason": str(text_trim_registry_row.get("trim_reason") or ""),
+        "text_trimmed_present": bool_text(bool(text_trim_path)),
+        "text_trimmed_path": relative_to_repo(text_trim_path) if text_trim_path else "",
+        "text_trim_method": str(text_trim_record.get("trim_method") or text_trim_registry_row.get("trim_method") or ""),
+        "text_trim_match_score": str(text_trim_record.get("match_score") or text_trim_registry_row.get("match_score") or ""),
+        "text_trim_start_page": str(text_trim_record.get("start_page_index") or text_trim_registry_row.get("start_page_index") or ""),
+        "text_trim_end_page": str(text_trim_record.get("end_page_index") or text_trim_registry_row.get("end_page_index") or ""),
+        "text_trim_source_text_json_path": str(
+            text_trim_record.get("source_text_json_path") or text_trim_registry_row.get("source_text_json_path") or ""
+        ),
         "langextract_raw_present": bool_text(bool(langextract_path)),
         "langextract_raw_path": relative_to_repo(langextract_path) if langextract_path else "",
         "langextract_model_id": str(langextract_record.get("model_id") or ""),
@@ -205,6 +235,8 @@ def build_registry_rows() -> list[dict[str, str]]:
     manifest_by_id = load_latest_manifest_by_id(COVIENCE_MANIFEST_PATH)
     pdfs_by_id = load_prefixed_pdfs(PDF_DIR)
     text_paths = load_json_paths(TEXT_DIR)
+    text_trimmed_paths = load_json_paths(TEXT_TRIMMED_DIR)
+    text_trim_registry_rows = load_csv_rows_by_id(TEXT_TRIM_REGISTRY_PATH, "paper_id")
     langextract_paths = load_json_paths(LANGEXTRACT_DIR)
     summary_paths = load_json_paths(SUMMARY_DIR)
     quality_raw_paths = load_json_paths(QUALITY_RAW_DIR)
@@ -215,6 +247,8 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(manifest_by_id)
         | set(pdfs_by_id)
         | set(text_paths)
+        | set(text_trimmed_paths)
+        | set(text_trim_registry_rows)
         | set(langextract_paths)
         | set(summary_paths)
         | set(quality_raw_paths)
@@ -224,6 +258,7 @@ def build_registry_rows() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     for paper_id in sort_paper_ids(all_ids):
         text_path = text_paths.get(paper_id)
+        text_trim_path = text_trimmed_paths.get(paper_id)
         langextract_path = langextract_paths.get(paper_id)
         summary_path = summary_paths.get(paper_id)
         quality_raw_path = quality_raw_paths.get(paper_id)
@@ -236,6 +271,9 @@ def build_registry_rows() -> list[dict[str, str]]:
                 pdf_paths=pdfs_by_id.get(paper_id, []),
                 text_record=load_json_record(text_path),
                 text_path=text_path,
+                text_trim_record=load_json_record(text_trim_path),
+                text_trim_path=text_trim_path,
+                text_trim_registry_row=text_trim_registry_rows.get(paper_id, {}),
                 langextract_record=load_json_record(langextract_path),
                 langextract_path=langextract_path,
                 summary_record=load_json_record(summary_path),
@@ -287,6 +325,15 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "text_needs_ocr",
         "text_ocr_applied",
         "text_ocr_error",
+        "text_trim_status",
+        "text_trim_reason",
+        "text_trimmed_present",
+        "text_trimmed_path",
+        "text_trim_method",
+        "text_trim_match_score",
+        "text_trim_start_page",
+        "text_trim_end_page",
+        "text_trim_source_text_json_path",
         "langextract_raw_present",
         "langextract_raw_path",
         "langextract_model_id",

@@ -24,9 +24,15 @@ data/extraction_json/*
 data/excel/*
 results/*
 
+# Covidence auth/session state and local credentials
+data/extraction_json/covidence/
+env/covidence*.env
+*.covidence.env
+
 # Allow placeholder files so folders exist in git
 !data/pdf_original/.gitkeep
 !data/pdf_annotated/.gitkeep
 !data/extraction_json/.gitkeep
+!data/extraction_json/covidence/.gitkeep
 !data/excel/.gitkeep
 !results/.gitkeep

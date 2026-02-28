@@ -18,6 +18,7 @@ from tqdm import tqdm
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = REPO_ROOT / "config" / "prompts"
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
+TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
@@ -294,6 +295,13 @@ def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def preferred_text_record_path(path: Path) -> Path:
+    trimmed_path = TEXT_TRIMMED_DIR / path.name
+    if trimmed_path.exists():
+        return trimmed_path
+    return path
+
+
 # Convert page-wise text into one model input while preserving page markers.
 def normalise_text(record: dict[str, Any]) -> str:
     # Join pages into one document while preserving page boundaries.
@@ -399,7 +407,8 @@ def should_run_group(args: argparse.Namespace) -> bool:
 # Process a single paper JSON: extract snippets, then save raw + summary outputs.
 def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, Any]) -> str:
     # Read source record and derive output locations from paper_id.
-    record = load_text_record(path)
+    source_path = preferred_text_record_path(path)
+    record = load_text_record(source_path)
     paper_id = str(record.get("paper_id") or path.stem)
     out_raw = args.raw_out_dir / f"{paper_id}.json"
     out_summary = args.summary_out_dir / f"{paper_id}.json"
@@ -501,6 +510,8 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
         "paper_id": paper_id,
         "source_filename": record.get("source_filename"),
         "source_sha256": record.get("source_sha256"),
+        "source_text_json_path": str(source_path),
+        "used_trimmed_text": source_path != path,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "extraction_modes": extraction_runs,
@@ -515,6 +526,8 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
         "paper_id": paper_id,
         "source_filename": record.get("source_filename"),
         "source_sha256": record.get("source_sha256"),
+        "source_text_json_path": str(source_path),
+        "used_trimmed_text": source_path != path,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "extraction_modes": summary_runs,
