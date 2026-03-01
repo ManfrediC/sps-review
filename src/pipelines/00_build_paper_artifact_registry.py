@@ -40,6 +40,25 @@ def join_values(values: list[str]) -> str:
     return " | ".join(value for value in values if value)
 
 
+def normalize_compare_text(value: str) -> str:
+    lowered = value.strip().lower()
+    return " ".join("".join(char if char.isalnum() else " " for char in lowered).split())
+
+
+def compare_text_flag(left: str, right: str) -> str:
+    if not left.strip() or not right.strip():
+        return ""
+    normalized_left = normalize_compare_text(left)
+    normalized_right = normalize_compare_text(right)
+    return "true" if normalized_left == normalized_right else "false"
+
+
+def compare_year_flag(left: str, right: str) -> str:
+    if not left.strip() or not right.strip():
+        return ""
+    return "true" if left.strip() == right.strip() else "false"
+
+
 def sort_paper_ids(ids: set[str]) -> list[str]:
     def key(value: str) -> tuple[int, int | str]:
         stripped = value.strip()
@@ -154,6 +173,12 @@ def build_row(
     quality_record: dict[str, Any],
     quality_record_path: Path | None,
 ) -> dict[str, str]:
+    export_title = (reference_row.get("Title") or "").strip()
+    export_authors = (reference_row.get("Authors") or "").strip()
+    export_year = (reference_row.get("Published Year") or "").strip()
+    card_title = str(manifest_row.get("card_publication_title") or "").strip()
+    card_authors = str(manifest_row.get("card_authors_full") or "").strip()
+    card_year = str(manifest_row.get("card_year") or "").strip()
     row = {
         "paper_id": paper_id,
         "covidence_id": (reference_row.get("Covidence") or paper_id).strip(),
@@ -161,9 +186,9 @@ def build_row(
         "reference_match_status": "matched_reference" if reference_row else "orphan_artifact",
         "ref": (reference_row.get("Ref") or "").strip(),
         "study": (reference_row.get("Study") or "").strip(),
-        "title": (reference_row.get("Title") or "").strip(),
-        "authors": (reference_row.get("Authors") or "").strip(),
-        "published_year": (reference_row.get("Published Year") or "").strip(),
+        "title": export_title,
+        "authors": export_authors,
+        "published_year": export_year,
         "published_month": (reference_row.get("Published Month") or "").strip(),
         "journal": (reference_row.get("Journal") or "").strip(),
         "volume": (reference_row.get("Volume") or "").strip(),
@@ -173,6 +198,14 @@ def build_row(
         "doi": (reference_row.get("DOI") or "").strip(),
         "notes": (reference_row.get("Notes") or "").strip(),
         "tags": (reference_row.get("Tags") or "").strip(),
+        "card_identifier_text": str(manifest_row.get("card_identifier_text") or "").strip(),
+        "card_first_author": str(manifest_row.get("card_first_author") or "").strip(),
+        "card_year": card_year,
+        "card_authors_full": card_authors,
+        "card_publication_title": card_title,
+        "card_title_matches_export": compare_text_flag(export_title, card_title),
+        "card_authors_match_export": compare_text_flag(export_authors, card_authors),
+        "card_year_matches_export": compare_year_flag(export_year, card_year),
         "pdf_present": bool_text(bool(pdf_paths)),
         "pdf_file_count": str(len(pdf_paths)),
         "pdf_filenames": join_values([path.name for path in pdf_paths]),
@@ -307,6 +340,14 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "doi",
         "notes",
         "tags",
+        "card_identifier_text",
+        "card_first_author",
+        "card_year",
+        "card_authors_full",
+        "card_publication_title",
+        "card_title_matches_export",
+        "card_authors_match_export",
+        "card_year_matches_export",
         "pdf_present",
         "pdf_file_count",
         "pdf_filenames",

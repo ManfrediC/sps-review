@@ -2,7 +2,7 @@
 
 AI-assisted, human-verified data extraction pipeline for stiff-person-spectrum (SPS) case reports and case series.
 
-The review team has already completed inclusion/exclusion. The limiting step is **high-volume, dual-reviewer data extraction** into a large Excel table. This repository provides a reproducible workflow that shifts effort from manual searching/typing to **rapid verification** of structured extractions against **colour-coded highlights** in the original PDFs.
+This repository aims to provide a reproducible workflow that shifts effort from manual searching/typing to **rapid verification** of structured extractions against **colour-coded highlights** in the original PDFs.
 
 ---
 

@@ -45,6 +45,11 @@ class ReferenceCard:
     tag: str
     covidence_id: str
     label: str
+    identifier_text: str
+    first_author: str
+    year: str
+    authors_full: str
+    publication_title: str
 
 
 def parse_args() -> argparse.Namespace:
@@ -134,6 +139,24 @@ def ensure_runtime_dirs(args: argparse.Namespace) -> None:
 def manifest_append(path: Path, payload: dict[str, Any]) -> None:
     with path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
+def print_manifest_row(payload: dict[str, Any]) -> None:
+    message = json.dumps(payload, ensure_ascii=False)
+    try:
+        print(message, flush=True)
+    except UnicodeEncodeError:
+        print(message.encode("ascii", "backslashreplace").decode("ascii"), flush=True)
+
+
+def card_manifest_fields(card_info: ReferenceCard) -> dict[str, str]:
+    return {
+        "card_identifier_text": card_info.identifier_text,
+        "card_first_author": card_info.first_author,
+        "card_year": card_info.year,
+        "card_authors_full": card_info.authors_full,
+        "card_publication_title": card_info.publication_title,
+    }
 
 
 def refresh_pdf_source_registry(skip_refresh: bool) -> None:
@@ -271,6 +294,34 @@ def progressive_scroll_for_cards(
     return list(discovered.values())
 
 
+def load_more_control(page: Page) -> Locator | None:
+    candidates = [
+        ("button", r"^load more$"),
+        ("link", r"^load more$"),
+        ("button", r"load more"),
+        ("link", r"load more"),
+    ]
+    for role, pattern in candidates:
+        control = visible_named_control(page, role, pattern)
+        if control is not None and not control_disabled(control):
+            return control
+    locator = page.locator("div[class*='loadMore'] button, div[class*='loadMore'] a")
+    control = maybe_first_visible(locator)
+    if control is not None and not control_disabled(control):
+        return control
+    return None
+
+
+def click_load_more_if_available(page: Page, settle_ms: int, timeout_ms: int) -> bool:
+    control = load_more_control(page)
+    if control is None:
+        return False
+    control.scroll_into_view_if_needed(timeout=timeout_ms)
+    control.click(timeout=timeout_ms)
+    page.wait_for_timeout(max(settle_ms * 4, 5000))
+    return True
+
+
 def extraction_list_ready(page: Page) -> bool:
     try:
         body_text = page.locator("body").inner_text(timeout=2000)
@@ -292,63 +343,123 @@ def discover_reference_cards(page: Page) -> list[ReferenceCard]:
     raw_cards = page.evaluate(
         """
         () => {
-          const controls = Array.from(document.querySelectorAll("button, a")).filter((el) => {
-            const text = (el.innerText || "").trim();
-            return /view full text/i.test(text);
-          });
-          const seen = new Set();
-          let counter = 0;
-
-          function pickLabel(lines) {
-            const ignore = [
-              /^#\\s*\\d+/i,
-              /^view full text$/i,
-              /\\.pdf$/i,
-              /^\\d{4}$/i,
-            ];
-            for (const line of lines) {
-              if (!line) {
-                continue;
-              }
-              if (ignore.some((pattern) => pattern.test(line))) {
-                continue;
-              }
-              return line.slice(0, 240);
-            }
-            return "";
+          function cleanText(value) {
+            return (value || "").replace(/\\s+/g, " ").trim();
           }
 
-          const cards = [];
-          for (const control of controls) {
-            let container = null;
-            let covidenceId = null;
-            for (let node = control.parentElement; node; node = node.parentElement) {
-              const text = (node.innerText || "").trim();
-              const match = text.match(/#\\s*(\\d{2,})\\b/);
-              if (!match) {
+          function queryFirst(root, selectors) {
+            for (const selector of selectors) {
+              const element = root.querySelector(selector);
+              if (element) {
+                return element;
+              }
+            }
+            return null;
+          }
+
+          function firstAuthorFromAuthors(authorsFull) {
+            if (!authorsFull) {
+              return "";
+            }
+            const firstChunk = authorsFull
+              .split(";")
+              .map((part) => cleanText(part))
+              .find(Boolean) || "";
+            if (!firstChunk) {
+              return "";
+            }
+            const surname = firstChunk.split(",")[0];
+            return cleanText(surname || firstChunk);
+          }
+
+          const articleSelectors = [
+            "article[aria-labelledby^='study-']",
+            "article[class*='StudyListItem-module__container']",
+            "article[class*='StudyListItem-StudyListItem-module__container']",
+          ];
+          const articles = [];
+          const seenArticles = new Set();
+          for (const selector of articleSelectors) {
+            for (const article of document.querySelectorAll(selector)) {
+              if (seenArticles.has(article)) {
                 continue;
               }
-              container = node;
-              covidenceId = match[1];
-              if (text.length <= 12000) {
-                break;
-              }
+              seenArticles.add(article);
+              articles.push(article);
             }
-            if (!container || !covidenceId || seen.has(covidenceId)) {
+          }
+
+          const seenIds = new Set();
+          let counter = 0;
+          const cards = [];
+
+          for (const article of articles) {
+            const identifierElement = queryFirst(article, [
+              "[class*='StudyListItem-module__identifier']",
+              "[class*='StudyListItem-StudyListItem-module__identifier']",
+              "[id^='study-']",
+            ]);
+            const identifierText = cleanText(identifierElement?.innerText || "");
+            const idMatch = identifierText.match(/#\\s*(\\d{2,})\\b/);
+            if (!idMatch) {
               continue;
             }
-            seen.add(covidenceId);
+
+            const referenceBlock = queryFirst(article, ["[data-testid='reference']"]);
+            const authorsFull = cleanText(
+              queryFirst(referenceBlock || article, [
+                "[class*='StudyReference-module__authors']",
+                "[class*='__authors']",
+              ])?.innerText || ""
+            );
+            const publicationTitle = cleanText(
+              queryFirst(referenceBlock || article, [
+                "[class*='StudyReference-module__title']",
+                "h2",
+              ])?.innerText || ""
+            );
+
+            const articleControls = Array.from(article.querySelectorAll("button, a"));
+            const hasFullTextToggle = articleControls.some((element) => {
+              const text = cleanText(element.innerText || "");
+              return /(view|hide) full text/i.test(text);
+            });
+            const hasDocumentsSection = Boolean(
+              article.querySelector("section[data-testid='documents'] a, a[class*='Documents-module__link']")
+            );
+            if (!hasFullTextToggle && !hasDocumentsSection) {
+              continue;
+            }
+
+            const authorYearMatch = identifierText.match(/#\\s*\\d+\\s*[\\u2013-]\\s*(.*?)\\s+(\\d{4})\\b/);
+            let firstAuthor = authorYearMatch ? cleanText(authorYearMatch[1]) : "";
+            let year = authorYearMatch ? cleanText(authorYearMatch[2]) : "";
+            if (!firstAuthor) {
+              firstAuthor = firstAuthorFromAuthors(authorsFull);
+            }
+            if (!year) {
+              const referenceText = cleanText(referenceBlock?.innerText || "");
+              const yearMatch = referenceText.match(/\\b(19|20)\\d{2}\\b/);
+              year = yearMatch ? yearMatch[0] : "";
+            }
+
+            const covidenceId = idMatch[1];
+            if (seenIds.has(covidenceId)) {
+              continue;
+            }
+            seenIds.add(covidenceId);
             counter += 1;
             const tag = `codex-covidence-ref-${counter}`;
-            container.setAttribute("data-codex-ref-card", tag);
-            const lines = (container.innerText || "")
-              .split(/\\r?\\n/)
-              .map((line) => line.trim())
-              .filter(Boolean);
+            article.setAttribute("data-codex-ref-card", tag);
             cards.push({
               tag,
               covidence_id: covidenceId,
-              label: pickLabel(lines),
+              label: publicationTitle || authorsFull || identifierText,
+              identifier_text: identifierText,
+              first_author: firstAuthor,
+              year,
+              authors_full: authorsFull,
+              publication_title: publicationTitle,
             });
           }
           return cards;
@@ -360,6 +471,11 @@ def discover_reference_cards(page: Page) -> list[ReferenceCard]:
             tag=item["tag"],
             covidence_id=item["covidence_id"],
             label=item.get("label", ""),
+            identifier_text=item.get("identifier_text", ""),
+            first_author=item.get("first_author", ""),
+            year=item.get("year", ""),
+            authors_full=item.get("authors_full", ""),
+            publication_title=item.get("publication_title", ""),
         )
         for item in raw_cards
     ]
@@ -385,6 +501,7 @@ def wait_for_pdf_link(page: Page, card: Locator, page_url: str, timeout_ms: int)
     deadline = time.time() + (timeout_ms / 1000)
     while time.time() < deadline:
         preferred_scopes = [
+            card.locator("section[data-testid='documents'] a"),
             card.locator("li[class*='Documents-module__documentContainer'] a"),
             card.locator("a[class*='Documents-module__link']"),
             card.locator("a"),
@@ -540,6 +657,7 @@ def process_reference(page: Page, args: argparse.Namespace, card_info: Reference
     existing = existing_pdf_for_id(args.download_dir, card_info.covidence_id)
     if existing is not None and not args.overwrite:
         return {
+            **card_manifest_fields(card_info),
             "covidence_id": card_info.covidence_id,
             "label": card_info.label,
             "status": "skipped_existing",
@@ -568,6 +686,7 @@ def process_reference(page: Page, args: argparse.Namespace, card_info: Reference
         raise RuntimeError("Download reported success but the PDF was not saved.")
 
     return {
+        **card_manifest_fields(card_info),
         "covidence_id": card_info.covidence_id,
         "label": card_info.label,
         "status": "downloaded",
@@ -620,6 +739,7 @@ def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]
                 row = process_reference(page, args, card_info)
             except Exception as exc:
                 row = {
+                    **card_manifest_fields(card_info),
                     "covidence_id": card_info.covidence_id,
                     "label": card_info.label,
                     "status": "failed",
@@ -631,17 +751,21 @@ def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]
                     "finished_at_utc": now_utc_iso(),
                 }
             manifest_append(args.manifest_path, row)
-            print(json.dumps(row, ensure_ascii=False), flush=True)
+            print_manifest_row(row)
             manifest_rows.append(row)
             processed_ids.add(card_info.covidence_id)
 
         next_control = next_page_control(page)
         if next_control is None:
+            if click_load_more_if_available(page, args.settle_ms, args.timeout_ms):
+                continue
             if exhausted_scroll_passes >= 1:
                 break
             page.wait_for_timeout(args.settle_ms * 2)
             cards_after_wait = progressive_scroll_for_cards(page, args.settle_ms, processed_ids)
             if not cards_after_wait:
+                if click_load_more_if_available(page, args.settle_ms, args.timeout_ms):
+                    continue
                 break
             cards = cards_after_wait
             continue

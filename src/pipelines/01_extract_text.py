@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import subprocess
@@ -21,6 +22,33 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Toggle OCR fallback for PDFs with poor native text extraction.
 ENABLE_OCR = True
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Extract PDF text with OCR fallback and optionally trim proceedings PDFs."
+    )
+    parser.add_argument(
+        "--input-dir",
+        type=Path,
+        default=PDF_DIR,
+        help="Directory containing source PDFs.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=OUT_DIR,
+        help="Directory where text extraction JSON files are written.",
+    )
+    parser.add_argument(
+        "--paper-id",
+        action="append",
+        default=[],
+        help="Specific paper ID to process. Repeat for multiple IDs.",
+    )
+    parser.add_argument("--limit", type=int, default=0, help="Maximum number of PDFs to process.")
+    parser.add_argument("--force", action="store_true", help="Overwrite existing text JSON outputs.")
+    return parser.parse_args()
 
 # Extract paper ID from filename (digits before first underscore).
 def paper_id_from_filename(name: str) -> str:
@@ -153,23 +181,45 @@ def extract_pdf_text(pdf_path: Path) -> dict:
     }
 
 
+def collect_input_pdfs(input_dir: Path, paper_ids: list[str], limit: int) -> list[Path]:
+    pdfs = sorted(input_dir.glob("*.pdf"))
+    if paper_ids:
+        wanted = {paper_id.strip() for paper_id in paper_ids if paper_id.strip()}
+        pdfs = [pdf_path for pdf_path in pdfs if paper_id_from_filename(pdf_path.name) in wanted]
+    if limit and limit > 0:
+        pdfs = pdfs[:limit]
+    return pdfs
+
+
 # Batch all PDFs in PDF_DIR and write one JSON record per paper_id.
 def main() -> None:
-    pdfs = sorted(PDF_DIR.glob("*.pdf"))
+    args = parse_args()
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+
+    pdfs = collect_input_pdfs(args.input_dir, args.paper_id, args.limit)
     if not pdfs:
-        raise SystemExit(f"No PDFs found in: {PDF_DIR}")
+        raise SystemExit(f"No PDFs found in: {args.input_dir}")
 
     # Process every PDF and save a structured text extraction JSON.
+    processed_ids: list[str] = []
     for pdf_path in tqdm(pdfs, desc="Extracting PDF text"):
+        paper_id = paper_id_from_filename(pdf_path.name)
+        out_path = args.output_dir / f"{paper_id}.json"
+        if out_path.exists() and not args.force:
+            processed_ids.append(paper_id)
+            continue
         record = extract_pdf_text(pdf_path)
-        out_path = OUT_DIR / f"{record['paper_id']}.json"
+        processed_ids.append(str(record["paper_id"]))
         out_path.write_text(
             json.dumps(record, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
 
+    trim_command = [sys.executable, str(TEXT_TRIM_SCRIPT)]
+    for paper_id in processed_ids:
+        trim_command.extend(["--paper-id", paper_id])
     subprocess.run(
-        [sys.executable, str(TEXT_TRIM_SCRIPT)],
+        trim_command,
         check=True,
         cwd=str(REPO_ROOT),
     )

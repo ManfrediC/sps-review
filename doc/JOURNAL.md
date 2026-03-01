@@ -79,7 +79,63 @@ Added a browser-based Covidence full-text acquisition workflow and started build
 
 - Added a concise script-level overview in `src/README.md` describing the purpose and order of all pipeline scripts under `src/`.
 
+### Bulk Covidence Run
+
+- Hardened `src/pipelines/00_download_covidence_pdfs.py` for large runs by improving lazy-list traversal.
+- Added progressive scrolling so the downloader waits for newly hydrated study cards instead of assuming the first rendered slice is the full list.
+- Added support for Covidence's `Load more` button when scrolling alone no longer reveals additional references.
+- Increased the wait time after clicking `Load more` because Covidence can take several seconds to render the next section of the list.
+- Added Unicode-safe manifest logging so long runs do not crash on non-ASCII author or title characters.
+- Ran the downloader across the full review and reached the end of the available Covidence list.
+- Re-ran targeted retries for the unresolved references after the full pass.
+- Rebuilt both registries after the bulk run:
+- `data/references/pdf_source_registry.csv`
+- `data/references/paper_artifact_registry.csv`
+
+### Remaining Manual PDF Queue
+
+- Most references now have a local PDF in `data/pdf_original/`.
+- A small unresolved set remains where Covidence either did not expose a PDF link or repeated timeouts occurred during link reveal.
+- Created `data/references/missing_pdf_manual_queue.csv` as the handoff list for manual PDF acquisition.
+- That queue contains the remaining unresolved Covidence IDs, titles, authors, and the intended filename prefix for manual placement into `data/pdf_original/`.
+
 ### Notes
 
 - Covidence study cards do not hydrate immediately after page load; explicit wait logic was needed before scanning for `View full text`.
 - The artifact registry was initially populated mainly for reference, PDF, and text stages; LangExtract and quality columns will fill as those pipelines are run on the downloaded PDFs.
+
+Reviewed the results of the large Covidence acquisition run and performed a first quality pass on extracted text and proceedings trimming.
+
+### Extraction And Trimming Batch Review
+
+- Ran `src/pipelines/01_extract_text.py` with OCR fallback on a first batch of 50 PDFs.
+- Ran `src/pipelines/00_trim_proceedings_text.py` on the same batch via the extraction pipeline.
+- Generated `data/references/text_trim_registry.csv` for that batch and refreshed `data/references/paper_artifact_registry.csv`.
+- Created `data/references/first_50_quality_review.csv` to classify the first 50 papers as:
+- `ok`
+- `proceedings_manual_review`
+- `proceedings_trimmed_auto`
+- `pdf_reference_mismatch_suspected`
+
+### Quality Findings
+
+- OCR fallback behaved as intended on the first 50-PDF batch.
+- Proceedings detection also behaved conservatively as intended.
+- One proceedings record was trimmed automatically with acceptable confidence.
+- Several large proceedings PDFs were flagged for manual review rather than auto-trimmed.
+- The main issue in the batch was not extraction failure but apparent mismatch between downloaded PDF assignment and reference metadata.
+
+### Key Conclusion
+
+- The current Covidence ID extraction in `src/pipelines/00_download_covidence_pdfs.py` is faulty.
+- Manual checking showed cases where:
+- the PDF title matched the PDF content,
+- the paper itself belongs to the reference set,
+- but the numeric Covidence ID prefixed to the filename was incorrect.
+- This means the bug is at the download/acquisition layer rather than in OCR, text extraction, or proceedings trimming.
+
+### Implications
+
+- The current filename prefix cannot be treated as a fully reliable source of truth for all downloaded PDFs.
+- Suspect files need manual or semi-automated reconciliation against the reference export before downstream extraction results can be trusted at scale.
+- The downloader will need a stricter Covidence card-to-ID binding strategy before future bulk download runs.

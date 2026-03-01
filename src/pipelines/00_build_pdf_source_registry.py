@@ -95,6 +95,23 @@ def join_names(paths: list[Path]) -> str:
     return " | ".join(path.name for path in paths)
 
 
+def normalize_compare_text(value: str) -> str:
+    lowered = value.strip().lower()
+    return re.sub(r"[^a-z0-9]+", " ", lowered).strip()
+
+
+def compare_text_flag(left: str, right: str) -> str:
+    if not left.strip() or not right.strip():
+        return ""
+    return "true" if normalize_compare_text(left) == normalize_compare_text(right) else "false"
+
+
+def compare_year_flag(left: str, right: str) -> str:
+    if not left.strip() or not right.strip():
+        return ""
+    return "true" if left.strip() == right.strip() else "false"
+
+
 def download_status_for(local_paths: list[Path], manifest_row: dict[str, Any]) -> str:
     if len(local_paths) == 1:
         return "downloaded"
@@ -112,16 +129,30 @@ def registry_row(
     manifest_row: dict[str, Any],
 ) -> dict[str, str]:
     covidence_id = (reference_row.get("Covidence") or "").strip()
+    export_title = (reference_row.get("Title") or "").strip()
+    export_authors = (reference_row.get("Authors") or "").strip()
+    export_year = (reference_row.get("Published Year") or "").strip()
+    card_title = str(manifest_row.get("card_publication_title", "")).strip()
+    card_authors = str(manifest_row.get("card_authors_full", "")).strip()
+    card_year = str(manifest_row.get("card_year", "")).strip()
     return {
         "covidence_id": covidence_id,
         "ref": (reference_row.get("Ref") or "").strip(),
         "study": (reference_row.get("Study") or "").strip(),
-        "title": (reference_row.get("Title") or "").strip(),
-        "authors": (reference_row.get("Authors") or "").strip(),
-        "published_year": (reference_row.get("Published Year") or "").strip(),
+        "title": export_title,
+        "authors": export_authors,
+        "published_year": export_year,
         "journal": (reference_row.get("Journal") or "").strip(),
         "doi": (reference_row.get("DOI") or "").strip(),
         "tags": (reference_row.get("Tags") or "").strip(),
+        "card_identifier_text": str(manifest_row.get("card_identifier_text", "")).strip(),
+        "card_first_author": str(manifest_row.get("card_first_author", "")).strip(),
+        "card_year": card_year,
+        "card_authors_full": card_authors,
+        "card_publication_title": card_title,
+        "card_title_matches_export": compare_text_flag(export_title, card_title),
+        "card_authors_match_export": compare_text_flag(export_authors, card_authors),
+        "card_year_matches_export": compare_year_flag(export_year, card_year),
         "pdf_filename": join_names(local_paths),
         "pdf_path_relative": join_paths(local_paths, absolute=False),
         "pdf_path_absolute": join_paths(local_paths, absolute=True),
@@ -134,7 +165,7 @@ def registry_row(
     }
 
 
-def unmatched_row(path: Path) -> dict[str, str]:
+def unmatched_row(path: Path, manifest_row: dict[str, Any]) -> dict[str, str]:
     match = PDF_ID_RE.match(path.name)
     covidence_id = match.group("covidence_id") if match else ""
     return {
@@ -147,6 +178,14 @@ def unmatched_row(path: Path) -> dict[str, str]:
         "journal": "",
         "doi": "",
         "tags": "",
+        "card_identifier_text": str(manifest_row.get("card_identifier_text", "")).strip(),
+        "card_first_author": str(manifest_row.get("card_first_author", "")).strip(),
+        "card_year": str(manifest_row.get("card_year", "")).strip(),
+        "card_authors_full": str(manifest_row.get("card_authors_full", "")).strip(),
+        "card_publication_title": str(manifest_row.get("card_publication_title", "")).strip(),
+        "card_title_matches_export": "",
+        "card_authors_match_export": "",
+        "card_year_matches_export": "",
         "pdf_filename": path.name,
         "pdf_path_relative": relative_to_repo(path),
         "pdf_path_absolute": str(path.resolve()),
@@ -178,7 +217,8 @@ def build_registry(args: argparse.Namespace) -> list[dict[str, str]]:
     extra_paths.extend(unmatched_local_pdfs)
 
     for path in sorted(extra_paths):
-        rows.append(unmatched_row(path))
+        covidence_id = path.stem.split("_", 1)[0].strip()
+        rows.append(unmatched_row(path, manifest_by_id.get(covidence_id, {})))
 
     return rows
 
@@ -195,6 +235,14 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "journal",
         "doi",
         "tags",
+        "card_identifier_text",
+        "card_first_author",
+        "card_year",
+        "card_authors_full",
+        "card_publication_title",
+        "card_title_matches_export",
+        "card_authors_match_export",
+        "card_year_matches_export",
         "pdf_filename",
         "pdf_path_relative",
         "pdf_path_absolute",
