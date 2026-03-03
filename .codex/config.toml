@@ -1,0 +1,18 @@
+# Project-scoped Codex settings for unattended Windows-native runs.
+# Canonical pipeline outputs remain under data/ and data/references/.
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "disabled"
+
+[sandbox_workspace_write]
+network_access = true
+exclude_slash_tmp = false
+exclude_tmpdir_env_var = false
+writable_roots = []
+
+[shell_environment_policy]
+ignore_default_excludes = true
+
+[features]
+shell_snapshot = true

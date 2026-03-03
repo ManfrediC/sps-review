@@ -1,0 +1,51 @@
+# Windows-native overnight rules for the sps-review repository.
+# Keep the policy tight: allow local repo work, block system-level or
+# interactive commands that can hang or destabilise an unattended run.
+
+prefix_rule(
+    pattern=["sudo"],
+    decision="forbidden",
+    justification="Overnight runs must never require sudo.",
+)
+
+prefix_rule(pattern=["apt"], decision="forbidden", justification="No system package installs in this repo.")
+prefix_rule(pattern=["apt-get"], decision="forbidden", justification="No system package installs in this repo.")
+prefix_rule(pattern=["dpkg"], decision="forbidden", justification="No system package installs in this repo.")
+prefix_rule(pattern=["snap"], decision="forbidden", justification="No system package installs in this repo.")
+prefix_rule(pattern=["winget"], decision="forbidden", justification="Do not change the host system during unattended runs.")
+prefix_rule(pattern=["choco"], decision="forbidden", justification="Do not change the host system during unattended runs.")
+prefix_rule(pattern=["scoop"], decision="forbidden", justification="Do not change the host system during unattended runs.")
+prefix_rule(pattern=["wsl"], decision="forbidden", justification="This repo is intentionally Windows-native.")
+
+prefix_rule(pattern=["vim"], decision="forbidden", justification="Interactive editor blocked for unattended runs.")
+prefix_rule(pattern=["nano"], decision="forbidden", justification="Interactive editor blocked for unattended runs.")
+prefix_rule(pattern=["less"], decision="forbidden", justification="Interactive pager blocked for unattended runs.")
+prefix_rule(pattern=["more"], decision="forbidden", justification="Interactive pager blocked for unattended runs.")
+prefix_rule(pattern=["notepad"], decision="forbidden", justification="Interactive editor blocked for unattended runs.")
+prefix_rule(pattern=["code"], decision="prompt", justification="Launching a GUI should stay explicit.")
+
+prefix_rule(pattern=["rm", "-rf"], decision="forbidden", justification="Recursive deletes are blocked.")
+prefix_rule(pattern=["rm", "-r"], decision="forbidden", justification="Recursive deletes are blocked.")
+
+prefix_rule(pattern=["git", "status"], decision="allow")
+prefix_rule(pattern=["git", "diff"], decision="allow")
+prefix_rule(pattern=["git", "log"], decision="allow")
+prefix_rule(pattern=["git", "show"], decision="allow")
+prefix_rule(pattern=["git", "rev-parse"], decision="allow")
+
+prefix_rule(pattern=["git", "add"], decision="forbidden", justification="No git writes during unattended runs.")
+prefix_rule(pattern=["git", "commit"], decision="forbidden", justification="No git writes during unattended runs.")
+prefix_rule(pattern=["git", "push"], decision="forbidden", justification="No git writes during unattended runs.")
+prefix_rule(pattern=["git", "pull"], decision="forbidden", justification="No git network operations during unattended runs.")
+prefix_rule(pattern=["git", "fetch"], decision="forbidden", justification="No git network operations during unattended runs.")
+prefix_rule(pattern=["git", "reset"], decision="forbidden", justification="No history rewriting during unattended runs.")
+prefix_rule(pattern=["git", "clean"], decision="forbidden", justification="No destructive workspace cleaning during unattended runs.")
+
+prefix_rule(pattern=["python"], decision="allow")
+prefix_rule(pattern=["py"], decision="allow")
+prefix_rule(pattern=[".\\.venv\\Scripts\\python.exe"], decision="allow")
+
+prefix_rule(pattern=["Get-ChildItem"], decision="allow")
+prefix_rule(pattern=["Get-Content"], decision="allow")
+prefix_rule(pattern=["Select-String"], decision="allow")
+prefix_rule(pattern=["Test-Path"], decision="allow")
