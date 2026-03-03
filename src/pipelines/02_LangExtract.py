@@ -13,15 +13,20 @@ from typing import Any
 import langextract as lx
 from tqdm import tqdm
 
+from _source_routing import load_csv_rows_by_id, resolve_source_row, truthy
+
 
 # Resolve repository-relative paths once so CLI defaults stay stable.
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = REPO_ROOT / "config" / "prompts"
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
+CASE_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
+SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 
 # Ensure output folders exist even on first run.
 RAW_OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -272,6 +277,11 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="OpenAI API key; defaults to OPENAI_API_KEY env var.",
     )
+    parser.add_argument(
+        "--ignore-routing",
+        action="store_true",
+        help="Ignore reviewed routing and process files according to explicit CLI include flags only.",
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--max-char-buffer", type=int, default=1200)
     parser.add_argument("--batch-length", type=int, default=8)
@@ -300,6 +310,48 @@ def preferred_text_record_path(path: Path) -> Path:
     if trimmed_path.exists():
         return trimmed_path
     return path
+
+
+def load_case_split_record(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def resolve_route(
+    paper_id: str,
+    heuristic_rows: dict[str, dict[str, str]],
+    manual_rows: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    return resolve_source_row(
+        paper_id=paper_id,
+        heuristic_row=heuristic_rows.get(paper_id, {}),
+        manual_row=manual_rows.get(paper_id, {}),
+    )
+
+
+def requested_modes(args: argparse.Namespace, route: dict[str, str]) -> tuple[bool, bool, bool]:
+    if args.ignore_routing:
+        individual_enabled = should_run_individual(args)
+        group_enabled = should_run_group(args)
+        return individual_enabled, group_enabled, False
+
+    route_mode = route.get("resolved_langextract_mode") or "manual_review"
+    route_eligible = truthy(route.get("resolved_langextract_eligible"))
+    if not route_eligible or route_mode in {"skip", "manual_review"}:
+        return False, False, False
+
+    if route_mode == "individual_case_split":
+        if args.include_group:
+            return False, True, False
+        return False, False, True
+
+    if args.include_individual or args.include_group:
+        return should_run_individual(args), should_run_group(args), False
+
+    if route_mode == "individual":
+        return True, False, False
+    if route_mode == "group":
+        return False, True, False
+    return True, True, False
 
 
 # Convert page-wise text into one model input while preserving page markers.
@@ -362,6 +414,21 @@ def build_overall_summary(
     return " ".join(parts).strip()
 
 
+def summarise_extractions(
+    extractions: list[dict[str, Any]],
+    section_order: list[str],
+    labels: dict[str, str],
+) -> tuple[dict[str, str], str]:
+    grouped = section_texts(extractions, section_order)
+    rendered = render_summary(grouped, section_order)
+    overall = build_overall_summary(
+        rendered_sections=rendered,
+        section_order=section_order,
+        labels=labels,
+    )
+    return rendered, overall
+
+
 # Run LangExtract with OpenAI settings and return one annotated document.
 def run_langextract(
     text: str,
@@ -404,18 +471,160 @@ def should_run_group(args: argparse.Namespace) -> bool:
     return args.include_group
 
 
+def process_case_split_file(
+    paper_id: str,
+    split_path: Path,
+    out_raw: Path,
+    out_summary: Path,
+    args: argparse.Namespace,
+    prompt_assets: dict[str, Any],
+    route: dict[str, str],
+) -> str:
+    split_record = load_case_split_record(split_path)
+    cases = split_record.get("cases") or []
+    if not cases:
+        raise ValueError(f"No case segments found in {split_path}")
+
+    if args.dry_run:
+        return "validated"
+
+    case_runs_raw: list[dict[str, Any]] = []
+    case_runs_summary: list[dict[str, Any]] = []
+    shared_context = (split_record.get("shared_context_text") or "").strip()
+
+    for case in cases:
+        case_text = (case.get("text") or "").strip()
+        if shared_context:
+            case_text = f"{shared_context}\n\n{case_text}".strip()
+        annotated = run_langextract(
+            text=case_text,
+            args=args,
+            prompt_description=prompt_assets["individual_prompt"],
+            examples=prompt_assets["individual_examples"],
+        )
+        individual_extractions = [
+            serialise_extraction(x) for x in (annotated.extractions or [])
+        ]
+        rendered, overall = summarise_extractions(
+            individual_extractions,
+            INDIVIDUAL_SECTION_ORDER,
+            {
+                "individual_presentation": "Individual presentation",
+                "individual_diagnostics": "Individual diagnostics",
+                "individual_treatment": "Individual treatment",
+                "individual_outcome": "Individual outcome",
+                "individual_limitations": "Individual limitations",
+            },
+        )
+        case_runs_raw.append(
+            {
+                "case_index": case.get("case_index"),
+                "case_label": case.get("case_label"),
+                "start_page_index": case.get("start_page_index"),
+                "end_page_index": case.get("end_page_index"),
+                "marker_text": case.get("marker_text"),
+                "text_char_count": len(case_text),
+                "extraction_count": len(individual_extractions),
+                "extractions": individual_extractions,
+            }
+        )
+        case_runs_summary.append(
+            {
+                "case_index": case.get("case_index"),
+                "case_label": case.get("case_label"),
+                "start_page_index": case.get("start_page_index"),
+                "end_page_index": case.get("end_page_index"),
+                "section_summaries": rendered,
+                "overall_summary": overall,
+                "extraction_count": len(individual_extractions),
+            }
+        )
+
+    raw_payload = {
+        "paper_id": paper_id,
+        "source_filename": split_record.get("source_filename"),
+        "source_sha256": split_record.get("source_sha256"),
+        "source_text_json_path": split_record.get("source_text_json_path"),
+        "used_trimmed_text": bool(split_record.get("used_trimmed_text")),
+        "source_case_series_split_path": str(split_path),
+        "route": route,
+        "model_id": args.model_id,
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "extraction_modes": {
+            "individual_case_split": {
+                "case_count": len(case_runs_raw),
+                "extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_raw),
+            }
+        },
+        "case_runs": case_runs_raw,
+        "total_extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_raw),
+    }
+    out_raw.write_text(json.dumps(raw_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    summary_payload = {
+        "paper_id": paper_id,
+        "source_filename": split_record.get("source_filename"),
+        "source_sha256": split_record.get("source_sha256"),
+        "source_text_json_path": split_record.get("source_text_json_path"),
+        "used_trimmed_text": bool(split_record.get("used_trimmed_text")),
+        "source_case_series_split_path": str(split_path),
+        "route": route,
+        "model_id": args.model_id,
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "extraction_modes": {
+            "individual_case_split": {
+                "case_count": len(case_runs_summary),
+                "extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_summary),
+            }
+        },
+        "case_runs": case_runs_summary,
+        "total_extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_summary),
+    }
+    out_summary.write_text(
+        json.dumps(summary_payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return "processed"
+
+
 # Process a single paper JSON: extract snippets, then save raw + summary outputs.
-def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, Any]) -> str:
-    # Read source record and derive output locations from paper_id.
-    source_path = preferred_text_record_path(path)
-    record = load_text_record(source_path)
-    paper_id = str(record.get("paper_id") or path.stem)
+def process_file(
+    path: Path,
+    args: argparse.Namespace,
+    prompt_assets: dict[str, Any],
+    heuristic_rows: dict[str, dict[str, str]],
+    manual_rows: dict[str, dict[str, str]],
+) -> str:
+    paper_id = path.stem
+    route = resolve_route(paper_id, heuristic_rows, manual_rows)
     out_raw = args.raw_out_dir / f"{paper_id}.json"
     out_summary = args.summary_out_dir / f"{paper_id}.json"
 
     # Skip work when outputs already exist unless user forces overwrite.
     if not args.force and out_raw.exists() and out_summary.exists():
         return "skipped"
+
+    individual_enabled, group_enabled, split_enabled = requested_modes(args, route)
+    if not individual_enabled and not group_enabled and not split_enabled:
+        return "skipped_by_routing"
+
+    if split_enabled:
+        split_path = CASE_SPLIT_DIR / f"{paper_id}.json"
+        if not split_path.exists():
+            return "skipped_missing_case_split"
+        return process_case_split_file(
+            paper_id=paper_id,
+            split_path=split_path,
+            out_raw=out_raw,
+            out_summary=out_summary,
+            args=args,
+            prompt_assets=prompt_assets,
+            route=route,
+        )
+
+    # Read source record and derive output locations from paper_id.
+    source_path = preferred_text_record_path(path)
+    record = load_text_record(source_path)
 
     # Build model input text and guard against empty inputs.
     text = normalise_text(record)
@@ -425,10 +634,6 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
     # Dry-run validates inputs without spending tokens.
     if args.dry_run:
         return "validated"
-
-    # Resolve which extraction modes are active for this run.
-    individual_enabled = should_run_individual(args)
-    group_enabled = should_run_group(args)
 
     extraction_runs: dict[str, Any] = {}
     summary_runs: dict[str, Any] = {}
@@ -444,16 +649,10 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
         individual_extractions = [
             serialise_extraction(x) for x in (individual_annotated.extractions or [])
         ]
-        individual_grouped = section_texts(
-            individual_extractions, INDIVIDUAL_SECTION_ORDER
-        )
-        individual_rendered = render_summary(
-            individual_grouped, INDIVIDUAL_SECTION_ORDER
-        )
-        individual_overall = build_overall_summary(
-            rendered_sections=individual_rendered,
-            section_order=INDIVIDUAL_SECTION_ORDER,
-            labels={
+        individual_rendered, individual_overall = summarise_extractions(
+            individual_extractions,
+            INDIVIDUAL_SECTION_ORDER,
+            {
                 "individual_presentation": "Individual presentation",
                 "individual_diagnostics": "Individual diagnostics",
                 "individual_treatment": "Individual treatment",
@@ -482,12 +681,10 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
         group_extractions = [
             serialise_extraction(x) for x in (group_annotated.extractions or [])
         ]
-        group_grouped = section_texts(group_extractions, GROUP_SECTION_ORDER)
-        group_rendered = render_summary(group_grouped, GROUP_SECTION_ORDER)
-        group_overall = build_overall_summary(
-            rendered_sections=group_rendered,
-            section_order=GROUP_SECTION_ORDER,
-            labels={
+        group_rendered, group_overall = summarise_extractions(
+            group_extractions,
+            GROUP_SECTION_ORDER,
+            {
                 "group_design": "Group design",
                 "group_characteristics": "Group characteristics",
                 "group_findings": "Group findings",
@@ -512,6 +709,7 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
         "source_sha256": record.get("source_sha256"),
         "source_text_json_path": str(source_path),
         "used_trimmed_text": source_path != path,
+        "route": route,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "extraction_modes": extraction_runs,
@@ -528,6 +726,7 @@ def process_file(path: Path, args: argparse.Namespace, prompt_assets: dict[str, 
         "source_sha256": record.get("source_sha256"),
         "source_text_json_path": str(source_path),
         "used_trimmed_text": source_path != path,
+        "route": route,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "extraction_modes": summary_runs,
@@ -562,6 +761,8 @@ def main() -> None:
     args.raw_out_dir.mkdir(parents=True, exist_ok=True)
     args.summary_out_dir.mkdir(parents=True, exist_ok=True)
     prompt_assets = load_prompt_assets(args.prompt_dir)
+    heuristic_rows = load_csv_rows_by_id(SOURCE_CATEGORISATION_PATH, "paper_id")
+    manual_rows = load_csv_rows_by_id(SOURCE_MANUAL_REVIEW_PATH, "paper_id")
 
     # Resolve input set before running.
     files = collect_input_files(args.input_dir, args.paper_id, args.limit)
@@ -569,12 +770,19 @@ def main() -> None:
         raise SystemExit(f"No input JSON files found in: {args.input_dir}")
 
     # Track outcomes to give a clear end-of-run status.
-    stats = {"processed": 0, "validated": 0, "skipped": 0, "failed": 0}
+    stats = {
+        "processed": 0,
+        "validated": 0,
+        "skipped": 0,
+        "skipped_by_routing": 0,
+        "skipped_missing_case_split": 0,
+        "failed": 0,
+    }
 
     # Continue past single-paper failures so batch runs are resilient.
     for path in tqdm(files, desc="LangExtract summaries"):
         try:
-            outcome = process_file(path, args, prompt_assets)
+            outcome = process_file(path, args, prompt_assets, heuristic_rows, manual_rows)
             stats[outcome] = stats.get(outcome, 0) + 1
         except Exception as exc:  # keep batch running even if one paper fails
             # Surface per-paper errors and continue the batch.
@@ -587,6 +795,8 @@ def main() -> None:
         f"processed={stats['processed']}",
         f"validated={stats['validated']}",
         f"skipped={stats['skipped']}",
+        f"skipped_by_routing={stats['skipped_by_routing']}",
+        f"skipped_missing_case_split={stats['skipped_missing_case_split']}",
         f"failed={stats['failed']}",
     )
 
