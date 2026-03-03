@@ -22,12 +22,33 @@ This folder contains the project pipeline scripts. They are designed to be run f
    - Finds the target abstract/publication by fuzzy title and author matching.
    - Writes focused text records to `data/extraction_json/text_trimmed/{paper_id}.json`.
 
-5. `pipelines/02_LangExtract.py`
-   - Reads extracted text and runs LangExtract with OpenAI models.
+5. `pipelines/01a_source_categorisation.py`
+   - Categorises each source after extraction as single-case, multi-case, group study, conference abstract, review, non-clinical, or manual-review.
    - Prefers trimmed proceedings text when available.
+   - Writes `data/references/source_categorisation_registry.csv`.
+   - The heuristic output is complemented by a reviewed override ledger in `data/references/source_categorisation_manual_review.csv` for papers that required case-by-case adjudication.
+
+6. `pipelines/00_validate_proceedings_text.py`
+   - Validates proceedings-derived text by searching the extracted text for the target title and author surnames.
+   - Confirms whether trimmed proceedings text appears to contain the correct abstract or whether manual follow-up is still needed.
+   - Writes `data/references/proceedings_text_qc_registry.csv`.
+
+7. `pipelines/01b_split_case_series.py`
+   - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
+   - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
+   - Writes `data/references/case_series_split_registry.csv`.
+
+8. `pipelines/00_build_langextract_examples.py`
+   - Rebuilds the LangExtract few-shot JSONs in `config/prompts/examples/`.
+   - Uses curated examples from `examples/` and validates that each prompt example maps back to a real curated row.
+
+9. `pipelines/02_LangExtract.py`
+   - Reads extracted text and runs LangExtract with OpenAI models.
+   - Uses reviewed source routing by default.
+   - Prefers trimmed proceedings text when available and uses case-series split artifacts for reviewed multi-case papers.
    - Writes raw extractions to `data/extraction_json/langextract/` and summaries to `data/extraction_json/summary/`.
 
-6. `pipelines/03_quality_assessment.py`
+10. `pipelines/03_quality_assessment.py`
    - Reads extracted text and runs publication-type detection plus dictionary-driven quality extraction.
    - Prefers trimmed proceedings text when available.
    - Writes raw outputs to `data/extraction_json/quality/raw/` and structured records to `data/extraction_json/quality/records/`.
@@ -36,11 +57,60 @@ This folder contains the project pipeline scripts. They are designed to be run f
 
 - `pipelines/00_build_paper_artifact_registry.py`
   - Builds `data/references/paper_artifact_registry.csv`.
-  - This is the project-wide source-of-truth table linking references, PDFs, extracted text, trimmed text, LangExtract outputs, summaries, and quality records.
+  - This is the project-wide source-of-truth table linking references, PDFs, extracted text, trimmed text, reviewed routing, proceedings QC, case-series splits, LangExtract outputs, summaries, and quality records.
 
 - `pipelines/00_screen_text_extraction.py`
   - Screens extracted text for likely issues such as proceedings-like documents, noisy website chrome, or suspicious text-quality patterns.
   - Writes `data/references/text_screening_registry.csv`.
+
+- `pipelines/01a_source_categorisation.py`
+  - Builds a source-routing registry for downstream LangExtract and case-series splitting.
+  - Adds stage-level provenance into the master artifact registry.
+  - Produces the heuristic routing table `data/references/source_categorisation_registry.csv`.
+  - Manual adjudications are stored separately in `data/references/source_categorisation_manual_review.csv`.
+  - The manual file records:
+    - the original heuristic category/subtype/confidence
+    - the reviewed final category/subtype
+    - short review notes
+    - a batch marker and timestamp
+    - a `pdf_content_alignment_tag` such as `appears_matched`, `uncertain`, or `likely_wrong_pdf_attached`
+  - The manual-review queue for this corpus has been exhausted, so the override ledger now covers all papers that were originally marked `manual_review_required`.
+  - Uses the following top-level categories:
+    - `single_case_report`: one patient, case-level extraction target
+    - `case_series_or_multi_case`: multiple individual cases, split before LangExtract
+    - `observational_group_study`: cohort or cross-sectional group paper without per-case extraction target
+    - `interventional_study`: controlled or therapeutic group study
+    - `conference_abstract`: abstract/supplement/proceedings source, often needing trimming or manual review
+    - `lab_heavy_clinical_or_translational`: clinically relevant group paper dominated by laboratory/antibody/method signals
+    - `non_clinical_basic_science`: mechanistic/basic-science paper that should not enter clinical LangExtract
+    - `review_article`: review-style paper, usually excluded from case-level extraction
+    - `unclear_manual_review`: routing was not reliable enough to automate
+
+- `pipelines/00_validate_proceedings_text.py`
+  - Runs a separate proceedings QC pass after trimming/categorisation.
+  - Searches proceedings-derived text for the reference title and author surnames.
+  - Writes `data/references/proceedings_text_qc_registry.csv`.
+  - Key statuses include:
+    - `trimmed_match_confirmed`
+    - `trimmed_partial_match`
+    - `trimmed_mismatch_suspected`
+    - `full_text_localised_untrimmed`
+    - `full_text_partial_match`
+    - `not_localised`
+
+- `pipelines/01b_split_case_series.py`
+  - Uses reviewed routing to find case-series papers that should be split before LangExtract.
+  - Only auto-splits when explicit case/patient headings make the split stable.
+  - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/`.
+  - Writes `data/references/case_series_split_registry.csv`.
+
+- `pipelines/00_build_langextract_examples.py`
+  - Rebuilds the prompt examples from curated project sheets in `examples/`.
+  - Writes:
+    - `config/prompts/examples/02_individual_examples.json`
+    - `config/prompts/examples/02_group_examples.json`
+    - `config/prompts/examples/03_publication_type_examples.json`
+  - Adds provenance fields such as `source_sheet`, `paper_id`, and `case_id` where applicable.
 
 - `pipelines/README.md`
   - More detailed per-script notes and run examples for the pipeline folder.
@@ -49,4 +119,5 @@ This folder contains the project pipeline scripts. They are designed to be run f
 
 - `paper_id` is the Covidence ID and is the key used across all downstream artifacts.
 - The full extracted text is preserved even when a trimmed proceedings version exists.
+- Reviewed source routing should be preferred over the heuristic source-categorisation output whenever a paper appears in `data/references/source_categorisation_manual_review.csv`.
 - Registry builders are meant to keep all generated artifacts traceable from one table.

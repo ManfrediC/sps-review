@@ -104,6 +104,8 @@ Added a browser-based Covidence full-text acquisition workflow and started build
 - Covidence study cards do not hydrate immediately after page load; explicit wait logic was needed before scanning for `View full text`.
 - The artifact registry was initially populated mainly for reference, PDF, and text stages; LangExtract and quality columns will fill as those pipelines are run on the downloaded PDFs.
 
+## 01.03.2026
+
 Reviewed the results of the large Covidence acquisition run and performed a first quality pass on extracted text and proceedings trimming.
 
 ### Extraction And Trimming Batch Review
@@ -139,3 +141,215 @@ Reviewed the results of the large Covidence acquisition run and performed a firs
 - The current filename prefix cannot be treated as a fully reliable source of truth for all downloaded PDFs.
 - Suspect files need manual or semi-automated reconciliation against the reference export before downstream extraction results can be trusted at scale.
 - The downloader will need a stricter Covidence card-to-ID binding strategy before future bulk download runs.
+
+### Covidence ID Repair
+
+- Inspected a saved Covidence HTML example and confirmed that the correct scoping unit for each study card is the enclosing `article` element.
+- Patched `src/pipelines/00_download_covidence_pdfs.py` to stop climbing arbitrary DOM ancestors when extracting IDs.
+- Replaced the old logic with article-scoped extraction of:
+- `covidence_id`
+- `card_identifier_text`
+- `card_first_author`
+- `card_year`
+- `card_authors_full`
+- `card_publication_title`
+- Tightened PDF-link discovery so the downloader now looks inside the local uploaded-documents section within the same article card.
+
+### Registry Enrichment
+
+- Extended `src/pipelines/00_build_pdf_source_registry.py` and `src/pipelines/00_build_paper_artifact_registry.py` to carry the live Covidence card metadata alongside the exported reference metadata.
+- Added comparison flags between the reference export and the live Covidence card metadata so mismatches are easier to spot in downstream QA.
+
+### Tainted Artifact Reset
+
+- Deleted the generated artifacts that depended on the faulty Covidence ID extraction:
+- `data/extraction_json/covidence/download_manifest.jsonl`
+- `data/references/pdf_source_registry.csv`
+- `data/references/paper_artifact_registry.csv`
+- `data/references/text_trim_registry.csv`
+- `data/references/first_50_quality_review.csv`
+- `data/references/missing_pdf_manual_queue.csv`
+- all generated JSON files under `data/extraction_json/text/`
+- all generated JSON files under `data/extraction_json/text_trimmed/`
+- Kept the source reference exports:
+- `data/references/sps_references_export.csv`
+- `data/references/sps_references_export.ris`
+
+### Clean Validation
+
+- Re-ran a clean 10-PDF Covidence batch with the patched downloader and manually verified the card-to-PDF mapping.
+- Extended the validation to a second clean 10-PDF batch and again confirmed that the ID-to-PDF mapping was correct.
+- This established that the article-scoped Covidence ID extraction was behaving correctly before scaling up.
+
+### Full Clean Covidence Run
+
+- Re-ran the downloader across the full Covidence review with the patched ID extraction logic.
+- Completed a clean full download with:
+- `1027` downloaded PDFs
+- `5` failed references
+- `7` missing references
+- Regenerated:
+- `data/references/pdf_source_registry.csv`
+- `data/references/paper_artifact_registry.csv`
+- Confirmed that the old wrong-ID prefix issue was not seen in the manual spot-checks after the repair.
+
+### Full Text Extraction
+
+- Ran `src/pipelines/01_extract_text.py` across the clean full PDF set.
+- Completed extraction for all `1027` downloaded PDFs.
+- Regenerated:
+- `data/references/text_trim_registry.csv`
+- `data/references/paper_artifact_registry.csv`
+- OCR fallback triggered on `52` files.
+- Proceedings auto-trimming succeeded on `15` files.
+- `102` proceedings-like files remained flagged as `manual_review_required`.
+
+### Extraction Quality Review
+
+- Spot-checked a diagnostic subset of extracted outputs across:
+- OCR-triggered files
+- generic-filename PDFs
+- auto-trimmed proceedings files
+- large proceedings/program PDFs
+- Findings:
+- OCR rescue cases were materially improved and readable.
+- Generic-filename PDFs such as `1610_1610.pdf` still mapped to the correct reference and extracted correctly.
+- Auto-trimmed proceedings outputs were usable when confidence was high, though some conference-entry cases contained only title/author blocks and little or no abstract body text.
+- The main remaining downstream risk is not basic extraction failure but the `102` large proceedings/program PDFs that still require manual review or further trimming refinement.
+
+### Proceedings Manual Review Queue
+
+- Created `data/references/proceedings_manual_review_queue.csv`.
+- The queue contains the `102` proceedings records still marked `manual_review_required`.
+- It links each paper to:
+- reference metadata
+- source PDF/text JSON paths
+- trimming diagnostics and match scores
+- blank `manual_status` and `manual_notes` columns for manual adjudication.
+
+## 03.03.2026
+
+Completed the manual source-categorisation review pass and documented the reviewed override layer for downstream routing.
+
+### Manual Source Categorisation Review
+
+- Worked through all `287` papers that had been flagged `manual_review_required` by `src/pipelines/01a_source_categorisation.py`.
+- Reviewed them case by case against the extracted text and, where needed, the PDF content.
+- Used title/author search rather than full-document reading for proceedings and supplement records.
+- Recorded every adjudication in `data/references/source_categorisation_manual_review.csv`.
+
+### Review Ledger
+
+- The manual review ledger stores:
+- heuristic category/subtype/confidence from the automatic pass
+- final reviewed category/subtype
+- short decision notes
+- review batch and timestamp
+- `pdf_content_alignment_tag`
+
+### Alignment Tagging
+
+- Used explicit alignment tags to separate routing uncertainty from attachment-quality concerns:
+- `appears_matched`
+- `uncertain`
+- `likely_wrong_pdf_attached`
+- This preserves suspected PDF/reference attachment problems as a separate signal instead of hiding them inside the source-category decision.
+
+### Categorisation Outcome
+
+- The manual source-categorisation queue is now exhausted:
+- `287` reviewed
+- `0` remaining
+- The reviewed override file now covers the full set of papers that originally required manual adjudication.
+- Many of the ambiguous heuristic cases resolved into:
+- `single_case_report`
+- `conference_abstract`
+- `lab_heavy_clinical_or_translational`
+- `observational_group_study`
+- `case_series_or_multi_case`
+- A small number remained explicitly uncertain because the local file was only an index sheet or otherwise incomplete.
+
+### Documentation
+
+- Updated `src/README.md` to document the reviewed override layer and the meaning of the categorisation outputs.
+- Updated `src/pipelines/README.md` to document:
+- the distinction between heuristic categorisation and manual overrides
+- the meaning of `pdf_content_alignment_tag`
+- the rule that reviewed categories should override heuristic routing when present
+
+### Queued Follow-Up
+
+- Deferred a separate proceedings QC pass until after categorisation:
+- search each proceedings-derived extracted text by title and/or authors
+- confirm that the correct abstract block was captured
+- flag any incorrect or incomplete trimmed extractions for correction
+
+### Proceedings Text QC
+
+- Implemented `src/pipelines/00_validate_proceedings_text.py`.
+- Added a separate proceedings QC layer that searches proceedings-derived text by title and author surnames rather than relying on trimming output alone.
+- Generated `data/references/proceedings_text_qc_registry.csv`.
+- Current QC distribution:
+- `2` `trimmed_match_confirmed`
+- `13` `trimmed_partial_match`
+- `194` `full_text_partial_match`
+- `25` `not_localised`
+- This makes the proceedings follow-up explicit and auditable instead of leaving it implicit in the trim registry.
+
+### Case-Series Splitting
+
+- Implemented `src/pipelines/01b_split_case_series.py`.
+- Integrated reviewed routing into the splitter so only reviewed/eligible multi-case sources are considered.
+- Tightened the splitter after live inspection:
+- generic `patients` / `cases` headings are no longer accepted as case boundaries
+- a split now requires the first detected heading to represent the first case
+- Generated:
+- `data/references/case_series_split_registry.csv`
+- `data/extraction_json/text_case_series_split/`
+- Current split distribution:
+- `37` `split_auto`
+- `79` `manual_review_required`
+- This keeps the splitter conservative enough for downstream individual extraction.
+
+### LangExtract Example Builder
+
+- Implemented `src/pipelines/00_build_langextract_examples.py`.
+- Rebuilt the prompt example JSON files from curated project examples in `examples/`.
+- Added provenance into the example payloads via `source_sheet`, `paper_id`, and `case_id` where relevant.
+- Current prompt example counts:
+- `7` individual examples
+- `5` group examples
+- `5` publication-type examples
+
+### Routing Integration
+
+- Added a shared routing helper in `src/pipelines/_source_routing.py` and normalised subtype-like manual category values.
+- Updated `src/pipelines/00_build_paper_artifact_registry.py` so the master registry now carries:
+- resolved reviewed routing
+- proceedings QC fields
+- case-series split fields
+- Updated `src/pipelines/02_LangExtract.py` so it now:
+- respects reviewed routing by default
+- skips ineligible/manual-review papers unless explicitly overridden
+- uses case-series split artifacts for reviewed multi-case papers
+
+### Controlled LangExtract Pilot
+
+- Ran a controlled real LangExtract pilot on:
+- `12013` as a reviewed individual paper
+- `3139` as a reviewed group paper
+- `1097` as an auto-split case series
+- The route-aware pilot completed successfully with `processed=3`, `failed=0`.
+- Verified that:
+- `12013` ran only the individual extraction mode
+- `3139` ran only the group extraction mode
+- `1097` used the new case-series split artifact and produced per-case extraction output
+
+### Documentation
+
+- Updated `src/README.md` and `src/pipelines/README.md` to document:
+- proceedings QC
+- case-series splitting
+- example rebuilding from curated sheets
+- route-aware LangExtract behavior
+- updated overnight-stage coverage in `src/pipelines/99_overnight_run.py`
