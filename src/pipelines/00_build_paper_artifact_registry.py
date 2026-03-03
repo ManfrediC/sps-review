@@ -6,18 +6,25 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from _source_routing import resolve_source_row
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
+CASE_SERIES_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
 LANGEXTRACT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 QUALITY_RAW_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 QUALITY_RECORD_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
 COVIENCE_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
+SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
+SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
+PROCEEDINGS_QC_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
+CASE_SERIES_SPLIT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "case_series_split_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "paper_artifact_registry.csv"
 
 
@@ -136,6 +143,9 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "pdf": row["pdf_present"] == "true",
         "text": row["text_json_present"] == "true",
         "text_trimmed": row["text_trimmed_present"] == "true",
+        "source_categorisation": row["source_categorisation_present"] == "true",
+        "proceedings_qc": row["proceedings_qc_present"] == "true",
+        "case_series_split": row["case_series_split_present"] == "true",
         "langextract": row["langextract_raw_present"] == "true",
         "summary": row["summary_json_present"] == "true",
         "quality_raw": row["quality_raw_present"] == "true",
@@ -164,6 +174,11 @@ def build_row(
     text_trim_record: dict[str, Any],
     text_trim_path: Path | None,
     text_trim_registry_row: dict[str, str],
+    source_categorisation_row: dict[str, str],
+    source_manual_review_row: dict[str, str],
+    proceedings_qc_row: dict[str, str],
+    case_series_split_row: dict[str, str],
+    case_series_split_path: Path | None,
     langextract_record: dict[str, Any],
     langextract_path: Path | None,
     summary_record: dict[str, Any],
@@ -179,6 +194,11 @@ def build_row(
     card_title = str(manifest_row.get("card_publication_title") or "").strip()
     card_authors = str(manifest_row.get("card_authors_full") or "").strip()
     card_year = str(manifest_row.get("card_year") or "").strip()
+    resolved_source = resolve_source_row(
+        paper_id=paper_id,
+        heuristic_row=source_categorisation_row,
+        manual_row=source_manual_review_row,
+    )
     row = {
         "paper_id": paper_id,
         "covidence_id": (reference_row.get("Covidence") or paper_id).strip(),
@@ -235,6 +255,51 @@ def build_row(
         "text_trim_source_text_json_path": str(
             text_trim_record.get("source_text_json_path") or text_trim_registry_row.get("source_text_json_path") or ""
         ),
+        "source_categorisation_present": bool_text(bool(source_categorisation_row)),
+        "source_category": str(source_categorisation_row.get("source_category") or ""),
+        "source_subtype": str(source_categorisation_row.get("source_subtype") or ""),
+        "source_classification_confidence": str(source_categorisation_row.get("classification_confidence") or ""),
+        "source_likely_case_count": str(source_categorisation_row.get("likely_case_count") or ""),
+        "source_contains_individual_level_data": str(source_categorisation_row.get("contains_individual_level_data") or ""),
+        "source_contains_group_level_data": str(source_categorisation_row.get("contains_group_level_data") or ""),
+        "source_case_series_split_candidate": str(source_categorisation_row.get("case_series_split_candidate") or ""),
+        "source_preferred_langextract_mode": str(source_categorisation_row.get("preferred_langextract_mode") or ""),
+        "source_langextract_eligible": str(source_categorisation_row.get("langextract_eligible") or ""),
+        "source_manual_review_required": str(source_categorisation_row.get("manual_review_required") or ""),
+        "source_recommended_next_action": str(source_categorisation_row.get("recommended_next_action") or ""),
+        "source_categorisation_reason": str(source_categorisation_row.get("categorisation_reason") or ""),
+        "source_categorised_at_utc": str(source_categorisation_row.get("categorised_at_utc") or ""),
+        "source_manual_override_present": str(resolved_source.get("manual_override_present") or ""),
+        "resolved_source_category": str(resolved_source.get("resolved_source_category") or ""),
+        "resolved_source_subtype": str(resolved_source.get("resolved_source_subtype") or ""),
+        "resolved_source_confidence": str(resolved_source.get("resolved_source_confidence") or ""),
+        "resolved_source_route_source": str(resolved_source.get("resolved_source_route_source") or ""),
+        "resolved_source_notes": str(resolved_source.get("resolved_source_notes") or ""),
+        "resolved_source_alignment_tag": str(resolved_source.get("resolved_source_alignment_tag") or ""),
+        "resolved_review_batch": str(resolved_source.get("resolved_review_batch") or ""),
+        "resolved_reviewed_at_utc": str(resolved_source.get("resolved_reviewed_at_utc") or ""),
+        "resolved_case_series_split_candidate": str(resolved_source.get("resolved_case_series_split_candidate") or ""),
+        "resolved_langextract_mode": str(resolved_source.get("resolved_langextract_mode") or ""),
+        "resolved_langextract_eligible": str(resolved_source.get("resolved_langextract_eligible") or ""),
+        "proceedings_qc_present": bool_text(bool(proceedings_qc_row)),
+        "proceedings_qc_status": str(proceedings_qc_row.get("qc_status") or ""),
+        "proceedings_qc_manual_follow_up_required": str(
+            proceedings_qc_row.get("manual_follow_up_required") or ""
+        ),
+        "proceedings_qc_validated_text_json_path": str(
+            proceedings_qc_row.get("validated_text_json_path") or ""
+        ),
+        "proceedings_qc_best_match_page_index": str(proceedings_qc_row.get("best_match_page_index") or ""),
+        "proceedings_qc_title_score": str(proceedings_qc_row.get("title_score") or ""),
+        "proceedings_qc_author_score": str(proceedings_qc_row.get("author_score") or ""),
+        "proceedings_qc_combined_score": str(proceedings_qc_row.get("combined_score") or ""),
+        "proceedings_qc_checked_at_utc": str(proceedings_qc_row.get("checked_at_utc") or ""),
+        "case_series_split_present": bool_text(bool(case_series_split_path)),
+        "case_series_split_status": str(case_series_split_row.get("split_status") or ""),
+        "case_series_split_reason": str(case_series_split_row.get("split_reason") or ""),
+        "case_series_split_method": str(case_series_split_row.get("split_method") or ""),
+        "case_series_split_case_count": str(case_series_split_row.get("case_count") or ""),
+        "case_series_split_text_json_path": relative_to_repo(case_series_split_path) if case_series_split_path else "",
         "langextract_raw_present": bool_text(bool(langextract_path)),
         "langextract_raw_path": relative_to_repo(langextract_path) if langextract_path else "",
         "langextract_model_id": str(langextract_record.get("model_id") or ""),
@@ -269,7 +334,12 @@ def build_registry_rows() -> list[dict[str, str]]:
     pdfs_by_id = load_prefixed_pdfs(PDF_DIR)
     text_paths = load_json_paths(TEXT_DIR)
     text_trimmed_paths = load_json_paths(TEXT_TRIMMED_DIR)
+    case_series_split_paths = load_json_paths(CASE_SERIES_SPLIT_DIR)
     text_trim_registry_rows = load_csv_rows_by_id(TEXT_TRIM_REGISTRY_PATH, "paper_id")
+    source_categorisation_rows = load_csv_rows_by_id(SOURCE_CATEGORISATION_PATH, "paper_id")
+    source_manual_review_rows = load_csv_rows_by_id(SOURCE_MANUAL_REVIEW_PATH, "paper_id")
+    proceedings_qc_rows = load_csv_rows_by_id(PROCEEDINGS_QC_PATH, "paper_id")
+    case_series_split_rows = load_csv_rows_by_id(CASE_SERIES_SPLIT_REGISTRY_PATH, "paper_id")
     langextract_paths = load_json_paths(LANGEXTRACT_DIR)
     summary_paths = load_json_paths(SUMMARY_DIR)
     quality_raw_paths = load_json_paths(QUALITY_RAW_DIR)
@@ -281,7 +351,12 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(pdfs_by_id)
         | set(text_paths)
         | set(text_trimmed_paths)
+        | set(case_series_split_paths)
         | set(text_trim_registry_rows)
+        | set(source_categorisation_rows)
+        | set(source_manual_review_rows)
+        | set(proceedings_qc_rows)
+        | set(case_series_split_rows)
         | set(langextract_paths)
         | set(summary_paths)
         | set(quality_raw_paths)
@@ -307,6 +382,11 @@ def build_registry_rows() -> list[dict[str, str]]:
                 text_trim_record=load_json_record(text_trim_path),
                 text_trim_path=text_trim_path,
                 text_trim_registry_row=text_trim_registry_rows.get(paper_id, {}),
+                source_categorisation_row=source_categorisation_rows.get(paper_id, {}),
+                source_manual_review_row=source_manual_review_rows.get(paper_id, {}),
+                proceedings_qc_row=proceedings_qc_rows.get(paper_id, {}),
+                case_series_split_row=case_series_split_rows.get(paper_id, {}),
+                case_series_split_path=case_series_split_paths.get(paper_id),
                 langextract_record=load_json_record(langextract_path),
                 langextract_path=langextract_path,
                 summary_record=load_json_record(summary_path),
@@ -375,6 +455,47 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "text_trim_start_page",
         "text_trim_end_page",
         "text_trim_source_text_json_path",
+        "source_categorisation_present",
+        "source_category",
+        "source_subtype",
+        "source_classification_confidence",
+        "source_likely_case_count",
+        "source_contains_individual_level_data",
+        "source_contains_group_level_data",
+        "source_case_series_split_candidate",
+        "source_preferred_langextract_mode",
+        "source_langextract_eligible",
+        "source_manual_review_required",
+        "source_recommended_next_action",
+        "source_categorisation_reason",
+        "source_categorised_at_utc",
+        "source_manual_override_present",
+        "resolved_source_category",
+        "resolved_source_subtype",
+        "resolved_source_confidence",
+        "resolved_source_route_source",
+        "resolved_source_notes",
+        "resolved_source_alignment_tag",
+        "resolved_review_batch",
+        "resolved_reviewed_at_utc",
+        "resolved_case_series_split_candidate",
+        "resolved_langextract_mode",
+        "resolved_langextract_eligible",
+        "proceedings_qc_present",
+        "proceedings_qc_status",
+        "proceedings_qc_manual_follow_up_required",
+        "proceedings_qc_validated_text_json_path",
+        "proceedings_qc_best_match_page_index",
+        "proceedings_qc_title_score",
+        "proceedings_qc_author_score",
+        "proceedings_qc_combined_score",
+        "proceedings_qc_checked_at_utc",
+        "case_series_split_present",
+        "case_series_split_status",
+        "case_series_split_reason",
+        "case_series_split_method",
+        "case_series_split_case_count",
+        "case_series_split_text_json_path",
         "langextract_raw_present",
         "langextract_raw_path",
         "langextract_model_id",
