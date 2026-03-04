@@ -2,7 +2,7 @@
 
 This folder contains the text extraction pipeline for source PDFs.
 
-## `00_download_covidence_pdfs.py`
+## `01_download_covidence_pdfs.py`
 
 This script automates the Covidence full-text download step from the extraction view.
 
@@ -28,16 +28,16 @@ After each run, it also refreshes `data/references/pdf_source_registry.csv` unle
 First run:
 
 ```bash
-python src/pipelines/00_download_covidence_pdfs.py
+python src/pipelines/01_download_covidence_pdfs.py
 ```
 
 Headless rerun:
 
 ```bash
-python src/pipelines/00_download_covidence_pdfs.py --headless
+python src/pipelines/01_download_covidence_pdfs.py --headless
 ```
 
-## `00_build_pdf_source_registry.py`
+## `02_build_pdf_source_registry.py`
 
 This script builds a reference-to-file registry in `data/references/pdf_source_registry.csv`.
 
@@ -52,10 +52,10 @@ The output gives each reference its local PDF filename/path plus a `download_sta
 ### Run
 
 ```bash
-python src/pipelines/00_build_pdf_source_registry.py
+python src/pipelines/02_build_pdf_source_registry.py
 ```
 
-## `00_build_paper_artifact_registry.py`
+## `12_build_paper_artifact_registry.py`
 
 This is the cross-pipeline source-of-truth registry for the project.
 
@@ -73,10 +73,10 @@ This makes the reference, local PDF, extracted text, and downstream AI artifacts
 ### Run
 
 ```bash
-python src/pipelines/00_build_paper_artifact_registry.py
+python src/pipelines/12_build_paper_artifact_registry.py
 ```
 
-## `00_trim_proceedings_text.py`
+## `05_trim_proceedings_text.py`
 
 This script detects likely conference proceedings or other multi-abstract PDFs and trims them down to the one abstract/publication that matches the Covidence reference.
 
@@ -92,10 +92,10 @@ It:
 ### Run
 
 ```bash
-python src/pipelines/00_trim_proceedings_text.py
+python src/pipelines/05_trim_proceedings_text.py
 ```
 
-## `00_validate_proceedings_text.py`
+## `06_validate_proceedings_text.py`
 
 This script runs the separate proceedings QC pass that was queued after trimming.
 
@@ -120,10 +120,10 @@ Useful statuses:
 ### Run
 
 ```bash
-python src/pipelines/00_validate_proceedings_text.py
+python src/pipelines/06_validate_proceedings_text.py
 ```
 
-## `01_extract_text.py`
+## `03_extract_text.py`
 
 Briefly, this script:
 
@@ -133,7 +133,7 @@ Briefly, this script:
 - Computes a SHA-256 checksum for each source PDF.
 - Detects low-text or corrupted native text and optionally runs OCR (`ocrmypdf`) before re-extracting text.
 - Writes one JSON output per PDF to `data/extraction_json/text/{paper_id}.json`.
-- Runs `00_trim_proceedings_text.py` to generate focused text artifacts for proceedings PDFs when possible.
+- Runs extraction only; proceedings trimming is a separate downstream stage.
 
 ## Output JSON includes
 
@@ -146,10 +146,10 @@ Briefly, this script:
 From repo root:
 
 ```bash
-python src/pipelines/01_extract_text.py
+python src/pipelines/03_extract_text.py
 ```
 
-## `01a_source_categorisation.py`
+## `04_source_categorisation.py`
 
 This script classifies each extracted source into a pragmatic downstream category using the reference export, proceedings-trim signals, and preferred text content.
 
@@ -225,10 +225,10 @@ After each run, it also refreshes `data/references/paper_artifact_registry.csv` 
 ### Run
 
 ```bash
-python src/pipelines/01a_source_categorisation.py
+python src/pipelines/04_source_categorisation.py
 ```
 
-## `01b_split_case_series.py`
+## `07_split_case_series.py`
 
 This script prepares reviewed multi-case papers for individual-level LangExtract.
 
@@ -246,10 +246,10 @@ It is intentionally conservative. If explicit case boundaries are not stable, th
 ### Run
 
 ```bash
-python src/pipelines/01b_split_case_series.py
+python src/pipelines/07_split_case_series.py
 ```
 
-## `00_build_langextract_examples.py`
+## `09_build_langextract_examples.py`
 
 This script rebuilds the few-shot JSON files used by LangExtract and the quality-assessment classifier.
 
@@ -268,10 +268,10 @@ Outputs:
 ### Run
 
 ```bash
-python src/pipelines/00_build_langextract_examples.py
+python src/pipelines/09_build_langextract_examples.py
 ```
 
-## `02_LangExtract.py`
+## `10_langextract.py`
 
 This script reads text JSON files from `data/extraction_json/text`, applies reviewed routing by default, prefers `data/extraction_json/text_trimmed/{paper_id}.json` when it exists, uses case-series split artifacts when appropriate, runs LangExtract with an OpenAI model, and writes:
 
@@ -288,22 +288,22 @@ This script reads text JSON files from `data/extraction_json/text`, applies revi
 Dry run (no API calls):
 
 ```bash
-python src/pipelines/02_LangExtract.py --dry-run --limit 2
+python src/pipelines/10_langextract.py --dry-run --limit 2
 ```
 
 Real run:
 
 ```bash
-python src/pipelines/02_LangExtract.py
+python src/pipelines/10_langextract.py
 ```
 
 Ignore reviewed routing and force explicit CLI mode selection:
 
 ```bash
-python src/pipelines/02_LangExtract.py --ignore-routing --include-individual --limit 5
+python src/pipelines/10_langextract.py --ignore-routing --include-individual --limit 5
 ```
 
-## `03_quality_assessment.py`
+## `11_quality_assessment.py`
 
 This script reads text JSON files from `data/extraction_json/text`, prefers `data/extraction_json/text_trimmed/{paper_id}.json` when it exists, and writes:
 

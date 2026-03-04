@@ -4,66 +4,66 @@ This folder contains the project pipeline scripts. They are designed to be run f
 
 ## Pipeline Order
 
-1. `pipelines/00_download_covidence_pdfs.py`
+1. `pipelines/01_download_covidence_pdfs.py`
    - Downloads source PDFs from the Covidence extraction view into `data/pdf_original/`.
    - Uses local/browser session state plus Covidence credentials.
 
-2. `pipelines/00_build_pdf_source_registry.py`
+2. `pipelines/02_build_pdf_source_registry.py`
    - Builds `data/references/pdf_source_registry.csv`.
    - Links each Covidence reference to its downloaded PDF path and download metadata.
 
-3. `pipelines/01_extract_text.py`
+3. `pipelines/03_extract_text.py`
    - Extracts page-level text from the downloaded PDFs.
    - Uses native PDF text first, then falls back to OCR when the extracted text is sparse or corrupted.
    - Writes `data/extraction_json/text/{paper_id}.json`.
 
-4. `pipelines/00_trim_proceedings_text.py`
-   - Detects large proceedings or multi-abstract PDFs.
-   - Finds the target abstract/publication by fuzzy title and author matching.
-   - Writes focused text records to `data/extraction_json/text_trimmed/{paper_id}.json`.
-
-5. `pipelines/01a_source_categorisation.py`
+4. `pipelines/04_source_categorisation.py`
    - Categorises each source after extraction as single-case, multi-case, group study, conference abstract, review, non-clinical, or manual-review.
    - Prefers trimmed proceedings text when available.
    - Writes `data/references/source_categorisation_registry.csv`.
    - The heuristic output is complemented by a reviewed override ledger in `data/references/source_categorisation_manual_review.csv` for papers that required case-by-case adjudication.
 
-6. `pipelines/00_validate_proceedings_text.py`
+5. `pipelines/05_trim_proceedings_text.py`
+   - Detects large proceedings or multi-abstract PDFs.
+   - Finds the target abstract/publication by fuzzy title and author matching.
+   - Writes focused text records to `data/extraction_json/text_trimmed/{paper_id}.json`.
+
+6. `pipelines/06_validate_proceedings_text.py`
    - Validates proceedings-derived text by searching the extracted text for the target title and author surnames.
    - Confirms whether trimmed proceedings text appears to contain the correct abstract or whether manual follow-up is still needed.
    - Writes `data/references/proceedings_text_qc_registry.csv`.
 
-7. `pipelines/01b_split_case_series.py`
+7. `pipelines/07_split_case_series.py`
    - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
    - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
    - Writes `data/references/case_series_split_registry.csv`.
 
-8. `pipelines/00_build_langextract_examples.py`
+8. `pipelines/09_build_langextract_examples.py`
    - Rebuilds the LangExtract few-shot JSONs in `config/prompts/examples/`.
    - Uses curated examples from `examples/` and validates that each prompt example maps back to a real curated row.
 
-9. `pipelines/02_LangExtract.py`
+9. `pipelines/10_langextract.py`
    - Reads extracted text and runs LangExtract with OpenAI models.
    - Uses reviewed source routing by default.
    - Prefers trimmed proceedings text when available and uses case-series split artifacts for reviewed multi-case papers.
    - Writes raw extractions to `data/extraction_json/langextract/` and summaries to `data/extraction_json/summary/`.
 
-10. `pipelines/03_quality_assessment.py`
+10. `pipelines/11_quality_assessment.py`
    - Reads extracted text and runs publication-type detection plus dictionary-driven quality extraction.
    - Prefers trimmed proceedings text when available.
    - Writes raw outputs to `data/extraction_json/quality/raw/` and structured records to `data/extraction_json/quality/records/`.
 
 ## Registry / Support Scripts
 
-- `pipelines/00_build_paper_artifact_registry.py`
+- `pipelines/12_build_paper_artifact_registry.py`
   - Builds `data/references/paper_artifact_registry.csv`.
   - This is the project-wide source-of-truth table linking references, PDFs, extracted text, trimmed text, reviewed routing, proceedings QC, case-series splits, LangExtract outputs, summaries, and quality records.
 
-- `pipelines/00_screen_text_extraction.py`
+- `pipelines/90_screen_text_extraction.py`
   - Screens extracted text for likely issues such as proceedings-like documents, noisy website chrome, or suspicious text-quality patterns.
   - Writes `data/references/text_screening_registry.csv`.
 
-- `pipelines/01a_source_categorisation.py`
+- `pipelines/04_source_categorisation.py`
   - Builds a source-routing registry for downstream LangExtract and case-series splitting.
   - Adds stage-level provenance into the master artifact registry.
   - Produces the heuristic routing table `data/references/source_categorisation_registry.csv`.
@@ -86,7 +86,7 @@ This folder contains the project pipeline scripts. They are designed to be run f
     - `review_article`: review-style paper, usually excluded from case-level extraction
     - `unclear_manual_review`: routing was not reliable enough to automate
 
-- `pipelines/00_validate_proceedings_text.py`
+- `pipelines/06_validate_proceedings_text.py`
   - Runs a separate proceedings QC pass after trimming/categorisation.
   - Searches proceedings-derived text for the reference title and author surnames.
   - Writes `data/references/proceedings_text_qc_registry.csv`.
@@ -98,13 +98,13 @@ This folder contains the project pipeline scripts. They are designed to be run f
     - `full_text_partial_match`
     - `not_localised`
 
-- `pipelines/01b_split_case_series.py`
+- `pipelines/07_split_case_series.py`
   - Uses reviewed routing to find case-series papers that should be split before LangExtract.
   - Only auto-splits when explicit case/patient headings make the split stable.
   - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/`.
   - Writes `data/references/case_series_split_registry.csv`.
 
-- `pipelines/00_build_langextract_examples.py`
+- `pipelines/09_build_langextract_examples.py`
   - Rebuilds the prompt examples from curated project sheets in `examples/`.
   - Writes:
     - `config/prompts/examples/02_individual_examples.json`

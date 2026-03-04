@@ -6,7 +6,7 @@ This project needs all full-text PDFs in `data/pdf_original/`, but the review co
 
 ## Script
 
-`src/pipelines/00_download_covidence_pdfs.py`
+`src/pipelines/01_download_covidence_pdfs.py`
 
 ## What it does
 
@@ -30,13 +30,13 @@ This project needs all full-text PDFs in `data/pdf_original/`, but the review co
 Interactive first run:
 
 ```powershell
-.venv\Scripts\python.exe src\pipelines\00_download_covidence_pdfs.py
+.venv\Scripts\python.exe src\pipelines\01_download_covidence_pdfs.py
 ```
 
 Headless rerun after the session has been saved:
 
 ```powershell
-.venv\Scripts\python.exe src\pipelines\00_download_covidence_pdfs.py --headless
+.venv\Scripts\python.exe src\pipelines\01_download_covidence_pdfs.py --headless
 ```
 
 Environment variables are supported:

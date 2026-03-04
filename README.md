@@ -212,7 +212,7 @@ It focuses exclusively on **case-level data extraction and verification infrastr
 
 ## Covidence PDF acquisition
 
-This review stores full texts in Covidence, but Covidence does not provide the project with a simple bulk PDF export step. The repository therefore includes a browser-based downloader at `src/pipelines/00_download_covidence_pdfs.py`.
+This review stores full texts in Covidence, but Covidence does not provide the project with a simple bulk PDF export step. The repository therefore includes a browser-based downloader at `src/pipelines/01_download_covidence_pdfs.py`.
 
 Workflow:
 1. Open the extraction review in Covidence.

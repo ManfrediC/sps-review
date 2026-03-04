@@ -76,8 +76,8 @@ GEMINI_API_KEY=your-key-here
    - `.codex/rules/sps_overnight.rules`
    - root `AGENTS.md`
 2. Add a Windows-native overnight runner that logs stage execution without changing canonical output locations.
-3. Implement `01a_source_categorisation.py`.
-4. Implement `01b_split_case_series.py`.
+3. Implement `04_source_categorisation.py`.
+4. Implement `07_split_case_series.py`.
 5. Implement `04_model_comparison.py`.
 6. Expand LangExtract few-shot examples using the curated material in `examples/`.
 7. Run a small end-to-end pilot before any unattended full-corpus run.

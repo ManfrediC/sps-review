@@ -11,13 +11,16 @@
 - Do not move or duplicate the canonical registries into `results/overnight/`.
 
 ## Pipeline Order
-1. `00_download_covidence_pdfs.py` when acquisition is needed.
-2. `01_extract_text.py` for text extraction and OCR fallback.
-3. `01a_source_categorisation.py` on extracted or trimmed text, not raw PDFs.
-4. `01b_split_case_series.py` before LangExtract whenever a source contains multiple cases that should be split.
-5. `02_LangExtract.py` on the eligible subset.
-6. `03_quality_assessment.py` after LangExtract.
-7. `04_model_comparison.py` only after LangExtract outputs exist and both API keys are available.
+1. `01_download_covidence_pdfs.py` when acquisition is needed.
+2. `03_extract_text.py` for text extraction and OCR fallback.
+3. `04_source_categorisation.py` on extracted or trimmed text, not raw PDFs.
+4. `05_trim_proceedings_text.py` for proceedings-specific trimming after categorisation.
+5. `06_validate_proceedings_text.py` to QC proceedings text alignment before downstream extraction.
+6. `07_split_case_series.py` before LangExtract whenever a source contains multiple cases that should be split.
+7. `09_build_langextract_examples.py` to refresh few-shot prompt assets when curated examples change.
+8. `10_langextract.py` on the eligible subset.
+9. `11_quality_assessment.py` after LangExtract.
+10. `04_model_comparison.py` only after LangExtract outputs exist and both API keys are available.
 
 ## Stopping Conditions
 - If a step needs a host-level install or admin access, write a clear blocked status to the overnight log and stop.

@@ -84,7 +84,7 @@ Generate from accepted compendium rows:
 - Store PDFs in your raw PDF input directory for pipeline compatibility.
 
 ### Phase 3: Process PDFs to text JSON
-- Run `src/pipelines/01_extract_text.py` on the acquired PDFs.
+- Run `src/pipelines/03_extract_text.py` on the acquired PDFs.
 - Keep OCR fallback enabled for image-based files.
 - Verify each paper has:
   - text JSON output
@@ -110,8 +110,8 @@ Generate from accepted compendium rows:
 ### Phase 7: Validate with held-out papers
 - Reserve a held-out subset not used for example creation.
 - Run:
-  - `src/pipelines/02_LangExtract.py`
-  - `src/pipelines/03_quality_assessment.py`
+  - `src/pipelines/10_langextract.py`
+  - `src/pipelines/11_quality_assessment.py`
 - Compare outputs to manual gold rows and record error patterns.
 
 ### Phase 8: Iterate examples first, prompts second

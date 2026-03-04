@@ -4,10 +4,10 @@ This directory stores editable prompts and few-shot examples for LangExtract pip
 
 ## Files
 
-- `02_individual_prompt.md`: prompt for individual-level extraction in `src/pipelines/02_LangExtract.py`
-- `02_group_prompt.md`: prompt for group-level extraction in `src/pipelines/02_LangExtract.py`
-- `03_publication_type_prompt.md`: publication-type prompt template for `src/pipelines/03_quality_assessment.py`
-- `03_quality_prompt.md`: quality-extraction prompt template for `src/pipelines/03_quality_assessment.py`
+- `02_individual_prompt.md`: prompt for individual-level extraction in `src/pipelines/10_langextract.py`
+- `02_group_prompt.md`: prompt for group-level extraction in `src/pipelines/10_langextract.py`
+- `03_publication_type_prompt.md`: publication-type prompt template for `src/pipelines/11_quality_assessment.py`
+- `03_quality_prompt.md`: quality-extraction prompt template for `src/pipelines/11_quality_assessment.py`
 
 ## Examples
 
