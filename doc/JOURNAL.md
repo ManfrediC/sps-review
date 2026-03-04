@@ -353,3 +353,55 @@ Completed the manual source-categorisation review pass and documented the review
 - example rebuilding from curated sheets
 - route-aware LangExtract behavior
 - updated overnight-stage coverage in `src/pipelines/99_overnight_run.py`
+
+## 04.03.2026
+
+Refactored pipeline numbering and repaired the interrupted proceedings-trimming flow so stage sequencing is consistent and execution-safe.
+
+### Pipeline Renumbering And Reference Updates
+
+- Renamed pipeline scripts to the new canonical numbering:
+- `00_download_covidence_pdfs.py` -> `01_download_covidence_pdfs.py`
+- `00_build_pdf_source_registry.py` -> `02_build_pdf_source_registry.py`
+- `01_extract_text.py` -> `03_extract_text.py`
+- `01a_source_categorisation.py` -> `04_source_categorisation.py`
+- `00_trim_proceedings_text.py` -> `05_trim_proceedings_text.py`
+- `00_validate_proceedings_text.py` -> `06_validate_proceedings_text.py`
+- `01b_split_case_series.py` -> `07_split_case_series.py`
+- `00_build_langextract_examples.py` -> `09_build_langextract_examples.py`
+- `02_LangExtract.py` -> `10_langextract.py`
+- `03_quality_assessment.py` -> `11_quality_assessment.py`
+- `00_build_paper_artifact_registry.py` -> `12_build_paper_artifact_registry.py`
+- `00_screen_text_extraction.py` -> `90_screen_text_extraction.py`
+- Updated internal script-path references across pipeline scripts to the new names.
+
+### Workflow Sequencing Fixes
+
+- Updated `src/pipelines/03_extract_text.py` to perform extraction only (removed auto-trigger of proceedings trimming).
+- Kept artifact-registry refresh in extraction, now pointing to `12_build_paper_artifact_registry.py`.
+- Updated `src/pipelines/99_overnight_run.py` stage map and order to include:
+- extraction -> source categorisation -> proceedings trim -> proceedings QC -> case-series split -> LangExtract stages.
+
+### Proceedings Trimming Repair
+
+- Fixed `src/pipelines/05_trim_proceedings_text.py` main-call mismatch after refactor:
+- restored required arguments for proceedings candidate filtering (`existing_trim_registry_path`, `include_already_trimmed`).
+- Updated proceedings candidate filtering behavior to remain scoped to proceedings candidates (no fallback to all papers when filtered set is empty).
+- Confirmed the script runs cleanly after patching.
+
+### Documentation Sync
+
+- Updated operational docs to new script names and stage order:
+- `AGENTS.md`
+- `README.md`
+- `src/README.md`
+- `src/pipelines/README.md`
+- `config/prompts/README.md`
+- `doc/COVIDENCE_DOWNLOAD_AGENT.md`
+- `doc/LANGEXTRACT_EXAMPLE_PLAN.md`
+- `doc/codex_plans/windows_native_setup_checklist.md`
+
+### Validation
+
+- Ran CLI smoke checks (`--help`) for renamed and touched scripts.
+- Ran a no-op trim execution to verify repaired argument wiring in `05_trim_proceedings_text.py`.
