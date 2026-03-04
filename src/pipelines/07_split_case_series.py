@@ -21,7 +21,7 @@ SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categor
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 PROCEEDINGS_QC_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "case_series_split_registry.csv"
-ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 
 CASE_MARKER_RE = re.compile(
     r"^(?P<lemma>case|patient)\b\s*(?:no\.?|number)?\s*(?P<num>\d+|[ivxlcdm]+|[a-z])\b[:.\-)]?",

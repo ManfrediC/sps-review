@@ -30,33 +30,38 @@ STAGES = [
     Stage(
         key="extract_text",
         label="Text Extraction",
-        script_path=REPO_ROOT / "src" / "pipelines" / "01_extract_text.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "03_extract_text.py",
         supports_force=True,
     ),
     Stage(
         key="source_categorisation",
         label="Source Categorisation",
-        script_path=REPO_ROOT / "src" / "pipelines" / "01a_source_categorisation.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py",
+    ),
+    Stage(
+        key="proceedings_trim",
+        label="Proceedings Trim",
+        script_path=REPO_ROOT / "src" / "pipelines" / "05_trim_proceedings_text.py",
     ),
     Stage(
         key="proceedings_qc",
         label="Proceedings Text QC",
-        script_path=REPO_ROOT / "src" / "pipelines" / "00_validate_proceedings_text.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "06_validate_proceedings_text.py",
     ),
     Stage(
         key="case_series_split",
         label="Case-Series Splitting",
-        script_path=REPO_ROOT / "src" / "pipelines" / "01b_split_case_series.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "07_split_case_series.py",
     ),
     Stage(
         key="build_langextract_examples",
         label="Build LangExtract Examples",
-        script_path=REPO_ROOT / "src" / "pipelines" / "00_build_langextract_examples.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "09_build_langextract_examples.py",
     ),
     Stage(
         key="langextract",
         label="LangExtract",
-        script_path=REPO_ROOT / "src" / "pipelines" / "02_LangExtract.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "10_langextract.py",
         supports_dry_run=True,
         supports_force=True,
         supports_model_id=True,
@@ -64,7 +69,7 @@ STAGES = [
     Stage(
         key="quality_assessment",
         label="Quality Assessment",
-        script_path=REPO_ROOT / "src" / "pipelines" / "03_quality_assessment.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "11_quality_assessment.py",
         supports_dry_run=True,
         supports_force=True,
         supports_model_id=True,

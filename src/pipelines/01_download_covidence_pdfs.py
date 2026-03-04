@@ -31,8 +31,8 @@ DEFAULT_DOWNLOAD_DIR = REPO_ROOT / "data" / "pdf_original"
 DEFAULT_STATE_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "playwright_state.json"
 DEFAULT_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
 DEFAULT_LOGIN_ENV_PATH = REPO_ROOT / "env" / "covidence_login.env"
-DEFAULT_REGISTRY_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "00_build_pdf_source_registry.py"
-DEFAULT_ARTIFACT_REGISTRY_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+DEFAULT_REGISTRY_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "02_build_pdf_source_registry.py"
+DEFAULT_ARTIFACT_REGISTRY_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 
 PDF_LINK_TEXT_RE = re.compile(r"\.pdf\b", re.IGNORECASE)
 PDF_HREF_RE = re.compile(r"(\.pdf\b|application%2fpdf)", re.IGNORECASE)

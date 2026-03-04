@@ -18,7 +18,7 @@ TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
-ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 
 NUMBER_WORDS = {
     "one": 1,

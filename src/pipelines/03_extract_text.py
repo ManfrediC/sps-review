@@ -16,8 +16,7 @@ from tqdm import tqdm
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
-TEXT_TRIM_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_trim_proceedings_text.py"
-ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Toggle OCR fallback for PDFs with poor native text extraction.
@@ -26,7 +25,7 @@ ENABLE_OCR = True
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Extract PDF text with OCR fallback and optionally trim proceedings PDFs."
+        description="Extract PDF text with OCR fallback."
     )
     parser.add_argument(
         "--input-dir",
@@ -201,28 +200,17 @@ def main() -> None:
         raise SystemExit(f"No PDFs found in: {args.input_dir}")
 
     # Process every PDF and save a structured text extraction JSON.
-    processed_ids: list[str] = []
     for pdf_path in tqdm(pdfs, desc="Extracting PDF text"):
         paper_id = paper_id_from_filename(pdf_path.name)
         out_path = args.output_dir / f"{paper_id}.json"
         if out_path.exists() and not args.force:
-            processed_ids.append(paper_id)
             continue
         record = extract_pdf_text(pdf_path)
-        processed_ids.append(str(record["paper_id"]))
         out_path.write_text(
             json.dumps(record, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
 
-    trim_command = [sys.executable, str(TEXT_TRIM_SCRIPT)]
-    for paper_id in processed_ids:
-        trim_command.extend(["--paper-id", paper_id])
-    subprocess.run(
-        trim_command,
-        check=True,
-        cwd=str(REPO_ROOT),
-    )
     subprocess.run(
         [sys.executable, str(ARTIFACT_REGISTRY_SCRIPT)],
         check=True,

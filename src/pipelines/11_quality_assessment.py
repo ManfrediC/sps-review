@@ -26,7 +26,7 @@ QUALITY_DICT_PATH = REPO_ROOT / "config" / "dictionaries" / "SPS_quality_diction
 QUALITY_SCHEMA_PATH = REPO_ROOT / "config" / "schema" / "SPS_quality_assessment.schema.json"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 RECORD_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
-ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 
 # Ensure output folders exist even on first run.
 RAW_OUT_DIR.mkdir(parents=True, exist_ok=True)

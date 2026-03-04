@@ -24,7 +24,7 @@ TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 CASE_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
-ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "00_build_paper_artifact_registry.py"
+ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 
