@@ -405,3 +405,68 @@ Refactored pipeline numbering and repaired the interrupted proceedings-trimming 
 
 - Ran CLI smoke checks (`--help`) for renamed and touched scripts.
 - Ran a no-op trim execution to verify repaired argument wiring in `05_trim_proceedings_text.py`.
+
+## 05.03.2026
+
+Patched proceedings abstract localisation, refreshed trial/spot-check outputs, added concise pipeline code comments, and expanded directory-level documentation coverage across the repository.
+
+### Proceedings Abstract Extractor Patch And Validation Run
+
+- Patched proceedings localisation behaviour and ran a validation/trial pass (`ef4d9ad`).
+- Updated:
+- `src/pipelines/05_trim_proceedings_text.py`
+- `src/pipelines/06_validate_proceedings_text.py`
+- `src/pipelines/07_split_case_series.py`
+- `src/pipelines/README.md`
+- Refreshed core registries:
+- `data/references/text_trim_registry.csv`
+- `data/references/proceedings_text_qc_registry.csv`
+- `data/references/source_categorisation_registry.csv`
+- `data/references/case_series_split_registry.csv`
+- `data/references/paper_artifact_registry.csv`
+- Added trial and spot-check artifacts:
+- `data/references/proceedings_accuracy_spotcheck_10.csv`
+- `data/references/proceedings_accuracy_spotcheck_10_manual.csv`
+- `data/references/proceedings_accuracy_spotcheck_10_report.txt`
+- `data/references/proceedings_text_qc_registry_trial_index_patch.csv`
+- `data/references/text_trim_registry_trial_index_patch.csv`
+- `data/references/text_trim_registry_trial_index_patch_single.csv`
+- Added planning note:
+- `doc/codex_plans/83_column_master_table_plan.md`
+
+### Pipeline Readability Pass
+
+- Added concise, block-level comments across all pipeline scripts (`b54714e`):
+- `src/pipelines/01_download_covidence_pdfs.py`
+- `src/pipelines/02_build_pdf_source_registry.py`
+- `src/pipelines/03_extract_text.py`
+- `src/pipelines/04_source_categorisation.py`
+- `src/pipelines/05_trim_proceedings_text.py`
+- `src/pipelines/06_validate_proceedings_text.py`
+- `src/pipelines/07_split_case_series.py`
+- `src/pipelines/09_build_langextract_examples.py`
+- `src/pipelines/10_langextract.py`
+- `src/pipelines/11_quality_assessment.py`
+- `src/pipelines/12_build_paper_artifact_registry.py`
+- `src/pipelines/90_screen_text_extraction.py`
+- `src/pipelines/99_overnight_run.py`
+- `src/pipelines/_source_routing.py`
+- Added trial registry snapshots from this pass:
+- `data/references/text_trim_registry_trial_2026_03_05_b.csv`
+- `data/references/proceedings_text_qc_registry_trial_2026_03_05_b.csv`
+
+### Repository Documentation Coverage
+
+- Added README coverage for previously undocumented directories (`861d7fe`), including:
+- `.codex/`, `.codex/rules/`, `.github/`, `.github/workflows/`
+- `config/dictionaries/`, `config/prompts/examples/`, `config/schema/`
+- `data/`, `data/references/`
+- `doc/`, `doc/codex_plans/`, `doc/methods/`, `doc/protocols/`
+- `env/`, `examples/`, `resources/`, `tests/`
+- `src/lib/`, `src/notebooks/`
+- Updated existing README files with directory snapshots:
+- `README.md`
+- `config/README.md`
+- `config/prompts/README.md`
+- `src/README.md`
+- `src/pipelines/README.md`
