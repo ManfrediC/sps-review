@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import re
+import statistics
 import subprocess
 import sys
 import unicodedata
@@ -30,15 +31,31 @@ ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_art
 ABSTRACT_START_RE = re.compile(
     r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{2,3}|\d{2,3})\.\s+(?P<title>.+)$"
 )
+ABSTRACT_START_DELIM_RE = re.compile(
+    r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5}|\d{2,5})\s*[\.\|\:\-\)]\s+(?P<title>[A-Za-z].+)$"
+)
+ABSTRACT_START_SPACE_CODE_RE = re.compile(
+    r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5})\s+(?P<title>[A-Za-z].+)$"
+)
 ABSTRACT_CODE_ONLY_RE = re.compile(
     r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,3})$"
 )
+ABSTRACT_BOUNDARY_RE = re.compile(
+    r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5})\s*(?:[\.\|\:\-\)]\s+|$)"
+)
+INDEX_ENTRY_RE = re.compile(
+    r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5})\s*(?:[\.\|\:\-\)]\s*)?(?P<title>.+?)\s+(?P<page>\d{1,4})$"
+)
+INDEX_TRAILING_PAGE_RE = re.compile(r"^(?P<title>.+?)\s+(?P<page>\d{1,4})$")
 PROGRAM_MARKERS = (
     "annual meeting",
     "program and abstracts",
     "program abstracts",
     "poster sessions",
     "poster presentations",
+    "table of contents",
+    "contents",
+    "index",
 )
 AUTHOR_CREDENTIAL_RE = re.compile(
     r"\b(MD|M\.D\.|DO|D\.O\.|PHD|PH\.D\.|MSC|M\.S\.|MS|BS|B\.S\.|BA|B\.A\.|MBA|MBBS|MPH|RN|FRCPC|FAAN|FRCP|DPhil)\b",
@@ -69,6 +86,10 @@ FOOTER_MARKERS = (
     "downloaded from https://",
     "terms and conditions",
     "program and abstracts",
+    "copyright",
+    "all rights reserved",
+    "supplement",
+    "poster sessions",
 )
 SECTION_HEADING_MARKERS = (
     "background",
@@ -107,6 +128,31 @@ class AbstractBlock:
     author_score: float = 0.0
     match_score: float = 0.0
     trim_method: str = ""
+    trim_mode: str = ""
+    start_rule: str = ""
+    end_rule: str = ""
+    body_signal_count: int = 0
+    spillover_flag: bool = False
+    header_only_flag: bool = False
+    index_detected: bool = False
+    index_confidence: float = 0.0
+    index_listed_page: str = ""
+    index_prev_code: str = ""
+    index_next_code: str = ""
+    page_map_method: str = ""
+    estimated_offset: float = 0.0
+    offset_confidence: float = 0.0
+    candidate_rank: int = 1
+    fallback_triggered: bool = False
+
+
+@dataclass
+class IndexEntry:
+    code: str
+    title: str
+    listed_page: int | None
+    index_page_index: int
+    raw_text: str
 
 
 def parse_args() -> argparse.Namespace:
@@ -284,11 +330,26 @@ def flatten_lines(record: dict[str, Any]) -> list[LineRef]:
 
 
 def is_abstract_start(line: str) -> re.Match[str] | None:
-    return ABSTRACT_START_RE.match(line.strip())
+    stripped = line.strip()
+    strict_match = ABSTRACT_START_RE.match(stripped)
+    if strict_match:
+        return strict_match
+    delim_match = ABSTRACT_START_DELIM_RE.match(stripped)
+    if delim_match:
+        return delim_match
+    space_match = ABSTRACT_START_SPACE_CODE_RE.match(stripped)
+    if space_match:
+        code = str(space_match.group("code") or "")
+        title = str(space_match.group("title") or "")
+        # Only allow space-separated starts for alphanumeric codes to avoid affiliation lines like "1School...".
+        if re.search(r"[A-Z]", code) and len(title.split()) >= 3:
+            return space_match
+    return None
 
 
 def is_abstract_code_only(line: str) -> re.Match[str] | None:
-    return ABSTRACT_CODE_ONLY_RE.match(line.strip())
+    stripped = line.strip()
+    return ABSTRACT_CODE_ONLY_RE.match(stripped) or ABSTRACT_BOUNDARY_RE.match(stripped)
 
 
 def is_abstract_boundary(line: str) -> bool:
@@ -296,12 +357,23 @@ def is_abstract_boundary(line: str) -> bool:
 
 
 def is_author_like(line: str) -> bool:
-    if AUTHOR_CREDENTIAL_RE.search(line):
+    stripped = line.strip()
+    if not stripped:
+        return False
+    if AUTHOR_CREDENTIAL_RE.search(stripped):
         return True
-    comma_count = line.count(",")
+    normalized = normalize_text(stripped)
+    if normalized.count(" and ") >= 1 and len(normalized.split()) <= 18:
+        return True
+    comma_count = stripped.count(",")
     if comma_count >= 3:
         return True
-    if ";" in line and comma_count >= 1:
+    if ";" in stripped and comma_count >= 1:
+        return True
+    # Proceedings author lines often use name separators without commas.
+    if ";" in stripped and len(stripped.split()) <= 20:
+        return True
+    if re.search(r"\b[A-Z][a-z]+\s+[A-Z][a-z]+\b", stripped) and len(stripped.split()) <= 22:
         return True
     return False
 
@@ -332,33 +404,51 @@ def is_section_heading(line: str) -> bool:
 
 
 def strip_abstract_code(line: str) -> str:
-    match = is_abstract_start(line)
-    if match:
-        return match.group("title").strip()
+    stripped = line.strip()
+    match = is_abstract_start(stripped)
+    if match and match.groupdict().get("title"):
+        return str(match.group("title")).strip()
+    boundary_match = ABSTRACT_BOUNDARY_RE.match(stripped)
+    if boundary_match:
+        without_code = stripped[boundary_match.end("code") :].strip(" .|:-)")
+        if without_code:
+            return without_code
     return line.strip()
 
 
 def abstract_code(line: str) -> str:
-    start_match = is_abstract_start(line)
-    if start_match:
-        return start_match.group("code")
+    stripped = line.strip()
+    start_match = is_abstract_start(stripped)
+    if start_match and start_match.groupdict().get("code"):
+        return str(start_match.group("code"))
     code_only_match = is_abstract_code_only(line)
-    if code_only_match:
-        return code_only_match.group("code")
+    if code_only_match and code_only_match.groupdict().get("code"):
+        return str(code_only_match.group("code"))
     return ""
 
 
 def parse_reference_surnames(authors: str) -> list[str]:
     surnames: list[str] = []
-    for chunk in re.split(r";", authors or ""):
+    for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
         part = chunk.strip()
         if not part:
             continue
-        surname = part.split(",", 1)[0].strip()
+        part = re.sub(r"\b(MD|PhD|DO|MSc|MBBS|RN|FRCP|FAAN)\b\.?", "", part, flags=re.IGNORECASE).strip()
+        if "," in part:
+            surname = part.split(",", 1)[0].strip()
+        else:
+            tokens = [token for token in re.split(r"\s+", part) if token]
+            if not tokens:
+                continue
+            surname = tokens[-1]
+            if len(tokens) >= 2 and len(tokens[-1]) <= 2:
+                surname = tokens[-2]
         normalized = normalize_text(surname)
+        if len(normalized) <= 1:
+            continue
         if normalized and normalized not in surnames:
             surnames.append(normalized)
-    return surnames[:6]
+    return surnames[:8]
 
 
 def score_title(reference_title: str, block_title: str) -> float:
@@ -374,7 +464,8 @@ def score_title(reference_title: str, block_title: str) -> float:
     overlap = len(ref_tokens & block_tokens) / max(1, len(ref_tokens))
     if ref_norm in block_norm or block_norm in ref_norm:
         overlap = max(overlap, 0.95)
-    return max(sequence, (0.65 * sequence) + (0.35 * overlap))
+    blended = (0.35 * sequence) + (0.65 * overlap)
+    return max(min(sequence, overlap), blended)
 
 
 def score_authors(reference_authors: str, block_text: str) -> float:
@@ -419,11 +510,245 @@ def page_match_scores(
     return best_page_index, best_title_score, best_author_score, best_combined
 
 
+def normalize_code(value: str) -> str:
+    return re.sub(r"[^A-Z0-9]", "", (value or "").upper())
+
+
+def body_signal_count(lines: list[LineRef]) -> int:
+    return sum(1 for line in lines if is_section_heading(line.text))
+
+
+def body_char_count(lines: list[LineRef]) -> int:
+    if not lines:
+        return 0
+    header_span = min(len(lines), 6)
+    body_lines = [line.text for line in lines[header_span:] if not is_footer_like(line.text)]
+    return len(" ".join(body_lines))
+
+
+def truncate_at_next_boundary(
+    lines: list[LineRef],
+    expected_code: str,
+    next_entry: IndexEntry | None,
+) -> tuple[list[LineRef], bool, str]:
+    if len(lines) < 5:
+        return lines, False, "no_boundary_found"
+    expected_code_norm = normalize_code(expected_code)
+    next_code_norm = normalize_code(next_entry.code) if next_entry else ""
+    for idx in range(4, len(lines)):
+        line = lines[idx]
+        if not is_abstract_boundary(line.text):
+            continue
+        boundary_code_norm = normalize_code(abstract_code(line.text))
+        if boundary_code_norm and expected_code_norm and boundary_code_norm == expected_code_norm:
+            continue
+        if next_code_norm and boundary_code_norm == next_code_norm:
+            return lines[:idx], True, "next_index_code_boundary"
+        if boundary_code_norm and boundary_code_norm != expected_code_norm:
+            return lines[:idx], True, "next_abstract_boundary"
+    return lines, False, "no_boundary_found"
+
+
+def has_enough_body(lines: list[LineRef]) -> tuple[bool, int, bool]:
+    section_hits = body_signal_count(lines)
+    chars = body_char_count(lines)
+    header_only = section_hits == 0 and chars < 280
+    enough = chars >= 420 or (section_hits >= 3 and chars >= 160) or (section_hits >= 1 and chars >= 220)
+    return enough, section_hits, header_only
+
+
+def parse_index_entries(record: dict[str, Any]) -> tuple[list[IndexEntry], bool]:
+    entries: list[IndexEntry] = []
+    index_page_count = 0
+    for page in record.get("pages") or []:
+        page_index = int(page.get("page_index") or 0)
+        page_text = str(page.get("text") or "")
+        lines = [" ".join(raw.split()) for raw in page_text.splitlines() if raw.strip()]
+        normalized_page = normalize_text(page_text)
+        page_entries: list[IndexEntry] = []
+
+        for line in lines:
+            match = INDEX_ENTRY_RE.match(line)
+            if match:
+                listed_page = int(match.group("page")) if match.group("page").isdigit() else None
+                page_entries.append(
+                    IndexEntry(
+                        code=match.group("code").strip(),
+                        title=match.group("title").strip(),
+                        listed_page=listed_page,
+                        index_page_index=page_index,
+                        raw_text=line,
+                    )
+                )
+
+        for idx, line in enumerate(lines[:-1]):
+            if INDEX_ENTRY_RE.match(line):
+                continue
+            code_match = ABSTRACT_BOUNDARY_RE.match(line)
+            if not code_match:
+                continue
+            next_line = lines[idx + 1]
+            trailing_page_match = INDEX_TRAILING_PAGE_RE.match(next_line)
+            if not trailing_page_match:
+                continue
+            listed_page = int(trailing_page_match.group("page")) if trailing_page_match.group("page").isdigit() else None
+            title_text = strip_abstract_code(line)
+            if trailing_page_match.group("title").strip():
+                title_text = f"{title_text} {trailing_page_match.group('title').strip()}".strip()
+            page_entries.append(
+                IndexEntry(
+                    code=abstract_code(line),
+                    title=title_text,
+                    listed_page=listed_page,
+                    index_page_index=page_index,
+                    raw_text=f"{line} {next_line}",
+                )
+            )
+
+        likely_index_page = len(page_entries) >= 8 or (
+            len(page_entries) >= 4
+            and (
+                "contents" in normalized_page
+                or "table of contents" in normalized_page
+                or "index" in normalized_page
+                or "program and abstracts" in normalized_page
+            )
+        )
+        if likely_index_page:
+            index_page_count += 1
+            entries.extend(page_entries)
+
+    index_detected = index_page_count > 0 or len(entries) >= 16
+    return entries, index_detected
+
+
+def best_index_entry(
+    entries: list[IndexEntry],
+    reference_title: str,
+) -> tuple[IndexEntry | None, float, float]:
+    if not entries:
+        return None, 0.0, 0.0
+    scored: list[tuple[float, IndexEntry]] = []
+    for entry in entries:
+        score = score_title(reference_title, entry.title)
+        if normalize_code(entry.code):
+            score = min(1.0, score + 0.03)
+        scored.append((score, entry))
+    scored.sort(key=lambda pair: pair[0], reverse=True)
+    best_score, best_entry = scored[0]
+    second = scored[1][0] if len(scored) > 1 else 0.0
+    confidence = max(0.0, best_score - max(0.0, second - 0.08))
+    return best_entry, confidence, second
+
+
+def line_matches_code(line: str, code: str) -> bool:
+    if not code:
+        return False
+    line_code = abstract_code(line)
+    if line_code and normalize_code(line_code) == normalize_code(code):
+        return True
+    normalized_line = normalize_code(line)
+    return bool(normalized_line) and normalize_code(code) in normalized_line
+
+
+def estimate_page_offset(record: dict[str, Any], entries: list[IndexEntry]) -> tuple[float, float, str]:
+    offsets: list[float] = []
+    pages = record.get("pages") or []
+    if not pages or not entries:
+        return 0.0, 0.0, "none"
+
+    # Build a fast code->first_page map once per record.
+    code_to_page: dict[str, int] = {}
+    page_text_cache: list[tuple[int, str]] = []
+    for page in pages:
+        page_index = int(page.get("page_index") or 0)
+        page_text = str(page.get("text") or "")
+        page_text_cache.append((page_index, page_text))
+        for raw in page_text.splitlines():
+            line = " ".join(raw.split())
+            if not line:
+                continue
+            code_norm = normalize_code(abstract_code(line))
+            if code_norm and code_norm not in code_to_page:
+                code_to_page[code_norm] = page_index
+
+    listed_entries = [entry for entry in entries if entry.listed_page is not None]
+    if not listed_entries:
+        return 0.0, 0.0, "insufficient_matches"
+
+    # Prefer code-anchored offsets; they are cheaper and more stable than title scans.
+    for entry in listed_entries[:120]:
+        code_norm = normalize_code(entry.code)
+        if not code_norm:
+            continue
+        matched_page = code_to_page.get(code_norm)
+        if matched_page is not None:
+            offsets.append(float(matched_page - int(entry.listed_page)))
+
+    # Fall back to title anchors only if code anchors are sparse.
+    if len(offsets) < 2:
+        title_candidates = [
+            entry for entry in listed_entries if len(token_set(entry.title, min_len=4)) >= 4
+        ][:8]
+        for entry in title_candidates:
+            best_page = -1
+            best_score = 0.0
+            for page_index, page_text in page_text_cache:
+                score = score_title(entry.title, page_text)
+                if score > best_score:
+                    best_page = page_index
+                    best_score = score
+            if best_page >= 0 and best_score >= 0.62:
+                offsets.append(float(best_page - int(entry.listed_page)))
+
+    if len(offsets) < 2:
+        return 0.0, 0.0, "insufficient_matches"
+
+    median_offset = statistics.median(offsets)
+    mad = statistics.median([abs(value - median_offset) for value in offsets]) if offsets else 999.0
+    confidence = min(1.0, (len(offsets) / 6.0)) * max(0.0, 1.0 - (mad / 5.0))
+    method = "median_offset_code_anchor" if len(offsets) >= 2 else "insufficient_matches"
+    return float(median_offset), float(confidence), method
+
+
+def neighbor_entries(entries: list[IndexEntry], target: IndexEntry) -> tuple[IndexEntry | None, IndexEntry | None]:
+    if not entries:
+        return None, None
+    try:
+        position = entries.index(target)
+    except ValueError:
+        return None, None
+    prev_entry = entries[position - 1] if position > 0 else None
+    next_entry = entries[position + 1] if position + 1 < len(entries) else None
+    return prev_entry, next_entry
+
+
+def select_search_lines(
+    lines: list[LineRef],
+    mapped_page_index: int | None,
+    offset_confidence: float,
+) -> tuple[list[LineRef], str]:
+    if mapped_page_index is None:
+        return lines, "global_fallback"
+    if offset_confidence >= 0.72:
+        radius = 3
+        mode = "index_page_narrow_window"
+    elif offset_confidence >= 0.45:
+        radius = 8
+        mode = "index_page_wide_window"
+    else:
+        radius = 12
+        mode = "index_page_low_confidence_window"
+    local = [line for line in lines if mapped_page_index - radius <= line.page_index <= mapped_page_index + radius]
+    if not local:
+        return lines, "global_fallback"
+    return local, mode
+
 def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[str, Any]:
-    first_window = [line for line in lines if line.page_index < 40]
+    first_window = [line for line in lines if line.page_index < 30]
     first_pages_text = " ".join(line.text for line in lines if line.page_index < 5)
     normalized_first_pages = normalize_text(first_pages_text)
-    abstract_starts = [line for line in first_window if is_abstract_start(line.text)]
+    abstract_starts = [line for line in first_window if is_abstract_boundary(line.text)]
     title_like_count = sum(1 for line in first_window if is_title_like(line.text))
     author_like_count = sum(1 for line in first_window if is_author_like(line.text))
     marker_text = " ".join(
@@ -434,23 +759,33 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
     )
     program_marker_count = sum(1 for marker in PROGRAM_MARKERS if marker in normalize_text(marker_text))
     n_pages = int(record.get("n_pages") or 0)
-    proceedings_detected = n_pages >= 40 and (
-        len(abstract_starts) >= 8
-        or (title_like_count >= 20 and author_like_count >= 10)
-        or program_marker_count > 0
-    )
+    signal_score = 0
+    if n_pages >= 25:
+        signal_score += 1
+    if len(abstract_starts) >= 8:
+        signal_score += 2
+    elif len(abstract_starts) >= 4:
+        signal_score += 1
+    if title_like_count >= 20 and author_like_count >= 8:
+        signal_score += 2
+    elif title_like_count >= 12 and author_like_count >= 5:
+        signal_score += 1
+    if program_marker_count > 0:
+        signal_score += 2
+    proceedings_detected = signal_score >= 3
     return {
         "n_pages": n_pages,
         "abstract_block_count": len(abstract_starts),
         "title_like_line_count": title_like_count,
         "author_like_line_count": author_like_count,
         "program_marker_count": program_marker_count,
+        "proceedings_signal_score": signal_score,
         "proceedings_detected": proceedings_detected,
     }
 
 
 def extract_blocks(lines: list[LineRef]) -> list[AbstractBlock]:
-    start_indices = [index for index, line in enumerate(lines) if is_abstract_start(line.text)]
+    start_indices = [index for index, line in enumerate(lines) if is_abstract_boundary(line.text)]
     blocks: list[AbstractBlock] = []
     for offset, start_index in enumerate(start_indices):
         end_index = start_indices[offset + 1] if offset + 1 < len(start_indices) else len(lines)
@@ -470,9 +805,10 @@ def extract_blocks(lines: list[LineRef]) -> list[AbstractBlock]:
         header_lines = [line.text for line in block_lines[: min(len(block_lines), consumed + 4)]]
         preview_lines = [line.text for line in block_lines[: min(len(block_lines), 12)] if not is_footer_like(line.text)]
         match = is_abstract_start(block_lines[0].text)
+        code_value = match.group("code") if match and match.groupdict().get("code") else abstract_code(block_lines[0].text)
         blocks.append(
             AbstractBlock(
-                code=match.group("code") if match else "",
+                code=code_value,
                 start_index=start_index,
                 end_index=end_index,
                 start_page_index=block_lines[0].page_index,
@@ -482,6 +818,7 @@ def extract_blocks(lines: list[LineRef]) -> list[AbstractBlock]:
                 preview_text=" ".join(preview_lines),
                 line_refs=block_lines,
                 trim_method="fuzzy_title_author_block_match",
+                trim_mode="fuzzy_title_author_block_match",
             )
         )
     return blocks
@@ -533,13 +870,30 @@ def local_window_candidate(
     record: dict[str, Any],
     reference_title: str,
     reference_authors: str,
+    forced_page_index: int | None = None,
+    preselected_lines: list[LineRef] | None = None,
+    target_code: str = "",
+    next_entry: IndexEntry | None = None,
+    trim_mode: str = "page_local_sliding_window_match",
+    index_detected: bool = False,
+    index_confidence: float = 0.0,
+    index_listed_page: str = "",
+    index_prev_code: str = "",
+    index_next_code: str = "",
+    page_map_method: str = "",
+    estimated_offset: float = 0.0,
+    offset_confidence: float = 0.0,
+    fallback_triggered: bool = False,
 ) -> AbstractBlock | None:
     if not lines:
         return None
-    best_page_index, _, _, _ = page_match_scores(record, reference_title, reference_authors)
-    local_lines = [
-        line for line in lines if best_page_index - 1 <= line.page_index <= best_page_index + 1
-    ]
+    if preselected_lines is not None:
+        local_lines = preselected_lines
+    else:
+        page_index = forced_page_index
+        if page_index is None:
+            page_index, _, _, _ = page_match_scores(record, reference_title, reference_authors)
+        local_lines = [line for line in lines if page_index - 1 <= line.page_index <= page_index + 1]
     if not local_lines:
         return None
 
@@ -575,11 +929,15 @@ def local_window_candidate(
                     anchor_title_text = cluster_text
 
             boundary_bonus = 1.0 if is_abstract_boundary(local_lines[start_index].text) else 0.0
+            code_bonus = 0.0
+            if target_code and any(line_matches_code(line.text, target_code) for line in window_lines[:4]):
+                code_bonus = 1.0
             combined = (
-                (0.40 * window_title_score)
+                (0.35 * window_title_score)
                 + (0.25 * window_author_score)
                 + (0.30 * anchor_score)
                 + (0.05 * boundary_bonus)
+                + (0.05 * code_bonus)
             )
             if combined > best_match_score:
                 best_match_score = combined
@@ -595,32 +953,66 @@ def local_window_candidate(
         return None
 
     start_index = best_anchor_index
+    start_rule = "anchor_line"
+    target_code_norm = normalize_code(target_code)
     for local_index in range(best_anchor_index, max(-1, best_anchor_index - 8), -1):
         line = local_lines[local_index]
+        line_code_norm = normalize_code(abstract_code(line.text))
+        if target_code_norm and line_code_norm and line_code_norm == target_code_norm:
+            start_index = local_index
+            start_rule = "target_code_boundary"
+            break
         if is_abstract_boundary(line.text):
             start_index = local_index
+            start_rule = "backtrack_abstract_boundary"
             break
         cluster_score, _ = title_cluster_score(reference_title, local_lines, local_index)
         if cluster_score >= 0.70:
             start_index = local_index
+            start_rule = "backtrack_title_cluster"
 
     end_index = min(len(local_lines), max(best_window_end, start_index + 8))
+    end_rule = "window_extent_cap"
+    next_code_norm = normalize_code(next_entry.code) if next_entry else ""
     for local_index in range(start_index + 3, len(local_lines)):
         line = local_lines[local_index]
+        line_code_norm = normalize_code(abstract_code(line.text))
+        if next_code_norm and line_code_norm and line_code_norm == next_code_norm:
+            end_index = local_index
+            end_rule = "next_index_code_boundary"
+            break
         if is_abstract_boundary(line.text):
             end_index = local_index
+            end_rule = "next_abstract_boundary"
             break
         if local_index > start_index + 4:
             cluster_score, _ = title_cluster_score(reference_title, local_lines, local_index)
-            if cluster_score >= 0.68 and not is_section_heading(local_lines[local_index].text):
+            if (
+                cluster_score >= 0.72
+                and is_title_like(local_lines[local_index].text)
+                and len(local_lines[local_index].text.split()) <= 20
+                and not is_section_heading(local_lines[local_index].text)
+            ):
                 end_index = local_index
+                end_rule = "next_title_cluster"
                 break
         if local_lines[local_index].page_index > local_lines[start_index].page_index + 1:
+            end_rule = "page_span_cap"
             break
 
     candidate_lines = local_lines[start_index:end_index]
+    candidate_lines, spillover_flag, spillover_rule = truncate_at_next_boundary(
+        candidate_lines,
+        expected_code=abstract_code(candidate_lines[0].text) if candidate_lines else target_code,
+        next_entry=next_entry,
+    )
+    if spillover_flag:
+        end_rule = spillover_rule
     if not candidate_lines:
         return None
+    enough_body, section_hits, header_only_flag = has_enough_body(candidate_lines)
+    # Keep candidate for downstream logic; guardrails are applied in process_record.
+    _ = enough_body
     preview_lines = [line.text for line in candidate_lines[: min(len(candidate_lines), 14)] if not is_footer_like(line.text)]
     header_lines = [line.text for line in candidate_lines[: min(len(candidate_lines), 8)] if not is_footer_like(line.text)]
     start_line = candidate_lines[0].text
@@ -638,7 +1030,137 @@ def local_window_candidate(
         author_score=best_author_score,
         match_score=best_match_score,
         trim_method="page_local_sliding_window_match",
+        trim_mode=trim_mode,
+        start_rule=start_rule,
+        end_rule=end_rule,
+        body_signal_count=section_hits,
+        spillover_flag=spillover_flag,
+        header_only_flag=header_only_flag,
+        index_detected=index_detected,
+        index_confidence=index_confidence,
+        index_listed_page=index_listed_page,
+        index_prev_code=index_prev_code,
+        index_next_code=index_next_code,
+        page_map_method=page_map_method,
+        estimated_offset=estimated_offset,
+        offset_confidence=offset_confidence,
+        fallback_triggered=fallback_triggered,
     )
+
+
+def index_assisted_candidate(
+    lines: list[LineRef],
+    record: dict[str, Any],
+    reference_title: str,
+    reference_authors: str,
+) -> tuple[AbstractBlock | None, dict[str, Any]]:
+    entries, index_detected = parse_index_entries(record)
+    diagnostics: dict[str, Any] = {
+        "index_detected": index_detected,
+        "index_confidence": 0.0,
+        "index_listed_page": "",
+        "index_prev_code": "",
+        "index_next_code": "",
+        "page_map_method": "",
+        "estimated_offset": 0.0,
+        "offset_confidence": 0.0,
+        "fallback_triggered": False,
+    }
+    if not entries:
+        diagnostics["fallback_triggered"] = True
+        return None, diagnostics
+
+    target_entry, confidence, _ = best_index_entry(entries, reference_title)
+    diagnostics["index_confidence"] = round(confidence, 4)
+    if target_entry is None or confidence < 0.55:
+        diagnostics["fallback_triggered"] = True
+        return None, diagnostics
+
+    prev_entry, next_entry = neighbor_entries(entries, target_entry)
+    diagnostics["index_listed_page"] = (
+        str(target_entry.listed_page) if target_entry.listed_page is not None else ""
+    )
+    diagnostics["index_prev_code"] = prev_entry.code if prev_entry else ""
+    diagnostics["index_next_code"] = next_entry.code if next_entry else ""
+
+    estimated_offset, offset_confidence, page_map_method = estimate_page_offset(record, entries)
+    diagnostics["page_map_method"] = page_map_method
+    diagnostics["estimated_offset"] = round(estimated_offset, 3)
+    diagnostics["offset_confidence"] = round(offset_confidence, 4)
+
+    mapped_page_index: int | None = None
+    if target_entry.listed_page is not None:
+        if offset_confidence >= 0.40:
+            mapped_page_index = max(0, int(round(float(target_entry.listed_page) + estimated_offset)))
+        else:
+            mapped_page_index = max(0, int(target_entry.listed_page))
+    if mapped_page_index is None:
+        diagnostics["fallback_triggered"] = True
+        return None, diagnostics
+
+    selected_lines, mode = select_search_lines(lines, mapped_page_index, offset_confidence)
+    if len(selected_lines) > 3200:
+        diagnostics["fallback_triggered"] = True
+        return None, diagnostics
+    candidate = local_window_candidate(
+        lines=lines,
+        record=record,
+        reference_title=reference_title,
+        reference_authors=reference_authors,
+        forced_page_index=mapped_page_index,
+        preselected_lines=selected_lines,
+        target_code=target_entry.code,
+        next_entry=next_entry,
+        trim_mode=f"index_assisted::{mode}",
+        index_detected=index_detected,
+        index_confidence=confidence,
+        index_listed_page=diagnostics["index_listed_page"],
+        index_prev_code=diagnostics["index_prev_code"],
+        index_next_code=diagnostics["index_next_code"],
+        page_map_method=page_map_method,
+        estimated_offset=estimated_offset,
+        offset_confidence=offset_confidence,
+        fallback_triggered=False,
+    )
+    if candidate is None:
+        diagnostics["fallback_triggered"] = True
+        return None, diagnostics
+    candidate.candidate_rank = 1
+    return candidate, diagnostics
+
+
+def candidate_quality_status(
+    block: AbstractBlock,
+    reference_authors: str,
+) -> tuple[str, str]:
+    # Re-score authors on a larger slice; header-only captures can otherwise look stronger than they are.
+    line_text = " ".join(line.text for line in block.line_refs[: min(len(block.line_refs), 24)])
+    stronger_author_score = score_authors(reference_authors, line_text)
+    block.author_score = max(block.author_score, stronger_author_score)
+
+    enough_body, section_hits, header_only = has_enough_body(block.line_refs)
+    block.body_signal_count = section_hits
+    block.header_only_flag = header_only
+
+    if block.spillover_flag:
+        return "manual_review_required", "Candidate contains lines from a subsequent abstract boundary."
+
+    identity_ok = block.title_score >= 0.62 or (
+        block.title_score >= 0.55 and block.author_score >= 0.20 and block.match_score >= 0.58
+    )
+    if not identity_ok:
+        return (
+            "manual_review_required",
+            "Proceedings detected, but the candidate did not match title/authors strongly enough.",
+        )
+
+    if header_only:
+        return "header_only_source", "Matched entry appears to contain header-only listing without abstract body."
+
+    if not enough_body:
+        return "manual_review_required", "Matched entry appears truncated or lacks sufficient abstract body content."
+
+    return "trimmed_auto", "Proceedings detected and candidate abstract passed identity and completeness guardrails."
 
 
 def choose_best_candidate(
@@ -649,6 +1171,18 @@ def choose_best_candidate(
         return window_candidate
     if window_candidate is None:
         return block_candidate
+    window_body_chars = body_char_count(window_candidate.line_refs)
+    block_body_chars = body_char_count(block_candidate.line_refs)
+    if (
+        block_body_chars >= max(500, int(window_body_chars * 1.35))
+        and block_candidate.match_score >= window_candidate.match_score - 0.06
+        and block_candidate.title_score >= 0.55
+    ):
+        return block_candidate
+    if window_candidate.trim_mode.startswith("index_assisted") and (
+        window_candidate.match_score + 0.02 >= block_candidate.match_score
+    ):
+        return window_candidate
     if window_candidate.match_score > block_candidate.match_score + 0.05:
         return window_candidate
     if (
@@ -687,6 +1221,7 @@ def build_trimmed_record(
         "source_text_json_path": relative_to_repo(source_path),
         "trim_status": "trimmed_auto",
         "trim_method": block.trim_method or "fuzzy_title_author_block_match",
+        "trim_mode": block.trim_mode or block.trim_method or "fuzzy_title_author_block_match",
         "proceedings_detected": True,
         "title": (reference_row.get("Title") or "").strip(),
         "authors": (reference_row.get("Authors") or "").strip(),
@@ -697,6 +1232,21 @@ def build_trimmed_record(
         "author_score": round(block.author_score, 4),
         "start_page_index": block.start_page_index,
         "end_page_index": block.end_page_index,
+        "start_rule": block.start_rule,
+        "end_rule": block.end_rule,
+        "body_signal_count": block.body_signal_count,
+        "spillover_flag": block.spillover_flag,
+        "header_only_flag": block.header_only_flag,
+        "index_detected": block.index_detected,
+        "index_confidence": round(block.index_confidence, 4),
+        "index_listed_page": block.index_listed_page,
+        "index_prev_code": block.index_prev_code,
+        "index_next_code": block.index_next_code,
+        "page_map_method": block.page_map_method,
+        "estimated_offset": round(block.estimated_offset, 3),
+        "offset_confidence": round(block.offset_confidence, 4),
+        "candidate_rank": block.candidate_rank,
+        "fallback_triggered": block.fallback_triggered,
         "original_n_pages": int(source_record.get("n_pages") or 0),
         "n_pages": len(pages),
         "page_char_counts": [len(page["text"]) for page in pages],
@@ -715,7 +1265,24 @@ def decision_row(
     trim_status: str,
     trim_reason: str,
     block: AbstractBlock | None,
+    diagnostics: dict[str, Any] | None,
 ) -> dict[str, str]:
+    diagnostics = diagnostics or {}
+    index_detected = bool(diagnostics.get("index_detected")) if block is None else bool(block.index_detected)
+    index_confidence = (
+        float(diagnostics.get("index_confidence") or 0.0) if block is None else float(block.index_confidence)
+    )
+    index_listed_page = str(diagnostics.get("index_listed_page") or "") if block is None else block.index_listed_page
+    index_prev_code = str(diagnostics.get("index_prev_code") or "") if block is None else block.index_prev_code
+    index_next_code = str(diagnostics.get("index_next_code") or "") if block is None else block.index_next_code
+    page_map_method = str(diagnostics.get("page_map_method") or "") if block is None else block.page_map_method
+    estimated_offset = (
+        float(diagnostics.get("estimated_offset") or 0.0) if block is None else float(block.estimated_offset)
+    )
+    offset_confidence = (
+        float(diagnostics.get("offset_confidence") or 0.0) if block is None else float(block.offset_confidence)
+    )
+    fallback_triggered = bool(diagnostics.get("fallback_triggered")) if block is None else bool(block.fallback_triggered)
     return {
         "paper_id": paper_id,
         "covidence_id": (reference_row.get("Covidence") or paper_id).strip(),
@@ -729,18 +1296,35 @@ def decision_row(
         "title_like_line_count": str(signals["title_like_line_count"]),
         "author_like_line_count": str(signals["author_like_line_count"]),
         "program_marker_count": str(signals["program_marker_count"]),
+        "proceedings_signal_score": str(signals.get("proceedings_signal_score", "")),
         "proceedings_detected": bool_text(bool(signals["proceedings_detected"])),
+        "index_detected": bool_text(index_detected),
+        "index_confidence": f"{index_confidence:.4f}" if index_confidence else "",
+        "index_listed_page": index_listed_page,
+        "index_prev_code": index_prev_code,
+        "index_next_code": index_next_code,
+        "page_map_method": page_map_method,
+        "estimated_offset": f"{estimated_offset:.3f}" if estimated_offset else "",
+        "offset_confidence": f"{offset_confidence:.4f}" if offset_confidence else "",
+        "fallback_triggered": bool_text(fallback_triggered),
         "trim_status": trim_status,
         "trim_reason": trim_reason,
-        "trim_method": block.trim_method if trim_status == "trimmed_auto" and block else "",
+        "trim_method": block.trim_method if trim_status in {"trimmed_auto", "header_only_source"} and block else "",
+        "trim_mode": block.trim_mode if block else "",
         "matched_block_code": block.code if block else "",
         "matched_block_title": block.title_text if block else "",
         "title_score": f"{block.title_score:.4f}" if block else "",
         "author_score": f"{block.author_score:.4f}" if block else "",
         "match_score": f"{block.match_score:.4f}" if block else "",
+        "start_rule": block.start_rule if block else "",
+        "end_rule": block.end_rule if block else "",
+        "body_signal_count": str(block.body_signal_count) if block else "",
+        "spillover_flag": bool_text(block.spillover_flag) if block else "",
+        "header_only_flag": bool_text(block.header_only_flag) if block else "",
+        "candidate_rank": str(block.candidate_rank) if block else "",
         "start_page_index": str(block.start_page_index) if block else "",
         "end_page_index": str(block.end_page_index) if block else "",
-        "trimmed_at_utc": now_utc_iso() if trim_status == "trimmed_auto" else "",
+        "trimmed_at_utc": now_utc_iso() if trim_status in {"trimmed_auto", "header_only_source"} else "",
     }
 
 
@@ -758,15 +1342,32 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         "title_like_line_count",
         "author_like_line_count",
         "program_marker_count",
+        "proceedings_signal_score",
         "proceedings_detected",
+        "index_detected",
+        "index_confidence",
+        "index_listed_page",
+        "index_prev_code",
+        "index_next_code",
+        "page_map_method",
+        "estimated_offset",
+        "offset_confidence",
+        "fallback_triggered",
         "trim_status",
         "trim_reason",
         "trim_method",
+        "trim_mode",
         "matched_block_code",
         "matched_block_title",
         "title_score",
         "author_score",
         "match_score",
+        "start_rule",
+        "end_rule",
+        "body_signal_count",
+        "spillover_flag",
+        "header_only_flag",
+        "candidate_rank",
         "start_page_index",
         "end_page_index",
         "trimmed_at_utc",
@@ -799,6 +1400,8 @@ def process_record(
     lines = flatten_lines(record)
     signals = proceedings_signals(record, lines)
     trimmed_path = output_dir / f"{paper_id}.json"
+    reference_title = (reference_row.get("Title") or "").strip()
+    reference_authors = (reference_row.get("Authors") or "").strip()
 
     if not signals["proceedings_detected"]:
         if trimmed_path.exists():
@@ -813,21 +1416,62 @@ def process_record(
             trim_status="not_needed",
             trim_reason="Document does not look like a large proceedings/program PDF.",
             block=None,
+            diagnostics=None,
         )
 
     blocks = extract_blocks(lines)
     block_candidate = best_matching_block(
         blocks=blocks,
-        reference_title=(reference_row.get("Title") or "").strip(),
-        reference_authors=(reference_row.get("Authors") or "").strip(),
+        reference_title=reference_title,
+        reference_authors=reference_authors,
     )
-    window_candidate = local_window_candidate(
+    index_candidate, index_diagnostics = index_assisted_candidate(
         lines=lines,
         record=record,
-        reference_title=(reference_row.get("Title") or "").strip(),
-        reference_authors=(reference_row.get("Authors") or "").strip(),
+        reference_title=reference_title,
+        reference_authors=reference_authors,
     )
+    fallback_window_candidate = local_window_candidate(
+        lines=lines,
+        record=record,
+        reference_title=reference_title,
+        reference_authors=reference_authors,
+        trim_mode="page_local_sliding_window_match",
+        fallback_triggered=index_candidate is None,
+    )
+    window_candidate = index_candidate if index_candidate is not None else fallback_window_candidate
+    if window_candidate is not None and window_candidate.trim_mode.startswith("index_assisted"):
+        window_candidate.fallback_triggered = False
+    elif window_candidate is not None:
+        window_candidate.fallback_triggered = True
+    if block_candidate is not None and not block_candidate.trim_mode:
+        block_candidate.trim_mode = "fuzzy_title_author_block_match"
+
     block = choose_best_candidate(block_candidate, window_candidate)
+    if block is None and index_candidate is not None:
+        # If index-assisted failed due candidate competition, keep fallback status explicit.
+        index_diagnostics["fallback_triggered"] = True
+    if block is not None and not block.index_detected:
+        block.index_detected = bool(index_diagnostics.get("index_detected"))
+    if block is not None and block.index_confidence == 0.0:
+        block.index_confidence = float(index_diagnostics.get("index_confidence") or 0.0)
+    if block is not None and not block.index_listed_page:
+        block.index_listed_page = str(index_diagnostics.get("index_listed_page") or "")
+    if block is not None and not block.index_prev_code:
+        block.index_prev_code = str(index_diagnostics.get("index_prev_code") or "")
+    if block is not None and not block.index_next_code:
+        block.index_next_code = str(index_diagnostics.get("index_next_code") or "")
+    if block is not None and not block.page_map_method:
+        block.page_map_method = str(index_diagnostics.get("page_map_method") or "")
+    if block is not None and block.estimated_offset == 0.0:
+        block.estimated_offset = float(index_diagnostics.get("estimated_offset") or 0.0)
+    if block is not None and block.offset_confidence == 0.0:
+        block.offset_confidence = float(index_diagnostics.get("offset_confidence") or 0.0)
+    if block is not None:
+        block.fallback_triggered = bool(index_diagnostics.get("fallback_triggered")) and not (
+            block.trim_mode.startswith("index_assisted")
+        )
+
     if block is None:
         if trimmed_path.exists():
             trimmed_path.unlink()
@@ -841,16 +1485,11 @@ def process_record(
             trim_status="manual_review_required",
             trim_reason="No abstract block could be segmented from the proceedings text.",
             block=None,
+            diagnostics=index_diagnostics,
         )
 
-    high_confidence = block.title_score >= 0.72 or (
-        block.title_score >= 0.56 and block.author_score >= 0.25 and block.match_score >= 0.60
-    ) or (
-        block.trim_method == "page_local_sliding_window_match"
-        and block.title_score >= 0.62
-        and block.match_score >= 0.58
-    )
-    if not high_confidence:
+    trim_status, trim_reason = candidate_quality_status(block, reference_authors)
+    if trim_status == "manual_review_required":
         if trimmed_path.exists():
             trimmed_path.unlink()
         return decision_row(
@@ -860,15 +1499,16 @@ def process_record(
             source_path=path,
             trimmed_path=None,
             signals=signals,
-            trim_status="manual_review_required",
-            trim_reason=(
-                "Proceedings detected, but the best abstract block match is below the auto-trim confidence threshold."
-            ),
+            trim_status=trim_status,
+            trim_reason=trim_reason,
             block=block,
+            diagnostics=index_diagnostics,
         )
 
     output_dir.mkdir(parents=True, exist_ok=True)
     trimmed_record = build_trimmed_record(record, path, block, reference_row)
+    trimmed_record["trim_status"] = trim_status
+    trimmed_record["trim_reason"] = trim_reason
     trimmed_path.write_text(
         json.dumps(trimmed_record, ensure_ascii=False, indent=2),
         encoding="utf-8",
@@ -880,9 +1520,10 @@ def process_record(
         source_path=path,
         trimmed_path=trimmed_path,
         signals=signals,
-        trim_status="trimmed_auto",
-        trim_reason="Proceedings detected and the target abstract block matched with sufficient confidence.",
+        trim_status=trim_status,
+        trim_reason=trim_reason,
         block=block,
+        diagnostics=index_diagnostics,
     )
 
 

@@ -83,11 +83,20 @@ This script detects likely conference proceedings or other multi-abstract PDFs a
 It:
 
 - reads full text JSON files from `data/extraction_json/text`,
-- detects proceedings using simple structural signals such as many pages, many title-like lines, and many author-like lines,
+- detects proceedings using structural signals (abstract-boundary density, title/author density, and program markers),
+- optionally uses index/table-of-contents pages to localise the target abstract page and boundary neighborhood,
 - segments the proceedings into abstract blocks,
-- finds the best target block using fuzzy title and author matching against `data/references/sps_references_export.csv`,
+- finds the best target block using title/author fuzzy matching with boundary guardrails,
+- applies completeness checks and spillover checks before auto-accepting,
 - writes trimmed JSON files to `data/extraction_json/text_trimmed/{paper_id}.json`, and
 - writes a decision registry to `data/references/text_trim_registry.csv`.
+
+Main trim statuses:
+
+- `trimmed_auto`
+- `header_only_source`
+- `manual_review_required`
+- `not_needed`
 
 ### Run
 
@@ -103,19 +112,21 @@ It:
 
 - selects proceedings-like papers from reviewed/heuristic source routing plus the trim registry,
 - prefers trimmed proceedings text when it exists,
-- searches the extracted text for the target title and author surnames,
+- checks title and author alignment,
+- checks abstract completeness signals (section headings/body size),
+- checks for likely spillover into neighboring abstracts,
 - scores the best-matching page,
 - records whether the proceedings-derived text appears to contain the correct abstract, and
 - writes `data/references/proceedings_text_qc_registry.csv`.
 
 Useful statuses:
 
-- `trimmed_match_confirmed`
-- `trimmed_partial_match`
-- `trimmed_mismatch_suspected`
-- `full_text_localised_untrimmed`
-- `full_text_partial_match`
-- `not_localised`
+- `confirmed_full`
+- `partial_truncated`
+- `spillover_detected`
+- `header_only_source`
+- `untrimmed_localised`
+- `mismatch`
 
 ### Run
 

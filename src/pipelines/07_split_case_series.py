@@ -245,7 +245,7 @@ def split_reason_for_qc_failure(proceedings_qc_row: dict[str, str], resolved_sou
     status = (proceedings_qc_row.get("qc_status") or "").strip()
     if not status:
         return "Conference abstract case-series candidate has not yet been proceedings-QC checked."
-    if status not in {"trimmed_match_confirmed", "trimmed_partial_match", "full_text_localised_untrimmed"}:
+    if status not in {"confirmed_full"}:
         return f"Conference abstract proceedings QC status '{status}' is not safe for auto-splitting."
     return ""
 

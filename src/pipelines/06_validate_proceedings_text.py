@@ -24,6 +24,21 @@ SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categor
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
+SECTION_HEADING_MARKERS = (
+    "background",
+    "purpose",
+    "objective",
+    "objectives",
+    "introduction",
+    "case",
+    "methods",
+    "results",
+    "discussion",
+    "conclusion",
+)
+ABSTRACT_BOUNDARY_RE = re.compile(
+    r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5})\s*(?:[\.\|\:\-\)]\s+|$)"
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -129,17 +144,29 @@ def score_title(reference_title: str, candidate_text: str) -> float:
     overlap = len(ref_tokens & candidate_tokens) / max(1, len(ref_tokens))
     if ref_norm in candidate_norm or candidate_norm in ref_norm:
         overlap = max(overlap, 0.95)
-    return max(sequence, (0.65 * sequence) + (0.35 * overlap))
+    blended = (0.35 * sequence) + (0.65 * overlap)
+    return max(min(sequence, overlap), blended)
 
 
 def parse_reference_surnames(authors: str) -> list[str]:
     surnames: list[str] = []
-    for chunk in re.split(r";", authors or ""):
+    for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
         part = chunk.strip()
         if not part:
             continue
-        surname = part.split(",", 1)[0].strip()
+        part = re.sub(r"\b(MD|PhD|DO|MSc|MBBS|RN|FRCP|FAAN)\b\.?", "", part, flags=re.IGNORECASE).strip()
+        if "," in part:
+            surname = part.split(",", 1)[0].strip()
+        else:
+            tokens = [token for token in re.split(r"\s+", part) if token]
+            if not tokens:
+                continue
+            surname = tokens[-1]
+            if len(tokens) >= 2 and len(tokens[-1]) <= 2:
+                surname = tokens[-2]
         normalized = normalize_text(surname)
+        if len(normalized) <= 1:
+            continue
         if normalized and normalized not in surnames:
             surnames.append(normalized)
     return surnames[:8]
@@ -160,6 +187,49 @@ def score_authors(reference_authors: str, candidate_text: str) -> float:
         if surname_tokens and surname_tokens.issubset(candidate_tokens):
             matches += 1
     return matches / len(surnames)
+
+
+def is_section_heading(line: str) -> bool:
+    normalized = normalize_text(line)
+    return any(normalized.startswith(marker) for marker in SECTION_HEADING_MARKERS)
+
+
+def is_abstract_boundary(line: str) -> bool:
+    return ABSTRACT_BOUNDARY_RE.match(line.strip()) is not None
+
+
+def body_metrics(record: dict[str, Any]) -> tuple[int, int, bool]:
+    lines: list[str] = []
+    for page in record.get("pages") or []:
+        page_text = str(page.get("text") or "")
+        for raw in page_text.splitlines():
+            line = " ".join(raw.split())
+            if line:
+                lines.append(line)
+    if not lines:
+        return 0, 0, True
+    section_hits = sum(1 for line in lines if is_section_heading(line))
+    body_text = " ".join(lines[min(6, len(lines)) :])
+    body_chars = len(body_text)
+    header_only = section_hits == 0 and body_chars < 280
+    return section_hits, body_chars, header_only
+
+
+def spillover_detected(record: dict[str, Any]) -> bool:
+    lines: list[str] = []
+    for page in record.get("pages") or []:
+        page_text = str(page.get("text") or "")
+        for raw in page_text.splitlines():
+            line = " ".join(raw.split())
+            if line:
+                lines.append(line)
+    if len(lines) < 8:
+        return False
+    # If another abstract boundary appears in the tail region, trimming likely leaked into a neighbour.
+    for line in lines[5:]:
+        if is_abstract_boundary(line):
+            return True
+    return False
 
 
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
@@ -235,21 +305,31 @@ def derive_qc_status(
     title_score: float,
     author_score: float,
     combined_score: float,
+    section_hits: int,
+    body_chars: int,
+    header_only: bool,
+    spillover: bool,
 ) -> tuple[str, bool, str]:
-    strong = title_score >= 0.72 and author_score >= 0.20
-    moderate = combined_score >= 0.62 or title_score >= 0.58 or author_score >= 0.40
-    if trimmed_present:
-        if strong:
-            return "trimmed_match_confirmed", False, "Trimmed proceedings text matches the target title/authors strongly."
-        if moderate:
-            return "trimmed_partial_match", True, "Trimmed text looks related but needs a manual check for completeness."
-        return "trimmed_mismatch_suspected", True, "Trimmed text does not match the target abstract confidently."
+    identity_strong = title_score >= 0.72 and author_score >= 0.20
+    identity_moderate = combined_score >= 0.62 or title_score >= 0.60
+    identity_ok = identity_strong or identity_moderate
 
-    if strong:
-        return "full_text_localised_untrimmed", True, "Target abstract appears localised in the proceedings text but no trimmed artifact exists."
-    if moderate:
-        return "full_text_partial_match", True, "Proceedings text contains a partial title/author match only."
-    return "not_localised", True, "Could not localise the target abstract confidently in the proceedings text."
+    if not identity_ok:
+        return "mismatch", True, "Title/author alignment is too weak for a reliable proceedings match."
+    if not trimmed_present:
+        if header_only:
+            return "header_only_source", True, "Matched source appears to be a title/author listing without abstract body text."
+        return "untrimmed_localised", True, "Target appears localised in full proceedings text; trimming/manual review is still required."
+    if spillover:
+        return "spillover_detected", True, "Trim appears to include a neighbouring abstract boundary."
+    if header_only:
+        return "header_only_source", True, "Matched source appears to be a title/author listing without abstract body text."
+
+    enough_body = body_chars >= 420 or (section_hits >= 3 and body_chars >= 160) or (section_hits >= 1 and body_chars >= 220)
+    if enough_body:
+        return "confirmed_full", False, "Trimmed proceedings text matches and appears complete."
+
+    return "partial_truncated", True, "Matched text appears related but likely incomplete/truncated."
 
 
 def qc_row(
@@ -264,12 +344,20 @@ def qc_row(
     author_score: float,
     combined_score: float,
     best_excerpt: str,
+    section_hits: int,
+    body_chars: int,
+    header_only: bool,
+    spillover: bool,
 ) -> dict[str, str]:
     status, manual_follow_up, note = derive_qc_status(
         trimmed_present=trimmed_path is not None,
         title_score=title_score,
         author_score=author_score,
         combined_score=combined_score,
+        section_hits=section_hits,
+        body_chars=body_chars,
+        header_only=header_only,
+        spillover=spillover,
     )
     return {
         "paper_id": paper_id,
@@ -292,6 +380,10 @@ def qc_row(
         "title_score": f"{title_score:.4f}",
         "author_score": f"{author_score:.4f}",
         "combined_score": f"{combined_score:.4f}",
+        "section_heading_count": str(section_hits),
+        "body_char_count": str(body_chars),
+        "header_only_flag": bool_text(header_only),
+        "spillover_flag": bool_text(spillover),
         "best_match_excerpt": best_excerpt,
         "qc_note": note,
         "checked_at_utc": now_utc_iso(),
@@ -320,6 +412,10 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         "title_score",
         "author_score",
         "combined_score",
+        "section_heading_count",
+        "body_char_count",
+        "header_only_flag",
+        "spillover_flag",
         "best_match_excerpt",
         "qc_note",
         "checked_at_utc",
@@ -374,6 +470,8 @@ def main() -> None:
             reference_title=(reference_row.get("Title") or "").strip(),
             reference_authors=(reference_row.get("Authors") or "").strip(),
         )
+        section_hits, body_chars, header_only = body_metrics(record)
+        spillover = spillover_detected(record) if trimmed_path.exists() else False
         rows.append(
             qc_row(
                 paper_id=paper_id,
@@ -387,6 +485,10 @@ def main() -> None:
                 author_score=author_score,
                 combined_score=combined_score,
                 best_excerpt=best_excerpt,
+                section_hits=section_hits,
+                body_chars=body_chars,
+                header_only=header_only,
+                spillover=spillover,
             )
         )
 

@@ -1,0 +1,11 @@
+paper_id,manual_verdict,is_correct_abstract,is_full_abstract_text,note
+1001,partial,yes,no,Target abstract text is present but trim spills into the next abstract (PP2211).
+1231,incorrect,partial,no,Only disclosure/title/authors and first background fragment captured; most of abstract body in source page is missing.
+1605,incorrect,partial,no,Trim stops after opening case line; full case-report abstract body exists in source page but is not captured.
+1793,incorrect,partial,no,"Title/authors captured, but objective/method/results content from source page is mostly missing."
+6141,accurate_full,yes,yes,Trimmed text matches the full target abstract block on source page.
+1120,incorrect,partial,no,Only title/authors captured; objective/background/method/results in source page are missing from trimmed output.
+1229,incorrect,partial,no,Only title/authors captured; substantial abstract body present in source page is not included.
+12807,partial,yes,source_only_has_header,Correct entry captured; source page appears to contain title/author listing only (no abstract body visible between neighboring entries).
+1439,partial,yes,source_only_has_header,Correct entry captured; source page appears to be title/author listing only with no abstract body text.
+5552,incorrect,partial,no,Trim includes 'Abstract cancelled' marker and header lines but misses case-report body text present in source page.
