@@ -17,6 +17,7 @@ GROUP_OUT = PROMPT_EXAMPLES_DIR / "02_group_examples.json"
 PUBLICATION_TYPE_OUT = PROMPT_EXAMPLES_DIR / "03_publication_type_examples.json"
 
 
+# Build dedupe headers.
 def dedupe_headers(headers: list[str]) -> list[str]:
     counts: dict[str, int] = {}
     deduped: list[str] = []
@@ -27,6 +28,7 @@ def dedupe_headers(headers: list[str]) -> list[str]:
     return deduped
 
 
+# Load case report rows.
 def load_case_report_rows(path: Path) -> set[tuple[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.reader(handle)
@@ -46,12 +48,14 @@ def load_case_report_rows(path: Path) -> set[tuple[str, str]]:
         return keys
 
 
+# Load sheet IDs.
 def load_sheet_ids(path: Path, key: str) -> set[str]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
         return {(row.get(key) or "").strip() for row in reader if (row.get(key) or "").strip()}
 
 
+# Validate individual sources.
 def validate_individual_sources(payload: list[dict[str, object]], case_rows: set[tuple[str, str]]) -> None:
     missing: list[str] = []
     for item in payload:
@@ -63,6 +67,7 @@ def validate_individual_sources(payload: list[dict[str, object]], case_rows: set
         raise ValueError(f"Missing individual example rows in curated case-report sheet: {', '.join(missing)}")
 
 
+# Validate sheet sources.
 def validate_sheet_sources(payload: list[dict[str, object]], valid_ids: set[str], label: str) -> None:
     missing = [
         str(item.get("paper_id") or "").strip()
@@ -73,11 +78,13 @@ def validate_sheet_sources(payload: list[dict[str, object]], valid_ids: set[str]
         raise ValueError(f"Missing {label} example IDs in curated sheet: {', '.join(missing)}")
 
 
+# Write JSON.
 def write_json(path: Path, payload: list[dict[str, object]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+# Build individual examples.
 def individual_examples() -> list[dict[str, object]]:
     return [
         {
@@ -167,6 +174,7 @@ def individual_examples() -> list[dict[str, object]]:
     ]
 
 
+# Group examples.
 def group_examples() -> list[dict[str, object]]:
     return [
         {
@@ -229,6 +237,7 @@ def group_examples() -> list[dict[str, object]]:
     ]
 
 
+# Build publication type examples.
 def publication_type_examples() -> list[dict[str, object]]:
     return [
         {
@@ -274,6 +283,7 @@ def publication_type_examples() -> list[dict[str, object]]:
     ]
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     case_rows = load_case_report_rows(CASE_REPORT_SHEET)
     case_series_ids = load_sheet_ids(CASE_SERIES_SHEET, "ID")

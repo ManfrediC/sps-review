@@ -186,14 +186,17 @@ CONTEXTUAL_PATIENT_COUNT_RE = re.compile(
 PATIENT_LABEL_RE = re.compile(r"\b(?:patient|case)\s*(?:#\s*)?(?:\d+|i|ii|iii|iv|v|vi|vii|viii|ix|x)\b")
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Build bool text.
 def bool_text(value: bool) -> str:
     return "true" if value else "false"
 
 
+# Convert a path to a repository-relative string.
 def relative_to_repo(path: Path) -> str:
     try:
         return str(path.resolve().relative_to(REPO_ROOT.resolve()))
@@ -201,6 +204,7 @@ def relative_to_repo(path: Path) -> str:
         return str(path.resolve())
 
 
+# Normalize text.
 def normalize_text(text: str) -> str:
     normalized = unicodedata.normalize("NFKD", text or "")
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
@@ -209,6 +213,7 @@ def normalize_text(text: str) -> str:
     return " ".join(ascii_text.split())
 
 
+# Load reference rows.
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
@@ -219,6 +224,7 @@ def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
         }
 
 
+# Load CSV rows by ID.
 def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]]:
     if not path.exists():
         return {}
@@ -232,12 +238,14 @@ def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]
     return latest
 
 
+# Load text record.
 def load_text_record(path: Path) -> dict[str, Any]:
     record = json.loads(path.read_text(encoding="utf-8"))
     record["_path"] = str(path)
     return record
 
 
+# Collect text paths.
 def collect_text_paths(input_dir: Path, paper_ids: list[str], limit: int) -> list[Path]:
     paths = sorted(input_dir.glob("*.json"))
     if paper_ids:
@@ -248,14 +256,17 @@ def collect_text_paths(input_dir: Path, paper_ids: list[str], limit: int) -> lis
     return paths
 
 
+# Build marker hits.
 def marker_hits(text: str, markers: tuple[str, ...]) -> list[str]:
     return [marker for marker in markers if marker in text]
 
 
+# Build count patient labels.
 def count_patient_labels(text: str) -> int:
     return len(set(PATIENT_LABEL_RE.findall(text)))
 
 
+# Parse count token.
 def parse_count_token(token: str) -> int:
     stripped = token.strip().lower()
     if stripped.isdigit():
@@ -263,6 +274,7 @@ def parse_count_token(token: str) -> int:
     return NUMBER_WORDS.get(stripped, 0)
 
 
+# Build likely case count.
 def likely_case_count(raw_text: str) -> int:
     lower_text = (raw_text or "").lower()
     counts = [parse_count_token(match.group("count")) for match in CONTEXTUAL_PATIENT_COUNT_RE.finditer(lower_text)]
@@ -272,6 +284,7 @@ def likely_case_count(raw_text: str) -> int:
     return max(counts) if counts else 0
 
 
+# Parse page span.
 def parse_page_span(pages: str) -> int:
     text = (pages or "").strip()
     if not text:
@@ -289,6 +302,7 @@ def parse_page_span(pages: str) -> int:
     return 0
 
 
+# Check whether individual demographic signal.
 def has_individual_demographic_signal(text: str) -> bool:
     lowered = (text or "").lower()
     if "year old" in lowered:
@@ -296,17 +310,20 @@ def has_individual_demographic_signal(text: str) -> bool:
     return bool(re.search(r"\b(?:male|female|man|woman|boy|girl)\b", lowered))
 
 
+# Build record text window.
 def record_text_window(record: dict[str, Any], *, use_all_pages: bool) -> str:
     pages = record.get("pages") or []
     selected = pages if use_all_pages else pages[:5]
     return "\n".join(str(page.get("text") or "") for page in selected)
 
 
+# Build leading text.
 def leading_text(text: str, limit: int = 1200) -> str:
     stripped = (text or "").strip()
     return stripped[:limit]
 
 
+# Build confidence label.
 def confidence_label(value: float, gap: float) -> str:
     if value >= 4.0 and gap >= 1.5:
         return "high"
@@ -315,6 +332,7 @@ def confidence_label(value: float, gap: float) -> str:
     return "low"
 
 
+# Classify record.
 def classify_record(
     *,
     reference_row: dict[str, str],
@@ -663,6 +681,7 @@ def classify_record(
     }
 
 
+# Write rows.
 def write_rows(rows: list[dict[str, str]], output_path: Path) -> None:
     fieldnames = [
         "paper_id",
@@ -708,6 +727,7 @@ def write_rows(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+# Build refresh artifact registry.
 def refresh_artifact_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -718,6 +738,7 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
     )
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Categorise extracted SPS sources for downstream routing and case-splitting."
@@ -737,6 +758,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     reference_rows = load_reference_rows(args.references_csv)

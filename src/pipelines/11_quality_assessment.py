@@ -298,6 +298,7 @@ def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Build preferred text record path.
 def preferred_text_record_path(path: Path) -> Path:
     trimmed_path = TEXT_TRIMMED_DIR / path.name
     if trimmed_path.exists():

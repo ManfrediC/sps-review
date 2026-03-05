@@ -40,6 +40,7 @@ WINDOWS_INVALID_CHARS_RE = re.compile(r'[<>:"/\\|?*]')
 REFERENCE_ID_RE = re.compile(r"#\s*\d{2,}")
 
 
+# Define referencecard.
 @dataclass
 class ReferenceCard:
     tag: str
@@ -52,6 +53,7 @@ class ReferenceCard:
     publication_title: str
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Download Covidence full-text PDFs from the extraction view."
@@ -126,21 +128,25 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Ensure runtime dirs.
 def ensure_runtime_dirs(args: argparse.Namespace) -> None:
     args.download_dir.mkdir(parents=True, exist_ok=True)
     args.state_path.parent.mkdir(parents=True, exist_ok=True)
     args.manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
 
+# Build manifest append.
 def manifest_append(path: Path, payload: dict[str, Any]) -> None:
     with path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
 
 
+# Build print manifest row.
 def print_manifest_row(payload: dict[str, Any]) -> None:
     message = json.dumps(payload, ensure_ascii=False)
     try:
@@ -149,6 +155,7 @@ def print_manifest_row(payload: dict[str, Any]) -> None:
         print(message.encode("ascii", "backslashreplace").decode("ascii"), flush=True)
 
 
+# Build card manifest fields.
 def card_manifest_fields(card_info: ReferenceCard) -> dict[str, str]:
     return {
         "card_identifier_text": card_info.identifier_text,
@@ -159,6 +166,7 @@ def card_manifest_fields(card_info: ReferenceCard) -> dict[str, str]:
     }
 
 
+# Build refresh PDF source registry.
 def refresh_pdf_source_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -174,6 +182,7 @@ def refresh_pdf_source_registry(skip_refresh: bool) -> None:
     )
 
 
+# Build sanitize filename.
 def sanitize_filename(filename: str) -> str:
     cleaned = WINDOWS_INVALID_CHARS_RE.sub("_", filename).strip().rstrip(".")
     if not cleaned.lower().endswith(".pdf"):
@@ -181,11 +190,13 @@ def sanitize_filename(filename: str) -> str:
     return cleaned or "document.pdf"
 
 
+# Build existing PDF for ID.
 def existing_pdf_for_id(download_dir: Path, covidence_id: str) -> Path | None:
     matches = sorted(download_dir.glob(f"{covidence_id}_*.pdf"))
     return matches[0] if matches else None
 
 
+# Load simple env file.
 def load_simple_env_file(path: Path) -> dict[str, str]:
     values: dict[str, str] = {}
     if not path.exists():
@@ -205,6 +216,7 @@ def load_simple_env_file(path: Path) -> dict[str, str]:
     return values
 
 
+# Collect credentials.
 def collect_credentials(args: argparse.Namespace) -> tuple[str, str]:
     file_values = load_simple_env_file(args.login_env_path)
     email = (
@@ -220,6 +232,7 @@ def collect_credentials(args: argparse.Namespace) -> tuple[str, str]:
     return email, password
 
 
+# Build maybe first visible.
 def maybe_first_visible(locator: Locator, limit: int = 5) -> Locator | None:
     count = min(locator.count(), limit)
     for index in range(count):
@@ -232,11 +245,13 @@ def maybe_first_visible(locator: Locator, limit: int = 5) -> Locator | None:
     return None
 
 
+# Build visible named control.
 def visible_named_control(scope: Page | Locator, role: str, pattern: str) -> Locator | None:
     locator = scope.get_by_role(role, name=re.compile(pattern, re.IGNORECASE))
     return maybe_first_visible(locator)
 
 
+# Build first visible control.
 def first_visible_control(scope: Page | Locator, role_patterns: list[tuple[str, str]]) -> Locator | None:
     for role, pattern in role_patterns:
         candidate = visible_named_control(scope, role, pattern)
@@ -245,6 +260,7 @@ def first_visible_control(scope: Page | Locator, role_patterns: list[tuple[str, 
     return None
 
 
+# Build control disabled.
 def control_disabled(locator: Locator) -> bool:
     attributes = [
         locator.get_attribute("disabled"),
@@ -255,6 +271,7 @@ def control_disabled(locator: Locator) -> bool:
     return any(token == "true" or "disabled" in token for token in disabled_tokens)
 
 
+# Build progressive scroll for cards.
 def progressive_scroll_for_cards(
     page: Page,
     settle_ms: int,
@@ -294,6 +311,7 @@ def progressive_scroll_for_cards(
     return list(discovered.values())
 
 
+# Load more control.
 def load_more_control(page: Page) -> Locator | None:
     candidates = [
         ("button", r"^load more$"),
@@ -312,6 +330,7 @@ def load_more_control(page: Page) -> Locator | None:
     return None
 
 
+# Build click load more if available.
 def click_load_more_if_available(page: Page, settle_ms: int, timeout_ms: int) -> bool:
     control = load_more_control(page)
     if control is None:
@@ -322,6 +341,7 @@ def click_load_more_if_available(page: Page, settle_ms: int, timeout_ms: int) ->
     return True
 
 
+# Build extraction list ready.
 def extraction_list_ready(page: Page) -> bool:
     try:
         body_text = page.locator("body").inner_text(timeout=2000)
@@ -330,6 +350,7 @@ def extraction_list_ready(page: Page) -> bool:
     return "View full text" in body_text and bool(REFERENCE_ID_RE.search(body_text))
 
 
+# Build wait for reference list.
 def wait_for_reference_list(page: Page, timeout_ms: int, settle_ms: int) -> None:
     deadline = time.time() + (timeout_ms / 1000)
     while time.time() < deadline:
@@ -339,6 +360,7 @@ def wait_for_reference_list(page: Page, timeout_ms: int, settle_ms: int) -> None
     raise RuntimeError("Covidence extraction list did not finish rendering in time.")
 
 
+# Build discover reference cards.
 def discover_reference_cards(page: Page) -> list[ReferenceCard]:
     raw_cards = page.evaluate(
         """
@@ -481,6 +503,7 @@ def discover_reference_cards(page: Page) -> list[ReferenceCard]:
     ]
 
 
+# Build PDF link details.
 def pdf_link_details(link: Locator, page_url: str) -> tuple[str, str]:
     text = (link.inner_text() or "").strip()
     href = (link.get_attribute("href") or "").strip()
@@ -493,10 +516,12 @@ def pdf_link_details(link: Locator, page_url: str) -> tuple[str, str]:
     return sanitize_filename(filename), absolute_url
 
 
+# Check whether PDF link candidate.
 def is_pdf_link_candidate(text: str, href: str) -> bool:
     return bool(PDF_LINK_TEXT_RE.search(text) or PDF_HREF_RE.search(href))
 
 
+# Build wait for PDF link.
 def wait_for_pdf_link(page: Page, card: Locator, page_url: str, timeout_ms: int) -> tuple[Locator, str, str]:
     deadline = time.time() + (timeout_ms / 1000)
     while time.time() < deadline:
@@ -522,11 +547,13 @@ def wait_for_pdf_link(page: Page, card: Locator, page_url: str, timeout_ms: int)
     raise RuntimeError("Timed out waiting for the PDF link to appear.")
 
 
+# Build cookie header.
 def cookie_header(page: Page, url: str) -> str:
     cookies = page.context.cookies([url])
     return "; ".join(f"{cookie['name']}={cookie['value']}" for cookie in cookies)
 
 
+# Build fetch PDF.
 def fetch_pdf(page: Page, url: str, target_path: Path, timeout_ms: int) -> None:
     headers = {
         "Accept": "application/pdf,application/octet-stream,*/*",
@@ -554,6 +581,7 @@ def fetch_pdf(page: Page, url: str, target_path: Path, timeout_ms: int) -> None:
     target_path.write_bytes(payload)
 
 
+# Download via browser.
 def download_via_browser(page: Page, link: Locator, target_path: Path, timeout_ms: int) -> None:
     with page.expect_download(timeout=timeout_ms) as download_info:
         link.click(timeout=timeout_ms)
@@ -561,11 +589,13 @@ def download_via_browser(page: Page, link: Locator, target_path: Path, timeout_m
     download.save_as(str(target_path))
 
 
+# Build active login form.
 def active_login_form(page: Page) -> bool:
     password_inputs = page.locator("input[type='password']")
     return password_inputs.count() > 0 and password_inputs.first.is_visible()
 
 
+# Ensure login.
 def ensure_login(page: Page, args: argparse.Namespace) -> None:
     page.goto(args.review_url, wait_until="domcontentloaded")
     page.wait_for_timeout(args.settle_ms)
@@ -614,6 +644,7 @@ def ensure_login(page: Page, args: argparse.Namespace) -> None:
     )
 
 
+# Build click view full text.
 def click_view_full_text(card: Locator, timeout_ms: int) -> None:
     control = first_visible_control(
         card,
@@ -630,6 +661,7 @@ def click_view_full_text(card: Locator, timeout_ms: int) -> None:
     control.click(timeout=timeout_ms)
 
 
+# Build next page control.
 def next_page_control(page: Page) -> Locator | None:
     candidates = [
         ("button", r"^next$"),
@@ -649,6 +681,7 @@ def next_page_control(page: Page) -> Locator | None:
     return None
 
 
+# Build process reference.
 def process_reference(page: Page, args: argparse.Namespace, card_info: ReferenceCard) -> dict[str, Any]:
     started_at = now_utc_iso()
     card = page.locator(f"[data-codex-ref-card='{card_info.tag}']").first
@@ -700,6 +733,7 @@ def process_reference(page: Page, args: argparse.Namespace, card_info: Reference
     }
 
 
+# Check whether process.
 def should_process(card_info: ReferenceCard, args: argparse.Namespace) -> bool:
     if args.only_id:
         wanted = {value.strip() for value in args.only_id if value.strip()}
@@ -707,6 +741,7 @@ def should_process(card_info: ReferenceCard, args: argparse.Namespace) -> bool:
     return True
 
 
+# Build iterate review.
 def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]:
     processed_ids: set[str] = set()
     manifest_rows: list[dict[str, Any]] = []
@@ -783,6 +818,7 @@ def iterate_review(page: Page, args: argparse.Namespace) -> list[dict[str, Any]]
     return manifest_rows
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     if sync_playwright is None:
         raise SystemExit(

@@ -41,6 +41,7 @@ ABSTRACT_BOUNDARY_RE = re.compile(
 )
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Validate proceedings-derived extracted text against reference title and authors."
@@ -102,14 +103,17 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Build bool text.
 def bool_text(value: bool) -> str:
     return "true" if value else "false"
 
 
+# Convert a path to a repository-relative string.
 def relative_to_repo(path: Path | None) -> str:
     if path is None:
         return ""
@@ -119,6 +123,7 @@ def relative_to_repo(path: Path | None) -> str:
         return str(path.resolve())
 
 
+# Normalize text.
 def normalize_text(text: str) -> str:
     normalized = unicodedata.normalize("NFKD", text or "")
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
@@ -127,10 +132,12 @@ def normalize_text(text: str) -> str:
     return " ".join(ascii_text.split())
 
 
+# Build token set.
 def token_set(text: str, min_len: int = 3) -> set[str]:
     return {token for token in normalize_text(text).split() if len(token) >= min_len}
 
 
+# Score title.
 def score_title(reference_title: str, candidate_text: str) -> float:
     ref_norm = normalize_text(reference_title)
     candidate_norm = normalize_text(candidate_text)
@@ -148,6 +155,7 @@ def score_title(reference_title: str, candidate_text: str) -> float:
     return max(min(sequence, overlap), blended)
 
 
+# Parse reference surnames.
 def parse_reference_surnames(authors: str) -> list[str]:
     surnames: list[str] = []
     for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
@@ -172,6 +180,7 @@ def parse_reference_surnames(authors: str) -> list[str]:
     return surnames[:8]
 
 
+# Score authors.
 def score_authors(reference_authors: str, candidate_text: str) -> float:
     surnames = parse_reference_surnames(reference_authors)
     if not surnames:
@@ -189,15 +198,18 @@ def score_authors(reference_authors: str, candidate_text: str) -> float:
     return matches / len(surnames)
 
 
+# Check whether section heading.
 def is_section_heading(line: str) -> bool:
     normalized = normalize_text(line)
     return any(normalized.startswith(marker) for marker in SECTION_HEADING_MARKERS)
 
 
+# Check whether abstract boundary.
 def is_abstract_boundary(line: str) -> bool:
     return ABSTRACT_BOUNDARY_RE.match(line.strip()) is not None
 
 
+# Build body metrics.
 def body_metrics(record: dict[str, Any]) -> tuple[int, int, bool]:
     lines: list[str] = []
     for page in record.get("pages") or []:
@@ -215,6 +227,7 @@ def body_metrics(record: dict[str, Any]) -> tuple[int, int, bool]:
     return section_hits, body_chars, header_only
 
 
+# Build spillover detected.
 def spillover_detected(record: dict[str, Any]) -> bool:
     lines: list[str] = []
     for page in record.get("pages") or []:
@@ -232,6 +245,7 @@ def spillover_detected(record: dict[str, Any]) -> bool:
     return False
 
 
+# Load reference rows.
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
@@ -242,10 +256,12 @@ def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
         }
 
 
+# Load text record.
 def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Collect candidate IDs.
 def collect_candidate_ids(
     text_dir: Path,
     trim_registry_rows: dict[str, dict[str, str]],
@@ -277,6 +293,7 @@ def collect_candidate_ids(
     return candidates
 
 
+# Build page matches.
 def page_matches(record: dict[str, Any], reference_title: str, reference_authors: str) -> tuple[int, float, float, float, str]:
     best_page_index = -1
     best_title_score = 0.0
@@ -300,6 +317,7 @@ def page_matches(record: dict[str, Any], reference_title: str, reference_authors
     return best_page_index, best_title_score, best_author_score, best_combined, best_excerpt
 
 
+# Build derive qc status.
 def derive_qc_status(
     trimmed_present: bool,
     title_score: float,
@@ -332,6 +350,7 @@ def derive_qc_status(
     return "partial_truncated", True, "Matched text appears related but likely incomplete/truncated."
 
 
+# Build qc row.
 def qc_row(
     paper_id: str,
     reference_row: dict[str, str],
@@ -390,6 +409,7 @@ def qc_row(
     }
 
 
+# Write registry.
 def write_registry(rows: list[dict[str, str]], path: Path) -> None:
     fieldnames = [
         "paper_id",
@@ -427,6 +447,7 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         writer.writerows(rows)
 
 
+# Build refresh artifact registry.
 def refresh_artifact_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -437,6 +458,7 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
     )
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     reference_rows = load_reference_rows(args.references_csv)

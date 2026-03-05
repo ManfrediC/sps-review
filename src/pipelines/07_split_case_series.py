@@ -33,6 +33,7 @@ ORDINAL_MARKER_RE = re.compile(
 )
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Split reviewed case-series papers into case-level text segments for downstream LangExtract."
@@ -94,14 +95,17 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Build bool text.
 def bool_text(value: bool) -> str:
     return "true" if value else "false"
 
 
+# Convert a path to a repository-relative string.
 def relative_to_repo(path: Path | None) -> str:
     if path is None:
         return ""
@@ -111,10 +115,12 @@ def relative_to_repo(path: Path | None) -> str:
         return str(path.resolve())
 
 
+# Load text record.
 def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Collect candidate IDs.
 def collect_candidate_ids(
     text_dir: Path,
     heuristic_rows: dict[str, dict[str, str]],
@@ -140,6 +146,7 @@ def collect_candidate_ids(
     return candidates
 
 
+# Build flatten lines.
 def flatten_lines(record: dict[str, Any]) -> list[dict[str, Any]]:
     lines: list[dict[str, Any]] = []
     for page in record.get("pages") or []:
@@ -158,6 +165,7 @@ def flatten_lines(record: dict[str, Any]) -> list[dict[str, Any]]:
     return lines
 
 
+# Parse case marker.
 def parse_case_marker(line: str) -> str | None:
     stripped = line.strip()
     if len(stripped) > 120:
@@ -171,6 +179,7 @@ def parse_case_marker(line: str) -> str | None:
     return None
 
 
+# Build unique markers.
 def unique_markers(lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
     markers: list[dict[str, Any]] = []
     seen_labels: set[str] = set()
@@ -194,6 +203,7 @@ def unique_markers(lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return markers
 
 
+# Build segments.
 def build_segments(lines: list[dict[str, Any]], markers: list[dict[str, Any]]) -> list[dict[str, Any]]:
     segments: list[dict[str, Any]] = []
     for offset, marker in enumerate(markers):
@@ -215,6 +225,7 @@ def build_segments(lines: list[dict[str, Any]], markers: list[dict[str, Any]]) -
     return segments
 
 
+# Build shared context text.
 def shared_context_text(lines: list[dict[str, Any]], first_marker_index: int) -> str:
     prefix_lines = lines[:first_marker_index]
     if not prefix_lines:
@@ -223,6 +234,7 @@ def shared_context_text(lines: list[dict[str, Any]], first_marker_index: int) ->
     return "\n".join(context_lines).strip()
 
 
+# Build first marker is first case.
 def first_marker_is_first_case(markers: list[dict[str, Any]]) -> bool:
     if not markers:
         return False
@@ -239,6 +251,7 @@ def first_marker_is_first_case(markers: list[dict[str, Any]]) -> bool:
     }
 
 
+# Split reason for qc failure.
 def split_reason_for_qc_failure(proceedings_qc_row: dict[str, str], resolved_source: dict[str, str]) -> str:
     if (resolved_source.get("resolved_source_category") or "") != "conference_abstract":
         return ""
@@ -250,6 +263,7 @@ def split_reason_for_qc_failure(proceedings_qc_row: dict[str, str], resolved_sou
     return ""
 
 
+# Build registry row.
 def registry_row(
     paper_id: str,
     resolved_source: dict[str, str],
@@ -280,6 +294,7 @@ def registry_row(
     }
 
 
+# Write registry.
 def write_registry(rows: list[dict[str, str]], path: Path) -> None:
     fieldnames = [
         "paper_id",
@@ -306,6 +321,7 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         writer.writerows(rows)
 
 
+# Build refresh artifact registry.
 def refresh_artifact_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -316,6 +332,7 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
     )
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     heuristic_rows = load_csv_rows_by_id(args.source_categorisation_path, "paper_id")

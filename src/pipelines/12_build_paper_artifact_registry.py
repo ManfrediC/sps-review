@@ -28,10 +28,12 @@ CASE_SERIES_SPLIT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "case_seri
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "paper_artifact_registry.csv"
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Convert a path to a repository-relative string.
 def relative_to_repo(path: Path) -> str:
     try:
         return str(path.resolve().relative_to(REPO_ROOT.resolve()))
@@ -39,19 +41,23 @@ def relative_to_repo(path: Path) -> str:
         return str(path.resolve())
 
 
+# Build bool text.
 def bool_text(value: bool) -> str:
     return "true" if value else "false"
 
 
+# Join values.
 def join_values(values: list[str]) -> str:
     return " | ".join(value for value in values if value)
 
 
+# Normalize compare text.
 def normalize_compare_text(value: str) -> str:
     lowered = value.strip().lower()
     return " ".join("".join(char if char.isalnum() else " " for char in lowered).split())
 
 
+# Compare text flag.
 def compare_text_flag(left: str, right: str) -> str:
     if not left.strip() or not right.strip():
         return ""
@@ -60,13 +66,16 @@ def compare_text_flag(left: str, right: str) -> str:
     return "true" if normalized_left == normalized_right else "false"
 
 
+# Compare year flag.
 def compare_year_flag(left: str, right: str) -> str:
     if not left.strip() or not right.strip():
         return ""
     return "true" if left.strip() == right.strip() else "false"
 
 
+# Build sort paper IDs.
 def sort_paper_ids(ids: set[str]) -> list[str]:
+    # Build key.
     def key(value: str) -> tuple[int, int | str]:
         stripped = value.strip()
         if stripped.isdigit():
@@ -76,6 +85,7 @@ def sort_paper_ids(ids: set[str]) -> list[str]:
     return sorted(ids, key=key)
 
 
+# Load reference rows.
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
@@ -86,6 +96,7 @@ def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
         }
 
 
+# Load latest manifest by ID.
 def load_latest_manifest_by_id(path: Path) -> dict[str, dict[str, Any]]:
     if not path.exists():
         return {}
@@ -103,6 +114,7 @@ def load_latest_manifest_by_id(path: Path) -> dict[str, dict[str, Any]]:
     return latest
 
 
+# Load CSV rows by ID.
 def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]]:
     if not path.exists():
         return {}
@@ -116,6 +128,7 @@ def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]
     return latest
 
 
+# Load prefixed pdfs.
 def load_prefixed_pdfs(path: Path) -> dict[str, list[Path]]:
     pdfs_by_id: dict[str, list[Path]] = {}
     for pdf_path in sorted(path.glob("*.pdf")):
@@ -124,18 +137,21 @@ def load_prefixed_pdfs(path: Path) -> dict[str, list[Path]]:
     return pdfs_by_id
 
 
+# Load JSON paths.
 def load_json_paths(path: Path) -> dict[str, Path]:
     if not path.exists():
         return {}
     return {file_path.stem: file_path for file_path in sorted(path.glob("*.json"))}
 
 
+# Load JSON record.
 def load_json_record(path: Path | None) -> dict[str, Any]:
     if path is None or not path.exists():
         return {}
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Build artifact types present.
 def artifact_types_present(row: dict[str, str]) -> str:
     present: list[str] = []
     checks = {
@@ -157,6 +173,7 @@ def artifact_types_present(row: dict[str, str]) -> str:
     return "; ".join(present)
 
 
+# Download status.
 def download_status(pdf_paths: list[Path], manifest_row: dict[str, Any]) -> str:
     if pdf_paths:
         return "downloaded"
@@ -164,6 +181,7 @@ def download_status(pdf_paths: list[Path], manifest_row: dict[str, Any]) -> str:
     return status or "missing"
 
 
+# Build row.
 def build_row(
     paper_id: str,
     reference_row: dict[str, str],
@@ -328,6 +346,7 @@ def build_row(
     return row
 
 
+# Build registry rows.
 def build_registry_rows() -> list[dict[str, str]]:
     reference_rows = load_reference_rows(REFERENCES_CSV)
     manifest_by_id = load_latest_manifest_by_id(COVIENCE_MANIFEST_PATH)
@@ -400,6 +419,7 @@ def build_registry_rows() -> list[dict[str, str]]:
     return rows
 
 
+# Write registry.
 def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
     fieldnames = [
         "paper_id",
@@ -528,6 +548,7 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     rows = build_registry_rows()
     write_registry(rows, OUTPUT_PATH)

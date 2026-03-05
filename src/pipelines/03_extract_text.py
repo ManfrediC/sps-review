@@ -23,6 +23,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 ENABLE_OCR = True
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Extract PDF text with OCR fallback."
@@ -180,6 +181,7 @@ def extract_pdf_text(pdf_path: Path) -> dict:
     }
 
 
+# Collect input pdfs.
 def collect_input_pdfs(input_dir: Path, paper_ids: list[str], limit: int) -> list[Path]:
     pdfs = sorted(input_dir.glob("*.pdf"))
     if paper_ids:

@@ -105,6 +105,7 @@ SECTION_HEADING_MARKERS = (
 )
 
 
+# Define lineref.
 @dataclass
 class LineRef:
     global_index: int
@@ -113,6 +114,7 @@ class LineRef:
     text: str
 
 
+# Define abstractblock.
 @dataclass
 class AbstractBlock:
     code: str
@@ -146,6 +148,7 @@ class AbstractBlock:
     fallback_triggered: bool = False
 
 
+# Define indexentry.
 @dataclass
 class IndexEntry:
     code: str
@@ -155,6 +158,7 @@ class IndexEntry:
     raw_text: str
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Trim multi-abstract proceedings PDFs down to the target abstract only."
@@ -220,10 +224,12 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Convert a path to a repository-relative string.
 def relative_to_repo(path: Path | None) -> str:
     if path is None:
         return ""
@@ -233,6 +239,7 @@ def relative_to_repo(path: Path | None) -> str:
         return str(path.resolve())
 
 
+# Normalize text.
 def normalize_text(text: str) -> str:
     normalized = unicodedata.normalize("NFKD", text or "")
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
@@ -241,14 +248,17 @@ def normalize_text(text: str) -> str:
     return " ".join(ascii_text.split())
 
 
+# Build token set.
 def token_set(text: str, min_len: int = 3) -> set[str]:
     return {token for token in normalize_text(text).split() if len(token) >= min_len}
 
 
+# Build bool text.
 def bool_text(value: bool) -> str:
     return "true" if value else "false"
 
 
+# Load reference rows.
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
@@ -259,6 +269,7 @@ def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
         }
 
 
+# Collect input paths.
 def collect_input_paths(input_dir: Path, paper_ids: list[str], limit: int) -> list[Path]:
     paths = sorted(input_dir.glob("*.json"))
     if paper_ids:
@@ -269,6 +280,7 @@ def collect_input_paths(input_dir: Path, paper_ids: list[str], limit: int) -> li
     return paths
 
 
+# Filter to proceedings candidates.
 def filter_to_proceedings_candidates(
     paths: list[Path],
     source_categorisation_path: Path,
@@ -304,10 +316,12 @@ def filter_to_proceedings_candidates(
     return filtered
 
 
+# Load text record.
 def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Build flatten lines.
 def flatten_lines(record: dict[str, Any]) -> list[LineRef]:
     lines: list[LineRef] = []
     global_index = 0
@@ -329,6 +343,7 @@ def flatten_lines(record: dict[str, Any]) -> list[LineRef]:
     return lines
 
 
+# Check whether abstract start.
 def is_abstract_start(line: str) -> re.Match[str] | None:
     stripped = line.strip()
     strict_match = ABSTRACT_START_RE.match(stripped)
@@ -347,15 +362,18 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
     return None
 
 
+# Check whether abstract code only.
 def is_abstract_code_only(line: str) -> re.Match[str] | None:
     stripped = line.strip()
     return ABSTRACT_CODE_ONLY_RE.match(stripped) or ABSTRACT_BOUNDARY_RE.match(stripped)
 
 
+# Check whether abstract boundary.
 def is_abstract_boundary(line: str) -> bool:
     return is_abstract_start(line) is not None or is_abstract_code_only(line) is not None
 
 
+# Check whether author like.
 def is_author_like(line: str) -> bool:
     stripped = line.strip()
     if not stripped:
@@ -378,16 +396,19 @@ def is_author_like(line: str) -> bool:
     return False
 
 
+# Check whether institution like.
 def is_institution_like(line: str) -> bool:
     normalized = normalize_text(line)
     return any(marker in normalized for marker in INSTITUTION_MARKERS)
 
 
+# Check whether footer like.
 def is_footer_like(line: str) -> bool:
     normalized = normalize_text(line)
     return any(marker in normalized for marker in FOOTER_MARKERS)
 
 
+# Check whether title like.
 def is_title_like(line: str) -> bool:
     if is_abstract_boundary(line) or is_author_like(line) or is_institution_like(line) or is_footer_like(line):
         return False
@@ -398,11 +419,13 @@ def is_title_like(line: str) -> bool:
     return alpha_words >= max(3, len(words) - 2)
 
 
+# Check whether section heading.
 def is_section_heading(line: str) -> bool:
     normalized = normalize_text(line)
     return any(normalized.startswith(marker) for marker in SECTION_HEADING_MARKERS)
 
 
+# Build strip abstract code.
 def strip_abstract_code(line: str) -> str:
     stripped = line.strip()
     match = is_abstract_start(stripped)
@@ -416,6 +439,7 @@ def strip_abstract_code(line: str) -> str:
     return line.strip()
 
 
+# Build abstract code.
 def abstract_code(line: str) -> str:
     stripped = line.strip()
     start_match = is_abstract_start(stripped)
@@ -427,6 +451,7 @@ def abstract_code(line: str) -> str:
     return ""
 
 
+# Parse reference surnames.
 def parse_reference_surnames(authors: str) -> list[str]:
     surnames: list[str] = []
     for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
@@ -451,6 +476,7 @@ def parse_reference_surnames(authors: str) -> list[str]:
     return surnames[:8]
 
 
+# Score title.
 def score_title(reference_title: str, block_title: str) -> float:
     ref_norm = normalize_text(reference_title)
     block_norm = normalize_text(block_title)
@@ -468,6 +494,7 @@ def score_title(reference_title: str, block_title: str) -> float:
     return max(min(sequence, overlap), blended)
 
 
+# Score authors.
 def score_authors(reference_authors: str, block_text: str) -> float:
     surnames = parse_reference_surnames(reference_authors)
     if not surnames:
@@ -485,6 +512,7 @@ def score_authors(reference_authors: str, block_text: str) -> float:
     return matches / len(surnames)
 
 
+# Build page match scores.
 def page_match_scores(
     record: dict[str, Any],
     reference_title: str,
@@ -510,14 +538,17 @@ def page_match_scores(
     return best_page_index, best_title_score, best_author_score, best_combined
 
 
+# Normalize code.
 def normalize_code(value: str) -> str:
     return re.sub(r"[^A-Z0-9]", "", (value or "").upper())
 
 
+# Build body signal count.
 def body_signal_count(lines: list[LineRef]) -> int:
     return sum(1 for line in lines if is_section_heading(line.text))
 
 
+# Build body char count.
 def body_char_count(lines: list[LineRef]) -> int:
     if not lines:
         return 0
@@ -526,6 +557,7 @@ def body_char_count(lines: list[LineRef]) -> int:
     return len(" ".join(body_lines))
 
 
+# Build truncate at next boundary.
 def truncate_at_next_boundary(
     lines: list[LineRef],
     expected_code: str,
@@ -549,6 +581,7 @@ def truncate_at_next_boundary(
     return lines, False, "no_boundary_found"
 
 
+# Check whether enough body.
 def has_enough_body(lines: list[LineRef]) -> tuple[bool, int, bool]:
     section_hits = body_signal_count(lines)
     chars = body_char_count(lines)
@@ -557,6 +590,7 @@ def has_enough_body(lines: list[LineRef]) -> tuple[bool, int, bool]:
     return enough, section_hits, header_only
 
 
+# Parse index entries.
 def parse_index_entries(record: dict[str, Any]) -> tuple[list[IndexEntry], bool]:
     entries: list[IndexEntry] = []
     index_page_count = 0
@@ -622,6 +656,7 @@ def parse_index_entries(record: dict[str, Any]) -> tuple[list[IndexEntry], bool]
     return entries, index_detected
 
 
+# Build best index entry.
 def best_index_entry(
     entries: list[IndexEntry],
     reference_title: str,
@@ -641,6 +676,7 @@ def best_index_entry(
     return best_entry, confidence, second
 
 
+# Build line matches code.
 def line_matches_code(line: str, code: str) -> bool:
     if not code:
         return False
@@ -651,6 +687,7 @@ def line_matches_code(line: str, code: str) -> bool:
     return bool(normalized_line) and normalize_code(code) in normalized_line
 
 
+# Build estimate page offset.
 def estimate_page_offset(record: dict[str, Any], entries: list[IndexEntry]) -> tuple[float, float, str]:
     offsets: list[float] = []
     pages = record.get("pages") or []
@@ -711,6 +748,7 @@ def estimate_page_offset(record: dict[str, Any], entries: list[IndexEntry]) -> t
     return float(median_offset), float(confidence), method
 
 
+# Build neighbor entries.
 def neighbor_entries(entries: list[IndexEntry], target: IndexEntry) -> tuple[IndexEntry | None, IndexEntry | None]:
     if not entries:
         return None, None
@@ -723,6 +761,7 @@ def neighbor_entries(entries: list[IndexEntry], target: IndexEntry) -> tuple[Ind
     return prev_entry, next_entry
 
 
+# Select search lines.
 def select_search_lines(
     lines: list[LineRef],
     mapped_page_index: int | None,
@@ -744,6 +783,7 @@ def select_search_lines(
         return lines, "global_fallback"
     return local, mode
 
+# Build proceedings signals.
 def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[str, Any]:
     first_window = [line for line in lines if line.page_index < 30]
     first_pages_text = " ".join(line.text for line in lines if line.page_index < 5)
@@ -784,6 +824,7 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
     }
 
 
+# Extract blocks.
 def extract_blocks(lines: list[LineRef]) -> list[AbstractBlock]:
     start_indices = [index for index, line in enumerate(lines) if is_abstract_boundary(line.text)]
     blocks: list[AbstractBlock] = []
@@ -824,6 +865,7 @@ def extract_blocks(lines: list[LineRef]) -> list[AbstractBlock]:
     return blocks
 
 
+# Build best matching block.
 def best_matching_block(
     blocks: list[AbstractBlock],
     reference_title: str,
@@ -839,10 +881,12 @@ def best_matching_block(
     return best
 
 
+# Join window text.
 def join_window_text(window_lines: list[LineRef]) -> str:
     return " ".join(line.text for line in window_lines if not is_footer_like(line.text)).strip()
 
 
+# Build title cluster score.
 def title_cluster_score(reference_title: str, lines: list[LineRef], start_index: int) -> tuple[float, str]:
     best_score = 0.0
     best_text = ""
@@ -865,6 +909,7 @@ def title_cluster_score(reference_title: str, lines: list[LineRef], start_index:
     return best_score, best_text
 
 
+# Build local window candidate.
 def local_window_candidate(
     lines: list[LineRef],
     record: dict[str, Any],
@@ -1048,6 +1093,7 @@ def local_window_candidate(
     )
 
 
+# Build index assisted candidate.
 def index_assisted_candidate(
     lines: list[LineRef],
     record: dict[str, Any],
@@ -1129,6 +1175,7 @@ def index_assisted_candidate(
     return candidate, diagnostics
 
 
+# Build candidate quality status.
 def candidate_quality_status(
     block: AbstractBlock,
     reference_authors: str,
@@ -1163,6 +1210,7 @@ def candidate_quality_status(
     return "trimmed_auto", "Proceedings detected and candidate abstract passed identity and completeness guardrails."
 
 
+# Build choose best candidate.
 def choose_best_candidate(
     block_candidate: AbstractBlock | None,
     window_candidate: AbstractBlock | None,
@@ -1194,6 +1242,7 @@ def choose_best_candidate(
     return block_candidate
 
 
+# Trim pages from block.
 def trim_pages_from_block(block: AbstractBlock) -> list[dict[str, Any]]:
     grouped: dict[int, list[str]] = {}
     for line_ref in block.line_refs:
@@ -1207,6 +1256,7 @@ def trim_pages_from_block(block: AbstractBlock) -> list[dict[str, Any]]:
     ]
 
 
+# Build trimmed record.
 def build_trimmed_record(
     source_record: dict[str, Any],
     source_path: Path,
@@ -1255,6 +1305,7 @@ def build_trimmed_record(
     }
 
 
+# Build decision row.
 def decision_row(
     paper_id: str,
     reference_row: dict[str, str],
@@ -1328,6 +1379,7 @@ def decision_row(
     }
 
 
+# Write registry.
 def write_registry(rows: list[dict[str, str]], path: Path) -> None:
     fieldnames = [
         "paper_id",
@@ -1379,6 +1431,7 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         writer.writerows(rows)
 
 
+# Build refresh artifact registry.
 def refresh_artifact_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -1389,6 +1442,7 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
     )
 
 
+# Build process record.
 def process_record(
     path: Path,
     reference_rows: dict[str, dict[str, str]],
@@ -1527,6 +1581,7 @@ def process_record(
     )
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     reference_rows = load_reference_rows(args.references_csv)

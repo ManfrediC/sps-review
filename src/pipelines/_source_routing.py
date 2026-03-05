@@ -4,6 +4,7 @@ import csv
 from pathlib import Path
 
 
+# Load CSV rows by ID.
 def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]]:
     if not path.exists():
         return {}
@@ -17,14 +18,17 @@ def load_csv_rows_by_id(path: Path, key_column: str) -> dict[str, dict[str, str]
     return rows
 
 
+# Build truthy.
 def truthy(value: str) -> bool:
     return str(value or "").strip().lower() in {"1", "true", "yes"}
 
 
+# Build bool text.
 def bool_text(value: bool) -> str:
     return "true" if value else "false"
 
 
+# Normalize category subtype.
 def normalize_category_subtype(category: str, subtype: str) -> tuple[str, str]:
     category = (category or "").strip()
     subtype = (subtype or "").strip()
@@ -42,6 +46,7 @@ def normalize_category_subtype(category: str, subtype: str) -> tuple[str, str]:
     return subtype_aliases.get(category, (category, subtype if subtype else ""))
 
 
+# Build infer mode.
 def infer_mode(category: str, subtype: str) -> str:
     category, subtype = normalize_category_subtype(category, subtype)
     if category == "single_case_report":
@@ -63,15 +68,18 @@ def infer_mode(category: str, subtype: str) -> str:
     return "manual_review"
 
 
+# Build infer eligibility.
 def infer_eligibility(category: str, subtype: str) -> bool:
     return infer_mode(category, subtype) not in {"skip", "manual_review"}
 
 
+# Build infer case split candidate.
 def infer_case_split_candidate(category: str, subtype: str) -> bool:
     category, subtype = normalize_category_subtype(category, subtype)
     return category == "case_series_or_multi_case" or subtype == "case_series_conference_abstract"
 
 
+# Resolve source row.
 def resolve_source_row(
     paper_id: str,
     heuristic_row: dict[str, str] | None,

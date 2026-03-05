@@ -16,6 +16,7 @@ LOG_PATH = RESULTS_DIR / "LOG.md"
 STATUS_PATH = RESULTS_DIR / "stage_status.tsv"
 
 
+# Define stage.
 @dataclass(frozen=True)
 class Stage:
     key: str
@@ -83,6 +84,7 @@ STAGES = [
 ]
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run the SPS overnight pipeline with canonical outputs kept under data/."
@@ -116,6 +118,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Append log.
 def append_log(message: str) -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     STAGE_LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -124,6 +127,7 @@ def append_log(message: str) -> None:
         handle.write(f"- {timestamp} {message}\n")
 
 
+# Build initialise status file.
 def initialise_status_file() -> None:
     if STATUS_PATH.exists():
         return
@@ -144,6 +148,7 @@ def initialise_status_file() -> None:
         )
 
 
+# Append status row.
 def append_status_row(
     *,
     started_at: datetime,
@@ -171,6 +176,7 @@ def append_status_row(
         )
 
 
+# Build selected stages.
 def selected_stages(args: argparse.Namespace) -> list[Stage]:
     start_index = next(i for i, stage in enumerate(STAGES) if stage.key == args.from_stage)
     end_index = next(i for i, stage in enumerate(STAGES) if stage.key == args.to_stage)
@@ -179,6 +185,7 @@ def selected_stages(args: argparse.Namespace) -> list[Stage]:
     return STAGES[start_index : end_index + 1]
 
 
+# Build command.
 def build_command(stage: Stage, args: argparse.Namespace) -> list[str]:
     command = [sys.executable, str(stage.script_path)]
     if args.limit > 0:
@@ -194,6 +201,7 @@ def build_command(stage: Stage, args: argparse.Namespace) -> list[str]:
     return command
 
 
+# Run stage.
 def run_stage(stage: Stage, args: argparse.Namespace) -> bool:
     started_at = datetime.now(timezone.utc)
     stdout_log = STAGE_LOG_DIR / f"{stage.key}.stdout.log"
@@ -251,6 +259,7 @@ def run_stage(stage: Stage, args: argparse.Namespace) -> bool:
     return False
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     initialise_status_file()

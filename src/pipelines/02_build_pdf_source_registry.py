@@ -16,6 +16,7 @@ DEFAULT_OUTPUT_PATH = REPO_ROOT / "data" / "references" / "pdf_source_registry.c
 PDF_ID_RE = re.compile(r"^(?P<covidence_id>\d+)_(?P<source_filename>.+\.pdf)$", re.IGNORECASE)
 
 
+# Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Build a registry linking Covidence references to local PDF files."
@@ -47,6 +48,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Load manifest by ID.
 def load_manifest_by_id(path: Path) -> dict[str, dict[str, Any]]:
     if not path.exists():
         return {}
@@ -64,6 +66,7 @@ def load_manifest_by_id(path: Path) -> dict[str, dict[str, Any]]:
     return latest
 
 
+# Load local pdfs by ID.
 def load_local_pdfs_by_id(pdf_dir: Path) -> tuple[dict[str, list[Path]], list[Path]]:
     matched: dict[str, list[Path]] = {}
     unmatched: list[Path] = []
@@ -79,6 +82,7 @@ def load_local_pdfs_by_id(pdf_dir: Path) -> tuple[dict[str, list[Path]], list[Pa
     return matched, unmatched
 
 
+# Convert a path to a repository-relative string.
 def relative_to_repo(path: Path) -> str:
     try:
         return str(path.resolve().relative_to(REPO_ROOT.resolve()))
@@ -86,32 +90,38 @@ def relative_to_repo(path: Path) -> str:
         return str(path.resolve())
 
 
+# Join paths.
 def join_paths(paths: list[Path], *, absolute: bool) -> str:
     values = [str(path.resolve()) if absolute else relative_to_repo(path) for path in paths]
     return " | ".join(values)
 
 
+# Join names.
 def join_names(paths: list[Path]) -> str:
     return " | ".join(path.name for path in paths)
 
 
+# Normalize compare text.
 def normalize_compare_text(value: str) -> str:
     lowered = value.strip().lower()
     return re.sub(r"[^a-z0-9]+", " ", lowered).strip()
 
 
+# Compare text flag.
 def compare_text_flag(left: str, right: str) -> str:
     if not left.strip() or not right.strip():
         return ""
     return "true" if normalize_compare_text(left) == normalize_compare_text(right) else "false"
 
 
+# Compare year flag.
 def compare_year_flag(left: str, right: str) -> str:
     if not left.strip() or not right.strip():
         return ""
     return "true" if left.strip() == right.strip() else "false"
 
 
+# Download status.
 def download_status_for(local_paths: list[Path], manifest_row: dict[str, Any]) -> str:
     if len(local_paths) == 1:
         return "downloaded"
@@ -123,6 +133,7 @@ def download_status_for(local_paths: list[Path], manifest_row: dict[str, Any]) -
     return "missing"
 
 
+# Build registry row.
 def registry_row(
     reference_row: dict[str, str],
     local_paths: list[Path],
@@ -165,6 +176,7 @@ def registry_row(
     }
 
 
+# Build unmatched row.
 def unmatched_row(path: Path, manifest_row: dict[str, Any]) -> dict[str, str]:
     match = PDF_ID_RE.match(path.name)
     covidence_id = match.group("covidence_id") if match else ""
@@ -198,6 +210,7 @@ def unmatched_row(path: Path, manifest_row: dict[str, Any]) -> dict[str, str]:
     }
 
 
+# Build registry.
 def build_registry(args: argparse.Namespace) -> list[dict[str, str]]:
     manifest_by_id = load_manifest_by_id(args.manifest_path)
     local_pdfs_by_id, unmatched_local_pdfs = load_local_pdfs_by_id(args.pdf_dir)
@@ -223,6 +236,7 @@ def build_registry(args: argparse.Namespace) -> list[dict[str, str]]:
     return rows
 
 
+# Write registry.
 def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
@@ -259,6 +273,7 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     rows = build_registry(args)

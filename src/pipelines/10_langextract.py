@@ -305,6 +305,7 @@ def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Build preferred text record path.
 def preferred_text_record_path(path: Path) -> Path:
     trimmed_path = TEXT_TRIMMED_DIR / path.name
     if trimmed_path.exists():
@@ -312,10 +313,12 @@ def preferred_text_record_path(path: Path) -> Path:
     return path
 
 
+# Load case split record.
 def load_case_split_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Resolve route.
 def resolve_route(
     paper_id: str,
     heuristic_rows: dict[str, dict[str, str]],
@@ -328,6 +331,7 @@ def resolve_route(
     )
 
 
+# Build requested modes.
 def requested_modes(args: argparse.Namespace, route: dict[str, str]) -> tuple[bool, bool, bool]:
     if args.ignore_routing:
         individual_enabled = should_run_individual(args)
@@ -414,6 +418,7 @@ def build_overall_summary(
     return " ".join(parts).strip()
 
 
+# Summarise extractions.
 def summarise_extractions(
     extractions: list[dict[str, Any]],
     section_order: list[str],
@@ -471,6 +476,7 @@ def should_run_group(args: argparse.Namespace) -> bool:
     return args.include_group
 
 
+# Build process case split file.
 def process_case_split_file(
     paper_id: str,
     split_path: Path,

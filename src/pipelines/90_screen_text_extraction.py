@@ -30,10 +30,12 @@ PROGRAM_MARKERS = (
 )
 
 
+# Build now utc iso.
 def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+# Load reference rows.
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
@@ -44,6 +46,7 @@ def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
         }
 
 
+# Normalize text.
 def normalize_text(text: str) -> str:
     normalized = unicodedata.normalize("NFKD", text or "")
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
@@ -52,6 +55,7 @@ def normalize_text(text: str) -> str:
     return " ".join(ascii_text.split())
 
 
+# Load text records.
 def load_text_records(path: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for file_path in sorted(path.glob("*.json")):
@@ -61,6 +65,7 @@ def load_text_records(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+# Build title first page.
 def title_first_page(normalized_title: str, normalized_pages: list[str]) -> int:
     if not normalized_title:
         return -1
@@ -70,6 +75,7 @@ def title_first_page(normalized_title: str, normalized_pages: list[str]) -> int:
     return -1
 
 
+# Build title word hits.
 def title_word_hits(normalized_title: str, normalized_full_text: str) -> tuple[int, int]:
     words = [word for word in normalized_title.split() if len(word) >= 5][:8]
     if not words:
@@ -78,26 +84,31 @@ def title_word_hits(normalized_title: str, normalized_full_text: str) -> tuple[i
     return hits, len(words)
 
 
+# Build suspicious control char count.
 def suspicious_control_char_count(text: str) -> int:
     return sum(1 for char in text if ord(char) < 32 and char not in "\n\r\t")
 
 
+# Build count program markers.
 def count_program_markers(normalized_pages: list[str], source_filename: str, journal: str) -> int:
     first_pages = " ".join(normalized_pages[:5])
     combined = " ".join([normalize_text(source_filename), normalize_text(journal), first_pages])
     return sum(1 for marker in PROGRAM_MARKERS if marker in combined)
 
 
+# Build count abstract codes.
 def count_abstract_codes(normalized_pages: list[str]) -> int:
     window = "\n".join(normalized_pages[:40])
     return len(set(ABSTRACT_CODE_RE.findall(window)))
 
 
+# Check whether website chrome.
 def has_website_chrome(normalized_pages: list[str]) -> bool:
     first_pages = " ".join(normalized_pages[:2])
     return any(marker in first_pages for marker in WEBSITE_CHROME_MARKERS)
 
 
+# Build screen status.
 def screen_status(
     n_pages: int,
     title_page_index: int,
@@ -119,6 +130,7 @@ def screen_status(
     return "ok", "", ""
 
 
+# Build row.
 def build_row(record: dict[str, Any], reference_row: dict[str, str]) -> dict[str, str]:
     pages = record.get("pages") or []
     page_texts = [str(page.get("text") or "") for page in pages]
@@ -166,6 +178,7 @@ def build_row(record: dict[str, Any], reference_row: dict[str, str]) -> dict[str
     }
 
 
+# Build rows.
 def build_rows() -> list[dict[str, str]]:
     reference_rows = load_reference_rows(REFERENCES_CSV)
     text_records = load_text_records(TEXT_DIR)
@@ -175,6 +188,7 @@ def build_rows() -> list[dict[str, str]]:
     ]
 
 
+# Write rows.
 def write_rows(rows: list[dict[str, str]], output_path: Path) -> None:
     fieldnames = [
         "paper_id",
@@ -202,6 +216,7 @@ def write_rows(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+# Run the pipeline entrypoint.
 def main() -> None:
     rows = build_rows()
     write_rows(rows, OUTPUT_PATH)
