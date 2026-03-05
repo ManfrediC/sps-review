@@ -22,3 +22,8 @@ Everything here is treated as *pipeline definition* (inputs to code), not run ou
 
 - Schemas use `additionalProperties: false` to catch unexpected fields early.
 - Missingness codes are standardised where possible (commonly `NR`, `NA`, `CD`) to keep downstream analysis consistent.
+
+## Directory Contents Snapshot
+- Last updated: `2026-03-05`
+- Immediate subdirectories (3): `dictionaries`, `prompts`, `schema`
+- Immediate files (0, excluding `README.md`): _None_

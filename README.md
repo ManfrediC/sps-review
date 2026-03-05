@@ -225,3 +225,8 @@ Workflow:
 ## End goal
 
 A scalable, reviewer-centred system that converts narrative SPS case reports into a high-quality, fully auditable dataset suitable for systematic synthesis, while preserving methodological rigour and dramatically reducing manual workload.
+
+## Directory Contents Snapshot
+- Last updated: `2026-03-05`
+- Immediate subdirectories (11): `.codex`, `.github`, `config`, `data`, `doc`, `env`, `examples`, `resources`, `results`, `src`, `tests`
+- Immediate files (2, excluding `README.md`): `.gitignore`, `AGENTS.md`

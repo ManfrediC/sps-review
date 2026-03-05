@@ -320,3 +320,8 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 
 - Raw quality-assessment LangExtract output to `data/extraction_json/quality/raw/{paper_id}.json`
 - Structured quality records to `data/extraction_json/quality/records/{paper_id}.json`
+
+## Directory Contents Snapshot
+- Last updated: `2026-03-05`
+- Immediate subdirectories (0): _None_
+- Immediate files (14, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, `12_build_paper_artifact_registry.py`, `90_screen_text_extraction.py`, ... (+2 more)

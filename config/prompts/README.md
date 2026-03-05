@@ -19,3 +19,8 @@ This directory stores editable prompts and few-shot examples for LangExtract pip
 
 - `03_publication_type_prompt.md` uses `{options}`.
 - `03_quality_prompt.md` uses `{publication_type}` and `{field_block}`.
+
+## Directory Contents Snapshot
+- Last updated: `2026-03-05`
+- Immediate subdirectories (1): `examples`
+- Immediate files (4, excluding `README.md`): `02_group_prompt.md`, `02_individual_prompt.md`, `03_publication_type_prompt.md`, `03_quality_prompt.md`

@@ -121,3 +121,8 @@ This folder contains the project pipeline scripts. They are designed to be run f
 - The full extracted text is preserved even when a trimmed proceedings version exists.
 - Reviewed source routing should be preferred over the heuristic source-categorisation output whenever a paper appears in `data/references/source_categorisation_manual_review.csv`.
 - Registry builders are meant to keep all generated artifacts traceable from one table.
+
+## Directory Contents Snapshot
+- Last updated: `2026-03-05`
+- Immediate subdirectories (3): `lib`, `notebooks`, `pipelines`
+- Immediate files (0, excluding `README.md`): _None_
