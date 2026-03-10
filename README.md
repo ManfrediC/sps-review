@@ -1,7 +1,5 @@
 # sps-review
 
-AI-assisted, human-verified data extraction pipeline for stiff-person-spectrum (SPS) case reports and case series.
-
 This repository aims to provide a reproducible workflow that shifts effort from manual searching/typing to **rapid verification** of structured extractions against **colour-coded highlights** in the original PDFs.
 
 ---
