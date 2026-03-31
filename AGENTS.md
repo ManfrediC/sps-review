@@ -106,8 +106,12 @@ Optimise for:
 
 ## Canonical outputs
 - Canonical research artefacts stay under `data/` and `data/references/`.
+- `results/` is reserved for canonical pipeline-produced exports, logs, and stage traces.
 - `results/overnight/` is for logs, calibration reports, and stage traces only.
+- Non-canonical validation packs, review sheets, spot checks, and ad hoc audit outputs belong under `qa/validation/`.
+- Test fixtures belong under `tests/` (or `tests/fixtures/` if a dedicated fixtures folder is added later).
 - Do not move or duplicate canonical registries into `results/overnight/`.
+- Do not write non-canonical review or validation material into `data/` or `results/`.
 
 ## Pipeline order
 1. `01_download_covidence_pdfs.py` when Covidence acquisition is needed; this also refreshes `02_build_pdf_source_registry.py` and `12_build_paper_artifact_registry.py` unless skipped

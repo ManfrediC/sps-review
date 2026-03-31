@@ -2,6 +2,8 @@
 
 This folder contains the project pipeline scripts, validation utilities, and shared code. They are designed to be run from the repository root and operate on the data stored under `data/`.
 
+Validation scripts should write their non-canonical review and audit outputs under `qa/validation/`, not `data/` or `results/`.
+
 ## Pipeline Order
 
 1. `pipelines/01_download_covidence_pdfs.py`
@@ -15,6 +17,7 @@ This folder contains the project pipeline scripts, validation utilities, and sha
 3. `pipelines/03_extract_text.py`
    - Extracts page-level text from the downloaded PDFs.
    - Uses native PDF text first, then falls back to OCR when the extracted text is sparse or corrupted.
+   - Honors reviewed per-paper overrides from `config/extraction/text_extraction_overrides.csv` for a small number of known corpus-specific PDFs.
    - Writes `data/extraction_json/text/{paper_id}.json`.
 
 4. `pipelines/04_source_categorisation.py`
@@ -121,6 +124,18 @@ This folder contains the project pipeline scripts, validation utilities, and sha
   - Audits sampled rows from `data/references/pdf_source_registry.csv` against the underlying source content.
   - Prefers OCR-backed text JSON from `data/extraction_json/text/` when present and falls back to direct PDF text extraction otherwise.
   - Uses reproducible random sampling plus title / first-author / year matching to flag likely mismatches for manual review.
+  - Validation reports should be written to `qa/validation/` by convention.
+
+- `validation/validate_text_extraction_quality.py`
+  - Builds a stratified manual-review sample for step 03 extraction QA.
+  - Oversamples OCR-backed records, long/proceedings-like PDFs, and artifact-risk extractions instead of relying on a purely random sample.
+  - Can write both a machine-readable JSON report and a CSV review sheet for `n=300` audits.
+  - Validation reports should be written to `qa/validation/` by convention.
+
+- `validation/export_text_json_to_txt.py`
+  - Converts `data/extraction_json/text/{paper_id}.json` into human-readable `.txt` files.
+  - Supports full-corpus export or subset export via `--paper-id` / `--selection-csv`.
+  - Review-oriented TXT exports should be written under `qa/validation/text_exports/`.
 
 - `validation/README.md`
   - Notes for the validation scripts and example commands.

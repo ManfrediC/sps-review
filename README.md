@@ -37,7 +37,10 @@ This repository aims to provide a reproducible workflow that shifts effort from 
   Methods and protocol documentation
 
 - `results/`  
-  Analysis-ready exports *(not committed by default)*
+  Canonical pipeline-produced exports and runtime outputs *(not committed by default)*
+
+- `qa/`  
+  Non-canonical validation packs, spot checks, and manual review sheets
 
 ---
 
@@ -136,6 +139,7 @@ Project directories (conceptually):
 - `pdf_annotated/` — automatically highlighted evidence PDFs
 - `extraction_json/` — structured AI outputs
 - `excel/` — reviewer workbook and final dataset
+- `qa/` — non-canonical validation and review material
 - `src/pipelines/` — automation and transformation steps
 
 Stable file naming is mandatory to preserve links between Excel, JSON, and PDFs.
@@ -225,6 +229,6 @@ Workflow:
 A scalable, reviewer-centred system that converts narrative SPS case reports into a high-quality, fully auditable dataset suitable for systematic synthesis, while preserving methodological rigour and dramatically reducing manual workload.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (11): `.codex`, `.github`, `config`, `data`, `doc`, `env`, `examples`, `resources`, `results`, `src`, `tests`
+- Last updated: `2026-03-31`
+- Immediate subdirectories (12): `.codex`, `.github`, `config`, `data`, `doc`, `env`, `examples`, `qa`, `resources`, `results`, `src`, `tests`
 - Immediate files (2, excluding `README.md`): `.gitignore`, `AGENTS.md`

@@ -470,3 +470,118 @@ Patched proceedings abstract localisation, refreshed trial/spot-check outputs, a
 - `config/prompts/README.md`
 - `src/README.md`
 - `src/pipelines/README.md`
+
+## 31.03.2026
+
+Reviewed and grouped the current uncommitted worktree changes. The main themes today were extraction QA, repo output hygiene, and hardening `03_extract_text.py` for known edge cases.
+
+### Suggested Commit Bucket 1
+
+- Git description: `docs: reserve data/results for canonical outputs and document qa validation workflow`
+- Updated `AGENTS.md` to keep `data/` and `results/` reserved for canonical pipeline artefacts and to route non-canonical validation and review material into `qa/validation/`.
+- Updated top-level and directory READMEs to reflect the new policy and to document the role of `qa/`, `qa/validation/`, and `qa/validation/text_exports/`.
+- Added `.gitignore` coverage for generated `qa/**/*.txt` review exports.
+- Touched files:
+- `AGENTS.md`
+- `.gitignore`
+- `README.md`
+- `config/README.md`
+- `src/README.md`
+- `src/validation/README.md`
+- `tests/README.md`
+- `qa/README.md`
+- `qa/validation/README.md`
+- `qa/validation/text_exports/README.md`
+
+### Suggested Commit Bucket 2
+
+- Git description: `feat(validation): add text extraction QA sampling and TXT export utilities`
+- Added `src/validation/validate_text_extraction_quality.py` to build stratified manual-review samples for step `03`, including quota-based oversampling of OCR, proceedings-like, and artifact-risk records.
+- Added `src/validation/export_text_json_to_txt.py` to export `data/extraction_json/text/*.json` into human-readable TXT files for manual QA.
+- Added automated tests for both new validation utilities.
+- Fixed an implementation bug during this work: PowerShell-written CSV selections carried a UTF-8 BOM, so the exporter initially over-selected records. The loader now reads selection CSVs BOM-safely.
+- Kept TXT headers readable by displaying repo-relative JSON source paths in the export output.
+- Touched files:
+- `src/validation/validate_text_extraction_quality.py`
+- `src/validation/export_text_json_to_txt.py`
+- `tests/test_validate_text_extraction_quality.py`
+- `tests/test_export_text_json_to_txt.py`
+
+### Suggested Commit Bucket 3
+
+- Git description: `feat(extraction): harden step 03 and add per-paper extraction overrides`
+- Hardened `src/pipelines/03_extract_text.py` so per-PDF failures no longer abort the whole batch immediately.
+- Added structured exception capture for native extraction and OCR failures, including exception class plus truncated stdout/stderr details where available.
+- Added atomic JSON writes to reduce the risk of partial or corrupt output files during interruption.
+- Added a per-paper override table at `config/extraction/text_extraction_overrides.csv`.
+- Implemented reviewed override routes for known problem IDs:
+- `force_ocr`: `30`, `238`, `386`, `633`, `12247`, `12613`
+- `pdftotext`: `637`, `861`
+- Expanded `tests/test_03_extract_text.py` to cover override loading, OCR override routing, `pdftotext` fallback routing, structured error capture, and partial-failure handling.
+- Reran `03_extract_text.py` on the overridden IDs only and refreshed the corresponding canonical JSON outputs.
+- This targeted rerun also refreshed the canonical provenance registry:
+- `data/references/paper_artifact_registry.csv`
+- Validation run:
+- `.\.venv\Scripts\python.exe -m unittest tests.test_03_extract_text -v`
+- Result: `17` tests passed.
+- Outcome:
+- Previously likely-failed extractions for `30`, `238`, `386`, `633`, `637`, `861`, `12247`, and `12613` now look usable after regeneration.
+- Remaining unresolved likely failures after override work are `23`, `1421`, and `6268`.
+- Touched files:
+- `src/pipelines/03_extract_text.py`
+- `tests/test_03_extract_text.py`
+- `config/extraction/text_extraction_overrides.csv`
+- `data/references/paper_artifact_registry.csv`
+
+### Suggested Commit Bucket 4
+
+- Git description: `chore(qa): generate text extraction review packs and reclassify weak cases`
+- Ran `validate_pdf_source_registry.py` on larger reproducible samples (`n=20` and `n=30`) and confirmed the sampled PDF-to-reference linkage looked sound.
+- Built a full `n=300` step `03` extraction QA pack under `qa/validation/`, including JSON sample summary plus CSV review sheets.
+- Triaged the `n=300` sample and used it to identify likely failure patterns:
+- NEJM boilerplate-only text layer
+- broken font encoding / unusable text layer
+- `pypdf` misses where `pdftotext` performs better
+- low-quality scan/OCR failure
+- proceedings or wrong-document / whole-issue cases
+- Exported the full corpus of extraction JSONs to readable TXT files under `qa/validation/text_exports/all/`.
+- Built and refreshed focused TXT review directories for:
+- `likely_failures/`
+- `weaker_cases/`
+- `weaker_text_quality_defects/`
+- `weaker_proceedings_context/`
+- `weaker_metadata_matching_only/`
+- Preserved pre-cleanup QA snapshots where early export output was wrong or later superseded:
+- `likely_failures_initial_incorrect_export/`
+- `likely_failures_before_post_override_cleanup/`
+- `weaker_cases_initial_incorrect_export/`
+- Reclassified weaker cases into primary-cause buckets using the JSONs as the source of truth:
+- `96` text-quality defects
+- `22` proceedings/context cases
+- `40` metadata/matching-only cases
+- Refreshed the likely-failure set so it now contains only the three unresolved cases:
+- `23`
+- `1421`
+- `6268`
+- Generated or moved QA artefacts now present under `qa/validation/` include:
+- `pdf_source_registry_validation_sample*.json`
+- `text_extraction_quality_sample_n300.json`
+- `text_extraction_quality_review_n300.csv`
+- `text_extraction_quality_review_n300_triaged.csv`
+- `text_extraction_full_weaker_cases.csv`
+- `text_extraction_full_likely_failures.csv`
+- `text_extraction_remainder_weaker_cases.csv`
+- `text_extraction_remainder_likely_failures.csv`
+- `text_extraction_remainder_triage_summary.json`
+- `text_extraction_weaker_cases_classified.csv`
+- `text_extraction_weaker_cases_classified_summary.json`
+- `text_extraction_weaker_text_quality_defects.csv`
+- `text_extraction_weaker_proceedings_context.csv`
+- `text_extraction_weaker_metadata_matching_only.csv`
+
+### Notes For Commit Hygiene
+
+- Bucket 1 is a pure docs/policy commit and should stay separate.
+- Bucket 2 is code plus tests for new validation utilities.
+- Bucket 3 is the extraction-pipeline behavior change plus its tests and the one canonical registry refresh caused by the targeted rerun.
+- Bucket 4 is QA output generation only and is best kept separate from code changes.

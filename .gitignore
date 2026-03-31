@@ -32,6 +32,9 @@ data/extraction_json/covidence/
 env/covidence*.env
 *.covidence.env
 
+# Non-canonical QA text exports and spot-check notes
+qa/**/*.txt
+
 # Allow placeholder files so folders exist in git
 !data/pdf_original/.gitkeep
 !data/pdf_annotated/.gitkeep

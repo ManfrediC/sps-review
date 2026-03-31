@@ -5,6 +5,11 @@ Everything here is treated as *pipeline definition* (inputs to code), not run ou
 
 ## Structure
 
+- `extraction/`
+  - Small, explicit pipeline override tables for known corpus-specific extraction edge cases.
+  - Current file:
+    - `text_extraction_overrides.csv`
+
 - `schema/`
   - JSON Schemas used to **constrain LLM outputs** (where supported) and to **validate extracted records** during automated QC.
   - Files:
@@ -24,6 +29,6 @@ Everything here is treated as *pipeline definition* (inputs to code), not run ou
 - Missingness codes are standardised where possible (commonly `NR`, `NA`, `CD`) to keep downstream analysis consistent.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (3): `dictionaries`, `prompts`, `schema`
+- Last updated: `2026-03-31`
+- Immediate subdirectories (4): `dictionaries`, `extraction`, `prompts`, `schema`
 - Immediate files (0, excluding `README.md`): _None_
