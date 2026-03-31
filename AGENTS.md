@@ -117,16 +117,17 @@ Optimise for:
 1. `01_download_covidence_pdfs.py` when Covidence acquisition is needed; this also refreshes `02_build_pdf_source_registry.py` and `12_build_paper_artifact_registry.py` unless skipped
 2. `02_build_pdf_source_registry.py` after new or manually changed PDFs when the PDF-to-reference registry needs rebuilding
 3. `03_extract_text.py`
-4. `90_screen_text_extraction.py` as an optional screening pass after extraction when triaging text-quality issues or likely proceedings PDFs
-5. `04_source_categorisation.py` on extracted text; rerun after proceedings trimming if you want routing to consume preferred trimmed text
-6. `05_trim_proceedings_text.py` for proceedings / `conference_abstract` candidates
-7. `06_validate_proceedings_text.py` after trimming; required before auto-splitting conference-abstract case series
-8. `07_split_case_series.py` for reviewed case-series candidates before LangExtract
-9. `09_build_langextract_examples.py` when curated examples change
-10. `10_langextract.py`
-11. `11_quality_assessment.py`
-12. `12_build_paper_artifact_registry.py` as the cross-pipeline provenance refresh; most pipeline stages call it automatically, but run it directly after manual artifact changes
-13. `99_overnight_run.py` is the orchestration wrapper for staged batch runs, not a separate canonical data-processing stage
+4. `03b_clean_text.py` on the reviewed subset of extracted text JSONs listed in `config/extraction/text_cleanup_overrides.csv`; this preserves pre-clean backups in `data/extraction_json/text_preclean/` and overwrites the canonical cleaned JSONs in `data/extraction_json/text/`
+5. `90_screen_text_extraction.py` as an optional screening pass after extraction/cleanup when triaging residual text-quality issues or likely proceedings PDFs
+6. `04_source_categorisation.py` on extracted text; rerun after proceedings trimming if you want routing to consume preferred trimmed text
+7. `05_trim_proceedings_text.py` for proceedings / `conference_abstract` candidates
+8. `06_validate_proceedings_text.py` after trimming; required before auto-splitting conference-abstract case series
+9. `07_split_case_series.py` for reviewed case-series candidates before LangExtract
+10. `09_build_langextract_examples.py` when curated examples change
+11. `10_langextract.py`
+12. `11_quality_assessment.py`
+13. `12_build_paper_artifact_registry.py` as the cross-pipeline provenance refresh; most pipeline stages call it automatically, but run it directly after manual artifact changes
+14. `99_overnight_run.py` is the orchestration wrapper for staged batch runs, not a separate canonical data-processing stage
 
 ## Stopping conditions
 - Stop if host-level install or admin access is required; log blocked status.

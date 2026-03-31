@@ -7,10 +7,13 @@ Typical contents:
 - sampled validation reports
 - manual review CSVs
 - triaged audit sheets
+- text-cleanup audit passes such as `text_cleanup_audit_round1.csv` and `text_cleanup_audit_round2.csv`
 - spot-check folders
 - human-readable text exports under `text_exports/`
 
 These files support QA and adjudication, but they are not canonical pipeline outputs.
+
+The weaker-case CSVs in this folder are the selection source for the subset TXT folders under `text_exports/` and should be regenerated together when the canonical text JSONs change.
 
 ## `text_exports/`
 

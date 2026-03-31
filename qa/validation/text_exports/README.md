@@ -2,6 +2,8 @@
 
 Human-readable `.txt` exports built from `data/extraction_json/text/{paper_id}.json` for manual QA.
 
+These folders are generated views over the canonical JSONs. When the canonical text changes, the corresponding selection CSVs in `qa/validation/` and the subset folders here should be refreshed together.
+
 ## Subdirectories
 
 - `all/`

@@ -73,6 +73,7 @@ It:
 - joins title/author/year metadata from `data/references/pdf_source_registry.csv`
 - writes one `{paper_id}.txt` file per exported record
 - can export the full corpus or a selected subset via `--paper-id` and `--selection-csv`
+- is the utility used to refresh `qa/validation/text_exports/all/` plus the weaker/failure subset folders after cleanup reruns
 
 Export the full corpus:
 

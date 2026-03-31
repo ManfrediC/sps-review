@@ -585,3 +585,93 @@ Reviewed and grouped the current uncommitted worktree changes. The main themes t
 - Bucket 2 is code plus tests for new validation utilities.
 - Bucket 3 is the extraction-pipeline behavior change plus its tests and the one canonical registry refresh caused by the targeted rerun.
 - Bucket 4 is QA output generation only and is best kept separate from code changes.
+
+### Canonical Text Cleanup Stage Follow-Up
+
+- Implemented the canonical phase-1 text-cleanup stage at `src/pipelines/03b_clean_text.py`.
+- Added the deterministic cleanup helpers at `src/lib/text_cleanup.py`.
+- Added the reviewed cleanup target table at `config/extraction/text_cleanup_overrides.csv`.
+- Extended `src/pipelines/12_build_paper_artifact_registry.py` so the master registry now records:
+  - `text_preclean` backup presence
+  - cleanup-applied status and profile
+  - cleanup source strategy
+  - source JSON / source PDF provenance
+- Updated `src/pipelines/99_overnight_run.py` and pipeline docs so `03b_clean_text.py` is treated as the canonical step between raw extraction and downstream routing.
+
+### Test Coverage And Validation
+
+- Added:
+  - `tests/test_text_cleanup.py`
+  - `tests/test_03b_clean_text.py`
+  - `tests/test_12_build_paper_artifact_registry.py`
+- Re-ran the focused cleanup test suite and then full test discovery.
+- Current validation result:
+  - `49` tests passed under `python -m unittest discover -s tests -p "test_*.py" -v`
+
+### Audit-Adaptation Loop
+
+- Audited the initial `03b` outputs directly against the source PDFs and their pre-clean JSON backups.
+- This live audit showed that some born-digital PDFs were better recovered via `pdftotext` than by cleaning already-corrupted `pypdf` text.
+- Adapted the cleanup workflow accordingly:
+  - added reviewed `source_strategy` support to `03b_clean_text.py`
+  - used `pdftotext_cleanup` for cleaner born-digital sources
+  - kept `json_cleanup` for OCR-derived or already-best-available sources
+- Added a narrow deterministic repair for `gamma-aminobutyric` placeholder corruption (`/H9253...` and `␥...`) after source-PDF inspection confirmed the underlying text.
+- Removed `180` from the active cleanup target list after audit showed it was an issue-level / localization problem rather than a text-cleanup problem.
+
+### Full Cleanup Rollout
+
+- Ran `src/pipelines/03b_clean_text.py --force` on the full reviewed cleanup set.
+- Result:
+  - `23` canonical text JSONs cleaned
+  - `data/references/paper_artifact_registry.csv` refreshed
+- The canonical text layout is now:
+  - cleaned JSONs in `data/extraction_json/text/`
+  - preserved pre-clean backups for targeted papers in `data/extraction_json/text_preclean/`
+
+### QA Refresh After 03b
+
+- Refreshed the TXT export views in:
+  - `qa/validation/text_exports/all/`
+  - `qa/validation/text_exports/weaker_cases/`
+  - `qa/validation/text_exports/likely_failures/`
+  - `qa/validation/text_exports/weaker_text_quality_defects/`
+  - `qa/validation/text_exports/weaker_proceedings_context/`
+  - `qa/validation/text_exports/weaker_metadata_matching_only/`
+- Added/updated cleanup audit ledgers:
+  - `qa/validation/text_cleanup_audit_round1.csv`
+  - `qa/validation/text_cleanup_audit_round2.csv`
+- Refreshed the weaker-case classification CSVs after the full `03b` rollout.
+
+### Cleanup Outcome
+
+- The phase-1 cleanup stage materially improved the reviewed target set.
+- Weaker cases dropped from `158` to `141`.
+- Text-quality defects dropped from `96` to `75`.
+- The likely-failure set remained:
+  - `23`
+  - `1421`
+  - `6268`
+- Cleanup targets that dropped out of the weaker-case set after `03b` included:
+  - `25`, `71`, `114`, `116`, `121`, `133`, `139`, `184`, `197`, `223`, `288`, `387`, `821`, `11750`, `11790`, `12502`, `12785`
+
+### Residual Problems After Phase 1
+
+- Residual text-quality defects:
+  - `43`
+  - `62`
+  - `155`
+- Residual proceedings/context or localization cases:
+  - `11109`
+  - `180`
+- Residual metadata / matching-only cases:
+  - `608`
+  - `13177`
+
+### Recommended Next Step
+
+- A second text-correction stage is justified, but only for the residual subset.
+- The next stage should stay deterministic and reviewed:
+  - targeted per-ID substitution tables for the few remaining corrupted title/body tokens
+  - no broad free-form rewriting of canonical text
+  - proceedings/context localization handled separately from text correction

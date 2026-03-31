@@ -28,7 +28,7 @@ This repository aims to provide a reproducible workflow that shifts effort from 
   Reviewer workbook(s) *(not committed)*
 
 - `src/pipelines/`  
-  Pipeline scripts *(extract → annotate → export)*
+  Pipeline scripts *(download → extract → clean → route → downstream extraction)*
 
 - `config/`  
   Schema + data dictionary + colour map
@@ -221,6 +221,17 @@ Workflow:
 2. Run the downloader script.
 3. Let the script reveal each `View full text` link and save the PDF into `data/pdf_original/` as `<Covidence_ID>_<original_filename>.pdf`.
 4. Feed those PDFs into the existing text-extraction pipeline.
+
+---
+
+## Current text-cleanup stage
+
+The canonical text flow now includes an explicit cleanup step between raw extraction and downstream routing.
+
+1. `src/pipelines/03_extract_text.py` writes raw extracted text JSONs to `data/extraction_json/text/`.
+2. `src/pipelines/03b_clean_text.py` applies deterministic cleanup only to the reviewed subset listed in `config/extraction/text_cleanup_overrides.csv`.
+3. `03b` preserves pre-clean backups for those targeted papers in `data/extraction_json/text_preclean/`.
+4. The cleaned canonical JSONs remain together in `data/extraction_json/text/` for downstream stages.
 
 ---
 

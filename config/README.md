@@ -9,6 +9,8 @@ Everything here is treated as *pipeline definition* (inputs to code), not run ou
   - Small, explicit pipeline override tables for known corpus-specific extraction edge cases.
   - Current file:
     - `text_extraction_overrides.csv`
+    - `text_cleanup_overrides.csv`
+  - `text_cleanup_overrides.csv` is the reviewed target list for `src/pipelines/03b_clean_text.py` and records the paper ID, whether cleanup is enabled, the reviewed `source_strategy`, the cleanup profile, and short provenance notes.
 
 - `schema/`
   - JSON Schemas used to **constrain LLM outputs** (where supported) and to **validate extracted records** during automated QC.

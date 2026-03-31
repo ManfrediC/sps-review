@@ -144,7 +144,7 @@ Briefly, this script:
 - Computes a SHA-256 checksum for each source PDF.
 - Detects low-text or corrupted native text and optionally runs OCR (`ocrmypdf`) before re-extracting text.
 - Writes one JSON output per PDF to `data/extraction_json/text/{paper_id}.json`.
-- Runs extraction only; proceedings trimming is a separate downstream stage.
+- Writes the raw extraction stage only; reviewed text cleanup is a separate downstream stage in `03b_clean_text.py`.
 
 ## Output JSON includes
 
@@ -158,6 +158,41 @@ From repo root:
 
 ```bash
 python src/pipelines/03_extract_text.py
+```
+
+## `03b_clean_text.py`
+
+This script applies deterministic cleanup to a reviewed subset of extracted text JSONs.
+
+It:
+
+- reads the target list from `config/extraction/text_cleanup_overrides.csv`,
+- honors the reviewed `source_strategy` for each target (`json_cleanup` or `pdftotext_cleanup`),
+- processes only enabled paper IDs (or an explicit `--paper-id` subset),
+- stores the original raw JSON snapshot at `data/extraction_json/text_preclean/{paper_id}.json`,
+- overwrites the canonical cleaned JSON at `data/extraction_json/text/{paper_id}.json`, and
+- refreshes `data/references/paper_artifact_registry.csv` unless `--skip-registry-refresh` is passed.
+
+Cleanup is intentionally conservative and deterministic:
+
+- common mojibake and ligature repair
+- a small reviewed substitution layer for corpus-specific glyph damage such as `gamma-aminobutyric` placeholders
+- line-break hyphenation repair
+- conservative punctuation/spacing normalization
+- light repeated header/footer and publisher boilerplate removal
+
+Phase 1 is intentionally limited to deterministic cleanup on a reviewed subset. Proceedings/context localization problems and true source-linkage problems should be handled elsewhere rather than pushed into this script.
+
+### Run
+
+```bash
+python src/pipelines/03b_clean_text.py
+```
+
+Force a rerun from preserved raw backups:
+
+```bash
+python src/pipelines/03b_clean_text.py --force
 ```
 
 ## `04_source_categorisation.py`
@@ -322,6 +357,6 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 - Structured quality records to `data/extraction_json/quality/records/{paper_id}.json`
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-05`
+- Last updated: `2026-03-31`
 - Immediate subdirectories (0): _None_
-- Immediate files (14, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, `12_build_paper_artifact_registry.py`, `90_screen_text_extraction.py`, ... (+2 more)
+- Immediate files (15, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, `12_build_paper_artifact_registry.py`, ... (+3 more)

@@ -9,7 +9,9 @@ This folder is for validation packs, spot checks, manual review sheets, and othe
 - `validation/`
   - machine-readable validation reports
   - CSV review sheets
-  - spot-check folders and ad hoc audit summaries
+  - spot-check folders, text-cleanup audits, and ad hoc audit summaries
+
+Human-readable `.txt` exports under `qa/validation/text_exports/` are generated from canonical JSONs for review convenience and are ignored in git.
 
 ## Policy
 - Do not store canonical pipeline artefacts here.
