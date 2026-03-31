@@ -1379,9 +1379,9 @@ def decision_row(
     }
 
 
-# Write registry.
-def write_registry(rows: list[dict[str, str]], path: Path) -> None:
-    fieldnames = [
+# Define registry fieldnames.
+def registry_fieldnames() -> list[str]:
+    return [
         "paper_id",
         "covidence_id",
         "title",
@@ -1424,11 +1424,44 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         "end_page_index",
         "trimmed_at_utc",
     ]
+
+
+# Sort registry rows by paper_id for stable output.
+def sort_registry_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    def sort_key(row: dict[str, str]) -> tuple[int, int | str]:
+        paper_id = str(row.get("paper_id") or "").strip()
+        if paper_id.isdigit():
+            return (0, int(paper_id))
+        return (1, paper_id)
+
+    return sorted(rows, key=sort_key)
+
+
+# Merge updated rows into an existing registry snapshot.
+def merge_registry_rows(
+    existing_rows: list[dict[str, str]],
+    updated_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    merged = {str(row.get("paper_id") or "").strip(): row for row in existing_rows if str(row.get("paper_id") or "").strip()}
+    for row in updated_rows:
+        paper_id = str(row.get("paper_id") or "").strip()
+        if paper_id:
+            merged[paper_id] = row
+    return sort_registry_rows(list(merged.values()))
+
+
+# Write registry.
+def write_registry(rows: list[dict[str, str]], path: Path, preserve_existing: bool = False) -> None:
+    fieldnames = registry_fieldnames()
+    rows_to_write = sort_registry_rows(rows)
+    if preserve_existing and path.exists():
+        existing_rows = list(load_csv_rows_by_id(path, "paper_id").values())
+        rows_to_write = merge_registry_rows(existing_rows, rows_to_write)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(rows_to_write)
 
 
 # Build refresh artifact registry.
@@ -1599,7 +1632,7 @@ def main() -> None:
     rows: list[dict[str, str]] = []
     for path in tqdm(input_paths, desc="Proceedings trim"):
         rows.append(process_record(path, reference_rows, args.output_dir))
-    write_registry(rows, args.registry_path)
+    write_registry(rows, args.registry_path, preserve_existing=bool(args.paper_id or args.limit))
     refresh_artifact_registry(args.skip_registry_refresh)
     print(f"Wrote {len(rows)} rows to {args.registry_path}")
 

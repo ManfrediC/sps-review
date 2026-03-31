@@ -1,6 +1,6 @@
 # `src` Overview
 
-This folder contains the project pipeline scripts. They are designed to be run from the repository root and operate on the data stored under `data/`.
+This folder contains the project pipeline scripts, validation utilities, and shared code. They are designed to be run from the repository root and operate on the data stored under `data/`.
 
 ## Pipeline Order
 
@@ -115,6 +115,16 @@ This folder contains the project pipeline scripts. They are designed to be run f
 - `pipelines/README.md`
   - More detailed per-script notes and run examples for the pipeline folder.
 
+## Validation Scripts
+
+- `validation/validate_pdf_source_registry.py`
+  - Audits sampled rows from `data/references/pdf_source_registry.csv` against the underlying source content.
+  - Prefers OCR-backed text JSON from `data/extraction_json/text/` when present and falls back to direct PDF text extraction otherwise.
+  - Uses reproducible random sampling plus title / first-author / year matching to flag likely mismatches for manual review.
+
+- `validation/README.md`
+  - Notes for the validation scripts and example commands.
+
 ## Practical Notes
 
 - `paper_id` is the Covidence ID and is the key used across all downstream artifacts.
@@ -124,5 +134,5 @@ This folder contains the project pipeline scripts. They are designed to be run f
 
 ## Directory Contents Snapshot
 - Last updated: `2026-03-05`
-- Immediate subdirectories (3): `lib`, `notebooks`, `pipelines`
+- Immediate subdirectories (4): `lib`, `notebooks`, `pipelines`, `validation`
 - Immediate files (0, excluding `README.md`): _None_
