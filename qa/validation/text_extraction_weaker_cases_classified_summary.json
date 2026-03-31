@@ -1,12 +1,34 @@
 {
-  "counts": {
-    "metadata_matching_only": 40,
-    "text_quality_defect": 96,
-    "proceedings_context": 22
-  },
-  "category_files": {
-    "text_quality_defect": "text_extraction_weaker_text_quality_defects.csv",
-    "proceedings_context": "text_extraction_weaker_proceedings_context.csv",
-    "metadata_matching_only": "text_extraction_weaker_metadata_matching_only.csv"
-  }
+  "weaker_cases_count": 141,
+  "text_quality_defect_count": 75,
+  "proceedings_context_count": 24,
+  "metadata_matching_only_count": 42,
+  "phase1_fixed_ids_removed_from_weaker_cases": [
+    25,
+    71,
+    114,
+    116,
+    121,
+    133,
+    139,
+    184,
+    197,
+    223,
+    288,
+    387,
+    821,
+    11750,
+    11790,
+    12502,
+    12785
+  ],
+  "post_03b_residual_ids": [
+    43,
+    62,
+    155,
+    180,
+    608,
+    11109,
+    13177
+  ]
 }
