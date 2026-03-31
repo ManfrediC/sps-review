@@ -35,6 +35,12 @@ STAGES = [
         supports_force=True,
     ),
     Stage(
+        key="clean_text",
+        label="Text Cleanup",
+        script_path=REPO_ROOT / "src" / "pipelines" / "03b_clean_text.py",
+        supports_force=True,
+    ),
+    Stage(
         key="source_categorisation",
         label="Source Categorisation",
         script_path=REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py",
