@@ -1,4 +1,6 @@
 covidence_id,selection_source,selection_reason
-23,post_override_qc,OCR still produces poor unreadable text from low-quality scan.
-1421,post_override_qc,Large supplement or issue-style PDF; target article text not localized in extracted output.
-6268,post_override_qc,Likely wrong or issue-level PDF; extracted text does not contain target article title/author evidence.
+263,remainder_full_review,Source PDF resolves to a different article than the registry metadata; likely source-linkage mismatch.
+1598,remainder_full_review,Source PDF is a multiple-sclerosis meeting supplement and does not contain the target case report.
+1841,remainder_full_review,"Source PDF is an unrelated functional movement disorders article, not the target case report."
+9385,remainder_full_review,Source PDF contains only subito copyright boilerplate and not the target article text.
+10691,remainder_full_review,Source PDF resolves to a different Neurology article/citation than the registry metadata.
