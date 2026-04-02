@@ -4,9 +4,11 @@ import argparse
 import csv
 import hashlib
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
+from contextlib import contextmanager
 from collections.abc import Sequence
 from datetime import datetime, timezone
 from pathlib import Path
@@ -129,15 +131,29 @@ def extract_pages_and_counts(pdf_path: Path) -> tuple[list[dict], list[int]]:
     return pages, char_counts
 
 
+@contextmanager
+def staged_pdf_for_external_tool(pdf_path: Path):
+    resolved = pdf_path.resolve()
+    if str(resolved).isascii():
+        yield resolved
+        return
+
+    with tempfile.TemporaryDirectory() as temp_dir_name:
+        staged_path = Path(temp_dir_name) / f"staged_input{resolved.suffix or '.pdf'}"
+        shutil.copy2(resolved, staged_path)
+        yield staged_path
+
+
 def extract_pages_and_counts_pdftotext(pdf_path: Path) -> tuple[list[dict], list[int]]:
-    proc = subprocess.run(
-        ["pdftotext", str(pdf_path), "-"],
-        check=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-    )
+    with staged_pdf_for_external_tool(pdf_path) as tool_pdf_path:
+        proc = subprocess.run(
+            ["pdftotext", str(tool_pdf_path), "-"],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
     raw_text = proc.stdout or ""
     page_texts = raw_text.split("\f")
     if page_texts and page_texts[-1] == "":

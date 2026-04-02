@@ -51,6 +51,23 @@ class TestExtractText(unittest.TestCase):
         self.assertEqual(module.paper_id_from_filename("11849_Stiff person syndrome.pdf"), "11849")
         self.assertEqual(module.paper_id_from_filename("12345.pdf"), "12345")
 
+    def test_extract_pages_and_counts_pdftotext_stages_non_ascii_pdf_path(self) -> None:
+        module = self.module
+        pdf_path = self.make_pdf("12751_Vázquez.pdf")
+
+        def fake_run(command, **kwargs):
+            staged_path = Path(command[1])
+            self.assertTrue(staged_path.exists())
+            self.assertTrue(str(staged_path).isascii())
+            self.assertNotEqual(staged_path, pdf_path)
+            return subprocess.CompletedProcess(command, 0, stdout="Page one\f", stderr="")
+
+        with mock.patch.object(module.subprocess, "run", side_effect=fake_run):
+            pages, char_counts = module.extract_pages_and_counts_pdftotext(pdf_path)
+
+        self.assertEqual(pages, [{"page_index": 0, "text": "Page one"}])
+        self.assertEqual(char_counts, [8])
+
     def test_collect_input_pdfs_filters_by_paper_id_and_limit(self) -> None:
         module = self.module
 

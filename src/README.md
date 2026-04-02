@@ -26,38 +26,45 @@ Validation scripts should write their non-canonical review and audit outputs und
    - Preserves the original extracted JSON for each cleaned paper under `data/extraction_json/text_preclean/{paper_id}.json`.
    - Overwrites the final canonical cleaned JSON in `data/extraction_json/text/{paper_id}.json`.
 
-5. `pipelines/04_source_categorisation.py`
+5. `pipelines/03c_clean_text_stage2.py`
+   - Experimental standalone residual-cleanup pass for papers that still have token-level corruption after `03b`.
+   - Uses reviewed per-paper overrides from `config/extraction/text_cleanup_stage2_overrides.csv` and reviewed substitutions from `config/extraction/text_cleanup_stage2_substitutions.csv`.
+   - Preserves the pre-stage-2 canonical JSON under `data/extraction_json/text_preclean_stage2/{paper_id}.json`.
+   - Overwrites the canonical JSON in `data/extraction_json/text/{paper_id}.json`.
+   - This is intentionally not yet treated as a permanent canonical stage until the residual-cleanup rules have been audited on more papers.
+
+6. `pipelines/04_source_categorisation.py`
    - Categorises each source after extraction as single-case, multi-case, group study, conference abstract, review, non-clinical, or manual-review.
    - Prefers trimmed proceedings text when available.
    - Writes `data/references/source_categorisation_registry.csv`.
    - The heuristic output is complemented by a reviewed override ledger in `data/references/source_categorisation_manual_review.csv` for papers that required case-by-case adjudication.
 
-6. `pipelines/05_trim_proceedings_text.py`
+7. `pipelines/05_trim_proceedings_text.py`
    - Detects large proceedings or multi-abstract PDFs.
    - Finds the target abstract/publication by fuzzy title and author matching.
    - Writes focused text records to `data/extraction_json/text_trimmed/{paper_id}.json`.
 
-7. `pipelines/06_validate_proceedings_text.py`
+8. `pipelines/06_validate_proceedings_text.py`
    - Validates proceedings-derived text by searching the extracted text for the target title and author surnames.
    - Confirms whether trimmed proceedings text appears to contain the correct abstract or whether manual follow-up is still needed.
    - Writes `data/references/proceedings_text_qc_registry.csv`.
 
-8. `pipelines/07_split_case_series.py`
+9. `pipelines/07_split_case_series.py`
    - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
    - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
    - Writes `data/references/case_series_split_registry.csv`.
 
-9. `pipelines/09_build_langextract_examples.py`
+10. `pipelines/09_build_langextract_examples.py`
    - Rebuilds the LangExtract few-shot JSONs in `config/prompts/examples/`.
    - Uses curated examples from `examples/` and validates that each prompt example maps back to a real curated row.
 
-10. `pipelines/10_langextract.py`
+11. `pipelines/10_langextract.py`
    - Reads extracted text and runs LangExtract with OpenAI models.
    - Uses reviewed source routing by default.
    - Prefers trimmed proceedings text when available and uses case-series split artifacts for reviewed multi-case papers.
    - Writes raw extractions to `data/extraction_json/langextract/` and summaries to `data/extraction_json/summary/`.
 
-11. `pipelines/11_quality_assessment.py`
+12. `pipelines/11_quality_assessment.py`
    - Reads extracted text and runs publication-type detection plus dictionary-driven quality extraction.
    - Prefers trimmed proceedings text when available.
    - Writes raw outputs to `data/extraction_json/quality/raw/` and structured records to `data/extraction_json/quality/records/`.
@@ -155,6 +162,6 @@ Validation scripts should write their non-canonical review and audit outputs und
 - Registry builders are meant to keep all generated artifacts traceable from one table.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-31`
+- Last updated: `2026-04-01`
 - Immediate subdirectories (4): `lib`, `notebooks`, `pipelines`, `validation`
 - Immediate files (0, excluding `README.md`): _None_

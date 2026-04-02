@@ -195,6 +195,32 @@ Force a rerun from preserved raw backups:
 python src/pipelines/03b_clean_text.py --force
 ```
 
+## `03c_clean_text_stage2.py`
+
+This script is an experimental standalone stage-2 cleaner for papers that still have residual token-level corruption after `03b_clean_text.py`.
+
+It:
+
+- reads the reviewed target list from `config/extraction/text_cleanup_stage2_overrides.csv`,
+- optionally rebuilds the working text from a cleaner per-paper source (`pdftotext` or rendered-page OCR with `tesseract`),
+- applies the same deterministic cleanup layer plus a reviewed per-paper substitution table from `config/extraction/text_cleanup_stage2_substitutions.csv`,
+- stores the pre-stage-2 canonical JSON snapshot at `data/extraction_json/text_preclean_stage2/{paper_id}.json`, and
+- overwrites the canonical text JSON in `data/extraction_json/text/{paper_id}.json`.
+
+Unlike `03b_clean_text.py`, this script is currently a preliminary standalone pass for a small residual subset. It exists so the stage-2 rules can be audited on real PDFs before deciding whether to merge them into `03b`.
+
+### Run
+
+```bash
+python src/pipelines/03c_clean_text_stage2.py --paper-id 43 --paper-id 62 --paper-id 155
+```
+
+Force a rerun from preserved stage-2 backups:
+
+```bash
+python src/pipelines/03c_clean_text_stage2.py --paper-id 43 --force
+```
+
 ## `04_source_categorisation.py`
 
 This script classifies each extracted source into a pragmatic downstream category using the reference export, proceedings-trim signals, and preferred text content.
@@ -357,6 +383,6 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 - Structured quality records to `data/extraction_json/quality/records/{paper_id}.json`
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-31`
+- Last updated: `2026-04-01`
 - Immediate subdirectories (0): _None_
-- Immediate files (15, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, `12_build_paper_artifact_registry.py`, ... (+3 more)
+- Immediate files (16, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `03c_clean_text_stage2.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+4 more)

@@ -1,0 +1,49 @@
+covidence_id,match_type,match,replacement,page_index,notes
+23,literal,Capmecytophage conimorsus septicemia caused by,Stiff-man syndrome treated with intrathecal baclofen,0,Replace unrelated OCR false heading on the scanned title line
+43,regex,\bGAD(?:6ss|gs|Â¢s|Ã©s|es)\b,GAD65,,Normalize OCR variants of GAD65
+43,literal,GADss,GAD65,,Normalize OCR variant of GAD65
+43,literal,GADÂ¢5,GAD65,,Normalize OCR variant of GAD65
+43,literal,GADÂ«s,GAD65,,Normalize OCR variant of GAD65
+43,literal,"GAD,s",GAD65,,Normalize OCR variant of GAD65
+43,literal,GADg7,GAD67,,Normalize OCR variant of GAD67
+43,literal,GADgr,GAD67,,Normalize OCR variant of GAD67
+43,literal,GADg;,GAD67,,Normalize OCR variant of GAD67
+43,literal,GADg.,GAD67,,Normalize OCR variant of GAD67
+43,literal,NHo2-terminal,NH2-terminal,,Normalize OCR title token
+43,literal,NH:-terminal,NH2-terminal,,Normalize OCR title token
+43,literal,NHz2-terminal,NH2-terminal,,Normalize OCR title token
+43,literal,NHb2-terminal,NH2-terminal,,Normalize OCR title token
+43,literal,DQwz2,DQw2,,Repair HLA haplotype token
+43,literal,Franciscg,Francisco,,Repair OCR city token
+43,literal,Califomia,California,,Repair OCR state token
+43,literal,Hepes/NzOH/MgCh,Hepes/NaOH/MgCl2,,Repair reagent notation
+43,literal,pancreatic 8 cells,β cells,,Restore beta-cell symbol
+43,literal,@ cells,β cells,,Restore beta-cell symbol
+43,literal,SteinunnBaekkeskov,Steinunn Baekkeskov,,Restore author spacing
+43,literal,HowardHughes,Howard Hughes,,Restore institution spacing
+43,literal,Universityof,University of,,Restore institution spacing
+62,literal,Rvsl61,Rvs161,,Repair title token from text layer
+62,literal,RvsI61,Rvs161,,Repair OCR variant of title token
+155,regex,\bstiffman\b,stiff-man,,Restore missing hyphen in syndrome name
+155,literal,IFN-y,IFN-γ,,Restore cytokine notation
+155,literal,"T, 1 cells",TH1 cells,,Restore helper-T notation
+155,literal,"T,1 cells",TH1 cells,,Restore helper-T notation
+155,literal,B cells of the pancreas,β cells of the pancreas,,Restore beta-cell symbol in body text
+155,literal,the f cells of the pancreas,the β cells of the pancreas,,Restore beta-cell symbol in body text
+155,literal,[A-2A,IA-2A,,Restore autoantigen notation
+155,literal,JF Neurol Neurosurg Psychiatry,J Neurol Neurosurg Psychiatry,,Restore journal header
+155,literal,GF Neurol Neurosurg Psychiatry,J Neurol Neurosurg Psychiatry,,Restore journal header
+13222,literal,␥-Aminobutyric,γ-Aminobutyric,,Normalize gamma symbol in title
+13222,literal,␥-aminobutyric,γ-aminobutyric,,Normalize gamma symbol in body text
+13222,literal,/H9253-Aminobutyric,γ-Aminobutyric,,Normalize pypdf placeholder if retained
+13222,literal,/H9253-aminobutyric,γ-aminobutyric,,Normalize pypdf placeholder if retained
+13222,literal,Gamma-Aminobutyric,γ-Aminobutyric,,Normalize spelled-out gamma token in title
+13222,literal,gamma-aminobutyric,γ-aminobutyric,,Normalize spelled-out gamma token in body text
+13222,literal,y-Aminobutyric,γ-Aminobutyric,,Normalize OCR fallback variant in title
+13222,literal,y-aminobutyric,γ-aminobutyric,,Normalize OCR fallback variant in body text
+5279,literal,anti‐GAD,anti-GAD,,Normalize Unicode hyphenation in the title heading
+5279,literal,stiff‐person,stiff-person,,Normalize Unicode hyphenation in the title heading
+1421,regex,(?s)\A.*?(Mohammad Saud Khan),\1,,Drop spillover from the preceding proceedings abstract before the target author block
+1421,regex,"(?s)(Nothing to Disclose: MSK, JBH, FC, AT, HS, JCJ).*",\1,,Trim the following abstract after the target proceedings abstract ends
+6268,regex,(?s)\A.*?(QUANTITATIVE ANALYSIS OF THE SILENT\s+PERIOD IN THE STIFF-PERSON SYNDROME),\1,,Drop preceding proceedings spillover before the target abstract title
+6268,regex,"(?s)(inhibitory pathways in the stiff-person syndrome\.)\s+MULTIFREQUENCY ELECTRICAL IMPEDANCE.*",\1,,Trim the following proceedings abstract after the target conclusion

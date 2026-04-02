@@ -10,7 +10,10 @@ Everything here is treated as *pipeline definition* (inputs to code), not run ou
   - Current file:
     - `text_extraction_overrides.csv`
     - `text_cleanup_overrides.csv`
+    - `text_cleanup_stage2_overrides.csv`
+    - `text_cleanup_stage2_substitutions.csv`
   - `text_cleanup_overrides.csv` is the reviewed target list for `src/pipelines/03b_clean_text.py` and records the paper ID, whether cleanup is enabled, the reviewed `source_strategy`, the cleanup profile, and short provenance notes.
+  - `text_cleanup_stage2_overrides.csv` and `text_cleanup_stage2_substitutions.csv` are the reviewed control tables for the preliminary `src/pipelines/03c_clean_text_stage2.py` residual-cleanup pass.
 
 - `schema/`
   - JSON Schemas used to **constrain LLM outputs** (where supported) and to **validate extracted records** during automated QC.
@@ -31,6 +34,6 @@ Everything here is treated as *pipeline definition* (inputs to code), not run ou
 - Missingness codes are standardised where possible (commonly `NR`, `NA`, `CD`) to keep downstream analysis consistent.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-31`
+- Last updated: `2026-04-01`
 - Immediate subdirectories (4): `dictionaries`, `extraction`, `prompts`, `schema`
 - Immediate files (0, excluding `README.md`): _None_
