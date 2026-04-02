@@ -675,3 +675,83 @@ Reviewed and grouped the current uncommitted worktree changes. The main themes t
   - targeted per-ID substitution tables for the few remaining corrupted title/body tokens
   - no broad free-form rewriting of canonical text
   - proceedings/context localization handled separately from text correction
+
+## 02.04.2026
+
+Implemented a preliminary stage-2 text-cleanup pipeline, completed a full review pass for the papers outside the original `n=300` sample, and resolved the two large proceedings-localisation cases `1421` and `6268`.
+
+### Repo Rules And Working Conventions
+
+- Added `doc/repo_rules.md` and updated `AGENTS.md` so the repo-level workflow, output placement, runtime expectations, and British-English writing rule are explicit and versioned.
+
+### Stage-2 Text Cleanup Prototype
+
+- Added `src/pipelines/03c_clean_text_stage2.py` as a standalone residual-cleanup stage for papers that still need per-paper source replacement or reviewed token repairs after `03b_clean_text.py`.
+- Added reviewed stage-2 control tables:
+  - `config/extraction/text_cleanup_stage2_overrides.csv`
+  - `config/extraction/text_cleanup_stage2_substitutions.csv`
+- Extended `src/pipelines/03_extract_text.py` and `src/pipelines/03c_clean_text_stage2.py` so external PDF tools first stage non-ASCII filenames to temporary ASCII-safe paths on Windows.
+- Added and extended test coverage in:
+  - `tests/test_03_extract_text.py`
+  - `tests/test_03c_clean_text_stage2.py`
+- Updated `config/README.md`, `src/README.md`, `src/pipelines/README.md`, and `tests/README.md` to document the new stage-2 workflow.
+
+### Full Review Of The Remainder Corpus
+
+- Completed a detailed review and triage pass for the papers outside the original `n=300` extraction-quality sample.
+- Saved the full review and fix-analysis outputs under `qa/validation/`:
+  - `text_extraction_remainder_review_full.csv`
+  - `text_extraction_remainder_review_full_summary.json`
+  - `text_extraction_remainder_fix_analysis.csv`
+  - `text_extraction_remainder_fix_analysis_summary.json`
+- Promoted a large set of residual weak cases to cleaner stage-2 sources, mainly `pdftotext`-backed re-extraction where the embedded text layer was clearly better than the canonical `pypdf` output.
+- Refreshed the live QA ledgers so the current weaker-case and likely-failure CSVs reflect the post-stage-2 state.
+
+### Proceedings And Localization Work
+
+- Resolved `6268` as a proceedings-localisation problem rather than a wrong-PDF problem.
+- Confirmed the target abstract is on PDF page `18`.
+- Switched stage 2 to OCR the localised page window only, using `psm=3`, and trimmed away neighbouring abstracts via reviewed substitution rules.
+- The canonical text now contains the target abstract cleanly and exactly.
+
+- Resolved `1421` as a proceedings-localisation problem rather than a wrong-PDF problem.
+- Ran a one-time OCR search across the supplement, saved the search evidence, and confirmed the target abstract is on supplement page `187`.
+- Localised stage 2 to that page only and trimmed away spillover from adjacent abstracts.
+- The canonical text now contains the correct author block and abstract body.
+- The printed supplement page does not show the full title string, so this remains a manually confirmed proceedings match rather than an automatic exact-title match.
+
+- Saved the localisation evidence so the expensive OCR search does not need to be repeated:
+  - `qa/validation/proceedings_localization/1421_ocr_search_top_candidates.csv`
+  - `qa/validation/proceedings_localization/1421_ocr_search_summary.json`
+  - `qa/validation/proceedings_localization/1421_localization_summary.json`
+  - `qa/validation/proceedings_localization/6268_localization_summary.json`
+
+- Added final reviewed source-category overrides for both papers in `data/references/source_categorisation_manual_review.csv`:
+  - `1421` -> `conference_abstract / single_case_conference_abstract`
+  - `6268` -> `conference_abstract / single_case_conference_abstract`
+
+### Current Corpus Status
+
+- All `1000+` extracted sources have now been reviewed at least once:
+  - the original `n=300` stratified sample received detailed manual review and triage
+  - the remaining corpus received a full review/fix-analysis pass recorded in the new remainder-review outputs
+- `1421` and `6268` have been removed from the live likely-failure list.
+- The current live likely-failure set is now:
+  - `263`
+  - `1598`
+  - `1841`
+  - `9385`
+  - `10691`
+
+### Validation
+
+- Re-ran the full test suite:
+  - `.\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py" -v`
+- Result:
+  - `61` tests passed
+
+### Blocker
+
+- `data/references/paper_artifact_registry.csv` remained locked by another process throughout this work.
+- Direct runs of `src/pipelines/12_build_paper_artifact_registry.py` still failed with `PermissionError [Errno 13]`.
+- Because of that lock, the final artifact-registry refresh could not yet be completed.
