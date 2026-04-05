@@ -237,10 +237,27 @@ The canonical step `01` to step `03` workflow is now in a strong operational sta
 - Two records are now explicitly labelled `incorrect_reference` and are excluded from downstream AI stages:
   - `263`
   - `1841`
+- Source routing and extractable SPS case counting are now split into separate canonical registries:
+  - `data/references/source_categorisation_registry.csv`
+  - `data/references/source_sps_case_count_registry.csv`
+- The separate SPS case-count benchmark currently reaches `95.2%` exact-match accuracy on the reviewed gold-standard case-count sheet in `examples/datasheet_examples_MC_Case_Report_Form.csv`.
 
 This means the remaining open issues after step `03` are now narrow and explicit:
 - unresolved source acquisition for the `12` queued references
 - two upstream reference-linkage problems
+
+---
+
+## Current routing and count stages
+
+The canonical routing flow now separates source type from extractable SPS case count.
+
+1. `src/pipelines/04_source_categorisation.py` assigns the source category and downstream routing behaviour.
+2. `src/pipelines/05_trim_proceedings_text.py` and `src/pipelines/06_validate_proceedings_text.py` refine proceedings-like records where needed.
+3. `src/pipelines/04b_extract_sps_case_counts.py` estimates extractable SPS case counts using the preferred available text and writes a separate count registry.
+4. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
+
+This keeps count heuristics from distorting source categorisation while still preserving a canonical count output for downstream use and auditing.
 
 ---
 

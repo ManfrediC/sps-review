@@ -869,3 +869,53 @@ Folded the residual rescue path into the canonical cleanup stage, labeled the tw
 - Clarified in the README that `src/pipelines/03b_clean_text.py` is the sole cleanup entry point, with `--stage2` as the reviewed residual-rescue mode.
 - Refreshed the top-level directory snapshot so it matches the repo layout after the cleanup and archive work.
 - Prepared and pushed a docs-only sync commit after the latest repo-stewardship pass.
+
+### Source-Categorisation Calibration And Count-Stage Split
+
+- Added a reusable validation sampler at `src/validation/build_source_categorisation_review_sample.py`.
+- Generated a first `n=30` review batch with compact CSV and TXT evidence packets under `qa/validation/source_categorisation/`.
+- Reviewed that batch against the live stage-`04` heuristics and used it to localise the main failure families in:
+  - conference abstract versus full paper routing
+  - case series versus group-study routing
+  - inflated or missing SPS case counts
+
+### Separate SPS Case-Count Stage
+
+- Split source categorisation and extractable SPS case counting into separate pipeline responsibilities:
+  - `src/pipelines/04_source_categorisation.py` now owns source type and downstream routing
+  - `src/pipelines/04b_extract_sps_case_counts.py` now owns extractable SPS case counts
+- Added the shared count helper `src/pipelines/_sps_case_counting.py`.
+- Generated the canonical count registry:
+  - `data/references/source_sps_case_count_registry.csv`
+- Extended `src/pipelines/12_build_paper_artifact_registry.py` so the master registry now records:
+  - separate count-stage presence
+  - count eligibility
+  - likely SPS case count
+  - count confidence and basis
+  - count manual-review flag
+  - count version and timestamp
+
+### Count-Heuristic Improvement Loop
+
+- Used `examples/datasheet_examples_MC_Case_Report_Form.csv` as the gold-standard count source, interpreting the number of rows per `Reference` as the extractable SPS case count.
+- Tightened the count heuristic to:
+  - ignore age-like numbers and background prevalence statements
+  - down-weight literature-summary counts
+  - recognise `participants` / cohort counts
+  - suppress score-scale artefacts such as `0-4`
+  - keep a narrower single-case fallback without overriding explicit multi-case papers
+  - avoid trusting body-derived patient labels from untrimmed proceedings PDFs
+- Added focused regression coverage in:
+  - `tests/test_sps_case_counting.py`
+  - `tests/test_04_source_categorisation_extractable_case_counts.py`
+  - `tests/test_04_source_categorisation_review_batch.py`
+
+### Validation
+
+- Re-ran the dedicated count benchmark:
+  - `python -m unittest tests.test_04_source_categorisation_extractable_case_counts -v`
+  - result: `95.2%` exact count accuracy over `168` evaluable references
+- Re-ran the focused split-stage regression coverage:
+  - `python -m unittest tests.test_sps_case_counting -v`
+  - `python -m unittest tests.test_04_source_categorisation_review_batch -v`
+- The review-batch file remains useful for category/subtype edge cases, but its count columns are no longer treated as a canonical benchmark when the reviewer left the count blank.
