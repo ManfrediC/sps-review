@@ -603,8 +603,13 @@ def process_file(
 ) -> str:
     paper_id = path.stem
     route = resolve_route(paper_id, heuristic_rows, manual_rows)
+    route_mode = route.get("resolved_langextract_mode") or "manual_review"
     out_raw = args.raw_out_dir / f"{paper_id}.json"
     out_summary = args.summary_out_dir / f"{paper_id}.json"
+
+    # Keep reviewed incorrect references out of downstream extraction explicitly.
+    if route_mode == "incorrect_reference" and not args.ignore_routing:
+        return "skipped_incorrect_reference"
 
     # Skip work when outputs already exist unless user forces overwrite.
     if not args.force and out_raw.exists() and out_summary.exists():
@@ -781,6 +786,7 @@ def main() -> None:
         "validated": 0,
         "skipped": 0,
         "skipped_by_routing": 0,
+        "skipped_incorrect_reference": 0,
         "skipped_missing_case_split": 0,
         "failed": 0,
     }
@@ -802,6 +808,7 @@ def main() -> None:
         f"validated={stats['validated']}",
         f"skipped={stats['skipped']}",
         f"skipped_by_routing={stats['skipped_by_routing']}",
+        f"skipped_incorrect_reference={stats['skipped_incorrect_reference']}",
         f"skipped_missing_case_split={stats['skipped_missing_case_split']}",
         f"failed={stats['failed']}",
     )

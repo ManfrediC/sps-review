@@ -16,6 +16,8 @@ from typing import Any
 import langextract as lx
 from tqdm import tqdm
 
+from _source_routing import load_csv_rows_by_id, resolve_source_row
+
 
 # Resolve repository-relative defaults once.
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -24,6 +26,8 @@ TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 QUALITY_DICT_PATH = REPO_ROOT / "config" / "dictionaries" / "SPS_quality_dictionary.csv"
 QUALITY_SCHEMA_PATH = REPO_ROOT / "config" / "schema" / "SPS_quality_assessment.schema.json"
+SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
+SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 RECORD_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
@@ -200,6 +204,18 @@ def parse_args() -> argparse.Namespace:
         help="Path to quality JSON schema used for record validation.",
     )
     parser.add_argument(
+        "--source-categorisation-path",
+        type=Path,
+        default=SOURCE_CATEGORISATION_PATH,
+        help="Heuristic source categorisation registry used for reviewed exclusions.",
+    )
+    parser.add_argument(
+        "--source-manual-review-path",
+        type=Path,
+        default=SOURCE_MANUAL_REVIEW_PATH,
+        help="Manual source categorisation overrides used for reviewed exclusions.",
+    )
+    parser.add_argument(
         "--skip-schema-validation",
         action="store_true",
         help="Skip schema validation for structured records.",
@@ -304,6 +320,19 @@ def preferred_text_record_path(path: Path) -> Path:
     if trimmed_path.exists():
         return trimmed_path
     return path
+
+
+# Resolve the reviewed routing row used for downstream exclusions.
+def resolve_route(
+    paper_id: str,
+    heuristic_rows: dict[str, dict[str, str]],
+    manual_rows: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    return resolve_source_row(
+        paper_id=paper_id,
+        heuristic_row=heuristic_rows.get(paper_id, {}),
+        manual_row=manual_rows.get(paper_id, {}),
+    )
 
 
 # Load and parse the JSON schema used for structured-record validation.
@@ -757,13 +786,20 @@ def process_file(
     publication_types: list[str],
     schema: dict[str, Any] | None,
     prompt_assets: dict[str, Any],
+    heuristic_rows: dict[str, dict[str, str]],
+    manual_rows: dict[str, dict[str, str]],
 ) -> str:
     # Resolve IO paths for this paper and skip if outputs already exist.
     source_path = preferred_text_record_path(path)
     record = load_text_record(source_path)
     paper_id = str(record.get("paper_id") or path.stem)
+    route = resolve_route(paper_id, heuristic_rows, manual_rows)
     out_raw = args.raw_out_dir / f"{paper_id}.json"
     out_record = args.record_out_dir / f"{paper_id}.json"
+
+    # Stop reviewed incorrect references from drifting back into downstream AI passes.
+    if (route.get("resolved_langextract_mode") or "") == "incorrect_reference":
+        return "skipped_incorrect_reference"
 
     if not args.force and out_raw.exists() and out_record.exists():
         return "skipped"
@@ -876,6 +912,8 @@ def main() -> None:
     quality_dict = load_quality_dictionary(args.quality_dict)
     publication_types = list(quality_dict.keys())
     schema = None if args.skip_schema_validation else load_schema(args.schema_path)
+    heuristic_rows = load_csv_rows_by_id(args.source_categorisation_path, "paper_id")
+    manual_rows = load_csv_rows_by_id(args.source_manual_review_path, "paper_id")
 
     # Resolve input files and fail fast if none were found.
     files = collect_input_files(args.input_dir, args.paper_id, args.limit)
@@ -883,7 +921,13 @@ def main() -> None:
         raise SystemExit(f"No input JSON files found in: {args.input_dir}")
 
     # Track outcome counts so batch status is explicit at the end.
-    stats = {"processed": 0, "validated": 0, "skipped": 0, "failed": 0}
+    stats = {
+        "processed": 0,
+        "validated": 0,
+        "skipped": 0,
+        "skipped_incorrect_reference": 0,
+        "failed": 0,
+    }
 
     # Continue processing even if single files fail.
     for path in tqdm(files, desc="Quality assessment"):
@@ -895,6 +939,8 @@ def main() -> None:
                 publication_types,
                 schema,
                 prompt_assets,
+                heuristic_rows,
+                manual_rows,
             )
             stats[outcome] = stats.get(outcome, 0) + 1
         except Exception as exc:
@@ -907,6 +953,7 @@ def main() -> None:
         f"processed={stats['processed']}",
         f"validated={stats['validated']}",
         f"skipped={stats['skipped']}",
+        f"skipped_incorrect_reference={stats['skipped_incorrect_reference']}",
         f"failed={stats['failed']}",
     )
     subprocess.run(

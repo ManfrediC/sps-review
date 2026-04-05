@@ -46,9 +46,18 @@ def normalize_category_subtype(category: str, subtype: str) -> tuple[str, str]:
     return subtype_aliases.get(category, (category, subtype if subtype else ""))
 
 
+# Treat reviewed incorrect references as an explicit downstream exclusion class.
+def is_incorrect_reference(category: str, subtype: str) -> bool:
+    category = (category or "").strip()
+    subtype = (subtype or "").strip()
+    return category == "incorrect_reference" or subtype == "incorrect_reference"
+
+
 # Build infer mode.
 def infer_mode(category: str, subtype: str) -> str:
     category, subtype = normalize_category_subtype(category, subtype)
+    if is_incorrect_reference(category, subtype):
+        return "incorrect_reference"
     if category == "single_case_report":
         return "individual"
     if category == "case_series_or_multi_case":
@@ -70,7 +79,7 @@ def infer_mode(category: str, subtype: str) -> str:
 
 # Build infer eligibility.
 def infer_eligibility(category: str, subtype: str) -> bool:
-    return infer_mode(category, subtype) not in {"skip", "manual_review"}
+    return infer_mode(category, subtype) not in {"skip", "manual_review", "incorrect_reference"}
 
 
 # Build infer case split candidate.

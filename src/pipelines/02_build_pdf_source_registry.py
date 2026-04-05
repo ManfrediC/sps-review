@@ -13,7 +13,9 @@ DEFAULT_REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_exp
 DEFAULT_PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 DEFAULT_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
 DEFAULT_OUTPUT_PATH = REPO_ROOT / "data" / "references" / "pdf_source_registry.csv"
+DEFAULT_QUEUE_OUTPUT_PATH = REPO_ROOT / "data" / "references" / "pdf_acquisition_queue.csv"
 PDF_ID_RE = re.compile(r"^(?P<covidence_id>\d+)_(?P<source_filename>.+\.pdf)$", re.IGNORECASE)
+QUEUE_TERMINAL_STATUSES = {"downloaded", "multiple_local_files", "unmatched_local_file"}
 
 
 # Parse command-line arguments.
@@ -44,6 +46,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=DEFAULT_OUTPUT_PATH,
         help="Output CSV path for the PDF source registry.",
+    )
+    parser.add_argument(
+        "--queue-output-path",
+        type=Path,
+        default=DEFAULT_QUEUE_OUTPUT_PATH,
+        help="Output CSV path for the remaining PDF acquisition queue.",
     )
     return parser.parse_args()
 
@@ -236,6 +244,48 @@ def build_registry(args: argparse.Namespace) -> list[dict[str, str]]:
     return rows
 
 
+# Build one queue reason from the current download state.
+def acquisition_queue_reason(download_status: str) -> str:
+    if download_status == "failed":
+        return "No local PDF is present and the last download attempt failed."
+    if download_status == "paywalled":
+        return "No local PDF is present and the source appears paywalled."
+    return "No local PDF is present and the reference still needs acquisition."
+
+
+# Build the remaining acquisition queue from the canonical PDF source registry rows.
+def build_acquisition_queue(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    queue_rows: list[dict[str, str]] = []
+    for row in rows:
+        download_status = (row.get("download_status") or "").strip()
+        if not (row.get("covidence_id") or "").strip():
+            continue
+        if download_status in QUEUE_TERMINAL_STATUSES:
+            continue
+        if (row.get("local_file_count") or "").strip() not in {"", "0"}:
+            continue
+        queue_rows.append(
+            {
+                "covidence_id": (row.get("covidence_id") or "").strip(),
+                "ref": (row.get("ref") or "").strip(),
+                "study": (row.get("study") or "").strip(),
+                "title": (row.get("title") or "").strip(),
+                "authors": (row.get("authors") or "").strip(),
+                "published_year": (row.get("published_year") or "").strip(),
+                "journal": (row.get("journal") or "").strip(),
+                "doi": (row.get("doi") or "").strip(),
+                "tags": (row.get("tags") or "").strip(),
+                "download_status": download_status,
+                "manifest_status": (row.get("manifest_status") or "").strip(),
+                "download_method": (row.get("download_method") or "").strip(),
+                "download_url": (row.get("download_url") or "").strip(),
+                "manifest_error": (row.get("manifest_error") or "").strip(),
+                "queue_reason": acquisition_queue_reason(download_status),
+            }
+        )
+    return sorted(queue_rows, key=lambda row: int(row["covidence_id"]))
+
+
 # Write registry.
 def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -273,12 +323,41 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+# Write the remaining acquisition queue.
+def write_acquisition_queue(rows: list[dict[str, str]], output_path: Path) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = [
+        "covidence_id",
+        "ref",
+        "study",
+        "title",
+        "authors",
+        "published_year",
+        "journal",
+        "doi",
+        "tags",
+        "download_status",
+        "manifest_status",
+        "download_method",
+        "download_url",
+        "manifest_error",
+        "queue_reason",
+    ]
+    with output_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 # Run the pipeline entrypoint.
 def main() -> None:
     args = parse_args()
     rows = build_registry(args)
+    queue_rows = build_acquisition_queue(rows)
     write_registry(rows, args.output_path)
+    write_acquisition_queue(queue_rows, args.queue_output_path)
     print(f"Wrote {len(rows)} rows to {args.output_path}")
+    print(f"Wrote {len(queue_rows)} rows to {args.queue_output_path}")
 
 
 if __name__ == "__main__":

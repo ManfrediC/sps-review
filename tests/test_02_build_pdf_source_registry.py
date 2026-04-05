@@ -58,6 +58,7 @@ def make_args(references_csv: Path, pdf_dir: Path, manifest_path: Path, output_p
         pdf_dir=pdf_dir,
         manifest_path=manifest_path,
         output_path=output_path,
+        queue_output_path=output_path.with_name("pdf_acquisition_queue.csv"),
     )
 
 
@@ -286,6 +287,56 @@ class TestBuildPdfSourceRegistry(unittest.TestCase):
         self.assertEqual(written_rows[0]["covidence_id"], "123")
         self.assertEqual(written_rows[0]["pdf_filename"], "123_alpha.pdf")
 
+    def test_build_acquisition_queue_keeps_only_non_downloaded_reference_rows(self) -> None:
+        rows = self.build_rows(
+            reference_rows=[
+                self.default_reference("123"),
+                self.default_reference("456"),
+                self.default_reference("789"),
+            ],
+            manifest_rows=[
+                {"covidence_id": "123", "status": "failed", "error": "Timed out"},
+                {"covidence_id": "456", "status": "downloaded"},
+                {"covidence_id": "789", "status": "paywalled"},
+            ],
+        )
+        queue_rows = self.module.build_acquisition_queue(rows)
+
+        self.assertEqual([row["covidence_id"] for row in queue_rows], ["123", "789"])
+        failed_row = next(row for row in queue_rows if row["covidence_id"] == "123")
+        paywalled_row = next(row for row in queue_rows if row["covidence_id"] == "789")
+        self.assertEqual(failed_row["queue_reason"], "No local PDF is present and the last download attempt failed.")
+        self.assertEqual(paywalled_row["queue_reason"], "No local PDF is present and the source appears paywalled.")
+
+    def test_write_acquisition_queue_writes_expected_rows(self) -> None:
+        queue_path = self.tmp_path / "pdf_acquisition_queue.csv"
+        queue_rows = [
+            {
+                "covidence_id": "123",
+                "ref": "R123",
+                "study": "S123",
+                "title": "Alpha Study",
+                "authors": "Smith J",
+                "published_year": "2020",
+                "journal": "Neurology",
+                "doi": "10.1000/example",
+                "tags": "screened",
+                "download_status": "failed",
+                "manifest_status": "failed",
+                "download_method": "direct_fetch",
+                "download_url": "https://example.org/alpha.pdf",
+                "manifest_error": "Timed out",
+                "queue_reason": "No local PDF is present and the last download attempt failed.",
+            }
+        ]
+
+        self.module.write_acquisition_queue(queue_rows, queue_path)
+        written_rows = read_csv_rows(queue_path)
+
+        self.assertEqual(len(written_rows), 1)
+        self.assertEqual(written_rows[0]["covidence_id"], "123")
+        self.assertEqual(written_rows[0]["download_status"], "failed")
+
     def test_main_builds_and_writes_registry(self) -> None:
         write_references_csv(self.references_csv, [self.default_reference("123")])
         write_manifest_jsonl(self.manifest_path, [])
@@ -298,9 +349,12 @@ class TestBuildPdfSourceRegistry(unittest.TestCase):
                 self.module.main()
 
         self.assertTrue(self.output_path.exists())
+        self.assertTrue(args.queue_output_path.exists())
         self.assertIn("Wrote 1 rows", stdout.getvalue())
         written_rows = read_csv_rows(self.output_path)
+        queue_rows = read_csv_rows(args.queue_output_path)
         self.assertEqual(len(written_rows), 1)
+        self.assertEqual(len(queue_rows), 0)
         self.assertEqual(written_rows[0]["download_status"], "downloaded")
 
 
