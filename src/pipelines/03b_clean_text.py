@@ -60,7 +60,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--stage2",
         action="store_true",
-        help="Run the reviewed residual rescue pass that used to live in 03c_clean_text_stage2.py.",
+        help="Run the reviewed residual rescue pass.",
     )
     parser.add_argument(
         "--input-dir",
