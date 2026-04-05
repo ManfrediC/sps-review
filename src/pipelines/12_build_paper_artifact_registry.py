@@ -14,6 +14,7 @@ REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_PRECLEAN_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean"
+TEXT_PRECLEAN_STAGE2_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean_stage2"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 CASE_SERIES_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
 LANGEXTRACT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
@@ -160,6 +161,7 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "pdf": row["pdf_present"] == "true",
         "text": row["text_json_present"] == "true",
         "text_preclean": row["text_preclean_json_present"] == "true",
+        "text_preclean_stage2": row["text_preclean_stage2_json_present"] == "true",
         "text_trimmed": row["text_trimmed_present"] == "true",
         "source_categorisation": row["source_categorisation_present"] == "true",
         "proceedings_qc": row["proceedings_qc_present"] == "true",
@@ -192,6 +194,7 @@ def build_row(
     text_record: dict[str, Any],
     text_path: Path | None,
     text_preclean_path: Path | None,
+    text_preclean_stage2_path: Path | None,
     text_trim_record: dict[str, Any],
     text_trim_path: Path | None,
     text_trim_registry_row: dict[str, str],
@@ -260,6 +263,10 @@ def build_row(
         "text_json_path": relative_to_repo(text_path) if text_path else "",
         "text_preclean_json_present": bool_text(bool(text_preclean_path)),
         "text_preclean_json_path": relative_to_repo(text_preclean_path) if text_preclean_path else "",
+        "text_preclean_stage2_json_present": bool_text(bool(text_preclean_stage2_path)),
+        "text_preclean_stage2_json_path": (
+            relative_to_repo(text_preclean_stage2_path) if text_preclean_stage2_path else ""
+        ),
         "text_source_filename": str(text_record.get("source_filename") or ""),
         "text_source_sha256": str(text_record.get("source_sha256") or ""),
         "text_extracted_at_utc": str(text_record.get("extracted_at_utc") or ""),
@@ -281,6 +288,24 @@ def build_row(
         "text_cleanup_source_json_sha256": str(text_record.get("cleanup_source_json_sha256") or ""),
         "text_cleanup_source_pdf_path": str(text_record.get("cleanup_source_pdf_path") or ""),
         "text_cleanup_source_pdf_sha256": str(text_record.get("cleanup_source_pdf_sha256") or ""),
+        "text_cleanup_stage2_applied": (
+            bool_text(bool(text_record.get("cleanup_stage2_applied")))
+            if "cleanup_stage2_applied" in text_record
+            else ""
+        ),
+        "text_cleanup_stage2_profile": str(text_record.get("cleanup_stage2_profile") or ""),
+        "text_cleanup_stage2_applied_at_utc": str(text_record.get("cleanup_stage2_applied_at_utc") or ""),
+        "text_cleanup_stage2_source_strategy": str(text_record.get("cleanup_stage2_source_strategy") or ""),
+        "text_cleanup_stage2_changed_page_count": str(text_record.get("cleanup_stage2_changed_page_count") or ""),
+        "text_cleanup_stage2_source_json_path": str(text_record.get("cleanup_stage2_source_json_path") or ""),
+        "text_cleanup_stage2_source_json_sha256": str(text_record.get("cleanup_stage2_source_json_sha256") or ""),
+        "text_cleanup_stage2_source_pdf_path": str(text_record.get("cleanup_stage2_source_pdf_path") or ""),
+        "text_cleanup_stage2_source_pdf_sha256": str(text_record.get("cleanup_stage2_source_pdf_sha256") or ""),
+        "text_cleanup_stage2_source_page_start": str(text_record.get("cleanup_stage2_source_page_start") or ""),
+        "text_cleanup_stage2_source_page_end": str(text_record.get("cleanup_stage2_source_page_end") or ""),
+        "text_cleanup_stage2_ocr_dpi": str(text_record.get("cleanup_stage2_ocr_dpi") or ""),
+        "text_cleanup_stage2_ocr_psm": str(text_record.get("cleanup_stage2_ocr_psm") or ""),
+        "text_cleanup_stage2_ocr_grayscale": str(text_record.get("cleanup_stage2_ocr_grayscale") or ""),
         "text_trim_status": str(text_trim_registry_row.get("trim_status") or ""),
         "text_trim_reason": str(text_trim_registry_row.get("trim_reason") or ""),
         "text_trimmed_present": bool_text(bool(text_trim_path)),
@@ -372,6 +397,7 @@ def build_registry_rows() -> list[dict[str, str]]:
     pdfs_by_id = load_prefixed_pdfs(PDF_DIR)
     text_paths = load_json_paths(TEXT_DIR)
     text_preclean_paths = load_json_paths(TEXT_PRECLEAN_DIR)
+    text_preclean_stage2_paths = load_json_paths(TEXT_PRECLEAN_STAGE2_DIR)
     text_trimmed_paths = load_json_paths(TEXT_TRIMMED_DIR)
     case_series_split_paths = load_json_paths(CASE_SERIES_SPLIT_DIR)
     text_trim_registry_rows = load_csv_rows_by_id(TEXT_TRIM_REGISTRY_PATH, "paper_id")
@@ -390,6 +416,7 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(pdfs_by_id)
         | set(text_paths)
         | set(text_preclean_paths)
+        | set(text_preclean_stage2_paths)
         | set(text_trimmed_paths)
         | set(case_series_split_paths)
         | set(text_trim_registry_rows)
@@ -407,6 +434,7 @@ def build_registry_rows() -> list[dict[str, str]]:
     for paper_id in sort_paper_ids(all_ids):
         text_path = text_paths.get(paper_id)
         text_preclean_path = text_preclean_paths.get(paper_id)
+        text_preclean_stage2_path = text_preclean_stage2_paths.get(paper_id)
         text_trim_path = text_trimmed_paths.get(paper_id)
         langextract_path = langextract_paths.get(paper_id)
         summary_path = summary_paths.get(paper_id)
@@ -421,6 +449,7 @@ def build_registry_rows() -> list[dict[str, str]]:
                 text_record=load_json_record(text_path),
                 text_path=text_path,
                 text_preclean_path=text_preclean_path,
+                text_preclean_stage2_path=text_preclean_stage2_path,
                 text_trim_record=load_json_record(text_trim_path),
                 text_trim_path=text_trim_path,
                 text_trim_registry_row=text_trim_registry_rows.get(paper_id, {}),
@@ -484,6 +513,8 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "text_json_path",
         "text_preclean_json_present",
         "text_preclean_json_path",
+        "text_preclean_stage2_json_present",
+        "text_preclean_stage2_json_path",
         "text_source_filename",
         "text_source_sha256",
         "text_extracted_at_utc",
@@ -501,6 +532,20 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "text_cleanup_source_json_sha256",
         "text_cleanup_source_pdf_path",
         "text_cleanup_source_pdf_sha256",
+        "text_cleanup_stage2_applied",
+        "text_cleanup_stage2_profile",
+        "text_cleanup_stage2_applied_at_utc",
+        "text_cleanup_stage2_source_strategy",
+        "text_cleanup_stage2_changed_page_count",
+        "text_cleanup_stage2_source_json_path",
+        "text_cleanup_stage2_source_json_sha256",
+        "text_cleanup_stage2_source_pdf_path",
+        "text_cleanup_stage2_source_pdf_sha256",
+        "text_cleanup_stage2_source_page_start",
+        "text_cleanup_stage2_source_page_end",
+        "text_cleanup_stage2_ocr_dpi",
+        "text_cleanup_stage2_ocr_psm",
+        "text_cleanup_stage2_ocr_grayscale",
         "text_trim_status",
         "text_trim_reason",
         "text_trimmed_present",

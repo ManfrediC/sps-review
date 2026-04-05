@@ -40,10 +40,13 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         module = self.module
         text_path = self.tmp_path / "text" / "114.json"
         preclean_path = self.tmp_path / "text_preclean" / "114.json"
+        preclean_stage2_path = self.tmp_path / "text_preclean_stage2" / "114.json"
         text_path.parent.mkdir()
         preclean_path.parent.mkdir()
+        preclean_stage2_path.parent.mkdir()
         text_path.write_text("{}", encoding="utf-8")
         preclean_path.write_text("{}", encoding="utf-8")
+        preclean_stage2_path.write_text("{}", encoding="utf-8")
 
         row = module.build_row(
             paper_id="114",
@@ -72,9 +75,24 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
                 "cleanup_source_json_sha256": "preclean_sha256",
                 "cleanup_source_pdf_path": "data/pdf_original/114_example.pdf",
                 "cleanup_source_pdf_sha256": "pdf_sha256",
+                "cleanup_stage2_applied": True,
+                "cleanup_stage2_profile": "combined_basic",
+                "cleanup_stage2_applied_at_utc": "2026-04-02T01:00:00+00:00",
+                "cleanup_stage2_source_strategy": "ocr_cleanup",
+                "cleanup_stage2_changed_page_count": 1,
+                "cleanup_stage2_source_json_path": "data/extraction_json/text_preclean_stage2/114.json",
+                "cleanup_stage2_source_json_sha256": "preclean_stage2_sha256",
+                "cleanup_stage2_source_pdf_path": "data/pdf_original/114_example.pdf",
+                "cleanup_stage2_source_pdf_sha256": "pdf_sha256",
+                "cleanup_stage2_source_page_start": "2",
+                "cleanup_stage2_source_page_end": "4",
+                "cleanup_stage2_ocr_dpi": "220",
+                "cleanup_stage2_ocr_psm": "3",
+                "cleanup_stage2_ocr_grayscale": "true",
             },
             text_path=text_path,
             text_preclean_path=preclean_path,
+            text_preclean_stage2_path=preclean_stage2_path,
             text_trim_record={},
             text_trim_path=None,
             text_trim_registry_row={},
@@ -94,6 +112,7 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         )
 
         self.assertEqual(row["text_preclean_json_present"], "true")
+        self.assertEqual(row["text_preclean_stage2_json_present"], "true")
         self.assertEqual(row["text_cleanup_applied"], "true")
         self.assertEqual(row["text_cleanup_profile"], "basic_spacing")
         self.assertEqual(row["text_cleanup_source_strategy"], "pdftotext_cleanup")
@@ -103,7 +122,14 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertEqual(row["text_cleanup_source_json_sha256"], "preclean_sha256")
         self.assertEqual(row["text_cleanup_source_pdf_path"], "data/pdf_original/114_example.pdf")
         self.assertEqual(row["text_cleanup_source_pdf_sha256"], "pdf_sha256")
+        self.assertEqual(row["text_cleanup_stage2_applied"], "true")
+        self.assertEqual(row["text_cleanup_stage2_profile"], "combined_basic")
+        self.assertEqual(row["text_cleanup_stage2_source_strategy"], "ocr_cleanup")
+        self.assertEqual(row["text_cleanup_stage2_source_page_start"], "2")
+        self.assertEqual(row["text_cleanup_stage2_source_page_end"], "4")
+        self.assertEqual(row["text_cleanup_stage2_ocr_psm"], "3")
         self.assertIn("text_preclean", row["artifact_types_present"])
+        self.assertIn("text_preclean_stage2", row["artifact_types_present"])
 
         module.write_registry([row], self.output_path)
 
@@ -114,9 +140,12 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         written_row = rows[0]
         self.assertIn("text_preclean_json_present", reader.fieldnames or [])
+        self.assertIn("text_preclean_stage2_json_present", reader.fieldnames or [])
         self.assertIn("text_cleanup_applied", reader.fieldnames or [])
+        self.assertIn("text_cleanup_stage2_applied", reader.fieldnames or [])
         self.assertIn("text_cleanup_source_strategy", reader.fieldnames or [])
         self.assertEqual(written_row["text_cleanup_profile"], "basic_spacing")
+        self.assertEqual(written_row["text_cleanup_stage2_profile"], "combined_basic")
 
 
 if __name__ == "__main__":
