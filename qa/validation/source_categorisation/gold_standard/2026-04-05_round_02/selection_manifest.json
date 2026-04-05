@@ -1,0 +1,209 @@
+{
+  "generated_at_utc": "2026-04-05T13:13:05.695192+00:00",
+  "round_id": "2026-04-05_round_02",
+  "round_dir": "qa\\validation\\source_categorisation\\gold_standard\\2026-04-05_round_02",
+  "seed": 20260405,
+  "bucket_quotas": {
+    "conference_edge": 4,
+    "case_group_boundary": 4,
+    "review_lab_edge": 4,
+    "count_ambiguity": 4,
+    "high_confidence_control": 4
+  },
+  "available_bucket_counts": {
+    "conference_edge": 192,
+    "case_group_boundary": 143,
+    "review_lab_edge": 36,
+    "count_ambiguity": 521,
+    "high_confidence_control": 408
+  },
+  "selected_primary_bucket_counts": {
+    "conference_edge": 4,
+    "case_group_boundary": 4,
+    "review_lab_edge": 4,
+    "count_ambiguity": 4,
+    "high_confidence_control": 4
+  },
+  "selected_bucket_counts": {
+    "case_group_boundary": 4,
+    "conference_edge": 4,
+    "count_ambiguity": 4,
+    "high_confidence_control": 4,
+    "review_lab_edge": 4
+  },
+  "selected_category_counts": {
+    "case_series_or_multi_case": 1,
+    "observational_group_study": 3,
+    "conference_abstract": 1,
+    "single_case_report": 6,
+    "interventional_study": 5,
+    "review_article": 4
+  },
+  "selected_count_confidence_counts": {
+    "medium": 12,
+    "low": 4,
+    "high": 4
+  },
+  "selected_rows": [
+    {
+      "paper_id": "114",
+      "title": "The stiff leg syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "116",
+      "title": "Antibodies to 125I-glutamic acid decarboxylase in patients with stiff man syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "160",
+      "title": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "1699",
+      "title": "Stiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "560",
+      "title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia.",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "634",
+      "title": "Anaesthetic management of a patient with Stiff-person syndrome.",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "12760",
+      "title": "Therapeutic Plasma Exchange in the Management of Stiff Person Syndrome Spectrum Disorders: A Case Series and Review of the Literature",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "13031",
+      "title": "INTRATHECAL BACLOFEN THERAPY IN STIFF-MAN SYNDROME - A DOUBLE-BLIND, PLACEBO-CONTROLLED TRIAL",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "22",
+      "title": "Therapeutic trial of milacemide in patients with myoclonus and other intractable movement disorders.",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_non_high_confidence; count_basis=patient_label_count",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "62",
+      "title": "Autoimmunity in stiff-Man syndrome with breast cancer is targeted to the C-terminal region of human amphiphysin, a protein similar to the yeast proteins, Rvs167 and Rvs161.",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_non_high_confidence; count_basis=source_single_case_override",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "673",
+      "title": "Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_non_high_confidence; count_basis=case_report_marker_single_case",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "12623",
+      "title": "Inpatient care for stiff person syndrome in the United States: A nationwide readmission study",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_manual_review_required; count_non_high_confidence; count_basis=early_body_count_signal",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "38",
+      "title": "Intravenous methocarbamol in the treatment of stiff-man syndrome.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "69",
+      "title": "Stiff-man syndrome. Report of a case.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "85",
+      "title": "Stiff-man syndrome: report of a case.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "89",
+      "title": "Glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "184",
+      "title": "The stiff-person syndrome: an autoimmune disorder affecting neurotransmission of gamma-aminobutyric acid.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "403",
+      "title": "Analysis of GAD65 autoantibodies in Stiff-Person syndrome patients.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present; non_clinical_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "620",
+      "title": "Stiff person syndrome: quantification, specificity, and intrathecal synthesis of GAD65 antibodies.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present; non_clinical_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "11785",
+      "title": "GAD antibody-spectrum disorders: progress in clinical phenotypes, immunopathogenesis and therapeutic interventions",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present; non_clinical_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    }
+  ]
+}
