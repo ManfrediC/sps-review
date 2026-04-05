@@ -4,7 +4,7 @@ Loads the 291 manually reviewed papers, runs classify_record() on each,
 and compares heuristic output against final_source_category after normalisation.
 
 Run:
-    python -m unittest tests.test_04_source_categorisation_accuracy -v
+    python -m unittest discover -s tests -p "test_04_source_categorisation_accuracy.py" -v
     python tests/test_04_source_categorisation_accuracy.py          # standalone report
 """
 from __future__ import annotations

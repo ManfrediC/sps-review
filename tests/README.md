@@ -15,13 +15,17 @@ python -m unittest discover -s tests -p "test_*.py" -v
 Focused cleanup-stage suite:
 
 ```bash
-python -m unittest tests.test_text_cleanup tests.test_03b_clean_text tests.test_12_build_paper_artifact_registry -v
+python -m unittest discover -s tests -p "test_text_cleanup.py" -v
+python -m unittest discover -s tests -p "test_03b_clean_text.py" -v
+python -m unittest discover -s tests -p "test_12_build_paper_artifact_registry.py" -v
 ```
 
 Routing and downstream exclusion checks:
 
 ```bash
-python -m unittest tests.test_source_routing tests.test_10_langextract tests.test_11_quality_assessment -v
+python -m unittest discover -s tests -p "test_source_routing.py" -v
+python -m unittest discover -s tests -p "test_10_langextract.py" -v
+python -m unittest discover -s tests -p "test_11_quality_assessment.py" -v
 ```
 
 ## Directory Contents Snapshot
