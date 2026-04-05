@@ -199,6 +199,24 @@ TITLE_CASE_COUNT_RE = re.compile(
     re.IGNORECASE,
 )
 PATIENT_LABEL_RE = re.compile(r"\b(?:patient|case)\s*(?:#\s*)?(?:\d+|i|ii|iii|iv|v|vi|vii|viii|ix|x)\b")
+SPS_SUBGROUP_DIAGNOSIS_PATTERN = (
+    r"(?:stiff person syndrome|stiff-person syndrome|stiff man syndrome|stiff-man syndrome|"
+    r"progressive encephalomyelitis with rigidity and myoclonus|"
+    r"progressive encephalomyelitis with myoclonus and rigidity)"
+)
+SPS_SUBGROUP_DIAGNOSIS_OR_CASE_LABEL_PATTERN = rf"(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN}|perm)"
+SPS_SUBGROUP_PAREN_COUNT_RE = re.compile(
+    rf"\b{SPS_SUBGROUP_DIAGNOSIS_PATTERN}\b\s*\(\s*{COUNT_TOKEN_PATTERN}\b",
+    re.IGNORECASE,
+)
+SPS_SUBGROUP_TABLE_COUNT_RE = re.compile(
+    rf"\b{SPS_SUBGROUP_DIAGNOSIS_PATTERN}\b\s+(?P<count>\d+)\s+\d+\s+\d+\b",
+    re.IGNORECASE,
+)
+SPS_SUBGROUP_CASE_LABEL_RE = re.compile(
+    rf"\bcase\s+\d+\s+{COUNT_FILLER_PATTERN}{{0,4}}?{SPS_SUBGROUP_DIAGNOSIS_OR_CASE_LABEL_PATTERN}\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -322,6 +340,33 @@ def has_explicit_multi_case_signal(text: str) -> bool:
     return False
 
 
+def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
+    normalized = normalize_count_text(text)
+    if not normalized:
+        return None
+
+    candidates: list[int] = []
+    for match in SPS_SUBGROUP_PAREN_COUNT_RE.finditer(normalized):
+        count = parse_count_token(match.group("count"))
+        if count > 0:
+            candidates.append(count)
+    if candidates:
+        return min(candidates), "high", "diagnosis_specific_parenthetical_count"
+
+    candidates = []
+    for match in SPS_SUBGROUP_TABLE_COUNT_RE.finditer(normalized):
+        count = parse_count_token(match.group("count"))
+        if count > 0:
+            candidates.append(count)
+    if candidates:
+        return min(candidates), "high", "diagnosis_specific_table_count"
+
+    if SPS_SUBGROUP_CASE_LABEL_RE.search(normalized):
+        return 1, "medium", "diagnosis_specific_case_label_count"
+
+    return None
+
+
 def score_count_candidate(
     unit: str,
     match: re.Match[str],
@@ -383,6 +428,17 @@ def estimate_sps_case_count(*, title: str, abstract: str, early_body_text: str) 
     title_candidates: list[tuple[int, int]] = []
     abstract_candidates: list[tuple[int, int]] = []
     body_candidates: list[tuple[int, int]] = []
+
+    if not title_mentions_sps:
+        subgroup_count = extract_sps_subgroup_count(" ".join([abstract, early_body_text]))
+        if subgroup_count is not None:
+            count, confidence, basis = subgroup_count
+            return CaseCountEstimate(
+                likely_case_count=count,
+                count_confidence=confidence,
+                count_basis=basis,
+                manual_review_required=confidence != "high",
+            )
 
     for match in TITLE_CASE_COUNT_RE.finditer(normalized_title):
         count = parse_count_token(match.group("count"))

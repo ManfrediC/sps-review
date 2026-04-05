@@ -276,6 +276,16 @@ FULL_ARTICLE_HEADER_MARKERS = (
     "original article",
     "original research",
 )
+ORIGINAL_COHORT_MARKERS = (
+    "medical records",
+    "patients were recruited",
+    "we looked for",
+    "were diagnosed as having",
+    "were diagnosed with",
+    "we retrospectively reviewed",
+    "retrospectively reviewed",
+    "retrospectively re viewed",
+)
 SUPPLEMENT_REFERENCE_MARKERS = (
     "supplement",
     "suppl",
@@ -530,6 +540,35 @@ def leading_text(text: str, limit: int = 1200) -> str:
     return stripped[:limit]
 
 
+def title_localised_window(
+    text: str,
+    title: str,
+    *,
+    min_prefix_skip: int = 1500,
+    leading_chars: int = 200,
+    trailing_chars: int = 3500,
+) -> str:
+    normalized_text = normalize_text(text)
+    normalized_title = normalize_text(title)
+    if not normalized_text or not normalized_title:
+        return normalized_text
+
+    title_tokens = normalized_title.split()
+    for anchor_size in (12, 10, 8, 6):
+        if len(title_tokens) < anchor_size:
+            continue
+        anchor = " ".join(title_tokens[:anchor_size])
+        index = normalized_text.find(anchor)
+        if index < 0:
+            continue
+        if index < min_prefix_skip:
+            return normalized_text
+        start = max(0, index - leading_chars)
+        end = min(len(normalized_text), index + len(anchor) + trailing_chars)
+        return normalized_text[start:end]
+    return normalized_text
+
+
 # Build confidence label.
 def confidence_label(value: float, gap: float) -> str:
     if value >= 4.0 and gap >= 1.5:
@@ -569,8 +608,8 @@ def classify_record(
     early_body_text = "\n".join(str(p.get("text") or "") for p in (preferred_record.get("pages") or [])[:3])
     meta_source_text = " ".join([title, abstract, tags, pages])
     meta_text = normalize_text(meta_source_text)
-    full_text_window = normalize_text(record_text_window(text_record, use_all_pages=False))
-    text_window = normalize_text(record_text_window(preferred_record, use_all_pages=trimmed_used))
+    full_text_window = title_localised_window(record_text_window(text_record, use_all_pages=False), title)
+    text_window = title_localised_window(record_text_window(preferred_record, use_all_pages=trimmed_used), title)
     header_text = leading_text(full_text_window, 1500)
     case_signal_text = normalize_text(" ".join([title, leading_text(abstract)]))
     # When metadata is sparse, fall back to extracted text for case signal detection.
@@ -587,6 +626,7 @@ def classify_record(
     case_report_hits = marker_hits(case_signal_text, CASE_REPORT_MARKERS)
     multi_case_hits = marker_hits(case_signal_text, MULTI_CASE_MARKERS)
     observational_hits = marker_hits(combined, OBSERVATIONAL_MARKERS)
+    original_cohort_hits = marker_hits(combined, ORIGINAL_COHORT_MARKERS)
     interventional_hits = marker_hits(combined, INTERVENTIONAL_MARKERS)
     # Search metadata first; fall back to combined text for lab markers when
     # metadata is sparse (many papers lack abstracts in the reference export).
@@ -672,6 +712,7 @@ def classify_record(
     original_study_signal = bool(
         structured_abstract_hits
         or observational_hits
+        or original_cohort_hits
         or interventional_hits
         or lab_method_hits
         or patient_label_count > 0
@@ -695,6 +736,12 @@ def classify_record(
         or patient_label_count >= 2
         or title_case_count_signal
         or quantified_multi_case_signal
+    )
+    patient_label_only_multi_case = bool(
+        patient_label_count >= 2
+        and not multi_case_hits
+        and not quantified_multi_case_signal
+        and not title_case_count_signal
     )
     strong_original_cohort_signal = (
         title_mentions_sps and (
@@ -798,6 +845,33 @@ def classify_record(
         scores["observational_group_study"] += 2.0
     if "patients with" in multi_case_hits:
         scores["observational_group_study"] += 0.8
+    scores["observational_group_study"] += len(original_cohort_hits) * 1.6
+    if original_cohort_hits and len(structured_abstract_hits) >= 2:
+        scores["observational_group_study"] += 1.2
+    if original_cohort_hits and explicit_multi_case and not strong_case_signal:
+        scores["observational_group_study"] += 1.2
+    if (
+        original_cohort_hits
+        and explicit_multi_case
+        and not title_mentions_sps
+        and len(structured_abstract_hits) >= 2
+    ):
+        scores["observational_group_study"] += 1.8
+        scores["case_series_or_multi_case"] -= 1.0
+    if (
+        original_cohort_hits
+        and patient_label_count >= 2
+        and not title_mentions_sps
+        and len(structured_abstract_hits) >= 2
+    ):
+        scores["observational_group_study"] += 1.5
+        scores["case_series_or_multi_case"] -= 2.0
+    if patient_label_only_multi_case and original_cohort_hits and len(structured_abstract_hits) >= 2:
+        scores["observational_group_study"] += 2.0
+        scores["case_series_or_multi_case"] -= 3.0
+    if patient_label_only_multi_case and original_cohort_hits and count_hint <= 1:
+        scores["observational_group_study"] += 2.5
+        scores["case_series_or_multi_case"] -= 3.0
 
     if interventional_hits and (observational_hits or explicit_multi_case or "controlled study" in interventional_hits):
         scores["interventional_study"] += len(interventional_hits) * 1.6
@@ -826,6 +900,14 @@ def classify_record(
         scores["lab_heavy_clinical_or_translational"] += 1.5
     if conference_like_metadata and strong_lab_signal:
         scores["lab_heavy_clinical_or_translational"] += 1.0
+    if original_cohort_hits and not lab_method_hits:
+        scores["lab_heavy_clinical_or_translational"] -= 1.5
+    if original_cohort_hits and not lab_method_hits and len(non_clinical_hits) <= 1:
+        scores["observational_group_study"] += 1.0
+        scores["lab_heavy_clinical_or_translational"] -= 2.5
+        scores["non_clinical_basic_science"] -= 2.5
+    if original_cohort_hits and not strong_lab_signal:
+        scores["review_article"] -= 1.5
 
     scores["unclear_manual_review"] = 1.0
 
@@ -997,6 +1079,8 @@ def classify_record(
         reasons.append(f"interventional_markers={'; '.join(interventional_hits[:3])}")
     if review_hits:
         reasons.append(f"review_markers={'; '.join(review_hits[:3])}")
+    if original_cohort_hits:
+        reasons.append(f"original_cohort_markers={'; '.join(original_cohort_hits[:3])}")
     if non_clinical_hits:
         reasons.append(f"non_clinical_markers={'; '.join(non_clinical_hits[:3])}")
     if lab_method_hits:
