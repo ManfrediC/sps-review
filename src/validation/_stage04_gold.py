@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 import random
+import re
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -105,6 +106,78 @@ def resolve_repo_path(path_text: str) -> Path:
     if path.is_absolute():
         return path
     return REPO_ROOT / path
+
+
+def load_text_page_entries(path_text: str) -> list[dict[str, Any]]:
+    text_json_path = resolve_repo_path(path_text)
+    if not text_json_path.exists():
+        return []
+
+    payload = json.loads(text_json_path.read_text(encoding="utf-8"))
+    page_entries: list[dict[str, Any]] = []
+    for index, page in enumerate(payload.get("pages") or []):
+        page_num = parse_int(
+            page.get("page_num"),
+            default=parse_int(page.get("page_index"), default=index) + 1,
+        )
+        page_entries.append(
+            {
+                "page_num": page_num,
+                "text": str(page.get("text") or ""),
+            }
+        )
+    return page_entries
+
+
+def build_search_snippet(
+    text: str,
+    *,
+    match_start: int,
+    match_end: int,
+    radius: int = 90,
+) -> str:
+    snippet_start = max(0, match_start - radius)
+    snippet_end = min(len(text), match_end + radius)
+    snippet = " ".join(text[snippet_start:snippet_end].split())
+    if snippet_start > 0:
+        snippet = f"...{snippet}"
+    if snippet_end < len(text):
+        snippet = f"{snippet}..."
+    return snippet
+
+
+def search_text_page_entries(
+    page_entries: list[dict[str, Any]],
+    query: str,
+    *,
+    max_results: int = 12,
+) -> list[dict[str, Any]]:
+    query_text = str(query or "").strip()
+    if not query_text:
+        return []
+
+    pattern = re.compile(re.escape(query_text), flags=re.IGNORECASE)
+    matches: list[dict[str, Any]] = []
+    for page_entry in page_entries:
+        page_text = str(page_entry.get("text") or "")
+        page_matches = list(pattern.finditer(page_text))
+        if not page_matches:
+            continue
+        first_match = page_matches[0]
+        matches.append(
+            {
+                "page_num": parse_int(page_entry.get("page_num"), default=1),
+                "match_count": len(page_matches),
+                "snippet": build_search_snippet(
+                    page_text,
+                    match_start=first_match.start(),
+                    match_end=first_match.end(),
+                ),
+            }
+        )
+        if len(matches) >= max_results:
+            break
+    return matches
 
 
 def first_pipe_separated_value(value: str) -> str:

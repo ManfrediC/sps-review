@@ -139,6 +139,12 @@ Build the default 10-paper batch:
 python src/validation/build_stage04_gold_batch.py
 ```
 
+Build a larger 20-paper batch with balanced quotas:
+
+```bash
+python src/validation/build_stage04_gold_batch.py --conference-edge-size 4 --case-group-boundary-size 4 --review-lab-edge-size 4 --count-ambiguity-size 4 --high-confidence-control-size 4
+```
+
 ### `review_stage04_gold_app.py`
 
 Streamlit reviewer for the stage-04 gold rounds.
@@ -146,6 +152,7 @@ Streamlit reviewer for the stage-04 gold rounds.
 It:
 - loads a selected round from `qa/validation/source_categorisation/gold_standard/`
 - shows the source PDF alongside the predicted source category and count
+- includes a search box that uses extracted page text to jump the embedded PDF viewer to matching pages
 - lets the reviewer confirm or edit the prediction
 - saves each response immediately to `responses.csv`
 - writes a round snapshot `gold_standard_stage04_<round_id>.csv`

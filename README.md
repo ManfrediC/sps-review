@@ -279,6 +279,7 @@ Current tools:
   - builds a reproducible `n=10` review round, excluding case-report example papers and prior gold rounds by default
 - `src/validation/review_stage04_gold_app.py`
   - Streamlit app that shows the source PDF alongside the predicted source category and extractable SPS count
+  - includes a page-based search box that uses extracted text to jump the embedded PDF viewer to matching pages
   - reviewer responses are saved immediately and the round can be resumed
 - `src/validation/benchmark_stage04_gold.py`
   - benchmarks the current heuristics against completed gold-standard reviews
@@ -289,6 +290,12 @@ Typical usage:
 python src/validation/build_stage04_gold_batch.py
 streamlit run src/validation/review_stage04_gold_app.py
 python src/validation/benchmark_stage04_gold.py
+```
+
+For a larger balanced `n=20` round, increase each bucket quota to `4`:
+
+```bash
+python src/validation/build_stage04_gold_batch.py --conference-edge-size 4 --case-group-boundary-size 4 --review-lab-edge-size 4 --count-ambiguity-size 4 --high-confidence-control-size 4
 ```
 
 The first generated round currently lives at:

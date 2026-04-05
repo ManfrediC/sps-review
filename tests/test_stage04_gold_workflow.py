@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -132,6 +133,32 @@ class TestStage04GoldWorkflow(unittest.TestCase):
         self.assertAlmostEqual(summary["conference_edge"]["count_accuracy"], 0.0)
         self.assertAlmostEqual(summary["count_ambiguity"]["category_accuracy"], 1.0)
         self.assertAlmostEqual(summary["count_ambiguity"]["count_accuracy"], 1.0)
+
+    def test_search_text_page_entries_returns_page_numbers_and_snippets(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            text_json_path = Path(tmp_dir_text) / "paper.json"
+            text_json_path.write_text(
+                json.dumps(
+                    {
+                        "pages": [
+                            {"page_index": 0, "text": "Introduction only."},
+                            {
+                                "page_index": 1,
+                                "text": "Results: two SPS patients improved after treatment.",
+                            },
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            page_entries = gold.load_text_page_entries(str(text_json_path))
+            matches = gold.search_text_page_entries(page_entries, "SPS patients")
+
+        self.assertEqual(len(page_entries), 2)
+        self.assertEqual(matches[0]["page_num"], 2)
+        self.assertEqual(matches[0]["match_count"], 1)
+        self.assertIn("SPS patients", matches[0]["snippet"])
 
 
 if __name__ == "__main__":

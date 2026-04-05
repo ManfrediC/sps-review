@@ -7,6 +7,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import streamlit as st
+from streamlit_pdf_viewer import pdf_viewer
 
 from src.validation._stage04_gold import (
     DEFAULT_REVIEWER,
@@ -18,23 +19,31 @@ from src.validation._stage04_gold import (
     count_completed_reviews,
     discover_round_directories,
     display_path,
+    load_text_page_entries,
     load_round_queue_rows,
     load_round_responses_by_id,
     resolve_repo_path,
     round_gold_snapshot_path,
     round_label_from_directory,
+    search_text_page_entries,
     upsert_gold_master,
     write_round_outputs,
 )
 
 
 PDF_VIEW_HEIGHT = 1000
+PDF_SEARCH_RESULT_LIMIT = 12
 
 
 @st.cache_data(show_spinner=False)
 def load_pdf_bytes(pdf_path_text: str) -> bytes:
     pdf_path = resolve_repo_path(pdf_path_text)
     return pdf_path.read_bytes()
+
+
+@st.cache_data(show_spinner=False)
+def load_text_pages(text_json_path_text: str) -> list[dict[str, object]]:
+    return load_text_page_entries(text_json_path_text)
 
 
 def normalise_count_text(value: str) -> str:
@@ -64,6 +73,10 @@ def sync_prediction_lock(prefix: str, queue_row: dict[str, str]) -> None:
         apply_prediction_values(prefix, queue_row)
 
 
+def preferred_start_page(queue_row: dict[str, str]) -> int:
+    return max(1, int((queue_row.get("preferred_start_page") or "1").strip() or "1"))
+
+
 def ensure_editor_state(
     *,
     queue_row: dict[str, str],
@@ -89,6 +102,8 @@ def ensure_editor_state(
         st.session_state[editor_key(prefix, "reviewer_id")] = (
             (response_row.get("reviewer_id") or DEFAULT_REVIEWER).strip() or DEFAULT_REVIEWER
         )
+        st.session_state[editor_key(prefix, "pdf_search_query")] = ""
+        st.session_state[editor_key(prefix, "pdf_view_page")] = preferred_start_page(queue_row)
         st.session_state[active_key] = prefix
     return prefix
 
@@ -213,17 +228,81 @@ def main() -> None:
     with left_col:
         st.subheader(f"PDF: {paper_id}")
         pdf_path_relative = (queue_row.get("pdf_path_relative") or "").strip()
+        text_json_path_relative = (queue_row.get("preferred_text_json_path") or "").strip()
         pdf_path = resolve_repo_path(pdf_path_relative)
-        preferred_page = max(1, int((queue_row.get("preferred_start_page") or "1").strip() or "1"))
+        preferred_page = preferred_start_page(queue_row)
+        pdf_view_page_key = editor_key(prefix, "pdf_view_page")
+        pdf_search_query_key = editor_key(prefix, "pdf_search_query")
         if pdf_path.exists():
             st.caption(f"{display_path(pdf_path)}")
             if preferred_page > 1:
                 st.caption(
-                    f"Suggested start page: {preferred_page}. "
-                    "The in-app PDF viewer may not jump automatically, so use the page control if needed."
+                    f"Suggested start page: {preferred_page}."
                 )
+            if text_json_path_relative:
+                page_entries = load_text_pages(text_json_path_relative)
+                page_count = len(page_entries)
+                search_col, page_col, reset_col = st.columns([2, 1, 1])
+                with search_col:
+                    st.text_input(
+                        "Search PDF text",
+                        key=pdf_search_query_key,
+                        placeholder="Enter a phrase to find matching pages",
+                        help=(
+                            "Search uses the paper's extracted page text and jumps the PDF viewer "
+                            "to the matching page."
+                        ),
+                    )
+                with page_col:
+                    st.number_input(
+                        "Page",
+                        min_value=1,
+                        max_value=max(page_count, preferred_page),
+                        step=1,
+                        key=pdf_view_page_key,
+                    )
+                with reset_col:
+                    st.write("")
+                    if st.button("Suggested page", use_container_width=True):
+                        st.session_state[pdf_view_page_key] = preferred_page
+                        st.rerun()
+
+                search_query = str(st.session_state[pdf_search_query_key]).strip()
+                if search_query:
+                    matches = search_text_page_entries(
+                        page_entries,
+                        search_query,
+                        max_results=PDF_SEARCH_RESULT_LIMIT,
+                    )
+                    if matches:
+                        st.caption(
+                            f"Found {sum(int(match['match_count']) for match in matches)} match(es) "
+                            f"across {len(matches)} page(s)."
+                        )
+                        for match in matches:
+                            page_num = int(match["page_num"])
+                            button_label = f"Page {page_num} ({match['match_count']} hit(s))"
+                            if st.button(
+                                button_label,
+                                key=editor_key(prefix, f"search_result::{page_num}"),
+                                use_container_width=True,
+                            ):
+                                st.session_state[pdf_view_page_key] = page_num
+                                st.rerun()
+                            st.caption(str(match["snippet"]))
+                    else:
+                        st.info("No matching pages were found in the extracted text for this paper.")
             try:
-                st.pdf(load_pdf_bytes(pdf_path_relative), height=PDF_VIEW_HEIGHT)
+                pdf_viewer(
+                    load_pdf_bytes(pdf_path_relative),
+                    key=editor_key(prefix, f"pdf_viewer::{st.session_state[pdf_view_page_key]}"),
+                    width="100%",
+                    height=PDF_VIEW_HEIGHT,
+                    render_text=True,
+                    zoom_level="auto",
+                    scroll_to_page=int(st.session_state[pdf_view_page_key]),
+                    scroll_behavior="instant",
+                )
             except Exception as exc:  # pragma: no cover - UI fallback
                 st.error(f"Could not render the PDF inline: {exc}")
         else:
