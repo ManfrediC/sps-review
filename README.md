@@ -28,7 +28,7 @@ This repository aims to provide a reproducible workflow that shifts effort from 
   Reviewer workbook(s) *(not committed)*
 
 - `src/pipelines/`  
-  Pipeline scripts *(download → extract → clean → route → downstream extraction)*
+  Pipeline scripts *(download -> extract -> clean -> route -> downstream extraction)*
 
 - `config/`  
   Schema + data dictionary + colour map
@@ -46,7 +46,7 @@ This repository aims to provide a reproducible workflow that shifts effort from 
 
 ## Purpose
 
-Develop and operate a reproducible workflow for **case-level** data extraction from a large corpus (~800) of screened SPS-spectrum case reports/series, while preserving **dual-reviewer verification** and improving speed, auditability, and consistency.
+Develop and operate a reproducible workflow for **case-level** data extraction from a large corpus of `1039` screened SPS-spectrum references, while preserving **dual-reviewer verification** and improving speed, auditability, and consistency.
 
 ---
 
@@ -56,7 +56,7 @@ Develop and operate a reproducible workflow for **case-level** data extraction f
 2. Preserve **dual-reviewer verification** in a time-efficient, auditable format.
 3. Maintain a clean, fast Excel workspace for reviewers.
 4. Automatically generate annotated PDFs with **colour-coded highlights** for each extracted data point.
-5. Produce a reproducible pipeline from **PDF → structured data → final analysis dataset**.
+5. Produce a reproducible pipeline from **PDF -> structured data -> final analysis dataset**.
 6. Ensure methodological transparency suitable for publication.
 
 ---
@@ -135,12 +135,12 @@ These outputs support reproducibility, transparency, and rapid re-checking.
 ## Data structure and organisation
 
 Project directories (conceptually):
-- `pdf_original/` — source files
-- `pdf_annotated/` — automatically highlighted evidence PDFs
-- `extraction_json/` — structured AI outputs
-- `excel/` — reviewer workbook and final dataset
-- `qa/` — non-canonical validation and review material
-- `src/pipelines/` — automation and transformation steps
+- `pdf_original/` - source files
+- `pdf_annotated/` - automatically highlighted evidence PDFs
+- `extraction_json/` - structured AI outputs
+- `excel/` - reviewer workbook and final dataset
+- `qa/` - non-canonical validation and review material
+- `src/pipelines/` - automation and transformation steps
 
 Stable file naming is mandatory to preserve links between Excel, JSON, and PDFs.
 
@@ -155,7 +155,7 @@ All variables are predefined in a data dictionary that includes:
 - domain colour for PDF highlights and Excel layout
 
 Extraction is strictly evidence-based:
-- if a value is not explicitly stated, it is recorded as **“not stated”**.
+- if a value is not explicitly stated, it is recorded as **"not stated"**.
 
 ---
 
@@ -192,7 +192,7 @@ The system is successful if it:
 Used to:
 - design and refine the extraction schema
 - generate and optimise structured extraction prompts
-- define data models (JSON ↔ Excel transformations)
+- define data models (JSON <-> Excel transformations)
 - plan the automation workflow
 - support methodological documentation for publication
 - troubleshoot edge cases (e.g., multi-patient case series, ambiguous reporting)
@@ -224,14 +224,35 @@ Workflow:
 
 ---
 
+## Current project status
+
+The canonical step `01` to step `03` workflow is now in a strong operational state.
+
+- `1039` references are tracked in the live registries.
+- `1027` references have downloaded PDFs and canonical extracted text JSONs.
+- All `1027` extracted texts have been reviewed at least once through the combined sample-review, remainder-review, and targeted repair workflow.
+- The remaining PDF acquisition backlog is explicit in `data/references/pdf_acquisition_queue.csv`:
+  - `7` `missing`
+  - `5` `failed`
+- Two records are now explicitly labelled `incorrect_reference` and are excluded from downstream AI stages:
+  - `263`
+  - `1841`
+
+This means the remaining open issues after step `03` are now narrow and explicit:
+- unresolved source acquisition for the `12` queued references
+- two upstream reference-linkage problems
+
+---
+
 ## Current text-cleanup stage
 
 The canonical text flow now includes an explicit cleanup step between raw extraction and downstream routing.
 
 1. `src/pipelines/03_extract_text.py` writes raw extracted text JSONs to `data/extraction_json/text/`.
-2. `src/pipelines/03b_clean_text.py` applies deterministic cleanup only to the reviewed subset listed in `config/extraction/text_cleanup_overrides.csv`.
-3. `03b` preserves pre-clean backups for those targeted papers in `data/extraction_json/text_preclean/`.
-4. The cleaned canonical JSONs remain together in `data/extraction_json/text/` for downstream stages.
+2. `src/pipelines/03b_clean_text.py` is the sole cleanup entry point and applies deterministic cleanup only to the reviewed subset listed in `config/extraction/text_cleanup_overrides.csv`.
+3. `03b --stage2` runs the reviewed residual rescue logic for the smaller set of papers that need page-localised OCR, alternate source replacement, or narrow reviewed substitutions.
+4. `03b` preserves pre-clean backups for those targeted papers in `data/extraction_json/text_preclean/` and `data/extraction_json/text_preclean_stage2/`.
+5. The cleaned canonical JSONs remain together in `data/extraction_json/text/` for downstream stages.
 
 ---
 
@@ -240,6 +261,6 @@ The canonical text flow now includes an explicit cleanup step between raw extrac
 A scalable, reviewer-centred system that converts narrative SPS case reports into a high-quality, fully auditable dataset suitable for systematic synthesis, while preserving methodological rigour and dramatically reducing manual workload.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-03-31`
-- Immediate subdirectories (12): `.codex`, `.github`, `config`, `data`, `doc`, `env`, `examples`, `qa`, `resources`, `results`, `src`, `tests`
-- Immediate files (2, excluding `README.md`): `.gitignore`, `AGENTS.md`
+- Last updated: `2026-04-05`
+- Immediate subdirectories (14): `.claude`, `.codex`, `.github`, `.venv`, `config`, `data`, `doc`, `env`, `examples`, `qa`, `resources`, `results`, `src`, `tests`
+- Immediate files (3, excluding `README.md`): `.gitignore`, `AGENTS.md`, `CLAUDE.md`

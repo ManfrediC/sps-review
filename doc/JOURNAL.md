@@ -856,3 +856,16 @@ Folded the residual rescue path into the canonical cleanup stage, labeled the tw
   - `python -m unittest discover -s tests -p "test_*.py" -v`
 - Result:
   - `55` tests passed
+
+### Top-Level Documentation Close-Out
+
+- Updated the top-level `README.md` so it reflects the current corpus and workflow state rather than the earlier early-project framing.
+- The README now states the live step-`01` to step-`03` status explicitly:
+  - `1039` tracked references
+  - `1027` downloaded PDFs and canonical extracted text JSONs
+  - all extracted texts reviewed at least once
+  - `12` remaining acquisition-queue items
+  - `263` and `1841` marked as `incorrect_reference`
+- Clarified in the README that `src/pipelines/03b_clean_text.py` is the sole cleanup entry point, with `--stage2` as the reviewed residual-rescue mode.
+- Refreshed the top-level directory snapshot so it matches the repo layout after the cleanup and archive work.
+- Prepared and pushed a docs-only sync commit after the latest repo-stewardship pass.
