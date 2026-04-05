@@ -580,8 +580,10 @@ def build_response_row(
 ) -> dict[str, str]:
     predicted_source_category = (queue_row.get("predicted_source_category") or "").strip()
     predicted_count = (queue_row.get("predicted_likely_sps_case_count") or "").strip()
+    reviewed_count = reviewed_extractable_sps_case_count.strip() or "0"
+    predicted_count = predicted_count or reviewed_count
     final_category = predicted_source_category if prediction_correct else reviewed_source_category.strip()
-    final_count = predicted_count if prediction_correct else reviewed_extractable_sps_case_count.strip()
+    final_count = predicted_count if prediction_correct else reviewed_count
     return {
         "round_id": (queue_row.get("round_id") or "").strip(),
         "paper_id": (queue_row.get("paper_id") or "").strip(),

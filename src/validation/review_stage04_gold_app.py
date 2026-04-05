@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import base64
 import sys
 from pathlib import Path
 
@@ -8,7 +7,6 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import streamlit as st
-import streamlit.components.v1 as components
 
 from src.validation._stage04_gold import (
     DEFAULT_REVIEWER,
@@ -34,17 +32,14 @@ PDF_VIEW_HEIGHT = 1000
 
 
 @st.cache_data(show_spinner=False)
-def load_pdf_data_uri(pdf_path_text: str) -> str:
+def load_pdf_bytes(pdf_path_text: str) -> bytes:
     pdf_path = resolve_repo_path(pdf_path_text)
-    payload = base64.b64encode(pdf_path.read_bytes()).decode("ascii")
-    return f"data:application/pdf;base64,{payload}"
+    return pdf_path.read_bytes()
 
 
-def pdf_iframe_html(data_uri: str, *, page_num: int) -> str:
-    return (
-        f'<iframe src="{data_uri}#page={page_num}" '
-        f'width="100%" height="{PDF_VIEW_HEIGHT}" style="border: 1px solid #d9d9d9;"></iframe>'
-    )
+def normalise_count_text(value: str) -> str:
+    stripped = (value or "").strip()
+    return stripped if stripped else "0"
 
 
 def round_options() -> list[Path]:
@@ -63,9 +58,9 @@ def response_defaults(
     response_row: dict[str, str],
 ) -> tuple[bool, str, str, str, str]:
     predicted_category = (queue_row.get("predicted_source_category") or "").strip()
-    predicted_count = (queue_row.get("predicted_likely_sps_case_count") or "").strip()
+    predicted_count = normalise_count_text(queue_row.get("predicted_likely_sps_case_count") or "")
     saved_category = (response_row.get("reviewed_source_category") or "").strip()
-    saved_count = (response_row.get("reviewed_extractable_sps_case_count") or "").strip()
+    saved_count = normalise_count_text(response_row.get("reviewed_extractable_sps_case_count") or "")
     prediction_correct = (response_row.get("prediction_correct") or "").strip() == "true"
     if response_row and not prediction_correct:
         category_value = saved_category or predicted_category
@@ -170,10 +165,14 @@ def main() -> None:
         pdf_path = resolve_repo_path(pdf_path_relative)
         preferred_page = max(1, int((queue_row.get("preferred_start_page") or "1").strip() or "1"))
         if pdf_path.exists():
-            st.caption(f"{display_path(pdf_path)} | start page {preferred_page}")
+            st.caption(f"{display_path(pdf_path)}")
+            if preferred_page > 1:
+                st.caption(
+                    f"Suggested start page: {preferred_page}. "
+                    "The in-app PDF viewer may not jump automatically, so use the page control if needed."
+                )
             try:
-                data_uri = load_pdf_data_uri(pdf_path_relative)
-                components.html(pdf_iframe_html(data_uri, page_num=preferred_page), height=PDF_VIEW_HEIGHT)
+                st.pdf(load_pdf_bytes(pdf_path_relative), height=PDF_VIEW_HEIGHT)
             except Exception as exc:  # pragma: no cover - UI fallback
                 st.error(f"Could not render the PDF inline: {exc}")
         else:
@@ -198,7 +197,7 @@ def main() -> None:
             prediction_correct_value = st.toggle(
                 "Prediction correct",
                 value=prediction_correct,
-                help="Leave on if both the category and count are acceptable. Turn off to edit.",
+                help="Leave on to accept the prediction as-is. If you edit the fields below, the app will treat the prediction as incorrect even if this toggle stays on.",
             )
             reviewed_source_category = st.selectbox(
                 "Source category",
@@ -206,12 +205,10 @@ def main() -> None:
                 index=SOURCE_CATEGORY_OPTIONS.index(default_category)
                 if default_category in SOURCE_CATEGORY_OPTIONS
                 else 0,
-                disabled=prediction_correct_value,
             )
             reviewed_count_text = st.text_input(
                 "Extractable SPS patient count",
                 value=default_count or "0",
-                disabled=prediction_correct_value,
                 help="Use `0` when the source is not an extractable SPS case source.",
             )
             pdf_alignment_tag = st.selectbox(
@@ -236,23 +233,27 @@ def main() -> None:
             save_next = st.form_submit_button("Save and next", type="primary", use_container_width=True)
 
         if save_here or save_next:
-            count_text = (queue_row.get("predicted_likely_sps_case_count") or "").strip()
-            if not prediction_correct_value:
-                count_text = reviewed_count_text.strip()
-            if not count_text:
-                st.error("The reviewed count cannot be blank. Use `0` if there are no extractable SPS cases.")
-                st.stop()
+            predicted_category = (queue_row.get("predicted_source_category") or "").strip()
+            predicted_count_text = normalise_count_text(queue_row.get("predicted_likely_sps_case_count") or "")
+            reviewed_count_text = normalise_count_text(reviewed_count_text)
             try:
-                int(count_text)
+                int(reviewed_count_text)
             except ValueError:
                 st.error("The reviewed count must be an integer.")
                 st.stop()
 
+            edited_prediction = (
+                reviewed_source_category != predicted_category
+                or reviewed_count_text != predicted_count_text
+            )
+            final_prediction_correct = prediction_correct_value and not edited_prediction
+            final_count_text = predicted_count_text if final_prediction_correct else reviewed_count_text
+
             responses_by_id[paper_id] = build_response_row(
                 queue_row=queue_row,
-                prediction_correct=prediction_correct_value,
+                prediction_correct=final_prediction_correct,
                 reviewed_source_category=reviewed_source_category,
-                reviewed_extractable_sps_case_count=count_text,
+                reviewed_extractable_sps_case_count=final_count_text,
                 pdf_content_alignment_tag=pdf_alignment_tag,
                 reviewer_notes=reviewer_notes,
                 reviewer_id=reviewer_id,

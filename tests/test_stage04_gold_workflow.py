@@ -83,6 +83,29 @@ class TestStage04GoldWorkflow(unittest.TestCase):
         self.assertEqual(snapshot_rows[0]["reviewed_extractable_sps_case_count"], "2")
         self.assertEqual(snapshot_rows[0]["prediction_correct"], "false")
 
+    def test_build_response_row_uses_zero_when_prediction_is_accepted_with_blank_count(self) -> None:
+        queue_row = {
+            "round_id": "2026-04-05_round_01",
+            "paper_id": "124",
+            "title": "Blank count paper",
+            "selection_bucket": "high_confidence_control",
+            "predicted_source_category": "single_case_report",
+            "predicted_likely_sps_case_count": "",
+        }
+
+        response_row = gold.build_response_row(
+            queue_row=queue_row,
+            prediction_correct=True,
+            reviewed_source_category="single_case_report",
+            reviewed_extractable_sps_case_count="0",
+            pdf_content_alignment_tag="appears_matched",
+            reviewer_notes="",
+            reviewer_id="reviewer_a",
+        )
+
+        self.assertEqual(response_row["reviewed_extractable_sps_case_count"], "0")
+        self.assertEqual(response_row["prediction_correct"], "true")
+
     def test_bucket_accuracy_summary_uses_exact_matches(self) -> None:
         summary = benchmark.summarise_bucket_accuracy(
             [
