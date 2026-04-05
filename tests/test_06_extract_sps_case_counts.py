@@ -172,6 +172,58 @@ class TestExtractableCaseCounts(unittest.TestCase):
         self.assertEqual(result["likely_sps_case_count"], "0")
         self.assertEqual(result["count_basis"], "lab_context_no_extractable_count")
 
+    def test_review_article_can_preserve_explicit_single_case_count(self) -> None:
+        count_mod = _load_module("case_count_module_review_case_override", CASE_COUNT_SCRIPT)
+        result = count_mod.build_case_count_record(
+            reference_row={
+                "Covidence": "1785",
+                "Title": "Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man",
+                "Authors": "Example, F",
+                "Abstract": "We present a case of a non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome.",
+            },
+            text_record={"paper_id": "1785", "_path": "data/extraction_json/text/1785.json"},
+            preferred_record={"pages": [{"text": "A 52-year-old male from the Congo presented with a 2-year history."}]},
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "1785.json",
+            source_row={
+                "source_category": "review_article",
+                "source_subtype": "tagged_review_article",
+            },
+        )
+        self.assertEqual(result["likely_sps_case_count"], "1")
+
+    def test_observational_translational_rows_can_zero_non_extractable_patient_labels(self) -> None:
+        count_mod = _load_module("case_count_module_observational_zero", CASE_COUNT_SCRIPT)
+        result = count_mod.build_case_count_record(
+            reference_row={
+                "Covidence": "292",
+                "Title": "Amphiphysin autoimmunity: paraneoplastic accompaniments.",
+                "Authors": "Example, G",
+                "Abstract": "",
+            },
+            text_record={"paper_id": "292", "_path": "data/extraction_json/text/292.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Clinical information was available for 63 patients. "
+                            "Coexisting paraneoplastic autoantibodies were identified in 74% of patients. "
+                            "Serological evaluation and western blot were performed."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "292.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_prospective_cohort",
+            },
+        )
+        self.assertEqual(result["likely_sps_case_count"], "0")
+        self.assertIn(
+            result["count_basis"],
+            {"observational_context_no_extractable_sps_count", "no_reliable_count_signal"},
+        )
+
 
 if __name__ == "__main__":
     report = run_case_count_benchmark()

@@ -290,6 +290,11 @@ ORIGINAL_COHORT_MARKERS = (
     "patients were included",
     "was used to measure",
     "were used to measure",
+    "clinical information was available",
+    "fulfilled criteria",
+    "identified in",
+    "were identified",
+    "evaluated between",
 )
 ADMINISTRATIVE_DATASET_MARKERS = (
     "nationwide readmission study",
@@ -310,6 +315,8 @@ INTERVENTIONAL_TITLE_MARKERS = (
     "trialing",
     "therapy",
     "therapeutic",
+    "improves",
+    "improvement with",
 )
 REVIEW_STYLE_MARKERS = (
     "is characterized by",
@@ -642,8 +649,14 @@ def classify_record(
     early_body_text = "\n".join(str(p.get("text") or "") for p in (preferred_record.get("pages") or [])[:3])
     meta_source_text = " ".join([title, abstract, tags, pages])
     meta_text = normalize_text(meta_source_text)
-    full_text_window = title_localised_window(record_text_window(text_record, use_all_pages=False), title)
-    text_window = title_localised_window(record_text_window(preferred_record, use_all_pages=trimmed_used), title)
+    full_text_window = title_localised_window(
+        record_text_window(text_record, use_all_pages=not abstract.strip()),
+        title,
+    )
+    text_window = title_localised_window(
+        record_text_window(preferred_record, use_all_pages=trimmed_used or not abstract.strip()),
+        title,
+    )
     header_text = leading_text(full_text_window, 1500)
     case_signal_text = normalize_text(" ".join([title, leading_text(abstract)]))
     # When metadata is sparse, fall back to extracted text for case signal detection.
@@ -695,13 +708,14 @@ def classify_record(
     abstract_word_count = len(normalize_text(abstract).split())
     preferred_page_count = int(preferred_record.get("n_pages") or len(preferred_record.get("pages") or []) or 0)
     full_page_count = int(text_record.get("n_pages") or len(text_record.get("pages") or []) or preferred_page_count or 0)
+    source_page_count = preferred_page_count if proceedings_detected and 0 < preferred_page_count < full_page_count else full_page_count
     # Detect supplement-style pages (e.g. "S123", "S45-S47").
     supplement_page = bool(re.match(r"^[Ss]\d+", pages)) if pages else False
     electronic_single_page = bool(re.match(r"^[Ee]\d+$", pages)) if pages else False
     supplement_issue = any(marker in normalized_issue for marker in SUPPLEMENT_REFERENCE_MARKERS)
     conference_doi_signal = "conference" in normalized_doi or "meetingabstracts" in normalized_doi
     header_only_proceedings = proceedings_detected and trim_status == "header_only_source"
-    short_source_document = 0 < full_page_count <= 2
+    short_source_document = 0 < source_page_count <= 2
     short_abstract_like = 0 < abstract_word_count <= 450
     short_source_abstract_like = short_source_document and short_abstract_like
     full_article_header = any(marker in header_text for marker in FULL_ARTICLE_HEADER_MARKERS)
@@ -885,6 +899,9 @@ def classify_record(
         scores["single_case_report"] += 1.5
     scores["single_case_report"] += len(case_report_hits) * 1.5
     scores["single_case_report"] += len(singular_patient_hits) * 0.5
+    if not abstract.strip() and ("anaesthesia for" in normalized_title or "anesthesia for" in normalized_title):
+        scores["single_case_report"] += 3.0
+        scores["review_article"] -= 2.0
     if patient_label_count >= 2 or ("patients with" in multi_case_hits and quantified_multi_case_signal):
         scores["single_case_report"] -= 3.0
     if quantified_multi_case_signal and (count_hint >= 8 or original_cohort_hits):
@@ -959,11 +976,17 @@ def classify_record(
     if patient_label_only_multi_case and original_cohort_hits and count_hint <= 1:
         scores["observational_group_study"] += 2.5
         scores["case_series_or_multi_case"] -= 3.0
+    if "clinical information was available" in meta_text:
+        scores["observational_group_study"] += 2.2
+        scores["lab_heavy_clinical_or_translational"] -= 1.2
 
     if interventional_hits and (observational_hits or explicit_multi_case or "controlled study" in interventional_hits):
         scores["interventional_study"] += len(interventional_hits) * 1.6
     if interventional_title_hits:
         scores["interventional_study"] += len(interventional_title_hits) * 1.8
+    if interventional_title_hits and explicit_single_case:
+        scores["interventional_study"] += 2.2
+        scores["single_case_report"] -= 0.8
 
     has_clinical_signal = (
         explicit_single_case
@@ -989,6 +1012,10 @@ def classify_record(
         scores["lab_heavy_clinical_or_translational"] += 1.5
     if conference_like_metadata and strong_lab_signal:
         scores["lab_heavy_clinical_or_translational"] += 1.0
+    if "antibodies" in normalized_title and strong_lab_signal and count_hint >= 10 and not title_mentions_sps:
+        scores["lab_heavy_clinical_or_translational"] += 4.0
+        scores["case_series_or_multi_case"] -= 1.5
+        scores["observational_group_study"] -= 1.2
     if original_cohort_hits and not lab_method_hits:
         scores["lab_heavy_clinical_or_translational"] -= 1.5
     if original_cohort_hits and not lab_method_hits and len(non_clinical_hits) <= 1:
@@ -1027,6 +1054,37 @@ def classify_record(
         manual_review_required = True
         preferred_langextract_mode = "manual_review"
         recommended_next_action = "trim_or_review_proceedings"
+    elif (
+        "clinical information was available" in meta_text
+        and original_cohort_hits
+        and count_hint <= 2
+        and not title_mentions_sps
+    ):
+        category = "observational_group_study"
+        subtype = "retrospective_or_prospective_cohort"
+        contains_group = True
+        preferred_langextract_mode = "group"
+        langextract_eligible = True
+        recommended_next_action = "run_langextract_group"
+    elif "antibodies" in normalized_title and strong_lab_signal and count_hint >= 10 and not title_mentions_sps:
+        category = "lab_heavy_clinical_or_translational"
+        subtype = "clinical_translational_antibody_cohort"
+        contains_group = True
+        preferred_langextract_mode = "group"
+        langextract_eligible = True
+        recommended_next_action = "run_langextract_group"
+    elif "review article" in normalized_tags and review_hits and not proceedings_detected and not explicit_multi_case:
+        category = "review_article"
+        subtype = "tagged_review_article"
+        preferred_langextract_mode = "skip"
+        recommended_next_action = "skip_langextract"
+    elif ("anaesthesia for" in normalized_title or "anesthesia for" in normalized_title) and not explicit_multi_case:
+        category = "single_case_report"
+        subtype = "single_case_full_article"
+        contains_individual = True
+        preferred_langextract_mode = "individual"
+        langextract_eligible = True
+        recommended_next_action = "run_langextract_individual"
     elif broad_review_shape or (
         scores["review_article"] >= 3.0
         and (
@@ -1039,14 +1097,29 @@ def classify_record(
         subtype = "tagged_review_article" if "review article" in normalized_tags else "narrative_or_systematic_review"
         preferred_langextract_mode = "skip"
         recommended_next_action = "skip_langextract"
-    elif header_only_proceedings and short_source_document and not abstract.strip():
-        category = "conference_abstract"
-        subtype = "group_conference_abstract"
-        contains_group = True
-        manual_review_required = True
-        preferred_langextract_mode = "manual_review"
-        langextract_eligible = False
-        recommended_next_action = "trim_or_review_proceedings"
+    elif header_only_proceedings and (short_source_document or electronic_single_page or page_span == 1):
+        if explicit_single_case and not explicit_multi_case:
+            category = "single_case_report"
+            subtype = "single_case_proceedings_excerpt"
+            contains_individual = True
+            preferred_langextract_mode = "individual"
+            langextract_eligible = True
+            recommended_next_action = "run_langextract_individual"
+        else:
+            category = "conference_abstract"
+            subtype = "group_conference_abstract"
+            contains_group = True
+            manual_review_required = True
+            preferred_langextract_mode = "manual_review"
+            langextract_eligible = False
+            recommended_next_action = "trim_or_review_proceedings"
+    elif interventional_title_hits and explicit_single_case:
+        category = "interventional_study"
+        subtype = "single_patient_therapeutic_report"
+        contains_individual = True
+        preferred_langextract_mode = "individual"
+        langextract_eligible = True
+        recommended_next_action = "run_langextract_individual"
     elif scores["interventional_study"] >= 3.5 and (
         interventional_title_hits
         or (

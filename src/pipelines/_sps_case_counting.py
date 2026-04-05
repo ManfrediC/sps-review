@@ -7,6 +7,13 @@ from datetime import datetime, timezone
 
 
 CURRENT_YEAR = datetime.now(timezone.utc).year
+LIGATURE_REPLACEMENTS = {
+    "ﬁ": "fi",
+    "ﬂ": "fl",
+    "ﬀ": "ff",
+    "ﬃ": "ffi",
+    "ﬄ": "ffl",
+}
 
 NUMBER_WORDS = {
     "one": 1,
@@ -120,6 +127,7 @@ COUNT_POSITIVE_CONTEXT_MARKERS = (
     "participants were included",
     "patients were identified",
     "participants were identified",
+    "were identified",
     "new patients were identified",
     "new patients were",
     "we included",
@@ -178,7 +186,7 @@ COUNT_TOKEN_PATTERN = (
 COUNT_TOKEN_NONGROUP_PATTERN = COUNT_TOKEN_PATTERN.replace("?P<count>", "?:")
 COUNT_NOUN_PATTERN = (
     r"(?:patients|patient|cases|case subjects|subjects|participants|participant|"
-    r"women|men|children|people|individuals)"
+    r"women|men|children|girls|boys|people|individuals)"
 )
 PATIENT_COUNT_RE = re.compile(
     rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",
@@ -220,8 +228,20 @@ SPS_SUBGROUP_CASE_LABEL_RE = re.compile(
     rf"\bcase\s+\d+\s+{COUNT_FILLER_PATTERN}{{0,4}}?{SPS_SUBGROUP_DIAGNOSIS_OR_CASE_LABEL_PATTERN}\b",
     re.IGNORECASE,
 )
+SPS_SUBGROUP_OF_TOTAL_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_NONGROUP_PATTERN})\s+of\s+\d+\s+patients?\b[\s\S]{{0,140}}?\b{SPS_DIAGNOSIS_PATTERN}\b",
+    re.IGNORECASE,
+)
 SPS_SUBGROUP_DIAGNOSIS_LIST_RE = re.compile(
     rf"\b(?P<count>{COUNT_TOKEN_NONGROUP_PATTERN})\s+each\s+had\b[\s\S]{{0,180}}?\b{SPS_DIAGNOSIS_PATTERN}\b",
+    re.IGNORECASE,
+)
+SPS_SUBGROUP_TRAILING_TABLE_COUNT_RE = re.compile(
+    rf"\b{SPS_SUBGROUP_DIAGNOSIS_PATTERN}\b\s+\d+\s+\([^)]*\)\S*\s+(?P<count>\d+)\b",
+    re.IGNORECASE,
+)
+SPS_TABLE_ROW_SEGMENT_RE = re.compile(
+    r"\b(?:diagnosis|other symptoms)\b(?P<row>[\s\S]{0,280}?)\b(?:aeds|treatment|therapy|response|effect|mri|eeg|past history)\b",
     re.IGNORECASE,
 )
 
@@ -235,7 +255,10 @@ class CaseCountEstimate:
 
 
 def normalize_text(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
+    normalized = text or ""
+    for source, replacement in LIGATURE_REPLACEMENTS.items():
+        normalized = normalized.replace(source, replacement)
+    normalized = unicodedata.normalize("NFKD", normalized)
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
     ascii_text = ascii_text.lower()
     ascii_text = re.sub(r"[^a-z0-9]+", " ", ascii_text)
@@ -243,7 +266,10 @@ def normalize_text(text: str) -> str:
 
 
 def normalize_count_text(text: str) -> str:
-    count_text = unicodedata.normalize("NFKD", text or "")
+    count_text = text or ""
+    for source, replacement in LIGATURE_REPLACEMENTS.items():
+        count_text = count_text.replace(source, replacement)
+    count_text = unicodedata.normalize("NFKD", count_text)
     count_text = count_text.encode("ascii", "ignore").decode("ascii")
     count_text = re.sub(r"\b\d+\.\d+\b", " decimal_number ", count_text)
     count_text = re.sub(r"\b\d+/\d+\b", " fraction_number ", count_text)
@@ -353,6 +379,14 @@ def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
         return None
 
     candidates = []
+    for match in SPS_SUBGROUP_OF_TOTAL_RE.finditer(normalized):
+        count = parse_count_token(match.group("count"))
+        if count > 0:
+            candidates.append(count)
+    if candidates:
+        return min(candidates), "high", "diagnosis_specific_of_total_count"
+
+    candidates = []
     for match in SPS_SUBGROUP_DIAGNOSIS_LIST_RE.finditer(normalized):
         count = parse_count_token(match.group("count"))
         if count > 0:
@@ -375,6 +409,23 @@ def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
             candidates.append(count)
     if candidates:
         return min(candidates), "high", "diagnosis_specific_table_count"
+
+    candidates = []
+    for match in SPS_SUBGROUP_TRAILING_TABLE_COUNT_RE.finditer(normalized):
+        count = parse_count_token(match.group("count"))
+        if count > 0:
+            candidates.append(count)
+    if candidates:
+        return min(candidates), "high", "diagnosis_specific_trailing_table_count"
+
+    candidates = []
+    for match in SPS_TABLE_ROW_SEGMENT_RE.finditer(normalized):
+        row = match.group("row") or ""
+        count = len(re.findall(r"\b(?:sps\*?|stiff[\s-]+person syndrome|stiff[\s-]+man syndrome)\b", row))
+        if 1 < count <= 12:
+            candidates.append(count)
+    if candidates:
+        return min(candidates), "high", "diagnosis_specific_table_row_count"
 
     if SPS_SUBGROUP_CASE_LABEL_RE.search(normalized):
         return 1, "medium", "diagnosis_specific_case_label_count"
@@ -406,6 +457,8 @@ def score_count_candidate(
     if mentions_sps_context(window):
         score += 5
     if has_current_series_signal(window):
+        score += 4
+    if re.match(r"^(?:results?|conclusions?)\b", unit):
         score += 4
     if has_literature_count_context(window, count):
         score -= 8

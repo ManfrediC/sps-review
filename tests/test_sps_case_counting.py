@@ -94,6 +94,31 @@ class TestSpsCaseCounting(unittest.TestCase):
         self.assertEqual(estimate.likely_case_count, 1)
         self.assertEqual(estimate.count_basis, "diagnosis_specific_list_count")
 
+    def test_extracts_results_section_count_for_conference_abstract_children(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Paediatric neurological syndromes associated with glycine receptor antibodies",
+            abstract="",
+            early_body_text=(
+                "Results: six girls with a mean age of 8 years were identified. "
+                "The children presented with refractory focal seizures or cognitive behavioural changes."
+            ),
+        )
+        self.assertEqual(estimate.likely_case_count, 6)
+        self.assertEqual(estimate.count_basis, "early_body_count_signal")
+
+    def test_extracts_table_row_sps_subgroup_count(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Intravenous methylprednisolone or immunoglobulin for anti-GAD65 autoimmune encephalitis.",
+            abstract="",
+            early_body_text=(
+                "Patient 1 Patient 2 Patient 3 Patient 4 Patient 5 Patient 6 "
+                "Other symptoms CI CI, SPS*, CA, NBC CI CI, SPS* CI CI "
+                "AEDS LEV, 1000 mg/day."
+            ),
+        )
+        self.assertEqual(estimate.likely_case_count, 2)
+        self.assertEqual(estimate.count_basis, "diagnosis_specific_table_row_count")
+
     def test_ignores_literature_case_totals_in_single_patient_interventional_report(self) -> None:
         estimate = estimate_sps_case_count(
             title="Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",
