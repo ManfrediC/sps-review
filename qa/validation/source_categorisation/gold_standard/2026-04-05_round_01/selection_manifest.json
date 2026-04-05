@@ -1,0 +1,127 @@
+{
+  "generated_at_utc": "2026-04-05T12:14:43.061427+00:00",
+  "round_id": "2026-04-05_round_01",
+  "round_dir": "qa\\validation\\source_categorisation\\gold_standard\\2026-04-05_round_01",
+  "seed": 20260405,
+  "bucket_quotas": {
+    "conference_edge": 2,
+    "case_group_boundary": 2,
+    "review_lab_edge": 2,
+    "count_ambiguity": 2,
+    "high_confidence_control": 2
+  },
+  "available_bucket_counts": {
+    "conference_edge": 195,
+    "case_group_boundary": 146,
+    "review_lab_edge": 38,
+    "count_ambiguity": 529,
+    "high_confidence_control": 410
+  },
+  "selected_primary_bucket_counts": {
+    "conference_edge": 2,
+    "case_group_boundary": 2,
+    "review_lab_edge": 2,
+    "count_ambiguity": 2,
+    "high_confidence_control": 2
+  },
+  "selected_bucket_counts": {
+    "case_group_boundary": 2,
+    "conference_edge": 2,
+    "count_ambiguity": 2,
+    "high_confidence_control": 2,
+    "review_lab_edge": 2
+  },
+  "selected_category_counts": {
+    "observational_group_study": 3,
+    "interventional_study": 4,
+    "single_case_report": 1,
+    "review_article": 2
+  },
+  "selected_count_confidence_counts": {
+    "medium": 7,
+    "high": 2,
+    "low": 1
+  },
+  "selected_rows": [
+    {
+      "paper_id": "1426",
+      "title": "Respiratory manifestations of stiff person syndrome (SPS)",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "1937",
+      "title": "Prevalence of neurological anti-gad autoimmunity in martinique",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "71",
+      "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "556",
+      "title": "GAD antibody-associated neurological illness and its relationship to gluten sensitivity.",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "990",
+      "title": "Therapeutic plasma exchange in treatment of neuroimmunologic disorders: Review of 92 cases",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_manual_review_required; count_non_high_confidence; count_differs_from_patient_labels",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "6060",
+      "title": "Glycine Receptor Antibodies in Immune-Mediated Movement Disorders: Progressive Encephalomyelitis with Rigidity and Myoclonus, Opsoclonus-Myoclonus Syndrome, and Ocular Flutter Syndrome",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_manual_review_required; count_non_high_confidence; count_differs_from_patient_labels; count_basis=early_body_count_signal",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "11",
+      "title": "A therapeutic trial of milacemide in myoclonus and the stiff-person syndrome.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "29",
+      "title": "Significant improvement of stiff-person syndrome after paraspinal injection of botulinum toxin A.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "227",
+      "title": "Spectrum of paraneoplastic neurologic disorders in women with breast and gynecologic cancer.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "710",
+      "title": "Encephalitis with refractory seizures, status epilepticus, and antibodies to the GABAA receptor: a case series, characterisation of the antigen, and analysis of the effects of antibodies.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    }
+  ]
+}

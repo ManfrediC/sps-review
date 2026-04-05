@@ -261,6 +261,40 @@ This keeps count heuristics from distorting source categorisation while still pr
 
 ---
 
+## Stage 04 gold-standard review loop
+
+Stage `04` now also has a dedicated gold-standard review workflow for source categorisation and extractable SPS case counts.
+
+The goal is to create small, reproducible adjudication rounds that can be used to:
+- measure current stage-04 performance on genuinely unseen papers
+- review predictions directly against the source PDF in a lightweight local UI
+- feed corrected decisions back into targeted heuristic improvements
+- repeat the process in short calibration cycles
+
+The workflow lives under `src/validation/` and writes non-canonical review material under `qa/validation/source_categorisation/gold_standard/`.
+
+Current tools:
+- `src/validation/build_stage04_gold_batch.py`
+  - builds a reproducible `n=10` review round, excluding case-report example papers and prior gold rounds by default
+- `src/validation/review_stage04_gold_app.py`
+  - Streamlit app that shows the source PDF alongside the predicted source category and extractable SPS count
+  - reviewer responses are saved immediately and the round can be resumed
+- `src/validation/benchmark_stage04_gold.py`
+  - benchmarks the current heuristics against completed gold-standard reviews
+
+Typical usage:
+
+```bash
+python src/validation/build_stage04_gold_batch.py
+streamlit run src/validation/review_stage04_gold_app.py
+python src/validation/benchmark_stage04_gold.py
+```
+
+The first generated round currently lives at:
+- `qa/validation/source_categorisation/gold_standard/2026-04-05_round_01/`
+
+---
+
 ## Current text-cleanup stage
 
 The canonical text flow now includes an explicit cleanup step between raw extraction and downstream routing.

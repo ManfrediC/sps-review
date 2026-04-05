@@ -110,3 +110,65 @@ Build the default batch and export review materials:
 ```bash
 python src/validation/build_source_categorisation_review_sample.py --output-path qa/validation/source_categorisation/source_categorisation_review_sample_n30_seed20260405.json --review-csv-path qa/validation/source_categorisation/source_categorisation_review_sample_n30_seed20260405.csv --text-output-dir qa/validation/source_categorisation/text_packets_n30_seed20260405
 ```
+
+### `build_stage04_gold_batch.py`
+
+Builds a reproducible `n=10` gold-standard review batch for stage 04.
+
+Default scheme:
+- `2` conference-edge rows
+- `2` case-series versus group-study boundary rows
+- `2` review/lab-boundary rows
+- `2` count-ambiguity rows
+- `2` high-confidence controls
+
+The script:
+- reads the live stage-04 source and count registries
+- excludes papers already present in `examples/datasheet_examples_MC_Case_Report_Form.csv`
+- excludes papers already adjudicated in `data/references/source_categorisation_manual_review.csv` by default
+- excludes papers already used in earlier gold rounds by default
+- requires a local PDF plus extracted text JSON
+- writes a round folder under `qa/validation/source_categorisation/gold_standard/` containing:
+  - `selection_manifest.json`
+  - `selection_queue.csv`
+  - `responses.csv`
+
+Build the default 10-paper batch:
+
+```bash
+python src/validation/build_stage04_gold_batch.py
+```
+
+### `review_stage04_gold_app.py`
+
+Streamlit reviewer for the stage-04 gold rounds.
+
+It:
+- loads a selected round from `qa/validation/source_categorisation/gold_standard/`
+- shows the source PDF alongside the predicted source category and count
+- lets the reviewer confirm or edit the prediction
+- saves each response immediately to `responses.csv`
+- writes a round snapshot `gold_standard_stage04_<round_id>.csv`
+- refreshes the cumulative master file once a round is complete
+
+Run:
+
+```bash
+streamlit run src/validation/review_stage04_gold_app.py
+```
+
+### `benchmark_stage04_gold.py`
+
+Benchmarks the current stage-04 heuristics against reviewed gold-standard rows.
+
+It:
+- reruns `04_source_categorisation.py` and `04b_extract_sps_case_counts.py` logic on reviewed rows
+- reports category accuracy and exact count accuracy
+- breaks accuracy down by selection bucket
+- excludes `likely_wrong_pdf_attached` and `incorrect_reference` rows by default
+
+Run against the cumulative master file:
+
+```bash
+python src/validation/benchmark_stage04_gold.py
+```
