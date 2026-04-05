@@ -86,3 +86,27 @@ Export a selected subset:
 ```bash
 python src/validation/export_text_json_to_txt.py --selection-csv qa/validation/text_extraction_remainder_likely_failures.csv --output-dir qa/validation/text_exports/likely_failures --force
 ```
+
+### `build_source_categorisation_review_sample.py`
+
+Builds a stratified manual-review batch for step 04 source categorisation calibration.
+
+Default batch for `n=30`:
+- `10` conference-edge rows
+- `10` case-series versus group-study boundary rows
+- `5` review/lab-boundary rows
+- `5` high-confidence controls
+
+The script:
+- reads `data/references/source_categorisation_registry.csv`
+- joins `data/references/source_sps_case_count_registry.csv` when available so review sheets use the separate case-count stage
+- excludes already manually reviewed rows by default
+- selects rows using explicit bucket signals and a reproducible seed
+- writes an optional JSON summary and a compact CSV review sheet
+- can export preferred-text TXT packets for the same papers
+
+Build the default batch and export review materials:
+
+```bash
+python src/validation/build_source_categorisation_review_sample.py --output-path qa/validation/source_categorisation/source_categorisation_review_sample_n30_seed20260405.json --review-csv-path qa/validation/source_categorisation/source_categorisation_review_sample_n30_seed20260405.csv --text-output-dir qa/validation/source_categorisation/text_packets_n30_seed20260405
+```

@@ -1,0 +1,314 @@
+{
+  "generated_at_utc": "2026-04-05T09:43:22.812401+00:00",
+  "seed": 20260405,
+  "include_reviewed": false,
+  "bucket_quotas": {
+    "conference_edge": 10,
+    "case_group_boundary": 10,
+    "review_lab_edge": 5,
+    "high_confidence_control": 5
+  },
+  "available_bucket_counts": {
+    "conference_edge": 219,
+    "case_group_boundary": 161,
+    "review_lab_edge": 43,
+    "high_confidence_control": 494
+  },
+  "selected_bucket_counts": {
+    "case_group_boundary": 10,
+    "conference_edge": 10,
+    "high_confidence_control": 5,
+    "review_lab_edge": 5
+  },
+  "selected_primary_bucket_counts": {
+    "conference_edge": 10,
+    "case_group_boundary": 10,
+    "review_lab_edge": 5,
+    "high_confidence_control": 5
+  },
+  "selected_category_counts": {
+    "observational_group_study": 7,
+    "case_series_or_multi_case": 5,
+    "interventional_study": 4,
+    "conference_abstract": 4,
+    "single_case_report": 5,
+    "review_article": 5
+  },
+  "selected_confidence_counts": {
+    "low": 13,
+    "medium": 12,
+    "high": 5
+  },
+  "selected_rows": [
+    {
+      "paper_id": "116",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count",
+      "title": "Antibodies to 125I-glutamic acid decarboxylase in patients with stiff man syndrome.",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "131",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_large_case_count_for_split; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "title": "Psychiatric consultations in stiff-man syndrome.",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "160",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence",
+      "title": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "427",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence",
+      "title": "Stiff person syndrome and motor mononeuropathy with conduction block: a singular association.",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "693",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "title": "Childhood onset of stiff-man syndrome.",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "826",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "title": "Antiglycine receptor antibody related disease: a case series and literature review.",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "975",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_large_case_count_for_split; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "title": "Intravenous methylprednisolone or immunoglobulin for anti-glutamic acid decarboxylase 65 antibody autoimmune encephalitis: which is better?.",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "1699",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count",
+      "title": "Stiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "1937",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence",
+      "title": "Prevalence of neurological anti-gad autoimmunity in martinique",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "3113",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "title": "Autologous haematopoietic stem cell transplantation for refractory stiff-person syndrome: the UK experience.",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "71",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "187",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "title": "Long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin.",
+      "source_category": "conference_abstract",
+      "source_subtype": "single_case_conference_abstract",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "556",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "title": "GAD antibody-associated neurological illness and its relationship to gluten sensitivity.",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "560",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia.",
+      "source_category": "conference_abstract",
+      "source_subtype": "single_case_conference_abstract",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "634",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "title": "Anaesthetic management of a patient with Stiff-person syndrome.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "969",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "title": "Novel clinical features of glycine receptor antibody syndrome: A series of 17 cases.",
+      "source_category": "conference_abstract",
+      "source_subtype": "multi_case_conference_abstract",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "980",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "title": "An unusual cause of older adult falls: Stiff Leg Syndrome",
+      "source_category": "conference_abstract",
+      "source_subtype": "group_conference_abstract",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "1426",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "title": "Respiratory manifestations of stiff person syndrome (SPS)",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "12760",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "title": "Therapeutic Plasma Exchange in the Management of Stiff Person Syndrome Spectrum Disorders: A Case Series and Review of the Literature",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "13031",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "title": "INTRATHECAL BACLOFEN THERAPY IN STIFF-MAN SYNDROME - A DOUBLE-BLIND, PLACEBO-CONTROLLED TRIAL",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "11",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "title": "A therapeutic trial of milacemide in myoclonus and the stiff-person syndrome.",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "classification_confidence": "high"
+    },
+    {
+      "paper_id": "23",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "classification_confidence": "high"
+    },
+    {
+      "paper_id": "29",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "title": "Significant improvement of stiff-person syndrome after paraspinal injection of botulinum toxin A.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "classification_confidence": "high"
+    },
+    {
+      "paper_id": "38",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "title": "Intravenous methocarbamol in the treatment of stiff-man syndrome.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "classification_confidence": "high"
+    },
+    {
+      "paper_id": "69",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "title": "Stiff-man syndrome. Report of a case.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "classification_confidence": "high"
+    },
+    {
+      "paper_id": "227",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "title": "Spectrum of paraneoplastic neurologic disorders in women with breast and gynecologic cancer.",
+      "source_category": "review_article",
+      "source_subtype": "tagged_review_article",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "403",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present; non_clinical_markers_present",
+      "title": "Analysis of GAD65 autoantibodies in Stiff-Person syndrome patients.",
+      "source_category": "review_article",
+      "source_subtype": "tagged_review_article",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "620",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present; non_clinical_markers_present",
+      "title": "Stiff person syndrome: quantification, specificity, and intrathecal synthesis of GAD65 antibodies.",
+      "source_category": "review_article",
+      "source_subtype": "tagged_review_article",
+      "classification_confidence": "medium"
+    },
+    {
+      "paper_id": "710",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "title": "Encephalitis with refractory seizures, status epilepticus, and antibodies to the GABAA receptor: a case series, characterisation of the antigen, and analysis of the effects of antibodies.",
+      "source_category": "review_article",
+      "source_subtype": "tagged_review_article",
+      "classification_confidence": "low"
+    },
+    {
+      "paper_id": "11785",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present; non_clinical_markers_present",
+      "title": "GAD antibody-spectrum disorders: progress in clinical phenotypes, immunopathogenesis and therapeutic interventions",
+      "source_category": "review_article",
+      "source_subtype": "tagged_review_article",
+      "classification_confidence": "medium"
+    }
+  ]
+}
