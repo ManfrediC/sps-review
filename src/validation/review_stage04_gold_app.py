@@ -42,6 +42,57 @@ def normalise_count_text(value: str) -> str:
     return stripped if stripped else "0"
 
 
+def editor_prefix(round_id: str, paper_id: str) -> str:
+    return f"stage04_gold::{round_id}::{paper_id}"
+
+
+def editor_key(prefix: str, suffix: str) -> str:
+    return f"{prefix}::{suffix}"
+
+
+def apply_prediction_values(prefix: str, queue_row: dict[str, str]) -> None:
+    st.session_state[editor_key(prefix, "reviewed_source_category")] = (
+        queue_row.get("predicted_source_category") or ""
+    ).strip()
+    st.session_state[editor_key(prefix, "reviewed_extractable_sps_case_count")] = normalise_count_text(
+        queue_row.get("predicted_likely_sps_case_count") or ""
+    )
+
+
+def sync_prediction_lock(prefix: str, queue_row: dict[str, str]) -> None:
+    if st.session_state.get(editor_key(prefix, "prediction_correct"), False):
+        apply_prediction_values(prefix, queue_row)
+
+
+def ensure_editor_state(
+    *,
+    queue_row: dict[str, str],
+    response_row: dict[str, str],
+) -> str:
+    round_id = (queue_row.get("round_id") or "").strip()
+    paper_id = (queue_row.get("paper_id") or "").strip()
+    prefix = editor_prefix(round_id, paper_id)
+    active_key = "stage04_gold_active_editor"
+    if st.session_state.get(active_key) != prefix:
+        (
+            prediction_correct,
+            default_category,
+            default_count,
+            default_alignment,
+            default_notes,
+        ) = response_defaults(queue_row, response_row)
+        st.session_state[editor_key(prefix, "prediction_correct")] = prediction_correct
+        st.session_state[editor_key(prefix, "reviewed_source_category")] = default_category
+        st.session_state[editor_key(prefix, "reviewed_extractable_sps_case_count")] = default_count
+        st.session_state[editor_key(prefix, "pdf_content_alignment_tag")] = default_alignment
+        st.session_state[editor_key(prefix, "reviewer_notes")] = default_notes
+        st.session_state[editor_key(prefix, "reviewer_id")] = (
+            (response_row.get("reviewer_id") or DEFAULT_REVIEWER).strip() or DEFAULT_REVIEWER
+        )
+        st.session_state[active_key] = prefix
+    return prefix
+
+
 def round_options() -> list[Path]:
     return list(reversed(discover_round_directories()))
 
@@ -153,9 +204,9 @@ def main() -> None:
     queue_row = queue_rows[current_index]
     paper_id = (queue_row.get("paper_id") or "").strip()
     response_row = responses_by_id.get(paper_id, {})
-    prediction_correct, default_category, default_count, default_alignment, default_notes = response_defaults(
-        queue_row,
-        response_row,
+    prefix = ensure_editor_state(
+        queue_row=queue_row,
+        response_row=response_row,
     )
 
     left_col, right_col = st.columns([3, 2], gap="large")
@@ -192,71 +243,76 @@ def main() -> None:
             f"Category confidence: `{(queue_row.get('predicted_confidence') or '').strip() or 'unknown'}`  \n"
             f"Count basis: `{(queue_row.get('predicted_count_basis') or '').strip() or 'unknown'}`"
         )
+        prediction_correct_key = editor_key(prefix, "prediction_correct")
+        reviewed_category_key = editor_key(prefix, "reviewed_source_category")
+        reviewed_count_key = editor_key(prefix, "reviewed_extractable_sps_case_count")
+        alignment_key = editor_key(prefix, "pdf_content_alignment_tag")
+        notes_key = editor_key(prefix, "reviewer_notes")
+        reviewer_key = editor_key(prefix, "reviewer_id")
 
-        with st.form(key=f"review_form_{paper_id}"):
-            prediction_correct_value = st.toggle(
-                "Prediction correct",
-                value=prediction_correct,
-                help="Leave on to accept the prediction as-is. If you edit the fields below, the app will treat the prediction as incorrect even if this toggle stays on.",
-            )
-            reviewed_source_category = st.selectbox(
-                "Source category",
-                options=SOURCE_CATEGORY_OPTIONS,
-                index=SOURCE_CATEGORY_OPTIONS.index(default_category)
-                if default_category in SOURCE_CATEGORY_OPTIONS
-                else 0,
-            )
-            reviewed_count_text = st.text_input(
-                "Extractable SPS patient count",
-                value=default_count or "0",
-                help="Use `0` when the source is not an extractable SPS case source.",
-            )
-            pdf_alignment_tag = st.selectbox(
-                "PDF alignment",
-                options=PDF_ALIGNMENT_OPTIONS,
-                index=PDF_ALIGNMENT_OPTIONS.index(default_alignment)
-                if default_alignment in PDF_ALIGNMENT_OPTIONS
-                else 0,
-                help="Flag wrong-PDF or reference-linkage problems separately from heuristic mistakes.",
-            )
-            reviewer_notes = st.text_area(
-                "Notes",
-                value=default_notes,
-                height=160,
-                placeholder="Optional note about why the prediction was wrong, or why the PDF is questionable.",
-            )
-            reviewer_id = st.text_input(
-                "Reviewer ID",
-                value=(response_row.get("reviewer_id") or DEFAULT_REVIEWER).strip() or DEFAULT_REVIEWER,
-            )
-            save_here = st.form_submit_button("Save", use_container_width=True)
-            save_next = st.form_submit_button("Save and next", type="primary", use_container_width=True)
+        st.toggle(
+            "Prediction correct",
+            key=prediction_correct_key,
+            help="When this is on, the prediction is accepted and the editable fields are locked.",
+            on_change=sync_prediction_lock,
+            args=(prefix, queue_row),
+        )
+        prediction_correct_value = bool(st.session_state[prediction_correct_key])
+
+        st.selectbox(
+            "Source category",
+            options=SOURCE_CATEGORY_OPTIONS,
+            key=reviewed_category_key,
+            disabled=prediction_correct_value,
+        )
+        st.text_input(
+            "Extractable SPS patient count",
+            key=reviewed_count_key,
+            disabled=prediction_correct_value,
+            help="Use `0` when the source is not an extractable SPS case source.",
+        )
+        st.selectbox(
+            "PDF alignment",
+            options=PDF_ALIGNMENT_OPTIONS,
+            key=alignment_key,
+            help="Flag wrong-PDF or reference-linkage problems separately from heuristic mistakes.",
+        )
+        st.text_area(
+            "Notes",
+            key=notes_key,
+            height=160,
+            placeholder="Optional note about why the prediction was wrong, or why the PDF is questionable.",
+        )
+        st.text_input(
+            "Reviewer ID",
+            key=reviewer_key,
+        )
+
+        save_col, save_next_col = st.columns(2)
+        save_here = save_col.button("Save", use_container_width=True)
+        save_next = save_next_col.button("Save and next", type="primary", use_container_width=True)
 
         if save_here or save_next:
             predicted_category = (queue_row.get("predicted_source_category") or "").strip()
             predicted_count_text = normalise_count_text(queue_row.get("predicted_likely_sps_case_count") or "")
-            reviewed_count_text = normalise_count_text(reviewed_count_text)
+            reviewed_source_category = str(st.session_state[reviewed_category_key]).strip()
+            reviewed_count_text = normalise_count_text(st.session_state[reviewed_count_key])
             try:
-                int(reviewed_count_text)
+                int(predicted_count_text if prediction_correct_value else reviewed_count_text)
             except ValueError:
                 st.error("The reviewed count must be an integer.")
                 st.stop()
 
-            edited_prediction = (
-                reviewed_source_category != predicted_category
-                or reviewed_count_text != predicted_count_text
-            )
-            final_prediction_correct = prediction_correct_value and not edited_prediction
-            final_count_text = predicted_count_text if final_prediction_correct else reviewed_count_text
-
             responses_by_id[paper_id] = build_response_row(
                 queue_row=queue_row,
-                prediction_correct=final_prediction_correct,
+                prediction_correct=prediction_correct_value,
                 reviewed_source_category=reviewed_source_category,
-                reviewed_extractable_sps_case_count=final_count_text,
-                pdf_content_alignment_tag=pdf_alignment_tag,
-                reviewer_notes=reviewer_notes,
-                reviewer_id=reviewer_id,
+                reviewed_extractable_sps_case_count=(
+                    predicted_count_text if prediction_correct_value else reviewed_count_text
+                ),
+                pdf_content_alignment_tag=str(st.session_state[alignment_key]).strip(),
+                reviewer_notes=str(st.session_state[notes_key]).strip(),
+                reviewer_id=str(st.session_state[reviewer_key]).strip(),
             )
             snapshot_rows = write_round_outputs(
                 round_dir=round_dir,
