@@ -162,7 +162,7 @@ python src/pipelines/03_extract_text.py
 
 ## `03b_clean_text.py`
 
-This script applies deterministic cleanup to a reviewed subset of extracted text JSONs.
+This script is now the canonical cleanup stage for both the deterministic pass and the reviewed residual rescue pass.
 
 It:
 
@@ -183,6 +183,13 @@ Cleanup is intentionally conservative and deterministic:
 
 Phase 1 is intentionally limited to deterministic cleanup on a reviewed subset. Proceedings/context localization problems and true source-linkage problems should be handled elsewhere rather than pushed into this script.
 
+With `--stage2`, the same script switches to the reviewed residual-cleanup path. In that mode it:
+
+- reads `config/extraction/text_cleanup_stage2_overrides.csv`,
+- applies reviewed per-paper substitutions from `config/extraction/text_cleanup_stage2_substitutions.csv`,
+- can rebuild from `pdftotext`, localized OCR, or an alternate in-repo PDF when the attached PDF is known to be wrong, and
+- preserves stage-2 backups in `data/extraction_json/text_preclean_stage2/{paper_id}.json`.
+
 ### Run
 
 ```bash
@@ -195,31 +202,21 @@ Force a rerun from preserved raw backups:
 python src/pipelines/03b_clean_text.py --force
 ```
 
-## `03c_clean_text_stage2.py`
-
-This script is an experimental standalone stage-2 cleaner for papers that still have residual token-level corruption after `03b_clean_text.py`.
-
-It:
-
-- reads the reviewed target list from `config/extraction/text_cleanup_stage2_overrides.csv`,
-- optionally rebuilds the working text from a cleaner per-paper source (`pdftotext` or rendered-page OCR with `tesseract`),
-- applies the same deterministic cleanup layer plus a reviewed per-paper substitution table from `config/extraction/text_cleanup_stage2_substitutions.csv`,
-- stores the pre-stage-2 canonical JSON snapshot at `data/extraction_json/text_preclean_stage2/{paper_id}.json`, and
-- overwrites the canonical text JSON in `data/extraction_json/text/{paper_id}.json`.
-
-Unlike `03b_clean_text.py`, this script is currently a preliminary standalone pass for a small residual subset. It exists so the stage-2 rules can be audited on real PDFs before deciding whether to merge them into `03b`.
-
-### Run
+Run the reviewed residual rescue pass explicitly:
 
 ```bash
-python src/pipelines/03c_clean_text_stage2.py --paper-id 43 --paper-id 62 --paper-id 155
+python src/pipelines/03b_clean_text.py --stage2 --paper-id 43 --paper-id 62 --paper-id 155
 ```
 
 Force a rerun from preserved stage-2 backups:
 
 ```bash
-python src/pipelines/03c_clean_text_stage2.py --paper-id 43 --force
+python src/pipelines/03b_clean_text.py --stage2 --paper-id 43 --force
 ```
+
+## `03c_clean_text_stage2.py`
+
+This file now exists only as a compatibility wrapper. It forwards its arguments to `03b_clean_text.py --stage2` so older commands still work while the canonical cleanup stage remains `03b_clean_text.py`.
 
 ## `04_source_categorisation.py`
 
@@ -254,6 +251,8 @@ Alignment tags currently used:
   - the paper was classifiable, but the local file or extracted text was not fully conclusive
 - `likely_wrong_pdf_attached`
   - the PDF/content appears inconsistent with the reference metadata and should be treated cautiously
+- `incorrect_reference`
+  - the stored reference metadata itself appears to be wrong or points to the wrong paper, so the local PDF/text should not be treated as recoverable by extraction cleanup alone
 
 Category meanings:
 
@@ -383,6 +382,6 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 - Structured quality records to `data/extraction_json/quality/records/{paper_id}.json`
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-01`
+- Last updated: `2026-04-05`
 - Immediate subdirectories (0): _None_
 - Immediate files (16, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `03c_clean_text_stage2.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+4 more)

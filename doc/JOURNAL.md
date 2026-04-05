@@ -755,3 +755,48 @@ Implemented a preliminary stage-2 text-cleanup pipeline, completed a full review
 - `data/references/paper_artifact_registry.csv` remained locked by another process throughout this work.
 - Direct runs of `src/pipelines/12_build_paper_artifact_registry.py` still failed with `PermissionError [Errno 13]`.
 - Because of that lock, the final artifact-registry refresh could not yet be completed.
+
+## 05.04.2026
+
+Folded the residual rescue path into the canonical cleanup stage, labeled the two remaining unrecoverable extraction items as incorrect references, and extended the artifact-registry schema so stage-2 cleanup provenance can be tracked once the registry file is writable again.
+
+### Cleanup Stage Consolidation
+
+- Moved the stage-2 rescue implementation behind `src/pipelines/03b_clean_text.py --stage2`.
+- Added a shared helper module at `src/lib/text_cleanup_stage2.py` so the reviewed stage-2 logic can be reused without drifting.
+- Kept `src/pipelines/03c_clean_text_stage2.py` as a compatibility wrapper that now forwards to `03b_clean_text.py --stage2`.
+- Added block-level comments to the merged cleanup code so the stage split, provenance handling, and wrapper behavior are easier to follow.
+
+### Incorrect Reference Labels
+
+- Added explicit manual-review rows for:
+  - `263`
+  - `1841`
+- Both now resolve as:
+  - `final_source_category = unclear_manual_review`
+  - `final_source_subtype = incorrect_reference`
+  - `pdf_content_alignment_tag = incorrect_reference`
+- Updated the live QA likely-failure ledgers so their reason text now clearly states that these are incorrect-reference problems rather than recoverable text-extraction failures.
+
+### Artifact Registry Schema Extension
+
+- Extended `src/pipelines/12_build_paper_artifact_registry.py` so it now captures stage-2 provenance fields:
+  - `text_preclean_stage2_json_present`
+  - `text_preclean_stage2_json_path`
+  - `text_cleanup_stage2_*` source, page-window, and OCR settings
+- Added test coverage for those new fields in `tests/test_12_build_paper_artifact_registry.py`.
+
+### Validation
+
+- Re-ran the full unittest suite:
+  - `python -m unittest discover -s tests -p "test_*.py" -v`
+- Result:
+  - `63` tests passed
+
+### Remaining Blocker
+
+- `src/pipelines/12_build_paper_artifact_registry.py` still cannot overwrite `data/references/paper_artifact_registry.csv`.
+- The file remains locked by another process, so the live CSV could not yet be refreshed even though the in-memory row build now resolves:
+  - `263` as `incorrect_reference`
+  - `1841` as `incorrect_reference`
+  - stage-2 provenance for `1421`, `6268`, `1598`, `9385`, and `10691`

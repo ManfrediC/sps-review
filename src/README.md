@@ -25,13 +25,11 @@ Validation scripts should write their non-canonical review and audit outputs und
    - Supports reviewed per-paper source strategies such as `json_cleanup` and `pdftotext_cleanup`.
    - Preserves the original extracted JSON for each cleaned paper under `data/extraction_json/text_preclean/{paper_id}.json`.
    - Overwrites the final canonical cleaned JSON in `data/extraction_json/text/{paper_id}.json`.
+   - Also owns the reviewed residual rescue path via `--stage2`, using `config/extraction/text_cleanup_stage2_overrides.csv`, `config/extraction/text_cleanup_stage2_substitutions.csv`, and backups in `data/extraction_json/text_preclean_stage2/{paper_id}.json`.
 
 5. `pipelines/03c_clean_text_stage2.py`
-   - Experimental standalone residual-cleanup pass for papers that still have token-level corruption after `03b`.
-   - Uses reviewed per-paper overrides from `config/extraction/text_cleanup_stage2_overrides.csv` and reviewed substitutions from `config/extraction/text_cleanup_stage2_substitutions.csv`.
-   - Preserves the pre-stage-2 canonical JSON under `data/extraction_json/text_preclean_stage2/{paper_id}.json`.
-   - Overwrites the canonical JSON in `data/extraction_json/text/{paper_id}.json`.
-   - This is intentionally not yet treated as a permanent canonical stage until the residual-cleanup rules have been audited on more papers.
+   - Compatibility wrapper only.
+   - Forwards to `pipelines/03b_clean_text.py --stage2` so older commands still work while the canonical cleanup stage remains `03b_clean_text.py`.
 
 6. `pipelines/04_source_categorisation.py`
    - Categorises each source after extraction as single-case, multi-case, group study, conference abstract, review, non-clinical, or manual-review.
@@ -89,7 +87,7 @@ Validation scripts should write their non-canonical review and audit outputs und
     - the reviewed final category/subtype
     - short review notes
     - a batch marker and timestamp
-    - a `pdf_content_alignment_tag` such as `appears_matched`, `uncertain`, or `likely_wrong_pdf_attached`
+    - a `pdf_content_alignment_tag` such as `appears_matched`, `uncertain`, `likely_wrong_pdf_attached`, or `incorrect_reference`
   - The manual-review queue for this corpus has been exhausted, so the override ledger now covers all papers that were originally marked `manual_review_required`.
   - Uses the following top-level categories:
     - `single_case_report`: one patient, case-level extraction target
@@ -162,6 +160,6 @@ Validation scripts should write their non-canonical review and audit outputs und
 - Registry builders are meant to keep all generated artifacts traceable from one table.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-01`
+- Last updated: `2026-04-05`
 - Immediate subdirectories (4): `lib`, `notebooks`, `pipelines`, `validation`
 - Immediate files (0, excluding `README.md`): _None_
