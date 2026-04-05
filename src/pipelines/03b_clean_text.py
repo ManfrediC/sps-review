@@ -9,7 +9,7 @@ import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -17,19 +17,50 @@ SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
+from lib import text_cleanup_stage2 as stage2_cleanup  # noqa: E402
 from lib.text_cleanup import DEFAULT_PROFILE, clean_document_pages  # noqa: E402
 
 
 PDF_DIR = REPO_ROOT / "data" / "pdf_original"
 TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_PRECLEAN_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean"
+TEXT_PRECLEAN_STAGE2_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean_stage2"
 OVERRIDE_PATH = REPO_ROOT / "config" / "extraction" / "text_cleanup_overrides.csv"
+STAGE2_OVERRIDE_PATH = REPO_ROOT / "config" / "extraction" / "text_cleanup_stage2_overrides.csv"
+STAGE2_SUBSTITUTION_PATH = (
+    REPO_ROOT / "config" / "extraction" / "text_cleanup_stage2_substitutions.csv"
+)
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 
 
-def parse_args() -> argparse.Namespace:
+# Re-export the reviewed stage-2 helper types and functions from the shared
+# library module so `03b` becomes the single primary entry point while tests and
+# downstream tooling can still import the rescue helpers from here.
+SubstitutionRule = stage2_cleanup.SubstitutionRule
+SourceWindow = stage2_cleanup.SourceWindow
+parse_optional_int = stage2_cleanup.parse_optional_int
+parse_optional_bool = stage2_cleanup.parse_optional_bool
+load_substitution_rules = stage2_cleanup.load_substitution_rules
+parse_source_window = stage2_cleanup.parse_source_window
+apply_source_window = stage2_cleanup.apply_source_window
+staged_pdf_for_external_tool = stage2_cleanup.staged_pdf_for_external_tool
+ensure_stage2_snapshot = stage2_cleanup.ensure_stage2_snapshot
+apply_substitution_rules = stage2_cleanup.apply_substitution_rules
+_STAGE2_PDFTOTEXT_IMPL = stage2_cleanup.extract_pages_and_counts_pdftotext
+_STAGE2_TESSERACT_IMPL = stage2_cleanup.extract_pages_and_counts_tesseract
+
+
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Apply deterministic cleanup to selected extracted text JSON records."
+        description=(
+            "Apply reviewed cleanup to selected extracted text JSON records. "
+            "Use --stage2 for the residual rescue pass."
+        )
+    )
+    parser.add_argument(
+        "--stage2",
+        action="store_true",
+        help="Run the reviewed residual rescue pass that used to live in 03c_clean_text_stage2.py.",
     )
     parser.add_argument(
         "--input-dir",
@@ -40,14 +71,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--backup-dir",
         type=Path,
-        default=TEXT_PRECLEAN_DIR,
-        help="Directory where pre-clean raw JSON backups are stored.",
+        default=None,
+        help="Directory where pre-clean JSON backups are stored. Defaults depend on the selected mode.",
     )
     parser.add_argument(
         "--override-path",
         type=Path,
-        default=OVERRIDE_PATH,
-        help="CSV file containing per-paper text cleanup overrides.",
+        default=None,
+        help="CSV file containing per-paper cleanup overrides. Defaults depend on the selected mode.",
+    )
+    parser.add_argument(
+        "--substitution-path",
+        type=Path,
+        default=None,
+        help="CSV file containing reviewed per-paper substitutions for stage 2 only.",
     )
     parser.add_argument(
         "--paper-id",
@@ -66,7 +103,24 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Do not rebuild paper_artifact_registry.csv after cleanup.",
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
+
+
+# Resolve mode-specific defaults in one place so stage 1 keeps its existing CLI
+# while stage 2 now lives behind the same canonical script.
+def resolve_cleanup_paths(args: argparse.Namespace) -> tuple[Path, Path, Path, Path | None]:
+    stage2 = bool(getattr(args, "stage2", False))
+    input_dir = getattr(args, "input_dir", TEXT_DIR)
+    backup_dir = getattr(args, "backup_dir", None) or (
+        TEXT_PRECLEAN_STAGE2_DIR if stage2 else TEXT_PRECLEAN_DIR
+    )
+    override_path = getattr(args, "override_path", None) or (
+        STAGE2_OVERRIDE_PATH if stage2 else OVERRIDE_PATH
+    )
+    substitution_path = getattr(args, "substitution_path", None)
+    if stage2 and substitution_path is None:
+        substitution_path = STAGE2_SUBSTITUTION_PATH
+    return input_dir, backup_dir, override_path, substitution_path
 
 
 def truthy(value: str) -> bool:
@@ -103,30 +157,80 @@ def load_json_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def extract_pages_and_counts_pdftotext(pdf_path: Path) -> tuple[list[dict[str, Any]], list[int]]:
-    # Some born-digital PDFs have a usable text layer that `pypdf` mangles badly.
-    # This path re-extracts directly from the source PDF so cleanup starts from the
-    # cleaner text stream rather than from already-corrupted JSON content.
-    proc = subprocess.run(
-        ["pdftotext", str(pdf_path), "-"],
-        check=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
+def extract_pages_and_counts_pdftotext(
+    pdf_path: Path,
+    *,
+    start_page: int | None = None,
+    end_page: int | None = None,
+) -> tuple[list[dict[str, Any]], list[int]]:
+    # Reuse the shared extraction helper so stage 1 benefits from the same
+    # Windows filename handling as the reviewed stage-2 rescue path.
+    return _STAGE2_PDFTOTEXT_IMPL(
+        pdf_path,
+        start_page=start_page,
+        end_page=end_page,
     )
-    raw_text = proc.stdout or ""
-    page_texts = raw_text.split("\f")
-    if page_texts and page_texts[-1] == "":
-        page_texts = page_texts[:-1]
 
-    pages: list[dict[str, Any]] = []
-    char_counts: list[int] = []
-    for index, text in enumerate(page_texts):
-        cleaned = text.replace("\u00a0", " ").strip()
-        pages.append({"page_index": index, "text": cleaned})
-        char_counts.append(len(cleaned))
-    return pages, char_counts
+
+# Keep the OCR helper overridable from `03b` so tests and future callers can
+# patch one module and still exercise the shared stage-2 implementation.
+def extract_pages_and_counts_tesseract(
+    pdf_path: Path,
+    *,
+    dpi: int = 300,
+    grayscale: bool = False,
+    psm: int | None = None,
+    start_page: int | None = None,
+    end_page: int | None = None,
+) -> tuple[list[dict[str, Any]], list[int]]:
+    return _STAGE2_TESSERACT_IMPL(
+        pdf_path,
+        dpi=dpi,
+        grayscale=grayscale,
+        psm=psm,
+        start_page=start_page,
+        end_page=end_page,
+    )
+
+
+# Before delegating to the shared stage-2 module, mirror the key globals so any
+# patches applied to `03b` are honoured by the underlying rescue helpers.
+def sync_stage2_module_globals() -> None:
+    stage2_cleanup.PDF_DIR = PDF_DIR
+    stage2_cleanup.relative_to_repo = relative_to_repo
+    stage2_cleanup.sha256_file = sha256_file
+    stage2_cleanup.suspicious_control_char_count = suspicious_control_char_count
+    stage2_cleanup.extract_pages_and_counts_pdftotext = extract_pages_and_counts_pdftotext
+    stage2_cleanup.extract_pages_and_counts_tesseract = extract_pages_and_counts_tesseract
+
+
+# Wrap the shared stage-2 source builder so `03b` is the stable public surface
+# even though the residual-cleanup implementation now lives in `src/lib/`.
+def build_stage2_cleanup_source_record(
+    raw_record: dict[str, Any],
+    *,
+    override_row: dict[str, str],
+) -> tuple[dict[str, Any], dict[str, str]]:
+    sync_stage2_module_globals()
+    return stage2_cleanup.build_cleanup_source_record(raw_record, override_row=override_row)
+
+
+# Wrap the shared stage-2 cleanup application for the same reason: the primary
+# script owns the API, while the shared library owns the implementation details.
+def apply_stage2_cleanup_to_record(
+    raw_record: dict[str, Any],
+    *,
+    raw_source_path: Path,
+    override_row: dict[str, str],
+    substitution_rules: list[SubstitutionRule],
+) -> dict[str, Any]:
+    sync_stage2_module_globals()
+    return stage2_cleanup.apply_stage2_cleanup_to_record(
+        raw_record,
+        raw_source_path=raw_source_path,
+        override_row=override_row,
+        substitution_rules=substitution_rules,
+    )
 
 
 def write_json_atomic(out_path: Path, record: dict[str, Any]) -> None:
@@ -279,6 +383,66 @@ def apply_cleanup_to_record(
     return cleaned_record
 
 
+# Stage 2 keeps its reviewed OCR, page-window, and substitution logic intact,
+# but `03b` now owns the primary entry point for running it.
+def run_stage2_cleanup(
+    *,
+    input_dir: Path,
+    backup_dir: Path,
+    override_path: Path,
+    substitution_path: Path | None,
+    paper_ids: list[str],
+    limit: int,
+    force: bool,
+    skip_registry_refresh: bool,
+) -> None:
+    overrides = load_cleanup_overrides(override_path)
+    substitution_rules = load_substitution_rules(substitution_path)
+    enabled_ids = set(overrides)
+    target_paths = collect_target_json_paths(
+        input_dir,
+        enabled_ids=enabled_ids,
+        paper_ids=paper_ids,
+        limit=limit,
+    )
+    if not target_paths:
+        raise SystemExit(
+            f"No text JSONs found in {input_dir} for enabled stage-2 cleanup IDs."
+        )
+
+    cleaned_count = 0
+    skipped_count = 0
+    for text_path in target_paths:
+        current_record = load_json_record(text_path)
+        backup_path = backup_dir / text_path.name
+        if current_record.get("cleanup_stage2_applied") and not force:
+            if not backup_path.exists():
+                raise ValueError(
+                    "Canonical text JSON is already stage-2 cleaned but no stage-2 pre-clean "
+                    f"backup exists: {text_path}"
+                )
+            skipped_count += 1
+            continue
+
+        # Stage 2 always rebuilds from the preserved stage-2 snapshot so reruns
+        # stay deterministic and do not compound substitutions over time.
+        raw_record, raw_source_path = ensure_stage2_snapshot(text_path, backup_path)
+        cleaned_record = apply_stage2_cleanup_to_record(
+            raw_record,
+            raw_source_path=raw_source_path,
+            override_row=overrides[text_path.stem],
+            substitution_rules=substitution_rules.get(text_path.stem, []),
+        )
+        write_json_atomic(text_path, cleaned_record)
+        cleaned_count += 1
+
+    refresh_artifact_registry(skip_registry_refresh)
+    print(
+        f"Stage-2 cleaned {cleaned_count} text JSON(s) in {input_dir}"
+        + (f"; skipped {skipped_count} already-cleaned file(s)." if skipped_count else ".")
+    )
+
+
 def refresh_artifact_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -289,27 +453,41 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
     )
 
 
-def main() -> None:
-    args = parse_args()
-    overrides = load_cleanup_overrides(args.override_path)
+def main(argv: Sequence[str] | None = None) -> None:
+    args = parse_args(argv)
+    input_dir, backup_dir, override_path, substitution_path = resolve_cleanup_paths(args)
+    if bool(getattr(args, "stage2", False)):
+        run_stage2_cleanup(
+            input_dir=input_dir,
+            backup_dir=backup_dir,
+            override_path=override_path,
+            substitution_path=substitution_path,
+            paper_ids=getattr(args, "paper_id", []),
+            limit=getattr(args, "limit", 0),
+            force=bool(getattr(args, "force", False)),
+            skip_registry_refresh=bool(getattr(args, "skip_registry_refresh", False)),
+        )
+        return
+
+    overrides = load_cleanup_overrides(override_path)
     enabled_ids = set(overrides)
     target_paths = collect_target_json_paths(
-        args.input_dir,
+        input_dir,
         enabled_ids=enabled_ids,
-        paper_ids=args.paper_id,
-        limit=args.limit,
+        paper_ids=getattr(args, "paper_id", []),
+        limit=getattr(args, "limit", 0),
     )
     if not target_paths:
         raise SystemExit(
-            f"No text JSONs found in {args.input_dir} for enabled cleanup IDs."
+            f"No text JSONs found in {input_dir} for enabled cleanup IDs."
         )
 
     cleaned_count = 0
     skipped_count = 0
     for text_path in target_paths:
         current_record = load_json_record(text_path)
-        backup_path = args.backup_dir / text_path.name
-        if current_record.get("cleanup_applied") and not args.force:
+        backup_path = backup_dir / text_path.name
+        if current_record.get("cleanup_applied") and not bool(getattr(args, "force", False)):
             if not backup_path.exists():
                 raise ValueError(
                     f"Canonical text JSON is already cleaned but no pre-clean backup exists: {text_path}"
@@ -328,9 +506,9 @@ def main() -> None:
         write_json_atomic(text_path, cleaned_record)
         cleaned_count += 1
 
-    refresh_artifact_registry(args.skip_registry_refresh)
+    refresh_artifact_registry(bool(getattr(args, "skip_registry_refresh", False)))
     print(
-        f"Cleaned {cleaned_count} text JSON(s) in {args.input_dir}"
+        f"Cleaned {cleaned_count} text JSON(s) in {input_dir}"
         + (f"; skipped {skipped_count} already-cleaned file(s)." if skipped_count else ".")
     )
 

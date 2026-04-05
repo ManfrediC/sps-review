@@ -1,47 +1,50 @@
-covidence_id,enabled,source_strategy,cleanup_profile,source_page_start,source_page_end,ocr_dpi,ocr_psm,ocr_grayscale,reason,notes
-23,true,ocr_cleanup,combined_basic,,,400,3,true,Scan-derived article needs stronger OCR settings,Rebuild from rendered PDF OCR using higher DPI grayscale rendering and default page segmentation
-43,true,ocr_cleanup,combined_basic,,,,,,Residual OCR/font substitutions remain after stage-1 cleanup,Rebuild from rendered PDF OCR and apply reviewed token repairs
-62,true,pdftotext_cleanup,combined_basic,,,,,,Cleaner pdftotext layer plus reviewed token repair,Prefer pdftotext source and repair the Rvs161 title token
-155,true,ocr_cleanup,combined_basic,,,,,,Residual symbol and notation substitutions remain after stage-1 cleanup,Rebuild from rendered PDF OCR and apply reviewed symbol repairs
-434,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-522,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for clean article text and author line,The PDF text layer contains the target article cleanly
-545,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-548,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-582,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title recovery,The PDF text layer contains the target article cleanly
-621,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for clean article text and exact title recovery,The PDF text layer contains the target article cleanly
-639,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-723,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for clean article text and exact title recovery,The PDF text layer contains the target article cleanly
-850,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-862,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-905,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-938,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-942,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-960,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-964,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
-9182,true,json_cleanup,combined_basic,3,3,,,,Discard lending cover sheets and keep the article page,Preserve only the localized article page from the existing OCR JSON
-1118,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-1421,true,ocr_cleanup,combined_basic,187,187,220,6,true,Localize the ENDO supplement abstract page via OCR,OCR search identified the target stiff-person abstract on supplement page 187
-1764,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-1789,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-1859,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-1918,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-2371,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-2617,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-2841,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-2885,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-3105,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-5230,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-5279,true,json_cleanup,combined_basic,,,,,,Normalize joined title tokens in the abstract heading,The extracted abstract is readable but the title tokens need reviewed replacements
-5573,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-6268,true,ocr_cleanup,combined_basic,18,18,220,3,true,Localize the AAEM proceedings abstract page via OCR,Manual PDF review confirmed the target abstract on proceedings page 18 and OCR works best with page segmentation mode 3
-6475,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-6641,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-6723,true,pdftotext_cleanup,combined_basic,54,54,,,,Localize the target meeting abstract page,The exact target abstract appears on a later supplement page
-11884,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-12376,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-13222,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source and normalize gamma notation,Use the cleaner pdftotext source before symbol cleanup
-12465,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-12751,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-12798,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
-13688,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
-13723,true,pdftotext_cleanup,combined_basic,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+covidence_id,enabled,source_strategy,cleanup_profile,source_pdf_filename_override,source_page_start,source_page_end,ocr_dpi,ocr_psm,ocr_grayscale,reason,notes
+23,true,ocr_cleanup,combined_basic,,,,400,3,true,Scan-derived article needs stronger OCR settings,Rebuild from rendered PDF OCR using higher DPI grayscale rendering and default page segmentation
+43,true,ocr_cleanup,combined_basic,,,,,,,Residual OCR/font substitutions remain after stage-1 cleanup,Rebuild from rendered PDF OCR and apply reviewed token repairs
+62,true,pdftotext_cleanup,combined_basic,,,,,,,Cleaner pdftotext layer plus reviewed token repair,Prefer pdftotext source and repair the Rvs161 title token
+155,true,ocr_cleanup,combined_basic,,,,,,,Residual symbol and notation substitutions remain after stage-1 cleanup,Rebuild from rendered PDF OCR and apply reviewed symbol repairs
+434,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+522,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for clean article text and author line,The PDF text layer contains the target article cleanly
+545,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+548,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+582,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title recovery,The PDF text layer contains the target article cleanly
+621,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for clean article text and exact title recovery,The PDF text layer contains the target article cleanly
+639,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+723,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for clean article text and exact title recovery,The PDF text layer contains the target article cleanly
+850,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+862,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+905,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+938,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+942,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+960,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+964,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner spacing and title recovery,The PDF text layer contains the target article cleanly
+1598,true,pdftotext_cleanup,combined_basic,12627_Coexistence of neuromyelitis optica and stiff person syndrome in a single patient.pdf,,,,,,Reuse the reviewed duplicate PDF already in the corpus,The attached 1598 PDF is the wrong ACTRIMS supplement; 12627 is the exact same paper with the correct source PDF
+9182,true,json_cleanup,combined_basic,,3,3,,,,Discard lending cover sheets and keep the article page,Preserve only the localized article page from the existing OCR JSON
+9385,true,ocr_cleanup,combined_basic,,2,5,220,3,true,Ocr the article-image pages behind the subito wrapper,The source PDF is correct but page 1 is only the copyright wrapper and pdftotext misses the article pages
+10691,true,pdftotext_cleanup,combined_basic,12682_WNL.43.4_Suppl_2.A11.pdf,266,266,,,,Reuse the Neurology 1993 supplement that contains abstract 593P,The attached 10691 PDF is the wrong article; the target abstract is present on supplement page 266 in 12682
+1118,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+1421,true,ocr_cleanup,combined_basic,,187,187,220,6,true,Localize the ENDO supplement abstract page via OCR,OCR search identified the target stiff-person abstract on supplement page 187
+1764,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+1789,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+1859,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+1918,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+2371,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+2617,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+2841,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+2885,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+3105,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+5230,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+5279,true,json_cleanup,combined_basic,,,,,,,Normalize joined title tokens in the abstract heading,The extracted abstract is readable but the title tokens need reviewed replacements
+5573,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+6268,true,ocr_cleanup,combined_basic,,18,18,220,3,true,Localize the AAEM proceedings abstract page via OCR,Manual PDF review confirmed the target abstract on proceedings page 18 and OCR works best with page segmentation mode 3
+6475,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+6641,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+6723,true,pdftotext_cleanup,combined_basic,,54,54,,,,Localize the target meeting abstract page,The exact target abstract appears on a later supplement page
+11884,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+12376,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+12465,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+12751,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+12798,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly
+13222,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source and normalize gamma notation,Use the cleaner pdftotext source before symbol cleanup
+13688,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for cleaner article text and exact title recovery,The PDF text layer contains the target article cleanly
+13723,true,pdftotext_cleanup,combined_basic,,,,,,,Prefer pdftotext source for exact title and author recovery,The PDF text layer contains the target article cleanly

@@ -47,3 +47,8 @@ covidence_id,match_type,match,replacement,page_index,notes
 1421,regex,"(?s)(Nothing to Disclose: MSK, JBH, FC, AT, HS, JCJ).*",\1,,Trim the following abstract after the target proceedings abstract ends
 6268,regex,(?s)\A.*?(QUANTITATIVE ANALYSIS OF THE SILENT\s+PERIOD IN THE STIFF-PERSON SYNDROME),\1,,Drop preceding proceedings spillover before the target abstract title
 6268,regex,"(?s)(inhibitory pathways in the stiff-person syndrome\.)\s+MULTIFREQUENCY ELECTRICAL IMPEDANCE.*",\1,,Trim the following proceedings abstract after the target conclusion
+1598,regex,"(?s)\(P2\.\s*2-032\)\s*Amanda Thuringer and Yasir JassamAUTHORS INFO.*?Abstract","\nAmanda Thuringer and Yasir Jassam\nAbstract",,Drop webpage chrome between the poster title and abstract body
+9385,literal,STIFF-MAN SYNDROME : A CASE REPORT AND REVIEW OF THE LITERATURE,STIFF-MAN SYNDROME: A CASE REPORT AND REVIEW OF THE LITERATURE,,Restore title punctuation if OCR inserts a spaced colon
+10691,regex,"(?s)\A.*?(593P\s+Vigabatrin Improves Rigidity in Stiff-Person\s+Syndrome \(SPS\))","\1",,Drop the neighbouring abstract spillover before the target Neurology 1993 abstract
+10691,regex,"(?s)(Conclusions\.\s+Vigabatrin decreases rigidity of SPS and allows\s+lower doses of diazepam to control muscle spasms\.).*",\1,,Trim the following abstract after the target conclusion
+1598,regex,"(?s)Abstract\s+Publication History.*?Share\s+Abstract\s+Objective:","Abstract\nObjective:",,Drop webpage navigation chrome that remains between the abstract heading and the first objective sentence

@@ -12,11 +12,12 @@ from pathlib import Path
 from unittest import mock
 
 
-SCRIPT_PATH = Path(__file__).resolve().parents[1] / "src" / "pipelines" / "03c_clean_text_stage2.py"
+PRIMARY_SCRIPT_PATH = Path(__file__).resolve().parents[1] / "src" / "pipelines" / "03b_clean_text.py"
+WRAPPER_SCRIPT_PATH = Path(__file__).resolve().parents[1] / "src" / "pipelines" / "03c_clean_text_stage2.py"
 
 
-def load_module():
-    spec = importlib.util.spec_from_file_location("clean_text_stage2_module", SCRIPT_PATH)
+def load_module(script_path: Path, module_name: str):
+    spec = importlib.util.spec_from_file_location(module_name, script_path)
     module = importlib.util.module_from_spec(spec)
     assert spec is not None and spec.loader is not None
     sys.modules[spec.name] = module
@@ -33,6 +34,7 @@ def write_override_csv(path: Path, rows: list[dict[str, str]]) -> None:
                 "enabled",
                 "source_strategy",
                 "cleanup_profile",
+                "source_pdf_filename_override",
                 "source_page_start",
                 "source_page_end",
                 "ocr_dpi",
@@ -59,7 +61,8 @@ def write_substitution_csv(path: Path, rows: list[dict[str, str]]) -> None:
 class TestCleanTextStage2Pipeline(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.module = load_module()
+        cls.module = load_module(PRIMARY_SCRIPT_PATH, "clean_text_stage2_primary_module")
+        cls.wrapper_module = load_module(WRAPPER_SCRIPT_PATH, "clean_text_stage2_wrapper_module")
 
     def setUp(self) -> None:
         self.temp_dir = tempfile.TemporaryDirectory()
@@ -220,6 +223,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
                     "enabled": "true",
                     "source_strategy": "ocr_cleanup",
                     "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "",
                     "source_page_start": "",
                     "source_page_end": "",
                     "ocr_dpi": "",
@@ -244,6 +248,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
             ],
         )
         args = argparse.Namespace(
+            stage2=True,
             input_dir=self.input_dir,
             backup_dir=self.backup_dir,
             override_path=self.override_path,
@@ -301,6 +306,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
                     "enabled": "true",
                     "source_strategy": "json_cleanup",
                     "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "",
                     "source_page_start": "",
                     "source_page_end": "",
                     "ocr_dpi": "",
@@ -325,6 +331,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
             ],
         )
         args = argparse.Namespace(
+            stage2=True,
             input_dir=self.input_dir,
             backup_dir=self.backup_dir,
             override_path=self.override_path,
@@ -368,6 +375,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
                     "covidence_id": "62",
                     "source_strategy": "pdftotext_cleanup",
                     "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "",
                     "source_page_start": "",
                     "source_page_end": "",
                     "ocr_dpi": "",
@@ -400,11 +408,12 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
             raw_source_path=raw_source_path,
             override_row={
                 "covidence_id": "9182",
-                "source_strategy": "json_cleanup",
-                "cleanup_profile": "combined_basic",
-                "source_page_start": "3",
-                "source_page_end": "3",
-                "ocr_dpi": "",
+                    "source_strategy": "json_cleanup",
+                    "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "",
+                    "source_page_start": "3",
+                    "source_page_end": "3",
+                    "ocr_dpi": "",
                 "ocr_psm": "",
                 "ocr_grayscale": "",
                 "reason": "Skip cover pages.",
@@ -443,6 +452,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
                     "covidence_id": "23",
                     "source_strategy": "ocr_cleanup",
                     "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "",
                     "source_page_start": "",
                     "source_page_end": "",
                     "ocr_dpi": "400",
@@ -492,6 +502,7 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
                     "covidence_id": "1421",
                     "source_strategy": "ocr_cleanup",
                     "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "",
                     "source_page_start": "187",
                     "source_page_end": "187",
                     "ocr_dpi": "220",
@@ -514,6 +525,70 @@ class TestCleanTextStage2Pipeline(unittest.TestCase):
         self.assertEqual(cleaned_record["pages"], [{"page_index": 186, "text": "localized abstract"}])
         self.assertEqual(cleaned_record["cleanup_stage2_source_page_start"], "187")
         self.assertEqual(cleaned_record["cleanup_stage2_source_page_end"], "187")
+
+    def test_apply_stage2_cleanup_to_record_can_override_source_pdf_filename(self) -> None:
+        module = self.module
+        text_path = self.make_text_json("1598", ["wrong attached supplement"])
+        backup_path = self.backup_dir / "1598.json"
+        raw_record, raw_source_path = module.ensure_stage2_snapshot(text_path, backup_path)
+        fake_pdf_dir = self.tmp_path / "pdfs"
+        fake_pdf_dir.mkdir()
+        attached_pdf = fake_pdf_dir / "1598_wrong.pdf"
+        attached_pdf.write_bytes(b"%PDF-1.4")
+        alternate_pdf = fake_pdf_dir / "12627_correct.pdf"
+        alternate_pdf.write_bytes(b"%PDF-1.4")
+
+        with (
+            mock.patch.object(module, "PDF_DIR", fake_pdf_dir),
+            mock.patch.object(
+                module,
+                "extract_pages_and_counts_pdftotext",
+                return_value=([{"page_index": 0, "text": "correct duplicate source"}], [24]),
+            ) as extract_mock,
+            mock.patch.object(
+                module,
+                "sha256_file",
+                side_effect=lambda path: "alternate_sha256" if path == alternate_pdf else "json_sha256",
+            ),
+        ):
+            cleaned_record = module.apply_stage2_cleanup_to_record(
+                raw_record,
+                raw_source_path=raw_source_path,
+                override_row={
+                    "covidence_id": "1598",
+                    "source_strategy": "pdftotext_cleanup",
+                    "cleanup_profile": "combined_basic",
+                    "source_pdf_filename_override": "12627_correct.pdf",
+                    "source_page_start": "",
+                    "source_page_end": "",
+                    "ocr_dpi": "",
+                    "ocr_psm": "",
+                    "ocr_grayscale": "",
+                    "reason": "Reuse the reviewed duplicate PDF already in the corpus.",
+                    "notes": "",
+                },
+                substitution_rules=[],
+            )
+
+        extract_mock.assert_called_once_with(
+            alternate_pdf,
+            start_page=None,
+            end_page=None,
+        )
+        self.assertEqual(
+            cleaned_record["cleanup_stage2_source_pdf_path"],
+            module.relative_to_repo(alternate_pdf),
+        )
+        self.assertEqual(cleaned_record["cleanup_stage2_source_pdf_sha256"], "alternate_sha256")
+
+    def test_wrapper_forwards_to_primary_script_with_stage2_flag(self) -> None:
+        wrapper_module = self.wrapper_module
+        fake_primary = mock.Mock()
+
+        with mock.patch.object(wrapper_module, "load_primary_cleanup_module", return_value=fake_primary):
+            wrapper_module.main(["--paper-id", "43", "--force"])
+
+        fake_primary.main.assert_called_once_with(["--stage2", "--paper-id", "43", "--force"])
 
 
 if __name__ == "__main__":
