@@ -253,9 +253,10 @@ This means the remaining open issues after step `03` are now narrow and explicit
 The canonical routing flow now separates source type from extractable SPS case count.
 
 1. `src/pipelines/04_source_categorisation.py` assigns the source category and downstream routing behaviour.
-2. `src/pipelines/05_trim_proceedings_text.py` and `src/pipelines/06_validate_proceedings_text.py` refine proceedings-like records where needed.
-3. `src/pipelines/04b_extract_sps_case_counts.py` estimates extractable SPS case counts using the preferred available text and writes a separate count registry.
-4. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
+2. `src/pipelines/05_trim_proceedings_text.py` trims proceedings-like records down to the target abstract where needed.
+3. `src/pipelines/05b_validate_proceedings_text.py` checks whether the proceedings-derived text looks correctly localised and usable downstream.
+4. `src/pipelines/06_extract_sps_case_counts.py` estimates extractable SPS case counts using the preferred available text and writes a separate count registry.
+5. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
 
 This keeps count heuristics from distorting source categorisation while still preserving a canonical count output for downstream use and auditing.
 

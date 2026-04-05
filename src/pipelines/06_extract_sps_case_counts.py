@@ -9,6 +9,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 from src.pipelines._sps_case_counting import (
     CaseCountEstimate,
     estimate_sps_case_count,
@@ -187,6 +190,13 @@ def build_case_count_record(
         "conference_abstract",
     }
     count_eligible = source_category in eligible_categories
+    if source_category in {"review_article", "non_clinical_basic_science"}:
+        estimate = CaseCountEstimate(
+            likely_case_count=0,
+            count_confidence="low",
+            count_basis="not_count_eligible",
+            manual_review_required=False,
+        )
     manual_review_required = count_eligible and estimate.manual_review_required
 
     reasons = [
@@ -206,7 +216,7 @@ def build_case_count_record(
         "preferred_text_json_path": relative_to_repo(preferred_path),
         "preferred_text_source": preferred_text_source,
         "count_eligible": bool_text(count_eligible),
-        "likely_sps_case_count": str(estimate.likely_case_count or ""),
+        "likely_sps_case_count": str(estimate.likely_case_count),
         "count_confidence": estimate.count_confidence,
         "count_basis": estimate.count_basis,
         "count_manual_review_required": bool_text(manual_review_required),

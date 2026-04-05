@@ -20,8 +20,8 @@
 5. `90_screen_text_extraction.py` as an optional screening pass after extraction/cleanup when triaging residual text-quality issues or likely proceedings PDFs.
 6. `04_source_categorisation.py` on extracted text to assign the source category and downstream routing; rerun after proceedings trimming only if the categorisation itself should consume preferred trimmed text.
 7. `05_trim_proceedings_text.py` for proceedings / `conference_abstract` candidates.
-8. `06_validate_proceedings_text.py` after trimming; required before auto-splitting conference-abstract case series.
-9. `04b_extract_sps_case_counts.py` after categorisation and, when available, after proceedings trimming/QC so extractable SPS case counts use the preferred text source.
+8. `05b_validate_proceedings_text.py` after trimming; required before auto-splitting conference-abstract case series.
+9. `06_extract_sps_case_counts.py` after categorisation and, when available, after proceedings trimming/QC so extractable SPS case counts use the preferred text source.
 10. `07_split_case_series.py` for reviewed case-series candidates before LangExtract.
 11. `09_build_langextract_examples.py` when curated examples change.
 12. `10_langextract.py`

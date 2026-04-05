@@ -366,7 +366,7 @@ Refactored pipeline numbering and repaired the interrupted proceedings-trimming 
 - `01_extract_text.py` -> `03_extract_text.py`
 - `01a_source_categorisation.py` -> `04_source_categorisation.py`
 - `00_trim_proceedings_text.py` -> `05_trim_proceedings_text.py`
-- `00_validate_proceedings_text.py` -> `06_validate_proceedings_text.py`
+- `00_validate_proceedings_text.py` -> `05b_validate_proceedings_text.py`
 - `01b_split_case_series.py` -> `07_split_case_series.py`
 - `00_build_langextract_examples.py` -> `09_build_langextract_examples.py`
 - `02_LangExtract.py` -> `10_langextract.py`
@@ -380,7 +380,7 @@ Refactored pipeline numbering and repaired the interrupted proceedings-trimming 
 - Updated `src/pipelines/03_extract_text.py` to perform extraction only (removed auto-trigger of proceedings trimming).
 - Kept artifact-registry refresh in extraction, now pointing to `12_build_paper_artifact_registry.py`.
 - Updated `src/pipelines/99_overnight_run.py` stage map and order to include:
-- extraction -> source categorisation -> proceedings trim -> proceedings QC -> case-series split -> LangExtract stages.
+- extraction -> source categorisation -> proceedings trim -> proceedings QC -> SPS case counts -> case-series split -> LangExtract stages.
 
 ### Proceedings Trimming Repair
 
@@ -415,7 +415,7 @@ Patched proceedings abstract localisation, refreshed trial/spot-check outputs, a
 - Patched proceedings localisation behaviour and ran a validation/trial pass (`ef4d9ad`).
 - Updated:
 - `src/pipelines/05_trim_proceedings_text.py`
-- `src/pipelines/06_validate_proceedings_text.py`
+- `src/pipelines/05b_validate_proceedings_text.py`
 - `src/pipelines/07_split_case_series.py`
 - `src/pipelines/README.md`
 - Refreshed core registries:
@@ -442,7 +442,7 @@ Patched proceedings abstract localisation, refreshed trial/spot-check outputs, a
 - `src/pipelines/03_extract_text.py`
 - `src/pipelines/04_source_categorisation.py`
 - `src/pipelines/05_trim_proceedings_text.py`
-- `src/pipelines/06_validate_proceedings_text.py`
+- `src/pipelines/05b_validate_proceedings_text.py`
 - `src/pipelines/07_split_case_series.py`
 - `src/pipelines/09_build_langextract_examples.py`
 - `src/pipelines/10_langextract.py`
@@ -883,7 +883,7 @@ Folded the residual rescue path into the canonical cleanup stage, labeled the tw
 
 - Split source categorisation and extractable SPS case counting into separate pipeline responsibilities:
   - `src/pipelines/04_source_categorisation.py` now owns source type and downstream routing
-  - `src/pipelines/04b_extract_sps_case_counts.py` now owns extractable SPS case counts
+  - `src/pipelines/06_extract_sps_case_counts.py` now owns extractable SPS case counts
 - Added the shared count helper `src/pipelines/_sps_case_counting.py`.
 - Generated the canonical count registry:
   - `data/references/source_sps_case_count_registry.csv`

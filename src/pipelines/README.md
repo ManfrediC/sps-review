@@ -108,7 +108,7 @@ Main trim statuses:
 python src/pipelines/05_trim_proceedings_text.py
 ```
 
-## `06_validate_proceedings_text.py`
+## `05b_validate_proceedings_text.py`
 
 This script runs the separate proceedings QC pass that was queued after trimming.
 
@@ -135,7 +135,7 @@ Useful statuses:
 ### Run
 
 ```bash
-python src/pipelines/06_validate_proceedings_text.py
+python src/pipelines/05b_validate_proceedings_text.py
 ```
 
 ## `03_extract_text.py`
@@ -305,9 +305,9 @@ After each run, it also refreshes `data/references/paper_artifact_registry.csv` 
 python src/pipelines/04_source_categorisation.py
 ```
 
-## `04b_extract_sps_case_counts.py`
+## `06_extract_sps_case_counts.py`
 
-This script estimates how many extractable SPS patients/cases are present in each source after categorisation.
+This script estimates how many extractable SPS patients/cases are present in each source after source categorisation and any available proceedings trimming/QC.
 
 It:
 
@@ -325,7 +325,7 @@ After each run, it also refreshes `data/references/paper_artifact_registry.csv` 
 ### Run
 
 ```bash
-python src/pipelines/04b_extract_sps_case_counts.py
+python src/pipelines/06_extract_sps_case_counts.py
 ```
 
 ## `07_split_case_series.py`
@@ -417,4 +417,4 @@ Records reviewed as `incorrect_reference` are explicitly excluded before any dow
 ## Directory Contents Snapshot
 - Last updated: `2026-04-05`
 - Immediate subdirectories (0): _None_
-- Immediate files (17, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation.py`, `04b_extract_sps_case_counts.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+5 more)
+- Immediate files (17, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `05b_validate_proceedings_text.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+5 more)

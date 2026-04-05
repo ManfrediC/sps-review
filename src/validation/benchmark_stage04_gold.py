@@ -16,7 +16,7 @@ from src.validation._stage04_gold import GOLD_MASTER_PATH, reviewed_gold_rows_fr
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py"
-CASE_COUNT_SCRIPT = REPO_ROOT / "src" / "pipelines" / "04b_extract_sps_case_counts.py"
+CASE_COUNT_SCRIPT = REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_counts.py"
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 TRIM_REGISTRY_CSV = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"

@@ -53,7 +53,12 @@ STAGES = [
     Stage(
         key="proceedings_qc",
         label="Proceedings Text QC",
-        script_path=REPO_ROOT / "src" / "pipelines" / "06_validate_proceedings_text.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text.py",
+    ),
+    Stage(
+        key="sps_case_counts",
+        label="SPS Case Counts",
+        script_path=REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_counts.py",
     ),
     Stage(
         key="case_series_split",

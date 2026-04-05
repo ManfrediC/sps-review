@@ -162,7 +162,7 @@ streamlit run src/validation/review_stage04_gold_app.py
 Benchmarks the current stage-04 heuristics against reviewed gold-standard rows.
 
 It:
-- reruns `04_source_categorisation.py` and `04b_extract_sps_case_counts.py` logic on reviewed rows
+- reruns `04_source_categorisation.py` and `06_extract_sps_case_counts.py` logic on reviewed rows
 - reports category accuracy and exact count accuracy
 - breaks accuracy down by selection bucket
 - excludes `likely_wrong_pdf_attached` and `incorrect_reference` rows by default

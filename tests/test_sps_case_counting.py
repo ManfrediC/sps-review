@@ -9,7 +9,7 @@ from src.pipelines._sps_case_counting import estimate_sps_case_count
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-CASE_COUNT_SCRIPT = REPO_ROOT / "src" / "pipelines" / "04b_extract_sps_case_counts.py"
+CASE_COUNT_SCRIPT = REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_counts.py"
 
 
 def load_case_count_stage():

@@ -13,7 +13,7 @@ Also read `AGENTS.md` (working style, editing rules, debugging protocol, hard pr
 python -m unittest discover -s tests -p "test_*.py" -v
 
 # Run a single test file
-python -m unittest tests.test_04_source_categorisation_extractable_case_counts -v
+python -m unittest discover -s tests -p "test_06_extract_sps_case_counts.py" -v
 
 # Lint / format (if configured)
 ruff check .
