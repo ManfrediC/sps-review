@@ -80,6 +80,48 @@ class TestSpsCaseCounting(unittest.TestCase):
         )
         self.assertEqual(estimate.likely_case_count, 3)
 
+    def test_extracts_diagnosis_specific_single_case_from_mixed_disorder_trial(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Therapeutic trial of milacemide in patients with myoclonus and other intractable movement disorders.",
+            abstract=(
+                "We performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with "
+                "intractable movement disorders. Six had myoclonus of various etiologies and one each had "
+                "progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and "
+                "moving toes, and stiff-person syndrome. No clear-cut observable improvement occurred."
+            ),
+            early_body_text="",
+        )
+        self.assertEqual(estimate.likely_case_count, 1)
+        self.assertEqual(estimate.count_basis, "diagnosis_specific_list_count")
+
+    def test_ignores_literature_case_totals_in_single_patient_interventional_report(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",
+            abstract=(
+                "OBJECTIVE: We report a patient with severe SPS refractory to oral standard therapies. "
+                "CASE REPORT: A 48-year-old white man with SPS underwent successful continuous intrathecal "
+                "catheter trial of baclofen. The literature reports only 5 cases of GAD(-) SPS patients treated "
+                "with intrathecal baclofen therapy, and these resulted in poor long-term success."
+            ),
+            early_body_text="",
+        )
+        self.assertEqual(estimate.likely_case_count, 1)
+
+    def test_ignores_protein_number_as_patient_count(self) -> None:
+        estimate = estimate_sps_case_count(
+            title=(
+                "Glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes "
+                "mellitus exhibit similarities and differences in epitope recognition."
+            ),
+            abstract=(
+                "Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer "
+                "than individuals with IDDM. These two regions of the GAD 65 protein are similar to regions "
+                "targeted by GAD 65-specific Abs found in individuals with IDDM."
+            ),
+            early_body_text="",
+        )
+        self.assertEqual(estimate.likely_case_count, 0)
+
     def test_stage_defaults_single_case_when_no_count_signal_exists(self) -> None:
         result = self.stage_module.build_case_count_record(
             reference_row={
@@ -114,8 +156,8 @@ class TestSpsCaseCounting(unittest.TestCase):
             preferred_record={"pages": [{"text": "Case 1 ... Case 2 ..."}]},
             preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "214.json",
             source_row={
-                "source_category": "lab_heavy_clinical_or_translational",
-                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+                "source_category": "case_series_or_multi_case",
+                "source_subtype": "case_series",
             },
         )
         self.assertEqual(result["likely_sps_case_count"], "2")

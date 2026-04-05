@@ -11,6 +11,7 @@ from streamlit_pdf_viewer import pdf_viewer
 
 from src.validation._stage04_gold import (
     DEFAULT_REVIEWER,
+    GOLD_MASTER_PATH,
     PDF_ALIGNMENT_OPTIONS,
     ROUND_RESPONSES_FILENAME,
     SOURCE_CATEGORY_OPTIONS,
@@ -158,6 +159,7 @@ def render_sidebar(round_dir: Path, snapshot_rows: list[dict[str, str]]) -> int:
             st.sidebar.success("Round complete. Gold export and master file are up to date.")
     st.sidebar.caption(f"Responses file: `{display_path(round_dir / ROUND_RESPONSES_FILENAME)}`")
     st.sidebar.caption(f"Gold snapshot: `{display_path(round_gold_snapshot_path(round_dir))}`")
+    st.sidebar.caption(f"Cumulative gold file: `{display_path(GOLD_MASTER_PATH)}`")
     return completed
 
 

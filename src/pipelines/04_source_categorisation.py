@@ -221,6 +221,7 @@ SINGULAR_PATIENT_MARKERS = (
     "a girl",
     "one patient",
     "single patient",
+    "patient autoantibodies",
 )
 SPS_CONTEXT_MARKERS = (
     "stiff person syndrome",
@@ -285,6 +286,39 @@ ORIGINAL_COHORT_MARKERS = (
     "we retrospectively reviewed",
     "retrospectively reviewed",
     "retrospectively re viewed",
+    "were included",
+    "patients were included",
+    "was used to measure",
+    "were used to measure",
+)
+ADMINISTRATIVE_DATASET_MARKERS = (
+    "nationwide readmission study",
+    "nationwide study",
+    "national inpatient sample",
+    "inpatient care",
+    "readmission study",
+    "administrative database",
+    "hospital discharge database",
+    "claims database",
+)
+INTERVENTIONAL_TITLE_MARKERS = (
+    "therapeutic trial",
+    "placebo controlled trial",
+    "placebo-controlled trial",
+    "double blind",
+    "double-blind",
+    "trialing",
+    "therapy",
+    "therapeutic",
+)
+REVIEW_STYLE_MARKERS = (
+    "is characterized by",
+    "is characterised by",
+    "rare and disabling disorder",
+    "the cause of",
+    "new evidence suggests",
+    "pathogenesis is suspected",
+    "hallmark clinical",
 )
 SUPPLEMENT_REFERENCE_MARKERS = (
     "supplement",
@@ -626,8 +660,12 @@ def classify_record(
     case_report_hits = marker_hits(case_signal_text, CASE_REPORT_MARKERS)
     multi_case_hits = marker_hits(case_signal_text, MULTI_CASE_MARKERS)
     observational_hits = marker_hits(combined, OBSERVATIONAL_MARKERS)
+    if "cohort" in observational_hits and not re.search(r"\bcohort\b", combined):
+        observational_hits = [hit for hit in observational_hits if hit != "cohort"]
     original_cohort_hits = marker_hits(combined, ORIGINAL_COHORT_MARKERS)
+    administrative_dataset_hits = marker_hits(combined, ADMINISTRATIVE_DATASET_MARKERS)
     interventional_hits = marker_hits(combined, INTERVENTIONAL_MARKERS)
+    interventional_title_hits = marker_hits(normalized_title, INTERVENTIONAL_TITLE_MARKERS)
     # Search metadata first; fall back to combined text for lab markers when
     # metadata is sparse (many papers lack abstracts in the reference export).
     non_clinical_hits = marker_hits(meta_text, NON_CLINICAL_MARKERS)
@@ -639,6 +677,7 @@ def classify_record(
     structured_abstract_hits = marker_hits(meta_text, ABSTRACT_STRUCTURE_MARKERS)
     singular_patient_hits = marker_hits(case_signal_text, SINGULAR_PATIENT_MARKERS)
     weak_case_hits = marker_hits(case_signal_text, WEAK_CASE_MARKERS)
+    review_style_hits = marker_hits(review_source_text, REVIEW_STYLE_MARKERS)
 
     count_estimate = estimate_sps_case_count(
         title=title,
@@ -713,6 +752,7 @@ def classify_record(
         structured_abstract_hits
         or observational_hits
         or original_cohort_hits
+        or administrative_dataset_hits
         or interventional_hits
         or lab_method_hits
         or patient_label_count > 0
@@ -733,24 +773,42 @@ def classify_record(
     quantified_large_group_signal = quantified_multi_case_signal and count_hint >= 12
     explicit_multi_case = bool(
         "case series" in multi_case_hits
-        or patient_label_count >= 2
+        or patient_label_count >= 3
+        or (patient_label_count >= 2 and count_hint >= 2)
         or title_case_count_signal
         or quantified_multi_case_signal
     )
     patient_label_only_multi_case = bool(
-        patient_label_count >= 2
+        (patient_label_count >= 3 or (patient_label_count >= 2 and count_hint >= 2))
         and not multi_case_hits
         and not quantified_multi_case_signal
         and not title_case_count_signal
     )
     strong_original_cohort_signal = (
         title_mentions_sps and (
-            bool(observational_hits) or explicit_multi_case or len(structured_abstract_hits) >= 2
+            bool(observational_hits)
+            or explicit_multi_case
+            or len(structured_abstract_hits) >= 2
+            or bool(administrative_dataset_hits)
         )
     ) or (
         strong_translational_signal and quantified_multi_case_signal
     )
-    broad_review_shape = bool(review_hits) and not title_mentions_sps and not explicit_single_case and not explicit_multi_case
+    clear_clinical_group_signal = quantified_multi_case_signal and (
+        bool(observational_hits)
+        or "patients with" in multi_case_hits
+        or len(structured_abstract_hits) >= 2
+        or bool(administrative_dataset_hits)
+        or count_hint >= 8
+    )
+    small_case_series_signal = (
+        quantified_multi_case_signal
+        and 2 <= count_hint <= 10
+        and not observational_hits
+        and not administrative_dataset_hits
+        and not interventional_hits
+    )
+    broad_review_shape = bool(review_hits) and not explicit_single_case and not explicit_multi_case and count_hint == 0
 
     scores = {
         "conference_abstract": 0.0,
@@ -791,6 +849,10 @@ def classify_record(
         scores["conference_abstract"] += 1.5
     if full_article_veto and not explicit_conference_signal:
         scores["conference_abstract"] -= 4.0
+    if full_article_veto and full_page_count >= 5:
+        scores["conference_abstract"] -= 2.5
+    if quantified_multi_case_signal and full_page_count >= 5:
+        scores["conference_abstract"] -= 2.0
     if header_only_proceedings and full_page_count > 3:
         scores["conference_abstract"] -= 3.0
     if header_only_proceedings and short_source_document:
@@ -810,6 +872,12 @@ def classify_record(
         scores["case_series_or_multi_case"] -= 1.0
         scores["lab_heavy_clinical_or_translational"] -= 1.0
         scores["observational_group_study"] -= 1.0
+    if review_hits and not original_study_signal and count_hint == 0:
+        scores["review_article"] += 1.5
+        scores["lab_heavy_clinical_or_translational"] -= 1.0
+    if review_style_hits and not original_study_signal and count_hint == 0:
+        scores["review_article"] += 3.0
+        scores["lab_heavy_clinical_or_translational"] -= 1.5
 
     if explicit_single_case:
         scores["single_case_report"] += 2.5
@@ -817,6 +885,10 @@ def classify_record(
         scores["single_case_report"] += 1.5
     scores["single_case_report"] += len(case_report_hits) * 1.5
     scores["single_case_report"] += len(singular_patient_hits) * 0.5
+    if patient_label_count >= 2 or ("patients with" in multi_case_hits and quantified_multi_case_signal):
+        scores["single_case_report"] -= 3.0
+    if quantified_multi_case_signal and (count_hint >= 8 or original_cohort_hits):
+        scores["single_case_report"] -= 4.0
     if strong_translational_signal and case_report_hits == ["a patient with"] and not demographic_single_case:
         scores["single_case_report"] -= 2.5
     # Weak case markers contribute less; suppressed when conference-like metadata is present.
@@ -830,16 +902,31 @@ def classify_record(
         scores["case_series_or_multi_case"] += 2.5
     if quantified_multi_case_signal and not observational_hits and not quantified_large_group_signal:
         scores["case_series_or_multi_case"] += 1.5
+    if small_case_series_signal:
+        scores["case_series_or_multi_case"] += 2.0
     if quantified_large_group_signal and patient_label_count < 2 and "case series" not in multi_case_hits:
         scores["case_series_or_multi_case"] -= 1.5
     if patient_label_count >= 2:
         scores["case_series_or_multi_case"] += 2.0
+    if patient_label_count >= 3:
+        scores["case_series_or_multi_case"] += 2.0
+    if patient_label_count >= 3 and count_hint >= 3:
+        scores["case_series_or_multi_case"] += 3.0
     scores["case_series_or_multi_case"] += len(multi_case_hits) * 1.2
 
     scores["observational_group_study"] += len(observational_hits) * 1.4
+    scores["observational_group_study"] += len(administrative_dataset_hits) * 2.5
     if observational_hits and not explicit_single_case:
         scores["observational_group_study"] += 1.8
+    if administrative_dataset_hits:
+        scores["observational_group_study"] += 3.0
     if quantified_multi_case_signal and (observational_hits or len(structured_abstract_hits) >= 2):
+        scores["observational_group_study"] += 1.5
+    if quantified_multi_case_signal and "patients with" in multi_case_hits:
+        scores["observational_group_study"] += 2.0
+    if title_mentions_sps and quantified_multi_case_signal and strong_lab_signal:
+        scores["observational_group_study"] += 2.0
+    if title_mentions_sps and quantified_multi_case_signal and len(structured_abstract_hits) >= 2:
         scores["observational_group_study"] += 1.5
     if quantified_large_group_signal and patient_label_count < 2:
         scores["observational_group_study"] += 2.0
@@ -875,6 +962,8 @@ def classify_record(
 
     if interventional_hits and (observational_hits or explicit_multi_case or "controlled study" in interventional_hits):
         scores["interventional_study"] += len(interventional_hits) * 1.6
+    if interventional_title_hits:
+        scores["interventional_study"] += len(interventional_title_hits) * 1.8
 
     has_clinical_signal = (
         explicit_single_case
@@ -908,6 +997,13 @@ def classify_record(
         scores["non_clinical_basic_science"] -= 2.5
     if original_cohort_hits and not strong_lab_signal:
         scores["review_article"] -= 1.5
+    if clear_clinical_group_signal:
+        scores["lab_heavy_clinical_or_translational"] -= 2.5
+        scores["non_clinical_basic_science"] -= 1.5
+    if small_case_series_signal:
+        scores["lab_heavy_clinical_or_translational"] -= 2.0
+    if patient_label_count >= 3 and count_hint >= 3:
+        scores["lab_heavy_clinical_or_translational"] -= 2.5
 
     scores["unclear_manual_review"] = 1.0
 
@@ -935,6 +1031,7 @@ def classify_record(
         scores["review_article"] >= 3.0
         and (
             (low_sps_focus and not (strong_translational_signal and quantified_multi_case_signal))
+            or (review_hits and low_sps_focus and not title_mentions_sps)
             or (not strong_case_signal and not strong_original_cohort_signal)
         )
     ):
@@ -950,6 +1047,25 @@ def classify_record(
         preferred_langextract_mode = "manual_review"
         langextract_eligible = False
         recommended_next_action = "trim_or_review_proceedings"
+    elif scores["interventional_study"] >= 3.5 and (
+        interventional_title_hits
+        or (
+            not explicit_single_case
+            and (
+                "trial" in interventional_hits
+                or "controlled trial" in interventional_hits
+                or "placebo" in interventional_hits
+            )
+        )
+        or explicit_multi_case
+        or quantified_multi_case_signal
+    ):
+        category = "interventional_study"
+        subtype = "controlled_or_therapeutic_group_study"
+        contains_group = True
+        preferred_langextract_mode = "group"
+        langextract_eligible = True
+        recommended_next_action = "run_langextract_group"
     elif scores["conference_abstract"] >= 3.0:
         category = "conference_abstract"
         if explicit_multi_case:
@@ -978,6 +1094,20 @@ def classify_record(
                 langextract_eligible = False
                 recommended_next_action = "trim_or_review_proceedings"
     elif (
+        patient_label_count >= 3
+        and count_hint >= 3
+        and not interventional_title_hits
+        and not observational_hits
+    ):
+        category = "case_series_or_multi_case"
+        subtype = "case_series"
+        contains_individual = True
+        contains_group = True
+        split_candidate = True
+        preferred_langextract_mode = "individual_and_group"
+        langextract_eligible = True
+        recommended_next_action = "split_cases_then_langextract"
+    elif (
         explicit_single_case
         and not explicit_multi_case
         and not (strong_translational_signal and case_report_hits == ["a patient with"] and not demographic_single_case)
@@ -992,6 +1122,8 @@ def classify_record(
         scores["lab_heavy_clinical_or_translational"] >= 5.0
         and strong_lab_signal
         and (observational_hits or "patients with" in multi_case_hits or explicit_multi_case or strong_translational_signal)
+        and not clear_clinical_group_signal
+        and not small_case_series_signal
     ):
         category = "lab_heavy_clinical_or_translational"
         subtype = "group_or_frequency_focused_lab_clinical_study"
@@ -1006,9 +1138,18 @@ def classify_record(
         subtype = "basic_science_or_mechanistic"
         preferred_langextract_mode = "skip"
         recommended_next_action = "skip_langextract"
-    elif scores["interventional_study"] >= 3.0:
+    elif scores["interventional_study"] >= 3.0 and (
+        interventional_title_hits or explicit_multi_case or quantified_multi_case_signal or not explicit_single_case
+    ):
         category = "interventional_study"
         subtype = "controlled_or_therapeutic_group_study"
+        contains_group = True
+        preferred_langextract_mode = "group"
+        langextract_eligible = True
+        recommended_next_action = "run_langextract_group"
+    elif original_cohort_hits and patient_label_count >= 3 and count_hint <= 1:
+        category = "observational_group_study"
+        subtype = "retrospective_or_cohort_group_study"
         contains_group = True
         preferred_langextract_mode = "group"
         langextract_eligible = True

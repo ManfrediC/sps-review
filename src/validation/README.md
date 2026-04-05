@@ -132,6 +132,10 @@ The script:
   - `selection_manifest.json`
   - `selection_queue.csv`
   - `responses.csv`
+  - `gold_standard_stage04_<round_id>.csv`
+
+Canonical cumulative reviewed file:
+- `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`
 
 Build the default 10-paper batch:
 
@@ -156,7 +160,7 @@ It:
 - lets the reviewer confirm or edit the prediction
 - saves each response immediately to `responses.csv`
 - writes a round snapshot `gold_standard_stage04_<round_id>.csv`
-- refreshes the cumulative master file once a round is complete
+- refreshes the canonical cumulative gold file `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv` once a round is complete
 
 Run:
 
@@ -179,3 +183,6 @@ Run against the cumulative master file:
 ```bash
 python src/validation/benchmark_stage04_gold.py
 ```
+
+The default benchmark input is:
+- `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`

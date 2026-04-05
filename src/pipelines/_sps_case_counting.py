@@ -76,6 +76,7 @@ SINGULAR_PATIENT_MARKERS = (
     "girl with",
     "female patient",
     "male patient",
+    "patient autoantibodies",
 )
 TITLE_COMPARISON_MARKERS = (
     " vs ",
@@ -148,6 +149,7 @@ COUNT_NEGATIVE_CONTEXT_MARKERS = (
     "previously reported cases",
     "previously reported patients",
     "reported cases",
+    "literature reports",
     "review article",
     "rare condition",
     "rare disorder",
@@ -173,6 +175,7 @@ COUNT_TOKEN_PATTERN = (
     r"eighty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
     r"ninety(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?)"
 )
+COUNT_TOKEN_NONGROUP_PATTERN = COUNT_TOKEN_PATTERN.replace("?P<count>", "?:")
 COUNT_NOUN_PATTERN = (
     r"(?:patients|patient|cases|case subjects|subjects|participants|participant|"
     r"women|men|children|people|individuals)"
@@ -215,6 +218,10 @@ SPS_SUBGROUP_TABLE_COUNT_RE = re.compile(
 )
 SPS_SUBGROUP_CASE_LABEL_RE = re.compile(
     rf"\bcase\s+\d+\s+{COUNT_FILLER_PATTERN}{{0,4}}?{SPS_SUBGROUP_DIAGNOSIS_OR_CASE_LABEL_PATTERN}\b",
+    re.IGNORECASE,
+)
+SPS_SUBGROUP_DIAGNOSIS_LIST_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_NONGROUP_PATTERN})\s+each\s+had\b[\s\S]{{0,180}}?\b{SPS_DIAGNOSIS_PATTERN}\b",
     re.IGNORECASE,
 )
 
@@ -345,6 +352,14 @@ def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
     if not normalized:
         return None
 
+    candidates = []
+    for match in SPS_SUBGROUP_DIAGNOSIS_LIST_RE.finditer(normalized):
+        count = parse_count_token(match.group("count"))
+        if count > 0:
+            candidates.append(count)
+    if candidates:
+        return min(candidates), "high", "diagnosis_specific_list_count"
+
     candidates: list[int] = []
     for match in SPS_SUBGROUP_PAREN_COUNT_RE.finditer(normalized):
         count = parse_count_token(match.group("count"))
@@ -398,10 +413,16 @@ def score_count_candidate(
         score -= 2
     if COUNT_RANGE_RE.search(local_window):
         score -= 6
+    if re.search(r"\b\d+\s*(?:to|-)\s*\d+\s*fold\b", window) or re.search(r"\bfold\b", local_window):
+        score -= 12
+    if re.search(r"\bgad\s+\d+\b", window) or re.search(r"\bspecific\s+abs?\b", window):
+        score -= 10
     if "percent" in local_window:
         score -= 6
     if "percent patients" in local_window or "percent of patients" in local_window:
         score -= 6
+    if re.search(r"\b(?:titre|titer|titres|titers)\b", window):
+        score -= 8
     if re.search(r"\b(?:igg|igm|iga|nmol|microg|ng|iu|mg|ml)\b", local_window) and "patients" not in match.group(0):
         score -= 6
     if re.search(r"\b(?:scale|score|grading)\b", window) and not has_current_series_signal(window):
@@ -412,6 +433,10 @@ def score_count_candidate(
         score -= 3
     if re.search(r"\b(?:of|among)\s+\d+\s+patients?\b", window) and not mentions_sps_context(window):
         score -= 2
+    if re.search(r"\bonly\s+one\s+patient\b", window):
+        score -= 6
+    if re.search(r"\bone\s+patient\b", window) and re.search(r"\b(?:improvement|improved|responded|differed)\b", window):
+        score -= 5
     if single_case_signal and count > 1 and not has_current_series_signal(window):
         score -= 4
     if single_case_signal and count > 3:
@@ -465,6 +490,7 @@ def estimate_sps_case_count(*, title: str, abstract: str, early_body_text: str) 
         normalized_unit = normalize_count_text(unit)
         if not normalized_unit:
             continue
+        unit_single_case_signal = has_single_case_signal(unit)
         for pattern in (SPS_DIRECT_COUNT_RE, CONTEXTUAL_PATIENT_COUNT_RE, PATIENT_COUNT_RE):
             for match in pattern.finditer(normalized_unit):
                 count = parse_count_token(match.group("count"))
@@ -476,7 +502,7 @@ def estimate_sps_case_count(*, title: str, abstract: str, early_body_text: str) 
                     count=count,
                     title_mentions_sps=title_mentions_sps,
                     source_weight=4 if pattern is SPS_DIRECT_COUNT_RE else 3,
-                    single_case_signal=single_case_signal,
+                    single_case_signal=unit_single_case_signal,
                 )
                 if score >= 4:
                     abstract_candidates.append((score, count))
@@ -511,6 +537,7 @@ def estimate_sps_case_count(*, title: str, abstract: str, early_body_text: str) 
         normalized_unit = normalize_count_text(unit)
         if not normalized_unit:
             continue
+        unit_single_case_signal = has_single_case_signal(unit)
         has_strong_body_context = any(marker in normalized_unit for marker in COUNT_POSITIVE_CONTEXT_MARKERS) or bool(
             re.search(r"\b(?:patient|case)\s*[12]\b", normalized_unit)
         )
@@ -527,7 +554,7 @@ def estimate_sps_case_count(*, title: str, abstract: str, early_body_text: str) 
                     count=count,
                     title_mentions_sps=title_mentions_sps,
                     source_weight=2 if pattern is SPS_DIRECT_COUNT_RE else 1,
-                    single_case_signal=single_case_signal,
+                    single_case_signal=unit_single_case_signal,
                 )
                 if score >= 5:
                     body_candidates.append((score, count))

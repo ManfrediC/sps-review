@@ -27,6 +27,16 @@ TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 SOURCE_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_registry.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
+ADMINISTRATIVE_DATASET_MARKERS = (
+    "nationwide readmission study",
+    "nationwide study",
+    "national inpatient sample",
+    "inpatient care",
+    "readmission study",
+    "administrative database",
+    "hospital discharge database",
+    "claims database",
+)
 
 
 def now_utc_iso() -> str:
@@ -93,13 +103,13 @@ def prefer_single_case_default(
     abstract: str,
     early_body_text: str,
 ) -> bool:
-    explicit_multi_case = has_explicit_multi_case_signal(" ".join([title, abstract]))
-    if explicit_multi_case:
-        return False
     if source_category == "single_case_report":
         return True
     if source_subtype == "single_case_conference_abstract":
         return True
+    explicit_multi_case = has_explicit_multi_case_signal(" ".join([title, abstract]))
+    if explicit_multi_case:
+        return False
     text_for_signal = " ".join([title, abstract, early_body_text[:1200]])
     return has_single_case_signal(text_for_signal)
 
@@ -114,6 +124,15 @@ def adjust_estimate_for_source_context(
     source_subtype: str,
     preferred_text_source: str,
 ) -> CaseCountEstimate:
+    context_text = " ".join([title, abstract, early_body_text[:1200]]).lower()
+    if any(marker in context_text for marker in ADMINISTRATIVE_DATASET_MARKERS):
+        return CaseCountEstimate(
+            likely_case_count=0,
+            count_confidence="low",
+            count_basis="administrative_dataset_not_extractable",
+            manual_review_required=False,
+        )
+
     single_case_default_ok = prefer_single_case_default(
         source_category=source_category,
         source_subtype=source_subtype,
@@ -146,6 +165,14 @@ def adjust_estimate_for_source_context(
             likely_case_count=1,
             count_confidence="medium",
             count_basis="source_single_case_override",
+            manual_review_required=False,
+        )
+
+    if source_category == "lab_heavy_clinical_or_translational":
+        return CaseCountEstimate(
+            likely_case_count=0,
+            count_confidence="low",
+            count_basis="lab_context_no_extractable_count",
             manual_review_required=False,
         )
 

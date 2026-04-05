@@ -1,0 +1,209 @@
+{
+  "generated_at_utc": "2026-04-05T15:33:49.275525+00:00",
+  "round_id": "2026-04-05_round_03",
+  "round_dir": "qa\\validation\\source_categorisation\\gold_standard\\2026-04-05_round_03",
+  "seed": 20260405,
+  "bucket_quotas": {
+    "conference_edge": 4,
+    "case_group_boundary": 4,
+    "review_lab_edge": 4,
+    "count_ambiguity": 4,
+    "high_confidence_control": 4
+  },
+  "available_bucket_counts": {
+    "conference_edge": 188,
+    "case_group_boundary": 139,
+    "review_lab_edge": 32,
+    "count_ambiguity": 506,
+    "high_confidence_control": 404
+  },
+  "selected_primary_bucket_counts": {
+    "conference_edge": 4,
+    "case_group_boundary": 4,
+    "review_lab_edge": 4,
+    "count_ambiguity": 4,
+    "high_confidence_control": 4
+  },
+  "selected_bucket_counts": {
+    "case_group_boundary": 4,
+    "conference_edge": 4,
+    "count_ambiguity": 4,
+    "high_confidence_control": 4,
+    "review_lab_edge": 4
+  },
+  "selected_category_counts": {
+    "case_series_or_multi_case": 4,
+    "conference_abstract": 4,
+    "interventional_study": 4,
+    "single_case_report": 4,
+    "lab_heavy_clinical_or_translational": 2,
+    "review_article": 2
+  },
+  "selected_count_confidence_counts": {
+    "high": 4,
+    "medium": 13,
+    "low": 3
+  },
+  "selected_rows": [
+    {
+      "paper_id": "131",
+      "title": "Psychiatric consultations in stiff-man syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_large_case_count_for_split; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "693",
+      "title": "Childhood onset of stiff-man syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "975",
+      "title": "Intravenous methylprednisolone or immunoglobulin for anti-glutamic acid decarboxylase 65 antibody autoimmune encephalitis: which is better?.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "3113",
+      "title": "Autologous haematopoietic stem cell transplantation for refractory stiff-person syndrome: the UK experience.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_non_high_confidence; group_boundary_small_or_mid_case_count; group_boundary_patient_labels_present; group_boundary_action=split_cases_then_langextract",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "969",
+      "title": "Novel clinical features of glycine receptor antibody syndrome: A series of 17 cases.",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "980",
+      "title": "An unusual cause of older adult falls: Stiff Leg Syndrome",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "1116",
+      "title": "Paediatric neurological syndromes associated with glycine receptor antibodies",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "1138",
+      "title": "Stiff person syndrome: Review of 14 patients",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_non_high_confidence; conference_using_full_text",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "242",
+      "title": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_non_high_confidence; count_differs_from_patient_labels; count_basis=case_report_marker_single_case",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "711",
+      "title": "Efficacy of therapeutic plasma exchange for treatment of stiff-person syndrome.",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_differs_from_patient_labels",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "11956",
+      "title": "Teaching Video NeuroImage: Hung-Up Reflex in Stiff Limb Syndrome.",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_non_high_confidence",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "12137",
+      "title": "THERAPEUTIC TRIAL OF MILACEMIDE IN PATIENTS WITH MYOCLONUS AND OTHER INTRACTABLE MOVEMENT-DISORDERS",
+      "selection_bucket": "count_ambiguity",
+      "selection_signals": "count_non_high_confidence; count_basis=patient_label_count",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "99",
+      "title": "Improvement of stiff-man syndrome with vigabatrin.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "101",
+      "title": "Progressive encephalomyelitis with rigidity responsive to plasmapheresis and immunosuppression.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "103",
+      "title": "Electrophysiological evaluation of the stiff-man syndrome: further data.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "106",
+      "title": "Subacute encephalomyelitis presenting as stiff-person syndrome: clinical, polygraphic, and pathologic correlations.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "292",
+      "title": "Amphiphysin autoimmunity: paraneoplastic accompaniments.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; non_clinical_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "629",
+      "title": "Anaesthesia for Stiff-Person Syndrome.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "894",
+      "title": "Paraneoplastic Neurological Syndromes and Glutamic Acid Decarboxylase Antibodies.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    },
+    {
+      "paper_id": "1785",
+      "title": "Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "review_lab_non_high_confidence; review_markers_present",
+      "predicted_source_category": "",
+      "predicted_likely_sps_case_count": ""
+    }
+  ]
+}

@@ -146,6 +146,32 @@ class TestExtractableCaseCounts(unittest.TestCase):
         print_report(self.results)
         self.assertGreater(self.results["exact_accuracy"], 0.90)
 
+    def test_lab_heavy_stage_rows_are_zeroed_for_extractable_count(self) -> None:
+        count_mod = _load_module("case_count_module_lab_heavy_zero", CASE_COUNT_SCRIPT)
+        result = count_mod.build_case_count_record(
+            reference_row={
+                "Covidence": "89",
+                "Title": (
+                    "Glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent "
+                    "diabetes mellitus exhibit similarities and differences in epitope recognition."
+                ),
+                "Authors": "Example, E",
+                "Abstract": (
+                    "Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher "
+                    "titer than individuals with IDDM."
+                ),
+            },
+            text_record={"paper_id": "89", "_path": "data/extraction_json/text/89.json"},
+            preferred_record={"pages": [{"text": "These two regions of the GAD 65 protein are similar ..."}]},
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "89.json",
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(result["likely_sps_case_count"], "0")
+        self.assertEqual(result["count_basis"], "lab_context_no_extractable_count")
+
 
 if __name__ == "__main__":
     report = run_case_count_benchmark()

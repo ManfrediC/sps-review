@@ -258,6 +258,16 @@ The canonical routing flow now separates source type from extractable SPS case c
 4. `src/pipelines/06_extract_sps_case_counts.py` estimates extractable SPS case counts using the preferred available text and writes a separate count registry.
 5. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
 
+## Stage-04 gold standard
+
+Manual review rounds for stage 04 live under `qa/validation/source_categorisation/gold_standard/`.
+
+Use this cumulative reviewed file as the canonical gold-standard reference set:
+- `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`
+
+Per-round reviewed snapshots remain in the same folder as:
+- `gold_standard_stage04_<round_id>.csv`
+
 This keeps count heuristics from distorting source categorisation while still preserving a canonical count output for downstream use and auditing.
 
 ---

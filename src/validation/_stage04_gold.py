@@ -27,7 +27,8 @@ ARTIFACT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "paper_artifact_reg
 TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 CASE_REPORT_FORM_CSV = REPO_ROOT / "examples" / "datasheet_examples_MC_Case_Report_Form.csv"
 GOLD_STANDARD_ROOT = REPO_ROOT / "qa" / "validation" / "source_categorisation" / "gold_standard"
-GOLD_MASTER_PATH = GOLD_STANDARD_ROOT / "stage04_gold_standard_master.csv"
+GOLD_MASTER_PATH = GOLD_STANDARD_ROOT / "04_categorisation_gold_standard.csv"
+LEGACY_GOLD_MASTER_PATH = GOLD_STANDARD_ROOT / "stage04_gold_standard_master.csv"
 DEFAULT_SEED = 20260405
 DEFAULT_BUCKET_QUOTAS = {
     "conference_edge": 2,
@@ -220,11 +221,18 @@ def load_gold_round_ids(root: Path = GOLD_STANDARD_ROOT) -> set[str]:
 
 
 def load_gold_master_ids(path: Path = GOLD_MASTER_PATH) -> set[str]:
-    return {
+    ids = {
         (row.get("paper_id") or "").strip()
         for row in load_csv_rows(path)
         if (row.get("paper_id") or "").strip()
     }
+    if path == GOLD_MASTER_PATH:
+        ids.update(
+            (row.get("paper_id") or "").strip()
+            for row in load_csv_rows(LEGACY_GOLD_MASTER_PATH)
+            if (row.get("paper_id") or "").strip()
+        )
+    return ids
 
 
 def load_existing_gold_ids(root: Path = GOLD_STANDARD_ROOT, master_path: Path = GOLD_MASTER_PATH) -> set[str]:
@@ -723,6 +731,8 @@ def write_round_outputs(
 def upsert_gold_master(snapshot_rows: list[dict[str, str]], master_path: Path = GOLD_MASTER_PATH) -> list[dict[str, str]]:
     completed_rows = [row for row in snapshot_rows if (row.get("review_status") or "").strip() == "reviewed"]
     existing_rows = load_csv_rows(master_path)
+    if master_path == GOLD_MASTER_PATH:
+        existing_rows.extend(load_csv_rows(LEGACY_GOLD_MASTER_PATH))
     merged_by_round_and_id: dict[tuple[str, str], dict[str, str]] = {}
     for row in existing_rows:
         key = ((row.get("round_id") or "").strip(), (row.get("paper_id") or "").strip())
@@ -737,6 +747,8 @@ def upsert_gold_master(snapshot_rows: list[dict[str, str]], master_path: Path = 
         key=lambda row: ((row.get("round_id") or "").strip(), parse_int(row.get("paper_id"), default=10**9)),
     )
     write_csv_rows(master_path, merged_rows, gold_fieldnames())
+    if master_path == GOLD_MASTER_PATH:
+        write_csv_rows(LEGACY_GOLD_MASTER_PATH, merged_rows, gold_fieldnames())
     return merged_rows
 
 
