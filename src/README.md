@@ -13,6 +13,7 @@ Validation scripts should write their non-canonical review and audit outputs und
 2. `pipelines/02_build_pdf_source_registry.py`
    - Builds `data/references/pdf_source_registry.csv`.
    - Links each Covidence reference to its downloaded PDF path and download metadata.
+   - Also refreshes `data/references/pdf_acquisition_queue.csv` for the remaining references with no local PDF.
 
 3. `pipelines/03_extract_text.py`
    - Extracts page-level text from the downloaded PDFs.
@@ -27,43 +28,41 @@ Validation scripts should write their non-canonical review and audit outputs und
    - Overwrites the final canonical cleaned JSON in `data/extraction_json/text/{paper_id}.json`.
    - Also owns the reviewed residual rescue path via `--stage2`, using `config/extraction/text_cleanup_stage2_overrides.csv`, `config/extraction/text_cleanup_stage2_substitutions.csv`, and backups in `data/extraction_json/text_preclean_stage2/{paper_id}.json`.
 
-5. `pipelines/03c_clean_text_stage2.py`
-   - Compatibility wrapper only.
-   - Forwards to `pipelines/03b_clean_text.py --stage2` so older commands still work while the canonical cleanup stage remains `03b_clean_text.py`.
-
-6. `pipelines/04_source_categorisation.py`
+5. `pipelines/04_source_categorisation.py`
    - Categorises each source after extraction as single-case, multi-case, group study, conference abstract, review, non-clinical, or manual-review.
    - Prefers trimmed proceedings text when available.
    - Writes `data/references/source_categorisation_registry.csv`.
    - The heuristic output is complemented by a reviewed override ledger in `data/references/source_categorisation_manual_review.csv` for papers that required case-by-case adjudication.
 
-7. `pipelines/05_trim_proceedings_text.py`
+6. `pipelines/05_trim_proceedings_text.py`
    - Detects large proceedings or multi-abstract PDFs.
    - Finds the target abstract/publication by fuzzy title and author matching.
    - Writes focused text records to `data/extraction_json/text_trimmed/{paper_id}.json`.
 
-8. `pipelines/06_validate_proceedings_text.py`
+7. `pipelines/06_validate_proceedings_text.py`
    - Validates proceedings-derived text by searching the extracted text for the target title and author surnames.
    - Confirms whether trimmed proceedings text appears to contain the correct abstract or whether manual follow-up is still needed.
    - Writes `data/references/proceedings_text_qc_registry.csv`.
 
-9. `pipelines/07_split_case_series.py`
+8. `pipelines/07_split_case_series.py`
    - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
    - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
    - Writes `data/references/case_series_split_registry.csv`.
 
-10. `pipelines/09_build_langextract_examples.py`
+9. `pipelines/09_build_langextract_examples.py`
    - Rebuilds the LangExtract few-shot JSONs in `config/prompts/examples/`.
    - Uses curated examples from `examples/` and validates that each prompt example maps back to a real curated row.
 
-11. `pipelines/10_langextract.py`
+10. `pipelines/10_langextract.py`
    - Reads extracted text and runs LangExtract with OpenAI models.
    - Uses reviewed source routing by default.
+   - Explicitly skips records reviewed as `incorrect_reference`.
    - Prefers trimmed proceedings text when available and uses case-series split artifacts for reviewed multi-case papers.
    - Writes raw extractions to `data/extraction_json/langextract/` and summaries to `data/extraction_json/summary/`.
 
-12. `pipelines/11_quality_assessment.py`
+11. `pipelines/11_quality_assessment.py`
    - Reads extracted text and runs publication-type detection plus dictionary-driven quality extraction.
+   - Uses reviewed source routing to exclude records reviewed as `incorrect_reference`.
    - Prefers trimmed proceedings text when available.
    - Writes raw outputs to `data/extraction_json/quality/raw/` and structured records to `data/extraction_json/quality/records/`.
 

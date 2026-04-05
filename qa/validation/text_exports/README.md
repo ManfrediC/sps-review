@@ -27,4 +27,4 @@ These folders are generated views over the canonical JSONs. When the canonical t
   - Review subset for the extraction outputs that still appear genuinely unresolved after QC.
   - This is the main folder to inspect when looking for papers that may need a better source PDF, different extraction route, or manual handling.
 
-Historical snapshot folders may also exist here when an older generated set is preserved for before/after comparison.
+This directory should hold the current live export sets only. Superseded snapshot folders should be archived elsewhere or removed once they are no longer needed.

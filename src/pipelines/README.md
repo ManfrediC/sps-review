@@ -49,6 +49,8 @@ It joins:
 
 The output gives each reference its local PDF filename/path plus a `download_status`.
 
+It also refreshes `data/references/pdf_acquisition_queue.csv`, which is the canonical backlog of references that still do not have a local PDF. The queue currently includes only matched references with no local PDF and a non-terminal `download_status` such as `missing`, `failed`, or `paywalled`.
+
 ### Run
 
 ```bash
@@ -214,10 +216,6 @@ Force a rerun from preserved stage-2 backups:
 python src/pipelines/03b_clean_text.py --stage2 --paper-id 43 --force
 ```
 
-## `03c_clean_text_stage2.py`
-
-This file now exists only as a compatibility wrapper. It forwards its arguments to `03b_clean_text.py --stage2` so older commands still work while the canonical cleanup stage remains `03b_clean_text.py`.
-
 ## `04_source_categorisation.py`
 
 This script classifies each extracted source into a pragmatic downstream category using the reference export, proceedings-trim signals, and preferred text content.
@@ -349,6 +347,8 @@ This script reads text JSON files from `data/extraction_json/text`, applies revi
 - Raw LangExtract entities to `data/extraction_json/langextract/{paper_id}.json`
 - Section summaries + overall summary to `data/extraction_json/summary/{paper_id}.json`
 
+Records reviewed as `incorrect_reference` are explicitly excluded and reported as `skipped_incorrect_reference` in the run summary.
+
 ### Requirements
 
 - `langextract[openai]` installed in your virtual environment
@@ -381,7 +381,9 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 - Raw quality-assessment LangExtract output to `data/extraction_json/quality/raw/{paper_id}.json`
 - Structured quality records to `data/extraction_json/quality/records/{paper_id}.json`
 
+Records reviewed as `incorrect_reference` are explicitly excluded before any downstream model calls.
+
 ## Directory Contents Snapshot
 - Last updated: `2026-04-05`
 - Immediate subdirectories (0): _None_
-- Immediate files (16, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `03c_clean_text_stage2.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+4 more)
+- Immediate files (15, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `06_validate_proceedings_text.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, `12_build_paper_artifact_registry.py`, ... (+3 more)

@@ -14,7 +14,7 @@
 
 ## Pipeline order
 1. `01_download_covidence_pdfs.py` when Covidence acquisition is needed; this also refreshes `02_build_pdf_source_registry.py` and `12_build_paper_artifact_registry.py` unless skipped.
-2. `02_build_pdf_source_registry.py` after new or manually changed PDFs when the PDF-to-reference registry needs rebuilding.
+2. `02_build_pdf_source_registry.py` after new or manually changed PDFs when the PDF-to-reference registry needs rebuilding; this also refreshes the remaining non-downloaded acquisition queue in `data/references/pdf_acquisition_queue.csv`.
 3. `03_extract_text.py`
 4. `03b_clean_text.py` on the reviewed subset of extracted text JSONs listed in `config/extraction/text_cleanup_overrides.csv`; this preserves pre-clean backups in `data/extraction_json/text_preclean/` and overwrites canonical cleaned JSONs in `data/extraction_json/text/`.
 5. `90_screen_text_extraction.py` as an optional screening pass after extraction/cleanup when triaging residual text-quality issues or likely proceedings PDFs.

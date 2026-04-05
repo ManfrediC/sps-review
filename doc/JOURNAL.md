@@ -800,3 +800,59 @@ Folded the residual rescue path into the canonical cleanup stage, labeled the tw
   - `263` as `incorrect_reference`
   - `1841` as `incorrect_reference`
   - stage-2 provenance for `1421`, `6268`, `1598`, `9385`, and `10691`
+
+### Acquisition Queue And Explicit Incorrect-Reference Exclusions
+
+- Extended `src/pipelines/02_build_pdf_source_registry.py` so it now also writes the canonical remaining acquisition queue at `data/references/pdf_acquisition_queue.csv`.
+- The queue is derived directly from the live PDF source registry and currently contains the `12` references with no local PDF:
+  - `7` with `download_status = missing`
+  - `5` with `download_status = failed`
+- Made `incorrect_reference` an explicit downstream routing mode in `src/pipelines/_source_routing.py` rather than letting those rows fall through as generic manual review.
+- Updated downstream AI stages so they now exclude those papers explicitly:
+  - `src/pipelines/10_langextract.py` reports them as `skipped_incorrect_reference`
+  - `src/pipelines/11_quality_assessment.py` reports them as `skipped_incorrect_reference`
+- Verified that the live incorrect-reference rows remain:
+  - `263`
+  - `1841`
+- Verified that no LangExtract or quality-assessment artefacts exist for those two papers.
+
+### Validation
+
+- Re-ran the focused regression suite covering the new queue and routing behaviour:
+  - `python -m unittest tests.test_02_build_pdf_source_registry tests.test_source_routing tests.test_10_langextract tests.test_11_quality_assessment tests.test_12_build_paper_artifact_registry -v`
+- Result:
+  - `14` tests passed
+- Rebuilt the live PDF registry and acquisition queue:
+  - `python src/pipelines/02_build_pdf_source_registry.py`
+- Re-ran downstream dry-run checks for the two reviewed incorrect references:
+  - `python src/pipelines/10_langextract.py --dry-run --paper-id 263 --paper-id 1841`
+  - `python src/pipelines/11_quality_assessment.py --dry-run --paper-id 263 --paper-id 1841`
+- Result:
+  - both stages now skip those records explicitly without writing downstream artefacts
+
+### Repo Cleanup And Archiving
+
+- Removed the obsolete `src/pipelines/03c_clean_text_stage2.py` compatibility wrapper now that `03b_clean_text.py --stage2` is the only supported entry point for residual cleanup.
+- Removed the wrapper-specific test `tests/test_03c_clean_text_stage2.py`.
+- Deleted local source-tree `__pycache__` directories to reduce repository noise.
+- Moved historical non-canonical proceedings trial and spot-check files out of `data/references/` into `qa/validation/archive/data_references_legacy/`:
+  - `proceedings_accuracy_spotcheck_10.csv`
+  - `proceedings_accuracy_spotcheck_10_manual.csv`
+  - `proceedings_accuracy_spotcheck_10_report.txt`
+  - `proceedings_text_qc_registry_trial_2026_03_05_b.csv`
+  - `proceedings_text_qc_registry_trial_index_patch.csv`
+  - `text_trim_registry_trial_2026_03_05_b.csv`
+  - `text_trim_registry_trial_index_patch.csv`
+  - `text_trim_registry_trial_index_patch_single.csv`
+- Removed stale generated snapshot folders from `qa/validation/text_exports/` so that directory now contains only the live current export sets.
+- Updated the README layers so:
+  - `data/references/` is described as canonical live registries only
+  - `qa/validation/archive/` is the home for preserved historical QA artefacts
+  - `03b_clean_text.py` is documented as the sole cleanup entry point
+
+### Validation
+
+- Re-ran the full unittest suite after the cleanup:
+  - `python -m unittest discover -s tests -p "test_*.py" -v`
+- Result:
+  - `55` tests passed

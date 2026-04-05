@@ -12,7 +12,7 @@ Reusable Python library helpers shared across pipeline scripts.
 - `text_cleanup_stage2.py`
   - Shared stage-2 rescue helpers used by `src/pipelines/03b_clean_text.py --stage2`.
   - Handles reviewed source replacement, page-localized `pdftotext` or OCR rescue, and explicit per-paper substitution rules.
-  - Exists so the canonical `03b` stage and the `03c` compatibility wrapper can share the same residual-cleanup logic without drifting.
+  - Exists so the canonical `03b` stage can keep the residual-cleanup logic separate from the deterministic phase-1 helpers.
 
 ## Directory Contents Snapshot
 - Last updated: `2026-04-05`
