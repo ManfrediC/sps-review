@@ -11,6 +11,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from src.pipelines._sps_case_counting import estimate_sps_case_count
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
@@ -19,6 +21,7 @@ TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
+CURRENT_YEAR = datetime.now(timezone.utc).year
 
 NUMBER_WORDS = {
     "one": 1,
@@ -42,6 +45,16 @@ NUMBER_WORDS = {
     "nineteen": 19,
     "twenty": 20,
 }
+TENS_WORDS = {
+    "twenty": 20,
+    "thirty": 30,
+    "forty": 40,
+    "fifty": 50,
+    "sixty": 60,
+    "seventy": 70,
+    "eighty": 80,
+    "ninety": 90,
+}
 
 CONFERENCE_MARKERS = (
     "annual meeting",
@@ -54,6 +67,10 @@ CONFERENCE_MARKERS = (
     "poster session",
     "supplement",
     "symposium",
+    "poster presentation",
+    "oral presentation",
+    "poster number",
+    "abstract number",
 )
 CONFERENCE_METADATA_MARKERS = (
     "conference paper",
@@ -83,6 +100,24 @@ CASE_REPORT_MARKERS = (
     "a patient with",
     "presenting with",
     "new case",
+    "case note",
+    "case vignette",
+    "clinical vignette",
+    "rare case",
+    "unusual case",
+    "unique case",
+    "first case",
+    "novel case",
+)
+# Weaker markers that suggest case-level reporting but can also appear in
+# non-case-report contexts (reviews, group studies, conference summaries).
+WEAK_CASE_MARKERS = (
+    "we report",
+    "we describe",
+    "we present",
+    "is reported",
+    "is described",
+    "is presented",
 )
 MULTI_CASE_MARKERS = (
     "case series",
@@ -150,6 +185,20 @@ LAB_METHOD_MARKERS = (
     "sera from",
     "healthy controls",
 )
+TRANSLATIONAL_CLINICAL_MARKERS = (
+    "elisa",
+    "western blot",
+    "western blots",
+    "serological markers",
+    "serological evaluation",
+    "positive serum",
+    "monoclonal",
+    "epitope specificities",
+    "intrathecal synthesis",
+    "antibody titers",
+    "antibody titres",
+    "glyralpha1",
+)
 ABSTRACT_STRUCTURE_MARKERS = (
     "background",
     "methods",
@@ -166,21 +215,111 @@ SINGULAR_PATIENT_MARKERS = (
     "child with",
     "boy with",
     "girl with",
+    "a woman",
+    "a man",
+    "a boy",
+    "a girl",
+    "one patient",
+    "single patient",
+)
+SPS_CONTEXT_MARKERS = (
+    "stiff person syndrome",
+    "stiff-person syndrome",
+    "stiff man syndrome",
+    "stiff-man syndrome",
+    " stiff person ",
+    " stiff-person ",
+    " stiff man ",
+    " stiff-man ",
+    " sps ",
+    " sms ",
+    " spsd ",
+)
+COUNT_POSITIVE_CONTEXT_MARKERS = (
+    "we identified",
+    "we reviewed",
+    "we examined",
+    "we studied",
+    "we describe",
+    "we described",
+    "we report",
+    "we reported",
+    "our patients",
+    "consecutive patients",
+    "confirmed stiff",
+    "had sps",
+    "with sps",
+    "had sms",
+    "with sms",
+)
+COUNT_NEGATIVE_CONTEXT_MARKERS = (
+    "controls",
+    "control patients",
+    "healthy controls",
+    "healthy individuals",
+    "other diseases",
+    "disease controls",
+    "literature review",
+    "review of the literature",
+    "published references",
+    "published reports",
+    "identified in the literature",
+    "reported from",
+    "prevalence",
+    "confidence interval",
+    "inhab",
+)
+FULL_ARTICLE_HEADER_MARKERS = (
+    "case report",
+    "research open access",
+    "research article",
+    "original article",
+    "original research",
+)
+SUPPLEMENT_REFERENCE_MARKERS = (
+    "supplement",
+    "suppl",
+    "meetingabstracts",
+    "meeting abstracts",
+)
+COUNT_FILLER_PATTERN = r"(?:[a-z][a-z0-9\-/]*\s+)"
+SPS_DIAGNOSIS_PATTERN = (
+    r"(?:stiff person syndrome|stiff-person syndrome|stiff man syndrome|"
+    r"stiff-man syndrome|sps|sms|spsd)"
 )
 
 COUNT_TOKEN_PATTERN = (
     r"(?P<count>\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
-    r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)"
+    r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|"
+    r"twenty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"thirty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"forty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"fifty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"sixty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"seventy(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"eighty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"ninety(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?)"
 )
 COUNT_NOUN_PATTERN = r"(?:patients|patient|cases|case subjects|subjects|women|men|children|people|individuals)"
 PATIENT_COUNT_RE = re.compile(
-    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+(?:[a-z0-9\-/]+\s+){{0,4}}?{COUNT_NOUN_PATTERN}\b",
+    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",
     re.IGNORECASE,
 )
 CONTEXTUAL_PATIENT_COUNT_RE = re.compile(
     rf"\b(?:of|in|among|with|included|including|includes|review of|series of|cohort of|study of|"
     rf"observations in|observed in|our|these|those|following)\s+{COUNT_TOKEN_PATTERN}(?!\s*%)\s+"
-    rf"(?:[a-z0-9\-/]+\s+){{0,4}}?{COUNT_NOUN_PATTERN}\b",
+    rf"{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",
+    re.IGNORECASE,
+)
+SPS_DIRECT_COUNT_RE = re.compile(
+    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,2}}?"
+    rf"(?:had|with|were|diagnosed with|presented with)\s+{COUNT_FILLER_PATTERN}{{0,3}}?"
+    rf"{SPS_DIAGNOSIS_PATTERN}\b",
+    re.IGNORECASE,
+)
+COUNT_RANGE_RE = re.compile(r"\b\d+\s+to\s+\d+\s+(?:percent|cases|patients)\b", re.IGNORECASE)
+TITLE_CASE_COUNT_RE = re.compile(
+    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,2}}?(?:cases|patients)\b",
     re.IGNORECASE,
 )
 PATIENT_LABEL_RE = re.compile(r"\b(?:patient|case)\s*(?:#\s*)?(?:\d+|i|ii|iii|iv|v|vi|vii|viii|ix|x)\b")
@@ -211,6 +350,17 @@ def normalize_text(text: str) -> str:
     ascii_text = ascii_text.lower()
     ascii_text = re.sub(r"[^a-z0-9]+", " ", ascii_text)
     return " ".join(ascii_text.split())
+
+
+def normalize_count_text(text: str) -> str:
+    count_text = unicodedata.normalize("NFKD", text or "")
+    count_text = count_text.encode("ascii", "ignore").decode("ascii")
+    count_text = re.sub(r"\b\d+\.\d+\b", " decimal_number ", count_text)
+    count_text = re.sub(r"\b\d+/\d+\b", " fraction_number ", count_text)
+    count_text = count_text.replace("%", " percent ")
+    count_text = count_text.lower()
+    count_text = re.sub(r"[^a-z0-9]+", " ", count_text)
+    return " ".join(count_text.split())
 
 
 # Load reference rows.
@@ -268,20 +418,67 @@ def count_patient_labels(text: str) -> int:
 
 # Parse count token.
 def parse_count_token(token: str) -> int:
-    stripped = token.strip().lower()
+    stripped = token.strip().lower().replace("-", " ")
     if stripped.isdigit():
         return int(stripped)
-    return NUMBER_WORDS.get(stripped, 0)
+    if stripped in NUMBER_WORDS:
+        return NUMBER_WORDS[stripped]
+    parts = stripped.split()
+    if len(parts) == 2 and parts[0] in TENS_WORDS and parts[1] in NUMBER_WORDS and NUMBER_WORDS[parts[1]] < 10:
+        return TENS_WORDS[parts[0]] + NUMBER_WORDS[parts[1]]
+    return 0
 
 
-# Build likely case count.
-def likely_case_count(raw_text: str) -> int:
-    lower_text = (raw_text or "").lower()
-    counts = [parse_count_token(match.group("count")) for match in CONTEXTUAL_PATIENT_COUNT_RE.finditer(lower_text)]
-    if not counts:
-        counts = [parse_count_token(match.group("count")) for match in PATIENT_COUNT_RE.finditer(lower_text)]
-    counts = [count for count in counts if count > 0]
-    return max(counts) if counts else 0
+def split_text_units(text: str) -> list[str]:
+    return [unit for unit in re.split(r"[.!?;\n]+", text or "") if unit.strip()]
+
+
+def mentions_sps_context(text: str) -> bool:
+    padded = f" {text} "
+    return any(marker in padded for marker in SPS_CONTEXT_MARKERS)
+
+
+def count_sps_mentions(text: str) -> int:
+    return len(re.findall(r"\b(?:stiff person syndrome|stiff man syndrome|sps|sms|spsd)\b", text or ""))
+
+
+def score_count_candidate(
+    unit: str,
+    match: re.Match[str],
+    *,
+    count: int,
+    title_mentions_sps: bool,
+    source_weight: int,
+) -> int:
+    start, end = match.span()
+    window = unit[max(0, start - 48) : min(len(unit), end + 128)]
+    local_window = unit[max(0, start - 24) : min(len(unit), end + 48)]
+    score = source_weight
+    if count >= 1900 and count <= CURRENT_YEAR + 1:
+        score -= 10
+    elif count > 500:
+        score -= 8
+    if title_mentions_sps:
+        score += 1
+    if mentions_sps_context(window):
+        score += 5
+    if any(marker in window for marker in COUNT_POSITIVE_CONTEXT_MARKERS):
+        score += 2
+    if any(marker in window for marker in COUNT_NEGATIVE_CONTEXT_MARKERS):
+        score -= 6
+    if COUNT_RANGE_RE.search(local_window):
+        score -= 6
+    if "percent" in local_window:
+        score -= 6
+    if "percent patients" in local_window or "percent of patients" in local_window:
+        score -= 6
+    if re.search(r"\b(?:igg|igm|iga|nmol|microg|ng|iu|mg|ml)\b", local_window) and "patients" not in match.group(0):
+        score -= 6
+    if re.search(r"\b(?:less than|fewer than|more than|up to|approximately|about)\s+\d+\s+cases?\b", window):
+        score -= 5
+    if re.search(r"\b(?:of|among)\s+\d+\s+patients?\b", window) and not mentions_sps_context(window):
+        score -= 2
+    return score
 
 
 # Parse page span.
@@ -296,6 +493,13 @@ def parse_page_span(pages: str) -> int:
         end = int(match.group("end"))
         if end >= start:
             return (end - start) + 1
+        # Handle abbreviated end pages: "1588-92" means 1588-1592.
+        end_str = match.group("end")
+        start_str = match.group("start")
+        if len(end_str) < len(start_str):
+            expanded_end = int(start_str[: len(start_str) - len(end_str)] + end_str)
+            if expanded_end >= start:
+                return (expanded_end - start) + 1
     single = re.match(r"^[A-Za-z]?(?P<page>\d+)$", normalized)
     if single:
         return 1
@@ -307,7 +511,10 @@ def has_individual_demographic_signal(text: str) -> bool:
     lowered = (text or "").lower()
     if "year old" in lowered:
         return True
-    return bool(re.search(r"\b(?:male|female|man|woman|boy|girl)\b", lowered))
+    return bool(
+        re.search(r"\b(?:a|one)\s+(?:male|female|man|woman|boy|girl)\b", lowered)
+        or re.search(r"\b(?:male|female|man|woman|boy|girl)\s+patient\b", lowered)
+    )
 
 
 # Build record text window.
@@ -345,49 +552,158 @@ def classify_record(
     abstract = (reference_row.get("Abstract") or "").strip()
     authors = (reference_row.get("Authors") or "").strip()
     journal = (reference_row.get("Journal") or "").strip()
+    volume = (reference_row.get("Volume") or "").strip()
+    issue = (reference_row.get("Issue") or "").strip()
     notes = (reference_row.get("Notes") or "").strip()
     tags = (reference_row.get("Tags") or "").strip()
     pages = (reference_row.get("Pages") or "").strip()
+    doi = (reference_row.get("DOI") or "").strip()
     normalized_title = normalize_text(title)
+    title_mentions_sps = mentions_sps_context(normalized_title)
+    normalized_journal = normalize_text(journal)
+    normalized_issue = normalize_text(issue)
+    normalized_doi = normalize_text(doi)
     normalized_tags = normalize_text(tags)
 
     trimmed_used = preferred_path.parent == TEXT_TRIMMED_DIR
-    meta_source_text = " ".join([title, abstract, journal, tags, notes, pages])
+    early_body_text = "\n".join(str(p.get("text") or "") for p in (preferred_record.get("pages") or [])[:3])
+    meta_source_text = " ".join([title, abstract, tags, pages])
     meta_text = normalize_text(meta_source_text)
+    full_text_window = normalize_text(record_text_window(text_record, use_all_pages=False))
     text_window = normalize_text(record_text_window(preferred_record, use_all_pages=trimmed_used))
-    case_signal_text = normalize_text(" ".join([title, leading_text(abstract), leading_text(notes, 400)]))
+    header_text = leading_text(full_text_window, 1500)
+    case_signal_text = normalize_text(" ".join([title, leading_text(abstract)]))
+    # When metadata is sparse, fall back to extracted text for case signal detection.
+    if len(case_signal_text) < 80:
+        early_body = normalize_text(early_body_text)
+        case_signal_text = normalize_text(" ".join([case_signal_text, leading_text(early_body, 1500)]))
     combined = " ".join(part for part in [meta_text, text_window] if part).strip()
 
-    conference_hits = marker_hits(combined, CONFERENCE_MARKERS)
+    conference_hits = marker_hits(meta_text, CONFERENCE_MARKERS)
     conference_metadata_hits = marker_hits(meta_text, CONFERENCE_METADATA_MARKERS)
-    review_hits = marker_hits(combined, REVIEW_MARKERS)
+    header_conference_hits = marker_hits(header_text, CONFERENCE_MARKERS)
+    review_source_text = meta_text if len(meta_text) >= 80 else combined
+    review_hits = marker_hits(review_source_text, REVIEW_MARKERS)
     case_report_hits = marker_hits(case_signal_text, CASE_REPORT_MARKERS)
     multi_case_hits = marker_hits(case_signal_text, MULTI_CASE_MARKERS)
     observational_hits = marker_hits(combined, OBSERVATIONAL_MARKERS)
     interventional_hits = marker_hits(combined, INTERVENTIONAL_MARKERS)
+    # Search metadata first; fall back to combined text for lab markers when
+    # metadata is sparse (many papers lack abstracts in the reference export).
     non_clinical_hits = marker_hits(meta_text, NON_CLINICAL_MARKERS)
     lab_method_hits = marker_hits(meta_text, LAB_METHOD_MARKERS)
+    translational_hits = marker_hits(combined, TRANSLATIONAL_CLINICAL_MARKERS)
+    if len(meta_text) < 120:
+        non_clinical_hits = marker_hits(combined, NON_CLINICAL_MARKERS)
+        lab_method_hits = marker_hits(combined, LAB_METHOD_MARKERS)
     structured_abstract_hits = marker_hits(meta_text, ABSTRACT_STRUCTURE_MARKERS)
     singular_patient_hits = marker_hits(case_signal_text, SINGULAR_PATIENT_MARKERS)
+    weak_case_hits = marker_hits(case_signal_text, WEAK_CASE_MARKERS)
 
-    count_hint = likely_case_count(meta_source_text)
-    patient_label_count = count_patient_labels(text_window)
+    count_estimate = estimate_sps_case_count(
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+    )
+    count_hint = count_estimate.likely_case_count
+    # Restrict patient_label_count to first 3 pages to avoid reference-list labels.
+    early_text_for_labels = normalize_text(early_body_text)
+    patient_label_count = count_patient_labels(early_text_for_labels)
     proceedings_detected = (trim_row.get("proceedings_detected") or "").strip().lower() == "true"
     trim_status = (trim_row.get("trim_status") or "").strip()
     trim_match_score = float((trim_row.get("match_score") or "0").strip() or 0)
     page_span = parse_page_span(pages)
-    conference_like_metadata = (
-        proceedings_detected
-        or bool(conference_metadata_hits)
-        or (page_span and page_span <= 2 and len(structured_abstract_hits) >= 3)
-        or (page_span == 1 and "abstract" in meta_text)
+    abstract_word_count = len(normalize_text(abstract).split())
+    preferred_page_count = int(preferred_record.get("n_pages") or len(preferred_record.get("pages") or []) or 0)
+    full_page_count = int(text_record.get("n_pages") or len(text_record.get("pages") or []) or preferred_page_count or 0)
+    # Detect supplement-style pages (e.g. "S123", "S45-S47").
+    supplement_page = bool(re.match(r"^[Ss]\d+", pages)) if pages else False
+    electronic_single_page = bool(re.match(r"^[Ee]\d+$", pages)) if pages else False
+    supplement_issue = any(marker in normalized_issue for marker in SUPPLEMENT_REFERENCE_MARKERS)
+    conference_doi_signal = "conference" in normalized_doi or "meetingabstracts" in normalized_doi
+    header_only_proceedings = proceedings_detected and trim_status == "header_only_source"
+    short_source_document = 0 < full_page_count <= 2
+    short_abstract_like = 0 < abstract_word_count <= 450
+    short_source_abstract_like = short_source_document and short_abstract_like
+    full_article_header = any(marker in header_text for marker in FULL_ARTICLE_HEADER_MARKERS)
+    explicit_conference_signal = bool(
+        conference_hits
+        or conference_metadata_hits
+        or header_conference_hits
+        or supplement_page
+        or supplement_issue
+        or conference_doi_signal
     )
-    strong_lab_signal = len(non_clinical_hits) >= 2 or len(lab_method_hits) >= 2
+    large_proceedings_volume = proceedings_detected and full_page_count >= 20 and trim_status in {
+        "trimmed_auto",
+        "manual_review_required",
+        "header_only_source",
+    }
+    full_article_veto = full_article_header or (full_page_count >= 4 and not large_proceedings_volume)
+    usable_proceedings_signal = proceedings_detected and not full_article_header and (
+        explicit_conference_signal or short_source_document or large_proceedings_volume
+    )
+    conference_like_metadata = (
+        supplement_page
+        or supplement_issue
+        or conference_doi_signal
+        or bool(conference_hits)
+        or bool(conference_metadata_hits)
+        or bool(header_conference_hits)
+        or (not page_span and short_source_abstract_like and len(structured_abstract_hits) >= 3)
+        or (
+            page_span
+            and page_span <= 2
+            and short_source_abstract_like
+            and len(structured_abstract_hits) >= 3
+            and (explicit_conference_signal or usable_proceedings_signal)
+        )
+        or (electronic_single_page and short_source_abstract_like and (explicit_conference_signal or usable_proceedings_signal))
+        or short_source_abstract_like
+        or (usable_proceedings_signal and short_source_document)
+        or (page_span == 1 and "abstract" in meta_text and short_source_document)
+    )
+    if full_article_veto and not explicit_conference_signal:
+        conference_like_metadata = False
+    sps_focus_count = count_sps_mentions(meta_text)
+    low_sps_focus = not title_mentions_sps and sps_focus_count <= 1
+    strong_translational_signal = len(translational_hits) >= 2
+    strong_lab_signal = len(non_clinical_hits) >= 2 or len(lab_method_hits) >= 2 or strong_translational_signal
+    original_study_signal = bool(
+        structured_abstract_hits
+        or observational_hits
+        or interventional_hits
+        or lab_method_hits
+        or patient_label_count > 0
+    )
 
-    demographic_single_case = has_individual_demographic_signal(case_signal_text)
+    # Check demographic signal in both metadata and extracted text.
+    demographic_single_case = (
+        has_individual_demographic_signal(case_signal_text)
+        or has_individual_demographic_signal(early_text_for_labels)
+    )
     explicit_single_case = bool(case_report_hits or singular_patient_hits or demographic_single_case)
     title_case_count_signal = bool(re.search(r"\b(?:two|three|four|five|six|seven|eight|nine|ten|\d+)\s+cases\b", normalized_title))
-    explicit_multi_case = bool("case series" in multi_case_hits or patient_label_count >= 2 or title_case_count_signal)
+    quantified_multi_case_signal = bool(
+        count_hint >= 2
+        and count_estimate.count_confidence in {"high", "medium"}
+        and count_estimate.count_basis in {"title_count_signal", "abstract_count_signal"}
+    )
+    quantified_large_group_signal = quantified_multi_case_signal and count_hint >= 12
+    explicit_multi_case = bool(
+        "case series" in multi_case_hits
+        or patient_label_count >= 2
+        or title_case_count_signal
+        or quantified_multi_case_signal
+    )
+    strong_original_cohort_signal = (
+        title_mentions_sps and (
+            bool(observational_hits) or explicit_multi_case or len(structured_abstract_hits) >= 2
+        )
+    ) or (
+        strong_translational_signal and quantified_multi_case_signal
+    )
+    broad_review_shape = bool(review_hits) and not title_mentions_sps and not explicit_single_case and not explicit_multi_case
 
     scores = {
         "conference_abstract": 0.0,
@@ -403,57 +719,98 @@ def classify_record(
 
     scores["conference_abstract"] += len(conference_hits) * 1.2
     scores["conference_abstract"] += len(conference_metadata_hits) * 1.2
+    scores["conference_abstract"] += len(header_conference_hits) * 1.4
+    if supplement_page:
+        scores["conference_abstract"] += 2.5
+    if supplement_issue:
+        scores["conference_abstract"] += 2.5
+    if conference_doi_signal:
+        scores["conference_abstract"] += 3.0
+    if electronic_single_page and short_source_abstract_like and not full_article_header:
+        scores["conference_abstract"] += 1.0
     if len(structured_abstract_hits) >= 3 and page_span and page_span <= 2:
         scores["conference_abstract"] += 3.0
+    if not page_span and full_page_count == 1 and short_abstract_like and len(structured_abstract_hits) >= 3:
+        scores["conference_abstract"] += 2.5
+    if short_source_abstract_like and not full_article_header:
+        scores["conference_abstract"] += 1.8
     if conference_like_metadata:
         scores["conference_abstract"] += 2.0
-    if proceedings_detected:
-        scores["conference_abstract"] += 3.0
-    if trim_status == "trimmed_auto":
+    if usable_proceedings_signal:
+        scores["conference_abstract"] += 2.0
+    if trim_status == "trimmed_auto" and usable_proceedings_signal:
         scores["conference_abstract"] += 1.0
-    if trim_status == "manual_review_required":
+    if trim_status == "manual_review_required" and usable_proceedings_signal:
         scores["conference_abstract"] += 1.5
+    if full_article_veto and not explicit_conference_signal:
+        scores["conference_abstract"] -= 4.0
+    if header_only_proceedings and full_page_count > 3:
+        scores["conference_abstract"] -= 3.0
+    if header_only_proceedings and short_source_document:
+        scores["conference_abstract"] += 2.0
 
-    if not explicit_single_case and not explicit_multi_case and count_hint == 0:
+    # Only suppress review scoring when there are strong case markers (not just
+    # weak ones like "we present") and the paper clearly describes individual cases.
+    strong_case_signal = bool(case_report_hits or singular_patient_hits)
+    if not (strong_case_signal and not explicit_multi_case):
         scores["review_article"] += len(review_hits) * 1.8
-        if "review article" in normalized_tags:
-            scores["review_article"] += 2.5
+    if "review article" in normalized_tags:
+        scores["review_article"] += 0.5 if original_study_signal else 2.5
+    if original_study_signal:
+        scores["review_article"] -= 1.0
+    if review_hits and low_sps_focus and not conference_like_metadata:
+        scores["review_article"] += 2.5
+        scores["case_series_or_multi_case"] -= 1.0
+        scores["lab_heavy_clinical_or_translational"] -= 1.0
+        scores["observational_group_study"] -= 1.0
 
     if explicit_single_case:
         scores["single_case_report"] += 2.5
-    if explicit_single_case and not explicit_multi_case and count_hint <= 1:
+    if explicit_single_case and not explicit_multi_case:
         scores["single_case_report"] += 1.5
-    if count_hint == 1:
-        scores["single_case_report"] += 2.0
     scores["single_case_report"] += len(case_report_hits) * 1.5
     scores["single_case_report"] += len(singular_patient_hits) * 0.5
+    if strong_translational_signal and case_report_hits == ["a patient with"] and not demographic_single_case:
+        scores["single_case_report"] -= 2.5
+    # Weak case markers contribute less; suppressed when conference-like metadata is present.
+    if not conference_like_metadata:
+        scores["single_case_report"] += len(weak_case_hits) * 0.5
+    # Short papers (1-3 pages) that are not conference-like are likely case reports.
+    if page_span and 1 <= page_span <= 3 and not conference_like_metadata:
+        scores["single_case_report"] += 1.0
 
     if explicit_multi_case:
         scores["case_series_or_multi_case"] += 2.5
-    if 2 <= count_hint <= 10:
-        scores["case_series_or_multi_case"] += 2.0
+    if quantified_multi_case_signal and not observational_hits and not quantified_large_group_signal:
+        scores["case_series_or_multi_case"] += 1.5
+    if quantified_large_group_signal and patient_label_count < 2 and "case series" not in multi_case_hits:
+        scores["case_series_or_multi_case"] -= 1.5
     if patient_label_count >= 2:
         scores["case_series_or_multi_case"] += 2.0
     scores["case_series_or_multi_case"] += len(multi_case_hits) * 1.2
 
-    if count_hint > 10:
-        scores["observational_group_study"] += 2.5
     scores["observational_group_study"] += len(observational_hits) * 1.4
+    if observational_hits and not explicit_single_case:
+        scores["observational_group_study"] += 1.8
+    if quantified_multi_case_signal and (observational_hits or len(structured_abstract_hits) >= 2):
+        scores["observational_group_study"] += 1.5
+    if quantified_large_group_signal and patient_label_count < 2:
+        scores["observational_group_study"] += 2.0
     if "patients with" in multi_case_hits:
         scores["observational_group_study"] += 0.8
 
-    if interventional_hits and (count_hint > 1 or observational_hits or "controlled study" in interventional_hits):
+    if interventional_hits and (observational_hits or explicit_multi_case or "controlled study" in interventional_hits):
         scores["interventional_study"] += len(interventional_hits) * 1.6
 
     has_clinical_signal = (
         explicit_single_case
         or explicit_multi_case
-        or count_hint > 0
         or bool(observational_hits)
         or bool(interventional_hits)
     )
     scores["lab_heavy_clinical_or_translational"] += len(non_clinical_hits) * 1.0
     scores["lab_heavy_clinical_or_translational"] += len(lab_method_hits) * 1.6
+    scores["lab_heavy_clinical_or_translational"] += len(translational_hits) * 1.3
     scores["non_clinical_basic_science"] += len(non_clinical_hits) * 1.8
     scores["non_clinical_basic_science"] += len(lab_method_hits) * 1.2
     if strong_lab_signal:
@@ -461,8 +818,12 @@ def classify_record(
         scores["non_clinical_basic_science"] += 1.0
     if not has_clinical_signal:
         scores["non_clinical_basic_science"] += 2.0
-    if count_hint >= 2 or observational_hits or "patients with" in multi_case_hits:
+    if observational_hits or "patients with" in multi_case_hits or explicit_multi_case:
         scores["lab_heavy_clinical_or_translational"] += 2.0
+    if translational_hits and (observational_hits or explicit_multi_case):
+        scores["lab_heavy_clinical_or_translational"] += 2.0
+    if strong_translational_signal and quantified_multi_case_signal:
+        scores["lab_heavy_clinical_or_translational"] += 1.5
     if conference_like_metadata and strong_lab_signal:
         scores["lab_heavy_clinical_or_translational"] += 1.0
 
@@ -482,22 +843,31 @@ def classify_record(
     langextract_eligible = False
     recommended_next_action = "manual_source_review"
 
-    if proceedings_detected and trim_status == "manual_review_required":
+    if usable_proceedings_signal and trim_status == "manual_review_required":
         category = "conference_abstract"
         subtype = "proceedings_manual_review"
         manual_review_required = True
         preferred_langextract_mode = "manual_review"
         recommended_next_action = "trim_or_review_proceedings"
-    elif "review article" in normalized_tags:
+    elif broad_review_shape or (
+        scores["review_article"] >= 3.0
+        and (
+            (low_sps_focus and not (strong_translational_signal and quantified_multi_case_signal))
+            or (not strong_case_signal and not strong_original_cohort_signal)
+        )
+    ):
         category = "review_article"
-        subtype = "tagged_review_article"
+        subtype = "tagged_review_article" if "review article" in normalized_tags else "narrative_or_systematic_review"
         preferred_langextract_mode = "skip"
         recommended_next_action = "skip_langextract"
-    elif scores["review_article"] >= 3.0 and not explicit_single_case:
-        category = "review_article"
-        subtype = "narrative_or_systematic_review"
-        preferred_langextract_mode = "skip"
-        recommended_next_action = "skip_langextract"
+    elif header_only_proceedings and short_source_document and not abstract.strip():
+        category = "conference_abstract"
+        subtype = "group_conference_abstract"
+        contains_group = True
+        manual_review_required = True
+        preferred_langextract_mode = "manual_review"
+        langextract_eligible = False
+        recommended_next_action = "trim_or_review_proceedings"
     elif scores["conference_abstract"] >= 3.0:
         category = "conference_abstract"
         if explicit_multi_case:
@@ -508,7 +878,7 @@ def classify_record(
             preferred_langextract_mode = "individual_and_group"
             langextract_eligible = True
             recommended_next_action = "split_cases_then_langextract"
-        elif explicit_single_case or count_hint == 1:
+        elif explicit_single_case:
             subtype = "single_case_conference_abstract"
             contains_individual = True
             preferred_langextract_mode = "individual"
@@ -525,7 +895,11 @@ def classify_record(
                 preferred_langextract_mode = "manual_review"
                 langextract_eligible = False
                 recommended_next_action = "trim_or_review_proceedings"
-    elif explicit_single_case and not explicit_multi_case and count_hint <= 1:
+    elif (
+        explicit_single_case
+        and not explicit_multi_case
+        and not (strong_translational_signal and case_report_hits == ["a patient with"] and not demographic_single_case)
+    ):
         category = "single_case_report"
         subtype = "case_report"
         contains_individual = True
@@ -535,7 +909,7 @@ def classify_record(
     elif (
         scores["lab_heavy_clinical_or_translational"] >= 5.0
         and strong_lab_signal
-        and (count_hint >= 2 or observational_hits or "patients with" in multi_case_hits)
+        and (observational_hits or "patients with" in multi_case_hits or explicit_multi_case or strong_translational_signal)
     ):
         category = "lab_heavy_clinical_or_translational"
         subtype = "group_or_frequency_focused_lab_clinical_study"
@@ -573,7 +947,7 @@ def classify_record(
         preferred_langextract_mode = "group"
         langextract_eligible = True
         recommended_next_action = "run_langextract_group"
-    elif scores["single_case_report"] >= 2.5:
+    elif scores["single_case_report"] >= 2.0:
         category = "single_case_report"
         subtype = "case_report"
         contains_individual = True
@@ -627,10 +1001,20 @@ def classify_record(
         reasons.append(f"non_clinical_markers={'; '.join(non_clinical_hits[:3])}")
     if lab_method_hits:
         reasons.append(f"lab_method_markers={'; '.join(lab_method_hits[:3])}")
+    if translational_hits:
+        reasons.append(f"translational_markers={'; '.join(translational_hits[:3])}")
     if conference_hits:
         reasons.append(f"conference_markers={'; '.join(conference_hits[:3])}")
     if conference_metadata_hits:
         reasons.append(f"conference_metadata_markers={'; '.join(conference_metadata_hits[:3])}")
+    if header_conference_hits:
+        reasons.append(f"header_conference_markers={'; '.join(header_conference_hits[:3])}")
+    if supplement_issue:
+        reasons.append("supplement_issue=true")
+    if conference_doi_signal:
+        reasons.append("conference_doi=true")
+    if electronic_single_page:
+        reasons.append("electronic_single_page=true")
     if structured_abstract_hits:
         reasons.append(f"structured_abstract_markers={'; '.join(structured_abstract_hits[:4])}")
     if count_hint:
@@ -639,6 +1023,8 @@ def classify_record(
         reasons.append(f"patient_label_count={patient_label_count}")
     if page_span:
         reasons.append(f"page_span={page_span}")
+    if full_page_count:
+        reasons.append(f"full_page_count={full_page_count}")
     if demographic_single_case:
         reasons.append("individual_demographic_signal=true")
 
@@ -674,9 +1060,10 @@ def classify_record(
         "observational_marker_hits": str(len(observational_hits)),
         "interventional_marker_hits": str(len(interventional_hits)),
         "non_clinical_marker_hits": str(len(non_clinical_hits)),
+        "translational_marker_hits": str(len(translational_hits)),
         "patient_label_count": str(patient_label_count),
         "categorisation_reason": " | ".join(reasons),
-        "categorisation_version": "heuristic_v1",
+        "categorisation_version": "heuristic_v2",
         "categorised_at_utc": now_utc_iso(),
     }
 
@@ -715,6 +1102,7 @@ def write_rows(rows: list[dict[str, str]], output_path: Path) -> None:
         "observational_marker_hits",
         "interventional_marker_hits",
         "non_clinical_marker_hits",
+        "translational_marker_hits",
         "patient_label_count",
         "categorisation_reason",
         "categorisation_version",

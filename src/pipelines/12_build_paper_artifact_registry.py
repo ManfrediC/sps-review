@@ -24,6 +24,7 @@ QUALITY_RECORD_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "recor
 COVIENCE_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
+SOURCE_CASE_COUNT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_registry.csv"
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 PROCEEDINGS_QC_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 CASE_SERIES_SPLIT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "case_series_split_registry.csv"
@@ -164,6 +165,7 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "text_preclean_stage2": row["text_preclean_stage2_json_present"] == "true",
         "text_trimmed": row["text_trimmed_present"] == "true",
         "source_categorisation": row["source_categorisation_present"] == "true",
+        "source_sps_case_count": row["source_case_count_present"] == "true",
         "proceedings_qc": row["proceedings_qc_present"] == "true",
         "case_series_split": row["case_series_split_present"] == "true",
         "langextract": row["langextract_raw_present"] == "true",
@@ -199,6 +201,7 @@ def build_row(
     text_trim_path: Path | None,
     text_trim_registry_row: dict[str, str],
     source_categorisation_row: dict[str, str],
+    source_case_count_row: dict[str, str],
     source_manual_review_row: dict[str, str],
     proceedings_qc_row: dict[str, str],
     case_series_split_row: dict[str, str],
@@ -322,6 +325,17 @@ def build_row(
         "source_subtype": str(source_categorisation_row.get("source_subtype") or ""),
         "source_classification_confidence": str(source_categorisation_row.get("classification_confidence") or ""),
         "source_likely_case_count": str(source_categorisation_row.get("likely_case_count") or ""),
+        "source_case_count_present": bool_text(bool(source_case_count_row)),
+        "source_count_eligible": str(source_case_count_row.get("count_eligible") or ""),
+        "source_likely_sps_case_count": str(source_case_count_row.get("likely_sps_case_count") or ""),
+        "source_count_confidence": str(source_case_count_row.get("count_confidence") or ""),
+        "source_count_basis": str(source_case_count_row.get("count_basis") or ""),
+        "source_count_manual_review_required": str(
+            source_case_count_row.get("count_manual_review_required") or ""
+        ),
+        "source_count_reason": str(source_case_count_row.get("count_reason") or ""),
+        "source_count_version": str(source_case_count_row.get("count_version") or ""),
+        "source_counted_at_utc": str(source_case_count_row.get("counted_at_utc") or ""),
         "source_contains_individual_level_data": str(source_categorisation_row.get("contains_individual_level_data") or ""),
         "source_contains_group_level_data": str(source_categorisation_row.get("contains_group_level_data") or ""),
         "source_case_series_split_candidate": str(source_categorisation_row.get("case_series_split_candidate") or ""),
@@ -402,6 +416,7 @@ def build_registry_rows() -> list[dict[str, str]]:
     case_series_split_paths = load_json_paths(CASE_SERIES_SPLIT_DIR)
     text_trim_registry_rows = load_csv_rows_by_id(TEXT_TRIM_REGISTRY_PATH, "paper_id")
     source_categorisation_rows = load_csv_rows_by_id(SOURCE_CATEGORISATION_PATH, "paper_id")
+    source_case_count_rows = load_csv_rows_by_id(SOURCE_CASE_COUNT_PATH, "paper_id")
     source_manual_review_rows = load_csv_rows_by_id(SOURCE_MANUAL_REVIEW_PATH, "paper_id")
     proceedings_qc_rows = load_csv_rows_by_id(PROCEEDINGS_QC_PATH, "paper_id")
     case_series_split_rows = load_csv_rows_by_id(CASE_SERIES_SPLIT_REGISTRY_PATH, "paper_id")
@@ -421,6 +436,7 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(case_series_split_paths)
         | set(text_trim_registry_rows)
         | set(source_categorisation_rows)
+        | set(source_case_count_rows)
         | set(source_manual_review_rows)
         | set(proceedings_qc_rows)
         | set(case_series_split_rows)
@@ -454,6 +470,7 @@ def build_registry_rows() -> list[dict[str, str]]:
                 text_trim_path=text_trim_path,
                 text_trim_registry_row=text_trim_registry_rows.get(paper_id, {}),
                 source_categorisation_row=source_categorisation_rows.get(paper_id, {}),
+                source_case_count_row=source_case_count_rows.get(paper_id, {}),
                 source_manual_review_row=source_manual_review_rows.get(paper_id, {}),
                 proceedings_qc_row=proceedings_qc_rows.get(paper_id, {}),
                 case_series_split_row=case_series_split_rows.get(paper_id, {}),
@@ -560,6 +577,15 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "source_subtype",
         "source_classification_confidence",
         "source_likely_case_count",
+        "source_case_count_present",
+        "source_count_eligible",
+        "source_likely_sps_case_count",
+        "source_count_confidence",
+        "source_count_basis",
+        "source_count_manual_review_required",
+        "source_count_reason",
+        "source_count_version",
+        "source_counted_at_utc",
         "source_contains_individual_level_data",
         "source_contains_group_level_data",
         "source_case_series_split_candidate",

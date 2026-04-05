@@ -97,6 +97,16 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
             text_trim_path=None,
             text_trim_registry_row={},
             source_categorisation_row={},
+            source_case_count_row={
+                "count_eligible": "true",
+                "likely_sps_case_count": "2",
+                "count_confidence": "medium",
+                "count_basis": "abstract_count_signal",
+                "count_manual_review_required": "false",
+                "count_reason": "count_basis=abstract_count_signal | count_confidence=medium",
+                "count_version": "heuristic_v1",
+                "counted_at_utc": "2026-04-05T12:00:00+00:00",
+            },
             source_manual_review_row={},
             proceedings_qc_row={},
             case_series_split_row={},
@@ -128,8 +138,12 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertEqual(row["text_cleanup_stage2_source_page_start"], "2")
         self.assertEqual(row["text_cleanup_stage2_source_page_end"], "4")
         self.assertEqual(row["text_cleanup_stage2_ocr_psm"], "3")
+        self.assertEqual(row["source_case_count_present"], "true")
+        self.assertEqual(row["source_likely_sps_case_count"], "2")
+        self.assertEqual(row["source_count_confidence"], "medium")
         self.assertIn("text_preclean", row["artifact_types_present"])
         self.assertIn("text_preclean_stage2", row["artifact_types_present"])
+        self.assertIn("source_sps_case_count", row["artifact_types_present"])
 
         module.write_registry([row], self.output_path)
 
@@ -144,8 +158,11 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertIn("text_cleanup_applied", reader.fieldnames or [])
         self.assertIn("text_cleanup_stage2_applied", reader.fieldnames or [])
         self.assertIn("text_cleanup_source_strategy", reader.fieldnames or [])
+        self.assertIn("source_case_count_present", reader.fieldnames or [])
+        self.assertIn("source_likely_sps_case_count", reader.fieldnames or [])
         self.assertEqual(written_row["text_cleanup_profile"], "basic_spacing")
         self.assertEqual(written_row["text_cleanup_stage2_profile"], "combined_basic")
+        self.assertEqual(written_row["source_count_basis"], "abstract_count_signal")
 
 
 if __name__ == "__main__":
