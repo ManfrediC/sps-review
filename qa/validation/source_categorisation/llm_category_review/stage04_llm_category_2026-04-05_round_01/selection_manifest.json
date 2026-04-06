@@ -1,0 +1,124 @@
+{
+  "generated_at_utc": "2026-04-05T16:59:46.895829+00:00",
+  "round_id": "stage04_llm_category_2026-04-05_round_01",
+  "round_dir": "qa\\validation\\source_categorisation\\llm_category_review\\stage04_llm_category_2026-04-05_round_01",
+  "source_registry_path": "results\\source_categorisation_llm\\source_categorisation_registry_stage04_llm_category_2026-04-05_round_01.csv",
+  "seed": 20260405,
+  "bucket_quotas": {
+    "conference_edge": 3,
+    "case_group_boundary": 3,
+    "review_lab_edge": 2,
+    "high_confidence_control": 2
+  },
+  "available_bucket_counts": {
+    "conference_edge": 2,
+    "case_group_boundary": 4,
+    "review_lab_edge": 1,
+    "high_confidence_control": 7
+  },
+  "selected_primary_bucket_counts": {
+    "conference_edge": 2,
+    "case_group_boundary": 3,
+    "review_lab_edge": 0,
+    "high_confidence_control": 2
+  },
+  "selected_bucket_counts": {
+    "case_group_boundary": 3,
+    "case_group_boundary_overflow": 1,
+    "conference_edge": 2,
+    "high_confidence_control": 2,
+    "high_confidence_control_overflow": 2
+  },
+  "selected_category_counts": {
+    "observational_group_study": 1,
+    "case_series_or_multi_case": 2,
+    "lab_heavy_clinical_or_translational": 1,
+    "conference_abstract": 2,
+    "single_case_report": 4
+  },
+  "selected_confidence_counts": {
+    "high": 10
+  },
+  "selected_rows": [
+    {
+      "paper_id": "209",
+      "title": "Cerebellar ataxia with anti-glutamic acid decarboxylase antibodies: study of 14 patients.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=observational_group_study; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "observational_group_study",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "256",
+      "title": "Stiff person syndrome does not always occur with maternal passive transfer of GAD65 antibodies.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "258",
+      "title": "Anti-glutamic acid decarboxylase antibodies in the serum and cerebrospinal fluid of patients with stiff-person syndrome: correlation with clinical severity.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=lab_heavy_clinical_or_translational; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "lab_heavy_clinical_or_translational",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "273",
+      "title": "Stiff person syndrome does not always occur with maternal passive transfer of GAD65 antibodies.",
+      "selection_bucket": "case_group_boundary_overflow",
+      "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "1153",
+      "title": "A new clinical tool (BRIT) to monitor IVIg efficacy in patients with stiff person syndrome",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_predicted; conference_using_full_text; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "conference_abstract",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "1343",
+      "title": "Case control analysis of glycine receptor autoimmunity",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_predicted; conference_using_full_text; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "conference_abstract",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "110",
+      "title": "Stiff-man syndrome: abnormal late responses upon transcranial magnetic stimulation.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "112",
+      "title": "Anti-gabaergic neuron autoantibodies in a patient with stiff-man syndrome and ataxia.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "1959",
+      "title": "Levodopa-responsive progressive encephalomyelitis with rigidity and myoclonus associated with glycine receptor antibodies",
+      "selection_bucket": "high_confidence_control_overflow",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high"
+    },
+    {
+      "paper_id": "11803",
+      "title": "Perm syndrome: A potential mimic of glycine antagonist poisoning",
+      "selection_bucket": "high_confidence_control_overflow",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high"
+    }
+  ]
+}

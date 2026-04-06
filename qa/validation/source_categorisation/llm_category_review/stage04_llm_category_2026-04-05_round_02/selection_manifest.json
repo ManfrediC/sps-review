@@ -1,0 +1,245 @@
+{
+  "generated_at_utc": "2026-04-05T18:08:40.066047+00:00",
+  "round_id": "stage04_llm_category_2026-04-05_round_02",
+  "round_dir": "qa\\validation\\source_categorisation\\llm_category_review\\stage04_llm_category_2026-04-05_round_02",
+  "source_registry_path": "results\\source_categorisation_llm\\source_categorisation_registry_stage04_llm_category_2026-04-05_round_02.csv",
+  "seed": 20260405,
+  "bucket_quotas": {
+    "conference_edge": 6,
+    "case_group_boundary": 6,
+    "review_lab_edge": 4,
+    "high_confidence_control": 4
+  },
+  "available_bucket_counts": {
+    "conference_edge": 6,
+    "case_group_boundary": 10,
+    "review_lab_edge": 5,
+    "high_confidence_control": 11
+  },
+  "selected_primary_bucket_counts": {
+    "conference_edge": 6,
+    "case_group_boundary": 6,
+    "review_lab_edge": 2,
+    "high_confidence_control": 4
+  },
+  "selected_bucket_counts": {
+    "case_group_boundary": 6,
+    "conference_edge": 6,
+    "high_confidence_control": 4,
+    "high_confidence_control_overflow": 2,
+    "review_lab_edge": 2
+  },
+  "selected_category_counts": {
+    "case_series_or_multi_case": 3,
+    "lab_heavy_clinical_or_translational": 5,
+    "observational_group_study": 2,
+    "single_case_report": 7,
+    "conference_abstract": 3
+  },
+  "selected_confidence_counts": {
+    "high": 18,
+    "medium": 2
+  },
+  "selected_rows": [
+    {
+      "paper_id": "23",
+      "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "2",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "30",
+      "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "3",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "642",
+      "title": "Increased brainstem excitability in stiff-person syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=lab_heavy_clinical_or_translational; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "lab_heavy_clinical_or_translational",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "5",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "685",
+      "title": "Neuronal surface and glutamic acid decarboxylase autoantibodies in Nonparaneoplastic stiff person syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=lab_heavy_clinical_or_translational; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "lab_heavy_clinical_or_translational",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "25",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "825",
+      "title": "Practical issues in measuring autoantibodies to neuronal cell-surface antigens in autoimmune neurological disorders: 190 cases.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=observational_group_study; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "observational_group_study",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "18",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "11914",
+      "title": "Long-term Effectiveness of IVIg Maintenance Therapy in 36 Patients With GAD Antibody-Positive Stiff-Person Syndrome.",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=observational_group_study; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "observational_group_study",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "36",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "187",
+      "title": "Long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin.",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_proceedings_detected; non_conference_trim_status=trimmed_auto; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "1453",
+      "title": "Stiff person syndrome without axial stiffness or hyperekplexia: A case report",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_predicted; conference_using_full_text; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "conference_abstract",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "1540",
+      "title": "Multiplex family with GAD65-Abs neurologic syndromes",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_proceedings_detected; non_conference_trim_status=manual_review_required; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_confidence": "medium",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "1598",
+      "title": "Coexistence of neuromyelitis optica and stiff person syndrome in a single patient: A case report",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_predicted; conference_non_high_confidence; conference_manual_review_required; conference_using_full_text; conference_trim_status=manual_review_required; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "conference_abstract",
+      "predicted_confidence": "medium",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "1662",
+      "title": "Progressive encephalomyelitis with rigidity and myoclonus with antibodies to glycine receptor presenting with temporomandibular joint dislocation",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "conference_predicted; conference_trim_status=header_only_source; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "conference_abstract",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "1805",
+      "title": "Possible link of genetic variants to autoimmunity in GAD-antibody-associated neurological disorders",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_proceedings_detected; non_conference_trim_status=trimmed_auto; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "lab_heavy_clinical_or_translational",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "4",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "75",
+      "title": "Stiff-man syndrome: case report.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "115",
+      "title": "Improvement of stiff-man syndrome with vigabatrin.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "118",
+      "title": "Stiff-persons' syndrome associated with thymoma and subsequent myasthenia gravis.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "173",
+      "title": "Immune-mediated retinopathy in a patient with stiff-man syndrome.",
+      "selection_bucket": "high_confidence_control",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "427",
+      "title": "Stiff person syndrome and motor mononeuropathy with conduction block: a singular association.",
+      "selection_bucket": "high_confidence_control_overflow",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "640",
+      "title": "Pathological evidence of encephalomyelitis in the stiff man syndrome with anti-GAD antibodies.",
+      "selection_bucket": "high_confidence_control_overflow",
+      "selection_signals": "high_confidence_control; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "single_case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high"
+    },
+    {
+      "paper_id": "270",
+      "title": "Markedly elevated GAD antibodies in SPS: effects of age and illness duration.",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "lab_text_present; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "lab_heavy_clinical_or_translational",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "576",
+      "predicted_count_confidence": "medium"
+    },
+    {
+      "paper_id": "13206",
+      "title": "GAD AUTOANTIBODIES IN IDDM, STIFF-MAN SYNDROME, AND AUTOIMMUNE POLYENDOCRINE SYNDROME TYPE-I RECOGNIZE DIFFERENT EPITOPES",
+      "selection_bucket": "review_lab_edge",
+      "selection_signals": "lab_text_present; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "predicted_source_category": "lab_heavy_clinical_or_translational",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "4",
+      "predicted_count_confidence": "high"
+    }
+  ]
+}
