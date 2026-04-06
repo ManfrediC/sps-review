@@ -28,7 +28,7 @@ This repository aims to provide a reproducible workflow that shifts effort from 
   Reviewer workbook(s) *(not committed)*
 
 - `src/pipelines/`  
-  Pipeline scripts *(download -> extract -> clean -> route -> downstream extraction)*
+  Pipeline scripts *(download -> extract -> clean -> route -> proceedings trim/QC -> downstream extraction)*
 
 - `config/`  
   Schema + data dictionary + colour map

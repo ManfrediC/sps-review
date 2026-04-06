@@ -1019,3 +1019,77 @@ Added a reproducible gold-standard review workflow for source categorisation and
   - `ba30d98` `Calibrate stage 04 against round 02 gold review`
   - `689e0b2` `Add reviewed round 03 gold categorisation labels`
   - `b63601c` `Calibrate stage 04 and 06 against round 03 gold review`
+
+## 06.04.2026
+
+Refactored proceedings trimming and proceedings QC around explicit header-pattern detection, added boundary-aware regression coverage, and regenerated the canonical stage-`05` artefacts.
+
+### Proceedings trimming refactor
+
+- Added shared proceedings helpers in:
+  - `src/pipelines/_proceedings_text.py`
+- Refactored:
+  - `src/pipelines/05_trim_proceedings_text.py`
+  - `src/pipelines/05b_validate_proceedings_text.py`
+- Main behaviour changes:
+  - infer the local proceedings header pattern before localisation
+  - support uncoded title-style and uppercase proceedings headers in addition to code-prefixed abstracts
+  - trim from the matched source header to the next detected header/delimiter rather than relying on title similarity alone for the end boundary
+  - carry start/end global line anchors into trimmed proceedings JSONs and the trim registry
+  - validate trimmed proceedings text against the full source span so QC can detect:
+    - clean full matches
+    - early truncation before the next header
+    - spillover into the neighbouring abstract
+    - header-only listings
+
+### Test and documentation updates
+
+- Expanded `tests/test_05_trim_proceedings_text.py` with fixture-driven checks for:
+  - uncoded uppercase header detection
+  - next-header stopping
+  - header-only listings
+- Added `tests/test_05b_validate_proceedings_text.py` for segmentation-aware proceedings QC.
+- Updated README layers in:
+  - `README.md`
+  - `src/pipelines/README.md`
+  - `qa/validation/README.md`
+  - `data/references/README.md`
+
+### Validation
+
+- Ran focused automated checks:
+  - `python -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py`
+  - `python -m ruff check src/pipelines/_proceedings_text.py src/pipelines/05_trim_proceedings_text.py src/pipelines/05b_validate_proceedings_text.py tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py`
+- Built a small real-data validation pack under:
+  - `qa/validation/proceedings_stage05_2026-04-06/`
+- Subset outcomes:
+  - `1229`: `confirmed_full`
+  - `12807`: `header_only_source`
+  - `1605`: `confirmed_full`
+  - `1793`: `confirmed_full`
+
+### Canonical reruns
+
+- Re-ran:
+  - `src/pipelines/05_trim_proceedings_text.py --include-already-trimmed --skip-registry-refresh`
+  - `src/pipelines/05b_validate_proceedings_text.py --skip-registry-refresh`
+  - `src/pipelines/12_build_paper_artifact_registry.py`
+- Refreshed canonical outputs:
+  - `data/references/text_trim_registry.csv`
+  - `data/references/proceedings_text_qc_registry.csv`
+  - `data/references/paper_artifact_registry.csv`
+
+### Current proceedings status
+
+- Trim registry:
+  - `124` `trimmed_auto`
+  - `30` `header_only_source`
+  - `41` `manual_review_required`
+  - `44` `not_needed`
+- Proceedings QC registry:
+  - `106` `confirmed_full`
+  - `80` `untrimmed_localised`
+  - `23` `partial_truncated`
+  - `18` `header_only_source`
+  - `11` `mismatch`
+  - `1` `spillover_detected`

@@ -9,6 +9,7 @@ Typical contents:
 - triaged audit sheets
 - text-cleanup audit passes such as `text_cleanup_audit_round1.csv` and `text_cleanup_audit_round2.csv`
 - archived historical QA material under `archive/`
+- focused pipeline validation packs such as `proceedings_stage05_2026-04-06/`
 - spot-check folders
 - human-readable text exports under `text_exports/`
 
@@ -41,3 +42,14 @@ Human-readable `.txt` renders of `data/extraction_json/text/{paper_id}.json` for
   - TXT exports for the currently unresolved extraction failures.
 
 The live folders above should stay current. Superseded snapshot folders should be archived or removed rather than accumulating here.
+
+## `proceedings_stage05_2026-04-06/`
+
+Small real-data verification pack for the updated proceedings trimming and proceedings-QC logic.
+
+- Contains subset outputs for paper IDs `1229`, `12807`, `1605`, and `1793`.
+- Includes:
+  - `text_trim_registry_subset.csv`
+  - `proceedings_text_qc_registry_subset.csv`
+  - `text_trimmed/`
+- Use this folder as provenance for the 6 April 2026 stage-`05` / stage-`05b` refactor, not as a live registry source.

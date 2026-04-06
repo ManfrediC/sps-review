@@ -89,8 +89,9 @@ It:
 - reads full text JSON files from `data/extraction_json/text`,
 - detects proceedings using structural signals (abstract-boundary density, title/author density, and program markers),
 - optionally uses index/table-of-contents pages to localise the target abstract page and boundary neighborhood,
-- segments the proceedings into abstract blocks,
+- infers the local proceedings header pattern and segments the proceedings into abstract blocks,
 - finds the best target block using title/author fuzzy matching with boundary guardrails,
+- trims from the matched header to the next detected header/delimiter, including uncoded title-style headers,
 - applies completeness checks and spillover checks before auto-accepting,
 - writes trimmed JSON files to `data/extraction_json/text_trimmed/{paper_id}.json`, and
 - writes a decision registry to `data/references/text_trim_registry.csv`.
@@ -117,8 +118,9 @@ It:
 - selects proceedings-like papers from reviewed/heuristic source routing plus the trim registry,
 - prefers trimmed proceedings text when it exists,
 - checks title and author alignment,
+- validates the trimmed span back against the full proceedings source,
 - checks abstract completeness signals (section headings/body size),
-- checks for likely spillover into neighboring abstracts,
+- checks for likely spillover into neighbouring abstracts and early truncation before the next header,
 - scores the best-matching page,
 - records whether the proceedings-derived text appears to contain the correct abstract, and
 - writes `data/references/proceedings_text_qc_registry.csv`.

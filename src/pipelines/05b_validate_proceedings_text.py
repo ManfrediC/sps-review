@@ -6,12 +6,21 @@ import json
 import re
 import subprocess
 import sys
-import unicodedata
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
 
+from _proceedings_text import (
+    flatten_lines,
+    find_next_header_index,
+    has_enough_body,
+    header_boundary,
+    infer_proceedings_pattern,
+    is_footer_like,
+    normalize_text,
+    token_set,
+)
 from _source_routing import load_csv_rows_by_id, resolve_source_row
 
 
@@ -24,23 +33,7 @@ SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categor
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
-SECTION_HEADING_MARKERS = (
-    "background",
-    "purpose",
-    "objective",
-    "objectives",
-    "introduction",
-    "case",
-    "methods",
-    "results",
-    "discussion",
-    "conclusion",
-)
-ABSTRACT_BOUNDARY_RE = re.compile(
-    r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5})\s*(?:[\.\|\:\-\)]\s+|$)"
-)
-
-
+TAIL_NOISE_PREFIXES = ("corresponding author", "keywords", "disclosure")
 # Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -123,20 +116,6 @@ def relative_to_repo(path: Path | None) -> str:
         return str(path.resolve())
 
 
-# Normalize text.
-def normalize_text(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
-    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
-    ascii_text = ascii_text.lower()
-    ascii_text = re.sub(r"[^a-z0-9]+", " ", ascii_text)
-    return " ".join(ascii_text.split())
-
-
-# Build token set.
-def token_set(text: str, min_len: int = 3) -> set[str]:
-    return {token for token in normalize_text(text).split() if len(token) >= min_len}
-
-
 # Score title.
 def score_title(reference_title: str, candidate_text: str) -> float:
     ref_norm = normalize_text(reference_title)
@@ -198,51 +177,14 @@ def score_authors(reference_authors: str, candidate_text: str) -> float:
     return matches / len(surnames)
 
 
-# Check whether section heading.
-def is_section_heading(line: str) -> bool:
-    normalized = normalize_text(line)
-    return any(normalized.startswith(marker) for marker in SECTION_HEADING_MARKERS)
-
-
-# Check whether abstract boundary.
-def is_abstract_boundary(line: str) -> bool:
-    return ABSTRACT_BOUNDARY_RE.match(line.strip()) is not None
-
-
 # Build body metrics.
 def body_metrics(record: dict[str, Any]) -> tuple[int, int, bool]:
-    lines: list[str] = []
-    for page in record.get("pages") or []:
-        page_text = str(page.get("text") or "")
-        for raw in page_text.splitlines():
-            line = " ".join(raw.split())
-            if line:
-                lines.append(line)
+    lines = [line for line in flatten_lines(record) if not is_footer_like(line.text)]
     if not lines:
         return 0, 0, True
-    section_hits = sum(1 for line in lines if is_section_heading(line))
-    body_text = " ".join(lines[min(6, len(lines)) :])
-    body_chars = len(body_text)
-    header_only = section_hits == 0 and body_chars < 280
+    _, section_hits, header_only = has_enough_body(lines)
+    body_chars = sum(len(line.text) for line in lines[min(6, len(lines)) :])
     return section_hits, body_chars, header_only
-
-
-# Build spillover detected.
-def spillover_detected(record: dict[str, Any]) -> bool:
-    lines: list[str] = []
-    for page in record.get("pages") or []:
-        page_text = str(page.get("text") or "")
-        for raw in page_text.splitlines():
-            line = " ".join(raw.split())
-            if line:
-                lines.append(line)
-    if len(lines) < 8:
-        return False
-    # If another abstract boundary appears in the tail region, trimming likely leaked into a neighbour.
-    for line in lines[5:]:
-        if is_abstract_boundary(line):
-            return True
-    return False
 
 
 # Load reference rows.
@@ -317,6 +259,114 @@ def page_matches(record: dict[str, Any], reference_title: str, reference_authors
     return best_page_index, best_title_score, best_author_score, best_combined, best_excerpt
 
 
+def is_tail_noise(line: str) -> bool:
+    normalized = normalize_text(line)
+    if not normalized:
+        return True
+    if is_footer_like(line):
+        return True
+    return any(normalized.startswith(prefix) for prefix in TAIL_NOISE_PREFIXES)
+
+
+def locate_trimmed_span(
+    source_record: dict[str, Any],
+    trimmed_record: dict[str, Any],
+) -> tuple[int | None, int | None, str]:
+    source_lines = flatten_lines(source_record)
+    if not source_lines:
+        return None, None, "source_empty"
+
+    start_value = str(trimmed_record.get("start_line_global_index") or "").strip()
+    end_value = str(trimmed_record.get("end_line_global_index_exclusive") or "").strip()
+    if start_value.isdigit() and end_value.isdigit():
+        start_index = int(start_value)
+        end_index = int(end_value)
+        if 0 <= start_index < end_index <= len(source_lines):
+            return start_index, end_index, "trim_record_indices"
+
+    source_filtered = [line for line in source_lines if not is_footer_like(line.text)]
+    trimmed_filtered = [line for line in flatten_lines(trimmed_record) if not is_footer_like(line.text)]
+    if not source_filtered or not trimmed_filtered:
+        return None, None, "empty_after_footer_filter"
+
+    source_texts = [line.text for line in source_filtered]
+    trimmed_texts = [line.text for line in trimmed_filtered]
+    max_start = len(source_texts) - len(trimmed_texts) + 1
+    for start_offset in range(max(0, max_start)):
+        if source_texts[start_offset] != trimmed_texts[0]:
+            continue
+        if source_texts[start_offset : start_offset + len(trimmed_texts)] != trimmed_texts:
+            continue
+        start_index = source_filtered[start_offset].global_index
+        end_index = source_filtered[start_offset + len(trimmed_texts) - 1].global_index + 1
+        return start_index, end_index, "exact_footer_filtered_subsequence"
+    return None, None, "trim_span_not_found"
+
+
+def validate_trimmed_segmentation(
+    source_record: dict[str, Any],
+    trimmed_record: dict[str, Any],
+) -> dict[str, Any]:
+    source_lines = flatten_lines(source_record)
+    pattern = infer_proceedings_pattern(source_lines)
+    start_global_index, end_global_index_exclusive, detection_method = locate_trimmed_span(source_record, trimmed_record)
+    diagnostics: dict[str, Any] = {
+        "span_located": False,
+        "span_detection_method": detection_method,
+        "start_boundary_ok": False,
+        "leading_spillover": False,
+        "spillover": False,
+        "truncated_by_gap": False,
+        "meaningful_tail_gap_count": 0,
+        "start_boundary_rule": "",
+        "next_header_rule": "",
+    }
+    if start_global_index is None or end_global_index_exclusive is None or not source_lines:
+        return diagnostics
+
+    diagnostics["span_located"] = True
+    global_to_position = {line.global_index: idx for idx, line in enumerate(source_lines)}
+    start_position = global_to_position.get(start_global_index)
+    end_position_exclusive = global_to_position.get(end_global_index_exclusive - 1)
+    if start_position is None or end_position_exclusive is None:
+        diagnostics["span_located"] = False
+        return diagnostics
+    end_position_exclusive += 1
+
+    start_boundary_ok, _, start_rule, _ = header_boundary(source_lines, start_position, pattern, allow_soft=True)
+    diagnostics["start_boundary_ok"] = start_boundary_ok
+    diagnostics["start_boundary_rule"] = start_rule
+    if not start_boundary_ok:
+        lookahead_limit = min(len(source_lines), start_position + 4)
+        for offset in range(start_position + 1, lookahead_limit):
+            matched, _, _, _ = header_boundary(source_lines, offset, pattern, allow_soft=True)
+            if matched:
+                diagnostics["leading_spillover"] = True
+                break
+
+    next_header_position, next_header_rule = find_next_header_index(
+        lines=source_lines,
+        start_index=start_position,
+        pattern=pattern,
+        expected_code=str(trimmed_record.get("matched_block_code") or ""),
+        next_code="",
+        min_gap=4,
+    )
+    diagnostics["next_header_rule"] = next_header_rule
+    if next_header_position is None:
+        return diagnostics
+
+    diagnostics["spillover"] = end_position_exclusive > next_header_position
+    if diagnostics["spillover"]:
+        return diagnostics
+
+    trailing_lines = source_lines[end_position_exclusive:next_header_position]
+    meaningful_tail_gap_count = sum(1 for line in trailing_lines if not is_tail_noise(line.text))
+    diagnostics["meaningful_tail_gap_count"] = meaningful_tail_gap_count
+    diagnostics["truncated_by_gap"] = meaningful_tail_gap_count >= 2
+    return diagnostics
+
+
 # Build derive qc status.
 def derive_qc_status(
     trimmed_present: bool,
@@ -326,7 +376,7 @@ def derive_qc_status(
     section_hits: int,
     body_chars: int,
     header_only: bool,
-    spillover: bool,
+    segmentation: dict[str, Any] | None,
 ) -> tuple[str, bool, str]:
     identity_strong = title_score >= 0.72 and author_score >= 0.20
     identity_moderate = combined_score >= 0.62 or title_score >= 0.60
@@ -338,10 +388,19 @@ def derive_qc_status(
         if header_only:
             return "header_only_source", True, "Matched source appears to be a title/author listing without abstract body text."
         return "untrimmed_localised", True, "Target appears localised in full proceedings text; trimming/manual review is still required."
-    if spillover:
-        return "spillover_detected", True, "Trim appears to include a neighbouring abstract boundary."
+    segmentation = segmentation or {}
+    if not segmentation.get("span_located", False):
+        return "mismatch", True, "Trimmed text could not be mapped back to the full proceedings source."
+    if segmentation.get("leading_spillover", False):
+        return "spillover_detected", True, "Trim starts before the detected proceedings header."
+    if not segmentation.get("start_boundary_ok", False):
+        return "partial_truncated", True, "Trim does not start at a detected proceedings header."
+    if segmentation.get("spillover", False):
+        return "spillover_detected", True, "Trim appears to include text from the subsequent proceedings entry."
     if header_only:
         return "header_only_source", True, "Matched source appears to be a title/author listing without abstract body text."
+    if segmentation.get("truncated_by_gap", False):
+        return "partial_truncated", True, "Trim stops before the next detected proceedings header."
 
     enough_body = body_chars >= 420 or (section_hits >= 3 and body_chars >= 160) or (section_hits >= 1 and body_chars >= 220)
     if enough_body:
@@ -366,7 +425,7 @@ def qc_row(
     section_hits: int,
     body_chars: int,
     header_only: bool,
-    spillover: bool,
+    segmentation: dict[str, Any] | None,
 ) -> dict[str, str]:
     status, manual_follow_up, note = derive_qc_status(
         trimmed_present=trimmed_path is not None,
@@ -376,8 +435,9 @@ def qc_row(
         section_hits=section_hits,
         body_chars=body_chars,
         header_only=header_only,
-        spillover=spillover,
+        segmentation=segmentation,
     )
+    segmentation = segmentation or {}
     return {
         "paper_id": paper_id,
         "covidence_id": (reference_row.get("Covidence") or paper_id).strip(),
@@ -402,7 +462,13 @@ def qc_row(
         "section_heading_count": str(section_hits),
         "body_char_count": str(body_chars),
         "header_only_flag": bool_text(header_only),
-        "spillover_flag": bool_text(spillover),
+        "spillover_flag": bool_text(bool(segmentation.get("spillover") or segmentation.get("leading_spillover"))),
+        "span_located": bool_text(bool(segmentation.get("span_located"))),
+        "span_detection_method": str(segmentation.get("span_detection_method") or ""),
+        "start_boundary_ok": bool_text(bool(segmentation.get("start_boundary_ok"))),
+        "start_boundary_rule": str(segmentation.get("start_boundary_rule") or ""),
+        "next_header_rule": str(segmentation.get("next_header_rule") or ""),
+        "meaningful_tail_gap_count": str(segmentation.get("meaningful_tail_gap_count") or 0),
         "best_match_excerpt": best_excerpt,
         "qc_note": note,
         "checked_at_utc": now_utc_iso(),
@@ -436,6 +502,12 @@ def write_registry(rows: list[dict[str, str]], path: Path) -> None:
         "body_char_count",
         "header_only_flag",
         "spillover_flag",
+        "span_located",
+        "span_detection_method",
+        "start_boundary_ok",
+        "start_boundary_rule",
+        "next_header_rule",
+        "meaningful_tail_gap_count",
         "best_match_excerpt",
         "qc_note",
         "checked_at_utc",
@@ -478,7 +550,7 @@ def main() -> None:
         source_path = args.text_dir / f"{paper_id}.json"
         trimmed_path = args.trimmed_dir / f"{paper_id}.json"
         preferred_path = trimmed_path if trimmed_path.exists() else source_path
-        if not preferred_path.exists():
+        if not preferred_path.exists() or not source_path.exists():
             continue
         reference_row = reference_rows.get(paper_id, {})
         resolved_source = resolve_source_row(
@@ -486,6 +558,7 @@ def main() -> None:
             heuristic_row=heuristic_rows.get(paper_id, {}),
             manual_row=manual_rows.get(paper_id, {}),
         )
+        source_record = load_text_record(source_path)
         record = load_text_record(preferred_path)
         best_page_index, title_score, author_score, combined_score, best_excerpt = page_matches(
             record=record,
@@ -493,7 +566,11 @@ def main() -> None:
             reference_authors=(reference_row.get("Authors") or "").strip(),
         )
         section_hits, body_chars, header_only = body_metrics(record)
-        spillover = spillover_detected(record) if trimmed_path.exists() else False
+        segmentation = (
+            validate_trimmed_segmentation(source_record, record)
+            if trimmed_path.exists()
+            else None
+        )
         rows.append(
             qc_row(
                 paper_id=paper_id,
@@ -510,7 +587,7 @@ def main() -> None:
                 section_hits=section_hits,
                 body_chars=body_chars,
                 header_only=header_only,
-                spillover=spillover,
+                segmentation=segmentation,
             )
         )
 
