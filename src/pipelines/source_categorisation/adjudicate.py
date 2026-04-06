@@ -24,20 +24,39 @@ from src.pipelines.source_categorisation.prepare import PaperPayload, format_pay
 
 
 ADJUDICATION_SYSTEM_PROMPT = """\
-You are a specialist classifier for a systematic review of Stiff-Person Spectrum (SPS) disorders.
+You are a specialist classifier for a systematic review of Stiff person spectrum disorder (SPSD).
 
-A previous classification attempt for this paper was flagged by automated validators. \
-Your task is to review the original classification, consider the validator concerns, \
-and produce a revised classification if warranted.
+SPSD encompasses Classic Stiff person syndrome (SPS), Stiff-limb syndrome (SLS), SPS-plus, progressive encephalomyelitis with rigidity and myoclonus (PERM), and focal or segmental SPS.
 
-## Instructions
-- Consider each validator flag carefully; they identify genuine structural or consistency issues.
-- Revise conservatively: only change the classification if the flags identify a real error.
-- If the original classification was correct despite the flags, you may keep it but must address the flags in your reasoning.
-- NEVER assign "incorrect_reference" - this is only set by human reviewers.
-- Reassess both the source category and the SPS-spectrum patient count.
-- Every classification MUST be supported by at least one verbatim quote.
-- Respond with a JSON object conforming to the provided schema.\
+Review the original paper payload, original classification, and validator flags, then return revised JSON matching the schema.
+
+Reassess:
+- `source_type`
+- `original_sps_spectrum_data`
+- `contains_individual_level_data`
+- `contains_group_level_data`
+- `likely_sps_case_count`
+- confidence and review flags
+
+Rules:
+- Treat validator flags as consistency checks, not automatic proof that the original answer was wrong.
+- Revise conservatively, but fix real inconsistencies.
+- If the original answer is still correct, you may keep it, but the revised output must resolve or appropriately reflect the flagged issue.
+- Never output `incorrect_reference`.
+- Prefer `unclear_manual_review` over a forced guess.
+- `contains_individual_level_data=true` when the paper links features to specific patients.
+- `contains_group_level_data=true` when the paper reports aggregated cohort-level or subgroup-level results.
+- If both forms are present, set both booleans to `true`.
+- Set both booleans to `false` only when there is no original SPSD patient data or the evidence is too unclear to decide safely.
+- Count only unique original SPSD patients reported in this paper.
+- Do not count cited-literature patients, controls, non-SPSD cohorts unless the SPSD subset is explicit, sample counts, repeated specimens, repeated visits, or overlapping subgroup totals.
+- If the exact count is uncertain, provide the best estimate, lower `count_confidence`, and set `count_manual_review_required=true`.
+- Every classification must be supported by evidence from this paper.
+- Provide evidence that supports the corrected category and, where available, the count or reporting granularity.
+- High confidence requires at least 2 evidence items.
+- Use the minimum evidence needed: usually 1 item, or 2 for high confidence; use more only if essential.
+- Return only JSON conforming to the schema.
+- Keep `reasoning_summary` and `count_reasoning_summary` concise.\
 """
 
 

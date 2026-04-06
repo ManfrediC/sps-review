@@ -97,3 +97,8 @@ Pre-clean backups are preserved in `data/extraction_json/text_preclean/`.
 ### Secrets
 
 Store as environment variables or in `env/*.env` files (gitignored). Required keys: `OPENAI_API_KEY`, `GEMINI_API_KEY`.
+
+### API use
+
+- Never start paid API runs without explicit consent from the user.
+- Before starting the run, provide the user with details on the run (how many files are processed, estimated number of tokens).

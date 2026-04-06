@@ -8,6 +8,7 @@ classification happens here.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -15,6 +16,16 @@ from typing import Any
 
 # Approximate token budget for text content (~4 chars per token).
 _TEXT_CHAR_BUDGET = 24_000  # ~6,000 tokens
+_PROMPT_METADATA_KEYS = (
+    "title",
+    "abstract",
+    "journal",
+    "issue",
+    "pages",
+    "doi",
+    "abstract_note",
+)
+_BACK_MATTER_HEADING_RE = re.compile(r"(?im)^\s*(acknowledg?ments?|references)\b.*$")
 
 
 @dataclass
@@ -57,6 +68,36 @@ def _extract_text_pages(record: dict[str, Any], char_budget: int) -> tuple[str, 
         chars_used += len(page_text)
         pages_used += 1
     return "\n\n".join(parts), pages_used
+
+
+def _truncate_back_matter(text: str) -> str:
+    """Drop acknowledgments/references sections from extracted text."""
+    match = _BACK_MATTER_HEADING_RE.search(text)
+    if not match:
+        return text
+    return text[: match.start()].rstrip()
+
+
+def _normalise_for_overlap(text: str) -> str:
+    """Normalise text for conservative duplicate checks."""
+    cleaned = str(text or "").replace("-\n", "").replace("\n", " ")
+    cleaned = re.sub(r"\s+", " ", cleaned.casefold())
+    cleaned = re.sub(r"[^0-9a-z ]+", "", cleaned)
+    return cleaned.strip()
+
+
+def _abstract_is_duplicated_in_text(abstract: str, text_content: str) -> bool:
+    """Return True when the metadata abstract clearly duplicates the text body."""
+    abstract_norm = _normalise_for_overlap(abstract)
+    if len(abstract_norm) < 80:
+        return False
+
+    # The duplicate, when present, is typically near the start of the extracted text.
+    text_excerpt_norm = _normalise_for_overlap(text_content[:6_000])
+    if not text_excerpt_norm:
+        return False
+
+    return abstract_norm[:300] in text_excerpt_norm
 
 
 def assemble_payload(
@@ -102,6 +143,7 @@ def assemble_payload(
     # Use the preferred text source (trimmed if available).
     source_record = preferred_record if preferred_record else text_record
     text_content, pages_used = _extract_text_pages(source_record, _TEXT_CHAR_BUDGET)
+    text_content = _truncate_back_matter(text_content)
 
     proceedings_detected = (trim_row.get("proceedings_detected") or "").strip().lower() == "true"
     trim_status = (trim_row.get("trim_status") or "").strip()
@@ -124,12 +166,19 @@ def assemble_payload(
 def format_payload_for_llm(payload: PaperPayload) -> str:
     """Format a payload as a user-message string for the LLM call."""
     parts: list[str] = []
+    duplicate_abstract = _abstract_is_duplicated_in_text(
+        payload.metadata.get("abstract", ""),
+        payload.text_content,
+    )
 
     parts.append(f"Paper ID: {payload.paper_id}")
     parts.append("")
 
     parts.append("## Metadata")
-    for key, value in payload.metadata.items():
+    for key in _PROMPT_METADATA_KEYS:
+        if key == "abstract" and duplicate_abstract:
+            continue
+        value = payload.metadata.get(key, "")
         if value:
             parts.append(f"- {key}: {value}")
     parts.append("")

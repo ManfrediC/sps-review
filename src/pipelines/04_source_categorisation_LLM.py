@@ -67,8 +67,8 @@ COUNT_OUTPUT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_r
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 RUN_ROOT = REPO_ROOT / "results" / "stage04_llm_runs"
 
-DEFAULT_MODEL = "gpt-4.1"
-CATEGORISATION_VERSION = "llm_v1_gpt4.1"
+DEFAULT_MODEL = "gpt-5.4"
+CATEGORISATION_VERSION = "llm_v1_gpt5.4"
 DEFAULT_CHECKPOINT_EVERY = 25
 
 logging.basicConfig(

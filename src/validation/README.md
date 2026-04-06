@@ -231,3 +231,25 @@ python src/validation/benchmark_stage04_gold.py
 
 The default benchmark input is:
 - `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`
+
+### `stage04_model_benchmark/`
+
+Dedicated directory for cross-model stage-04 comparison.
+
+It keeps the benchmark workflow separate from both:
+- the heuristic gold benchmark
+- the Streamlit review rounds
+
+Main entry points:
+- `src/validation/stage04_model_benchmark/build_benchmark_set.py`
+- `src/validation/stage04_model_benchmark/freeze_payloads.py`
+- `src/validation/stage04_model_benchmark/run_models.py`
+- `src/validation/stage04_model_benchmark/score_models.py`
+
+The workflow:
+- builds a fixed mixed 20-paper benchmark from already reviewed stage-04 gold rows
+- freezes the exact payload bundle for every paper
+- records `tiktoken` prompt estimates before any paid run
+- reuses cached `gpt-4.1` outputs without regenerating them
+- runs only the newly chosen models with the same schema, validators, and adjudication policy
+- writes all benchmark artefacts under `qa/validation/source_categorisation/model_benchmark/`

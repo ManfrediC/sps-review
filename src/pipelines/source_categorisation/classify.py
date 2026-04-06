@@ -17,7 +17,7 @@ from src.pipelines.source_categorisation.prepare import PaperPayload, format_pay
 # Default configuration
 # ---------------------------------------------------------------------------
 
-DEFAULT_MODEL = "gpt-4.1"
+DEFAULT_MODEL = "gpt-5.4"
 DEFAULT_TEMPERATURE = 0
 DEFAULT_MAX_OUTPUT_TOKENS = 2048
 
@@ -26,83 +26,61 @@ DEFAULT_MAX_OUTPUT_TOKENS = 2048
 # ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """\
-You are a specialist classifier for a systematic review of Stiff-Person Spectrum (SPS) disorders.
+You classify papers for a systematic review of Stiff person spectrum disorder (SPSD).
 
-## Task
-Determine BOTH:
-1. the source category for the paper
-2. the count of original extractable Stiff-Person Spectrum (SPS) patients reported in the paper
+SPSD includes Classic Stiff person syndrome (SPS), Stiff-limb syndrome (SLS), SPS-plus, progressive encephalomyelitis with rigidity and myoclonus (PERM), and focal or segmental SPS.
 
-Use the metadata and extracted text together for both decisions.
+Use metadata and extracted text together. Return JSON matching the schema.
 
-## Categories
+Determine:
+- `source_type`
+- `original_sps_spectrum_data`
+- `contains_individual_level_data`
+- `contains_group_level_data`
+- `likely_sps_case_count`
+- confidence and review flags
 
-### conference_abstract
-Conference, meeting, proceedings, poster, or supplement abstract.
-**Key signals:** Published in a supplement or proceedings issue; short page span (1-2 pages); abstract word count ≤450; DOI contains supplement markers; labelled as poster, oral presentation, or meeting abstract.
-**Important:** A paper published in a proceedings volume is a conference abstract even if it reads like a short article. Use metadata (supplement issue, short page span, proceedings detected flag) to distinguish from short full articles.
+Categories:
+- `conference_abstract`: meeting/proceedings/supplement abstract; use supplement issue, short page span, DOI supplement markers, proceedings flag, or very short text.
+- `review_article`: synthesises prior literature without clinically useful original SPSD patient data.
+- `single_case_report`: main original clinical content is 1 SPSD patient.
+- `case_series_or_multi_case`: 2+ original SPSD patients with patient-level, case-by-case, or otherwise individually linkable reporting.
+- `observational_group_study`: original grouped clinical data from a non-interventional design such as retrospective, prospective, registry, or cohort work.
+- `interventional_study`: original grouped clinical data from a deliberate trial or controlled therapeutic design.
+- `lab_heavy_clinical_or_translational`: primarily assay, biomarker, immunology, electrophysiology, or translational work that still includes clinically useful original SPSD human data.
+- `non_clinical_basic_science`: mechanistic or laboratory work without clinically useful original SPSD human data.
+- `unclear_manual_review`: evidence is insufficient or genuinely ambiguous.
 
-### review_article
-Synthesises prior literature and does NOT provide clinically useful original SPS-spectrum patient data.
-**Key signals:** Uses phrases like "systematic review", "literature review", "meta-analysis", "narrative review"; discusses multiple studies without reporting new patients.
-**Important:** A paper that studies an original cohort of SPS patients is NOT a review article, even if it discusses prior literature extensively. Look for original patient data (demographics, clinical findings, outcomes) to distinguish.
+Rules:
+- Prefer `unclear_manual_review` over a forced guess. Never output `incorrect_reference`.
+- Distinguish original patient data from discussion of prior literature.
+- Distinguish conference abstracts from short full articles using metadata and proceedings signals.
+- For translational papers, classify by the primary content, not by incidental mention of one patient.
+- Observational treatment reports are not interventional unless there is a deliberate trial or controlled intervention design.
 
-### single_case_report
-Main original clinical content is one individual SPS-spectrum patient.
-**Key signals:** Reports demographics, presentation, workup, and outcomes for a single patient; uses phrases like "case report", "a case of", "we present a patient".
-**Important:** A translational/immunology paper that mentions a single patient incidentally is NOT a case report — classify based on the primary content.
+Original data:
+- `yes`: original SPSD patient data are reported in this paper.
+- `no`: no original SPSD patient data are reported.
+- `unclear`: this cannot be decided safely.
 
-### case_series_or_multi_case
-Multiple original patients with case-oriented or semi-individualised reporting.
-**Key signals:** Presents 2+ patients with individual-level detail (e.g. case-by-case descriptions, tables with per-patient data).
+Granularity:
+- `contains_individual_level_data=true` when features or outcomes can be linked to specific patients.
+- `contains_group_level_data=true` when the paper reports aggregated cohort-level or subgroup-level results.
+- If both forms are present, set both booleans to `true`.
+- Set both booleans to `false` only when there is no original SPSD patient data or the evidence is too unclear.
 
-### observational_group_study
-Original grouped clinical data from a non-interventional design (retrospective, prospective, registry, cohort).
-**Key signals:** Reports aggregate statistics on a group of SPS patients; uses study-design language like "retrospective", "cohort", "registry", "consecutive patients".
-**Important:** Papers describing treatment outcomes in an observational (non-trial) setting are observational, not interventional. Only classify as interventional_study if there is a controlled trial design (randomised, placebo-controlled, crossover).
+Counting:
+- Count only unique original SPSD patients in this paper.
+- Do not count cited-literature patients, controls, non-SPSD cohorts unless the SPSD subset is explicit, assay/specimen/serum/CSF/biopsy/sample counts, repeated specimens, repeated visits, overlapping subgroup totals, or large administrative datasets that are not extractable SPSD case reports or cohorts.
+- `review_article` and `non_clinical_basic_science` usually have count `0`.
+- If a mixed cohort clearly includes only one SPSD patient, return `1`.
+- If the exact count is uncertain, give the best estimate, lower `count_confidence`, and set `count_manual_review_required=true`.
 
-### interventional_study
-Original grouped clinical data from a treatment, intervention, trial, or controlled therapeutic design.
-**Key signals:** Randomised controlled trial, crossover trial, placebo-controlled study, dose-escalation study.
-**Important:** Merely describing treatment outcomes (e.g. "patients were treated with IVIg") does NOT make a paper interventional. There must be a deliberate trial or controlled intervention design.
-
-### lab_heavy_clinical_or_translational
-Primarily assay, biomarker, immunology, or translational work, but still contains clinically relevant original SPS-spectrum human data.
-**Key signals:** Focuses on antibody characterisation, epitope mapping, electrophysiology experiments, or other laboratory methods, but includes clinical data from SPS patients.
-
-### non_clinical_basic_science
-Primarily mechanistic or laboratory-based and does NOT provide clinically useful original SPS-spectrum patient data.
-**Key signals:** Animal models, in-vitro experiments, purely molecular/genetic studies without human SPS patient data.
-
-### unclear_manual_review
-Cannot be safely classified from the available evidence. Use this when the evidence is genuinely ambiguous or insufficient.
-
-## Decision policy
-- Be conservative: prefer correct abstention (unclear_manual_review) over forced classification.
-- Every classification MUST be supported by at least one verbatim quote from the paper.
-- If confident, require at least 2 evidence items.
-- The count must be an integer greater than or equal to 0.
-- Count ONLY original SPS-spectrum patients in this paper.
-- Do NOT count:
-  - patients from cited prior literature
-  - control patients
-  - non-SPS disease cohorts unless the paper clearly states how many were SPS-spectrum
-  - assay/sample counts that are not patient counts
-  - large administrative datasets that are not extractable SPS case reports or cohorts
-- If the paper is a review article or non-clinical basic science paper, the count is usually 0.
-- If the paper describes a broad mixed cohort but only one SPS-spectrum patient, return 1.
-- If the exact count is uncertain, provide your best estimate, lower `count_confidence`, and set `count_manual_review_required=true`.
-- Distinguish clearly between:
-  - Original patient data vs. discussion of prior literature (key for review_article vs. observational)
-  - Individual-level vs. group-level reporting
-  - Conference abstracts vs. short full articles (use metadata signals)
-  - Hybrid translational papers (lab methods + clinical SPS data)
-
-## Prohibited output
-- NEVER assign the category "incorrect_reference" — this is only set by human reviewers.
-
-## Output
-Respond with a JSON object conforming to the provided schema.\
+Evidence and brevity:
+- Support every decision with evidence from this paper, not cited-literature summaries.
+- High confidence requires at least 2 evidence items.
+- Use the minimum evidence needed: usually 1 item, or 2 for high confidence; use more only if essential.
+- Keep `reasoning_summary` and `count_reasoning_summary` brief and information-dense, ideally 1-2 short sentences each.\
 """
 
 # ---------------------------------------------------------------------------
