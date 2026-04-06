@@ -32,6 +32,7 @@ Validation scripts should write their non-canonical review and audit outputs und
    - Runs the canonical LLM-based stage-04 routing flow.
    - Jointly predicts source category and extractable SPS case count from the same LLM pass.
    - Checkpoints per-paper results under `results/stage04_llm_runs/{run_id}/`, supports resume, and requires explicit approval before paid LLM calls.
+   - Shows an interactive progress bar during paid terminal runs so long batches expose current progress and ETA.
    - Publishes `data/references/source_categorisation_registry.csv` and `data/references/source_sps_case_count_registry.csv` only after a complete run.
    - Refreshes `data/references/paper_artifact_registry.csv` after publish unless skipped.
 

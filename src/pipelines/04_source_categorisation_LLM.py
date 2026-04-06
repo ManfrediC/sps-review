@@ -19,10 +19,12 @@ from __future__ import annotations
 import argparse
 import csv
 import logging
+import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
+from typing import TextIO
 
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -75,6 +77,116 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 logger = logging.getLogger(__name__)
+
+
+def format_duration(seconds: float) -> str:
+    seconds = max(0, int(seconds))
+    hours, remainder = divmod(seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+
+
+class Stage04ProgressBar:
+    """Render a lightweight terminal progress bar for the current invocation."""
+
+    def __init__(
+        self,
+        *,
+        total_pending: int,
+        planned_total: int,
+        completed_before_start: int,
+        enabled: bool,
+        stream: TextIO | None = None,
+        now_fn=time.monotonic,
+    ) -> None:
+        self.total_pending = max(total_pending, 0)
+        self.planned_total = max(planned_total, 0)
+        self.completed_before_start = max(completed_before_start, 0)
+        self.enabled = enabled and self.total_pending > 0
+        self.stream = stream or sys.stderr
+        self.now_fn = now_fn
+        self.started_at = self.now_fn()
+        self.last_line_length = 0
+
+    def _bar_width(self) -> int:
+        terminal_width = shutil.get_terminal_size((120, 20)).columns
+        reserved = 70
+        return max(10, min(30, terminal_width - reserved))
+
+    def _render_line(
+        self,
+        *,
+        attempted_count: int,
+        durable_completed: int,
+        error_count: int,
+        last_paper_id: str,
+        status: str,
+    ) -> str:
+        fraction = 1.0 if self.total_pending == 0 else min(max(attempted_count / self.total_pending, 0.0), 1.0)
+        filled = int(round(self._bar_width() * fraction))
+        bar = "#" * filled + "-" * (self._bar_width() - filled)
+        elapsed = self.now_fn() - self.started_at
+        elapsed_text = format_duration(elapsed)
+        eta_text = "--:--:--"
+        if attempted_count > 0 and attempted_count < self.total_pending:
+            remaining = self.total_pending - attempted_count
+            eta_seconds = elapsed / attempted_count * remaining
+            eta_text = format_duration(eta_seconds)
+        if attempted_count >= self.total_pending:
+            eta_text = "00:00:00"
+
+        line = (
+            f"Stage 04 [{bar}] {attempted_count}/{self.total_pending} this pass "
+            f"| durable {durable_completed}/{self.planned_total} | errors {error_count} "
+            f"| elapsed {elapsed_text} | eta {eta_text} | {status}"
+        )
+        if last_paper_id:
+            line += f" | last {last_paper_id}"
+        return line
+
+    def render(
+        self,
+        *,
+        attempted_count: int,
+        durable_completed: int,
+        error_count: int,
+        last_paper_id: str = "",
+        status: str = "running",
+    ) -> None:
+        if not self.enabled:
+            return
+        line = self._render_line(
+            attempted_count=attempted_count,
+            durable_completed=durable_completed,
+            error_count=error_count,
+            last_paper_id=last_paper_id,
+            status=status,
+        )
+        padded = line.ljust(self.last_line_length)
+        self.stream.write("\r" + padded)
+        self.stream.flush()
+        self.last_line_length = len(line)
+
+    def finish(
+        self,
+        *,
+        attempted_count: int,
+        durable_completed: int,
+        error_count: int,
+        last_paper_id: str = "",
+        status: str = "done",
+    ) -> None:
+        if not self.enabled:
+            return
+        self.render(
+            attempted_count=attempted_count,
+            durable_completed=durable_completed,
+            error_count=error_count,
+            last_paper_id=last_paper_id,
+            status=status,
+        )
+        self.stream.write("\n")
+        self.stream.flush()
 
 
 def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
@@ -197,6 +309,11 @@ def parse_args() -> argparse.Namespace:
         "--skip-registry-refresh",
         action="store_true",
         help="Do not rebuild paper_artifact_registry.csv after publishing canonical outputs.",
+    )
+    parser.add_argument(
+        "--show-progress",
+        action="store_true",
+        help="Force the interactive progress bar even when stderr is not detected as a terminal.",
     )
     return parser.parse_args()
 
@@ -418,6 +535,20 @@ def main() -> None:
     invocation_start = time.monotonic()
     newly_completed = 0
     last_completed_paper_id = ""
+    attempted_this_invocation = 0
+    current_error_count = len(load_error_rows(run_dir))
+    progress_bar = Stage04ProgressBar(
+        total_pending=len(pending_ids),
+        planned_total=len(planned_ids),
+        completed_before_start=len(completed_ids),
+        enabled=pending_llm > 0 and (args.show_progress or sys.stderr.isatty()),
+    )
+    progress_bar.render(
+        attempted_count=0,
+        durable_completed=len(completed_ids),
+        error_count=current_error_count,
+        status="starting",
+    )
 
     for paper_id in pending_ids:
         if args.max_runtime_minutes > 0:
@@ -437,6 +568,15 @@ def main() -> None:
                 paper_id=paper_id,
                 error_type="missing_text_json",
                 error_message=f"Missing text JSON: {text_path}",
+            )
+            attempted_this_invocation += 1
+            current_error_count += 1
+            progress_bar.render(
+                attempted_count=attempted_this_invocation,
+                durable_completed=len(completed_ids) + newly_completed,
+                error_count=current_error_count,
+                last_paper_id=paper_id,
+                status="missing_text_json",
             )
             continue
 
@@ -470,7 +610,16 @@ def main() -> None:
                 error_type=exc.__class__.__name__,
                 error_message=str(exc),
             )
+            attempted_this_invocation += 1
+            current_error_count += 1
             logger.exception("Failed to classify %s - recorded error and continuing", paper_id)
+            progress_bar.render(
+                attempted_count=attempted_this_invocation,
+                durable_completed=len(completed_ids) + newly_completed,
+                error_count=current_error_count,
+                last_paper_id=paper_id,
+                status="error",
+            )
             continue
 
         text_json_rel = _relative_to_repo(text_path)
@@ -511,6 +660,7 @@ def main() -> None:
         )
 
         newly_completed += 1
+        attempted_this_invocation += 1
         last_completed_paper_id = paper_id
         logger.info(
             "  %s -> %s (%s, %s, count=%s)",
@@ -519,6 +669,12 @@ def main() -> None:
             result.confidence.value,
             result.classification_source,
             count_row.get("likely_sps_case_count", "").strip() or "NA",
+        )
+        progress_bar.render(
+            attempted_count=attempted_this_invocation,
+            durable_completed=len(completed_ids) + newly_completed,
+            error_count=current_error_count,
+            last_paper_id=paper_id,
         )
 
         if newly_completed % args.checkpoint_every == 0:
@@ -540,6 +696,14 @@ def main() -> None:
         completed_paper_ids=completed_after_run,
         error_count=len(error_rows),
         last_completed_paper_id=last_completed_paper_id,
+    )
+    progress_status = "done" if attempted_this_invocation == len(pending_ids) else "stopped"
+    progress_bar.finish(
+        attempted_count=attempted_this_invocation,
+        durable_completed=len(completed_after_run),
+        error_count=len(error_rows),
+        last_paper_id=last_completed_paper_id,
+        status=progress_status,
     )
     logger.info(
         "Run %s now has %d/%d completed papers and %d recorded errors",

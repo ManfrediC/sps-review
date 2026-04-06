@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import importlib.util
+import io
 import json
 import sys
 import tempfile
@@ -158,6 +159,7 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
             skip_manual_overrides=True,
             dry_run=False,
             skip_registry_refresh=True,
+            show_progress=False,
         )
 
         with (
@@ -196,6 +198,7 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
             skip_manual_overrides=True,
             dry_run=False,
             skip_registry_refresh=True,
+            show_progress=False,
         )
 
         with (
@@ -330,6 +333,7 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
             skip_manual_overrides=True,
             dry_run=False,
             skip_registry_refresh=True,
+            show_progress=False,
         )
 
         with (
@@ -343,6 +347,42 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
         self.assertEqual(len(source_rows), 2)
         self.assertEqual([row["paper_id"] for row in source_rows], ["321", "322"])
         mocked_process.assert_called_once()
+
+    def test_progress_bar_renders_invocation_and_durable_progress(self) -> None:
+        stream = io.StringIO()
+        progress_bar = self.llm_mod.Stage04ProgressBar(
+            total_pending=4,
+            planned_total=10,
+            completed_before_start=3,
+            enabled=True,
+            stream=stream,
+            now_fn=lambda: 120.0,
+        )
+        progress_bar.started_at = 0.0
+
+        progress_bar.render(
+            attempted_count=2,
+            durable_completed=5,
+            error_count=1,
+            last_paper_id="322",
+            status="running",
+        )
+        progress_bar.finish(
+            attempted_count=4,
+            durable_completed=7,
+            error_count=1,
+            last_paper_id="323",
+            status="done",
+        )
+
+        output = stream.getvalue()
+        self.assertIn("2/4 this pass", output)
+        self.assertIn("durable 5/10", output)
+        self.assertIn("errors 1", output)
+        self.assertIn("last 322", output)
+        self.assertIn("4/4 this pass", output)
+        self.assertIn("durable 7/10", output)
+        self.assertIn("done", output)
 
 
 if __name__ == "__main__":
