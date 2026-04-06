@@ -1,0 +1,288 @@
+{
+  "generated_at_utc": "2026-04-06T20:35:02.106848+00:00",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "results": [
+    {
+      "paper_id": "969",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "observational_group_study"
+        }
+      ]
+    },
+    {
+      "paper_id": "980",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1001",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1001.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1011",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1011.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Poster 313"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation."
+        },
+        {
+          "name": "not_contains::sequelae of radiation-induced myelopathy",
+          "passed": true,
+          "actual": "sequelae of radiation-induced myelopathy, radiation-induced"
+        },
+        {
+          "name": "not_contains::funicular pain is likely to progress wit",
+          "passed": true,
+          "actual": "funicular pain is likely to progress with time."
+        },
+        {
+          "name": "not_contains::Poster 314",
+          "passed": true,
+          "actual": "Poster 314"
+        },
+        {
+          "name": "not_contains::The Usefulness of Transcranial Magnetic ",
+          "passed": true,
+          "actual": "The Usefulness of Transcranial Magnetic Stimulation"
+        },
+        {
+          "name": "not_contains::Diffusion Tensor Tractography",
+          "passed": true,
+          "actual": "Diffusion Tensor Tractography"
+        }
+      ]
+    },
+    {
+      "paper_id": "1028",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1028.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1031",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1031.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "with only mild stiffness and pain."
+        },
+        {
+          "name": "not_contains::Poster 21",
+          "passed": true,
+          "actual": "Poster 21"
+        },
+        {
+          "name": "not_contains::A comparison of the progression of auton",
+          "passed": true,
+          "actual": "A comparison of the progression of autonomic dysfunction"
+        },
+        {
+          "name": "not_contains::J.L. Gilden",
+          "passed": true,
+          "actual": "J.L. Gilden"
+        }
+      ]
+    },
+    {
+      "paper_id": "1112",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1112.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1116",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1116.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1117",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1117.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms."
+        }
+      ]
+    },
+    {
+      "paper_id": "1118",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1118.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    }
+  ]
+}

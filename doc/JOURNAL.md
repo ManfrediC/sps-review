@@ -1093,3 +1093,20 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `18` `header_only_source`
   - `11` `mismatch`
   - `1` `spillover_detected`
+
+### Missed proceedings audit
+
+- Added `src/validation/find_missed_proceedings_candidates.py` to audit non-conference stage-04 rows for missed proceedings fragments or conference-style abstracts.
+- Refactored proceedings fuzzy matching into the shared helper `src/pipelines/_proceedings_text.py` so stage `05`, stage `05b`, and the new audit use the same title/author scoring.
+- Added `tests/test_find_missed_proceedings_candidates.py`.
+- The audit combines:
+  - metadata cues such as `conference paper`, `conference abstract`, `poster`, and `supplement`
+  - local proceedings-format cues around the matched title and author block
+  - stricter code handling so section numbering like `1. Introduction` is not mistaken for proceedings codes
+- Added focused-batch support via repeated `--paper-id` flags and made snippet exports overwrite stale TXT files on rerun.
+- Built a focused mixed validation pack under:
+  - `qa/validation/missed_proceedings_audit_2026-04-06/focused_batch_mixed/`
+- Focused mixed batch outcome after tightening the heuristic:
+  - `8` candidates selected from `15` tested papers
+  - retained strong or moderate proceedings-style hits such as `5753`, `6271`, `1017`, `1597`, `1784`, `1935`, `8198`, and `8317`
+  - dropped the obvious full-article false positives from the same batch such as `101`, `432`, `647`, `828`, and `952`

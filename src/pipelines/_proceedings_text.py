@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from typing import Any
 
 
@@ -18,6 +19,10 @@ ABSTRACT_START_SPACE_CODE_RE = re.compile(
 ABSTRACT_CODE_ONLY_RE = re.compile(
     r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,3})$"
 )
+POSTER_CODE_ONLY_RE = re.compile(r"^(?P<code>Poster\s+\d{1,5}[A-Z]?)$", re.IGNORECASE)
+SESSION_CODE_ONLY_RE = re.compile(
+    r"^(?P<code>[A-Z]{1,4}\d{1,2}(?:\.\d+)+(?:\s*[-–]\s*\d{1,5})?)$"
+)
 ABSTRACT_BOUNDARY_RE = re.compile(
     r"^(?P<code>(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5})\s*(?:[\.\|\:\-\)]\s+|$)"
 )
@@ -26,6 +31,13 @@ AUTHOR_CREDENTIAL_RE = re.compile(
     re.IGNORECASE,
 )
 CONTROL_ID_RE = re.compile(r"\bcontrol id\b", re.IGNORECASE)
+DOI_LINE_RE = re.compile(r"^\s*doi\s*:", re.IGNORECASE)
+DATE_LINE_RE = re.compile(
+    r"^(monday|tuesday|wednesday|thursday|friday|saturday|sunday)(?:,\s+[a-z]+(?:\s+\d{1,2})?(?:,\s+\d{4})?)?$",
+    re.IGNORECASE,
+)
+TIME_RANGE_RE = re.compile(r"\b\d{1,2}:\d{2}\s*(?:am|pm)?\s*[–-]\s*\d{1,2}:\d{2}\s*(?:am|pm)?\b", re.IGNORECASE)
+REFERENCE_ENTRY_RE = re.compile(r"^[A-Z][a-z]+,\s*[A-Z]")
 
 INSTITUTION_MARKERS = (
     "university",
@@ -64,13 +76,23 @@ SECTION_HEADING_MARKERS = (
     "objectives",
     "introduction",
     "case",
+    "material and methods",
+    "materials and methods",
     "methods",
+    "method",
+    "design methods",
+    "study design methods",
     "results",
+    "observation",
+    "observations",
     "discussion",
     "conclusion",
+    "conclusions",
 )
 HEADER_NOISE_MARKERS = (
     "abstracts",
+    "abstract details",
+    "poster session",
     "poster sessions",
     "program and abstracts",
     "table of contents",
@@ -79,6 +101,18 @@ HEADER_NOISE_MARKERS = (
     "corresponding author",
     "keywords",
     "disclosure",
+)
+ARTICLE_MARKERS = (
+    "article open access",
+    "article history",
+    "a r t i c l e i n f o",
+    "available online",
+    "correspondence",
+    "full disclosures",
+    "disclosure of interest",
+    "go to neurology org",
+    "article processing charge",
+    "creative commons attribution",
 )
 
 
@@ -111,6 +145,115 @@ def token_set(text: str, min_len: int = 3) -> set[str]:
     return {token for token in normalize_text(text).split() if len(token) >= min_len}
 
 
+def alpha_word_count(text: str) -> int:
+    return sum(1 for word in text.split() if re.search(r"[A-Za-z]", word))
+
+
+def starts_like_title_opening(text: str) -> bool:
+    stripped = text.strip()
+    if not stripped:
+        return False
+    for character in stripped:
+        if character.isalpha():
+            return character.isupper()
+    return bool(re.match(r"^[\d\(\[]", stripped))
+
+
+def is_article_numbered_section(line: str) -> bool:
+    match = re.match(r"^\d+\.\s+(?P<title>.+)$", line.strip())
+    if not match:
+        return False
+    title = str(match.group("title") or "").strip()
+    if not title:
+        return False
+    normalized = normalize_text(title)
+    if normalized == "references" or normalized == "disclosure of interest":
+        return True
+    return alpha_word_count(title) <= 4 and is_section_heading(title)
+
+
+def is_article_metadata_line(line: str) -> bool:
+    normalized = normalize_text(line)
+    if not normalized:
+        return False
+    if any(normalized.startswith(marker) for marker in ARTICLE_MARKERS):
+        return True
+    if normalized.startswith("received ") or normalized.startswith("accepted "):
+        return True
+    if normalized.startswith("keywords") or normalized == "keywords":
+        return True
+    return False
+
+
+def looks_like_reference_entry(text: str) -> bool:
+    stripped = text.strip()
+    normalized = normalize_text(stripped)
+    if not stripped or not normalized:
+        return False
+    if not REFERENCE_ENTRY_RE.match(stripped):
+        return False
+    has_year = bool(re.search(r"\b(?:19|20)\d{2}\b", stripped))
+    return has_year or " et al " in f" {normalized} "
+
+
+def parse_reference_surnames(authors: str) -> list[str]:
+    surnames: list[str] = []
+    for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
+        part = chunk.strip()
+        if not part:
+            continue
+        part = re.sub(r"\b(MD|PhD|DO|MSc|MBBS|RN|FRCP|FAAN)\b\.?", "", part, flags=re.IGNORECASE).strip()
+        if "," in part:
+            surname = part.split(",", 1)[0].strip()
+        else:
+            tokens = [token for token in re.split(r"\s+", part) if token]
+            if not tokens:
+                continue
+            surname = tokens[-1]
+            if len(tokens) >= 2 and len(tokens[-1]) <= 2:
+                surname = tokens[-2]
+        normalized = normalize_text(surname)
+        if len(normalized) <= 1:
+            continue
+        if normalized and normalized not in surnames:
+            surnames.append(normalized)
+    return surnames[:8]
+
+
+def score_title(reference_title: str, candidate_text: str) -> float:
+    ref_norm = normalize_text(reference_title)
+    candidate_norm = normalize_text(candidate_text)
+    if not ref_norm or not candidate_norm:
+        return 0.0
+    if ref_norm == candidate_norm:
+        return 1.0
+    sequence = SequenceMatcher(None, ref_norm, candidate_norm).ratio()
+    ref_tokens = token_set(reference_title, min_len=4)
+    candidate_tokens = token_set(candidate_text, min_len=4)
+    overlap = len(ref_tokens & candidate_tokens) / max(1, len(ref_tokens))
+    if ref_norm in candidate_norm or candidate_norm in ref_norm:
+        overlap = max(overlap, 0.95)
+    blended = (0.35 * sequence) + (0.65 * overlap)
+    return max(min(sequence, overlap), blended)
+
+
+def score_authors(reference_authors: str, candidate_text: str) -> float:
+    surnames = parse_reference_surnames(reference_authors)
+    if not surnames:
+        return 0.0
+    normalized_candidate = normalize_text(candidate_text)
+    candidate_tokens = token_set(candidate_text, min_len=3)
+    matches = 0
+    for surname in surnames:
+        if surname in normalized_candidate:
+            matches += 1
+            continue
+        surname_tokens = {token for token in surname.split() if len(token) >= 3}
+        if surname_tokens and surname_tokens.issubset(candidate_tokens):
+            matches += 1
+    return matches / len(surnames)
+
+
 def normalize_code(value: str) -> str:
     return re.sub(r"[^A-Z0-9]", "", (value or "").upper())
 
@@ -140,14 +283,30 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
     stripped = line.strip()
     strict_match = ABSTRACT_START_RE.match(stripped)
     if strict_match:
+        code = str(strict_match.groupdict().get("code") or "")
+        title = str(strict_match.groupdict().get("title") or "")
+        if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
+            return None
         return strict_match
     delim_match = ABSTRACT_START_DELIM_RE.match(stripped)
     if delim_match:
+        code = str(delim_match.groupdict().get("code") or "")
+        title = str(delim_match.groupdict().get("title") or "")
+        if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
+            return None
         return delim_match
     space_match = ABSTRACT_START_SPACE_CODE_RE.match(stripped)
     if space_match:
         code = str(space_match.group("code") or "")
         title = str(space_match.group("title") or "")
+        if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
+            return None
         if re.search(r"[A-Z]", code) and len(title.split()) >= 3:
             return space_match
     return None
@@ -155,11 +314,44 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
 
 def is_abstract_code_only(line: str) -> re.Match[str] | None:
     stripped = line.strip()
-    return ABSTRACT_CODE_ONLY_RE.match(stripped) or ABSTRACT_BOUNDARY_RE.match(stripped)
+    poster_match = POSTER_CODE_ONLY_RE.match(stripped)
+    if poster_match:
+        return poster_match
+    session_match = SESSION_CODE_ONLY_RE.match(stripped)
+    if session_match:
+        return session_match
+    code_only_match = ABSTRACT_CODE_ONLY_RE.match(stripped)
+    if code_only_match:
+        return code_only_match
+    boundary_match = ABSTRACT_BOUNDARY_RE.match(stripped)
+    if not boundary_match:
+        return None
+    boundary_code = str(boundary_match.group("code") or "")
+    digits = "".join(character for character in boundary_code if character.isdigit())
+    if not re.search(r"[A-Z]", boundary_code) and len(digits) < 2:
+        return None
+    trailing = stripped[boundary_match.end("code") :].strip(" .|:-)")
+    if trailing and is_header_noise(trailing):
+        return None
+    return boundary_match
 
 
 def is_abstract_boundary(line: str) -> bool:
     return is_abstract_start(line) is not None or is_abstract_code_only(line) is not None
+
+
+def author_fragment_count(text: str) -> int:
+    count = 0
+    for fragment in re.split(r";|,", text):
+        part = fragment.strip(" .-*")
+        if not part:
+            continue
+        if re.search(r"\b(?:[A-Z]{1,3}\.\s*)+[A-Z][A-Za-z'’\-]+\b", part):
+            count += 1
+            continue
+        if re.search(r"\b[A-Z][a-z]+(?:\s+[A-Z]\.)?\s+[A-Z][A-Za-z'’\-]+\b", part):
+            count += 1
+    return count
 
 
 def is_author_like(line: str) -> bool:
@@ -171,16 +363,29 @@ def is_author_like(line: str) -> bool:
     if CONTROL_ID_RE.search(stripped):
         return True
     normalized = normalize_text(stripped)
-    if normalized.count(" and ") >= 1 and len(normalized.split()) <= 18:
-        return True
+    tokens = normalized.split()
+    if ";" not in stripped and "," not in stripped and not re.search(r"\b[A-Z]\.", stripped):
+        if any(
+            stopword in tokens
+            for stopword in ("of", "and", "with", "for", "from", "into", "during", "after", "before", "about")
+        ):
+            return False
     comma_count = stripped.count(",")
-    if comma_count >= 3:
+    fragment_count = author_fragment_count(stripped)
+    if comma_count >= 2 and fragment_count >= 2:
         return True
     if ";" in stripped and comma_count >= 1:
         return True
     if ";" in stripped and len(stripped.split()) <= 20:
         return True
-    if re.search(r"\b[A-Z][a-z]+\s+[A-Z][a-z]+\b", stripped) and len(stripped.split()) <= 22:
+    if comma_count >= 1 and re.search(r"\b[A-Z]\.\s*[A-Z][a-z]+\b", stripped):
+        return True
+    name_pair_count = len(re.findall(r"\b[A-Z][a-z]+(?:\s+[A-Z]\.)?\s+[A-Z][A-Za-z'’\-]+\b", stripped))
+    if name_pair_count >= 2 and len(stripped.split()) <= 22:
+        return True
+    if comma_count >= 1 and name_pair_count >= 1 and len(stripped.split()) <= 22:
+        return True
+    if fragment_count >= 2 and len(stripped.split()) <= 22:
         return True
     return False
 
@@ -203,6 +408,22 @@ def is_section_heading(line: str) -> bool:
 def is_header_noise(line: str) -> bool:
     normalized = normalize_text(line)
     if not normalized:
+        return True
+    if DOI_LINE_RE.match(line.strip()):
+        return True
+    if normalized == "abstract":
+        return True
+    if normalized.startswith("abstract wcn"):
+        return True
+    if normalized.startswith("abstract number"):
+        return True
+    if normalized.startswith("meeting"):
+        return True
+    if normalized.startswith("topic "):
+        return True
+    if normalized.startswith("first published "):
+        return True
+    if re.match(r"^no \d", normalized):
         return True
     if normalized in HEADER_NOISE_MARKERS:
         return True
@@ -252,6 +473,8 @@ def is_potential_title_line(line: str) -> bool:
         or is_section_heading(stripped)
         or is_header_noise(stripped)
     ):
+        return False
+    if not starts_like_title_opening(stripped):
         return False
     if is_title_like(stripped) or is_uppercase_title_like(stripped):
         return True
@@ -360,17 +583,30 @@ def soft_header_score(lines: list[LineRef], start_index: int) -> tuple[int, int,
             or is_institution_like(previous.text)
         ) and not previous.text.endswith("."):
             return 0, start_index, ""
+        if (
+            previous.page_index == current.page_index
+            and not is_footer_like(previous.text)
+            and not is_header_noise(previous.text)
+            and not is_abstract_boundary(previous.text)
+            and len(normalize_text(previous.text).split()) >= 5
+            and not previous.text.endswith((".", ":", ";"))
+        ):
+            return 0, start_index, ""
 
     title_cluster = collect_title_cluster(lines, start_index)
     if not title_cluster:
         return 0, start_index, ""
 
     end_index = start_index + len(title_cluster)
-    lookahead = lines[end_index : min(len(lines), end_index + 6)]
-    author_hit = any(is_author_like(line.text) for line in lookahead)
-    institution_hit = any(is_institution_like(line.text) for line in lookahead)
-    section_hit = any(is_section_heading(line.text) for line in lookahead)
-    control_id_hit = any(CONTROL_ID_RE.search(line.text) for line in lookahead)
+    lookahead = [
+        line
+        for line in lines[end_index : min(len(lines), end_index + 6)]
+        if not is_header_noise(line.text) and not is_footer_like(line.text)
+    ]
+    author_hit = any(is_author_like(line.text) for line in lookahead[:3])
+    institution_hit = any(is_institution_like(line.text) for line in lookahead[:3])
+    section_hit = any(is_section_heading(line.text) for line in lookahead[:4])
+    control_id_hit = any(CONTROL_ID_RE.search(line.text) for line in lookahead[:4])
     score = 0
     reasons: list[str] = []
     if author_hit:
@@ -391,13 +627,37 @@ def soft_header_score(lines: list[LineRef], start_index: int) -> tuple[int, int,
     if control_id_hit:
         score += 1
         reasons.append("control_id")
-    if not author_hit and not institution_hit and not section_hit:
+    if not author_hit and not control_id_hit:
         return 0, end_index, ""
     return score, end_index, "+".join(reasons)
 
 
+def coded_header_boundary(lines: list[LineRef], start_index: int) -> tuple[bool, int]:
+    if start_index >= len(lines):
+        return False, start_index
+    line_text = lines[start_index].text
+    if is_abstract_start(line_text) is not None:
+        return True, start_index + 1
+    code_match = is_abstract_code_only(line_text)
+    if code_match is None:
+        return False, start_index
+    saw_preamble = False
+    for line in lines[start_index + 1 : min(len(lines), start_index + 5)]:
+        if is_footer_like(line.text):
+            continue
+        if is_potential_title_line(line.text) or is_uppercase_title_like(line.text):
+            return True, start_index + 1
+        if is_header_noise(line.text) or is_header_preamble_line(line.text) or is_abstract_code_only(line.text):
+            saw_preamble = True
+            continue
+        if saw_preamble and is_author_like(line.text):
+            continue
+        break
+    return False, start_index
+
+
 def infer_proceedings_pattern(lines: list[LineRef]) -> ProceedingsPattern:
-    coded_header_count = sum(1 for line in lines if is_abstract_boundary(line.text))
+    coded_header_count = sum(1 for index in range(len(lines)) if coded_header_boundary(lines, index)[0])
     uncoded_header_count = 0
     uppercase_header_count = 0
     control_id_header_count = 0
@@ -415,7 +675,9 @@ def infer_proceedings_pattern(lines: list[LineRef]) -> ProceedingsPattern:
         index += 1
 
     dominant_start_style = "coded"
-    if uncoded_header_count >= max(2, coded_header_count):
+    if coded_header_count == 0 and uncoded_header_count >= 1:
+        dominant_start_style = "uncoded_uppercase" if uppercase_header_count >= 1 else "uncoded_title_author"
+    elif uncoded_header_count >= max(2, coded_header_count):
         dominant_start_style = "uncoded_uppercase" if uppercase_header_count >= max(2, uncoded_header_count // 3) else "uncoded_title_author"
     elif coded_header_count >= 3 and uncoded_header_count >= 3:
         dominant_start_style = "mixed"
@@ -437,8 +699,9 @@ def header_boundary(
 ) -> tuple[bool, int, str, int]:
     if start_index >= len(lines):
         return False, start_index, "", 0
-    if is_abstract_boundary(lines[start_index].text):
-        return True, start_index + 1, "coded_boundary", 100
+    coded_match, coded_end_index = coded_header_boundary(lines, start_index)
+    if coded_match:
+        return True, coded_end_index, "coded_boundary", 100
     if not allow_soft:
         return False, start_index, "", 0
     score, end_index, reason = soft_header_score(lines, start_index)
@@ -459,6 +722,47 @@ def header_start_indices(lines: list[LineRef], pattern: ProceedingsPattern) -> l
             continue
         index += 1
     return starts
+
+
+def rewind_header_preamble_start(lines: list[LineRef], start_index: int, lower_bound: int = 0) -> int:
+    index = start_index
+    while index > lower_bound:
+        previous = lines[index - 1]
+        if previous.page_index != lines[start_index].page_index:
+            break
+        if not is_header_preamble_line(previous.text):
+            break
+        index -= 1
+    return index
+
+
+def is_header_preamble_line(line: str) -> bool:
+    stripped = line.strip()
+    normalized = normalize_text(stripped)
+    if not normalized:
+        return False
+    if normalized.startswith(("disclosure", "keywords", "corresponding author")):
+        return False
+    if is_footer_like(stripped):
+        return True
+    if is_header_noise(stripped):
+        return True
+    if DATE_LINE_RE.match(normalized) or normalized.startswith(
+        ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+    ):
+        return True
+    if TIME_RANGE_RE.search(stripped):
+        return True
+    if normalized.startswith("posters available for viewing"):
+        return True
+    words = normalized.split()
+    if 1 <= len(words) <= 5 and not stripped.endswith("."):
+        if is_author_like(stripped) or is_section_heading(stripped):
+            return False
+        title_case_ratio = sum(1 for word in stripped.split() if word[:1].isupper()) / max(1, len(stripped.split()))
+        if is_uppercase_title_like(stripped) or is_title_like(stripped) or title_case_ratio >= 0.75:
+            return True
+    return False
 
 
 def find_previous_header_index(
@@ -499,10 +803,10 @@ def find_next_header_index(
             if boundary_code_norm and expected_code_norm and boundary_code_norm == expected_code_norm:
                 continue
             if next_code_norm and boundary_code_norm == next_code_norm:
-                return index, "next_index_code_boundary"
+                return rewind_header_preamble_start(lines, index, lower_bound=max(0, start_index + min_gap)), "next_index_code_boundary"
             if boundary_code_norm:
-                return index, "next_abstract_boundary"
+                return rewind_header_preamble_start(lines, index, lower_bound=max(0, start_index + min_gap)), "next_abstract_boundary"
         matched, _, reason, _ = header_boundary(lines, index, pattern, allow_soft=True)
         if matched and reason != "coded_boundary":
-            return index, "next_soft_header"
+            return rewind_header_preamble_start(lines, index, lower_bound=max(0, start_index + min_gap)), "next_soft_header"
     return None, "no_header_found"

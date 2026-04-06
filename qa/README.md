@@ -10,6 +10,9 @@ This folder is for validation packs, spot checks, manual review sheets, and othe
   - machine-readable validation reports
   - CSV review sheets
   - spot-check folders, text-cleanup audits, and ad hoc audit summaries
+- `trimming/`
+  - structured proceedings-trimming QA batches
+  - stored human feedback, frozen regression fixtures, and per-batch reports
 
 Human-readable `.txt` exports under `qa/validation/text_exports/` are generated from canonical JSONs for review convenience and are ignored in git.
 

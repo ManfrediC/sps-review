@@ -9,7 +9,6 @@ import subprocess
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
 
@@ -31,10 +30,15 @@ from _proceedings_text import (
     is_abstract_start,
     is_author_like,
     is_footer_like,
+    is_header_preamble_line,
     is_institution_like,
+    is_article_metadata_line,
+    is_article_numbered_section,
     is_potential_title_line,
     normalize_code,
     normalize_text,
+    score_authors,
+    score_title,
     strip_abstract_code,
     token_set,
 )
@@ -257,67 +261,6 @@ def filter_to_proceedings_candidates(
 # Load text record.
 def load_text_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
-
-
-# Parse reference surnames.
-def parse_reference_surnames(authors: str) -> list[str]:
-    surnames: list[str] = []
-    for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
-        part = chunk.strip()
-        if not part:
-            continue
-        part = re.sub(r"\b(MD|PhD|DO|MSc|MBBS|RN|FRCP|FAAN)\b\.?", "", part, flags=re.IGNORECASE).strip()
-        if "," in part:
-            surname = part.split(",", 1)[0].strip()
-        else:
-            tokens = [token for token in re.split(r"\s+", part) if token]
-            if not tokens:
-                continue
-            surname = tokens[-1]
-            if len(tokens) >= 2 and len(tokens[-1]) <= 2:
-                surname = tokens[-2]
-        normalized = normalize_text(surname)
-        if len(normalized) <= 1:
-            continue
-        if normalized and normalized not in surnames:
-            surnames.append(normalized)
-    return surnames[:8]
-
-
-# Score title.
-def score_title(reference_title: str, block_title: str) -> float:
-    ref_norm = normalize_text(reference_title)
-    block_norm = normalize_text(block_title)
-    if not ref_norm or not block_norm:
-        return 0.0
-    if ref_norm == block_norm:
-        return 1.0
-    sequence = SequenceMatcher(None, ref_norm, block_norm).ratio()
-    ref_tokens = token_set(ref_norm, min_len=4)
-    block_tokens = token_set(block_norm, min_len=4)
-    overlap = len(ref_tokens & block_tokens) / max(1, len(ref_tokens))
-    if ref_norm in block_norm or block_norm in ref_norm:
-        overlap = max(overlap, 0.95)
-    blended = (0.35 * sequence) + (0.65 * overlap)
-    return max(min(sequence, overlap), blended)
-
-
-# Score authors.
-def score_authors(reference_authors: str, block_text: str) -> float:
-    surnames = parse_reference_surnames(reference_authors)
-    if not surnames:
-        return 0.0
-    normalized_block = normalize_text(block_text)
-    block_tokens = token_set(block_text, min_len=3)
-    matches = 0
-    for surname in surnames:
-        if surname in normalized_block:
-            matches += 1
-            continue
-        surname_tokens = {token for token in surname.split() if len(token) >= 3}
-        if surname_tokens and surname_tokens.issubset(block_tokens):
-            matches += 1
-    return matches / len(surnames)
 
 
 # Build page match scores.
@@ -569,6 +512,8 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
     header_starts = header_start_indices(first_window, pattern) if first_window else []
     title_like_count = sum(1 for line in first_window if is_potential_title_line(line.text))
     author_like_count = sum(1 for line in first_window if is_author_like(line.text))
+    article_section_count = sum(1 for line in first_window if is_article_numbered_section(line.text))
+    article_metadata_count = sum(1 for line in first_window if is_article_metadata_line(line.text))
     marker_text = " ".join(
         [
             str(record.get("source_filename") or ""),
@@ -588,11 +533,25 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
         signal_score += 2
     elif title_like_count >= 12 and author_like_count >= 5:
         signal_score += 1
+    if n_pages <= 3 and len(header_starts) >= 2 and author_like_count >= 4:
+        signal_score += 3
+    if n_pages <= 2 and title_like_count >= 4 and author_like_count >= 1 and program_marker_count > 0:
+        signal_score += 2
     if pattern.uncoded_header_count >= 4:
         signal_score += 1
     if program_marker_count > 0:
         signal_score += 2
+    if article_section_count >= 2:
+        signal_score -= 3
+    if article_metadata_count >= 3:
+        signal_score -= 3
+    elif article_metadata_count >= 2:
+        signal_score -= 2
     proceedings_detected = signal_score >= 3
+    if program_marker_count == 0 and pattern.coded_header_count == 0 and (
+        article_section_count >= 2 or article_metadata_count >= 3
+    ):
+        proceedings_detected = False
     return {
         "n_pages": n_pages,
         "abstract_block_count": len(header_starts),
@@ -656,7 +615,20 @@ def best_matching_block(
         block.title_score = score_title(reference_title, block.title_text)
         block.author_score = score_authors(reference_authors, block.preview_text)
         block.match_score = (0.75 * block.title_score) + (0.25 * block.author_score)
+        enough_body, section_hits, header_only = has_enough_body(block.line_refs)
+        block.body_signal_count = section_hits
+        block.header_only_flag = header_only
         if best is None or block.match_score > best.match_score:
+            best = block
+            continue
+        if best is None:
+            continue
+        if (
+            abs(block.match_score - best.match_score) <= 0.10
+            and not header_only
+            and enough_body
+            and best.header_only_flag
+        ):
             best = block
     return best
 
@@ -990,6 +962,24 @@ def choose_best_candidate(
         return window_candidate
     if window_candidate is None:
         return block_candidate
+    if (
+        block_candidate.start_index == window_candidate.start_index
+        and block_candidate.end_index > window_candidate.end_index
+        and len(block_candidate.line_refs) > len(window_candidate.line_refs)
+    ):
+        if (
+            window_candidate.end_rule in {"next_abstract_boundary", "next_index_code_boundary", "next_soft_header"}
+            and window_candidate.title_score >= 0.90
+            and window_candidate.author_score + 0.05 >= block_candidate.author_score
+            and window_candidate.match_score + 0.12 >= block_candidate.match_score
+        ):
+            return window_candidate
+        extra_tail = block_candidate.line_refs[len(window_candidate.line_refs) :]
+        if extra_tail and all(
+            is_header_preamble_line(line.text) or is_footer_like(line.text)
+            for line in extra_tail
+        ):
+            return window_candidate
     window_body_chars = body_char_count(window_candidate.line_refs)
     block_body_chars = body_char_count(block_candidate.line_refs)
     if (

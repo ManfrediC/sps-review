@@ -109,16 +109,16 @@ Validation scripts should write their non-canonical review and audit outputs und
   - Records `likely_sps_case_count`, confidence, basis, and manual-review flags separately from the routing decision.
 
 - `pipelines/05b_validate_proceedings_text.py`
-  - Runs a separate proceedings QC pass after trimming/categorisation.
-  - Searches proceedings-derived text for the reference title and author surnames.
+  - Runs a segmentation-aware proceedings QC pass after trimming/categorisation.
+  - Maps trimmed proceedings text back to the full source span and checks for clean start/end boundaries, truncation, or spillover into the neighbouring abstract.
   - Writes `data/references/proceedings_text_qc_registry.csv`.
   - Key statuses include:
-    - `trimmed_match_confirmed`
-    - `trimmed_partial_match`
-    - `trimmed_mismatch_suspected`
-    - `full_text_localised_untrimmed`
-    - `full_text_partial_match`
-    - `not_localised`
+    - `confirmed_full`
+    - `partial_truncated`
+    - `spillover_detected`
+    - `header_only_source`
+    - `untrimmed_localised`
+    - `mismatch`
 
 - `pipelines/07_split_case_series.py`
   - Uses reviewed routing to find case-series papers that should be split before LangExtract.
@@ -157,6 +157,12 @@ Validation scripts should write their non-canonical review and audit outputs und
   - Review-oriented TXT exports should be written under `qa/validation/text_exports/`.
   - The current QA workflow uses it to keep `all/`, `weaker_cases/`, `likely_failures/`, and the split weaker-case folders in sync with the latest canonical JSONs.
 
+- `validation/find_missed_proceedings_candidates.py`
+  - Audits non-conference rows for missed proceedings fragments or conference-style abstracts.
+  - Combines stage-04 metadata cues with local proceedings-format cues around the matched title and author block.
+  - Supports focused batches via repeated `--paper-id` flags before any wider audit pass.
+  - Writes review queues and snippet packs under `qa/validation/missed_proceedings_audit_*/`.
+
 - `validation/README.md`
   - Notes for the validation scripts and example commands.
 
@@ -168,6 +174,6 @@ Validation scripts should write their non-canonical review and audit outputs und
 - Registry builders are meant to keep all generated artifacts traceable from one table.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-05`
+- Last updated: `2026-04-06`
 - Immediate subdirectories (4): `lib`, `notebooks`, `pipelines`, `validation`
 - Immediate files (0, excluding `README.md`): _None_

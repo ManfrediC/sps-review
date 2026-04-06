@@ -3,11 +3,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import re
 import subprocess
 import sys
 from datetime import datetime, timezone
-from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
 
@@ -19,7 +17,8 @@ from _proceedings_text import (
     infer_proceedings_pattern,
     is_footer_like,
     normalize_text,
-    token_set,
+    score_authors,
+    score_title,
 )
 from _source_routing import load_csv_rows_by_id, resolve_source_row
 
@@ -114,67 +113,6 @@ def relative_to_repo(path: Path | None) -> str:
         return str(path.resolve().relative_to(REPO_ROOT.resolve()))
     except ValueError:
         return str(path.resolve())
-
-
-# Score title.
-def score_title(reference_title: str, candidate_text: str) -> float:
-    ref_norm = normalize_text(reference_title)
-    candidate_norm = normalize_text(candidate_text)
-    if not ref_norm or not candidate_norm:
-        return 0.0
-    if ref_norm == candidate_norm:
-        return 1.0
-    sequence = SequenceMatcher(None, ref_norm, candidate_norm).ratio()
-    ref_tokens = token_set(reference_title, min_len=4)
-    candidate_tokens = token_set(candidate_text, min_len=4)
-    overlap = len(ref_tokens & candidate_tokens) / max(1, len(ref_tokens))
-    if ref_norm in candidate_norm or candidate_norm in ref_norm:
-        overlap = max(overlap, 0.95)
-    blended = (0.35 * sequence) + (0.65 * overlap)
-    return max(min(sequence, overlap), blended)
-
-
-# Parse reference surnames.
-def parse_reference_surnames(authors: str) -> list[str]:
-    surnames: list[str] = []
-    for chunk in re.split(r";| and | & ", authors or "", flags=re.IGNORECASE):
-        part = chunk.strip()
-        if not part:
-            continue
-        part = re.sub(r"\b(MD|PhD|DO|MSc|MBBS|RN|FRCP|FAAN)\b\.?", "", part, flags=re.IGNORECASE).strip()
-        if "," in part:
-            surname = part.split(",", 1)[0].strip()
-        else:
-            tokens = [token for token in re.split(r"\s+", part) if token]
-            if not tokens:
-                continue
-            surname = tokens[-1]
-            if len(tokens) >= 2 and len(tokens[-1]) <= 2:
-                surname = tokens[-2]
-        normalized = normalize_text(surname)
-        if len(normalized) <= 1:
-            continue
-        if normalized and normalized not in surnames:
-            surnames.append(normalized)
-    return surnames[:8]
-
-
-# Score authors.
-def score_authors(reference_authors: str, candidate_text: str) -> float:
-    surnames = parse_reference_surnames(reference_authors)
-    if not surnames:
-        return 0.0
-    normalized_candidate = normalize_text(candidate_text)
-    candidate_tokens = token_set(candidate_text, min_len=3)
-    matches = 0
-    for surname in surnames:
-        if surname in normalized_candidate:
-            matches += 1
-            continue
-        surname_tokens = {token for token in surname.split() if len(token) >= 3}
-        if surname_tokens and surname_tokens.issubset(candidate_tokens):
-            matches += 1
-    return matches / len(surnames)
 
 
 # Build body metrics.
@@ -337,7 +275,7 @@ def validate_trimmed_segmentation(
     diagnostics["start_boundary_ok"] = start_boundary_ok
     diagnostics["start_boundary_rule"] = start_rule
     if not start_boundary_ok:
-        lookahead_limit = min(len(source_lines), start_position + 4)
+        lookahead_limit = min(len(source_lines), start_position + 8)
         for offset in range(start_position + 1, lookahead_limit):
             matched, _, _, _ = header_boundary(source_lines, offset, pattern, allow_soft=True)
             if matched:

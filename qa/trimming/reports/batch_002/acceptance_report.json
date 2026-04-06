@@ -1,0 +1,218 @@
+{
+  "generated_at_utc": "2026-04-06T20:35:02.106848+00:00",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "results": [
+    {
+      "paper_id": "1119",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1120",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1129",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1129.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening."
+        }
+      ]
+    },
+    {
+      "paper_id": "1138",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1138.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusion: The results are compatible with literature."
+        }
+      ]
+    },
+    {
+      "paper_id": "1150",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        }
+      ]
+    },
+    {
+      "paper_id": "1153",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        }
+      ]
+    },
+    {
+      "paper_id": "1154",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        }
+      ]
+    },
+    {
+      "paper_id": "1215",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1217",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        }
+      ]
+    },
+    {
+      "paper_id": "1227",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    }
+  ]
+}

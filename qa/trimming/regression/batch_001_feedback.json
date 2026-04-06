@@ -1,0 +1,84 @@
+{
+  "regression_set_id": "batch_001_feedback",
+  "accepted_from_feedback_round_id": "batch_001_feedback",
+  "cases": [
+    {
+      "paper_id": "969",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Full journal article and not proceedings; should be excluded from stage 05."
+    },
+    {
+      "paper_id": "980",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Standalone clinical case article and not proceedings; should be excluded from stage 05."
+    },
+    {
+      "paper_id": "1001",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1011",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_start_first_line": "Poster 313",
+      "expected_end_contains": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.",
+      "expected_not_contains": [
+        "sequelae of radiation-induced myelopathy, radiation-induced",
+        "funicular pain is likely to progress with time.",
+        "Poster 314",
+        "The Usefulness of Transcranial Magnetic Stimulation",
+        "Diffusion Tensor Tractography"
+      ]
+    },
+    {
+      "paper_id": "1028",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1031",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "with only mild stiffness and pain.",
+      "expected_not_contains": [
+        "Poster 21",
+        "A comparison of the progression of autonomic dysfunction",
+        "J.L. Gilden"
+      ]
+    },
+    {
+      "paper_id": "1112",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1116",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1117",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms."
+    },
+    {
+      "paper_id": "1118",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    }
+  ]
+}

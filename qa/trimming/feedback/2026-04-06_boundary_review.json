@@ -1,0 +1,79 @@
+{
+  "feedback_round_id": "2026-04-06_boundary_review",
+  "created_from": "human review of focused proceedings snippets and trims",
+  "cases": [
+    {
+      "paper_id": "1017",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Standalone abstract, not proceedings, and should not enter stage 05."
+    },
+    {
+      "paper_id": "1784",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Standalone abstract, not proceedings, and should not enter stage 05."
+    },
+    {
+      "paper_id": "1935",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Standalone abstract, not proceedings, and should not enter stage 05."
+    },
+    {
+      "paper_id": "5753",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Standalone abstract, not proceedings, and should not enter stage 05."
+    },
+    {
+      "paper_id": "1597",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_end_contains": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+      "expected_not_contains": [
+        "O-36 Listening the sound of neuromuscular junction during"
+      ],
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "6271",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_not_contains": [
+        "preliminary evidence that HT, if started early",
+        "Guillain-Barré Syndrome (GBS) in a Nonagenarian"
+      ],
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "8198",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_end_contains": "High serum antibody titres correlate with disease activity.",
+      "expected_not_contains": [
+        "patient 1 had a monophasic illness that completely resolved after resection of a thymoma",
+        "POSTER SESSION 3",
+        "Subthalamic activity during diphasic dyskinesias in Parkinson"
+      ],
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "8317",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_start_first_line": "Stiff man syndrome associated with breast cancer about 2 cases",
+      "expected_not_contains": [
+        "Effect of carpal tunnel syndrome on ulnar nerve at wrist",
+        "Abstract — WCN 2013",
+        "No: 1362",
+        "Topic: 7 — Neuromuscular disorders"
+      ],
+      "expected_manual_review": false
+    }
+  ]
+}

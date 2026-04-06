@@ -1,0 +1,76 @@
+{
+  "regression_set_id": "batch_002_feedback",
+  "accepted_from_feedback_round_id": "batch_002_feedback",
+  "cases": [
+    {
+      "paper_id": "1119",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1120",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1129",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening."
+    },
+    {
+      "paper_id": "1138",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "Conclusion: The results are compatible with literature."
+    },
+    {
+      "paper_id": "1150",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "expected_trim_status": "not_needed",
+      "notes": "Accepted as not needing proceedings trimming."
+    },
+    {
+      "paper_id": "1153",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "expected_trim_status": "not_needed",
+      "notes": "Accepted as not needing proceedings trimming."
+    },
+    {
+      "paper_id": "1154",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "expected_trim_status": "not_needed",
+      "notes": "Accepted as not needing proceedings trimming."
+    },
+    {
+      "paper_id": "1215",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1217",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "expected_trim_status": "not_needed",
+      "notes": "Accepted as not needing proceedings trimming."
+    },
+    {
+      "paper_id": "1227",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    }
+  ]
+}

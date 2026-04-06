@@ -111,6 +111,48 @@ Build the default batch and export review materials:
 python src/validation/build_source_categorisation_review_sample.py --output-path qa/validation/source_categorisation/source_categorisation_review_sample_n30_seed20260405.json --review-csv-path qa/validation/source_categorisation/source_categorisation_review_sample_n30_seed20260405.csv --text-output-dir qa/validation/source_categorisation/text_packets_n30_seed20260405
 ```
 
+### `find_missed_proceedings_candidates.py`
+
+Builds a review queue for short proceedings fragments or conference-style abstracts that stage 04 did not currently label `conference_abstract`.
+
+The script:
+- reads `data/references/source_categorisation_registry.csv`
+- excludes rows already labelled `conference_abstract`
+- matches the reference title and authors back to the extracted text
+- combines metadata cues such as `conference paper`, `supplement`, `poster`, or `conference abstract` with local proceedings-format cues such as poster-session headers or code-prefixed abstract blocks
+- writes a non-canonical JSON summary, review CSV, and optional snippet TXT files under `qa/validation/`
+- supports focused testing via repeated `--paper-id` flags so heuristics can be reviewed on a small batch before any wider audit run
+
+Run a focused mixed batch first:
+
+```bash
+python src/validation/find_missed_proceedings_candidates.py --paper-id 5753 --paper-id 1597 --paper-id 1935 --paper-id 1017 --output-path qa/validation/missed_proceedings_audit_2026-04-06/focused_batch/report.json --review-csv-path qa/validation/missed_proceedings_audit_2026-04-06/focused_batch/review_queue.csv --snippet-dir qa/validation/missed_proceedings_audit_2026-04-06/focused_batch/snippets
+```
+
+After the focused batch looks sensible, run a wider audit:
+
+```bash
+python src/validation/find_missed_proceedings_candidates.py --output-path qa/validation/missed_proceedings_audit_2026-04-06/report.json --review-csv-path qa/validation/missed_proceedings_audit_2026-04-06/review_queue.csv --snippet-dir qa/validation/missed_proceedings_audit_2026-04-06/snippets
+```
+
+### `manage_trimming_batches.py`
+
+Prepares one proceedings-trimming QA batch at a time for the stage-05 improvement loop.
+
+The script:
+- reads the resolved stage-04 conference-abstract pool
+- excludes papers already frozen in `qa/trimming/feedback/` or `qa/trimming/regression/`
+- refuses to open a new batch while an earlier batch is still awaiting feedback
+- runs `05_trim_proceedings_text.py` and `05b_validate_proceedings_text.py` on the selected subset only
+- writes a batch manifest under `qa/trimming/batches/`
+- writes subset outputs and a machine-readable batch report under `qa/trimming/reports/<batch_id>/`
+
+Prepare the next default 10-file batch:
+
+```bash
+python src/validation/manage_trimming_batches.py
+```
+
 ### `build_stage04_gold_batch.py`
 
 Builds a reproducible `n=10` gold-standard review batch for stage 04.

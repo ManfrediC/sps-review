@@ -10,6 +10,7 @@ Typical contents:
 - text-cleanup audit passes such as `text_cleanup_audit_round1.csv` and `text_cleanup_audit_round2.csv`
 - archived historical QA material under `archive/`
 - focused pipeline validation packs such as `proceedings_stage05_2026-04-06/`
+- focused routing audits such as `missed_proceedings_audit_2026-04-06/`
 - spot-check folders
 - human-readable text exports under `text_exports/`
 
@@ -53,3 +54,13 @@ Small real-data verification pack for the updated proceedings trimming and proce
   - `proceedings_text_qc_registry_subset.csv`
   - `text_trimmed/`
 - Use this folder as provenance for the 6 April 2026 stage-`05` / stage-`05b` refactor, not as a live registry source.
+
+## `missed_proceedings_audit_2026-04-06/`
+
+Focused audit pack for proceedings-like sources that stage 04 did not currently label `conference_abstract`.
+
+- Contains:
+  - an exploratory whole-corpus report and review CSV
+  - a smaller reviewed mixed batch under `focused_batch_mixed/`
+  - per-paper snippet TXT files for the selected candidates
+- Use the focused batch as the current heuristic-check pack while the audit logic is still being calibrated.

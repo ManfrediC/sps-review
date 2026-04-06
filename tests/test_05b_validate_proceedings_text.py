@@ -131,6 +131,54 @@ class TestValidateProceedingsText(unittest.TestCase):
         self.assertEqual(status, "partial_truncated")
         self.assertTrue(manual_follow_up)
 
+    def test_validate_trimmed_segmentation_flags_preamble_before_real_title(self) -> None:
+        lines = [
+            "Earlier abstract closing line that should not be part of the target source.",
+            "doi:10.1016/j.jns.2013.07.1574",
+            "Abstract - WCN 2013",
+            "No: 1465",
+            "Topic: 7 - Neuromuscular disorders",
+            "Stiff man syndrome associated with breast cancer about 2 cases",
+            "L. Noutsa, P.C. Mbonda Chimi, M. Camara",
+            "Dakar, Senegal",
+            "Background: The stiff-man syndrome is one of the syndromes of neuromuscular hyperactivity.",
+            "Observation: Two patients had axial stiffness and rigidity.",
+            "Conclusion: The diagnosis requires a search for associated pathologies.",
+            "doi:10.1016/j.jns.2013.07.1575",
+            "Abstract - WCN 2013",
+            "No: 1362",
+            "Topic: 7 - Neuromuscular disorders",
+            "Effect of carpal tunnel syndrome on ulnar nerve at wrist",
+            "S. Kang, S.N. Yang",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 1, 11)
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.90,
+            author_score=0.60,
+            combined_score=0.82,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertFalse(segmentation["start_boundary_ok"])
+        self.assertTrue(segmentation["leading_spillover"])
+        self.assertEqual(status, "spillover_detected")
+        self.assertTrue(manual_follow_up)
+
 
 if __name__ == "__main__":
     unittest.main()

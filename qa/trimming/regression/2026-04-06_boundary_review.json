@@ -1,0 +1,57 @@
+{
+  "regression_set_id": "2026-04-06_boundary_review",
+  "accepted_from_feedback_round_id": "2026-04-06_boundary_review",
+  "cases": [
+    {
+      "paper_id": "1017",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true
+    },
+    {
+      "paper_id": "1784",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true
+    },
+    {
+      "paper_id": "1935",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true
+    },
+    {
+      "paper_id": "5753",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true
+    },
+    {
+      "paper_id": "1597",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_end_contains": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "6271",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "8198",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_end_contains": "High serum antibody titres correlate with disease activity.",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "8317",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_start_first_line": "Stiff man syndrome associated with breast cancer about 2 cases",
+      "expected_manual_review": false
+    }
+  ]
+}
