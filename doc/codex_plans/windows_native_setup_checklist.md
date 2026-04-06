@@ -76,7 +76,7 @@ GEMINI_API_KEY=your-key-here
    - `.codex/rules/sps_overnight.rules`
    - root `AGENTS.md`
 2. Add a Windows-native overnight runner that logs stage execution without changing canonical output locations.
-3. Implement `04_source_categorisation.py`.
+3. Implement `04_source_categorisation_LLM.py` as the canonical LLM stage and retain the heuristic under `src/legacy/`.
 4. Implement `07_split_case_series.py`.
 5. Implement `04_model_comparison.py`.
 6. Expand LangExtract few-shot examples using the curated material in `examples/`.

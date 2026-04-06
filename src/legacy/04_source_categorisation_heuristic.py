@@ -11,6 +11,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 from src.pipelines._sps_case_counting import estimate_sps_case_count
 
 

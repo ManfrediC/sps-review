@@ -250,13 +250,13 @@ This means the remaining open issues after step `03` are now narrow and explicit
 
 ## Current routing and count stages
 
-The canonical routing flow now separates source type from extractable SPS case count.
+The canonical routing flow now starts with the joint LLM stage-04 pass.
 
-1. `src/pipelines/04_source_categorisation.py` assigns the source category and downstream routing behaviour.
+1. `src/pipelines/04_source_categorisation_LLM.py` assigns the source category and the paired extractable SPS case count in one LLM pass.
+   It now checkpoints per-paper run artefacts under `results/stage04_llm_runs/` and only publishes the canonical registries after a complete run.
 2. `src/pipelines/05_trim_proceedings_text.py` trims proceedings-like records down to the target abstract where needed.
 3. `src/pipelines/05b_validate_proceedings_text.py` checks whether the proceedings-derived text looks correctly localised and usable downstream.
-4. `src/pipelines/06_extract_sps_case_counts.py` estimates extractable SPS case counts using the preferred available text and writes a separate count registry.
-5. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
+4. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
 
 ## Stage-04 gold standard
 
@@ -268,7 +268,7 @@ Use this cumulative reviewed file as the canonical gold-standard reference set:
 Per-round reviewed snapshots remain in the same folder as:
 - `gold_standard_stage04_<round_id>.csv`
 
-This keeps count heuristics from distorting source categorisation while still preserving a canonical count output for downstream use and auditing.
+This keeps the stage-04 adjudication loop aligned with the canonical LLM routing/count pass while preserving the reviewed gold file for downstream use and auditing.
 
 ---
 

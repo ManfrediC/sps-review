@@ -1,4 +1,4 @@
-"""Accuracy benchmark for 04_source_categorisation.py against manual review ground truth.
+"""Accuracy benchmark for the legacy 04_source_categorisation_heuristic.py against manual review ground truth.
 
 Loads the 291 manually reviewed papers, runs classify_record() on each,
 and compares heuristic output against final_source_category after normalisation.
@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py"
+CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "legacy" / "04_source_categorisation_heuristic.py"
 ROUTING_SCRIPT = REPO_ROOT / "src" / "pipelines" / "_source_routing.py"
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 MANUAL_REVIEW_CSV = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"

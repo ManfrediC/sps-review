@@ -15,7 +15,7 @@ from src.validation._stage04_gold import GOLD_MASTER_PATH, reviewed_gold_rows_fr
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py"
+CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "legacy" / "04_source_categorisation_heuristic.py"
 CASE_COUNT_SCRIPT = REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_counts.py"
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 TRIM_REGISTRY_CSV = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
@@ -34,7 +34,7 @@ def _load_module(name: str, path: Path):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Benchmark stage-04 heuristics against reviewed stage-04 gold-standard rows."
+        description="Benchmark the legacy heuristic stage-04 flow against reviewed stage-04 gold-standard rows."
     )
     parser.add_argument(
         "--gold-path",
@@ -85,18 +85,21 @@ def summarise_bucket_accuracy(comparisons: list[dict[str, Any]]) -> dict[str, di
     bucket_totals: Counter[str] = Counter()
     category_correct: Counter[str] = Counter()
     count_correct: Counter[str] = Counter()
+    count_totals: Counter[str] = Counter()
     for comparison in comparisons:
         bucket = str(comparison["selection_bucket"])
         bucket_totals[bucket] += 1
         if comparison["category_match"]:
             category_correct[bucket] += 1
-        if comparison["count_match"]:
+        if comparison.get("count_evaluated"):
+            count_totals[bucket] += 1
+        if comparison["count_match"] and comparison.get("count_evaluated"):
             count_correct[bucket] += 1
     return {
         bucket: {
             "rows": bucket_totals[bucket],
             "category_accuracy": safe_ratio(category_correct[bucket], bucket_totals[bucket]),
-            "count_accuracy": safe_ratio(count_correct[bucket], bucket_totals[bucket]),
+            "count_accuracy": safe_ratio(count_correct[bucket], count_totals[bucket]),
         }
         for bucket in sorted(bucket_totals)
     }
@@ -117,6 +120,7 @@ def run_benchmark(
     evaluated = 0
     category_correct = 0
     count_correct = 0
+    count_evaluated = 0
     excluded_alignment_counts: Counter[str] = Counter()
     alignment_counts: Counter[str] = Counter()
     mismatches: list[dict[str, Any]] = []
@@ -177,12 +181,15 @@ def run_benchmark(
         got_category = (category_result.get("source_category") or "").strip()
         got_count = (count_result.get("likely_sps_case_count") or "").strip()
         category_match = got_category == expected_category
-        count_match = got_count == expected_count
+        count_evaluated_row = expected_count != ""
+        count_match = (got_count == expected_count) if count_evaluated_row else True
 
         evaluated += 1
         if category_match:
             category_correct += 1
-        if count_match:
+        if count_evaluated_row:
+            count_evaluated += 1
+        if count_match and count_evaluated_row:
             count_correct += 1
 
         comparison = {
@@ -196,6 +203,7 @@ def run_benchmark(
             "got_count": got_count,
             "category_match": category_match,
             "count_match": count_match,
+            "count_evaluated": count_evaluated_row,
             "categorisation_reason": (category_result.get("categorisation_reason") or "").strip(),
             "count_reason": (count_result.get("count_reason") or "").strip(),
         }
@@ -207,10 +215,11 @@ def run_benchmark(
         "gold_path": str(gold_path),
         "reviewed_rows_available": len(gold_rows),
         "evaluated_rows": evaluated,
+        "count_evaluated_rows": count_evaluated,
         "excluded_alignment_counts": dict(excluded_alignment_counts),
         "alignment_counts": dict(alignment_counts),
         "category_accuracy": safe_ratio(category_correct, evaluated),
-        "count_accuracy": safe_ratio(count_correct, evaluated),
+        "count_accuracy": safe_ratio(count_correct, count_evaluated),
         "bucket_accuracy": summarise_bucket_accuracy(comparisons),
         "mismatches": mismatches,
     }
@@ -223,6 +232,7 @@ def print_report(results: dict[str, Any]) -> None:
     print(f"Gold file: {results['gold_path']}")
     print(f"Reviewed rows available: {results['reviewed_rows_available']}")
     print(f"Rows evaluated: {results['evaluated_rows']}")
+    print(f"Rows with reviewed count labels: {results['count_evaluated_rows']}")
     if results["excluded_alignment_counts"]:
         print(f"Excluded alignment rows: {results['excluded_alignment_counts']}")
     print(f"Category accuracy: {results['category_accuracy']:.1%}")

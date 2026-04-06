@@ -364,7 +364,7 @@ Refactored pipeline numbering and repaired the interrupted proceedings-trimming 
 - `00_download_covidence_pdfs.py` -> `01_download_covidence_pdfs.py`
 - `00_build_pdf_source_registry.py` -> `02_build_pdf_source_registry.py`
 - `01_extract_text.py` -> `03_extract_text.py`
-- `01a_source_categorisation.py` -> `04_source_categorisation.py`
+- `01a_source_categorisation.py` -> `04_source_categorisation_LLM.py`
 - `00_trim_proceedings_text.py` -> `05_trim_proceedings_text.py`
 - `00_validate_proceedings_text.py` -> `05b_validate_proceedings_text.py`
 - `01b_split_case_series.py` -> `07_split_case_series.py`
@@ -440,7 +440,7 @@ Patched proceedings abstract localisation, refreshed trial/spot-check outputs, a
 - `src/pipelines/01_download_covidence_pdfs.py`
 - `src/pipelines/02_build_pdf_source_registry.py`
 - `src/pipelines/03_extract_text.py`
-- `src/pipelines/04_source_categorisation.py`
+- `src/pipelines/04_source_categorisation_LLM.py`
 - `src/pipelines/05_trim_proceedings_text.py`
 - `src/pipelines/05b_validate_proceedings_text.py`
 - `src/pipelines/07_split_case_series.py`
@@ -882,7 +882,7 @@ Folded the residual rescue path into the canonical cleanup stage, labeled the tw
 ### Separate SPS Case-Count Stage
 
 - Split source categorisation and extractable SPS case counting into separate pipeline responsibilities:
-  - `src/pipelines/04_source_categorisation.py` now owns source type and downstream routing
+  - `src/pipelines/04_source_categorisation_LLM.py` now owns source type and downstream routing
   - `src/pipelines/06_extract_sps_case_counts.py` now owns extractable SPS case counts
 - Added the shared count helper `src/pipelines/_sps_case_counting.py`.
 - Generated the canonical count registry:
@@ -919,3 +919,103 @@ Folded the residual rescue path into the canonical cleanup stage, labeled the tw
   - `python -m unittest tests.test_sps_case_counting -v`
   - `python -m unittest tests.test_04_source_categorisation_review_batch -v`
 - The review-batch file remains useful for category/subtype edge cases, but its count columns are no longer treated as a canonical benchmark when the reviewer left the count blank.
+
+## 05.04.2026 (continued)
+
+Added a reproducible gold-standard review workflow for source categorisation and extractable SPS case counts, then used two reviewed rounds to calibrate stage `04` and stage `06`.
+
+### Gold-Standard Review Workflow
+
+- Added a dedicated validation workflow under `src/validation/` for stage-`04` / stage-`06` review:
+  - `build_stage04_gold_batch.py`
+  - `review_stage04_gold_app.py`
+  - `benchmark_stage04_gold.py`
+  - `_stage04_gold.py`
+- Added a Streamlit reviewer so local PDF review can be done inside the repo with:
+  - predicted source category
+  - predicted extractable SPS count
+  - reviewer override fields
+  - resumable per-round response saving
+  - in-app PDF text search and page-jump navigation
+- Generated review rounds under `qa/validation/source_categorisation/gold_standard/`:
+  - `2026-04-05_round_01`
+  - `2026-04-05_round_02`
+  - `2026-04-05_round_03`
+- Added the canonical cumulative reviewed gold file:
+  - `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`
+- Kept `stage04_gold_standard_master.csv` in sync as a compatibility alias.
+- Updated the README layers so the gold-standard file and reviewer workflow are explicitly documented.
+
+### Pipeline Ordering And Renames
+
+- Moved proceedings validation and case counting into the intended operational order after source categorisation:
+  - `04_source_categorisation_LLM.py`
+  - `05_trim_proceedings_text.py`
+  - `05b_validate_proceedings_text.py`
+  - `06_extract_sps_case_counts.py`
+  - `07_split_case_series.py`
+- Renamed:
+  - `src/pipelines/06_validate_proceedings_text.py` -> `src/pipelines/05b_validate_proceedings_text.py`
+  - `src/pipelines/04b_extract_sps_case_counts.py` -> `src/pipelines/06_extract_sps_case_counts.py`
+- Updated the overnight orchestrator, validation scripts, tests, and docs so the new naming and order are consistent.
+
+### Round-02 Calibration
+
+- Incorporated the completed `2026-04-05_round_02` review into the canonical cumulative gold file.
+- Patched stage `04` and stage `06` against the reviewed errors:
+  - better cohort-versus-lab routing
+  - diagnosis-specific subgroup counting
+  - improved handling of literature-only and titre/protein numbers
+  - zeroed extractable counts for genuinely non-extractable lab-heavy studies
+- Added regression coverage so the reviewed round remains reproducible and benchmarkable.
+- Generated `2026-04-05_round_03` as the next 20-paper review set.
+
+### Round-03 Calibration
+
+- Added the completed `2026-04-05_round_03` responses into:
+  - `04_categorisation_gold_standard.csv`
+  - `stage04_gold_standard_master.csv`
+- Patched the heuristics in:
+  - `src/pipelines/04_source_categorisation_LLM.py`
+  - `src/pipelines/06_extract_sps_case_counts.py`
+  - `src/pipelines/_sps_case_counting.py`
+- Main round-03 fixes:
+  - proceedings-aware routing using trimmed/title-localised text windows
+  - stronger title-only and single-patient therapeutic routing
+  - OCR-ligature normalisation for count extraction
+  - conference-abstract result-section count capture such as `six girls`
+  - SPS subgroup counts from `13 of 17`-style phrasing and table-row signals
+  - better suppression of weak non-extractable counts in translational / observational cohorts
+  - preservation of explicit single-case counts for rare review-tagged rows
+- Added focused regression tests in:
+  - `tests/test_sps_case_counting.py`
+  - `tests/test_06_extract_sps_case_counts.py`
+  - `tests/test_stage04_gold_regressions.py`
+
+### Current Benchmark State
+
+- Round `01` benchmark:
+  - `100%` category accuracy
+  - `60%` count accuracy
+  - the remaining misses are older mixed-cohort / prevalence-style count disagreements that were left visible rather than paper-specific patched
+- Round `02` benchmark:
+  - `100%` category accuracy
+  - `100%` count accuracy
+- Round `03` benchmark:
+  - `100%` category accuracy
+  - `95%` count accuracy
+  - the one remaining mismatch is a duplicate milacemide trial-family conflict between paper `12137` and the earlier reviewed paper `22`
+- Cumulative gold benchmark over `04_categorisation_gold_standard.csv`:
+  - `100%` category accuracy
+  - `90%` count accuracy
+
+### Commit Hygiene
+
+- Created small, topic-specific commits for the new workflow and calibration loop, including:
+  - `46e6538` `Rename proceedings QC and case count stages`
+  - `224a688` `Improve stage 04 routing and SPS subgroup counts`
+  - `72e7f7e` `Add searchable PDF navigation to gold review app`
+  - `a6c73ee` `Add reviewed stage 04 gold rounds and regression check`
+  - `ba30d98` `Calibrate stage 04 against round 02 gold review`
+  - `689e0b2` `Add reviewed round 03 gold categorisation labels`
+  - `b63601c` `Calibrate stage 04 and 06 against round 03 gold review`

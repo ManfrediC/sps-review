@@ -25,6 +25,8 @@ class Stage:
     supports_dry_run: bool = False
     supports_force: bool = False
     supports_model_id: bool = False
+    requires_paid_approval: bool = False
+    supports_publish: bool = False
 
 
 STAGES = [
@@ -43,7 +45,9 @@ STAGES = [
     Stage(
         key="source_categorisation",
         label="Source Categorisation",
-        script_path=REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py",
+        script_path=REPO_ROOT / "src" / "pipelines" / "04_source_categorisation_LLM.py",
+        requires_paid_approval=True,
+        supports_publish=True,
     ),
     Stage(
         key="proceedings_trim",
@@ -54,11 +58,6 @@ STAGES = [
         key="proceedings_qc",
         label="Proceedings Text QC",
         script_path=REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text.py",
-    ),
-    Stage(
-        key="sps_case_counts",
-        label="SPS Case Counts",
-        script_path=REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_counts.py",
     ),
     Stage(
         key="case_series_split",
@@ -125,6 +124,16 @@ def parse_args() -> argparse.Namespace:
         "--model-id",
         default="gpt-4.1-mini",
         help="Model ID passed to stages that accept --model-id.",
+    )
+    parser.add_argument(
+        "--allow-paid-stage04",
+        action="store_true",
+        help="Explicit approval flag required before the overnight runner will start the paid stage-04 LLM step.",
+    )
+    parser.add_argument(
+        "--publish-stage04",
+        action="store_true",
+        help="Publish canonical stage-04 registries after the overnight stage completes.",
     )
     return parser.parse_args()
 
@@ -193,7 +202,12 @@ def selected_stages(args: argparse.Namespace) -> list[Stage]:
     end_index = next(i for i, stage in enumerate(STAGES) if stage.key == args.to_stage)
     if end_index < start_index:
         raise SystemExit("--to-stage must come after --from-stage.")
-    return STAGES[start_index : end_index + 1]
+    chosen = STAGES[start_index : end_index + 1]
+    if any(stage.requires_paid_approval for stage in chosen) and not args.allow_paid_stage04:
+        raise SystemExit(
+            "The overnight runner will not start the paid stage-04 LLM step without --allow-paid-stage04."
+        )
+    return chosen
 
 
 # Build command.
@@ -209,6 +223,10 @@ def build_command(stage: Stage, args: argparse.Namespace) -> list[str]:
         command.append("--dry-run")
     if stage.supports_model_id:
         command.extend(["--model-id", args.model_id])
+    if stage.requires_paid_approval:
+        command.append("--allow-paid-run")
+    if stage.supports_publish and args.publish_stage04:
+        command.append("--publish")
     return command
 
 

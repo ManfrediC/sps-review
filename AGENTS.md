@@ -76,6 +76,7 @@ Read and follow `doc/repo_rules.md` for repo-specific workflow, pipeline, output
 - Do not silently change interfaces, file locations, or side effects.
 - Before changing a public function, CLI, schema, or data contract, search for downstream uses first.
 - Keep edits small and reviewable.
+- British English is preferred.
 
 ## Coding conventions
 - Prioritise readability.
@@ -162,6 +163,7 @@ For substantial tasks, use:
 - No hallucinated citations or references.
 - No invented values.
 - No pretending commands/tests ran when they did not.
+- Never start paid LLM/API runs without asking the user first and getting explicit approval.
 - No giant rewrites without warning.
 - No irreversible actions without approval.
 - No secrets in commits or tracked files.

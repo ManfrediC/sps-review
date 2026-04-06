@@ -114,16 +114,19 @@ class TestStage04GoldWorkflow(unittest.TestCase):
                     "selection_bucket": "conference_edge",
                     "category_match": True,
                     "count_match": False,
+                    "count_evaluated": True,
                 },
                 {
                     "selection_bucket": "conference_edge",
                     "category_match": False,
                     "count_match": False,
+                    "count_evaluated": True,
                 },
                 {
                     "selection_bucket": "count_ambiguity",
                     "category_match": True,
                     "count_match": True,
+                    "count_evaluated": True,
                 },
             ]
         )

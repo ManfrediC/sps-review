@@ -207,7 +207,7 @@ def parse_args() -> argparse.Namespace:
         "--source-categorisation-path",
         type=Path,
         default=SOURCE_CATEGORISATION_PATH,
-        help="Heuristic source categorisation registry used for reviewed exclusions.",
+        help="Stage-04 source categorisation registry used for reviewed exclusions.",
     )
     parser.add_argument(
         "--source-manual-review-path",

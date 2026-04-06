@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "pipelines" / "04_source_categorisation.py"
+CATEGORISATION_SCRIPT = REPO_ROOT / "src" / "legacy" / "04_source_categorisation_heuristic.py"
 CASE_COUNT_SCRIPT = REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_counts.py"
 REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 TRIM_REGISTRY_CSV = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"

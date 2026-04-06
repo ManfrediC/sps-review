@@ -218,32 +218,29 @@ Force a rerun from preserved stage-2 backups:
 python src/pipelines/03b_clean_text.py --stage2 --paper-id 43 --force
 ```
 
-## `04_source_categorisation.py`
+## `04_source_categorisation_LLM.py`
 
-This script classifies each extracted source into a pragmatic downstream category using the reference export, proceedings-trim signals, and preferred text content.
+This script is the canonical stage-04 routing pass and uses the LLM workflow to classify each extracted source and estimate the paired extractable SPS case count in one run.
 
 It:
 
 - reads the full text JSON from `data/extraction_json/text`,
 - prefers `data/extraction_json/text_trimmed/{paper_id}.json` when available,
 - reuses `data/references/text_trim_registry.csv` for proceedings signals,
-- assigns categories such as `single_case_report`, `case_series_or_multi_case`, `observational_group_study`, `conference_abstract`, `review_article`, `non_clinical`, or `unclear_manual_review`,
+- assigns categories such as `single_case_report`, `case_series_or_multi_case`, `observational_group_study`, `conference_abstract`, `review_article`, `non_clinical_basic_science`, or `unclear_manual_review`,
+- estimates `likely_sps_case_count` from the same LLM pass,
 - records whether case-series splitting is a candidate, and
-- writes `data/references/source_categorisation_registry.csv`.
+- checkpoints each completed paper under `results/stage04_llm_runs/{run_id}/`,
+- supports resume and publish-only recovery from saved run artefacts, and
+- publishes `data/references/source_categorisation_registry.csv` and `data/references/source_sps_case_count_registry.csv` only after a complete run.
 
-This stage now owns source type and routing only. The canonical extractable SPS case-count output is written separately by:
-
-- `data/references/source_sps_case_count_registry.csv`
-
-For transition safety, `source_categorisation_registry.csv` still includes a legacy `likely_case_count` column, but downstream count-sensitive work should prefer the dedicated case-count registry.
-
-This registry is the heuristic first pass. Manual adjudications for papers that required case-by-case review are stored in:
+Manual adjudications for papers that required case-by-case review are stored in:
 
 - `data/references/source_categorisation_manual_review.csv`
 
 That manual override ledger records:
 
-- the original heuristic decision
+- the original predicted decision
 - the final reviewed category and subtype
 - short review notes
 - a review batch label and timestamp
@@ -295,14 +292,28 @@ The current corpus-level manual review pass has been completed, so all rows that
 Practical downstream rule:
 
 - if a paper appears in `source_categorisation_manual_review.csv`, use the reviewed `final_source_category` and `final_source_subtype`
-- otherwise, use the heuristic values from `source_categorisation_registry.csv`
+- otherwise, use the stage-04 LLM values from `source_categorisation_registry.csv`
 
-After each run, it also refreshes `data/references/paper_artifact_registry.csv` unless `--skip-registry-refresh` is passed.
+Paid LLM calls are blocked unless `--allow-paid-run` is passed explicitly.
+
+After publish, it also refreshes `data/references/paper_artifact_registry.csv` unless `--skip-registry-refresh` is passed.
 
 ### Run
 
 ```bash
-python src/pipelines/04_source_categorisation.py
+python src/pipelines/04_source_categorisation_LLM.py --estimate-only
+```
+
+Start an approved checkpointed run:
+
+```bash
+python src/pipelines/04_source_categorisation_LLM.py --allow-paid-run --run-id stage04_llm_20260406 --max-runtime-minutes 180
+```
+
+Publish a completed run:
+
+```bash
+python src/pipelines/04_source_categorisation_LLM.py --publish-only --run-id stage04_llm_20260406
 ```
 
 ## `06_extract_sps_case_counts.py`
@@ -318,7 +329,7 @@ It:
 - records count confidence, basis, and whether manual count review is advisable, and
 - writes `data/references/source_sps_case_count_registry.csv`.
 
-This stage is intentionally separate from `04_source_categorisation.py` so count errors do not directly distort source-type routing.
+This stage is now a legacy heuristic comparator for the canonical joint LLM count output written by `04_source_categorisation_LLM.py`.
 
 After each run, it also refreshes `data/references/paper_artifact_registry.csv` unless `--skip-registry-refresh` is passed.
 
@@ -417,4 +428,4 @@ Records reviewed as `incorrect_reference` are explicitly excluded before any dow
 ## Directory Contents Snapshot
 - Last updated: `2026-04-05`
 - Immediate subdirectories (0): _None_
-- Immediate files (17, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation.py`, `05_trim_proceedings_text.py`, `05b_validate_proceedings_text.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+5 more)
+- Immediate files (17, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05b_validate_proceedings_text.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+5 more)

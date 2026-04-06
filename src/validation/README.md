@@ -168,12 +168,57 @@ Run:
 streamlit run src/validation/review_stage04_gold_app.py
 ```
 
-### `benchmark_stage04_gold.py`
+### `build_stage04_llm_gold_batch.py`
 
-Benchmarks the current stage-04 heuristics against reviewed gold-standard rows.
+Builds a reproducible `n=10` LLM stage-04 category-and-count review batch.
+
+Default scheme:
+- `3` conference-edge rows
+- `3` case/group-boundary rows
+- `2` review/lab-boundary rows
+- `2` high-confidence controls
+
+The script:
+- reads `data/references/source_categorisation_registry.csv`
+- joins `data/references/source_sps_case_count_registry.csv`
+- excludes papers already adjudicated in `data/references/source_categorisation_manual_review.csv` by default
+- excludes papers already present in earlier gold-standard rounds by default
+- requires a local PDF plus extracted text JSON
+- writes a round folder under `qa/validation/source_categorisation/llm_category_review/`
+- appends completed reviews into `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`
+- carries the joint LLM category and count prediction into the review queue
+
+Build the default 10-paper batch:
+
+```bash
+python src/validation/build_stage04_llm_gold_batch.py
+```
+
+### `review_stage04_llm_gold_app.py`
+
+Streamlit reviewer for the LLM stage-04 joint category-and-count rounds.
 
 It:
-- reruns `04_source_categorisation.py` and `06_extract_sps_case_counts.py` logic on reviewed rows
+- loads a selected round from `qa/validation/source_categorisation/llm_category_review/`
+- shows the source PDF alongside the LLM-predicted source category and count
+- includes a search box that uses extracted page text to jump the embedded PDF viewer to matching pages
+- lets the reviewer confirm or edit both the category and the extractable SPS case count
+- saves each response immediately to `responses.csv`
+- writes a round snapshot CSV
+- refreshes the canonical cumulative gold file `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv` once a round is complete
+
+Run:
+
+```bash
+streamlit run src/validation/review_stage04_llm_gold_app.py
+```
+
+### `benchmark_stage04_gold.py`
+
+Benchmarks the legacy heuristic stage-04 flow against reviewed gold-standard rows.
+
+It:
+- reruns `src/legacy/04_source_categorisation_heuristic.py` and `06_extract_sps_case_counts.py` logic on reviewed rows
 - reports category accuracy and exact count accuracy
 - breaks accuracy down by selection bucket
 - excludes `likely_wrong_pdf_attached` and `incorrect_reference` rows by default
