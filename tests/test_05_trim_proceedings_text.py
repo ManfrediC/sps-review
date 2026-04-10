@@ -320,6 +320,311 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertIn("diagnosis of encephalomyelitis with rigidity, variant of SPS.", joined)
         self.assertNotIn("O-36 Listening the sound", joined)
 
+    def test_is_abstract_start_ignores_b12_sentence_continuation(self) -> None:
+        match = self.module.is_abstract_start(
+            "B12 deficiency, and a family history of autoimmunity, presented with"
+        )
+
+        self.assertIsNone(match)
+
+    def test_local_window_candidate_keeps_multipage_conclusion_after_b12_line(self) -> None:
+        record = {
+            "paper_id": "1418",
+            "source_filename": "b12_false_header_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "1316",
+                            "Stiff-limb syndrome with cerebellar features and atypical EMG",
+                            "findings responds to IVIG",
+                            "S. Rametta, G. Robinson, N. Hellmers, N. Jacoby, H. Sarva (Brooklyn, NY, USA)",
+                            "Objective: To describe a case of stiff-limb syndrome with ataxic features which had delayed EMG findings and improvement to IVIG.",
+                            "Background: Stiff-person syndrome (SPS) is part of a spectrum of progressive autoimmune neurological diseases that also include isolated cerebellar ataxias.",
+                            "Methods: Case report.",
+                            "Results: A 52-year-old woman with history of pernicious anemia and",
+                            "B12 deficiency, and a family history of autoimmunity, presented with",
+                            "two months of axial ataxia, lower back pain, and unsteady gait.",
+                            "She was hospitalised after a fall and found to have a low B12 level.",
+                            "Medication trials with benzodiazepines, baclofen, pregabalin, dantrolene, and gabapentin were not effective.",
+                            "IVIG was initiated with dramatic improvement in pain but no improvement in spasticity or gait until she completed 10 trials.",
+                            "After her 12th consecutive dose of IVIG, she has considerable improvement in spasticity and gait and was able to return to work full time.",
+                            "Conclusions: Our patient is unique as she had mild ataxia, no dystonia, and delayed unilateral positive EMG findings.",
+                            "The exact duration of treatment is still unknown and further research into the long-term prognosis of SLS is needed.",
+                            "1317",
+                            "Ocular motor disorders among Filipino XDP patients",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Stiff-limb syndrome with cerebellar features and atypical EMG findings responds to IVIG",
+            reference_authors="Rametta, S.; Robinson, G.; Hellmers, N.; Jacoby, N.; Sarva, H.",
+            pattern=pattern,
+            target_code="1316",
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("long-term prognosis of SLS is needed.", joined)
+        self.assertNotIn("1317", joined)
+
+    def test_extract_blocks_keeps_multipage_conclusion_across_proceedings_footer(self) -> None:
+        record = {
+            "paper_id": "1418",
+            "source_filename": "footer_wrapped_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "1316",
+                            "Stiff-limb syndrome with cerebellar features and atypical EMG",
+                            "findings responds to IVIG",
+                            "S. Rametta, G. Robinson, N. Hellmers, N. Jacoby, H. Sarva (Brooklyn, NY, USA)",
+                            "Objective: To describe a case of stiff-limb syndrome with ataxic features which had delayed EMG findings and improvement to IVIG.",
+                            "Methods: Case report.",
+                            "Results: Medication trials were not effective, but IVIG was initiated with dramatic improvement in pain.",
+                            "Conclusions: Our patient is unique as she had mild ataxia, no dystonia, and delayed unilateral positive EMG findings.",
+                            "The exact duration",
+                            "S516 ABSTRACTS",
+                            "Movement Disorders, Vol. 32, Suppl. 2, 2017",
+                            "Downloaded from https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.27087",
+                        ]
+                    ),
+                },
+                {
+                    "page_index": 1,
+                    "text": "\n".join(
+                        [
+                            "of treatment is still unknown and further research into the long-term",
+                            "prognosis of SLS is needed.",
+                            "1317",
+                            "Ocular motor disorders among Filipino XDP patients",
+                            "Another author line",
+                        ]
+                    ),
+                },
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Stiff-limb syndrome with cerebellar features and atypical EMG findings responds to IVIG",
+            reference_authors="Rametta, S.; Robinson, G.; Hellmers, N.; Jacoby, N.; Sarva, H.",
+        )
+
+        self.assertTrue(self.module.is_footer_like("S516 ABSTRACTS"))
+        self.assertTrue(self.module.is_footer_like("Movement Disorders, Vol. 32, Suppl. 2, 2017"))
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("long-term prognosis of SLS is needed.", joined)
+        self.assertNotIn("1317", joined)
+
+    def test_local_window_candidate_stops_before_id_prefixed_next_header(self) -> None:
+        record = {
+            "paper_id": "1257",
+            "source_filename": "id_prefixed_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Earlier abstract tail text remains on the same page.",
+                            "doi:10.1016/j.clinph.2015.11.204",
+                            "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+                            "circuits in stiff-person syndrome: A case report—V. Bocek,",
+                            "B. Cvickova, T. Peisker, I. Stetkarova (Department of Neurology,",
+                            "Charles University, Third Faculty of Medicine, Charles University",
+                            "Objective: Stiff-person syndrome (SPS) is an autoimmune disease characterized by progressive rigidity.",
+                            "Methods: Fifty-one years old male with a two years history of stiffness and muscle spasms was investigated.",
+                            "Conclusion: Our findings confirmed loss of GABA-ergic inhibition corresponding to clinical status.",
+                            "Supported by PRVOUK P34, IGA-NT 13693, 12282.",
+                            "doi:10.1016/j.clinph.2015.11.205",
+                            "ID 159 – Madelung’s disease. A case report—N. Ausín Morales a, I. Lambarri San Martín a",
+                            "Objective: Madelung’s disease or multiple symmetric lipomatosis is characterised by accumulation of fat.",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Left-side asymmetry in cortical and spinal inhibitory circuits in stiff-person syndrome: A case report",
+            reference_authors="Bocek, V.; Cvickova, B.; Peisker, T.; Stetkarova, I.",
+            pattern=pattern,
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("doi:10.1016/j.clinph.2015.11.205", joined)
+        self.assertNotIn("ID 159", joined)
+        self.assertEqual(candidate.end_rule, "next_abstract_boundary")
+
+    def test_local_window_candidate_stops_before_spaced_code_next_header(self) -> None:
+        record = {
+            "paper_id": "1433",
+            "source_filename": "spaced_code_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "CGR 7",
+                            "EARLY EMPIRICAL TREATMENT OF ANTIBODY-NEGATIVE",
+                            "AUTOIMMUNE/PARANEOPLASTIC ENCEPHALITIS WITH",
+                            "IMMUNOSUPPRESSION",
+                            "P Dai, M-W Lin, N Mahant, B Gao and D Brown",
+                            "We report two cases of antibody-negative paraneoplastic/autoimmune encephalitis who were treated empirically with immunosuppression leading to clinical improvement.",
+                            "Up to half of autoimmune/paraneoplastic encephalitis is antibody negative.",
+                            "These two cases emphasise the importance of using the patients' clinical phenotype in guiding the early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.",
+                            "CGR 8",
+                            "A NOVEL CASE FEATURING AN IGE PARAPROTEIN ASSOCIATED",
+                            "WITH FAMILIAL MEDITERRANEAN FEVER",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Early empirical treatment of antibody-negative autoimmune/paraneoplastic encephalitis with immunosuppression",
+            reference_authors="Dai, P.; Lin, M.-W.; Mahant, N.; Gao, B.; Brown, D.",
+            pattern=pattern,
+            target_code="CGR 7",
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.", joined)
+        self.assertNotIn("CGR 8", joined)
+        self.assertEqual(candidate.end_rule, "next_abstract_boundary")
+
+    def test_extract_blocks_does_not_split_on_inline_reference_citation(self) -> None:
+        record = {
+            "paper_id": "1332",
+            "source_filename": "citation_split_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Stiff face syndrome associated with glycine",
+                            "receptor antibodies",
+                            "J GADIAN, K LASCELLES, M LIM",
+                            "Children’s Neurosciences Centre, St Thomas’ Hospital, London, UK",
+                            "Objective: We present the case and videos of a boy with severe stimulus sensitive spasms.",
+                            "Discussion: Stiff person syndrome is a spectrum of disorders characterised by spinal cord hyperexcitability.",
+                            "spasms, myoclonus, autonomic dysfunction and hyperekplexia.",
+                            "Its more severe variant, progressive encephalitis with rigidity",
+                            "and myoclonus (PERM), is characterised by more widespread",
+                            "features including brainstem involvement or sensory symptoms.",
+                            "(Carvajal-Gonzalez et al., Brain, 2014;137(Pt 8):2178-92). The",
+                            "detection of GlyR-Ab presents the possibility that PERM is amenable",
+                            "to immunotherapy.",
+                            "Conclusion: We present, to our knowledge, the first case of",
+                            "stimulus sensitive spasms affecting primarily the face, and propose",
+                            "that Stiff face syndrome is an important feature of this under-recognised and treatable syndrome.",
+                            "Delineation of the movement disorder spectrum",
+                            "A PAPANDREOU, RB SCHNEIDER",
+                            "Great Ormond Street Hospital, London, UK",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+
+        self.assertEqual(len(blocks), 2)
+        joined = " ".join(line.text for line in blocks[0].line_refs)
+        self.assertIn("under-recognised and treatable syndrome.", joined)
+        self.assertNotIn("Delineation of the movement disorder spectrum", joined)
+
+    def test_local_window_candidate_keeps_full_abstract_with_numbered_date_preamble(self) -> None:
+        record = {
+            "paper_id": "1333",
+            "source_filename": "numbered_date_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "107 12th January 2017",
+                            "Glycine antibody mediated progressive",
+                            "encephalomyelitis with rigidity and myoclonus",
+                            "(PERM): a paediatric presentation",
+                            "DST KARIYAWASAM 1, D HILDEBRAND 2,",
+                            "S JAYAWANT 1, JP PALACE 3, M I LEITE 4, S RAMDAS 1",
+                            "1Paediatric Neurology, John Radcliffe Hospital, Oxford, UK",
+                            "Objectives: We present a unique case of glycine receptor antibody mediated PERM.",
+                            "Methods: Retrospective review of patient notes and relevant literature search.",
+                            "Results: A 15 year-old boy with genetically confirmed APS1 presented with variable bilateral ptosis and diplopia.",
+                            "Further review revealed decreased palatal and tongue movements, neck rigidity, dysarthria, and brisk reflexes.",
+                            "Conclusions: (1) PERM associated with GlyR Abs has been well described, especially in adult population.",
+                            "(2) As in adult cases, clinical presentations with eye signs may mimic ocular myasthenia.",
+                            "(3) PERM may be added to the list of the autoimmune manifestations associated with APS1.",
+                            "108 12th January 2017",
+                            "Out of the loop? Information sharing with",
+                            "healthcare professionals regarding outcomes of",
+                            "suspected non-accidental head injury (NAHI)",
+                            "NE YEO, W DOYLE, P MARSDEN, R ROBINSON",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Glycine antibody mediated progressive encephalomyelitis with rigidity and myoclonus (PERM): A paediatric presentation",
+            reference_authors="Kariyawasam, D.S.T.; Hildebrand, D.; Jayawant, S.; Palace, J.; Leite, M.I.; Ramdas, S.",
+            pattern=pattern,
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertEqual(candidate.line_refs[0].text, "107 12th January 2017")
+        self.assertIn("the autoimmune manifestations associated with APS1.", joined)
+        self.assertNotIn("108 12th January 2017", joined)
+        self.assertEqual(candidate.end_rule, "next_abstract_boundary")
+
     def test_local_window_candidate_stops_before_poster_session_preamble(self) -> None:
         record = {
             "paper_id": "8198",
@@ -384,9 +689,8 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
             self.module.LineRef(global_index=1, page_index=0, line_index=1, text="Jane Doe, John Smith"),
             self.module.LineRef(global_index=2, page_index=0, line_index=2, text="Background: target body"),
             self.module.LineRef(global_index=3, page_index=0, line_index=3, text="Conclusion: target body"),
-            self.module.LineRef(global_index=4, page_index=0, line_index=4, text="doi:10.1016/j.jns.2013.07.1575"),
-            self.module.LineRef(global_index=5, page_index=0, line_index=5, text="Abstract - WCN 2013"),
-            self.module.LineRef(global_index=6, page_index=0, line_index=6, text="No: 1362"),
+            self.module.LineRef(global_index=4, page_index=0, line_index=4, text="Abstract - WCN 2013"),
+            self.module.LineRef(global_index=5, page_index=0, line_index=5, text="No: 1362"),
         ]
         window = self.module.AbstractBlock(
             code="",
@@ -407,7 +711,7 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         block = self.module.AbstractBlock(
             code="",
             start_index=0,
-            end_index=7,
+            end_index=6,
             start_page_index=0,
             end_page_index=0,
             title_text="Target title",
@@ -666,6 +970,161 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertIn("rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms.", joined)
         self.assertNotIn("Another abstract title", joined)
 
+    def test_extract_blocks_does_not_split_on_body_acronym_list_line(self) -> None:
+        record = {
+            "paper_id": "1439",
+            "source_filename": "acronym_body_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "M300. Unrecognized Respiratory Manifestations of Stiff",
+                            "Person Syndrome (SPS)",
+                            "Goran Rakocevic, Matthew Woodford, Katrina Pack, Anthony Allen and William Sexaur. Philadelphia, PA",
+                            "Introduction: Respiratory manifestations in Stiff-person Syndrome patients have not been systematically investigated and adequately managed.",
+                            "Methods: SPS patients were recruited prospectively from neurology clinic in a single university center.",
+                            "Results: Fifteen of 16 consented patients had evaluable data.",
+                            "There was no significant association between pulmonary",
+                            "function and any of the following: VAS1day, UCSD-",
+                            "SOBQ, Distribution of Stiffness, or Heightened Sensitivity.",
+                            "No correlation between any dyspnea score and any measure",
+                            "of SPS disease severity was found.",
+                            "Conclusions:",
+                            "Dyspnea in SPS is common, and occurs both at rest and with exertion.",
+                            "Potential involvement of diaphragmatic muscles is unknown.",
+                            "S198 Annals of Neurology Vol 82 (suppl 21) 2017",
+                        ]
+                    ),
+                },
+                {
+                    "page_index": 1,
+                    "text": "\n".join(
+                        [
+                            "M301. Regenerating Axons and Blood Vessels in Tissue",
+                            "Engineered Scaffolds Have Defined Spatial Relationships",
+                            "After Complete Spinal Cord Injury in Rats",
+                            "Another author line",
+                        ]
+                    ),
+                },
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Unrecognized respiratory manifestations of stiff person syndrome (SPS)",
+            reference_authors="Rakocevic, G.; Woodford, M.; Pack, K.; Allen, A.; Sexaur, W.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("Potential involvement of diaphragmatic muscles is unknown.", joined)
+        self.assertNotIn("M301.", joined)
+
+    def test_extract_blocks_keeps_split_author_block_and_trims_disclosure_tail(self) -> None:
+        record = {
+            "paper_id": "1441",
+            "source_filename": "split_author_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "P601",
+                            "Spectrum of stiff person syndrome expands with presence of",
+                            "retinal pathology",
+                            "T. Shoemaker",
+                            "1, A. Rothman1, J. Prince2, S. Saidha1, P.A.",
+                            "Calabresi1, S.D. Newsome1",
+                            "1Neurology, Neuroimmunology, 2Electrical and Computer",
+                            "Engineering, Johns Hopkins University, Baltimore, MD, United",
+                            "States",
+                            "Objective: To assess structural and functional changes in the afferent visual system of patients with Stiff-Person Syndrome (SPS).",
+                            "Background: SPS is a rare neuroimmunological disorder characterized by progressive rigidity and painful muscle spasms.",
+                            "Methods: Forty SPS patients and matched healthy controls underwent retinal testing.",
+                            "Results: SPS patients exhibited lower visual acuity and thinner GCIP layer thickness.",
+                            "Conclusions: SPS patients have mild visual dysfunction compared to healthy controls.",
+                            "Clinicians should be aware of the expanding spectrum of SPS to help prevent misdiagnosis as more common conditions like MS.",
+                            "Disclosure",
+                            "Thomas Shoemaker: nothing to disclose",
+                            "P602",
+                            "Retinal ganglion cell layer thickness predicts disease activity",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Spectrum of stiff person syndrome expands with presence of retinal pathology",
+            reference_authors="Shoemaker, T.; Rothman, A.; Prince, J.; Saidha, S.; Calabresi, P.A.; Newsome, S.D.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("prevent misdiagnosis as more common conditions like MS.", joined)
+        self.assertNotIn("Disclosure", joined)
+        self.assertNotIn("P602", joined)
+
+    def test_extract_blocks_keeps_body_when_disclosure_precedes_case_description(self) -> None:
+        record = {
+            "paper_id": "1011",
+            "source_filename": "disclosure_preamble_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Poster 313",
+                            "Two Cases of Stiff Person Syndrome Treated with",
+                            "Intrathecal Baclofen Pump in an Inpatient",
+                            "Rehabilitation Unit: A Case Series.",
+                            "Hannah A. Shoval (New York Presbyterian Hospital, New York, NY, United States); Orlee Hamer, DO;",
+                            "Kenny Chantasi, DO; Udai Nanda, MD.",
+                            "Disclosures: H. A. Shoval, No Disclosures: I Have No Relevant Financial Relationships to Disclose.",
+                            "Case Description: RS is a 55-year-old female and PL is a 48-year-old male admitted for stiff person syndrome (SPS) to an inpatient rehabilitation unit after intrathecal baclofen pump placement.",
+                            "Setting: Inpatient Rehabilitation Unit of a University Hospital.",
+                            "Results or Clinical Course: Both patients improved with intrathecal baclofen pump placement and therapy participation.",
+                            "Discussion: Inpatient rehabilitation allows for close coordination of baclofen titration with intensive therapy and fall prevention.",
+                            "Conclusions: Patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.",
+                            "Poster 314",
+                            "Another unrelated title",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Two cases of stiff person syndrome treated with intrathecal baclofen pump in an inpatient rehabilitation unit: A case series",
+            reference_authors="Shoval, H.A.; Hamer, O.; Chantasi, K.; Nanda, U.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("Patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.", joined)
+        self.assertNotIn("Poster 314", joined)
+
     def test_best_matching_block_prefers_full_body_over_header_only_listing(self) -> None:
         listing = self.module.AbstractBlock(
             code="M103",
@@ -778,6 +1237,177 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
 
         self.assertTrue(matched)
         self.assertEqual(rule, "coded_boundary")
+
+    def test_extract_blocks_recognises_wip_codes_and_prefers_full_body(self) -> None:
+        record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Autoimmune Neurology",
+                            "M311.WIP Stiff-Person Syndrome in Association with",
+                            "Cerebellar Ataxia: Overlapping Syndrome: A Case",
+                            "Report",
+                            "Varun H. Chauhan and Abbas A. Jowkar. Detroit, MI",
+                            "M312.WIP Another autoimmune title",
+                            "Another author line",
+                        ]
+                    ),
+                },
+                {
+                    "page_index": 1,
+                    "text": "\n".join(
+                        [
+                            "Autoimmune Neurology",
+                            "M311WIP . Stiff-Person Syndrome in Association with",
+                            "Cerebellar Ataxia: Overlapping Syndrome: A Case",
+                            "Report",
+                            "Varun H. Chauhan and Abbas A. Jowkar. Detroit, MI",
+                            "SPS (Stiff-person Syndrome) is a rare autoimmune condition.",
+                            "Our patient had classical features of SPS with cerebellar ataxia",
+                            "and demonstrated significant improvement in his symptoms with appropriate treatment.",
+                            "M312WIP . Another autoimmune title",
+                            "Another author line",
+                        ]
+                    ),
+                },
+            ]
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+
+        m311_blocks = [block for block in blocks if self.module.normalize_code(block.code) == "M311WIP"]
+
+        self.assertEqual(len(m311_blocks), 2)
+
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Stiff-person syndrome in association with cerebellar ataxia: Overlapping syndrome: A case report",
+            reference_authors="Chauhan V.H.; Jowkar A.A.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        self.assertEqual(chosen.start_page_index, 1)
+        chosen_text = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("appropriate treatment.", chosen_text)
+
+    def test_choose_best_candidate_prefers_full_body_block_over_header_only_window(self) -> None:
+        block_candidate = self.module.AbstractBlock(
+            code="M311WIP",
+            start_index=100,
+            end_index=114,
+            start_page_index=3,
+            end_page_index=3,
+            title_text="Stiff-Person Syndrome in Association with Cerebellar Ataxia: Overlapping Syndrome: A Case Report",
+            header_text="M311WIP . Stiff-Person Syndrome in Association with Cerebellar Ataxia: Overlapping Syndrome: A Case Report",
+            preview_text="Varun H. Chauhan and Abbas A. Jowkar. Detroit, MI. The patient improved with appropriate treatment.",
+            line_refs=[
+                self.module.LineRef(global_index=100, page_index=3, line_index=0, text="M311WIP . Stiff-Person Syndrome in Association with"),
+                self.module.LineRef(global_index=101, page_index=3, line_index=1, text="Cerebellar Ataxia: Overlapping Syndrome: A Case"),
+                self.module.LineRef(global_index=102, page_index=3, line_index=2, text="Report"),
+                self.module.LineRef(global_index=103, page_index=3, line_index=3, text="Varun H. Chauhan and Abbas A. Jowkar. Detroit, MI"),
+                self.module.LineRef(global_index=104, page_index=3, line_index=4, text="SPS is a rare autoimmune condition."),
+                self.module.LineRef(global_index=105, page_index=3, line_index=5, text="The patient had classical features of SPS with cerebellar ataxia."),
+                self.module.LineRef(global_index=106, page_index=3, line_index=6, text="He demonstrated significant improvement in his symptoms with appropriate treatment."),
+                self.module.LineRef(global_index=107, page_index=3, line_index=7, text="This presentation included persistent stiffness, exaggerated startle, and gait impairment."),
+                self.module.LineRef(global_index=108, page_index=3, line_index=8, text="Serial assessment supported an overlapping autoimmune neurological syndrome with cerebellar involvement."),
+            ],
+            title_score=0.83,
+            author_score=0.0,
+            match_score=0.623,
+            trim_method="fuzzy_title_author_block_match",
+            trim_mode="fuzzy_title_author_block_match",
+            body_signal_count=1,
+            header_only_flag=False,
+        )
+        window_candidate = self.module.AbstractBlock(
+            code="M311.WIP",
+            start_index=10,
+            end_index=14,
+            start_page_index=0,
+            end_page_index=0,
+            title_text="Stiff-Person Syndrome in Association with Cerebellar Ataxia: Overlapping Syndrome: A Case Report",
+            header_text="M311.WIP Stiff-Person Syndrome in Association with Cerebellar Ataxia: Overlapping Syndrome: A Case Report",
+            preview_text="Varun H. Chauhan and Abbas A. Jowkar. Detroit, MI",
+            line_refs=[
+                self.module.LineRef(global_index=10, page_index=0, line_index=0, text="M311.WIP Stiff-Person Syndrome in Association with"),
+                self.module.LineRef(global_index=11, page_index=0, line_index=1, text="Cerebellar Ataxia: Overlapping Syndrome: A Case"),
+                self.module.LineRef(global_index=12, page_index=0, line_index=2, text="Report"),
+                self.module.LineRef(global_index=13, page_index=0, line_index=3, text="Varun H. Chauhan and Abbas A. Jowkar. Detroit, MI"),
+            ],
+            title_score=0.844,
+            author_score=0.5,
+            match_score=0.712,
+            trim_method="page_local_sliding_window_match",
+            trim_mode="page_local_sliding_window_match",
+            start_rule="backtrack_abstract_boundary",
+            end_rule="next_abstract_boundary",
+            body_signal_count=0,
+            header_only_flag=True,
+        )
+
+        chosen = self.module.choose_best_candidate(block_candidate, window_candidate)
+
+        self.assertIs(chosen, block_candidate)
+
+    def test_filter_to_proceedings_candidates_keeps_explicit_ids_subject_to_manual_override(self) -> None:
+        input_dir = self.tmp_path / "text"
+        input_dir.mkdir()
+        target_path = input_dir / "1391.json"
+        target_path.write_text("{}", encoding="utf-8")
+
+        source_registry_path = self.tmp_path / "source_categorisation_registry.csv"
+        source_manual_review_path = self.tmp_path / "source_categorisation_manual_review.csv"
+        existing_trim_registry_path = self.tmp_path / "text_trim_registry.csv"
+
+        with source_registry_path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=["paper_id", "source_category", "source_subtype"])
+            writer.writeheader()
+            writer.writerow(
+                {
+                    "paper_id": "1391",
+                    "source_category": "conference_abstract",
+                    "source_subtype": "case_series_conference_abstract",
+                }
+            )
+
+        with source_manual_review_path.open(
+            "w",
+            encoding="utf-8",
+            newline="",
+        ) as handle:
+            writer = csv.DictWriter(
+                handle,
+                fieldnames=["paper_id", "final_source_category", "final_source_subtype"],
+            )
+            writer.writeheader()
+            writer.writerow(
+                {
+                    "paper_id": "1391",
+                    "final_source_category": "case_series_or_multi_case",
+                    "final_source_subtype": "small_case_series",
+                }
+            )
+
+        with existing_trim_registry_path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=["paper_id", "trim_status"])
+            writer.writeheader()
+
+        filtered = self.module.filter_to_proceedings_candidates(
+            paths=[target_path],
+            source_categorisation_path=source_registry_path,
+            source_manual_review_path=source_manual_review_path,
+            existing_trim_registry_path=existing_trim_registry_path,
+            force_all_papers=False,
+            explicit_paper_ids=["1391"],
+            include_already_trimmed=False,
+        )
+
+        self.assertEqual(filtered, [])
 
 
 if __name__ == "__main__":

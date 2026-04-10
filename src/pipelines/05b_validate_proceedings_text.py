@@ -15,6 +15,8 @@ from _proceedings_text import (
     has_enough_body,
     header_boundary,
     infer_proceedings_pattern,
+    is_abstract_code_only,
+    is_header_preamble_line,
     is_footer_like,
     normalize_text,
     score_authors,
@@ -33,6 +35,9 @@ SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categori
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 TAIL_NOISE_PREFIXES = ("corresponding author", "keywords", "disclosure")
+TAIL_NOISE_BLOCK_PREFIXES = TAIL_NOISE_PREFIXES + ("full disclosures", "disclosure of interest")
+
+
 # Parse command-line arguments.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -162,9 +167,16 @@ def collect_candidate_ids(
             heuristic_row=heuristic_rows.get(paper_id, {}),
             manual_row=manual_rows.get(paper_id, {}),
         )
+        resolved_category = (resolved.get("resolved_source_category") or "").strip()
+        manual_override_present = (resolved.get("manual_override_present") or "").strip().lower() == "true"
+        if manual_override_present and resolved_category != "conference_abstract":
+            continue
         is_proceedings = (
-            (resolved.get("resolved_source_category") or "") == "conference_abstract"
-            or (trim_row.get("proceedings_detected") or "").strip().lower() == "true"
+            resolved_category == "conference_abstract"
+            or (
+                not manual_override_present
+                and (trim_row.get("proceedings_detected") or "").strip().lower() == "true"
+            )
         )
         if is_proceedings:
             candidates.append(paper_id)
@@ -185,8 +197,10 @@ def page_matches(record: dict[str, Any], reference_title: str, reference_authors
         page_text = str(page.get("text") or "").strip()
         if not page_text:
             continue
-        title_score = score_title(reference_title, page_text)
-        author_score = score_authors(reference_authors, page_text)
+        page_lines = [line.strip() for line in page_text.splitlines() if line.strip()]
+        header_slice = " ".join(page_lines[:8])
+        title_score = max(score_title(reference_title, page_text), score_title(reference_title, header_slice))
+        author_score = max(score_authors(reference_authors, page_text), score_authors(reference_authors, header_slice))
         combined = (0.75 * title_score) + (0.25 * author_score)
         if combined > best_combined:
             best_page_index = page_index
@@ -203,7 +217,27 @@ def is_tail_noise(line: str) -> bool:
         return True
     if is_footer_like(line):
         return True
+    if "nothing to disclose" in normalized:
+        return True
     return any(normalized.startswith(prefix) for prefix in TAIL_NOISE_PREFIXES)
+
+
+def meaningful_tail_gap_count(trailing_lines: list[Any]) -> int:
+    count = 0
+    tail_noise_block_open = False
+    for line in trailing_lines:
+        normalized = normalize_text(line.text)
+        if not normalized:
+            continue
+        if tail_noise_block_open:
+            continue
+        if any(normalized.startswith(prefix) for prefix in TAIL_NOISE_BLOCK_PREFIXES):
+            tail_noise_block_open = True
+            continue
+        if is_tail_noise(line.text):
+            continue
+        count += 1
+    return count
 
 
 def locate_trimmed_span(
@@ -272,6 +306,26 @@ def validate_trimmed_segmentation(
     end_position_exclusive += 1
 
     start_boundary_ok, _, start_rule, _ = header_boundary(source_lines, start_position, pattern, allow_soft=True)
+    if not start_boundary_ok and start_position > 0:
+        current_line = source_lines[start_position]
+        for previous_position in range(max(0, start_position - 3), start_position):
+            previous_line = source_lines[previous_position]
+            intervening_lines = source_lines[previous_position + 1 : start_position]
+            if previous_line.page_index != current_line.page_index:
+                continue
+            if is_abstract_code_only(previous_line.text) is None:
+                continue
+            if not intervening_lines:
+                start_boundary_ok = True
+                start_rule = "after_coded_boundary"
+                break
+            if all(
+                line.page_index == current_line.page_index and is_header_preamble_line(line.text)
+                for line in intervening_lines
+            ):
+                start_boundary_ok = True
+                start_rule = "after_coded_boundary_preamble"
+                break
     diagnostics["start_boundary_ok"] = start_boundary_ok
     diagnostics["start_boundary_rule"] = start_rule
     if not start_boundary_ok:
@@ -299,9 +353,9 @@ def validate_trimmed_segmentation(
         return diagnostics
 
     trailing_lines = source_lines[end_position_exclusive:next_header_position]
-    meaningful_tail_gap_count = sum(1 for line in trailing_lines if not is_tail_noise(line.text))
-    diagnostics["meaningful_tail_gap_count"] = meaningful_tail_gap_count
-    diagnostics["truncated_by_gap"] = meaningful_tail_gap_count >= 2
+    gap_count = meaningful_tail_gap_count(trailing_lines)
+    diagnostics["meaningful_tail_gap_count"] = gap_count
+    diagnostics["truncated_by_gap"] = gap_count >= 2
     return diagnostics
 
 

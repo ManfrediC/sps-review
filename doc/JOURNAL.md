@@ -1110,3 +1110,48 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `8` candidates selected from `15` tested papers
   - retained strong or moderate proceedings-style hits such as `5753`, `6271`, `1017`, `1597`, `1784`, `1935`, `8198`, and `8317`
   - dropped the obvious full-article false positives from the same batch such as `101`, `432`, `647`, `828`, and `952`
+
+## 2026-04-10
+
+### Proceedings trimming regression pass
+
+- Reviewed batch `007` feedback and analysed four boundary failures:
+  - `1418`: cut off at a proceedings page header/footer before the carried-over conclusion on the next page
+  - `1433`: failed to stop at the next spaced abstract code (`CGR 8`)
+  - `1439`: body text was misread as author/header text, causing an early cut
+  - `1441`: split author/affiliation header handling was too weak and QC treated a disclosure tail as missing abstract text
+- Implemented narrow fixes in:
+  - `src/pipelines/_proceedings_text.py`
+  - `src/pipelines/05_trim_proceedings_text.py`
+  - `src/pipelines/05b_validate_proceedings_text.py`
+- Added focused regression coverage in:
+  - `tests/test_05_trim_proceedings_text.py`
+  - `tests/test_05b_validate_proceedings_text.py`
+  - `tests/test_evaluate_trimming_feedback.py`
+
+### Follow-on regression handling
+
+- A full replay surfaced three older cases where header disclosures were being treated as trailing disclosure tails (`1011`, `1245`, `1246`) and one QC identity false negative on an OCR-damaged title (`1251`).
+- Tightened the trimmer so disclosure-tail removal only fires after abstract body headings have begun.
+- Tightened QC page matching so title/author identity also scores against the header slice, not only the whole page.
+
+### Validation
+
+- Ran focused automated checks:
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_evaluate_trimming_feedback.py`
+- Result:
+  - `45 passed`
+- Replayed stage `05` and stage `05b` outputs for:
+  - `batch_001`
+  - `batch_002`
+  - `batch_003`
+  - `batch_004`
+  - `batch_005`
+  - `batch_007`
+  - `regression_boundary_review`
+- Refreshed batch `007` acceptance:
+  - `qa/trimming/reports/batch_007/acceptance_report.json`
+  - outcome: `10/10` passed
+- Refreshed full trimming regression:
+  - `qa/trimming/reports/regression_evaluation_batch_007.json`
+  - outcome: `59/59` passed

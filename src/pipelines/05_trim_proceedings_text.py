@@ -35,6 +35,7 @@ from _proceedings_text import (
     is_article_metadata_line,
     is_article_numbered_section,
     is_potential_title_line,
+    is_section_heading,
     normalize_code,
     normalize_text,
     score_authors,
@@ -232,7 +233,7 @@ def filter_to_proceedings_candidates(
     explicit_paper_ids: list[str],
     include_already_trimmed: bool,
 ) -> list[Path]:
-    if force_all_papers or explicit_paper_ids:
+    if force_all_papers:
         return paths
     if not source_categorisation_path.exists():
         return paths
@@ -309,6 +310,22 @@ def truncate_at_next_header(
     if next_index is None:
         return lines, False, "no_header_found"
     return lines[:next_index], True, rule
+
+
+def trim_trailing_header_noise(lines: list[LineRef]) -> tuple[list[LineRef], bool]:
+    if len(lines) < 7:
+        return lines, False
+    enough_body, section_hits, _ = has_enough_body(lines)
+    if not enough_body and section_hits == 0:
+        return lines, False
+    saw_body_heading = any(is_section_heading(line.text) for line in lines[:6])
+    for index in range(6, len(lines)):
+        if is_section_heading(lines[index].text):
+            saw_body_heading = True
+        normalized = normalize_text(lines[index].text)
+        if saw_body_heading and normalized.startswith(("disclosure", "disclosures", "keywords", "corresponding author")):
+            return lines[:index], True
+    return lines, False
 
 
 # Parse index entries.
@@ -570,6 +587,7 @@ def extract_blocks(lines: list[LineRef], pattern: ProceedingsPattern) -> list[Ab
     for offset, start_index in enumerate(start_indices):
         end_index = start_indices[offset + 1] if offset + 1 < len(start_indices) else len(lines)
         block_lines = lines[start_index:end_index]
+        block_lines, _ = trim_trailing_header_noise(block_lines)
         if not block_lines:
             continue
         title_parts = [strip_abstract_code(block_lines[0].text)]
@@ -794,6 +812,9 @@ def local_window_candidate(
     )
     if spillover_flag:
         end_rule = spillover_rule
+    candidate_lines, trailing_noise_trimmed = trim_trailing_header_noise(candidate_lines)
+    if trailing_noise_trimmed:
+        end_rule = "trailing_header_noise"
     if not candidate_lines:
         return None
     enough_body, section_hits, header_only_flag = has_enough_body(candidate_lines)
@@ -962,6 +983,8 @@ def choose_best_candidate(
         return window_candidate
     if window_candidate is None:
         return block_candidate
+    window_body_chars = body_char_count(window_candidate.line_refs)
+    block_body_chars = body_char_count(block_candidate.line_refs)
     if (
         block_candidate.start_index == window_candidate.start_index
         and block_candidate.end_index > window_candidate.end_index
@@ -980,8 +1003,14 @@ def choose_best_candidate(
             for line in extra_tail
         ):
             return window_candidate
-    window_body_chars = body_char_count(window_candidate.line_refs)
-    block_body_chars = body_char_count(block_candidate.line_refs)
+    if (
+        window_candidate.header_only_flag
+        and not block_candidate.header_only_flag
+        and block_body_chars >= 220
+        and block_candidate.title_score + 0.03 >= window_candidate.title_score
+        and block_candidate.match_score + 0.10 >= window_candidate.match_score
+    ):
+        return block_candidate
     if (
         block_body_chars >= max(500, int(window_body_chars * 1.35))
         and block_candidate.match_score >= window_candidate.match_score - 0.06

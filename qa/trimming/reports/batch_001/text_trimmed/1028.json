@@ -4,22 +4,22 @@
   "source_sha256": "22ddffff4de886d6657c3d4ccec99792dde316cefac2d273ef3b3deb0b699b7e",
   "source_text_json_path": "data\\extraction_json\\text\\1028.json",
   "trim_status": "trimmed_auto",
-  "trim_method": "page_local_sliding_window_match",
-  "trim_mode": "page_local_sliding_window_match",
+  "trim_method": "fuzzy_title_author_block_match",
+  "trim_mode": "fuzzy_title_author_block_match",
   "proceedings_detected": true,
   "title": "Autoantibodies against glycine-associated synaptic proteins in stiff-person syndrome",
   "authors": "Probst C.; Blocker I.-M.; Mindorf S.; Unger M.; Fechner K.; Meinck H.-M.; Balint B.; Stocker W.; Schlumberger W.; Komorowski L.",
   "matched_block_code": "96",
-  "matched_block_title": "Autoantibodies against glycine-associated synaptic proteins in stiff-person syndrome",
-  "match_score": 0.8222,
-  "title_score": 1.0,
+  "matched_block_title": "96 Autoantibodies against glycine-associated synaptic proteins in stiff-person syndrome",
+  "match_score": 0.9329,
+  "title_score": 0.9939,
   "author_score": 0.75,
   "start_page_index": 0,
   "end_page_index": 1,
   "start_line_global_index": 79,
-  "end_line_global_index_exclusive": 135,
-  "start_rule": "backtrack_abstract_boundary",
-  "end_rule": "next_abstract_boundary",
+  "end_line_global_index_exclusive": 136,
+  "start_rule": "",
+  "end_rule": "",
   "body_signal_count": 4,
   "spillover_flag": false,
   "header_only_flag": false,
@@ -37,9 +37,9 @@
   "n_pages": 2,
   "page_char_counts": [
     2508,
-    870
+    905
   ],
-  "trimmed_at_utc": "2026-04-06T20:30:05.721849+00:00",
+  "trimmed_at_utc": "2026-04-10T01:55:38.978397+00:00",
   "pages": [
     {
       "page_index": 0,
@@ -47,7 +47,7 @@
     },
     {
       "page_index": 1,
-      "text": "gephyrin more than 10 years after the initial case report on a single SPS\npatient. The malicious inﬂuence of potentially in vivo bound anti-GlyT2/\nSLC6A5 might add to or even cause attenuation of glycinergic\ntransmission and thus release of brainstem and spinal inter- and\nmotorneurons from physiological inhibition. This point should best be\naddressed in a passive antibody transfer model.\nReferences\n[1] Hutchinson, M., Waters, P., McHugh, J., et al., 2008]. Progressive\nencephalomyelitis, rigidity, and myoclonus: a novel glycine\nreceptor antibody. Neurology 71, 1291 –1292\n.\n[2] McKeon, A., Martinez-Hernandez, E., Lancaster, E., et al., 2013].\nGlycine receptor autoimmune spectrum with stiff-man syndrome\nphenotype. JAMA Neurol 70, 44–50.\n[3] Butler, M.H., Hayashi, A., Ohkoshi, N., et al., 2000]. Autoimmunity to\ngephyrin in stiff-man syndrome. Neuron 26, 307–312."
+      "text": "gephyrin more than 10 years after the initial case report on a single SPS\npatient. The malicious inﬂuence of potentially in vivo bound anti-GlyT2/\nSLC6A5 might add to or even cause attenuation of glycinergic\ntransmission and thus release of brainstem and spinal inter- and\nmotorneurons from physiological inhibition. This point should best be\naddressed in a passive antibody transfer model.\nReferences\n[1] Hutchinson, M., Waters, P., McHugh, J., et al., 2008]. Progressive\nencephalomyelitis, rigidity, and myoclonus: a novel glycine\nreceptor antibody. Neurology 71, 1291 –1292\n.\n[2] McKeon, A., Martinez-Hernandez, E., Lancaster, E., et al., 2013].\nGlycine receptor autoimmune spectrum with stiff-man syndrome\nphenotype. JAMA Neurol 70, 44–50.\n[3] Butler, M.H., Hayashi, A., Ohkoshi, N., et al., 2000]. Autoimmunity to\ngephyrin in stiff-man syndrome. Neuron 26, 307–312.\ndoi:10.1016/j.jneuroim.2014.08.060"
     }
   ],
   "trim_reason": "Proceedings detected and candidate abstract passed identity and completeness guardrails."

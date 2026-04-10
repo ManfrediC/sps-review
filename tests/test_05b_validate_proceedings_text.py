@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import tempfile
 import importlib.util
 import sys
 import unittest
@@ -25,6 +26,13 @@ class TestValidateProceedingsText(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.module = load_module()
+
+    def setUp(self) -> None:
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.tmp_path = Path(self.temp_dir.name)
+
+    def tearDown(self) -> None:
+        self.temp_dir.cleanup()
 
     def make_source_record(self) -> tuple[dict[str, object], list[str]]:
         lines = [
@@ -131,6 +139,53 @@ class TestValidateProceedingsText(unittest.TestCase):
         self.assertEqual(status, "partial_truncated")
         self.assertTrue(manual_follow_up)
 
+    def test_validate_trimmed_segmentation_ignores_disclosure_block_after_conclusion(self) -> None:
+        lines = [
+            "P601",
+            "Spectrum of stiff person syndrome expands with presence of retinal pathology",
+            "T. Shoemaker, A. Rothman, J. Prince, S. Saidha, P.A. Calabresi, S.D. Newsome",
+            "Objective: To assess structural and functional changes in the afferent visual system of patients with SPS.",
+            "Background: SPS is a rare neuroimmunological disorder that can be misdiagnosed because of overlapping symptoms and under-recognised visual complaints.",
+            "Methods: Forty SPS patients and matched healthy controls underwent retinal testing with structural and functional visual assessments.",
+            "Results: SPS patients exhibited lower visual acuity, thinner GCIP layer thickness, and consistent retinal changes after adjustment for age and diabetes history.",
+            "Conclusions: Clinicians should be aware of the expanding spectrum of SPS to help prevent misdiagnosis as more common conditions like MS.",
+            "Disclosure",
+            "Thomas Shoemaker: nothing to disclose.",
+            "Scott Newsome has served on scientific advisory boards for Biogen and Genzyme.",
+            "P602",
+            "Retinal ganglion cell layer thickness predicts disease activity in clinically isolated syndrome",
+            "Another author line",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 0, 8)
+        trimmed_record["matched_block_code"] = "P601"
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.95,
+            author_score=0.60,
+            combined_score=0.86,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertFalse(segmentation["truncated_by_gap"])
+        self.assertEqual(segmentation["meaningful_tail_gap_count"], 0)
+        self.assertEqual(segmentation["next_header_rule"], "next_abstract_boundary")
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+
     def test_validate_trimmed_segmentation_flags_preamble_before_real_title(self) -> None:
         lines = [
             "Earlier abstract closing line that should not be part of the target source.",
@@ -178,6 +233,204 @@ class TestValidateProceedingsText(unittest.TestCase):
         self.assertTrue(segmentation["leading_spillover"])
         self.assertEqual(status, "spillover_detected")
         self.assertTrue(manual_follow_up)
+
+    def test_validate_trimmed_segmentation_accepts_title_start_after_coded_boundary(self) -> None:
+        lines = [
+            "Level of Evidence: Level V",
+            "Poster 237",
+            "Bilateral Hip Fracture During Hospitalization for",
+            "Spasm Exacerbation in an Adult with Stiff Person",
+            "Syndrome: A Case Report",
+            "Tomasz K. Podobinski, DO, Paolo C. Mimbella, MD",
+            "Case/Program Description: The patient developed progressive painful spasms and bilateral hip fractures during a hospital admission.",
+            "Setting: Tertiary care hospital.",
+            "Results: Symptoms continued to interfere with rehabilitation participation.",
+            "Discussion: This is the first reported case, to our knowledge, of bilateral hip fractures in a female with stiff person syndrome related spasms.",
+            "Conclusions: Refractory spasms may contribute to significant forces exerted on bony elements leading to fractures.",
+            "Level of Evidence: Level V",
+            "Poster 238",
+            "Tumefactive Demyelinating Lesions",
+            "Another Author, MD",
+            "Case/Program Description: Another unrelated case begins here.",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 2, 11)
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.92,
+            author_score=0.60,
+            combined_score=0.84,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertTrue(segmentation["start_boundary_ok"])
+        self.assertEqual(segmentation["start_boundary_rule"], "after_coded_boundary")
+        self.assertFalse(segmentation["spillover"])
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+
+    def test_validate_trimmed_segmentation_accepts_title_start_after_coded_boundary_with_date_preamble(self) -> None:
+        lines = [
+            "042",
+            "3rd January 2018",
+            "Hypokinesia, Brainstem Involvement, Rigidity and",
+            "Exaggerated Startle in a Child with Glycine",
+            "Receptors Antibodies",
+            "SA M I N1, B HAMEED 1, MO . EB A B I K E R1",
+            "1University Hospitals Bristol",
+            "Background: We report a video presentation of a previously well 7-year-old boy with worsening rigidity and exaggerated startle.",
+            "Results: Steroids were subsequently introduced with a marked clinical improvement.",
+            "Conclusions: PERM should be considered in the differential diagnosis in any child presenting with similar symptoms.",
+            "043",
+            "3rd January 2018",
+            "Another abstract title",
+            "Another author line",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 2, 10)
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.92,
+            author_score=0.35,
+            combined_score=0.78,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertTrue(segmentation["start_boundary_ok"])
+        self.assertEqual(segmentation["start_boundary_rule"], "after_coded_boundary_preamble")
+        self.assertFalse(segmentation["spillover"])
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+
+    def test_page_matches_uses_header_slice_for_identity_scoring(self) -> None:
+        record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "126",
+                            "Double trouble: opisthotonos associated with",
+                            "Guillain-Barr/C19e Syndrome and GAD autoantibody",
+                            "A. Alwis, D. Ram, G. Vassallo",
+                            "Introduction: Guillain-Barr/C19e Syndrome is typified by weakness, areflexia, and elevated CSF protein.",
+                            "Case: We present a unique case with severe pain, opisthotonos, and positive anti-glutamic acid decarboxylase antibodies.",
+                            "Discussion: An additional diagnosis should be considered when opisthotonos is present.",
+                            "Conclusion: Anti-GAD antibody levels should be measured in this instance.",
+                        ]
+                    ),
+                }
+            ]
+        }
+
+        page_index, title_score, author_score, combined_score, _ = self.module.page_matches(
+            record=record,
+            reference_title="Double trouble: Opisthotonos associated with guillain-barre Syndrome and GAD autoantibody",
+            reference_authors="Alwis A.; Ram D.; Vassallo G.",
+        )
+
+        self.assertEqual(page_index, 0)
+        self.assertGreaterEqual(title_score, 0.60)
+        self.assertGreaterEqual(author_score, 0.66)
+        self.assertGreaterEqual(combined_score, 0.62)
+
+    def test_validate_trimmed_segmentation_flags_spillover_into_id_prefixed_header(self) -> None:
+        lines = [
+            "doi:10.1016/j.clinph.2015.11.204",
+            "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+            "circuits in stiff-person syndrome: A case report—V. Bocek,",
+            "B. Cvickova, T. Peisker, I. Stetkarova",
+            "Objective: Stiff-person syndrome is an autoimmune disease.",
+            "Conclusion: Loss of GABA-ergic inhibition corresponded to clinical status.",
+            "Supported by PRVOUK P34, IGA-NT 13693, 12282.",
+            "doi:10.1016/j.clinph.2015.11.205",
+            "ID 159 – Madelung’s disease. A case report—N. Ausín Morales",
+            "Objective: Madelung’s disease is characterised by fat accumulation.",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 1, 9)
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.90,
+            author_score=0.60,
+            combined_score=0.82,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertTrue(segmentation["spillover"])
+        self.assertEqual(segmentation["next_header_rule"], "next_abstract_boundary")
+        self.assertEqual(status, "spillover_detected")
+        self.assertTrue(manual_follow_up)
+
+    def test_collect_candidate_ids_ignores_stale_trim_row_when_manual_override_is_not_proceedings(self) -> None:
+        (self.tmp_path / "1391.json").write_text("{}", encoding="utf-8")
+
+        candidate_ids = self.module.collect_candidate_ids(
+            text_dir=self.tmp_path,
+            trim_registry_rows={
+                "1391": {
+                    "paper_id": "1391",
+                    "proceedings_detected": "true",
+                }
+            },
+            heuristic_rows={
+                "1391": {
+                    "paper_id": "1391",
+                    "source_category": "conference_abstract",
+                    "source_subtype": "case_series_conference_abstract",
+                }
+            },
+            manual_rows={
+                "1391": {
+                    "paper_id": "1391",
+                    "final_source_category": "case_series_or_multi_case",
+                    "final_source_subtype": "small_case_series",
+                }
+            },
+            paper_ids=["1391"],
+            limit=0,
+        )
+
+        self.assertEqual(candidate_ids, [])
 
 
 if __name__ == "__main__":
