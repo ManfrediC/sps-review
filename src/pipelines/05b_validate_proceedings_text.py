@@ -16,6 +16,7 @@ from _proceedings_text import (
     header_boundary,
     infer_proceedings_pattern,
     is_abstract_code_only,
+    is_disclosure_detail_line,
     is_header_preamble_line,
     is_footer_like,
     normalize_text,
@@ -199,8 +200,27 @@ def page_matches(record: dict[str, Any], reference_title: str, reference_authors
             continue
         page_lines = [line.strip() for line in page_text.splitlines() if line.strip()]
         header_slice = " ".join(page_lines[:8])
-        title_score = max(score_title(reference_title, page_text), score_title(reference_title, header_slice))
-        author_score = max(score_authors(reference_authors, page_text), score_authors(reference_authors, header_slice))
+        local_title_score = 0.0
+        local_author_score = 0.0
+        for start_index in range(min(len(page_lines), 12)):
+            for window_size in range(1, 5):
+                title_window = page_lines[start_index : start_index + window_size]
+                if not title_window:
+                    continue
+                title_text = " ".join(title_window)
+                local_title_score = max(local_title_score, score_title(reference_title, title_text))
+                author_window = page_lines[start_index : start_index + window_size + 3]
+                local_author_score = max(local_author_score, score_authors(reference_authors, " ".join(author_window)))
+        title_score = max(
+            score_title(reference_title, page_text),
+            score_title(reference_title, header_slice),
+            local_title_score,
+        )
+        author_score = max(
+            score_authors(reference_authors, page_text),
+            score_authors(reference_authors, header_slice),
+            local_author_score,
+        )
         combined = (0.75 * title_score) + (0.25 * author_score)
         if combined > best_combined:
             best_page_index = page_index
@@ -216,6 +236,8 @@ def is_tail_noise(line: str) -> bool:
     if not normalized:
         return True
     if is_footer_like(line):
+        return True
+    if is_disclosure_detail_line(line):
         return True
     if "nothing to disclose" in normalized:
         return True

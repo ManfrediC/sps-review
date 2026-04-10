@@ -255,6 +255,8 @@ def evaluate_routing_gate(
 
 def evaluate_not_needed(
     trim_row: dict[str, str],
+    qc_row: dict[str, str],
+    expected_manual_review: bool,
 ) -> list[dict[str, Any]]:
     trim_status = str(trim_row.get("trim_status") or "").strip()
     return [
@@ -262,7 +264,12 @@ def evaluate_not_needed(
             "name": "trim_status_matches_not_needed",
             "passed": trim_status == "not_needed",
             "actual": trim_status,
-        }
+        },
+        {
+            "name": "manual_follow_up_matches",
+            "passed": bool_from_text(qc_row.get("manual_follow_up_required") or "") == expected_manual_review,
+            "actual": bool_from_text(qc_row.get("manual_follow_up_required") or ""),
+        },
     ]
 
 
@@ -351,7 +358,7 @@ def evaluate_case(
     if workflow_stage == "routing_gate":
         checks = evaluate_routing_gate(resolved_source_category)
     elif bool(case.get("expected_manual_review")):
-        checks = evaluate_not_needed(trim_row)
+        checks = evaluate_not_needed(trim_row, qc_row, bool(case.get("expected_manual_review")))
     else:
         checks = evaluate_trimmed_case(case, trim_row, qc_row, bundle)
 

@@ -27,8 +27,10 @@ from _proceedings_text import (
     header_start_indices,
     infer_proceedings_pattern,
     is_abstract_boundary,
+    is_abstract_code_only,
     is_abstract_start,
     is_author_like,
+    is_disclosure_detail_line,
     is_footer_like,
     is_header_preamble_line,
     is_institution_like,
@@ -69,6 +71,20 @@ PROGRAM_MARKERS = (
     "contents",
     "index",
 )
+ISOLATED_ABSTRACT_PAGE_MARKERS = (
+    "first published",
+    "authors info affiliations",
+    "aan publications",
+    "letters to the editor",
+    "submit a letter for this article",
+    "the most widely read and highly cited",
+    "sign insubscribe",
+    "latest articles",
+    "current issue",
+    "past issues",
+    "manage cookie preferences",
+)
+EVENT_CODE_ONLY_RE = re.compile(r"^[A-Z]{3,5}\d{2,4}-\d{3,5}$", re.IGNORECASE)
 
 
 # Define abstractblock.
@@ -328,6 +344,39 @@ def trim_trailing_header_noise(lines: list[LineRef]) -> tuple[list[LineRef], boo
     return lines, False
 
 
+def trim_leading_header_noise(lines: list[LineRef]) -> tuple[list[LineRef], bool]:
+    if len(lines) < 2:
+        return lines, False
+    start_index = 0
+    max_probe = min(len(lines), 6)
+    while start_index < max_probe - 1:
+        current = lines[start_index].text
+        current_is_event_code = bool(EVENT_CODE_ONLY_RE.match(current.strip()))
+        if is_abstract_start(current) is not None:
+            break
+        if is_abstract_code_only(current) is not None and not current_is_event_code:
+            break
+        if is_potential_title_line(current):
+            break
+        if not (
+            is_footer_like(current)
+            or is_header_preamble_line(current)
+            or is_disclosure_detail_line(current)
+            or current_is_event_code
+        ):
+            break
+        lookahead = lines[start_index + 1 : min(len(lines), start_index + 5)]
+        if not any(
+            is_potential_title_line(line.text) or is_abstract_start(line.text) is not None
+            for line in lookahead
+        ):
+            break
+        start_index += 1
+    if start_index == 0:
+        return lines, False
+    return lines[start_index:], True
+
+
 # Parse index entries.
 def parse_index_entries(record: dict[str, Any]) -> tuple[list[IndexEntry], bool]:
     entries: list[IndexEntry] = []
@@ -531,6 +580,9 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
     author_like_count = sum(1 for line in first_window if is_author_like(line.text))
     article_section_count = sum(1 for line in first_window if is_article_numbered_section(line.text))
     article_metadata_count = sum(1 for line in first_window if is_article_metadata_line(line.text))
+    isolated_page_marker_count = sum(
+        1 for marker in ISOLATED_ABSTRACT_PAGE_MARKERS if marker in normalized_first_pages
+    )
     marker_text = " ".join(
         [
             str(record.get("source_filename") or ""),
@@ -564,11 +616,19 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
         signal_score -= 3
     elif article_metadata_count >= 2:
         signal_score -= 2
+    if n_pages <= 2 and program_marker_count == 0 and len(header_starts) <= 2:
+        if isolated_page_marker_count >= 2:
+            signal_score -= 4
+        elif "first published" in normalized_first_pages:
+            signal_score -= 3
     proceedings_detected = signal_score >= 3
     if program_marker_count == 0 and pattern.coded_header_count == 0 and (
         article_section_count >= 2 or article_metadata_count >= 3
     ):
         proceedings_detected = False
+    if n_pages <= 2 and program_marker_count == 0 and len(header_starts) <= 2:
+        if isolated_page_marker_count >= 2 or "first published" in normalized_first_pages:
+            proceedings_detected = False
     return {
         "n_pages": n_pages,
         "abstract_block_count": len(header_starts),
@@ -587,6 +647,7 @@ def extract_blocks(lines: list[LineRef], pattern: ProceedingsPattern) -> list[Ab
     for offset, start_index in enumerate(start_indices):
         end_index = start_indices[offset + 1] if offset + 1 < len(start_indices) else len(lines)
         block_lines = lines[start_index:end_index]
+        block_lines, _ = trim_leading_header_noise(block_lines)
         block_lines, _ = trim_trailing_header_noise(block_lines)
         if not block_lines:
             continue
@@ -634,6 +695,7 @@ def best_matching_block(
         block.author_score = score_authors(reference_authors, block.preview_text)
         block.match_score = (0.75 * block.title_score) + (0.25 * block.author_score)
         enough_body, section_hits, header_only = has_enough_body(block.line_refs)
+        block_body_chars = body_char_count(block.line_refs)
         block.body_signal_count = section_hits
         block.header_only_flag = header_only
         if best is None or block.match_score > best.match_score:
@@ -641,10 +703,29 @@ def best_matching_block(
             continue
         if best is None:
             continue
+        best_body_chars = body_char_count(best.line_refs)
         if (
             abs(block.match_score - best.match_score) <= 0.10
             and not header_only
             and enough_body
+            and best.header_only_flag
+        ):
+            best = block
+            continue
+        if (
+            block.title_score >= 0.88
+            and best.title_score >= 0.88
+            and not header_only
+            and enough_body
+            and block_body_chars >= 220
+            and best.header_only_flag
+        ):
+            best = block
+            continue
+        if (
+            block.title_score + 0.02 >= best.title_score
+            and block_body_chars >= max(240, int(best_body_chars * 1.25))
+            and not header_only
             and best.header_only_flag
         ):
             best = block
@@ -812,6 +893,9 @@ def local_window_candidate(
     )
     if spillover_flag:
         end_rule = spillover_rule
+    candidate_lines, leading_noise_trimmed = trim_leading_header_noise(candidate_lines)
+    if leading_noise_trimmed:
+        start_rule = "leading_header_noise_trimmed"
     candidate_lines, trailing_noise_trimmed = trim_trailing_header_noise(candidate_lines)
     if trailing_noise_trimmed:
         end_rule = "trailing_header_noise"
@@ -1054,6 +1138,17 @@ def build_trimmed_record(
     reference_row: dict[str, str],
 ) -> dict[str, Any]:
     pages = trim_pages_from_block(block)
+    kept_line_refs = [line_ref for line_ref in block.line_refs if not is_footer_like(line_ref.text)]
+    if kept_line_refs:
+        start_page_index = kept_line_refs[0].page_index
+        end_page_index = kept_line_refs[-1].page_index
+        start_line_global_index = kept_line_refs[0].global_index
+        end_line_global_index_exclusive = kept_line_refs[-1].global_index + 1
+    else:
+        start_page_index = block.start_page_index
+        end_page_index = block.end_page_index
+        start_line_global_index = block.start_index
+        end_line_global_index_exclusive = block.end_index
     return {
         "paper_id": str(source_record.get("paper_id") or source_path.stem),
         "source_filename": str(source_record.get("source_filename") or ""),
@@ -1070,10 +1165,10 @@ def build_trimmed_record(
         "match_score": round(block.match_score, 4),
         "title_score": round(block.title_score, 4),
         "author_score": round(block.author_score, 4),
-        "start_page_index": block.start_page_index,
-        "end_page_index": block.end_page_index,
-        "start_line_global_index": block.start_index,
-        "end_line_global_index_exclusive": block.end_index,
+        "start_page_index": start_page_index,
+        "end_page_index": end_page_index,
+        "start_line_global_index": start_line_global_index,
+        "end_line_global_index_exclusive": end_line_global_index_exclusive,
         "start_rule": block.start_rule,
         "end_rule": block.end_rule,
         "body_signal_count": block.body_signal_count,

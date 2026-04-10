@@ -360,6 +360,114 @@ class TestValidateProceedingsText(unittest.TestCase):
         self.assertGreaterEqual(author_score, 0.66)
         self.assertGreaterEqual(combined_score, 0.62)
 
+    def test_page_matches_handles_mojibake_title_windows(self) -> None:
+        record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "0028 Sti ï¬€-Limb Syndrome: Thinking about that!",
+                            "A. Delorme, D.E. Pencu, G. De Saint-Hubert",
+                            "Introduction: Stiff-limb syndrome can masquerade as orthopaedic or functional disease.",
+                            "Case report: We describe a patient whose diagnosis was delayed by the unusual focal presentation.",
+                            "Conclusion: Immune-mediated stiffness syndromes should remain in the differential diagnosis.",
+                        ]
+                    ),
+                }
+            ]
+        }
+
+        page_index, title_score, author_score, combined_score, _ = self.module.page_matches(
+            record=record,
+            reference_title="Stiff-limb syndrome: Thinking about that!",
+            reference_authors="Delorme A.; Pencu D.E.; De Saint-Hubert G.",
+        )
+
+        self.assertEqual(page_index, 0)
+        self.assertGreaterEqual(title_score, 0.85)
+        self.assertGreaterEqual(author_score, 0.60)
+        self.assertGreaterEqual(combined_score, 0.78)
+
+    def test_validate_trimmed_segmentation_accepts_dotted_code_boundary(self) -> None:
+        lines = [
+            "P.026 Acute lower limb spasticity: Stiff person syndrome responsive to immunomodulatory therapy in an adolescent female",
+            "R. Ogilvie, H. Kolski",
+            "Background: Progressive lower-limb spasticity can obscure the diagnosis of SPS in younger patients.",
+            "Methods: The patient underwent MRI, electrophysiology, cerebrospinal fluid analysis, and autoimmune testing over several admissions before the diagnosis was settled.",
+            "Results: Immunomodulatory therapy improved mobility and painful spasms while allowing rehabilitation participation to resume over the following weeks.",
+            "Conclusion: Early recognition can prevent unnecessary delay in treatment and reduce the risk of avoidable disability in adolescent presentations of SPS.",
+            "P.027 Another abstract title",
+            "Another author line",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 0, 6)
+        trimmed_record["matched_block_code"] = "P.026"
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.95,
+            author_score=0.70,
+            combined_score=0.89,
+            section_hits=3,
+            body_chars=320,
+            header_only=False,
+            segmentation=segmentation,
+        )
+
+        self.assertTrue(segmentation["start_boundary_ok"])
+        self.assertEqual(segmentation["start_boundary_rule"], "coded_boundary")
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+
+    def test_validate_trimmed_segmentation_ignores_conference_footer_gap(self) -> None:
+        lines = [
+            "E-P10.05A A rare person with Stiff Person syndrome",
+            "R. Suciu, D. Stoicanescu, M. Cevei, F. Bodog",
+            "Background: Stiff Person syndrome is a very rare and severe neuromuscular condition.",
+            "Case report: The patient had longstanding gait difficulty, painful spasms, impaired balance, and repeated functional decline requiring multidisciplinary rehabilitation.",
+            "Conclusion: Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability while supportive pharmacological treatment controls symptoms.",
+            "Abstracts from the 50 th European Society of Human Genetics Conference:. . . 949",
+            "E-P10.06 Another abstract title",
+            "Another author line",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 0, 5)
+        trimmed_record["matched_block_code"] = "E-P10.05A"
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.94,
+            author_score=0.70,
+            combined_score=0.88,
+            section_hits=3,
+            body_chars=320,
+            header_only=False,
+            segmentation=segmentation,
+        )
+
+        self.assertFalse(segmentation["spillover"])
+        self.assertFalse(segmentation["truncated_by_gap"])
+        self.assertEqual(segmentation["meaningful_tail_gap_count"], 0)
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+
     def test_validate_trimmed_segmentation_flags_spillover_into_id_prefixed_header(self) -> None:
         lines = [
             "doi:10.1016/j.clinph.2015.11.204",

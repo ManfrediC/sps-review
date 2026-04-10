@@ -7,7 +7,9 @@ from difflib import SequenceMatcher
 from typing import Any
 
 
-ALPHANUMERIC_ABSTRACT_CODE_RE = r"(?:[A-Z]{1,3}-)?(?:[A-Z]{1,2})?\d{1,5}(?:[.-]?[A-Z]{2,6})?"
+ALPHANUMERIC_ABSTRACT_CODE_RE = (
+    r"(?:[A-Z]{2,5}\d{1,4}-\d{1,5}|(?:[A-Z]{1,3}-)?(?:[A-Z]{1,3}[.-]?)?\d{1,5}(?:\.\d+)*(?:[.-]?[A-Z]{1,6})?)"
+)
 NUMERIC_ABSTRACT_CODE_RE = r"\d{2,5}"
 SPACED_ALPHA_ABSTRACT_CODE_RE = r"[A-Z]{1,4}\s+\d{1,5}(?:[A-Z])?"
 ABSTRACT_START_RE = re.compile(
@@ -46,6 +48,7 @@ AUTHOR_CREDENTIAL_RE = re.compile(
 )
 CONTROL_ID_RE = re.compile(r"\bcontrol id\b", re.IGNORECASE)
 DOI_LINE_RE = re.compile(r"^\s*doi\s*:", re.IGNORECASE)
+DOI_PAGE_FOOTER_RE = re.compile(r"^\s*doi\s*:.*\s+\d{1,4}\s*$", re.IGNORECASE)
 DATE_LINE_RE = re.compile(
     r"^(monday|tuesday|wednesday|thursday|friday|saturday|sunday)(?:,\s+[a-z]+(?:\s+\d{1,2})?(?:,\s+\d{4})?)?$",
     re.IGNORECASE,
@@ -58,6 +61,26 @@ JOURNAL_VOLUME_METADATA_RE = re.compile(
     r"\bvol\.\s*\d+\b.*\b(?:suppl\.?|supplement)\b.*\b(?:19|20)\d{2}\b",
     re.IGNORECASE,
 )
+CONFERENCE_FOOTER_RE = re.compile(r"^abstracts from the .* conference", re.IGNORECASE)
+JOURNAL_PAGE_METADATA_RE = re.compile(
+    r"^(?:abstracts\s*/\s*)?journal of [a-z0-9&'’\-\s]+ \d+[a-z]? \(\d{4}\)",
+    re.IGNORECASE,
+)
+DISCLOSURE_DETAIL_RE = re.compile(r"(?::\s*none\b)|\bnothing to disclose\b", re.IGNORECASE)
+
+MOJIBAKE_REPLACEMENTS = {
+    "ï¬€": "ff",
+    "ï¬": "fi",
+    "ï¬‚": "fl",
+    "ï¬ƒ": "ffi",
+    "ï¬„": "ffl",
+    "â€™": "'",
+    "â€˜": "'",
+    "â€œ": '"',
+    "â€": '"',
+    "â€“": "-",
+    "â€”": "-",
+}
 
 INSTITUTION_MARKERS = (
     "university",
@@ -126,6 +149,7 @@ ARTICLE_MARKERS = (
     "article open access",
     "article history",
     "a r t i c l e i n f o",
+    "authors info affiliations",
     "available online",
     "correspondence",
     "full disclosures",
@@ -133,6 +157,15 @@ ARTICLE_MARKERS = (
     "go to neurology org",
     "article processing charge",
     "creative commons attribution",
+    "aan publications",
+    "letters to the editor",
+    "submit a letter for this article",
+    "the most widely read and highly cited",
+    "sign insubscribe",
+    "latest articles",
+    "current issue",
+    "past issues",
+    "manage cookie preferences",
 )
 
 
@@ -154,7 +187,10 @@ class ProceedingsPattern:
 
 
 def normalize_text(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
+    cleaned = text or ""
+    for source, replacement in MOJIBAKE_REPLACEMENTS.items():
+        cleaned = cleaned.replace(source, replacement)
+    normalized = unicodedata.normalize("NFKD", cleaned)
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
     ascii_text = ascii_text.lower()
     ascii_text = re.sub(r"[^a-z0-9]+", " ", ascii_text)
@@ -199,6 +235,8 @@ def is_article_metadata_line(line: str) -> bool:
     if any(normalized.startswith(marker) for marker in ARTICLE_MARKERS):
         return True
     if normalized.startswith("received ") or normalized.startswith("accepted "):
+        return True
+    if normalized.startswith("first published "):
         return True
     if normalized.startswith("keywords") or normalized == "keywords":
         return True
@@ -254,6 +292,19 @@ def is_inline_reference_citation(line: str) -> bool:
     if has_year and " et al " in f" {normalized} ":
         return True
     if has_year and has_compact_citation:
+        return True
+    return False
+
+
+def is_disclosure_detail_line(line: str) -> bool:
+    stripped = line.strip()
+    normalized = normalize_text(stripped)
+    if not stripped or not normalized:
+        return False
+    if "nothing to disclose" in normalized:
+        return True
+    colon_none_hits = len(re.findall(r":\s*none\b", stripped, flags=re.IGNORECASE))
+    if colon_none_hits >= 1:
         return True
     return False
 
@@ -319,6 +370,8 @@ def flatten_lines(record: dict[str, Any]) -> list[LineRef]:
 
 def is_abstract_start(line: str) -> re.Match[str] | None:
     stripped = line.strip()
+    if looks_like_numbered_affiliation_line(stripped):
+        return None
     id_match = ID_ABSTRACT_START_RE.match(stripped)
     if id_match:
         title = str(id_match.groupdict().get("title") or "")
@@ -339,6 +392,8 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
         title = str(strict_match.groupdict().get("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
             return None
+        if not re.search(r"[A-Z]", code) and looks_like_numbered_affiliation_line(stripped):
+            return None
         if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
             return None
         return strict_match
@@ -348,6 +403,8 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
         title = str(delim_match.groupdict().get("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
             return None
+        if not re.search(r"[A-Z]", code) and looks_like_numbered_affiliation_line(stripped):
+            return None
         if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
             return None
         return delim_match
@@ -356,6 +413,8 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
         code = str(space_match.group("code") or "")
         title = str(space_match.group("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not re.search(r"[A-Z]", code) and looks_like_numbered_affiliation_line(stripped):
             return None
         if not starts_like_title_opening(title):
             return None
@@ -394,7 +453,7 @@ def is_abstract_code_only(line: str) -> re.Match[str] | None:
     if not re.search(r"[A-Z]", boundary_code) and len(digits) < 2:
         return None
     trailing = stripped[boundary_match.end("code") :].strip(" .|:-)")
-    if trailing and is_header_noise(trailing):
+    if trailing:
         return None
     return boundary_match
 
@@ -434,7 +493,7 @@ def looks_like_numbered_affiliation_line(line: str) -> bool:
     normalized = normalize_text(stripped)
     if not stripped or not normalized:
         return False
-    if not re.match(r"^\d+[A-Za-z]", stripped):
+    if not re.match(r"^\d+(?:[\)\.\-]\s*|\s+)?[A-Za-z]", stripped):
         return False
     if "," not in stripped:
         return False
@@ -451,6 +510,8 @@ def looks_like_numbered_affiliation_line(line: str) -> bool:
 def is_author_like(line: str) -> bool:
     stripped = line.strip()
     if not stripped:
+        return False
+    if is_disclosure_detail_line(stripped):
         return False
     if is_footer_like(stripped) or is_header_noise(stripped):
         return False
@@ -507,7 +568,13 @@ def is_footer_like(line: str) -> bool:
     stripped = line.strip()
     if PROCEEDINGS_PAGE_HEADER_RE.match(stripped):
         return True
+    if DOI_PAGE_FOOTER_RE.match(stripped):
+        return True
     if JOURNAL_VOLUME_METADATA_RE.search(stripped):
+        return True
+    if CONFERENCE_FOOTER_RE.match(stripped):
+        return True
+    if JOURNAL_PAGE_METADATA_RE.match(stripped):
         return True
     normalized = normalize_text(line)
     return any(marker in normalized for marker in FOOTER_MARKERS)
@@ -521,6 +588,8 @@ def is_section_heading(line: str) -> bool:
 def is_header_noise(line: str) -> bool:
     normalized = normalize_text(line)
     if not normalized:
+        return True
+    if is_disclosure_detail_line(line):
         return True
     if DOI_LINE_RE.match(line.strip()):
         return True
@@ -690,36 +759,38 @@ def soft_header_score(lines: list[LineRef], start_index: int) -> tuple[int, int,
         previous = lines[start_index - 1]
         if previous.page_index == current.page_index and (
             is_uppercase_title_like(previous.text)
-            or is_title_continuation_like(previous.text)
+            or (is_title_continuation_like(previous.text) and starts_like_title_opening(previous.text))
             or is_abstract_boundary(previous.text)
             or is_author_like(previous.text)
             or is_institution_like(previous.text)
         ) and not previous.text.endswith("."):
             return 0, start_index, ""
-        if (
+        previous_continuation_veto = (
             previous.page_index == current.page_index
             and not is_footer_like(previous.text)
             and not is_header_noise(previous.text)
             and not is_abstract_boundary(previous.text)
             and len(normalize_text(previous.text).split()) >= 5
             and not previous.text.endswith((".", ":", ";"))
-        ):
-            return 0, start_index, ""
+        )
+    else:
+        previous_continuation_veto = False
 
     title_cluster = collect_title_cluster(lines, start_index)
     if not title_cluster:
         return 0, start_index, ""
 
     end_index = start_index + len(title_cluster)
+    context_window = 5 if is_uppercase_title_like(current.text) else 3
     lookahead = [
         line
         for line in lines[end_index : min(len(lines), end_index + 6)]
         if not is_header_noise(line.text) and not is_footer_like(line.text)
     ]
-    author_hit = any(is_author_like(line.text) for line in lookahead[:3])
-    institution_hit = any(is_institution_like(line.text) for line in lookahead[:3])
+    author_hit = any(is_author_like(line.text) for line in lookahead[:context_window])
+    institution_hit = any(is_institution_like(line.text) for line in lookahead[:context_window])
     section_hit = any(is_section_heading(line.text) for line in lookahead[:4])
-    control_id_hit = any(CONTROL_ID_RE.search(line.text) for line in lookahead[:4])
+    control_id_hit = any(CONTROL_ID_RE.search(line.text) for line in lookahead[:context_window])
     score = 0
     reasons: list[str] = []
     if author_hit:
@@ -742,6 +813,9 @@ def soft_header_score(lines: list[LineRef], start_index: int) -> tuple[int, int,
         reasons.append("control_id")
     if not author_hit and not control_id_hit:
         return 0, end_index, ""
+    strong_uppercase_header = is_uppercase_title_like(current.text) and (author_hit or control_id_hit)
+    if previous_continuation_veto and not strong_uppercase_header:
+        return 0, start_index, ""
     return score, end_index, "+".join(reasons)
 
 

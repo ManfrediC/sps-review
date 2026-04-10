@@ -1409,6 +1409,88 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
 
         self.assertEqual(filtered, [])
 
+    def test_is_footer_like_matches_conference_footer_banner(self) -> None:
+        self.assertTrue(
+            self.module.is_footer_like(
+                "Abstracts from the 50 th European Society of Human Genetics Conference:. . . 949"
+            )
+        )
+
+    def test_is_abstract_start_ignores_numbered_affiliation_line(self) -> None:
+        match = self.module.is_abstract_start(
+            "1) Division of Immunology and Allergy, Department of Medicine, University Hospital Lausanne"
+        )
+
+        self.assertIsNone(match)
+
+    def test_proceedings_signals_rejects_isolated_abstract_page_with_article_markers(self) -> None:
+        record = {
+            "paper_id": "1611",
+            "source_filename": "isolated_abstract_page.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Authors Info & Affiliations",
+                            "First published March 4, 2019",
+                            "Presence of systemic autoantibodies and associated comorbid conditions in a large cohort of stiff person syndrome",
+                            "M. Comisac, Y. Wang, S. Aljarallah, N. Lukish, S. Newsome",
+                            "Objective: To characterise systemic autoimmunity in a large SPS cohort.",
+                            "Results: Multiple systemic autoantibodies and autoimmune comorbidities were observed.",
+                            "AAN Publications",
+                            "Current Issue",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        signals = self.module.proceedings_signals(record, lines)
+
+        self.assertFalse(signals["proceedings_detected"])
+        self.assertLess(signals["proceedings_signal_score"], 3)
+
+    def test_build_trimmed_record_uses_non_footer_indices(self) -> None:
+        block = self.module.AbstractBlock(
+            code="E-P10.05A",
+            start_index=120,
+            end_index=126,
+            start_page_index=5,
+            end_page_index=5,
+            title_text="A rare person with Stiff Person syndrome",
+            header_text="E-P10.05A rare person with Stiff Person syndrome",
+            preview_text="R. Suciu D. Stoicanescu M. Cevei F. Bodog",
+            line_refs=[
+                self.module.LineRef(global_index=120, page_index=5, line_index=0, text="E-P10.05A rare person with Stiff Person syndrome"),
+                self.module.LineRef(global_index=121, page_index=5, line_index=1, text="R. Suciu, D. Stoicanescu, M. Cevei, F. Bodog"),
+                self.module.LineRef(global_index=122, page_index=5, line_index=2, text="Stiff Person syndrome is a very rare and severe neuromuscular condition."),
+                self.module.LineRef(global_index=123, page_index=5, line_index=3, text="Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability."),
+                self.module.LineRef(
+                    global_index=124,
+                    page_index=5,
+                    line_index=4,
+                    text="Abstracts from the 50 th European Society of Human Genetics Conference:. . . 949",
+                ),
+            ],
+            title_score=0.95,
+            author_score=1.0,
+            match_score=0.9625,
+        )
+
+        trimmed = self.module.build_trimmed_record(
+            source_record={"paper_id": "1664", "source_filename": "1664.pdf", "n_pages": 6},
+            source_path=self.tmp_path / "1664.json",
+            block=block,
+            reference_row={"Covidence": "1664", "Title": "A rare person with Stiff Person syndrome", "Authors": "Suciu R.; Stoicanescu D.; Cevei M.; Bodog F."},
+        )
+
+        self.assertEqual(trimmed["start_line_global_index"], 120)
+        self.assertEqual(trimmed["end_line_global_index_exclusive"], 124)
+        self.assertNotIn("European Society of Human Genetics Conference", trimmed["pages"][0]["text"])
+
 
 if __name__ == "__main__":
     unittest.main()

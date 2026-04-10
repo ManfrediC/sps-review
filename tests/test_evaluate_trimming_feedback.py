@@ -120,7 +120,9 @@ def test_evaluate_feedback_accepts_not_needed_manual_review_case(tmp_path: Path)
     assert report["passed_count"] == 1
     result = report["results"][0]
     assert result["workflow_stage"] == "stage05_not_needed"
-    assert result["checks"][0]["name"] == "trim_status_matches_not_needed"
+    check_names = [check["name"] for check in result["checks"]]
+    assert "trim_status_matches_not_needed" in check_names
+    assert "manual_follow_up_matches" in check_names
 
 
 def test_evaluate_feedback_checks_trimmed_text_expectations(tmp_path: Path) -> None:
