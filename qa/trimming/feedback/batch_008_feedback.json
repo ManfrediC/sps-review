@@ -1,0 +1,82 @@
+{
+  "feedback_round_id": "batch_008_feedback",
+  "batch_id": "batch_008",
+  "received_at_utc": "2026-04-10T00:00:00Z",
+  "cases": [
+    {
+      "paper_id": "1437",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1511",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1602",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1605",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "and/or intravenous immunoglobulins"
+    },
+    {
+      "paper_id": "1611",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Isolated abstract page, not proceedings, so stage 05 should not trim it."
+    },
+    {
+      "paper_id": "1662",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "Immunosuppression led to slow but progressive improvement."
+    },
+    {
+      "paper_id": "1664",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability.",
+      "expected_not_contains": [
+        "Abstracts from the 50 th European Society of Human Genetics Conference"
+      ]
+    },
+    {
+      "paper_id": "1668",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Isolated abstract page, not proceedings, so stage 05 should not trim it."
+    },
+    {
+      "paper_id": "1675",
+      "workflow_stage": "stage05_not_needed",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Single abstract/article-style page, not a proceedings bundle, so stage 05 should not trim it."
+    },
+    {
+      "paper_id": "1721",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_start_first_line": "Anti-glutamic acid decarboxylase positive stiff person syndrome",
+      "expected_end_contains": "for as long as three months after infusion. No adverse events were encountered.",
+      "expected_not_contains": [
+        "Poster Session 3",
+        "WCN19-0188"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-09T07:51:13.263078+00:00",
+  "generated_at_utc": "2026-04-10T08:35:53.834082+00:00",
   "batch_id": "batch_002",
   "file_count": 10,
   "paper_ids": [
@@ -14,6 +14,20 @@
     "1217",
     "1227"
   ],
+  "screened_candidate_count": 10,
+  "screened_candidate_ids": [
+    "1119",
+    "1120",
+    "1129",
+    "1138",
+    "1150",
+    "1153",
+    "1154",
+    "1215",
+    "1217",
+    "1227"
+  ],
+  "screened_out_paper_ids": [],
   "output_paths": {
     "trim_registry_path": "qa/trimming/reports/batch_002/text_trim_registry.csv",
     "qc_registry_path": "qa/trimming/reports/batch_002/proceedings_text_qc_registry.csv",
@@ -95,7 +109,7 @@
       "manual_follow_up_required": "false",
       "low_confidence_flag": false,
       "trimmed_text_json_path": "qa/trimming/reports/batch_002/text_trimmed/1138.json",
-      "match_score": "0.8718",
+      "match_score": "1.0000",
       "title_score": "1.0000",
       "author_score": "1.0000",
       "trim_reason": "Proceedings detected and candidate abstract passed identity and completeness guardrails.",
@@ -197,8 +211,8 @@
       "manual_follow_up_required": "false",
       "low_confidence_flag": false,
       "trimmed_text_json_path": "qa/trimming/reports/batch_002/text_trimmed/1227.json",
-      "match_score": "0.9920",
-      "title_score": "0.9894",
+      "match_score": "0.8843",
+      "title_score": "1.0000",
       "author_score": "1.0000",
       "trim_reason": "Proceedings detected and candidate abstract passed identity and completeness guardrails.",
       "qc_note": "Trimmed proceedings text matches and appears complete."

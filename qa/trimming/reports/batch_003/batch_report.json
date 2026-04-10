@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-09T11:09:10.303518+00:00",
+  "generated_at_utc": "2026-04-10T08:35:53.849364+00:00",
   "batch_id": "batch_003",
   "file_count": 10,
   "paper_ids": [
@@ -14,6 +14,20 @@
     "1246",
     "1249"
   ],
+  "screened_candidate_count": 10,
+  "screened_candidate_ids": [
+    "1229",
+    "1230",
+    "1231",
+    "1233",
+    "1237",
+    "1239",
+    "1242",
+    "1245",
+    "1246",
+    "1249"
+  ],
+  "screened_out_paper_ids": [],
   "output_paths": {
     "trim_registry_path": "qa/trimming/reports/batch_003/text_trim_registry.csv",
     "qc_registry_path": "qa/trimming/reports/batch_003/proceedings_text_qc_registry.csv",
@@ -61,8 +75,8 @@
       "manual_follow_up_required": "false",
       "low_confidence_flag": false,
       "trimmed_text_json_path": "qa/trimming/reports/batch_003/text_trimmed/1230.json",
-      "match_score": "0.9461",
-      "title_score": "0.9281",
+      "match_score": "0.9901",
+      "title_score": "0.9868",
       "author_score": "1.0000",
       "trim_reason": "Proceedings detected and candidate abstract passed identity and completeness guardrails.",
       "qc_note": "Trimmed proceedings text matches and appears complete."
@@ -78,8 +92,8 @@
       "manual_follow_up_required": "false",
       "low_confidence_flag": false,
       "trimmed_text_json_path": "qa/trimming/reports/batch_003/text_trimmed/1231.json",
-      "match_score": "0.8831",
-      "title_score": "1.0000",
+      "match_score": "0.9858",
+      "title_score": "0.9810",
       "author_score": "1.0000",
       "trim_reason": "Proceedings detected and candidate abstract passed identity and completeness guardrails.",
       "qc_note": "Trimmed proceedings text matches and appears complete."

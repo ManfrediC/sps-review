@@ -1,20 +1,20 @@
 {
-  "generated_at_utc": "2026-04-10T08:36:02.927732+00:00",
+  "generated_at_utc": "2026-04-10T08:53:48.288569+00:00",
   "case_count": 10,
   "passed_count": 10,
   "failed_count": 0,
   "results": [
     {
-      "paper_id": "1119",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1437",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_trimming",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
           "name": "trimmed_output_present",
           "passed": true,
-          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json"
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1437.json"
         },
         {
           "name": "qc_confirmed_full",
@@ -29,16 +29,16 @@
       ]
     },
     {
-      "paper_id": "1120",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1511",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_trimming",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
           "name": "trimmed_output_present",
           "passed": true,
-          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json"
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1511.json"
         },
         {
           "name": "qc_confirmed_full",
@@ -53,16 +53,40 @@
       ]
     },
     {
-      "paper_id": "1129",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1602",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_trimming",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
           "name": "trimmed_output_present",
           "passed": true,
-          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1129.json"
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1602.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1605",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1605.json"
         },
         {
           "name": "qc_confirmed_full",
@@ -77,21 +101,40 @@
         {
           "name": "expected_end_present",
           "passed": true,
-          "actual": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening."
+          "actual": "and/or intravenous immunoglobulins"
         }
       ]
     },
     {
-      "paper_id": "1138",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1611",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1662",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_trimming",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
           "name": "trimmed_output_present",
           "passed": true,
-          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1138.json"
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1662.json"
         },
         {
           "name": "qc_confirmed_full",
@@ -106,78 +149,21 @@
         {
           "name": "expected_end_present",
           "passed": true,
-          "actual": "Conclusion: The results are compatible with literature."
+          "actual": "Immunosuppression led to slow but progressive improvement."
         }
       ]
     },
     {
-      "paper_id": "1150",
-      "regression_set_id": "batch_002_feedback",
-      "workflow_stage": "stage05_not_needed",
-      "output_source": "batch_002",
-      "passed": true,
-      "checks": [
-        {
-          "name": "trim_status_matches_not_needed",
-          "passed": true,
-          "actual": "not_needed"
-        },
-        {
-          "name": "manual_follow_up_matches",
-          "passed": true,
-          "actual": true
-        }
-      ]
-    },
-    {
-      "paper_id": "1153",
-      "regression_set_id": "batch_002_feedback",
-      "workflow_stage": "stage05_not_needed",
-      "output_source": "batch_002",
-      "passed": true,
-      "checks": [
-        {
-          "name": "trim_status_matches_not_needed",
-          "passed": true,
-          "actual": "not_needed"
-        },
-        {
-          "name": "manual_follow_up_matches",
-          "passed": true,
-          "actual": true
-        }
-      ]
-    },
-    {
-      "paper_id": "1154",
-      "regression_set_id": "batch_002_feedback",
-      "workflow_stage": "stage05_not_needed",
-      "output_source": "batch_002",
-      "passed": true,
-      "checks": [
-        {
-          "name": "trim_status_matches_not_needed",
-          "passed": true,
-          "actual": "not_needed"
-        },
-        {
-          "name": "manual_follow_up_matches",
-          "passed": true,
-          "actual": true
-        }
-      ]
-    },
-    {
-      "paper_id": "1215",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1664",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_trimming",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
           "name": "trimmed_output_present",
           "passed": true,
-          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json"
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1664.json"
         },
         {
           "name": "qc_confirmed_full",
@@ -188,14 +174,24 @@
           "name": "manual_follow_up_matches",
           "passed": true,
           "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability."
+        },
+        {
+          "name": "not_contains::Abstracts from the 50 th European Societ",
+          "passed": true,
+          "actual": "Abstracts from the 50 th European Society of Human Genetics Conference"
         }
       ]
     },
     {
-      "paper_id": "1217",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1668",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_not_needed",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
@@ -211,16 +207,35 @@
       ]
     },
     {
-      "paper_id": "1227",
-      "regression_set_id": "batch_002_feedback",
+      "paper_id": "1675",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1721",
+      "regression_set_id": "batch_008_feedback",
       "workflow_stage": "stage05_trimming",
-      "output_source": "batch_002",
+      "output_source": "batch_008",
       "passed": true,
       "checks": [
         {
           "name": "trimmed_output_present",
           "passed": true,
-          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json"
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1721.json"
         },
         {
           "name": "qc_confirmed_full",
@@ -231,6 +246,26 @@
           "name": "manual_follow_up_matches",
           "passed": true,
           "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Anti-glutamic acid decarboxylase positive stiff person syndrome"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "for as long as three months after infusion. No adverse events were encountered."
+        },
+        {
+          "name": "not_contains::Poster Session 3",
+          "passed": true,
+          "actual": "Poster Session 3"
+        },
+        {
+          "name": "not_contains::WCN19-0188",
+          "passed": true,
+          "actual": "WCN19-0188"
         }
       ]
     }

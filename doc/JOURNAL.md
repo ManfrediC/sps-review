@@ -1155,3 +1155,66 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 - Refreshed full trimming regression:
   - `qa/trimming/reports/regression_evaluation_batch_007.json`
   - outcome: `59/59` passed
+
+### Proceedings trimming batch 008 follow-up
+
+- Reviewed batch `008` feedback and analysed the main failure patterns:
+  - header-only duplicate listings being chosen instead of the later full abstract (`1662`)
+  - wrapped all-caps or soft proceedings boundaries being missed, causing spill-over (`1605`, `1664`)
+  - isolated abstract/article pages still being treated as proceedings candidates (`1611`, `1668`)
+  - event/session preamble and footer noise leaking into the kept span (`1721`, `1664`)
+  - dotted or compact abstract codes not being recognised consistently enough for QC boundary checks (`1437`, `1602`)
+- Implemented narrow updates in:
+  - `src/pipelines/_proceedings_text.py`
+  - `src/pipelines/05_trim_proceedings_text.py`
+  - `src/pipelines/05b_validate_proceedings_text.py`
+  - `src/validation/evaluate_trimming_feedback.py`
+- Added focused regression coverage for:
+  - conference footer stripping
+  - numbered affiliation lines
+  - isolated abstract/article-page rejection
+  - dotted-code boundary validation
+  - mojibake-tolerant page identity scoring
+  - manual-follow-up checks for `stage05_not_needed`
+
+### Batch and regression replay
+
+- Froze the accepted batch `008` feedback in:
+  - `qa/trimming/feedback/batch_008_feedback.json`
+  - `qa/trimming/regression/batch_008_feedback.json`
+- Replayed stage `05` and stage `05b` for `batch_008`, then rebuilt:
+  - `qa/trimming/reports/batch_008/batch_report.json`
+  - `qa/trimming/reports/batch_008/acceptance_report.json`
+- Batch `008` accepted-case outcome:
+  - `9/9` passed
+  - `1675` remains outside the frozen fixture and still needs human review
+- After tightening the evaluator to enforce expected manual-review status for `stage05_not_needed`, older stored QC bundles for `batch_002` and `batch_003` were stale.
+- Replayed stage `05` and stage `05b` for `batch_002` and `batch_003`, then refreshed:
+  - `qa/trimming/reports/batch_002/acceptance_report.json`
+  - `qa/trimming/reports/batch_003/acceptance_report.json`
+- Refreshed full trimming regression:
+  - `qa/trimming/reports/regression_evaluation_batch_008.json`
+  - outcome: `68/68` passed
+
+### Manual follow-up flag
+
+- Measured `manual_follow_up_required` against the accepted human-feedback corpus for stage `05` cases only, excluding routing-gate cases.
+- Overall accepted stage `05` corpus:
+  - `60/60` correct
+  - precision `1.00`
+  - recall `1.00`
+- Batch `008` accepted subset:
+  - `9/9` correct
+  - true positives `2`
+  - true negatives `7`
+
+### Batch 008 finalisation
+
+- Finalised `1675` as a `stage05_not_needed` case after confirming it behaves like an isolated abstract/article-style page rather than a trim-worthy proceedings bundle.
+- Updated:
+  - `qa/trimming/feedback/batch_008_feedback.json`
+  - `qa/trimming/regression/batch_008_feedback.json`
+  - `qa/trimming/batches/batch_008.json`
+  - `qa/trimming/reports/batch_008/acceptance_report.json`
+- Batch `008` is now fully resolved:
+  - accepted-case outcome `10/10`
