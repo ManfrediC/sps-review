@@ -142,15 +142,76 @@ Prepares one proceedings-trimming QA batch at a time for the stage-05 improvemen
 The script:
 - reads the resolved stage-04 conference-abstract pool
 - excludes papers already frozen in `qa/trimming/feedback/` or `qa/trimming/regression/`
-- refuses to open a new batch while an earlier batch is still awaiting feedback
-- runs `05_trim_proceedings_text.py` and `05b_validate_proceedings_text.py` on the selected subset only
+- resumes an interrupted processing batch instead of starting from scratch
+- refuses to open a new batch while an earlier batch is still unresolved
+- runs `05_trim_proceedings_text.py` and `05b_validate_proceedings_text.py` incrementally on the selected subset only
 - writes a batch manifest under `qa/trimming/batches/`
-- writes subset outputs and a machine-readable batch report under `qa/trimming/reports/<batch_id>/`
+- writes subset outputs, review files, and a machine-readable batch report under `qa/trimming/reports/<batch_id>/`
 
-Prepare the next default 10-file batch:
+Prepare the next default 50-file batch:
 
 ```bash
 python src/validation/manage_trimming_batches.py
+```
+
+Prepare a smaller explicit batch size:
+
+```bash
+python src/validation/manage_trimming_batches.py --batch-size 10
+```
+
+### `review_stage05_app.py`
+
+Streamlit reviewer for the stage-05 proceedings-trimming rounds.
+
+It:
+- loads a selected batch from `qa/trimming/reports/`
+- shows the source PDF alongside the current trim/QC state
+- includes a search box that uses extracted page text to jump the embedded PDF viewer to matching pages
+- shows a preview of the current trimmed abstract when one exists
+- lets the reviewer mark the extraction as correct or enter corrected start/end anchors plus patch comments
+- saves each response immediately to `responses.csv`
+- refreshes `feedback.json`, `manual_overrides.csv`, `acceptance_report.json`, and `patch_review_summary.json` after each save
+
+Run:
+
+```bash
+streamlit run src/validation/review_stage05_app.py
+```
+
+### `update_trimming_review_outputs.py`
+
+Refreshes stage-05 review artefacts after a general code patch and rerun of the batch outputs.
+
+It:
+- rebuilds `review_queue.csv` from the latest batch-local trim/QC registries
+- recompiles `feedback.json` from `responses.csv`
+- refreshes `manual_overrides.csv`
+- rewrites the batch acceptance report
+- rewrites the combined regression-plus-batch evaluation report
+
+Run:
+
+```bash
+python src/validation/update_trimming_review_outputs.py --batch-id batch_009
+```
+
+### `apply_trimming_manual_overrides.py`
+
+Applies fallback per-paper manual overrides for residual failures after the preferred general `05/05b` patch path has been tried.
+
+It:
+- reads enabled rows from `manual_overrides.csv`
+- extracts the reviewed start/end span directly from the full text JSON
+- overwrites the batch-local trimmed JSON for that paper
+- updates the batch-local trim registry
+- reruns `05b_validate_proceedings_text.py` on the affected papers
+- refreshes feedback and acceptance artefacts afterwards
+
+Run:
+
+```bash
+python src/validation/apply_trimming_manual_overrides.py --batch-id batch_009 --only-enabled
 ```
 
 ### `build_stage04_gold_batch.py`

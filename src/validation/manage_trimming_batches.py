@@ -14,6 +14,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.pipelines._source_routing import load_csv_rows_by_id, resolve_source_row
+from src.validation import _stage05_review as stage05_review
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -26,18 +27,20 @@ REGRESSION_DIR = TRIMMING_QA_DIR / "regression"
 REPORTS_DIR = TRIMMING_QA_DIR / "reports"
 TRIMMER_SCRIPT = REPO_ROOT / "src" / "pipelines" / "05_trim_proceedings_text.py"
 QC_SCRIPT = REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text.py"
-OPEN_BATCH_STATUSES = {"prepared", "awaiting_feedback", "feedback_received", "patch_in_progress"}
+PROCESSING_BATCH_STATUSES = {"prepared", "stage05_running", "stage05b_running"}
+REVIEW_BATCH_STATUSES = {"awaiting_review", "feedback_received", "patch_in_progress", "override_in_progress"}
+OPEN_BATCH_STATUSES = PROCESSING_BATCH_STATUSES | REVIEW_BATCH_STATUSES
 RESOLVED_BATCH_STATUSES = {"resolved", "superseded", "archived"}
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Prepare a reproducible proceedings-trimming QA batch and run stage 05/05b on that subset."
+        description="Prepare a resumable proceedings-trimming QA batch and run stage 05/05b on that subset."
     )
     parser.add_argument(
         "--batch-size",
         type=int,
-        default=10,
+        default=50,
         help="Number of proceedings-detected files to include in the review batch.",
     )
     parser.add_argument(
@@ -84,7 +87,10 @@ def now_utc_iso() -> str:
 
 
 def repo_relative(path: Path) -> str:
-    return str(path.resolve().relative_to(REPO_ROOT.resolve())).replace("\\", "/")
+    try:
+        return str(path.resolve().relative_to(REPO_ROOT.resolve())).replace("\\", "/")
+    except ValueError:
+        return str(path.resolve()).replace("\\", "/")
 
 
 def ensure_required_directories(
@@ -166,6 +172,66 @@ def next_batch_id(batches_dir: Path) -> str:
     return f"batch_{next_index:03d}"
 
 
+def load_csv_rows(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def rows_by_id(path: Path) -> dict[str, dict[str, str]]:
+    return {
+        (row.get("paper_id") or "").strip(): row
+        for row in load_csv_rows(path)
+        if (row.get("paper_id") or "").strip()
+    }
+
+
+def proceedings_detected(trim_row: dict[str, str]) -> bool:
+    return str(trim_row.get("proceedings_detected") or "").strip().lower() == "true"
+
+
+def trim_command(
+    paper_ids: list[str],
+    trimmed_dir: Path,
+    trim_registry_path: Path,
+) -> list[str]:
+    return [
+        sys.executable,
+        str(TRIMMER_SCRIPT),
+        *[argument for paper_id in paper_ids for argument in ("--paper-id", paper_id)],
+        "--output-dir",
+        str(trimmed_dir),
+        "--registry-path",
+        str(trim_registry_path),
+        "--skip-registry-refresh",
+    ]
+
+
+def qc_command(
+    paper_ids: list[str],
+    trimmed_dir: Path,
+    trim_registry_path: Path,
+    qc_registry_path: Path,
+) -> list[str]:
+    return [
+        sys.executable,
+        str(QC_SCRIPT),
+        *[argument for paper_id in paper_ids for argument in ("--paper-id", paper_id)],
+        "--trimmed-dir",
+        str(trimmed_dir),
+        "--text-trim-registry",
+        str(trim_registry_path),
+        "--output-path",
+        str(qc_registry_path),
+        "--skip-registry-refresh",
+    ]
+
+
+def run_command(command: list[str]) -> None:
+    subprocess.run(command, check=True, cwd=str(REPO_ROOT))
+
+
 def resolved_conference_rows(
     source_registry_path: Path,
     source_manual_review_path: Path,
@@ -210,91 +276,81 @@ def select_unreviewed_batch(
     return selected
 
 
-def proceedings_detected(trim_row: dict[str, str]) -> bool:
-    return str(trim_row.get("proceedings_detected") or "").strip().lower() == "true"
+def manifest_output_paths(batch_id: str, report_dir: Path, report_path: Path, trim_registry_path: Path, qc_registry_path: Path) -> dict[str, str]:
+    return {
+        "report_dir": repo_relative(report_dir),
+        "report_path": repo_relative(report_path),
+        "trim_registry_path": repo_relative(trim_registry_path),
+        "qc_registry_path": repo_relative(qc_registry_path),
+        "review_queue_path": repo_relative(stage05_review.review_queue_path(report_dir)),
+        "responses_path": repo_relative(stage05_review.responses_path(report_dir)),
+        "feedback_path": repo_relative(stage05_review.feedback_path(report_dir)),
+        "manual_overrides_path": repo_relative(stage05_review.manual_overrides_path(report_dir)),
+        "acceptance_report_path": repo_relative(stage05_review.acceptance_report_path(report_dir)),
+        "patch_summary_path": repo_relative(stage05_review.patch_summary_path(report_dir)),
+    }
 
 
-def trim_command(
-    paper_ids: list[str],
-    trimmed_dir: Path,
-    trim_registry_path: Path,
-) -> list[str]:
-    return [
-        sys.executable,
-        str(TRIMMER_SCRIPT),
-        *[argument for paper_id in paper_ids for argument in ("--paper-id", paper_id)],
-        "--output-dir",
-        str(trimmed_dir),
-        "--registry-path",
-        str(trim_registry_path),
-        "--skip-registry-refresh",
-    ]
-
-
-def qc_command(
-    paper_ids: list[str],
-    trimmed_dir: Path,
+def initial_manifest_payload(
+    *,
+    batch_id: str,
+    batch_size: int,
+    reviewed_ids: set[str],
+    report_dir: Path,
+    report_path: Path,
     trim_registry_path: Path,
     qc_registry_path: Path,
-) -> list[str]:
-    return [
-        sys.executable,
-        str(QC_SCRIPT),
-        *[argument for paper_id in paper_ids for argument in ("--paper-id", paper_id)],
-        "--trimmed-dir",
-        str(trimmed_dir),
-        "--text-trim-registry",
-        str(trim_registry_path),
-        "--output-path",
-        str(qc_registry_path),
-        "--skip-registry-refresh",
-    ]
-
-
-def screen_for_detected_batch(
-    candidate_rows: list[dict[str, str]],
-    batch_size: int,
-    trimmed_dir: Path,
-    trim_registry_path: Path,
-) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    screened_rows: list[dict[str, str]] = []
-    selected_rows: list[dict[str, str]] = []
-    for row in candidate_rows:
-        paper_id = row["paper_id"]
-        run_command(trim_command([paper_id], trimmed_dir, trim_registry_path))
-        screened_rows.append(row)
-        trim_row = rows_by_id(trim_registry_path).get(paper_id, {})
-        if proceedings_detected(trim_row):
-            selected_rows.append(row)
-            if len(selected_rows) >= batch_size:
-                break
-    return screened_rows, selected_rows
-
-
-def run_command(command: list[str]) -> None:
-    subprocess.run(command, check=True, cwd=str(REPO_ROOT))
-
-
-def load_csv_rows(path: Path) -> list[dict[str, str]]:
-    if not path.exists():
-        return []
-    with path.open(encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle))
-
-
-def rows_by_id(path: Path) -> dict[str, dict[str, str]]:
+) -> dict[str, Any]:
     return {
-        (row.get("paper_id") or "").strip(): row
-        for row in load_csv_rows(path)
-        if (row.get("paper_id") or "").strip()
+        "batch_id": batch_id,
+        "created_at_utc": now_utc_iso(),
+        "last_updated_at_utc": now_utc_iso(),
+        "status": "stage05_running",
+        "batch_size_target": batch_size,
+        "batch_size": 0,
+        "paper_ids": [],
+        "screened_candidate_ids": [],
+        "screened_candidate_count": 0,
+        "reviewed_ids_excluded_count": len(reviewed_ids),
+        "qc_completed_paper_ids": [],
+        "output_paths": manifest_output_paths(batch_id, report_dir, report_path, trim_registry_path, qc_registry_path),
     }
+
+
+def write_manifest(manifest_path: Path, payload: dict[str, Any]) -> None:
+    payload["last_updated_at_utc"] = now_utc_iso()
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def update_manifest(
+    manifest_path: Path,
+    payload: dict[str, Any],
+    *,
+    status: str | None = None,
+    screened_candidate_ids: list[str] | None = None,
+    paper_ids: list[str] | None = None,
+    qc_completed_paper_ids: list[str] | None = None,
+) -> dict[str, Any]:
+    if status is not None:
+        payload["status"] = status
+    if screened_candidate_ids is not None:
+        payload["screened_candidate_ids"] = screened_candidate_ids
+        payload["screened_candidate_count"] = len(screened_candidate_ids)
+    if paper_ids is not None:
+        payload["paper_ids"] = paper_ids
+        payload["batch_size"] = len(paper_ids)
+    if qc_completed_paper_ids is not None:
+        payload["qc_completed_paper_ids"] = qc_completed_paper_ids
+    write_manifest(manifest_path, payload)
+    return payload
 
 
 def low_confidence_flag(trim_row: dict[str, str], qc_row: dict[str, str]) -> bool:
     if str(qc_row.get("manual_follow_up_required") or "").strip().lower() == "true":
         return True
     trim_status = str(trim_row.get("trim_status") or "").strip()
-    if trim_status != "trimmed_auto":
+    if trim_status not in {"trimmed_auto", "trimmed_manual_override"}:
         return True
     try:
         match_score = float(trim_row.get("match_score") or 0.0)
@@ -305,6 +361,85 @@ def low_confidence_flag(trim_row: dict[str, str], qc_row: dict[str, str]) -> boo
     return match_score < 0.75 or title_score < 0.75 or author_score < 0.35
 
 
+def screen_for_detected_batch(
+    *,
+    candidate_rows: list[dict[str, str]],
+    batch_size: int,
+    trimmed_dir: Path,
+    trim_registry_path: Path,
+    manifest_path: Path,
+    manifest_payload: dict[str, Any],
+) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, Any]]:
+    candidate_by_id = {row["paper_id"]: row for row in candidate_rows}
+    screened_candidate_ids = list(manifest_payload.get("screened_candidate_ids") or [])
+    screened_set = set(screened_candidate_ids)
+    selected_paper_ids = list(manifest_payload.get("paper_ids") or [])
+    selected_set = set(selected_paper_ids)
+
+    for row in candidate_rows:
+        paper_id = row["paper_id"]
+        if len(selected_paper_ids) >= batch_size:
+            break
+        if paper_id in screened_set:
+            continue
+        run_command(trim_command([paper_id], trimmed_dir, trim_registry_path))
+        screened_candidate_ids.append(paper_id)
+        screened_set.add(paper_id)
+        trim_row = rows_by_id(trim_registry_path).get(paper_id, {})
+        if proceedings_detected(trim_row) and paper_id not in selected_set:
+            selected_paper_ids.append(paper_id)
+            selected_set.add(paper_id)
+        manifest_payload = update_manifest(
+            manifest_path,
+            manifest_payload,
+            status="stage05_running",
+            screened_candidate_ids=screened_candidate_ids,
+            paper_ids=selected_paper_ids,
+        )
+
+    screened_rows = [candidate_by_id[paper_id] for paper_id in screened_candidate_ids if paper_id in candidate_by_id]
+    selected_rows = [candidate_by_id[paper_id] for paper_id in selected_paper_ids if paper_id in candidate_by_id]
+    return screened_rows, selected_rows, manifest_payload
+
+
+def run_incremental_qc(
+    *,
+    selected_rows: list[dict[str, str]],
+    trimmed_dir: Path,
+    trim_registry_path: Path,
+    qc_registry_path: Path,
+    manifest_path: Path,
+    manifest_payload: dict[str, Any],
+) -> dict[str, Any]:
+    qc_completed_ids = list(manifest_payload.get("qc_completed_paper_ids") or [])
+    qc_completed_set = set(qc_completed_ids)
+    existing_qc_rows = rows_by_id(qc_registry_path)
+
+    for row in selected_rows:
+        paper_id = row["paper_id"]
+        if paper_id in qc_completed_set or paper_id in existing_qc_rows:
+            if paper_id not in qc_completed_set:
+                qc_completed_ids.append(paper_id)
+                qc_completed_set.add(paper_id)
+            continue
+        run_command(qc_command([paper_id], trimmed_dir, trim_registry_path, qc_registry_path))
+        qc_completed_ids.append(paper_id)
+        qc_completed_set.add(paper_id)
+        manifest_payload = update_manifest(
+            manifest_path,
+            manifest_payload,
+            status="stage05b_running",
+            qc_completed_paper_ids=qc_completed_ids,
+        )
+
+    return update_manifest(
+        manifest_path,
+        manifest_payload,
+        status="stage05b_running",
+        qc_completed_paper_ids=qc_completed_ids,
+    )
+
+
 def build_batch_report(
     batch_id: str,
     screened_rows: list[dict[str, str]],
@@ -313,6 +448,7 @@ def build_batch_report(
     qc_registry_path: Path,
     trimmed_dir: Path,
     report_path: Path,
+    report_dir: Path,
 ) -> dict[str, Any]:
     trim_rows = rows_by_id(trim_registry_path)
     qc_rows = rows_by_id(qc_registry_path)
@@ -337,6 +473,7 @@ def build_batch_report(
                 "match_score": (trim_row.get("match_score") or "").strip(),
                 "title_score": (trim_row.get("title_score") or "").strip(),
                 "author_score": (trim_row.get("author_score") or "").strip(),
+                "combined_score": (qc_row.get("combined_score") or "").strip(),
                 "trim_reason": (trim_row.get("trim_reason") or "").strip(),
                 "qc_note": (qc_row.get("qc_note") or "").strip(),
             }
@@ -356,6 +493,12 @@ def build_batch_report(
             "qc_registry_path": repo_relative(qc_registry_path),
             "trimmed_dir": repo_relative(trimmed_dir),
             "report_path": repo_relative(report_path),
+            "review_queue_path": repo_relative(stage05_review.review_queue_path(report_dir)),
+            "responses_path": repo_relative(stage05_review.responses_path(report_dir)),
+            "feedback_path": repo_relative(stage05_review.feedback_path(report_dir)),
+            "manual_overrides_path": repo_relative(stage05_review.manual_overrides_path(report_dir)),
+            "acceptance_report_path": repo_relative(stage05_review.acceptance_report_path(report_dir)),
+            "patch_summary_path": repo_relative(stage05_review.patch_summary_path(report_dir)),
         },
         "summary": {
             "trim_status_counts": dict(Counter(item["trim_status"] for item in file_statuses)),
@@ -371,48 +514,106 @@ def build_batch_report(
     return report
 
 
-def write_batch_manifest(
+def resume_or_prepare_batch(
+    *,
+    args: argparse.Namespace,
+    manifest_payload: dict[str, Any],
     manifest_path: Path,
-    batch_id: str,
-    screened_rows: list[dict[str, str]],
-    selected_rows: list[dict[str, str]],
-    reviewed_ids: set[str],
-    report_dir: Path,
-    report_path: Path,
-    trim_registry_path: Path,
-    qc_registry_path: Path,
-) -> None:
-    payload = {
-        "batch_id": batch_id,
-        "created_at_utc": now_utc_iso(),
-        "status": "awaiting_feedback",
-        "paper_ids": [row["paper_id"] for row in selected_rows],
-        "batch_size": len(selected_rows),
-        "screened_candidate_count": len(screened_rows),
-        "screened_candidate_ids": [row["paper_id"] for row in screened_rows],
-        "reviewed_ids_excluded_count": len(reviewed_ids),
-        "output_paths": {
-            "report_dir": repo_relative(report_dir),
-            "report_path": repo_relative(report_path),
-            "trim_registry_path": repo_relative(trim_registry_path),
-            "qc_registry_path": repo_relative(qc_registry_path),
-        },
-    }
-    manifest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    candidate_rows: list[dict[str, str]],
+) -> dict[str, Any]:
+    batch_id = str(manifest_payload.get("batch_id") or "").strip()
+    report_dir = args.reports_dir / batch_id
+    trimmed_dir = report_dir / "text_trimmed"
+    trimmed_dir.mkdir(parents=True, exist_ok=True)
+    trim_registry_path = report_dir / "text_trim_registry.csv"
+    qc_registry_path = report_dir / "proceedings_text_qc_registry.csv"
+    report_path = report_dir / "batch_report.json"
+
+    screened_rows, selected_rows, manifest_payload = screen_for_detected_batch(
+        candidate_rows=candidate_rows,
+        batch_size=args.batch_size,
+        trimmed_dir=trimmed_dir,
+        trim_registry_path=trim_registry_path,
+        manifest_path=manifest_path,
+        manifest_payload=manifest_payload,
+    )
+    if len(selected_rows) < args.batch_size:
+        raise RuntimeError(
+            "Unable to prepare a full proceedings-detected trimming batch: "
+            f"found {len(selected_rows)} detected files after screening {len(screened_rows)} candidates."
+        )
+
+    manifest_payload = update_manifest(
+        manifest_path,
+        manifest_payload,
+        status="stage05b_running",
+        paper_ids=[row["paper_id"] for row in selected_rows],
+        screened_candidate_ids=[row["paper_id"] for row in screened_rows],
+    )
+    manifest_payload = run_incremental_qc(
+        selected_rows=selected_rows,
+        trimmed_dir=trimmed_dir,
+        trim_registry_path=trim_registry_path,
+        qc_registry_path=qc_registry_path,
+        manifest_path=manifest_path,
+        manifest_payload=manifest_payload,
+    )
+
+    report = build_batch_report(
+        batch_id=batch_id,
+        screened_rows=screened_rows,
+        selected_rows=selected_rows,
+        trim_registry_path=trim_registry_path,
+        qc_registry_path=qc_registry_path,
+        trimmed_dir=trimmed_dir,
+        report_path=report_path,
+        report_dir=report_dir,
+    )
+    stage05_review.refresh_review_materials(
+        batch_id=batch_id,
+        report_dir=report_dir,
+        feedback_dir=args.feedback_dir,
+        regression_dir=args.regression_dir,
+        reports_dir=args.reports_dir,
+        source_registry_path=args.source_registry_path,
+        source_manual_review_path=args.source_manual_review_path,
+    )
+    update_manifest(
+        manifest_path,
+        manifest_payload,
+        status="awaiting_review",
+        paper_ids=report["paper_ids"],
+        screened_candidate_ids=report["screened_candidate_ids"],
+    )
+    return report
 
 
 def prepare_batch(args: argparse.Namespace) -> dict[str, Any]:
     ensure_required_directories(args.batches_dir, args.feedback_dir, args.regression_dir, args.reports_dir)
     active_batches = open_batches(args.batches_dir)
-    if active_batches:
+    if len(active_batches) > 1:
         batch_ids = ", ".join(str(item.get("batch_id") or "unknown") for item in active_batches)
-        raise RuntimeError(f"Cannot open a new trimming batch while unresolved batches exist: {batch_ids}")
+        raise RuntimeError(f"Cannot continue trimming while multiple unresolved batches exist: {batch_ids}")
 
     reviewed_ids = reviewed_paper_ids(args.feedback_dir, args.regression_dir)
     candidate_rows = resolved_conference_rows(args.source_registry_path, args.source_manual_review_path)
     unreviewed_rows = select_unreviewed_batch(candidate_rows, reviewed_ids, len(candidate_rows))
     if not unreviewed_rows:
         raise RuntimeError("No unreviewed conference-abstract files remain for a new trimming batch.")
+
+    if active_batches:
+        active_batch = active_batches[0]
+        active_status = str(active_batch.get("status") or "").strip()
+        if active_status in PROCESSING_BATCH_STATUSES or not active_status:
+            manifest_path = args.batches_dir / f"{active_batch['batch_id']}.json"
+            return resume_or_prepare_batch(
+                args=args,
+                manifest_payload=active_batch,
+                manifest_path=manifest_path,
+                candidate_rows=unreviewed_rows,
+            )
+        batch_ids = ", ".join(str(item.get("batch_id") or "unknown") for item in active_batches)
+        raise RuntimeError(f"Cannot open a new trimming batch while unresolved batches exist: {batch_ids}")
 
     batch_id = next_batch_id(args.batches_dir)
     report_dir = args.reports_dir / batch_id
@@ -422,42 +623,22 @@ def prepare_batch(args: argparse.Namespace) -> dict[str, Any]:
     qc_registry_path = report_dir / "proceedings_text_qc_registry.csv"
     report_path = report_dir / "batch_report.json"
     manifest_path = args.batches_dir / f"{batch_id}.json"
-
-    screened_rows, selected_rows = screen_for_detected_batch(
-        candidate_rows=unreviewed_rows,
+    manifest_payload = initial_manifest_payload(
+        batch_id=batch_id,
         batch_size=args.batch_size,
-        trimmed_dir=trimmed_dir,
-        trim_registry_path=trim_registry_path,
-    )
-    if len(selected_rows) < args.batch_size:
-        raise RuntimeError(
-            "Unable to prepare a full proceedings-detected trimming batch: "
-            f"found {len(selected_rows)} detected files after screening {len(screened_rows)} candidates."
-        )
-
-    paper_ids = [row["paper_id"] for row in selected_rows]
-    run_command(qc_command(paper_ids, trimmed_dir, trim_registry_path, qc_registry_path))
-    report = build_batch_report(
-        batch_id=batch_id,
-        screened_rows=screened_rows,
-        selected_rows=selected_rows,
-        trim_registry_path=trim_registry_path,
-        qc_registry_path=qc_registry_path,
-        trimmed_dir=trimmed_dir,
-        report_path=report_path,
-    )
-    write_batch_manifest(
-        manifest_path=manifest_path,
-        batch_id=batch_id,
-        screened_rows=screened_rows,
-        selected_rows=selected_rows,
         reviewed_ids=reviewed_ids,
         report_dir=report_dir,
         report_path=report_path,
         trim_registry_path=trim_registry_path,
         qc_registry_path=qc_registry_path,
     )
-    return report
+    write_manifest(manifest_path, manifest_payload)
+    return resume_or_prepare_batch(
+        args=args,
+        manifest_payload=manifest_payload,
+        manifest_path=manifest_path,
+        candidate_rows=unreviewed_rows,
+    )
 
 
 def main() -> None:

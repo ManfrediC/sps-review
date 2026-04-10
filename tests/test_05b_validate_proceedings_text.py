@@ -34,6 +34,25 @@ class TestValidateProceedingsText(unittest.TestCase):
     def tearDown(self) -> None:
         self.temp_dir.cleanup()
 
+    def test_write_registry_preserve_existing_keeps_unprocessed_rows(self) -> None:
+        registry_path = self.tmp_path / "proceedings_text_qc_registry.csv"
+        existing_rows = [
+            {"paper_id": "1001", "qc_status": "confirmed_full", "manual_follow_up_required": "false"},
+            {"paper_id": "1002", "qc_status": "mismatch", "manual_follow_up_required": "true"},
+        ]
+        updated_rows = [
+            {"paper_id": "1002", "qc_status": "confirmed_full", "manual_follow_up_required": "false"},
+            {"paper_id": "1003", "qc_status": "partial_truncated", "manual_follow_up_required": "true"},
+        ]
+
+        self.module.write_registry(existing_rows, registry_path)
+        self.module.write_registry(updated_rows, registry_path, preserve_existing=True)
+
+        with registry_path.open(encoding="utf-8-sig", newline="") as handle:
+            rows = list(self.module.csv.DictReader(handle))
+        self.assertEqual([row["paper_id"] for row in rows], ["1001", "1002", "1003"])
+        self.assertEqual(rows[1]["qc_status"], "confirmed_full")
+
     def make_source_record(self) -> tuple[dict[str, object], list[str]]:
         lines = [
             "Previous abstract tail text that should not be part of the target source.",
