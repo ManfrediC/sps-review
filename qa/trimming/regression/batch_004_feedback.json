@@ -1,0 +1,60 @@
+{
+  "regression_set_id": "batch_004_feedback",
+  "accepted_from_feedback_round_id": "batch_004_feedback",
+  "batch_id": "batch_004",
+  "cases": [
+    {
+      "paper_id": "1251",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1257",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_start_first_line": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+      "expected_end_contains": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205",
+      "expected_not_contains": [
+        "ID 159",
+        "Madelung’s disease"
+      ]
+    },
+    {
+      "paper_id": "1332",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "is an important feature of this under-recognised and treatable syndrome.",
+      "expected_not_contains": [
+        "Delineation of the movement disorder spectrum"
+      ]
+    },
+    {
+      "paper_id": "1333",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_start_first_line": "107 12th January 2017",
+      "expected_end_contains": "of the autoimmune manifestations associated with APS1.",
+      "expected_not_contains": [
+        "108 12th January 2017",
+        "Out of the loop? Information sharing with"
+      ]
+    },
+    {
+      "paper_id": "1391",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Full journal article case series, not proceedings, and should be excluded from stage 05."
+    },
+    {
+      "paper_id": "1393",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    }
+  ]
+}

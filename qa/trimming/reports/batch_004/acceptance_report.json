@@ -1,0 +1,192 @@
+{
+  "generated_at_utc": "2026-04-09T16:55:23.408924+00:00",
+  "case_count": 6,
+  "passed_count": 6,
+  "failed_count": 0,
+  "results": [
+    {
+      "paper_id": "1251",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1251.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1257",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1257.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205"
+        },
+        {
+          "name": "not_contains::ID 159",
+          "passed": true,
+          "actual": "ID 159"
+        },
+        {
+          "name": "not_contains::Madelung’s disease",
+          "passed": true,
+          "actual": "Madelung’s disease"
+        }
+      ]
+    },
+    {
+      "paper_id": "1332",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1332.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "is an important feature of this under-recognised and treatable syndrome."
+        },
+        {
+          "name": "not_contains::Delineation of the movement disorder spe",
+          "passed": true,
+          "actual": "Delineation of the movement disorder spectrum"
+        }
+      ]
+    },
+    {
+      "paper_id": "1333",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1333.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "107 12th January 2017"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "of the autoimmune manifestations associated with APS1."
+        },
+        {
+          "name": "not_contains::108 12th January 2017",
+          "passed": true,
+          "actual": "108 12th January 2017"
+        },
+        {
+          "name": "not_contains::Out of the loop? Information sharing wit",
+          "passed": true,
+          "actual": "Out of the loop? Information sharing with"
+        }
+      ]
+    },
+    {
+      "paper_id": "1391",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "case_series_or_multi_case"
+        }
+      ]
+    },
+    {
+      "paper_id": "1393",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1393.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    }
+  ]
+}

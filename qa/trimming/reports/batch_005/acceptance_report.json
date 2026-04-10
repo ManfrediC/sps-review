@@ -1,0 +1,118 @@
+{
+  "generated_at_utc": "2026-04-09T17:43:33.015754+00:00",
+  "case_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "results": [
+    {
+      "paper_id": "1395",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1395.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1397",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1397.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1398",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1398.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1401",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1407",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1407.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    }
+  ]
+}

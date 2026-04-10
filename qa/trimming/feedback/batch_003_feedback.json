@@ -1,0 +1,59 @@
+{
+  "feedback_round_id": "batch_003_feedback",
+  "batch_id": "batch_003",
+  "received_at_utc": "2026-04-06T00:00:00Z",
+  "cases": [
+    {
+      "paper_id": "1229",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1230",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1231",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1233",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1237",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1239",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1242",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "and demonstrated significant improvement in his symptoms with appropriate treatment."
+    },
+    {
+      "paper_id": "1245",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1246",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1249",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Single-page CHEST abstract, does not need proceedings trimming."
+    }
+  ]
+}

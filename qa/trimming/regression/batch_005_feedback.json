@@ -1,0 +1,38 @@
+{
+  "regression_set_id": "batch_005_feedback",
+  "accepted_from_feedback_round_id": "batch_005_feedback",
+  "batch_id": "batch_005",
+  "cases": [
+    {
+      "paper_id": "1395",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1397",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1398",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1401",
+      "workflow_stage": "routing_gate",
+      "expected_verdict": "should_manual_review",
+      "expected_manual_review": true,
+      "notes": "Single case report, not proceedings, and should be excluded from stage 05."
+    },
+    {
+      "paper_id": "1407",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    }
+  ]
+}

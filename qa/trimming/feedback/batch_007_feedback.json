@@ -1,0 +1,86 @@
+{
+  "feedback_round_id": "batch_007_feedback",
+  "batch_id": "batch_007",
+  "received_at_utc": "2026-04-09T00:00:00Z",
+  "cases": [
+    {
+      "paper_id": "1416",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1418",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "still unknown and further research into the long-term prognosis of SLS is needed.",
+      "expected_not_contains": [
+        "1317",
+        "Ocular motor disorders among Filipino"
+      ]
+    },
+    {
+      "paper_id": "1433",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.",
+      "expected_not_contains": [
+        "CGR 8",
+        "A NOVEL CASE FEATURING AN IGE"
+      ]
+    },
+    {
+      "paper_id": "1439",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "Potential involvement of diaphragmatic muscles is unknown.",
+      "expected_not_contains": [
+        "M301"
+      ]
+    },
+    {
+      "paper_id": "1441",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false,
+      "expected_end_contains": "prevent misdiagnosis as more common conditions like MS.",
+      "expected_not_contains": [
+        "Disclosure",
+        "P602"
+      ]
+    },
+    {
+      "paper_id": "1446",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1447",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1452",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1453",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1458",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    }
+  ]
+}
