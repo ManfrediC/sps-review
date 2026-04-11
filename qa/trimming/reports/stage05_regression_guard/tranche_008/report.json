@@ -1,0 +1,242 @@
+{
+  "generated_at_utc": "2026-04-11T13:08:30.066161+00:00",
+  "tranche_id": "tranche_008",
+  "case_count": 3,
+  "passed_count": 3,
+  "failed_count": 0,
+  "paper_ids": [
+    "1922",
+    "1923",
+    "1924"
+  ],
+  "results": [
+    {
+      "paper_id": "1922",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_008",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1922.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_008\\text_trimmed\\1922.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_008\\text_trimmed\\1922.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "116",
+          "expected": "116",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusions: In conclusion, SPS can present with acute dysarthria mimicking stroke, and has not been reported before. Thus, evaluation for acute stroke is appropriate in these cases, and careful history may reveal more chronic symptoms leading to a very different diagnosis and treatment. References: Arino H, Hoftberger R, Gresa-Arribas N, et al. Paraneoplastic Neurological Syndrome and Glutamic Acid Decarboxylase Antibodies. JAMA Neurol 2015; 72:874. Raju R, Rakocevic G, Chen Z, et al. Autoimmuniry to GABAA-receptor-associated protein in stiffperson syndrome. Brain 2006; 129:3270.",
+          "expected": "Conclusions: In conclusion, SPS can present with acute dysarthria mimicking stroke, and has not been reported before. Thus, evaluation for acute stroke is appropriate in these cases, and careful history may reveal more chronic symptoms leading to a very different diagnosis and treatment. References: Arino H, Hoftberger R, Gresa-Arribas N, et al. Paraneoplastic Neurological Syndrome and Glutamic Acid Decarboxylase Antibodies. JAMA Neurol 2015; 72:874. Raju R, Rakocevic G, Chen Z, et al. Autoimmuniry to GABAA-receptor-associated protein in stiffperson syndrome. Brain 2006; 129:3270.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1922.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "116",
+          "expected": "116",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusions: In conclusion, SPS can present with acute dysarthria mimicking stroke, and has not been reported before. Thus, evaluation for acute stroke is appropriate in these cases, and careful history may reveal more chronic symptoms leading to a very different diagnosis and treatment",
+          "expected": "Conclusions: In conclusion, SPS can present with acute dysarthria mimicking stroke, and has not been reported before. Thus, evaluation for acute stroke is appropriate in these cases, and careful history may reveal more chronic symptoms leading to a very different diagnosis and treatment. References: Arino H, Hoftberger R, Gresa-Arribas N, et al. Paraneoplastic Neurological Syndrome and Glutamic Acid Decarboxylase Antibodies. JAMA Neurol 2015; 72:874. Raju R, Rakocevic G, Chen Z, et al. Autoimmuniry to GABAA-receptor-associated protein in stiffperson syndrome. Brain 2006; 129:3270.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1923",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_008",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1923.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_008\\text_trimmed\\1923.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_008\\text_trimmed\\1923.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "117",
+          "expected": "117",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusions: intrathecal baclofen promoted a clinical significant improvement in spasticity, as well as in balance and gait parameters. ITB pump implantation should be considered as a symptomatic therapy for those patients with refractory SPS.",
+          "expected": "Conclusions: intrathecal baclofen promoted a clinical significant improvement in spasticity, as well as in balance and gait parameters. ITB pump implantation should be considered as a symptomatic therapy for those patients with refractory SPS.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1923.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "117",
+          "expected": "117",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusions: intrathecal baclofen promoted a clinical significant improvement in spasticity, as well as in balance and gait parameters. ITB pump implantation should be considered as a symptomatic therapy for those patients with refractory SPS.",
+          "expected": "Conclusions: intrathecal baclofen promoted a clinical significant improvement in spasticity, as well as in balance and gait parameters. ITB pump implantation should be considered as a symptomatic therapy for those patients with refractory SPS.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1924",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_008",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1924.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_008\\text_trimmed\\1924.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_008\\text_trimmed\\1924.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "148",
+          "expected": "148",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusions: Our case provides an unusual description of SPS presenting as status dystonicus in a patient with severe muscle rigidity and spasms. We provide a photograph and can provide a video demonstration of the involuntary movements, which we hope will aid other practitioners in the early recognition and treatment of this condition. We also demonstrate that IVIg may improve the clinical course of this syndrome. References: 1) Fahn S, Jancovic J, Hallett M, editors. Principles and Practice of Movement Disorders. 2nd ed. New York: Elsevier Saunders; 2011.2) JK Baizabal-Carvallo, J Jankovic. Stiff-person syndrome: insights into a complex autoimmune disorder. J Neurol Neurosurg Psychiatry. 2015 Aug;86(8):840-8.",
+          "expected": "Conclusions: Our case provides an unusual description of SPS presenting as status dystonicus in a patient with severe muscle rigidity and spasms. We provide a photograph and can provide a video demonstration of the involuntary movements, which we hope will aid other practitioners in the early recognition and treatment of this condition. We also demonstrate that IVIg may improve the clinical course of this syndrome. References: 1) Fahn S, Jancovic J, Hallett M, editors. Principles and Practice of Movement Disorders. 2nd ed. New York: Elsevier Saunders; 2011.2) JK Baizabal-Carvallo, J Jankovic. Stiff-person syndrome: insights into a complex autoimmune disorder. J Neurol Neurosurg Psychiatry. 2015 Aug;86(8):840-8.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1924.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "148",
+          "expected": "148",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusions: Our case provides an unusual description of SPS presenting as status dystonicus in a patient with severe muscle rigidity and spasms. We provide a photograph and can provide a video demonstration of the involuntary movements, which we hope will aid other practitioners in the early recognition and treatment of this condition. We also demonstrate that IVIg may improve the clinical course of this syndrome",
+          "expected": "Conclusions: Our case provides an unusual description of SPS presenting as status dystonicus in a patient with severe muscle rigidity and spasms. We provide a photograph and can provide a video demonstration of the involuntary movements, which we hope will aid other practitioners in the early recognition and treatment of this condition. We also demonstrate that IVIg may improve the clinical course of this syndrome. References: 1) Fahn S, Jancovic J, Hallett M, editors. Principles and Practice of Movement Disorders. 2nd ed. New York: Elsevier Saunders; 2011.2) JK Baizabal-Carvallo, J Jankovic. Stiff-person syndrome: insights into a complex autoimmune disorder. J Neurol Neurosurg Psychiatry. 2015 Aug;86(8):840-8.",
+          "source": "feedback"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,865 @@
+{
+  "generated_at_utc": "2026-04-11T10:41:51.815030+00:00",
+  "tranche_id": "tranche_002",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "paper_ids": [
+    "1117",
+    "1118",
+    "1119",
+    "1120",
+    "1129",
+    "1138",
+    "1215",
+    "1227",
+    "1229",
+    "1230"
+  ],
+  "results": [
+    {
+      "paper_id": "1117",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1117.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1117.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1117.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP08.9 - 2594",
+          "expected": "PP08.9 - 2594",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms.",
+          "expected": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1117.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP08.9 - 2594",
+          "expected": "PP08.9 - 2594",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms.",
+          "expected": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1118",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1118.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1118.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1118.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP14. 3 - 2698",
+          "expected": "PP14. 3 - 2698",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "barbiturate infusion in an intensive care setting, as in our case.",
+          "expected": "barbiturate infusion in an intensive care setting, as in our case.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1118.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1118.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP14. 3 - 2698",
+          "expected": "PP14. 3 - 2698",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "barbiturate infusion in an intensive care setting, as in our case.",
+          "expected": "barbiturate infusion in an intensive care setting, as in our case.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1118.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1119",
+      "regression_set_id": "batch_002_feedback",
+      "baseline_bundle": "batch_002",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1119.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1119.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "670",
+          "expected": "670",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "correlation which might guide antibody testing.",
+          "expected": "correlation which might guide antibody testing.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "670",
+          "expected": "670",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "correlation which might guide antibody testing.",
+          "expected": "correlation which might guide antibody testing.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1120",
+      "regression_set_id": "batch_002_feedback",
+      "baseline_bundle": "batch_002",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1120.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1120.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "740",
+          "expected": "740",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "exact pathogenesis remains unknown, and needs further investigation.",
+          "expected": "exact pathogenesis remains unknown, and needs further investigation.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "740",
+          "expected": "740",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "exact pathogenesis remains unknown, and needs further investigation.",
+          "expected": "exact pathogenesis remains unknown, and needs further investigation.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1129",
+      "regression_set_id": "batch_002_feedback",
+      "baseline_bundle": "batch_002",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1129.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1129.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1129.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "M103. GAD Autoimmunity: Syndromes, Comorbidities,",
+          "expected": "M103. GAD Autoimmunity: Syndromes, Comorbidities,",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening.",
+          "expected": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1129.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "M103. GAD Autoimmunity: Syndromes, Comorbidities,",
+          "expected": "M103. GAD Autoimmunity: Syndromes, Comorbidities,",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening.",
+          "expected": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1138",
+      "regression_set_id": "batch_002_feedback",
+      "baseline_bundle": "batch_002",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1138.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1138.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1138.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff person syndrome: review of 14 patients",
+          "expected": "Stiff person syndrome: review of 14 patients",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusion: The results are compatible with literature.",
+          "expected": "Conclusion: The results are compatible with literature.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1138.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff person syndrome: review of 14 patients",
+          "expected": "Stiff person syndrome: review of 14 patients",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Conclusion: The results are compatible with literature.",
+          "expected": "Conclusion: The results are compatible with literature.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1215",
+      "regression_set_id": "batch_002_feedback",
+      "baseline_bundle": "batch_002",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1215.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1215.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "58",
+          "expected": "58",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "SATURDAY",
+          "expected": "SATURDAY",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "58",
+          "expected": "58",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "SATURDAY",
+          "expected": "SATURDAY",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1227",
+      "regression_set_id": "batch_002_feedback",
+      "baseline_bundle": "batch_002",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1227.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1227.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "77",
+          "expected": "77",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "with disease modifying agents.",
+          "expected": "with disease modifying agents.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "77",
+          "expected": "77",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "with disease modifying agents.",
+          "expected": "with disease modifying agents.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_002",
+          "expected": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1229",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1229.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1229.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1229.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P11168",
+          "expected": "P11168",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "autoimmune syndromes of suspected paraneoplastic origin.",
+          "expected": "autoimmune syndromes of suspected paraneoplastic origin.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1229.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1229.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P11168",
+          "expected": "P11168",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "autoimmune syndromes of suspected paraneoplastic origin.",
+          "expected": "autoimmune syndromes of suspected paraneoplastic origin.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1229.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1230",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_002",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1230.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1230.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_002\\text_trimmed\\1230.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P32164",
+          "expected": "P32164",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "for diagnosis, along with a high degree of clinical suspicion.",
+          "expected": "for diagnosis, along with a high degree of clinical suspicion.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_002",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1230.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1230.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P32164",
+          "expected": "P32164",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "for diagnosis, along with a high degree of clinical suspicion.",
+          "expected": "for diagnosis, along with a high degree of clinical suspicion.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1230.json"
+        }
+      ]
+    }
+  ]
+}

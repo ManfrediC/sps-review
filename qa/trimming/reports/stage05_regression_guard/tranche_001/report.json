@@ -1,0 +1,921 @@
+{
+  "generated_at_utc": "2026-04-11T10:29:20.081878+00:00",
+  "tranche_id": "tranche_001",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "paper_ids": [
+    "1597",
+    "6271",
+    "8198",
+    "8317",
+    "1001",
+    "1011",
+    "1028",
+    "1031",
+    "1112",
+    "1116"
+  ],
+  "results": [
+    {
+      "paper_id": "1597",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "baseline_bundle": "regression_boundary_review",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\1597.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1597.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1597.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "O-35 The Stiff Person Syndrome. Neurophysiological ﬁndings—",
+          "expected": "O-35 The Stiff Person Syndrome. Neurophysiological ﬁndings—",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+          "expected": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\1597.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "O-35 The Stiff Person Syndrome. Neurophysiological ﬁndings—",
+          "expected": "O-35 The Stiff Person Syndrome. Neurophysiological ﬁndings—",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+          "expected": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "6271",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "baseline_bundle": "regression_boundary_review",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\6271.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\6271.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\6271.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "C14",
+          "expected": "C14",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "treatment.",
+          "expected": "treatment.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_001",
+          "expected": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\6271.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\6271.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "C14",
+          "expected": "C14",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "treatment.",
+          "expected": "treatment.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "regression_boundary_review",
+          "expected": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\6271.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "8198",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "baseline_bundle": "regression_boundary_review",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8198.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\8198.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\8198.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "623",
+          "expected": "623",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "High serum antibody titres correlate with disease activity.",
+          "expected": "High serum antibody titres correlate with disease activity.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8198.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "623",
+          "expected": "623",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "High serum antibody titres correlate with disease activity.",
+          "expected": "High serum antibody titres correlate with disease activity.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "8317",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "baseline_bundle": "regression_boundary_review",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8317.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\8317.json",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\8317.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff man syndrome associated with breast cancer about 2 cases",
+          "expected": "Stiff man syndrome associated with breast cancer about 2 cases",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "doi:10.1016/j.jns.2013.07.1575",
+          "expected": "doi:10.1016/j.jns.2013.07.1575",
+          "source": "historical_json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8317.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff man syndrome associated with breast cancer about 2 cases",
+          "expected": "Stiff man syndrome associated with breast cancer about 2 cases",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "doi:10.1016/j.jns.2013.07.1575",
+          "expected": "doi:10.1016/j.jns.2013.07.1575",
+          "source": "historical_json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1001",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1001.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1001.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1001.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP2210",
+          "expected": "PP2210",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "ciated with SPS.",
+          "expected": "ciated with SPS.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1001.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1001.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP2210",
+          "expected": "PP2210",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "ciated with SPS.",
+          "expected": "ciated with SPS.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1001.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1011",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1011.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1011.json",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1011.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 313",
+          "expected": "Poster 313",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.",
+          "expected": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::sequelae of radiation-induced myelopathy",
+          "passed": true,
+          "actual": "sequelae of radiation-induced myelopathy, radiation-induced"
+        },
+        {
+          "name": "not_contains::funicular pain is likely to progress wit",
+          "passed": true,
+          "actual": "funicular pain is likely to progress with time."
+        },
+        {
+          "name": "not_contains::Poster 314",
+          "passed": true,
+          "actual": "Poster 314"
+        },
+        {
+          "name": "not_contains::The Usefulness of Transcranial Magnetic ",
+          "passed": true,
+          "actual": "The Usefulness of Transcranial Magnetic Stimulation"
+        },
+        {
+          "name": "not_contains::Diffusion Tensor Tractography",
+          "passed": true,
+          "actual": "Diffusion Tensor Tractography"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1011.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 313",
+          "expected": "Poster 313",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.",
+          "expected": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::sequelae of radiation-induced myelopathy",
+          "passed": true,
+          "actual": "sequelae of radiation-induced myelopathy, radiation-induced"
+        },
+        {
+          "name": "not_contains::funicular pain is likely to progress wit",
+          "passed": true,
+          "actual": "funicular pain is likely to progress with time."
+        },
+        {
+          "name": "not_contains::Poster 314",
+          "passed": true,
+          "actual": "Poster 314"
+        },
+        {
+          "name": "not_contains::The Usefulness of Transcranial Magnetic ",
+          "passed": true,
+          "actual": "The Usefulness of Transcranial Magnetic Stimulation"
+        },
+        {
+          "name": "not_contains::Diffusion Tensor Tractography",
+          "passed": true,
+          "actual": "Diffusion Tensor Tractography"
+        }
+      ]
+    },
+    {
+      "paper_id": "1028",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1028.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1028.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1028.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "96",
+          "expected": "96",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "doi:10.1016/j.jneuroim.2014.08.060",
+          "expected": "doi:10.1016/j.jneuroim.2014.08.060",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1028.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1028.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "96",
+          "expected": "96",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "doi:10.1016/j.jneuroim.2014.08.060",
+          "expected": "doi:10.1016/j.jneuroim.2014.08.060",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1028.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1031",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1031.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1031.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1031.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 20",
+          "expected": "Poster 20",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "with only mild stiffness and pain.",
+          "expected": "with only mild stiffness and pain.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Poster 21",
+          "passed": true,
+          "actual": "Poster 21"
+        },
+        {
+          "name": "not_contains::A comparison of the progression of auton",
+          "passed": true,
+          "actual": "A comparison of the progression of autonomic dysfunction"
+        },
+        {
+          "name": "not_contains::J.L. Gilden",
+          "passed": true,
+          "actual": "J.L. Gilden"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1031.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 20",
+          "expected": "Poster 20",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "with only mild stiffness and pain.",
+          "expected": "with only mild stiffness and pain.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Poster 21",
+          "passed": true,
+          "actual": "Poster 21"
+        },
+        {
+          "name": "not_contains::A comparison of the progression of auton",
+          "passed": true,
+          "actual": "A comparison of the progression of autonomic dysfunction"
+        },
+        {
+          "name": "not_contains::J.L. Gilden",
+          "passed": true,
+          "actual": "J.L. Gilden"
+        }
+      ]
+    },
+    {
+      "paper_id": "1112",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1112.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1112.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1112.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "F1087",
+          "expected": "F1087",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "sustainable for that period",
+          "expected": "sustainable for that period",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1112.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1112.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "F1087",
+          "expected": "F1087",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "sustainable for that period",
+          "expected": "sustainable for that period",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1112.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1116",
+      "regression_set_id": "batch_001_feedback",
+      "baseline_bundle": "batch_001",
+      "current_bundle": "tranche_001",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1116.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1116.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_001\\text_trimmed\\1116.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "OP87 - 3001",
+          "expected": "OP87 - 3001",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "determined, to help guide therapies.",
+          "expected": "determined, to help guide therapies.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1116.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1116.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "OP87 - 3001",
+          "expected": "OP87 - 3001",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "determined, to help guide therapies.",
+          "expected": "determined, to help guide therapies.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_001",
+          "expected": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1116.json"
+        }
+      ]
+    }
+  ]
+}

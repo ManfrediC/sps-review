@@ -1,0 +1,781 @@
+{
+  "generated_at_utc": "2026-04-11T13:04:21.979721+00:00",
+  "tranche_id": "tranche_007",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "paper_ids": [
+    "1838",
+    "1897",
+    "1898",
+    "1899",
+    "1900",
+    "1901",
+    "1903",
+    "1916",
+    "1918",
+    "1921"
+  ],
+  "results": [
+    {
+      "paper_id": "1838",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "batch_009",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1838.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1838.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1838.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "EPO2344",
+          "expected": "EPO2344",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "for GlyR antibodies. To conclude, PERM in the presence of multiple autoantibodies should always raise the suspicion pf thymoma",
+          "expected": "... for GlyR antibodies. To conclude, PERM in the presence of multiple autoantibodies should always raise the suspicion pf thymoma. Disclosure: Nothing to disclose",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1838.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "EPO2344",
+          "expected": "EPO2344",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "for GlyR antibodies. To conclude, PERM in the presence of multiple autoantibodies should always raise the suspicion pf thymoma",
+          "expected": "... for GlyR antibodies. To conclude, PERM in the presence of multiple autoantibodies should always raise the suspicion pf thymoma. Disclosure: Nothing to disclose",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1897",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "batch_009",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1897.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1897.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1897.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Autologous Hematopoietic Stem Cell Transplantation",
+          "expected": "Autologous Hematopoietic Stem Cell Transplantation",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS.",
+          "expected": "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1897.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Autologous Hematopoietic Stem Cell Transplantation",
+          "expected": "Autologous Hematopoietic Stem Cell Transplantation",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS.",
+          "expected": "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1898",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "batch_009",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1898.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1898.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1898.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "A25",
+          "expected": "A25",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... the patient had a cognitive loss without circulatory or immuno‐neurological disease only SPSD. Final Comments: Our review confirm the best treatment for SPSD, despite this unexpected 9‐year‐evolution. Informed consent to publish had been obtained from the patient.",
+          "expected": "... the patient had a cognitive loss without circulatory or immuno‐neurological disease only SPSD. Final Comments: Our review confirm the best treatment for SPSD, despite this unexpected 9‐year‐evolution. Informed consent to publish had been obtained from the patient.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1898.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "A25",
+          "expected": "A25",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... the patient had a cognitive loss without circulatory or immuno‐neurological disease only SPSD. Final Comments: Our review confirm the best treatment for SPSD, despite this unexpected 9‐year‐evolution. Informed consent to publish had been obtained from the patient.",
+          "expected": "... the patient had a cognitive loss without circulatory or immuno‐neurological disease only SPSD. Final Comments: Our review confirm the best treatment for SPSD, despite this unexpected 9‐year‐evolution. Informed consent to publish had been obtained from the patient.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1899",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1899.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1899.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1899.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "A394",
+          "expected": "A394",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Conclusion: SPS is a very rare disease without well established pathogenesis and debilitating nature if not recognized in time. Association with T1DM, anti-GAD antibodies and other autoimmune disorders could contribute to clinical suspicion and earlier diagnosis.",
+          "expected": "... Conclusion: SPS is a very rare disease without well established pathogenesis and debilitating nature if not recognized in time. Association with T1DM, anti-GAD antibodies and other autoimmune disorders could contribute to clinical suspicion and earlier diagnosis.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1899.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "A394",
+          "expected": "A394",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Conclusion: SPS is a very rare disease without well established pathogenesis and debilitating nature if not recognized in time. Association with T1DM, anti-GAD antibodies and other autoimmune disorders could contribute to clinical suspicion and earlier diagnosis.",
+          "expected": "... Conclusion: SPS is a very rare disease without well established pathogenesis and debilitating nature if not recognized in time. Association with T1DM, anti-GAD antibodies and other autoimmune disorders could contribute to clinical suspicion and earlier diagnosis.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1900",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1900.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1900.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1900.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "52 | STIFF PERSON SYNDROME",
+          "expected": "52 | STIFF PERSON SYNDROME",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "We hope by contributing this information to the medical literature we can aid others in their treatment of this rare disease.",
+          "expected": "We hope by contributing this information to the medical literature we can aid others in their treatment of this rare disease.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1900.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "52 | STIFF PERSON SYNDROME",
+          "expected": "52 | STIFF PERSON SYNDROME",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "We hope by contributing this information to the medical literature we can aid others in their treatment of this rare disease.",
+          "expected": "We hope by contributing this information to the medical literature we can aid others in their treatment of this rare disease.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1901",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1901.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1901.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1901.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "75 | IATROGENIC HYPOGLOBULINEMIA",
+          "expected": "75 | IATROGENIC HYPOGLOBULINEMIA",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... exchange (e.g. Guillain- Barre syndrome) when allergic reactions limit the volume of FFP one can use as replacement fluid.",
+          "expected": "... exchange (e.g. Guillain- Barre syndrome) when allergic reactions limit the volume of FFP one can use as replacement fluid.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1901.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "75 | IATROGENIC HYPOGLOBULINEMIA",
+          "expected": "75 | IATROGENIC HYPOGLOBULINEMIA",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... exchange (e.g. Guillain- Barre syndrome) when allergic reactions limit the volume of FFP one can use as replacement fluid.",
+          "expected": "... exchange (e.g. Guillain- Barre syndrome) when allergic reactions limit the volume of FFP one can use as replacement fluid.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1903",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1903.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1903.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1903.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "C31",
+          "expected": "C31",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Conclusion: This case illustrates that symptom management in SPS can be challenging to create a balance between symptom control and avoiding side effects. Psychological aspects of the care should also be taken into consideration.",
+          "expected": "... Conclusion: This case illustrates that symptom management in SPS can be challenging to create a balance between symptom control and avoiding side effects. Psychological aspects of the care should also be taken into consideration.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1903.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "C31",
+          "expected": "C31",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Conclusion: This case illustrates that symptom management in SPS can be challenging to create a balance between symptom control and avoiding side effects. Psychological aspects of the care should also be taken into consideration.",
+          "expected": "... Conclusion: This case illustrates that symptom management in SPS can be challenging to create a balance between symptom control and avoiding side effects. Psychological aspects of the care should also be taken into consideration.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1916",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1916.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1916.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1916.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "A Rare Cause Of Progressive Encephalopathy - PERM",
+          "expected": "A Rare Cause Of Progressive Encephalopathy - PERM",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Some institutions routinely screen CSF samples for autoantibodies and have higher detection rates, an argument could be made for this to become normal practice globally. References: 2Progressive encephalomyelitis, rigidity, and myoclonus: a novel glycine receptor antibody. (Hutchinson et al, 2008) 3Glycine receptor antibodies are detected in progressive encephalomyelitis with rigidity and myoclonus (PERM) but not in saccadic oscillations. (Vincent et al, 2011)",
+          "expected": "... Some institutions routinely screen CSF samples for autoantibodies and have higher detection rates, an argument could be made for this to become normal practice globally. References: 2Progressive encephalomyelitis, rigidity, and myoclonus: a novel glycine receptor antibody. (Hutchinson et al, 2008) 3Glycine receptor antibodies are detected in progressive encephalomyelitis with rigidity and myoclonus (PERM) but not in saccadic oscillations. (Vincent et al, 2011)",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1916.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "A Rare Cause Of Progressive Encephalopathy - PERM",
+          "expected": "A Rare Cause Of Progressive Encephalopathy - PERM",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Some institutions routinely screen CSF samples for autoantibodies and have higher detection rates, an argument could be made for this to become normal practice globally",
+          "expected": "... Some institutions routinely screen CSF samples for autoantibodies and have higher detection rates, an argument could be made for this to become normal practice globally. References: 2Progressive encephalomyelitis, rigidity, and myoclonus: a novel glycine receptor antibody. (Hutchinson et al, 2008) 3Glycine receptor antibodies are detected in progressive encephalomyelitis with rigidity and myoclonus (PERM) but not in saccadic oscillations. (Vincent et al, 2011)",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1918",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1918.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1918.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1918.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "F59. Spasmodic reflex myoclonus-an characteristic electrophysiological manifestation for the diagnosis of Stiff-person syndrome—Chon-Haw Tsai (Taiwan)",
+          "expected": "F59. Spasmodic reflex myoclonus-an characteristic electrophysiological manifestation for the diagnosis of Stiff-person syndrome—Chon-Haw Tsai (Taiwan)",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... These neurophysiological features discern spasmodic reflex myoclonus from hyperekplexia and are helpful in making diagnosis of SPS.",
+          "expected": "... These neurophysiological features discern spasmodic reflex myoclonus from hyperekplexia and are helpful in making diagnosis of SPS.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1918.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "F59. Spasmodic reflex myoclonus-an characteristic electrophysiological manifestation for the diagnosis of Stiff-person syndrome—Chon-Haw Tsai (Taiwan)",
+          "expected": "F59. Spasmodic reflex myoclonus-an characteristic electrophysiological manifestation for the diagnosis of Stiff-person syndrome—Chon-Haw Tsai (Taiwan)",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... These neurophysiological features discern spasmodic reflex myoclonus from hyperekplexia and are helpful in making diagnosis of SPS.",
+          "expected": "... These neurophysiological features discern spasmodic reflex myoclonus from hyperekplexia and are helpful in making diagnosis of SPS.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1921",
+      "regression_set_id": "batch_010_feedback",
+      "baseline_bundle": "batch_010",
+      "current_bundle": "tranche_007",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1921.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1921.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_007\\text_trimmed\\1921.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "171",
+          "expected": "171",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Rituximab may be an option to be considered once patients show a poor response to the first imunossupressive treatment. References: 1. Dalakas MC, Rakocevic G, Dambrosia JM, Alexopoulos H, McElroy DB. A double blind, placebo-controlled study of rituximab in patients with stiff person syndrome. Ann Neurol. 2017 Aug;82(2):271-277. ‘Accepted Article’. 2. McKeon A, Robinson MT, McEvoy KM, Matsumoto JY, Lennon VA, Ahlskog JE, Pittock SJ. Stiffman syndrome and variants: clinical course, treatments, and outcomes. Arch Neurol. 2012 Feb;69(2):230-8.",
+          "expected": "... Rituximab may be an option to be considered once patients show a poor response to the first imunossupressive treatment. References: 1. Dalakas MC, Rakocevic G, Dambrosia JM, Alexopoulos H, McElroy DB. A double blind, placebo-controlled study of rituximab in patients with stiff person syndrome. Ann Neurol. 2017 Aug;82(2):271-277. ‘Accepted Article’. 2. McKeon A, Robinson MT, McEvoy KM, Matsumoto JY, Lennon VA, Ahlskog JE, Pittock SJ. Stiffman syndrome and variants: clinical course, treatments, and outcomes. Arch Neurol. 2012 Feb;69(2):230-8.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1921.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "171",
+          "expected": "171",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Rituximab may be an option to be considered once patients show a poor response to the first imunossupressive treatment",
+          "expected": "... Rituximab may be an option to be considered once patients show a poor response to the first imunossupressive treatment. References: 1. Dalakas MC, Rakocevic G, Dambrosia JM, Alexopoulos H, McElroy DB. A double blind, placebo-controlled study of rituximab in patients with stiff person syndrome. Ann Neurol. 2017 Aug;82(2):271-277. ‘Accepted Article’. 2. McKeon A, Robinson MT, McEvoy KM, Matsumoto JY, Lennon VA, Ahlskog JE, Pittock SJ. Stiffman syndrome and variants: clinical course, treatments, and outcomes. Arch Neurol. 2012 Feb;69(2):230-8.",
+          "source": "feedback"
+        }
+      ]
+    }
+  ]
+}

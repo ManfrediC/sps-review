@@ -1,0 +1,895 @@
+{
+  "generated_at_utc": "2026-04-11T10:57:33.550451+00:00",
+  "tranche_id": "tranche_003",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "paper_ids": [
+    "1231",
+    "1233",
+    "1237",
+    "1239",
+    "1242",
+    "1245",
+    "1246",
+    "1251",
+    "1257",
+    "1332"
+  ],
+  "results": [
+    {
+      "paper_id": "1231",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1231.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1231.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1231.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P32209",
+          "expected": "P32209",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "further deterioration in SPS and side-effects.",
+          "expected": "further deterioration in SPS and side-effects.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1231.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1231.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P32209",
+          "expected": "P32209",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "further deterioration in SPS and side-effects.",
+          "expected": "further deterioration in SPS and side-effects.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1231.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1233",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1233.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1233.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1233.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1791",
+          "expected": "1791",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "case to case.",
+          "expected": "case to case.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1233.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1233.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1791",
+          "expected": "1791",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "case to case.",
+          "expected": "case to case.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1233.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1237",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1237.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1237.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1237.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1822",
+          "expected": "1822",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "in this case.",
+          "expected": "in this case.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1237.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1237.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1822",
+          "expected": "1822",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "in this case.",
+          "expected": "in this case.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1237.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1239",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1239.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1239.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1239.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1001",
+          "expected": "1001",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "suggesting a yet non-detected gene variant.",
+          "expected": "suggesting a yet non-detected gene variant.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1239.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1239.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1001",
+          "expected": "1001",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "suggesting a yet non-detected gene variant.",
+          "expected": "suggesting a yet non-detected gene variant.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1239.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1242",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1242.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1242.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1242.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "M311WIP . Stiff-Person Syndrome in Association with",
+          "expected": "M311WIP . Stiff-Person Syndrome in Association with",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "and demonstrated significant improvement in his symptoms with appropriate treatment.",
+          "expected": "and demonstrated significant improvement in his symptoms with appropriate treatment.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1242.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "M311WIP . Stiff-Person Syndrome in Association with",
+          "expected": "M311WIP . Stiff-Person Syndrome in Association with",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "and demonstrated significant improvement in his symptoms with appropriate treatment.",
+          "expected": "and demonstrated significant improvement in his symptoms with appropriate treatment.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1245",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1245.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1245.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1245.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 237",
+          "expected": "Poster 237",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Level of Evidence: Level V",
+          "expected": "Level of Evidence: Level V",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1245.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1245.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 237",
+          "expected": "Poster 237",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Level of Evidence: Level V",
+          "expected": "Level of Evidence: Level V",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1245.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1246",
+      "regression_set_id": "batch_003_feedback",
+      "baseline_bundle": "batch_003",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1246.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1246.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1246.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 360",
+          "expected": "Poster 360",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Level of Evidence: Level V",
+          "expected": "Level of Evidence: Level V",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1246.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1246.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 360",
+          "expected": "Poster 360",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Level of Evidence: Level V",
+          "expected": "Level of Evidence: Level V",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_003",
+          "expected": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1246.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1251",
+      "regression_set_id": "batch_004_feedback",
+      "baseline_bundle": "batch_004",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1251.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1251.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "historical_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1251.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "126",
+          "expected": "126",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "instance.",
+          "expected": "instance.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_003",
+          "expected": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1251.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1251.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "126",
+          "expected": "126",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "instance.",
+          "expected": "instance.",
+          "source": "historical_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "batch_004",
+          "expected": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1251.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1257",
+      "regression_set_id": "batch_004_feedback",
+      "baseline_bundle": "batch_004",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1257.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1257.json",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1257.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+          "expected": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205",
+          "expected": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::ID 159",
+          "passed": true,
+          "actual": "ID 159"
+        },
+        {
+          "name": "not_contains::Madelung’s disease",
+          "passed": true,
+          "actual": "Madelung’s disease"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1257.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+          "expected": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205",
+          "expected": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::ID 159",
+          "passed": true,
+          "actual": "ID 159"
+        },
+        {
+          "name": "not_contains::Madelung’s disease",
+          "passed": true,
+          "actual": "Madelung’s disease"
+        }
+      ]
+    },
+    {
+      "paper_id": "1332",
+      "regression_set_id": "batch_004_feedback",
+      "baseline_bundle": "batch_004",
+      "current_bundle": "tranche_003",
+      "baseline_trimmed_path": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1332.json",
+      "current_trimmed_path": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1332.json",
+      "start_expectation_source": "historical_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\stage05_regression_guard\\tranche_003\\text_trimmed\\1332.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff face syndrome associated with glycine",
+          "expected": "Stiff face syndrome associated with glycine",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "is an important feature of this under-recognised and treatable syndrome.",
+          "expected": "is an important feature of this under-recognised and treatable syndrome.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Delineation of the movement disorder spe",
+          "passed": true,
+          "actual": "Delineation of the movement disorder spectrum"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1332.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff face syndrome associated with glycine",
+          "expected": "Stiff face syndrome associated with glycine",
+          "source": "historical_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "is an important feature of this under-recognised and treatable syndrome.",
+          "expected": "is an important feature of this under-recognised and treatable syndrome.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Delineation of the movement disorder spe",
+          "passed": true,
+          "actual": "Delineation of the movement disorder spectrum"
+        }
+      ]
+    }
+  ]
+}
