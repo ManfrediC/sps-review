@@ -1369,6 +1369,84 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 
 ## 2026-04-11
 
+### Stage-05 reviewed regression guard
+
+- Replayed the frozen reviewed `stage05_trimming` regression set in eight tranches under `qa/trimming/reports/stage05_regression_guard/`.
+- Added dedicated regression tooling in:
+  - `src/validation/_stage05_regression.py`
+  - `src/validation/run_stage05_regression_tranches.py`
+- Enforced reviewed-stage expectations in this priority order:
+  - explicit historical reviewer feedback for wrong starts
+  - explicit historical reviewer feedback for wrong ends
+  - otherwise the historical reviewed JSON start/end as the default truth
+- Verified the current frozen reviewed pool in the repo:
+  - `73` `stage05_trimming` cases
+  - `8` `routing_gate` cases
+  - `8` `stage05_not_needed` cases
+  - `89` total frozen reviewed regression cases
+
+### Compatibility fixes
+
+- Removed the generic stage-05 trailing DOI trim that had regressed historical reviewed proceedings outputs.
+- Added reviewed compatibility overrides in `config/extraction/proceedings_trim_overrides.csv` for residual legacy cases that require:
+  - exact historical spans
+  - or explicit DOI stripping where the reviewed end feedback stops before the DOI
+- Patched `src/pipelines/05b_validate_proceedings_text.py` so a solitary DOI-only tail gap is not misclassified as truncation.
+- Patched `src/validation/evaluate_trimming_feedback.py` and the stage-05 regression matcher so reviewed end anchors handle:
+  - leading reviewer ellipsis such as `...`
+  - OCR-merged tail text near the abstract end
+
+### Regression outcome
+
+- Cleared all eight reviewed `stage05_trimming` tranches:
+  - tranche 001: `10/10`
+  - tranche 002: `10/10`
+  - tranche 003: `10/10`
+  - tranche 004: `10/10`
+  - tranche 005: `10/10`
+  - tranche 006: `10/10`
+  - tranche 007: `10/10`
+  - tranche 008: `3/3`
+- Consolidated the tranche artefacts in:
+  - `qa/trimming/reports/stage05_regression_guard/full_summary.json`
+
+### Next review batch
+
+- Refreshed `batch_011` on the patched stage-05 baseline instead of opening a duplicate batch.
+- `batch_011` remains the current review batch in `qa/trimming/batches/batch_011.json`.
+- `batch_011` paper IDs:
+  - `1625`
+  - `1932`
+  - `1947`
+  - `3125`
+  - `5029`
+  - `5079`
+  - `5087`
+  - `5158`
+  - `5212`
+  - `5233`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage05_regression.py tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_evaluate_trimming_feedback.py -q`
+  - `.venv\Scripts\python.exe -m py_compile src/pipelines/05_trim_proceedings_text.py src/pipelines/05b_validate_proceedings_text.py src/validation/evaluate_trimming_feedback.py src/validation/_stage05_regression.py src/validation/run_stage05_regression_tranches.py`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 2 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 3 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 4 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 5 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 6 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 7 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/validation/run_stage05_regression_tranches.py --tranche-size 10 --start-tranche 8 --max-tranches 1`
+  - `.venv\Scripts\python.exe src/pipelines/05_trim_proceedings_text.py --all-papers --include-already-trimmed --output-dir qa/trimming/reports/batch_011/text_trimmed --registry-path qa/trimming/reports/batch_011/text_trim_registry.csv --skip-registry-refresh --paper-id 1625 --paper-id 1932 --paper-id 1947 --paper-id 3125 --paper-id 5029 --paper-id 5079 --paper-id 5087 --paper-id 5158 --paper-id 5212 --paper-id 5233`
+  - `.venv\Scripts\python.exe src/pipelines/05b_validate_proceedings_text.py --trimmed-dir qa/trimming/reports/batch_011/text_trimmed --text-trim-registry qa/trimming/reports/batch_011/text_trim_registry.csv --output-path qa/trimming/reports/batch_011/proceedings_text_qc_registry.csv --skip-registry-refresh --paper-id 1625 --paper-id 1932 --paper-id 1947 --paper-id 3125 --paper-id 5029 --paper-id 5079 --paper-id 5087 --paper-id 5158 --paper-id 5212 --paper-id 5233`
+  - `.venv\Scripts\python.exe src/validation/update_trimming_review_outputs.py --batch-id batch_011`
+- Result:
+  - `85 passed`
+  - reviewed `stage05_trimming` regression set green at `73/73`
+  - refreshed `batch_011` ready for review
+
 ### Stage-05 autoresearch harness
 
 - Added isolated stage-05 `_autoresearch` pipeline copies so optimisation can proceed without touching the canonical production scripts:
@@ -1379,11 +1457,17 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `src/autoresearch/stage_05/gold.py`
   - `src/autoresearch/stage_05/benchmark.py`
   - `src/autoresearch/stage_05/program.md`
-- The benchmark is explicitly frozen so the optimisation loop cannot improve the metric by changing:
+- The benchmark is now explicitly frozen so the optimisation loop cannot improve the metric by changing:
   - `benchmark.py`
   - the scoring rules
   - the strict normalisation
-- Gold manifest entries now capture provenance fields such as `source_text_path`, `reviewer`, and `notes`, alongside text hashes and first/last-line anchors.
+- Gold manifest entries now capture:
+  - `paper_id`
+  - `gold_json_path`
+  - `source_text_path`
+  - `reviewer`
+  - `notes`
+  - text hashes and first/last-line anchors
 - The frozen benchmark now emits fixed per-paper labels:
   - `missing_output`
   - `spillover`
@@ -1398,3 +1482,24 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `.venv\Scripts\python.exe -m pytest tests/test_stage05_gold.py tests/test_stage05_regression.py`
   - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py -k AutoresearchSmoke tests/test_05b_validate_proceedings_text.py -k AutoresearchSmoke`
 - Did not run the live stage-05 gold benchmark because the gold-standard JSON corpus is still being generated.
+
+### Stage-05 gold-standard completion
+
+- Restored and finalised the stage-05 gold tooling in:
+  - `src/validation/_stage05_gold.py`
+  - `src/validation/promote_stage05_gold.py`
+  - `src/validation/_stage05_regression.py`
+  - `src/validation/run_stage05_regression_tranches.py`
+- Built the proceedings gold corpus under `qa/trimming/gold_standard/` with:
+  - `83` active gold JSONs in `papers/`
+  - `manifest.json`
+  - tranche verification reports
+  - `verify_summary.json`
+  - `COMPLETE`
+- Verification outcome:
+  - older reviewed regression set re-run against the latest code: `73/73` passed
+  - additional reviewed `batch_011` gold JSONs checked directly against reviewed anchors: `10/10` passed
+  - combined gold verification: `83/83` passed
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage05_gold.py tests/test_stage05_regression.py tests/test_evaluate_trimming_feedback.py tests/test_stage05_review.py -q`
+  - `.venv\Scripts\python.exe -m py_compile src/validation/_stage05_gold.py src/validation/_stage05_regression.py src/validation/run_stage05_regression_tranches.py src/validation/promote_stage05_gold.py`
