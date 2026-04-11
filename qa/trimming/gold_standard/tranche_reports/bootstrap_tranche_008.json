@@ -1,0 +1,43 @@
+{
+  "generated_at_utc": "2026-04-11T20:28:54.865371+00:00",
+  "tranche_id": "bootstrap_tranche_008",
+  "dry_run": false,
+  "case_count": 3,
+  "paper_ids": [
+    "6271",
+    "8198",
+    "8317"
+  ],
+  "promoted_count": 3,
+  "missing_source_json_count": 0,
+  "conflict_count": 0,
+  "results": [
+    {
+      "paper_id": "6271",
+      "status": "already_active",
+      "promotion_basis": "copied_reviewed_correct",
+      "batch_id": "regression_boundary_review",
+      "source_trimmed_json_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\6271.json",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\6271.json",
+      "failure_reason": ""
+    },
+    {
+      "paper_id": "8198",
+      "status": "already_active",
+      "promotion_basis": "copied_reviewed_correct",
+      "batch_id": "regression_boundary_review",
+      "source_trimmed_json_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8198.json",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\8198.json",
+      "failure_reason": ""
+    },
+    {
+      "paper_id": "8317",
+      "status": "already_active",
+      "promotion_basis": "copied_reviewed_correct",
+      "batch_id": "regression_boundary_review",
+      "source_trimmed_json_path": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8317.json",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\8317.json",
+      "failure_reason": ""
+    }
+  ]
+}

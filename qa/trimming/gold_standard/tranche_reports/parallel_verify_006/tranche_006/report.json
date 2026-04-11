@@ -1,0 +1,833 @@
+{
+  "generated_at_utc": "2026-04-11T22:47:51.883612+00:00",
+  "tranche_id": "tranche_006",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "paper_ids": [
+    "1662",
+    "1664",
+    "1721",
+    "1722",
+    "1774",
+    "1793",
+    "1802",
+    "1807",
+    "1829",
+    "1830"
+  ],
+  "results": [
+    {
+      "paper_id": "1662",
+      "regression_set_id": "batch_008_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1662.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1662.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1662.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P72",
+          "expected": "P72",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Immunosuppression led to slow but progressive improvement.",
+          "expected": "Immunosuppression led to slow but progressive improvement.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1662.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P72",
+          "expected": "P72",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Immunosuppression led to slow but progressive improvement.",
+          "expected": "Immunosuppression led to slow but progressive improvement.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1664",
+      "regression_set_id": "batch_008_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1664.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1664.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1664.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "E-P10.05A rare person with Stiff Person syndrome",
+          "expected": "E-P10.05A rare person with Stiff Person syndrome",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability.",
+          "expected": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Abstracts from the 50 th European Societ",
+          "passed": true,
+          "actual": "Abstracts from the 50 th European Society of Human Genetics Conference"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1664.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "E-P10.05A rare person with Stiff Person syndrome",
+          "expected": "E-P10.05A rare person with Stiff Person syndrome",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability.",
+          "expected": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Abstracts from the 50 th European Societ",
+          "passed": true,
+          "actual": "Abstracts from the 50 th European Society of Human Genetics Conference"
+        }
+      ]
+    },
+    {
+      "paper_id": "1721",
+      "regression_set_id": "batch_008_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1721.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1721.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1721.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Anti-glutamic acid decarboxylase positive stiff person syndrome",
+          "expected": "Anti-glutamic acid decarboxylase positive stiff person syndrome",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "for as long as three months after infusion. No adverse events were encountered.",
+          "expected": "for as long as three months after infusion. No adverse events were encountered.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Poster Session 3",
+          "passed": true,
+          "actual": "Poster Session 3"
+        },
+        {
+          "name": "not_contains::WCN19-0188",
+          "passed": true,
+          "actual": "WCN19-0188"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1721.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Anti-glutamic acid decarboxylase positive stiff person syndrome",
+          "expected": "Anti-glutamic acid decarboxylase positive stiff person syndrome",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "for as long as three months after infusion. No adverse events were encountered.",
+          "expected": "for as long as three months after infusion. No adverse events were encountered.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::Poster Session 3",
+          "passed": true,
+          "actual": "Poster Session 3"
+        },
+        {
+          "name": "not_contains::WCN19-0188",
+          "passed": true,
+          "actual": "WCN19-0188"
+        }
+      ]
+    },
+    {
+      "paper_id": "1722",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1722.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1722.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1722.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff person syndrome - An unusual paraneoplastic neurological",
+          "expected": "Stiff person syndrome - An unusual paraneoplastic neurological",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... carcinoid, we believe this is the first report of SPS associated with carcinoid tumour.",
+          "expected": "... carcinoid, we believe this is the first report of SPS associated with carcinoid tumour.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1722.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Stiff person syndrome - An unusual paraneoplastic neurological",
+          "expected": "Stiff person syndrome - An unusual paraneoplastic neurological",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": false,
+          "actual": "doi:10.1016/j.jns.2019.10.1336",
+          "expected": "... carcinoid, we believe this is the first report of SPS associated with carcinoid tumour.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1774",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1774.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1774.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1774.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Pe-027-5 An unusual presentation of stiff-person",
+          "expected": "Pe-027-5An unusual presentation of stiff-person syndrome○ Weerawat Saengphatrachai1, Chayasak Wantaneeyawong2, Yuvadee Pitakpatapee1, Prachaya Srivanitchapoom11 Division of Neurology, Faculty of Medicine, Siriraj Hospital, Mahidol University, Bangkok, Thailand, 2 The Northern Neuroscience Center, Faculty of Medicine, Chiang Mai University, Chiang Mai, ThailandBackground: Movement disorders in anti-glutamic acid decarboxylase antibody （anti-GAD Ab）...",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Conclusions: Parkinsonism can be one of manifestations of anti-GAD Ab syndrome. Early recognition and prompt treatment will provide a favorable outcome.",
+          "expected": "... Conclusions: Parkinsonism can be one of manifestations of anti-GAD Ab syndrome. Early recognition and prompt treatment will provide a favorable outcome.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1774.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Pe-027-5 An unusual presentation of stiff-person",
+          "expected": "Pe-027-5An unusual presentation of stiff-person syndrome○ Weerawat Saengphatrachai1, Chayasak Wantaneeyawong2, Yuvadee Pitakpatapee1, Prachaya Srivanitchapoom11 Division of Neurology, Faculty of Medicine, Siriraj Hospital, Mahidol University, Bangkok, Thailand, 2 The Northern Neuroscience Center, Faculty of Medicine, Chiang Mai University, Chiang Mai, ThailandBackground: Movement disorders in anti-glutamic acid decarboxylase antibody （anti-GAD Ab）...",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Conclusions: Parkinsonism can be one of manifestations of anti-GAD Ab syndrome. Early recognition and prompt treatment will provide a favorable outcome.",
+          "expected": "... Conclusions: Parkinsonism can be one of manifestations of anti-GAD Ab syndrome. Early recognition and prompt treatment will provide a favorable outcome.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1793",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1793.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1793.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1793.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "144 | Stiff- person syndrome: The analyses of 15 cases",
+          "expected": "144 | Stiff- person syndrome: The analyses of 15 cases",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "need to be treated by cognitive behavioural therapy which can help recovering their social functions better. Keywords: Stiff-person syndrome; anti-glutamic acid decarboxylase (GAD); eye movement disorder; cognitive behavioural therapy.",
+          "expected": "need to be treated by cognitive behavioural therapy which can help recovering their social functions better. Keywords: Stiff-person syndrome; anti-glutamic acid decarboxylase (GAD); eye movement disorder; cognitive behavioural therapy.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1793.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "144 | Stiff- person syndrome: The analyses of 15 cases",
+          "expected": "144 | Stiff- person syndrome: The analyses of 15 cases",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "need to be treated by cognitive behavioural therapy which can help recovering their social functions better. Keywords: Stiff-person syndrome; anti-glutamic acid decarboxylase (GAD); eye movement disorder; cognitive behavioural therapy.",
+          "expected": "need to be treated by cognitive behavioural therapy which can help recovering their social functions better. Keywords: Stiff-person syndrome; anti-glutamic acid decarboxylase (GAD); eye movement disorder; cognitive behavioural therapy.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1802",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1802.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1802.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1802.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Advanced Progression of Scoliosis After Intrathecal Baclofen in an",
+          "expected": "Advanced Progression of Scoliosis After Intrathecal Baclofen in an",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Level of Evidence: Level V",
+          "expected": "Level of Evidence: Level V",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_006",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1802.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1802.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Advanced Progression of Scoliosis After Intrathecal Baclofen in an",
+          "expected": "Advanced Progression of Scoliosis After Intrathecal Baclofen in an",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Level of Evidence: Level V",
+          "expected": "Level of Evidence: Level V",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1802.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1807",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1807.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1807.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1807.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 281",
+          "expected": "Anti-GAD65 Antibody Mediated Systemic Small Vessel Vasculitis with CNS Involvement Presenting as Refractory Status Epilepticus and Stiff-Limb Syndrome Derek Neupert; Nate Leibu; Aimee Aysenne; Casey R. Dunn Tulane University School of Medicine, Department of Neurology, New Orleans, LA, United States Introduction Glutamic acid decarboxylase (GAD) is the rate-limiting enzyme ...",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... we advocate for early initiation of GABAergic medications such as benzodiazepines and use of immunotherapy.",
+          "expected": "... we advocate for early initiation of GABAergic medications such as benzodiazepines and use of immunotherapy.",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1807.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 281",
+          "expected": "Anti-GAD65 Antibody Mediated Systemic Small Vessel Vasculitis with CNS Involvement Presenting as Refractory Status Epilepticus and Stiff-Limb Syndrome Derek Neupert; Nate Leibu; Aimee Aysenne; Casey R. Dunn Tulane University School of Medicine, Department of Neurology, New Orleans, LA, United States Introduction Glutamic acid decarboxylase (GAD) is the rate-limiting enzyme ...",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... we advocate for early initiation of GABAergic medications such as benzodiazepines and use of immunotherapy.",
+          "expected": "... we advocate for early initiation of GABAergic medications such as benzodiazepines and use of immunotherapy.",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1829",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1829.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1829.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1829.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 254:",
+          "expected": "Poster 254:",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Understanding the diagnosis and management of SPS is vital to improve care. Conclusions: It is important to consider implanting the intrathecal baclofen pump as we can provide SPS patients with comfort while preserving mental status. Level of Evidence: Level V",
+          "expected": "... Understanding the diagnosis and management of SPS is vital to improve care. Conclusions: It is important to consider implanting the intrathecal baclofen pump as we can provide SPS patients with comfort while preserving mental status. Level of Evidence: Level V",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1829.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 254:",
+          "expected": "Poster 254:",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... Understanding the diagnosis and management of SPS is vital to improve care. Conclusions: It is important to consider implanting the intrathecal baclofen pump as we can provide SPS patients with comfort while preserving mental status. Level of Evidence: Level V",
+          "expected": "... Understanding the diagnosis and management of SPS is vital to improve care. Conclusions: It is important to consider implanting the intrathecal baclofen pump as we can provide SPS patients with comfort while preserving mental status. Level of Evidence: Level V",
+          "source": "feedback"
+        }
+      ]
+    },
+    {
+      "paper_id": "1830",
+      "regression_set_id": "batch_009_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_006",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1830.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1830.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_006\\tranche_006\\text_trimmed\\1830.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 263:",
+          "expected": "Poster 263: Rehabilitation Challenges in a Rare Combination of Stiff- Man Syndrome, Cerebellar Ataxia, and Grave’s Disease: A Case Report Yulia Rivelis, MD (Montefiore Medical Center, New York, NY, United States), Eathar Saad, MD Disclosures: Yulia Rivelis: I Have No Relevant Financial Relationships To Disclose Case/Program Description: A 33-year-old woman, diagnosed with cerebellar...",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... co-morbidities, making rehabilitation of this patient that much more difficult. Level of Evidence: Level V",
+          "expected": "... co-morbidities, making rehabilitation of this patient that much more difficult. Level of Evidence: Level V",
+          "source": "feedback"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1830.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "Poster 263:",
+          "expected": "Poster 263: Rehabilitation Challenges in a Rare Combination of Stiff- Man Syndrome, Cerebellar Ataxia, and Grave’s Disease: A Case Report Yulia Rivelis, MD (Montefiore Medical Center, New York, NY, United States), Eathar Saad, MD Disclosures: Yulia Rivelis: I Have No Relevant Financial Relationships To Disclose Case/Program Description: A 33-year-old woman, diagnosed with cerebellar...",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "... co-morbidities, making rehabilitation of this patient that much more difficult. Level of Evidence: Level V",
+          "expected": "... co-morbidities, making rehabilitation of this patient that much more difficult. Level of Evidence: Level V",
+          "source": "feedback"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,933 @@
+{
+  "generated_at_utc": "2026-04-11T23:07:24.271746+00:00",
+  "tranche_id": "tranche_004",
+  "case_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "paper_ids": [
+    "1333",
+    "1393",
+    "1395",
+    "1397",
+    "1398",
+    "1407",
+    "1416",
+    "1418",
+    "1433",
+    "1439"
+  ],
+  "results": [
+    {
+      "paper_id": "1333",
+      "regression_set_id": "batch_004_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1333.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1333.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "feedback",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1333.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "107 12th January 2017",
+          "expected": "107 12th January 2017",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "of the autoimmune manifestations associated with APS1.",
+          "expected": "of the autoimmune manifestations associated with APS1.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::108 12th January 2017",
+          "passed": true,
+          "actual": "108 12th January 2017"
+        },
+        {
+          "name": "not_contains::Out of the loop? Information sharing wit",
+          "passed": true,
+          "actual": "Out of the loop? Information sharing with"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1333.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "107 12th January 2017",
+          "expected": "107 12th January 2017",
+          "source": "feedback"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "of the autoimmune manifestations associated with APS1.",
+          "expected": "of the autoimmune manifestations associated with APS1.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::108 12th January 2017",
+          "passed": true,
+          "actual": "108 12th January 2017"
+        },
+        {
+          "name": "not_contains::Out of the loop? Information sharing wit",
+          "passed": true,
+          "actual": "Out of the loop? Information sharing with"
+        }
+      ]
+    },
+    {
+      "paper_id": "1393",
+      "regression_set_id": "batch_004_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1393.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1393.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1393.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP2171",
+          "expected": "PP2171",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "exceptional variant of SPS.",
+          "expected": "exceptional variant of SPS.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_004",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1393.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1393.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP2171",
+          "expected": "PP2171",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "exceptional variant of SPS.",
+          "expected": "exceptional variant of SPS.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1393.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1395",
+      "regression_set_id": "batch_005_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1395.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1395.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1395.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP4124",
+          "expected": "PP4124",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "in the differential diagnosis of atypical parkinsonian syndrome.",
+          "expected": "in the differential diagnosis of atypical parkinsonian syndrome.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_004",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1395.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1395.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "PP4124",
+          "expected": "PP4124",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "in the differential diagnosis of atypical parkinsonian syndrome.",
+          "expected": "in the differential diagnosis of atypical parkinsonian syndrome.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1395.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1397",
+      "regression_set_id": "batch_005_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1397.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1397.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1397.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "65",
+          "expected": "65",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "important implications for future research and treatment.",
+          "expected": "important implications for future research and treatment.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_004",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1397.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1397.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "65",
+          "expected": "65",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "important implications for future research and treatment.",
+          "expected": "important implications for future research and treatment.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1397.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1398",
+      "regression_set_id": "batch_005_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1398.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1398.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1398.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "321",
+          "expected": "321",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "another dimension to Anti-GAD encephalitis.",
+          "expected": "another dimension to Anti-GAD encephalitis.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_004",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1398.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1398.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "321",
+          "expected": "321",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "another dimension to Anti-GAD encephalitis.",
+          "expected": "another dimension to Anti-GAD encephalitis.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1398.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1407",
+      "regression_set_id": "batch_005_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1407.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1407.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1407.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P1022",
+          "expected": "P1022",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "syndrome.",
+          "expected": "syndrome.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_004",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1407.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1407.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "P1022",
+          "expected": "P1022",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "syndrome.",
+          "expected": "syndrome.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1407.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1416",
+      "regression_set_id": "batch_007_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1416.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1416.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "gold_json",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1416.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1292",
+          "expected": "1292",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "mediated autoimmune disease.",
+          "expected": "mediated autoimmune disease.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "tranche_004",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1416.json"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1416.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1292",
+          "expected": "1292",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "mediated autoimmune disease.",
+          "expected": "mediated autoimmune disease.",
+          "source": "gold_json"
+        },
+        {
+          "name": "matches_historical_text",
+          "passed": true,
+          "actual": "gold_standard",
+          "expected": "qa\\trimming\\gold_standard\\papers\\1416.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "1418",
+      "regression_set_id": "batch_007_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1418.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1418.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1418.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1316",
+          "expected": "1316",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "still unknown and further research into the long-term prognosis of SLS is needed.",
+          "expected": "still unknown and further research into the long-term prognosis of SLS is needed.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::1317",
+          "passed": true,
+          "actual": "1317"
+        },
+        {
+          "name": "not_contains::Ocular motor disorders among Filipino",
+          "passed": true,
+          "actual": "Ocular motor disorders among Filipino"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1418.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "1316",
+          "expected": "1316",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "still unknown and further research into the long-term prognosis of SLS is needed.",
+          "expected": "still unknown and further research into the long-term prognosis of SLS is needed.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::1317",
+          "passed": true,
+          "actual": "1317"
+        },
+        {
+          "name": "not_contains::Ocular motor disorders among Filipino",
+          "passed": true,
+          "actual": "Ocular motor disorders among Filipino"
+        }
+      ]
+    },
+    {
+      "paper_id": "1433",
+      "regression_set_id": "batch_007_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1433.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1433.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1433.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "CGR 7",
+          "expected": "CGR 7",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.",
+          "expected": "early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::CGR 8",
+          "passed": true,
+          "actual": "CGR 8"
+        },
+        {
+          "name": "not_contains::A NOVEL CASE FEATURING AN IGE",
+          "passed": true,
+          "actual": "A NOVEL CASE FEATURING AN IGE"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1433.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "CGR 7",
+          "expected": "CGR 7",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.",
+          "expected": "early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::CGR 8",
+          "passed": true,
+          "actual": "CGR 8"
+        },
+        {
+          "name": "not_contains::A NOVEL CASE FEATURING AN IGE",
+          "passed": true,
+          "actual": "A NOVEL CASE FEATURING AN IGE"
+        }
+      ]
+    },
+    {
+      "paper_id": "1439",
+      "regression_set_id": "batch_007_feedback",
+      "baseline_bundle": "gold_standard",
+      "current_bundle": "tranche_004",
+      "baseline_trimmed_path": "qa\\trimming\\gold_standard\\papers\\1439.json",
+      "current_trimmed_path": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1439.json",
+      "baseline_source_kind": "gold_standard",
+      "start_expectation_source": "gold_json",
+      "end_expectation_source": "feedback",
+      "passed": true,
+      "failure_reason": "",
+      "failure_location": "",
+      "issue_classification": "none",
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\tranche_reports\\parallel_verify_004\\tranche_004\\text_trimmed\\1439.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "M300. Unrecognized Respiratory Manifestations of Stiff",
+          "expected": "M300. Unrecognized Respiratory Manifestations of Stiff",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Potential involvement of diaphragmatic muscles is unknown.",
+          "expected": "Potential involvement of diaphragmatic muscles is unknown.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::M301",
+          "passed": true,
+          "actual": "M301"
+        }
+      ],
+      "baseline_checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\gold_standard\\papers\\1439.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_false",
+          "passed": true,
+          "actual": "false"
+        },
+        {
+          "name": "start_anchor_matches",
+          "passed": true,
+          "actual": "M300. Unrecognized Respiratory Manifestations of Stiff",
+          "expected": "M300. Unrecognized Respiratory Manifestations of Stiff",
+          "source": "gold_json"
+        },
+        {
+          "name": "end_anchor_matches",
+          "passed": true,
+          "actual": "Potential involvement of diaphragmatic muscles is unknown.",
+          "expected": "Potential involvement of diaphragmatic muscles is unknown.",
+          "source": "feedback"
+        },
+        {
+          "name": "not_contains::M301",
+          "passed": true,
+          "actual": "M301"
+        }
+      ]
+    }
+  ]
+}
