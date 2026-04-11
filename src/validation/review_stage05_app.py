@@ -11,6 +11,10 @@ from src.validation import _stage05_review as review
 
 PDF_VIEW_HEIGHT = 1000
 PDF_SEARCH_RESULT_LIMIT = 12
+PDF_ZOOM_MIN = 0.5
+PDF_ZOOM_MAX = 3.0
+PDF_ZOOM_STEP = 0.25
+PDF_DEFAULT_ZOOM = 1.0
 
 
 @st.cache_data(show_spinner=False)
@@ -86,6 +90,7 @@ def ensure_editor_state(
             1,
             review.parse_int(queue_row.get("preferred_start_page"), default=1),
         )
+        st.session_state[editor_key(prefix, "pdf_zoom_level")] = PDF_DEFAULT_ZOOM
         st.session_state[active_key] = prefix
     return prefix
 
@@ -138,6 +143,19 @@ def refresh_report_dir(report_dir: Path) -> dict[str, object]:
         batch_id=batch_id,
         report_dir=report_dir,
     )
+
+
+def set_session_value(key: str, value: int | str | bool) -> None:
+    st.session_state[key] = value
+
+
+def clamp_zoom_level(value: float) -> float:
+    return max(PDF_ZOOM_MIN, min(PDF_ZOOM_MAX, round(value, 2)))
+
+
+def adjust_zoom_level(key: str, delta: float) -> None:
+    current = float(st.session_state.get(key, PDF_DEFAULT_ZOOM))
+    st.session_state[key] = clamp_zoom_level(current + delta)
 
 
 def main() -> None:
@@ -216,6 +234,7 @@ def main() -> None:
         preferred_page = max(1, review.parse_int(queue_row.get("preferred_start_page"), default=1))
         pdf_view_page_key = editor_key(prefix, "pdf_view_page")
         pdf_search_query_key = editor_key(prefix, "pdf_search_query")
+        pdf_zoom_level_key = editor_key(prefix, "pdf_zoom_level")
         if pdf_path_relative:
             pdf_path = review.resolve_repo_path(pdf_path_relative)
         else:
@@ -246,9 +265,12 @@ def main() -> None:
                     )
                 with reset_col:
                     st.write("")
-                    if st.button("Suggested page", use_container_width=True):
-                        st.session_state[pdf_view_page_key] = preferred_page
-                        st.rerun()
+                    st.button(
+                        "Suggested page",
+                        use_container_width=True,
+                        on_click=set_session_value,
+                        args=(pdf_view_page_key, preferred_page),
+                    )
 
                 search_query = str(st.session_state[pdf_search_query_key]).strip()
                 if search_query:
@@ -269,20 +291,65 @@ def main() -> None:
                                 button_label,
                                 key=editor_key(prefix, f"search_result::{page_num}"),
                                 use_container_width=True,
+                                on_click=set_session_value,
+                                args=(pdf_view_page_key, page_num),
                             ):
-                                st.session_state[pdf_view_page_key] = page_num
-                                st.rerun()
+                                pass
                             st.caption(str(match["snippet"]))
                     else:
                         st.info("No matching pages were found in the extracted text for this paper.")
+            zoom_down_col, zoom_slider_col, zoom_up_col, zoom_reset_col = st.columns([1, 2, 1, 1])
+            with zoom_down_col:
+                st.write("")
+                st.button(
+                    "Zoom -",
+                    use_container_width=True,
+                    key=editor_key(prefix, "zoom_down"),
+                    on_click=adjust_zoom_level,
+                    args=(pdf_zoom_level_key, -PDF_ZOOM_STEP),
+                )
+            with zoom_slider_col:
+                st.slider(
+                    "Zoom",
+                    min_value=PDF_ZOOM_MIN,
+                    max_value=PDF_ZOOM_MAX,
+                    value=float(st.session_state[pdf_zoom_level_key]),
+                    step=PDF_ZOOM_STEP,
+                    key=pdf_zoom_level_key,
+                    help="Keeps the viewer frame fixed and zooms the PDF inside it.",
+                )
+            with zoom_up_col:
+                st.write("")
+                st.button(
+                    "Zoom +",
+                    use_container_width=True,
+                    key=editor_key(prefix, "zoom_up"),
+                    on_click=adjust_zoom_level,
+                    args=(pdf_zoom_level_key, PDF_ZOOM_STEP),
+                )
+            with zoom_reset_col:
+                st.write("")
+                st.button(
+                    "100%",
+                    use_container_width=True,
+                    key=editor_key(prefix, "zoom_reset"),
+                    on_click=set_session_value,
+                    args=(pdf_zoom_level_key, PDF_DEFAULT_ZOOM),
+                )
+            st.caption(f"Current zoom: {int(round(float(st.session_state[pdf_zoom_level_key]) * 100))}%")
             try:
                 pdf_viewer(
                     load_pdf_bytes(pdf_path_relative),
-                    key=editor_key(prefix, f"pdf_viewer::{st.session_state[pdf_view_page_key]}"),
+                    key=editor_key(
+                        prefix,
+                        f"pdf_viewer::{st.session_state[pdf_view_page_key]}::{st.session_state[pdf_zoom_level_key]}",
+                    ),
                     width="100%",
                     height=PDF_VIEW_HEIGHT,
-                    render_text=True,
-                    zoom_level="auto",
+                    render_text=False,
+                    resolution_boost=2,
+                    zoom_level=float(st.session_state[pdf_zoom_level_key]),
+                    viewer_align="left",
                     scroll_to_page=int(st.session_state[pdf_view_page_key]),
                     scroll_behavior="instant",
                 )
