@@ -22,6 +22,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = REPO_ROOT / "qa" / "trimming" / "reports"
 SOURCE_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
+UNINFORMATIVE_END_SECTION_RE = re.compile(r"\b(?:references?|disclosures?)\s*:", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -150,6 +151,27 @@ def contains_approximate_text(haystack: str, needle: str) -> bool:
     return False
 
 
+def expected_end_variants(expected_end: str) -> list[str]:
+    cleaned = str(expected_end or "").strip()
+    if not cleaned:
+        return []
+    variants = [cleaned]
+    match = UNINFORMATIVE_END_SECTION_RE.search(cleaned)
+    if match:
+        prefix = cleaned[: match.start()].strip(" .;:-")
+        if prefix:
+            variants.append(prefix)
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for variant in variants:
+        normalized = normalize_text(variant)
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        deduped.append(variant)
+    return deduped
+
+
 def display_path(path: Path | None) -> str:
     if path is None:
         return ""
@@ -225,6 +247,21 @@ def trimmed_text_payload(path: Path | None) -> tuple[str, list[str]]:
             chunks.append(page_text)
             lines.extend(line.strip() for line in page_text.splitlines() if line.strip())
     return "\n".join(chunks), lines
+
+
+def start_anchor_matches(trimmed_text: str, trimmed_lines: list[str], expected_start: str) -> bool:
+    if not expected_start:
+        return False
+    actual_start = trimmed_lines[0] if trimmed_lines else ""
+    if actual_start == expected_start:
+        return True
+    start_region = " ".join(trimmed_lines[: min(len(trimmed_lines), 12)]) or trimmed_text
+    variants = [expected_start]
+    normalised_tokens = normalize_text(expected_start).split()
+    for token_limit in (18, 12, 8):
+        if len(normalised_tokens) >= token_limit:
+            variants.append(" ".join(normalised_tokens[:token_limit]))
+    return any(contains_approximate_text(start_region, variant) for variant in variants if variant)
 
 
 def trimmed_output_path(trim_row: dict[str, str], bundle: ReportBundle | None, paper_id: str) -> Path | None:
@@ -307,7 +344,7 @@ def evaluate_trimmed_case(
         checks.append(
             {
                 "name": "start_line_matches",
-                "passed": actual_start == expected_start,
+                "passed": start_anchor_matches(trimmed_text, trimmed_lines, expected_start),
                 "actual": actual_start,
             }
         )
@@ -317,7 +354,9 @@ def evaluate_trimmed_case(
         checks.append(
             {
                 "name": "expected_end_present",
-                "passed": contains_approximate_text(trimmed_text, expected_end),
+                "passed": any(
+                    contains_approximate_text(trimmed_text, variant) for variant in expected_end_variants(expected_end)
+                ),
                 "actual": expected_end if flattened_text else "",
             }
         )

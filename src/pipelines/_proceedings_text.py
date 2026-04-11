@@ -8,39 +8,56 @@ from typing import Any
 
 
 ALPHANUMERIC_ABSTRACT_CODE_RE = (
-    r"(?:[A-Z]{2,5}\d{1,4}-\d{1,5}|(?:[A-Z]{1,3}-)?(?:[A-Z]{1,3}[.-]?)?\d{1,5}(?:\.\d+)*(?:[.-]?[A-Z]{1,6})?)"
+    r"(?:[A-Z]{2,5}\d{1,4}-\d{1,5}|(?:[A-Z]{1,3}-)?(?:[A-Z]{1,3}[.-]?)?\d{1,5}(?:[.-]\d{1,5})*(?:[.-]?[A-Z]{1,6})?)"
 )
 NUMERIC_ABSTRACT_CODE_RE = r"\d{2,5}"
 SPACED_ALPHA_ABSTRACT_CODE_RE = r"[A-Z]{1,4}\s+\d{1,5}(?:[A-Z])?"
 ABSTRACT_START_RE = re.compile(
-    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE}|{NUMERIC_ABSTRACT_CODE_RE})\.\s+(?P<title>.+)$"
+    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE}|{NUMERIC_ABSTRACT_CODE_RE})\.\s+(?P<title>.+)$",
+    re.IGNORECASE,
 )
 ABSTRACT_START_DELIM_RE = re.compile(
-    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE}|{NUMERIC_ABSTRACT_CODE_RE})\s*[\.\|\:\-\)]\s+(?P<title>[A-Za-z].+)$"
+    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE}|{NUMERIC_ABSTRACT_CODE_RE})\s*[\.\|\:\-\)]\s+(?P<title>[A-Za-z].+)$",
+    re.IGNORECASE,
 )
 SPACED_ALPHA_ABSTRACT_START_RE = re.compile(
-    rf"^(?P<code>{SPACED_ALPHA_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)]\s*)?(?P<title>[A-Za-z].+)$"
+    rf"^(?P<code>{SPACED_ALPHA_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)]\s*)?(?P<title>[A-Za-z].+)$",
+    re.IGNORECASE,
+)
+POSTER_ABSTRACT_CODE_RE = r"Poster\s+\d{1,5}[A-Z]?"
+POSTER_ABSTRACT_START_RE = re.compile(
+    rf"^(?P<code>{POSTER_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)]\s*)?(?P<title>[A-Za-z].+)$",
+    re.IGNORECASE,
+)
+SESSION_DASHED_ABSTRACT_CODE_RE = r"[A-Z]{1,4}\d{1,4}\s*-\s*\d{1,5}"
+SESSION_DASHED_ABSTRACT_START_RE = re.compile(
+    rf"^(?P<code>{SESSION_DASHED_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)]\s*)?(?P<title>[A-Za-z].+)$",
+    re.IGNORECASE,
 )
 ID_ABSTRACT_START_RE = re.compile(
     r"^(?P<code>ID\s+\d{1,5})\s*[\.\|\:\-\)\u2013\u2014]\s+(?P<title>.+)$",
     re.IGNORECASE,
 )
 ABSTRACT_START_SPACE_CODE_RE = re.compile(
-    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE})\s+(?P<title>[A-Za-z].+)$"
+    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE})\s+(?P<title>[A-Za-z].+)$",
+    re.IGNORECASE,
 )
-ABSTRACT_CODE_ONLY_RE = re.compile(rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE})$")
-SPACED_ALPHA_ABSTRACT_CODE_ONLY_RE = re.compile(rf"^(?P<code>{SPACED_ALPHA_ABSTRACT_CODE_RE})$")
+ABSTRACT_CODE_ONLY_RE = re.compile(rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE})$", re.IGNORECASE)
+SPACED_ALPHA_ABSTRACT_CODE_ONLY_RE = re.compile(rf"^(?P<code>{SPACED_ALPHA_ABSTRACT_CODE_RE})$", re.IGNORECASE)
 ID_ABSTRACT_CODE_ONLY_RE = re.compile(r"^(?P<code>ID\s+\d{1,5})$", re.IGNORECASE)
+SESSION_DASHED_CODE_ONLY_RE = re.compile(rf"^(?P<code>{SESSION_DASHED_ABSTRACT_CODE_RE})$", re.IGNORECASE)
 NUMERIC_DATE_CODE_ONLY_RE = re.compile(
     r"^(?P<code>\d{1,5})\s+\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+\d{4}$",
     re.IGNORECASE,
 )
-POSTER_CODE_ONLY_RE = re.compile(r"^(?P<code>Poster\s+\d{1,5}[A-Z]?)$", re.IGNORECASE)
+POSTER_CODE_ONLY_RE = re.compile(rf"^(?P<code>{POSTER_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)])?$", re.IGNORECASE)
 SESSION_CODE_ONLY_RE = re.compile(
-    r"^(?P<code>[A-Z]{1,4}\d{1,2}(?:\.\d+)+(?:\s*[-–]\s*\d{1,5})?)$"
+    r"^(?P<code>[A-Z]{1,4}\d{1,2}(?:\.\d+)+(?:\s*[-–]\s*\d{1,5})?)$",
+    re.IGNORECASE,
 )
 ABSTRACT_BOUNDARY_RE = re.compile(
-    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE}|{NUMERIC_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)]\s+|$)"
+    rf"^(?P<code>{ALPHANUMERIC_ABSTRACT_CODE_RE}|{NUMERIC_ABSTRACT_CODE_RE})\s*(?:[\.\|\:\-\)]\s+|$)",
+    re.IGNORECASE,
 )
 AUTHOR_CREDENTIAL_RE = re.compile(
     r"\b(MD|M\.D\.|DO|D\.O\.|PHD|PH\.D\.|MSC|M\.S\.|MS|BS|B\.S\.|BA|B\.A\.|MBA|MBBS|MPH|RN|FRCPC|FAAN|FRCP|DPhil)\b",
@@ -145,6 +162,21 @@ HEADER_NOISE_MARKERS = (
     "keywords",
     "disclosure",
 )
+RETAINED_TAIL_METADATA_PREFIXES = (
+    "keywords",
+    "key words",
+    "level of evidence",
+    "final comments",
+    "informed consent",
+)
+TRIMMABLE_TAIL_METADATA_PREFIXES = (
+    "corresponding author",
+    "correspondence",
+    "disclosure",
+    "disclosures",
+    "reference",
+    "references",
+)
 ARTICLE_MARKERS = (
     "article open access",
     "article history",
@@ -205,6 +237,10 @@ def alpha_word_count(text: str) -> int:
     return sum(1 for word in text.split() if re.search(r"[A-Za-z]", word))
 
 
+def contains_marker_phrase(normalized_text: str, markers: tuple[str, ...]) -> bool:
+    return any(re.search(rf"\b{re.escape(marker)}\b", normalized_text) for marker in markers)
+
+
 def starts_like_title_opening(text: str) -> bool:
     stripped = text.strip()
     if not stripped:
@@ -213,6 +249,26 @@ def starts_like_title_opening(text: str) -> bool:
         if character.isalpha():
             return character.isupper()
     return bool(re.match(r"^[\d\(\[]", stripped))
+
+
+def is_plausible_spaced_alpha_code(code: str) -> bool:
+    match = re.match(r"^(?P<prefix>[A-Za-z]+)", code.strip())
+    if not match:
+        return False
+    prefix = str(match.group("prefix") or "")
+    if prefix.isupper():
+        return True
+    return len(prefix) <= 2 and prefix[:1].isupper() and prefix[1:].islower()
+
+
+def is_pure_numeric_dotted_code(code: str) -> bool:
+    stripped = code.strip()
+    return bool(stripped) and bool(re.fullmatch(r"\d+(?:\.\d+)+", stripped))
+
+
+def is_unlikely_numeric_letter_suffix_code(code: str) -> bool:
+    stripped = code.strip().upper()
+    return bool(stripped) and bool(re.fullmatch(r"\d+[A-Z]{2,}", stripped))
 
 
 def is_article_numbered_section(line: str) -> bool:
@@ -309,6 +365,20 @@ def is_disclosure_detail_line(line: str) -> bool:
     return False
 
 
+def is_retained_tail_metadata_line(line: str) -> bool:
+    normalized = normalize_text(line)
+    if not normalized:
+        return False
+    return any(normalized.startswith(prefix) for prefix in RETAINED_TAIL_METADATA_PREFIXES)
+
+
+def is_trimmable_tail_metadata_line(line: str) -> bool:
+    normalized = normalize_text(line)
+    if not normalized:
+        return False
+    return any(normalized.startswith(prefix) for prefix in TRIMMABLE_TAIL_METADATA_PREFIXES)
+
+
 def score_title(reference_title: str, candidate_text: str) -> float:
     ref_norm = normalize_text(reference_title)
     candidate_norm = normalize_text(candidate_text)
@@ -372,16 +442,37 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
     stripped = line.strip()
     if looks_like_numbered_affiliation_line(stripped):
         return None
+    if is_footer_like(stripped):
+        return None
     id_match = ID_ABSTRACT_START_RE.match(stripped)
     if id_match:
         title = str(id_match.groupdict().get("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
             return None
         return id_match
+    poster_match = POSTER_ABSTRACT_START_RE.match(stripped)
+    if poster_match:
+        title = str(poster_match.groupdict().get("title") or "")
+        if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not starts_like_title_opening(title):
+            return None
+        return poster_match
+    session_dashed_match = SESSION_DASHED_ABSTRACT_START_RE.match(stripped)
+    if session_dashed_match:
+        title = str(session_dashed_match.groupdict().get("title") or "")
+        if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not starts_like_title_opening(title):
+            return None
+        return session_dashed_match
     spaced_match = SPACED_ALPHA_ABSTRACT_START_RE.match(stripped)
     if spaced_match:
+        code = str(spaced_match.groupdict().get("code") or "")
         title = str(spaced_match.groupdict().get("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if not is_plausible_spaced_alpha_code(code):
             return None
         if not starts_like_title_opening(title):
             return None
@@ -392,7 +483,13 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
         title = str(strict_match.groupdict().get("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
             return None
+        if is_pure_numeric_dotted_code(code):
+            return None
+        if is_unlikely_numeric_letter_suffix_code(code):
+            return None
         if not re.search(r"[A-Z]", code) and looks_like_numbered_affiliation_line(stripped):
+            return None
+        if not starts_like_title_opening(title):
             return None
         if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
             return None
@@ -403,9 +500,17 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
         title = str(delim_match.groupdict().get("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
             return None
+        if is_pure_numeric_dotted_code(code):
+            return None
+        if is_unlikely_numeric_letter_suffix_code(code):
+            return None
         if not re.search(r"[A-Z]", code) and looks_like_numbered_affiliation_line(stripped):
             return None
+        if not starts_like_title_opening(title):
+            return None
         if not re.search(r"[A-Z]", code) and (alpha_word_count(title) < 4 or is_section_heading(title)):
+            return None
+        if is_author_like(title):
             return None
         return delim_match
     space_match = ABSTRACT_START_SPACE_CODE_RE.match(stripped)
@@ -413,6 +518,10 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
         code = str(space_match.group("code") or "")
         title = str(space_match.group("title") or "")
         if title and (is_header_noise(title) or looks_like_reference_entry(title)):
+            return None
+        if is_pure_numeric_dotted_code(code):
+            return None
+        if is_unlikely_numeric_letter_suffix_code(code):
             return None
         if not re.search(r"[A-Z]", code) and looks_like_numbered_affiliation_line(stripped):
             return None
@@ -427,6 +536,10 @@ def is_abstract_start(line: str) -> re.Match[str] | None:
 
 def is_abstract_code_only(line: str) -> re.Match[str] | None:
     stripped = line.strip()
+    if stripped.isdigit() and len(stripped) == 1:
+        return None
+    if is_footer_like(stripped):
+        return None
     poster_match = POSTER_CODE_ONLY_RE.match(stripped)
     if poster_match:
         return poster_match
@@ -436,6 +549,9 @@ def is_abstract_code_only(line: str) -> re.Match[str] | None:
     id_code_match = ID_ABSTRACT_CODE_ONLY_RE.match(stripped)
     if id_code_match:
         return id_code_match
+    session_dashed_code_match = SESSION_DASHED_CODE_ONLY_RE.match(stripped)
+    if session_dashed_code_match:
+        return session_dashed_code_match
     numeric_date_code_match = NUMERIC_DATE_CODE_ONLY_RE.match(stripped)
     if numeric_date_code_match:
         return numeric_date_code_match
@@ -444,6 +560,9 @@ def is_abstract_code_only(line: str) -> re.Match[str] | None:
         return session_match
     code_only_match = ABSTRACT_CODE_ONLY_RE.match(stripped)
     if code_only_match:
+        code_only_code = str(code_only_match.groupdict().get("code") or "")
+        if is_unlikely_numeric_letter_suffix_code(code_only_code):
+            return None
         return code_only_match
     boundary_match = ABSTRACT_BOUNDARY_RE.match(stripped)
     if not boundary_match:
@@ -451,6 +570,10 @@ def is_abstract_code_only(line: str) -> re.Match[str] | None:
     boundary_code = str(boundary_match.group("code") or "")
     digits = "".join(character for character in boundary_code if character.isdigit())
     if not re.search(r"[A-Z]", boundary_code) and len(digits) < 2:
+        return None
+    if is_pure_numeric_dotted_code(boundary_code):
+        return None
+    if is_unlikely_numeric_letter_suffix_code(boundary_code):
         return None
     trailing = stripped[boundary_match.end("code") :].strip(" .|:-)")
     if trailing:
@@ -497,7 +620,7 @@ def looks_like_numbered_affiliation_line(line: str) -> bool:
         return False
     if "," not in stripped:
         return False
-    if any(marker in normalized for marker in INSTITUTION_MARKERS):
+    if contains_marker_phrase(normalized, INSTITUTION_MARKERS):
         return True
     return bool(
         re.search(
@@ -561,7 +684,7 @@ def is_author_like(line: str) -> bool:
 
 def is_institution_like(line: str) -> bool:
     normalized = normalize_text(line)
-    return looks_like_numbered_affiliation_line(line) or any(marker in normalized for marker in INSTITUTION_MARKERS)
+    return looks_like_numbered_affiliation_line(line) or contains_marker_phrase(normalized, INSTITUTION_MARKERS)
 
 
 def is_footer_like(line: str) -> bool:
@@ -588,6 +711,8 @@ def is_section_heading(line: str) -> bool:
 def is_header_noise(line: str) -> bool:
     normalized = normalize_text(line)
     if not normalized:
+        return True
+    if is_retained_tail_metadata_line(line) or is_trimmable_tail_metadata_line(line):
         return True
     if is_disclosure_detail_line(line):
         return True
@@ -687,6 +812,29 @@ def is_title_continuation_like(line: str) -> bool:
     if len(words) > 8:
         return False
     return bool(words)
+
+
+def looks_like_coded_header_title_line(line: str) -> bool:
+    stripped = line.strip()
+    if (
+        not stripped
+        or is_abstract_boundary(stripped)
+        or is_author_like(stripped)
+        or is_institution_like(stripped)
+        or is_footer_like(stripped)
+        or is_header_noise(stripped)
+    ):
+        return False
+    if is_potential_title_line(stripped) or is_uppercase_title_like(stripped):
+        return True
+    if not starts_like_title_opening(stripped) or stripped.endswith("."):
+        return False
+    if alpha_word_count(stripped) < 4 or alpha_word_count(stripped) > 14:
+        return False
+    normalized = normalize_text(stripped)
+    if is_section_heading(stripped):
+        return normalized.startswith(("case study", "case report", "case series"))
+    return True
 
 
 def strip_abstract_code(line: str) -> str:
@@ -832,7 +980,7 @@ def coded_header_boundary(lines: list[LineRef], start_index: int) -> tuple[bool,
     for line in lines[start_index + 1 : min(len(lines), start_index + 5)]:
         if is_footer_like(line.text):
             continue
-        if is_potential_title_line(line.text) or is_uppercase_title_like(line.text):
+        if looks_like_coded_header_title_line(line.text):
             return True, start_index + 1
         if is_header_noise(line.text) or is_header_preamble_line(line.text) or is_abstract_code_only(line.text):
             saw_preamble = True
@@ -930,7 +1078,7 @@ def is_header_preamble_line(line: str) -> bool:
         return False
     if DOI_LINE_RE.match(stripped):
         return False
-    if normalized.startswith(("disclosure", "keywords", "corresponding author")):
+    if is_retained_tail_metadata_line(stripped) or is_trimmable_tail_metadata_line(stripped):
         return False
     if is_footer_like(stripped):
         return True

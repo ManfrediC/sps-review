@@ -280,7 +280,7 @@ class TestValidateProceedingsText(unittest.TestCase):
                 }
             ]
         }
-        trimmed_record = self.make_trimmed_record(lines, 2, 11)
+        trimmed_record = self.make_trimmed_record(lines, 2, 12)
 
         segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
         section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
@@ -300,6 +300,55 @@ class TestValidateProceedingsText(unittest.TestCase):
         self.assertFalse(segmentation["spillover"])
         self.assertEqual(status, "confirmed_full")
         self.assertFalse(manual_follow_up)
+
+    def test_validate_trimmed_segmentation_flags_missing_level_of_evidence_tail(self) -> None:
+        lines = [
+            "Level of Evidence: Level V",
+            "Poster 237",
+            "Bilateral Hip Fracture During Hospitalization for",
+            "Spasm Exacerbation in an Adult with Stiff Person",
+            "Syndrome: A Case Report",
+            "Tomasz K. Podobinski, DO, Paolo C. Mimbella, MD",
+            "Case/Program Description: The patient developed progressive painful spasms and bilateral hip fractures during a hospital admission.",
+            "Setting: Tertiary care hospital.",
+            "Results: Symptoms continued to interfere with rehabilitation participation.",
+            "Discussion: This is the first reported case, to our knowledge, of bilateral hip fractures in a female with stiff person syndrome related spasms.",
+            "Conclusions: Refractory spasms may contribute to significant forces exerted on bony elements leading to fractures.",
+            "Level of Evidence: Level V",
+            "Poster 238",
+            "Tumefactive Demyelinating Lesions",
+            "Another Author, MD",
+            "Case/Program Description: Another unrelated case begins here.",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 2, 11)
+        trimmed_record["matched_block_code"] = "Poster 237"
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.92,
+            author_score=0.60,
+            combined_score=0.84,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertTrue(segmentation["truncated_by_gap"])
+        self.assertGreaterEqual(segmentation["meaningful_tail_gap_count"], 1)
+        self.assertEqual(segmentation["next_header_rule"], "next_abstract_boundary")
+        self.assertEqual(status, "partial_truncated")
+        self.assertTrue(manual_follow_up)
 
     def test_validate_trimmed_segmentation_accepts_title_start_after_coded_boundary_with_date_preamble(self) -> None:
         lines = [

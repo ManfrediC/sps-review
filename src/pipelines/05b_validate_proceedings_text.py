@@ -16,9 +16,10 @@ from _proceedings_text import (
     header_boundary,
     infer_proceedings_pattern,
     is_abstract_code_only,
-    is_disclosure_detail_line,
     is_header_preamble_line,
+    is_retained_tail_metadata_line,
     is_footer_like,
+    is_trimmable_tail_metadata_line,
     normalize_text,
     score_authors,
     score_title,
@@ -35,8 +36,7 @@ SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categor
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
-TAIL_NOISE_PREFIXES = ("corresponding author", "keywords", "disclosure")
-TAIL_NOISE_BLOCK_PREFIXES = TAIL_NOISE_PREFIXES + ("full disclosures", "disclosure of interest")
+TAIL_NOISE_BLOCK_PREFIXES = ("full disclosures", "disclosure of interest")
 
 
 # Parse command-line arguments.
@@ -253,11 +253,9 @@ def is_tail_noise(line: str) -> bool:
         return True
     if is_footer_like(line):
         return True
-    if is_disclosure_detail_line(line):
+    if is_trimmable_tail_metadata_line(line):
         return True
-    if "nothing to disclose" in normalized:
-        return True
-    return any(normalized.startswith(prefix) for prefix in TAIL_NOISE_PREFIXES)
+    return is_header_preamble_line(line) and not is_retained_tail_metadata_line(line)
 
 
 def meaningful_tail_gap_count(trailing_lines: list[Any]) -> int:
@@ -268,6 +266,9 @@ def meaningful_tail_gap_count(trailing_lines: list[Any]) -> int:
         if not normalized:
             continue
         if tail_noise_block_open:
+            continue
+        if is_trimmable_tail_metadata_line(line.text):
+            tail_noise_block_open = True
             continue
         if any(normalized.startswith(prefix) for prefix in TAIL_NOISE_BLOCK_PREFIXES):
             tail_noise_block_open = True
@@ -393,7 +394,7 @@ def validate_trimmed_segmentation(
     trailing_lines = source_lines[end_position_exclusive:next_header_position]
     gap_count = meaningful_tail_gap_count(trailing_lines)
     diagnostics["meaningful_tail_gap_count"] = gap_count
-    diagnostics["truncated_by_gap"] = gap_count >= 2
+    diagnostics["truncated_by_gap"] = gap_count >= 1
     return diagnostics
 
 

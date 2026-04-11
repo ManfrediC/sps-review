@@ -37,7 +37,9 @@ from _proceedings_text import (
     is_article_metadata_line,
     is_article_numbered_section,
     is_potential_title_line,
+    is_retained_tail_metadata_line,
     is_section_heading,
+    is_trimmable_tail_metadata_line,
     normalize_code,
     normalize_text,
     score_authors,
@@ -334,12 +336,21 @@ def trim_trailing_header_noise(lines: list[LineRef]) -> tuple[list[LineRef], boo
     enough_body, section_hits, _ = has_enough_body(lines)
     if not enough_body and section_hits == 0:
         return lines, False
-    saw_body_heading = any(is_section_heading(line.text) for line in lines[:6])
-    for index in range(6, len(lines)):
-        if is_section_heading(lines[index].text):
+    saw_authorship = any(is_author_like(line.text) or is_institution_like(line.text) for line in lines[:8])
+    saw_body_heading = False
+    for index, line_ref in enumerate(lines):
+        if is_author_like(line_ref.text) or is_institution_like(line_ref.text):
+            saw_authorship = True
+        if saw_authorship and is_section_heading(line_ref.text):
+            normalized = normalize_text(line_ref.text)
+            if normalized in {"case report", "case study", "case series"} and ":" not in line_ref.text:
+                continue
             saw_body_heading = True
-        normalized = normalize_text(lines[index].text)
-        if saw_body_heading and normalized.startswith(("disclosure", "disclosures", "keywords", "corresponding author")):
+        if not saw_body_heading:
+            continue
+        if is_retained_tail_metadata_line(line_ref.text):
+            continue
+        if is_trimmable_tail_metadata_line(line_ref.text):
             return lines[:index], True
     return lines, False
 
@@ -580,6 +591,7 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
     author_like_count = sum(1 for line in first_window if is_author_like(line.text))
     article_section_count = sum(1 for line in first_window if is_article_numbered_section(line.text))
     article_metadata_count = sum(1 for line in first_window if is_article_metadata_line(line.text))
+    section_heading_count = sum(1 for line in first_window if is_section_heading(line.text))
     isolated_page_marker_count = sum(
         1 for marker in ISOLATED_ABSTRACT_PAGE_MARKERS if marker in normalized_first_pages
     )
@@ -603,6 +615,12 @@ def proceedings_signals(record: dict[str, Any], lines: list[LineRef]) -> dict[st
     elif title_like_count >= 12 and author_like_count >= 5:
         signal_score += 1
     if n_pages <= 3 and len(header_starts) >= 2 and author_like_count >= 4:
+        signal_score += 3
+    elif n_pages <= 2 and len(header_starts) >= 1 and author_like_count >= 4 and section_heading_count >= 2:
+        signal_score += 3
+    elif n_pages <= 2 and pattern.coded_header_count >= 2 and section_heading_count >= 2:
+        signal_score += 3
+    elif n_pages <= 2 and pattern.coded_header_count >= 1 and author_like_count >= 1 and section_heading_count >= 3:
         signal_score += 3
     if n_pages <= 2 and title_like_count >= 4 and author_like_count >= 1 and program_marker_count > 0:
         signal_score += 2

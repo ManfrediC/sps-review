@@ -1079,6 +1079,312 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertNotIn("Disclosure", joined)
         self.assertNotIn("P602", joined)
 
+    def test_extract_blocks_trim_references_tail_after_body(self) -> None:
+        record = {
+            "paper_id": "1900_fixture",
+            "source_filename": "references_tail_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "116",
+                            "Stiff Person Syndrome Presenting with Spastic Dysarthria",
+                            "Amanda Persaud, Natalya Shneyder, Michael Pulley, Samuel Giles",
+                            "Objective: The purpose of this study is to discern whether SPS can present with stroke-like symptoms.",
+                            "Background: Stiff person syndrome is due to neuronal hyperexcitability.",
+                            "Conclusions: Acute dysarthria may be an SPS presentation and careful history can avoid misdiagnosis.",
+                            "References: Arino H, Hoftberger R, Gresa-Arribas N, et al.",
+                            "117",
+                            "Intrathecal Baclofen Effects in Stiff Person Syndrome: Clinical and Instrumented Gait Analysis",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Stiff Person Syndrome Presenting with Spastic Dysarthria",
+            reference_authors="Persaud, A.; Shneyder, N.; Pulley, M.; Giles, S.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("Acute dysarthria may be an SPS presentation", joined)
+        self.assertNotIn("References:", joined)
+        self.assertNotIn("117", joined)
+
+    def test_extract_blocks_trim_inline_disclosure_tail_after_body(self) -> None:
+        record = {
+            "paper_id": "1001_fixture",
+            "source_filename": "inline_disclosure_tail_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "PP2210",
+                            "Inpatient physiotherapy management for Stiff Person syndrome",
+                            "T. Kahraman, B. Balci, I.S. Sengun",
+                            "Introduction: Little information about physiotherapy management of SPS is found in the literature.",
+                            "Methods: The patient received balance, coordination, strengthening, and gait training.",
+                            "Results: Her walking speed, distance, and independence improved.",
+                            "Conclusions: Inpatient physiotherapy management for SPS can be effective to improve function.",
+                            "Disclosure: Nothing to disclose.",
+                            "PP2211",
+                            "Another poster title",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Inpatient physiotherapy management for Stiff Person syndrome",
+            reference_authors="Kahraman, T.; Balci, B.; Sengun, I.S.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("physiotherapy management for SPS can be effective", joined)
+        self.assertNotIn("Disclosure: Nothing to disclose.", joined)
+        self.assertNotIn("PP2211", joined)
+
+    def test_is_abstract_code_only_rejects_single_digit_affiliation_marker(self) -> None:
+        self.assertIsNone(self.module.is_abstract_code_only("1"))
+        self.assertIsNone(self.module.is_abstract_code_only("2"))
+
+    def test_poster_boundaries_accept_trailing_colons(self) -> None:
+        start_match = self.module.is_abstract_start("Poster 254: Providing relief from stiff person syndrome")
+        code_only_match = self.module.is_abstract_code_only("Poster 254:")
+
+        self.assertIsNotNone(start_match)
+        self.assertIsNotNone(code_only_match)
+        assert start_match is not None
+        assert code_only_match is not None
+        self.assertEqual(start_match.group("code"), "Poster 254")
+        self.assertEqual(code_only_match.group("code"), "Poster 254")
+
+    def test_local_window_candidate_keeps_body_after_split_numeric_affiliations(self) -> None:
+        record = {
+            "paper_id": "1774_fixture",
+            "source_filename": "split_numeric_affiliation_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Pe-027-5 An unusual presentation of stiff-person syndrome",
+                            "Weerawat Saengphatrachai",
+                            "1",
+                            "Chayasak Wantaneeyawong",
+                            "2",
+                            "Yuvadee Pitakpatapee",
+                            "1",
+                            "Prachaya Srivanitchapoom",
+                            "1",
+                            "1 Division of Neurology, Faculty of Medicine, Siriraj Hospital, Mahidol University, Bangkok, Thailand",
+                            "2 The Northern Neuroscience Center, Faculty of Medicine, Chiang Mai University, Chiang Mai, Thailand",
+                            "Background: Movement disorders in anti-glutamic acid decarboxylase antibody syndrome are heterogeneous and may mimic parkinsonism.",
+                            "Case report: The patient presented with rigidity, painful spasms, and parkinsonism with subsequent antibody confirmation.",
+                            "Conclusions: Early recognition and prompt treatment can provide a favourable outcome.",
+                            "Pe-027-6 Another abstract title",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="An unusual presentation of stiff-person syndrome",
+            reference_authors="Saengphatrachai, W.; Wantaneeyawong, C.; Pitakpatapee, Y.; Srivanitchapoom, P.",
+            pattern=pattern,
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("Background: Movement disorders in anti-glutamic acid decarboxylase antibody syndrome", joined)
+        self.assertIn("Early recognition and prompt treatment can provide a favourable outcome.", joined)
+        self.assertNotIn("Another abstract title", joined)
+
+    def test_proceedings_signals_detect_two_page_poster_fragment_with_colons(self) -> None:
+        record = {
+            "paper_id": "1830_fixture",
+            "source_filename": "small_two_page_poster_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Poster 262:",
+                            "Acute inpatient rehabilitation of individual status post transplant",
+                            "Nicole Brand, MD",
+                            "Ning Cao, MD",
+                            "Case/Program Description: A transplant recipient with stroke-related deficits improved with rehabilitation.",
+                            "Level of Evidence: Level V",
+                            "Poster 263:",
+                            "Rehabilitation challenges in a rare combination of stiff-man syndrome",
+                            "Yulia Rivelis, MD",
+                            "Eathar Saad, MD",
+                            "Case/Program Description: A woman with cerebellar ataxia and stiff-man syndrome presented for rehabilitation follow-up.",
+                        ]
+                    ),
+                },
+                {
+                    "page_index": 1,
+                    "text": "\n".join(
+                        [
+                            "Setting: University hospital",
+                            "Results: Monthly IVIG and therapy improved gait and communication.",
+                            "Discussion: Anti-GAD disease can complicate rehabilitation planning.",
+                            "Conclusions: A multidisciplinary approach is critical for this patient.",
+                            "Level of Evidence: Level V",
+                            "Poster 264:",
+                            "Persistent neurological deficits after cerebral fat embolism",
+                            "Abana Azariah, MD",
+                        ]
+                    ),
+                },
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        signals = self.module.proceedings_signals(record, lines)
+
+        self.assertTrue(signals["proceedings_detected"])
+        self.assertGreaterEqual(signals["abstract_block_count"], 2)
+
+    def test_local_window_candidate_keeps_level_of_evidence_with_current_abstract(self) -> None:
+        record = {
+            "paper_id": "1829_fixture",
+            "source_filename": "level_of_evidence_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Level of Evidence: Level V",
+                            "Poster 254:",
+                            "Providing relief from stiff person syndrome through",
+                            "intrathecal baclofen: A case report",
+                            "Anthony J. Mazzola, MD; Miguel X. Escalon, MD, MPH",
+                            "Disclosures: Anthony Mazzola: I Have No Relevant Financial Relationships to Disclose",
+                            "Case/Program Description: A 64 year old man diagnosed with SPS presented with painful spasms and recurrent falls.",
+                            "Setting: University hospital physical medicine and rehabilitation clinic.",
+                            "Results: At more than one year post implantation the patient continued to benefit from controlled spasms.",
+                            "Discussion: SPS is a rare difficult to treat debilitating disorder with autoimmune associations.",
+                            "Conclusions: It is important to consider implanting the intrathecal baclofen pump while preserving mental status.",
+                            "Level of Evidence: Level V",
+                            "Poster 255:",
+                            "Another rehabilitation title",
+                            "Another author line",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Providing relief from stiff person syndrome through intrathecal baclofen: A case report",
+            reference_authors="Mazzola, A.J.; Escalon, M.X.",
+            pattern=pattern,
+            target_code="Poster 254",
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("Level of Evidence: Level V", joined)
+        self.assertNotIn("Poster 255", joined)
+
+    def test_local_window_candidate_keeps_cross_page_body_for_poster_header_with_colon(self) -> None:
+        record = {
+            "paper_id": "1829_cross_page_fixture",
+            "source_filename": "cross_page_poster_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Poster 253:",
+                            "A preceding rehabilitation title",
+                            "Another author line",
+                            "Level of Evidence: Level V",
+                            "Poster 254:",
+                            "Providing relief from stiff person syndrome through",
+                            "Intrathecal Baclofen: A Case Report",
+                            "Anthony J. Mazzola, MD; Miguel X. Escalon, MD, MPH",
+                            "Disclosures: Anthony Mazzola: I Have No Relevant Financial Relationships to Disclose",
+                            "Case/Program Description: A 64 year old man diagnosed with SPS presented with painful spasms and recurrent falls.",
+                            "The oral medications improved his stiffness, but interfered with his ability to perform at",
+                        ]
+                    ),
+                },
+                {
+                    "page_index": 1,
+                    "text": "\n".join(
+                        [
+                            "work. To solve these issues an intrathecal baclofen pump was implanted.",
+                            "Setting: University hospital physical medicine and rehabilitation clinic.",
+                            "Results: At more than one year post implantation the patient continued to benefit from controlled spasms.",
+                            "Discussion: SPS is a rare difficult to treat debilitating disorder with autoimmune associations.",
+                            "Conclusions: It is important to consider implanting the intrathecal baclofen pump while preserving mental status.",
+                            "Level of Evidence: Level V",
+                            "Poster 255:",
+                            "Another rehabilitation title",
+                            "Another author line",
+                        ]
+                    ),
+                },
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Providing relief from stiff person syndrome through intrathecal baclofen: A case report",
+            reference_authors="Mazzola, A.J.; Escalon, M.X.",
+            pattern=pattern,
+            target_code="Poster 254",
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("work. To solve these issues an intrathecal baclofen pump was implanted.", joined)
+        self.assertIn("Level of Evidence: Level V", joined)
+        self.assertNotIn("Poster 255:", joined)
+
     def test_extract_blocks_keeps_body_when_disclosure_precedes_case_description(self) -> None:
         record = {
             "paper_id": "1011",
@@ -1211,6 +1517,120 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
 
         self.assertTrue(signals["proceedings_detected"])
         self.assertGreaterEqual(signals["proceedings_signal_score"], 3)
+
+    def test_proceedings_signals_detect_single_page_op_supplement_fragment(self) -> None:
+        record = {
+            "paper_id": "1116_fixture",
+            "source_filename": "epn_op_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "OP85 - 2511",
+                            "IVIG for Guillain-Barre syndrome: Which regimen should I choose?",
+                            "D. Ram, M. Aziz. Department of Paediatric Neurology, Royal Manchester Children's Hospital, Manchester, UK",
+                            "Objective: To compare two IVIG regimens in children with GBS.",
+                            "Results: Recovery was faster with the 5 day regimen.",
+                            "OP87 - 3001",
+                            "Paediatric neurological syndromes associated with glycine receptor antibodies",
+                            "J. Gadian, Y. Hacohen, S. Kariyawasam. Children's Neurosciences Centre, London, UK",
+                            "Background: GlyR antibodies have been associated with SPS and PERM.",
+                            "Methods: Cases were identified from neuronal surface antibody testing.",
+                            "Results: Six girls were identified across London and Australia.",
+                            "Conclusions: The paediatric phenotype is predominated by female sex and seizures.",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        signals = self.module.proceedings_signals(record, lines)
+
+        self.assertTrue(signals["proceedings_detected"])
+        self.assertGreaterEqual(signals["abstract_block_count"], 2)
+
+    def test_proceedings_signals_detect_single_page_poster_case_fragment(self) -> None:
+        record = {
+            "paper_id": "1452_fixture",
+            "source_filename": "single_page_poster_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Poster 321:",
+                            "A Stiff Diagnosis: An Unusual Case of Low Back Pain",
+                            "Komal G. Patel, DO, Fergie-Ross L. Montero-Cruz, DO, Surya M. Vishnubhakat, MD",
+                            "Disclosures: Komal Patel: I Have No Relevant Financial Relationships To Disclose",
+                            "Case/Program Description: A 44-year-old man presented with low back and hip pain and impaired ambulation.",
+                            "Setting: Neurology clinic.",
+                            "Results: Decreasing anti-GAD antibodies led to functional improvement.",
+                            "Discussion: Reduction in antibody level with IVIG allowed meaningful recovery.",
+                            "Conclusions: Proper diagnosis and treatment can lead to significant functional improvements.",
+                            "Level of Evidence: Level V",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        signals = self.module.proceedings_signals(record, lines)
+
+        self.assertTrue(signals["proceedings_detected"])
+        self.assertGreaterEqual(signals["abstract_block_count"], 1)
+
+    def test_local_window_candidate_keeps_body_after_case_report_title_fragment_and_disclosure(self) -> None:
+        record = {
+            "paper_id": "1830_fixture",
+            "source_filename": "case_report_title_fragment.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Poster 263:",
+                            "Rehabilitation Challenges in a Rare Combination of Stiff-",
+                            "Man Syndrome, Cerebellar Ataxia, and Grave's Disease: A",
+                            "Case Report",
+                            "Yulia Rivelis, MD, Eathar Saad, MD",
+                            "Disclosures: Yulia Rivelis: I Have No Relevant Financial Relationships To Disclose",
+                            "Case/Program Description: A 33-year-old woman was diagnosed with cerebellar ataxia and later stiff-man syndrome.",
+                            "Setting: University Hospital",
+                            "Results: Her deficits from a rehabilitation perspective include dysarthria, stiff lower extremities, and ataxic gait.",
+                            "Discussion: This case highlights a rare combination of co-morbidities.",
+                            "Conclusions: A multidisciplinary approach is critical for this patient.",
+                            "Level of Evidence: Level V",
+                            "Poster 264:",
+                            "Another title",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        candidate = self.module.local_window_candidate(
+            lines=lines,
+            record=record,
+            reference_title="Rehabilitation challenges in a rare combination of Stiff-man syndrome, cerebellar ataxia, and Grave's Disease: A case report",
+            reference_authors="Rivelis, Y.; Saad, E.",
+            pattern=pattern,
+            target_code="Poster 263",
+        )
+
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        joined = " ".join(line.text for line in candidate.line_refs)
+        self.assertIn("Case/Program Description:", joined)
+        self.assertIn("A multidisciplinary approach is critical for this patient.", joined)
+        self.assertNotIn("Poster 264:", joined)
 
     def test_header_boundary_accepts_numeric_code_with_session_preamble(self) -> None:
         record = {
@@ -1422,6 +1842,87 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         )
 
         self.assertIsNone(match)
+
+    def test_is_abstract_start_rejects_lowercase_spaced_body_line(self) -> None:
+        self.assertIsNone(self.module.is_abstract_start("from 80 Hz to 1000 Hz."))
+
+    def test_is_abstract_start_rejects_numeric_dotted_body_lines(self) -> None:
+        self.assertIsNone(
+            self.module.is_abstract_start("7.0) and rhabdomyolysis (CK > 20,000). EEG and MRI brain with and")
+        )
+        self.assertIsNone(
+            self.module.is_abstract_start(
+                "2011.2) JK Baizabal-Carvallo, J Jankovic. Stiff-person syndrome: insights into a complex autoimmune disorder."
+            )
+        )
+
+    def test_is_abstract_start_rejects_numeric_letter_affiliation_line(self) -> None:
+        line = "1LSU New Orleans, 2University of Alabama, 3Ochsner Health System"
+
+        self.assertIsNone(self.module.is_abstract_start(line))
+        self.assertIsNone(self.module.is_abstract_code_only("1LSU"))
+
+    def test_coded_header_boundary_accepts_case_study_title_after_code_only_line(self) -> None:
+        record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "C32",
+                            "Case Study: Delirium with Complex Multisystem Chronic",
+                            "Conditions",
+                            "P. C. Scott. Geriatric Medicine, Eastern Virginia Medical School, Norfolk, VA.",
+                            "Background: Delirium in hospitalised older adults is common and carries high morbidity.",
+                        ]
+                    ),
+                }
+            ]
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+
+        matched, end_index, reason, _ = self.module.header_boundary(lines, 0, pattern, allow_soft=True)
+
+        self.assertTrue(matched)
+        self.assertEqual(end_index, 1)
+        self.assertEqual(reason, "coded_boundary")
+
+    def test_coded_header_boundary_accepts_split_title_after_numeric_code(self) -> None:
+        record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "117",
+                            "Intrathecal Baclofen Effects in Stiff Person Syndrome: Clinical and",
+                            "Instrumented Gait Analysis",
+                            "Maria Sheila Rocha, Paulo Roberto Terzian, Rodrigo Ferreira",
+                            "Objective: To describe the effects of intrathecal baclofen on gait parameters.",
+                        ]
+                    ),
+                }
+            ]
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+
+        matched, end_index, reason, _ = self.module.header_boundary(lines, 0, pattern, allow_soft=True)
+
+        self.assertTrue(matched)
+        self.assertEqual(end_index, 1)
+        self.assertEqual(reason, "coded_boundary")
+
+    def test_is_institution_like_uses_word_boundaries(self) -> None:
+        self.assertFalse(
+            self.module.is_institution_like("Intrathecal Baclofen Effects in Stiff Person Syndrome: Clinical and")
+        )
+        self.assertTrue(
+            self.module.is_institution_like("Department of Neurology, University Hospital Lausanne, Lausanne, Switzerland")
+        )
 
     def test_proceedings_signals_rejects_isolated_abstract_page_with_article_markers(self) -> None:
         record = {
