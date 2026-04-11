@@ -9,13 +9,16 @@ from pathlib import Path
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "src" / "pipelines" / "05_trim_proceedings_text.py"
+AUTORESEARCH_SCRIPT_PATH = (
+    Path(__file__).resolve().parents[1] / "src" / "pipelines" / "05_trim_proceedings_text_autoresearch.py"
+)
 
 
-def load_module():
-    pipeline_dir = SCRIPT_PATH.parent
+def load_module(script_path: Path = SCRIPT_PATH):
+    pipeline_dir = script_path.parent
     if str(pipeline_dir) not in sys.path:
         sys.path.insert(0, str(pipeline_dir))
-    spec = importlib.util.spec_from_file_location("trim_proceedings_text", SCRIPT_PATH)
+    spec = importlib.util.spec_from_file_location(f"trim_proceedings_text__{script_path.stem}", script_path)
     module = importlib.util.module_from_spec(spec)
     assert spec is not None and spec.loader is not None
     sys.modules[spec.name] = module
@@ -2165,6 +2168,20 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertEqual(trimmed["start_line_global_index"], 120)
         self.assertEqual(trimmed["end_line_global_index_exclusive"], 124)
         self.assertNotIn("European Society of Human Genetics Conference", trimmed["pages"][0]["text"])
+
+
+class TestTrimProceedingsAutoresearchSmoke(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.production = load_module(SCRIPT_PATH)
+        cls.autoresearch = load_module(AUTORESEARCH_SCRIPT_PATH)
+
+    def test_autoresearch_registry_fieldnames_match_production(self) -> None:
+        self.assertEqual(self.autoresearch.registry_fieldnames(), self.production.registry_fieldnames())
+
+    def test_autoresearch_defaults_are_noncanonical(self) -> None:
+        self.assertIn("qa", str(self.autoresearch.OUT_DIR).lower())
+        self.assertIn("gold_standard", str(self.autoresearch.OUT_DIR).lower())
 
 
 if __name__ == "__main__":

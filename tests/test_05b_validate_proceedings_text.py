@@ -8,13 +8,16 @@ from pathlib import Path
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "src" / "pipelines" / "05b_validate_proceedings_text.py"
+AUTORESEARCH_SCRIPT_PATH = (
+    Path(__file__).resolve().parents[1] / "src" / "pipelines" / "05b_validate_proceedings_text_autoresearch.py"
+)
 
 
-def load_module():
-    pipeline_dir = SCRIPT_PATH.parent
+def load_module(script_path: Path = SCRIPT_PATH):
+    pipeline_dir = script_path.parent
     if str(pipeline_dir) not in sys.path:
         sys.path.insert(0, str(pipeline_dir))
-    spec = importlib.util.spec_from_file_location("validate_proceedings_text", SCRIPT_PATH)
+    spec = importlib.util.spec_from_file_location(f"validate_proceedings_text__{script_path.stem}", script_path)
     module = importlib.util.module_from_spec(spec)
     assert spec is not None and spec.loader is not None
     sys.modules[spec.name] = module
@@ -669,6 +672,41 @@ class TestValidateProceedingsText(unittest.TestCase):
         )
 
         self.assertEqual(candidate_ids, [])
+
+
+class TestValidateProceedingsAutoresearchSmoke(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.production = load_module(SCRIPT_PATH)
+        cls.autoresearch = load_module(AUTORESEARCH_SCRIPT_PATH)
+
+    def test_autoresearch_output_defaults_are_noncanonical(self) -> None:
+        self.assertIn("qa", str(self.autoresearch.TEXT_TRIMMED_DIR).lower())
+        self.assertIn("gold_standard", str(self.autoresearch.OUTPUT_PATH).lower())
+
+    def test_autoresearch_derive_qc_status_matches_production(self) -> None:
+        production_result = self.production.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.95,
+            author_score=0.60,
+            combined_score=0.86,
+            section_hits=3,
+            body_chars=320,
+            header_only=False,
+            segmentation={"span_located": True, "start_boundary_ok": True, "spillover": False, "truncated_by_gap": False},
+        )
+        autoresearch_result = self.autoresearch.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.95,
+            author_score=0.60,
+            combined_score=0.86,
+            section_hits=3,
+            body_chars=320,
+            header_only=False,
+            segmentation={"span_located": True, "start_boundary_ok": True, "spillover": False, "truncated_by_gap": False},
+        )
+
+        self.assertEqual(autoresearch_result, production_result)
 
 
 if __name__ == "__main__":
