@@ -8,6 +8,8 @@ These scripts are intentionally separate from `src/pipelines/`:
 - validation scripts audit those outputs and report whether they appear consistent with the underlying evidence
 - non-canonical validation reports, review sheets, and spot checks should be written under `qa/validation/`, not `data/` or `results/`
 
+The frozen stage-05 autoresearch benchmark now lives under `src/autoresearch/stage_05/`. `src/validation/` keeps the manual batch-management, review, and feedback utilities for stage 05.
+
 ## Available scripts
 
 ### `validate_pdf_source_registry.py`

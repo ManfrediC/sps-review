@@ -1366,3 +1366,35 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `78 passed in 35.58s`
   - historical reviewed regression green at `89/89`
   - `batch_011` prepared successfully with 10 papers
+
+## 2026-04-11
+
+### Stage-05 autoresearch harness
+
+- Added isolated stage-05 `_autoresearch` pipeline copies so optimisation can proceed without touching the canonical production scripts:
+  - `src/pipelines/_proceedings_text_autoresearch.py`
+  - `src/pipelines/05_trim_proceedings_text_autoresearch.py`
+  - `src/pipelines/05b_validate_proceedings_text_autoresearch.py`
+- Added the minimal frozen stage-05 autoresearch harness in:
+  - `src/autoresearch/stage_05/gold.py`
+  - `src/autoresearch/stage_05/benchmark.py`
+  - `src/autoresearch/stage_05/program.md`
+- The benchmark is explicitly frozen so the optimisation loop cannot improve the metric by changing:
+  - `benchmark.py`
+  - the scoring rules
+  - the strict normalisation
+- Gold manifest entries now capture provenance fields such as `source_text_path`, `reviewer`, and `notes`, alongside text hashes and first/last-line anchors.
+- The frozen benchmark now emits fixed per-paper labels:
+  - `missing_output`
+  - `spillover`
+  - `truncated`
+  - `exact_match`
+  - `wrong_abstract`
+- Updated the relevant README files for `src/`, `src/pipelines/`, `src/validation/`, `src/autoresearch/`, `src/autoresearch/stage_05/`, and `qa/trimming/`.
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage05_gold.py tests/test_stage05_regression.py`
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py -k AutoresearchSmoke tests/test_05b_validate_proceedings_text.py -k AutoresearchSmoke`
+- Did not run the live stage-05 gold benchmark because the gold-standard JSON corpus is still being generated.

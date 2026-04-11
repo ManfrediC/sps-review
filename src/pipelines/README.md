@@ -140,6 +140,25 @@ Useful statuses:
 python src/pipelines/05b_validate_proceedings_text.py
 ```
 
+## Stage-05 `_autoresearch` Copies
+
+The proceedings trimming autoresearch loop uses isolated stage-05 copies so production stage 05 stays untouched:
+
+- `src/pipelines/_proceedings_text_autoresearch.py`
+- `src/pipelines/05_trim_proceedings_text_autoresearch.py`
+- `src/pipelines/05b_validate_proceedings_text_autoresearch.py`
+
+These copies:
+- default to non-canonical outputs under `qa/trimming/gold_standard/autoresearch/`
+- avoid refreshing canonical registries
+- are the only stage-05 scripts used by `src/autoresearch/stage_05/benchmark.py`
+
+The v1 optimisation loop should edit only:
+- `src/pipelines/_proceedings_text_autoresearch.py`
+- `src/pipelines/05_trim_proceedings_text_autoresearch.py`
+
+The `_autoresearch` validator copy remains frozen and is used only for diagnostics and failure labels.
+
 ## `03_extract_text.py`
 
 Briefly, this script:
@@ -428,6 +447,6 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 Records reviewed as `incorrect_reference` are explicitly excluded before any downstream model calls.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-05`
+- Last updated: `2026-04-11`
 - Immediate subdirectories (0): _None_
-- Immediate files (17, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05b_validate_proceedings_text.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, `11_quality_assessment.py`, ... (+5 more)
+- Immediate files (22, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05_trim_proceedings_text_autoresearch.py`, `05b_validate_proceedings_text.py`, `05b_validate_proceedings_text_autoresearch.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, ... (+10 more)

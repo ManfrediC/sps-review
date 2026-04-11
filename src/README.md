@@ -1,8 +1,10 @@
 # `src` Overview
 
-This folder contains the project pipeline scripts, validation utilities, and shared code. They are designed to be run from the repository root and operate on the data stored under `data/`.
+This folder contains the project pipeline scripts, validation utilities, autoresearch harnesses, and shared code. They are designed to be run from the repository root and operate on the data stored under `data/`.
 
 Validation scripts should write their non-canonical review and audit outputs under `qa/validation/`, not `data/` or `results/`.
+
+Autoresearch harnesses should write benchmark-local artefacts under non-canonical QA folders such as `qa/trimming/`.
 
 ## Pipeline Order
 
@@ -166,6 +168,20 @@ Validation scripts should write their non-canonical review and audit outputs und
 - `validation/README.md`
   - Notes for the validation scripts and example commands.
 
+## Autoresearch Harnesses
+
+- `autoresearch/stage_05/gold.py`
+  - scans direct stage-05 gold JSONs in `qa/trimming/gold_standard/papers/`
+  - writes the active manifest used by the frozen benchmark
+
+- `autoresearch/stage_05/benchmark.py`
+  - runs the frozen stage-05 gold and regression benchmarks against the isolated `_autoresearch` pipeline copies
+  - keeps scoring rules, labels, and strict normalisation outside the editable optimisation loop
+
+- `autoresearch/stage_05/program.md`
+  - defines the editable surface for the stage-05 autoresearch agent
+  - forbids edits to the benchmark and harness files
+
 ## Practical Notes
 
 - `paper_id` is the Covidence ID and is the key used across all downstream artifacts.
@@ -174,6 +190,6 @@ Validation scripts should write their non-canonical review and audit outputs und
 - Registry builders are meant to keep all generated artifacts traceable from one table.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-06`
-- Immediate subdirectories (4): `lib`, `notebooks`, `pipelines`, `validation`
+- Last updated: `2026-04-11`
+- Immediate subdirectories (6): `autoresearch`, `legacy`, `lib`, `notebooks`, `pipelines`, `validation`
 - Immediate files (0, excluding `README.md`): _None_
