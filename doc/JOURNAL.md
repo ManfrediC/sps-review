@@ -1218,3 +1218,151 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `qa/trimming/reports/batch_008/acceptance_report.json`
 - Batch `008` is now fully resolved:
   - accepted-case outcome `10/10`
+
+### Stage 05 50-paper review accelerator
+
+- Implemented a resumable stage-05 review workflow for larger proceedings-trimming rounds, using patched `batch_008` behaviour as the baseline.
+- Extended:
+  - `src/validation/manage_trimming_batches.py`
+  - `src/pipelines/05b_validate_proceedings_text.py`
+- Added:
+  - `src/validation/_stage05_review.py`
+  - `src/validation/review_stage05_app.py`
+  - `src/validation/update_trimming_review_outputs.py`
+  - `src/validation/apply_trimming_manual_overrides.py`
+- Updated documentation in:
+  - `qa/trimming/README.md`
+  - `src/validation/README.md`
+
+### Workflow changes
+
+- Batch preparation now:
+  - defaults to a 50-paper target
+  - writes the batch manifest before screening begins
+  - resumes interrupted stage `05` and `05b` work instead of restarting
+  - excludes papers already frozen in `qa/trimming/feedback/` or `qa/trimming/regression/`
+  - blocks opening a new batch while another unresolved batch exists
+- Batch manifests now track:
+  - `stage05_running`
+  - `stage05b_running`
+  - `awaiting_review`
+  - `feedback_received`
+  - `patch_in_progress`
+  - `override_in_progress`
+  - `resolved`
+- Stage `05b` registry writing is now merge-safe for per-paper and limited reruns, so prior QC rows are preserved on resume.
+
+### Review tooling
+
+- Added a dedicated Streamlit reviewer for stage `05` that shows:
+  - the source PDF with page jump and extracted-text search
+  - current trim and QC status
+  - a preview of the current trimmed abstract
+  - a single correctness checkbox
+  - conditional correction fields for reviewed start anchor, end anchor, and patch comments
+- Review responses now persist to `responses.csv` before acceptance artefacts are refreshed, so saves survive UI reruns and crashes.
+- Added non-canonical batch artefacts under `qa/trimming/reports/<batch_id>/`:
+  - `review_queue.csv`
+  - `responses.csv`
+  - `feedback.json`
+  - `manual_overrides.csv`
+  - `acceptance_report.json`
+  - `patch_review_summary.json`
+- General `05/05b` code patches remain the preferred correction path; `manual_overrides.csv` is a fallback-only mechanism for residual failures.
+
+### Verification
+
+- Added or updated targeted tests in:
+  - `tests/test_manage_trimming_batches.py`
+  - `tests/test_05b_validate_proceedings_text.py`
+  - `tests/test_stage05_review.py`
+  - `tests/test_apply_trimming_manual_overrides.py`
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage05_review.py tests/test_manage_trimming_batches.py tests/test_apply_trimming_manual_overrides.py tests/test_05b_validate_proceedings_text.py tests/test_evaluate_trimming_feedback.py tests/test_05_trim_proceedings_text.py -q`
+  - `.venv\Scripts\python.exe -m py_compile src/validation/_stage05_review.py src/validation/review_stage05_app.py src/validation/manage_trimming_batches.py src/validation/update_trimming_review_outputs.py src/validation/apply_trimming_manual_overrides.py src/pipelines/05b_validate_proceedings_text.py`
+- Result:
+  - `65 passed in 8.92s`
+
+### Stage 05 early-truncation hardening and batch 011 handover
+
+- Investigated the next reviewed `batch_010` failures against the saved reviewer end anchors rather than relying on QC status alone.
+- Localised the dominant root cause to false abstract-boundary detection in proceedings text:
+  - body lines such as `from 80 Hz to 1000 Hz.`, `7.0) ...`, `2011.2) ...`, and `1LSU ...` were being mistaken for new abstract headers
+  - true proceedings starts such as `Poster 321:`, `OP87 - 3001`, split coded headers (`C32`, `117`), and similar variants were not being recognised consistently enough
+  - bare title fragments such as `Case Report` could be misread as real section headings, causing header-only trims
+- Tightened proceedings parsing in:
+  - `src/pipelines/_proceedings_text.py`
+  - `src/pipelines/05_trim_proceedings_text.py`
+  - `src/validation/evaluate_trimming_feedback.py`
+- Added regression coverage for:
+  - dashed session codes and poster-style code starts
+  - lowercase spaced-body false positives
+  - numeric dotted-code false positives
+  - numeric-letter affiliation false positives
+  - split coded-title boundaries
+  - retained versus trimmable tail metadata
+  - approximate reviewer start anchors and trimmed end anchors without trailing `References` / `Disclosures`
+- Adopted trailing `Disclosure` / `References` sections as non-informative abstract-tail signals for trimming and acceptance, while still allowing retained tails such as `Keywords`, `Level of Evidence`, `Final Comments`, and `Informed Consent`.
+
+### Historical regression replay
+
+- Replayed the affected reviewed cases in:
+  - `qa/trimming/reports/batch_001/`
+  - `qa/trimming/reports/batch_002/`
+  - `qa/trimming/reports/batch_003/`
+  - `qa/trimming/reports/batch_007/`
+  - `qa/trimming/reports/batch_009/`
+  - `qa/trimming/reports/batch_010/`
+- Specifically repaired the previously failing historical reviewed papers:
+  - `1116`
+  - `1452`
+  - `1453`
+  - `1830`
+- Refreshed `batch_010` review artefacts after patching.
+- Verified reviewed-regression status in `qa/trimming/reports/regression_evaluation_batch_010.json`:
+  - `89/89` passed
+- Verified the accepted first 10 reviewed papers in `batch_010`:
+  - `10/10` passed
+
+### Review app and next batch
+
+- Updated `src/validation/review_stage05_app.py` so the PDF viewer keeps a fixed frame and uses app-level zoom controls, avoiding the earlier resize-only behaviour and the dark text-layer shading artefact.
+- Froze the accepted first 10 reviewed papers from `batch_010` into:
+  - `qa/trimming/feedback/batch_010_feedback.json`
+  - `qa/trimming/regression/batch_010_feedback.json`
+- Marked `qa/trimming/batches/batch_010.json` as `superseded` after freezing those accepted cases.
+- Generated the next review round as `batch_011` with a 10-paper target using the patched stage-05 baseline.
+- `batch_011` paper IDs:
+  - `1625`
+  - `1932`
+  - `1947`
+  - `3125`
+  - `5029`
+  - `5079`
+  - `5087`
+  - `5158`
+  - `5212`
+  - `5233`
+- `batch_011` initial QC summary:
+  - `7` `confirmed_full`
+  - `2` `partial_truncated`
+  - `1` `header_only_source`
+  - `3` marked `manual_follow_up_required=true`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_evaluate_trimming_feedback.py tests/test_stage05_review.py -q`
+  - `.venv\Scripts\python.exe -m py_compile src/pipelines/_proceedings_text.py src/pipelines/05_trim_proceedings_text.py src/validation/evaluate_trimming_feedback.py tests/test_05_trim_proceedings_text.py`
+  - `.venv\Scripts\python.exe src/pipelines/05_trim_proceedings_text.py --include-already-trimmed --skip-registry-refresh --output-dir qa/trimming/reports/batch_001/text_trimmed --registry-path qa/trimming/reports/batch_001/text_trim_registry.csv --paper-id 1116`
+  - `.venv\Scripts\python.exe src/pipelines/05_trim_proceedings_text.py --include-already-trimmed --skip-registry-refresh --output-dir qa/trimming/reports/batch_007/text_trimmed --registry-path qa/trimming/reports/batch_007/text_trim_registry.csv --paper-id 1452 --paper-id 1453`
+  - `.venv\Scripts\python.exe src/pipelines/05_trim_proceedings_text.py --include-already-trimmed --skip-registry-refresh --output-dir qa/trimming/reports/batch_009/text_trimmed --registry-path qa/trimming/reports/batch_009/text_trim_registry.csv --paper-id 1830`
+  - `.venv\Scripts\python.exe src/pipelines/05b_validate_proceedings_text.py --skip-registry-refresh --trimmed-dir qa/trimming/reports/batch_001/text_trimmed --text-trim-registry qa/trimming/reports/batch_001/text_trim_registry.csv --output-path qa/trimming/reports/batch_001/proceedings_text_qc_registry.csv --paper-id 1116`
+  - `.venv\Scripts\python.exe src/pipelines/05b_validate_proceedings_text.py --skip-registry-refresh --trimmed-dir qa/trimming/reports/batch_007/text_trimmed --text-trim-registry qa/trimming/reports/batch_007/text_trim_registry.csv --output-path qa/trimming/reports/batch_007/proceedings_text_qc_registry.csv --paper-id 1452 --paper-id 1453`
+  - `.venv\Scripts\python.exe src/pipelines/05b_validate_proceedings_text.py --skip-registry-refresh --trimmed-dir qa/trimming/reports/batch_009/text_trimmed --text-trim-registry qa/trimming/reports/batch_009/text_trim_registry.csv --output-path qa/trimming/reports/batch_009/proceedings_text_qc_registry.csv --paper-id 1830`
+  - `.venv\Scripts\python.exe src/validation/update_trimming_review_outputs.py --batch-id batch_010`
+  - `.venv\Scripts\python.exe src/validation/manage_trimming_batches.py --batch-size 10`
+- Result:
+  - `78 passed in 35.58s`
+  - historical reviewed regression green at `89/89`
+  - `batch_011` prepared successfully with 10 papers

@@ -1,0 +1,86 @@
+{
+  "feedback_round_id": "batch_009_feedback",
+  "batch_id": "batch_009",
+  "received_at_utc": "2026-04-10T16:01:18.368197+00:00",
+  "cases": [
+    {
+      "paper_id": "1722",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "... carcinoid, we believe this is the first report of SPS associated with carcinoid tumour.",
+      "notes": "Body text cut-off too soon"
+    },
+    {
+      "paper_id": "1774",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_start_first_line": "Pe-027-5An unusual presentation of stiff-person syndrome○ Weerawat Saengphatrachai1, Chayasak Wantaneeyawong2, Yuvadee Pitakpatapee1, Prachaya Srivanitchapoom11 Division of Neurology, Faculty of Medicine, Siriraj Hospital, Mahidol University, Bangkok, Thailand, 2 The Northern Neuroscience Center, Faculty of Medicine, Chiang Mai University, Chiang Mai, ThailandBackground: Movement disorders in anti-glutamic acid decarboxylase antibody （anti-GAD Ab）...",
+      "expected_end_contains": "... Conclusions: Parkinsonism can be one of manifestations of anti-GAD Ab syndrome. Early recognition and prompt treatment will provide a favorable outcome.",
+      "notes": "it seems like abstract header and delimiter were not identified"
+    },
+    {
+      "paper_id": "1793",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "need to be treated by cognitive behavioural therapy which can help recovering their social functions better. Keywords: Stiff-person syndrome; anti-glutamic acid decarboxylase (GAD); eye movement disorder; cognitive behavioural therapy.",
+      "notes": "cut off too soon"
+    },
+    {
+      "paper_id": "1802",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "correct",
+      "expected_manual_review": false
+    },
+    {
+      "paper_id": "1807",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_start_first_line": "Anti-GAD65 Antibody Mediated Systemic Small Vessel Vasculitis with CNS Involvement Presenting as Refractory Status Epilepticus and Stiff-Limb Syndrome Derek Neupert; Nate Leibu; Aimee Aysenne; Casey R. Dunn Tulane University School of Medicine, Department of Neurology, New Orleans, LA, United States Introduction Glutamic acid decarboxylase (GAD) is the rate-limiting enzyme ...",
+      "expected_end_contains": "... we advocate for early initiation of GABAergic medications such as benzodiazepines and use of immunotherapy.",
+      "notes": "cut off too soon"
+    },
+    {
+      "paper_id": "1829",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "... Understanding the diagnosis and management of SPS is vital to improve care. Conclusions: It is important to consider implanting the intrathecal baclofen pump as we can provide SPS patients with comfort while preserving mental status. Level of Evidence: Level V",
+      "notes": "cut-off too soon"
+    },
+    {
+      "paper_id": "1830",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_start_first_line": "Poster 263: Rehabilitation Challenges in a Rare Combination of Stiff- Man Syndrome, Cerebellar Ataxia, and Grave’s Disease: A Case Report Yulia Rivelis, MD (Montefiore Medical Center, New York, NY, United States), Eathar Saad, MD Disclosures: Yulia Rivelis: I Have No Relevant Financial Relationships To Disclose Case/Program Description: A 33-year-old woman, diagnosed with cerebellar...",
+      "expected_end_contains": "... co-morbidities, making rehabilitation of this patient that much more difficult. Level of Evidence: Level V",
+      "notes": "no abstract extracted at all"
+    },
+    {
+      "paper_id": "1838",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "... for GlyR antibodies. To conclude, PERM in the presence of multiple autoantibodies should always raise the suspicion pf thymoma. Disclosure: Nothing to disclose",
+      "notes": "cut-off too soon"
+    },
+    {
+      "paper_id": "1897",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS."
+    },
+    {
+      "paper_id": "1898",
+      "workflow_stage": "stage05_trimming",
+      "expected_verdict": "wrong_abstract",
+      "expected_manual_review": false,
+      "expected_end_contains": "... the patient had a cognitive loss without circulatory or immuno‐neurological disease only SPSD. Final Comments: Our review confirm the best treatment for SPSD, despite this unexpected 9‐year‐evolution. Informed consent to publish had been obtained from the patient."
+    }
+  ]
+}
