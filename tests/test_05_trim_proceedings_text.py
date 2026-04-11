@@ -1079,7 +1079,7 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertNotIn("Disclosure", joined)
         self.assertNotIn("P602", joined)
 
-    def test_extract_blocks_trim_references_tail_after_body(self) -> None:
+    def test_extract_blocks_preserve_references_tail_before_next_header(self) -> None:
         record = {
             "paper_id": "1900_fixture",
             "source_filename": "references_tail_fragment.pdf",
@@ -1118,7 +1118,7 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         assert chosen is not None
         joined = " ".join(line.text for line in chosen.line_refs)
         self.assertIn("Acute dysarthria may be an SPS presentation", joined)
-        self.assertNotIn("References:", joined)
+        self.assertIn("References:", joined)
         self.assertNotIn("117", joined)
 
     def test_extract_blocks_trim_inline_disclosure_tail_after_body(self) -> None:
@@ -1163,6 +1163,180 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertIn("physiotherapy management for SPS can be effective", joined)
         self.assertNotIn("Disclosure: Nothing to disclose.", joined)
         self.assertNotIn("PP2211", joined)
+
+    def test_extract_blocks_preserve_doi_tail_before_next_header(self) -> None:
+        record = {
+            "paper_id": "1597_fixture",
+            "source_filename": "doi_tail_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "O-35 The Stiff Person Syndrome. Neurophysiological findings",
+                            "Maria Concepcion Maeztu Sardina, Francisco A. Martinez Garcia",
+                            "Background: Stiff Person Syndrome is an immune-mediated disorder.",
+                            "Conclusions: leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+                            "doi:10.1016/j.clinph.2019.04.351",
+                            "O-36 Listening the sound of neuromuscular junction during voluntary contraction",
+                            "Sezin Alpaydin Baslo, Tugrul Artug",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="O-35 The Stiff Person Syndrome. Neurophysiological findings",
+            reference_authors="Maeztu Sardina, M.C.; Martinez Garcia, F.A.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("variant of SPS.", joined)
+        self.assertIn("doi:10.1016/j.clinph.2019.04.351", joined)
+        self.assertNotIn("O-36", joined)
+
+    def test_apply_trim_override_strips_terminal_doi_for_reviewed_legacy_case(self) -> None:
+        record = {
+            "paper_id": "1597_fixture",
+            "source_filename": "doi_tail_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "O-35 The Stiff Person Syndrome. Neurophysiological findings",
+                            "Maria Concepcion Maeztu Sardina, Francisco A. Martinez Garcia",
+                            "Background: Stiff Person Syndrome is an immune-mediated disorder.",
+                            "Conclusions: leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+                            "doi:10.1016/j.clinph.2019.04.351",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        block = self.module.AbstractBlock(
+            code="O-35",
+            start_index=0,
+            end_index=len(lines),
+            start_page_index=0,
+            end_page_index=0,
+            title_text="The Stiff Person Syndrome. Neurophysiological findings",
+            header_text=lines[0].text,
+            preview_text=" ".join(line.text for line in lines),
+            line_refs=lines,
+        )
+
+        overridden = self.module.apply_trim_override(block, {"strip_terminal_doi": "true"}, lines)
+
+        self.assertEqual(overridden.end_index, lines[-2].global_index + 1)
+        self.assertEqual(overridden.end_rule, "override_strip_terminal_doi")
+        self.assertNotIn("doi:10.1016/j.clinph.2019.04.351", " ".join(line.text for line in overridden.line_refs))
+
+    def test_apply_trim_override_replaces_span_for_reviewed_legacy_case(self) -> None:
+        record = {
+            "paper_id": "1446_fixture",
+            "source_filename": "reviewed_span_fragment.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Previous abstract closing line.",
+                            "doi:10.1016/j.jns.2017.08.2553",
+                            "2523",
+                            "WCN17-1798",
+                            "SHIFT 7 - AUTOIMMUNE DISORDERS",
+                            "Neurologic disorders associated with anti-glutamic acid",
+                            "decarboxylase antibodies",
+                            "doi:10.1016/j.jns.2017.08.2554",
+                            "2524",
+                            "WCN17-2901",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        block = self.module.AbstractBlock(
+            code="2523",
+            start_index=4,
+            end_index=8,
+            start_page_index=0,
+            end_page_index=0,
+            title_text="Neurologic disorders associated with anti-glutamic acid decarboxylase antibodies",
+            header_text=lines[4].text,
+            preview_text=" ".join(line.text for line in lines[4:8]),
+            line_refs=lines[4:8],
+        )
+
+        overridden = self.module.apply_trim_override(
+            block,
+            {
+                "start_line_global_index": "2",
+                "end_line_global_index_exclusive": "8",
+            },
+            lines,
+        )
+
+        self.assertEqual(overridden.start_index, 2)
+        self.assertEqual(overridden.end_index, 8)
+        self.assertEqual(overridden.start_rule, "override_exact_span_start")
+        self.assertEqual(overridden.end_rule, "override_exact_span_end")
+        self.assertEqual(overridden.line_refs[0].text, "2523")
+        self.assertEqual(overridden.line_refs[1].text, "WCN17-1798")
+
+    def test_extract_blocks_preserve_references_tail_in_final_block(self) -> None:
+        record = {
+            "paper_id": "1028_fixture",
+            "source_filename": "final_block_references_tail.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "96",
+                            "Autoantibodies against glycine-associated synaptic proteins in stiff-person syndrome",
+                            "Christian Probst, Inga-Madeleine Blocker, Swantje Mindorf",
+                            "Background: Autoantibodies against the postsynaptic glycine receptor were recently reported.",
+                            "Conclusions: This point should best be addressed in a passive antibody transfer model.",
+                            "References",
+                            "[1] Hutchinson et al.",
+                            "doi:10.1016/j.jneuroim.2014.08.060",
+                        ]
+                    ),
+                }
+            ],
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+        blocks = self.module.extract_blocks(lines, pattern)
+        chosen = self.module.best_matching_block(
+            blocks=blocks,
+            reference_title="Autoantibodies against glycine-associated synaptic proteins in stiff-person syndrome",
+            reference_authors="Probst, C.; Blocker, I.-M.; Mindorf, S.",
+        )
+
+        self.assertIsNotNone(chosen)
+        assert chosen is not None
+        joined = " ".join(line.text for line in chosen.line_refs)
+        self.assertIn("This point should best be addressed in a passive antibody transfer model.", joined)
+        self.assertIn("References", joined)
+        self.assertIn("doi:10.1016/j.jneuroim.2014.08.060", joined)
 
     def test_is_abstract_code_only_rejects_single_digit_affiliation_marker(self) -> None:
         self.assertIsNone(self.module.is_abstract_code_only("1"))

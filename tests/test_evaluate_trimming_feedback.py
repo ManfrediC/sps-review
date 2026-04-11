@@ -390,6 +390,89 @@ def test_evaluate_feedback_accepts_end_anchor_without_reference_tail(tmp_path: P
     assert end_check["passed"] is True
 
 
+def test_evaluate_feedback_accepts_leading_ellipsis_in_end_anchor(tmp_path: Path) -> None:
+    source_registry = tmp_path / "source_categorisation_registry.csv"
+    manual_review = tmp_path / "source_categorisation_manual_review.csv"
+    feedback_path = tmp_path / "batch_009_feedback.json"
+    reports_dir = tmp_path / "reports"
+    batch_dir = reports_dir / "batch_009"
+    trimmed_dir = batch_dir / "text_trimmed"
+    trimmed_dir.mkdir(parents=True)
+    trimmed_path = trimmed_dir / "1897.json"
+
+    write_csv(
+        source_registry,
+        [
+            {
+                "paper_id": "1897",
+                "source_category": "conference_abstract",
+                "source_subtype": "group_conference_abstract",
+                "classification_confidence": "high",
+                "categorisation_reason": "Proceedings abstract.",
+            }
+        ],
+    )
+    write_csv(manual_review, [])
+    trimmed_path.write_text(
+        json.dumps(
+            {
+                "pages": [
+                    {
+                        "page_index": 0,
+                        "text": "\n".join(
+                            [
+                                "Autologous Hematopoietic Stem Cell Transplantation",
+                                "These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS.",
+                            ]
+                        ),
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    write_csv(
+        batch_dir / "text_trim_registry.csv",
+        [{"paper_id": "1897", "trim_status": "trimmed_auto", "trimmed_text_json_path": ""}],
+    )
+    write_csv(
+        batch_dir / "proceedings_text_qc_registry.csv",
+        [{"paper_id": "1897", "qc_status": "confirmed_full", "manual_follow_up_required": "false"}],
+    )
+    feedback_path.write_text(
+        json.dumps(
+            {
+                "feedback_round_id": "batch_009_feedback",
+                "batch_id": "batch_009",
+                "cases": [
+                    {
+                        "paper_id": "1897",
+                        "expected_verdict": "correct",
+                        "expected_manual_review": False,
+                        "expected_end_contains": (
+                            "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective "
+                            "therapy for select pts with treatment-refractory, severe SPS."
+                        ),
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = evaluate_feedback_files(
+        feedback_paths=[feedback_path],
+        reports_dir=reports_dir,
+        source_registry_path=source_registry,
+        source_manual_review_path=manual_review,
+    )
+
+    assert report["passed_count"] == 1
+    result = report["results"][0]
+    end_check = next(check for check in result["checks"] if check["name"] == "expected_end_present")
+    assert end_check["passed"] is True
+
+
 def test_evaluate_feedback_accepts_approximate_start_anchor_near_top(tmp_path: Path) -> None:
     source_registry = tmp_path / "source_categorisation_registry.csv"
     manual_review = tmp_path / "source_categorisation_manual_review.csv"

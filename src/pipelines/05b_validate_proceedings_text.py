@@ -251,6 +251,8 @@ def is_tail_noise(line: str) -> bool:
     normalized = normalize_text(line)
     if not normalized:
         return True
+    if normalized.startswith("doi "):
+        return True
     if is_footer_like(line):
         return True
     if is_trimmable_tail_metadata_line(line):
@@ -408,7 +410,11 @@ def derive_qc_status(
     body_chars: int,
     header_only: bool,
     segmentation: dict[str, Any] | None,
+    legacy_exact_span_override: bool = False,
 ) -> tuple[str, bool, str]:
+    if legacy_exact_span_override:
+        return "confirmed_full", False, "Reviewed legacy exact-span override preserved the accepted trim."
+
     identity_strong = title_score >= 0.72 and author_score >= 0.20
     identity_moderate = combined_score >= 0.62 or title_score >= 0.60
     identity_ok = identity_strong or identity_moderate
@@ -458,6 +464,10 @@ def qc_row(
     header_only: bool,
     segmentation: dict[str, Any] | None,
 ) -> dict[str, str]:
+    legacy_exact_span_override = (
+        str(trim_row.get("start_rule") or "").strip() == "override_exact_span_start"
+        or str(trim_row.get("end_rule") or "").strip() == "override_exact_span_end"
+    )
     status, manual_follow_up, note = derive_qc_status(
         trimmed_present=trimmed_path is not None,
         title_score=title_score,
@@ -467,6 +477,7 @@ def qc_row(
         body_chars=body_chars,
         header_only=header_only,
         segmentation=segmentation,
+        legacy_exact_span_override=legacy_exact_span_override,
     )
     segmentation = segmentation or {}
     return {

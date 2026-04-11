@@ -156,6 +156,9 @@ def expected_end_variants(expected_end: str) -> list[str]:
     if not cleaned:
         return []
     variants = [cleaned]
+    stripped_leading_ellipsis = re.sub(r"^(?:\.{3}|…)\s*", "", cleaned).strip()
+    if stripped_leading_ellipsis and stripped_leading_ellipsis != cleaned:
+        variants.append(stripped_leading_ellipsis)
     match = UNINFORMATIVE_END_SECTION_RE.search(cleaned)
     if match:
         prefix = cleaned[: match.start()].strip(" .;:-")
@@ -165,9 +168,10 @@ def expected_end_variants(expected_end: str) -> list[str]:
     seen: set[str] = set()
     for variant in variants:
         normalized = normalize_text(variant)
-        if not normalized or normalized in seen:
+        raw_key = variant.strip()
+        if not normalized or raw_key in seen:
             continue
-        seen.add(normalized)
+        seen.add(raw_key)
         deduped.append(variant)
     return deduped
 

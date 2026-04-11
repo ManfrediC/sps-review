@@ -7,7 +7,7 @@ import re
 import statistics
 import subprocess
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -57,6 +57,7 @@ OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
 SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
+TRIM_OVERRIDE_PATH = REPO_ROOT / "config" / "extraction" / "proceedings_trim_overrides.csv"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
 
 INDEX_ENTRY_RE = re.compile(
@@ -230,6 +231,18 @@ def load_reference_rows(path: Path) -> dict[str, dict[str, str]]:
         }
 
 
+def load_trim_override_rows(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        return {
+            (row.get("paper_id") or "").strip(): row
+            for row in reader
+            if (row.get("paper_id") or "").strip()
+        }
+
+
 # Collect input paths.
 def collect_input_paths(input_dir: Path, paper_ids: list[str], limit: int) -> list[Path]:
     paths = sorted(input_dir.glob("*.json"))
@@ -330,8 +343,8 @@ def truncate_at_next_header(
     return lines[:next_index], True, rule
 
 
-def trim_trailing_header_noise(lines: list[LineRef]) -> tuple[list[LineRef], bool]:
-    if len(lines) < 7:
+def trim_trailing_header_noise(lines: list[LineRef], *, has_following_header: bool = False) -> tuple[list[LineRef], bool]:
+    if len(lines) < 5:
         return lines, False
     enough_body, section_hits, _ = has_enough_body(lines)
     if not enough_body and section_hits == 0:
@@ -350,7 +363,8 @@ def trim_trailing_header_noise(lines: list[LineRef]) -> tuple[list[LineRef], boo
             continue
         if is_retained_tail_metadata_line(line_ref.text):
             continue
-        if is_trimmable_tail_metadata_line(line_ref.text):
+        normalized = normalize_text(line_ref.text)
+        if has_following_header and normalized.startswith(("corresponding author", "correspondence", "disclosure", "disclosures")):
             return lines[:index], True
     return lines, False
 
@@ -666,7 +680,7 @@ def extract_blocks(lines: list[LineRef], pattern: ProceedingsPattern) -> list[Ab
         end_index = start_indices[offset + 1] if offset + 1 < len(start_indices) else len(lines)
         block_lines = lines[start_index:end_index]
         block_lines, _ = trim_leading_header_noise(block_lines)
-        block_lines, _ = trim_trailing_header_noise(block_lines)
+        block_lines, _ = trim_trailing_header_noise(block_lines, has_following_header=offset + 1 < len(start_indices))
         if not block_lines:
             continue
         title_parts = [strip_abstract_code(block_lines[0].text)]
@@ -914,7 +928,10 @@ def local_window_candidate(
     candidate_lines, leading_noise_trimmed = trim_leading_header_noise(candidate_lines)
     if leading_noise_trimmed:
         start_rule = "leading_header_noise_trimmed"
-    candidate_lines, trailing_noise_trimmed = trim_trailing_header_noise(candidate_lines)
+    candidate_lines, trailing_noise_trimmed = trim_trailing_header_noise(
+        candidate_lines,
+        has_following_header=next_header_index is not None or spillover_flag,
+    )
     if trailing_noise_trimmed:
         end_rule = "trailing_header_noise"
     if not candidate_lines:
@@ -1210,6 +1227,46 @@ def build_trimmed_record(
     }
 
 
+def apply_trim_override(
+    block: AbstractBlock,
+    override_row: dict[str, str],
+    source_lines: list[LineRef],
+) -> AbstractBlock:
+    start_value = str(override_row.get("start_line_global_index") or "").strip()
+    end_value = str(override_row.get("end_line_global_index_exclusive") or "").strip()
+    if start_value.isdigit() and end_value.isdigit():
+        start_index = int(start_value)
+        end_index = int(end_value)
+        overridden_lines = [line for line in source_lines if start_index <= line.global_index < end_index]
+        if overridden_lines:
+            block = replace(
+                block,
+                line_refs=overridden_lines,
+                start_index=overridden_lines[0].global_index,
+                end_index=overridden_lines[-1].global_index + 1,
+                start_page_index=overridden_lines[0].page_index,
+                end_page_index=overridden_lines[-1].page_index,
+                start_rule="override_exact_span_start",
+                end_rule="override_exact_span_end",
+            )
+
+    strip_terminal_doi = str(override_row.get("strip_terminal_doi") or "").strip().lower() == "true"
+    if not strip_terminal_doi:
+        return block
+    if len(block.line_refs) < 2:
+        return block
+    if not block.line_refs[-1].text.strip().lower().startswith("doi"):
+        return block
+    trimmed_lines = block.line_refs[:-1]
+    return replace(
+        block,
+        line_refs=trimmed_lines,
+        end_index=trimmed_lines[-1].global_index + 1,
+        end_page_index=trimmed_lines[-1].page_index,
+        end_rule="override_strip_terminal_doi",
+    )
+
+
 # Build decision row.
 def decision_row(
     paper_id: str,
@@ -1389,6 +1446,7 @@ def process_record(
     path: Path,
     reference_rows: dict[str, dict[str, str]],
     output_dir: Path,
+    trim_override_rows: dict[str, dict[str, str]],
 ) -> dict[str, str]:
     record = load_text_record(path)
     paper_id = str(record.get("paper_id") or path.stem)
@@ -1487,6 +1545,7 @@ def process_record(
             diagnostics=index_diagnostics,
         )
 
+    block = apply_trim_override(block, trim_override_rows.get(paper_id, {}), lines)
     trim_status, trim_reason = candidate_quality_status(block, reference_authors)
     if trim_status == "manual_review_required":
         if trimmed_path.exists():
@@ -1530,6 +1589,7 @@ def process_record(
 def main() -> None:
     args = parse_args()
     reference_rows = load_reference_rows(args.references_csv)
+    trim_override_rows = load_trim_override_rows(TRIM_OVERRIDE_PATH)
     input_paths = collect_input_paths(args.input_dir, args.paper_id, args.limit)
     input_paths = filter_to_proceedings_candidates(
         paths=input_paths,
@@ -1543,7 +1603,7 @@ def main() -> None:
     print(f"Proceedings trim candidate count: {len(input_paths)}")
     rows: list[dict[str, str]] = []
     for path in tqdm(input_paths, desc="Proceedings trim"):
-        rows.append(process_record(path, reference_rows, args.output_dir))
+        rows.append(process_record(path, reference_rows, args.output_dir, trim_override_rows))
     write_registry(rows, args.registry_path, preserve_existing=bool(args.paper_id or args.limit))
     refresh_artifact_registry(args.skip_registry_refresh)
     print(f"Wrote {len(rows)} rows to {args.registry_path}")

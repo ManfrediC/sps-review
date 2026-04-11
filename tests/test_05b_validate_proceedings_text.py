@@ -205,6 +205,68 @@ class TestValidateProceedingsText(unittest.TestCase):
         self.assertEqual(status, "confirmed_full")
         self.assertFalse(manual_follow_up)
 
+    def test_validate_trimmed_segmentation_ignores_solitary_doi_gap_before_next_header(self) -> None:
+        lines = [
+            "O-35 The Stiff Person Syndrome. Neurophysiological findings",
+            "Maria Concepcion Maeztu Sardina, Francisco A. Martinez Garcia",
+            "Background: Stiff Person Syndrome is an immune-mediated disorder.",
+            "Methods: We evaluated neurophysiological features in a patient with painful spasms, rigidity, and exaggerated startle.",
+            "Patients underwent repeated electrophysiological testing together with longitudinal clinical assessment.",
+            "Results: EMG showed continuous involuntary activity of normal motor units.",
+            "Additional studies demonstrated persistent excess motor unit activity across axial and proximal limb muscles.",
+            "The patient improved after immunotherapy but continued to have fluctuating stiffness and disabling spasms.",
+            "Conclusions: The neurophysiological studies play an important role in the differential diagnosis of encephalomyelitis with rigidity, variant of SPS.",
+            "doi:10.1016/j.clinph.2019.04.351",
+            "O-36 Listening the sound of neuromuscular junction during voluntary contraction",
+            "Sezin Alpaydin Baslo, Tugrul Artug",
+        ]
+        source_record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(lines),
+                }
+            ]
+        }
+        trimmed_record = self.make_trimmed_record(lines, 0, 9)
+        trimmed_record["matched_block_code"] = "O-35"
+
+        segmentation = self.module.validate_trimmed_segmentation(source_record, trimmed_record)
+        section_hits, body_chars, header_only = self.module.body_metrics(trimmed_record)
+        status, manual_follow_up, _ = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.95,
+            author_score=0.60,
+            combined_score=0.86,
+            section_hits=section_hits,
+            body_chars=body_chars,
+            header_only=header_only,
+            segmentation=segmentation,
+        )
+
+        self.assertFalse(segmentation["truncated_by_gap"])
+        self.assertEqual(segmentation["meaningful_tail_gap_count"], 0)
+        self.assertEqual(segmentation["next_header_rule"], "next_abstract_boundary")
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+
+    def test_derive_qc_status_accepts_reviewed_legacy_exact_span_override(self) -> None:
+        status, manual_follow_up, note = self.module.derive_qc_status(
+            trimmed_present=True,
+            title_score=0.10,
+            author_score=0.0,
+            combined_score=0.08,
+            section_hits=0,
+            body_chars=40,
+            header_only=False,
+            segmentation={"truncated_by_gap": True, "spillover": True, "start_boundary_ok": False},
+            legacy_exact_span_override=True,
+        )
+
+        self.assertEqual(status, "confirmed_full")
+        self.assertFalse(manual_follow_up)
+        self.assertIn("legacy exact-span override", note)
+
     def test_validate_trimmed_segmentation_flags_preamble_before_real_title(self) -> None:
         lines = [
             "Earlier abstract closing line that should not be part of the target source.",
