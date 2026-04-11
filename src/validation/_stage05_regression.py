@@ -10,6 +10,7 @@ from typing import Any
 
 from src.pipelines._proceedings_text import normalize_text
 from src.pipelines._source_routing import load_csv_rows_by_id, resolve_source_row
+import src.validation._stage05_gold as gold_standard
 from src.validation.evaluate_trimming_feedback import (
     REPORTS_DIR,
     ReportBundle,
@@ -49,6 +50,7 @@ class RegressionCase:
     case_payload: dict[str, Any]
     baseline_bundle_name: str
     baseline_trimmed_path: Path
+    baseline_source_kind: str = "historical_report"
 
 
 def historical_first_line(trimmed_lines: list[str]) -> str:
@@ -102,8 +104,8 @@ def text_matches_historical(current_text: str, historical_text: str) -> bool:
     return normalised_trimmed_text(current_text) == normalised_trimmed_text(historical_text)
 
 
-def source_label(explicit_value: str) -> str:
-    return "feedback" if explicit_value else "historical_json"
+def source_label(explicit_value: str, fallback_label: str = "historical_json") -> str:
+    return "feedback" if explicit_value else fallback_label
 
 
 def failure_location(failed_start: bool, failed_end: bool, failed_other: bool) -> str:
@@ -152,6 +154,7 @@ def build_case_checks(
     trimmed_lines: list[str],
     historical_text: str,
     historical_lines: list[str],
+    fallback_expectation_source: str = "historical_json",
 ) -> list[dict[str, Any]]:
     explicit_start = str(case.case_payload.get("expected_start_first_line") or "").strip()
     explicit_end = str(case.case_payload.get("expected_end_contains") or "").strip()
@@ -182,14 +185,14 @@ def build_case_checks(
             "passed": start_anchor_matches(trimmed_text, trimmed_lines, expected_start),
             "actual": trimmed_lines[0] if trimmed_lines else "",
             "expected": expected_start,
-            "source": source_label(explicit_start),
+            "source": source_label(explicit_start, fallback_expectation_source),
         },
         {
             "name": "end_anchor_matches",
             "passed": end_match_passed,
             "actual": matched_end or (historical_last_line(trimmed_lines) if trimmed_lines else ""),
             "expected": expected_end,
-            "source": source_label(explicit_end),
+            "source": source_label(explicit_end, fallback_expectation_source),
         },
     ]
 
@@ -226,6 +229,7 @@ def load_regression_cases(
     bundles = discover_report_bundles(reports_dir)
     heuristic_rows = load_csv_rows_by_id(source_registry_path, "paper_id")
     manual_rows = load_csv_rows_by_id(source_manual_review_path, "paper_id")
+    gold_entries = gold_standard.active_entries_by_id()
     cases: list[RegressionCase] = []
     for feedback_path in sorted(regression_dir.glob("*.json")):
         payload = load_feedback_payload(feedback_path)
@@ -245,14 +249,27 @@ def load_regression_cases(
             )
             if workflow_stage != "stage05_trimming":
                 continue
-            bundle = pick_report_bundle(paper_id, payload, workflow_stage, bundles)
-            if bundle is None:
-                raise FileNotFoundError(f"No historical report bundle found for reviewed regression paper {paper_id}.")
-            baseline_trimmed_path = trimmed_output_path(bundle.trim_rows.get(paper_id, {}), bundle, paper_id)
-            if baseline_trimmed_path is None or not baseline_trimmed_path.exists():
-                raise FileNotFoundError(
-                    f"Historical trimmed JSON not found for reviewed regression paper {paper_id} in bundle {bundle.name}."
-                )
+            gold_entry = gold_entries.get(paper_id, {})
+            gold_path_text = str(gold_entry.get("gold_json_path") or "").strip()
+            if gold_path_text:
+                baseline_trimmed_path = gold_standard.resolve_repo_path(gold_path_text)
+                if not baseline_trimmed_path.exists():
+                    raise FileNotFoundError(
+                        f"Gold trimmed JSON not found for reviewed regression paper {paper_id}: {baseline_trimmed_path}."
+                    )
+                baseline_bundle_name = "gold_standard"
+                baseline_source_kind = "gold_standard"
+            else:
+                bundle = pick_report_bundle(paper_id, payload, workflow_stage, bundles)
+                if bundle is None:
+                    raise FileNotFoundError(f"No historical report bundle found for reviewed regression paper {paper_id}.")
+                baseline_trimmed_path = trimmed_output_path(bundle.trim_rows.get(paper_id, {}), bundle, paper_id)
+                if baseline_trimmed_path is None or not baseline_trimmed_path.exists():
+                    raise FileNotFoundError(
+                        f"Historical trimmed JSON not found for reviewed regression paper {paper_id} in bundle {bundle.name}."
+                    )
+                baseline_bundle_name = bundle.name
+                baseline_source_kind = "historical_report"
             cases.append(
                 RegressionCase(
                     paper_id=paper_id,
@@ -260,8 +277,9 @@ def load_regression_cases(
                     batch_id=feedback_batch_id(payload),
                     workflow_stage=workflow_stage,
                     case_payload=dict(case_payload),
-                    baseline_bundle_name=bundle.name,
+                    baseline_bundle_name=baseline_bundle_name,
                     baseline_trimmed_path=baseline_trimmed_path,
+                    baseline_source_kind=baseline_source_kind,
                 )
             )
     return cases
@@ -317,12 +335,28 @@ def ensure_bundle(report_dir: Path) -> ReportBundle:
 
 
 def evaluate_regression_case(case: RegressionCase, current_bundle: ReportBundle) -> dict[str, Any]:
-    baseline_bundle = ReportBundle(
-        name=case.baseline_bundle_name,
-        report_dir=case.baseline_trimmed_path.parents[1],
-        trim_rows=rows_by_id(case.baseline_trimmed_path.parents[1] / "text_trim_registry.csv"),
-        qc_rows=rows_by_id(case.baseline_trimmed_path.parents[1] / "proceedings_text_qc_registry.csv"),
-    )
+    fallback_expectation_source = "gold_json" if case.baseline_source_kind == "gold_standard" else "historical_json"
+    if case.baseline_source_kind == "gold_standard":
+        baseline_bundle = ReportBundle(
+            name=case.baseline_bundle_name,
+            report_dir=case.baseline_trimmed_path.parent,
+            trim_rows={},
+            qc_rows={},
+        )
+        baseline_trim_row: dict[str, str] = {}
+        baseline_qc_row = {
+            "qc_status": "confirmed_full",
+            "manual_follow_up_required": "false",
+        }
+    else:
+        baseline_bundle = ReportBundle(
+            name=case.baseline_bundle_name,
+            report_dir=case.baseline_trimmed_path.parents[1],
+            trim_rows=rows_by_id(case.baseline_trimmed_path.parents[1] / "text_trim_registry.csv"),
+            qc_rows=rows_by_id(case.baseline_trimmed_path.parents[1] / "proceedings_text_qc_registry.csv"),
+        )
+        baseline_trim_row = baseline_bundle.trim_rows.get(case.paper_id, {})
+        baseline_qc_row = baseline_bundle.qc_rows.get(case.paper_id, {})
 
     historical_text, historical_lines = trimmed_text_payload(case.baseline_trimmed_path)
     current_trim_row = current_bundle.trim_rows.get(case.paper_id, {})
@@ -330,8 +364,6 @@ def evaluate_regression_case(case: RegressionCase, current_bundle: ReportBundle)
     current_trimmed_path = trimmed_output_path(current_trim_row, current_bundle, case.paper_id)
     current_text, current_lines = trimmed_text_payload(current_trimmed_path)
 
-    baseline_trim_row = baseline_bundle.trim_rows.get(case.paper_id, {})
-    baseline_qc_row = baseline_bundle.qc_rows.get(case.paper_id, {})
     baseline_checks = build_case_checks(
         case=case,
         trim_row=baseline_trim_row,
@@ -342,6 +374,7 @@ def evaluate_regression_case(case: RegressionCase, current_bundle: ReportBundle)
         trimmed_lines=historical_lines,
         historical_text=historical_text,
         historical_lines=historical_lines,
+        fallback_expectation_source=fallback_expectation_source,
     )
     current_checks = build_case_checks(
         case=case,
@@ -353,6 +386,7 @@ def evaluate_regression_case(case: RegressionCase, current_bundle: ReportBundle)
         trimmed_lines=current_lines,
         historical_text=historical_text,
         historical_lines=historical_lines,
+        fallback_expectation_source=fallback_expectation_source,
     )
 
     failed_names = {str(check.get("name") or "").strip() for check in current_checks if not bool(check.get("passed"))}
@@ -370,8 +404,15 @@ def evaluate_regression_case(case: RegressionCase, current_bundle: ReportBundle)
         "current_bundle": current_bundle.name,
         "baseline_trimmed_path": display_path(case.baseline_trimmed_path),
         "current_trimmed_path": display_path(current_trimmed_path) if current_trimmed_path else "",
-        "start_expectation_source": source_label(str(case.case_payload.get("expected_start_first_line") or "").strip()),
-        "end_expectation_source": source_label(str(case.case_payload.get("expected_end_contains") or "").strip()),
+        "baseline_source_kind": case.baseline_source_kind,
+        "start_expectation_source": source_label(
+            str(case.case_payload.get("expected_start_first_line") or "").strip(),
+            fallback_expectation_source,
+        ),
+        "end_expectation_source": source_label(
+            str(case.case_payload.get("expected_end_contains") or "").strip(),
+            fallback_expectation_source,
+        ),
         "passed": result_passed,
         "failure_reason": "" if result_passed else failure_reason(current_checks),
         "failure_location": "" if result_passed else failure_location(failed_start, failed_end, failed_other),

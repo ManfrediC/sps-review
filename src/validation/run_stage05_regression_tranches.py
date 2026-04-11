@@ -8,7 +8,7 @@ from pathlib import Path
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from src.validation import _stage05_regression as regression
+import src.validation._stage05_regression as regression
 
 
 DEFAULT_OUTPUT_ROOT = regression.REPORTS_DIR / "stage05_regression_guard"
