@@ -1503,3 +1503,24 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 - Ran:
   - `.venv\Scripts\python.exe -m pytest tests/test_stage05_gold.py tests/test_stage05_regression.py tests/test_evaluate_trimming_feedback.py tests/test_stage05_review.py -q`
   - `.venv\Scripts\python.exe -m py_compile src/validation/_stage05_gold.py src/validation/_stage05_regression.py src/validation/run_stage05_regression_tranches.py src/validation/promote_stage05_gold.py`
+
+### Stage-05 automation runner
+
+- Added the stage-05 outer-loop runner in:
+  - `src/autoresearch/stage_05/loop.py`
+- Added the gold-completion watcher / launcher in:
+  - `src/autoresearch/stage_05/trigger.py`
+- Updated the stage-05 autoresearch docs so the stop condition is explicit:
+  - stop once every gold paper is `exact_match`
+  - and regression failed count is `0`
+- The trigger now launches the full stage-05 loop by default after `qa/trimming/gold_standard/COMPLETE` appears, while still supporting the older baseline-only launch mode.
+- Added focused tests for:
+  - trigger readiness / command construction
+  - loop keep/discard and stop-condition logic
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage05_trigger.py tests/test_stage05_loop.py tests/test_stage05_gold.py tests/test_stage05_regression.py -q`
+  - `.venv\Scripts\python.exe src/autoresearch/stage_05/loop.py --help`
+  - `.venv\Scripts\python.exe src/autoresearch/stage_05/trigger.py --help`

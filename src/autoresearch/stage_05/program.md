@@ -44,6 +44,10 @@ Reason: otherwise you would optimise the metric instead of the extraction.
 
 Maximise `exact_match_rate` on the gold benchmark without increasing regression failures.
 
+Stop the loop once:
+- the gold benchmark marks every gold paper as `exact_match`
+- regression failed count is `0`
+
 The benchmark requires:
 
 - correct abstract text
