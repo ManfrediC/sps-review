@@ -75,6 +75,7 @@ CONTACT_PREFIX_RE = re.compile(
     re.IGNORECASE,
 )
 REFERENCE_HEADING_RE = re.compile(r"^\s*references?\s*:?\s*$", re.IGNORECASE)
+REFERENCE_INLINE_START_RE = re.compile(r"^\s*references?\s*:\s*.+$", re.IGNORECASE)
 REFERENCE_CITATION_START_RE = re.compile(r"^\s*(?:\[\d+\]|\d+\.)\s*")
 
 HEURISTIC_PRIORITY = {
@@ -173,6 +174,11 @@ def candidate_by_id(package: CandidatePackage, candidate_id: str) -> EndCandidat
     return None
 
 
+def _starts_reference_section(line: str) -> bool:
+    stripped = line.strip()
+    return bool(REFERENCE_HEADING_RE.match(stripped) or REFERENCE_INLINE_START_RE.match(stripped))
+
+
 def _soft_boundary_hits(lines: list[LineRef], pattern: ProceedingsPattern, start_index: int, end_index_exclusive: int) -> bool:
     positions = _global_to_position(lines)
     start_position = positions.get(start_index)
@@ -191,7 +197,7 @@ def is_tail_metadata_like_line(line: str) -> bool:
     normalized = normalize_text(stripped)
     if not stripped or not normalized:
         return True
-    if REFERENCE_HEADING_RE.match(stripped):
+    if _starts_reference_section(stripped):
         return True
     if REFERENCE_CITATION_START_RE.match(stripped):
         return True
@@ -212,7 +218,7 @@ def is_tail_metadata_like_line(line: str) -> bool:
 
 def _explicit_tail_metadata_start(line: str) -> bool:
     stripped = line.strip()
-    if REFERENCE_HEADING_RE.match(stripped):
+    if _starts_reference_section(stripped):
         return True
     if is_trimmable_tail_metadata_line(stripped):
         return True
@@ -374,7 +380,7 @@ def _tail_metadata_trim_end(
     if len(span_lines) < 6:
         return permissive_end_index_exclusive
     for offset, line_ref in enumerate(span_lines[4:], start=4):
-        if REFERENCE_HEADING_RE.match(line_ref.text.strip()):
+        if _starts_reference_section(line_ref.text):
             return line_ref.global_index
         if not _explicit_tail_metadata_start(line_ref.text):
             continue

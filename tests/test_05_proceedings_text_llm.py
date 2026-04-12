@@ -251,6 +251,23 @@ class TestProceedingsTrimLLM(unittest.TestCase):
 
         self.assertEqual(trimmed_end, 27)
 
+    def test_tail_metadata_trim_end_stops_at_inline_references_heading(self) -> None:
+        lines = [
+            self.trim_llm.LineRef(global_index=40, page_index=0, line_index=0, text="Poster 339"),
+            self.trim_llm.LineRef(global_index=41, page_index=0, line_index=1, text="Rapid Onset Stiff Person Syndrome"),
+            self.trim_llm.LineRef(global_index=42, page_index=0, line_index=2, text="Author line"),
+            self.trim_llm.LineRef(global_index=43, page_index=0, line_index=3, text="Introduction: SPS may present abruptly in rare cases."),
+            self.trim_llm.LineRef(global_index=44, page_index=0, line_index=4, text="Case: The patient improved with benzodiazepines and IVIG."),
+            self.trim_llm.LineRef(global_index=45, page_index=0, line_index=5, text="Conclusion: SPS should remain in the differential diagnosis."),
+            self.trim_llm.LineRef(global_index=46, page_index=0, line_index=6, text="References: 1. Hadavi, S., Noyce, A.J., Leslie, R.D., & Giovannoni, G."),
+            self.trim_llm.LineRef(global_index=47, page_index=0, line_index=7, text="Other: Rare disease"),
+            self.trim_llm.LineRef(global_index=48, page_index=0, line_index=8, text="340"),
+        ]
+
+        trimmed_end = self.trim_llm._tail_metadata_trim_end(lines, 40, 49)
+
+        self.assertEqual(trimmed_end, 46)
+
     def test_process_candidate_package_uses_reference_metadata_for_final_registry(self) -> None:
         record = self.make_source_record()
         source_path = self.write_source_record(record)
