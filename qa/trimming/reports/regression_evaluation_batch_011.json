@@ -1,7 +1,2659 @@
 {
-  "generated_at_utc": "2026-04-11T13:19:46.580141+00:00",
-  "case_count": 0,
-  "passed_count": 0,
-  "failed_count": 0,
-  "results": []
+  "generated_at_utc": "2026-04-11T21:48:50.938827+00:00",
+  "case_count": 99,
+  "passed_count": 96,
+  "failed_count": 3,
+  "results": [
+    {
+      "paper_id": "1017",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "routing_gate",
+      "output_source": "",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1784",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "routing_gate",
+      "output_source": "",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1935",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "routing_gate",
+      "output_source": "",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "5753",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "routing_gate",
+      "output_source": "",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1597",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "regression_boundary_review",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\1597.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "leading in this patient to the diagnosis of encephalomyelitis with rigidity, variant of SPS."
+        }
+      ]
+    },
+    {
+      "paper_id": "6271",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "regression_boundary_review",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\6271.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "8198",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "regression_boundary_review",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8198.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "High serum antibody titres correlate with disease activity."
+        }
+      ]
+    },
+    {
+      "paper_id": "8317",
+      "regression_set_id": "2026-04-06_boundary_review",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "regression_boundary_review",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\regression_boundary_review\\text_trimmed\\8317.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Stiff man syndrome associated with breast cancer about 2 cases"
+        }
+      ]
+    },
+    {
+      "paper_id": "969",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "observational_group_study"
+        }
+      ]
+    },
+    {
+      "paper_id": "980",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1001",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1001.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1011",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1011.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Poster 313"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "patients with SPS may benefit from intrathecal baclofen pumps or inpatient rehabilitation."
+        },
+        {
+          "name": "not_contains::sequelae of radiation-induced myelopathy",
+          "passed": true,
+          "actual": "sequelae of radiation-induced myelopathy, radiation-induced"
+        },
+        {
+          "name": "not_contains::funicular pain is likely to progress wit",
+          "passed": true,
+          "actual": "funicular pain is likely to progress with time."
+        },
+        {
+          "name": "not_contains::Poster 314",
+          "passed": true,
+          "actual": "Poster 314"
+        },
+        {
+          "name": "not_contains::The Usefulness of Transcranial Magnetic ",
+          "passed": true,
+          "actual": "The Usefulness of Transcranial Magnetic Stimulation"
+        },
+        {
+          "name": "not_contains::Diffusion Tensor Tractography",
+          "passed": true,
+          "actual": "Diffusion Tensor Tractography"
+        }
+      ]
+    },
+    {
+      "paper_id": "1028",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1028.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1031",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1031.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "with only mild stiffness and pain."
+        },
+        {
+          "name": "not_contains::Poster 21",
+          "passed": true,
+          "actual": "Poster 21"
+        },
+        {
+          "name": "not_contains::A comparison of the progression of auton",
+          "passed": true,
+          "actual": "A comparison of the progression of autonomic dysfunction"
+        },
+        {
+          "name": "not_contains::J.L. Gilden",
+          "passed": true,
+          "actual": "J.L. Gilden"
+        }
+      ]
+    },
+    {
+      "paper_id": "1112",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1112.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1116",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1116.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1117",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1117.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "rigidity and myoclonus can present in children as stimulus-sensitive muscle spasms."
+        }
+      ]
+    },
+    {
+      "paper_id": "1118",
+      "regression_set_id": "batch_001_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_001",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_001\\text_trimmed\\1118.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1119",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1119.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1120",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1120.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1129",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1129.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "In GAD-syndromes, the association with classical PNS and cell-surface antibodies should prompt cancer screening."
+        }
+      ]
+    },
+    {
+      "paper_id": "1138",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1138.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusion: The results are compatible with literature."
+        }
+      ]
+    },
+    {
+      "paper_id": "1150",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1153",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1154",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1215",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1215.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1217",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1227",
+      "regression_set_id": "batch_002_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_002",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_002\\text_trimmed\\1227.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1229",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1229.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1230",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1230.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1231",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1231.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1233",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1233.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1237",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1237.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1239",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1239.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1242",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1242.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "and demonstrated significant improvement in his symptoms with appropriate treatment."
+        }
+      ]
+    },
+    {
+      "paper_id": "1245",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1245.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1246",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_003\\text_trimmed\\1246.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1249",
+      "regression_set_id": "batch_003_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_003",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1251",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1251.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1257",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1257.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "ID 140 – Left-side asymmetry in cortical and spinal inhibitory"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "corresponding to clinical status. Supported by PRVOUK P34, IGA-NT 13693, 12282. doi:10.1016/j.clinph.2015.11.205"
+        },
+        {
+          "name": "not_contains::ID 159",
+          "passed": true,
+          "actual": "ID 159"
+        },
+        {
+          "name": "not_contains::Madelung’s disease",
+          "passed": true,
+          "actual": "Madelung’s disease"
+        }
+      ]
+    },
+    {
+      "paper_id": "1332",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1332.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "is an important feature of this under-recognised and treatable syndrome."
+        },
+        {
+          "name": "not_contains::Delineation of the movement disorder spe",
+          "passed": true,
+          "actual": "Delineation of the movement disorder spectrum"
+        }
+      ]
+    },
+    {
+      "paper_id": "1333",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1333.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "107 12th January 2017"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "of the autoimmune manifestations associated with APS1."
+        },
+        {
+          "name": "not_contains::108 12th January 2017",
+          "passed": true,
+          "actual": "108 12th January 2017"
+        },
+        {
+          "name": "not_contains::Out of the loop? Information sharing wit",
+          "passed": true,
+          "actual": "Out of the loop? Information sharing with"
+        }
+      ]
+    },
+    {
+      "paper_id": "1391",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "case_series_or_multi_case"
+        }
+      ]
+    },
+    {
+      "paper_id": "1393",
+      "regression_set_id": "batch_004_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_004",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_004\\text_trimmed\\1393.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1395",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1395.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1397",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1397.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1398",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1398.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1401",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "routing_gate",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "resolved_source_category_not_conference_abstract",
+          "passed": true,
+          "actual": "single_case_report"
+        }
+      ]
+    },
+    {
+      "paper_id": "1407",
+      "regression_set_id": "batch_005_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_005",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_005\\text_trimmed\\1407.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1416",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1416.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1418",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1418.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "still unknown and further research into the long-term prognosis of SLS is needed."
+        },
+        {
+          "name": "not_contains::1317",
+          "passed": true,
+          "actual": "1317"
+        },
+        {
+          "name": "not_contains::Ocular motor disorders among Filipino",
+          "passed": true,
+          "actual": "Ocular motor disorders among Filipino"
+        }
+      ]
+    },
+    {
+      "paper_id": "1433",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1433.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "early initiation of immunosuppression in autoimmune/paraneoplastic encephalitis."
+        },
+        {
+          "name": "not_contains::CGR 8",
+          "passed": true,
+          "actual": "CGR 8"
+        },
+        {
+          "name": "not_contains::A NOVEL CASE FEATURING AN IGE",
+          "passed": true,
+          "actual": "A NOVEL CASE FEATURING AN IGE"
+        }
+      ]
+    },
+    {
+      "paper_id": "1439",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1439.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Potential involvement of diaphragmatic muscles is unknown."
+        },
+        {
+          "name": "not_contains::M301",
+          "passed": true,
+          "actual": "M301"
+        }
+      ]
+    },
+    {
+      "paper_id": "1441",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1441.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "prevent misdiagnosis as more common conditions like MS."
+        },
+        {
+          "name": "not_contains::Disclosure",
+          "passed": true,
+          "actual": "Disclosure"
+        },
+        {
+          "name": "not_contains::P602",
+          "passed": true,
+          "actual": "P602"
+        }
+      ]
+    },
+    {
+      "paper_id": "1446",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1446.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1447",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1447.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1452",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1452.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1453",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1453.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1458",
+      "regression_set_id": "batch_007_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_007",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_007\\text_trimmed\\1458.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1437",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1437.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1511",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1511.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1602",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1602.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1605",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1605.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "and/or intravenous immunoglobulins"
+        }
+      ]
+    },
+    {
+      "paper_id": "1611",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1662",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1662.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Immunosuppression led to slow but progressive improvement."
+        }
+      ]
+    },
+    {
+      "paper_id": "1664",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1664.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Medical rehabilitation targets to reduce spasticity, pain, improve gait and stability."
+        },
+        {
+          "name": "not_contains::Abstracts from the 50 th European Societ",
+          "passed": true,
+          "actual": "Abstracts from the 50 th European Society of Human Genetics Conference"
+        }
+      ]
+    },
+    {
+      "paper_id": "1668",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1675",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_not_needed",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trim_status_matches_not_needed",
+          "passed": true,
+          "actual": "not_needed"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": true
+        }
+      ]
+    },
+    {
+      "paper_id": "1721",
+      "regression_set_id": "batch_008_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_008",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_008\\text_trimmed\\1721.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Anti-glutamic acid decarboxylase positive stiff person syndrome"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "for as long as three months after infusion. No adverse events were encountered."
+        },
+        {
+          "name": "not_contains::Poster Session 3",
+          "passed": true,
+          "actual": "Poster Session 3"
+        },
+        {
+          "name": "not_contains::WCN19-0188",
+          "passed": true,
+          "actual": "WCN19-0188"
+        }
+      ]
+    },
+    {
+      "paper_id": "1722",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1722.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... carcinoid, we believe this is the first report of SPS associated with carcinoid tumour."
+        }
+      ]
+    },
+    {
+      "paper_id": "1774",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1774.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Pe-027-5 An unusual presentation of stiff-person"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... Conclusions: Parkinsonism can be one of manifestations of anti-GAD Ab syndrome. Early recognition and prompt treatment will provide a favorable outcome."
+        }
+      ]
+    },
+    {
+      "paper_id": "1793",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1793.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "need to be treated by cognitive behavioural therapy which can help recovering their social functions better. Keywords: Stiff-person syndrome; anti-glutamic acid decarboxylase (GAD); eye movement disorder; cognitive behavioural therapy."
+        }
+      ]
+    },
+    {
+      "paper_id": "1802",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1802.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "paper_id": "1807",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1807.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Poster 281"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... we advocate for early initiation of GABAergic medications such as benzodiazepines and use of immunotherapy."
+        }
+      ]
+    },
+    {
+      "paper_id": "1829",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1829.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... Understanding the diagnosis and management of SPS is vital to improve care. Conclusions: It is important to consider implanting the intrathecal baclofen pump as we can provide SPS patients with comfort while preserving mental status. Level of Evidence: Level V"
+        }
+      ]
+    },
+    {
+      "paper_id": "1830",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1830.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "start_line_matches",
+          "passed": true,
+          "actual": "Poster 263:"
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... co-morbidities, making rehabilitation of this patient that much more difficult. Level of Evidence: Level V"
+        }
+      ]
+    },
+    {
+      "paper_id": "1838",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1838.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... for GlyR antibodies. To conclude, PERM in the presence of multiple autoantibodies should always raise the suspicion pf thymoma. Disclosure: Nothing to disclose"
+        }
+      ]
+    },
+    {
+      "paper_id": "1897",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1897.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... These preliminary findings suggest that AHSCT is well-tolerated and may be highly effective therapy for select pts with treatment-refractory, severe SPS."
+        }
+      ]
+    },
+    {
+      "paper_id": "1898",
+      "regression_set_id": "batch_009_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_009",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_009\\text_trimmed\\1898.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... the patient had a cognitive loss without circulatory or immuno‐neurological disease only SPSD. Final Comments: Our review confirm the best treatment for SPSD, despite this unexpected 9‐year‐evolution. Informed consent to publish had been obtained from the patient."
+        }
+      ]
+    },
+    {
+      "paper_id": "1899",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1899.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... Conclusion: SPS is a very rare disease without well established pathogenesis and debilitating nature if not recognized in time. Association with T1DM, anti-GAD antibodies and other autoimmune disorders could contribute to clinical suspicion and earlier diagnosis."
+        }
+      ]
+    },
+    {
+      "paper_id": "1900",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1900.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "We hope by contributing this information to the medical literature we can aid others in their treatment of this rare disease."
+        }
+      ]
+    },
+    {
+      "paper_id": "1901",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1901.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... exchange (e.g. Guillain- Barre syndrome) when allergic reactions limit the volume of FFP one can use as replacement fluid."
+        }
+      ]
+    },
+    {
+      "paper_id": "1903",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1903.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... Conclusion: This case illustrates that symptom management in SPS can be challenging to create a balance between symptom control and avoiding side effects. Psychological aspects of the care should also be taken into consideration."
+        }
+      ]
+    },
+    {
+      "paper_id": "1916",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1916.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... Some institutions routinely screen CSF samples for autoantibodies and have higher detection rates, an argument could be made for this to become normal practice globally. References: 2Progressive encephalomyelitis, rigidity, and myoclonus: a novel glycine receptor antibody. (Hutchinson et al, 2008) 3Glycine receptor antibodies are detected in progressive encephalomyelitis with rigidity and myoclonus (PERM) but not in saccadic oscillations. (Vincent et al, 2011)"
+        }
+      ]
+    },
+    {
+      "paper_id": "1918",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1918.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... These neurophysiological features discern spasmodic reflex myoclonus from hyperekplexia and are helpful in making diagnosis of SPS."
+        }
+      ]
+    },
+    {
+      "paper_id": "1921",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1921.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "... Rituximab may be an option to be considered once patients show a poor response to the first imunossupressive treatment. References: 1. Dalakas MC, Rakocevic G, Dambrosia JM, Alexopoulos H, McElroy DB. A double blind, placebo-controlled study of rituximab in patients with stiff person syndrome. Ann Neurol. 2017 Aug;82(2):271-277. ‘Accepted Article’. 2. McKeon A, Robinson MT, McEvoy KM, Matsumoto JY, Lennon VA, Ahlskog JE, Pittock SJ. Stiffman syndrome and variants: clinical course, treatments, and outcomes. Arch Neurol. 2012 Feb;69(2):230-8."
+        }
+      ]
+    },
+    {
+      "paper_id": "1922",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1922.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusions: In conclusion, SPS can present with acute dysarthria mimicking stroke, and has not been reported before. Thus, evaluation for acute stroke is appropriate in these cases, and careful history may reveal more chronic symptoms leading to a very different diagnosis and treatment. References: Arino H, Hoftberger R, Gresa-Arribas N, et al. Paraneoplastic Neurological Syndrome and Glutamic Acid Decarboxylase Antibodies. JAMA Neurol 2015; 72:874. Raju R, Rakocevic G, Chen Z, et al. Autoimmuniry to GABAA-receptor-associated protein in stiffperson syndrome. Brain 2006; 129:3270."
+        }
+      ]
+    },
+    {
+      "paper_id": "1923",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1923.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusions: intrathecal baclofen promoted a clinical significant improvement in spasticity, as well as in balance and gait parameters. ITB pump implantation should be considered as a symptomatic therapy for those patients with refractory SPS."
+        }
+      ]
+    },
+    {
+      "paper_id": "1924",
+      "regression_set_id": "batch_010_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_010",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_010\\text_trimmed\\1924.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusions: Our case provides an unusual description of SPS presenting as status dystonicus in a patient with severe muscle rigidity and spasms. We provide a photograph and can provide a video demonstration of the involuntary movements, which we hope will aid other practitioners in the early recognition and treatment of this condition. We also demonstrate that IVIg may improve the clinical course of this syndrome. References: 1) Fahn S, Jancovic J, Hallett M, editors. Principles and Practice of Movement Disorders. 2nd ed. New York: Elsevier Saunders; 2011.2) JK Baizabal-Carvallo, J Jankovic. Stiff-person syndrome: insights into a complex autoimmune disorder. J Neurol Neurosurg Psychiatry. 2015 Aug;86(8):840-8."
+        }
+      ]
+    },
+    {
+      "paper_id": "1625",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\1625.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "those without (6/6 vs 4/14, p=0.0108). Conclusions: Patients with SPSD and NSA antibodies have better prognosis than those without antibodies."
+        }
+      ]
+    },
+    {
+      "paper_id": "1932",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": false,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\1932.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": false,
+          "actual": "partial_truncated"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": false,
+          "actual": true
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusions : This is the fi rst international multicentre SPSD study with prospective data collection bymovement disorder experts. Further plans include expanding this cohort and, using a health servicesapproach, identifying unmet needs in SPSD and areas for further research."
+        }
+      ]
+    },
+    {
+      "paper_id": "1947",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\1947.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "This in combination with angioedema and urticaria is a unique presentation not documented in the literature."
+        }
+      ]
+    },
+    {
+      "paper_id": "3125",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\3125.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusions: Use of botulinum toxin in refractory symptoms for SPS can improve overall function with improved pain control, gait mechanics, and balance. Level of Evidence: Level V"
+        }
+      ]
+    },
+    {
+      "paper_id": "5029",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\5029.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "further research is needed toward the understanding the pathophysiology and treatment options."
+        }
+      ]
+    },
+    {
+      "paper_id": "5079",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\5079.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusion: Unusual acute SPS onset could suggest an overproduction of autoantibodies or a turnover point in the synaptic sensitivity. The detection of autoantibodies against amphyphisin, in patients with SPS, should be considered an indication for search an occult tumour, which could be other than the most commonly reported."
+        }
+      ]
+    },
+    {
+      "paper_id": "5087",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\5087.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "This case highlights the unusual presentation of antibody-negative paraneoplastic stiff person syndrome with cranial nerve involvement and emphasises the need for identification of other antibodies associated specifically with lymphoma."
+        }
+      ]
+    },
+    {
+      "paper_id": "5158",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": true,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\5158.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": true,
+          "actual": "confirmed_full"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": true,
+          "actual": false
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "patients with Type 1 diabetes presenting with atypical clinical or biochemical features."
+        }
+      ]
+    },
+    {
+      "paper_id": "5212",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": false,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\5212.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": false,
+          "actual": "partial_truncated"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": false,
+          "actual": true
+        },
+        {
+          "name": "expected_end_present",
+          "passed": true,
+          "actual": "Conclusions. These results further support the use of serum GAD-LIR and exteroceptive reflexes as markers for stiff-man syndrome. Our findings also suggest that serum GAD-LIR may identify a subset of patients responsive to treatment, that corticosteroids may be efficacious even with increasing titers, and that CSF GAD-LIR is a risk factor for seizures."
+        }
+      ]
+    },
+    {
+      "paper_id": "5233",
+      "regression_set_id": "batch_011_feedback",
+      "workflow_stage": "stage05_trimming",
+      "output_source": "batch_011",
+      "passed": false,
+      "checks": [
+        {
+          "name": "trimmed_output_present",
+          "passed": true,
+          "actual": "qa\\trimming\\reports\\batch_011\\text_trimmed\\5233.json"
+        },
+        {
+          "name": "qc_confirmed_full",
+          "passed": false,
+          "actual": "header_only_source"
+        },
+        {
+          "name": "manual_follow_up_matches",
+          "passed": false,
+          "actual": true
+        },
+        {
+          "name": "expected_end_present",
+          "passed": false,
+          "actual": "We report on a father and daughter with stiff-man syndrome (SMS) and GAD65 antibody (Ab). The family had multiple thyrogastric autoimmune disorders; type-1 diabetes, thyroiditis, and pernicious anemia appearing as dominant traits. The propositus had pernicious anemia and thyroiditis. At age 53 years, neurological symptoms and signs developed, consistent with SMS limited to one limb. GAD65Ab was 199 nmol/L (normal, #0.02 nmol/L). Azathioprine and diazepam reduced limb spasms and GAD65Ab (12.9 nmol/L). Classic SMS began in the daughter at age 31 years, progressing to episodic opisthotonos. Baclofen relieved symptoms. She had GAD65Ab (88.7 nmol/L) and thyroperoxidase Ab (100 IU/ ml; normal, ,20 IU/ml) but no clinical thyroiditis. Her asymptomatic daughter acquired GAD65Ab transplacentally (72.7 nmol/L at birth; 6.65 nmol/L at 3 months; 0.65 nmol/L at 7 months). SMS is usually sporadic, frequently coexisting with thyrogastric autoimmunity. Three families have been reported with congenital SMS. These cases antedated GAD65Ab testing and differed clinically from acquired SMS. Stiffness presented at birth, dysphagia was prominent, and facial muscles were involved. No coexisting autoimmune disorders were reported. Our report illustrates that SMS, like associated thyrogastric disorders, occurs in families as a dominant trait. Immunogenetic determinants of familial SMS may involve a common mutation responsible for abrogating self-tolerance in all of the associated but autoantigen-distinct disorders."
+        }
+      ]
+    }
+  ]
 }
