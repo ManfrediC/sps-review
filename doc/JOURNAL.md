@@ -1545,3 +1545,39 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 - Patched `tempfile.mkdtemp()` inside pytest runs to use the same workspace-local temp root, because `tempfile.TemporaryDirectory()` was hitting the same Windows permission failure.
 - Also downgraded the known Windows pytest temp-dir finalisation `PermissionError` to a warning so teardown no longer aborts the session.
 - Reason: repeated Windows permission failures were coming from stale inaccessible pytest temp/cache directories rather than from the pytest package install itself.
+
+### Autoresearch
+
+#### Stage-05 live status sidecar
+
+- Added `src/autoresearch/stage_05/status.py` as a read-only sidecar for live or completed stage-05 runs.
+- The status sidecar:
+  - inspects the latest loop payload or an explicit run root
+  - infers the current run phase from the baseline, ledger, and loop summary artefacts
+  - records a compact `status_snapshot.json` under the run root and `qa/trimming/gold_standard/autoresearch/latest_status_snapshot.json`
+  - keeps chat check-ins lightweight without touching the live autoresearch workers
+- Updated `.gitignore` so the top-level `latest_status_snapshot.json` sidecar stays untracked like the other runtime artefacts.
+- Added focused coverage in `tests/test_stage05_status.py`.
+
+#### Stage-05 baseline timeout and resume fix
+
+- Removed the nested `--include-regression` call from the loop and trigger harnesses so the gold benchmark no longer tries to run regression internally before the harness launches the standalone regression step.
+- Updated `src/autoresearch/stage_05/benchmark.py` to reuse existing non-canonical trim/QC artefacts when their registries already cover the target `paper_id` set:
+  - skip trim when the trim registry covers every target paper and each row that should have a trimmed JSON still resolves to an existing file under `text_trimmed/`
+  - rebase copied `trimmed_text_json_path` values onto the fresh run root when local reused files are present
+  - skip QC when the QC registry already covers every target paper and the trim outputs were reused unchanged
+- Reworked `loop.run_logged_command()` to use a `Popen` timeout wrapper that kills the full subprocess tree on timeout, preventing orphan Python workers from continuing after a failed benchmark.
+- Increased the default benchmark timeout in both the loop and the trigger from `1800` seconds to `14400` seconds.
+- Seeded `qa/trimming/gold_standard/autoresearch/runs/stage05-apr12_04/baseline/gold/` from the completed `stage05-apr12_03` gold trim artefacts and relaunched the loop on branch `autoresearch/stage05-apr12`.
+- Added focused tests for:
+  - gold benchmark reuse with complete trim/QC artefacts
+  - gold benchmark reuse with trim-only artefacts that require a QC rerun
+  - loop benchmark commands avoiding nested regression
+  - timeout logging for the new subprocess wrapper
+  - trigger baseline launch keeping gold and regression as separate steps
+
+#### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m py_compile src/autoresearch/stage_05/benchmark.py src/autoresearch/stage_05/loop.py src/autoresearch/stage_05/trigger.py src/autoresearch/stage_05/status.py`
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage05_regression.py tests/test_stage05_loop.py tests/test_stage05_trigger.py tests/test_stage05_status.py -q`

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -83,3 +84,54 @@ def test_next_run_root_suffixes_duplicate_tags(tmp_path: Path) -> None:
     second = loop.next_run_root("stage05-apr12", tmp_path)
 
     assert second.name == "stage05-apr12_02"
+
+
+def test_run_benchmarks_keeps_regression_as_a_separate_step(tmp_path: Path, monkeypatch) -> None:
+    commands: list[list[str]] = []
+    state = loop.BenchmarkState(
+        exact_match_count=1,
+        case_count=1,
+        exact_match_rate=1.0,
+        regression_failed_count=0,
+        mean_overlap_score=1.0,
+        gold_summary_path=tmp_path / "gold.json",
+        regression_summary_path=tmp_path / "regression.json",
+    )
+
+    def fake_run_logged_command(
+        command: list[str],
+        *,
+        stdout_path: Path,
+        stderr_path: Path,
+        timeout_seconds: int,
+        input_text: str | None = None,
+    ) -> loop.CommandResult:
+        commands.append(command)
+        return loop.CommandResult(tuple(command), stdout_path, stderr_path, 0, False, timeout_seconds)
+
+    monkeypatch.setattr(loop, "run_logged_command", fake_run_logged_command)
+    monkeypatch.setattr(loop, "benchmark_state_from_paths", lambda gold_path, regression_path: state)
+
+    run = loop.run_benchmarks(tmp_path / "run", tmp_path / "manifest.json", 90)
+
+    assert run.state == state
+    assert len(commands) == 2
+    assert "--include-regression" not in commands[0]
+    assert commands[0][commands[0].index("--mode") + 1] == "gold"
+    assert commands[1][commands[1].index("--mode") + 1] == "regression"
+
+
+def test_run_logged_command_marks_timeout_and_writes_note(tmp_path: Path) -> None:
+    stdout_path = tmp_path / "stdout.log"
+    stderr_path = tmp_path / "stderr.log"
+
+    result = loop.run_logged_command(
+        [sys.executable, "-c", "import time; time.sleep(5)"],
+        stdout_path=stdout_path,
+        stderr_path=stderr_path,
+        timeout_seconds=1,
+    )
+
+    assert result.timed_out is True
+    assert result.returncode is None
+    assert "timed out after 1 seconds" in stderr_path.read_text(encoding="utf-8")

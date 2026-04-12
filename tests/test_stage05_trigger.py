@@ -69,6 +69,22 @@ def test_benchmark_command_adds_include_regression_only_for_gold(tmp_path: Path)
     assert "--include-regression" not in regression_command
 
 
+def test_launch_baseline_run_keeps_gold_and_regression_separate(tmp_path: Path) -> None:
+    payload = trigger.launch_baseline_run(
+        run_root=tmp_path / "run",
+        manifest_path=tmp_path / "manifest.json",
+        snapshot=trigger.ManifestSnapshot(paper_count=83, entry_count=83, invalid_count=0, signature="abc"),
+        signals=["ready_file:test"],
+        run_tag="stage05-apr12",
+        benchmark_timeout_seconds=14400,
+        dry_run=True,
+    )
+
+    assert "--include-regression" not in payload["commands"]["gold_baseline"]
+    assert payload["commands"]["gold_baseline"][payload["commands"]["gold_baseline"].index("--mode") + 1] == "gold"
+    assert payload["commands"]["regression_baseline"][payload["commands"]["regression_baseline"].index("--mode") + 1] == "regression"
+
+
 def test_loop_command_includes_run_tag_and_timeouts(tmp_path: Path) -> None:
     command = trigger.loop_command(
         run_root=tmp_path / "run",

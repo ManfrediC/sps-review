@@ -14,6 +14,7 @@ The harness is intentionally separate from the canonical stage-05 pipeline so ex
   - frozen benchmark for the stage-05 autoresearch loop
   - defines the fixed labels `missing_output`, `spillover`, `truncated`, `exact_match`, and `wrong_abstract`
   - owns the strict normalisation and scoring rules
+  - can reuse existing non-canonical trim/QC artefacts in a run directory when the registries already cover the target paper IDs
 - `program.md`
   - instructions for the autoresearch agent
 - `loop.py`
@@ -21,6 +22,7 @@ The harness is intentionally separate from the canonical stage-05 pipeline so ex
   - recommends a dedicated branch name `autoresearch/<run_tag>` for each run
   - writes a simple `results.tsv` ledger plus per-iteration `decision.json`, `candidate.patch`, and stdout/stderr logs
   - keeps only changes that improve the frozen keep metrics or simplify tied code
+  - kills timed-out benchmark subprocess trees instead of leaving orphan workers behind
   - stops once all gold papers are exact matches and regression failures are zero
 
 ## Freeze Rules
@@ -75,6 +77,7 @@ The trigger:
 - writes tagged outputs under `qa/trimming/gold_standard/autoresearch/trigger_runs/`
 - starts the stage-05 loop by default once the gold set is ready
 - records standard workflow logs in `loop_stdout.log` and `loop_stderr.log`
+- uses a `14400` second default timeout for each gold or regression benchmark subprocess
 
 Run the loop directly without waiting:
 
@@ -82,14 +85,22 @@ Run the loop directly without waiting:
 python src/autoresearch/stage_05/loop.py --run-tag stage05-apr12
 ```
 
+Summarise the latest live run and write a compact snapshot file:
+
+```bash
+python src/autoresearch/stage_05/status.py
+```
+
 The loop uses `codex exec` for bounded edit iterations, then stops as soon as:
 - every gold paper is labelled `exact_match`
 - regression failed count is `0`
+- uses a `14400` second default timeout for each gold or regression benchmark subprocess
 
 Each run now follows a simple structure:
 - one run tag
 - one `results.tsv` ledger with the keep/discard verdicts
 - one `decision.json` plus logs and patch artefacts per iteration
+- one `status_snapshot.json` sidecar for quick progress checks
 
 The default results ledger columns are:
 - `iteration`

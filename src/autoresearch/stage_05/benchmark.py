@@ -8,6 +8,7 @@ metric instead of the extraction.
 """
 
 import argparse
+import csv
 import json
 import subprocess
 import sys
@@ -50,6 +51,7 @@ SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categori
 TRIMMER_SCRIPT = REPO_ROOT / "src" / "pipelines" / "05_trim_proceedings_text_autoresearch.py"
 QC_SCRIPT = REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text_autoresearch.py"
 LABELS = ("missing_output", "spillover", "truncated", "exact_match", "wrong_abstract")
+TRIMMED_OUTPUT_STATUSES = {"trimmed_auto", "header_only_source"}
 
 
 @dataclass(frozen=True)
@@ -133,6 +135,94 @@ def qc_command(paper_ids: list[str], trimmed_dir: Path, trim_registry_path: Path
 
 def run_command(command: list[str]) -> None:
     subprocess.run(command, check=True, cwd=str(REPO_ROOT))
+
+
+def registry_rows_by_id(path: Path) -> dict[str, dict[str, str]]:
+    return load_csv_rows_by_id(path, "paper_id") if path.exists() else {}
+
+
+def registry_covers_paper_ids(rows: dict[str, dict[str, str]], paper_ids: list[str]) -> bool:
+    return all(paper_id in rows for paper_id in paper_ids)
+
+
+def local_trimmed_output_path(report_dir: Path, paper_id: str) -> Path:
+    return report_dir / "text_trimmed" / f"{paper_id}.json"
+
+
+def rebase_trim_registry_paths(report_dir: Path) -> None:
+    trim_registry_path = report_dir / "text_trim_registry.csv"
+    if not trim_registry_path.exists():
+        return
+    rows = list(registry_rows_by_id(trim_registry_path).values())
+    if not rows:
+        return
+    updated = False
+    for row in rows:
+        paper_id = str(row.get("paper_id") or "").strip()
+        trim_status = str(row.get("trim_status") or "").strip()
+        if not paper_id or trim_status not in TRIMMED_OUTPUT_STATUSES:
+            continue
+        local_path = local_trimmed_output_path(report_dir, paper_id)
+        if not local_path.exists():
+            continue
+        local_display = gold.display_path(local_path)
+        if str(row.get("trimmed_text_json_path") or "").strip() != local_display:
+            row["trimmed_text_json_path"] = local_display
+            updated = True
+    if updated:
+        fieldnames = list(rows[0].keys())
+        with trim_registry_path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
+
+
+def trim_outputs_cover_paper_ids(report_dir: Path, paper_ids: list[str]) -> bool:
+    trim_registry_path = report_dir / "text_trim_registry.csv"
+    if not trim_registry_path.exists():
+        return False
+    bundle = ensure_bundle(report_dir)
+    for paper_id in paper_ids:
+        trim_row = bundle.trim_rows.get(paper_id, {})
+        if not trim_row:
+            return False
+        trim_status = str(trim_row.get("trim_status") or "").strip()
+        if trim_status in TRIMMED_OUTPUT_STATUSES:
+            local_path = local_trimmed_output_path(report_dir, paper_id)
+            if local_path.exists():
+                continue
+            candidate_path = trimmed_output_path(trim_row, bundle, paper_id)
+            if candidate_path is None or not candidate_path.exists():
+                return False
+    return True
+
+
+def qc_outputs_cover_paper_ids(report_dir: Path, paper_ids: list[str]) -> bool:
+    qc_registry_path = report_dir / "proceedings_text_qc_registry.csv"
+    return registry_covers_paper_ids(registry_rows_by_id(qc_registry_path), paper_ids)
+
+
+def ensure_trim_and_qc_outputs(
+    *,
+    paper_ids: list[str],
+    report_dir: Path,
+) -> None:
+    if not paper_ids:
+        return
+    trimmed_dir = report_dir / "text_trimmed"
+    trimmed_dir.mkdir(parents=True, exist_ok=True)
+    trim_registry_path = report_dir / "text_trim_registry.csv"
+    qc_registry_path = report_dir / "proceedings_text_qc_registry.csv"
+
+    trim_ready = trim_outputs_cover_paper_ids(report_dir, paper_ids)
+    if not trim_ready:
+        run_command(trim_command(paper_ids, trimmed_dir, trim_registry_path))
+    else:
+        rebase_trim_registry_paths(report_dir)
+
+    qc_ready = trim_ready and qc_outputs_cover_paper_ids(report_dir, paper_ids)
+    if not qc_ready:
+        run_command(qc_command(paper_ids, trimmed_dir, trim_registry_path, qc_registry_path))
 
 
 def ensure_bundle(report_dir: Path) -> ReportBundle:
@@ -249,14 +339,12 @@ def run_gold_benchmark(
     ]
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    trimmed_dir = output_dir / "text_trimmed"
-    trimmed_dir.mkdir(parents=True, exist_ok=True)
-    trim_registry_path = output_dir / "text_trim_registry.csv"
-    qc_registry_path = output_dir / "proceedings_text_qc_registry.csv"
     if active_entries:
         paper_id_list = [str(entry.get("paper_id") or "").strip() for entry in active_entries]
-        run_command(trim_command(paper_id_list, trimmed_dir, trim_registry_path))
-        run_command(qc_command(paper_id_list, trimmed_dir, trim_registry_path, qc_registry_path))
+        ensure_trim_and_qc_outputs(
+            paper_ids=paper_id_list,
+            report_dir=output_dir,
+        )
 
     bundle = ensure_bundle(output_dir)
     results = [
@@ -638,14 +726,12 @@ def run_regression_benchmark(
         manifest_path=manifest_path,
     )
     output_dir.mkdir(parents=True, exist_ok=True)
-    trimmed_dir = output_dir / "text_trimmed"
-    trimmed_dir.mkdir(parents=True, exist_ok=True)
-    trim_registry_path = output_dir / "text_trim_registry.csv"
-    qc_registry_path = output_dir / "proceedings_text_qc_registry.csv"
     paper_ids = [case.paper_id for case in cases]
     if paper_ids:
-        run_command(trim_command(paper_ids, trimmed_dir, trim_registry_path))
-        run_command(qc_command(paper_ids, trimmed_dir, trim_registry_path, qc_registry_path))
+        ensure_trim_and_qc_outputs(
+            paper_ids=paper_ids,
+            report_dir=output_dir,
+        )
 
     current_bundle = ensure_bundle(output_dir)
     results = [evaluate_regression_case(case, current_bundle) for case in cases]

@@ -190,7 +190,6 @@ def launch_baseline_run(
         mode="gold",
         output_dir=gold_output_dir,
         manifest_path=manifest_path,
-        include_regression=True,
     )
     regression_command = benchmark_command(
         mode="regression",
@@ -427,7 +426,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--benchmark-timeout-seconds",
         type=int,
-        default=1800,
+        default=14400,
         help="Timeout for each gold or regression benchmark command.",
     )
     return parser.parse_args()

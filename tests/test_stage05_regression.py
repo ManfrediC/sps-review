@@ -268,21 +268,70 @@ def test_run_gold_benchmark_writes_exact_match_summary_without_running_scripts(t
     write_trimmed_json(output_dir / "text_trimmed" / "3001.json", ["Poster 1", "Body", "Conclusion: Accepted ending."])
     write_csv(
         output_dir / "text_trim_registry.csv",
-        [{"paper_id": "3001", "trim_status": "trimmed_auto", "trimmed_text_json_path": ""}],
+        [{"paper_id": "3001", "trim_status": "trimmed_auto", "trimmed_text_json_path": "old/run/3001.json"}],
     )
     write_csv(
         output_dir / "proceedings_text_qc_registry.csv",
         [{"paper_id": "3001", "qc_status": "confirmed_full", "manual_follow_up_required": "false"}],
     )
 
-    monkeypatch.setattr(benchmark, "run_command", lambda command: None)
+    commands: list[list[str]] = []
+
+    monkeypatch.setattr(benchmark, "run_command", lambda command: commands.append(command))
 
     summary = benchmark.run_gold_benchmark(
         output_dir=output_dir,
         manifest_path=manifest_path,
     )
 
+    assert commands == []
     assert summary["case_count"] == 1
     assert summary["exact_match_rate"] == 1.0
     assert summary["label_counts"]["exact_match"] == 1
     assert (output_dir / "summary.json").exists()
+    rebased_rows = benchmark.registry_rows_by_id(output_dir / "text_trim_registry.csv")
+    assert rebased_rows["3001"]["trimmed_text_json_path"] == stage05_gold.display_path(
+        output_dir / "text_trimmed" / "3001.json"
+    )
+
+
+def test_run_gold_benchmark_reuses_trim_outputs_and_only_runs_qc_when_needed(tmp_path: Path, monkeypatch) -> None:
+    gold_papers_dir = tmp_path / "gold_standard" / "papers"
+    gold_path = gold_papers_dir / "3002.json"
+    write_trimmed_json(gold_path, ["Poster 2", "Body", "Conclusion: Accepted ending."])
+    manifest_path = tmp_path / "gold_standard" / "manifest.json"
+    stage05_gold.sync_manifest(gold_papers_dir=gold_papers_dir, manifest_path=manifest_path)
+
+    output_dir = tmp_path / "benchmark_output"
+    write_trimmed_json(output_dir / "text_trimmed" / "3002.json", ["Poster 2", "Body", "Conclusion: Accepted ending."])
+    write_csv(
+        output_dir / "text_trim_registry.csv",
+        [{"paper_id": "3002", "trim_status": "trimmed_auto", "trimmed_text_json_path": "old/run/3002.json"}],
+    )
+    commands: list[list[str]] = []
+
+    def fake_run_command(command: list[str]) -> None:
+        commands.append(command)
+        if str(benchmark.QC_SCRIPT) in command:
+            write_csv(
+                output_dir / "proceedings_text_qc_registry.csv",
+                [{"paper_id": "3002", "qc_status": "confirmed_full", "manual_follow_up_required": "false"}],
+            )
+
+    monkeypatch.setattr(benchmark, "run_command", fake_run_command)
+
+    summary = benchmark.run_gold_benchmark(
+        output_dir=output_dir,
+        manifest_path=manifest_path,
+    )
+
+    assert len(commands) == 1
+    assert str(benchmark.QC_SCRIPT) in commands[0]
+    assert str(benchmark.TRIMMER_SCRIPT) not in commands[0]
+    assert summary["case_count"] == 1
+    assert summary["label_counts"]["exact_match"] == 1
+    assert (output_dir / "summary.json").exists()
+    rebased_rows = benchmark.registry_rows_by_id(output_dir / "text_trim_registry.csv")
+    assert rebased_rows["3002"]["trimmed_text_json_path"] == stage05_gold.display_path(
+        output_dir / "text_trimmed" / "3002.json"
+    )

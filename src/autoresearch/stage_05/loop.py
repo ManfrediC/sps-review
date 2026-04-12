@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import re
+import signal
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -145,19 +147,43 @@ def run_logged_command(
     with stdout_path.open("w", encoding="utf-8") as stdout_handle, stderr_path.open(
         "w", encoding="utf-8"
     ) as stderr_handle:
+        popen_kwargs: dict[str, Any] = {
+            "cwd": str(gold.REPO_ROOT),
+            "text": True,
+            "stdout": stdout_handle,
+            "stderr": stderr_handle,
+        }
+        if input_text is not None:
+            popen_kwargs["stdin"] = subprocess.PIPE
+        if os.name == "nt":
+            popen_kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+        else:
+            popen_kwargs["start_new_session"] = True
+        process = subprocess.Popen(command, **popen_kwargs)
         try:
-            completed = subprocess.run(
-                command,
-                check=False,
-                cwd=str(gold.REPO_ROOT),
-                input=input_text,
-                text=True,
-                stdout=stdout_handle,
-                stderr=stderr_handle,
-                timeout=max(1, timeout_seconds),
-            )
+            process.communicate(input=input_text, timeout=max(1, timeout_seconds))
         except subprocess.TimeoutExpired:
+            if os.name == "nt":
+                subprocess.run(
+                    ["taskkill", "/T", "/F", "/PID", str(process.pid)],
+                    check=False,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                )
+            else:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                except PermissionError:
+                    process.kill()
+            try:
+                process.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait(timeout=10)
             stderr_handle.write(f"[stage05 autoresearch] command timed out after {timeout_seconds} seconds.\n")
+            stderr_handle.flush()
             return CommandResult(
                 command=tuple(command),
                 stdout_path=stdout_path,
@@ -170,7 +196,7 @@ def run_logged_command(
         command=tuple(command),
         stdout_path=stdout_path,
         stderr_path=stderr_path,
-        returncode=completed.returncode,
+        returncode=process.returncode,
         timed_out=False,
         timeout_seconds=timeout_seconds,
     )
@@ -336,7 +362,6 @@ def run_benchmarks(run_root: Path, manifest_path: Path, timeout_seconds: int) ->
         str(Path(benchmark.__file__).resolve()),
         "--mode",
         "gold",
-        "--include-regression",
         "--output-dir",
         str(gold_dir),
         "--manifest-path",
@@ -634,7 +659,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--benchmark-timeout-seconds",
         type=int,
-        default=1800,
+        default=14400,
         help="Timeout for each gold or regression benchmark command.",
     )
     return parser.parse_args()
