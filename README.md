@@ -256,7 +256,9 @@ The canonical routing flow now starts with the joint LLM stage-04 pass.
    It now checkpoints per-paper run artefacts under `results/stage04_llm_runs/` and only publishes the canonical registries after a complete run.
 2. `src/pipelines/05_trim_proceedings_text.py` trims proceedings-like records down to the target abstract where needed.
 3. `src/pipelines/05b_validate_proceedings_text.py` checks whether the proceedings-derived text looks correctly localised and usable downstream.
-4. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
+4. `src/pipelines/05_trim_proceedings_text_LLM.py` can build ordered end-candidate packages for the same proceedings sources under `data/extraction_json/text_trimmed_llm_candidates/` and `data/references/text_trim_llm_candidate_registry.csv`.
+5. `src/pipelines/05b_validate_proceedings_text_LLM.py` uses an OpenAI model to pick the best candidate end (or fall back to heuristics) and writes separate LLM-validated trims under `data/extraction_json/text_trimmed_llm/` and `data/references/text_trim_llm_registry.csv`.
+6. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
 
 ## Stage-04 gold standard
 

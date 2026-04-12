@@ -181,6 +181,25 @@ Run:
 streamlit run src/validation/review_stage05_app.py
 ```
 
+### `review_stage05_llm_app.py`
+
+Read-only Streamlit inspector for the LLM-assisted stage-05 proceedings workflow.
+
+It:
+- reads `data/references/text_trim_llm_candidate_registry.csv` and `data/references/text_trim_llm_registry.csv`
+- joins the source PDF from `data/references/paper_artifact_registry.csv`
+- shows the source PDF alongside the current LLM trim decision
+- includes the same page-search jump controls used by the main stage-05 review app
+- shows a compact preview of the final LLM-trimmed text when one exists
+- displays every heuristic end candidate with its rationale and end index
+- lets you inspect the selected candidate boundary and the full overshoot span with candidate-end markers
+
+Run:
+
+```bash
+streamlit run src/validation/review_stage05_llm_app.py
+```
+
 ### `update_trimming_review_outputs.py`
 
 Refreshes stage-05 review artefacts after a general code patch and rerun of the batch outputs.

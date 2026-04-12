@@ -140,6 +140,60 @@ Useful statuses:
 python src/pipelines/05b_validate_proceedings_text.py
 ```
 
+## `05_trim_proceedings_text_LLM.py`
+
+This script is the candidate-generation half of the LLM-assisted stage-05 proceedings workflow.
+
+It:
+
+- reads the same full text JSON files from `data/extraction_json/text`,
+- reuses the deterministic stage-05 matching logic to find the target proceedings block,
+- builds a small ordered set of possible abstract-end candidates from the matched start,
+- records whether LLM review is recommended for that package,
+- writes one candidate package per paper to `data/extraction_json/text_trimmed_llm_candidates/{paper_id}.json`, and
+- writes the paired registry `data/references/text_trim_llm_candidate_registry.csv`.
+
+The candidate packages are intentionally separate from the canonical deterministic `text_trimmed/` outputs so the LLM path can be inspected independently.
+
+### Run
+
+```bash
+python src/pipelines/05_trim_proceedings_text_LLM.py
+```
+
+Run a focused subset:
+
+```bash
+python src/pipelines/05_trim_proceedings_text_LLM.py --all-papers --paper-id 1001 --paper-id 1011 --paper-id 1028
+```
+
+## `05b_validate_proceedings_text_LLM.py`
+
+This script is the second half of the LLM-assisted stage-05 proceedings workflow.
+
+It:
+
+- reads candidate packages from `data/extraction_json/text_trimmed_llm_candidates/`,
+- sends the overshoot span plus candidate markers to an OpenAI model,
+- validates the structured LLM answer against guardrails,
+- falls back to the heuristic candidate order if the LLM answer is missing or invalid,
+- writes final LLM-validated trims to `data/extraction_json/text_trimmed_llm/{paper_id}.json`, and
+- writes the paired registry `data/references/text_trim_llm_registry.csv`.
+
+This flow keeps the deterministic stage-05 outputs untouched while producing a parallel LLM-reviewed alternative for inspection.
+
+### Run
+
+```bash
+python src/pipelines/05b_validate_proceedings_text_LLM.py
+```
+
+Run the same focused subset after loading `OPENAI_API_KEY`:
+
+```bash
+python src/pipelines/05b_validate_proceedings_text_LLM.py --paper-id 1001 --paper-id 1011 --paper-id 1028
+```
+
 ## Stage-05 `_autoresearch` Copies
 
 The proceedings trimming autoresearch loop uses isolated stage-05 copies so production stage 05 stays untouched:
@@ -447,6 +501,6 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 Records reviewed as `incorrect_reference` are explicitly excluded before any downstream model calls.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-11`
+- Last updated: `2026-04-12`
 - Immediate subdirectories (0): _None_
-- Immediate files (22, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05_trim_proceedings_text_autoresearch.py`, `05b_validate_proceedings_text.py`, `05b_validate_proceedings_text_autoresearch.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, ... (+10 more)
+- Immediate files (26, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05_trim_proceedings_text_LLM.py`, `05_trim_proceedings_text_autoresearch.py`, `05b_validate_proceedings_text.py`, `05b_validate_proceedings_text_LLM.py`, `05b_validate_proceedings_text_autoresearch.py`, `06_extract_sps_case_counts.py`, ... (+14 more)
