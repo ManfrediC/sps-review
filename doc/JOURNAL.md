@@ -1535,3 +1535,13 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - standard stdout/stderr log paths for agent and benchmark commands
 - Tightened the keep/discard rule so a metrics tie can still be kept when the editable diff is a real simplification.
 - Added explicit timeout handling for `codex exec` and benchmark subprocesses in both the loop and the trigger.
+
+### Pytest temp/cache stabilisation
+
+- Added repo-level `pytest.ini` so pytest no longer defaults to the user temp root and legacy `.pytest_cache` path:
+  - `cache_dir = pytest_cache`
+- Updated `.gitignore` to keep the new pytest temp/cache directories untracked.
+- Added root `conftest.py` so repo tests use a workspace-local `tmp_path` / `tmp_path_factory` implementation backed by normal `Path.mkdir()` instead of the failing Windows temp-dir behaviour from pytest's built-in tmpdir layer.
+- Patched `tempfile.mkdtemp()` inside pytest runs to use the same workspace-local temp root, because `tempfile.TemporaryDirectory()` was hitting the same Windows permission failure.
+- Also downgraded the known Windows pytest temp-dir finalisation `PermissionError` to a warning so teardown no longer aborts the session.
+- Reason: repeated Windows permission failures were coming from stale inaccessible pytest temp/cache directories rather than from the pytest package install itself.
