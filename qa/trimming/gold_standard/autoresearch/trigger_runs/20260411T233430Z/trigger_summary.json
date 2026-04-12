@@ -1,0 +1,25 @@
+{
+  "generated_at_utc": "2026-04-11T23:34:30.578471+00:00",
+  "status": "started",
+  "launch_mode": "loop",
+  "run_root": "qa\\trimming\\gold_standard\\autoresearch\\trigger_runs\\20260411T233430Z",
+  "manifest_path": "qa\\trimming\\gold_standard\\manifest.json",
+  "paper_count": 83,
+  "entry_count": 83,
+  "invalid_count": 0,
+  "completion_signals": [
+    "ready_file:qa\\trimming\\gold_standard\\COMPLETE"
+  ],
+  "command": [
+    "C:\\Projects\\sps-review\\.venv\\Scripts\\python.exe",
+    "C:\\Projects\\sps-review\\src\\autoresearch\\stage_05\\loop.py",
+    "--run-root",
+    "C:\\Projects\\sps-review\\qa\\trimming\\gold_standard\\autoresearch\\trigger_runs\\20260411T233430Z",
+    "--manifest-path",
+    "C:\\Projects\\sps-review\\qa\\trimming\\gold_standard\\manifest.json",
+    "--codex-bin",
+    "codex"
+  ],
+  "loop_summary_path": "qa\\trimming\\gold_standard\\autoresearch\\trigger_runs\\20260411T233430Z\\loop_summary.json",
+  "results_path": "qa\\trimming\\gold_standard\\autoresearch\\trigger_runs\\20260411T233430Z\\results.tsv"
+}
