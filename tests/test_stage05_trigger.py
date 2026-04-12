@@ -69,17 +69,33 @@ def test_benchmark_command_adds_include_regression_only_for_gold(tmp_path: Path)
     assert "--include-regression" not in regression_command
 
 
-def test_loop_command_includes_codex_and_optional_iteration_limit(tmp_path: Path) -> None:
+def test_loop_command_includes_run_tag_and_timeouts(tmp_path: Path) -> None:
     command = trigger.loop_command(
         run_root=tmp_path / "run",
         manifest_path=tmp_path / "manifest.json",
         codex_bin="codex",
         model="gpt-5.4",
+        run_tag="stage05-apr12",
         max_iterations=12,
+        agent_timeout_seconds=900,
+        benchmark_timeout_seconds=1200,
     )
 
+    assert "--run-tag" in command
+    assert "stage05-apr12" in command
     assert "--codex-bin" in command
     assert "codex" in command
     assert "--model" in command
     assert "gpt-5.4" in command
     assert "--max-iterations" in command
+    assert "--agent-timeout-seconds" in command
+    assert "--benchmark-timeout-seconds" in command
+
+
+def test_next_run_root_uses_loop_tagged_naming(tmp_path: Path) -> None:
+    first = trigger.next_run_root("stage05-apr12", tmp_path)
+    first.mkdir(parents=True)
+
+    second = trigger.next_run_root("stage05-apr12", tmp_path)
+
+    assert second.name == "stage05-apr12_02"

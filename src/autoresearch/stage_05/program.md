@@ -35,10 +35,19 @@ Reason: otherwise you would optimise the metric instead of the extraction.
 
 1. Sync the gold manifest:
    - `python src/autoresearch/stage_05/gold.py --sync`
-2. Establish a baseline with no code edits:
+2. Use a dedicated run tag and branch when practical:
+   - recommended branch: `autoresearch/<run_tag>`
+3. Establish a baseline with no code edits:
    - `python src/autoresearch/stage_05/benchmark.py --mode gold --output-dir <run_dir>/gold_baseline`
    - `python src/autoresearch/stage_05/benchmark.py --mode regression --output-dir <run_dir>/regression_baseline`
-3. Record results in `<run_dir>/results.tsv`.
+4. Record results in `<run_dir>/results.tsv`.
+
+The outer loop also writes:
+- `<iteration_dir>/decision.json`
+- `<iteration_dir>/candidate.patch`
+- `<iteration_dir>/agent_stdout.log`
+- `<iteration_dir>/agent_stderr.log`
+- benchmark command stdout/stderr logs under the gold and regression output directories
 
 ## Goal
 
@@ -62,6 +71,7 @@ Keep a change only if:
 2. `exact_match_rate` ties and `regression_failed_count` decreases
 
 If still tied, prefer the simpler change.
+A pure simplification win is acceptable when the keep metrics tie and the editable diff removes more lines than it adds.
 
 ## Per-paper labels
 
@@ -81,12 +91,14 @@ Loop:
 
 1. Inspect the last benchmark outputs.
 2. Make one bounded extraction change in the allowed files only.
-3. Commit the change.
+3. Keep the diff small enough to explain in one sentence.
 4. Run:
    - `python src/autoresearch/stage_05/benchmark.py --mode gold --output-dir <run_dir>/gold_current`
    - `python src/autoresearch/stage_05/benchmark.py --mode regression --output-dir <run_dir>/regression_current`
 5. Append results to `<run_dir>/results.tsv`.
-6. Keep or discard the commit using the rule above.
+6. Keep or discard the change using the rule above.
+
+The outer loop owns commits, keep/discard, timeout handling, and standard log paths.
 
 ## Constraints
 

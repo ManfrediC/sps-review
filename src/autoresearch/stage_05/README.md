@@ -18,7 +18,9 @@ The harness is intentionally separate from the canonical stage-05 pipeline so ex
   - instructions for the autoresearch agent
 - `loop.py`
   - outer-loop runner that calls `codex exec` for one bounded edit at a time
-  - keeps only changes that improve the frozen keep metrics
+  - recommends a dedicated branch name `autoresearch/<run_tag>` for each run
+  - writes a simple `results.tsv` ledger plus per-iteration `decision.json`, `candidate.patch`, and stdout/stderr logs
+  - keeps only changes that improve the frozen keep metrics or simplify tied code
   - stops once all gold papers are exact matches and regression failures are zero
 
 ## Freeze Rules
@@ -58,7 +60,7 @@ python src/autoresearch/stage_05/benchmark.py --mode regression --output-dir qa/
 Wait for gold completion and launch the frozen baseline automatically:
 
 ```bash
-python src/autoresearch/stage_05/trigger.py --ready-file qa/trimming/gold_standard/COMPLETE
+python src/autoresearch/stage_05/trigger.py --ready-file qa/trimming/gold_standard/COMPLETE --run-tag stage05-apr12
 ```
 
 Or launch automatically once the active manifest reaches a target size:
@@ -70,18 +72,34 @@ python src/autoresearch/stage_05/trigger.py --target-paper-count 100
 The trigger:
 - re-syncs `qa/trimming/gold_standard/manifest.json` while waiting
 - requires the ready condition to hold for two consecutive polls by default
-- writes timestamped outputs under `qa/trimming/gold_standard/autoresearch/trigger_runs/`
+- writes tagged outputs under `qa/trimming/gold_standard/autoresearch/trigger_runs/`
 - starts the stage-05 loop by default once the gold set is ready
+- records standard workflow logs in `loop_stdout.log` and `loop_stderr.log`
 
 Run the loop directly without waiting:
 
 ```bash
-python src/autoresearch/stage_05/loop.py
+python src/autoresearch/stage_05/loop.py --run-tag stage05-apr12
 ```
 
 The loop uses `codex exec` for bounded edit iterations, then stops as soon as:
 - every gold paper is labelled `exact_match`
 - regression failed count is `0`
+
+Each run now follows a simple structure:
+- one run tag
+- one `results.tsv` ledger with the keep/discard verdicts
+- one `decision.json` plus logs and patch artefacts per iteration
+
+The default results ledger columns are:
+- `iteration`
+- `status`
+- `exact_match_count`
+- `case_count`
+- `exact_match_rate`
+- `regression_failed_count`
+- `kept_commit`
+- `description`
 
 Use `--launch-mode baseline` on the trigger if you want the old baseline-only behaviour.
 

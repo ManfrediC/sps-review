@@ -1524,3 +1524,14 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `.venv\Scripts\python.exe -m pytest tests/test_stage05_trigger.py tests/test_stage05_loop.py tests/test_stage05_gold.py tests/test_stage05_regression.py -q`
   - `.venv\Scripts\python.exe src/autoresearch/stage_05/loop.py --help`
   - `.venv\Scripts\python.exe src/autoresearch/stage_05/trigger.py --help`
+
+### Stage-05 autoresearch structure pass
+
+- Simplified the stage-05 autoresearch run structure to align more closely with the `karpathy/autoresearch` style while keeping the SPS-specific benchmark and stop rules:
+  - human-readable `run_tag` support
+  - recommended branch naming `autoresearch/<run_tag>`
+  - a shorter `results.tsv` ledger
+  - per-iteration `decision.json` and `candidate.patch` artefacts
+  - standard stdout/stderr log paths for agent and benchmark commands
+- Tightened the keep/discard rule so a metrics tie can still be kept when the editable diff is a real simplification.
+- Added explicit timeout handling for `codex exec` and benchmark subprocesses in both the loop and the trigger.
