@@ -6,6 +6,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from _proceedings_ready import (
+    TEXT_PROCEEDINGS_READY_DIR as PROCEEDINGS_READY_DIR,
+    TEXT_PROCEEDINGS_READY_REGISTRY_PATH as PROCEEDINGS_READY_REGISTRY_PATH,
+)
 from _source_routing import resolve_source_row
 
 
@@ -16,6 +20,7 @@ TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_PRECLEAN_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean"
 TEXT_PRECLEAN_STAGE2_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean_stage2"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
+TEXT_PROCEEDINGS_READY_DIR = PROCEEDINGS_READY_DIR
 CASE_SERIES_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
 LANGEXTRACT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
@@ -23,6 +28,7 @@ QUALITY_RAW_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 QUALITY_RECORD_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
 COVIENCE_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
+TEXT_PROCEEDINGS_READY_REGISTRY_PATH = PROCEEDINGS_READY_REGISTRY_PATH
 SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 SOURCE_CASE_COUNT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_registry.csv"
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
@@ -164,6 +170,7 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "text_preclean": row["text_preclean_json_present"] == "true",
         "text_preclean_stage2": row["text_preclean_stage2_json_present"] == "true",
         "text_trimmed": row["text_trimmed_present"] == "true",
+        "text_proceedings_ready": row["text_proceedings_ready_present"] == "true",
         "source_categorisation": row["source_categorisation_present"] == "true",
         "source_sps_case_count": row["source_case_count_present"] == "true",
         "proceedings_qc": row["proceedings_qc_present"] == "true",
@@ -200,6 +207,8 @@ def build_row(
     text_trim_record: dict[str, Any],
     text_trim_path: Path | None,
     text_trim_registry_row: dict[str, str],
+    text_proceedings_ready_path: Path | None,
+    text_proceedings_ready_row: dict[str, str],
     source_categorisation_row: dict[str, str],
     source_case_count_row: dict[str, str],
     source_manual_review_row: dict[str, str],
@@ -313,6 +322,11 @@ def build_row(
         "text_trim_reason": str(text_trim_registry_row.get("trim_reason") or ""),
         "text_trimmed_present": bool_text(bool(text_trim_path)),
         "text_trimmed_path": relative_to_repo(text_trim_path) if text_trim_path else "",
+        "text_proceedings_ready_present": bool_text(bool(text_proceedings_ready_path)),
+        "text_proceedings_ready_path": relative_to_repo(text_proceedings_ready_path) if text_proceedings_ready_path else "",
+        "text_proceedings_ready_source_kind": str(text_proceedings_ready_row.get("ready_source_kind") or ""),
+        "text_proceedings_ready_text_mode": str(text_proceedings_ready_row.get("ready_text_mode") or ""),
+        "text_proceedings_ready_reason": str(text_proceedings_ready_row.get("ready_reason") or ""),
         "text_trim_method": str(text_trim_record.get("trim_method") or text_trim_registry_row.get("trim_method") or ""),
         "text_trim_match_score": str(text_trim_record.get("match_score") or text_trim_registry_row.get("match_score") or ""),
         "text_trim_start_page": str(text_trim_record.get("start_page_index") or text_trim_registry_row.get("start_page_index") or ""),
@@ -413,8 +427,10 @@ def build_registry_rows() -> list[dict[str, str]]:
     text_preclean_paths = load_json_paths(TEXT_PRECLEAN_DIR)
     text_preclean_stage2_paths = load_json_paths(TEXT_PRECLEAN_STAGE2_DIR)
     text_trimmed_paths = load_json_paths(TEXT_TRIMMED_DIR)
+    text_proceedings_ready_paths = load_json_paths(TEXT_PROCEEDINGS_READY_DIR)
     case_series_split_paths = load_json_paths(CASE_SERIES_SPLIT_DIR)
     text_trim_registry_rows = load_csv_rows_by_id(TEXT_TRIM_REGISTRY_PATH, "paper_id")
+    text_proceedings_ready_rows = load_csv_rows_by_id(TEXT_PROCEEDINGS_READY_REGISTRY_PATH, "paper_id")
     source_categorisation_rows = load_csv_rows_by_id(SOURCE_CATEGORISATION_PATH, "paper_id")
     source_case_count_rows = load_csv_rows_by_id(SOURCE_CASE_COUNT_PATH, "paper_id")
     source_manual_review_rows = load_csv_rows_by_id(SOURCE_MANUAL_REVIEW_PATH, "paper_id")
@@ -433,8 +449,10 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(text_preclean_paths)
         | set(text_preclean_stage2_paths)
         | set(text_trimmed_paths)
+        | set(text_proceedings_ready_paths)
         | set(case_series_split_paths)
         | set(text_trim_registry_rows)
+        | set(text_proceedings_ready_rows)
         | set(source_categorisation_rows)
         | set(source_case_count_rows)
         | set(source_manual_review_rows)
@@ -452,6 +470,7 @@ def build_registry_rows() -> list[dict[str, str]]:
         text_preclean_path = text_preclean_paths.get(paper_id)
         text_preclean_stage2_path = text_preclean_stage2_paths.get(paper_id)
         text_trim_path = text_trimmed_paths.get(paper_id)
+        text_proceedings_ready_path = text_proceedings_ready_paths.get(paper_id)
         langextract_path = langextract_paths.get(paper_id)
         summary_path = summary_paths.get(paper_id)
         quality_raw_path = quality_raw_paths.get(paper_id)
@@ -469,6 +488,8 @@ def build_registry_rows() -> list[dict[str, str]]:
                 text_trim_record=load_json_record(text_trim_path),
                 text_trim_path=text_trim_path,
                 text_trim_registry_row=text_trim_registry_rows.get(paper_id, {}),
+                text_proceedings_ready_path=text_proceedings_ready_path,
+                text_proceedings_ready_row=text_proceedings_ready_rows.get(paper_id, {}),
                 source_categorisation_row=source_categorisation_rows.get(paper_id, {}),
                 source_case_count_row=source_case_count_rows.get(paper_id, {}),
                 source_manual_review_row=source_manual_review_rows.get(paper_id, {}),
@@ -567,6 +588,11 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "text_trim_reason",
         "text_trimmed_present",
         "text_trimmed_path",
+        "text_proceedings_ready_present",
+        "text_proceedings_ready_path",
+        "text_proceedings_ready_source_kind",
+        "text_proceedings_ready_text_mode",
+        "text_proceedings_ready_reason",
         "text_trim_method",
         "text_trim_match_score",
         "text_trim_start_page",

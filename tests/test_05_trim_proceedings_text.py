@@ -9,9 +9,6 @@ from pathlib import Path
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "src" / "pipelines" / "05_trim_proceedings_text.py"
-AUTORESEARCH_SCRIPT_PATH = (
-    Path(__file__).resolve().parents[1] / "src" / "pipelines" / "05_trim_proceedings_text_autoresearch.py"
-)
 
 
 def load_module(script_path: Path = SCRIPT_PATH):
@@ -2093,6 +2090,32 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertEqual(end_index, 1)
         self.assertEqual(reason, "coded_boundary")
 
+    def test_coded_header_boundary_rejects_hyphenated_sentence_continuation(self) -> None:
+        record = {
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Results: Eighteen patients were found to have serum antibodies to",
+                            "both GAD65 and amphiphysin, of whom 1 was positive for CSF anti-",
+                            "GAD65. Five patients were diagnosed with type 2 diabetes.",
+                            "Conclusions: This remained consistent with the reported SPSD spectrum.",
+                        ]
+                    ),
+                }
+            ]
+        }
+
+        lines = self.module.flatten_lines(record)
+        pattern = self.module.infer_proceedings_pattern(lines)
+
+        matched, end_index, reason, _ = self.module.header_boundary(lines, 2, pattern, allow_soft=True)
+
+        self.assertFalse(matched)
+        self.assertEqual(end_index, 2)
+        self.assertEqual(reason, "")
+
     def test_is_institution_like_uses_word_boundaries(self) -> None:
         self.assertFalse(
             self.module.is_institution_like("Intrathecal Baclofen Effects in Stiff Person Syndrome: Clinical and")
@@ -2168,20 +2191,6 @@ class TestTrimProceedingsRegistryWrites(unittest.TestCase):
         self.assertEqual(trimmed["start_line_global_index"], 120)
         self.assertEqual(trimmed["end_line_global_index_exclusive"], 124)
         self.assertNotIn("European Society of Human Genetics Conference", trimmed["pages"][0]["text"])
-
-
-class TestTrimProceedingsAutoresearchSmoke(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls) -> None:
-        cls.production = load_module(SCRIPT_PATH)
-        cls.autoresearch = load_module(AUTORESEARCH_SCRIPT_PATH)
-
-    def test_autoresearch_registry_fieldnames_match_production(self) -> None:
-        self.assertEqual(self.autoresearch.registry_fieldnames(), self.production.registry_fieldnames())
-
-    def test_autoresearch_defaults_are_noncanonical(self) -> None:
-        self.assertIn("qa", str(self.autoresearch.OUT_DIR).lower())
-        self.assertIn("gold_standard", str(self.autoresearch.OUT_DIR).lower())
 
 
 if __name__ == "__main__":

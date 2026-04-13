@@ -18,6 +18,13 @@ from src.pipelines._sps_case_counting import (
     has_explicit_multi_case_signal,
     has_single_case_signal,
 )
+from src.pipelines._proceedings_ready import (
+    TEXT_PROCEEDINGS_READY_DIR,
+    TEXT_PROCEEDINGS_READY_REGISTRY_PATH,
+    load_ready_rows_by_id,
+    preferred_proceedings_text_path,
+    preferred_proceedings_text_source,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -273,7 +280,14 @@ def build_case_count_record(
         abstract=abstract,
         early_body_text=early_body_text,
     )
-    preferred_text_source = "trimmed" if preferred_path.parent == TEXT_TRIMMED_DIR else "full_text"
+    paper_id = str(text_record.get("paper_id") or Path(str(text_record.get("_path") or "")).stem)
+    if preferred_path.parent == TEXT_PROCEEDINGS_READY_DIR:
+        preferred_text_source = preferred_proceedings_text_source(
+            paper_id,
+            ready_rows=load_ready_rows_by_id(TEXT_PROCEEDINGS_READY_REGISTRY_PATH),
+        )
+    else:
+        preferred_text_source = "trimmed" if preferred_path.parent == TEXT_TRIMMED_DIR else "full_text"
     source_category = (source_row.get("source_category") or "").strip()
     source_subtype = (source_row.get("source_subtype") or "").strip()
     estimate = adjust_estimate_for_source_context(
@@ -316,7 +330,7 @@ def build_case_count_record(
         reasons.append(f"source_category={source_category}")
 
     return {
-        "paper_id": str(text_record.get("paper_id") or Path(str(text_record.get("_path") or "")).stem),
+        "paper_id": paper_id,
         "covidence_id": (reference_row.get("Covidence") or "").strip(),
         "title": title,
         "authors": authors,
@@ -398,9 +412,11 @@ def main() -> None:
     rows: list[dict[str, str]] = []
     for text_path in collect_text_paths(args.input_dir, args.paper_id, args.limit):
         paper_id = text_path.stem
-        preferred_path = args.trimmed_dir / text_path.name
-        if not preferred_path.exists():
-            preferred_path = text_path
+        preferred_path = preferred_proceedings_text_path(
+            text_path,
+            ready_dir=TEXT_PROCEEDINGS_READY_DIR,
+            fallback_trimmed_dir=args.trimmed_dir,
+        )
         rows.append(
             build_case_count_record(
                 reference_row=reference_rows.get(paper_id, {}),

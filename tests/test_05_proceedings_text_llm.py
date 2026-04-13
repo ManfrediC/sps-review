@@ -233,6 +233,257 @@ class TestProceedingsTrimLLM(unittest.TestCase):
         self.assertTrue(passed)
         self.assertEqual(reason, "ok")
 
+    def test_validate_llm_decision_rejects_page_footer_cut_before_resumed_body(self) -> None:
+        record = {
+            "paper_id": "2002",
+            "source_filename": "2002.pdf",
+            "n_pages": 2,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "Poster 10",
+                            "A STIFF WOMAN",
+                            "Fnu Srinithya; Saikrishna Gadde. Example Hospital, Birmingham, AL",
+                            "BACKGROUND: A 37 year old woman developed progressive stiffness and painful spasms.",
+                            "METHODS: The patient underwent extensive testing before the final diagnosis.",
+                            "RESULTS: She improved after immunotherapy and benzodiazepines.",
+                            "DISCUSSION: Early recognition supported supportive care and malignancy screening.",
+                            "Movement Disorders, Vol. 28, Suppl. 1, 2013",
+                            "S355POSTER SESSION",
+                            "Downloaded from https://movementdisorders.onlinelibrary.wiley.com/",
+                        ]
+                    ),
+                },
+                {
+                    "page_index": 1,
+                    "text": "\n".join(
+                        [
+                            "Conclusions: The syndrome remained highly treatment responsive.",
+                            "The patient regained ambulation with sustained improvement at follow-up.",
+                            "Disclosure: Nothing to disclose.",
+                        ]
+                    ),
+                },
+            ],
+        }
+        source_path = self.write_source_record(record)
+        package = self.trim_llm.CandidatePackage(
+            paper_id="2002",
+            source_text_json_path=str(source_path),
+            reference_title="A stiff woman",
+            reference_authors="Srinithya, F; Gadde, S",
+            matched_start_index=1,
+            matched_start_page_index=0,
+            matched_block_code="",
+            matched_block_title="A STIFF WOMAN",
+            start_rule="matched_header_start",
+            candidate_generation_mode=self.trim_llm.CANDIDATE_GENERATION_MODE,
+            candidates=[
+                self.trim_llm.EndCandidate(
+                    candidate_id="cand_01_tail_metadata_trim_end",
+                    heuristic_name="tail_metadata_trim_end",
+                    rank=1,
+                    start_index=1,
+                    end_index_exclusive=13,
+                    start_page_index=0,
+                    end_page_index=1,
+                    n_lines=12,
+                    body_char_count=900,
+                    contains_next_confirmed_header=False,
+                    contains_soft_boundary=False,
+                    contains_tail_metadata=True,
+                    confidence_class="medium",
+                    rationale="Overshoot span reaches the disclosure line.",
+                )
+            ],
+            overshoot_candidate_id="cand_01_tail_metadata_trim_end",
+            baseline_candidate_id="cand_01_tail_metadata_trim_end",
+            proceedings_signals={"proceedings_detected": True},
+            upstream_match_metadata={
+                "trim_method": "llm_validated_proceedings_trim",
+                "trim_mode": "llm_validated_proceedings_trim",
+                "title_score": 0.95,
+                "author_score": 0.60,
+                "match_score": 0.86,
+                "end_rule": "tail_metadata_trim_end",
+                "matched_end_index_exclusive": 13,
+                "matched_end_page_index": 1,
+                "body_signal_count": 4,
+                "header_only_flag": False,
+                "spillover_flag": False,
+                "index_detected": False,
+                "index_confidence": 0.0,
+                "index_listed_page": "",
+                "index_prev_code": "",
+                "index_next_code": "",
+                "page_map_method": "",
+                "estimated_offset": 0.0,
+                "offset_confidence": 0.0,
+                "fallback_triggered": False,
+                "candidate_quality_status": "trimmed_auto",
+                "candidate_quality_reason": "Looks valid.",
+            },
+        )
+        source_lines = self.validate_llm.flatten_lines(record)
+        decision = self.trim_llm.LLMDecision(
+            decision_type="line_within_overshoot",
+            selected_candidate_id="cand_01_tail_metadata_trim_end",
+            last_abstract_line_global_index=6,
+            confidence="high",
+            end_reason="metadata_starts",
+            explanation_short="The page footer looked like metadata.",
+        )
+
+        passed, reason = self.trim_llm.validate_llm_decision(package, decision, source_lines)
+
+        self.assertFalse(passed)
+        self.assertEqual(reason, "overshoot_contains_resumed_body_after_page_noise")
+
+    def test_parse_llm_decision_resolves_short_candidate_alias(self) -> None:
+        record = self.make_source_record()
+        source_path = self.write_source_record(record)
+        package = self.make_package(source_path)
+        source_lines = self.validate_llm.flatten_lines(record)
+
+        decision = self.trim_llm.parse_llm_decision(
+            package,
+            {
+                "decision_type": "candidate_exact",
+                "selected_candidate_id": "cand_01",
+                "last_abstract_line_number": None,
+                "confidence": "high",
+                "end_reason": "candidate_is_exact",
+                "explanation_short": "Candidate 01 is already exact.",
+            },
+            source_lines,
+        )
+
+        self.assertEqual(decision.selected_candidate_id, "cand_01_current_selected_end")
+        self.assertEqual(decision.last_abstract_line_global_index, 8)
+
+    def test_validate_llm_decision_allows_next_abstract_header_in_remainder(self) -> None:
+        record = {
+            "paper_id": "2003",
+            "source_filename": "2003.pdf",
+            "n_pages": 1,
+            "pages": [
+                {
+                    "page_index": 0,
+                    "text": "\n".join(
+                        [
+                            "P06.173",
+                            "A STIFF WOMAN",
+                            "Fnu Srinithya; Saikrishna Gadde. Example Hospital, Birmingham, AL",
+                            "BACKGROUND: A 37 year old woman developed progressive stiffness and painful spasms.",
+                            "METHODS: The patient underwent extensive testing before the final diagnosis.",
+                            "RESULTS: She improved after immunotherapy and benzodiazepines.",
+                            "RESULTS: Repeat electrophysiology showed reduced continuous motor unit activity.",
+                            "RESULTS: Early inpatient rehabilitation restored transfers and supported gait recovery.",
+                            "CONCLUSIONS: Early recognition supported durable recovery.",
+                            "Disclosure: Nothing to disclose.",
+                            "16 Short Communications",
+                            "© 2008 EFNS European Journal of Neurology 15 (Suppl. 3), 9-30",
+                            "Downloaded from https://onlinelibrary.wiley.com/",
+                            "P06.174",
+                            "A STROKE OF LUCK",
+                            "Shruti Rao; Thomas Wong. Another Hospital, San Francisco, CA",
+                            "CASE: Another unrelated case begins here.",
+                        ]
+                    ),
+                }
+            ],
+        }
+        source_path = self.write_source_record(record)
+        package = self.trim_llm.CandidatePackage(
+            paper_id="2003",
+            source_text_json_path=str(source_path),
+            reference_title="A stiff woman",
+            reference_authors="Srinithya, F; Gadde, S",
+            matched_start_index=0,
+            matched_start_page_index=0,
+            matched_block_code="P06.173",
+            matched_block_title="A STIFF WOMAN",
+            start_rule="matched_header_start",
+            candidate_generation_mode=self.trim_llm.CANDIDATE_GENERATION_MODE,
+            candidates=[
+                self.trim_llm.EndCandidate(
+                    candidate_id="cand_01_current_selected_end",
+                    heuristic_name="current_selected_end",
+                    rank=1,
+                    start_index=0,
+                    end_index_exclusive=10,
+                    start_page_index=0,
+                    end_page_index=0,
+                    n_lines=10,
+                    body_char_count=700,
+                    contains_next_confirmed_header=False,
+                    contains_soft_boundary=False,
+                    contains_tail_metadata=True,
+                    confidence_class="strict",
+                    rationale="Baseline candidate.",
+                ),
+                self.trim_llm.EndCandidate(
+                    candidate_id="cand_02_tail_metadata_trim_end",
+                    heuristic_name="tail_metadata_trim_end",
+                    rank=2,
+                    start_index=0,
+                    end_index_exclusive=17,
+                    start_page_index=0,
+                    end_page_index=0,
+                    n_lines=17,
+                    body_char_count=950,
+                    contains_next_confirmed_header=True,
+                    contains_soft_boundary=False,
+                    contains_tail_metadata=False,
+                    confidence_class="medium",
+                    rationale="Overshoot candidate including the next abstract header.",
+                ),
+            ],
+            overshoot_candidate_id="cand_02_tail_metadata_trim_end",
+            baseline_candidate_id="cand_01_current_selected_end",
+            proceedings_signals={"proceedings_detected": True},
+            upstream_match_metadata={
+                "trim_method": "llm_validated_proceedings_trim",
+                "trim_mode": "llm_validated_proceedings_trim",
+                "title_score": 0.95,
+                "author_score": 0.60,
+                "match_score": 0.86,
+                "end_rule": "current_selected_end",
+                "matched_end_index_exclusive": 8,
+                "matched_end_page_index": 0,
+                "body_signal_count": 4,
+                "header_only_flag": False,
+                "spillover_flag": False,
+                "index_detected": False,
+                "index_confidence": 0.0,
+                "index_listed_page": "",
+                "index_prev_code": "",
+                "index_next_code": "",
+                "page_map_method": "",
+                "estimated_offset": 0.0,
+                "offset_confidence": 0.0,
+                "fallback_triggered": False,
+                "candidate_quality_status": "trimmed_auto",
+                "candidate_quality_reason": "Looks valid.",
+            },
+        )
+        source_lines = self.validate_llm.flatten_lines(record)
+        decision = self.trim_llm.LLMDecision(
+            decision_type="line_within_overshoot",
+            selected_candidate_id="cand_02_tail_metadata_trim_end",
+            last_abstract_line_global_index=9,
+            confidence="high",
+            end_reason="next_header_starts",
+            explanation_short="The next abstract begins at P06.174, so the disclosure line is the true end.",
+        )
+
+        passed, reason = self.trim_llm.validate_llm_decision(package, decision, source_lines)
+
+        self.assertTrue(passed)
+        self.assertEqual(reason, "ok")
+
     def test_tail_metadata_trim_end_stops_at_references_heading(self) -> None:
         lines = [
             self.trim_llm.LineRef(global_index=20, page_index=0, line_index=0, text="Poster 96"),
@@ -267,6 +518,23 @@ class TestProceedingsTrimLLM(unittest.TestCase):
         trimmed_end = self.trim_llm._tail_metadata_trim_end(lines, 40, 49)
 
         self.assertEqual(trimmed_end, 46)
+
+    def test_tail_metadata_trim_end_stops_at_footer_metadata_lines(self) -> None:
+        lines = [
+            self.trim_llm.LineRef(global_index=70, page_index=0, line_index=0, text="307"),
+            self.trim_llm.LineRef(global_index=71, page_index=0, line_index=1, text="Stiff-person syndrome - a 15-year review at a tertiary hospital"),
+            self.trim_llm.LineRef(global_index=72, page_index=0, line_index=2, text="Authors"),
+            self.trim_llm.LineRef(global_index=73, page_index=0, line_index=3, text="Objective: Clinical characterization of stiff-person syndrome."),
+            self.trim_llm.LineRef(global_index=74, page_index=0, line_index=4, text="Results: Four patients were identified over 15 years."),
+            self.trim_llm.LineRef(global_index=75, page_index=0, line_index=5, text="Conclusions: Prompt diagnosis allows treatment."),
+            self.trim_llm.LineRef(global_index=76, page_index=0, line_index=6, text="Movement Disorders, Vol. 36, Suppl. 1,"),
+            self.trim_llm.LineRef(global_index=77, page_index=0, line_index=7, text="S132 ABSTRACTS"),
+            self.trim_llm.LineRef(global_index=78, page_index=0, line_index=8, text="Downloaded from https://movementdisorders.onlinelibrary.wiley.com/"),
+        ]
+
+        trimmed_end = self.trim_llm._tail_metadata_trim_end(lines, 70, 79)
+
+        self.assertEqual(trimmed_end, 76)
 
     def test_process_candidate_package_uses_reference_metadata_for_final_registry(self) -> None:
         record = self.make_source_record()

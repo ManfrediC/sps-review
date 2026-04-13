@@ -70,6 +70,12 @@ END_DECISION_SCHEMA: dict[str, Any] = {
 
 DOI_LINE_RE = re.compile(r"^\s*doi\s*[: ]", re.IGNORECASE)
 EMAIL_RE = re.compile(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b")
+URL_RE = re.compile(r"https?://|www\.", re.IGNORECASE)
+DOWNLOADED_FROM_RE = re.compile(r"\bdownloaded from\b", re.IGNORECASE)
+PROCEEDINGS_PAGE_SECTION_RE = re.compile(
+    r"^\s*(?:\d+\s+)?(?:short communications|poster session|abstracts?)\b",
+    re.IGNORECASE,
+)
 CONTACT_PREFIX_RE = re.compile(
     r"^(?:contact|contacts|email|e-mail|correspondence|corresponding author)\b",
     re.IGNORECASE,
@@ -174,6 +180,20 @@ def candidate_by_id(package: CandidatePackage, candidate_id: str) -> EndCandidat
     return None
 
 
+def _resolve_candidate_alias(package: CandidatePackage, candidate_id: str | None) -> str | None:
+    if not candidate_id:
+        return None
+    if candidate_by_id(package, candidate_id) is not None:
+        return candidate_id
+    alias_match = re.fullmatch(r"cand[_-]?0*(\d{1,2})", candidate_id, re.IGNORECASE)
+    if alias_match:
+        rank = int(alias_match.group(1))
+        for candidate in package.candidates:
+            if candidate.rank == rank:
+                return candidate.candidate_id
+    return candidate_id
+
+
 def _starts_reference_section(line: str) -> bool:
     stripped = line.strip()
     return bool(REFERENCE_HEADING_RE.match(stripped) or REFERENCE_INLINE_START_RE.match(stripped))
@@ -209,6 +229,12 @@ def is_tail_metadata_like_line(line: str) -> bool:
         return True
     if EMAIL_RE.search(stripped):
         return True
+    if URL_RE.search(stripped):
+        return True
+    if DOWNLOADED_FROM_RE.search(stripped):
+        return True
+    if PROCEEDINGS_PAGE_SECTION_RE.match(stripped):
+        return True
     if CONTACT_PREFIX_RE.match(stripped):
         return True
     if is_header_preamble_line(stripped):
@@ -220,11 +246,19 @@ def _explicit_tail_metadata_start(line: str) -> bool:
     stripped = line.strip()
     if _starts_reference_section(stripped):
         return True
+    if is_footer_like(stripped):
+        return True
     if is_trimmable_tail_metadata_line(stripped):
         return True
     if DOI_LINE_RE.match(stripped):
         return True
     if EMAIL_RE.search(stripped):
+        return True
+    if URL_RE.search(stripped):
+        return True
+    if DOWNLOADED_FROM_RE.search(stripped):
+        return True
+    if PROCEEDINGS_PAGE_SECTION_RE.match(stripped):
         return True
     return bool(CONTACT_PREFIX_RE.match(stripped))
 
@@ -933,7 +967,7 @@ def parse_llm_decision(
     decision_type = str(payload.get("decision_type") or "unable_to_determine")
     selected_candidate_id = payload.get("selected_candidate_id")
     if selected_candidate_id is not None:
-        selected_candidate_id = str(selected_candidate_id).strip() or None
+        selected_candidate_id = _resolve_candidate_alias(package, str(selected_candidate_id).strip() or None)
 
     overshoot_lines = _overshoot_span_lines(package, source_lines)
     last_abstract_line_global_index: int | None = None
@@ -1019,6 +1053,39 @@ def _build_block_from_end_index(
     )
 
 
+def _overshoot_remainder_contains_resumed_body(
+    package: CandidatePackage,
+    source_lines: list[LineRef],
+    *,
+    final_end_index_exclusive: int,
+    overshoot_end_index_exclusive: int,
+) -> bool:
+    remainder_lines = line_refs_for_span(source_lines, final_end_index_exclusive, overshoot_end_index_exclusive)
+    continuation_hits = 0
+    for line in remainder_lines:
+        stripped = line.text.strip()
+        normalized = normalize_text(stripped)
+        if not stripped or not normalized:
+            continue
+        line_code = abstract_code(stripped)
+        if line_code and line_code != package.matched_block_code:
+            return False
+        if is_footer_like(stripped) or is_header_preamble_line(stripped):
+            continue
+        if is_tail_metadata_like_line(stripped):
+            continue
+        if package.matched_block_code and line_code == package.matched_block_code:
+            continue
+        token_count = len(normalized.split())
+        if is_section_heading(stripped):
+            return True
+        if token_count >= 4:
+            continuation_hits += 1
+            if continuation_hits >= 2:
+                return True
+    return False
+
+
 def validate_llm_decision(
     package: CandidatePackage,
     decision: LLMDecision,
@@ -1048,6 +1115,13 @@ def validate_llm_decision(
         return False, "final_end_precedes_start"
     if final_end_index_exclusive > overshoot_candidate.end_index_exclusive:
         return False, "final_end_exceeds_overshoot"
+    if decision.decision_type == "line_within_overshoot" and _overshoot_remainder_contains_resumed_body(
+        package,
+        source_lines,
+        final_end_index_exclusive=final_end_index_exclusive,
+        overshoot_end_index_exclusive=overshoot_candidate.end_index_exclusive,
+    ):
+        return False, "overshoot_contains_resumed_body_after_page_noise"
 
     span_lines = line_refs_for_span(source_lines, package.matched_start_index, final_end_index_exclusive)
     if not span_lines:

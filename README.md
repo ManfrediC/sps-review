@@ -258,7 +258,9 @@ The canonical routing flow now starts with the joint LLM stage-04 pass.
 3. `src/pipelines/05b_validate_proceedings_text.py` checks whether the proceedings-derived text looks correctly localised and usable downstream.
 4. `src/pipelines/05_trim_proceedings_text_LLM.py` can build ordered end-candidate packages for the same proceedings sources under `data/extraction_json/text_trimmed_llm_candidates/` and `data/references/text_trim_llm_candidate_registry.csv`.
 5. `src/pipelines/05b_validate_proceedings_text_LLM.py` uses an OpenAI model to pick the best candidate end (or fall back to heuristics) and writes separate LLM-validated trims under `data/extraction_json/text_trimmed_llm/` and `data/references/text_trim_llm_registry.csv`.
-6. `src/pipelines/07_split_case_series.py` uses reviewed routing for true multi-case sources before downstream extraction.
+6. `src/pipelines/05c_publish_proceedings_ready.py` publishes the canonical proceedings-ready layer under `data/extraction_json/text_proceedings_ready/` and `data/references/text_proceedings_ready_registry.csv`, merging active gold trims, validated LLM trims, rebuilt LLM spans, legacy trims, and safe full-text passthrough abstracts.
+7. `src/pipelines/06_extract_sps_case_counts.py`, `src/pipelines/07_split_case_series.py`, and `src/pipelines/10_langextract.py` now prefer `data/extraction_json/text_proceedings_ready/{paper_id}.json` first, then legacy `text_trimmed/`, then the full extracted text when no proceedings-specific artefact exists.
+8. `src/pipelines/07_split_case_series.py` still uses reviewed routing for true multi-case sources before downstream extraction.
 
 ## Stage-04 gold standard
 

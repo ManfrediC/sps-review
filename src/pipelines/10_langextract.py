@@ -13,6 +13,7 @@ from typing import Any
 import langextract as lx
 from tqdm import tqdm
 
+from _proceedings_ready import TEXT_PROCEEDINGS_READY_DIR, preferred_proceedings_text_path
 from _source_routing import load_csv_rows_by_id, resolve_source_row, truthy
 
 
@@ -307,10 +308,11 @@ def load_text_record(path: Path) -> dict[str, Any]:
 
 # Build preferred text record path.
 def preferred_text_record_path(path: Path) -> Path:
-    trimmed_path = TEXT_TRIMMED_DIR / path.name
-    if trimmed_path.exists():
-        return trimmed_path
-    return path
+    return preferred_proceedings_text_path(
+        path,
+        ready_dir=TEXT_PROCEEDINGS_READY_DIR,
+        fallback_trimmed_dir=TEXT_TRIMMED_DIR,
+    )
 
 
 # Load case split record.

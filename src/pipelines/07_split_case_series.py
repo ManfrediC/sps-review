@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from _source_routing import load_csv_rows_by_id, resolve_source_row, truthy
+from _proceedings_ready import TEXT_PROCEEDINGS_READY_DIR, preferred_proceedings_text_path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -355,7 +356,12 @@ def main() -> None:
         )
         source_path = args.text_dir / f"{paper_id}.json"
         trimmed_path = args.trimmed_dir / f"{paper_id}.json"
-        preferred_path = trimmed_path if trimmed_path.exists() else source_path
+        preferred_path = preferred_proceedings_text_path(
+            source_path,
+            ready_dir=TEXT_PROCEEDINGS_READY_DIR,
+            fallback_trimmed_dir=args.trimmed_dir,
+        )
+        used_preferred_text = preferred_path != source_path
         split_path = args.output_dir / f"{paper_id}.json"
 
         qc_failure_reason = split_reason_for_qc_failure(
@@ -371,7 +377,7 @@ def main() -> None:
                     resolved_source=resolved_source,
                     source_path=preferred_path,
                     split_path=None,
-                    used_trimmed_text=trimmed_path.exists(),
+                    used_trimmed_text=used_preferred_text,
                     split_status="manual_review_required",
                     split_reason=qc_failure_reason,
                     segments=[],
@@ -393,7 +399,7 @@ def main() -> None:
                     resolved_source=resolved_source,
                     source_path=preferred_path,
                     split_path=None,
-                    used_trimmed_text=trimmed_path.exists(),
+                    used_trimmed_text=used_preferred_text,
                     split_status="manual_review_required",
                     split_reason="Could not find at least two distinct explicit case/patient headings.",
                     segments=[],
@@ -411,7 +417,7 @@ def main() -> None:
                     resolved_source=resolved_source,
                     source_path=preferred_path,
                     split_path=None,
-                    used_trimmed_text=trimmed_path.exists(),
+                    used_trimmed_text=used_preferred_text,
                     split_status="manual_review_required",
                     split_reason="Case headings do not begin with the first case, so the leading case block is not safely isolated.",
                     segments=[],
@@ -427,7 +433,7 @@ def main() -> None:
                     resolved_source=resolved_source,
                     source_path=preferred_path,
                     split_path=None,
-                    used_trimmed_text=trimmed_path.exists(),
+                    used_trimmed_text=used_preferred_text,
                     split_status="manual_review_required",
                     split_reason="Case headings were found, but the segmented case blocks were too short or unstable.",
                     segments=[],
@@ -440,7 +446,7 @@ def main() -> None:
             "source_filename": record.get("source_filename"),
             "source_sha256": record.get("source_sha256"),
             "source_text_json_path": relative_to_repo(preferred_path),
-            "used_trimmed_text": trimmed_path.exists(),
+            "used_trimmed_text": used_preferred_text,
             "resolved_source_category": resolved_source.get("resolved_source_category") or "",
             "resolved_source_subtype": resolved_source.get("resolved_source_subtype") or "",
             "split_status": "split_auto",
@@ -457,7 +463,7 @@ def main() -> None:
                 resolved_source=resolved_source,
                 source_path=preferred_path,
                 split_path=split_path,
-                used_trimmed_text=trimmed_path.exists(),
+                used_trimmed_text=used_preferred_text,
                 split_status="split_auto",
                 split_reason="Explicit case/patient headings supported a stable case-level split.",
                 segments=segments,

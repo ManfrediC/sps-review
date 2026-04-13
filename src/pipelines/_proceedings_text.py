@@ -75,7 +75,7 @@ TIME_RANGE_RE = re.compile(r"\b\d{1,2}:\d{2}\s*(?:am|pm)?\s*[–-]\s*\d{1,2}:\d{
 REFERENCE_ENTRY_RE = re.compile(r"^[A-Z][a-z]+,\s*[A-Z]")
 PROCEEDINGS_PAGE_HEADER_RE = re.compile(r"^[A-Z]?\d+\s*ABSTRACTS$", re.IGNORECASE)
 JOURNAL_VOLUME_METADATA_RE = re.compile(
-    r"\bvol\.\s*\d+\b.*\b(?:suppl\.?|supplement)\b.*\b(?:19|20)\d{2}\b",
+    r"\bvol\.\s*\d+\b.*\b(?:suppl\.?|supplement)\b(?:.*\b(?:19|20)\d{2}\b)?",
     re.IGNORECASE,
 )
 CONFERENCE_FOOTER_RE = re.compile(r"^abstracts from the .* conference", re.IGNORECASE)
@@ -972,6 +972,10 @@ def coded_header_boundary(lines: list[LineRef], start_index: int) -> tuple[bool,
         return False, start_index
     line_text = lines[start_index].text
     if is_abstract_start(line_text) is not None:
+        if start_index > 0:
+            previous_text = lines[start_index - 1].text.strip()
+            if previous_text.endswith("-") and not is_footer_like(previous_text):
+                return False, start_index
         return True, start_index + 1
     code_match = is_abstract_code_only(line_text)
     if code_match is None:

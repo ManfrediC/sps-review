@@ -1581,3 +1581,29 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 - Ran:
   - `.venv\Scripts\python.exe -m py_compile src/autoresearch/stage_05/benchmark.py src/autoresearch/stage_05/loop.py src/autoresearch/stage_05/trigger.py src/autoresearch/stage_05/status.py`
   - `.venv\Scripts\python.exe -m pytest tests/test_stage05_regression.py tests/test_stage05_loop.py tests/test_stage05_trigger.py tests/test_stage05_status.py -q`
+### LLM proceedings rollout completion
+
+- Completed the remaining live stage-05 LLM proceedings run for the unresolved conference-abstract pool, including the late-discovered holdout tranche that had not yet entered the earlier candidate registry.
+- Current stage-05 LLM registries now hold `89` candidate rows and `81` final reviewed rows.
+- Final LLM review outcomes: `64` `trimmed_auto_llm_candidate_exact`, `13` `trimmed_auto_llm_line_within_overshoot`, and `4` `trimmed_auto_llm_fallback_heuristic`.
+- Published the canonical proceedings-ready layer via `src/pipelines/05c_publish_proceedings_ready.py` to:
+  - `data/extraction_json/text_proceedings_ready/`
+  - `data/references/text_proceedings_ready_registry.csv`
+- The proceedings-ready layer now covers the full resolved conference-abstract universe (`235` papers) with no missing JSON files.
+- Source mix: `82` `gold_manual`, `61` `llm_validated`, `3` `llm_decision_rebuilt`, `71` `source_text_passthrough`, `18` `legacy_trimmed`.
+- Patched rebuilt-span edge cases so wrapped session titles are recognised correctly, misleading numeric bullet codes no longer win start-boundary selection, and supplement footer metadata without a year trims cleanly.
+- Downstream consumers now prefer the canonical proceedings-ready layer in:
+  - `src/pipelines/06_extract_sps_case_counts.py`
+  - `src/pipelines/07_split_case_series.py`
+  - `src/pipelines/10_langextract.py`
+  - `src/pipelines/12_build_paper_artifact_registry.py`
+
+### Verification
+
+- Ran live OpenAI validation for the late-discovered holdout tranche after explicitly loading `OPENAI_API_KEY` from `env/openai_api_key.env`.
+- Manual spot-checks looked correct for rebuilt/publication edge cases and final holdouts including `12473`, `8296`, `6219`, `6442`, `7804`, `8303`, and passthrough check `1217`.
+- Ran:
+  - `.venv\Scripts\python.exe src/pipelines/05c_publish_proceedings_ready.py`
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py tests/test_06_extract_sps_case_counts.py tests/test_sps_case_counting.py tests/test_04_source_categorisation_review_batch.py`
+  - `.venv\Scripts\python.exe -m py_compile src/pipelines/_proceedings_text.py src/pipelines/_proceedings_trim_llm.py src/pipelines/_proceedings_ready.py src/pipelines/05c_publish_proceedings_ready.py src/pipelines/06_extract_sps_case_counts.py src/pipelines/07_split_case_series.py src/pipelines/10_langextract.py src/pipelines/12_build_paper_artifact_registry.py tests/test_05_trim_proceedings_text.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py`
+- Result: `111` pytest checks passed.
