@@ -11,7 +11,7 @@ This folder is the working area for resumable stage-05 trimming review rounds. I
 - `feedback/`
   - structured human-reviewed source-of-truth files
 - `gold_standard/`
-  - accepted per-paper gold JSONs, the synced manifest, and autoresearch benchmark runs
+  - accepted per-paper gold JSONs, the synced manifest, and tranche bootstrap reports for the live manual workflow
 - `regression/`
   - frozen accepted cases used as a regression corpus
 - `reports/`
@@ -39,19 +39,9 @@ This folder is the working area for resumable stage-05 trimming review rounds. I
   - refreshes the review queue, feedback export, override file, and acceptance reports after a general code patch rerun
 - `src/validation/apply_trimming_manual_overrides.py`
   - applies fallback per-paper overrides from `manual_overrides.csv` and re-runs stage 05b on the affected papers
-- `src/autoresearch/stage_05/gold.py`
-  - scans direct stage-05 gold JSONs in `gold_standard/papers/`
-  - writes `gold_standard/manifest.json`
-- `src/autoresearch/stage_05/benchmark.py`
-  - runs the frozen gold and regression benchmarks against the isolated `_autoresearch` stage-05 scripts
-  - keeps labels, scoring rules, and strict normalisation outside the editable loop
 
-## Frozen benchmark rules
-- The autoresearch loop must not modify `src/autoresearch/stage_05/benchmark.py`.
-- The autoresearch loop must not modify the benchmark scoring rules or strict normalisation.
-- Per-paper labels are fixed:
-  - `missing_output`
-  - `spillover`
-  - `truncated`
-  - `exact_match`
-  - `wrong_abstract`
+## Retired Archive
+
+The former stage-05 autoresearch harness, the isolated `_autoresearch` scripts, the watcher marker, and the saved benchmark runs have been retired to `legacy/stage_05_autoresearch/`.
+
+The live proceedings-trimming workflow in `qa/trimming/` no longer depends on that archived bundle.

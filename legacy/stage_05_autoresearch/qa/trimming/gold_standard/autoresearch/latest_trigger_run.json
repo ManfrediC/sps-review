@@ -1,0 +1,49 @@
+{
+  "generated_at_utc": "2026-04-12T21:51:37.285126+00:00",
+  "status": "planned",
+  "launch_mode": "baseline",
+  "run_root": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run",
+  "run_tag": "stage05-apr12",
+  "manifest_path": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\manifest.json",
+  "paper_count": 83,
+  "entry_count": 83,
+  "invalid_count": 0,
+  "completion_signals": [
+    "ready_file:test"
+  ],
+  "recommended_branch": "autoresearch/stage05-apr12",
+  "current_branch": "autoresearch/stage05-apr12",
+  "branch_matches_recommended": true,
+  "commands": {
+    "gold_baseline": [
+      "C:\\Projects\\sps-review\\.venv\\Scripts\\python.exe",
+      "C:\\Projects\\sps-review\\src\\autoresearch\\stage_05\\benchmark.py",
+      "--mode",
+      "gold",
+      "--output-dir",
+      "C:\\Projects\\sps-review\\pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\gold_baseline",
+      "--manifest-path",
+      "C:\\Projects\\sps-review\\pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\manifest.json"
+    ],
+    "regression_baseline": [
+      "C:\\Projects\\sps-review\\.venv\\Scripts\\python.exe",
+      "C:\\Projects\\sps-review\\src\\autoresearch\\stage_05\\benchmark.py",
+      "--mode",
+      "regression",
+      "--output-dir",
+      "C:\\Projects\\sps-review\\pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\regression_baseline",
+      "--manifest-path",
+      "C:\\Projects\\sps-review\\pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\manifest.json"
+    ]
+  },
+  "log_paths": {
+    "gold_baseline_stdout": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\gold_baseline\\command_stdout.log",
+    "gold_baseline_stderr": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\gold_baseline\\command_stderr.log",
+    "regression_baseline_stdout": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\regression_baseline\\command_stdout.log",
+    "regression_baseline_stderr": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\regression_baseline\\command_stderr.log"
+  },
+  "summary_paths": {
+    "gold_baseline": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\gold_baseline\\summary.json",
+    "regression_baseline": "pytest_workspace_tmp\\20260412T215131_19988\\tmp_path\\test_launch_baseline_run_keeps_gold_and_regression_separate_000\\run\\regression_baseline\\summary.json"
+  }
+}

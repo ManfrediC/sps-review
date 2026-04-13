@@ -1,10 +1,10 @@
 # `src` Overview
 
-This folder contains the project pipeline scripts, validation utilities, autoresearch harnesses, and shared code. They are designed to be run from the repository root and operate on the data stored under `data/`.
+This folder contains the project pipeline scripts, validation utilities, legacy helpers, and shared code. They are designed to be run from the repository root and operate on the data stored under `data/`.
 
 Validation scripts should write their non-canonical review and audit outputs under `qa/validation/`, not `data/` or `results/`.
 
-Autoresearch harnesses should write benchmark-local artefacts under non-canonical QA folders such as `qa/trimming/`.
+The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autoresearch/`. Any future autoresearch harnesses should write benchmark-local artefacts under non-canonical QA folders such as `qa/trimming/`.
 
 ## Pipeline Order
 
@@ -48,23 +48,38 @@ Autoresearch harnesses should write benchmark-local artefacts under non-canonica
    - Confirms whether trimmed proceedings text appears to contain the correct abstract or whether manual follow-up is still needed.
    - Writes `data/references/proceedings_text_qc_registry.csv`.
 
-8. `pipelines/07_split_case_series.py`
+8. `pipelines/05_trim_proceedings_text_LLM.py`
+   - Builds ordered proceedings end-candidate packages under `data/extraction_json/text_trimmed_llm_candidates/`.
+   - Writes `data/references/text_trim_llm_candidate_registry.csv`.
+
+9. `pipelines/05b_validate_proceedings_text_LLM.py`
+   - Uses an OpenAI model to confirm the best proceedings end candidate or fall back to guarded heuristics.
+   - Writes final LLM-reviewed trims to `data/extraction_json/text_trimmed_llm/{paper_id}.json`.
+   - Writes `data/references/text_trim_llm_registry.csv`.
+
+10. `pipelines/05c_publish_proceedings_ready.py`
+   - Publishes the canonical proceedings-ready layer under `data/extraction_json/text_proceedings_ready/{paper_id}.json`.
+   - Writes `data/references/text_proceedings_ready_registry.csv`.
+   - Refreshes `data/references/paper_artifact_registry.csv`.
+
+11. `pipelines/07_split_case_series.py`
    - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
+   - Prefers `data/extraction_json/text_proceedings_ready/` before falling back to legacy trimmed or full source text.
    - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
    - Writes `data/references/case_series_split_registry.csv`.
 
-9. `pipelines/09_build_langextract_examples.py`
+12. `pipelines/09_build_langextract_examples.py`
    - Rebuilds the LangExtract few-shot JSONs in `config/prompts/examples/`.
    - Uses curated examples from `examples/` and validates that each prompt example maps back to a real curated row.
 
-10. `pipelines/10_langextract.py`
+13. `pipelines/10_langextract.py`
    - Reads extracted text and runs LangExtract with OpenAI models.
    - Uses reviewed source routing by default.
    - Explicitly skips records reviewed as `incorrect_reference`.
-   - Prefers trimmed proceedings text when available and uses case-series split artifacts for reviewed multi-case papers.
+   - Prefers proceedings-ready text when available and uses case-series split artifacts for reviewed multi-case papers.
    - Writes raw extractions to `data/extraction_json/langextract/` and summaries to `data/extraction_json/summary/`.
 
-11. `pipelines/11_quality_assessment.py`
+14. `pipelines/11_quality_assessment.py`
    - Reads extracted text and runs publication-type detection plus dictionary-driven quality extraction.
    - Uses reviewed source routing to exclude records reviewed as `incorrect_reference`.
    - Prefers trimmed proceedings text when available.
@@ -74,7 +89,7 @@ Autoresearch harnesses should write benchmark-local artefacts under non-canonica
 
 - `pipelines/12_build_paper_artifact_registry.py`
   - Builds `data/references/paper_artifact_registry.csv`.
-  - This is the project-wide source-of-truth table linking references, PDFs, extracted text, trimmed text, reviewed routing, proceedings QC, case-series splits, LangExtract outputs, summaries, and quality records.
+  - This is the project-wide source-of-truth table linking references, PDFs, extracted text, proceedings-ready text, reviewed routing, proceedings QC, case-series splits, LangExtract outputs, summaries, and quality records.
 
 - `pipelines/90_screen_text_extraction.py`
   - Screens extracted text for likely issues such as proceedings-like documents, noisy website chrome, or suspicious text-quality patterns.
@@ -168,19 +183,11 @@ Autoresearch harnesses should write benchmark-local artefacts under non-canonica
 - `validation/README.md`
   - Notes for the validation scripts and example commands.
 
-## Autoresearch Harnesses
+## Autoresearch Status
 
-- `autoresearch/stage_05/gold.py`
-  - scans direct stage-05 gold JSONs in `qa/trimming/gold_standard/papers/`
-  - writes the active manifest used by the frozen benchmark
-
-- `autoresearch/stage_05/benchmark.py`
-  - runs the frozen stage-05 gold and regression benchmarks against the isolated `_autoresearch` pipeline copies
-  - keeps scoring rules, labels, and strict normalisation outside the editable optimisation loop
-
-- `autoresearch/stage_05/program.md`
-  - defines the editable surface for the stage-05 autoresearch agent
-  - forbids edits to the benchmark and harness files
+- No active autoresearch harness currently lives under `src/`.
+- The retired stage-05 proceedings-trimming archive is preserved under `legacy/stage_05_autoresearch/`.
+- The reviewed gold papers and shared `qa/trimming/gold_standard/manifest.json` remain live outside that archive for the manual stage-05 workflow.
 
 ## Practical Notes
 
@@ -190,6 +197,6 @@ Autoresearch harnesses should write benchmark-local artefacts under non-canonica
 - Registry builders are meant to keep all generated artifacts traceable from one table.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-11`
+- Last updated: `2026-04-13`
 - Immediate subdirectories (6): `autoresearch`, `legacy`, `lib`, `notebooks`, `pipelines`, `validation`
 - Immediate files (0, excluding `README.md`): _None_

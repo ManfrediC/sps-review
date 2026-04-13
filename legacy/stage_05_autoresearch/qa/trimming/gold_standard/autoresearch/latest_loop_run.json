@@ -1,0 +1,37 @@
+{
+  "generated_at_utc": "2026-04-12T08:13:03.870406+00:00",
+  "run_root": "qa\\trimming\\gold_standard\\autoresearch\\runs\\stage05-apr12_03",
+  "run_tag": "stage05-apr12",
+  "manifest_path": "qa\\trimming\\gold_standard\\manifest.json",
+  "editable_files": [
+    "src\\pipelines\\_proceedings_text_autoresearch.py",
+    "src\\pipelines\\05_trim_proceedings_text_autoresearch.py"
+  ],
+  "program_path": "src\\autoresearch\\stage_05\\program.md",
+  "results_header": [
+    "iteration",
+    "status",
+    "exact_match_count",
+    "case_count",
+    "exact_match_rate",
+    "regression_failed_count",
+    "kept_commit",
+    "description"
+  ],
+  "max_iterations": 0,
+  "codex_bin": "codex",
+  "model": "",
+  "agent_timeout_seconds": 1200,
+  "benchmark_timeout_seconds": 1800,
+  "recommended_branch": "autoresearch/stage05-apr12",
+  "current_branch": "autoresearch/stage05-apr12",
+  "branch_matches_recommended": true,
+  "status": "blocked",
+  "results_path": "qa\\trimming\\gold_standard\\autoresearch\\runs\\stage05-apr12_03\\results.tsv",
+  "current_iteration": "baseline",
+  "stop_reason": "baseline_failed",
+  "failure_reason": "gold benchmark timed out after 1800 seconds",
+  "failed_step": "gold benchmark",
+  "failed_stdout_path": "qa\\trimming\\gold_standard\\autoresearch\\runs\\stage05-apr12_03\\baseline\\gold\\command_stdout.log",
+  "failed_stderr_path": "qa\\trimming\\gold_standard\\autoresearch\\runs\\stage05-apr12_03\\baseline\\gold\\command_stderr.log"
+}

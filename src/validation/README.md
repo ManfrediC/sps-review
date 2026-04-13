@@ -8,7 +8,7 @@ These scripts are intentionally separate from `src/pipelines/`:
 - validation scripts audit those outputs and report whether they appear consistent with the underlying evidence
 - non-canonical validation reports, review sheets, and spot checks should be written under `qa/validation/`, not `data/` or `results/`
 
-The frozen stage-05 autoresearch benchmark now lives under `src/autoresearch/stage_05/`. `src/validation/` keeps the manual batch-management, review, and feedback utilities for stage 05.
+The retired stage-05 autoresearch bundle is now archived under `legacy/stage_05_autoresearch/`. `src/validation/` keeps the live manual batch-management, review, and feedback utilities for stage 05.
 
 ## Available scripts
 
@@ -193,6 +193,7 @@ It:
 - shows a compact preview of the final LLM-trimmed text when one exists
 - displays every heuristic end candidate with its rationale and end index
 - lets you inspect the selected candidate boundary and the full overshoot span with candidate-end markers
+- is the preferred inspection surface before `05c_publish_proceedings_ready.py` promotes the accepted result into `data/extraction_json/text_proceedings_ready/`
 
 Run:
 

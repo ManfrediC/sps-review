@@ -66,6 +66,7 @@ It writes `data/references/paper_artifact_registry.csv` with one row per `paper_
 - the Covidence reference export,
 - downloaded PDFs,
 - text extraction outputs,
+- proceedings-ready text outputs,
 - source categorisation outputs,
 - SPS case-count outputs,
 - LangExtract raw outputs,
@@ -182,6 +183,12 @@ It:
 
 This flow keeps the deterministic stage-05 outputs untouched while producing a parallel LLM-reviewed alternative for inspection.
 
+Run the canonical publication pass afterwards:
+
+```bash
+python src/pipelines/05c_publish_proceedings_ready.py
+```
+
 ### Run
 
 ```bash
@@ -194,24 +201,32 @@ Run the same focused subset after loading `OPENAI_API_KEY`:
 python src/pipelines/05b_validate_proceedings_text_LLM.py --paper-id 1001 --paper-id 1011 --paper-id 1028
 ```
 
-## Stage-05 `_autoresearch` Copies
+## `05c_publish_proceedings_ready.py`
 
-The proceedings trimming autoresearch loop uses isolated stage-05 copies so production stage 05 stays untouched:
+This script publishes the canonical proceedings-ready text layer used by downstream stages.
 
-- `src/pipelines/_proceedings_text_autoresearch.py`
-- `src/pipelines/05_trim_proceedings_text_autoresearch.py`
-- `src/pipelines/05b_validate_proceedings_text_autoresearch.py`
+It:
 
-These copies:
-- default to non-canonical outputs under `qa/trimming/gold_standard/autoresearch/`
-- avoid refreshing canonical registries
-- are the only stage-05 scripts used by `src/autoresearch/stage_05/benchmark.py`
+- reads the resolved conference-abstract universe from stage 04,
+- prefers active gold-standard proceedings trims when available,
+- publishes validated LLM trims and rebuilt LLM boundary spans where needed,
+- keeps safe full-text passthrough abstracts together in the same canonical layer,
+- falls back to legacy `text_trimmed/` only when no better source is available,
+- writes canonical outputs to `data/extraction_json/text_proceedings_ready/{paper_id}.json`,
+- writes the paired registry `data/references/text_proceedings_ready_registry.csv`, and
+- refreshes `data/references/paper_artifact_registry.csv`.
 
-The v1 optimisation loop should edit only:
-- `src/pipelines/_proceedings_text_autoresearch.py`
-- `src/pipelines/05_trim_proceedings_text_autoresearch.py`
+### Run
 
-The `_autoresearch` validator copy remains frozen and is used only for diagnostics and failure labels.
+```bash
+python src/pipelines/05c_publish_proceedings_ready.py
+```
+
+## Retired Stage-05 `_autoresearch` Copies
+
+The isolated stage-05 `_autoresearch` copies have been retired from the live pipeline tree.
+
+They are preserved under `legacy/stage_05_autoresearch/src/pipelines/` together with the archived benchmark harness, dedicated tests, and non-canonical run artefacts.
 
 ## `03_extract_text.py`
 
@@ -398,7 +413,8 @@ This script estimates how many extractable SPS patients/cases are present in eac
 It:
 
 - reads the full text JSON from `data/extraction_json/text`,
-- prefers `data/extraction_json/text_trimmed/{paper_id}.json` when available,
+- prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when available,
+- falls back to `data/extraction_json/text_trimmed/{paper_id}.json`,
 - joins the source category from `data/references/source_categorisation_registry.csv`,
 - estimates `likely_sps_case_count` with a separate SPS-specific count heuristic,
 - records count confidence, basis, and whether manual count review is advisable, and
@@ -423,6 +439,8 @@ It:
 - reads the reviewed routing decision from `data/references/source_categorisation_manual_review.csv` when available,
 - limits automatic splitting to papers that are true case-series candidates,
 - requires proceedings conference abstracts to pass the proceedings QC gate first,
+- prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when available,
+- falls back to `data/extraction_json/text_trimmed/{paper_id}.json`,
 - searches for explicit `Case 1` / `Patient 1` style headings,
 - writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`, and
 - writes `data/references/case_series_split_registry.csv`.
@@ -459,7 +477,7 @@ python src/pipelines/09_build_langextract_examples.py
 
 ## `10_langextract.py`
 
-This script reads text JSON files from `data/extraction_json/text`, applies reviewed routing by default, prefers `data/extraction_json/text_trimmed/{paper_id}.json` when it exists, uses case-series split artifacts when appropriate, runs LangExtract with an OpenAI model, and writes:
+This script reads text JSON files from `data/extraction_json/text`, applies reviewed routing by default, prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when it exists, falls back to `data/extraction_json/text_trimmed/{paper_id}.json`, uses case-series split artifacts when appropriate, runs LangExtract with an OpenAI model, and writes:
 
 - Raw LangExtract entities to `data/extraction_json/langextract/{paper_id}.json`
 - Section summaries + overall summary to `data/extraction_json/summary/{paper_id}.json`
@@ -501,6 +519,6 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 Records reviewed as `incorrect_reference` are explicitly excluded before any downstream model calls.
 
 ## Directory Contents Snapshot
-- Last updated: `2026-04-12`
+- Last updated: `2026-04-13`
 - Immediate subdirectories (0): _None_
-- Immediate files (26, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05_trim_proceedings_text_LLM.py`, `05_trim_proceedings_text_autoresearch.py`, `05b_validate_proceedings_text.py`, `05b_validate_proceedings_text_LLM.py`, `05b_validate_proceedings_text_autoresearch.py`, `06_extract_sps_case_counts.py`, ... (+14 more)
+- Immediate files (25, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05_trim_proceedings_text_LLM.py`, `05b_validate_proceedings_text.py`, `05b_validate_proceedings_text_LLM.py`, `05c_publish_proceedings_ready.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, ... (+13 more)
