@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-04-11T23:34:31.143936+00:00",
-  "paper_count": 83,
+  "generated_at_utc": "2026-04-13T08:42:33.412510+00:00",
+  "paper_count": 89,
   "entries": [
     {
       "paper_id": "1001",
@@ -30,12 +30,12 @@
       "paper_id": "1028",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1028.json",
       "source_text_path": "data\\extraction_json\\text\\1028.json",
-      "reviewer": "",
-      "notes": "",
-      "raw_text_hash": "231865dfe70603b16a2a0bf029e4cc82f8704fb24f0055a26f4421b6d5a5a109",
-      "normalised_text_hash": "3eb38dca35e0d13c916cb77477e2644434e5d346dbb230ae5f00a8daa0d24250",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed footer spill and references tail from the proceedings abstract.",
+      "raw_text_hash": "4079a567b48d15eefa193bc985a6f0828c6364cd2547f3856a68e03798be3aa6",
+      "normalised_text_hash": "340cffc9811f941ce11ce0fc00173db2392542b83f0f71d4cd53aa8254072e71",
       "gold_first_line": "96",
-      "gold_last_line": "doi:10.1016/j.jneuroim.2014.08.060",
+      "gold_last_line": "addressed in a passive antibody transfer model.",
       "gold_status": "active"
     },
     {
@@ -150,12 +150,12 @@
       "paper_id": "1215",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1215.json",
       "source_text_path": "data\\extraction_json\\text\\1215.json",
-      "reviewer": "",
-      "notes": "",
-      "raw_text_hash": "a3e05d0a2e064fd2a59808890c367413fe4b570a81d7d8d23da496a498c591f6",
-      "normalised_text_hash": "dece34f4fe258c2fc453f8a07b1153eb428f7fa320c4b452d2c88af669f82cd8",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed the journal footer and schedule tail.",
+      "raw_text_hash": "ae58abf721bc14a773e8180daacdbb70a0e62ebfe4a05933acc31489d08a9d22",
+      "normalised_text_hash": "f58ac17366a3341da0da8c83c18d61296565971cb9c64c9cbc8cc7b51b0d2da0",
       "gold_first_line": "58",
-      "gold_last_line": "SATURDAY",
+      "gold_last_line": "They may be responsive to treatment with anakinra or high-dose IVIG.",
       "gold_status": "active"
     },
     {
@@ -411,6 +411,18 @@
       "gold_status": "active"
     },
     {
+      "paper_id": "1422",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1422.json",
+      "source_text_path": "data\\extraction_json\\text\\1422.json",
+      "reviewer": "Codex manual repair",
+      "notes": "Manual repair: isolate abstract P128 and stop before the next abstract and footer.",
+      "raw_text_hash": "ebb480ae5de4a384e38f70755ff8f6282ec24a8c350ef2febede7ea1800273a0",
+      "normalised_text_hash": "313383ca1bc01c1747cb41568480a571767510485de6c90bef741d06f1ad7e2c",
+      "gold_first_line": "P128: Intrathecal baclofen therapy for GAD(+) Stiff-Person Syndrome: A Case Series of 4 patients",
+      "gold_last_line": "steroids and plasma exchange, all the 4 patients described here highly benefited from intrathecal baclofen (ITB) therapy.",
+      "gold_status": "active"
+    },
+    {
       "paper_id": "1433",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1433.json",
       "source_text_path": "data\\extraction_json\\text\\1433.json",
@@ -522,12 +534,12 @@
       "paper_id": "1511",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1511.json",
       "source_text_path": "data\\extraction_json\\text\\1511.json",
-      "reviewer": "",
-      "notes": "",
-      "raw_text_hash": "0eb2bcc4f521ad911394c14684887e701ed6d2dd98b9f429e21c586ea45f86e0",
-      "normalised_text_hash": "e90139348a7d638ad5ec6e60ae353bcb7ceb6ef0cc553f15d15434b3b27ba549",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: rebuilt the SPS abstract from non-contiguous source lines and removed neighbouring abstracts.",
+      "raw_text_hash": "0a17ed7cfd4858081f1e6bd8e938a529bcf269b5d8deb823a07a71bd2f62ca79",
+      "normalised_text_hash": "b34c2682e705abd8d630845bf301e1e68febf867f3072d6055e7c135c4783711",
       "gold_first_line": "0028 Sti ﬀ-Limb Syndrome: Thinking about that!",
-      "gold_last_line": "[1] Kaltenbach, T., Engler, P., Kratzer, W., et al.",
+      "gold_last_line": "generally noted in most patients.",
       "gold_status": "active"
     },
     {
@@ -642,12 +654,12 @@
       "paper_id": "1793",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1793.json",
       "source_text_path": "data\\extraction_json\\text\\1793.json",
-      "reviewer": "",
-      "notes": "",
-      "raw_text_hash": "1a6b1d8e561929ca23b69c821372e2f3b92e5e688c7af2e2b6c800f571642046",
-      "normalised_text_hash": "a865cb924afd9a85e042a107e2dbb27c1974cfb16d9caa0663c199131a9bbbac",
-      "gold_first_line": "144 | Stiff- person syndrome: The analyses of 15 cases",
-      "gold_last_line": "ABSTRACTS",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed the download/footer tail after the abstract keywords.",
+      "raw_text_hash": "16bd0baa266b9dca513eeb6644d7b97eca46dbd830bcff85523b47b9f19c40bb",
+      "normalised_text_hash": "622036eb09081579f3a303251c228f7036d93adbca98a79f39bf3b22a690aa42",
+      "gold_first_line": "lobectomy; safety; effectiveness.",
+      "gold_last_line": "ioural therapy.",
       "gold_status": "active"
     },
     {
@@ -762,10 +774,10 @@
       "paper_id": "1901",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1901.json",
       "source_text_path": "data\\extraction_json\\text\\1901.json",
-      "reviewer": "",
-      "notes": "",
-      "raw_text_hash": "a9e1ab68fd6daffc2b4f5517a4fb422403363a9999644d0b595eb1986dc35b3b",
-      "normalised_text_hash": "910225bbc7e61da83194c1742cdc065b67d98f0e5e3a4054a420e98d5af2abfa",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed the footer/download insert from the abstract conclusion.",
+      "raw_text_hash": "2572985961d1d0e10dbf95122374504b602deb2b0822a753a353c4368cf7f5b5",
+      "normalised_text_hash": "b3d87d0ea7d8d1c591162a48666767a47b85bca3ec62d31af1dc60d50b6c03c7",
       "gold_first_line": "75 | IATROGENIC HYPOGLOBULINEMIA",
       "gold_last_line": "FFP one can use as replacement fluid.",
       "gold_status": "active"
@@ -780,6 +792,18 @@
       "normalised_text_hash": "62be147bcab64d7705f7387696c54e15f0865a08610d247637466d81738440d1",
       "gold_first_line": "C31",
       "gold_last_line": "also be taken into consideration.",
+      "gold_status": "active"
+    },
+    {
+      "paper_id": "1909",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1909.json",
+      "source_text_path": "data\\extraction_json\\text\\1909.json",
+      "reviewer": "Codex manual repair",
+      "notes": "Manual repair: keep the abstract through conclusions and stop before disclosures.",
+      "raw_text_hash": "38182e953a1d7198b03afacb6ed8fb16ba99fac8443143dfaffc371f68edf1ad",
+      "normalised_text_hash": "4fc3b0e9e3af06ee37d2b09295a0e3ebce65e04d3f6adedff3760b765a5c82c6",
+      "gold_first_line": "Autologous Hematopoietic Stem Cell Transplantation May Be",
+      "gold_last_line": "highly effective therapy for selected patients with treatment-refractory, severe SPS.",
       "gold_status": "active"
     },
     {
@@ -810,11 +834,11 @@
       "paper_id": "1921",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\1921.json",
       "source_text_path": "data\\extraction_json\\text\\1921.json",
-      "reviewer": "",
-      "notes": "",
-      "raw_text_hash": "37b1de7f9d8b54d5203f1d4310a7623d1821b45a552c1325f61bfd72f6c5ce8a",
-      "normalised_text_hash": "a8d32b1e9af84fe204c6b560c1169845563aaa3128aecdbfb69a5a2c79835480",
-      "gold_first_line": "171",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed the withdrawn-item preamble, figure/footer block, and references tail.",
+      "raw_text_hash": "48f0329ceef0e39ae200116ff8f5c60f81f628cb244f83292a6a768dcae673ef",
+      "normalised_text_hash": "4ce466ddd4f24169c6510e02a5aeca933d58ffe733b4c8da51ec84c5348194f9",
+      "gold_first_line": "172",
       "gold_last_line": "show a poor response to the ﬁrst imunossupressive treatment.",
       "gold_status": "active"
     },
@@ -894,10 +918,10 @@
       "paper_id": "5029",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\5029.json",
       "source_text_path": "data\\extraction_json\\text\\5029.json",
-      "reviewer": "human_reviewer",
-      "notes": "truncated",
-      "raw_text_hash": "6ba1ab12fb3f77c692c7de496a7e6148ca57f9531697fb116d3c5817b59725d5",
-      "normalised_text_hash": "5ca6e9964ed2b9e22a5af673ce0534f398219ffdfb1109a4fe4e4c4b8def03ee",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed the footer/download insert and next-abstract spillover.",
+      "raw_text_hash": "45dccfaf1745da8dc73cc405d707a484f4a6c4562b8ad731f559275d3857ff70",
+      "normalised_text_hash": "58e92d6abce3557dd44ceb0ae5e7eae000b730e3127288e6bf5008184ca1297a",
       "gold_first_line": "419. Anti-Amphiphysin Positive Partial Stiff Person",
       "gold_last_line": "ophysiology and treatment options.",
       "gold_status": "active"
@@ -963,6 +987,18 @@
       "gold_status": "active"
     },
     {
+      "paper_id": "5970",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\5970.json",
+      "source_text_path": "data\\extraction_json\\text\\5970.json",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: removed the embedded abstracts footer and next-abstract spillover.",
+      "raw_text_hash": "5cf19ecd23da4853e8d97c1393a15c0f66ef5e23f6eb739ed1bd74899917056c",
+      "normalised_text_hash": "d53a43917376ae52ea956be71f71f626363e79b3109c2095b836e8e1bd150e46",
+      "gold_first_line": "DON'T CALL THE PSYCHIATRIST JUST YET; A CASE RE-",
+      "gold_last_line": "ical testing. Imaging generally does not aid in diagnosis.",
+      "gold_status": "active"
+    },
+    {
       "paper_id": "6271",
       "gold_json_path": "qa\\trimming\\gold_standard\\papers\\6271.json",
       "source_text_path": "data\\extraction_json\\text\\6271.json",
@@ -972,6 +1008,30 @@
       "normalised_text_hash": "a753259cda1bd7856363adcf20896deb0cf39a69710c3e1d429d81988b6c563a",
       "gold_first_line": "C14",
       "gold_last_line": "treatment.",
+      "gold_status": "active"
+    },
+    {
+      "paper_id": "6723",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\6723.json",
+      "source_text_path": "data\\extraction_json\\text\\6723.json",
+      "reviewer": "Codex manual repair",
+      "notes": "Manual repair: isolate abstract T-87 and stop before T-88.",
+      "raw_text_hash": "411f34857d8c1ded60718c1e9ca38e7306def61e6a0903685ef8f401e6fa13bf",
+      "normalised_text_hash": "7f36a3ba4e89ce3aa5674d6d546b8d97698300961c0bbaf19be85565f6e4a862",
+      "gold_first_line": "T-87. Stiff-Man Syndrome: Clinical Course, Treatments",
+      "gold_last_line": "testing.",
+      "gold_status": "active"
+    },
+    {
+      "paper_id": "6732",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\6732.json",
+      "source_text_path": "data\\extraction_json\\text\\6732.json",
+      "reviewer": "Codex manual repair",
+      "notes": "Sanity sweep repair: trimmed the disclosure tail and next-abstract spillover.",
+      "raw_text_hash": "8d7fb9ee997e18290c1ddc90ad96ea4714eb5fbd659f8ccc5e2d217ee9e11690",
+      "normalised_text_hash": "ab1e835f88d551c6211731e567a91ba143e98916a826c508a0677ee454611db0",
+      "gold_first_line": "06.173",
+      "gold_last_line": "ergic inhibitory system in muscle hyperactivity syndromes.",
       "gold_status": "active"
     },
     {
@@ -996,6 +1056,18 @@
       "normalised_text_hash": "bbd6b0260c97c3efc2263c4b8fe99341e9bd4ecd52d5e389685414f65c819282",
       "gold_first_line": "Stiff man syndrome associated with breast cancer about 2 cases",
       "gold_last_line": "doi:10.1016/j.jns.2013.07.1575",
+      "gold_status": "active"
+    },
+    {
+      "paper_id": "11109",
+      "gold_json_path": "qa\\trimming\\gold_standard\\papers\\11109.json",
+      "source_text_path": "data\\extraction_json\\text\\11109.json",
+      "reviewer": "Codex manual repair",
+      "notes": "Manual repair: use the source article body through the end of discussion, before references.",
+      "raw_text_hash": "8a547dc1bda49f4a38337f0139e84585a28869f6fb75b2a4c1c8f31f0b9742b0",
+      "normalised_text_hash": "fea7e016a99031fce0e466c4157496596697d8b8a8b1883e296d47045345e2df",
+      "gold_first_line": "INTRODUCTION",
+      "gold_last_line": "other available agents.",
       "gold_status": "active"
     }
   ]
