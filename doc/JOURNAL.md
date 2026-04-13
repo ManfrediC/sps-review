@@ -1581,18 +1581,41 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 - Ran:
   - `.venv\Scripts\python.exe -m py_compile src/autoresearch/stage_05/benchmark.py src/autoresearch/stage_05/loop.py src/autoresearch/stage_05/trigger.py src/autoresearch/stage_05/status.py`
   - `.venv\Scripts\python.exe -m pytest tests/test_stage05_regression.py tests/test_stage05_loop.py tests/test_stage05_trigger.py tests/test_stage05_status.py -q`
+
+### Stage-05 autoresearch retirement
+
+- Retired the live stage-05 autoresearch bundle to `legacy/stage_05_autoresearch/`.
+- Moved the following into that archive:
+  - `src/autoresearch/stage_05/`
+  - the three stage-05 `_autoresearch` pipeline copies
+  - the dedicated `tests/test_stage05_*.py` files
+  - the saved watcher outputs and benchmark runs from `qa/trimming/gold_standard/autoresearch/`
+  - the trigger marker `qa/trimming/gold_standard/COMPLETE`
+- Kept the reviewed gold papers and the shared `qa/trimming/gold_standard/manifest.json` in place because they are still used by the live manual stage-05 review flow.
+- Updated the active docs and production tests so the default repo workflow no longer points at the retired autoresearch harness.
+
 ### LLM proceedings rollout completion
 
 - Completed the remaining live stage-05 LLM proceedings run for the unresolved conference-abstract pool, including the late-discovered holdout tranche that had not yet entered the earlier candidate registry.
-- Current stage-05 LLM registries now hold `89` candidate rows and `81` final reviewed rows.
-- Final LLM review outcomes: `64` `trimmed_auto_llm_candidate_exact`, `13` `trimmed_auto_llm_line_within_overshoot`, and `4` `trimmed_auto_llm_fallback_heuristic`.
-- Published the canonical proceedings-ready layer via `src/pipelines/05c_publish_proceedings_ready.py` to:
+- The LLM stage-05 registries now contain:
+  - `89` candidate rows in `data/references/text_trim_llm_candidate_registry.csv`
+  - `81` final LLM-reviewed rows in `data/references/text_trim_llm_registry.csv`
+  - final status mix: `64` `trimmed_auto_llm_candidate_exact`, `13` `trimmed_auto_llm_line_within_overshoot`, `4` `trimmed_auto_llm_fallback_heuristic`
+- Added and exercised the canonical proceedings publication layer:
+  - `src/pipelines/05c_publish_proceedings_ready.py`
   - `data/extraction_json/text_proceedings_ready/`
   - `data/references/text_proceedings_ready_registry.csv`
-- The proceedings-ready layer now covers the full resolved conference-abstract universe (`235` papers) with no missing JSON files.
-- Source mix: `82` `gold_manual`, `61` `llm_validated`, `3` `llm_decision_rebuilt`, `71` `source_text_passthrough`, `18` `legacy_trimmed`.
-- Patched rebuilt-span edge cases so wrapped session titles are recognised correctly, misleading numeric bullet codes no longer win start-boundary selection, and supplement footer metadata without a year trims cleanly.
-- Downstream consumers now prefer the canonical proceedings-ready layer in:
+- The canonical proceedings-ready layer now covers the full resolved conference-abstract universe (`235` papers) with no missing JSON files.
+- Current proceedings-ready source mix:
+  - `82` `gold_manual`
+  - `61` `llm_validated`
+  - `3` `llm_decision_rebuilt`
+  - `71` `source_text_passthrough`
+  - `18` `legacy_trimmed`
+- Patched two publication edge cases discovered during the rollout:
+  - rebuilt starts now prioritise title matches over misleading numeric bullet codes and can match wrapped session-title clusters
+  - supplement footer metadata without an explicit year now trims cleanly from rebuilt spans
+- Downstream consumers now prefer the canonical proceedings-ready layer where available:
   - `src/pipelines/06_extract_sps_case_counts.py`
   - `src/pipelines/07_split_case_series.py`
   - `src/pipelines/10_langextract.py`
@@ -1600,10 +1623,46 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 
 ### Verification
 
-- Ran live OpenAI validation for the late-discovered holdout tranche after explicitly loading `OPENAI_API_KEY` from `env/openai_api_key.env`.
-- Manual spot-checks looked correct for rebuilt/publication edge cases and final holdouts including `12473`, `8296`, `6219`, `6442`, `7804`, `8303`, and passthrough check `1217`.
+- Ran live OpenAI validation for the newly discovered stage-05 holdout papers after explicitly loading `OPENAI_API_KEY` from `env/openai_api_key.env`.
+- Manual spot-checks looked correct for the rebuilt/publication edge cases and the final holdout trims, including:
+  - `12473`
+  - `8296`
+  - `6219`
+  - `6442`
+  - `7804`
+  - `8303`
+  - passthrough check `1217`
 - Ran:
   - `.venv\Scripts\python.exe src/pipelines/05c_publish_proceedings_ready.py`
   - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py tests/test_06_extract_sps_case_counts.py tests/test_sps_case_counting.py tests/test_04_source_categorisation_review_batch.py`
   - `.venv\Scripts\python.exe -m py_compile src/pipelines/_proceedings_text.py src/pipelines/_proceedings_trim_llm.py src/pipelines/_proceedings_ready.py src/pipelines/05c_publish_proceedings_ready.py src/pipelines/06_extract_sps_case_counts.py src/pipelines/07_split_case_series.py src/pipelines/10_langextract.py src/pipelines/12_build_paper_artifact_registry.py tests/test_05_trim_proceedings_text.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py`
-- Result: `111` pytest checks passed.
+- Result:
+  - `111` pytest checks passed
+
+### Stage-05 proceedings sanity sweep repairs
+
+- Ran a manual sanity sweep over the published `data/extraction_json/text_proceedings_ready/` outputs to look for the concrete boundary failures seen during rollout: trailing references, disclosure tails, journal/footer inserts, download notices, and next-abstract spillover.
+- Confirmed and repaired `13` stage-05 outputs with updated gold JSONs:
+  - new or rebuilt gold repairs: `11109`, `1422`, `1909`, `5970`, `6723`, `6732`
+  - revised older gold trims: `1028`, `1215`, `1511`, `1793`, `1901`, `1921`, `5029`
+- The repaired cases included both contiguous span fixes and a few hand-assembled non-contiguous reconstructions where OCR had interleaved neighbouring abstracts.
+- Republished the canonical proceedings-ready layer and refreshed the downstream provenance registry:
+  - `data/extraction_json/text_proceedings_ready/`
+  - `data/references/text_proceedings_ready_registry.csv`
+  - `data/references/paper_artifact_registry.csv`
+- Current proceedings-ready publication mix after the repair pass:
+  - `88` `gold_manual`
+  - `70` `llm_validated`
+  - `5` `llm_decision_rebuilt`
+  - `72` `source_text_passthrough`
+  - `0` `legacy_trimmed`
+- Coverage remains complete at `235/235` published proceedings-ready JSONs with `0` missing files.
+
+### Verification
+
+- Re-ran `src/pipelines/05c_publish_proceedings_ready.py` after both repair batches.
+- Rechecked the repaired outputs directly in the published proceedings-ready layer.
+- Re-ran the focused stage-05 test slice:
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py -q`
+- Result:
+  - `90` pytest checks passed
