@@ -10,6 +10,8 @@ These scripts are intentionally separate from `src/pipelines/`:
 
 The retired stage-05 autoresearch bundle is now archived under `legacy/stage_05_autoresearch/`. `src/validation/` keeps the live manual batch-management, review, and feedback utilities for stage 05.
 
+The retired deterministic stage-05 validation bundle now lives under `legacy/stage_05_deterministic/src/validation/`.
+
 ## Available scripts
 
 ### `validate_pdf_source_registry.py`
@@ -146,9 +148,9 @@ The script:
 - excludes papers already frozen in `qa/trimming/feedback/` or `qa/trimming/regression/`
 - resumes an interrupted processing batch instead of starting from scratch
 - refuses to open a new batch while an earlier batch is still unresolved
-- runs `05_trim_proceedings_text.py` and `05b_validate_proceedings_text.py` incrementally on the selected subset only
+- runs `05_trim_proceedings_text_LLM.py`, `05b_validate_proceedings_text_LLM.py`, and `05c_publish_proceedings_ready.py` incrementally on the selected subset only
 - writes a batch manifest under `qa/trimming/batches/`
-- writes subset outputs, review files, and a machine-readable batch report under `qa/trimming/reports/<batch_id>/`
+- writes subset candidate, final, and proceedings-ready artefacts plus a machine-readable batch report under `qa/trimming/reports/<batch_id>/`
 
 Prepare the next default 50-file batch:
 
@@ -162,34 +164,15 @@ Prepare a smaller explicit batch size:
 python src/validation/manage_trimming_batches.py --batch-size 10
 ```
 
-### `review_stage05_app.py`
-
-Streamlit reviewer for the stage-05 proceedings-trimming rounds.
-
-It:
-- loads a selected batch from `qa/trimming/reports/`
-- shows the source PDF alongside the current trim/QC state
-- includes a search box that uses extracted page text to jump the embedded PDF viewer to matching pages
-- shows a preview of the current trimmed abstract when one exists
-- lets the reviewer mark the extraction as correct or enter corrected start/end anchors plus patch comments
-- saves each response immediately to `responses.csv`
-- refreshes `feedback.json`, `manual_overrides.csv`, `acceptance_report.json`, and `patch_review_summary.json` after each save
-
-Run:
-
-```bash
-streamlit run src/validation/review_stage05_app.py
-```
-
 ### `review_stage05_llm_app.py`
 
-Read-only Streamlit inspector for the LLM-assisted stage-05 proceedings workflow.
+Read-only Streamlit inspector for the live LLM-assisted stage-05 proceedings workflow.
 
 It:
-- reads `data/references/text_trim_llm_candidate_registry.csv` and `data/references/text_trim_llm_registry.csv`
+- reads the canonical registries by default and can be pointed at batch-local `text_trim_llm_candidate_registry.csv` and `text_trim_llm_registry.csv` files
 - joins the source PDF from `data/references/paper_artifact_registry.csv`
 - shows the source PDF alongside the current LLM trim decision
-- includes the same page-search jump controls used by the main stage-05 review app
+- includes page-search jump controls driven by the extracted text
 - shows a compact preview of the final LLM-trimmed text when one exists
 - displays every heuristic end candidate with its rationale and end index
 - lets you inspect the selected candidate boundary and the full overshoot span with candidate-end markers
@@ -199,6 +182,24 @@ Run:
 
 ```bash
 streamlit run src/validation/review_stage05_llm_app.py
+```
+
+### `review_stage06_count_app.py`
+
+Streamlit review workflow for the stage-06 SPS case-count pipeline.
+
+It:
+- opens a specific `results/stage06_count_runs/<run_id>/` folder or the live `source_sps_case_count_registry.csv`
+- joins the source PDF from `data/references/paper_artifact_registry.csv`
+- shows the source PDF beside the final stage-06 count decision
+- supports PDF-page search using the preferred text JSON selected for stage 06
+- displays heuristic candidates, the selected LLM decision, and stored evidence quotes
+- lets the reviewer record whether the predicted count is correct and save notes under `qa/validation/stage06_count_review/`
+
+Run:
+
+```bash
+streamlit run src/validation/review_stage06_count_app.py
 ```
 
 ### `update_trimming_review_outputs.py`
@@ -220,15 +221,14 @@ python src/validation/update_trimming_review_outputs.py --batch-id batch_009
 
 ### `apply_trimming_manual_overrides.py`
 
-Applies fallback per-paper manual overrides for residual failures after the preferred general `05/05b` patch path has been tried.
+Applies fallback per-paper manual overrides for residual failures after the preferred general stage-05 LLM patch path has been tried.
 
 It:
 - reads enabled rows from `manual_overrides.csv`
 - extracts the reviewed start/end span directly from the full text JSON
-- overwrites the batch-local trimmed JSON for that paper
-- updates the batch-local trim registry
-- reruns `05b_validate_proceedings_text.py` on the affected papers
-- refreshes feedback and acceptance artefacts afterwards
+- overwrites the batch-local final LLM-trimmed JSON for that paper
+- updates the batch-local `text_trim_llm_registry.csv`
+- republishes the affected batch-local proceedings-ready JSONs through `05c_publish_proceedings_ready.py`
 
 Run:
 

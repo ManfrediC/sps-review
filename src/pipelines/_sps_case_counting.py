@@ -186,7 +186,7 @@ COUNT_TOKEN_PATTERN = (
 COUNT_TOKEN_NONGROUP_PATTERN = COUNT_TOKEN_PATTERN.replace("?P<count>", "?:")
 COUNT_NOUN_PATTERN = (
     r"(?:patients|patient|cases|case subjects|subjects|participants|participant|"
-    r"women|men|children|girls|boys|people|individuals)"
+    r"women|men|children|girls|boys|people|individuals|twins)"
 )
 PATIENT_COUNT_RE = re.compile(
     rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",

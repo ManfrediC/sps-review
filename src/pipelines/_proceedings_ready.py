@@ -7,18 +7,36 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from _proceedings_text import (
-    LineRef,
-    abstract_code,
-    flatten_lines,
-    is_footer_like,
-    is_header_preamble_line,
-    is_potential_title_line,
-    normalize_code,
-    normalize_text,
-    strip_abstract_code,
-)
-from _proceedings_trim_llm import _tail_metadata_trim_end, is_tail_metadata_like_line, line_refs_for_span
+try:
+    from src.pipelines._proceedings_text import (
+        LineRef,
+        abstract_code,
+        flatten_lines,
+        is_footer_like,
+        is_header_preamble_line,
+        is_potential_title_line,
+        normalize_code,
+        normalize_text,
+        strip_abstract_code,
+    )
+    from src.pipelines._proceedings_trim_llm import (
+        _tail_metadata_trim_end,
+        is_tail_metadata_like_line,
+        line_refs_for_span,
+    )
+except ImportError:
+    from _proceedings_text import (
+        LineRef,
+        abstract_code,
+        flatten_lines,
+        is_footer_like,
+        is_header_preamble_line,
+        is_potential_title_line,
+        normalize_code,
+        normalize_text,
+        strip_abstract_code,
+    )
+    from _proceedings_trim_llm import _tail_metadata_trim_end, is_tail_metadata_like_line, line_refs_for_span
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]

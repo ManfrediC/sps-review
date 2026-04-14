@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import csv
+import re
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -10,11 +12,20 @@ from src.pipelines._sps_case_counting import (
     estimate_sps_case_count,
     has_explicit_multi_case_signal,
     has_single_case_signal,
+    parse_count_token,
 )
+from src.pipelines._proceedings_ready import (
+    TEXT_PROCEEDINGS_READY_DIR,
+    TEXT_PROCEEDINGS_READY_REGISTRY_PATH,
+    load_ready_rows_by_id,
+    preferred_proceedings_text_source,
+)
+from src.pipelines.stage06_counting.models import CountCandidate, CountCandidatePackage
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
+HEURISTIC_VERSION = "heuristic_v2"
 ADMINISTRATIVE_DATASET_MARKERS = (
     "nationwide readmission study",
     "nationwide study",
@@ -25,6 +36,175 @@ ADMINISTRATIVE_DATASET_MARKERS = (
     "hospital discharge database",
     "claims database",
 )
+CONFIDENCE_SCORES = {
+    "high": 90,
+    "medium": 70,
+    "low": 45,
+}
+AMBIGUOUS_BASES = {
+    "source_single_case_default",
+    "source_single_case_override",
+    "single_case_text_signal",
+    "early_body_count_signal",
+    "patient_label_count",
+    "no_reliable_count_signal",
+}
+LLM_EVIDENCE_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+|\n+")
+LLM_EVIDENCE_COUNT_RE = re.compile(
+    r"\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
+    r"fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\b",
+    re.IGNORECASE,
+)
+LLM_EVIDENCE_CONTEXT_RE = re.compile(
+    r"\b(?:patient|patients|case|cases|participant|participants|subject|subjects|individual|individuals|"
+    r"cohort|series|report|reported|describe|described|identified|included|enrolled|treated)\b",
+    re.IGNORECASE,
+)
+LLM_EVIDENCE_LABEL_RE = re.compile(
+    r"\b(?:patient|case|subject|participant|twin)\s*(?:#\s*)?(?:\d+|i|ii|iii|iv|v|vi|vii|viii|ix|x|[a-z])\b",
+    re.IGNORECASE,
+)
+LLM_EVIDENCE_SPS_RE = re.compile(
+    r"\b(?:stiff person syndrome|stiff-person syndrome|stiff man syndrome|stiff-man syndrome|sps|sms|spsd)\b",
+    re.IGNORECASE,
+)
+LLM_EVIDENCE_POSITIVE_MARKERS = (
+    "we report",
+    "we reported",
+    "we describe",
+    "we described",
+    "we identified",
+    "we included",
+    "we enrolled",
+    "we treated",
+    "results",
+)
+COUNT_TOKEN_TEXT_PATTERN = (
+    r"(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
+    r"fifteen|sixteen|seventeen|eighteen|nineteen|twenty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"thirty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"forty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"fifty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"sixty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"seventy(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"eighty(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?|"
+    r"ninety(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?)"
+)
+SPS_DIAGNOSIS_CANONICAL_BY_ALIAS = {
+    "stiff person syndrome": "stiff person syndrome",
+    "stiff-person syndrome": "stiff person syndrome",
+    "stiff man syndrome": "stiff person syndrome",
+    "stiff-man syndrome": "stiff person syndrome",
+    "sps": "stiff person syndrome",
+    "sms": "stiff person syndrome",
+    "spsd": "stiff person syndrome",
+    "classic sps": "classic sps",
+    "classic stiff person syndrome": "classic sps",
+    "atypical sps": "atypical sps",
+    "atypical stiff person syndrome": "atypical sps",
+    "jerking sps": "jerking sps",
+    "jerking stiff person syndrome": "jerking sps",
+    "stiff limb syndrome": "stiff limb syndrome",
+    "stiff-limb syndrome": "stiff limb syndrome",
+    "stiff leg syndrome": "stiff limb syndrome",
+    "stiff-leg syndrome": "stiff limb syndrome",
+    "progressive encephalomyelitis with rigidity and myoclonus": "perm",
+    "progressive encephalomyelitis with myoclonus and rigidity": "perm",
+    "perm": "perm",
+}
+SPS_SUBGROUP_DIAGNOSIS_PATTERN = "|".join(
+    sorted((re.escape(alias) for alias in SPS_DIAGNOSIS_CANONICAL_BY_ALIAS), key=len, reverse=True)
+)
+SPS_SUBGROUP_PAIR_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\b\s+"
+    rf"(?:patients?\s+|cases?\s+)?"
+    rf"(?:(?:were\s+classified\s+as|were\s+diagnosed\s+with|diagnosed\s+with|classified\s+as|presented\s+with|had|with|as)\s+)?"
+    rf"(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
+)
+PATIENT_CASE_LABEL_RE = re.compile(
+    r"\b(?:patient|case)\s*(?P<label>\d+|i|ii|iii|iv|v|vi|vii|viii|ix|x)\b",
+    re.IGNORECASE,
+)
+DESCRIPTIVE_PATIENT_LABEL_RE = re.compile(
+    r"\b(?:the\s+)?(?P<label>first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|male|female)\s+patient\b",
+    re.IGNORECASE,
+)
+SPS_SCORE_CONTEXT_RE = re.compile(
+    r"\bsps(?:-adl|\s+(?:activity|activities|score|scores|scale|scales|ones))\b",
+    re.IGNORECASE,
+)
+DIRECT_SPS_COHORT_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\s+"
+    rf"(?:affected\s+by|with|had|diagnosed\s+with|treated\s+for)\b[\s\S]{{0,120}}?"
+    rf"\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
+)
+DIRECT_SPS_COHORT_POSITIVE_MARKERS = (
+    "we report",
+    "we describe",
+    "in this study",
+    "participants",
+    "we present",
+    "our patients",
+)
+DIRECT_SPS_COHORT_NEGATIVE_MARKERS = (
+    "retrospective cohort",
+    "screening cohort",
+    "identified in a retrospective cohort",
+    "samples were also identified",
+)
+EXPLICIT_PATIENT_SPS_ACTION_RE = re.compile(
+    rf"\b(?:diagnosed\s+with|treated\s+for|had|has|with|affected\s+by|who\s+had)\b[\s\S]{{0,80}}?"
+    rf"\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
+)
+SPS_STATUS_SUBSET_UNCERTAINTY_RE = re.compile(
+    rf"\bonly\s+(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\s+had\s+"
+    r"(?:clinical\s+)?(?:rigidity|stiffness|spasm|spasms|myoclonus|hyperekplexia|startle)\b",
+    re.IGNORECASE,
+)
+SPS_STATUS_SINGLE_PATIENT_OCR_UNCERTAINTY_RE = re.compile(
+    r"\bonly\s+(?:1|one|i|l)\s+patient\s+had\s+"
+    r"(?:clinical\s+)?(?:rigidity|stiffness|spasm|spasms|myoclonus|hyperekplexia|startle)\b",
+    re.IGNORECASE,
+)
+NON_SPS_MIXED_DIAGNOSIS_MARKERS = (
+    "encephalitis",
+    "myelitis",
+    "ataxia",
+    "neuropathy",
+    "limbic encephalitis",
+    "epileptic encephalopathy",
+    "visual loss",
+    "paresthesia",
+    "cramp",
+    "brainstem",
+    "optic neuropath",
+)
+
+
+@dataclass(frozen=True)
+class SubgroupSignal:
+    count: int
+    count_basis: str
+    count_confidence: str
+    evidence_units: tuple[str, ...]
+
+
+def count_eligibility_status(source_category: str) -> str:
+    if source_category in {
+        "single_case_report",
+        "case_series_or_multi_case",
+        "observational_group_study",
+        "interventional_study",
+        "lab_heavy_clinical_or_translational",
+        "conference_abstract",
+    }:
+        return "extractable"
+    if source_category == "unclear_manual_review":
+        return "uncertain"
+    return "not_extractable"
 
 
 def now_utc_iso() -> str:
@@ -79,6 +259,321 @@ def title_localised_window(
         end = min(len(normalized_text), index + len(anchor) + trailing_chars)
         return normalized_text[start:end]
     return normalized_text
+
+
+def _clean_signal_text(text: str) -> str:
+    joined = re.sub(r"(?<=\w)-\s+(?=\w)", "", str(text or ""))
+    return " ".join(joined.split())
+
+
+def _raw_evidence_units(text: str) -> list[str]:
+    units: list[str] = []
+    seen: set[str] = set()
+    for raw_unit in re.split(r"\n+|(?<=[.!?])\s+", text or ""):
+        unit = _clean_signal_text(raw_unit)
+        if len(unit) < 20:
+            continue
+        normalized = normalize_text(unit)
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        units.append(unit[:420])
+    return units
+
+
+def _canonicalize_subgroup_diagnosis(text: str) -> str:
+    cleaned = normalize_text(_clean_signal_text(text))
+    for alias, canonical in SPS_DIAGNOSIS_CANONICAL_BY_ALIAS.items():
+        if cleaned == normalize_text(alias):
+            return canonical
+    return cleaned
+
+
+def _subgroup_pairs_from_unit(unit: str) -> list[tuple[str, int]]:
+    pairs: list[tuple[str, int]] = []
+    for match in SPS_SUBGROUP_PAIR_RE.finditer(_clean_signal_text(unit)):
+        count = parse_count_token(match.group("count"))
+        if count <= 0:
+            continue
+        pairs.append((_canonicalize_subgroup_diagnosis(match.group("diagnosis")), count))
+    return pairs
+
+
+def _extract_direct_sps_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for unit in _raw_evidence_units(text):
+        normalized = normalize_text(unit)
+        if not any(marker in normalized for marker in DIRECT_SPS_COHORT_POSITIVE_MARKERS):
+            continue
+        if any(marker in normalized for marker in DIRECT_SPS_COHORT_NEGATIVE_MARKERS):
+            continue
+        for match in DIRECT_SPS_COHORT_RE.finditer(unit):
+            count = parse_count_token(match.group("count"))
+            if count <= 0:
+                continue
+            score = count
+            signal = SubgroupSignal(
+                count=count,
+                count_basis="diagnosis_specific_direct_cohort_count",
+                count_confidence="high",
+                evidence_units=(unit[:420],),
+            )
+            if score > best_score:
+                best_score = score
+                best_signal = signal
+    return best_signal
+
+
+def _extract_group_breakdown_subgroup_signal(text: str) -> SubgroupSignal | None:
+    cleaned = _clean_signal_text(text)
+    if not cleaned:
+        return None
+
+    raw_matches: list[tuple[int, int, str, int]] = []
+    for match in SPS_SUBGROUP_PAIR_RE.finditer(cleaned):
+        count = parse_count_token(match.group("count"))
+        if count <= 0:
+            continue
+        raw_matches.append(
+            (
+                match.start(),
+                match.end(),
+                _canonicalize_subgroup_diagnosis(match.group("diagnosis")),
+                count,
+            )
+        )
+
+    if len(raw_matches) < 2:
+        return None
+
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    cluster: list[tuple[int, int, str, int]] = []
+    max_gap = 140
+
+    def _finalise_cluster(items: list[tuple[int, int, str, int]]) -> None:
+        nonlocal best_signal, best_score
+        if len(items) < 2:
+            return
+        subgroup_total = sum(count for _, _, _, count in items)
+        snippet_start = items[0][0]
+        snippet_end = min(len(cleaned), items[-1][1] + 120)
+        signal = SubgroupSignal(
+            count=subgroup_total,
+            count_basis="diagnosis_specific_group_breakdown_count",
+            count_confidence="high",
+            evidence_units=(cleaned[snippet_start:snippet_end][:420],),
+        )
+        score = (len(items) * 100) + subgroup_total
+        if score > best_score:
+            best_score = score
+            best_signal = signal
+
+    for item in raw_matches:
+        if cluster:
+            gap_text = cleaned[cluster[-1][1] : item[0]]
+        else:
+            gap_text = ""
+        if cluster and (item[0] - cluster[-1][1] > max_gap or any(marker in gap_text for marker in ".!?")):
+            _finalise_cluster(cluster)
+            cluster = []
+        cluster.append(item)
+    _finalise_cluster(cluster)
+    return best_signal
+
+
+def _iter_patient_reference_matches(unit: str) -> list[tuple[int, int, str]]:
+    matches: list[tuple[int, int, str]] = []
+    for pattern in (PATIENT_CASE_LABEL_RE, DESCRIPTIVE_PATIENT_LABEL_RE):
+        for match in pattern.finditer(unit):
+            matches.append((match.start(), match.end(), match.group("label").lower()))
+    return sorted(matches, key=lambda item: item[0])
+
+
+def _has_explicit_patient_level_sps_signal(window: str) -> bool:
+    if not window or SPS_SCORE_CONTEXT_RE.search(window):
+        return False
+    if EXPLICIT_PATIENT_SPS_ACTION_RE.search(window):
+        return True
+    normalized = normalize_text(window)
+    return bool(LLM_EVIDENCE_SPS_RE.search(window) and len(normalized.split()) <= 8)
+
+
+def _extract_explicit_patient_case_signal(text: str) -> SubgroupSignal | None:
+    cleaned = _clean_signal_text(text)
+    if not cleaned:
+        return None
+
+    evidence_by_label: dict[str, str] = {}
+    for match in EXPLICIT_PATIENT_SPS_ACTION_RE.finditer(cleaned):
+        snippet_start = max(0, match.start() - 160)
+        snippet_end = min(len(cleaned), match.end() + 100)
+        snippet = cleaned[snippet_start:snippet_end]
+        reference_matches = _iter_patient_reference_matches(snippet)
+        if not reference_matches:
+            continue
+        label = reference_matches[-1][2]
+        evidence_by_label[label] = snippet[:420]
+
+    if not evidence_by_label:
+        return None
+
+    evidence_units = tuple(evidence_by_label.values())
+    return SubgroupSignal(
+        count=len(evidence_by_label),
+        count_basis="diagnosis_specific_patient_case_count",
+        count_confidence="medium",
+        evidence_units=evidence_units,
+    )
+
+
+def _extract_patient_label_subgroup_signal(text: str) -> SubgroupSignal | None:
+    evidence_by_label: dict[str, str] = {}
+    for unit in _raw_evidence_units(text):
+        local_matches = _iter_patient_reference_matches(unit)
+        if not local_matches:
+            continue
+        for index, (start, end, label) in enumerate(local_matches):
+            next_start = local_matches[index + 1][0] if index + 1 < len(local_matches) else len(unit)
+            window = unit[start : min(next_start, end + 100)]
+            if not _has_explicit_patient_level_sps_signal(window):
+                continue
+            evidence_by_label[label] = window[:420]
+
+    if not evidence_by_label:
+        return None
+
+    return SubgroupSignal(
+        count=len(evidence_by_label),
+        count_basis="diagnosis_specific_patient_label_count",
+        count_confidence="medium",
+        evidence_units=tuple(evidence_by_label.values()),
+    )
+
+
+def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: str) -> SubgroupSignal | None:
+    combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
+    for extractor in (
+        _extract_direct_sps_cohort_signal,
+        _extract_group_breakdown_subgroup_signal,
+        _extract_explicit_patient_case_signal,
+        _extract_patient_label_subgroup_signal,
+    ):
+        signal = extractor(combined_text)
+        if signal is not None:
+            return signal
+    return None
+
+
+def extract_sps_status_uncertainty_signals(
+    *,
+    abstract: str,
+    raw_preferred_text: str,
+    subgroup_signal: SubgroupSignal | None,
+) -> list[str]:
+    subgroup_units = set(subgroup_signal.evidence_units if subgroup_signal is not None else ())
+    signals: list[str] = []
+    seen: set[str] = set()
+    combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
+    cleaned_combined_text = _clean_signal_text(combined_text)
+
+    for pattern in (SPS_STATUS_SUBSET_UNCERTAINTY_RE, SPS_STATUS_SINGLE_PATIENT_OCR_UNCERTAINTY_RE):
+        match = pattern.search(cleaned_combined_text)
+        if match is None:
+            continue
+        snippet_start = max(0, match.start() - 120)
+        snippet_end = min(len(cleaned_combined_text), match.end() + 120)
+        snippet = cleaned_combined_text[snippet_start:snippet_end][:420]
+        normalized_snippet = normalize_text(snippet)
+        if normalized_snippet and normalized_snippet not in seen:
+            seen.add(normalized_snippet)
+            signals.append(snippet)
+
+    for unit in _raw_evidence_units(combined_text):
+        if unit in subgroup_units:
+            continue
+        if unit.lower().startswith("keywords:"):
+            continue
+        normalized = normalize_text(_clean_signal_text(unit))
+        if not normalized or normalized in seen:
+            continue
+        if SPS_STATUS_SUBSET_UNCERTAINTY_RE.search(unit) or SPS_STATUS_SINGLE_PATIENT_OCR_UNCERTAINTY_RE.search(unit):
+            seen.add(normalized)
+            signals.append(unit[:420])
+            continue
+        non_sps_hits = sum(1 for marker in NON_SPS_MIXED_DIAGNOSIS_MARKERS if marker in normalized)
+        if LLM_EVIDENCE_SPS_RE.search(normalized) and non_sps_hits >= 2 and len(_subgroup_pairs_from_unit(unit)) < 2:
+            seen.add(normalized)
+            signals.append(unit[:420])
+    return signals[:4]
+
+
+def _llm_evidence_sentences(text: str, *, max_sentences: int) -> list[str]:
+    scored: list[tuple[int, int, str]] = []
+    seen: set[str] = set()
+    for index, raw_unit in enumerate(LLM_EVIDENCE_SENTENCE_SPLIT_RE.split(text or "")):
+        sentence = " ".join(str(raw_unit or "").split())
+        if len(sentence) < 20:
+            continue
+        normalized = normalize_text(sentence)
+        if not normalized or normalized in seen:
+            continue
+        score = 0
+        if LLM_EVIDENCE_COUNT_RE.search(sentence):
+            score += 2
+        if LLM_EVIDENCE_CONTEXT_RE.search(sentence):
+            score += 2
+        if LLM_EVIDENCE_LABEL_RE.search(sentence):
+            score += 2
+        if LLM_EVIDENCE_SPS_RE.search(sentence):
+            score += 1
+        if any(marker in normalized for marker in LLM_EVIDENCE_POSITIVE_MARKERS):
+            score += 2
+        if score <= 0:
+            continue
+        seen.add(normalized)
+        scored.append((score, index, sentence[:420]))
+
+    selected = sorted(scored, key=lambda item: (-item[0], item[1]))[:max_sentences]
+    return [sentence for _, _, sentence in sorted(selected, key=lambda item: item[1])]
+
+
+def build_llm_evidence_text(
+    *,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+    raw_preferred_text: str,
+    explicit_sps_subgroup_evidence: tuple[str, ...] | list[str] = (),
+    sps_status_uncertainty_signals: tuple[str, ...] | list[str] = (),
+) -> str:
+    parts: list[str] = []
+    if title.strip():
+        parts.append(f"Title:\n{title.strip()[:500]}")
+    if abstract.strip():
+        parts.append(f"Metadata abstract:\n{abstract.strip()[:1800]}")
+
+    subgroup_evidence = [snippet for snippet in explicit_sps_subgroup_evidence if str(snippet or "").strip()]
+    if subgroup_evidence:
+        subgroup_block = "\n".join(f"- {snippet[:420]}" for snippet in subgroup_evidence[:4])
+        parts.append(f"Explicit SPS-spectrum subgroup signals:\n{subgroup_block}")
+
+    uncertainty_block_items = [snippet for snippet in sps_status_uncertainty_signals if str(snippet or "").strip()]
+    if uncertainty_block_items:
+        uncertainty_block = "\n".join(f"- {snippet[:420]}" for snippet in uncertainty_block_items[:4])
+        parts.append(f"Potential SPS-status uncertainty signals:\n{uncertainty_block}")
+
+    body_sentences = _llm_evidence_sentences(raw_preferred_text or early_body_text, max_sentences=8)
+    if body_sentences:
+        body_block = "\n".join(f"- {sentence}" for sentence in body_sentences)
+        parts.append(f"Preferred text count-salient snippets:\n{body_block}")
+    elif raw_preferred_text.strip():
+        parts.append(f"Preferred text excerpt:\n{raw_preferred_text.strip()[:2200]}")
+    elif early_body_text.strip():
+        parts.append(f"Preferred text excerpt:\n{early_body_text.strip()[:2200]}")
+
+    return "\n\n".join(parts)[:6500]
 
 
 def prefer_single_case_default(
@@ -202,31 +697,55 @@ def adjust_estimate_for_source_context(
     return estimate
 
 
-def build_case_count_record(
+def count_eligible(source_category: str) -> bool:
+    return count_eligibility_status(source_category) != "not_extractable"
+
+
+def resolve_preferred_text_source(
     *,
-    reference_row: dict[str, str],
-    text_record: dict[str, Any],
-    preferred_record: dict[str, Any],
     preferred_path: Path,
-    source_row: dict[str, str],
-    count_version: str = "heuristic_v1",
-) -> dict[str, str]:
-    title = (reference_row.get("Title") or "").strip()
-    abstract = (reference_row.get("Abstract") or "").strip()
-    authors = (reference_row.get("Authors") or "").strip()
-    early_body_text = title_localised_window(
-        record_text_window(preferred_record, use_all_pages=not abstract.strip()),
-        title,
+    paper_id: str,
+    ready_rows: dict[str, dict[str, str]] | None = None,
+) -> str:
+    if preferred_path.parent == TEXT_PROCEEDINGS_READY_DIR:
+        ready_registry_rows = (
+            ready_rows
+            if ready_rows is not None
+            else load_ready_rows_by_id(TEXT_PROCEEDINGS_READY_REGISTRY_PATH)
+        )
+        return preferred_proceedings_text_source(
+            paper_id,
+            ready_rows=ready_registry_rows,
+        )
+    return "trimmed" if preferred_path.parent == TEXT_TRIMMED_DIR else "full_text"
+
+
+def _review_single_case_override(
+    *,
+    source_category: str,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+    estimate: CaseCountEstimate,
+) -> bool:
+    return (
+        source_category == "review_article"
+        and estimate.likely_case_count == 1
+        and has_single_case_signal(" ".join([title, abstract]))
     )
-    estimate = estimate_sps_case_count(
-        title=title,
-        abstract=abstract,
-        early_body_text=early_body_text,
-    )
-    preferred_text_source = "trimmed" if preferred_path.parent == TEXT_TRIMMED_DIR else "full_text"
-    source_category = (source_row.get("source_category") or "").strip()
-    source_subtype = (source_row.get("source_subtype") or "").strip()
-    estimate = adjust_estimate_for_source_context(
+
+
+def finalise_estimate_for_registry(
+    *,
+    estimate: CaseCountEstimate,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+    source_category: str,
+    source_subtype: str,
+    preferred_text_source: str,
+) -> CaseCountEstimate:
+    adjusted = adjust_estimate_for_source_context(
         estimate=estimate,
         title=title,
         abstract=abstract,
@@ -235,54 +754,605 @@ def build_case_count_record(
         source_subtype=source_subtype,
         preferred_text_source=preferred_text_source,
     )
-    eligible_categories = {
-        "single_case_report",
-        "case_series_or_multi_case",
-        "observational_group_study",
-        "interventional_study",
-        "lab_heavy_clinical_or_translational",
-        "conference_abstract",
-    }
-    count_eligible = source_category in eligible_categories
-    review_single_case_override = (
-        source_category == "review_article"
-        and estimate.likely_case_count == 1
-        and has_single_case_signal(" ".join([title, abstract, early_body_text[:1200]]))
-    )
-    if source_category in {"review_article", "non_clinical_basic_science"} and not review_single_case_override:
-        estimate = CaseCountEstimate(
+    if source_category in {"review_article", "non_clinical_basic_science"} and not _review_single_case_override(
+        source_category=source_category,
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+        estimate=adjusted,
+    ):
+        return CaseCountEstimate(
             likely_case_count=0,
             count_confidence="low",
             count_basis="not_count_eligible",
             manual_review_required=False,
         )
-    manual_review_required = count_eligible and estimate.manual_review_required
+    return adjusted
 
-    reasons = [
-        f"count_basis={estimate.count_basis}",
-        f"count_confidence={estimate.count_confidence}",
+
+def _candidate_kind_from_estimate(estimate: CaseCountEstimate) -> str:
+    if estimate.count_basis.startswith("diagnosis_specific_"):
+        return "diagnosis_specific_subset_count"
+    if estimate.count_basis in {
+        "source_single_case_default",
+        "source_single_case_override",
+        "single_case_text_signal",
+        "case_report_marker_single_case",
+    }:
+        return "single_case_default"
+    if estimate.count_basis in {
+        "not_count_eligible",
+        "administrative_dataset_not_extractable",
+        "lab_context_no_extractable_count",
+        "observational_context_no_extractable_sps_count",
+    } or estimate.likely_case_count == 0:
+        return "forced_zero"
+    return "exact_numeric_count"
+
+
+def _estimate_score(estimate: CaseCountEstimate, *, preferred: bool = False) -> int:
+    score = CONFIDENCE_SCORES.get(estimate.count_confidence, 40)
+    if preferred:
+        score += 20
+    if estimate.count_basis.startswith("diagnosis_specific_"):
+        score += 12
+    if estimate.count_basis in {
+        "not_count_eligible",
+        "administrative_dataset_not_extractable",
+        "lab_context_no_extractable_count",
+        "observational_context_no_extractable_sps_count",
+    }:
+        score += 10
+    if estimate.count_basis in {
+        "source_single_case_default",
+        "source_single_case_override",
+        "case_report_marker_single_case",
+        "single_case_text_signal",
+    }:
+        score += 4
+    if estimate.manual_review_required:
+        score -= 8
+    return score
+
+
+def _estimate_evidence(
+    estimate: CaseCountEstimate,
+    *,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+) -> tuple[str, str]:
+    if estimate.count_basis == "title_count_signal":
+        return title, "title"
+    if estimate.count_basis in {
+        "abstract_count_signal",
+        "case_report_marker_single_case",
+        "single_case_text_signal",
+    } and abstract.strip():
+        return abstract[:900], "abstract"
+    if estimate.count_basis.startswith("diagnosis_specific_") or estimate.count_basis in {
+        "early_body_count_signal",
+        "patient_label_count",
+    }:
+        return early_body_text[:1200], "preferred_text_excerpt"
+    if estimate.count_basis in {
+        "source_single_case_default",
+        "source_single_case_override",
+    }:
+        return " ".join(part for part in [title, abstract, early_body_text[:500]] if part).strip()[:1200], "context"
+    return " ".join(part for part in [abstract, early_body_text[:500], title] if part).strip()[:1200], "context"
+
+
+def _estimate_rationale(
+    estimate: CaseCountEstimate,
+    *,
+    source_category: str,
+) -> str:
+    parts = [
+        f"basis={estimate.count_basis}",
+        f"confidence={estimate.count_confidence}",
     ]
     if source_category:
-        reasons.append(f"source_category={source_category}")
+        parts.append(f"source_category={source_category}")
+    if estimate.manual_review_required:
+        parts.append("heuristic_manual_review=true")
+    return " | ".join(parts)
 
+
+def _build_candidate(
+    estimate: CaseCountEstimate,
+    *,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+    source_category: str,
+    preferred: bool = False,
+) -> CountCandidate:
+    evidence_text, evidence_section = _estimate_evidence(
+        estimate,
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+    )
+    blockers: list[str] = []
+    if estimate.count_basis in AMBIGUOUS_BASES:
+        blockers.append("ambiguous_heuristic_basis")
+    if estimate.manual_review_required:
+        blockers.append("heuristic_manual_review_required")
+    if estimate.count_confidence != "high":
+        blockers.append("non_high_confidence")
+    return CountCandidate(
+        candidate_id="",
+        proposed_count=estimate.likely_case_count,
+        candidate_kind=_candidate_kind_from_estimate(estimate),
+        count_basis=estimate.count_basis,
+        count_confidence=estimate.count_confidence,
+        manual_review_required=estimate.manual_review_required,
+        score=_estimate_score(estimate, preferred=preferred),
+        rationale=_estimate_rationale(estimate, source_category=source_category),
+        evidence_text=evidence_text,
+        evidence_section=evidence_section,
+        blockers=blockers,
+    )
+
+
+def _build_subgroup_candidate(
+    signal: SubgroupSignal,
+    *,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+    source_category: str,
+) -> CountCandidate:
+    estimate = CaseCountEstimate(
+        likely_case_count=signal.count,
+        count_confidence=signal.count_confidence,
+        count_basis=signal.count_basis,
+        manual_review_required=signal.count_confidence != "high",
+    )
+    candidate = _build_candidate(
+        estimate,
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+        source_category=source_category,
+    )
+    return CountCandidate(
+        candidate_id=candidate.candidate_id,
+        proposed_count=candidate.proposed_count,
+        candidate_kind=candidate.candidate_kind,
+        count_basis=candidate.count_basis,
+        count_confidence=candidate.count_confidence,
+        manual_review_required=candidate.manual_review_required,
+        score=candidate.score,
+        rationale=candidate.rationale,
+        evidence_text=(signal.evidence_units[0] if signal.evidence_units else candidate.evidence_text),
+        evidence_section="explicit_sps_subgroup_signal",
+        blockers=list(candidate.blockers),
+    )
+
+
+def _with_candidate_ids(candidates: list[CountCandidate]) -> list[CountCandidate]:
+    resolved: list[CountCandidate] = []
+    for index, candidate in enumerate(candidates, start=1):
+        resolved.append(
+            CountCandidate(
+                candidate_id=f"cand{index:02d}",
+                proposed_count=candidate.proposed_count,
+                candidate_kind=candidate.candidate_kind,
+                count_basis=candidate.count_basis,
+                count_confidence=candidate.count_confidence,
+                manual_review_required=candidate.manual_review_required,
+                score=candidate.score,
+                rationale=candidate.rationale,
+                evidence_text=candidate.evidence_text,
+                evidence_section=candidate.evidence_section,
+                blockers=list(candidate.blockers),
+            )
+        )
+    return resolved
+
+
+def _dedupe_candidates(candidates: list[CountCandidate]) -> list[CountCandidate]:
+    deduped: dict[tuple[int, str], CountCandidate] = {}
+    for candidate in candidates:
+        key = (candidate.proposed_count, candidate.count_basis)
+        existing = deduped.get(key)
+        if existing is None or candidate.score > existing.score:
+            deduped[key] = candidate
+    ordered = sorted(
+        deduped.values(),
+        key=lambda candidate: (-candidate.score, candidate.manual_review_required, candidate.proposed_count, candidate.count_basis),
+    )
+    return _with_candidate_ids(ordered)
+
+
+def _fallback_candidate_id(candidates: list[CountCandidate]) -> str:
+    subgroup_candidates = [candidate for candidate in candidates if candidate.count_basis.startswith("diagnosis_specific_")]
+    if subgroup_candidates:
+        subgroup_candidates.sort(key=lambda candidate: (-candidate.score, candidate.proposed_count))
+        return subgroup_candidates[0].candidate_id
+    return candidates[0].candidate_id
+
+
+def _llm_routing_reason(candidates: list[CountCandidate], preferred_text_source: str, source_category: str) -> tuple[bool, str]:
+    distinct_counts = {candidate.proposed_count for candidate in candidates}
+    top = candidates[0]
+    eligibility_status = count_eligibility_status(source_category)
+    if eligibility_status == "uncertain":
+        return True, "uncertain_source_category"
+    if len(distinct_counts) > 1:
+        return True, "multiple_candidate_counts"
+    if top.manual_review_required:
+        return True, "preferred_candidate_manual_review"
+    if top.count_confidence != "high":
+        return True, "preferred_candidate_non_high_confidence"
+    if top.count_basis in AMBIGUOUS_BASES:
+        return True, "ambiguous_heuristic_basis"
+    if source_category == "conference_abstract" and preferred_text_source == "full_text":
+        return True, "conference_abstract_using_full_text"
+    if source_category in {"lab_heavy_clinical_or_translational", "observational_group_study"}:
+        return True, "high_risk_source_category"
+    return False, "preferred_candidate_clear"
+
+
+def build_case_count_candidate_package(
+    *,
+    reference_row: dict[str, str],
+    text_record: dict[str, Any],
+    preferred_record: dict[str, Any],
+    preferred_path: Path,
+    source_row: dict[str, str],
+    ready_rows: dict[str, dict[str, str]] | None = None,
+    heuristic_version: str = HEURISTIC_VERSION,
+) -> CountCandidatePackage:
+    paper_id = str(text_record.get("paper_id") or Path(str(text_record.get("_path") or "")).stem)
+    title = (reference_row.get("Title") or "").strip()
+    abstract = (reference_row.get("Abstract") or "").strip()
+    authors = (reference_row.get("Authors") or "").strip()
+    source_category = (source_row.get("source_category") or "").strip()
+    source_subtype = (source_row.get("source_subtype") or "").strip()
+    eligibility_status = count_eligibility_status(source_category)
+    preferred_text_source = resolve_preferred_text_source(
+        preferred_path=preferred_path,
+        paper_id=paper_id,
+        ready_rows=ready_rows,
+    )
+    raw_preferred_text = record_text_window(preferred_record, use_all_pages=not abstract.strip())
+    early_body_text = title_localised_window(
+        raw_preferred_text,
+        title,
+    )
+    subgroup_signal = extract_explicit_sps_subgroup_signal(
+        abstract=abstract,
+        raw_preferred_text=raw_preferred_text,
+    )
+    uncertainty_signals = extract_sps_status_uncertainty_signals(
+        abstract=abstract,
+        raw_preferred_text=raw_preferred_text,
+        subgroup_signal=subgroup_signal,
+    )
+
+    base_estimate = estimate_sps_case_count(
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+    )
+    final_estimate = finalise_estimate_for_registry(
+        estimate=base_estimate,
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+        source_category=source_category,
+        source_subtype=source_subtype,
+        preferred_text_source=preferred_text_source,
+    )
+
+    abstract_only_estimate = estimate_sps_case_count(
+        title=title,
+        abstract=abstract,
+        early_body_text="",
+    )
+    abstract_only_final = finalise_estimate_for_registry(
+        estimate=abstract_only_estimate,
+        title=title,
+        abstract=abstract,
+        early_body_text="",
+        source_category=source_category,
+        source_subtype=source_subtype,
+        preferred_text_source=preferred_text_source,
+    )
+
+    body_only_estimate = estimate_sps_case_count(
+        title=title,
+        abstract="",
+        early_body_text=early_body_text,
+    )
+    body_only_final = finalise_estimate_for_registry(
+        estimate=body_only_estimate,
+        title=title,
+        abstract="",
+        early_body_text=early_body_text,
+        source_category=source_category,
+        source_subtype=source_subtype,
+        preferred_text_source=preferred_text_source,
+    )
+
+    candidates: list[CountCandidate] = [
+        _build_candidate(
+            final_estimate,
+            title=title,
+            abstract=abstract,
+            early_body_text=early_body_text,
+            source_category=source_category,
+            preferred=True,
+        )
+    ]
+    notes: list[str] = [f"preferred_text_source={preferred_text_source}"]
+    suppress_nonzero_alternatives = (
+        eligibility_status == "not_extractable" and final_estimate.count_basis == "not_count_eligible"
+    )
+
+    if (
+        not suppress_nonzero_alternatives
+        and (
+            base_estimate.likely_case_count != final_estimate.likely_case_count
+            or base_estimate.count_basis != final_estimate.count_basis
+        )
+    ):
+        notes.append("source_context_adjusted_primary_estimate")
+        candidates.append(
+            _build_candidate(
+                base_estimate,
+                title=title,
+                abstract=abstract,
+                early_body_text=early_body_text,
+                source_category=source_category,
+            )
+        )
+
+    if (
+        not suppress_nonzero_alternatives
+        and (
+            abstract_only_final.likely_case_count != final_estimate.likely_case_count
+            or abstract_only_final.count_basis != final_estimate.count_basis
+        )
+    ):
+        notes.append("abstract_only_candidate_added")
+        candidates.append(
+            _build_candidate(
+                abstract_only_final,
+                title=title,
+                abstract=abstract,
+                early_body_text=early_body_text,
+                source_category=source_category,
+            )
+        )
+
+    if (
+        not suppress_nonzero_alternatives
+        and (
+            body_only_final.likely_case_count != final_estimate.likely_case_count
+            or body_only_final.count_basis != final_estimate.count_basis
+        )
+    ):
+        notes.append("body_only_candidate_added")
+        candidates.append(
+            _build_candidate(
+                body_only_final,
+                title=title,
+                abstract=abstract,
+                early_body_text=early_body_text,
+                source_category=source_category,
+            )
+        )
+
+    if not suppress_nonzero_alternatives and subgroup_signal is not None:
+        notes.append("explicit_sps_subgroup_candidate_added")
+        candidates.append(
+            _build_subgroup_candidate(
+                subgroup_signal,
+                title=title,
+                abstract=abstract,
+                early_body_text=early_body_text,
+                source_category=source_category,
+            )
+        )
+
+    if (
+        source_category not in {"review_article", "non_clinical_basic_science"}
+        and prefer_single_case_default(
+            source_category=source_category,
+            source_subtype=source_subtype,
+            title=title,
+            abstract=abstract,
+            early_body_text=early_body_text,
+        )
+    ):
+        single_case_candidate = CaseCountEstimate(
+            likely_case_count=1,
+            count_confidence="medium",
+            count_basis="source_single_case_default",
+            manual_review_required=False,
+        )
+        if single_case_candidate.likely_case_count != final_estimate.likely_case_count or single_case_candidate.count_basis != final_estimate.count_basis:
+            notes.append("single_case_default_candidate_added")
+            candidates.append(
+                _build_candidate(
+                    single_case_candidate,
+                    title=title,
+                    abstract=abstract,
+                    early_body_text=early_body_text,
+                    source_category=source_category,
+                )
+            )
+
+    if eligibility_status == "not_extractable":
+        zero_candidate = CaseCountEstimate(
+            likely_case_count=0,
+            count_confidence="low",
+            count_basis="not_count_eligible",
+            manual_review_required=False,
+        )
+        if zero_candidate.count_basis != final_estimate.count_basis:
+            notes.append("count_ineligible_zero_candidate_added")
+            candidates.append(
+                _build_candidate(
+                    zero_candidate,
+                    title=title,
+                    abstract=abstract,
+                    early_body_text=early_body_text,
+                    source_category=source_category,
+                )
+            )
+
+    resolved_candidates = _dedupe_candidates(candidates)
+    fallback_candidate_id = _fallback_candidate_id(resolved_candidates)
+    llm_routing_recommended, llm_reason = _llm_routing_reason(
+        resolved_candidates,
+        preferred_text_source=preferred_text_source,
+        source_category=source_category,
+    )
+    notes.append(f"distinct_candidate_counts={sorted({candidate.proposed_count for candidate in resolved_candidates})}")
+    if subgroup_signal is not None:
+        notes.append(f"explicit_sps_subgroup_count={subgroup_signal.count}")
+    if uncertainty_signals:
+        notes.append(f"sps_status_uncertainty_signals={len(uncertainty_signals)}")
+
+    return CountCandidatePackage(
+        paper_id=paper_id,
+        covidence_id=(reference_row.get("Covidence") or "").strip(),
+        title=title,
+        authors=authors,
+        source_category=source_category,
+        source_subtype=source_subtype,
+        preferred_text_json_path=relative_to_repo(preferred_path),
+        preferred_text_source=preferred_text_source,
+        preferred_text_metadata={
+            "preferred_text_json_path": relative_to_repo(preferred_path),
+            "preferred_text_source": preferred_text_source,
+            "source_filename": str(preferred_record.get("source_filename") or text_record.get("source_filename") or ""),
+            "proceedings_ready_source_kind": str(preferred_record.get("proceedings_ready_source_kind") or ""),
+            "proceedings_ready_text_mode": str(preferred_record.get("proceedings_ready_text_mode") or ""),
+            "proceedings_ready_reason": str(preferred_record.get("proceedings_ready_reason") or ""),
+            "source_text_json_path": str(preferred_record.get("source_text_json_path") or ""),
+        },
+        count_eligible=count_eligible(source_category),
+        heuristic_version=heuristic_version,
+        abstract_text=abstract,
+        early_body_text=early_body_text[:5000],
+        llm_evidence_text=build_llm_evidence_text(
+            title=title,
+            abstract=abstract,
+            early_body_text=early_body_text,
+            raw_preferred_text=raw_preferred_text,
+            explicit_sps_subgroup_evidence=() if subgroup_signal is None else subgroup_signal.evidence_units,
+            sps_status_uncertainty_signals=uncertainty_signals,
+        ),
+        candidate_generation_notes=[*notes, f"count_eligibility_status={eligibility_status}"],
+        candidates=resolved_candidates,
+        preferred_candidate_id=resolved_candidates[0].candidate_id,
+        fallback_candidate_id=fallback_candidate_id,
+        llm_routing_recommended=llm_routing_recommended,
+        llm_routing_reason=llm_reason,
+        explicit_sps_subgroup_count=None if subgroup_signal is None else subgroup_signal.count,
+        explicit_sps_subgroup_basis="" if subgroup_signal is None else subgroup_signal.count_basis,
+        explicit_sps_subgroup_evidence=[] if subgroup_signal is None else list(subgroup_signal.evidence_units),
+        sps_status_uncertainty_signals=uncertainty_signals,
+    )
+
+
+def count_row_from_resolution(
+    *,
+    package: CountCandidatePackage,
+    final_count: int,
+    final_confidence: str,
+    final_basis: str,
+    final_manual_review_required: bool,
+    final_reason: str,
+    count_version: str,
+    count_verification_status: str,
+    count_candidate_json_path: str = "",
+    count_evidence_json_path: str = "",
+    heuristic_fallback_used: bool = False,
+    llm_likely_sps_case_count: str = "",
+    llm_count_confidence: str = "",
+    llm_selected_candidate_id: str = "",
+    count_validator_flags: list[str] | None = None,
+    count_audit_status: str = "not_run",
+) -> dict[str, str]:
+    preferred_candidate = package.preferred_candidate()
     return {
-        "paper_id": str(text_record.get("paper_id") or Path(str(text_record.get("_path") or "")).stem),
-        "covidence_id": (reference_row.get("Covidence") or "").strip(),
-        "title": title,
-        "authors": authors,
-        "source_category": source_category,
-        "source_subtype": source_subtype,
-        "preferred_text_json_path": relative_to_repo(preferred_path),
-        "preferred_text_source": preferred_text_source,
-        "count_eligible": bool_text(count_eligible),
-        "likely_sps_case_count": str(estimate.likely_case_count),
-        "count_confidence": estimate.count_confidence,
-        "count_basis": estimate.count_basis,
-        "count_manual_review_required": bool_text(manual_review_required),
-        "count_reason": " | ".join(reasons),
+        "paper_id": package.paper_id,
+        "covidence_id": package.covidence_id,
+        "title": package.title,
+        "authors": package.authors,
+        "source_category": package.source_category,
+        "source_subtype": package.source_subtype,
+        "preferred_text_json_path": package.preferred_text_json_path,
+        "preferred_text_source": package.preferred_text_source,
+        "count_eligible": bool_text(package.count_eligible),
+        "likely_sps_case_count": str(final_count),
+        "count_confidence": final_confidence,
+        "count_basis": final_basis,
+        "count_manual_review_required": bool_text(package.count_eligible and final_manual_review_required),
+        "count_reason": final_reason,
         "count_version": count_version,
+        "heuristic_likely_sps_case_count": str(preferred_candidate.proposed_count),
+        "heuristic_count_confidence": preferred_candidate.count_confidence,
+        "heuristic_count_basis": preferred_candidate.count_basis,
+        "count_candidate_json_path": count_candidate_json_path,
+        "heuristic_candidate_count": str(len(package.candidates)),
+        "llm_likely_sps_case_count": llm_likely_sps_case_count,
+        "llm_count_confidence": llm_count_confidence,
+        "llm_selected_candidate_id": llm_selected_candidate_id,
+        "heuristic_fallback_used": bool_text(heuristic_fallback_used),
+        "count_audit_status": count_audit_status,
+        "count_verification_status": count_verification_status,
+        "count_validator_flags": "; ".join(count_validator_flags or []),
+        "count_evidence_json_path": count_evidence_json_path,
         "counted_at_utc": now_utc_iso(),
     }
+
+
+def build_case_count_record(
+    *,
+    reference_row: dict[str, str],
+    text_record: dict[str, Any],
+    preferred_record: dict[str, Any],
+    preferred_path: Path,
+    source_row: dict[str, str],
+    count_version: str = HEURISTIC_VERSION,
+    ready_rows: dict[str, dict[str, str]] | None = None,
+) -> dict[str, str]:
+    package = build_case_count_candidate_package(
+        reference_row=reference_row,
+        text_record=text_record,
+        preferred_record=preferred_record,
+        preferred_path=preferred_path,
+        source_row=source_row,
+        ready_rows=ready_rows,
+        heuristic_version=HEURISTIC_VERSION,
+    )
+    preferred_candidate = package.preferred_candidate()
+    reasons = [
+        f"count_basis={preferred_candidate.count_basis}",
+        f"count_confidence={preferred_candidate.count_confidence}",
+    ]
+    if package.source_category:
+        reasons.append(f"source_category={package.source_category}")
+    if package.candidate_generation_notes:
+        reasons.append(f"candidate_notes={'; '.join(package.candidate_generation_notes)}")
+    return count_row_from_resolution(
+        package=package,
+        final_count=preferred_candidate.proposed_count,
+        final_confidence=preferred_candidate.count_confidence,
+        final_basis=preferred_candidate.count_basis,
+        final_manual_review_required=preferred_candidate.manual_review_required,
+        final_reason=" | ".join(reasons),
+        count_version=count_version,
+        count_verification_status="heuristic_only",
+    )
 
 
 def count_row_fieldnames() -> list[str]:
@@ -302,6 +1372,19 @@ def count_row_fieldnames() -> list[str]:
         "count_manual_review_required",
         "count_reason",
         "count_version",
+        "heuristic_likely_sps_case_count",
+        "heuristic_count_confidence",
+        "heuristic_count_basis",
+        "count_candidate_json_path",
+        "heuristic_candidate_count",
+        "llm_likely_sps_case_count",
+        "llm_count_confidence",
+        "llm_selected_candidate_id",
+        "heuristic_fallback_used",
+        "count_audit_status",
+        "count_verification_status",
+        "count_validator_flags",
+        "count_evidence_json_path",
         "counted_at_utc",
     ]
 
