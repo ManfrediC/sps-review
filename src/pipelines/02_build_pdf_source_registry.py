@@ -93,14 +93,17 @@ def load_local_pdfs_by_id(pdf_dir: Path) -> tuple[dict[str, list[Path]], list[Pa
 # Convert a path to a repository-relative string.
 def relative_to_repo(path: Path) -> str:
     try:
-        return str(path.resolve().relative_to(REPO_ROOT.resolve()))
+        return str(path.resolve().relative_to(REPO_ROOT.resolve())).replace("\\", "/")
     except ValueError:
-        return str(path.resolve())
+        return str(path.resolve()).replace("\\", "/")
 
 
 # Join paths.
 def join_paths(paths: list[Path], *, absolute: bool) -> str:
-    values = [str(path.resolve()) if absolute else relative_to_repo(path) for path in paths]
+    values = [
+        str(path.resolve()).replace("\\", "/") if absolute else relative_to_repo(path)
+        for path in paths
+    ]
     return " | ".join(values)
 
 
@@ -208,7 +211,7 @@ def unmatched_row(path: Path, manifest_row: dict[str, Any]) -> dict[str, str]:
         "card_year_matches_export": "",
         "pdf_filename": path.name,
         "pdf_path_relative": relative_to_repo(path),
-        "pdf_path_absolute": str(path.resolve()),
+        "pdf_path_absolute": str(path.resolve()).replace("\\", "/"),
         "local_file_count": "1",
         "download_status": "unmatched_local_file",
         "manifest_status": "",

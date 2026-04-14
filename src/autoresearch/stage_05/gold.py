@@ -3,8 +3,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import Any
 
 
@@ -23,13 +24,20 @@ def display_path(path: Path | None) -> str:
     if path is None:
         return ""
     try:
-        return str(path.resolve().relative_to(REPO_ROOT.resolve()))
+        return str(path.resolve().relative_to(REPO_ROOT.resolve())).replace("\\", "/")
     except ValueError:
-        return str(path.resolve())
+        return str(path.resolve()).replace("\\", "/")
 
 
 def resolve_repo_path(path_text: str) -> Path:
-    path = Path(path_text)
+    raw_path = str(path_text or "").strip()
+    windows_path = PureWindowsPath(raw_path)
+    if windows_path.is_absolute():
+        if os.name == "nt":
+            return Path(str(windows_path))
+        return Path("/mnt", windows_path.drive.rstrip(":").lower(), *windows_path.parts[1:])
+
+    path = Path(raw_path.replace("\\", "/"))
     if path.is_absolute():
         return path
     return REPO_ROOT / path

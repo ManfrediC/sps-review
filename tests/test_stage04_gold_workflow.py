@@ -163,6 +163,22 @@ class TestStage04GoldWorkflow(unittest.TestCase):
         self.assertEqual(matches[0]["match_count"], 1)
         self.assertIn("SPS patients", matches[0]["snippet"])
 
+    def test_resolve_repo_path_accepts_legacy_backslash_relative_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            target_path = root / "data" / "pdf_original" / "123_test.pdf"
+            target_path.parent.mkdir(parents=True)
+            target_path.write_bytes(b"%PDF-1.4\n")
+            original_root = gold.REPO_ROOT
+            try:
+                gold.REPO_ROOT = root
+                resolved_path = gold.resolve_repo_path(r"data\pdf_original\123_test.pdf")
+            finally:
+                gold.REPO_ROOT = original_root
+
+            self.assertEqual(resolved_path, target_path)
+            self.assertTrue(resolved_path.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

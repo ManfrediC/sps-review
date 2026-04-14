@@ -3,11 +3,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import random
 import re
 import unicodedata
 from collections import Counter
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import Any
 
 from pypdf import PdfReader
@@ -164,6 +165,36 @@ def load_pdf_pages(path: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     return pages, metadata
 
 
+def first_pipe_separated_value(value: str) -> str:
+    parts = [part.strip() for part in str(value or "").split("|")]
+    return next((part for part in parts if part), "")
+
+
+def resolve_recorded_path(path_text: str) -> Path | None:
+    raw_path = str(path_text or "").strip()
+    if not raw_path:
+        return None
+
+    windows_path = PureWindowsPath(raw_path)
+    if windows_path.is_absolute():
+        if os.name == "nt":
+            return Path(str(windows_path))
+        return Path("/mnt", windows_path.drive.rstrip(":").lower(), *windows_path.parts[1:])
+
+    path = Path(raw_path.replace("\\", "/"))
+    if path.is_absolute():
+        return path
+    return REPO_ROOT / path
+
+
+def resolved_pdf_path_for_row(row: dict[str, str]) -> Path | None:
+    for field_name in ("pdf_path_relative", "pdf_path_absolute"):
+        candidate = resolve_recorded_path(first_pipe_separated_value(row.get(field_name) or ""))
+        if candidate is not None and candidate.exists():
+            return candidate
+    return None
+
+
 # Resolve the best available text source for a registry row.
 def load_text_pages(row: dict[str, str], text_dir: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     paper_id = (row.get("covidence_id") or "").strip()
@@ -171,8 +202,8 @@ def load_text_pages(row: dict[str, str], text_dir: Path) -> tuple[list[dict[str,
     if text_json_path.exists():
         return load_text_json_pages(text_json_path)
 
-    pdf_path = Path((row.get("pdf_path_absolute") or "").strip())
-    if pdf_path.exists():
+    pdf_path = resolved_pdf_path_for_row(row)
+    if pdf_path is not None:
         return load_pdf_pages(pdf_path)
 
     return [], {
@@ -370,8 +401,13 @@ def eligible_rows(rows: list[dict[str, str]], args: argparse.Namespace) -> list[
                 continue
             if (row.get("local_file_count") or "").strip() != "1":
                 continue
-        pdf_path = Path((row.get("pdf_path_absolute") or "").strip()) if (row.get("pdf_path_absolute") or "").strip() else None
-        if pdf_path is not None and not pdf_path.exists():
+
+        text_json_path = args.text_dir / f"{covidence_id}.json" if covidence_id else None
+        if text_json_path is not None and text_json_path.exists():
+            filtered.append(row)
+            continue
+
+        if resolved_pdf_path_for_row(row) is None:
             continue
         filtered.append(row)
     return filtered

@@ -71,18 +71,18 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
                 "cleanup_source_strategy": "pdftotext_cleanup",
                 "cleanup_original_extractor": "pypdf",
                 "cleanup_changed_page_count": 2,
-                "cleanup_source_json_path": "data/extraction_json/text_preclean/114.json",
+                "cleanup_source_json_path": "data\\extraction_json\\text_preclean\\114.json",
                 "cleanup_source_json_sha256": "preclean_sha256",
-                "cleanup_source_pdf_path": "data/pdf_original/114_example.pdf",
+                "cleanup_source_pdf_path": "data\\pdf_original\\114_example.pdf",
                 "cleanup_source_pdf_sha256": "pdf_sha256",
                 "cleanup_stage2_applied": True,
                 "cleanup_stage2_profile": "combined_basic",
                 "cleanup_stage2_applied_at_utc": "2026-04-02T01:00:00+00:00",
                 "cleanup_stage2_source_strategy": "ocr_cleanup",
                 "cleanup_stage2_changed_page_count": 1,
-                "cleanup_stage2_source_json_path": "data/extraction_json/text_preclean_stage2/114.json",
+                "cleanup_stage2_source_json_path": "data\\extraction_json\\text_preclean_stage2\\114.json",
                 "cleanup_stage2_source_json_sha256": "preclean_stage2_sha256",
-                "cleanup_stage2_source_pdf_path": "data/pdf_original/114_example.pdf",
+                "cleanup_stage2_source_pdf_path": "data\\pdf_original\\114_example.pdf",
                 "cleanup_stage2_source_pdf_sha256": "pdf_sha256",
                 "cleanup_stage2_source_page_start": "2",
                 "cleanup_stage2_source_page_end": "4",
@@ -95,7 +95,7 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
             text_preclean_stage2_path=preclean_stage2_path,
             text_trim_record={},
             text_trim_path=None,
-            text_trim_registry_row={},
+            text_trim_registry_row={"source_text_json_path": "data\\extraction_json\\text\\114.json"},
             source_categorisation_row={},
             source_case_count_row={
                 "count_eligible": "true",
@@ -108,7 +108,7 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
                 "counted_at_utc": "2026-04-05T12:00:00+00:00",
             },
             source_manual_review_row={},
-            proceedings_qc_row={},
+            proceedings_qc_row={"validated_text_json_path": "data\\extraction_json\\text\\114.json"},
             case_series_split_row={},
             case_series_split_path=None,
             langextract_record={},
@@ -138,6 +138,8 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertEqual(row["text_cleanup_stage2_source_page_start"], "2")
         self.assertEqual(row["text_cleanup_stage2_source_page_end"], "4")
         self.assertEqual(row["text_cleanup_stage2_ocr_psm"], "3")
+        self.assertEqual(row["text_trim_source_text_json_path"], "data/extraction_json/text/114.json")
+        self.assertEqual(row["proceedings_qc_validated_text_json_path"], "data/extraction_json/text/114.json")
         self.assertEqual(row["source_case_count_present"], "true")
         self.assertEqual(row["source_likely_sps_case_count"], "2")
         self.assertEqual(row["source_count_confidence"], "medium")

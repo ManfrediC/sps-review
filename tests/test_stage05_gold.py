@@ -113,3 +113,18 @@ def test_strict_normalise_text_is_minimal(tmp_path: Path) -> None:
     normalized = stage05_gold.strict_normalise_text(text)
 
     assert normalized == "Poster 1 Line two Line three"
+
+
+def test_resolve_repo_path_accepts_legacy_backslash_relative_paths(tmp_path: Path) -> None:
+    target_path = tmp_path / "data" / "extraction_json" / "text" / "991001.json"
+    target_path.parent.mkdir(parents=True)
+    target_path.write_text("{}", encoding="utf-8")
+    original_root = stage05_gold.REPO_ROOT
+    try:
+        stage05_gold.REPO_ROOT = tmp_path
+        resolved_path = stage05_gold.resolve_repo_path(r"data\extraction_json\text\991001.json")
+    finally:
+        stage05_gold.REPO_ROOT = original_root
+
+    assert resolved_path == target_path
+    assert resolved_path.exists()

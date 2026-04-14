@@ -36,12 +36,16 @@ def now_utc_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def normalize_path_text(value: str) -> str:
+    return str(value or "").strip().replace("\\", "/")
+
+
 # Convert a path to a repository-relative string.
 def relative_to_repo(path: Path) -> str:
     try:
-        return str(path.resolve().relative_to(REPO_ROOT.resolve()))
+        return str(path.resolve().relative_to(REPO_ROOT.resolve())).replace("\\", "/")
     except ValueError:
-        return str(path.resolve())
+        return str(path.resolve()).replace("\\", "/")
 
 
 # Build bool text.
@@ -287,9 +291,9 @@ def build_row(
         "text_cleanup_source_strategy": str(text_record.get("cleanup_source_strategy") or ""),
         "text_cleanup_original_extractor": str(text_record.get("cleanup_original_extractor") or ""),
         "text_cleanup_changed_page_count": str(text_record.get("cleanup_changed_page_count") or ""),
-        "text_cleanup_source_json_path": str(text_record.get("cleanup_source_json_path") or ""),
+        "text_cleanup_source_json_path": normalize_path_text(text_record.get("cleanup_source_json_path") or ""),
         "text_cleanup_source_json_sha256": str(text_record.get("cleanup_source_json_sha256") or ""),
-        "text_cleanup_source_pdf_path": str(text_record.get("cleanup_source_pdf_path") or ""),
+        "text_cleanup_source_pdf_path": normalize_path_text(text_record.get("cleanup_source_pdf_path") or ""),
         "text_cleanup_source_pdf_sha256": str(text_record.get("cleanup_source_pdf_sha256") or ""),
         "text_cleanup_stage2_applied": (
             bool_text(bool(text_record.get("cleanup_stage2_applied")))
@@ -300,9 +304,13 @@ def build_row(
         "text_cleanup_stage2_applied_at_utc": str(text_record.get("cleanup_stage2_applied_at_utc") or ""),
         "text_cleanup_stage2_source_strategy": str(text_record.get("cleanup_stage2_source_strategy") or ""),
         "text_cleanup_stage2_changed_page_count": str(text_record.get("cleanup_stage2_changed_page_count") or ""),
-        "text_cleanup_stage2_source_json_path": str(text_record.get("cleanup_stage2_source_json_path") or ""),
+        "text_cleanup_stage2_source_json_path": normalize_path_text(
+            text_record.get("cleanup_stage2_source_json_path") or ""
+        ),
         "text_cleanup_stage2_source_json_sha256": str(text_record.get("cleanup_stage2_source_json_sha256") or ""),
-        "text_cleanup_stage2_source_pdf_path": str(text_record.get("cleanup_stage2_source_pdf_path") or ""),
+        "text_cleanup_stage2_source_pdf_path": normalize_path_text(
+            text_record.get("cleanup_stage2_source_pdf_path") or ""
+        ),
         "text_cleanup_stage2_source_pdf_sha256": str(text_record.get("cleanup_stage2_source_pdf_sha256") or ""),
         "text_cleanup_stage2_source_page_start": str(text_record.get("cleanup_stage2_source_page_start") or ""),
         "text_cleanup_stage2_source_page_end": str(text_record.get("cleanup_stage2_source_page_end") or ""),
@@ -317,7 +325,7 @@ def build_row(
         "text_trim_match_score": str(text_trim_record.get("match_score") or text_trim_registry_row.get("match_score") or ""),
         "text_trim_start_page": str(text_trim_record.get("start_page_index") or text_trim_registry_row.get("start_page_index") or ""),
         "text_trim_end_page": str(text_trim_record.get("end_page_index") or text_trim_registry_row.get("end_page_index") or ""),
-        "text_trim_source_text_json_path": str(
+        "text_trim_source_text_json_path": normalize_path_text(
             text_trim_record.get("source_text_json_path") or text_trim_registry_row.get("source_text_json_path") or ""
         ),
         "source_categorisation_present": bool_text(bool(source_categorisation_row)),
@@ -362,7 +370,7 @@ def build_row(
         "proceedings_qc_manual_follow_up_required": str(
             proceedings_qc_row.get("manual_follow_up_required") or ""
         ),
-        "proceedings_qc_validated_text_json_path": str(
+        "proceedings_qc_validated_text_json_path": normalize_path_text(
             proceedings_qc_row.get("validated_text_json_path") or ""
         ),
         "proceedings_qc_best_match_page_index": str(proceedings_qc_row.get("best_match_page_index") or ""),

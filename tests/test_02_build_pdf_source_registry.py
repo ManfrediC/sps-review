@@ -239,6 +239,18 @@ class TestBuildPdfSourceRegistry(unittest.TestCase):
         self.assertEqual(self.module.compare_year_flag("2020", "2020"), "true")
         self.assertEqual(self.module.compare_year_flag("2020", "2021"), "false")
 
+    def test_relative_to_repo_uses_forward_slashes(self) -> None:
+        pdf_path = self.tmp_path / "data" / "pdf_original" / "123_alpha.pdf"
+        pdf_path.parent.mkdir(parents=True)
+        pdf_path.touch()
+
+        with patch.object(self.module, "REPO_ROOT", self.tmp_path):
+            relative = self.module.relative_to_repo(pdf_path)
+            absolute = self.module.join_paths([pdf_path], absolute=True)
+
+        self.assertEqual(relative, "data/pdf_original/123_alpha.pdf")
+        self.assertEqual(absolute, f"{self.tmp_path.as_posix()}/data/pdf_original/123_alpha.pdf")
+
     def test_write_registry_writes_expected_header_and_rows(self) -> None:
         (self.pdf_dir / "123_alpha.pdf").touch()
         rows = self.build_rows(
