@@ -1,3 +1,29 @@
+## 2026-04-14
+
+### Stage-05 officialisation around the LLM workflow
+
+- Retired the old deterministic stage-05 entrypoints to `legacy/stage_05_deterministic/`:
+  - `src/pipelines/05_trim_proceedings_text.py`
+  - `src/pipelines/05b_validate_proceedings_text.py`
+  - the paired deterministic-only validation helpers and tests
+- Kept the `_LLM` filenames as the canonical live stage-05 CLI surface:
+  - `src/pipelines/05_trim_proceedings_text_LLM.py`
+  - `src/pipelines/05b_validate_proceedings_text_LLM.py`
+  - `src/pipelines/05c_publish_proceedings_ready.py`
+- Repointed the active stage-05 validation tooling so batch preparation, manual overrides, and overnight orchestration now target the LLM candidate, validation, and publication layers rather than the archived deterministic scripts.
+- Updated the live Streamlit review app so it can inspect either the canonical LLM registries or batch-local stage-05 registries.
+- Updated the active repo docs so the published stage-05 contract is now:
+  - candidate layer: `data/extraction_json/text_trimmed_llm_candidates/` plus `data/references/text_trim_llm_candidate_registry.csv`
+  - final LLM layer: `data/extraction_json/text_trimmed_llm/` plus `data/references/text_trim_llm_registry.csv`
+  - canonical published layer: `data/extraction_json/text_proceedings_ready/` plus `data/references/text_proceedings_ready_registry.csv`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py tests/test_manage_trimming_batches.py tests/test_apply_trimming_manual_overrides.py -q`
+- Result:
+  - `24 passed`
+
 ## 21.02.2026
 
 Initialized the reproducible SPS-review repository structure and added source reference exports for downstream extraction and verification.
@@ -1666,3 +1692,48 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - `.venv\Scripts\python.exe -m pytest tests/test_05_trim_proceedings_text.py tests/test_05b_validate_proceedings_text.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py -q`
 - Result:
   - `90` pytest checks passed
+
+### Stage-06 semantic-conflict policy and 10-paper paid evaluation
+
+- Committed the stage-06 hybrid implementation and reviewer workflow as `3c0af67` (`Implement hybrid stage 06 count adjudication`).
+- Tightened the stage-06 controller so semantic validator conflicts now preserve the LLM proposal and force manual review instead of silently replacing the answer with a heuristic fallback.
+- Ran focused verification on the new policy:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_llm_counting.py tests/test_stage06_count_candidates.py tests/test_06_extract_sps_case_counts.py tests/test_sps_case_counting.py -q`
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_review_workflow.py tests/test_stage06_review_app_helpers.py -q`
+- Result:
+  - `45` pytest checks passed
+
+#### Paid batch provenance
+
+- First attempted a paid 10-paper stage-06 batch as `stage06_llm_eval_v9`, but every row returned `llm_request_failed_manual_review_required`.
+- Root cause: `OPENAI_API_KEY` was not loaded in the shell (`$env:OPENAI_API_KEY.Length` returned `0`).
+- Preserved `v9` as the failed no-key trace, then loaded the existing key from `env/openai_api_key.env` and reran successfully as `stage06_llm_eval_v10`.
+- Command used for the successful rerun:
+  - `.venv\Scripts\python.exe src/pipelines/06_extract_sps_case_counts.py --verification-mode always --allow-paid-run --allow-unresolved-export --skip-registry-refresh --run-id stage06_llm_eval_v10 --output-path qa/validation/stage06_eval/stage06_llm_eval_v10.csv --paper-id 11 --paper-id 29 --paper-id 227 --paper-id 556 --paper-id 710 --paper-id 990 --paper-id 1426 --paper-id 1937 --paper-id 6060 --paper-id 22`
+- QA artefacts:
+  - CSV: `qa/validation/stage06_eval/stage06_llm_eval_v10.csv`
+  - run artefacts: `results/stage06_count_runs/stage06_llm_eval_v10/`
+
+#### Paper-by-paper assessment
+
+- `11 -> 3` correct. The paper explicitly separates `seven patients with myoclonus` from `three patients with the stiff-person syndrome`.
+- `22 -> 1` correct. The cohort contains one `stiff-person syndrome` subject (`case 10`); the earlier `three with stiff-person syndrome` mention is background literature about Brown et al.
+- `29 -> 1` correct. This is a classic single-case report of one `36-year-old man` with SPS.
+- `1426 -> 16` correct. The abstract states that `16` SPS patients consented and `15` had evaluable data; the unique cohort count is `16`.
+- `1937 -> 14` correct under the current SPS-spectrum rule. The abstract reports `13` SPS plus `1` PERM within the anti-GAD cohort, so the SPS-spectrum subset is `14`.
+- `227 -> 1` numerically looks correct but remains conservatively unresolved. The paper reports a 92-patient mixed paraneoplastic neurology cohort with only `one` explicit stiff-person syndrome case.
+- `556 -> 10` wrong. The paper explicitly defines `Group 1` as `seven` SPS patients, so the extractable SPS count should be `7`; the current candidate package did not offer `7`, and the LLM response contradicted itself.
+- `6060 -> 1` correct. The abstract describes three immune-mediated movement-disorder cases, but only `case 1` is PERM; cases 2 and 3 are OMS/OFS.
+- `710 -> 6` wrong. The paper’s main six-patient cohort is autoimmune encephalitis, not SPS; the SPS mentions occur in broad control/reference groups and should not be finalised as `6` extractable SPS-spectrum cases.
+- `990 -> 1` correct. Table 1 lists one `Stiff person syndrome` patient within the 92-case mixed neuroimmunology series.
+
+#### Current readout
+
+- `7/10` clean final counts looked correct against the paper text: `11`, `22`, `29`, `1426`, `1937`, `6060`, `990`
+- `1/10` looks like a correct numeric count held in an over-cautious unresolved state: `227`
+- `2/10` were clearly wrong: `556`, `710`
+
+#### Follow-up targets
+
+- `556`: add broader subgroup-candidate generation so explicit cohort counts like `Group 1 consisted of seven patients with SPS` enter the candidate list directly.
+- `710`: strengthen the non-extractable/lab-heavy filter so mixed assay-control papers do not promote incidental SPS mentions into final case counts.
