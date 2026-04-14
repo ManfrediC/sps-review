@@ -13,10 +13,17 @@ doc/JOURNAL.md
 __pycache__/
 *.pyc
 .venv/
+.venv-wsl/
 venv/
 .env
 env/*.env
 .pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.coverage
+.coverage.*
+htmlcov/
 .pytest-tmp/
 pytest_cache/
 pytest_tmp/
