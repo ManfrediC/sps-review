@@ -6,25 +6,53 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
-from _proceedings_text import (
-    LineRef,
-    ProceedingsPattern,
-    abstract_code,
-    body_char_count,
-    has_enough_body,
-    header_boundary,
-    is_author_like,
-    is_disclosure_detail_line,
-    is_footer_like,
-    is_header_preamble_line,
-    is_institution_like,
-    is_potential_title_line,
-    is_section_heading,
-    is_trimmable_tail_metadata_line,
-    normalize_text,
-    strip_abstract_code,
-)
-from _proceedings_trim_core import AbstractBlock, REPO_ROOT, bool_text, now_utc_iso, relative_to_repo, title_cluster_score
+try:
+    from src.pipelines._proceedings_text import (
+        LineRef,
+        ProceedingsPattern,
+        abstract_code,
+        body_char_count,
+        has_enough_body,
+        header_boundary,
+        is_author_like,
+        is_disclosure_detail_line,
+        is_footer_like,
+        is_header_preamble_line,
+        is_institution_like,
+        is_potential_title_line,
+        is_section_heading,
+        is_trimmable_tail_metadata_line,
+        normalize_text,
+        strip_abstract_code,
+    )
+    from src.pipelines._proceedings_trim_core import (
+        AbstractBlock,
+        REPO_ROOT,
+        bool_text,
+        now_utc_iso,
+        relative_to_repo,
+        title_cluster_score,
+    )
+except ImportError:
+    from _proceedings_text import (
+        LineRef,
+        ProceedingsPattern,
+        abstract_code,
+        body_char_count,
+        has_enough_body,
+        header_boundary,
+        is_author_like,
+        is_disclosure_detail_line,
+        is_footer_like,
+        is_header_preamble_line,
+        is_institution_like,
+        is_potential_title_line,
+        is_section_heading,
+        is_trimmable_tail_metadata_line,
+        normalize_text,
+        strip_abstract_code,
+    )
+    from _proceedings_trim_core import AbstractBlock, REPO_ROOT, bool_text, now_utc_iso, relative_to_repo, title_cluster_score
 
 
 TRIM_WORKFLOW_VERSION = "proceedings_llm_v1"

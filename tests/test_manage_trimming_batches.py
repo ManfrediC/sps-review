@@ -81,23 +81,7 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> 
         writer.writerows(rows)
 
 
-def fake_refresh_review_materials(**kwargs) -> dict[str, object]:
-    report_dir = kwargs["report_dir"]
-    (report_dir / "review_queue.csv").write_text("batch_id,paper_id\n", encoding="utf-8")
-    (report_dir / "responses.csv").write_text("batch_id,paper_id\n", encoding="utf-8")
-    (report_dir / "feedback.json").write_text(json.dumps({"cases": []}), encoding="utf-8")
-    (report_dir / "manual_overrides.csv").write_text("batch_id,paper_id\n", encoding="utf-8")
-    (report_dir / "acceptance_report.json").write_text(json.dumps({"results": []}), encoding="utf-8")
-    (report_dir / "patch_review_summary.json").write_text(json.dumps({"incorrect_cases": []}), encoding="utf-8")
-    return {
-        "queue_rows": [],
-        "responses_by_id": {},
-        "acceptance_report": {"failed_count": 0},
-        "completed_review_count": 0,
-    }
-
-
-def test_prepare_batch_screens_forward_until_it_collects_detected_cases(
+def test_prepare_batch_screens_forward_until_it_collects_candidate_packages(
     tmp_path: Path,
     monkeypatch,
 ) -> None:
@@ -131,15 +115,15 @@ def test_prepare_batch_screens_forward_until_it_collects_detected_cases(
             "resolved_source_route_source": "heuristic",
         },
     ]
-    detected_ids = {"1002", "1004"}
+    candidate_package_ids = {"1002", "1004"}
     command_log: list[list[str]] = []
 
     def fake_run_command(command: list[str]) -> None:
         command_log.append(command)
         script_name = Path(command[1]).name
-        if script_name == "05_trim_proceedings_text.py":
+        if script_name == "05_trim_proceedings_text_LLM.py":
             paper_id = command[command.index("--paper-id") + 1]
-            registry_path = Path(command[command.index("--registry-path") + 1])
+            registry_path = Path(command[command.index("--candidate-registry-path") + 1])
             existing_rows = []
             if registry_path.exists():
                 with registry_path.open(encoding="utf-8-sig", newline="") as handle:
@@ -147,23 +131,44 @@ def test_prepare_batch_screens_forward_until_it_collects_detected_cases(
             existing_by_id = {row["paper_id"]: row for row in existing_rows}
             existing_by_id[paper_id] = {
                 "paper_id": paper_id,
-                "proceedings_detected": "true" if paper_id in detected_ids else "false",
-                "trim_status": "trimmed_auto" if paper_id in detected_ids else "not_needed",
-                "match_score": "0.95" if paper_id in detected_ids else "",
-                "title_score": "0.95" if paper_id in detected_ids else "",
-                "author_score": "0.70" if paper_id in detected_ids else "",
-                "trim_reason": "fixture",
+                "trim_status": "candidate_package_created" if paper_id in candidate_package_ids else "not_needed",
+                "candidate_count": "2" if paper_id in candidate_package_ids else "0",
+                "source_text_json_path": f"data/extraction_json/text/{paper_id}.json",
+                "candidate_heuristics": "fixture",
             }
             write_csv(
                 registry_path,
-                ["paper_id", "proceedings_detected", "trim_status", "match_score", "title_score", "author_score", "trim_reason"],
+                ["paper_id", "trim_status", "candidate_count", "source_text_json_path", "candidate_heuristics"],
                 list(existing_by_id.values()),
             )
-            trimmed_dir = Path(command[command.index("--output-dir") + 1])
-            if paper_id in detected_ids:
-                trimmed_dir.mkdir(parents=True, exist_ok=True)
-                (trimmed_dir / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
-        elif script_name == "05b_validate_proceedings_text.py":
+            candidate_dir = Path(command[command.index("--candidate-output-dir") + 1])
+            if paper_id in candidate_package_ids:
+                candidate_dir.mkdir(parents=True, exist_ok=True)
+                (candidate_dir / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
+        elif script_name == "05b_validate_proceedings_text_LLM.py":
+            registry_path = Path(command[command.index("--registry-path") + 1])
+            paper_id = command[command.index("--paper-id") + 1]
+            existing_rows = []
+            if registry_path.exists():
+                with registry_path.open(encoding="utf-8-sig", newline="") as handle:
+                    existing_rows = list(csv.DictReader(handle))
+            existing_by_id = {row["paper_id"]: row for row in existing_rows}
+            existing_by_id[paper_id] = {
+                "paper_id": paper_id,
+                "trim_status": "trimmed_auto_llm_candidate_exact",
+                "llm_validation_passed": "true",
+                "llm_validation_reason": "fixture",
+                "heuristic_fallback_used": "false",
+            }
+            write_csv(
+                registry_path,
+                ["paper_id", "trim_status", "llm_validation_passed", "llm_validation_reason", "heuristic_fallback_used"],
+                list(existing_by_id.values()),
+            )
+            llm_dir = Path(command[command.index("--output-dir") + 1])
+            llm_dir.mkdir(parents=True, exist_ok=True)
+            (llm_dir / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
+        elif script_name == "05c_publish_proceedings_ready.py":
             output_path = Path(command[command.index("--output-path") + 1])
             paper_id = command[command.index("--paper-id") + 1]
             existing_rows = []
@@ -173,21 +178,22 @@ def test_prepare_batch_screens_forward_until_it_collects_detected_cases(
             existing_by_id = {row["paper_id"]: row for row in existing_rows}
             existing_by_id[paper_id] = {
                 "paper_id": paper_id,
-                "qc_status": "confirmed_full",
-                "manual_follow_up_required": "false",
-                "qc_note": "fixture",
-                "combined_score": "0.91",
+                "ready_source_kind": "llm_validated",
+                "ready_text_mode": "trimmed_abstract",
+                "ready_reason": "fixture",
             }
             write_csv(
                 output_path,
-                ["paper_id", "qc_status", "manual_follow_up_required", "qc_note", "combined_score"],
+                ["paper_id", "ready_source_kind", "ready_text_mode", "ready_reason"],
                 list(existing_by_id.values()),
             )
+            ready_dir = Path(command[command.index("--output-dir") + 1])
+            ready_dir.mkdir(parents=True, exist_ok=True)
+            (ready_dir / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
 
     monkeypatch.setattr(manage_trimming_batches, "resolved_conference_rows", lambda *args, **kwargs: candidates)
     monkeypatch.setattr(manage_trimming_batches, "reviewed_paper_ids", lambda *args, **kwargs: set())
     monkeypatch.setattr(manage_trimming_batches, "run_command", fake_run_command)
-    monkeypatch.setattr(manage_trimming_batches.stage05_review, "refresh_review_materials", fake_refresh_review_materials)
     monkeypatch.setattr(manage_trimming_batches, "repo_relative", lambda path: str(path))
 
     args = argparse.Namespace(
@@ -204,15 +210,17 @@ def test_prepare_batch_screens_forward_until_it_collects_detected_cases(
 
     assert report["paper_ids"] == ["1002", "1004"]
     assert report["screened_candidate_ids"] == ["1001", "1002", "1003", "1004"]
-    assert [Path(command[1]).name for command in command_log].count("05_trim_proceedings_text.py") == 4
-    assert [Path(command[1]).name for command in command_log].count("05b_validate_proceedings_text.py") == 2
+    assert [Path(command[1]).name for command in command_log].count("05_trim_proceedings_text_LLM.py") == 4
+    assert [Path(command[1]).name for command in command_log].count("05b_validate_proceedings_text_LLM.py") == 2
+    assert [Path(command[1]).name for command in command_log].count("05c_publish_proceedings_ready.py") == 2
 
     manifest = json.loads((tmp_path / "batches" / "batch_001.json").read_text(encoding="utf-8"))
     assert manifest["status"] == "awaiting_review"
     assert manifest["paper_ids"] == ["1002", "1004"]
     assert manifest["batch_size_target"] == 2
-    assert manifest["qc_completed_paper_ids"] == ["1002", "1004"]
-    assert "review_queue_path" in manifest["output_paths"]
+    assert manifest["llm_completed_paper_ids"] == ["1002", "1004"]
+    assert manifest["published_paper_ids"] == ["1002", "1004"]
+    assert "ready_registry_path" in manifest["output_paths"]
 
 
 def test_prepare_batch_resumes_existing_processing_batch(
@@ -249,48 +257,47 @@ def test_prepare_batch_resumes_existing_processing_batch(
             "resolved_source_route_source": "heuristic",
         },
     ]
-    detected_ids = {"1002", "1004"}
+    candidate_package_ids = {"1002", "1004"}
     report_dir = tmp_path / "reports" / "batch_001"
-    report_dir.mkdir(parents=True)
-    (report_dir / "text_trimmed").mkdir()
+    (report_dir / "text_trimmed_llm_candidates").mkdir(parents=True)
+    (report_dir / "text_trimmed_llm").mkdir()
+    (report_dir / "text_proceedings_ready").mkdir()
     write_csv(
-        report_dir / "text_trim_registry.csv",
-        ["paper_id", "proceedings_detected", "trim_status", "match_score", "title_score", "author_score", "trim_reason"],
+        report_dir / "text_trim_llm_candidate_registry.csv",
+        ["paper_id", "trim_status", "candidate_count", "source_text_json_path", "candidate_heuristics"],
         [
             {
                 "paper_id": "1001",
-                "proceedings_detected": "false",
                 "trim_status": "not_needed",
-                "match_score": "",
-                "title_score": "",
-                "author_score": "",
-                "trim_reason": "fixture",
+                "candidate_count": "0",
+                "source_text_json_path": "data/extraction_json/text/1001.json",
+                "candidate_heuristics": "fixture",
             },
             {
                 "paper_id": "1002",
-                "proceedings_detected": "true",
-                "trim_status": "trimmed_auto",
-                "match_score": "0.95",
-                "title_score": "0.95",
-                "author_score": "0.70",
-                "trim_reason": "fixture",
+                "trim_status": "candidate_package_created",
+                "candidate_count": "2",
+                "source_text_json_path": "data/extraction_json/text/1002.json",
+                "candidate_heuristics": "fixture",
             },
         ],
     )
 
     manifest = {
         "batch_id": "batch_001",
-        "status": "stage05_running",
+        "status": "candidate_generation_running",
         "batch_size_target": 2,
         "paper_ids": ["1002"],
         "screened_candidate_ids": ["1001", "1002"],
         "screened_candidate_count": 2,
-        "qc_completed_paper_ids": [],
+        "llm_completed_paper_ids": [],
+        "published_paper_ids": [],
         "output_paths": {
             "report_dir": str(report_dir),
             "report_path": str(report_dir / "batch_report.json"),
-            "trim_registry_path": str(report_dir / "text_trim_registry.csv"),
-            "qc_registry_path": str(report_dir / "proceedings_text_qc_registry.csv"),
+            "candidate_registry_path": str(report_dir / "text_trim_llm_candidate_registry.csv"),
+            "llm_registry_path": str(report_dir / "text_trim_llm_registry.csv"),
+            "ready_registry_path": str(report_dir / "text_proceedings_ready_registry.csv"),
         },
     }
     batches_dir = tmp_path / "batches"
@@ -302,28 +309,50 @@ def test_prepare_batch_resumes_existing_processing_batch(
     def fake_run_command(command: list[str]) -> None:
         command_log.append(command)
         script_name = Path(command[1]).name
-        if script_name == "05_trim_proceedings_text.py":
+        if script_name == "05_trim_proceedings_text_LLM.py":
             paper_id = command[command.index("--paper-id") + 1]
-            registry_path = Path(command[command.index("--registry-path") + 1])
+            registry_path = Path(command[command.index("--candidate-registry-path") + 1])
             existing_rows = list(csv.DictReader(registry_path.open(encoding="utf-8-sig", newline="")))
             existing_by_id = {row["paper_id"]: row for row in existing_rows}
             existing_by_id[paper_id] = {
                 "paper_id": paper_id,
-                "proceedings_detected": "true" if paper_id in detected_ids else "false",
-                "trim_status": "trimmed_auto" if paper_id in detected_ids else "not_needed",
-                "match_score": "0.95" if paper_id in detected_ids else "",
-                "title_score": "0.95" if paper_id in detected_ids else "",
-                "author_score": "0.70" if paper_id in detected_ids else "",
-                "trim_reason": "fixture",
+                "trim_status": "candidate_package_created" if paper_id in candidate_package_ids else "not_needed",
+                "candidate_count": "2" if paper_id in candidate_package_ids else "0",
+                "source_text_json_path": f"data/extraction_json/text/{paper_id}.json",
+                "candidate_heuristics": "fixture",
             }
             write_csv(
                 registry_path,
-                ["paper_id", "proceedings_detected", "trim_status", "match_score", "title_score", "author_score", "trim_reason"],
+                ["paper_id", "trim_status", "candidate_count", "source_text_json_path", "candidate_heuristics"],
                 list(existing_by_id.values()),
             )
-            if paper_id in detected_ids:
-                (report_dir / "text_trimmed" / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
-        elif script_name == "05b_validate_proceedings_text.py":
+            if paper_id in candidate_package_ids:
+                (report_dir / "text_trimmed_llm_candidates" / f"{paper_id}.json").write_text(
+                    json.dumps({"paper_id": paper_id}),
+                    encoding="utf-8",
+                )
+        elif script_name == "05b_validate_proceedings_text_LLM.py":
+            output_path = Path(command[command.index("--registry-path") + 1])
+            paper_id = command[command.index("--paper-id") + 1]
+            existing_rows = []
+            if output_path.exists():
+                with output_path.open(encoding="utf-8-sig", newline="") as handle:
+                    existing_rows = list(csv.DictReader(handle))
+            existing_by_id = {row["paper_id"]: row for row in existing_rows}
+            existing_by_id[paper_id] = {
+                "paper_id": paper_id,
+                "trim_status": "trimmed_auto_llm_candidate_exact",
+                "llm_validation_passed": "true",
+                "llm_validation_reason": "fixture",
+                "heuristic_fallback_used": "false",
+            }
+            write_csv(
+                output_path,
+                ["paper_id", "trim_status", "llm_validation_passed", "llm_validation_reason", "heuristic_fallback_used"],
+                list(existing_by_id.values()),
+            )
+            (report_dir / "text_trimmed_llm" / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
+        elif script_name == "05c_publish_proceedings_ready.py":
             output_path = Path(command[command.index("--output-path") + 1])
             paper_id = command[command.index("--paper-id") + 1]
             existing_rows = []
@@ -333,21 +362,20 @@ def test_prepare_batch_resumes_existing_processing_batch(
             existing_by_id = {row["paper_id"]: row for row in existing_rows}
             existing_by_id[paper_id] = {
                 "paper_id": paper_id,
-                "qc_status": "confirmed_full",
-                "manual_follow_up_required": "false",
-                "qc_note": "fixture",
-                "combined_score": "0.91",
+                "ready_source_kind": "llm_validated",
+                "ready_text_mode": "trimmed_abstract",
+                "ready_reason": "fixture",
             }
             write_csv(
                 output_path,
-                ["paper_id", "qc_status", "manual_follow_up_required", "qc_note", "combined_score"],
+                ["paper_id", "ready_source_kind", "ready_text_mode", "ready_reason"],
                 list(existing_by_id.values()),
             )
+            (report_dir / "text_proceedings_ready" / f"{paper_id}.json").write_text(json.dumps({"paper_id": paper_id}), encoding="utf-8")
 
     monkeypatch.setattr(manage_trimming_batches, "resolved_conference_rows", lambda *args, **kwargs: candidates)
     monkeypatch.setattr(manage_trimming_batches, "reviewed_paper_ids", lambda *args, **kwargs: set())
     monkeypatch.setattr(manage_trimming_batches, "run_command", fake_run_command)
-    monkeypatch.setattr(manage_trimming_batches.stage05_review, "refresh_review_materials", fake_refresh_review_materials)
     monkeypatch.setattr(manage_trimming_batches, "repo_relative", lambda path: str(path))
 
     args = argparse.Namespace(
@@ -364,13 +392,13 @@ def test_prepare_batch_resumes_existing_processing_batch(
 
     assert report["batch_id"] == "batch_001"
     assert report["paper_ids"] == ["1002", "1004"]
-    assert [Path(command[1]).name for command in command_log].count("05_trim_proceedings_text.py") == 2
+    assert [Path(command[1]).name for command in command_log].count("05_trim_proceedings_text_LLM.py") == 2
     manifest_after = json.loads((batches_dir / "batch_001.json").read_text(encoding="utf-8"))
     assert manifest_after["status"] == "awaiting_review"
     assert manifest_after["paper_ids"] == ["1002", "1004"]
 
 
-def test_prepare_batch_raises_when_not_enough_detected_cases_remain(
+def test_prepare_batch_raises_when_not_enough_candidate_packages_remain(
     tmp_path: Path,
     monkeypatch,
 ) -> None:
@@ -399,10 +427,10 @@ def test_prepare_batch_raises_when_not_enough_detected_cases_remain(
     ]
 
     def fake_run_command(command: list[str]) -> None:
-        if Path(command[1]).name != "05_trim_proceedings_text.py":
+        if Path(command[1]).name != "05_trim_proceedings_text_LLM.py":
             return
         paper_id = command[command.index("--paper-id") + 1]
-        registry_path = Path(command[command.index("--registry-path") + 1])
+        registry_path = Path(command[command.index("--candidate-registry-path") + 1])
         existing_rows = []
         if registry_path.exists():
             with registry_path.open(encoding="utf-8-sig", newline="") as handle:
@@ -410,16 +438,14 @@ def test_prepare_batch_raises_when_not_enough_detected_cases_remain(
         existing_by_id = {row["paper_id"]: row for row in existing_rows}
         existing_by_id[paper_id] = {
             "paper_id": paper_id,
-            "proceedings_detected": "true" if paper_id == "1002" else "false",
-            "trim_status": "trimmed_auto" if paper_id == "1002" else "not_needed",
-            "match_score": "",
-            "title_score": "",
-            "author_score": "",
-            "trim_reason": "fixture",
+            "trim_status": "candidate_package_created" if paper_id == "1002" else "not_needed",
+            "candidate_count": "2" if paper_id == "1002" else "0",
+            "source_text_json_path": f"data/extraction_json/text/{paper_id}.json",
+            "candidate_heuristics": "fixture",
         }
         write_csv(
             registry_path,
-            ["paper_id", "proceedings_detected", "trim_status", "match_score", "title_score", "author_score", "trim_reason"],
+            ["paper_id", "trim_status", "candidate_count", "source_text_json_path", "candidate_heuristics"],
             list(existing_by_id.values()),
         )
 
@@ -440,10 +466,10 @@ def test_prepare_batch_raises_when_not_enough_detected_cases_remain(
     try:
         manage_trimming_batches.prepare_batch(args)
     except RuntimeError as error:
-        assert "found 1 detected files after screening 3 candidates" in str(error)
+        assert "found 1 candidate packages after screening 3 conference abstracts" in str(error)
     else:
-        raise AssertionError("Expected prepare_batch to fail when too few proceedings-detected files remain.")
+        raise AssertionError("Expected prepare_batch to fail when too few candidate packages remain.")
 
     manifest = json.loads((tmp_path / "batches" / "batch_001.json").read_text(encoding="utf-8"))
-    assert manifest["status"] == "stage05_running"
+    assert manifest["status"] == "candidate_generation_running"
     assert manifest["screened_candidate_ids"] == ["1001", "1002", "1003"]

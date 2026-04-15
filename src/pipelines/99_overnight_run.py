@@ -51,13 +51,20 @@ STAGES = [
     ),
     Stage(
         key="proceedings_trim",
-        label="Proceedings Trim",
-        script_path=REPO_ROOT / "src" / "pipelines" / "05_trim_proceedings_text.py",
+        label="Proceedings LLM Candidate Generation",
+        script_path=REPO_ROOT / "src" / "pipelines" / "05_trim_proceedings_text_LLM.py",
     ),
     Stage(
         key="proceedings_qc",
-        label="Proceedings Text QC",
-        script_path=REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text.py",
+        label="Proceedings LLM Validation",
+        script_path=REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text_LLM.py",
+        supports_dry_run=True,
+        requires_paid_approval=True,
+    ),
+    Stage(
+        key="proceedings_publish",
+        label="Proceedings-Ready Publication",
+        script_path=REPO_ROOT / "src" / "pipelines" / "05c_publish_proceedings_ready.py",
     ),
     Stage(
         key="case_series_split",
@@ -128,7 +135,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--allow-paid-stage04",
         action="store_true",
-        help="Explicit approval flag required before the overnight runner will start the paid stage-04 LLM step.",
+        help="Explicit approval flag required before the overnight runner will start the paid stage-04 or stage-05 LLM steps.",
     )
     parser.add_argument(
         "--publish-stage04",
@@ -205,7 +212,7 @@ def selected_stages(args: argparse.Namespace) -> list[Stage]:
     chosen = STAGES[start_index : end_index + 1]
     if any(stage.requires_paid_approval for stage in chosen) and not args.allow_paid_stage04:
         raise SystemExit(
-            "The overnight runner will not start the paid stage-04 LLM step without --allow-paid-stage04."
+            "The overnight runner will not start the paid stage-04 or stage-05 LLM steps without --allow-paid-stage04."
         )
     return chosen
 

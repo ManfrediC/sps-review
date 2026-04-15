@@ -22,10 +22,13 @@ def _load_script_module(module_name: str, file_name: str):
     return module
 
 
-_TRIM_MODULE = _load_script_module("_stage05_trim_proceedings_text_baseline", "05_trim_proceedings_text.py")
+_TRIM_MODULE = _load_script_module(
+    "_stage05_trim_proceedings_text_baseline",
+    "_proceedings_trim_deterministic.py",
+)
 _VALIDATE_MODULE = _load_script_module(
     "_stage05_validate_proceedings_text_baseline",
-    "05b_validate_proceedings_text.py",
+    "_proceedings_validate_deterministic.py",
 )
 
 REPO_ROOT = _TRIM_MODULE.REPO_ROOT

@@ -18,12 +18,61 @@ from src.validation import _stage05_review as review
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-QC_SCRIPT = REPO_ROOT / "src" / "pipelines" / "05b_validate_proceedings_text.py"
+PUBLISH_SCRIPT = REPO_ROOT / "src" / "pipelines" / "05c_publish_proceedings_ready.py"
+
+
+def llm_final_registry_fieldnames() -> list[str]:
+    return [
+        "paper_id",
+        "covidence_id",
+        "title",
+        "authors",
+        "source_filename",
+        "source_text_json_path",
+        "candidate_source_json_path",
+        "trimmed_text_json_path",
+        "trim_workflow_version",
+        "trim_workflow_stage",
+        "trim_status",
+        "trim_reason",
+        "trim_method",
+        "trim_mode",
+        "matched_block_code",
+        "matched_block_title",
+        "title_score",
+        "author_score",
+        "match_score",
+        "start_rule",
+        "end_rule",
+        "start_page_index",
+        "end_page_index",
+        "start_line_global_index",
+        "end_line_global_index_exclusive",
+        "end_selection_mode",
+        "candidate_count",
+        "baseline_candidate_id",
+        "overshoot_candidate_id",
+        "candidate_ids",
+        "llm_used",
+        "llm_model",
+        "llm_api_mode",
+        "llm_prompt_version",
+        "llm_decision_type",
+        "llm_selected_candidate_id",
+        "llm_last_abstract_line_global_index",
+        "llm_confidence",
+        "llm_end_reason",
+        "llm_explanation_short",
+        "llm_validation_passed",
+        "llm_validation_reason",
+        "heuristic_fallback_used",
+        "trimmed_at_utc",
+    ]
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Apply fallback per-paper manual overrides for a reviewed stage-05 batch and re-run QC."
+        description="Apply fallback per-paper manual overrides for a reviewed stage-05 LLM batch and republish batch-local ready outputs."
     )
     parser.add_argument(
         "--batch-id",
@@ -110,8 +159,10 @@ def build_manual_trimmed_record(
     *,
     source_record: dict[str, Any],
     source_path: Path,
-    queue_row: dict[str, str],
+    report_row: dict[str, str],
+    candidate_row: dict[str, str],
     selected_lines: list[Any],
+    candidate_source_json_path: str,
 ) -> dict[str, Any]:
     start_line = selected_lines[0]
     end_line = selected_lines[-1]
@@ -125,8 +176,10 @@ def build_manual_trimmed_record(
         "trim_reason": "Manual override derived from reviewed stage-05 anchors.",
         "trim_method": "manual_override",
         "trim_mode": "manual_override",
-        "matched_block_code": "",
-        "matched_block_title": str(queue_row.get("title") or "").strip(),
+        "trim_workflow_version": "proceedings_llm_v1",
+        "trim_workflow_stage": "llm_validated",
+        "matched_block_code": str(candidate_row.get("matched_block_code") or ""),
+        "matched_block_title": str(report_row.get("title") or candidate_row.get("matched_block_title") or "").strip(),
         "match_score": 1.0,
         "title_score": 1.0,
         "author_score": 1.0,
@@ -136,9 +189,15 @@ def build_manual_trimmed_record(
         "end_line_global_index_exclusive": int(end_line.global_index) + 1,
         "start_rule": "manual_override_start_anchor",
         "end_rule": "manual_override_end_anchor",
+        "end_selection_mode": "manual_override",
         "body_signal_count": "",
         "spillover_flag": False,
         "header_only_flag": False,
+        "candidate_source_json_path": candidate_source_json_path,
+        "llm_used": False,
+        "llm_validation_passed": True,
+        "llm_validation_reason": "manual_override_applied",
+        "heuristic_fallback_used": False,
         "trimmed_at_utc": now_utc_iso(),
     }
 
@@ -159,8 +218,28 @@ def write_csv_with_fieldnames(path: Path, fieldnames: list[str], rows: list[dict
         writer.writerows(rows)
 
 
-def update_trim_registry_row(
-    trim_registry_path: Path,
+def load_batch_report_rows(report_dir: Path) -> dict[str, dict[str, str]]:
+    report_path = report_dir / "batch_report.json"
+    if not report_path.exists():
+        raise FileNotFoundError(f"Batch report not found: {report_path}")
+    payload = json.loads(report_path.read_text(encoding="utf-8"))
+    return {
+        str(row.get("paper_id") or "").strip(): row
+        for row in payload.get("file_statuses") or []
+        if str(row.get("paper_id") or "").strip()
+    }
+
+
+def load_candidate_rows(report_dir: Path) -> dict[str, dict[str, str]]:
+    return {
+        str(row.get("paper_id") or "").strip(): row
+        for row in review.load_csv_rows(report_dir / "text_trim_llm_candidate_registry.csv")
+        if str(row.get("paper_id") or "").strip()
+    }
+
+
+def update_final_registry_row(
+    final_registry_path: Path,
     *,
     paper_id: str,
     trimmed_path: Path,
@@ -169,10 +248,11 @@ def update_trim_registry_row(
     start_line_index: int,
     end_line_index_exclusive: int,
 ) -> None:
-    fieldnames, rows = load_csv_with_fieldnames(trim_registry_path)
-    if not rows:
-        raise FileNotFoundError(f"Trim registry not found or empty: {trim_registry_path}")
+    fieldnames, rows = load_csv_with_fieldnames(final_registry_path)
+    if not fieldnames:
+        fieldnames = llm_final_registry_fieldnames()
     updated_rows: list[dict[str, str]] = []
+    found = False
     for row in rows:
         if str(row.get("paper_id") or "").strip() == paper_id:
             row = {
@@ -182,14 +262,36 @@ def update_trim_registry_row(
                 "trim_reason": "Manual override derived from reviewed stage-05 anchors.",
                 "trim_method": "manual_override",
                 "trim_mode": "manual_override",
+                "title_score": "1.0000",
+                "author_score": "1.0000",
+                "match_score": "1.0000",
+                "start_rule": "manual_override_start_anchor",
+                "end_rule": "manual_override_end_anchor",
                 "start_page_index": str(start_page_index),
                 "end_page_index": str(end_page_index),
                 "start_line_global_index": str(start_line_index),
                 "end_line_global_index_exclusive": str(end_line_index_exclusive),
+                "end_selection_mode": "manual_override",
+                "llm_used": "false",
+                "llm_model": "",
+                "llm_api_mode": "",
+                "llm_prompt_version": "",
+                "llm_decision_type": "manual_override",
+                "llm_selected_candidate_id": "",
+                "llm_last_abstract_line_global_index": str(end_line_index_exclusive - 1),
+                "llm_confidence": "reviewed",
+                "llm_end_reason": "manual_override",
+                "llm_explanation_short": "Manual override derived from reviewed stage-05 anchors.",
+                "llm_validation_passed": "true",
+                "llm_validation_reason": "manual_override_applied",
+                "heuristic_fallback_used": "false",
                 "trimmed_at_utc": now_utc_iso(),
             }
+            found = True
         updated_rows.append(row)
-    write_csv_with_fieldnames(trim_registry_path, fieldnames, updated_rows)
+    if not found:
+        raise FileNotFoundError(f"Final LLM registry row not found for paper_id {paper_id}: {final_registry_path}")
+    write_csv_with_fieldnames(final_registry_path, fieldnames, updated_rows)
 
 
 def update_override_rows(
@@ -220,28 +322,32 @@ def update_manifest_status(manifest_path: Path, status: str) -> None:
     manifest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def qc_command(paper_id: str, report_dir: Path) -> list[str]:
+def publish_command(paper_ids: list[str], report_dir: Path) -> list[str]:
     return [
         sys.executable,
-        str(QC_SCRIPT),
-        "--paper-id",
-        paper_id,
-        "--trimmed-dir",
-        str(report_dir / "text_trimmed"),
-        "--text-trim-registry",
-        str(report_dir / "text_trim_registry.csv"),
+        str(PUBLISH_SCRIPT),
+        *[argument for paper_id in paper_ids for argument in ("--paper-id", paper_id)],
+        "--llm-candidate-registry-path",
+        str(report_dir / "text_trim_llm_candidate_registry.csv"),
+        "--llm-trimmed-dir",
+        str(report_dir / "text_trimmed_llm"),
+        "--llm-registry-path",
+        str(report_dir / "text_trim_llm_registry.csv"),
+        "--output-dir",
+        str(report_dir / "text_proceedings_ready"),
         "--output-path",
-        str(report_dir / "proceedings_text_qc_registry.csv"),
+        str(report_dir / "text_proceedings_ready_registry.csv"),
         "--skip-registry-refresh",
     ]
 
 
 def apply_override_for_row(
-    queue_row: dict[str, str],
+    report_row: dict[str, str],
     override_row: dict[str, str],
+    candidate_row: dict[str, str],
     report_dir: Path,
 ) -> tuple[bool, str]:
-    source_text_json_path = str(queue_row.get("source_text_json_path") or "").strip()
+    source_text_json_path = str(report_row.get("source_text_json_path") or "").strip()
     if not source_text_json_path:
         return False, "Missing source text JSON path."
     source_path = review.resolve_repo_path(source_text_json_path)
@@ -268,18 +374,21 @@ def apply_override_for_row(
     if not selected_lines:
         return False, "Manual override selected an empty span."
 
+    paper_id = str(report_row.get("paper_id") or "").strip()
+    candidate_source_json_path = str(candidate_row.get("candidate_json_path") or "").strip()
     trimmed_record = build_manual_trimmed_record(
         source_record=source_record,
         source_path=source_path,
-        queue_row=queue_row,
+        report_row=report_row,
+        candidate_row=candidate_row,
         selected_lines=selected_lines,
+        candidate_source_json_path=candidate_source_json_path,
     )
-    paper_id = str(queue_row.get("paper_id") or "").strip()
-    trimmed_path = report_dir / "text_trimmed" / f"{paper_id}.json"
+    trimmed_path = report_dir / "text_trimmed_llm" / f"{paper_id}.json"
     trimmed_path.parent.mkdir(parents=True, exist_ok=True)
     trimmed_path.write_text(json.dumps(trimmed_record, ensure_ascii=False, indent=2), encoding="utf-8")
-    update_trim_registry_row(
-        report_dir / "text_trim_registry.csv",
+    update_final_registry_row(
+        report_dir / "text_trim_llm_registry.csv",
         paper_id=paper_id,
         trimmed_path=trimmed_path,
         start_page_index=int(selected_lines[0].page_index),
@@ -294,38 +403,39 @@ def main() -> None:
     args = parse_args()
     report_dir = args.reports_dir / args.batch_id
     manifest_path = args.batches_dir / f"{args.batch_id}.json"
-    queue_rows = review.load_review_queue_rows(report_dir)
+    overrides_path = review.manual_overrides_path(report_dir)
     override_rows_by_id = review.load_manual_overrides_by_id(report_dir)
-    queue_by_id = {str(row.get("paper_id") or "").strip(): row for row in queue_rows}
+    report_rows_by_id = load_batch_report_rows(report_dir)
+    candidate_rows_by_id = load_candidate_rows(report_dir)
 
     update_manifest_status(manifest_path, "override_in_progress")
     override_statuses: dict[str, tuple[str, str]] = {}
-    rerun_paper_ids: list[str] = []
+    republish_paper_ids: list[str] = []
 
     for paper_id, override_row in override_rows_by_id.items():
         if args.only_enabled and not review.truthy(override_row.get("override_enabled") or ""):
             continue
-        queue_row = queue_by_id.get(paper_id, {})
-        if not queue_row:
-            override_statuses[paper_id] = ("missing_queue_row", now_utc_iso())
+        report_row = report_rows_by_id.get(paper_id, {})
+        candidate_row = candidate_rows_by_id.get(paper_id, {})
+        if not report_row:
+            override_statuses[paper_id] = ("missing_batch_report_row", now_utc_iso())
             continue
-        ok, error_message = apply_override_for_row(queue_row, override_row, report_dir)
+        ok, error_message = apply_override_for_row(report_row, override_row, candidate_row, report_dir)
         if ok:
-            rerun_paper_ids.append(paper_id)
+            republish_paper_ids.append(paper_id)
             override_statuses[paper_id] = ("applied", now_utc_iso())
         else:
             override_statuses[paper_id] = (error_message, now_utc_iso())
 
-    update_override_rows(review.manual_overrides_path(report_dir), override_statuses)
+    update_override_rows(overrides_path, override_statuses)
 
-    for paper_id in rerun_paper_ids:
-        subprocess.run(qc_command(paper_id, report_dir), check=True, cwd=str(REPO_ROOT))
+    if republish_paper_ids:
+        subprocess.run(publish_command(republish_paper_ids, report_dir), check=True, cwd=str(REPO_ROOT))
 
-    review.refresh_review_materials(batch_id=args.batch_id, report_dir=report_dir)
-    update_manifest_status(manifest_path, "feedback_received")
+    update_manifest_status(manifest_path, "awaiting_review")
 
-    print(f"Applied overrides for {len(rerun_paper_ids)} paper(s) in {args.batch_id}.")
-    print(f"Acceptance: {review.display_path(review.acceptance_report_path(report_dir))}")
+    print(f"Applied overrides for {len(republish_paper_ids)} paper(s) in {args.batch_id}.")
+    print(f"Batch-local ready registry: {review.display_path(report_dir / 'text_proceedings_ready_registry.csv')}")
 
 
 if __name__ == "__main__":

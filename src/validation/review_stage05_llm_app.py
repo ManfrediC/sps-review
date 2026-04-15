@@ -23,8 +23,8 @@ PDF_ZOOM_MAX = 3.0
 PDF_ZOOM_STEP = 0.25
 PDF_DEFAULT_ZOOM = 1.0
 
-CANDIDATE_REGISTRY_PATH = review.REPO_ROOT / "data" / "references" / "text_trim_llm_candidate_registry.csv"
-FINAL_REGISTRY_PATH = review.REPO_ROOT / "data" / "references" / "text_trim_llm_registry.csv"
+DEFAULT_CANDIDATE_REGISTRY_PATH = review.REPO_ROOT / "data" / "references" / "text_trim_llm_candidate_registry.csv"
+DEFAULT_FINAL_REGISTRY_PATH = review.REPO_ROOT / "data" / "references" / "text_trim_llm_registry.csv"
 
 
 @st.cache_data(show_spinner=False)
@@ -88,13 +88,15 @@ def set_session_value(key: str, value: int | str | float) -> None:
     st.session_state[key] = value
 
 
-def load_review_rows() -> list[dict[str, str]]:
-    if not CANDIDATE_REGISTRY_PATH.exists():
+def load_review_rows(candidate_registry_path_text: str, final_registry_path_text: str) -> list[dict[str, str]]:
+    candidate_registry_path = Path(candidate_registry_path_text)
+    final_registry_path = Path(final_registry_path_text)
+    if not candidate_registry_path.exists():
         return []
-    candidate_rows = {row["paper_id"]: row for row in load_registry_rows(str(CANDIDATE_REGISTRY_PATH)) if row.get("paper_id")}
+    candidate_rows = {row["paper_id"]: row for row in load_registry_rows(str(candidate_registry_path)) if row.get("paper_id")}
     final_rows = {}
-    if FINAL_REGISTRY_PATH.exists():
-        final_rows = {row["paper_id"]: row for row in load_registry_rows(str(FINAL_REGISTRY_PATH)) if row.get("paper_id")}
+    if final_registry_path.exists():
+        final_rows = {row["paper_id"]: row for row in load_registry_rows(str(final_registry_path)) if row.get("paper_id")}
     artifact_rows = review.rows_by_id(review.ARTIFACT_REGISTRY_PATH)
 
     def sort_key(paper_id: str) -> tuple[int, str]:
@@ -371,9 +373,20 @@ def main() -> None:
     st.title("Stage 05 LLM Review App")
     st.caption("Inspect the PDF, the final trimmed output, and the heuristic end candidates from the LLM proceedings workflow.")
 
-    rows = load_review_rows()
+    candidate_registry_path_text = st.sidebar.text_input(
+        "Candidate registry",
+        value=str(DEFAULT_CANDIDATE_REGISTRY_PATH),
+        help="Use the canonical registry or point the app at a batch-local `text_trim_llm_candidate_registry.csv`.",
+    )
+    final_registry_path_text = st.sidebar.text_input(
+        "Final registry",
+        value=str(DEFAULT_FINAL_REGISTRY_PATH),
+        help="Use the canonical registry or point the app at a batch-local `text_trim_llm_registry.csv`.",
+    )
+
+    rows = load_review_rows(candidate_registry_path_text, final_registry_path_text)
     if not rows:
-        st.warning("No LLM stage-05 candidate rows were found yet. Run `05_trim_proceedings_text_LLM.py` first.")
+        st.warning("No LLM stage-05 candidate rows were found at the selected registry paths.")
         return
 
     trim_options = ["All"] + sorted({row["trim_status"] for row in rows if row["trim_status"]})
