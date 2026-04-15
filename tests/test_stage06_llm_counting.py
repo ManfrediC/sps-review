@@ -141,7 +141,9 @@ def make_710_package():
             "Authors": "Petit-Pedrol, Mar",
             "Abstract": (
                 "These 12 patients developed a broader spectrum of symptoms probably indicative of coexisting autoimmune disorders: "
-                "six had encephalitis with seizures, four had stiff-person syndrome, and two had opsoclonus-myoclonus."
+                "six had encephalitis with seizures (one with status epilepticus needing pharmacologically induced coma; "
+                "one with epilepsia partialis continua), four had stiff-person syndrome (one with seizures and limbic involvement), "
+                "and two had opsoclonus-myoclonus."
             ),
         },
         text_record={"paper_id": "710", "_path": "data/extraction_json/text/710.json"},
@@ -150,8 +152,9 @@ def make_710_package():
                 {
                     "text": (
                         "These 12 control patients with other diseases developed a broader spectrum of symptoms probably indicative "
-                        "of coexisting autoimmune disorders: six had encephalitis with seizures, four had stiff-person syndrome, "
-                        "and two had opsoclonus-myoclonus."
+                        "of coexisting autoimmune disorders: six had encephalitis with seizures (one with status epilepticus "
+                        "needing pharmacologically induced coma; one with epilepsia partialis continua), four had stiff-person syndrome "
+                        "(one with seizures and limbic involvement), and two had opsoclonus-myoclonus."
                     )
                 }
             ]
@@ -301,7 +304,7 @@ class TestStage06LlmCounting(unittest.TestCase):
         self.assertIn("COUNT_REASONING_DECISION_TYPE_CONTRADICTION", flags)
         self.assertEqual(worst, Severity.REJECT)
 
-    def test_validator_rejects_confident_control_group_subgroup_without_review(self) -> None:
+    def test_validator_accepts_explicit_control_group_subgroup_count(self) -> None:
         package = make_710_package()
         decision = LLMCountDecisionOutput(
             decision_type="bounded_alternative",
@@ -324,8 +327,8 @@ class TestStage06LlmCounting(unittest.TestCase):
             ],
         )
         flags, worst = run_validators(package, decision)
-        self.assertIn("COUNT_SPS_STATUS_UNCERTAIN", flags)
-        self.assertEqual(worst, Severity.REJECT)
+        self.assertNotIn("COUNT_SPS_STATUS_UNCERTAIN", flags)
+        self.assertEqual(worst, Severity.PASS)
 
     def test_adjudicated_count_row_uses_selected_candidate(self) -> None:
         package = make_package()

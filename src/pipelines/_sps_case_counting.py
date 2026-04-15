@@ -220,10 +220,6 @@ SPS_SUBGROUP_PAREN_COUNT_RE = re.compile(
     rf"\b{SPS_SUBGROUP_DIAGNOSIS_PATTERN}\b\s*\(\s*{COUNT_TOKEN_PATTERN}\b",
     re.IGNORECASE,
 )
-SPS_SUBGROUP_TABLE_COUNT_RE = re.compile(
-    rf"\b{SPS_SUBGROUP_DIAGNOSIS_PATTERN}\b\s+(?P<count>\d+)\s+\d+\s+\d+\b",
-    re.IGNORECASE,
-)
 SPS_SUBGROUP_CASE_LABEL_RE = re.compile(
     rf"\bcase\s+\d+\s+{COUNT_FILLER_PATTERN}{{0,4}}?{SPS_SUBGROUP_DIAGNOSIS_OR_CASE_LABEL_PATTERN}\b",
     re.IGNORECASE,
@@ -403,14 +399,6 @@ def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
         return min(candidates), "high", "diagnosis_specific_parenthetical_count"
 
     candidates = []
-    for match in SPS_SUBGROUP_TABLE_COUNT_RE.finditer(normalized):
-        count = parse_count_token(match.group("count"))
-        if count > 0:
-            candidates.append(count)
-    if candidates:
-        return min(candidates), "high", "diagnosis_specific_table_count"
-
-    candidates = []
     for match in SPS_SUBGROUP_TRAILING_TABLE_COUNT_RE.finditer(normalized):
         count = parse_count_token(match.group("count"))
         if count > 0:
@@ -447,7 +435,7 @@ def score_count_candidate(
     local_window = unit[max(0, start - 24) : min(len(unit), end + 48)]
     score = source_weight
     if count >= 1900 and count <= CURRENT_YEAR + 1:
-        score -= 10
+        score -= 25
     elif count > 500:
         score -= 8
     if has_age_context(window, count):

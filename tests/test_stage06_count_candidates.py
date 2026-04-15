@@ -309,7 +309,9 @@ class TestStage06CountCandidates(unittest.TestCase):
                 "Authors": "Petit-Pedrol, Mar",
                 "Abstract": (
                     "These 12 patients developed a broader spectrum of symptoms probably indicative of coexisting autoimmune disorders: "
-                    "six had encephalitis with seizures, four had stiff-person syndrome, and two had opsoclonus-myoclonus."
+                    "six had encephalitis with seizures (one with status epilepticus needing pharmacologically induced coma; "
+                    "one with epilepsia partialis continua), four had stiff-person syndrome (one with seizures and limbic involvement), "
+                    "and two had opsoclonus-myoclonus."
                 ),
             },
             text_record={"paper_id": "710", "_path": "data/extraction_json/text/710.json"},
@@ -318,8 +320,9 @@ class TestStage06CountCandidates(unittest.TestCase):
                     {
                         "text": (
                             "These 12 control patients with other diseases developed a broader spectrum of symptoms probably indicative "
-                            "of coexisting autoimmune disorders: six had encephalitis with seizures, four had stiff-person syndrome, "
-                            "and two had opsoclonus-myoclonus."
+                            "of coexisting autoimmune disorders: six had encephalitis with seizures (one with status epilepticus "
+                            "needing pharmacologically induced coma; one with epilepsia partialis continua), four had stiff-person syndrome "
+                            "(one with seizures and limbic involvement), and two had opsoclonus-myoclonus."
                         )
                     }
                 ]
@@ -332,12 +335,50 @@ class TestStage06CountCandidates(unittest.TestCase):
         )
         self.assertEqual(package.explicit_sps_subgroup_count, 4)
         self.assertEqual(package.fallback_candidate().proposed_count, 4)
-        self.assertTrue(package.sps_status_uncertainty_signals)
+        self.assertFalse(package.sps_status_uncertainty_signals)
         self.assertIn(
             "diagnosis_specific_mixed_diagnosis_subgroup_count",
             {candidate.count_basis for candidate in package.candidates},
         )
-        self.assertTrue(any("control" in signal.lower() for signal in package.sps_status_uncertainty_signals))
+
+    def test_candidate_package_extracts_singleton_suffix_subgroup_from_mixed_pns_cohort(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "227",
+                "Title": "Spectrum of paraneoplastic neurologic disorders in women with breast and gynecologic cancer.",
+                "Authors": "Rojas-Marcos, Inigo",
+                "Abstract": (
+                    "We retrospectively reviewed 92 patients whose serum was sent to our laboratories. "
+                    "Other PNSs were opsoclonus-myoclonus syndrome (4 cases), sensorimotor neuropathy (4 cases), "
+                    "paraneoplastic encephalomyelitis (4 cases), stiff-person syndrome (1 with amphiphysin-ab), "
+                    "and limbic encephalitis (1 case)."
+                ),
+            },
+            text_record={"paper_id": "227", "_path": "data/extraction_json/text/227.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Table 1. Clinical and immunologic characteristics of 92 patients. "
+                            "Stiff-person syndrome 1 Amphiphysin (1)."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "227.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.fallback_candidate().proposed_count, 1)
+        self.assertEqual(package.explicit_sps_subgroup_count, 1)
+        self.assertIn(1, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn(
+            "diagnosis_specific_suffix_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+        self.assertFalse(package.sps_status_uncertainty_signals)
 
     def test_candidate_package_extracts_single_sps_case_from_mixed_two_patient_abstract(self) -> None:
         package = build_case_count_candidate_package(
@@ -408,6 +449,42 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertIn(
             "diagnosis_specific_direct_cohort_count",
             {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_sums_enumerated_sps_spectrum_subgroups(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "1937",
+                "Title": "Prevalence of neurological anti-GAD autoimmunity in Martinique",
+                "Authors": "Duclos, S",
+                "Abstract": (
+                    "Among those patients, 13 had SPS, 9 had CA, 6 had LOFE, 5 had LE, and 1 PERM."
+                ),
+            },
+            text_record={"paper_id": "1937", "_path": "data/extraction_json/text/1937.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Among those patients, 13 had SPS, 9 had CA, 6 had LOFE, 5 had LE, and 1 PERM."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text_proceedings_ready" / "1937.json",
+            source_row={
+                "source_category": "conference_abstract",
+                "source_subtype": "group_conference_abstract",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 14)
+        self.assertEqual(package.fallback_candidate().proposed_count, 14)
+        self.assertTrue(
+            {
+                "diagnosis_specific_enumerated_subgroup_count",
+                "diagnosis_specific_group_breakdown_count",
+            }
+            & {candidate.count_basis for candidate in package.candidates}
         )
 
     def test_non_extractable_review_article_suppresses_spurious_nonzero_alternatives(self) -> None:

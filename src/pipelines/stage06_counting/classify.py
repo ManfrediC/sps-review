@@ -38,6 +38,7 @@ Subgroup handling:
 - If the package includes an explicit SPS-spectrum subgroup count, treat that as the safest upper bound unless the evidence clearly supports a different bounded alternative.
 - If only some patients are explicitly labelled SPS/PERM/stiff-limb syndrome and others are only suggestive because of symptoms such as rigidity or spasms, require manual review rather than counting the whole cohort.
 - Treat statements such as "only 1 patient had clinical rigidity" as uncertainty about SPS-spectrum membership, not proof that every reported patient qualifies.
+- When a paper reports a recruited, consented, or enrolled SPS-spectrum cohort plus a smaller evaluable or analysable subset, count the unique cohort size rather than the reduced analysis denominator unless the text explicitly says the excluded participant should not count as an SPS-spectrum case.
 
 Fixed-category handling:
 - If the fixed source category is `review_article` or `non_clinical_basic_science`, prefer an exact zero-count candidate unless the supplied evidence clearly shows an original single-patient report within the paper itself.
