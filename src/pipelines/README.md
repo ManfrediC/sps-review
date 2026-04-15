@@ -81,69 +81,9 @@ This makes the reference, local PDF, extracted text, and downstream AI artifacts
 python src/pipelines/12_build_paper_artifact_registry.py
 ```
 
-## `05_trim_proceedings_text.py`
-
-This script detects likely conference proceedings or other multi-abstract PDFs and trims them down to the one abstract/publication that matches the Covidence reference.
-
-It:
-
-- reads full text JSON files from `data/extraction_json/text`,
-- detects proceedings using structural signals (abstract-boundary density, title/author density, and program markers),
-- optionally uses index/table-of-contents pages to localise the target abstract page and boundary neighborhood,
-- infers the local proceedings header pattern and segments the proceedings into abstract blocks,
-- finds the best target block using title/author fuzzy matching with boundary guardrails,
-- trims from the matched header to the next detected header/delimiter, including uncoded title-style headers,
-- applies completeness checks and spillover checks before auto-accepting,
-- writes trimmed JSON files to `data/extraction_json/text_trimmed/{paper_id}.json`, and
-- writes a decision registry to `data/references/text_trim_registry.csv`.
-
-Main trim statuses:
-
-- `trimmed_auto`
-- `header_only_source`
-- `manual_review_required`
-- `not_needed`
-
-### Run
-
-```bash
-python src/pipelines/05_trim_proceedings_text.py
-```
-
-## `05b_validate_proceedings_text.py`
-
-This script runs the separate proceedings QC pass that was queued after trimming.
-
-It:
-
-- selects proceedings-like papers from reviewed/heuristic source routing plus the trim registry,
-- prefers trimmed proceedings text when it exists,
-- checks title and author alignment,
-- validates the trimmed span back against the full proceedings source,
-- checks abstract completeness signals (section headings/body size),
-- checks for likely spillover into neighbouring abstracts and early truncation before the next header,
-- scores the best-matching page,
-- records whether the proceedings-derived text appears to contain the correct abstract, and
-- writes `data/references/proceedings_text_qc_registry.csv`.
-
-Useful statuses:
-
-- `confirmed_full`
-- `partial_truncated`
-- `spillover_detected`
-- `header_only_source`
-- `untrimmed_localised`
-- `mismatch`
-
-### Run
-
-```bash
-python src/pipelines/05b_validate_proceedings_text.py
-```
-
 ## `05_trim_proceedings_text_LLM.py`
 
-This script is the candidate-generation half of the LLM-assisted stage-05 proceedings workflow.
+This script is the official stage-05 candidate-generation step for the LLM-assisted proceedings workflow.
 
 It:
 
@@ -154,7 +94,7 @@ It:
 - writes one candidate package per paper to `data/extraction_json/text_trimmed_llm_candidates/{paper_id}.json`, and
 - writes the paired registry `data/references/text_trim_llm_candidate_registry.csv`.
 
-The candidate packages are intentionally separate from the canonical deterministic `text_trimmed/` outputs so the LLM path can be inspected independently.
+The candidate packages are intentionally separate from the retired deterministic `text_trimmed/` outputs so the live LLM path can be inspected independently.
 
 ### Run
 
@@ -170,7 +110,7 @@ python src/pipelines/05_trim_proceedings_text_LLM.py --all-papers --paper-id 100
 
 ## `05b_validate_proceedings_text_LLM.py`
 
-This script is the second half of the LLM-assisted stage-05 proceedings workflow.
+This script is the official stage-05 validation step for the LLM-assisted proceedings workflow.
 
 It:
 
@@ -181,7 +121,7 @@ It:
 - writes final LLM-validated trims to `data/extraction_json/text_trimmed_llm/{paper_id}.json`, and
 - writes the paired registry `data/references/text_trim_llm_registry.csv`.
 
-This flow keeps the deterministic stage-05 outputs untouched while producing a parallel LLM-reviewed alternative for inspection.
+This flow produces the final live stage-05 LLM trim layer that feeds `05c_publish_proceedings_ready.py`.
 
 Run the canonical publication pass afterwards:
 
@@ -203,7 +143,7 @@ python src/pipelines/05b_validate_proceedings_text_LLM.py --paper-id 1001 --pape
 
 ## `05c_publish_proceedings_ready.py`
 
-This script publishes the canonical proceedings-ready text layer used by downstream stages.
+This script publishes the canonical proceedings-ready text layer used by downstream stages and is the required third step of the live stage-05 workflow.
 
 It:
 
@@ -211,7 +151,7 @@ It:
 - prefers active gold-standard proceedings trims when available,
 - publishes validated LLM trims and rebuilt LLM boundary spans where needed,
 - keeps safe full-text passthrough abstracts together in the same canonical layer,
-- falls back to legacy `text_trimmed/` only when no better source is available,
+- treats legacy `text_trimmed/` as archived provenance rather than a live interface,
 - writes canonical outputs to `data/extraction_json/text_proceedings_ready/{paper_id}.json`,
 - writes the paired registry `data/references/text_proceedings_ready_registry.csv`, and
 - refreshes `data/references/paper_artifact_registry.csv`.
@@ -227,6 +167,15 @@ python src/pipelines/05c_publish_proceedings_ready.py
 The isolated stage-05 `_autoresearch` copies have been retired from the live pipeline tree.
 
 They are preserved under `legacy/stage_05_autoresearch/src/pipelines/` together with the archived benchmark harness, dedicated tests, and non-canonical run artefacts.
+
+## Retired Deterministic Stage 05
+
+The older deterministic stage-05 entrypoints have been retired to `legacy/stage_05_deterministic/src/pipelines/`.
+
+Shared deterministic helpers that are still reused by the live LLM workflow remain in place as internal support modules:
+
+- `_proceedings_trim_deterministic.py`
+- `_proceedings_validate_deterministic.py`
 
 ## `03_extract_text.py`
 
@@ -521,4 +470,4 @@ Records reviewed as `incorrect_reference` are explicitly excluded before any dow
 ## Directory Contents Snapshot
 - Last updated: `2026-04-13`
 - Immediate subdirectories (0): _None_
-- Immediate files (25, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text.py`, `05_trim_proceedings_text_LLM.py`, `05b_validate_proceedings_text.py`, `05b_validate_proceedings_text_LLM.py`, `05c_publish_proceedings_ready.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, ... (+13 more)
+- Immediate files (23, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text_LLM.py`, `05b_validate_proceedings_text_LLM.py`, `05c_publish_proceedings_ready.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, ... (+11 more)

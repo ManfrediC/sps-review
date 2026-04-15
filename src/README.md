@@ -38,31 +38,23 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
    - Publishes `data/references/source_categorisation_registry.csv` and `data/references/source_sps_case_count_registry.csv` only after a complete run.
    - Refreshes `data/references/paper_artifact_registry.csv` after publish unless skipped.
 
-6. `pipelines/05_trim_proceedings_text.py`
-   - Detects large proceedings or multi-abstract PDFs.
-   - Finds the target abstract/publication by fuzzy title and author matching.
-   - Writes focused text records to `data/extraction_json/text_trimmed/{paper_id}.json`.
-
-7. `pipelines/05b_validate_proceedings_text.py`
-   - Validates proceedings-derived text by searching the extracted text for the target title and author surnames.
-   - Confirms whether trimmed proceedings text appears to contain the correct abstract or whether manual follow-up is still needed.
-   - Writes `data/references/proceedings_text_qc_registry.csv`.
-
-8. `pipelines/05_trim_proceedings_text_LLM.py`
+6. `pipelines/05_trim_proceedings_text_LLM.py`
+   - Official stage-05 candidate-generation step for proceedings trimming.
    - Builds ordered proceedings end-candidate packages under `data/extraction_json/text_trimmed_llm_candidates/`.
    - Writes `data/references/text_trim_llm_candidate_registry.csv`.
 
-9. `pipelines/05b_validate_proceedings_text_LLM.py`
+7. `pipelines/05b_validate_proceedings_text_LLM.py`
+   - Official stage-05 validation step for proceedings trimming.
    - Uses an OpenAI model to confirm the best proceedings end candidate or fall back to guarded heuristics.
    - Writes final LLM-reviewed trims to `data/extraction_json/text_trimmed_llm/{paper_id}.json`.
    - Writes `data/references/text_trim_llm_registry.csv`.
 
-10. `pipelines/05c_publish_proceedings_ready.py`
+8. `pipelines/05c_publish_proceedings_ready.py`
    - Publishes the canonical proceedings-ready layer under `data/extraction_json/text_proceedings_ready/{paper_id}.json`.
    - Writes `data/references/text_proceedings_ready_registry.csv`.
    - Refreshes `data/references/paper_artifact_registry.csv`.
 
-11. `pipelines/07_split_case_series.py`
+9. `pipelines/07_split_case_series.py`
    - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
    - Prefers `data/extraction_json/text_proceedings_ready/` before falling back to legacy trimmed or full source text.
    - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
@@ -125,17 +117,19 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
   - Uses the preferred available text after categorisation and proceedings trimming.
   - Records `likely_sps_case_count`, confidence, basis, and manual-review flags separately from the routing decision.
 
-- `pipelines/05b_validate_proceedings_text.py`
-  - Runs a segmentation-aware proceedings QC pass after trimming/categorisation.
-  - Maps trimmed proceedings text back to the full source span and checks for clean start/end boundaries, truncation, or spillover into the neighbouring abstract.
-  - Writes `data/references/proceedings_text_qc_registry.csv`.
-  - Key statuses include:
-    - `confirmed_full`
-    - `partial_truncated`
-    - `spillover_detected`
-    - `header_only_source`
-    - `untrimmed_localised`
-    - `mismatch`
+- `pipelines/05_trim_proceedings_text_LLM.py`
+  - Official stage-05 candidate-generation step for proceedings trimming.
+  - Reuses the deterministic matcher to find the target abstract start and proposes ordered end candidates for review.
+  - Writes `data/extraction_json/text_trimmed_llm_candidates/` plus `data/references/text_trim_llm_candidate_registry.csv`.
+
+- `pipelines/05b_validate_proceedings_text_LLM.py`
+  - Official stage-05 validation step for proceedings trimming.
+  - Validates the end choice with an OpenAI model or guarded heuristic fallback and writes `data/extraction_json/text_trimmed_llm/` plus `data/references/text_trim_llm_registry.csv`.
+
+- `pipelines/05c_publish_proceedings_ready.py`
+  - Publishes the only live downstream stage-05 layer under `data/extraction_json/text_proceedings_ready/`.
+  - Writes `data/references/text_proceedings_ready_registry.csv`.
+  - Merges gold-manual, LLM-validated, rebuilt, and safe passthrough proceedings outputs into one canonical interface.
 
 - `pipelines/07_split_case_series.py`
   - Uses reviewed routing to find case-series papers that should be split before LangExtract.

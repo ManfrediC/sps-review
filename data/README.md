@@ -24,6 +24,8 @@ Canonical research artifacts and generated data products used by the pipeline.
 - `references/paper_artifact_registry.csv`
   Cross-pipeline provenance table linking the reference, source text, proceedings artefacts, and downstream outputs.
 
+The older deterministic stage-05 outputs in `extraction_json/text_trimmed/` are retained only as archived provenance. The live downstream contract is now `extraction_json/text_proceedings_ready/` plus `references/text_proceedings_ready_registry.csv`.
+
 ## Directory Contents Snapshot
 - Last updated: `2026-04-13`
 - Immediate subdirectories (5): `excel`, `extraction_json`, `pdf_annotated`, `pdf_original`, `references`
