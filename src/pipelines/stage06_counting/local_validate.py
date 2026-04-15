@@ -19,6 +19,16 @@ def validate_local_count_decision(
         flags.append("LOCAL_SINGLE_CASE_CONFERENCE_MISMATCH")
     if package.explicit_sps_subgroup_count is not None and resolved_count > package.explicit_sps_subgroup_count:
         flags.append("LOCAL_COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP")
+    if (
+        package.explicit_sps_subgroup_basis
+        in {
+            "diagnosis_specific_enumerated_subgroup_count",
+            "diagnosis_specific_group_breakdown_count",
+        }
+        and package.explicit_sps_subgroup_count is not None
+        and resolved_count != package.explicit_sps_subgroup_count
+    ):
+        flags.append("LOCAL_ENUMERATED_SPS_SUBGROUP_MISMATCH")
     if package.sps_status_uncertainty_signals and resolved_count > 0 and not decision.needs_review:
         flags.append("LOCAL_SPS_STATUS_UNCERTAIN_NO_REVIEW")
     if decision.confidence != "high" and not decision.needs_review:
