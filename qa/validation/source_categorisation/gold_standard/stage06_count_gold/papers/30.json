@@ -1,0 +1,353 @@
+{
+  "schema_version": "stage06_count_gold_result_v1",
+  "generated_at_utc": "2026-04-15T21:54:11.964087+00:00",
+  "paper_id": "30",
+  "count_row": {
+    "paper_id": "30",
+    "covidence_id": "30",
+    "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+    "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+    "source_category": "case_series_or_multi_case",
+    "source_subtype": "case_series",
+    "preferred_text_json_path": "data/extraction_json/text/30.json",
+    "preferred_text_source": "full_text",
+    "count_eligible": "true",
+    "likely_sps_case_count": "3",
+    "count_confidence": "high",
+    "count_basis": "manual_gold_review",
+    "count_manual_review_required": "false",
+    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=3 | reviewed_source_category=case_series_or_multi_case | predicted_count=3 | predicted_source_category=case_series_or_multi_case",
+    "count_version": "gold_reviewed_stage06_v1",
+    "counted_at_utc": "2026-04-05T18:38:54.830901+00:00"
+  },
+  "source_text_json_path": "data\\extraction_json\\text\\30.json",
+  "preferred_text_json_path": "data/extraction_json/text/30.json",
+  "paper_context": {
+    "covidence_id": "30",
+    "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+    "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+    "published_year": "1993",
+    "journal": "The New England journal of medicine",
+    "pdf_filename": "30_Folli-1993-Autoantibodies to a 128-kd synaptic.pdf",
+    "pdf_path_relative": "data\\pdf_original\\30_Folli-1993-Autoantibodies to a 128-kd synaptic.pdf"
+  },
+  "gold_review": {
+    "round_id": "stage04_llm_category_2026-04-05_round_02",
+    "selection_bucket": "case_group_boundary",
+    "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+    "prediction_correct": true,
+    "reviewed_source_category": "case_series_or_multi_case",
+    "reviewed_extractable_sps_case_count": "3",
+    "pdf_content_alignment_tag": "appears_matched",
+    "reviewer_notes": "",
+    "reviewer_id": "human_reviewer",
+    "reviewed_at_utc": "2026-04-05T18:38:54.830901+00:00",
+    "source_gold_master_path": "qa\\validation\\source_categorisation\\gold_standard\\04_categorisation_gold_standard.csv"
+  },
+  "prediction_snapshot": {
+    "gold_master_row": {
+      "round_id": "stage04_llm_category_2026-04-05_round_02",
+      "paper_id": "30",
+      "covidence_id": "30",
+      "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+      "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+      "published_year": "1993",
+      "journal": "The New England journal of medicine",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "pdf_filename": "30_Folli-1993-Autoantibodies to a 128-kd synaptic.pdf",
+      "pdf_path_relative": "data\\pdf_original\\30_Folli-1993-Autoantibodies to a 128-kd synaptic.pdf",
+      "preferred_text_json_path": "data/extraction_json/text/30.json",
+      "preferred_text_source": "full_text",
+      "preferred_start_page": "1",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_source_subtype": "case_series",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "3",
+      "predicted_count_confidence": "high",
+      "predicted_count_basis": "llm_joint_extraction",
+      "predicted_count_manual_review_required": "false",
+      "predicted_count_reason": "The paper presents detailed case reports for three women with stiff-man syndrome (SPS) and breast cancer, including clinical presentation, diagnostic workup, treatment, and outcomes. Each patient is described individually, confirming three original SPS-spectrum cases.",
+      "predicted_categorisation_reason": "This is a case series describing three original patients with stiff-man syndrome and breast cancer, with individual-level clinical and laboratory data provided for each. The structure and content match the definition of a case series or multi-case report.",
+      "selection_created_at_utc": "2026-04-05T18:08:40.059326+00:00",
+      "prediction_correct": "true",
+      "review_status": "reviewed",
+      "reviewed_source_category": "case_series_or_multi_case",
+      "reviewed_extractable_sps_case_count": "3",
+      "pdf_content_alignment_tag": "appears_matched",
+      "reviewer_notes": "",
+      "reviewer_id": "human_reviewer",
+      "reviewed_at_utc": "2026-04-05T18:38:54.830901+00:00"
+    },
+    "live_count_registry_row": {
+      "paper_id": "30",
+      "covidence_id": "30",
+      "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+      "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "preferred_text_json_path": "data/extraction_json/text/30.json",
+      "preferred_text_source": "full_text",
+      "count_eligible": "true",
+      "likely_sps_case_count": "3",
+      "count_confidence": "high",
+      "count_basis": "llm_joint_extraction",
+      "count_manual_review_required": "false",
+      "count_reason": "The paper presents detailed case reports of three women with stiff-man syndrome (SPS) and breast cancer, including clinical presentation, diagnostic workup, treatment, and outcomes. Each patient is described individually, and there is no indication that additional original SPS-spectrum patients are included.",
+      "count_version": "llm_v1_gpt4.1",
+      "counted_at_utc": "2026-04-05T20:19:31.761119+00:00"
+    },
+    "live_source_registry_row": {
+      "paper_id": "30",
+      "covidence_id": "30",
+      "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+      "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+      "published_year": "1993",
+      "journal": "The New England journal of medicine",
+      "tags": "Clinical manifestations; Electrophysiology; Immunological - Lab tests; Treatment",
+      "notes": "",
+      "text_json_path": "data/extraction_json/text/30.json",
+      "preferred_text_json_path": "data/extraction_json/text/30.json",
+      "preferred_text_source": "full_text",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "high",
+      "likely_case_count": "3",
+      "contains_individual_level_data": "true",
+      "contains_group_level_data": "false",
+      "case_series_split_candidate": "true",
+      "preferred_langextract_mode": "individual_case_split",
+      "langextract_eligible": "true",
+      "manual_review_required": "false",
+      "recommended_next_action": "split_cases_then_langextract",
+      "conference_marker_hits": "",
+      "review_marker_hits": "",
+      "case_report_marker_hits": "",
+      "multi_case_marker_hits": "",
+      "observational_marker_hits": "",
+      "interventional_marker_hits": "",
+      "non_clinical_marker_hits": "",
+      "translational_marker_hits": "",
+      "patient_label_count": "",
+      "categorisation_reason": "This is a case series describing three original SPS-spectrum patients, each with individual-level clinical and laboratory data. The paper is not a review, conference abstract, or basic science study, and the patient count is clearly delineated.",
+      "categorisation_version": "llm_v1_gpt4.1",
+      "categorised_at_utc": "2026-04-05T20:19:31.761096+00:00"
+    }
+  },
+  "attached_run_artifacts": {
+    "run_id": "stage06_llm_eval_v15",
+    "result_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v15\\results\\30.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v15\\candidate_packages\\30.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v15\\count_decisions\\30.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v15\\count_evidence\\30.json",
+    "result_payload": {
+      "paper_id": "30",
+      "count_row": {
+        "paper_id": "30",
+        "covidence_id": "30",
+        "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+        "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+        "source_category": "case_series_or_multi_case",
+        "source_subtype": "case_series",
+        "preferred_text_json_path": "data\\extraction_json\\text\\30.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "3",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly reports an original case series of three women with stiff-man syndrome and breast cancer. The competing count of 4 appears to arise from inclusion of control stiff-man syndrome samples shown in figures, not additional index SPS-spectrum cases reported by this paper.",
+        "count_version": "hybrid_v1_gpt-5.4",
+        "heuristic_likely_sps_case_count": "3",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v15\\candidate_packages\\30.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "3",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "not_run",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v15\\count_evidence\\30.json",
+        "counted_at_utc": "2026-04-15T05:33:15.224122+00:00"
+      },
+      "source_text_json_path": "data\\extraction_json\\text\\30.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\30.json"
+    },
+    "candidate_payload": {
+      "paper_id": "30",
+      "covidence_id": "30",
+      "title": "Autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.",
+      "authors": "Folli, F; Solimena, M; Cofiell, R; Austoni, M; Tallini, G; Fassetta, G; Bates, D; Cartlidge, N; Bottazzo, G F; Piccolo, G; De Camilli, P",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "preferred_text_json_path": "data\\extraction_json\\text\\30.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\30.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "30_Folli-1993-Autoantibodies to a 128-kd synaptic.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "BACKGROUND: The stiff-man syndrome is a rare disease of the central nervous system characterized by progressive rigidity of the body musculature. Autoantibodies directed against glutamic acid decarboxylase are present in about 60 percent of patients with the syndrome. In this group, there is a striking association of the stiff-man syndrome with organ-specific autoimmune diseases, primarily insulin-dependent diabetes mellitus., METHODS: We studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid by immunocytochemical techniques, Western blotting, and immunoprecipitation., RESULTS: Autoantibodies directed against a 128-kd brain protein were found in two of the women with the stiff-man syndrome and breast cancer. These results led to a search for breast cancer in the third patient with the stiff-man syndrome, who also had autoantibodies. A small invasive ductal carcinoma was detected by ultrasonography and removed. Serum samples from all three patients were negative for autoantibodies directed against glutamic acid decarboxylase. Autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer or in patients with cancer who did not have the syndrome. Within the nervous system, the 128-kd autoantigen was localized in neurons and concentrated at synapses., CONCLUSIONS: In a subgroup of patients with the stiff-man syndrome, the condition is likely to have an autoimmune paraneoplastic origin. The detection of autoantibodies against the 128-kd antigen in patients with this syndrome should be considered an indication to search for an occult breast cancer.",
+      "early_body_text": "946 the new england journal of medicine feb. 25, 1993 autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer franco fouur, m.d., michele solimena, m.d., roxanne coofiell, b.s., mario austoni, m.d., giovanni tallini, m.d., gruliano fassetta, m.d., davin bates, m.d., niall cartlipge, m.d., gian franco bottazzo, m.d., giovanni piccolo, m.d., and pretro de camilu1, m.d. abstract background. the stiff-man syndrome is a rare disease of the central nervous system characterized by progressive rigidity of the body musculature. autoantibodies directed against glutamic acid decarboxylase are present in about 60 percent of patients with the syndrome. in this group, there is a striking association of the stiff-man syndrome with organ-specific autoimmune diseases, primarily insulin-dependent diabetes mellitus. methods. we studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid by immunocytochemical techniques, western blotting, and immunoprecipitation. results. autoantibodies directed against a 128-kd brain protein were found in two of the women with the stiffman syndrome and breast cancer. these results led to a search for breast cancer in the third patient with the stiffhe stiff-man syndrome is a rare disorder of the central nervous system characterized by fluctuat- ing but progressive muscle rigidity and spasms.'? sixty percent of the patients with this syndrome have autoantibodies directed against glutamic acid decarboxylase,*® an enzyme present both in neurons secreting y-aminobutyric acid and in pancreatic beta cells.”®* glutamic acid decarboxylase autoantibodies are also found in patients with insulin-dependent diabetes mellitus.? patients with the stiff-man syndrome who have such autoantibodies often have organ-specific autoimmune diseases, in particular insu- lin-dependent diabetes mellitus.*° the absence of glutamic acid decarboxylase autoantibodies in 40 percent of the patients with stiff-man syndrome suggests that the pathogenesis of the syndrome may be hetero- geneous.”'° in a few patients, the stiff-man syndrome is associated with cancer.'' we describe three women with the stiff-man syn- drome and ductal breast cancer who had autoantibodies directed against a 128-kd neuronal protein that is concentrated at synapses. none of the patients had glutamic acid decarboxylase antibodies or organ-specific autoimmune diseases. man syndrome, who also had autoantibodies. a small invasive ductal carcinoma was detected by ultrasonography and removed. serum samples from all three patients were negative for autoantibodies directed against glutamic acid decarboxylase. autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer or in patients with cancer who did not have the syndrome. within the nervous system, the 128-kd autoantigen was localized in neurons and concentrated at synapses. conclusions. \\n a subgroup of patients with the stiffman syndrome, the condition is likely to have an autoimmune paraneoplastic origin. the detection of autoantibodies against the 128-kd antigen in patients with this syndrome should be considered an indication to search for an occult breast cancer. (n engl j med 1993;328: 546-51.) case reports patient 1 patient | has been described previously by piccolo et al.!? (patient 2 in their report). a 54-year-old woman began to have paresthesia, myalgia, and rigidity of both arms in 1985. in march 1986, she presented with symmetric stiffness of the upper arm and neck muscles that increased markedly on voluntary contraction as well as during passive motion. the patient’s cerebrospinal! fluid contained igg, which had an oligoclonal pattern when examined by isoelec- trofocusing.'® electromyography revealed continuous motor-unit activity at rest. diazepam therapy was ineffective, but the patient’s neurologic symptoms improved when she was treated with predni- sone. in september 1987 an invasive ductal adenocarcinoma of the breast was detected and removed, after which tamoxifen was given. treatment with prednisone was discontinued in march 1988, and at the most recent follow-up visit the patient was neurologically normal. autoantibodies against the 128-kd antigen were detected in several serum samples obtained between october 1986 and may 1992 (earlier samples were not available) and in two cerebrospinal fluid samples obtained in october 1986 and january 1987. patient 2 a 76-year-old woman began to have contractures and weakness of the arms in 1985. she was found to have fixed rigidity of the shoulders; contractures of the arms, wrists, and fingers; and absent arm reflexes in 1987. electromyography revealed continuous motorunit activity at rest. no oligoclonal bands of igg were detected in the cerebrospinal fluid. the patient also had a breast mass, which proved to be a poorly diff",
+      "llm_evidence_text": "Title:\nAutoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer.\n\nMetadata abstract:\nBACKGROUND: The stiff-man syndrome is a rare disease of the central nervous system characterized by progressive rigidity of the body musculature. Autoantibodies directed against glutamic acid decarboxylase are present in about 60 percent of patients with the syndrome. In this group, there is a striking association of the stiff-man syndrome with organ-specific autoimmune diseases, primarily insulin-dependent diabetes mellitus., METHODS: We studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid by immunocytochemical techniques, Western blotting, and immunoprecipitation., RESULTS: Autoantibodies directed against a 128-kd brain protein were found in two of the women with the stiff-man syndrome and breast cancer. These results led to a search for breast cancer in the third patient with the stiff-man syndrome, who also had autoantibodies. A small invasive ductal carcinoma was detected by ultrasonography and removed. Serum samples from all three patients were negative for autoantibodies directed against glutamic acid decarboxylase. Autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer or in patients with cancer who did not have the syndrome. Within the nervous system, the 128-kd autoantigen was localized in neurons and concentrated at synapses., CONCLUSIONS: In a subgroup of patients with the stiff-man syndrome, the condition is likely to have an autoimmune paraneoplastic origin. The detection of autoantibodies against the 128-kd antigen in patients with this syndrome should be considered an indication to search for an occult breast cancer.\n\nExplicit SPS-spectrum subgroup signals:\n- brain protein were found in two of the women with the stiffman syndrome and breast cancer. These results led to a search for breast cancer in the third patient with the stiffHE stiff-man syndrome is a rare disorder of the central nervous system characterized by fluctuating but progressive muscl\n- ts (Fig. 1) and cerebrospinal fluid ples from the control subjects, including samples from samples from Patients 1 and 3 (samples from Patient 2 other patients with the stiff-man syndrome that did not contain glutamic acid decarboxylase antibodies (Fig. 3, lanes 7, 8, and 9). The 128-kd\n- were labeled with the following: lane 1, serum from Patient 1; lane 2, serum from Patient 2; lane 3, serum from Patient 3; lane 4, serum from a control patient with the stiff-man syndrome who had glutamic acid decarboxylase (GAD) antibodies; lane 5, serum from a control patient with the\n- ad GAD antibodies; lane 4, serum from Patient 3; lane 5, serum from Patient 2; lane 6, serum from Patient 1; lanes 7 and 8, serum samples from control patients with the stiff-man syndrome who did not have GAD antibodies; and lane 9, serum from a normal subject. The band visible in lanes\n\nPotential SPS-status uncertainty signals:\n- d decarboxylase. Autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer or in patients with cancer who did not have the syndrome.\n- riton X-100 extracts of rat brain with the following: lanes 2 and 3, serum from control patients with the stiff-man syndrome 200128-kd antigen== 116.2who had GAD antibodies; lane 4, serum from Patient 3; \n- from Patient 2; lane 6, serum from Patient 1; lanes 7 and 8, serum samples from control patients with the stiff-man syndrome who did not have GAD antibodies; and lane 9, serum from a normal subject. The b\n- ane 2, serum from Patient 2; lane 3, serum from Patient 3; lane 4, serum from a control patient with the stiff-man syndrome who had glutamic acid decarboxylase (GAD) antibodies; lane 5, serum from a cont\n\nPreferred text count-salient snippets:\n- present in about 60 percent of patients with the syndrome.\n- Sixty percent of the patients with this syndrome\n- glutamic acid decarboxylase autoantibodies in 40 percent of the patients with stiff-man syndrome suggests\n- We describe three women with the stiff-man syn-\n- Serum samples from all three patients were\n- The detection of autoantibodies against the 128-kd antigen in patients with this\n- tested serum samples from 73 other patients with the stiff-man syndrome who did not have breast cancer (of whom 43 had positive\n- and 3, serum from control patients with the stiff-man syndrome",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[3, 4]",
+        "explicit_sps_subgroup_count=4",
+        "sps_status_uncertainty_signals=4",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 3,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=abstract_count_signal | confidence=high | source_category=case_series_or_multi_case",
+          "evidence_text": "BACKGROUND: The stiff-man syndrome is a rare disease of the central nervous system characterized by progressive rigidity of the body musculature. Autoantibodies directed against glutamic acid decarboxylase are present in about 60 percent of patients with the syndrome. In this group, there is a striking association of the stiff-man syndrome with organ-specific autoimmune diseases, primarily insulin-dependent diabetes mellitus., METHODS: We studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid by immunocytochemical techniques, Western blotting, and immunoprecipitation., RESULTS: Autoantibodies directed against a 128-kd brain protein were found in two of the women with the stiff-man syndrome and breast cancer. These results led to a search for breast cancer in the third patient with",
+          "evidence_section": "abstract",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 4,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_patient_case_count",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 74,
+          "rationale": "basis=diagnosis_specific_patient_case_count | confidence=medium | source_category=case_series_or_multi_case | heuristic_manual_review=true",
+          "evidence_text": "brain protein were found in two of the women with the stiffman syndrome and breast cancer. These results led to a search for breast cancer in the third patient with the stiffHE stiff-man syndrome is a rare disorder of the central nervous system characterized by fluctuating but progressive muscl",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 3,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "early_body_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 70,
+          "rationale": "basis=early_body_count_signal | confidence=medium | source_category=case_series_or_multi_case",
+          "evidence_text": "946 the new england journal of medicine feb. 25, 1993 autoantibodies to a 128-kd synaptic protein in three women with the stiff-man syndrome and breast cancer franco fouur, m.d., michele solimena, m.d., roxanne coofiell, b.s., mario austoni, m.d., giovanni tallini, m.d., gruliano fassetta, m.d., davin bates, m.d., niall cartlipge, m.d., gian franco bottazzo, m.d., giovanni piccolo, m.d., and pretro de camilu1, m.d. abstract background. the stiff-man syndrome is a rare disease of the central nervous system characterized by progressive rigidity of the body musculature. autoantibodies directed against glutamic acid decarboxylase are present in about 60 percent of patients with the syndrome. in this group, there is a striking association of the stiff-man syndrome with organ-specific autoimmune diseases, primarily insulin-dependent diabetes mellitus. methods. we studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid by immunocytochemical techniques, western blotting, and immunoprecipitation. results. autoantibodies directed against a 128-kd brain protein were found in two of the ",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand02",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 4,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_patient_case_count",
+      "explicit_sps_subgroup_evidence": [
+        "brain protein were found in two of the women with the stiffman syndrome and breast cancer. These results led to a search for breast cancer in the third patient with the stiffHE stiff-man syndrome is a rare disorder of the central nervous system characterized by fluctuating but progressive muscl",
+        "ts (Fig. 1) and cerebrospinal fluid ples from the control subjects, including samples from samples from Patients 1 and 3 (samples from Patient 2 other patients with the stiff-man syndrome that did not contain glutamic acid decarboxylase antibodies (Fig. 3, lanes 7, 8, and 9). The 128-kd",
+        "were labeled with the following: lane 1, serum from Patient 1; lane 2, serum from Patient 2; lane 3, serum from Patient 3; lane 4, serum from a control patient with the stiff-man syndrome who had glutamic acid decarboxylase (GAD) antibodies; lane 5, serum from a control patient with the",
+        "ad GAD antibodies; lane 4, serum from Patient 3; lane 5, serum from Patient 2; lane 6, serum from Patient 1; lanes 7 and 8, serum samples from control patients with the stiff-man syndrome who did not have GAD antibodies; and lane 9, serum from a normal subject. The band visible in lanes"
+      ],
+      "sps_status_uncertainty_signals": [
+        "d decarboxylase. Autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer or in patients with cancer who did not have the syndrome.",
+        "riton X-100 extracts of rat brain with the following: lanes 2 and 3, serum from control patients with the stiff-man syndrome 200128-kd antigen== 116.2who had GAD antibodies; lane 4, serum from Patient 3; ",
+        "from Patient 2; lane 6, serum from Patient 1; lanes 7 and 8, serum samples from control patients with the stiff-man syndrome who did not have GAD antibodies; and lane 9, serum from a normal subject. The b",
+        "ane 2, serum from Patient 2; lane 3, serum from Patient 3; lane 4, serum from a control patient with the stiff-man syndrome who had glutamic acid decarboxylase (GAD) antibodies; lane 5, serum from a cont"
+      ]
+    },
+    "count_decision_payload": {
+      "paper_id": "30",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_semantic_conflict_manual_review_required",
+      "validator_flags": [
+        "COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly reports an original case series of three women with stiff-man syndrome and breast cancer. The competing count of 4 appears to arise from inclusion of control stiff-man syndrome samples shown in figures, not additional index SPS-spectrum cases reported by this paper.",
+        "evidence": [
+          {
+            "quote": "We studied three women with the stiff-man syndrome and breast cancer",
+            "page": null,
+            "section": "Abstract/Methods",
+            "supports": "Direct statement of the original SPS case-series size as 3"
+          },
+          {
+            "quote": "We describe three women with the stiff-man syndrome and ductal breast cancer",
+            "page": null,
+            "section": "Introduction/Preferred text excerpt",
+            "supports": "Confirms the paper's original reported SPS-spectrum patient count is 3"
+          },
+          {
+            "quote": "Serum samples from all three patients were negative for autoantibodies directed against glutamic acid decarboxylase.",
+            "page": null,
+            "section": "Abstract/Results",
+            "supports": "Reinforces that the analyzed index cohort consists of three patients"
+          },
+          {
+            "quote": "Autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer",
+            "page": null,
+            "section": "Abstract/Results",
+            "supports": "Shows additional stiff-man syndrome individuals mentioned are controls and should not be counted as original index cases"
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "30",
+      "evidence": [
+        {
+          "quote": "We studied three women with the stiff-man syndrome and breast cancer",
+          "page": null,
+          "section": "Abstract/Methods",
+          "supports": "Direct statement of the original SPS case-series size as 3"
+        },
+        {
+          "quote": "We describe three women with the stiff-man syndrome and ductal breast cancer",
+          "page": null,
+          "section": "Introduction/Preferred text excerpt",
+          "supports": "Confirms the paper's original reported SPS-spectrum patient count is 3"
+        },
+        {
+          "quote": "Serum samples from all three patients were negative for autoantibodies directed against glutamic acid decarboxylase.",
+          "page": null,
+          "section": "Abstract/Results",
+          "supports": "Reinforces that the analyzed index cohort consists of three patients"
+        },
+        {
+          "quote": "Autoantibodies against the 128-kd antigen were not detected in control patients with the stiff-man syndrome without breast cancer",
+          "page": null,
+          "section": "Abstract/Results",
+          "supports": "Shows additional stiff-man syndrome individuals mentioned are controls and should not be counted as original index cases"
+        }
+      ]
+    }
+  }
+}

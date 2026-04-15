@@ -1,0 +1,346 @@
+{
+  "schema_version": "stage06_count_gold_result_v1",
+  "generated_at_utc": "2026-04-15T21:54:12.370925+00:00",
+  "paper_id": "1247",
+  "count_row": {
+    "paper_id": "1247",
+    "covidence_id": "1247",
+    "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+    "authors": "Shah C.D.; Bunzol D.",
+    "source_category": "single_case_report",
+    "source_subtype": "case_report",
+    "preferred_text_json_path": "data/extraction_json/text/1247.json",
+    "preferred_text_source": "full_text",
+    "count_eligible": "true",
+    "likely_sps_case_count": "1",
+    "count_confidence": "high",
+    "count_basis": "manual_gold_review",
+    "count_manual_review_required": "false",
+    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage06_eval_backfill_2026-04-15 | selection_bucket=stage06_eval_backfill | prediction_correct=true | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=1 | predicted_source_category=single_case_report | reviewer_notes=Single case report; 2009 is a year marker rather than a patient count.",
+    "count_version": "gold_reviewed_stage06_v1",
+    "counted_at_utc": "2026-04-15T00:00:00+00:00"
+  },
+  "source_text_json_path": "data\\extraction_json\\text\\1247.json",
+  "preferred_text_json_path": "data/extraction_json/text/1247.json",
+  "paper_context": {
+    "covidence_id": "1247",
+    "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+    "authors": "Shah C.D.; Bunzol D.",
+    "published_year": "2016",
+    "journal": "PM and R",
+    "pdf_filename": "1247_Shah-2016-A novel approach to the treatment of.pdf",
+    "pdf_path_relative": "data\\pdf_original\\1247_Shah-2016-A novel approach to the treatment of.pdf"
+  },
+  "gold_review": {
+    "round_id": "stage06_eval_backfill_2026-04-15",
+    "selection_bucket": "stage06_eval_backfill",
+    "selection_signals": "manual_stage06_eval_backfill; resolved_count_review",
+    "prediction_correct": true,
+    "reviewed_source_category": "single_case_report",
+    "reviewed_extractable_sps_case_count": "1",
+    "pdf_content_alignment_tag": "appears_matched",
+    "reviewer_notes": "Single case report; 2009 is a year marker rather than a patient count.",
+    "reviewer_id": "human_reviewer",
+    "reviewed_at_utc": "2026-04-15T00:00:00+00:00",
+    "source_gold_master_path": "qa\\validation\\source_categorisation\\gold_standard\\04_categorisation_gold_standard.csv"
+  },
+  "prediction_snapshot": {
+    "gold_master_row": {
+      "round_id": "stage06_eval_backfill_2026-04-15",
+      "paper_id": "1247",
+      "covidence_id": "1247",
+      "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+      "authors": "Shah C.D.; Bunzol D.",
+      "published_year": "2016",
+      "journal": "PM and R",
+      "selection_bucket": "stage06_eval_backfill",
+      "selection_signals": "manual_stage06_eval_backfill; resolved_count_review",
+      "pdf_filename": "1247_Shah-2016-A novel approach to the treatment of.pdf",
+      "pdf_path_relative": "data\\pdf_original\\1247_Shah-2016-A novel approach to the treatment of.pdf",
+      "preferred_text_json_path": "data/extraction_json/text/1247.json",
+      "preferred_text_source": "full_text",
+      "preferred_start_page": "1",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "predicted_source_category": "single_case_report",
+      "predicted_source_subtype": "case_report",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "high",
+      "predicted_count_basis": "llm_joint_extraction",
+      "predicted_count_manual_review_required": "false",
+      "predicted_count_reason": "The paper describes a single 53-year-old man with SPS, providing detailed clinical history, diagnosis, treatments, and outcomes, consistent with a single case report. No evidence of additional SPS patients is present.",
+      "predicted_categorisation_reason": "This is a single case report, as indicated by the title and the detailed description of one patient's clinical course, diagnosis, and treatment. The report contains original, individual-level SPS-spectrum data.",
+      "selection_created_at_utc": "2026-04-15T00:00:00+00:00",
+      "prediction_correct": "true",
+      "review_status": "reviewed",
+      "reviewed_source_category": "single_case_report",
+      "reviewed_extractable_sps_case_count": "1",
+      "pdf_content_alignment_tag": "appears_matched",
+      "reviewer_notes": "Single case report; 2009 is a year marker rather than a patient count.",
+      "reviewer_id": "human_reviewer",
+      "reviewed_at_utc": "2026-04-15T00:00:00+00:00"
+    },
+    "live_count_registry_row": {
+      "paper_id": "1247",
+      "covidence_id": "1247",
+      "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+      "authors": "Shah C.D.; Bunzol D.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data/extraction_json/text/1247.json",
+      "preferred_text_source": "full_text",
+      "count_eligible": "true",
+      "likely_sps_case_count": "1",
+      "count_confidence": "high",
+      "count_basis": "llm_joint_extraction",
+      "count_manual_review_required": "false",
+      "count_reason": "The paper describes a single 53-year-old man with SPS, providing detailed clinical history, diagnosis, treatments, and outcomes, consistent with a single case report. No evidence of additional SPS patients is present.",
+      "count_version": "llm_v1_gpt4.1",
+      "counted_at_utc": "2026-04-05T19:26:16.977771+00:00"
+    },
+    "live_source_registry_row": {
+      "paper_id": "1247",
+      "covidence_id": "1247",
+      "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+      "authors": "Shah C.D.; Bunzol D.",
+      "published_year": "2016",
+      "journal": "PM and R",
+      "tags": "",
+      "notes": "",
+      "text_json_path": "data/extraction_json/text/1247.json",
+      "preferred_text_json_path": "data/extraction_json/text/1247.json",
+      "preferred_text_source": "full_text",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "classification_confidence": "high",
+      "likely_case_count": "1",
+      "contains_individual_level_data": "true",
+      "contains_group_level_data": "false",
+      "case_series_split_candidate": "false",
+      "preferred_langextract_mode": "individual",
+      "langextract_eligible": "true",
+      "manual_review_required": "false",
+      "recommended_next_action": "run_langextract_individual",
+      "conference_marker_hits": "",
+      "review_marker_hits": "",
+      "case_report_marker_hits": "",
+      "multi_case_marker_hits": "",
+      "observational_marker_hits": "",
+      "interventional_marker_hits": "",
+      "non_clinical_marker_hits": "",
+      "translational_marker_hits": "",
+      "patient_label_count": "",
+      "categorisation_reason": "This is a single case report, as indicated by the title and the detailed description of one patient's clinical course, diagnosis, and treatment. The report contains original, individual-level SPS-spectrum data.",
+      "categorisation_version": "llm_v1_gpt4.1",
+      "categorised_at_utc": "2026-04-05T19:26:16.977752+00:00"
+    }
+  },
+  "attached_run_artifacts": {
+    "run_id": "stage06_llm_eval_v8",
+    "result_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\results\\1247.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\candidate_packages\\1247.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\count_decisions\\1247.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\count_evidence\\1247.json",
+    "result_payload": {
+      "paper_id": "1247",
+      "count_row": {
+        "paper_id": "1247",
+        "covidence_id": "1247",
+        "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+        "authors": "Shah C.D.; Bunzol D.",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\1247.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "source_single_case_override",
+        "count_manual_review_required": "false",
+        "count_reason": "verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report describing one 53-year-old man diagnosed with SPS and treated with botulinum toxin. The numeric signal '2009' refers to the year of antibody measurement, not a patient count.",
+        "count_version": "hybrid_v1_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "source_single_case_override",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\candidate_packages\\1247.json",
+        "heuristic_candidate_count": "4",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "not_run",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\count_evidence\\1247.json",
+        "counted_at_utc": "2026-04-14T20:55:52.921520+00:00"
+      },
+      "source_text_json_path": "data\\extraction_json\\text\\1247.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\1247.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1247",
+      "covidence_id": "1247",
+      "title": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+      "authors": "Shah C.D.; Bunzol D.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text\\1247.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\1247.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "1247_Shah-2016-A novel approach to the treatment of.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. Patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. Tightness is associated with pain and decreased range of motion (ROM). This resulted in impaired ambulation, transfers, and balance with frequent associated falls. Physical exam noted bilateral spasticity rated at 2/4 on Modified Ashworth Scale in bilateral hip flexors, adductors, and knee extensors; 4/4 in hamstrings. After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS. Patient was initially treated with IVIG and went into remission for several years. In 2012, aforementioned symptoms returned. He subsequently received a course of PLEX and Rituximab x2. Since 2012, patient has been receiving IVIG 1mg/kg divided over 2 days every 4 weeks. In addition to monthly IVIG, patient has tried warm baths, heating pads, TENS unit, corticosteroids, and chiropractor care over several years without any relief in stiffness. His medication management includes baclofen, diazepam, and gabapentin without significant relief in pain nor rigidity. Setting(s): Tertiary Care Hospital. Result(s): After bilateral treatment with botulinum toxin injections to the long head of biceps femoris, adductor magnus, and rectus femoris patient noted significant pain relief, decreased stiffness, and improved ROM. He subsequently endorsed fewer falls, increased distance for ambulation, and improved balance and gait mechanics. Discussion(s): Stiff-Person-Syndrome is an uncommon autoimmune process characterized by progressive axial muscle stiffness, rigidity, and spasms resulting in severely impaired ambulation. This syndrome is commonly associated with anti-GAD antibodies. Traditional treatment includes use of benzodiazepines, baclofen, muscle relaxants, glucocorticoids, IVIG, and plasma exchange. In refractory cases, botulinum toxin can be an adjunct therapy that can improve symptoms. Conclusion(s): Use of botulinum toxin in refractory symptoms for SPS can improve overall function with improved pain control, gait mechanics, and balance.",
+      "early_body_text": "effective in treating night sweats asso- ciated with other conditions as well as other symptoms associated with autonomic dysfunction and warrants further study. level of evidence: level v poster 258 a novel approach to the treatment of stiff-person-syndrome with botulinum toxin: a case report chirag d. shah, md, jd (rush university medical center, chicago, illinois, united states), daniel bunzol, md disclosures: chirag shah: i have no relevant financial relationships to disclose case/program description: patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. tightness is associated with pain and decreased range of motion (rom). this resulted in impaired ambulation, trans- fers, and balance with frequent associated falls. physical exam noted bilateral spasticity rated at 2/4 on modiﬁed ashworth scale in bilateral hip ﬂexors, adductors, and knee extensors; 4/4 in hamstrings. after extensive workup for stated symptoms, patient was found to have elevated anti-gad antibodies ( >250 in 2009) and was diagnosed with sps. patient was initially treated with ivig and went into remission for several years. in 2012, aforementioned symptoms returned. he sub- sequently received a course of plex and rituximab x2. since 2012, patient has been receiving ivig 1mg/kg divided over 2 days every 4 weeks. in addition to monthly ivig, patient has tried warm baths, heating pads, tens unit, corticosteroids, and chiropractor care over several years without any relief in stiffness. his medication manage- ment includes baclofen, diazepam, and gabapentin without signiﬁcant relief in pain nor rigidity. setting: tertiary care hospital. results: after bilateral treatment with botulinum toxin injections to the long head of biceps femoris, adductor magnus, and rectus femoris patient noted signiﬁcant pain relief, decreased stiffness, and improved rom. he subsequently endorsed fewer falls, increased dis- tance for ambulation, and improved balance and gait mechanics. discussion: stiff-person-syndrome is an uncommon autoimmune pro- cess characterized by progressive axial muscle stiffness, rigidity, and spasms resulting in severely impaired ambulation. this syndrome is commonly associated with anti-gad antibodies. traditional treatment includes use of benzodiazepines, baclofen, muscle relaxants, gluco- corticoids, ivig, and plasma exchange. in refractory cases, botulinum toxin can be an adjunct therapy that can improve symptoms. conclusions: use of botulinum toxin in refractory symptoms for sps can improve overall function with improved pain control, gait me- chanics, and balance. level of evidence: level v poster 259 bilateral corpus callosum stroke: case review of neurostimulants to treat this patient population shaessa l. wright, do (rutgers-rwj medical school, jfk johnson rehabilitation institute, edison, new jersey, united states), sara cuccurullo, md, brian d. greenwald, md disclosures: shaessa wright: i have no relevant financial relation- ships to disclose case/program description: a 58-year-old man underwent a cabg x 3 vessels and on postop day 3 acutely decompensated decreased verbal output, decreased command following. mri brain demonstrated multifocal cerebral ischemia predominately in the corpus callosum secondary to embolic infarct attributed to his paroxysmal a fib. his deﬁcits included left hemiparesis, aphasia, dysphagia, decreased arousal and poor initiation secondary to a bilateral corpus callosum embolic infarct for which he presented for acute inpatient neuro- rehabilitation. after further discussion and evaluation a decision was made to treat this patient with amantadine and methylphenidate to address issues of decreased initiation, poor arousal and the inability to initiate speech. setting: acute inpatient rehabilitation hospital. results: after several days of treatment with amantadine starting dose 100 mg bid titrated up to 150 mg bid and methylphenidate starting dose 5mg bid titrated up to 10 mg bid we documented improvements in the patient’s arousal, ability to follow commands, speech initiation and recall. we found that after four weeks of utilization of neurostimulants and acute inpatient neuro- rehabilitation the patient signiﬁcantly improved reasoning, pro- cessing speed, and communication with signiﬁcant improvement in his adls. discussion: the utilization of neurostimulants appears to aide in functional outcomes of patients treated with altered levels of con- sciousness secondary to tbi. neuropharmacologic therapies are commonly used off label to enhance arousal and behavioral respon- siveness, on the premise that injury induced derangements in dopa- minergi",
+      "llm_evidence_text": "Title:\nA novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report\n\nMetadata abstract:\nCase/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. Patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. Tightness is associated with pain and decreased range of motion (ROM). This resulted in impaired ambulation, transfers, and balance with frequent associated falls. Physical exam noted bilateral spasticity rated at 2/4 on Modified Ashworth Scale in bilateral hip flexors, adductors, and knee extensors; 4/4 in hamstrings. After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS. Patient was initially treated with IVIG and went into remission for several years. In 2012, aforementioned symptoms returned. He subsequently received a course of PLEX and Rituximab x2. Since 2012, patient has been receiving IVIG 1mg/kg divided over 2 days every 4 weeks. In addition to monthly IVIG, patient has tried warm baths, heating pads, TENS unit, corticosteroids, and chiropractor care over several years without any relief in stiffness. His medication management includes baclofen, diazepam, and gabapentin without significant relief in pain nor rigidity. Setting(s): Tertiary Care Hospital. Result(s): After bilateral treatment with botulinum toxin injections to the long head of biceps femoris, adductor magnus, and rectus femoris patient noted significant pain relief, decreased stiffness, and improved ROM. He subsequently endorsed fewer falls, increased distance for ambulation, and improved balance and gait mechanics. Discussion(s): Stiff-Person-Syndrome is an uncommon autoimmune process characterized by progressive axial muscle stiffness, rigidity, and spasms resulting in severely impaired \n\nPreferred text count-salient snippets:\n- continued to report insomnia, profuse night sweats and fatigue.\n- Case/Program Description: Patient is a 53-year-old man with waxing\n- patient has been receiving IVIG 1mg/kg divided over 2 days every 4\n- In refractory cases, botulinum\n- Case/Program Description: A 58-year-old man underwent a CABG x 3\n- functional outcomes of patients treated with altered levels of con-\n- and ability to conduct ADLs in stroke patients.\n- Case/Program Description: The patient is a 25-year-old woman with",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "source_context_adjusted_primary_estimate",
+        "body_only_candidate_added",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1, 2009]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_override",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=source_single_case_override | confidence=medium | source_category=single_case_report",
+          "evidence_text": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. Patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. Tightness is associated with pain and decreased range of motion (ROM). This resulted in impaired ambulation, transfers, and balance with frequent associated falls. Physical exam noted bilateral spasticity rated at 2/4 on Modified Ashworth Scale in bilateral hip flexors, adductors, and knee extensors; 4/4 in hamstrings. After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS. Patient was initially treated with IVIG and went into remission for several years. In 2012, aforementioned symptoms returned. He subsequently received a course of PLEX and Rituximab x2. Since 2012, patient has been receiving IVIG 1mg/kg divided over 2 days every 4 weeks. In addition to monthly IVIG, patient has tried warm baths, heating pads, TENS unit, corticosteroids, and chiropractor care over several years wi",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. Patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. Tightness is associated with pain and decreased range of motion (ROM). This resulted in impaired ambulation, transfers, and balance with frequent associated falls. Physical exam noted bilateral spasticity rated at 2/4 on Modified Ashworth Scale in bilateral hip flexors, adductors, and knee extensors; 4/4 in hamstrings. After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS. Patient was initially treated with IVIG and went into remission for several years. In 2012, aforementioned symptoms returned. He subsequently received a course of PLEX and Rituximab x2. Since 2012, patient has b",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. Patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. Tightness is associated with pain and decreased range of motion (ROM). This resulted in impaired ambulation, transfers, and balance with frequent associated falls. Physical exam noted bilateral spasticity rated at 2/4 on Modified Ashworth Scale in bilateral hip flexors, adductors, and knee extensors; 4/4 in hamstrings. After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS. Patient was initially treated with IVIG and went into remission for several years. In 2012, aforementioned symptoms returned. He subsequently received a course of PLEX and Rituximab x2. Since 2012, patient has been receiving IVIG 1mg/kg divided over 2 days every 4 weeks. In addition to monthly IVIG, patient has tried warm baths, heating pads, TENS unit, corticosteroids, and chiropractor care over several years wi",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand04",
+          "proposed_count": 2009,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 62,
+          "rationale": "basis=abstract_count_signal | confidence=medium | source_category=single_case_report | heuristic_manual_review=true",
+          "evidence_text": "Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps. Patient noted localized and symmetric stiffness in his quadriceps, hamstrings, and adductors bilaterally. Tightness is associated with pain and decreased range of motion (ROM). This resulted in impaired ambulation, transfers, and balance with frequent associated falls. Physical exam noted bilateral spasticity rated at 2/4 on Modified Ashworth Scale in bilateral hip flexors, adductors, and knee extensors; 4/4 in hamstrings. After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS. Patient was initially treated with IVIG and went into remission for several years. In 2012, aforementioned symptoms returned. He subsequently received a course of PLEX and Rituximab x2. Since 2012, patient has b",
+          "evidence_section": "abstract",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "1247",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "This is a single-patient case report describing one 53-year-old man diagnosed with SPS and treated with botulinum toxin. The numeric signal '2009' refers to the year of antibody measurement, not a patient count.",
+        "evidence": [
+          {
+            "quote": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+            "page": null,
+            "section": "title",
+            "supports": "The paper is explicitly a case report, supporting a single original patient."
+          },
+          {
+            "quote": "Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps.",
+            "page": null,
+            "section": "abstract/case description",
+            "supports": "Identifies one individual patient being reported."
+          },
+          {
+            "quote": "After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS.",
+            "page": null,
+            "section": "abstract/case description",
+            "supports": "Confirms the reported individual had SPS; '2009' is part of the clinical timeline, not a case count."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1247",
+      "evidence": [
+        {
+          "quote": "A novel approach to the treatment of stiff-person-syndrome with botulinum toxin: A case report",
+          "page": null,
+          "section": "title",
+          "supports": "The paper is explicitly a case report, supporting a single original patient."
+        },
+        {
+          "quote": "Case/Program Description: Patient is a 53-year-old man with waxing and waning symptoms of low back pain and leg cramps.",
+          "page": null,
+          "section": "abstract/case description",
+          "supports": "Identifies one individual patient being reported."
+        },
+        {
+          "quote": "After extensive workup for stated symptoms, patient was found to have elevated anti-GAD antibodies (>250 in 2009) and was diagnosed with SPS.",
+          "page": null,
+          "section": "abstract/case description",
+          "supports": "Confirms the reported individual had SPS; '2009' is part of the clinical timeline, not a case count."
+        }
+      ]
+    }
+  }
+}

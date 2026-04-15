@@ -1,0 +1,319 @@
+{
+  "schema_version": "stage06_count_gold_result_v1",
+  "generated_at_utc": "2026-04-15T21:54:11.997177+00:00",
+  "paper_id": "71",
+  "count_row": {
+    "paper_id": "71",
+    "covidence_id": "71",
+    "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+    "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+    "source_category": "interventional_study",
+    "source_subtype": "controlled_or_therapeutic_group_study",
+    "preferred_text_json_path": "data\\extraction_json\\text\\71.json",
+    "preferred_text_source": "full_text",
+    "count_eligible": "true",
+    "likely_sps_case_count": "1",
+    "count_confidence": "high",
+    "count_basis": "manual_gold_review",
+    "count_manual_review_required": "false",
+    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_01 | selection_bucket=conference_edge | prediction_correct=false | reviewed_count=1 | reviewed_source_category=interventional_study | predicted_count=1 | predicted_source_category=interventional_study",
+    "count_version": "gold_reviewed_stage06_v1",
+    "counted_at_utc": "2026-04-05T12:37:34.661461+00:00"
+  },
+  "source_text_json_path": "data\\extraction_json\\text\\71.json",
+  "preferred_text_json_path": "data\\extraction_json\\text\\71.json",
+  "paper_context": {
+    "covidence_id": "71",
+    "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+    "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+    "published_year": "1995",
+    "journal": "Neurology",
+    "pdf_filename": "71_Silbert-1995-Intrathecal baclofen therapy in s.pdf",
+    "pdf_path_relative": "data\\pdf_original\\71_Silbert-1995-Intrathecal baclofen therapy in s.pdf"
+  },
+  "gold_review": {
+    "round_id": "2026-04-05_round_01",
+    "selection_bucket": "conference_edge",
+    "selection_signals": "non_conference_with_conference_markers",
+    "prediction_correct": false,
+    "reviewed_source_category": "interventional_study",
+    "reviewed_extractable_sps_case_count": "1",
+    "pdf_content_alignment_tag": "appears_matched",
+    "reviewer_notes": "",
+    "reviewer_id": "human_reviewer",
+    "reviewed_at_utc": "2026-04-05T12:37:34.661461+00:00",
+    "source_gold_master_path": "qa\\validation\\source_categorisation\\gold_standard\\04_categorisation_gold_standard.csv"
+  },
+  "prediction_snapshot": {
+    "gold_master_row": {
+      "round_id": "2026-04-05_round_01",
+      "paper_id": "71",
+      "covidence_id": "71",
+      "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+      "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+      "published_year": "1995",
+      "journal": "Neurology",
+      "selection_bucket": "conference_edge",
+      "selection_signals": "non_conference_with_conference_markers",
+      "pdf_filename": "71_Silbert-1995-Intrathecal baclofen therapy in s.pdf",
+      "pdf_path_relative": "data\\pdf_original\\71_Silbert-1995-Intrathecal baclofen therapy in s.pdf",
+      "preferred_text_json_path": "data\\extraction_json\\text\\71.json",
+      "preferred_text_source": "full_text",
+      "preferred_start_page": "1",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "predicted_source_category": "interventional_study",
+      "predicted_source_subtype": "controlled_or_therapeutic_group_study",
+      "predicted_confidence": "low",
+      "predicted_likely_sps_case_count": "1",
+      "predicted_count_confidence": "medium",
+      "predicted_count_basis": "abstract_count_signal",
+      "predicted_count_manual_review_required": "true",
+      "predicted_count_reason": "count_basis=abstract_count_signal | count_confidence=medium | source_category=interventional_study",
+      "predicted_categorisation_reason": "interventional_markers=controlled trial; double blind; placebo | conference_markers=annual meeting | likely_case_count=3 | patient_label_count=3 | individual_demographic_signal=true",
+      "selection_created_at_utc": "2026-04-05T12:14:43.058855+00:00",
+      "prediction_correct": "false",
+      "review_status": "reviewed",
+      "reviewed_source_category": "interventional_study",
+      "reviewed_extractable_sps_case_count": "1",
+      "pdf_content_alignment_tag": "appears_matched",
+      "reviewer_notes": "",
+      "reviewer_id": "human_reviewer",
+      "reviewed_at_utc": "2026-04-05T12:37:34.661461+00:00"
+    },
+    "live_count_registry_row": {
+      "paper_id": "71",
+      "covidence_id": "71",
+      "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+      "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "preferred_text_json_path": "data/extraction_json/text/71.json",
+      "preferred_text_source": "full_text",
+      "count_eligible": "true",
+      "likely_sps_case_count": "3",
+      "count_confidence": "high",
+      "count_basis": "llm_joint_extraction",
+      "count_manual_review_required": "false",
+      "count_reason": "The paper describes a double-blind, placebo-controlled trial of intrathecal baclofen in three patients with stiff-man syndrome (SPS). All three patients are described in detail, with individual and group-level clinical and electrophysiological data reported.",
+      "count_version": "llm_v1_gpt4.1",
+      "counted_at_utc": "2026-04-05T21:00:51.857620+00:00"
+    },
+    "live_source_registry_row": {
+      "paper_id": "71",
+      "covidence_id": "71",
+      "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+      "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+      "published_year": "1995",
+      "journal": "Neurology",
+      "tags": "Treatment",
+      "notes": "",
+      "text_json_path": "data/extraction_json/text/71.json",
+      "preferred_text_json_path": "data/extraction_json/text/71.json",
+      "preferred_text_source": "full_text",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "classification_confidence": "high",
+      "likely_case_count": "3",
+      "contains_individual_level_data": "true",
+      "contains_group_level_data": "true",
+      "case_series_split_candidate": "false",
+      "preferred_langextract_mode": "group",
+      "langextract_eligible": "true",
+      "manual_review_required": "false",
+      "recommended_next_action": "run_langextract_group",
+      "conference_marker_hits": "",
+      "review_marker_hits": "",
+      "case_report_marker_hits": "",
+      "multi_case_marker_hits": "",
+      "observational_marker_hits": "",
+      "interventional_marker_hits": "",
+      "non_clinical_marker_hits": "",
+      "translational_marker_hits": "",
+      "patient_label_count": "",
+      "categorisation_reason": "This is an interventional study (double-blind, placebo-controlled trial) involving three original SPS patients. The paper provides both individual-level and group-level data, including clinical and electrophysiological outcomes for each patient.",
+      "categorisation_version": "llm_v1_gpt4.1",
+      "categorised_at_utc": "2026-04-05T21:00:51.857601+00:00"
+    }
+  },
+  "attached_run_artifacts": {
+    "run_id": "stage06_llm_test_71",
+    "result_json_path": "results\\stage06_count_runs\\stage06_llm_test_71\\results\\71.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_llm_test_71\\candidate_packages\\71.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_llm_test_71\\count_decisions\\71.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_test_71\\count_evidence\\71.json",
+    "result_payload": {
+      "paper_id": "71",
+      "count_row": {
+        "paper_id": "71",
+        "covidence_id": "71",
+        "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+        "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+        "source_category": "interventional_study",
+        "source_subtype": "controlled_or_therapeutic_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\71.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "3",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports a double-blind placebo-controlled trial in three patients with stiff-man syndrome, and the methods section confirms recruitment of three SMS patients meeting diagnostic criteria. The count of unique original SPS-spectrum patients is therefore 3.",
+        "count_version": "hybrid_v1_gpt-5.4",
+        "heuristic_likely_sps_case_count": "3",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_llm_test_71\\candidate_packages\\71.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "3",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "not_run",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_test_71\\count_evidence\\71.json",
+        "counted_at_utc": "2026-04-13T23:52:34.884168+00:00"
+      },
+      "source_text_json_path": "data\\extraction_json\\text\\71.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\71.json"
+    },
+    "candidate_payload": {
+      "paper_id": "71",
+      "covidence_id": "71",
+      "title": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial.",
+      "authors": "Silbert, P L; Matsumoto, J Y; McManis, P G; Stolp-Smith, K A; Elliott, B A; McEvoy, K M",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\71.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\71.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "71_Silbert-1995-Intrathecal baclofen therapy in s.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "We performed a double-blind, placebo-controlled trial of intrathecal baclofen (ITB) in stiff-man syndrome. Three patients, unresponsive to current therapy, received 50 micrograms of ITB or placebo on sequential days. Following ITB, all patients demonstrated improvement in reflex EMG activity. The mean reduction in total EMG activity (from all muscles) following stimulation of the medial plantar nerve (cutaneous flexor reflex) was 72% following 50 micrograms of ITB compared with 18% following placebo (ANOVA: significance of F, p < 0.0001). The mean latency to onset of the response was also significantly prolonged for all muscles following ITB (ANOVA: significance of F, p < 0.05). Although reflex EMG activity was reduced in all patients, clinical improvement was evident in only one patient, who differed from the others studied by a longer duration of disease, greater severity of stiffness, less fear of falling, and greater electrophysiologic improvement.",
+      "early_body_text": "in.trathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial p.l. silbert, mbbs, fracp; j.y. matsumoto, md; p.g. mcmanis, mbbs, fracp; k.a. stolp-smith, md; b.a. elliott, md; and k.m. mcevoy, md, phd article abstract-we performed a double-blind, placebo-controlled trial of intrathecal baclofen (itb) in stiff-man syndrome. three patients, unresponsive to current therapy, received 50 pg of itb or placebo on sequential days. following itb, all patients demonstrated improvement in reflex emg activity. the mean reduction in total emg activity (from all muscles) following stimulation of the medial plantar nerve (cutaneous flexor reflex) was 72% following 50 pg of itb compared with 18% following placebo (anova: significance of f, p < 0.0001). the mean latency to onset of the response was also significantly prolonged for all muscles following itb (anova: significance of f, p < 0.05). although reflex emg activity was reduced in all patients, clinical improvement was evident in only one patient, who differed from the others studied by a longer duration of disease, greater severity of stiffness, less fear of falling, and greater electrophysiologic improvement. neurology 1995;45:1893-1897 stiff-man syndrome (sms) is a r a r e disorder characterized by involuntary stiffness of axial and lower-extremity muscles with superimposed painful muscle spasms.' the etiology is unknown, but a n immune-mediated mechanism is suggested by the presence of antibodies t o glutamic acid decarboxylase (gad) and the strong association with other autoimmune diseases.2 gad catalyzes the conversion of glutamate t o gaba, and there are reduced csf gaba levels in some patients with sms,3 making baclofen (which acts on gabab receptors) a logical therapy. csf penetration of baclofen is poor following oral administration4 and, although effective in some case^,^,^ the response in sms is often variable and inadequate.7 intrathecal administration of baclofen avoids the high systemic levels required with oral administration because of limited csf p e n e t r a t i ~ n csf . ~ levels up to 50 times higher may be achieved with ?booth of the oral dose.* there are reports of intrathecal baclofen (itb) in five cases of smsg-llbut most trials were open, and there was no electrophysiologic monitoring of the effects of itb. in the only reported patient with a blinded evaluation, no improvement could be documented.ll we report a double-blind, placebo-controlled trial of itb therapy in three pa- tients with sms, with intensive clinical and electrophysiologic monitoring. methods. patient selection. three patients with sms were recruited for a double-blind, placebo-controlled trial of itb therapy. the study was approved by the mayo clinic institutional review board. patients were selected because of inadequate control on their current therapy due to lack of efficacy or side effects. symptoms of sms had been present for 6 years in patient 1, 4 years in patient 2, and 10 years in patient 3, and these patients were currently on combinations of diazepam, clonazepam, baclofen, valproate, and prednisone. all patients fulfilled the clinical and electrophysiologic diagnostic criteria of lorish et a17 and had positive anti-gad antibodies. all patients had a n increased lumbar lordosis, reduced range of lumbar movement, paraspinal muscle hypertrophy, rigid abdominal muscles, spontaneous and startle-induced spasms, and at least a partial response to benzodiazepine therapy. lower-extremity reflexes were brisk in all patients, with asymmetry of the stiffness and reflexes in patients 2 and 3. informed consent was obtained and current medications were continued. the protocol allowed for patients to receive blinded intrathecal administration of either 50 pg of baclofen or placebo on day 1, with the other medication given on day 2. following this, patients were eligible to receive a further trial of either 75 or 100 pg of itb with placebo control, as determined by the patient's subjective response and the observed clinical response to the lower dose. from the departments of neurology (drs. silbert, matsumoto, mcmanis, and mcevoy), physical medicine and rehabilitation (dr. stolp-smith), and anesthesiology (dr. elliott), mayo clinic and mayo foundation, rochester, mn. presented in part at the annual meetings of the american academy of electrodiagnostic medicine, san francisco, ca, september 1994, and the american neurological association, san francisco, ca, october 1994. received august 22, 1994. accepted in final form march 3, 1995. address correspondence and reprint requests to dr. k.m. mcevoy, department of neurology, mayo clinic, rochester, mn 55904. october 1995 neurology 45 1893 !able 1. results of reflex emg activity for all patients it placebo: percentage change in reflex emg activity from baseline patient 1 patient 2 patient 3 mean biceps brachii triceps l-3 paraspinals lower rectus abdominis biceps femoris rectus femoris medial gastrocnemi",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "distinct_candidate_counts=[1, 3]"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 3,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 82,
+          "rationale": "basis=abstract_count_signal | confidence=medium | source_category=interventional_study | heuristic_manual_review=true",
+          "evidence_text": "We performed a double-blind, placebo-controlled trial of intrathecal baclofen (ITB) in stiff-man syndrome. Three patients, unresponsive to current therapy, received 50 micrograms of ITB or placebo on sequential days. Following ITB, all patients demonstrated improvement in reflex EMG activity. The mean reduction in total EMG activity (from all muscles) following stimulation of the medial plantar nerve (cutaneous flexor reflex) was 72% following 50 micrograms of ITB compared with 18% following placebo (ANOVA: significance of F, p < 0.0001). The mean latency to onset of the response was also significantly prolonged for all muscles following ITB (ANOVA: significance of F, p < 0.05). Although reflex EMG activity was reduced in all patients, clinical improvement was evident in only one patient, who differed from the others studied by a longer duration of disease, greater severity of stiffness,",
+          "evidence_section": "abstract",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_override",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_override | confidence=medium | source_category=interventional_study",
+          "evidence_text": "Intrathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial. We performed a double-blind, placebo-controlled trial of intrathecal baclofen (ITB) in stiff-man syndrome. Three patients, unresponsive to current therapy, received 50 micrograms of ITB or placebo on sequential days. Following ITB, all patients demonstrated improvement in reflex EMG activity. The mean reduction in total EMG activity (from all muscles) following stimulation of the medial plantar nerve (cutaneous flexor reflex) was 72% following 50 micrograms of ITB compared with 18% following placebo (ANOVA: significance of F, p < 0.0001). The mean latency to onset of the response was also significantly prolonged for all muscles following ITB (ANOVA: significance of F, p < 0.05). Although reflex EMG activity was reduced in all patients, clinical improvement was evident in only one patient, who differed from the others studied by a longer duration of disease, greater severity of stiffness, less fear of falling, and greater electrophysiologic improvement. in.trathecal baclofen therapy in stiff-man syndrome: a double-blind, placebo-controlled trial p.l. silbert, mbbs, fracp; j.y. matsumoto, md",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts"
+    },
+    "count_decision_payload": {
+      "paper_id": "71",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly reports a double-blind placebo-controlled trial in three patients with stiff-man syndrome, and the methods section confirms recruitment of three SMS patients meeting diagnostic criteria. The count of unique original SPS-spectrum patients is therefore 3.",
+        "evidence": [
+          {
+            "quote": "Three patients, unresponsive to current therapy, received 50 micrograms of ITB or placebo on sequential days.",
+            "page": null,
+            "section": "Abstract",
+            "supports": "Directly states the number of trial participants was three."
+          },
+          {
+            "quote": "we report a double-blind, placebo-controlled trial of itb therapy in three patients with sms",
+            "page": null,
+            "section": "Introduction/overview",
+            "supports": "Confirms the study reports three original SMS patients."
+          },
+          {
+            "quote": "patient selection. three patients with sms were recruited for a double-blind, placebo-controlled trial of itb therapy.",
+            "page": null,
+            "section": "Methods - Patient selection",
+            "supports": "Explicit recruitment count of three unique SMS patients."
+          },
+          {
+            "quote": "Symptoms of sms had been present for 6 years in patient 1, 4 years in patient 2, and 10 years in patient 3",
+            "page": null,
+            "section": "Methods - Patient selection",
+            "supports": "Enumerates three distinct patients, confirming uniqueness rather than repeated measurements."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "71",
+      "evidence": [
+        {
+          "quote": "Three patients, unresponsive to current therapy, received 50 micrograms of ITB or placebo on sequential days.",
+          "page": null,
+          "section": "Abstract",
+          "supports": "Directly states the number of trial participants was three."
+        },
+        {
+          "quote": "we report a double-blind, placebo-controlled trial of itb therapy in three patients with sms",
+          "page": null,
+          "section": "Introduction/overview",
+          "supports": "Confirms the study reports three original SMS patients."
+        },
+        {
+          "quote": "patient selection. three patients with sms were recruited for a double-blind, placebo-controlled trial of itb therapy.",
+          "page": null,
+          "section": "Methods - Patient selection",
+          "supports": "Explicit recruitment count of three unique SMS patients."
+        },
+        {
+          "quote": "Symptoms of sms had been present for 6 years in patient 1, 4 years in patient 2, and 10 years in patient 3",
+          "page": null,
+          "section": "Methods - Patient selection",
+          "supports": "Enumerates three distinct patients, confirming uniqueness rather than repeated measurements."
+        }
+      ]
+    }
+  }
+}

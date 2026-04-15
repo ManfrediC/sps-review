@@ -1,0 +1,359 @@
+{
+  "schema_version": "stage06_count_gold_result_v1",
+  "generated_at_utc": "2026-04-15T21:54:11.946388+00:00",
+  "paper_id": "23",
+  "count_row": {
+    "paper_id": "23",
+    "covidence_id": "23",
+    "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+    "authors": "Penn, R D; Mangieri, E A",
+    "source_category": "case_series_or_multi_case",
+    "source_subtype": "case_series",
+    "preferred_text_json_path": "data/extraction_json/text/23.json",
+    "preferred_text_source": "full_text",
+    "count_eligible": "true",
+    "likely_sps_case_count": "2",
+    "count_confidence": "high",
+    "count_basis": "manual_gold_review",
+    "count_manual_review_required": "false",
+    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=2 | reviewed_source_category=case_series_or_multi_case | predicted_count=2 | predicted_source_category=case_series_or_multi_case",
+    "count_version": "gold_reviewed_stage06_v1",
+    "counted_at_utc": "2026-04-05T18:38:37.219075+00:00"
+  },
+  "source_text_json_path": "data\\extraction_json\\text\\23.json",
+  "preferred_text_json_path": "data/extraction_json/text/23.json",
+  "paper_context": {
+    "covidence_id": "23",
+    "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+    "authors": "Penn, R D; Mangieri, E A",
+    "published_year": "1993",
+    "journal": "Neurology",
+    "pdf_filename": "23_Penn 1993 Baclofen.pdf",
+    "pdf_path_relative": "data\\pdf_original\\23_Penn 1993 Baclofen.pdf"
+  },
+  "gold_review": {
+    "round_id": "stage04_llm_category_2026-04-05_round_02",
+    "selection_bucket": "case_group_boundary",
+    "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+    "prediction_correct": true,
+    "reviewed_source_category": "case_series_or_multi_case",
+    "reviewed_extractable_sps_case_count": "2",
+    "pdf_content_alignment_tag": "appears_matched",
+    "reviewer_notes": "",
+    "reviewer_id": "human_reviewer",
+    "reviewed_at_utc": "2026-04-05T18:38:37.219075+00:00",
+    "source_gold_master_path": "qa\\validation\\source_categorisation\\gold_standard\\04_categorisation_gold_standard.csv"
+  },
+  "prediction_snapshot": {
+    "gold_master_row": {
+      "round_id": "stage04_llm_category_2026-04-05_round_02",
+      "paper_id": "23",
+      "covidence_id": "23",
+      "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+      "authors": "Penn, R D; Mangieri, E A",
+      "published_year": "1993",
+      "journal": "Neurology",
+      "selection_bucket": "case_group_boundary",
+      "selection_signals": "group_boundary_category=case_series_or_multi_case; group_boundary_action=split_cases_then_langextract; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
+      "pdf_filename": "23_Penn 1993 Baclofen.pdf",
+      "pdf_path_relative": "data\\pdf_original\\23_Penn 1993 Baclofen.pdf",
+      "preferred_text_json_path": "data/extraction_json/text/23.json",
+      "preferred_text_source": "full_text",
+      "preferred_start_page": "1",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "predicted_source_category": "case_series_or_multi_case",
+      "predicted_source_subtype": "case_series",
+      "predicted_confidence": "high",
+      "predicted_likely_sps_case_count": "2",
+      "predicted_count_confidence": "high",
+      "predicted_count_basis": "llm_joint_extraction",
+      "predicted_count_manual_review_required": "false",
+      "predicted_count_reason": "The paper provides detailed individual-level clinical descriptions of two patients with stiff-man syndrome (SPS), including their history, treatment, and outcomes. Both are original cases reported by the authors.",
+      "predicted_categorisation_reason": "This is a case series describing two original patients with stiff-man syndrome treated with intrathecal baclofen. The text provides detailed clinical information for each patient, confirming original SPS-spectrum data.",
+      "selection_created_at_utc": "2026-04-05T18:08:40.059326+00:00",
+      "prediction_correct": "true",
+      "review_status": "reviewed",
+      "reviewed_source_category": "case_series_or_multi_case",
+      "reviewed_extractable_sps_case_count": "2",
+      "pdf_content_alignment_tag": "appears_matched",
+      "reviewer_notes": "",
+      "reviewer_id": "human_reviewer",
+      "reviewed_at_utc": "2026-04-05T18:38:37.219075+00:00"
+    },
+    "live_count_registry_row": {
+      "paper_id": "23",
+      "covidence_id": "23",
+      "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+      "authors": "Penn, R D; Mangieri, E A",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "preferred_text_json_path": "data/extraction_json/text/23.json",
+      "preferred_text_source": "full_text",
+      "count_eligible": "true",
+      "likely_sps_case_count": "2",
+      "count_confidence": "high",
+      "count_basis": "llm_joint_extraction",
+      "count_manual_review_required": "false",
+      "count_reason": "The paper describes two individual patients with stiff-man syndrome (SPS) treated with intrathecal baclofen, providing detailed clinical histories and outcomes for each. There is no indication of additional SPS patients beyond these two.",
+      "count_version": "llm_v1_gpt4.1",
+      "counted_at_utc": "2026-04-05T20:05:50.862557+00:00"
+    },
+    "live_source_registry_row": {
+      "paper_id": "23",
+      "covidence_id": "23",
+      "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+      "authors": "Penn, R D; Mangieri, E A",
+      "published_year": "1993",
+      "journal": "Neurology",
+      "tags": "Treatment",
+      "notes": "",
+      "text_json_path": "data/extraction_json/text/23.json",
+      "preferred_text_json_path": "data/extraction_json/text/23.json",
+      "preferred_text_source": "full_text",
+      "proceedings_detected": "false",
+      "trim_status": "",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "classification_confidence": "high",
+      "likely_case_count": "2",
+      "contains_individual_level_data": "true",
+      "contains_group_level_data": "false",
+      "case_series_split_candidate": "true",
+      "preferred_langextract_mode": "individual_case_split",
+      "langextract_eligible": "true",
+      "manual_review_required": "false",
+      "recommended_next_action": "split_cases_then_langextract",
+      "conference_marker_hits": "",
+      "review_marker_hits": "",
+      "case_report_marker_hits": "",
+      "multi_case_marker_hits": "",
+      "observational_marker_hits": "",
+      "interventional_marker_hits": "",
+      "non_clinical_marker_hits": "",
+      "translational_marker_hits": "",
+      "patient_label_count": "",
+      "categorisation_reason": "This is a case series reporting on two original SPS patients, with detailed individual-level clinical data for each. The structure and content are consistent with a case series or multi-case report.",
+      "categorisation_version": "llm_v1_gpt4.1",
+      "categorised_at_utc": "2026-04-05T20:05:50.862534+00:00"
+    }
+  },
+  "attached_run_artifacts": {
+    "run_id": "stage06_llm_eval_v8",
+    "result_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\results\\23.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\candidate_packages\\23.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\count_decisions\\23.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\count_evidence\\23.json",
+    "result_payload": {
+      "paper_id": "23",
+      "count_row": {
+        "paper_id": "23",
+        "covidence_id": "23",
+        "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+        "authors": "Penn, R D; Mangieri, E A",
+        "source_category": "case_series_or_multi_case",
+        "source_subtype": "case_series",
+        "preferred_text_json_path": "data\\extraction_json\\text\\23.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "2",
+        "count_confidence": "high",
+        "count_basis": "patient_label_count",
+        "count_manual_review_required": "false",
+        "count_reason": "verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand03 | The paper explicitly reports original treatment experience in two patients with stiff-man syndrome and provides separate case descriptions for Patient 1 and Patient 2. It also states that both patients met diagnostic criteria for stiff man syndrome, supporting an extractable SPS-spectrum count of 2.",
+        "count_version": "hybrid_v1_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "source_single_case_override",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\candidate_packages\\23.json",
+        "heuristic_candidate_count": "4",
+        "llm_likely_sps_case_count": "2",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand03",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "not_run",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_llm_eval_v8\\count_evidence\\23.json",
+        "counted_at_utc": "2026-04-14T20:56:12.393626+00:00"
+      },
+      "source_text_json_path": "data\\extraction_json\\text\\23.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\23.json"
+    },
+    "candidate_payload": {
+      "paper_id": "23",
+      "covidence_id": "23",
+      "title": "Stiff-man syndrome treated with intrathecal baclofen.",
+      "authors": "Penn, R D; Mangieri, E A",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "preferred_text_json_path": "data\\extraction_json\\text\\23.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\23.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "23_Penn 1993 Baclofen.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "",
+      "early_body_text": "sos6. 291-382. 386 1. ndon ja. capnoestophaga canimorsus septicemia caused by a dog bite {in hairy ell leukemin patient. j clin microbiol 1982; 30: 211. 213. stiff-man syndrome treated with intrathecal baclofen richard d. penn, md, and eugene a. mangieri, md stiff-man syndrome is a rare, progressive motor disorder caus: ing disabling muscle rigidity and spasms, which is often associated with insulin-dependent diabetes mellitus. in patients with this syndrome, solimena et al! documented the presence of autoantibodies against glutamic acid decarboxylase (gad) enzyme scleetively concentrated in pancreatic beta cells ‘cns neurons secreting the major inhibitory neurotransmitter amingbutyric acid (gaba). although plasmapheresis has been tried.? diazepam remains the most effective treatment; it acts on the gaba receptors, making: them more sensitive to gaba.* unfortunately, as the disoase progresses, diazepam becomes loss effective and severe spasms occur. baclofen is a direct gaba-b agonist that docs not require gaba secretion to aeti- ‘ate its receptor. thus, baclofen would logically be a useful medication for treating stff-man syndrome if it could be provided ‘sufficiently high concentration to the spinal cord receptors. we have treated severe spasticity of spinal origin with intrathecal baclofen and found that it significantly reduces spasms and rigidity when oral medications failed.” we now report similar ‘success with two patients with stiff man syndrome. patient 1. a 42-year old man reported 7 years of progressive rigidity and spasms that began in hix trunk musculature and gradually involved both legs and made walking difficult. diazepam had afforded initial relief, but as the disease pro: ‘gressod, he became disabled and unable to work at his job as a machinist. pain became worse as the intensity and frequency of ‘spasms increased, he gradually clovated his diazepam dose to 140 mg/d, without significant improvement. at age 34, he devel- ‘oped diabetes mellitus and was placed on insulin. his only novrologie abnormalities were demonstrated on motor examination. he had increased muscle tone in his axial muscles, with a pronounced lumbar lordosis, mild sensory stimulation or volitional movements would set off sovere spasms in his back and legs. his reflexes were normal and babinski sgn was not present. ‘a lumbar puncture was performed and 75 ug baclofen (ciba- ,, basel, switzerland) was injected. one hour later, his gidity and spasms completely disappeared and ho was able to ‘walk normally. by 8 hours, the effect was decreasing, and by 24 hhours he returned to baseline. a programmable drug pump and catheter (synchro med, medtronic, ine., minneapolis, mn) going to the lumbar subarachnoid space was implanted, and hi ‘spasms wore completely controlled with baclofen 120 ygid. over tho next 2% years, the dose of intrathecal baclofen was gradually increased to 1, 200 gid to suppress his spasms; diazepam has been reduced to 20 mg/d, but is sill necessary in low dose. ho thas had an episode of moningitis requiring antibiotics and replacement of the pump and cathoter system, and twice the catheter has dislocated from the subarachnoid space and needed replacement. each time he stopped receiving intrathecal ‘baclofen his spasms recurred. patient 2. a 68-year-old woman was diagnosed with stiff: ‘man xyndrome in 1988. at that time, she had a one-year history ‘of progressive spasms in her back and legs and difficulty with fit and she required a walker. pain occurred during attacks of spasms. on motor examination, she had hyperextension of t lumbar spine and sovore spasms at the hips and knees, without ‘weaknoss, atrophy, or fasciculations, the reflexes were normal and a babinski sign was not prescnt. an extensive work-up was normal except for antibodies to gad in her csf (by dr. de curicelli at yale university). diazepam was given and helped initially, but a year later she was bedridden and having markedly inereased pain. intrathecal preservative-froe methylprednisolone and systemic immunotherapy with azathioprine plasmapheresis were tried without significant effect, by 1992, she had developed ankylosis at her hip, knees, and foet, secondary atrophy of her leg muscles, and severe pain due to her 2412 neurology (3 november 1983 spasms. oral nareoties only provided partial relief, and on ‘numerous oceasions she was admitted for intravenous nareotics.. intrathecal baclofen was tried, and 75 jg produced excellent pain relief, stopping the spasms for 4 hours. a drug pump was then implanted, with a constant infusion of 120 wai ove the lat 9 months, she has good control af her spasms and pain. she remains bedridden because of lower-extremity muscle atrophy and ankylosis. discussion. both patients meet the criterion for stiff man syndrome outlined by lorish et al.® dinzepam was initially effective, but as the disease progressed even high doses (>90 and >140 mg/d) were inadequate. since diazepam works by potentiation of the effect o",
+      "llm_evidence_text": "Title:\nStiff-man syndrome treated with intrathecal baclofen.\n\nPreferred text count-salient snippets:\n- Stiff-man syndrome treated with intrathecal\n- ‘success with two patients with stiff man syndrome.\n- A 42-year old man reported 7 years of progressive\n- Both patients meet the criterion for stiff man\n- ‘may explain its usefulness in our two patients.\n- the basis of our experience with these two patients, wo recom-\n- ‘mend testing patients with stiff man's syndrome with a lumbar\n- ‘observations on two patients are confirmed in other patients with",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "source_context_adjusted_primary_estimate",
+        "abstract_only_candidate_added",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[0, 1, 2]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_override",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=source_single_case_override | confidence=medium | source_category=case_series_or_multi_case",
+          "evidence_text": "Stiff-man syndrome treated with intrathecal baclofen. sos6. 291-382. 386 1. ndon ja. capnoestophaga canimorsus septicemia caused by a dog bite {in hairy ell leukemin patient. j clin microbiol 1982; 30: 211. 213. stiff-man syndrome treated with intrathecal baclofen richard d. penn, md, and eugene a. mangieri, md stiff-man syndrome is a rare, progressive motor disorder caus: ing disabling muscle rigidity and spasms, which is often associated with insulin-dependent diabetes mellitus. in patients with this syndrome, solimena et al! documented the prese",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=case_series_or_multi_case",
+          "evidence_text": "Stiff-man syndrome treated with intrathecal baclofen. sos6. 291-382. 386 1. ndon ja. capnoestophaga canimorsus septicemia caused by a dog bite {in hairy ell leukemin patient. j clin microbiol 1982; 30: 211. 213. stiff-man syndrome treated with intrathecal baclofen richard d. penn, md, and eugene a. mangieri, md stiff-man syndrome is a rare, progressive motor disorder caus: ing disabling muscle rigidity and spasms, which is often associated with insulin-dependent diabetes mellitus. in patients with this syndrome, solimena et al! documented the prese",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 2,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "patient_label_count",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 70,
+          "rationale": "basis=patient_label_count | confidence=medium | source_category=case_series_or_multi_case",
+          "evidence_text": "sos6. 291-382. 386 1. ndon ja. capnoestophaga canimorsus septicemia caused by a dog bite {in hairy ell leukemin patient. j clin microbiol 1982; 30: 211. 213. stiff-man syndrome treated with intrathecal baclofen richard d. penn, md, and eugene a. mangieri, md stiff-man syndrome is a rare, progressive motor disorder caus: ing disabling muscle rigidity and spasms, which is often associated with insulin-dependent diabetes mellitus. in patients with this syndrome, solimena et al! documented the presence of autoantibodies against glutamic acid decarboxylase (gad) enzyme scleetively concentrated in pancreatic beta cells ‘cns neurons secreting the major inhibitory neurotransmitter amingbutyric acid (gaba). although plasmapheresis has been tried.? diazepam remains the most effective treatment; it acts on the gaba receptors, making: them more sensitive to gaba.* unfortunately, as the disoase progresses, diazepam becomes loss effective and severe spasms occur. baclofen is a direct gaba-b agonist that docs not require gaba secretion to aeti- ‘ate its receptor. thus, baclofen would logically be a useful medication for treating stff-man syndrome if it could be provided ‘sufficiently high concent",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand04",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 45,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=case_series_or_multi_case",
+          "evidence_text": "sos6. 291-382. 386 1. ndon ja. capnoestophaga canimorsus septicemia caused by a dog bite {in hairy ell leukemin patient. j clin microbiol 1982; 30: 211. 213. stiff-man syndrome treated with intrathecal baclofen richard d. penn, md, and eugene a. mangieri, md stiff-man syndrome is a rare, progressive motor disorder caus: ing disabling muscle rigidity and spasms, which is often associated with insulin-dependent diabetes mellitus. in patients with this syndrome, solimena et al! documented the prese Stiff-man syndrome treated with intrathecal baclofen.",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "23",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand03",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly reports original treatment experience in two patients with stiff-man syndrome and provides separate case descriptions for Patient 1 and Patient 2. It also states that both patients met diagnostic criteria for stiff man syndrome, supporting an extractable SPS-spectrum count of 2.",
+        "evidence": [
+          {
+            "quote": "we now report similar success with two patients with stiff man syndrome.",
+            "page": null,
+            "section": "Preferred text excerpt",
+            "supports": "Explicit original cohort size of two SPS patients"
+          },
+          {
+            "quote": "patient 1. a 42-year old man reported 7 years of progressive rigidity and spasms",
+            "page": null,
+            "section": "Preferred text excerpt",
+            "supports": "First distinct SPS case is described"
+          },
+          {
+            "quote": "patient 2. a 68-year-old woman was diagnosed with stiff-man syndrome in 1988.",
+            "page": null,
+            "section": "Preferred text excerpt",
+            "supports": "Second distinct SPS case is described"
+          },
+          {
+            "quote": "discussion. both patients meet the criterion for stiff man syndrome outlined by lorish et al.",
+            "page": null,
+            "section": "Discussion",
+            "supports": "Confirms both described patients qualify as stiff-man syndrome cases"
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "23",
+      "evidence": [
+        {
+          "quote": "we now report similar success with two patients with stiff man syndrome.",
+          "page": null,
+          "section": "Preferred text excerpt",
+          "supports": "Explicit original cohort size of two SPS patients"
+        },
+        {
+          "quote": "patient 1. a 42-year old man reported 7 years of progressive rigidity and spasms",
+          "page": null,
+          "section": "Preferred text excerpt",
+          "supports": "First distinct SPS case is described"
+        },
+        {
+          "quote": "patient 2. a 68-year-old woman was diagnosed with stiff-man syndrome in 1988.",
+          "page": null,
+          "section": "Preferred text excerpt",
+          "supports": "Second distinct SPS case is described"
+        },
+        {
+          "quote": "discussion. both patients meet the criterion for stiff man syndrome outlined by lorish et al.",
+          "page": null,
+          "section": "Discussion",
+          "supports": "Confirms both described patients qualify as stiff-man syndrome cases"
+        }
+      ]
+    }
+  }
+}
