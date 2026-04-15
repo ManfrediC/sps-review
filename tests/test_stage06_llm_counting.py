@@ -100,6 +100,70 @@ def make_92_package():
     )
 
 
+def make_556_package():
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "556",
+            "Title": "GAD antibody-associated neurological illness and its relationship to gluten sensitivity",
+            "Authors": "Hadjivassiliou, M",
+            "Abstract": (
+                "Results - Six of seven (86%) patients with SPS were positive for anti-GAD. "
+                "Table 2 summarised evidence of gluten sensitivity in seven patients with stiff-person syndrome."
+            ),
+        },
+        text_record={"paper_id": "556", "_path": "data/extraction_json/text/556.json"},
+        preferred_record={
+            "pages": [
+                {
+                    "text": (
+                        "Group 1 consisted of seven patients with clinical features and neurophysiological evidence of SPS. "
+                        "Table 2 Evidence of gluten sensitivity with or without enteropathy in seven patients with stiff-person syndrome."
+                    )
+                }
+            ]
+        },
+        preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "556.json",
+        source_row={
+            "source_category": "case_series_or_multi_case",
+            "source_subtype": "case_series",
+        },
+    )
+
+
+def make_710_package():
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "710",
+            "Title": (
+                "Encephalitis with refractory seizures, status epilepticus, and antibodies to the GABAA receptor: "
+                "a case series, characterisation of the antigen, and analysis of the effects of antibodies."
+            ),
+            "Authors": "Petit-Pedrol, Mar",
+            "Abstract": (
+                "These 12 patients developed a broader spectrum of symptoms probably indicative of coexisting autoimmune disorders: "
+                "six had encephalitis with seizures, four had stiff-person syndrome, and two had opsoclonus-myoclonus."
+            ),
+        },
+        text_record={"paper_id": "710", "_path": "data/extraction_json/text/710.json"},
+        preferred_record={
+            "pages": [
+                {
+                    "text": (
+                        "These 12 control patients with other diseases developed a broader spectrum of symptoms probably indicative "
+                        "of coexisting autoimmune disorders: six had encephalitis with seizures, four had stiff-person syndrome, "
+                        "and two had opsoclonus-myoclonus."
+                    )
+                }
+            ]
+        },
+        preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "710.json",
+        source_row={
+            "source_category": "case_series_or_multi_case",
+            "source_subtype": "case_series",
+        },
+    )
+
+
 def make_12584_package():
     return build_case_count_candidate_package(
         reference_row={
@@ -210,6 +274,57 @@ class TestStage06LlmCounting(unittest.TestCase):
         )
         flags, worst = run_validators(package, decision)
         self.assertIn("COUNT_REASONING_SELECTED_CANDIDATE_MISMATCH", flags)
+        self.assertEqual(worst, Severity.REJECT)
+
+    def test_validator_rejects_candidate_exact_when_reasoning_requests_bounded_alternative(self) -> None:
+        package = make_556_package()
+        decision = LLMCountDecisionOutput(
+            decision_type="candidate_exact",
+            selected_candidate_id=package.preferred_candidate_id,
+            alternative_count=None,
+            count_confidence="high",
+            count_manual_review_required=False,
+            count_reasoning_summary=(
+                "The stronger extractable SPS-spectrum cohort count is therefore 7, but cand01 (7) is not exact. "
+                "Since no listed candidate exactly matches the explicit count, a bounded alternative is warranted."
+            ),
+            evidence=[
+                CountEvidenceItem(
+                    quote="Group 1 consisted of seven patients with clinical features and neurophysiological evidence of SPS.",
+                    page=2,
+                    section="methods",
+                    supports="Explicit SPS cohort size is 7.",
+                )
+            ],
+        )
+        flags, worst = run_validators(package, decision)
+        self.assertIn("COUNT_REASONING_DECISION_TYPE_CONTRADICTION", flags)
+        self.assertEqual(worst, Severity.REJECT)
+
+    def test_validator_rejects_confident_control_group_subgroup_without_review(self) -> None:
+        package = make_710_package()
+        decision = LLMCountDecisionOutput(
+            decision_type="bounded_alternative",
+            selected_candidate_id=None,
+            alternative_count=4,
+            count_confidence="medium",
+            count_manual_review_required=False,
+            count_reasoning_summary="The abstract identifies four stiff-person syndrome patients in the mixed cohort.",
+            evidence=[
+                CountEvidenceItem(
+                    quote=(
+                        "These 12 control patients with other diseases developed a broader spectrum of symptoms "
+                        "probably indicative of coexisting autoimmune disorders: six had encephalitis with seizures, "
+                        "four had stiff-person syndrome, and two had opsoclonus-myoclonus."
+                    ),
+                    page=1,
+                    section="abstract",
+                    supports="Mixed cohort includes four SPS patients, but they come from a control subgroup.",
+                )
+            ],
+        )
+        flags, worst = run_validators(package, decision)
+        self.assertIn("COUNT_SPS_STATUS_UNCERTAIN", flags)
         self.assertEqual(worst, Severity.REJECT)
 
     def test_adjudicated_count_row_uses_selected_candidate(self) -> None:

@@ -140,6 +140,18 @@ DIRECT_SPS_COHORT_RE = re.compile(
     rf"\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
     re.IGNORECASE,
 )
+NAMED_SPS_COHORT_RE = re.compile(
+    rf"\b(?:group|cohort|arm|series)\s*(?:\d+|[ivx]+)?\b[\s\S]{{0,60}}?"
+    rf"(?:consisted\s+of|comprised|included|contained|enrolled|described)\s+"
+    rf"(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\b[\s\S]{{0,160}}?"
+    rf"\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
+)
+TABLE_SPS_COHORT_RE = re.compile(
+    rf"\btable\s+\d+\b[\s\S]{{0,80}}?\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\b"
+    rf"[\s\S]{{0,120}}?\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
+)
 DIRECT_SPS_COHORT_POSITIVE_MARKERS = (
     "we report",
     "we describe",
@@ -153,6 +165,24 @@ DIRECT_SPS_COHORT_NEGATIVE_MARKERS = (
     "screening cohort",
     "identified in a retrospective cohort",
     "samples were also identified",
+)
+MIXED_DIAGNOSIS_SUBGROUP_CONTEXT_MARKERS = (
+    "broader spectrum of symptoms",
+    "coexisting autoimmune disorders",
+    "control patients",
+    "control group",
+    "disease control groups",
+    "were classified as",
+)
+CONTROL_GROUP_UNCERTAINTY_MARKERS = (
+    "control patients",
+    "healthy controls",
+    "disease control groups",
+)
+CONTROL_GROUP_SPS_CONTEXT_RE = re.compile(
+    rf"\b(?:control patients?|healthy controls?|disease control groups?)\b"
+    rf"[\s\S]{{0,260}}?\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
 )
 EXPLICIT_PATIENT_SPS_ACTION_RE = re.compile(
     rf"\b(?:diagnosed\s+with|treated\s+for|had|has|with|affected\s+by|who\s+had)\b[\s\S]{{0,80}}?"
@@ -325,6 +355,31 @@ def _extract_direct_sps_cohort_signal(text: str) -> SubgroupSignal | None:
     return best_signal
 
 
+def _extract_named_sps_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for unit in _raw_evidence_units(text):
+        normalized = normalize_text(unit)
+        if any(marker in normalized for marker in DIRECT_SPS_COHORT_NEGATIVE_MARKERS):
+            continue
+        for pattern in (NAMED_SPS_COHORT_RE, TABLE_SPS_COHORT_RE):
+            for match in pattern.finditer(unit):
+                count = parse_count_token(match.group("count"))
+                if count <= 0:
+                    continue
+                score = count + (20 if pattern is NAMED_SPS_COHORT_RE else 10)
+                signal = SubgroupSignal(
+                    count=count,
+                    count_basis="diagnosis_specific_named_cohort_count",
+                    count_confidence="high",
+                    evidence_units=(unit[:420],),
+                )
+                if score > best_score:
+                    best_score = score
+                    best_signal = signal
+    return best_signal
+
+
 def _extract_group_breakdown_subgroup_signal(text: str) -> SubgroupSignal | None:
     cleaned = _clean_signal_text(text)
     if not cleaned:
@@ -380,6 +435,37 @@ def _extract_group_breakdown_subgroup_signal(text: str) -> SubgroupSignal | None
             cluster = []
         cluster.append(item)
     _finalise_cluster(cluster)
+    return best_signal
+
+
+def _extract_mixed_diagnosis_subgroup_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for unit in _raw_evidence_units(text):
+        normalized = normalize_text(unit)
+        pairs = _subgroup_pairs_from_unit(unit)
+        if len(pairs) != 1:
+            continue
+        if not (
+            any(marker in normalized for marker in MIXED_DIAGNOSIS_SUBGROUP_CONTEXT_MARKERS)
+            or normalized.count(" had ") >= 2
+            or normalized.count(" as ") >= 2
+        ):
+            continue
+        _, count = pairs[0]
+        if count <= 0:
+            continue
+        confidence = "medium" if any(marker in normalized for marker in CONTROL_GROUP_UNCERTAINTY_MARKERS) else "high"
+        score = count + (20 if confidence == "high" else 5)
+        signal = SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_mixed_diagnosis_subgroup_count",
+            count_confidence=confidence,
+            evidence_units=(unit[:420],),
+        )
+        if score > best_score:
+            best_score = score
+            best_signal = signal
     return best_signal
 
 
@@ -456,7 +542,9 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
     combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
     for extractor in (
         _extract_direct_sps_cohort_signal,
+        _extract_named_sps_cohort_signal,
         _extract_group_breakdown_subgroup_signal,
+        _extract_mixed_diagnosis_subgroup_signal,
         _extract_explicit_patient_case_signal,
         _extract_patient_label_subgroup_signal,
     ):
@@ -490,15 +578,37 @@ def extract_sps_status_uncertainty_signals(
             seen.add(normalized_snippet)
             signals.append(snippet)
 
+    for match in CONTROL_GROUP_SPS_CONTEXT_RE.finditer(cleaned_combined_text):
+        snippet_start = max(0, match.start() - 80)
+        snippet_end = min(len(cleaned_combined_text), match.end() + 80)
+        snippet = cleaned_combined_text[snippet_start:snippet_end][:420]
+        normalized_snippet = normalize_text(snippet)
+        if normalized_snippet and normalized_snippet not in seen:
+            seen.add(normalized_snippet)
+            signals.append(snippet)
+
     for unit in _raw_evidence_units(combined_text):
-        if unit in subgroup_units:
-            continue
-        if unit.lower().startswith("keywords:"):
-            continue
         normalized = normalize_text(_clean_signal_text(unit))
         if not normalized or normalized in seen:
             continue
+        has_control_group_uncertainty = bool(
+            LLM_EVIDENCE_SPS_RE.search(normalized)
+            and any(marker in normalized for marker in CONTROL_GROUP_UNCERTAINTY_MARKERS)
+        )
+        mixed_context_uncertainty = bool(
+            LLM_EVIDENCE_SPS_RE.search(normalized)
+            and sum(1 for marker in NON_SPS_MIXED_DIAGNOSIS_MARKERS if marker in normalized) >= 2
+            and len(_subgroup_pairs_from_unit(unit)) < 2
+        )
+        if unit in subgroup_units and not (has_control_group_uncertainty or mixed_context_uncertainty):
+            continue
+        if unit.lower().startswith("keywords:"):
+            continue
         if SPS_STATUS_SUBSET_UNCERTAINTY_RE.search(unit) or SPS_STATUS_SINGLE_PATIENT_OCR_UNCERTAINTY_RE.search(unit):
+            seen.add(normalized)
+            signals.append(unit[:420])
+            continue
+        if has_control_group_uncertainty:
             seen.add(normalized)
             signals.append(unit[:420])
             continue
@@ -967,7 +1077,23 @@ def _dedupe_candidates(candidates: list[CountCandidate]) -> list[CountCandidate]
     return _with_candidate_ids(ordered)
 
 
-def _fallback_candidate_id(candidates: list[CountCandidate]) -> str:
+def _fallback_candidate_id(
+    candidates: list[CountCandidate],
+    *,
+    explicit_sps_subgroup_count: int | None = None,
+) -> str:
+    if explicit_sps_subgroup_count is not None:
+        explicit_subgroup_candidates = [
+            candidate
+            for candidate in candidates
+            if candidate.proposed_count == explicit_sps_subgroup_count
+            and candidate.count_basis.startswith("diagnosis_specific_")
+        ]
+        if explicit_subgroup_candidates:
+            explicit_subgroup_candidates.sort(
+                key=lambda candidate: (-candidate.score, candidate.manual_review_required, candidate.count_basis)
+            )
+            return explicit_subgroup_candidates[0].candidate_id
     subgroup_candidates = [candidate for candidate in candidates if candidate.count_basis.startswith("diagnosis_specific_")]
     if subgroup_candidates:
         subgroup_candidates.sort(key=lambda candidate: (-candidate.score, candidate.proposed_count))
@@ -1207,7 +1333,10 @@ def build_case_count_candidate_package(
             )
 
     resolved_candidates = _dedupe_candidates(candidates)
-    fallback_candidate_id = _fallback_candidate_id(resolved_candidates)
+    fallback_candidate_id = _fallback_candidate_id(
+        resolved_candidates,
+        explicit_sps_subgroup_count=None if subgroup_signal is None else subgroup_signal.count,
+    )
     llm_routing_recommended, llm_reason = _llm_routing_reason(
         resolved_candidates,
         preferred_text_source=preferred_text_source,

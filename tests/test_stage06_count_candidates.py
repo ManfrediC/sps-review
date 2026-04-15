@@ -261,6 +261,84 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertIn(1, {candidate.proposed_count for candidate in package.candidates})
         self.assertIn("potential sps-status uncertainty signals", package.llm_evidence_text.lower())
 
+    def test_candidate_package_extracts_named_sps_cohort_from_group_definition(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "556",
+                "Title": "GAD antibody-associated neurological illness and its relationship to gluten sensitivity",
+                "Authors": "Hadjivassiliou, M",
+                "Abstract": (
+                    "Results - Six of seven (86%) patients with SPS were positive for anti-GAD, mean titre 109 U/ml. "
+                    "This compared with 9/90 patients with idiopathic sporadic ataxia, 16/40 patients with gluten ataxia, "
+                    "and 6/10 patients with type 1 diabetes only."
+                ),
+            },
+            text_record={"paper_id": "556", "_path": "data/extraction_json/text/556.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Group 1 consisted of seven patients with clinical features and neurophysiological evidence of SPS. "
+                            "Table 2 Evidence of gluten sensitivity with or without enteropathy in seven patients with stiff-person syndrome."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "556.json",
+            source_row={
+                "source_category": "case_series_or_multi_case",
+                "source_subtype": "case_series",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 7)
+        self.assertEqual(package.fallback_candidate().proposed_count, 7)
+        self.assertIn(7, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn(
+            "diagnosis_specific_named_cohort_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_marks_control_group_subgroup_counts_as_uncertain(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "710",
+                "Title": (
+                    "Encephalitis with refractory seizures, status epilepticus, and antibodies to the GABAA receptor: "
+                    "a case series, characterisation of the antigen, and analysis of the effects of antibodies."
+                ),
+                "Authors": "Petit-Pedrol, Mar",
+                "Abstract": (
+                    "These 12 patients developed a broader spectrum of symptoms probably indicative of coexisting autoimmune disorders: "
+                    "six had encephalitis with seizures, four had stiff-person syndrome, and two had opsoclonus-myoclonus."
+                ),
+            },
+            text_record={"paper_id": "710", "_path": "data/extraction_json/text/710.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "These 12 control patients with other diseases developed a broader spectrum of symptoms probably indicative "
+                            "of coexisting autoimmune disorders: six had encephalitis with seizures, four had stiff-person syndrome, "
+                            "and two had opsoclonus-myoclonus."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "710.json",
+            source_row={
+                "source_category": "case_series_or_multi_case",
+                "source_subtype": "case_series",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 4)
+        self.assertEqual(package.fallback_candidate().proposed_count, 4)
+        self.assertTrue(package.sps_status_uncertainty_signals)
+        self.assertIn(
+            "diagnosis_specific_mixed_diagnosis_subgroup_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+        self.assertTrue(any("control" in signal.lower() for signal in package.sps_status_uncertainty_signals))
+
     def test_candidate_package_extracts_single_sps_case_from_mixed_two_patient_abstract(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={

@@ -24,6 +24,18 @@ REASONING_MATCHED_CANDIDATE_RE = re.compile(
     r"\b(?:matching|matches|match(?:es)?|selected|select|choose|chose|prefers?|preferred)\s+candidate\s+(?P<id>cand\d+)\b",
     re.IGNORECASE,
 )
+REASONING_BOUNDED_ALTERNATIVE_RE = re.compile(
+    r"\b(?:"
+    r"no listed candidate is exact|"
+    r"no listed candidate exactly matches|"
+    r"requires? a bounded alternative|"
+    r"bounded alternative is warranted|"
+    r"bounded alternative warranted|"
+    r"candidate\s+cand\d+\s+\(\d+\)\s+is\s+not\s+exact|"
+    r"not exact"
+    r")\b",
+    re.IGNORECASE,
+)
 
 MECHANICAL_REJECT_FLAGS = frozenset(
     {
@@ -101,14 +113,7 @@ def check_reasoning_consistent_with_decision_type(
     decision: LLMCountDecisionOutput,
 ) -> ValidatorResult:
     summary = str(decision.count_reasoning_summary or "").lower()
-    if decision.decision_type == "candidate_exact" and any(
-        marker in summary
-        for marker in (
-            "no listed candidate is exact",
-            "requires a bounded alternative",
-            "require a bounded alternative",
-        )
-    ):
+    if decision.decision_type == "candidate_exact" and REASONING_BOUNDED_ALTERNATIVE_RE.search(summary):
         return ValidatorResult(Severity.REJECT, "COUNT_REASONING_DECISION_TYPE_CONTRADICTION")
     return ValidatorResult(Severity.PASS, "")
 
