@@ -202,6 +202,28 @@ Run:
 streamlit run src/validation/review_stage06_count_app.py
 ```
 
+### `bootstrap_stage06_gold_json.py`
+
+Builds a stage-06 per-paper gold JSON corpus from the reviewed cumulative gold CSV.
+
+It:
+- reads reviewed rows from `qa/validation/source_categorisation/gold_standard/04_categorisation_gold_standard.csv`
+- writes one reviewed stage-06-style JSON per active paper under `qa/validation/source_categorisation/gold_standard/stage06_count_gold/papers/`
+- writes a manifest with active, excluded, and conflict statuses
+- embeds the reviewed truth together with registry snapshots and any attached historical stage-06 run artefacts that can still be resolved
+
+Run:
+
+```bash
+python src/validation/bootstrap_stage06_gold_json.py
+```
+
+Preview the manifest summary without writing files:
+
+```bash
+python src/validation/bootstrap_stage06_gold_json.py --dry-run
+```
+
 ### `update_trimming_review_outputs.py`
 
 Refreshes stage-05 review artefacts after a general code patch and rerun of the batch outputs.
