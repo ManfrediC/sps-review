@@ -105,6 +105,7 @@ def adjudicated_count_row(
     run_dir: Path | None = None,
     count_version: str = "hybrid_v1_gpt5.4",
     candidate_json_path: str = "",
+    adviser_notes: str = "",
 ) -> dict[str, str]:
     preferred_candidate = package.preferred_candidate()
     fallback_candidate = package.fallback_candidate()
@@ -115,6 +116,7 @@ def adjudicated_count_row(
             package,
             model=model,
             api_key=api_key,
+            adviser_notes=adviser_notes,
         )
         validator_results = collect_validator_results(package, decision)
         validator_flags, worst = summarise_validator_results(validator_results)

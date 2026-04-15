@@ -67,6 +67,7 @@ def adjudicate_count_package(
     temperature: float = DEFAULT_TEMPERATURE,
     max_output_tokens: int = DEFAULT_MAX_OUTPUT_TOKENS,
     api_key: str | None = None,
+    adviser_notes: str = "",
 ) -> tuple[LLMCountDecisionOutput, str]:
     client = OpenAI(api_key=api_key or os.environ.get("OPENAI_API_KEY"))
     response = client.responses.parse(
@@ -74,7 +75,7 @@ def adjudicate_count_package(
         temperature=temperature,
         max_output_tokens=max_output_tokens,
         instructions=SYSTEM_PROMPT,
-        input=[{"role": "user", "content": format_candidate_package_for_llm(package)}],
+        input=[{"role": "user", "content": format_candidate_package_for_llm(package, adviser_notes=adviser_notes)}],
         text_format=LLMCountDecisionOutput,
     )
     parsed = response.output_parsed
