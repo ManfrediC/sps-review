@@ -379,6 +379,56 @@ After each run, it also refreshes `data/references/paper_artifact_registry.csv` 
 python src/pipelines/06_extract_sps_case_counts.py
 ```
 
+## `06_extract_sps_case_counts_LLM.py`
+
+This script is the QA-only calibration runner for an alternative stage-06 workflow that combines:
+
+- a local Ollama first pass using `gemma4:e4b`, and
+- a paid OpenAI adjudication pass using `gpt-5.4` on every selected row.
+
+It deliberately does not publish canonical outputs. Instead, it writes calibration artefacts so the local-model signal can be compared against the existing stage-06 GPT adjudication flow before any production switch is considered.
+
+It:
+
+- reads the same preferred proceedings-ready/full-text inputs as the current stage-06 script,
+- reuses the existing deterministic stage-06 candidate package and evidence-window builder,
+- sends a derived evidence pack to the local model rather than the raw OCR JSON,
+- records the local model's count, evidence span, granularity, confidence, review flag, and optional competing possibilities,
+- passes every row through GPT-5.4 during calibration,
+- appends local-model provenance and comparison fields onto the stage-06 count row, and
+- writes non-canonical outputs under:
+  - `results/stage06_count_llm_runs/{run_id}/`
+  - `qa/validation/stage06_llm/{run_id}.csv`
+
+The existing deterministic hard gates are preserved. Review/basic-science rows, single-case constraints, explicit SPS subgroup caps, and SPS-status uncertainty signals remain active guardrails around the model outputs.
+
+Paid GPT calls are blocked unless `--allow-paid-run` is passed explicitly.
+
+### Requirements
+
+- Ollama running locally and serving `gemma4:e4b`
+- `OPENAI_API_KEY` available in the shell environment
+
+### Run
+
+Estimate the selected run without model calls:
+
+```bash
+python src/pipelines/06_extract_sps_case_counts_LLM.py --estimate-only
+```
+
+Run a focused calibration subset:
+
+```bash
+python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --paper-id 214 --paper-id 724
+```
+
+Write the QA CSV to an explicit path:
+
+```bash
+python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --output-path qa/validation/stage06_llm/manual_slice.csv --limit 10
+```
+
 ## `07_split_case_series.py`
 
 This script prepares reviewed multi-case papers for individual-level LangExtract.

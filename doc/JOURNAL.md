@@ -1,3 +1,48 @@
+## 2026-04-15
+
+### Stage-06 local Gemma calibration runner
+
+- Added a new QA-only alternative stage-06 runner:
+  - `src/pipelines/06_extract_sps_case_counts_LLM.py`
+- The new runner keeps the existing deterministic stage-06 candidate packaging and safety rails, then adds:
+  - a local Ollama first pass using `gemma4:e4b`
+  - a GPT-5.4 adjudication pass on every selected row during calibration
+- The local model now receives a derived evidence pack rather than the raw OCR JSON so the prompt stays compact and inspectable.
+- The GPT adjudicator can now optionally receive advisory notes without changing the existing canonical stage-06 flow:
+  - `src/pipelines/stage06_counting/prepare.py`
+  - `src/pipelines/stage06_counting/classify.py`
+  - `src/pipelines/stage06_counting/controller.py`
+
+### Local-model support modules
+
+- Added the local stage-06 support layer under `src/pipelines/stage06_counting/`:
+  - `local_models.py`
+  - `local_prepare.py`
+  - `local_ollama.py`
+  - `local_validate.py`
+- The local layer:
+  - formats a compact evidence pack for Gemma
+  - calls Ollama with `think=false`
+  - tolerantly extracts JSON from plain or fenced responses
+  - validates the local count against key deterministic guardrails
+- Local parse failures and guardrail conflicts are recorded as artefacts rather than silently discarded.
+
+### QA outputs and docs
+
+- Added the stage-06 calibration output guide:
+  - `qa/validation/stage06_llm/README.md`
+- Updated `src/pipelines/README.md` with a dedicated section for `06_extract_sps_case_counts_LLM.py`.
+- The new runner writes:
+  - per-run artefacts under `results/stage06_count_llm_runs/{run_id}/`
+  - non-canonical comparison CSVs under `qa/validation/stage06_llm/`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_local_counting.py tests/test_stage06_llm_counting.py tests/test_stage06_count_candidates.py tests/test_06_extract_sps_case_counts_LLM.py -q`
+- Result:
+  - `38 passed`
+
 ## 2026-04-14
 
 ### Stage-05 officialisation around the LLM workflow
