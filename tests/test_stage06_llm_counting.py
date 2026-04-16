@@ -6,6 +6,7 @@ from unittest import mock
 
 from src.pipelines._sps_case_count_registry import build_case_count_candidate_package
 from src.pipelines.stage06_counting.controller import adjudicated_count_row
+from src.pipelines.stage06_counting.classify import SYSTEM_PROMPT
 from src.pipelines.stage06_counting.models import CountEvidenceItem, LLMCountDecisionOutput
 from src.pipelines.stage06_counting.prepare import format_candidate_package_for_llm
 from src.pipelines.stage06_counting.validate import Severity, run_validators
@@ -197,6 +198,14 @@ def make_12584_package():
 
 
 class TestStage06LlmCounting(unittest.TestCase):
+    def test_llm_system_prompt_defines_spsd_scope(self) -> None:
+        self.assertIn("classic stiff person syndrome (SPS)", SYSTEM_PROMPT)
+        self.assertIn("partial or focal SPS, including stiff limb syndrome", SYSTEM_PROMPT)
+        self.assertIn("SPS-plus", SYSTEM_PROMPT)
+        self.assertIn("jerking SPS", SYSTEM_PROMPT)
+        self.assertIn("progressive encephalomyelitis with rigidity and myoclonus (PERM)", SYSTEM_PROMPT)
+        self.assertIn("Stiff man syndrome (SMS)", SYSTEM_PROMPT)
+
     def test_llm_prompt_includes_generic_evidence_pack(self) -> None:
         package = make_package()
         prompt = format_candidate_package_for_llm(package)

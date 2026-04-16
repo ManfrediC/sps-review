@@ -6,6 +6,7 @@ from unittest import mock
 
 from src.pipelines._sps_case_count_registry import build_case_count_candidate_package
 from src.pipelines.stage06_counting.local_ollama import (
+    SYSTEM_PROMPT,
     ensure_ollama_model_available,
     parse_local_count_output,
     run_local_count_package,
@@ -247,6 +248,14 @@ def make_late_count_package():
 
 
 class TestStage06LocalCounting(unittest.TestCase):
+    def test_local_system_prompt_defines_spsd_scope(self) -> None:
+        self.assertIn("classic stiff person syndrome (SPS)", SYSTEM_PROMPT)
+        self.assertIn("partial or focal SPS, including stiff limb syndrome", SYSTEM_PROMPT)
+        self.assertIn("SPS-plus", SYSTEM_PROMPT)
+        self.assertIn("jerking SPS", SYSTEM_PROMPT)
+        self.assertIn("progressive encephalomyelitis with rigidity and myoclonus (PERM)", SYSTEM_PROMPT)
+        self.assertIn("Stiff man syndrome (SMS)", SYSTEM_PROMPT)
+
     def test_local_prompt_includes_evidence_and_candidates(self) -> None:
         prompt = format_candidate_package_for_local_llm(make_package())
         self.assertIn("## Deterministic anchors", prompt)

@@ -15,6 +15,15 @@ DEFAULT_MAX_OUTPUT_TOKENS = 1600
 SYSTEM_PROMPT = """\
 You adjudicate extractable SPS-spectrum case counts for a systematic review.
 
+For this review, stiff person spectrum disorder (SPSD) includes:
+- classic stiff person syndrome (SPS)
+- partial or focal SPS, including stiff limb syndrome
+- SPS-plus
+- jerking SPS
+- progressive encephalomyelitis with rigidity and myoclonus (PERM)
+
+`Stiff man syndrome (SMS)` is an older designation for SPS.
+
 The paper has already been routed into a fixed source category. Do not reclassify the paper.
 If the source category is `unclear_manual_review`, treat that as uncertainty in the upstream routing rather than evidence that the paper has zero extractable cases.
 

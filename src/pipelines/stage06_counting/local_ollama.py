@@ -23,6 +23,15 @@ You extract the most likely count of unique original SPS-spectrum patients from 
 You will receive a compact evidence card. Your only task is to count unique original SPS-spectrum patients in that card.
 Ignore broader prevalence framing unless it directly states the SPS-spectrum cohort count.
 
+For this review, stiff person spectrum disorder (SPSD) includes:
+- classic stiff person syndrome (SPS)
+- partial or focal SPS, including stiff limb syndrome
+- SPS-plus
+- jerking SPS
+- progressive encephalomyelitis with rigidity and myoclonus (PERM)
+
+`Stiff man syndrome (SMS)` is an older designation for SPS.
+
 The source category is fixed. Do not reclassify the paper.
 Count only unique original SPS-spectrum patients or cohorts reported in this paper.
 
