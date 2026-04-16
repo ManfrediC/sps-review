@@ -1,0 +1,78 @@
+{
+  "generated_at_utc": "2026-04-16T08:10:00+00:00",
+  "gold30": {
+    "selection_path": "qa/validation/stage06_llm/stage06_gold30_balanced_20260416.selection.json",
+    "current_output_path": "qa/validation/stage06_llm/stage06_gold30_current_iter1_20260416.csv",
+    "llm_local_output_path": "qa/validation/stage06_llm/stage06_gold30_llm_local_iter2_20260416.csv",
+    "llm_output_path": "qa/validation/stage06_llm/stage06_gold30_llm_iter2_20260416.csv",
+    "current_exact": 26,
+    "current_total": 30,
+    "current_silent_wrong": 1,
+    "current_manual_review": 8,
+    "llm_exact": 28,
+    "llm_total": 30,
+    "llm_silent_wrong": 0,
+    "llm_manual_review": 10
+  },
+  "gold20": {
+    "selection_path": "qa/validation/stage06_llm/stage06_gold20_round2_20260416.selection.json",
+    "current_output_path": "qa/validation/stage06_llm/stage06_gold20_current_round2_20260416.csv",
+    "llm_local_output_path": "qa/validation/stage06_llm/stage06_gold20_llm_local_round2b_20260416.csv",
+    "llm_output_path": "qa/validation/stage06_llm/stage06_gold20_llm_round2_20260416.csv",
+    "current_exact": 17,
+    "current_total": 20,
+    "current_silent_wrong": 1,
+    "current_manual_review": 8,
+    "llm_exact": 17,
+    "llm_total": 20,
+    "llm_silent_wrong": 1,
+    "llm_manual_review": 8
+  },
+  "combined50": {
+    "current_exact": 43,
+    "current_total": 50,
+    "current_silent_wrong": 2,
+    "current_manual_review": 16,
+    "llm_exact": 45,
+    "llm_total": 50,
+    "llm_silent_wrong": 1,
+    "llm_manual_review": 18
+  },
+  "remaining_shared_failures": [
+    {
+      "paper_id": "12137",
+      "gold_count": 10,
+      "current_count": 1,
+      "llm_count": 1,
+      "notes": "Silent wrong in both workflows on the holdout set."
+    },
+    {
+      "paper_id": "560",
+      "gold_count": 0,
+      "current_count": 1,
+      "llm_count": 1,
+      "notes": "Reviewed but still overcounted in both workflows."
+    },
+    {
+      "paper_id": "270",
+      "gold_count": 576,
+      "current_count": 76,
+      "llm_count": 76,
+      "notes": "Large undercount in both workflows, but both route to review."
+    },
+    {
+      "paper_id": "184",
+      "gold_count": 0,
+      "current_count": 20,
+      "llm_count": 20,
+      "notes": "Persisting GPT override issue from the 30-paper set."
+    },
+    {
+      "paper_id": "629",
+      "gold_count": 1,
+      "current_count": 0,
+      "llm_count": 0,
+      "notes": "Persisting unresolved undercount from the 30-paper set."
+    }
+  ]
+}

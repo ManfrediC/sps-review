@@ -49,3 +49,15 @@ python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --paper-
 - These outputs are QA artefacts only and should not replace `data/references/source_sps_case_count_registry.csv` directly.
 - The local model is advisory during calibration. GPT-5.4 still runs on every row in this workflow.
 - If the local model fails to parse or violates a deterministic guardrail, the QA row records that status and still continues to GPT.
+
+## Benchmarks
+
+- `stage06_gold30_balanced_20260416.selection.json` records the reviewed 30-paper benchmark cohort used for the first comparison round.
+- `stage06_gold30_current_iter1_20260416.csv` is the current heuristic-plus-GPT workflow on that cohort after the shared judgement patch.
+- `stage06_gold30_llm_local_iter2_20260416.csv` is the local-only Gemma checkpoint used before the paid rerun.
+- `stage06_gold30_llm_iter2_20260416.csv` is the final Gemma-plus-GPT result on that cohort after the Gemma input/output fixes.
+- `stage06_gold20_round2_20260416.selection.json` records the additional 20-paper reviewed-gold holdout cohort.
+- `stage06_gold20_current_round2_20260416.csv` is the current heuristic-plus-GPT workflow on that holdout.
+- `stage06_gold20_llm_local_round2b_20260416.csv` is the final local-only Gemma checkpoint on the holdout after count-focused evidence packing.
+- `stage06_gold20_llm_round2_20260416.csv` is the final Gemma-plus-GPT result on that holdout.
+- `stage06_benchmark_summary_20260416.json` and `.md` summarise the final 30-paper, 20-paper, and combined 50-paper scorecards.
