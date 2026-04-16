@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.001579+00:00",
+  "generated_at_utc": "2026-04-16T20:31:37.830095+00:00",
   "paper_id": "75",
   "count_row": {
     "paper_id": "75",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\75.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\75.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\75.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\75.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\75.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\75.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\75.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\75.json",
     "result_payload": {
       "paper_id": "75",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "high",
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly a single case report of stiff-man syndrome and repeatedly describes one 39-year-old woman as the patient. Other numbers in the text refer to prior literature cases, not additional original patients in this paper.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of stiff-man syndrome describing one 39-year-old woman with diagnosis-supported SPS-spectrum disease. The paper repeatedly frames itself as an illustrative case report and provides individual clinical details for only one patient.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\75.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\75.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\75.json",
-        "counted_at_utc": "2026-04-16T14:13:45.376820+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\75.json",
+        "counted_at_utc": "2026-04-16T18:59:59.359839+00:00"
       },
       "model_count_row": {
         "paper_id": "75",
@@ -192,12 +193,13 @@
         "count_confidence": "high",
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly a single case report of stiff-man syndrome and repeatedly describes one 39-year-old woman as the patient. Other numbers in the text refer to prior literature cases, not additional original patients in this paper.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of stiff-man syndrome describing one 39-year-old woman with diagnosis-supported SPS-spectrum disease. The paper repeatedly frames itself as an illustrative case report and provides individual clinical details for only one patient.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\75.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\75.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\75.json",
-        "counted_at_utc": "2026-04-16T14:13:45.376820+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\75.json",
+        "counted_at_utc": "2026-04-16T18:59:59.359839+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\75.json",
@@ -282,7 +284,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "75",
@@ -297,25 +302,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper is explicitly a single case report of stiff-man syndrome and repeatedly describes one 39-year-old woman as the patient. Other numbers in the text refer to prior literature cases, not additional original patients in this paper.",
+        "count_reasoning_summary": "This is a single-patient case report of stiff-man syndrome describing one 39-year-old woman with diagnosis-supported SPS-spectrum disease. The paper repeatedly frames itself as an illustrative case report and provides individual clinical details for only one patient.",
         "evidence": [
           {
             "quote": "This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain",
             "page": null,
             "section": "abstract",
-            "supports": "The paper reports one original SPS-spectrum patient."
+            "supports": "Supports that the paper reports one original SPS-spectrum patient."
           },
           {
             "quote": "this case report describes a patient who presented to the ed with stiff-man syndrome",
             "page": null,
             "section": "introduction/case report lead-in",
-            "supports": "Confirms the article is centered on a single patient with stiff-man syndrome."
+            "supports": "Supports that the article is a single case report of one patient with stiff-man syndrome."
           },
           {
             "quote": "a 39-year-old black woman who had back pain was carried into the ed by two relatives.",
             "page": null,
             "section": "case report history",
-            "supports": "Identifies the single unique patient described in the report."
+            "supports": "Supports that the detailed original clinical data concern one unique individual patient."
           }
         ]
       }
@@ -329,22 +334,22 @@
           "quote": "This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain",
           "page": null,
           "section": "abstract",
-          "supports": "The paper reports one original SPS-spectrum patient."
+          "supports": "Supports that the paper reports one original SPS-spectrum patient."
         },
         {
           "quote": "this case report describes a patient who presented to the ed with stiff-man syndrome",
           "page": null,
           "section": "introduction/case report lead-in",
-          "supports": "Confirms the article is centered on a single patient with stiff-man syndrome."
+          "supports": "Supports that the article is a single case report of one patient with stiff-man syndrome."
         },
         {
           "quote": "a 39-year-old black woman who had back pain was carried into the ed by two relatives.",
           "page": null,
           "section": "case report history",
-          "supports": "Identifies the single unique patient described in the report."
+          "supports": "Supports that the detailed original clinical data concern one unique individual patient."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\75.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\75.json",
       "challenge_json_path": ""
     }
   }

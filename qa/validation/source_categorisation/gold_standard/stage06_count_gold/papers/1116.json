@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.982687+00:00",
+  "generated_at_utc": "2026-04-16T20:31:39.940930+00:00",
   "paper_id": "1116",
   "count_row": {
     "paper_id": "1116",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1116.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1116.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1116.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1116.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\1116.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1116.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\1116.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1116.json",
     "result_payload": {
       "paper_id": "1116",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "low",
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The abstract reports a cohort of six GlyR-antibody-positive children, but only one is explicitly described as having features of PERM, which is within the SPS spectrum. The remaining children are described mainly by seizures, cognitive/behavioural changes, tremor, and gait abnormalities, so the SPS-spectrum subset cannot be safely counted from the provided text.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The abstract reports an original cohort of 6 GlyR-antibody-positive children, but only one child is explicitly described as having features of PERM, while the others are described mainly by seizures/cognitive-behavioural syndromes. Because the paper does not explicitly state that all 6 had SPS-spectrum disorders, the extractable SPS-spectrum count cannot be resolved safely from the abstract alone.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "6",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1116.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1116.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "6",
         "llm_count_confidence": "low",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1116.json",
-        "counted_at_utc": "2026-04-16T14:04:48.830886+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1116.json",
+        "counted_at_utc": "2026-04-16T18:52:19.592200+00:00"
       },
       "model_count_row": {
         "paper_id": "1116",
@@ -192,12 +193,13 @@
         "count_confidence": "low",
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The abstract reports a cohort of six GlyR-antibody-positive children, but only one is explicitly described as having features of PERM, which is within the SPS spectrum. The remaining children are described mainly by seizures, cognitive/behavioural changes, tremor, and gait abnormalities, so the SPS-spectrum subset cannot be safely counted from the provided text.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The abstract reports an original cohort of 6 GlyR-antibody-positive children, but only one child is explicitly described as having features of PERM, while the others are described mainly by seizures/cognitive-behavioural syndromes. Because the paper does not explicitly state that all 6 had SPS-spectrum disorders, the extractable SPS-spectrum count cannot be resolved safely from the abstract alone.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "6",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1116.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1116.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "6",
         "llm_count_confidence": "low",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1116.json",
-        "counted_at_utc": "2026-04-16T14:04:48.830886+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1116.json",
+        "counted_at_utc": "2026-04-16T18:52:19.592200+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\1116.json",
@@ -284,7 +286,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "1116",
@@ -299,25 +304,25 @@
         "alternative_count": null,
         "count_confidence": "low",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The abstract reports a cohort of six GlyR-antibody-positive children, but only one is explicitly described as having features of PERM, which is within the SPS spectrum. The remaining children are described mainly by seizures, cognitive/behavioural changes, tremor, and gait abnormalities, so the SPS-spectrum subset cannot be safely counted from the provided text.",
+        "count_reasoning_summary": "The abstract reports an original cohort of 6 GlyR-antibody-positive children, but only one child is explicitly described as having features of PERM, while the others are described mainly by seizures/cognitive-behavioural syndromes. Because the paper does not explicitly state that all 6 had SPS-spectrum disorders, the extractable SPS-spectrum count cannot be resolved safely from the abstract alone.",
         "evidence": [
           {
-            "quote": "Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified",
+            "quote": "Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified (2 London, 1 Oxford, and 3 Australia).",
             "page": null,
-            "section": "abstract/results",
-            "supports": "Shows the full original pediatric GlyR-antibody cohort size is 6, but this is not explicitly an SPS-spectrum cohort."
+            "section": "Results/abstract",
+            "supports": "There is an original cohort of 6 pediatric GlyR-Ab-positive patients in this paper."
           },
           {
             "quote": "The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM.",
             "page": null,
-            "section": "abstract/results",
-            "supports": "Only one patient is explicitly identified with an SPS-spectrum diagnosis/features (PERM); the others are not clearly classifiable as SPS-spectrum cases."
+            "section": "Results/abstract",
+            "supports": "Only one patient is explicitly identified with an SPS-spectrum diagnosis/features (PERM); the remainder are not clearly confirmed as SPS-spectrum cases."
           },
           {
             "quote": "Conclusion(s): The paediatric phenotype is predominated by female sex, seizures, and, where PERM occurs, it is associated with additional features.",
             "page": null,
-            "section": "abstract/conclusions",
-            "supports": "Confirms PERM occurred only as a subset within this broader GlyR-antibody pediatric phenotype rather than indicating all 6 had SPS-spectrum disorders."
+            "section": "Conclusions/abstract",
+            "supports": "The cohort appears broader than SPS-spectrum alone, with PERM occurring only in a subset rather than all 6 patients."
           }
         ]
       }
@@ -328,25 +333,25 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified",
+          "quote": "Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified (2 London, 1 Oxford, and 3 Australia).",
           "page": null,
-          "section": "abstract/results",
-          "supports": "Shows the full original pediatric GlyR-antibody cohort size is 6, but this is not explicitly an SPS-spectrum cohort."
+          "section": "Results/abstract",
+          "supports": "There is an original cohort of 6 pediatric GlyR-Ab-positive patients in this paper."
         },
         {
           "quote": "The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM.",
           "page": null,
-          "section": "abstract/results",
-          "supports": "Only one patient is explicitly identified with an SPS-spectrum diagnosis/features (PERM); the others are not clearly classifiable as SPS-spectrum cases."
+          "section": "Results/abstract",
+          "supports": "Only one patient is explicitly identified with an SPS-spectrum diagnosis/features (PERM); the remainder are not clearly confirmed as SPS-spectrum cases."
         },
         {
           "quote": "Conclusion(s): The paediatric phenotype is predominated by female sex, seizures, and, where PERM occurs, it is associated with additional features.",
           "page": null,
-          "section": "abstract/conclusions",
-          "supports": "Confirms PERM occurred only as a subset within this broader GlyR-antibody pediatric phenotype rather than indicating all 6 had SPS-spectrum disorders."
+          "section": "Conclusions/abstract",
+          "supports": "The cohort appears broader than SPS-spectrum alone, with PERM occurring only in a subset rather than all 6 patients."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1116.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\1116.json",
       "challenge_json_path": ""
     }
   }

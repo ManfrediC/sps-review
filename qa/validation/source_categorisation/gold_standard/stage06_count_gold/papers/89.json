@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.022853+00:00",
+  "generated_at_utc": "2026-04-16T20:31:37.902635+00:00",
   "paper_id": "89",
   "count_row": {
     "paper_id": "89",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\89.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\89.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\89.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\89.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\89.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\89.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\89.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\89.json",
     "result_payload": {
       "paper_id": "89",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "low",
         "count_basis": "lab_context_no_extractable_count",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper is a lab-focused epitope study using SMS sera, but the provided evidence pack does not contain a clear explicit count of unique original SPS-spectrum patients. The only numeric signal in the candidate list (2) appears to come from a corrupted front-matter excerpt rather than a patient-count statement, while the paper also contains reuse signals suggesting previously described sera/cohorts.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper clearly involves SMS sera, but the provided evidence pack does not give a reliable explicit number of unique original SPS-spectrum patients. There are also multiple signals that the sera/clinical features were previously described, so provenance and extractable case counting remain unresolved.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "lab_context_no_extractable_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\89.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\89.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "0",
         "llm_count_confidence": "low",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\89.json",
-        "counted_at_utc": "2026-04-16T14:02:31.789536+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\89.json",
+        "counted_at_utc": "2026-04-16T18:50:21.296365+00:00"
       },
       "model_count_row": {
         "paper_id": "89",
@@ -192,12 +193,13 @@
         "count_confidence": "low",
         "count_basis": "lab_context_no_extractable_count",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper is a lab-focused epitope study using SMS sera, but the provided evidence pack does not contain a clear explicit count of unique original SPS-spectrum patients. The only numeric signal in the candidate list (2) appears to come from a corrupted front-matter excerpt rather than a patient-count statement, while the paper also contains reuse signals suggesting previously described sera/cohorts.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper clearly involves SMS sera, but the provided evidence pack does not give a reliable explicit number of unique original SPS-spectrum patients. There are also multiple signals that the sera/clinical features were previously described, so provenance and extractable case counting remain unresolved.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "lab_context_no_extractable_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\89.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\89.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "0",
         "llm_count_confidence": "low",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\89.json",
-        "counted_at_utc": "2026-04-16T14:02:31.789536+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\89.json",
+        "counted_at_utc": "2026-04-16T18:50:21.296365+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\89.json",
@@ -241,6 +243,7 @@
         "source_context_adjusted_primary_estimate",
         "distinct_candidate_counts=[0, 2]",
         "non_original_case_signals=4",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -283,7 +286,15 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "The clinical features of these sera have been previously described",
+        "in the GAD protein fragment)) as previously described (23).",
+        "as previously described (16) and had a purity greater than 85% by mass",
+        "IDDM sera that have been previously reported (23)."
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "89",
@@ -298,31 +309,25 @@
         "alternative_count": null,
         "count_confidence": "low",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper is a lab-focused epitope study using SMS sera, but the provided evidence pack does not contain a clear explicit count of unique original SPS-spectrum patients. The only numeric signal in the candidate list (2) appears to come from a corrupted front-matter excerpt rather than a patient-count statement, while the paper also contains reuse signals suggesting previously described sera/cohorts.",
+        "count_reasoning_summary": "The paper clearly involves SMS sera, but the provided evidence pack does not give a reliable explicit number of unique original SPS-spectrum patients. There are also multiple signals that the sera/clinical features were previously described, so provenance and extractable case counting remain unresolved.",
         "evidence": [
-          {
-            "quote": "We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins.",
-            "page": null,
-            "section": "Abstract / preferred text excerpt",
-            "supports": "Shows this is primarily a laboratory assay study on sera rather than a clearly enumerated clinical cohort."
-          },
           {
             "quote": "Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM.",
             "page": null,
-            "section": "Abstract / preferred text excerpt",
-            "supports": "Confirms inclusion of SMS patients but gives no explicit number of unique SPS-spectrum cases."
+            "section": "abstract / preferred text excerpt",
+            "supports": "Confirms that SMS patients were included in the study, so an automatic zero count is not well supported."
           },
           {
             "quote": "Two of the individuals with SMS",
             "page": null,
-            "section": "Preferred text count-salient snippets",
-            "supports": "Suggests at least 2 SMS individuals were discussed, but this isolated fragment is insufficient to establish the total unique case count."
+            "section": "preferred_text_count-salient snippet",
+            "supports": "Suggests at least 2 SMS individuals may be discussed, but this is only a fragment and does not securely establish the total unique cohort count."
           },
           {
             "quote": "The clinical features of these sera have been previously described",
             "page": null,
-            "section": "Potential non-original or reused-cohort signals",
-            "supports": "Raises concern that the sera/cases may be reused from prior reports, increasing ambiguity about extractable original case counting."
+            "section": "review evidence pack: provenance signals",
+            "supports": "Indicates possible reuse of previously described cases, creating uncertainty about whether this paper contains an original extractable SPS-spectrum cohort."
           }
         ]
       }
@@ -333,31 +338,25 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins.",
-          "page": null,
-          "section": "Abstract / preferred text excerpt",
-          "supports": "Shows this is primarily a laboratory assay study on sera rather than a clearly enumerated clinical cohort."
-        },
-        {
           "quote": "Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM.",
           "page": null,
-          "section": "Abstract / preferred text excerpt",
-          "supports": "Confirms inclusion of SMS patients but gives no explicit number of unique SPS-spectrum cases."
+          "section": "abstract / preferred text excerpt",
+          "supports": "Confirms that SMS patients were included in the study, so an automatic zero count is not well supported."
         },
         {
           "quote": "Two of the individuals with SMS",
           "page": null,
-          "section": "Preferred text count-salient snippets",
-          "supports": "Suggests at least 2 SMS individuals were discussed, but this isolated fragment is insufficient to establish the total unique case count."
+          "section": "preferred_text_count-salient snippet",
+          "supports": "Suggests at least 2 SMS individuals may be discussed, but this is only a fragment and does not securely establish the total unique cohort count."
         },
         {
           "quote": "The clinical features of these sera have been previously described",
           "page": null,
-          "section": "Potential non-original or reused-cohort signals",
-          "supports": "Raises concern that the sera/cases may be reused from prior reports, increasing ambiguity about extractable original case counting."
+          "section": "review evidence pack: provenance signals",
+          "supports": "Indicates possible reuse of previously described cases, creating uncertainty about whether this paper contains an original extractable SPS-spectrum cohort."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\89.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\89.json",
       "challenge_json_path": ""
     }
   }

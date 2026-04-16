@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:09.081407+00:00",
+  "generated_at_utc": "2026-04-16T20:31:40.081315+00:00",
   "paper_id": "1153",
   "count_row": {
     "paper_id": "1153",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1153.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1153.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1153.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1153.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\1153.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1153.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\1153.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1153.json",
     "result_payload": {
       "paper_id": "1153",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "high",
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports a prospective study of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and matches candidate cand01 exactly.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports an original prospective cohort of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and best matches candidate 12.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "12",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1153.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1153.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "12",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1153.json",
-        "counted_at_utc": "2026-04-16T14:05:55.057530+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1153.json",
+        "counted_at_utc": "2026-04-16T18:53:21.615616+00:00"
       },
       "model_count_row": {
         "paper_id": "1153",
@@ -192,12 +193,13 @@
         "count_confidence": "high",
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports a prospective study of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and matches candidate cand01 exactly.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports an original prospective cohort of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and best matches candidate 12.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "12",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1153.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1153.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "12",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1153.json",
-        "counted_at_utc": "2026-04-16T14:05:55.057530+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1153.json",
+        "counted_at_utc": "2026-04-16T18:53:21.615616+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\1153.json",
@@ -280,7 +282,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "1153",
@@ -295,19 +300,19 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "The conference abstract explicitly reports a prospective study of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and matches candidate cand01 exactly.",
+        "count_reasoning_summary": "The conference abstract explicitly reports an original prospective cohort of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and best matches candidate 12.",
         "evidence": [
           {
-            "quote": "We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy.",
+            "quote": "we devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy.",
             "page": null,
             "section": "abstract",
-            "supports": "Direct explicit count of unique SPS-spectrum patients in this study."
+            "supports": "Direct original cohort count of 12 SPS-spectrum patients."
           },
           {
             "quote": "prospectively studied 12 SPS patients receiving IVIg therapy.",
             "page": null,
             "section": "preferred text excerpt",
-            "supports": "Confirms the study cohort size is 12 SPS patients."
+            "supports": "Confirms the extractable number of unique SPS patients in the study cohort."
           }
         ]
       }
@@ -318,19 +323,19 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy.",
+          "quote": "we devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy.",
           "page": null,
           "section": "abstract",
-          "supports": "Direct explicit count of unique SPS-spectrum patients in this study."
+          "supports": "Direct original cohort count of 12 SPS-spectrum patients."
         },
         {
           "quote": "prospectively studied 12 SPS patients receiving IVIg therapy.",
           "page": null,
           "section": "preferred text excerpt",
-          "supports": "Confirms the study cohort size is 12 SPS patients."
+          "supports": "Confirms the extractable number of unique SPS patients in the study cohort."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1153.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\1153.json",
       "challenge_json_path": ""
     }
   }

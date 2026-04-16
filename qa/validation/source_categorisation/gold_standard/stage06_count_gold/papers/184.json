@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.180768+00:00",
+  "generated_at_utc": "2026-04-16T20:31:38.494653+00:00",
   "paper_id": "184",
   "count_row": {
     "paper_id": "184",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\184.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\184.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\184.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\184.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\184.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\184.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\184.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\184.json",
     "result_payload": {
       "paper_id": "184",
       "count_row": {
@@ -158,25 +158,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "20",
-        "count_confidence": "medium",
-        "count_basis": "llm_bounded_alternative",
-        "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper explicitly states an original series of 20 consecutive patients with stiff-person syndrome, while several subsequent findings are reported only for a 12-patient trial subset. The heuristic candidate of 47 is not supported by the supplied text, so the best explicit extractable count is 20 unique SPS-spectrum patients.",
+        "count_confidence": "high",
+        "count_basis": "diagnosis_specific_series_cohort_count",
+        "count_manual_review_required": "false",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly describes an original diagnosis-specific series of 20 consecutive patients with stiff-person syndrome. References to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
         "count_version": "hybrid_v2_gpt-5.4",
-        "heuristic_likely_sps_case_count": "47",
-        "heuristic_count_confidence": "medium",
-        "heuristic_count_basis": "early_body_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\184.json",
-        "heuristic_candidate_count": "2",
+        "heuristic_likely_sps_case_count": "20",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "diagnosis_specific_series_cohort_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\184.json",
+        "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "20",
-        "llm_count_confidence": "medium",
-        "llm_selected_candidate_id": "",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_bounded_alternative",
+        "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\184.json",
-        "counted_at_utc": "2026-04-16T13:54:52.253434+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\184.json",
+        "counted_at_utc": "2026-04-16T18:43:58.817615+00:00"
       },
       "model_count_row": {
         "paper_id": "184",
@@ -189,25 +190,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "20",
-        "count_confidence": "medium",
-        "count_basis": "llm_bounded_alternative",
-        "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper explicitly states an original series of 20 consecutive patients with stiff-person syndrome, while several subsequent findings are reported only for a 12-patient trial subset. The heuristic candidate of 47 is not supported by the supplied text, so the best explicit extractable count is 20 unique SPS-spectrum patients.",
+        "count_confidence": "high",
+        "count_basis": "diagnosis_specific_series_cohort_count",
+        "count_manual_review_required": "false",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly describes an original diagnosis-specific series of 20 consecutive patients with stiff-person syndrome. References to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
         "count_version": "hybrid_v2_gpt-5.4",
-        "heuristic_likely_sps_case_count": "47",
-        "heuristic_count_confidence": "medium",
-        "heuristic_count_basis": "early_body_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\184.json",
-        "heuristic_candidate_count": "2",
+        "heuristic_likely_sps_case_count": "20",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "diagnosis_specific_series_cohort_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\184.json",
+        "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "20",
-        "llm_count_confidence": "medium",
-        "llm_selected_candidate_id": "",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_bounded_alternative",
+        "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\184.json",
-        "counted_at_utc": "2026-04-16T13:54:52.253434+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\184.json",
+        "counted_at_utc": "2026-04-16T18:43:58.817615+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\184.json",
@@ -235,16 +237,31 @@
       "heuristic_version": "heuristic_v2",
       "abstract_text": "The stiff-person syndrome, a rare and disabling disorder, is characterized by muscle rigidity and episodic spasms that involve axial and limb musculature. Continuous contraction of agonist and antagonist muscles caused by involuntary motor-unit firing at rest are the hallmark clinical and electrophysiologic signs of the disease. Except for global muscle stiffness, results of neurologic examination are usually normal. Results of conventional computed tomography and magnetic resonance imaging of the brain are also normal. The cause of the stiff-person syndrome is unknown; however, an autoimmune pathogenesis is suspected because of 1) the presence of antibodies against glutamic acid decarboxylase (GAD), the rate-limiting enzyme for the synthesis of the inhibitory neurotransmitter gamma-aminobutyric acid (GABA); 2) the association of the disease with other autoimmune conditions; 3) the presence of various autoantibodies; and 4) a strong immunogenetic association. Anti-GAD antibodies, which are found in high titers in most patients, seem to be directed against conformational forms of GAD. New evidence suggests that these antibodies may be pathogenic because they interfere with the synthesis of GABA. In addition, a reduction in brain levels of GABA, which is prominent in the motor cortex, has been demonstrated with magnetic resonance spectroscopy in patients with the stiff-person syndrome. The stiff-person syndrome is clinically elusive but potentially treatable and should be considered in patients with unexplained stiffness and spasms. Drugs that enhance GABA neurotransmission, such as diazepam, vigabatrin, and baclofen, provide mild to modest relief of clinical symptoms. Immunomodulatory agents, such as steroids, plasmapheresis, and intravenous immunoglobulin, seem to offer substantial improvement. Results of an ongoing controlled trial will elucidate the role of these agents in the treatment of the disease.",
       "early_body_text": "nih conference the stiff-person syndrome: an autoimmune disorder affecting neurotransmission of gamma-aminobutyric acid moderator: lucien m. levy, md, phd; discussants: marinos c. dalakas, md, and mary kay floeter, md, phd the stiff-person syndrome, a rare and disabling disorder, is characterized by muscle rigidity and episodic spasms that involve axial and limb musculature. continuous contraction of agonist and antagonist muscles caused by involuntary motor-unit firing at rest are the hallmark clinical and electrophysiologic signs of the disease. except for global muscle stiffness, results of neurologic examination are usually normal. results of conventional computed tomography and magnetic resonance imaging of the brain are also normal. the cause of the stiff-person syndrome is unknown; however, an autoimmune pathogenesis is suspected because of 1) the presence of antibodies against glutamic acid decarboxylase (gad), the rate-limiting enzyme for the synthesis of the inhibitory neurotransmitter gamma-aminobutyric acid (gaba); 2) the association of the disease with other autoimmune conditions; 3) the presence of various autoantibodies; and 4) a strong immunogenetic association. anti-gad antibodies, which are found in high titers in most patients, seem to be directed against conformational forms of gad. new evidence suggests that these antibodies may be pathogenic because they interfere with the synthesis of gaba. in addition, a reduction in brain levels of gaba, which is prominent in the motor cortex, has been demonstrated with magnetic resonance spectroscopy in patients with the stiff-person syndrome. the stiff-person syndrome is clinically elusive but potentially treatable and should be considered in patients with unexplained stiffness and spasms. drugs that enhance gaba neurotransmission, such as diazepam, vigabatrin, and baclofen, provide mild to modest relief of clinical symptoms. immunomodulatory agents, such as steroids, plasmapheresis, and intravenous immunoglobulin, seem to offer substantial improvement. results of an ongoing controlled trial will elucidate the role of these agents in the treatment of the disease. ann intern med. 1999; 131: 522-530. for author affiliations and current addresses, see end of text. an edited summary of a clinical staff conference held on 28 october 1998 at the national institutes of health in bethesda, maryland. authors who wish to cite a section of the conference and specifically indicate its author may use this example for the form of the reference: floeter mk. inhibitory pathways defined by electrophysiology. in: levy lm, moderator. the stiff-person syndrome: an autoimmune disorder affecting neurotransmission of gamma-aminobutyric acid. ann intern med. 1999; 131: 523-524. 522 d r. dalakas (neuromuscular diseases section, national institutes of neurological diseases and stroke [ninds], national institutes of health [nih], bethesda, maryland): in 1956, moersh and woltman (1) reported a series of 14 patients with unexplained fluctuating rigidity and spasms who had visited the mayo clinic over a 32-year period. these authors called this entity the stiff-man syndrome because the patients did not have extrapyramidal disease, pyramidal tract dysfunction, or any other known neurologic disorder that could explain the stiffness. since that report was published, several cases of this rare disorder—which is preferably called the stiff-person syndrome— have been reported in both men and women, and new cases are increasingly being recognized. the stiff-person syndrome causes substantial disability and is therefore of interest to various specialists, including neurologists, internists, rheumatologists, diabetologists, immunologists, and rehabilitation physicians (1– 6). during the past 2 years, we studied the stiff-person syndrome to better define the disease, explore its pathogenetic mechanisms, and apply specific therapies. it may seem that the stiff-person syndrome is elusive and requires a high degree of suspicion for diagnosis; however, in a typical presentation, the stiff-person syndrome is not difficult to identify. in our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed on the rigidity. the rigidity, which is characterized by tightness and stiffness, begins insidiously, over several months, at the axial muscles— especially the thoracic and lumbar spine—and spreads to the legs. the hallmark sign is the continuous contraction of the agonist and antagonist muscles; in the trunk, this produces a boardlike appearance. hyperlordosis is caused by co-contraction of the abdominal and thoracolumbar paraspinal muscles. in our series, 9 of 12 patients had an asymmetric presentation: one leg was affected more than the other (stiff-limb syndrome) (7), and the stiffness eventually spread to other areas of the body, includ5 october 1999 • annals of internal medicine •",
-      "llm_evidence_text": "Title:\nThe stiff-person syndrome: an autoimmune disorder affecting neurotransmission of gamma-aminobutyric acid.\n\nMetadata abstract:\nThe stiff-person syndrome, a rare and disabling disorder, is characterized by muscle rigidity and episodic spasms that involve axial and limb musculature. Continuous contraction of agonist and antagonist muscles caused by involuntary motor-unit firing at rest are the hallmark clinical and electrophysiologic signs of the disease. Except for global muscle stiffness, results of neurologic examination are usually normal. Results of conventional computed tomography and magnetic resonance imaging of the brain are also normal. The cause of the stiff-person syndrome is unknown; however, an autoimmune pathogenesis is suspected because of 1) the presence of antibodies against glutamic acid decarboxylase (GAD), the rate-limiting enzyme for the synthesis of the inhibitory neurotransmitter gamma-aminobutyric acid (GABA); 2) the association of the disease with other autoimmune conditions; 3) the presence of various autoantibodies; and 4) a strong immunogenetic association. Anti-GAD antibodies, which are found in high titers in most patients, seem to be directed against conformational forms of GAD. New evidence suggests that these antibodies may be pathogenic because they interfere with the synthesis of GABA. In addition, a reduction in brain levels of GABA, which is prominent in the motor cortex, has been demonstrated with magnetic resonance spectroscopy in patients with the stiff-person syndrome. The stiff-person syndrome is clinically elusive but potentially treatable and should be considered in patients with unexplained stiffness and spasms. Drugs that enhance GABA neurotransmission, such as diazepam, vigabatrin, and baclofen, provide mild to modest relief of clinical symptoms. Immunomodulatory agents, such as steroids, plasmapheresis, and intravenous immunoglobulin, seem to offer\n\nPreferred text count-salient snippets:\n- Woltman (1) reported a series of 14 patients with\n- our series, 20 consecutive patients—12 of whom\n- In our series, 9 of 12 patients had an asymmetric\n- Eight of 12 patients experienced\n- in 10 of 12 patients.\n- titers of anti-GAD antibodies are detected in patients with type 1 diabetes, and up to 30% of patients with the stiff-person syndrome also have diabetes (13–20).\n- our 12 patients with the stiff-person syndrome had\n- In a subgroup of patients, the stiff-person syndrome is a paraneoplastic disease (17, 28 –30).",
+      "llm_evidence_text": "Title:\nThe stiff-person syndrome: an autoimmune disorder affecting neurotransmission of gamma-aminobutyric acid.\n\nMetadata abstract:\nThe stiff-person syndrome, a rare and disabling disorder, is characterized by muscle rigidity and episodic spasms that involve axial and limb musculature. Continuous contraction of agonist and antagonist muscles caused by involuntary motor-unit firing at rest are the hallmark clinical and electrophysiologic signs of the disease. Except for global muscle stiffness, results of neurologic examination are usually normal. Results of conventional computed tomography and magnetic resonance imaging of the brain are also normal. The cause of the stiff-person syndrome is unknown; however, an autoimmune pathogenesis is suspected because of 1) the presence of antibodies against glutamic acid decarboxylase (GAD), the rate-limiting enzyme for the synthesis of the inhibitory neurotransmitter gamma-aminobutyric acid (GABA); 2) the association of the disease with other autoimmune conditions; 3) the presence of various autoantibodies; and 4) a strong immunogenetic association. Anti-GAD antibodies, which are found in high titers in most patients, seem to be directed against conformational forms of GAD. New evidence suggests that these antibodies may be pathogenic because they interfere with the synthesis of GABA. In addition, a reduction in brain levels of GABA, which is prominent in the motor cortex, has been demonstrated with magnetic resonance spectroscopy in patients with the stiff-person syndrome. The stiff-person syndrome is clinically elusive but potentially treatable and should be considered in patients with unexplained stiffness and spasms. Drugs that enhance GABA neurotransmission, such as diazepam, vigabatrin, and baclofen, provide mild to modest relief of clinical symptoms. Immunomodulatory agents, such as steroids, plasmapheresis, and intravenous immunoglobulin, seem to offer\n\nExplicit SPS-spectrum subgroup signals:\n- pecific therapies. It may seem that the stiff-person syndrome is elusive and requires a high degree of suspicion for diagnosis; however, in a typical presentation, the stiff-person syndrome is not difficult to identify. In our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed \n\nPreferred text count-salient snippets:\n- Woltman (1) reported a series of 14 patients with\n- our series, 20 consecutive patients—12 of whom\n- In our series, 9 of 12 patients had an asymmetric\n- Eight of 12 patients experienced\n- in 10 of 12 patients.\n- titers of anti-GAD antibodies are detected in patients with type 1 diabetes, and up to 30% of patients with the stiff-person syndrome also have diabetes (13–20).\n- our 12 patients with the stiff-person syndrome had\n- In a subgroup of patients, the stiff-person syndrome is a paraneoplastic disease (17, 28 –30).",
       "candidate_generation_notes": [
         "preferred_text_source=full_text",
         "abstract_only_candidate_added",
-        "distinct_candidate_counts=[0, 47]",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[0, 20, 47]",
+        "explicit_sps_subgroup_count=20",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
         {
           "candidate_id": "cand01",
+          "proposed_count": 20,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_series_cohort_count",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 102,
+          "rationale": "basis=diagnosis_specific_series_cohort_count | confidence=high | source_category=case_series_or_multi_case",
+          "evidence_text": "pecific therapies. It may seem that the stiff-person syndrome is elusive and requires a high degree of suspicion for diagnosis; however, in a typical presentation, the stiff-person syndrome is not difficult to identify. In our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed ",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
           "proposed_count": 47,
           "candidate_kind": "exact_numeric_count",
           "count_basis": "early_body_count_signal",
@@ -261,7 +278,7 @@
           ]
         },
         {
-          "candidate_id": "cand02",
+          "candidate_id": "cand03",
           "proposed_count": 0,
           "candidate_kind": "forced_zero",
           "count_basis": "no_reliable_count_signal",
@@ -281,49 +298,48 @@
       "fallback_candidate_id": "cand01",
       "llm_routing_recommended": true,
       "llm_routing_reason": "multiple_candidate_counts",
-      "explicit_sps_subgroup_count": null,
-      "explicit_sps_subgroup_basis": "",
-      "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "explicit_sps_subgroup_count": 20,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_series_cohort_count",
+      "explicit_sps_subgroup_evidence": [
+        "pecific therapies. It may seem that the stiff-person syndrome is elusive and requires a high degree of suspicion for diagnosis; however, in a typical presentation, the stiff-person syndrome is not difficult to identify. In our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed "
+      ],
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "184",
       "model_id": "gpt-5.4-2026-03-05",
-      "verification_status": "llm_bounded_alternative",
+      "verification_status": "llm_candidate_exact",
       "validator_flags": [],
       "decision_stage": "primary",
       "challenge_reasons": [],
       "decision": {
-        "decision_type": "bounded_alternative",
-        "selected_candidate_id": null,
-        "alternative_count": 20,
-        "count_confidence": "medium",
-        "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly states an original series of 20 consecutive patients with stiff-person syndrome, while several subsequent findings are reported only for a 12-patient trial subset. The heuristic candidate of 47 is not supported by the supplied text, so the best explicit extractable count is 20 unique SPS-spectrum patients.",
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly describes an original diagnosis-specific series of 20 consecutive patients with stiff-person syndrome. References to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
         "evidence": [
           {
             "quote": "during the past 2 years, we studied the stiff-person syndrome to better define the disease, explore its pathogenetic mechanisms, and apply specific therapies.",
             "page": null,
-            "section": "preferred text excerpt",
-            "supports": "Indicates the paper includes an original studied SPS cohort rather than only a literature review."
+            "section": "Preferred text excerpt",
+            "supports": "Supports that this is the authors' own original cohort rather than only a literature review."
           },
           {
             "quote": "in our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed on the rigidity.",
             "page": null,
-            "section": "preferred text excerpt",
-            "supports": "Explicitly gives the full original SPS cohort size as 20, with 12 being only a subset in a controlled trial."
+            "section": "Preferred text excerpt",
+            "supports": "Directly supports a diagnosis-specific SPS cohort count of 20, with 12 as a subset."
           },
           {
             "quote": "in our series, 9 of 12 patients had an asymmetric presentation: one leg was affected more than the other (stiff-limb syndrome)",
             "page": null,
-            "section": "preferred text excerpt",
-            "supports": "Confirms that later denominators of 12 refer to a subgroup/subset, not the total cohort size."
-          },
-          {
-            "quote": "our series, 20 consecutive patients—12 of whom",
-            "page": null,
-            "section": "count-salient snippet",
-            "supports": "Reinforces the explicit 20-patient cohort and 12-patient subset distinction."
+            "section": "Preferred text excerpt",
+            "supports": "Confirms that later counts of 12 refer to a subgroup/subset analysis within the larger series, not the total number of SPS-spectrum patients."
           }
         ]
       }
@@ -336,29 +352,23 @@
         {
           "quote": "during the past 2 years, we studied the stiff-person syndrome to better define the disease, explore its pathogenetic mechanisms, and apply specific therapies.",
           "page": null,
-          "section": "preferred text excerpt",
-          "supports": "Indicates the paper includes an original studied SPS cohort rather than only a literature review."
+          "section": "Preferred text excerpt",
+          "supports": "Supports that this is the authors' own original cohort rather than only a literature review."
         },
         {
           "quote": "in our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed on the rigidity.",
           "page": null,
-          "section": "preferred text excerpt",
-          "supports": "Explicitly gives the full original SPS cohort size as 20, with 12 being only a subset in a controlled trial."
+          "section": "Preferred text excerpt",
+          "supports": "Directly supports a diagnosis-specific SPS cohort count of 20, with 12 as a subset."
         },
         {
           "quote": "in our series, 9 of 12 patients had an asymmetric presentation: one leg was affected more than the other (stiff-limb syndrome)",
           "page": null,
-          "section": "preferred text excerpt",
-          "supports": "Confirms that later denominators of 12 refer to a subgroup/subset, not the total cohort size."
-        },
-        {
-          "quote": "our series, 20 consecutive patients—12 of whom",
-          "page": null,
-          "section": "count-salient snippet",
-          "supports": "Reinforces the explicit 20-patient cohort and 12-patient subset distinction."
+          "section": "Preferred text excerpt",
+          "supports": "Confirms that later counts of 12 refer to a subgroup/subset analysis within the larger series, not the total number of SPS-spectrum patients."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\184.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\184.json",
       "challenge_json_path": ""
     }
   }

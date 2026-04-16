@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.573339+00:00",
+  "generated_at_utc": "2026-04-16T20:31:39.559585+00:00",
   "paper_id": "673",
   "count_row": {
     "paper_id": "673",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\673.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\673.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\673.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\673.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\673.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\673.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\673.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\673.json",
     "result_payload": {
       "paper_id": "673",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "high",
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of one original SPS patient. The abstract and full-text excerpt repeatedly state that the authors report one patient, while the mention of 5 cases refers to prior literature and should not be counted.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report with explicit original clinical data for one SPS patient. The mentions of 5 prior GAD-negative SPS cases are literature background and should not be counted.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\673.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\673.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\673.json",
-        "counted_at_utc": "2026-04-16T14:12:46.258084+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\673.json",
+        "counted_at_utc": "2026-04-16T18:59:18.461407+00:00"
       },
       "model_count_row": {
         "paper_id": "673",
@@ -192,12 +193,13 @@
         "count_confidence": "high",
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of one original SPS patient. The abstract and full-text excerpt repeatedly state that the authors report one patient, while the mention of 5 cases refers to prior literature and should not be counted.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report with explicit original clinical data for one SPS patient. The mentions of 5 prior GAD-negative SPS cases are literature background and should not be counted.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\673.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\673.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\673.json",
-        "counted_at_utc": "2026-04-16T14:12:46.258084+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\673.json",
+        "counted_at_utc": "2026-04-16T18:59:18.461407+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\673.json",
@@ -299,7 +301,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "673",
@@ -314,25 +319,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "This is a single-patient case report of one original SPS patient. The abstract and full-text excerpt repeatedly state that the authors report one patient, while the mention of 5 cases refers to prior literature and should not be counted.",
+        "count_reasoning_summary": "This is a single-patient case report with explicit original clinical data for one SPS patient. The mentions of 5 prior GAD-negative SPS cases are literature background and should not be counted.",
         "evidence": [
           {
             "quote": "We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)]",
             "page": null,
             "section": "abstract/objective",
-            "supports": "The paper reports one original SPS patient."
+            "supports": "The paper reports one original SPS-spectrum patient."
           },
           {
             "quote": "CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic.",
             "page": null,
             "section": "abstract/case report",
-            "supports": "The case report describes a single individual with SPS."
+            "supports": "Confirms a single individual case with diagnosis-supported SPS."
           },
           {
-            "quote": "The literature reports only 5 cases of GAD(-) SPS patients treated with intrathecal baclofen therapy",
+            "quote": "We report a GAD(-) patient with SPS and resulting debilitating spasticity",
             "page": null,
             "section": "abstract/conclusions",
-            "supports": "The count of 5 refers to previously reported literature cases, not additional original patients in this paper."
+            "supports": "Reinforces that the original report concerns one SPS patient."
           }
         ]
       }
@@ -346,22 +351,22 @@
           "quote": "We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)]",
           "page": null,
           "section": "abstract/objective",
-          "supports": "The paper reports one original SPS patient."
+          "supports": "The paper reports one original SPS-spectrum patient."
         },
         {
           "quote": "CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic.",
           "page": null,
           "section": "abstract/case report",
-          "supports": "The case report describes a single individual with SPS."
+          "supports": "Confirms a single individual case with diagnosis-supported SPS."
         },
         {
-          "quote": "The literature reports only 5 cases of GAD(-) SPS patients treated with intrathecal baclofen therapy",
+          "quote": "We report a GAD(-) patient with SPS and resulting debilitating spasticity",
           "page": null,
           "section": "abstract/conclusions",
-          "supports": "The count of 5 refers to previously reported literature cases, not additional original patients in this paper."
+          "supports": "Reinforces that the original report concerns one SPS patient."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\673.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\673.json",
       "challenge_json_path": ""
     }
   }

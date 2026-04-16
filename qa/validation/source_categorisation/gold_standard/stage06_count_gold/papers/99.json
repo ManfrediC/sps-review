@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.036999+00:00",
+  "generated_at_utc": "2026-04-16T20:31:37.963789+00:00",
   "paper_id": "99",
   "count_row": {
     "paper_id": "99",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\99.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\99.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\99.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\99.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\99.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\99.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\99.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\99.json",
     "result_payload": {
       "paper_id": "99",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "high",
         "count_basis": "source_single_case_default",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-case report describing one man with stiff-man syndrome (SMS), an older term for SPS. The full text consistently refers to a single patient and does not indicate any additional original SPS-spectrum cases.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original patient with stiff-man syndrome (an older term for SPS) and provides diagnosis-supporting clinical, EMG, and antibody findings. The best-supported extractable SPS-spectrum count is 1.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "source_single_case_default",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\99.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\99.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\99.json",
-        "counted_at_utc": "2026-04-16T14:03:34.169009+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\99.json",
+        "counted_at_utc": "2026-04-16T18:51:11.578564+00:00"
       },
       "model_count_row": {
         "paper_id": "99",
@@ -192,12 +193,13 @@
         "count_confidence": "high",
         "count_basis": "source_single_case_default",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-case report describing one man with stiff-man syndrome (SMS), an older term for SPS. The full text consistently refers to a single patient and does not indicate any additional original SPS-spectrum cases.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original patient with stiff-man syndrome (an older term for SPS) and provides diagnosis-supporting clinical, EMG, and antibody findings. The best-supported extractable SPS-spectrum count is 1.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "source_single_case_default",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\99.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\99.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\99.json",
-        "counted_at_utc": "2026-04-16T14:03:34.169009+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\99.json",
+        "counted_at_utc": "2026-04-16T18:51:11.578564+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\99.json",
@@ -283,7 +285,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "99",
@@ -298,25 +303,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper is an original single-case report describing one man with stiff-man syndrome (SMS), an older term for SPS. The full text consistently refers to a single patient and does not indicate any additional original SPS-spectrum cases.",
+        "count_reasoning_summary": "This single-case report explicitly describes one original patient with stiff-man syndrome (an older term for SPS) and provides diagnosis-supporting clinical, EMG, and antibody findings. The best-supported extractable SPS-spectrum count is 1.",
         "evidence": [
           {
             "quote": "we report improvement of a man with sms after treatment with vigabatrin.",
             "page": null,
             "section": "Preferred text excerpt",
-            "supports": "Directly states this is one original SMS/SPS patient."
+            "supports": "The paper reports one original patient."
           },
           {
             "quote": "a 42-year-old man with insulin-dependent diabetes mellitus for 12 years complained of paroxysmal painful muscle spasms in his left leg.",
             "page": null,
             "section": "Preferred text excerpt",
-            "supports": "Introduces the single individual case being reported."
+            "supports": "Identifies the single individual case being described."
           },
           {
-            "quote": "these findings are compatible with sms.",
+            "quote": "clinical examination revealed a lumbar hyperlordosis, and board-like rigidity of the trunk and proximal legs... electromyography showed continuous motor-unit activity at rest in all affected muscles, which decreased after diazepam. in serum, autoantibodies against glutamic acid decarboxylase (gad) were present. these findings are compatible with sms.",
             "page": null,
             "section": "Preferred text excerpt",
-            "supports": "Confirms the reported individual had stiff-man syndrome, which is within the SPS spectrum."
+            "supports": "Provides diagnostic support that this patient had SPS-spectrum disease."
           }
         ]
       }
@@ -330,22 +335,22 @@
           "quote": "we report improvement of a man with sms after treatment with vigabatrin.",
           "page": null,
           "section": "Preferred text excerpt",
-          "supports": "Directly states this is one original SMS/SPS patient."
+          "supports": "The paper reports one original patient."
         },
         {
           "quote": "a 42-year-old man with insulin-dependent diabetes mellitus for 12 years complained of paroxysmal painful muscle spasms in his left leg.",
           "page": null,
           "section": "Preferred text excerpt",
-          "supports": "Introduces the single individual case being reported."
+          "supports": "Identifies the single individual case being described."
         },
         {
-          "quote": "these findings are compatible with sms.",
+          "quote": "clinical examination revealed a lumbar hyperlordosis, and board-like rigidity of the trunk and proximal legs... electromyography showed continuous motor-unit activity at rest in all affected muscles, which decreased after diazepam. in serum, autoantibodies against glutamic acid decarboxylase (gad) were present. these findings are compatible with sms.",
           "page": null,
           "section": "Preferred text excerpt",
-          "supports": "Confirms the reported individual had stiff-man syndrome, which is within the SPS spectrum."
+          "supports": "Provides diagnostic support that this patient had SPS-spectrum disease."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\99.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\99.json",
       "challenge_json_path": ""
     }
   }

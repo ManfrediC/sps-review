@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:09.846915+00:00",
+  "generated_at_utc": "2026-04-16T20:31:40.833284+00:00",
   "paper_id": "12760",
   "count_row": {
     "paper_id": "12760",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\12760.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\12760.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\12760.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\12760.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\12760.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12760.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\12760.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12760.json",
     "result_payload": {
       "paper_id": "12760",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "high",
         "count_basis": "early_body_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown sums exactly to 39: 24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia. Because the total cohort is explicitly labeled SPSD and the subgroup enumeration confirms the same total, 39 is the best-supported extractable count.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown given in the same results sentence sums to 39 (24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia). Although the heuristic package lists an explicit subgroup count of 36, the quoted diagnosis-specific breakdown itself supports 39 unique SPSD patients; however, manual review remains required because provenance overlap/embedded literature-review signals are flagged upstream.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "36",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_group_breakdown_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\12760.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12760.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "39",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\12760.json",
-        "counted_at_utc": "2026-04-16T13:51:35.875732+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12760.json",
+        "counted_at_utc": "2026-04-16T18:41:24.017894+00:00"
       },
       "model_count_row": {
         "paper_id": "12760",
@@ -192,12 +193,13 @@
         "count_confidence": "high",
         "count_basis": "early_body_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown sums exactly to 39: 24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia. Because the total cohort is explicitly labeled SPSD and the subgroup enumeration confirms the same total, 39 is the best-supported extractable count.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown given in the same results sentence sums to 39 (24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia). Although the heuristic package lists an explicit subgroup count of 36, the quoted diagnosis-specific breakdown itself supports 39 unique SPSD patients; however, manual review remains required because provenance overlap/embedded literature-review signals are flagged upstream.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "36",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_group_breakdown_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\12760.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12760.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "39",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\12760.json",
-        "counted_at_utc": "2026-04-16T13:51:35.875732+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12760.json",
+        "counted_at_utc": "2026-04-16T18:41:24.017894+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\12760.json",
@@ -235,13 +237,15 @@
       "heuristic_version": "heuristic_v2",
       "abstract_text": "",
       "early_body_text": "https://doi.org/10.1177/17562864231180736 https://doi.org/10.1177/17562864231180736 journals.sagepub.com/home/tan 1 ther adv neurol disord 2023, vol. 16: 1–13 doi: 10.1177/ 17562864231180736 © the author(s), 2023. article reuse guidelines: sagepub.com/journals- permissions therapeutic advances in neurological disorders creative commons non commercial cc by-nc: this article is distributed under the terms of the creative commons attribution-noncommercial 4.0 license (https://creativecommons.org/licenses/by-nc/4.0/) which permits non-commercial use, reproduction and distribution of the work without further permission provided the original work is attributed as specified on the sage and open access pages (https://us.sagepub.com/en-us/nam/open-access-at-sage). therapeutic plasma exchange in the management of stiff person syndrome spectrum disorders: a case series and review of the literature nicolas mercure-corriveau* , shuvro roy* , chen hu, elizabeth p. crowe, xianming zhu, danielle obando, eshan u. patel, aaron a. r. tobian, yujie wang, evan m. bloch† and scott d. newsome† abstract background: stiff person syndrome spectrum disorders (spsd) are a rare group of disabling neuroimmunological disorders. spsd often requires immune therapies, especially in the setting of inadequate response to symptomatic treatments. the safety and efficacy of therapeutic plasma exchange (tpe) in spsd remains uncertain. objectives: to describe the safety, tolerability, and efficacy of tpe in patients with spsd. design: a retrospective observational study. methods: a retrospective review of spsd patients seen at johns hopkins hospital (jhh) from 1997 to 2021 was performed. patient demographics/history, examination/diagnostic findings, treatment response, and tpe-related complications were recorded. assessment for any associations between clinical characteristics, including age, sex, clinical phenotype, and time on immunotherapy, and response to tpe 3 months after treatment was performed. a subgroup of 18 patients treated with tpe at jhh and 6 patients treated with tpe at outside institutions were evaluated for any change in usage of symptomatic medications 3 months after the tpe treatment. literature review of spsd and tpe was also conducted. results: thirty-nine spsd patients were treated with tpe (21 at jhh and 18 at outside institutions); median age 48 years, 77% female, median modified rankin scale 3; mean initial anti-gad65 antibody titer was 23,508 u/ml. twenty-four patients (62%) had classic sps, 10 (26%) had sps-plus, 2 (5%) had progressive encephalomyelitis with rigidity and myoclonus, and 3 (8%) had pure cerebellar ataxia. all patients were on symptomatic treatments, 30 (77%) previously received ivig, and 3 (8%) previously received rituximab. four patients (10%) had a tpe-related adverse event. one developed asymptomatic hypotension, another had both line thrombosis and infection, and two had non-life-threatening bleeding events. twenty-three (59%) patients reported improvement in symptoms after tpe. of the subgroup of 24 patients evaluated for any change in usage of symptomatic medications 3 months after the tpe treatment, 14 (58%) required fewer gabaergic symptomatic medications. literature review identified 57 additional patients with spsd; 43 (75%) reported temporary improvement after tpe. conclusion: the majority of patients treated with tpe had improvement. moreover, most patients evaluated for any change in usage of symptomatic medications after the tpe treatment no longer required as much symptomatic medications months after tpe. tpe appears safe and well-tolerated in spsd. further studies are needed to assess the long-term efficacy of tpe in spsd and identify which patients may benefit the most from tpe. keywords: gad65, stiff person syndrome, therapeutic plasma exchange received: 15 november 2022; revised manuscript accepted: 11 may 2023. correspondence to: scott d. newsome division of neuroimmunology and neurological infections, department of neurology, johns hopkins university, school of medicine, 600 north wolfe street, pathology 627, baltimore, md 21287, usa. snewsom2@jhmi.edu nicolas mercure- corriveau elizabeth p. crowe xianming zhu eshan u. patel aaron a. r. tobian evan m. bloch division of transfusion medicine, department of pathology, school of medicine, johns hopkins university, baltimore, md, usa shuvro roy chen hu division of neuroimmunology and neurological infections, department of neurology, johns hopkins university, school of medicine, baltimore, md, usa danielle obando department of neurology, johns hopkins university, school of medicine, baltimore, md, usa yujie wang department of neurology, johns hopkins university, school of medicine, baltimore, md, usa department of neurology, university of washington, seattle, wa, usa *n.m.-c. and s.r. contributed equally to this work. †e.m.b. and s.d.n. contributed equally to this work. 1180736tan0010.1177/17562864231180736therapeutic advances in neurologic",
-      "llm_evidence_text": "Title:\nTherapeutic Plasma Exchange in the Management of Stiff Person Syndrome Spectrum Disorders: A Case Series and Review of the Literature\n\nExplicit SPS-spectrum subgroup signals:\n- 24 patients had classic SPS, 10 had SPS-plus, 2 had PERM, and 3 had CA. The median pre-TPE mRS was 3 [interquartile range (IQR) 3–4]. Before starting TPE, 30 (77%) patients had\n\nPreferred text count-salient snippets:\n- A subgroup of 18 patients treated with TPE at JHH and 6 patients treated with TPE at outside\n- Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside\n- Twenty-four patients (62%) had classic SPS, 10\n- All patients were on symptomatic treatments, 30 (77%)\n- Four patients (10%) had a\n- Of the subgroup of 24 patients evaluated\n- patients with SPSD; 43 (75%) reported temporary improvement after TPE.\n- 23 patients affected by the stiff man syndrome:",
+      "llm_evidence_text": "Title:\nTherapeutic Plasma Exchange in the Management of Stiff Person Syndrome Spectrum Disorders: A Case Series and Review of the Literature\n\nExplicit SPS-spectrum subgroup signals:\n- 24 patients had classic SPS, 10 had SPS-plus, 2 had PERM, and 3 had CA. The median pre-TPE mRS was 3 [interquartile range (IQR) 3–4]. Before starting TPE, 30 (77%) patients had\n\nPotential non-original or reused-cohort signals:\n- Chia et al.18 Middle-aged female\n- Barker et al.22 2 patients with classic\n- Grech et al.37 1 partial SPS\n- Morise et al.39 72-year-old female\n\nPreferred text count-salient snippets:\n- A subgroup of 18 patients treated with TPE at JHH and 6 patients treated with TPE at outside\n- Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside\n- Twenty-four patients (62%) had classic SPS, 10\n- All patients were on symptomatic treatments, 30 (77%)\n- Four patients (10%) had a\n- Of the subgroup of 24 patients evaluated\n- patients with SPSD; 43 (75%) reported temporary improvement after TPE.\n- 23 patients affected by the stiff man syndrome:",
       "candidate_generation_notes": [
         "preferred_text_source=full_text",
         "abstract_only_candidate_added",
         "explicit_sps_subgroup_candidate_added",
         "distinct_candidate_counts=[0, 36, 39]",
         "explicit_sps_subgroup_count=36",
+        "non_original_case_signals=4",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -300,7 +304,15 @@
       "explicit_sps_subgroup_evidence": [
         "24 patients had classic SPS, 10 had SPS-plus, 2 had PERM, and 3 had CA. The median pre-TPE mRS was 3 [interquartile range (IQR) 3–4]. Before starting TPE, 30 (77%) patients had"
       ],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "Chia et al.18 Middle-aged female",
+        "Barker et al.22 2 patients with classic",
+        "Grech et al.37 1 partial SPS",
+        "Morise et al.39 72-year-old female"
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "12760",
@@ -320,26 +332,32 @@
         "selected_candidate_id": "cand02",
         "alternative_count": null,
         "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown sums exactly to 39: 24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia. Because the total cohort is explicitly labeled SPSD and the subgroup enumeration confirms the same total, 39 is the best-supported extractable count.",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown given in the same results sentence sums to 39 (24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia). Although the heuristic package lists an explicit subgroup count of 36, the quoted diagnosis-specific breakdown itself supports 39 unique SPSD patients; however, manual review remains required because provenance overlap/embedded literature-review signals are flagged upstream.",
         "evidence": [
           {
             "quote": "Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside institutions)",
             "page": null,
-            "section": "Results / Preferred text excerpt",
-            "supports": "Explicit total number of SPS-spectrum disorder patients in the study cohort"
+            "section": "Results/Abstract",
+            "supports": "Direct total count of original SPSD patients in the case series"
           },
           {
             "quote": "Twenty-four patients (62%) had classic SPS, 10 (26%) had SPS-plus, 2 (5%) had progressive encephalomyelitis with rigidity and myoclonus, and 3 (8%) had pure cerebellar ataxia.",
             "page": null,
-            "section": "Results / Preferred text excerpt",
-            "supports": "Diagnosis-specific breakdown that sums to 39 and confirms the total cohort composition"
+            "section": "Results/Abstract",
+            "supports": "Diagnosis-specific breakdown summing to 39 patients"
           },
           {
             "quote": "a retrospective review of SPSD patients seen at Johns Hopkins Hospital (JHH) from 1997 to 2021 was performed.",
             "page": null,
-            "section": "Methods / Preferred text excerpt",
-            "supports": "Confirms the cohort under study consists of SPSD patients rather than a broader mixed neurology cohort"
+            "section": "Methods/Abstract",
+            "supports": "Indicates an original retrospective cohort rather than only literature-derived cases"
+          },
+          {
+            "quote": "literature review identified 57 additional patients with SPSD; 43 (75%) reported temporary improvement after TPE.",
+            "page": null,
+            "section": "Results/Abstract",
+            "supports": "Separates the literature-review cases from the 39-patient retrospective cohort"
           }
         ]
       }
@@ -356,24 +374,30 @@
         {
           "quote": "Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside institutions)",
           "page": null,
-          "section": "Results / Preferred text excerpt",
-          "supports": "Explicit total number of SPS-spectrum disorder patients in the study cohort"
+          "section": "Results/Abstract",
+          "supports": "Direct total count of original SPSD patients in the case series"
         },
         {
           "quote": "Twenty-four patients (62%) had classic SPS, 10 (26%) had SPS-plus, 2 (5%) had progressive encephalomyelitis with rigidity and myoclonus, and 3 (8%) had pure cerebellar ataxia.",
           "page": null,
-          "section": "Results / Preferred text excerpt",
-          "supports": "Diagnosis-specific breakdown that sums to 39 and confirms the total cohort composition"
+          "section": "Results/Abstract",
+          "supports": "Diagnosis-specific breakdown summing to 39 patients"
         },
         {
           "quote": "a retrospective review of SPSD patients seen at Johns Hopkins Hospital (JHH) from 1997 to 2021 was performed.",
           "page": null,
-          "section": "Methods / Preferred text excerpt",
-          "supports": "Confirms the cohort under study consists of SPSD patients rather than a broader mixed neurology cohort"
+          "section": "Methods/Abstract",
+          "supports": "Indicates an original retrospective cohort rather than only literature-derived cases"
+        },
+        {
+          "quote": "literature review identified 57 additional patients with SPSD; 43 (75%) reported temporary improvement after TPE.",
+          "page": null,
+          "section": "Results/Abstract",
+          "supports": "Separates the literature-review cases from the 39-patient retrospective cohort"
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\12760.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\12760.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\12760.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\12760.json"
     }
   }
 }

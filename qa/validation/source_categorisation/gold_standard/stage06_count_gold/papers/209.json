@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.212239+00:00",
+  "generated_at_utc": "2026-04-16T20:31:38.651280+00:00",
   "paper_id": "209",
   "count_row": {
     "paper_id": "209",
@@ -12,12 +12,12 @@
     "preferred_text_json_path": "data/extraction_json/text/209.json",
     "preferred_text_source": "full_text",
     "count_eligible": "true",
-    "likely_sps_case_count": "14",
+    "likely_sps_case_count": "22",
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
     "count_original_cohort_provenance_uncertain": "false",
-    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_01 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=14 | reviewed_source_category=observational_group_study | predicted_count=14 | predicted_source_category=observational_group_study",
+    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_01 | selection_bucket=case_group_boundary | prediction_correct=false | reviewed_count=22 | reviewed_source_category=observational_group_study | predicted_count=14 | predicted_source_category=observational_group_study | reviewer_notes=Count the explicit SMS/SPS cohort of 22 identified by the authors; the 14-patient title refers to the cerebellar ataxia subset, not the SPSD total.",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T17:55:23.424757+00:00"
   },
@@ -36,11 +36,11 @@
     "round_id": "stage04_llm_category_2026-04-05_round_01",
     "selection_bucket": "case_group_boundary",
     "selection_signals": "group_boundary_mixed_data_levels; group_boundary_category=observational_group_study; prediction_origin=llm; prediction_version=llm_v1_gpt4.1",
-    "prediction_correct": true,
+    "prediction_correct": false,
     "reviewed_source_category": "observational_group_study",
-    "reviewed_extractable_sps_case_count": "14",
+    "reviewed_extractable_sps_case_count": "22",
     "pdf_content_alignment_tag": "appears_matched",
-    "reviewer_notes": "",
+    "reviewer_notes": "Count the explicit SMS/SPS cohort of 22 identified by the authors; the 14-patient title refers to the cerebellar ataxia subset, not the SPSD total.",
     "reviewer_id": "human_reviewer",
     "reviewed_at_utc": "2026-04-05T17:55:23.424757+00:00",
     "source_gold_master_path": "qa\\validation\\source_categorisation\\gold_standard\\04_categorisation_gold_standard.csv"
@@ -73,12 +73,12 @@
       "predicted_count_reason": "The paper reports a cohort of 14 patients with cerebellar ataxia and high titers of GAD antibodies, with detailed clinical and immunological data provided for each patient. These patients are described as original cases identified and studied by the authors.",
       "predicted_categorisation_reason": "This paper reports on a cohort of 14 patients with cerebellar ataxia and anti-GAD antibodies, providing both individual-level data (tables with per-patient clinical and immunologic features) and group-level summaries. The study design is observational, with no intervention or trial described. The focus is on clinical and immunologic characterization, not primarily laboratory methods, and the data are original.",
       "selection_created_at_utc": "2026-04-05T16:59:46.891175+00:00",
-      "prediction_correct": "true",
+      "prediction_correct": "false",
       "review_status": "reviewed",
       "reviewed_source_category": "observational_group_study",
-      "reviewed_extractable_sps_case_count": "14",
+      "reviewed_extractable_sps_case_count": "22",
       "pdf_content_alignment_tag": "appears_matched",
-      "reviewer_notes": "",
+      "reviewer_notes": "Count the explicit SMS/SPS cohort of 22 identified by the authors; the 14-patient title refers to the cerebellar ataxia subset, not the SPSD total.",
       "reviewer_id": "human_reviewer",
       "reviewed_at_utc": "2026-04-05T17:55:23.424757+00:00"
     },
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\209.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\209.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\209.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\209.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\209.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\209.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\209.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\209.json",
     "result_payload": {
       "paper_id": "209",
       "count_row": {
@@ -157,26 +157,27 @@
         "preferred_text_json_path": "data\\extraction_json\\text\\209.json",
         "preferred_text_source": "full_text",
         "count_eligible": "true",
-        "likely_sps_case_count": "14",
-        "count_confidence": "low",
-        "count_basis": "title_count_signal",
+        "likely_sps_case_count": "22",
+        "count_confidence": "medium",
+        "count_basis": "diagnosis_specific_series_cohort_count",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=22 vs 14 | The paper is primarily a 14-patient cerebellar ataxia series, but the abstract also states that the authors identified 22 patients with stiff-man syndrome. It is unclear from the provided evidence whether those 22 SPS cases are original patients reported in this paper as an extractable cohort or only a comparison group/background sample, so a safe SPS-spectrum count cannot be resolved from the evidence pack alone.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly states that the authors identified 22 patients with stiff-man syndrome, which is an SPS-spectrum diagnosis-specific subgroup and is the best-supported extractable SPS count. However, the full text also notes that some patients in the broader article were previously described, so provenance overlap is uncertain and manual review remains warranted.",
         "count_version": "hybrid_v2_gpt-5.4",
-        "heuristic_likely_sps_case_count": "14",
-        "heuristic_count_confidence": "medium",
-        "heuristic_count_basis": "title_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\209.json",
-        "heuristic_candidate_count": "1",
-        "llm_likely_sps_case_count": "14",
-        "llm_count_confidence": "low",
-        "llm_selected_candidate_id": "",
+        "heuristic_likely_sps_case_count": "22",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "diagnosis_specific_series_cohort_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\209.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "22",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_manual_review_required",
+        "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\209.json",
-        "counted_at_utc": "2026-04-16T14:08:38.652026+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\209.json",
+        "counted_at_utc": "2026-04-16T18:55:36.436990+00:00"
       },
       "model_count_row": {
         "paper_id": "209",
@@ -188,26 +189,27 @@
         "preferred_text_json_path": "data\\extraction_json\\text\\209.json",
         "preferred_text_source": "full_text",
         "count_eligible": "true",
-        "likely_sps_case_count": "14",
-        "count_confidence": "low",
-        "count_basis": "title_count_signal",
+        "likely_sps_case_count": "22",
+        "count_confidence": "medium",
+        "count_basis": "diagnosis_specific_series_cohort_count",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=22 vs 14 | The paper is primarily a 14-patient cerebellar ataxia series, but the abstract also states that the authors identified 22 patients with stiff-man syndrome. It is unclear from the provided evidence whether those 22 SPS cases are original patients reported in this paper as an extractable cohort or only a comparison group/background sample, so a safe SPS-spectrum count cannot be resolved from the evidence pack alone.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly states that the authors identified 22 patients with stiff-man syndrome, which is an SPS-spectrum diagnosis-specific subgroup and is the best-supported extractable SPS count. However, the full text also notes that some patients in the broader article were previously described, so provenance overlap is uncertain and manual review remains warranted.",
         "count_version": "hybrid_v2_gpt-5.4",
-        "heuristic_likely_sps_case_count": "14",
-        "heuristic_count_confidence": "medium",
-        "heuristic_count_basis": "title_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\209.json",
-        "heuristic_candidate_count": "1",
-        "llm_likely_sps_case_count": "14",
-        "llm_count_confidence": "low",
-        "llm_selected_candidate_id": "",
+        "heuristic_likely_sps_case_count": "22",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "diagnosis_specific_series_cohort_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\209.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "22",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_manual_review_required",
+        "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\209.json",
-        "counted_at_utc": "2026-04-16T14:08:38.652026+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\209.json",
+        "counted_at_utc": "2026-04-16T18:55:36.436990+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\209.json",
@@ -235,16 +237,32 @@
       "heuristic_version": "heuristic_v2",
       "abstract_text": "BACKGROUND: Antibodies to glutamic acid decarboxylase (GAD-Ab) are described in patients with insulin-dependent (type 1) diabetes mellitus (IDDM), in stiff-man syndrome, and, recently, in a few patients with cerebellar ataxia., OBJECTIVES: To show a link between GAD-Ab and some patients with cerebellar ataxia and to clarify their clinical and immunologic profiles., METHODS: Serum samples were selected from 9000 samples of 4 laboratories. The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab., RESULTS: Thirteen of the 14 patients with cerebellar ataxia and GAD-Ab were women, and 11 had late-onset IDDM. Patients did not have clinical or radiologic evidence of brainstem involvement. Ten patients had oligoclonal IgG bands in the cerebrospinal fluid, and intrathecal GAD-Ab synthesis was observed in 5 of the 6 patients studied. The level of GAD-Ab of these patients was similar to those with stiff-man syndrome and significantly higher than those with IDDM or with polyendocrine autoimmunity (P<.001). However, the GAD-Ab levels of 6 of the 9 patients with polyendocrine autoimmunity overlapped with those of patients with cerebellar ataxia., CONCLUSIONS: These results suggest a link between high level of GAD-Ab and some cases of cerebellar ataxia, particularly women with IDDM. If high serum levels of GAD-Ab are detected, the cerebrospinal fluid should be evaluated for the presence of oligoclonal IgG bands and intrathecal synthesis of GAD-Ab to further prove an autoimmune origin of the syndrome.",
       "early_body_text": "cerebellar ataxia with anti–glutamic acid decarboxylase antibodies study of 14 patients je´roˆme honnorat, md, phd; albert saiz, md; bruno giometto, md; angela vincent, frcpath; luis brieva, md; clara de andres, md; jose´ maestre, md; nicole fabien, md; alain vighetto, md; roser casamitjana, md; charles thivolet, md; bruno tavolato, md; jean christophe antoine, md; paul trouillas, md; francesc graus, md background: antibodies to glutamic acid decarboxyl- ase (gad-ab) are described in patients with insulin- dependent (type 1) diabetes mellitus (iddm), in stiff- man syndrome, and, recently, in a few patients with cerebellar ataxia. objectives: to show a link between gad-ab and some patients with cerebellar ataxia and to clarify their clini- cal and immunologic profiles. methods: serum samples were selected from 9000 samples of 4 laboratories. the selection criterion was an immunohistochemical pattern compatible with gad-ab that was confirmed by radioimmunoassay. we identi- fied 22 patients with stiff-man syndrome and 14 with cer- ebellar ataxia and gad-ab. results:thirteen of the 14 patients with cerebellar ataxia and gad-ab were women, and 11 had late-onset iddm. patients did not have clinical or radiologic evidence of brainstem involvement. ten patients had oligoclonal igg bands in the cerebrospinal fluid, and intrathecal gad-ab synthesis was observed in 5 of the 6 patients studied. the level of gad-ab of these patients was similar to those with stiff-man syndrome and significantly higher than those with iddm or with polyendocrine autoimmunity (p,.001). however, the gad-ab levels of 6 of the 9 pa- tients with polyendocrine autoimmunity overlapped with those of patients with cerebellar ataxia. conclusions: these results suggest a link between high level of gad-ab and some cases of cerebellar ataxia, par- ticularly women with iddm. if high serum levels of gad-ab are detected, the cerebrospinal fluid should be evaluated for the presence of oligoclonal igg bands and intrathecal synthesis of gad-ab to further prove an au- toimmune origin of the syndrome. arch neurol. 2001;58:225-230 g lutamic acid decarbox- ylase (gad) is a major en- zyme of the nervous sys- tem that catalyzes the conversion of glutamate to g-aminobutyric acid (gaba). this en- zyme, also expressed by pancreatic beta cells, has been identified as a dominant and es- sential autoantigen in the development of insulin-dependent (type 1) diabetes melli- tus (iddm). 1 anti-gad autoantibodies (gad-ab) are present in up to 80% of pa- tients with newly diagnosed iddm and can be detected many years before the clinical onset of the disease. 2 high levels of gad-ab are found in the serum and cerebrospinal fluid (csf) of at least 60% of patients with the stiff-man syndrome, a rare disorder of the central nervous system characterized by progressive muscle rigidity with superim- posed painful spasms. 3,4 patients with stiff- man syndrome who have gad-ab usually also have iddm and other organ-specific au- toimmune manifestations, suggesting that the stiff-man syndrome may have an auto- immune-mediated pathogenesis. 5 the gad-ab of patients with stiff-man syn- drome are in higher titer and have a differ- ent epitope specificity than those of pa- tients with iddm, suggesting that the 2 diseases may have different autoimmune mechanisms. 6,7 recent studies show that high levels of gad-ab may also be observed in a few pa- tients with cerebellar ataxia, supporting an autoimmune pathogenesis of the cerebel- lar syndrome. 8-14 to confirm this clinical- immunologic association, we describe a se- ries of 14 patients with idiopathic cerebellar ataxia and high titers of gad-ab. results clinical features the main clinical features of the 14 pa- tients with gad-ab and cerebellar ataxia are summarized in table 1andtable 2 original contribution the affiliations of the authors appear in the acknowledgment section at the end of the article. (reprinted) arch neurol / vol 58, feb 2001 www.archneurol.com 225 ©2001 american medical association. all rights reserved. downloaded from: https://jamanetwork.com/ by a uzh hauptbibliothek / zentralbibliothek zuerich user on 05/26/2023 and include 4 patients (patients 1-4) who were previ- ously described.10-12 thirteen of them were women, with a median age of 51 years (range, 20-74 years) at the on- set of the cerebellar syndrome. six patients had a family history of autoimmune diseases such as iddm or thy- roiditis, but none had a family history of cerebellar ataxia. ten of 14 patients had iddm. in all cases, these patients had a late-onset iddm that started at a median age of 47 years (range, 28-66 years). the diagnosis of iddm an- tedated the onset of the cerebellar syndrome in 7 pa- tients (median, 8 years; range, 2-12 years). other auto- immune disorders were thyroiditis (hashimoto or graves disease) (8 patients), pernicious anemia (2 patients), my- asthenia gravis (1 patient), and psoriasis (1 patient). an asymptomatic celiac disease wa",
-      "llm_evidence_text": "Title:\nCerebellar ataxia with anti-glutamic acid decarboxylase antibodies: study of 14 patients.\n\nMetadata abstract:\nBACKGROUND: Antibodies to glutamic acid decarboxylase (GAD-Ab) are described in patients with insulin-dependent (type 1) diabetes mellitus (IDDM), in stiff-man syndrome, and, recently, in a few patients with cerebellar ataxia., OBJECTIVES: To show a link between GAD-Ab and some patients with cerebellar ataxia and to clarify their clinical and immunologic profiles., METHODS: Serum samples were selected from 9000 samples of 4 laboratories. The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab., RESULTS: Thirteen of the 14 patients with cerebellar ataxia and GAD-Ab were women, and 11 had late-onset IDDM. Patients did not have clinical or radiologic evidence of brainstem involvement. Ten patients had oligoclonal IgG bands in the cerebrospinal fluid, and intrathecal GAD-Ab synthesis was observed in 5 of the 6 patients studied. The level of GAD-Ab of these patients was similar to those with stiff-man syndrome and significantly higher than those with IDDM or with polyendocrine autoimmunity (P<.001). However, the GAD-Ab levels of 6 of the 9 patients with polyendocrine autoimmunity overlapped with those of patients with cerebellar ataxia., CONCLUSIONS: These results suggest a link between high level of GAD-Ab and some cases of cerebellar ataxia, particularly women with IDDM. If high serum levels of GAD-Ab are detected, the cerebrospinal fluid should be evaluated for the presence of oligoclonal IgG bands and intrathecal synthesis of GAD-Ab to further prove an autoimmune origin of the syndrome.\n\nPotential non-original or reused-cohort signals:\n- (Lyon’s laboratory) as previously described.\n- plying the Schu¨ ller formula as previously described.\n- previously described.\n- fications were made as previously described.17\n\nPreferred text count-salient snippets:\n- Study of 14 Patients\n- fied 22 patients with stiff-man syndrome and 14 with cer-\n- Results:Thirteen of the 14 patients with cerebellar ataxia\n- Ten patients had oligoclonal IgG\n- synthesis was observed in 5 of the 6 patients studied.\n- fluid (CSF) of at least 60% of patients with\n- 3,4 Patients with stiff-\n- examination gave normal results in only 4 patients.",
+      "llm_evidence_text": "Title:\nCerebellar ataxia with anti-glutamic acid decarboxylase antibodies: study of 14 patients.\n\nMetadata abstract:\nBACKGROUND: Antibodies to glutamic acid decarboxylase (GAD-Ab) are described in patients with insulin-dependent (type 1) diabetes mellitus (IDDM), in stiff-man syndrome, and, recently, in a few patients with cerebellar ataxia., OBJECTIVES: To show a link between GAD-Ab and some patients with cerebellar ataxia and to clarify their clinical and immunologic profiles., METHODS: Serum samples were selected from 9000 samples of 4 laboratories. The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab., RESULTS: Thirteen of the 14 patients with cerebellar ataxia and GAD-Ab were women, and 11 had late-onset IDDM. Patients did not have clinical or radiologic evidence of brainstem involvement. Ten patients had oligoclonal IgG bands in the cerebrospinal fluid, and intrathecal GAD-Ab synthesis was observed in 5 of the 6 patients studied. The level of GAD-Ab of these patients was similar to those with stiff-man syndrome and significantly higher than those with IDDM or with polyendocrine autoimmunity (P<.001). However, the GAD-Ab levels of 6 of the 9 patients with polyendocrine autoimmunity overlapped with those of patients with cerebellar ataxia., CONCLUSIONS: These results suggest a link between high level of GAD-Ab and some cases of cerebellar ataxia, particularly women with IDDM. If high serum levels of GAD-Ab are detected, the cerebrospinal fluid should be evaluated for the presence of oligoclonal IgG bands and intrathecal synthesis of GAD-Ab to further prove an autoimmune origin of the syndrome.\n\nExplicit SPS-spectrum subgroup signals:\n-  immunologic profiles., METHODS: Serum samples were selected from 9000 samples of 4 laboratories. The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab., RESULTS: Thirteen of the 14 patients with cerebellar ataxia and GAD-Ab w\n\nPotential non-original or reused-cohort signals:\n- (Lyon’s laboratory) as previously described.\n- plying the Schu¨ ller formula as previously described.\n- previously described.\n- fications were made as previously described.17\n\nPreferred text count-salient snippets:\n- Study of 14 Patients\n- fied 22 patients with stiff-man syndrome and 14 with cer-\n- Results:Thirteen of the 14 patients with cerebellar ataxia\n- Ten patients had oligoclonal IgG\n- synthesis was observed in 5 of the 6 patients studied.\n- fluid (CSF) of at least 60% of patients with\n- 3,4 Patients with stiff-\n- examination gave normal results in only 4 patients.",
       "candidate_generation_notes": [
         "preferred_text_source=full_text",
-        "distinct_candidate_counts=[14]",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[14, 22]",
+        "explicit_sps_subgroup_count=22",
         "non_original_case_signals=4",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
         {
           "candidate_id": "cand01",
+          "proposed_count": 22,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_series_cohort_count",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 102,
+          "rationale": "basis=diagnosis_specific_series_cohort_count | confidence=high | source_category=case_series_or_multi_case",
+          "evidence_text": " immunologic profiles., METHODS: Serum samples were selected from 9000 samples of 4 laboratories. The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab., RESULTS: Thirteen of the 14 patients with cerebellar ataxia and GAD-Ab w",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
           "proposed_count": 14,
           "candidate_kind": "exact_numeric_count",
           "count_basis": "title_count_signal",
@@ -263,78 +281,84 @@
       "preferred_candidate_id": "cand01",
       "fallback_candidate_id": "cand01",
       "llm_routing_recommended": true,
-      "llm_routing_reason": "preferred_candidate_manual_review",
-      "explicit_sps_subgroup_count": null,
-      "explicit_sps_subgroup_basis": "",
-      "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 22,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_series_cohort_count",
+      "explicit_sps_subgroup_evidence": [
+        " immunologic profiles., METHODS: Serum samples were selected from 9000 samples of 4 laboratories. The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab., RESULTS: Thirteen of the 14 patients with cerebellar ataxia and GAD-Ab w"
+      ],
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "(Lyon’s laboratory) as previously described.",
+        "plying the Schu¨ ller formula as previously described.",
+        "previously described.",
+        "fications were made as previously described.17"
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "209",
       "model_id": "gpt-5.4-2026-03-05",
-      "verification_status": "llm_manual_review_required",
+      "verification_status": "llm_candidate_exact",
       "validator_flags": [],
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "local_validation_conflict=22 vs 14"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "decision": {
-        "decision_type": "manual_review_required",
-        "selected_candidate_id": null,
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
         "alternative_count": null,
-        "count_confidence": "low",
+        "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper is primarily a 14-patient cerebellar ataxia series, but the abstract also states that the authors identified 22 patients with stiff-man syndrome. It is unclear from the provided evidence whether those 22 SPS cases are original patients reported in this paper as an extractable cohort or only a comparison group/background sample, so a safe SPS-spectrum count cannot be resolved from the evidence pack alone.",
+        "count_reasoning_summary": "The paper explicitly states that the authors identified 22 patients with stiff-man syndrome, which is an SPS-spectrum diagnosis-specific subgroup and is the best-supported extractable SPS count. However, the full text also notes that some patients in the broader article were previously described, so provenance overlap is uncertain and manual review remains warranted.",
         "evidence": [
           {
-            "quote": "Cerebellar ataxia with anti-glutamic acid decarboxylase antibodies: study of 14 patients.",
+            "quote": "The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab.",
             "page": null,
-            "section": "title",
-            "supports": "The main reported cohort in the paper is 14 patients, but they are cerebellar ataxia patients rather than clearly SPS-spectrum cases."
+            "section": "Methods/Abstract",
+            "supports": "Explicit diagnosis-specific SPS-spectrum subgroup count of 22 stiff-man syndrome patients."
           },
           {
-            "quote": "we identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and gad-ab.",
+            "quote": "high levels of gad-ab are found in the serum and cerebrospinal fluid (csf) of at least 60% of patients with the stiff-man syndrome",
             "page": null,
-            "section": "methods/abstract",
-            "supports": "The paper explicitly mentions 22 stiff-man syndrome patients, which are SPS-spectrum, but their role as an original extractable cohort versus comparator group is unclear from the provided text."
+            "section": "Introduction",
+            "supports": "Confirms that stiff-man syndrome is the SPS-spectrum condition discussed in this paper."
           },
           {
-            "quote": "the level of gad-ab of these patients was similar to those with stiff-man syndrome and significantly higher than those with iddm or with polyendocrine autoimmunity",
+            "quote": "and include 4 patients (patients 1-4) who were previously described.",
             "page": null,
-            "section": "results/abstract",
-            "supports": "Suggests the stiff-man syndrome group may function as a comparison cohort rather than the main case series, increasing uncertainty about whether to count the 22 SPS cases as reported original cases in this paper."
+            "section": "Results/Clinical features",
+            "supports": "Indicates possible prior description/overlap, so original cohort provenance is uncertain and manual review is needed."
           }
         ]
       }
     },
     "count_evidence_payload": {
       "paper_id": "209",
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "local_validation_conflict=22 vs 14"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "Cerebellar ataxia with anti-glutamic acid decarboxylase antibodies: study of 14 patients.",
+          "quote": "The selection criterion was an immunohistochemical pattern compatible with GAD-Ab that was confirmed by radioimmunoassay. We identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and GAD-Ab.",
           "page": null,
-          "section": "title",
-          "supports": "The main reported cohort in the paper is 14 patients, but they are cerebellar ataxia patients rather than clearly SPS-spectrum cases."
+          "section": "Methods/Abstract",
+          "supports": "Explicit diagnosis-specific SPS-spectrum subgroup count of 22 stiff-man syndrome patients."
         },
         {
-          "quote": "we identified 22 patients with stiff-man syndrome and 14 with cerebellar ataxia and gad-ab.",
+          "quote": "high levels of gad-ab are found in the serum and cerebrospinal fluid (csf) of at least 60% of patients with the stiff-man syndrome",
           "page": null,
-          "section": "methods/abstract",
-          "supports": "The paper explicitly mentions 22 stiff-man syndrome patients, which are SPS-spectrum, but their role as an original extractable cohort versus comparator group is unclear from the provided text."
+          "section": "Introduction",
+          "supports": "Confirms that stiff-man syndrome is the SPS-spectrum condition discussed in this paper."
         },
         {
-          "quote": "the level of gad-ab of these patients was similar to those with stiff-man syndrome and significantly higher than those with iddm or with polyendocrine autoimmunity",
+          "quote": "and include 4 patients (patients 1-4) who were previously described.",
           "page": null,
-          "section": "results/abstract",
-          "supports": "Suggests the stiff-man syndrome group may function as a comparison cohort rather than the main case series, increasing uncertainty about whether to count the 22 SPS cases as reported original cases in this paper."
+          "section": "Results/Clinical features",
+          "supports": "Indicates possible prior description/overlap, so original cohort provenance is uncertain and manual review is needed."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\209.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_challenges\\209.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\209.json",
+      "challenge_json_path": ""
     }
   }
 }

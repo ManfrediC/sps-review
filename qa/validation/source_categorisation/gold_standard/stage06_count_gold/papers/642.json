@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.526521+00:00",
+  "generated_at_utc": "2026-04-16T20:31:39.468237+00:00",
   "paper_id": "642",
   "count_row": {
     "paper_id": "642",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\642.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\642.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\642.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\642.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\642.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\642.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\642.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\642.json",
     "result_payload": {
       "paper_id": "642",
       "count_row": {
@@ -158,25 +158,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "5",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The full text explicitly describes a study cohort of five patients with a history of SPS who fulfilled clinical diagnostic criteria for SPS. This is a direct original SPS-spectrum cohort count, so candidate 5 is best supported.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports a study of five patients with stiff-person syndrome, and the methods state these five fulfilled clinical diagnostic criteria and were GAD-antibody positive. However, the evidence pack flags that the stimulation method was performed 'as described previously' and marks original cohort provenance as uncertain, so the safest resolution is to select the 5-patient candidate but retain manual review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "5",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\642.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\642.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "5",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_semantic_conflict_manual_review_required",
-        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\642.json",
-        "counted_at_utc": "2026-04-16T14:12:23.580706+00:00"
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\642.json",
+        "counted_at_utc": "2026-04-16T18:59:00.366930+00:00"
       },
       "model_count_row": {
         "paper_id": "642",
@@ -189,25 +190,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "5",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The full text explicitly describes a study cohort of five patients with a history of SPS who fulfilled clinical diagnostic criteria for SPS. This is a direct original SPS-spectrum cohort count, so candidate 5 is best supported.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports a study of five patients with stiff-person syndrome, and the methods state these five fulfilled clinical diagnostic criteria and were GAD-antibody positive. However, the evidence pack flags that the stimulation method was performed 'as described previously' and marks original cohort provenance as uncertain, so the safest resolution is to select the 5-patient candidate but retain manual review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "5",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\642.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\642.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "5",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_semantic_conflict_manual_review_required",
-        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\642.json",
-        "counted_at_utc": "2026-04-16T14:12:23.580706+00:00"
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\642.json",
+        "counted_at_utc": "2026-04-16T18:59:00.366930+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\642.json",
@@ -242,6 +244,7 @@
         "distinct_candidate_counts=[0, 5]",
         "non_original_case_signals=1",
         "sps_status_uncertainty_signals=1",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -283,76 +286,87 @@
       "explicit_sps_subgroup_evidence": [],
       "sps_status_uncertainty_signals": [
         "flex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circ"
-      ]
+      ],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "described previously."
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "642",
       "model_id": "gpt-5.4-2026-03-05",
       "verification_status": "llm_candidate_exact",
-      "validator_flags": [
-        "COUNT_SPS_STATUS_UNCERTAIN"
-      ],
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
-      ],
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "decision": {
         "decision_type": "candidate_exact",
         "selected_candidate_id": "cand01",
         "alternative_count": null,
-        "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "The full text explicitly describes a study cohort of five patients with a history of SPS who fulfilled clinical diagnostic criteria for SPS. This is a direct original SPS-spectrum cohort count, so candidate 5 is best supported.",
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper explicitly reports a study of five patients with stiff-person syndrome, and the methods state these five fulfilled clinical diagnostic criteria and were GAD-antibody positive. However, the evidence pack flags that the stimulation method was performed 'as described previously' and marks original cohort provenance as uncertain, so the safest resolution is to select the 5-patient candidate but retain manual review.",
         "evidence": [
           {
             "quote": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects.",
             "page": null,
             "section": "abstract",
-            "supports": "Direct abstract-level count of 5 SPS patients studied."
+            "supports": "Explicit SPS cohort size of 5."
           },
           {
-            "quote": "Methods. Seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of SPS (ages 47 to 60 years; mean, 51 years) gave written informed consent for the study protocol... Patients selected for the study fulfilled clinical criteria for diagnosis of SPS.",
+            "quote": "Seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of SPS (ages 47 to 60 years; mean, 51 years) gave written informed consent for the study protocol... Patients selected for the study fulfilled clinical criteria for diagnosis of SPS.",
             "page": null,
-            "section": "Methods",
-            "supports": "Confirms the original cohort included 5 unique SPS patients meeting clinical diagnostic criteria."
+            "section": "methods",
+            "supports": "Confirms five recruited SPS patients with diagnosis-supported status."
           },
           {
             "quote": "All five patients had autoantibodies against glutamic acid decarboxylase.",
             "page": null,
-            "section": "Methods",
-            "supports": "Reinforces that the same cohort consists of five SPS patients, not a mixed or uncertain subgroup."
+            "section": "methods",
+            "supports": "Provides additional diagnostic support for the five SPS cases."
+          },
+          {
+            "quote": "paired electrical pulses with a duration of 0.2 ms over the supraorbital nerve at the supraorbital foramen on the right side as described previously.",
+            "page": null,
+            "section": "methods",
+            "supports": "Contributes to provenance uncertainty flagged in the evidence pack; supports keeping manual review required."
           }
         ]
       }
     },
     "count_evidence_payload": {
       "paper_id": "642",
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "evidence": [
         {
           "quote": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects.",
           "page": null,
           "section": "abstract",
-          "supports": "Direct abstract-level count of 5 SPS patients studied."
+          "supports": "Explicit SPS cohort size of 5."
         },
         {
-          "quote": "Methods. Seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of SPS (ages 47 to 60 years; mean, 51 years) gave written informed consent for the study protocol... Patients selected for the study fulfilled clinical criteria for diagnosis of SPS.",
+          "quote": "Seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of SPS (ages 47 to 60 years; mean, 51 years) gave written informed consent for the study protocol... Patients selected for the study fulfilled clinical criteria for diagnosis of SPS.",
           "page": null,
-          "section": "Methods",
-          "supports": "Confirms the original cohort included 5 unique SPS patients meeting clinical diagnostic criteria."
+          "section": "methods",
+          "supports": "Confirms five recruited SPS patients with diagnosis-supported status."
         },
         {
           "quote": "All five patients had autoantibodies against glutamic acid decarboxylase.",
           "page": null,
-          "section": "Methods",
-          "supports": "Reinforces that the same cohort consists of five SPS patients, not a mixed or uncertain subgroup."
+          "section": "methods",
+          "supports": "Provides additional diagnostic support for the five SPS cases."
+        },
+        {
+          "quote": "paired electrical pulses with a duration of 0.2 ms over the supraorbital nerve at the supraorbital foramen on the right side as described previously.",
+          "page": null,
+          "section": "methods",
+          "supports": "Contributes to provenance uncertainty flagged in the evidence pack; supports keeping manual review required."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\642.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_challenges\\642.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\642.json",
+      "challenge_json_path": ""
     }
   }
 }

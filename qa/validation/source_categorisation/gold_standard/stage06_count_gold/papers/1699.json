@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:09.273507+00:00",
+  "generated_at_utc": "2026-04-16T20:31:40.281869+00:00",
   "paper_id": "1699",
   "count_row": {
     "paper_id": "1699",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\1699.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1699.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\1699.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1699.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\1699.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\1699.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\1699.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\1699.json",
     "result_payload": {
       "paper_id": "1699",
       "count_row": {
@@ -158,25 +158,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "1",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "source_single_case_default",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | This is an original single-case report, and the paper explicitly states that the authors report a 58-year-old man with stiff person syndrome. The full-text excerpt also presents one detailed case report beginning with a single patient presentation, with no indication of additional original SPS-spectrum patients.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports a single original patient: a 58-year-old Sri Lankan male with clinically and electrophysiologically supported stiff person syndrome and high GAD antibody titre. This best matches the single-case candidate, but manual review remains appropriate because provenance uncertainty was flagged upstream.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "source_single_case_default",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1699.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\1699.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_semantic_conflict_manual_review_required",
-        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1699.json",
-        "counted_at_utc": "2026-04-16T13:53:25.213775+00:00"
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\1699.json",
+        "counted_at_utc": "2026-04-16T18:42:44.685810+00:00"
       },
       "model_count_row": {
         "paper_id": "1699",
@@ -189,25 +190,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "1",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "source_single_case_default",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | This is an original single-case report, and the paper explicitly states that the authors report a 58-year-old man with stiff person syndrome. The full-text excerpt also presents one detailed case report beginning with a single patient presentation, with no indication of additional original SPS-spectrum patients.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports a single original patient: a 58-year-old Sri Lankan male with clinically and electrophysiologically supported stiff person syndrome and high GAD antibody titre. This best matches the single-case candidate, but manual review remains appropriate because provenance uncertainty was flagged upstream.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "source_single_case_default",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1699.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\1699.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_semantic_conflict_manual_review_required",
-        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1699.json",
-        "counted_at_utc": "2026-04-16T13:53:25.213775+00:00"
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\1699.json",
+        "counted_at_utc": "2026-04-16T18:42:44.685810+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\1699.json",
@@ -242,6 +244,7 @@
         "distinct_candidate_counts=[0, 1]",
         "non_original_case_signals=2",
         "sps_status_uncertainty_signals=1",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -287,76 +290,88 @@
       "explicit_sps_subgroup_evidence": [],
       "sps_status_uncertainty_signals": [
         "Although neurological syndromes such as sensory neuropathy, limbic encephalitis and, myelopathy have been described as paraneoplastic features in carcinoid, we believe this is the first report of stiff person syndrome associated with carcinoid tumour.Copyright © 2019, Brazilian Association of Computational Mechanics."
-      ]
+      ],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "carcinoid tumour has not been reported previously.",
+        "SPS has never been previously reported in"
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "1699",
       "model_id": "gpt-5.4-2026-03-05",
       "verification_status": "llm_candidate_exact",
-      "validator_flags": [
-        "COUNT_SPS_STATUS_UNCERTAIN"
-      ],
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
-      ],
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "decision": {
         "decision_type": "candidate_exact",
         "selected_candidate_id": "cand01",
         "alternative_count": null,
-        "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "This is an original single-case report, and the paper explicitly states that the authors report a 58-year-old man with stiff person syndrome. The full-text excerpt also presents one detailed case report beginning with a single patient presentation, with no indication of additional original SPS-spectrum patients.",
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper explicitly reports a single original patient: a 58-year-old Sri Lankan male with clinically and electrophysiologically supported stiff person syndrome and high GAD antibody titre. This best matches the single-case candidate, but manual review remains appropriate because provenance uncertainty was flagged upstream.",
         "evidence": [
           {
             "quote": "We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour.",
-            "page": null,
-            "section": "abstract",
-            "supports": "Explicitly identifies one original SPS patient reported in the paper."
+            "page": 1,
+            "section": "Abstract",
+            "supports": "Supports that this paper contains one original SPS patient."
           },
           {
             "quote": "case report a previously healthy 58 year old sri lankan male, presented with progressive difficulty in walking and painful stiffness of the back for 3 months.",
-            "page": null,
+            "page": 1,
             "section": "Case report",
-            "supports": "Confirms the paper contains a single individual case report rather than a cohort."
+            "supports": "Supports that the article is an original single-patient case report."
           },
           {
-            "quote": "we believe this is the first report of stiff person syndrome associated with carcinoid tumour.",
-            "page": null,
-            "section": "abstract/discussion context",
-            "supports": "Supports originality of this reported case and argues against the count being zero or a reused cohort."
+            "quote": "electromyography revealed continuous uniform activation of normal motor unit potential especially in para spinal muscles which was in favour of sps.",
+            "page": 2,
+            "section": "Case report",
+            "supports": "Supports diagnostic confirmation/support for SPS in the reported patient."
+          },
+          {
+            "quote": "the gad antibody titre was 1826.0 iu/ml (normal< 10). other causes of rigidity and spasm were excluded.",
+            "page": 2,
+            "section": "Case report",
+            "supports": "Supports that the reported patient had diagnosis-supported SPS rather than only suspected disease."
           }
         ]
       }
     },
     "count_evidence_payload": {
       "paper_id": "1699",
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "evidence": [
         {
           "quote": "We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour.",
-          "page": null,
-          "section": "abstract",
-          "supports": "Explicitly identifies one original SPS patient reported in the paper."
+          "page": 1,
+          "section": "Abstract",
+          "supports": "Supports that this paper contains one original SPS patient."
         },
         {
           "quote": "case report a previously healthy 58 year old sri lankan male, presented with progressive difficulty in walking and painful stiffness of the back for 3 months.",
-          "page": null,
+          "page": 1,
           "section": "Case report",
-          "supports": "Confirms the paper contains a single individual case report rather than a cohort."
+          "supports": "Supports that the article is an original single-patient case report."
         },
         {
-          "quote": "we believe this is the first report of stiff person syndrome associated with carcinoid tumour.",
-          "page": null,
-          "section": "abstract/discussion context",
-          "supports": "Supports originality of this reported case and argues against the count being zero or a reused cohort."
+          "quote": "electromyography revealed continuous uniform activation of normal motor unit potential especially in para spinal muscles which was in favour of sps.",
+          "page": 2,
+          "section": "Case report",
+          "supports": "Supports diagnostic confirmation/support for SPS in the reported patient."
+        },
+        {
+          "quote": "the gad antibody titre was 1826.0 iu/ml (normal< 10). other causes of rigidity and spasm were excluded.",
+          "page": 2,
+          "section": "Case report",
+          "supports": "Supports that the reported patient had diagnosis-supported SPS rather than only suspected disease."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\1699.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\1699.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\1699.json",
+      "challenge_json_path": ""
     }
   }
 }

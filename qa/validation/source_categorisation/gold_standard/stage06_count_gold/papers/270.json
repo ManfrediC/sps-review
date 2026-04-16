@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.316201+00:00",
+  "generated_at_utc": "2026-04-16T20:31:38.904164+00:00",
   "paper_id": "270",
   "count_row": {
     "paper_id": "270",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\270.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\270.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\270.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\270.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\270.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\270.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\270.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\270.json",
     "result_payload": {
       "paper_id": "270",
       "count_row": {
@@ -157,26 +157,27 @@
         "preferred_text_json_path": "data\\extraction_json\\text\\270.json",
         "preferred_text_source": "full_text",
         "count_eligible": "true",
-        "likely_sps_case_count": "76",
-        "count_confidence": "low",
-        "count_basis": "abstract_count_signal",
+        "likely_sps_case_count": "107",
+        "count_confidence": "medium",
+        "count_basis": "diagnosis_specific_confirmed_subset_count",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=576 vs 76 | The paper clearly reports a cohort of 576 patients referred with suspected SPS, with laboratory-tested subsets of 286 and 116, but the evidence provided does not establish how many were unique confirmed SPS-spectrum cases. Because the reported numbers appear to reflect a broader suspected/mixed referral cohort rather than an explicit extractable SPS-spectrum case count, no listed candidate is safely supported.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader 576 suspected referrals or the unsupported 76. Because the paper appears lab-heavy and provenance overlap is flagged as uncertain, this count should still be manually checked.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "76",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\270.json",
-        "heuristic_candidate_count": "2",
-        "llm_likely_sps_case_count": "76",
-        "llm_count_confidence": "low",
-        "llm_selected_candidate_id": "",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\270.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "107",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand02",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_manual_review_required",
+        "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\270.json",
-        "counted_at_utc": "2026-04-16T14:09:33.447861+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\270.json",
+        "counted_at_utc": "2026-04-16T18:56:28.314237+00:00"
       },
       "model_count_row": {
         "paper_id": "270",
@@ -188,26 +189,27 @@
         "preferred_text_json_path": "data\\extraction_json\\text\\270.json",
         "preferred_text_source": "full_text",
         "count_eligible": "true",
-        "likely_sps_case_count": "76",
-        "count_confidence": "low",
-        "count_basis": "abstract_count_signal",
+        "likely_sps_case_count": "107",
+        "count_confidence": "medium",
+        "count_basis": "diagnosis_specific_confirmed_subset_count",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=576 vs 76 | The paper clearly reports a cohort of 576 patients referred with suspected SPS, with laboratory-tested subsets of 286 and 116, but the evidence provided does not establish how many were unique confirmed SPS-spectrum cases. Because the reported numbers appear to reflect a broader suspected/mixed referral cohort rather than an explicit extractable SPS-spectrum case count, no listed candidate is safely supported.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader 576 suspected referrals or the unsupported 76. Because the paper appears lab-heavy and provenance overlap is flagged as uncertain, this count should still be manually checked.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "76",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\270.json",
-        "heuristic_candidate_count": "2",
-        "llm_likely_sps_case_count": "76",
-        "llm_count_confidence": "low",
-        "llm_selected_candidate_id": "",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\270.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "107",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand02",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_manual_review_required",
+        "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\270.json",
-        "counted_at_utc": "2026-04-16T14:09:33.447861+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\270.json",
+        "counted_at_utc": "2026-04-16T18:56:28.314237+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\270.json",
@@ -235,12 +237,16 @@
       "heuristic_version": "heuristic_v2",
       "abstract_text": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC). Of these, 286 underwent radioimmunoassay (RIA) for glutamic acid decarboxylase (GAD) antibodies; 116 were GAD antibody positive by one or both tests. Ninety-six percent of those positive by ICC had RIA values several standard deviations above normal. RIA did not correlate with age or illness duration. Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.",
       "early_body_text": "atory medicine. dennis a. noe, 2003:3.1–3.20. 2148 neurology 63 december (1 of 2) 2004 doi 10.1212/01.wnl.0000145661.01675.a8 2004;63;2146-2148 neurology b. b. murinson, m. butler, k. marfurt, et al. markedly elevated gad antibodies in sps: effects of age and illness duration this information is current as of december 13, 2004 services updated information & http://n.neurology.org/content/63/11/2146.full including high resolution figures, can be found at: supplementary material http://n.neurology.org/content/suppl/2004/11/16/63.11.2146.dc1 supplementary material can be found at: references http://n.neurology.org/content/63/11/2146.full#ref-list-1 this article cites 8 articles, 2 of which you can access for free at: citations http://n.neurology.org/content/63/11/2146.full##otherarticles this article has been cited by 4 highwire-hosted articles: subspecialty collections http://n.neurology.org/cgi/collection/stiff_person_syndrome stiff person syndrome http://n.neurology.org/cgi/collection/autoimmune_diseases autoimmune diseases http://n.neurology.org/cgi/collection/all_immunology all immunology following collection(s): this article, along with others on similar topics, appears in the permissions & licensing http://www.neurology.org/about/about_the_journal#permissions its entirety can be found online at: information about reproducing this article in parts (figures,tables) or in reprints http://n.neurology.org/subscribers/advertise information about ordering reprints can be found online: online issn: 1526-632x. 1951, it is now a weekly with 48 issues per year. copyright . all rights reserved. print issn: 0028-3878. ® is the official journal of the american academy of neurology. published continuously sinceneurology",
-      "llm_evidence_text": "Title:\nMarkedly elevated GAD antibodies in SPS: effects of age and illness duration.\n\nMetadata abstract:\nFive hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC). Of these, 286 underwent radioimmunoassay (RIA) for glutamic acid decarboxylase (GAD) antibodies; 116 were GAD antibody positive by one or both tests. Ninety-six percent of those positive by ICC had RIA values several standard deviations above normal. RIA did not correlate with age or illness duration. Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.\n\nPotential non-original or reused-cohort signals:\n- western blot was performed on all sera as previously described.\n\nPreferred text count-salient snippets:\n- Abstract—Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemis-\n- The sera of 576 patients who were referred specifi-\n- There were 107 patients positive for GAD antibodies by ICC; in 9\n- There were 469 patients that were GAD antibody negative by\n- mal RIA was 25, the 99th percentile of 58 normal subjects.\n- These nine patients with disparate RIA\n- ICC(/H11002) patients had RIA values above 5.\n- GADICC(/H11001) and five GAD ICC(/H11002) patients had “high-",
+      "llm_evidence_text": "Title:\nMarkedly elevated GAD antibodies in SPS: effects of age and illness duration.\n\nMetadata abstract:\nFive hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC). Of these, 286 underwent radioimmunoassay (RIA) for glutamic acid decarboxylase (GAD) antibodies; 116 were GAD antibody positive by one or both tests. Ninety-six percent of those positive by ICC had RIA values several standard deviations above normal. RIA did not correlate with age or illness duration. Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.\n\nExplicit SPS-spectrum subgroup signals:\n- 3 There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.\n- characteristic of ICC-confirmed SPS\n\nPotential non-original or reused-cohort signals:\n- western blot was performed on all sera as previously described.\n\nConfirmed-only guardrail signals:\n- Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).\n- Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.\n- Abstract—Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemis-\n- were characteristic of ICC-confirmed SPS, and modest elevations were not.\n\nPreferred text count-salient snippets:\n- Abstract—Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemis-\n- The sera of 576 patients who were referred specifi-\n- There were 107 patients positive for GAD antibodies by ICC; in 9\n- There were 469 patients that were GAD antibody negative by\n- mal RIA was 25, the 99th percentile of 58 normal subjects.\n- These nine patients with disparate RIA\n- ICC(/H11002) patients had RIA values above 5.\n- GADICC(/H11001) and five GAD ICC(/H11002) patients had “high-",
       "candidate_generation_notes": [
         "preferred_text_source=full_text",
         "body_only_candidate_added",
-        "distinct_candidate_counts=[0, 76]",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[0, 76, 107]",
+        "explicit_sps_subgroup_count=107",
         "non_original_case_signals=1",
+        "confirmed_only_guardrail_signals=4",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -259,6 +265,19 @@
         },
         {
           "candidate_id": "cand02",
+          "proposed_count": 107,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_confirmed_subset_count",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 102,
+          "rationale": "basis=diagnosis_specific_confirmed_subset_count | confidence=high | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "3 There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand03",
           "proposed_count": 0,
           "candidate_kind": "forced_zero",
           "count_basis": "lab_context_no_extractable_count",
@@ -274,92 +293,101 @@
         }
       ],
       "preferred_candidate_id": "cand01",
-      "fallback_candidate_id": "cand01",
+      "fallback_candidate_id": "cand02",
       "llm_routing_recommended": true,
       "llm_routing_reason": "multiple_candidate_counts",
-      "explicit_sps_subgroup_count": null,
-      "explicit_sps_subgroup_basis": "",
-      "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "explicit_sps_subgroup_count": 107,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_confirmed_subset_count",
+      "explicit_sps_subgroup_evidence": [
+        "3 There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.",
+        "characteristic of ICC-confirmed SPS"
+      ],
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "western blot was performed on all sera as previously described."
+      ],
+      "confirmed_only_guardrail_signals": [
+        "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
+        "Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.",
+        "Abstract—Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemis-",
+        "were characteristic of ICC-confirmed SPS, and modest elevations were not."
+      ]
     },
     "count_decision_payload": {
       "paper_id": "270",
       "model_id": "gpt-5.4-2026-03-05",
-      "verification_status": "llm_manual_review_required",
+      "verification_status": "llm_candidate_exact",
       "validator_flags": [],
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "local_validation_conflict=576 vs 76"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "decision": {
-        "decision_type": "manual_review_required",
-        "selected_candidate_id": null,
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand02",
         "alternative_count": null,
-        "count_confidence": "low",
+        "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper clearly reports a cohort of 576 patients referred with suspected SPS, with laboratory-tested subsets of 286 and 116, but the evidence provided does not establish how many were unique confirmed SPS-spectrum cases. Because the reported numbers appear to reflect a broader suspected/mixed referral cohort rather than an explicit extractable SPS-spectrum case count, no listed candidate is safely supported.",
+        "count_reasoning_summary": "The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader 576 suspected referrals or the unsupported 76. Because the paper appears lab-heavy and provenance overlap is flagged as uncertain, this count should still be manually checked.",
         "evidence": [
           {
             "quote": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
             "page": null,
-            "section": "Abstract",
-            "supports": "Shows the largest reported cohort is patients with suspected SPS, not necessarily confirmed SPS-spectrum cases."
+            "section": "abstract",
+            "supports": "The 576 figure is a suspected/referred cohort and should not be counted as confirmed SPS-spectrum cases."
           },
           {
-            "quote": "Of these, 286 underwent radioimmunoassay (RIA) for glutamic acid decarboxylase (GAD) antibodies; 116 were GAD antibody positive by one or both tests.",
+            "quote": "There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.",
             "page": null,
-            "section": "Abstract",
-            "supports": "Shows reported subgroup counts are laboratory-testing subsets/positivity groups rather than explicit SPS-spectrum case counts."
+            "section": "body / explicit SPS subgroup signal",
+            "supports": "Provides an explicit diagnosis-specific confirmed subset count of 107."
           },
           {
             "quote": "Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.",
             "page": null,
-            "section": "Abstract",
-            "supports": "Indicates only a subset may represent confirmed SPS, but the exact number of confirmed SPS-spectrum patients is not explicitly given in the supplied evidence."
+            "section": "abstract",
+            "supports": "Supports that the ICC-positive subgroup corresponds to the confirmed SPS subset rather than the broader suspected cohort."
           },
           {
-            "quote": "There were 107 patients positive for GAD antibodies by ICC; in 9",
+            "quote": "western blot was performed on all sera as previously described.",
             "page": null,
-            "section": "Preferred text count-salient snippet",
-            "supports": "Suggests an ICC-positive subgroup of 107, but this still does not explicitly equal the number of unique SPS-spectrum patients extractable for review without fuller context."
+            "section": "provenance signal",
+            "supports": "Indicates possible cohort reuse/provenance uncertainty, so manual review remains appropriate even though 107 is the best-supported count."
           }
         ]
       }
     },
     "count_evidence_payload": {
       "paper_id": "270",
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "local_validation_conflict=576 vs 76"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "evidence": [
         {
           "quote": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
           "page": null,
-          "section": "Abstract",
-          "supports": "Shows the largest reported cohort is patients with suspected SPS, not necessarily confirmed SPS-spectrum cases."
+          "section": "abstract",
+          "supports": "The 576 figure is a suspected/referred cohort and should not be counted as confirmed SPS-spectrum cases."
         },
         {
-          "quote": "Of these, 286 underwent radioimmunoassay (RIA) for glutamic acid decarboxylase (GAD) antibodies; 116 were GAD antibody positive by one or both tests.",
+          "quote": "There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.",
           "page": null,
-          "section": "Abstract",
-          "supports": "Shows reported subgroup counts are laboratory-testing subsets/positivity groups rather than explicit SPS-spectrum case counts."
+          "section": "body / explicit SPS subgroup signal",
+          "supports": "Provides an explicit diagnosis-specific confirmed subset count of 107."
         },
         {
           "quote": "Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.",
           "page": null,
-          "section": "Abstract",
-          "supports": "Indicates only a subset may represent confirmed SPS, but the exact number of confirmed SPS-spectrum patients is not explicitly given in the supplied evidence."
+          "section": "abstract",
+          "supports": "Supports that the ICC-positive subgroup corresponds to the confirmed SPS subset rather than the broader suspected cohort."
         },
         {
-          "quote": "There were 107 patients positive for GAD antibodies by ICC; in 9",
+          "quote": "western blot was performed on all sera as previously described.",
           "page": null,
-          "section": "Preferred text count-salient snippet",
-          "supports": "Suggests an ICC-positive subgroup of 107, but this still does not explicitly equal the number of unique SPS-spectrum patients extractable for review without fuller context."
+          "section": "provenance signal",
+          "supports": "Indicates possible cohort reuse/provenance uncertainty, so manual review remains appropriate even though 107 is the best-supported count."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\270.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_challenges\\270.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\270.json",
+      "challenge_json_path": ""
     }
   }
 }

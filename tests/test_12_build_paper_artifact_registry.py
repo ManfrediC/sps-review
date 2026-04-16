@@ -93,6 +93,8 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
             text_path=text_path,
             text_preclean_path=preclean_path,
             text_preclean_stage2_path=preclean_stage2_path,
+            text_proceedings_ready_path=None,
+            text_proceedings_ready_row={},
             text_trim_record={},
             text_trim_path=None,
             text_trim_registry_row={},

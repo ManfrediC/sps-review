@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:09.029811+00:00",
+  "generated_at_utc": "2026-04-16T20:31:40.017519+00:00",
   "paper_id": "1138",
   "count_row": {
     "paper_id": "1138",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1138.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1138.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1138.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1138.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\1138.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1138.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\1138.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1138.json",
     "result_payload": {
       "paper_id": "1138",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "high",
         "count_basis": "title_count_signal",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the reported subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "14",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "title_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1138.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1138.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "14",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1138.json",
-        "counted_at_utc": "2026-04-16T14:05:12.318154+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1138.json",
+        "counted_at_utc": "2026-04-16T18:52:40.098065+00:00"
       },
       "model_count_row": {
         "paper_id": "1138",
@@ -192,12 +193,13 @@
         "count_confidence": "high",
         "count_basis": "title_count_signal",
         "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the reported subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "14",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "title_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1138.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1138.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "14",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1138.json",
-        "counted_at_utc": "2026-04-16T14:05:12.318154+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1138.json",
+        "counted_at_utc": "2026-04-16T18:52:40.098065+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\1138.json",
@@ -263,7 +265,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "1138",
@@ -278,25 +283,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
+        "count_reasoning_summary": "The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the reported subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
         "evidence": [
           {
             "quote": "Patients and Methods: Retrospective analysis of 14 medical records of patients diagnosed with SPS from January 1989 to April 2015.",
             "page": null,
-            "section": "Methods/abstract",
-            "supports": "Direct cohort size of unique SPS patients reported in this paper."
+            "section": "abstract / patients and methods",
+            "supports": "Direct cohort size of unique diagnosed SPS patients"
           },
           {
             "quote": "Rating: classic SPS, 9 cases, SL, 5 cases.",
             "page": null,
-            "section": "Results/abstract",
-            "supports": "Subtype breakdown within the SPS spectrum summing to 14 total patients."
+            "section": "abstract / results",
+            "supports": "Subtype breakdown within the SPS spectrum summing to 14 total patients"
           },
           {
             "quote": "Stiff person syndrome: Review of 14 patients",
             "page": null,
-            "section": "Title",
-            "supports": "Title-level confirmation of the reported cohort size."
+            "section": "title",
+            "supports": "Title-level confirmation of a 14-patient SPS cohort"
           }
         ]
       }
@@ -309,23 +314,23 @@
         {
           "quote": "Patients and Methods: Retrospective analysis of 14 medical records of patients diagnosed with SPS from January 1989 to April 2015.",
           "page": null,
-          "section": "Methods/abstract",
-          "supports": "Direct cohort size of unique SPS patients reported in this paper."
+          "section": "abstract / patients and methods",
+          "supports": "Direct cohort size of unique diagnosed SPS patients"
         },
         {
           "quote": "Rating: classic SPS, 9 cases, SL, 5 cases.",
           "page": null,
-          "section": "Results/abstract",
-          "supports": "Subtype breakdown within the SPS spectrum summing to 14 total patients."
+          "section": "abstract / results",
+          "supports": "Subtype breakdown within the SPS spectrum summing to 14 total patients"
         },
         {
           "quote": "Stiff person syndrome: Review of 14 patients",
           "page": null,
-          "section": "Title",
-          "supports": "Title-level confirmation of the reported cohort size."
+          "section": "title",
+          "supports": "Title-level confirmation of a 14-patient SPS cohort"
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1138.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\1138.json",
       "challenge_json_path": ""
     }
   }

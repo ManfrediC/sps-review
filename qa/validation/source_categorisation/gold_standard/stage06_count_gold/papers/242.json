@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.241380+00:00",
+  "generated_at_utc": "2026-04-16T20:31:38.730109+00:00",
   "paper_id": "242",
   "count_row": {
     "paper_id": "242",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\242.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\242.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\242.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\242.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\242.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\242.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\242.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\242.json",
     "result_payload": {
       "paper_id": "242",
       "count_row": {
@@ -160,13 +160,14 @@
         "likely_sps_case_count": "1",
         "count_confidence": "high",
         "count_basis": "case_report_marker_single_case",
-        "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-patient case report. The title explicitly says \"a patient with stiff-person syndrome,\" and the body presents one detailed case history of a 63-year-old woman diagnosed with SPS and followed longitudinally after treatment changes.",
+        "count_manual_review_required": "true",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-patient case report of classic stiff-person syndrome. The title states 'a patient,' and the case report section describes one 63-year-old woman with clinically and electrophysiologically supported SPS plus anti-GAD positivity.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\242.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\242.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\242.json",
-        "counted_at_utc": "2026-04-16T14:08:58.456400+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\242.json",
+        "counted_at_utc": "2026-04-16T18:55:59.239353+00:00"
       },
       "model_count_row": {
         "paper_id": "242",
@@ -191,13 +192,14 @@
         "likely_sps_case_count": "1",
         "count_confidence": "high",
         "count_basis": "case_report_marker_single_case",
-        "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-patient case report. The title explicitly says \"a patient with stiff-person syndrome,\" and the body presents one detailed case history of a 63-year-old woman diagnosed with SPS and followed longitudinally after treatment changes.",
+        "count_manual_review_required": "true",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-patient case report of classic stiff-person syndrome. The title states 'a patient,' and the case report section describes one 63-year-old woman with clinically and electrophysiologically supported SPS plus anti-GAD positivity.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\242.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\242.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\242.json",
-        "counted_at_utc": "2026-04-16T14:08:58.456400+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\242.json",
+        "counted_at_utc": "2026-04-16T18:55:59.239353+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\242.json",
@@ -241,6 +243,7 @@
         "single_case_default_candidate_added",
         "distinct_candidate_counts=[1]",
         "non_original_case_signals=3",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=uncertain"
       ],
       "candidates": [
@@ -283,7 +286,14 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "with changes previously reported in high-altitude cerebral edema",
+        "primers, as previously published.",
+        "Somatic mosaicism was previously reported in CMT1A disease"
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "242",
@@ -297,26 +307,32 @@
         "selected_candidate_id": "cand01",
         "alternative_count": null,
         "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper is an original single-patient case report. The title explicitly says \"a patient with stiff-person syndrome,\" and the body presents one detailed case history of a 63-year-old woman diagnosed with SPS and followed longitudinally after treatment changes.",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper is an original single-patient case report of classic stiff-person syndrome. The title states 'a patient,' and the case report section describes one 63-year-old woman with clinically and electrophysiologically supported SPS plus anti-GAD positivity.",
         "evidence": [
           {
             "quote": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
             "page": null,
             "section": "title",
-            "supports": "The paper reports a single SPS patient."
+            "supports": "Supports that the paper reports a single SPS patient."
           },
           {
             "quote": "the following case illustrates these therapeutic challenges and demonstrates the successful treatment of paroxysms with the new antiepileptic drug (aed) levetiracetam (lev). case report. a 63-year-old woman had experienced increasing musculoskeletal pain of the trunk starting 20 years previously.",
             "page": null,
             "section": "case report",
-            "supports": "The article contains one original case report, identifying a single patient."
+            "supports": "Supports that there is one original individual case described."
           },
           {
-            "quote": "a diagnosis of sps was made, and the patient was treated with diazepam and dantrolene.",
+            "quote": "electromyography (emg) revealed continuous spontaneous discharges of normal-appearing motor unit potentials. a diagnosis of sps was made",
             "page": null,
             "section": "case report",
-            "supports": "Confirms the reported patient is an SPS-spectrum case."
+            "supports": "Supports that the reported individual had diagnosis-supported SPS."
+          },
+          {
+            "quote": "anti-glutamic acid decarboxylase autoantibodies were markedly elevated in both serum ... and csf ... ; anti-amphiphysin autoantibodies were absent.",
+            "page": null,
+            "section": "case report",
+            "supports": "Supports diagnostic confirmation of the single SPS case."
           }
         ]
       }
@@ -330,22 +346,28 @@
           "quote": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
           "page": null,
           "section": "title",
-          "supports": "The paper reports a single SPS patient."
+          "supports": "Supports that the paper reports a single SPS patient."
         },
         {
           "quote": "the following case illustrates these therapeutic challenges and demonstrates the successful treatment of paroxysms with the new antiepileptic drug (aed) levetiracetam (lev). case report. a 63-year-old woman had experienced increasing musculoskeletal pain of the trunk starting 20 years previously.",
           "page": null,
           "section": "case report",
-          "supports": "The article contains one original case report, identifying a single patient."
+          "supports": "Supports that there is one original individual case described."
         },
         {
-          "quote": "a diagnosis of sps was made, and the patient was treated with diazepam and dantrolene.",
+          "quote": "electromyography (emg) revealed continuous spontaneous discharges of normal-appearing motor unit potentials. a diagnosis of sps was made",
           "page": null,
           "section": "case report",
-          "supports": "Confirms the reported patient is an SPS-spectrum case."
+          "supports": "Supports that the reported individual had diagnosis-supported SPS."
+        },
+        {
+          "quote": "anti-glutamic acid decarboxylase autoantibodies were markedly elevated in both serum ... and csf ... ; anti-amphiphysin autoantibodies were absent.",
+          "page": null,
+          "section": "case report",
+          "supports": "Supports diagnostic confirmation of the single SPS case."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\242.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\242.json",
       "challenge_json_path": ""
     }
   }

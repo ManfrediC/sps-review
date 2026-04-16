@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:09.497538+00:00",
+  "generated_at_utc": "2026-04-16T20:31:40.556650+00:00",
   "paper_id": "11785",
   "count_row": {
     "paper_id": "11785",
@@ -140,9 +140,9 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\11785.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\11785.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\11785.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\11785.json",
     "count_decision_json_path": "",
     "count_evidence_json_path": "",
     "result_payload": {
@@ -161,12 +161,13 @@
         "count_confidence": "low",
         "count_basis": "not_count_eligible",
         "count_manual_review_required": "false",
+        "count_original_cohort_provenance_uncertain": "false",
         "count_reason": "count_basis=not_count_eligible | count_confidence=low | source_category=review_article | candidate_notes=preferred_text_source=full_text; distinct_candidate_counts=[0]; sps_status_uncertainty_signals=1; count_eligibility_status=not_extractable",
         "count_version": "hybrid_v2_heuristic_v2",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "not_count_eligible",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\11785.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\11785.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "",
         "llm_count_confidence": "",
@@ -176,7 +177,7 @@
         "count_verification_status": "heuristic_only",
         "count_validator_flags": "",
         "count_evidence_json_path": "",
-        "counted_at_utc": "2026-04-16T14:05:55.061163+00:00"
+        "counted_at_utc": "2026-04-16T18:53:21.669931+00:00"
       },
       "model_count_row": {
         "paper_id": "11785",
@@ -192,12 +193,13 @@
         "count_confidence": "low",
         "count_basis": "not_count_eligible",
         "count_manual_review_required": "false",
+        "count_original_cohort_provenance_uncertain": "false",
         "count_reason": "count_basis=not_count_eligible | count_confidence=low | source_category=review_article | candidate_notes=preferred_text_source=full_text; distinct_candidate_counts=[0]; sps_status_uncertainty_signals=1; count_eligibility_status=not_extractable",
         "count_version": "hybrid_v2_heuristic_v2",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "not_count_eligible",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\11785.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\11785.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "",
         "llm_count_confidence": "",
@@ -207,7 +209,7 @@
         "count_verification_status": "heuristic_only",
         "count_validator_flags": "",
         "count_evidence_json_path": "",
-        "counted_at_utc": "2026-04-16T14:05:55.061163+00:00"
+        "counted_at_utc": "2026-04-16T18:53:21.669931+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\11785.json",
@@ -268,7 +270,10 @@
       "explicit_sps_subgroup_evidence": [],
       "sps_status_uncertainty_signals": [
         "Antibodies against glutamic acid decarboxylase (GAD), originally linked to stiff person syndrome (SPS), now denote the \"GAD antibody-spectrum disorders\" (GAD-SD) that also include autoimmune epilepsy, limbic encephalitis, cerebellar ataxia and nystagmus with overlapping symptomatology highlighting autoimmune neuronal excitability disorders."
-      ]
+      ],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": null,
     "count_evidence_payload": null

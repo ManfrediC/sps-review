@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.149016+00:00",
+  "generated_at_utc": "2026-04-16T20:31:38.344109+00:00",
   "paper_id": "160",
   "count_row": {
     "paper_id": "160",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\160.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\160.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\160.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\160.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\160.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\160.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\160.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\160.json",
     "result_payload": {
       "paper_id": "160",
       "count_row": {
@@ -158,25 +158,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "23",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "title_count_signal",
-        "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper reports an original cohort of 23 referred patients with SPS-spectrum disorders and explicitly subdivides them into PERM (2), stiff man syndrome (8), and stiff limb syndrome (13), which sums to 23 unique cases. These are all within the review's SPS-spectrum definition.",
+        "count_manual_review_required": "true",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports an original reviewed cohort of 23 referred patients with rigidity/spasms and continuous motor unit activity, subdivided into SPS-spectrum diagnoses: 2 PERM, 8 stiff man syndrome, and 13 stiff limb syndrome. These sum to 23 and all fall within the review's SPS-spectrum definition, but provenance is flagged as potentially including previously described cases, so human review remains warranted.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "23",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "title_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\160.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\160.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "23",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\160.json",
-        "counted_at_utc": "2026-04-16T14:07:46.732658+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\160.json",
+        "counted_at_utc": "2026-04-16T18:54:51.767386+00:00"
       },
       "model_count_row": {
         "paper_id": "160",
@@ -189,25 +190,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "23",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "title_count_signal",
-        "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper reports an original cohort of 23 referred patients with SPS-spectrum disorders and explicitly subdivides them into PERM (2), stiff man syndrome (8), and stiff limb syndrome (13), which sums to 23 unique cases. These are all within the review's SPS-spectrum definition.",
+        "count_manual_review_required": "true",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports an original reviewed cohort of 23 referred patients with rigidity/spasms and continuous motor unit activity, subdivided into SPS-spectrum diagnoses: 2 PERM, 8 stiff man syndrome, and 13 stiff limb syndrome. These sum to 23 and all fall within the review's SPS-spectrum definition, but provenance is flagged as potentially including previously described cases, so human review remains warranted.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "23",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "title_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\160.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\160.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "23",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\160.json",
-        "counted_at_utc": "2026-04-16T14:07:46.732658+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\160.json",
+        "counted_at_utc": "2026-04-16T18:54:51.767386+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\160.json",
@@ -240,6 +242,7 @@
         "preferred_text_source=full_text",
         "distinct_candidate_counts=[23]",
         "non_original_case_signals=1",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -264,7 +267,12 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "previously described."
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "160",
@@ -277,27 +285,33 @@
         "decision_type": "candidate_exact",
         "selected_candidate_id": "cand01",
         "alternative_count": null,
-        "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper reports an original cohort of 23 referred patients with SPS-spectrum disorders and explicitly subdivides them into PERM (2), stiff man syndrome (8), and stiff limb syndrome (13), which sums to 23 unique cases. These are all within the review's SPS-spectrum definition.",
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper reports an original reviewed cohort of 23 referred patients with rigidity/spasms and continuous motor unit activity, subdivided into SPS-spectrum diagnoses: 2 PERM, 8 stiff man syndrome, and 13 stiff limb syndrome. These sum to 23 and all fall within the review's SPS-spectrum definition, but provenance is flagged as potentially including previously described cases, so human review remains warranted.",
         "evidence": [
+          {
+            "quote": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+            "page": null,
+            "section": "title",
+            "supports": "Explicit total cohort size of 23 patients in this paper."
+          },
           {
             "quote": "Methods— Twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity... were reviewed.",
             "page": null,
-            "section": "Abstract/Methods",
-            "supports": "Establishes the total original cohort size as 23 patients."
+            "section": "abstract/methods",
+            "supports": "Original cohort/reviewed patient count is 23."
           },
           {
             "quote": "Results—This simple division identified three distinct groups of patients. (1) Progressive encephalomyelitis with rigidity: two patients... (2) Stiff man syndrome: eight patients... (3) Stiff limb syndrome: thirteen patients...",
             "page": null,
-            "section": "Abstract/Results",
-            "supports": "Confirms the 23 patients are SPS-spectrum cases divided into 2 PERM + 8 SPS + 13 stiff limb syndrome = 23."
+            "section": "abstract/results",
+            "supports": "All 23 patients are allocated to SPS-spectrum subgroups (2+8+13=23)."
           },
           {
             "quote": "here, we review the 23 patients of stiff people who presented to our hospital over a 10 year period",
             "page": null,
-            "section": "Preferred text excerpt",
-            "supports": "Supports that these were the paper's own hospital patients rather than only cited literature cases."
+            "section": "preferred text excerpt/introduction",
+            "supports": "Supports that the paper concerns 23 patients presenting to the authors' hospital, though overlap with previously described cases remains possible."
           }
         ]
       }
@@ -308,25 +322,31 @@
       "challenge_reasons": [],
       "evidence": [
         {
+          "quote": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+          "page": null,
+          "section": "title",
+          "supports": "Explicit total cohort size of 23 patients in this paper."
+        },
+        {
           "quote": "Methods— Twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity... were reviewed.",
           "page": null,
-          "section": "Abstract/Methods",
-          "supports": "Establishes the total original cohort size as 23 patients."
+          "section": "abstract/methods",
+          "supports": "Original cohort/reviewed patient count is 23."
         },
         {
           "quote": "Results—This simple division identified three distinct groups of patients. (1) Progressive encephalomyelitis with rigidity: two patients... (2) Stiff man syndrome: eight patients... (3) Stiff limb syndrome: thirteen patients...",
           "page": null,
-          "section": "Abstract/Results",
-          "supports": "Confirms the 23 patients are SPS-spectrum cases divided into 2 PERM + 8 SPS + 13 stiff limb syndrome = 23."
+          "section": "abstract/results",
+          "supports": "All 23 patients are allocated to SPS-spectrum subgroups (2+8+13=23)."
         },
         {
           "quote": "here, we review the 23 patients of stiff people who presented to our hospital over a 10 year period",
           "page": null,
-          "section": "Preferred text excerpt",
-          "supports": "Supports that these were the paper's own hospital patients rather than only cited literature cases."
+          "section": "preferred text excerpt/introduction",
+          "supports": "Supports that the paper concerns 23 patients presenting to the authors' hospital, though overlap with previously described cases remains possible."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\160.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\160.json",
       "challenge_json_path": ""
     }
   }

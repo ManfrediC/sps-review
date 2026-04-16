@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.462375+00:00",
+  "generated_at_utc": "2026-04-16T20:31:39.334883+00:00",
   "paper_id": "629",
   "count_row": {
     "paper_id": "629",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\629.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\629.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\629.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\629.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\629.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\629.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\629.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\629.json",
     "result_payload": {
       "paper_id": "629",
       "count_row": {
@@ -161,12 +161,13 @@
         "count_confidence": "low",
         "count_basis": "no_reliable_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The provided full-text excerpt appears to be mismatched correspondence unrelated to stiff person syndrome, while the paper title suggests an SPS-focused article. Because the evidence pack contains no reliable extractable patient-count statement from the actual paper, a zero count cannot be supported safely and manual review is required.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The provided full-text excerpt appears to be unrelated correspondence and does not contain usable evidence about original SPS-spectrum patients in this paper. Because the title suggests SPS relevance but the extracted text does not support any explicit count, a zero count cannot be safely confirmed and manual review is required.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "no_reliable_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\629.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\629.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "0",
         "llm_count_confidence": "low",
@@ -175,8 +176,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\629.json",
-        "counted_at_utc": "2026-04-16T14:00:34.701454+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\629.json",
+        "counted_at_utc": "2026-04-16T18:48:26.182961+00:00"
       },
       "model_count_row": {
         "paper_id": "629",
@@ -192,12 +193,13 @@
         "count_confidence": "low",
         "count_basis": "no_reliable_count_signal",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The provided full-text excerpt appears to be mismatched correspondence unrelated to stiff person syndrome, while the paper title suggests an SPS-focused article. Because the evidence pack contains no reliable extractable patient-count statement from the actual paper, a zero count cannot be supported safely and manual review is required.",
+        "count_original_cohort_provenance_uncertain": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The provided full-text excerpt appears to be unrelated correspondence and does not contain usable evidence about original SPS-spectrum patients in this paper. Because the title suggests SPS relevance but the extracted text does not support any explicit count, a zero count cannot be safely confirmed and manual review is required.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "no_reliable_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\629.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\629.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "0",
         "llm_count_confidence": "low",
@@ -206,8 +208,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\629.json",
-        "counted_at_utc": "2026-04-16T14:00:34.701454+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\629.json",
+        "counted_at_utc": "2026-04-16T18:48:26.182961+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\629.json",
@@ -266,7 +268,10 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": false,
+      "original_cohort_provenance_signals": [],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "629",
@@ -281,25 +286,19 @@
         "alternative_count": null,
         "count_confidence": "low",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The provided full-text excerpt appears to be mismatched correspondence unrelated to stiff person syndrome, while the paper title suggests an SPS-focused article. Because the evidence pack contains no reliable extractable patient-count statement from the actual paper, a zero count cannot be supported safely and manual review is required.",
+        "count_reasoning_summary": "The provided full-text excerpt appears to be unrelated correspondence and does not contain usable evidence about original SPS-spectrum patients in this paper. Because the title suggests SPS relevance but the extracted text does not support any explicit count, a zero count cannot be safely confirmed and manual review is required.",
         "evidence": [
           {
-            "quote": "title: Anaesthesia for Stiff-Person Syndrome.",
+            "quote": "Title: Anaesthesia for Stiff-Person Syndrome.",
             "page": null,
-            "section": "Title",
-            "supports": "Indicates the target paper is about SPS, so an automatic zero based on absent signals is unsafe."
+            "section": "title",
+            "supports": "The paper is potentially about SPS-spectrum disease and therefore should not be assumed to have zero cases without better text evidence."
           },
           {
-            "quote": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation ... describe three interesting cases of electromechanical dissociation",
+            "quote": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation ... dr mcbrien et al. describe three interesting cases of electromechanical dissociation",
             "page": null,
-            "section": "Preferred text excerpt",
-            "supports": "Shows the supplied excerpt is about unrelated EMD correspondence rather than clearly the SPS paper, so the count cannot be resolved from this text."
-          },
-          {
-            "quote": "candidate_kind: forced_zero ... count_basis: no_reliable_count_signal ... source_category=unclear_manual_review",
-            "page": null,
-            "section": "Heuristic package",
-            "supports": "The only candidate is a heuristic forced zero based on missing reliable count evidence, not on explicit paper text."
+            "section": "preferred text excerpt",
+            "supports": "The available excerpt is mismatched/unrelated correspondence and does not provide extractable SPS-spectrum case-count evidence for this paper."
           }
         ]
       }
@@ -310,25 +309,19 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "title: Anaesthesia for Stiff-Person Syndrome.",
+          "quote": "Title: Anaesthesia for Stiff-Person Syndrome.",
           "page": null,
-          "section": "Title",
-          "supports": "Indicates the target paper is about SPS, so an automatic zero based on absent signals is unsafe."
+          "section": "title",
+          "supports": "The paper is potentially about SPS-spectrum disease and therefore should not be assumed to have zero cases without better text evidence."
         },
         {
-          "quote": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation ... describe three interesting cases of electromechanical dissociation",
+          "quote": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation ... dr mcbrien et al. describe three interesting cases of electromechanical dissociation",
           "page": null,
-          "section": "Preferred text excerpt",
-          "supports": "Shows the supplied excerpt is about unrelated EMD correspondence rather than clearly the SPS paper, so the count cannot be resolved from this text."
-        },
-        {
-          "quote": "candidate_kind: forced_zero ... count_basis: no_reliable_count_signal ... source_category=unclear_manual_review",
-          "page": null,
-          "section": "Heuristic package",
-          "supports": "The only candidate is a heuristic forced zero based on missing reliable count evidence, not on explicit paper text."
+          "section": "preferred text excerpt",
+          "supports": "The available excerpt is mismatched/unrelated correspondence and does not provide extractable SPS-spectrum case-count evidence for this paper."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\629.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\629.json",
       "challenge_json_path": ""
     }
   }

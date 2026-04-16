@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:09.374468+00:00",
+  "generated_at_utc": "2026-04-16T20:31:40.472690+00:00",
   "paper_id": "1805",
   "count_row": {
     "paper_id": "1805",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\1805.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1805.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\1805.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1805.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\1805.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\1805.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\1805.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\1805.json",
     "result_payload": {
       "paper_id": "1805",
       "count_row": {
@@ -158,25 +158,26 @@
         "preferred_text_source": "trimmed",
         "count_eligible": "true",
         "likely_sps_case_count": "4",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "llm_bounded_alternative",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but explicitly breaks phenotypes down and identifies only 4 with stiff person syndrome. Because only the SPS subgroup should be counted for this review, the best-supported extractable SPS-spectrum count is 4 rather than the full cohort of 19.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but only 4 are explicitly identified as having stiff person syndrome. For SPS-spectrum counting, the extractable subgroup is therefore 4 rather than the full 19, though provenance uncertainty warrants manual review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "19",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1805.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\1805.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "4",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_semantic_conflict_manual_review_required",
-        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1805.json",
-        "counted_at_utc": "2026-04-16T13:54:24.876174+00:00"
+        "count_verification_status": "llm_bounded_alternative",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\1805.json",
+        "counted_at_utc": "2026-04-16T18:43:34.611662+00:00"
       },
       "model_count_row": {
         "paper_id": "1805",
@@ -189,25 +190,26 @@
         "preferred_text_source": "trimmed",
         "count_eligible": "true",
         "likely_sps_case_count": "4",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "llm_bounded_alternative",
         "count_manual_review_required": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but explicitly breaks phenotypes down and identifies only 4 with stiff person syndrome. Because only the SPS subgroup should be counted for this review, the best-supported extractable SPS-spectrum count is 4 rather than the full cohort of 19.",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but only 4 are explicitly identified as having stiff person syndrome. For SPS-spectrum counting, the extractable subgroup is therefore 4 rather than the full 19, though provenance uncertainty warrants manual review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "19",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1805.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\1805.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "4",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_semantic_conflict_manual_review_required",
-        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1805.json",
-        "counted_at_utc": "2026-04-16T13:54:24.876174+00:00"
+        "count_verification_status": "llm_bounded_alternative",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\1805.json",
+        "counted_at_utc": "2026-04-16T18:43:34.611662+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\1805.json",
@@ -242,6 +244,7 @@
         "distinct_candidate_counts=[0, 19]",
         "non_original_case_signals=2",
         "sps_status_uncertainty_signals=3",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -288,64 +291,76 @@
         "itionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exh",
         "itionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhi",
         "RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis."
-      ]
+      ],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients with GAD-ab-associated neurological disorders was not observed in any of our patients.",
+        "The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients"
+      ],
+      "confirmed_only_guardrail_signals": []
     },
     "count_decision_payload": {
       "paper_id": "1805",
       "model_id": "gpt-5.4-2026-03-05",
       "verification_status": "llm_bounded_alternative",
-      "validator_flags": [
-        "COUNT_SPS_STATUS_UNCERTAIN"
-      ],
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
-      ],
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "decision": {
         "decision_type": "bounded_alternative",
         "selected_candidate_id": null,
         "alternative_count": 4,
-        "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but explicitly breaks phenotypes down and identifies only 4 with stiff person syndrome. Because only the SPS subgroup should be counted for this review, the best-supported extractable SPS-spectrum count is 4 rather than the full cohort of 19.",
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but only 4 are explicitly identified as having stiff person syndrome. For SPS-spectrum counting, the extractable subgroup is therefore 4 rather than the full 19, though provenance uncertainty warrants manual review.",
         "evidence": [
           {
-            "quote": "RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.",
+            "quote": "19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.",
             "page": null,
             "section": "abstract/results",
-            "supports": "Shows the total cohort is mixed and explicitly identifies 4 SPS cases."
+            "supports": "Only 4 of the 19 included patients are explicitly SPS-spectrum cases."
           },
           {
             "quote": "Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating cns disease with recurrent optic neuritis.",
             "page": null,
             "section": "preferred text excerpt/results",
-            "supports": "Confirms the phenotype-specific subgroup count of 4 stiff person syndrome patients."
+            "supports": "Confirms the explicit SPS subgroup count of 4 within a broader mixed neurological cohort."
+          },
+          {
+            "quote": "The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients with GAD-ab-associated neurological disorders was not observed in any of our patients.",
+            "page": null,
+            "section": "abstract/results",
+            "supports": "Indicates original-cohort provenance uncertainty, so the count should remain flagged for manual review."
           }
         ]
       }
     },
     "count_evidence_payload": {
       "paper_id": "1805",
-      "decision_stage": "challenge",
-      "challenge_reasons": [
-        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
-      ],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.",
+          "quote": "19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.",
           "page": null,
           "section": "abstract/results",
-          "supports": "Shows the total cohort is mixed and explicitly identifies 4 SPS cases."
+          "supports": "Only 4 of the 19 included patients are explicitly SPS-spectrum cases."
         },
         {
           "quote": "Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating cns disease with recurrent optic neuritis.",
           "page": null,
           "section": "preferred text excerpt/results",
-          "supports": "Confirms the phenotype-specific subgroup count of 4 stiff person syndrome patients."
+          "supports": "Confirms the explicit SPS subgroup count of 4 within a broader mixed neurological cohort."
+        },
+        {
+          "quote": "The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients with GAD-ab-associated neurological disorders was not observed in any of our patients.",
+          "page": null,
+          "section": "abstract/results",
+          "supports": "Indicates original-cohort provenance uncertainty, so the count should remain flagged for manual review."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\1805.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\1805.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\1805.json",
+      "challenge_json_path": ""
     }
   }
 }

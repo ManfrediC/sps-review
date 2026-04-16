@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T18:35:08.262583+00:00",
+  "generated_at_utc": "2026-04-16T20:31:38.819240+00:00",
   "paper_id": "258",
   "count_row": {
     "paper_id": "258",
@@ -140,11 +140,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\258.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\258.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\258.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\258.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\258.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\258.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\258.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\258.json",
     "result_payload": {
       "paper_id": "258",
       "count_row": {
@@ -158,25 +158,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "16",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "early_body_count_signal",
-        "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=0 vs 16 | llm_selected_candidate_id=cand01 | The paper explicitly reports a cohort of 16 patients with typical stiff-person syndrome and reiterates in the methods that serum and CSF were examined from 16 patients with SPS who fulfilled established diagnostic criteria. The mention of 4 patients refers only to a serial-measurement subset within this same cohort, not additional or alternative cases.",
+        "count_manual_review_required": "true",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods state that all 16 fulfilled established diagnostic criteria for SPS. Although the study includes serum/CSF assays, it is not specimen-only because it reports a clinically characterized SPS cohort; however, provenance uncertainty ('used, as previously described') warrants manual review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "16",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "early_body_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\258.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\258.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "16",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_candidate_exact",
-        "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\258.json",
-        "counted_at_utc": "2026-04-16T13:58:49.319354+00:00"
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_DONOR_MATERIAL_ONLY",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\258.json",
+        "counted_at_utc": "2026-04-16T18:46:50.139804+00:00"
       },
       "model_count_row": {
         "paper_id": "258",
@@ -189,25 +190,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "16",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "early_body_count_signal",
-        "count_manual_review_required": "false",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=0 vs 16 | llm_selected_candidate_id=cand01 | The paper explicitly reports a cohort of 16 patients with typical stiff-person syndrome and reiterates in the methods that serum and CSF were examined from 16 patients with SPS who fulfilled established diagnostic criteria. The mention of 4 patients refers only to a serial-measurement subset within this same cohort, not additional or alternative cases.",
+        "count_manual_review_required": "true",
+        "count_original_cohort_provenance_uncertain": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods state that all 16 fulfilled established diagnostic criteria for SPS. Although the study includes serum/CSF assays, it is not specimen-only because it reports a clinically characterized SPS cohort; however, provenance uncertainty ('used, as previously described') warrants manual review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "16",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "early_body_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\258.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\258.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "16",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand01",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_candidate_exact",
-        "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\258.json",
-        "counted_at_utc": "2026-04-16T13:58:49.319354+00:00"
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_DONOR_MATERIAL_ONLY",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\258.json",
+        "counted_at_utc": "2026-04-16T18:46:50.139804+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\258.json",
@@ -235,12 +237,14 @@
       "heuristic_version": "heuristic_v2",
       "abstract_text": "BACKGROUND: Stiff-person syndrome (SPS) is an immune-mediated central nervous system disorder characterized by fluctuating muscle stiffness, disabling spasms, and heightened sensitivity to external stimuli. Up to 80% of patients with SPS have anti-glutamic acid decarboxylase (GAD) antibodies in the serum or cerebral spinal fluid (CSF). Whether these antibodies are clinically relevant and correlate with disease severity is unknown., OBJECTIVE: To correlate anti-GAD antibody titers in the serum and CSF of patients with SPS with the degree of clinical severity., DESIGN: Patients studied the last 6 years., SETTING: The Clinical Center of the National Institutes of Health, Bethesda, MD., PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers., INTERVENTIONS: Antibody titers in serum and CSF were measured by radioimmunoassay, and the intrathecal anti-GAD-specific IgG production was calculated., MAIN OUTCOME MEASURES: Comparison of antibody titers with stiffness index and heightened sensitivity scores based on scales that reliably measure disease severity., RESULTS: The mean disease duration was 11 years (range, 5-30 years). The mean anti-GAD antibody titer in the serum was 51 500 U/mL (range, 24 000-200 000 U/mL); and in the CSF, 181 U/mL (range, 30-400 U/mL). A 10-fold increased intrathecal production of GAD-specific IgG antibodies was noted. No correlation was found between antibody titers in serum or CSF with disease severity. In 4 patients, the anti-GAD antibody titers measured serially during a 2-year period did not correlate with clinical fluctuations., CONCLUSIONS: In patients with SPS, the anti-GAD antibody titers in serum and CSF do not correlate with disease severity or duration. Anti-GAD antibodies are an excellent marker for SPS, but monitoring their titers during the course of the disease may not be of practical value.",
       "early_body_text": "anti–glutamic acid decarboxylase antibodies in the serum and cerebrospinal fluid of patients with stiff-person syndrome correlation with clinical severity goran rakocevic, md; raghavanpillai raju, phd; marinos c. dalakas, md background:stiff-person syndrome (sps) is an immune- mediated central nervous system disorder characterized by fluctuating muscle stiffness, disabling spasms, and heightened sensitivity to external stimuli. up to 80% of patients with sps have anti–glutamic acid decarboxyl- ase (gad) antibodies in the serum or cerebral spinal fluid (csf). whether these antibodies are clinically relevant and correlate with disease severity is unknown. objective: to correlate anti-gad antibody titers in the serum and csf of patients with sps with the degree of clinical severity. design: patients studied the last 6 years. setting: the clinical center of the national institutes of health, bethesda, md. patients: sixteen patients with typical sps and el- evated serum anti-gad antibody titers. interventions: antibody titers in serum and csf were measured by radioimmunoassay, and the intrathecal anti– gad-specific igg production was calculated. main outcome measures: comparison of antibody titers with stiffness index and heightened sensitivity scores based on scales that reliably measure disease severity. results: the mean disease duration was 11 years (range, 5-30 years). the mean anti-gad antibody titer in the se- rum was 51 500 u/ml (range, 24 000-200 000 u/ml); and in the csf, 181 u/ml (range, 30-400 u/ml). a 10-fold increased intrathecal production of gad-specific igg an- tibodies was noted. no correlation was found between antibody titers in serum or csf with disease severity. in 4 patients, the anti-gad antibody titers measured seri- ally during a 2-year period did not correlate with clini- cal fluctuations. conclusions: in patients with sps, the anti-gad anti- body titers in serum and csf do not correlate with dis- ease severity or duration. anti-gad antibodies are an excellent marker for sps, but monitoring their titers during the course of the disease may not be of practical value. arch neurol. 2004;61:902-904 s tiff-person syndrome(sps) is an immune-mediated cen- tral nervous system disorder characterized by rigidity of the axial and proximal limb muscles, intermittent superimposed spasms, and heightened sensitivity to ex- ternal stimuli. 1-3 continuous cocontrac- tion of agonist and antagonist muscles caused by involuntary firing of motor units at rest are the clinical and electrophysi- ologic hallmarks of the disease. 1-4 stiff-person syndrome is an autoim- mune disorder that responds to immuno- therapies 5,6 and is frequently associated with other autoimmune diseases, autoan- tibodies, and certain hla haplotypes. 1-3 a characteristic autoimmune marker for sps seen in more than 80% of the patients is the presence of antibodies against glu- tamic acid decarboxylase (gad65), the rate-limiting enzyme for the synthesis of /h9253-aminobutyric acid (gaba), the brain’s main inhibitory neurotransmitter. 1-3 these antibodies are produced intrathecally and may impair the synthesis of gaba, result- ing in low gaba levels in the brain and cerebrospinal fluid (csf). 2,3 to deter- mine the clinical relevance of anti-gad an- tibodies in patients with sps, we corre- lated their intrathecal production and serum titers with the severity of symp- toms, using validated clinical scales. methods we examined serum and csf from 16 pa- tients with sps, 6 men and 10 women, aged 37 to 62 years (mean, 52 years), studied under in- stitutional review board–approved protocols at original contribution from the neuromuscular diseases section, national institute of neurological disorders and stroke, national institutes of health, bethesda, md. (reprinted) arch neurol / vol 61, june 2004 www.archneurol.com 902 ©2004 american medical association. all rights reserved. downloaded from: https://jamanetwork.com/ by a uzh hauptbibliothek / zentralbibliothek zuerich user on 05/26/2023 the neuromuscular diseases section, national institutes of health, bethesda, md, from 1997 to 2003. all patients had el- evated titers of serum anti-gad antibodies and fulfilled the es- tablished diagnostic criteria for sps. 1,3 the serum and csf were examined for total immunoglobulins, immunofixation electro- phoresis, igg index, and intrathecal synthesis of igg-specific anti-gad antibodies. the integrity of the blood-brain barrier was assessed by the ratio of serum albumin to csf albumin (nor- mal, /h11022130). the csf igg index was calculated according to the following formula: (csf igg/serum igg)/(csf albumin/serum albumin), in which csf igg and csf albumin are measured in nano- grams per milliliter and serum igg and serum albumin are mea- sured in milligrams per milliliter. the csf igg index is considered normal when it is be- low 0.67. 2,7 for detection and quantification of anti-gad an- tibodies in serum and csf, we used a radioimmunoassay kit (kronus,",
-      "llm_evidence_text": "Title:\nAnti-glutamic acid decarboxylase antibodies in the serum and cerebrospinal fluid of patients with stiff-person syndrome: correlation with clinical severity.\n\nMetadata abstract:\nBACKGROUND: Stiff-person syndrome (SPS) is an immune-mediated central nervous system disorder characterized by fluctuating muscle stiffness, disabling spasms, and heightened sensitivity to external stimuli. Up to 80% of patients with SPS have anti-glutamic acid decarboxylase (GAD) antibodies in the serum or cerebral spinal fluid (CSF). Whether these antibodies are clinically relevant and correlate with disease severity is unknown., OBJECTIVE: To correlate anti-GAD antibody titers in the serum and CSF of patients with SPS with the degree of clinical severity., DESIGN: Patients studied the last 6 years., SETTING: The Clinical Center of the National Institutes of Health, Bethesda, MD., PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers., INTERVENTIONS: Antibody titers in serum and CSF were measured by radioimmunoassay, and the intrathecal anti-GAD-specific IgG production was calculated., MAIN OUTCOME MEASURES: Comparison of antibody titers with stiffness index and heightened sensitivity scores based on scales that reliably measure disease severity., RESULTS: The mean disease duration was 11 years (range, 5-30 years). The mean anti-GAD antibody titer in the serum was 51 500 U/mL (range, 24 000-200 000 U/mL); and in the CSF, 181 U/mL (range, 30-400 U/mL). A 10-fold increased intrathecal production of GAD-specific IgG antibodies was noted. No correlation was found between antibody titers in serum or CSF with disease severity. In 4 patients, the anti-GAD antibody titers measured serially during a 2-year period did not correlate with clinical fluctuations., CONCLUSIONS: In patients with SPS, the anti-GAD antibody titers in serum and CSF do not correlate with disease severity or duration. Anti-GAD antibodies are an excellent marker for SPS, b\n\nPotential non-original or reused-cohort signals:\n- used, as previously described.\n\nPreferred text count-salient snippets:\n- Design: Patients studied the last 6 years.\n- Patients: Sixteen patients with typical SPS and el-\n- 4 patients, the anti-GAD antibody titers measured seri-\n- seen in more than 80% of the patients is\n- patients), followed by proximal leg stiffness (7 patients).\n- Seven patients also had\n- patients had strongly positive antinuclear antibodies, 3\n- globulin.6 Preliminary results in 4 patients who had anti-",
+      "llm_evidence_text": "Title:\nAnti-glutamic acid decarboxylase antibodies in the serum and cerebrospinal fluid of patients with stiff-person syndrome: correlation with clinical severity.\n\nMetadata abstract:\nBACKGROUND: Stiff-person syndrome (SPS) is an immune-mediated central nervous system disorder characterized by fluctuating muscle stiffness, disabling spasms, and heightened sensitivity to external stimuli. Up to 80% of patients with SPS have anti-glutamic acid decarboxylase (GAD) antibodies in the serum or cerebral spinal fluid (CSF). Whether these antibodies are clinically relevant and correlate with disease severity is unknown., OBJECTIVE: To correlate anti-GAD antibody titers in the serum and CSF of patients with SPS with the degree of clinical severity., DESIGN: Patients studied the last 6 years., SETTING: The Clinical Center of the National Institutes of Health, Bethesda, MD., PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers., INTERVENTIONS: Antibody titers in serum and CSF were measured by radioimmunoassay, and the intrathecal anti-GAD-specific IgG production was calculated., MAIN OUTCOME MEASURES: Comparison of antibody titers with stiffness index and heightened sensitivity scores based on scales that reliably measure disease severity., RESULTS: The mean disease duration was 11 years (range, 5-30 years). The mean anti-GAD antibody titer in the serum was 51 500 U/mL (range, 24 000-200 000 U/mL); and in the CSF, 181 U/mL (range, 30-400 U/mL). A 10-fold increased intrathecal production of GAD-specific IgG antibodies was noted. No correlation was found between antibody titers in serum or CSF with disease severity. In 4 patients, the anti-GAD antibody titers measured serially during a 2-year period did not correlate with clinical fluctuations., CONCLUSIONS: In patients with SPS, the anti-GAD antibody titers in serum and CSF do not correlate with disease severity or duration. Anti-GAD antibodies are an excellent marker for SPS, b\n\nPotential non-original or reused-cohort signals:\n- used, as previously described.\n\nConfirmed-only guardrail signals:\n- by the anti–GAD-specific IgG from patients with SPS\n\nPreferred text count-salient snippets:\n- Design: Patients studied the last 6 years.\n- Patients: Sixteen patients with typical SPS and el-\n- 4 patients, the anti-GAD antibody titers measured seri-\n- seen in more than 80% of the patients is\n- patients), followed by proximal leg stiffness (7 patients).\n- Seven patients also had\n- patients had strongly positive antinuclear antibodies, 3\n- globulin.6 Preliminary results in 4 patients who had anti-",
       "candidate_generation_notes": [
         "preferred_text_source=full_text",
         "abstract_only_candidate_added",
         "distinct_candidate_counts=[0, 16]",
         "non_original_case_signals=1",
+        "confirmed_only_guardrail_signals=1",
+        "original_cohort_provenance_uncertain=true",
         "count_eligibility_status=extractable"
       ],
       "candidates": [
@@ -284,48 +288,51 @@
       "explicit_sps_subgroup_count": null,
       "explicit_sps_subgroup_basis": "",
       "explicit_sps_subgroup_evidence": [],
-      "sps_status_uncertainty_signals": []
+      "sps_status_uncertainty_signals": [],
+      "original_cohort_provenance_uncertain": true,
+      "original_cohort_provenance_signals": [
+        "used, as previously described."
+      ],
+      "confirmed_only_guardrail_signals": [
+        "by the anti–GAD-specific IgG from patients with SPS"
+      ]
     },
     "count_decision_payload": {
       "paper_id": "258",
       "model_id": "gpt-5.4-2026-03-05",
       "verification_status": "llm_candidate_exact",
-      "validator_flags": [],
+      "validator_flags": [
+        "COUNT_DONOR_MATERIAL_ONLY"
+      ],
       "decision_stage": "challenge",
       "challenge_reasons": [
-        "local_safer_abstention_conflict=0 vs 16"
+        "semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY"
       ],
       "decision": {
         "decision_type": "candidate_exact",
         "selected_candidate_id": "cand01",
         "alternative_count": null,
-        "count_confidence": "high",
-        "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper explicitly reports a cohort of 16 patients with typical stiff-person syndrome and reiterates in the methods that serum and CSF were examined from 16 patients with SPS who fulfilled established diagnostic criteria. The mention of 4 patients refers only to a serial-measurement subset within this same cohort, not additional or alternative cases.",
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods state that all 16 fulfilled established diagnostic criteria for SPS. Although the study includes serum/CSF assays, it is not specimen-only because it reports a clinically characterized SPS cohort; however, provenance uncertainty ('used, as previously described') warrants manual review.",
         "evidence": [
           {
             "quote": "PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers.",
             "page": null,
-            "section": "Abstract",
-            "supports": "Direct explicit count of the SPS cohort as 16 unique patients."
+            "section": "Abstract / Patients",
+            "supports": "Explicit cohort size of SPS-spectrum patients reported in this paper."
           },
           {
-            "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years",
+            "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years (mean, 52 years)",
             "page": null,
             "section": "Methods",
-            "supports": "Confirms the study cohort size was 16 SPS patients."
+            "supports": "Original study cohort consists of 16 patients with SPS."
           },
           {
             "quote": "all patients had elevated titers of serum anti-gad antibodies and fulfilled the established diagnostic criteria for sps.",
             "page": null,
             "section": "Methods",
-            "supports": "Shows the entire 16-patient cohort qualified as SPS-spectrum cases, not a mixed cohort."
-          },
-          {
-            "quote": "in 4 patients, the anti-gad antibody titers measured serially during a 2-year period did not correlate with clinical fluctuations.",
-            "page": null,
-            "section": "Results",
-            "supports": "Clarifies that 4 patients were a longitudinal subset of the 16, avoiding undercounting or double counting."
+            "supports": "Confirms the 16 patients were diagnosis-supported SPS cases rather than merely specimen sources or suspected referrals."
           }
         ]
       }
@@ -334,36 +341,30 @@
       "paper_id": "258",
       "decision_stage": "challenge",
       "challenge_reasons": [
-        "local_safer_abstention_conflict=0 vs 16"
+        "semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY"
       ],
       "evidence": [
         {
           "quote": "PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers.",
           "page": null,
-          "section": "Abstract",
-          "supports": "Direct explicit count of the SPS cohort as 16 unique patients."
+          "section": "Abstract / Patients",
+          "supports": "Explicit cohort size of SPS-spectrum patients reported in this paper."
         },
         {
-          "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years",
+          "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years (mean, 52 years)",
           "page": null,
           "section": "Methods",
-          "supports": "Confirms the study cohort size was 16 SPS patients."
+          "supports": "Original study cohort consists of 16 patients with SPS."
         },
         {
           "quote": "all patients had elevated titers of serum anti-gad antibodies and fulfilled the established diagnostic criteria for sps.",
           "page": null,
           "section": "Methods",
-          "supports": "Shows the entire 16-patient cohort qualified as SPS-spectrum cases, not a mixed cohort."
-        },
-        {
-          "quote": "in 4 patients, the anti-gad antibody titers measured serially during a 2-year period did not correlate with clinical fluctuations.",
-          "page": null,
-          "section": "Results",
-          "supports": "Clarifies that 4 patients were a longitudinal subset of the 16, avoiding undercounting or double counting."
+          "supports": "Confirms the 16 patients were diagnosis-supported SPS cases rather than merely specimen sources or suspected referrals."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\258.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\258.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\258.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\258.json"
     }
   }
 }
