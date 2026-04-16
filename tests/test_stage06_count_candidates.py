@@ -380,6 +380,85 @@ class TestStage06CountCandidates(unittest.TestCase):
         )
         self.assertFalse(package.sps_status_uncertainty_signals)
 
+    def test_candidate_package_skips_previously_described_sps_subgroup_counts(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "62",
+                "Title": (
+                    "Autoimmunity in stiff-Man syndrome with breast cancer is targeted to the C-terminal "
+                    "region of human amphiphysin, a protein similar to the yeast proteins, Rvs167 and Rvs161."
+                ),
+                "Authors": "David, C; Solimena, M; De Camilli, P",
+                "Abstract": (
+                    "Amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the "
+                    "autoantigen of Stiff-Man Syndrome (SMS) associated with breast cancer."
+                ),
+            },
+            text_record={"paper_id": "62", "_path": "data/extraction_json/text/62.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Sera from four patients with SMS and breast cancer were previously described "
+                            "(patients 2-5) [8, 9]. In two of these patients, an infiltrating ductal "
+                            "adenocarcinoma was searched for, and found, only after the identification of the "
+                            "anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study))."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "62.json",
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertIsNone(package.explicit_sps_subgroup_count)
+        self.assertNotIn(4, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn("potential non-original or reused-cohort signals", package.llm_evidence_text.lower())
+
+    def test_candidate_package_extracts_table_row_subgroup_from_mixed_neurology_cohort(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "990",
+                "Title": "Therapeutic plasma exchange in treatment of neuroimmunologic disorders: Review of 92 cases",
+                "Authors": "Sorgun M.H.; Erdogan S.; Bay M.; Ayyildiz E.; Yucemen N.; IIhan O.; Yucesan C.",
+                "Abstract": (
+                    "Therapeutic plasma exchange (TPE) is a procedure that reduces amount of circulating antibodies "
+                    "in patients through filtration for the treatment of neurologic diseases in which autoimmunity "
+                    "plays a major role. We reviewed the medical records of 92 neurologic patients who had been "
+                    "consecutively treated by TPE. Neurological indications included myastehia gravis (MG, 16 "
+                    "patients), Guillain-Barre syndrome (GBS, 37 patients) and miscellaneous diseases (39 patients)."
+                ),
+            },
+            text_record={"paper_id": "990", "_path": "data/extraction_json/text/990.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "The results of the treatment are summarized in Table 2. Table 1 Indications of "
+                            "plasmapheresis and demographic details of the patients. Diagnosis No. of the patients "
+                            "Mean age (Range) Sex (F/M) Total number of TPE procedures Mean number of TPE (Range) "
+                            "MG 16 41(19-73) 11/5 16 5(3-8) GBS 37 50(16-77) 21/16 37 4(1-6) Stiff person syndrome "
+                            "1 59(59) 1/0 1 5"
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "990.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 1)
+        self.assertEqual(package.fallback_candidate().proposed_count, 1)
+        self.assertIn(1, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn(
+            "diagnosis_specific_table_row_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
     def test_candidate_package_extracts_single_sps_case_from_mixed_two_patient_abstract(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={

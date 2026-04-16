@@ -222,6 +222,26 @@ NON_SPS_MIXED_DIAGNOSIS_MARKERS = (
     "brainstem",
     "optic neuropath",
 )
+NON_ORIGINAL_COHORT_SIGNAL_RE = re.compile(
+    r"\b(?:previously|earlier|prior(?:ly)?)\s+(?:described|reported|published|identified)\b|"
+    r"\b(?:described|reported|published|identified)\s+(?:previously|earlier)\b|"
+    r"\bour most recent case\b",
+    re.IGNORECASE,
+)
+TABLE_ROW_SPS_COUNT_RE = re.compile(
+    rf"\b(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b\s+"
+    rf"(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\b"
+    rf"(?P<trailing>(?:\s+[0-9][0-9()/.-]*){{3,8}})",
+    re.IGNORECASE,
+)
+TABLE_ROW_CONTEXT_MARKERS = (
+    "table",
+    "diagnosis",
+    "no. of the patients",
+    "no of the patients",
+    "mean age",
+    "sex (",
+)
 
 
 @dataclass(frozen=True)
@@ -344,6 +364,10 @@ def _contains_subgroup_count_signal(unit: str, subgroup_signal: SubgroupSignal |
     return any(count == subgroup_signal.count for _, count in _subgroup_pairs_from_unit(unit))
 
 
+def _is_non_original_case_context(unit: str) -> bool:
+    return bool(NON_ORIGINAL_COHORT_SIGNAL_RE.search(_clean_signal_text(unit)))
+
+
 def _canonicalize_subgroup_diagnosis(text: str) -> str:
     cleaned = normalize_text(_clean_signal_text(text))
     for alias, canonical in SPS_DIAGNOSIS_CANONICAL_BY_ALIAS.items():
@@ -383,6 +407,8 @@ def _extract_direct_sps_cohort_signal(text: str) -> SubgroupSignal | None:
     best_score = -1
     for unit in _raw_evidence_units(text):
         normalized = normalize_text(unit)
+        if _is_non_original_case_context(unit):
+            continue
         if not any(marker in normalized for marker in DIRECT_SPS_COHORT_POSITIVE_MARKERS):
             continue
         if any(marker in normalized for marker in DIRECT_SPS_COHORT_NEGATIVE_MARKERS):
@@ -409,6 +435,8 @@ def _extract_named_sps_cohort_signal(text: str) -> SubgroupSignal | None:
     best_score = -1
     for unit in _raw_evidence_units(text):
         normalized = normalize_text(unit)
+        if _is_non_original_case_context(unit):
+            continue
         if any(marker in normalized for marker in DIRECT_SPS_COHORT_NEGATIVE_MARKERS):
             continue
         for pattern in (NAMED_SPS_COHORT_RE, TABLE_SPS_COHORT_RE):
@@ -463,11 +491,14 @@ def _extract_group_breakdown_subgroup_signal(text: str) -> SubgroupSignal | None
         subgroup_total = sum(count for _, _, _, count in items)
         snippet_start = items[0][0]
         snippet_end = min(len(cleaned), items[-1][1] + 120)
+        snippet = cleaned[snippet_start:snippet_end][:420]
+        if _is_non_original_case_context(snippet):
+            return
         signal = SubgroupSignal(
             count=subgroup_total,
             count_basis="diagnosis_specific_group_breakdown_count",
             count_confidence="high",
-            evidence_units=(cleaned[snippet_start:snippet_end][:420],),
+            evidence_units=(snippet,),
         )
         score = (len(items) * 100) + subgroup_total
         if score > best_score:
@@ -492,6 +523,8 @@ def _extract_enumerated_sps_subgroup_signal(text: str) -> SubgroupSignal | None:
     best_score = -1
     for unit in _raw_evidence_units(text):
         normalized = normalize_text(unit)
+        if _is_non_original_case_context(unit):
+            continue
         if not any(marker in normalized for marker in ENUMERATED_SPS_SUBGROUP_MARKERS):
             continue
         pairs = _subgroup_pairs_from_unit(unit)
@@ -516,6 +549,8 @@ def _extract_mixed_diagnosis_subgroup_signal(text: str) -> SubgroupSignal | None
     best_score = -1
     for unit in _raw_evidence_units(text):
         normalized = normalize_text(unit)
+        if _is_non_original_case_context(unit):
+            continue
         pairs = _subgroup_pairs_from_unit(unit)
         if len(pairs) != 1:
             continue
@@ -547,6 +582,8 @@ def _extract_suffix_count_subgroup_signal(text: str) -> SubgroupSignal | None:
     best_score = -1
     for unit in _raw_evidence_units(text):
         cleaned = _clean_signal_text(unit)
+        if _is_non_original_case_context(cleaned):
+            continue
         for match in SPS_SUBGROUP_SUFFIX_RE.finditer(cleaned):
             count = parse_count_token(match.group("count"))
             if count <= 0 or count > 25:
@@ -561,6 +598,44 @@ def _extract_suffix_count_subgroup_signal(text: str) -> SubgroupSignal | None:
             if score > best_score:
                 best_score = score
                 best_signal = signal
+    return best_signal
+
+
+def _extract_table_row_subgroup_signal(text: str) -> SubgroupSignal | None:
+    cleaned = _clean_signal_text(text)
+    if not cleaned:
+        return None
+
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for match in TABLE_ROW_SPS_COUNT_RE.finditer(cleaned):
+        count = parse_count_token(match.group("count"))
+        if count <= 0 or count > 25:
+            continue
+        context_start = max(0, match.start() - 1200)
+        context_end = min(len(cleaned), match.end() + 120)
+        context_window = cleaned[context_start:context_end]
+        snippet_start = max(0, match.start() - 220)
+        snippet_end = min(len(cleaned), match.end() + 120)
+        snippet = cleaned[snippet_start:snippet_end][:420]
+        normalized_context = normalize_text(context_window)
+        if _is_non_original_case_context(snippet):
+            continue
+        if not any(marker in normalized_context for marker in TABLE_ROW_CONTEXT_MARKERS):
+            continue
+        numeric_tokens = re.findall(r"\b\d+(?:/\d+)?(?:\(\d+\))?\b", match.group("trailing"))
+        if len(numeric_tokens) < 3:
+            continue
+        signal = SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_table_row_count",
+            count_confidence="high",
+            evidence_units=(snippet,),
+        )
+        score = (len(numeric_tokens) * 10) + (30 - count)
+        if score > best_score:
+            best_score = score
+            best_signal = signal
     return best_signal
 
 
@@ -591,6 +666,8 @@ def _extract_explicit_patient_case_signal(text: str) -> SubgroupSignal | None:
         snippet_start = max(0, match.start() - 160)
         snippet_end = min(len(cleaned), match.end() + 100)
         snippet = cleaned[snippet_start:snippet_end]
+        if _is_non_original_case_context(snippet):
+            continue
         reference_matches = _iter_patient_reference_matches(snippet)
         if not reference_matches:
             continue
@@ -612,6 +689,8 @@ def _extract_explicit_patient_case_signal(text: str) -> SubgroupSignal | None:
 def _extract_patient_label_subgroup_signal(text: str) -> SubgroupSignal | None:
     evidence_by_label: dict[str, str] = {}
     for unit in _raw_evidence_units(text):
+        if _is_non_original_case_context(unit):
+            continue
         local_matches = _iter_patient_reference_matches(unit)
         if not local_matches:
             continue
@@ -642,6 +721,7 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
         _extract_enumerated_sps_subgroup_signal,
         _extract_mixed_diagnosis_subgroup_signal,
         _extract_suffix_count_subgroup_signal,
+        _extract_table_row_subgroup_signal,
         _extract_explicit_patient_case_signal,
         _extract_patient_label_subgroup_signal,
     ):
@@ -649,6 +729,21 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
         if signal is not None:
             return signal
     return None
+
+
+def extract_non_original_case_signals(*, abstract: str, raw_preferred_text: str) -> list[str]:
+    signals: list[str] = []
+    seen: set[str] = set()
+    combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
+    for unit in _raw_evidence_units(combined_text):
+        if not _is_non_original_case_context(unit):
+            continue
+        normalized = normalize_text(unit)
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        signals.append(unit[:420])
+    return signals[:4]
 
 
 def extract_sps_status_uncertainty_signals(
@@ -755,6 +850,7 @@ def build_llm_evidence_text(
     early_body_text: str,
     raw_preferred_text: str,
     explicit_sps_subgroup_evidence: tuple[str, ...] | list[str] = (),
+    non_original_case_signals: tuple[str, ...] | list[str] = (),
     sps_status_uncertainty_signals: tuple[str, ...] | list[str] = (),
 ) -> str:
     parts: list[str] = []
@@ -767,6 +863,11 @@ def build_llm_evidence_text(
     if subgroup_evidence:
         subgroup_block = "\n".join(f"- {snippet[:420]}" for snippet in subgroup_evidence[:4])
         parts.append(f"Explicit SPS-spectrum subgroup signals:\n{subgroup_block}")
+
+    non_original_block_items = [snippet for snippet in non_original_case_signals if str(snippet or "").strip()]
+    if non_original_block_items:
+        non_original_block = "\n".join(f"- {snippet[:420]}" for snippet in non_original_block_items[:4])
+        parts.append(f"Potential non-original or reused-cohort signals:\n{non_original_block}")
 
     uncertainty_block_items = [snippet for snippet in sps_status_uncertainty_signals if str(snippet or "").strip()]
     if uncertainty_block_items:
@@ -1252,6 +1353,10 @@ def build_case_count_candidate_package(
         abstract=abstract,
         raw_preferred_text=raw_preferred_text,
     )
+    non_original_case_signals = extract_non_original_case_signals(
+        abstract=abstract,
+        raw_preferred_text=raw_preferred_text,
+    )
     uncertainty_signals = extract_sps_status_uncertainty_signals(
         abstract=abstract,
         raw_preferred_text=raw_preferred_text,
@@ -1444,6 +1549,8 @@ def build_case_count_candidate_package(
     notes.append(f"distinct_candidate_counts={sorted({candidate.proposed_count for candidate in resolved_candidates})}")
     if subgroup_signal is not None:
         notes.append(f"explicit_sps_subgroup_count={subgroup_signal.count}")
+    if non_original_case_signals:
+        notes.append(f"non_original_case_signals={len(non_original_case_signals)}")
     if uncertainty_signals:
         notes.append(f"sps_status_uncertainty_signals={len(uncertainty_signals)}")
 
@@ -1475,6 +1582,7 @@ def build_case_count_candidate_package(
             early_body_text=early_body_text,
             raw_preferred_text=raw_preferred_text,
             explicit_sps_subgroup_evidence=() if subgroup_signal is None else subgroup_signal.evidence_units,
+            non_original_case_signals=non_original_case_signals,
             sps_status_uncertainty_signals=uncertainty_signals,
         ),
         candidate_generation_notes=[*notes, f"count_eligibility_status={eligibility_status}"],

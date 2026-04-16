@@ -240,6 +240,12 @@ SPS_TABLE_ROW_SEGMENT_RE = re.compile(
     r"\b(?:diagnosis|other symptoms)\b(?P<row>[\s\S]{0,280}?)\b(?:aeds|treatment|therapy|response|effect|mri|eeg|past history)\b",
     re.IGNORECASE,
 )
+NON_ORIGINAL_COHORT_CONTEXT_RE = re.compile(
+    r"\b(?:previously|earlier|prior(?:ly)?)\s+(?:described|reported|published|identified)\b|"
+    r"\b(?:described|reported|published|identified)\s+(?:previously|earlier)\b|"
+    r"\bour most recent case\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -450,6 +456,8 @@ def score_count_candidate(
         score += 4
     if has_literature_count_context(window, count):
         score -= 8
+    if NON_ORIGINAL_COHORT_CONTEXT_RE.search(window):
+        score -= 15
     if any(marker in window for marker in BACKGROUND_MARKERS) and not has_current_series_signal(window):
         score -= 2
     if COUNT_RANGE_RE.search(local_window):
