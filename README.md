@@ -253,14 +253,15 @@ This means the remaining open issues after step `03` are now narrow and explicit
 The canonical routing flow now starts with the joint LLM stage-04 pass.
 
 1. `src/pipelines/04_source_categorisation_LLM.py` assigns the source category and the paired extractable SPS case count in one LLM pass.
-   It now checkpoints per-paper run artefacts under `results/stage04_llm_runs/` and only publishes the canonical registries after a complete run.
+   It now checkpoints per-paper run artefacts under `results/stage04_llm_runs/` and publishes the canonical routing registry plus a provisional count snapshot after a complete run.
 2. `src/pipelines/05_trim_proceedings_text_LLM.py` is the official stage-05 candidate-generation step and writes ordered proceedings end-candidate packages under `data/extraction_json/text_trimmed_llm_candidates/` plus `data/references/text_trim_llm_candidate_registry.csv`.
 3. `src/pipelines/05b_validate_proceedings_text_LLM.py` is the official stage-05 validation step and uses an OpenAI model to pick the best candidate end, or falls back to guarded heuristics, writing final LLM-reviewed trims under `data/extraction_json/text_trimmed_llm/` plus `data/references/text_trim_llm_registry.csv`.
 4. `src/pipelines/05c_publish_proceedings_ready.py` is the required publication step and writes the canonical proceedings-ready layer under `data/extraction_json/text_proceedings_ready/` plus `data/references/text_proceedings_ready_registry.csv`, merging active gold trims, validated or rebuilt LLM trims, and safe full-text passthrough abstracts into one downstream-facing directory.
 5. The proceedings-ready layer is now the only live downstream stage-05 contract. Manual gold repairs from sanity sweeps land there alongside LLM-reviewed outputs, and the current published registry no longer carries `legacy_trimmed` rows.
-6. The retired deterministic stage-05 entrypoints now live under `legacy/stage_05_deterministic/` for provenance only.
-7. `src/pipelines/06_extract_sps_case_counts.py`, `src/pipelines/07_split_case_series.py`, and `src/pipelines/10_langextract.py` now prefer `data/extraction_json/text_proceedings_ready/{paper_id}.json` first, then legacy `text_trimmed/`, then the full extracted text when no proceedings-specific artefact exists.
-8. `src/pipelines/07_split_case_series.py` still uses reviewed routing for true multi-case sources before downstream extraction.
+6. `src/pipelines/06_extract_sps_case_counts_hybrid.py` is now the intended production stage-06 entrypoint. It combines deterministic count candidates, local Gemma advice, GPT adjudication, contradiction escalation, and the tracked manual-review override ledger `data/references/source_sps_case_count_manual_review.csv` before writing the final canonical `data/references/source_sps_case_count_registry.csv`.
+7. `src/pipelines/06_extract_sps_case_counts.py` is retained as the frozen heuristic-plus-GPT comparator, and `src/pipelines/06_extract_sps_case_counts_LLM.py` remains the QA-only Gemma-first calibration harness.
+8. `src/pipelines/07_split_case_series.py` and `src/pipelines/10_langextract.py` prefer `data/extraction_json/text_proceedings_ready/{paper_id}.json` first, then legacy `text_trimmed/`, then the full extracted text when no proceedings-specific artefact exists.
+9. `src/pipelines/07_split_case_series.py` still uses reviewed routing for true multi-case sources before downstream extraction.
 
 ## Stage-04 gold standard
 

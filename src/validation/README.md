@@ -195,11 +195,29 @@ It:
 - supports PDF-page search using the preferred text JSON selected for stage 06
 - displays heuristic candidates, the selected LLM decision, and stored evidence quotes
 - lets the reviewer record whether the predicted count is correct and save notes under `qa/validation/stage06_count_review/`
+- also syncs reviewed responses into the canonical stage-06 override ledger `data/references/source_sps_case_count_manual_review.csv`
 
 Run:
 
 ```bash
 streamlit run src/validation/review_stage06_count_app.py
+```
+
+### `benchmark_stage06_hybrid.py`
+
+Benchmarks one or more stage-06 workflow CSV outputs against the reviewed stage-06 gold JSON corpus.
+
+It:
+- reads active gold papers from `qa/validation/source_categorisation/gold_standard/stage06_count_gold/`
+- can score a focused benchmark selection such as `gold30`, `gold20`, or a curated regression pack
+- supports exclusions so the remaining active gold papers can be used as a final untouched acceptance set
+- reports exact accuracy, silent wrong auto-accepts, manual-review rows, reviewed overrides, and missing predictions
+- can write JSON and Markdown summaries for archived benchmark reports
+
+Run against the frozen 30-paper benchmark:
+
+```bash
+python src/validation/benchmark_stage06_hybrid.py --selection-path qa/validation/stage06_llm/stage06_gold30_balanced_20260416.selection.json --workflow legacy=qa/validation/stage06_llm/stage06_gold30_current_iter1_20260416.csv --workflow llm=qa/validation/stage06_llm/stage06_gold30_llm_iter2_20260416.csv
 ```
 
 ### `bootstrap_stage06_gold_json.py`

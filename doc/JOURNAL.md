@@ -1,5 +1,35 @@
 ## 2026-04-15
 
+### Stage-06 hybrid production cutover
+
+- Added the new canonical hybrid stage-06 runner:
+  - `src/pipelines/06_extract_sps_case_counts_hybrid.py`
+- Added the shared hybrid controller:
+  - `src/pipelines/stage06_counting/hybrid.py`
+- The hybrid flow now combines:
+  - deterministic candidate generation and hard safety rails from the legacy stage-06 path
+  - local Ollama-served `gemma4:e4b` advice on every selected paper
+  - GPT-5.4 adjudication with a contradiction-focused challenge pass when deterministic or conservative evidence conflicts
+  - a tracked reviewed override ledger at `data/references/source_sps_case_count_manual_review.csv`
+- Added the shared override support layer:
+  - `src/pipelines/stage06_counting/overrides.py`
+- Updated the stage-06 review workflow so saved reviewer responses now also sync into the canonical override ledger:
+  - `src/validation/_stage06_review.py`
+  - `src/validation/review_stage06_count_app.py`
+- Added the hybrid benchmark utility and regression-pack support:
+  - `src/validation/benchmark_stage06_hybrid.py`
+  - `qa/validation/stage06_llm/stage06_historical_regression_papers.json`
+- Preserved the earlier stage-06 scripts as non-canonical comparators:
+  - `src/pipelines/06_extract_sps_case_counts.py`
+  - `src/pipelines/06_extract_sps_case_counts_LLM.py`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_overrides.py tests/test_stage06_review_workflow.py tests/test_stage06_hybrid_counting.py tests/test_06_extract_sps_case_counts_hybrid.py tests/test_stage06_hybrid_benchmark.py -q`
+  - `.venv\Scripts\python.exe -m py_compile src/pipelines/stage06_counting/hybrid.py src/pipelines/06_extract_sps_case_counts_hybrid.py src/validation/benchmark_stage06_hybrid.py`
+  - `.venv\Scripts\python.exe src/pipelines/06_extract_sps_case_counts_hybrid.py --estimate-only --limit 3`
+
 ### Stage-06 local Gemma calibration runner
 
 - Added a new QA-only alternative stage-06 runner:

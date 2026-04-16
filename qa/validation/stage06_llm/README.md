@@ -49,6 +49,7 @@ python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --paper-
 - These outputs are QA artefacts only and should not replace `data/references/source_sps_case_count_registry.csv` directly.
 - The local model is advisory during calibration. GPT-5.4 still runs on every row in this workflow.
 - If the local model fails to parse or violates a deterministic guardrail, the QA row records that status and still continues to GPT.
+- The canonical production candidate now lives in `src/pipelines/06_extract_sps_case_counts_hybrid.py`; this folder remains the calibration and benchmark workspace for the preserved non-canonical LLM harness.
 
 ## Benchmarks
 
@@ -61,3 +62,8 @@ python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --paper-
 - `stage06_gold20_llm_local_round2b_20260416.csv` is the final local-only Gemma checkpoint on the holdout after count-focused evidence packing.
 - `stage06_gold20_llm_round2_20260416.csv` is the final Gemma-plus-GPT result on that holdout.
 - `stage06_benchmark_summary_20260416.json` and `.md` summarise the final 30-paper, 20-paper, and combined 50-paper scorecards.
+- `stage06_historical_regression_papers.json` is the curated regression pack of known stage-06 wins that should not regress while the hybrid workflow improves.
+
+## Benchmark Utility
+
+Use `src/validation/benchmark_stage06_hybrid.py` to score any legacy, calibration, or hybrid CSV output against the reviewed gold corpus and these frozen selection packs.

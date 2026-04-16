@@ -271,7 +271,7 @@ It:
 - records whether case-series splitting is a candidate, and
 - checkpoints each completed paper under `results/stage04_llm_runs/{run_id}/`,
 - supports resume and publish-only recovery from saved run artefacts, and
-- publishes `data/references/source_categorisation_registry.csv` and `data/references/source_sps_case_count_registry.csv` only after a complete run.
+- publishes `data/references/source_categorisation_registry.csv` after a complete run, while the stage-04 count output should be treated as provisional until `06_extract_sps_case_counts_hybrid.py` refreshes the canonical stage-06 registry.
 
 Manual adjudications for papers that required case-by-case review are stored in:
 
@@ -357,7 +357,7 @@ python src/pipelines/04_source_categorisation_LLM.py --publish-only --run-id sta
 
 ## `06_extract_sps_case_counts.py`
 
-This script estimates how many extractable SPS patients/cases are present in each source after source categorisation and any available proceedings trimming/QC.
+This script is the frozen legacy heuristic-plus-GPT comparator for the separate extractable SPS case-count registry.
 
 It:
 
@@ -367,9 +367,9 @@ It:
 - joins the source category from `data/references/source_categorisation_registry.csv`,
 - estimates `likely_sps_case_count` with a separate SPS-specific count heuristic,
 - records count confidence, basis, and whether manual count review is advisable, and
-- writes `data/references/source_sps_case_count_registry.csv`.
+- can still write `data/references/source_sps_case_count_registry.csv` when run directly.
 
-This stage is now a legacy heuristic comparator for the canonical joint LLM count output written by `04_source_categorisation_LLM.py`.
+This stage is retained for benchmarking and fallback comparison. New stage-06 production work should go into `06_extract_sps_case_counts_hybrid.py` instead.
 
 After each run, it also refreshes `data/references/paper_artifact_registry.csv` unless `--skip-registry-refresh` is passed.
 
@@ -404,6 +404,8 @@ The existing deterministic hard gates are preserved. Review/basic-science rows, 
 
 Paid GPT calls are blocked unless `--allow-paid-run` is passed explicitly.
 
+This script is a calibration harness only. It should not replace the canonical stage-06 registry directly.
+
 ### Requirements
 
 - Ollama running locally and serving `gemma4:e4b`
@@ -427,6 +429,38 @@ Write the QA CSV to an explicit path:
 
 ```bash
 python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --output-path qa/validation/stage06_llm/manual_slice.csv --limit 10
+```
+
+## `06_extract_sps_case_counts_hybrid.py`
+
+This script is the canonical stage-06 production candidate and is the intended final writer for `data/references/source_sps_case_count_registry.csv`.
+
+It combines:
+
+- deterministic heuristic candidate generation and hard safety rails,
+- a local Ollama-served `gemma4:e4b` first pass on every selected paper,
+- GPT-5.4 adjudication on rows that still need model resolution,
+- a contradiction-focused GPT challenge pass when the first adjudication conflicts with deterministic or conservative evidence, and
+- a tracked manual-review override ledger at `data/references/source_sps_case_count_manual_review.csv`.
+
+It:
+
+- reads the same preferred proceedings-ready/full-text inputs as the other stage-06 scripts,
+- writes run artefacts under `results/stage06_count_runs/{run_id}/`,
+- applies reviewed overrides during publish,
+- refuses canonical export when unresolved manual-review rows remain uncovered by overrides unless `--allow-unresolved-export` is passed explicitly, and
+- refreshes `data/references/paper_artifact_registry.csv` after a canonical write unless skipped.
+
+Estimate-only:
+
+```bash
+python src/pipelines/06_extract_sps_case_counts_hybrid.py --estimate-only
+```
+
+Canonical hybrid run:
+
+```bash
+python src/pipelines/06_extract_sps_case_counts_hybrid.py --allow-paid-run
 ```
 
 ## `07_split_case_series.py`

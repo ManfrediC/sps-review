@@ -35,7 +35,8 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
    - Jointly predicts source category and extractable SPS case count from the same LLM pass.
    - Checkpoints per-paper results under `results/stage04_llm_runs/{run_id}/`, supports resume, and requires explicit approval before paid LLM calls.
    - Shows an interactive progress bar during paid terminal runs so long batches expose current progress and ETA.
-   - Publishes `data/references/source_categorisation_registry.csv` and `data/references/source_sps_case_count_registry.csv` only after a complete run.
+   - Publishes `data/references/source_categorisation_registry.csv` after a complete run.
+   - Still emits a provisional count snapshot during stage 04, but the final canonical SPS case-count registry is now expected to be refreshed by the stage-06 hybrid run.
    - Refreshes `data/references/paper_artifact_registry.csv` after publish unless skipped.
 
 6. `pipelines/05_trim_proceedings_text_LLM.py`
@@ -88,10 +89,11 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
   - Writes `data/references/text_screening_registry.csv`.
 
 - `pipelines/04_source_categorisation_LLM.py`
-  - Builds the canonical source-routing and SPS case-count registries for downstream workflow stages.
+  - Builds the canonical source-routing registry and a provisional SPS case-count snapshot for downstream workflow stages.
   - Adds stage-level provenance into the master artifact registry.
   - Stores resumable run artefacts under `results/stage04_llm_runs/`.
-  - Produces `data/references/source_categorisation_registry.csv` and `data/references/source_sps_case_count_registry.csv` only when a completed run is published.
+  - Produces `data/references/source_categorisation_registry.csv` when a completed run is published.
+  - The final canonical `data/references/source_sps_case_count_registry.csv` is expected to be refreshed by `pipelines/06_extract_sps_case_counts_hybrid.py`.
   - Manual adjudications are stored separately in `data/references/source_categorisation_manual_review.csv`.
   - The manual file records:
     - the original predicted category/subtype/confidence
@@ -113,9 +115,17 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
 
 
 - `pipelines/06_extract_sps_case_counts.py`
-  - Legacy heuristic extractor for the separate extractable SPS case-count registry `data/references/source_sps_case_count_registry.csv`.
-  - Uses the preferred available text after categorisation and proceedings trimming.
-  - Records `likely_sps_case_count`, confidence, basis, and manual-review flags separately from the routing decision.
+  - Frozen legacy heuristic-plus-GPT comparator for the extractable SPS case-count workflow.
+  - Kept for benchmarking and fallback comparisons.
+
+- `pipelines/06_extract_sps_case_counts_LLM.py`
+  - QA-only Gemma-plus-GPT calibration harness for stage 06.
+  - Writes non-canonical calibration artefacts under `qa/validation/stage06_llm/`.
+
+- `pipelines/06_extract_sps_case_counts_hybrid.py`
+  - Canonical stage-06 hybrid runner.
+  - Combines deterministic candidate generation, local Gemma advice, GPT adjudication, contradiction escalation, and tracked reviewed overrides.
+  - Writes the final canonical `data/references/source_sps_case_count_registry.csv`.
 
 - `pipelines/05_trim_proceedings_text_LLM.py`
   - Official stage-05 candidate-generation step for proceedings trimming.
