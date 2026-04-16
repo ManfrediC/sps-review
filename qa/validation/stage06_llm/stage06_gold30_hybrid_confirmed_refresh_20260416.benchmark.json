@@ -1,0 +1,36 @@
+{
+  "selection_description": "qa\\validation\\stage06_llm\\stage06_gold30_balanced_20260416.selection.json",
+  "gold_manifest_path": "C:\\Projects\\sps-review\\qa\\validation\\source_categorisation\\gold_standard\\stage06_count_gold\\manifest.json",
+  "gold_papers_dir": "C:\\Projects\\sps-review\\qa\\validation\\source_categorisation\\gold_standard\\stage06_count_gold\\papers",
+  "selection_total": 30,
+  "workflow_scores": [
+    {
+      "workflow_label": "hybrid",
+      "workflow_path": "qa\\validation\\stage06_llm\\stage06_gold30_hybrid_confirmed_refresh_20260416.csv",
+      "total": 30,
+      "exact": 28,
+      "exact_accuracy": 0.9333333333333333,
+      "manual_review_rows": 19,
+      "silent_wrong_auto_accepts": 0,
+      "reviewed_override_rows": 0,
+      "missing_predictions": 0,
+      "missing_prediction_paper_ids": [],
+      "mismatches": [
+        {
+          "paper_id": "1937",
+          "gold_count": 14,
+          "predicted_count": 13,
+          "count_manual_review_required": true,
+          "count_verification_status": "llm_bounded_alternative"
+        },
+        {
+          "paper_id": "12584",
+          "gold_count": 1,
+          "predicted_count": 2,
+          "count_manual_review_required": true,
+          "count_verification_status": "llm_candidate_exact"
+        }
+      ]
+    }
+  ]
+}
