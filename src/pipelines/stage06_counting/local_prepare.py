@@ -26,6 +26,30 @@ def _clip(text: str, *, limit: int = 420) -> str:
     return compact[: limit - 3].rstrip() + "..."
 
 
+def _count_focused_clip(text: str, *, count: int | None, limit: int = 420) -> str:
+    compact = " ".join(str(text or "").split())
+    if len(compact) <= limit:
+        return compact
+    if count is None:
+        return _clip(compact, limit=limit)
+
+    match = re.search(rf"\b{re.escape(str(count))}\b", compact)
+    if match is None:
+        return _clip(compact, limit=limit)
+
+    half = max(0, limit // 2)
+    start = max(0, match.start() - half)
+    end = min(len(compact), start + limit)
+    if end - start < limit:
+        start = max(0, end - limit)
+    snippet = compact[start:end].strip()
+    if start > 0:
+        snippet = "..." + snippet.lstrip(".")
+    if end < len(compact):
+        snippet = snippet.rstrip(".") + "..."
+    return snippet
+
+
 def _candidate_count_values(package: CountCandidatePackage) -> list[int]:
     return sorted({candidate.proposed_count for candidate in package.candidates})
 
@@ -84,7 +108,10 @@ def _preferred_candidate_summary_lines(package: CountCandidatePackage) -> list[s
         f"fallback_candidate_basis: {fallback.count_basis}",
     ]
     if preferred.evidence_text:
-        lines.append(f"preferred_deterministic_evidence: {preferred.evidence_text[:420].strip()}")
+        lines.append(
+            "preferred_deterministic_evidence: "
+            + _count_focused_clip(preferred.evidence_text, count=preferred.proposed_count, limit=420)
+        )
     if package.explicit_sps_subgroup_count is not None:
         subgroup_candidate = next(
             (
@@ -134,7 +161,7 @@ def _explicit_subgroup_lines(package: CountCandidatePackage) -> list[str]:
         )
     lines.extend(
         [
-            f"evidence: {snippet}"
+            f"evidence: {_count_focused_clip(snippet, count=package.explicit_sps_subgroup_count, limit=420)}"
             for snippet in (
                 package.explicit_sps_subgroup_evidence or ["[no subgroup evidence excerpt available]"]
             )
@@ -160,7 +187,10 @@ def _candidate_summary_lines(package: CountCandidatePackage) -> list[str]:
             )
         )
         if candidate.evidence_text:
-            lines.append(f"evidence: {_clip(candidate.evidence_text, limit=320)}")
+            lines.append(
+                "evidence: "
+                + _count_focused_clip(candidate.evidence_text, count=candidate.proposed_count, limit=320)
+            )
     return lines
 
 
@@ -229,8 +259,8 @@ def _key_evidence_lines(package: CountCandidatePackage) -> list[str]:
     lines: list[str] = []
     seen: set[str] = set()
 
-    def _push(label: str, text: str, *, limit: int = 420) -> None:
-        compact = _clip(text, limit=limit)
+    def _push(label: str, text: str, *, limit: int = 420, count: int | None = None) -> None:
+        compact = _count_focused_clip(text, count=count, limit=limit)
         if not compact:
             return
         normalised = compact.lower()
@@ -240,11 +270,21 @@ def _key_evidence_lines(package: CountCandidatePackage) -> list[str]:
         lines.append(f"{label}: {compact}")
 
     if package.abstract_text:
-        _push("abstract", package.abstract_text, limit=420)
+        _push("abstract", package.abstract_text, limit=420, count=package.preferred_candidate().proposed_count)
     for snippet in package.explicit_sps_subgroup_evidence:
-        _push("explicit_subgroup_evidence", snippet, limit=420)
+        _push(
+            "explicit_subgroup_evidence",
+            snippet,
+            limit=420,
+            count=package.explicit_sps_subgroup_count,
+        )
     for candidate in package.candidates[:3]:
-        _push(f"{candidate.candidate_id}_evidence", candidate.evidence_text, limit=320)
+        _push(
+            f"{candidate.candidate_id}_evidence",
+            candidate.evidence_text,
+            limit=320,
+            count=candidate.proposed_count,
+        )
     for signal in package.sps_status_uncertainty_signals[:3]:
         _push("uncertainty_signal", signal, limit=280)
     if not lines and package.llm_evidence_text:

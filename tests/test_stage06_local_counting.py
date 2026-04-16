@@ -217,6 +217,35 @@ def make_treatment_subset_package():
     )
 
 
+def make_late_count_package():
+    long_lead = " ".join(["background"] * 120)
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "1153",
+            "Title": "A new clinical tool to monitor IVIg efficacy in patients with stiff person syndrome",
+            "Authors": "Weerasinghe S.; Sadalage G.; Jacob S.",
+            "Abstract": (
+                f"{long_lead} We monitored 12 patients with stiff person syndrome receiving IVIg and recorded outcome scores."
+            ),
+        },
+        text_record={"paper_id": "1153", "_path": "data/extraction_json/text/1153.json"},
+        preferred_record={
+            "pages": [
+                {
+                    "text": (
+                        f"{long_lead} We monitored 12 patients with stiff person syndrome receiving IVIg and recorded outcome scores."
+                    )
+                }
+            ]
+        },
+        preferred_path=Path("data/extraction_json/text_proceedings_ready/1153.json"),
+        source_row={
+            "source_category": "conference_abstract",
+            "source_subtype": "group_conference_abstract",
+        },
+    )
+
+
 class TestStage06LocalCounting(unittest.TestCase):
     def test_local_prompt_includes_evidence_and_candidates(self) -> None:
         prompt = format_candidate_package_for_local_llm(make_package())
@@ -275,6 +304,10 @@ class TestStage06LocalCounting(unittest.TestCase):
             "Do not use pre-treatment, post-treatment, response, or medication-usage subsets as the cohort size",
             prompt,
         )
+
+    def test_local_prompt_keeps_late_count_visible_in_evidence_snippet(self) -> None:
+        prompt = format_candidate_package_for_local_llm(make_late_count_package())
+        self.assertIn("12 patients with stiff person syndrome", prompt)
 
     def test_parse_local_output_handles_fenced_json(self) -> None:
         parsed = parse_local_count_output(
