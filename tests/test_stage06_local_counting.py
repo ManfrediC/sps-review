@@ -153,17 +153,84 @@ def make_single_case_suffix_package():
     )
 
 
+def make_non_candidate_direct_sps_package():
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "1805",
+            "Title": "Possible link of genetic variants to autoimmunity in GAD-antibody-associated neurological disorders",
+            "Authors": "Thaler F.S.; Bangol B.; Biljecki M.; Havla J.; Schumacher A.-M.; Kumpfel T.",
+            "Abstract": (
+                "RESULT(S): 19 patients with positive GAD-ab and the following neurological phenotypes were included: "
+                "n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, "
+                "n = 1 demyelinating CNS disease with recurrent optic neuritis."
+            ),
+        },
+        text_record={"paper_id": "1805", "_path": "data/extraction_json/text/1805.json"},
+        preferred_record={
+            "pages": [
+                {
+                    "text": (
+                        "RESULT(S): 19 patients with positive GAD-ab and the following neurological phenotypes were included: "
+                        "n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, "
+                        "n = 1 demyelinating CNS disease with recurrent optic neuritis."
+                    )
+                }
+            ]
+        },
+        preferred_path=Path("data/extraction_json/text_trimmed/1805.json"),
+        source_row={
+            "source_category": "lab_heavy_clinical_or_translational",
+            "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        },
+    )
+
+
+def make_treatment_subset_package():
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "12760",
+            "Title": "Therapeutic Plasma Exchange in the Management of Stiff Person Syndrome Spectrum Disorders",
+            "Authors": "Roy, S",
+            "Abstract": (
+                "Thirty-nine SPSD patients were treated with TPE. "
+                "Twenty-four patients had classic SPS, 10 had SPS-plus, 2 had PERM, and 3 had CA. "
+                "Before starting TPE, 30 patients had symptomatic treatment exposure."
+            ),
+        },
+        text_record={"paper_id": "12760", "_path": "data/extraction_json/text/12760.json"},
+        preferred_record={
+            "pages": [
+                {
+                    "text": (
+                        "Thirty-nine SPSD patients were treated with TPE. "
+                        "Twenty-four patients had classic SPS, 10 had SPS-plus, 2 had PERM, and 3 had CA. "
+                        "Before starting TPE, 30 patients had symptomatic treatment exposure."
+                    )
+                }
+            ]
+        },
+        preferred_path=Path("data/extraction_json/text/12760.json"),
+        source_row={
+            "source_category": "observational_group_study",
+            "source_subtype": "retrospective_or_cohort_group_study",
+        },
+    )
+
+
 class TestStage06LocalCounting(unittest.TestCase):
     def test_local_prompt_includes_evidence_and_candidates(self) -> None:
         prompt = format_candidate_package_for_local_llm(make_package())
         self.assertIn("## Deterministic anchors", prompt)
         self.assertIn("## Evidence pack", prompt)
         self.assertIn("## Explicit subgroup signals", prompt)
+        self.assertIn("## Direct named SPS-spectrum subgroup cues", prompt)
+        self.assertIn("## Treatment-state subset cues", prompt)
         self.assertIn("## Deterministic candidate hints", prompt)
         self.assertIn("## Required JSON output", prompt)
         self.assertIn('"n_spsd_patients"', prompt)
         self.assertIn("preferred_candidate_id", prompt)
         self.assertIn("preferred_deterministic_count", prompt)
+        self.assertIn("deterministic_candidate_counts", prompt)
 
     def test_local_prompt_highlights_explicit_subgroup_total(self) -> None:
         prompt = format_candidate_package_for_local_llm(make_enumerated_subgroup_package())
@@ -190,6 +257,22 @@ class TestStage06LocalCounting(unittest.TestCase):
         )
         self.assertIn(
             "A bare suffix count like SPS (3) is not enough to override single-case routing on its own.",
+            prompt,
+        )
+
+    def test_local_prompt_highlights_direct_named_subgroup_exception(self) -> None:
+        prompt = format_candidate_package_for_local_llm(make_non_candidate_direct_sps_package())
+        self.assertIn("n = 4 stiff person syndrome", prompt)
+        self.assertIn(
+            "You may choose a different top-level count only when the evidence pack contains a direct SPS-spectrum subgroup quote",
+            prompt,
+        )
+
+    def test_local_prompt_highlights_treatment_state_subset_warning(self) -> None:
+        prompt = format_candidate_package_for_local_llm(make_treatment_subset_package())
+        self.assertIn("Before starting TPE", prompt)
+        self.assertIn(
+            "Do not use pre-treatment, post-treatment, response, or medication-usage subsets as the cohort size",
             prompt,
         )
 
@@ -296,6 +379,51 @@ class TestStage06LocalCounting(unittest.TestCase):
         )
         flags = validate_local_count_decision(make_enumerated_subgroup_package(), parsed)
         self.assertIn("LOCAL_ENUMERATED_SPS_SUBGROUP_MISMATCH", flags)
+
+    def test_validate_local_decision_flags_non_candidate_without_direct_support(self) -> None:
+        parsed = parse_local_count_output(
+            """{
+              "n_spsd_patients": 16,
+              "evidence_span": "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.",
+              "data_granularity": "group-level",
+              "confidence": "high",
+              "needs_review": true,
+              "reasoning_short": "The explicit evidence lists three groups.",
+              "possibilities": []
+            }"""
+        )
+        flags = validate_local_count_decision(make_treatment_subset_package(), parsed)
+        self.assertIn("LOCAL_COUNT_NOT_IN_CANDIDATES", flags)
+
+    def test_validate_local_decision_allows_direct_named_subgroup_non_candidate(self) -> None:
+        parsed = parse_local_count_output(
+            """{
+              "n_spsd_patients": 4,
+              "evidence_span": "n = 4 stiff person syndrome",
+              "data_granularity": "group-level",
+              "confidence": "medium",
+              "needs_review": true,
+              "reasoning_short": "This is the direct SPS subgroup.",
+              "possibilities": []
+            }"""
+        )
+        flags = validate_local_count_decision(make_non_candidate_direct_sps_package(), parsed)
+        self.assertNotIn("LOCAL_COUNT_NOT_IN_CANDIDATES", flags)
+
+    def test_validate_local_decision_flags_treatment_subset_drift(self) -> None:
+        parsed = parse_local_count_output(
+            """{
+              "n_spsd_patients": 30,
+              "evidence_span": "Before starting TPE, 30 patients had symptomatic treatment exposure.",
+              "data_granularity": "group-level",
+              "confidence": "high",
+              "needs_review": true,
+              "reasoning_short": "This seems like the cohort size.",
+              "possibilities": []
+            }"""
+        )
+        flags = validate_local_count_decision(make_treatment_subset_package(), parsed)
+        self.assertIn("LOCAL_TREATMENT_STATE_SUBSET_COUNT", flags)
 
     def test_ensure_ollama_model_available_checks_model_list(self) -> None:
         with mock.patch("src.pipelines.stage06_counting.local_ollama.requests.get") as get_mock:

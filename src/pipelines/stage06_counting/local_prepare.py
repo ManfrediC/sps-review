@@ -1,8 +1,22 @@
 from __future__ import annotations
 
 import json
+import re
 
 from src.pipelines.stage06_counting.models import CountCandidatePackage
+
+
+DIRECT_SPSD_COUNT_PATTERN = re.compile(
+    r"(?:n\s*=\s*|^)(\d+)\s+"
+    r"(?:classic\s+sps|stiff[- ]person\s+syndrome|sps-plus|spsd|sps-spectrum|"
+    r"progressive\s+encephalomyelitis\s+with\s+rigidity\s+and\s+myoclonus|perm)\b",
+    re.IGNORECASE,
+)
+TREATMENT_STATE_PATTERN = re.compile(
+    r"\b(before starting|before treatment|after treatment|after tpe|previously received|"
+    r"reported improvement|required fewer|response to|treated with|months after)\b",
+    re.IGNORECASE,
+)
 
 
 def _clip(text: str, *, limit: int = 420) -> str:
@@ -10,6 +24,52 @@ def _clip(text: str, *, limit: int = 420) -> str:
     if len(compact) <= limit:
         return compact
     return compact[: limit - 3].rstrip() + "..."
+
+
+def _candidate_count_values(package: CountCandidatePackage) -> list[int]:
+    return sorted({candidate.proposed_count for candidate in package.candidates})
+
+
+def _direct_named_sps_count_lines(package: CountCandidatePackage) -> list[str]:
+    snippets = [
+        package.abstract_text,
+        package.early_body_text,
+        *package.explicit_sps_subgroup_evidence,
+        *package.sps_status_uncertainty_signals,
+    ]
+    matches: list[str] = []
+    seen: set[str] = set()
+    for snippet in snippets:
+        compact = _clip(snippet, limit=280)
+        if not compact or not DIRECT_SPSD_COUNT_PATTERN.search(compact):
+            continue
+        key = compact.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        matches.append(compact)
+    return matches
+
+
+def _treatment_state_subset_lines(package: CountCandidatePackage) -> list[str]:
+    snippets = [
+        package.abstract_text,
+        package.early_body_text,
+        *package.explicit_sps_subgroup_evidence,
+        *[candidate.evidence_text for candidate in package.candidates[:3]],
+    ]
+    matches: list[str] = []
+    seen: set[str] = set()
+    for snippet in snippets:
+        compact = _clip(snippet, limit=280)
+        if not compact or not TREATMENT_STATE_PATTERN.search(compact):
+            continue
+        key = compact.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        matches.append(compact)
+    return matches
 
 
 def _preferred_candidate_summary_lines(package: CountCandidatePackage) -> list[str]:
@@ -105,10 +165,17 @@ def _candidate_summary_lines(package: CountCandidatePackage) -> list[str]:
 
 
 def _local_safety_hint_lines(package: CountCandidatePackage) -> list[str]:
+    candidate_counts = _candidate_count_values(package)
+    direct_named_counts = _direct_named_sps_count_lines(package)
+    treatment_subset_lines = _treatment_state_subset_lines(package)
     lines = [
         "If you mention any alternative count different from the top-level count, set needs_review=true.",
         "Never return alias keys such as count, evidence, or granularity.",
         "Never return string-only possibilities; each possibility must be a JSON object.",
+        f"Prefer a top-level count from deterministic_candidate_counts={candidate_counts}.",
+        "You may choose a different top-level count only when the evidence pack contains a direct SPS-spectrum subgroup quote that clearly supports that alternative number.",
+        "If a sentence lists several different diagnoses, count only the explicitly SPS-spectrum diagnosis entries, not the full mixed-diagnosis total.",
+        "Do not use pre-treatment, post-treatment, response, or medication-usage subsets as the cohort size unless the text explicitly says that subset is the full SPS-spectrum cohort.",
     ]
     if package.source_category == "single_case_report" or package.source_subtype == "single_case_conference_abstract":
         lines.append(
@@ -142,6 +209,14 @@ def _local_safety_hint_lines(package: CountCandidatePackage) -> list[str]:
     if package.explicit_sps_subgroup_basis == "diagnosis_specific_suffix_count":
         lines.append(
             "Parenthetical suffix counts can be citations or OCR artefacts. Do not trust them over clear case-report framing or explicit patient statements."
+        )
+    if direct_named_counts:
+        lines.append(
+            "A direct named SPS-spectrum subgroup quote is present below. That kind of quote can justify a non-candidate count if it is explicit and more specific than the broader totals."
+        )
+    if treatment_subset_lines:
+        lines.append(
+            "Treatment-state subset cues are present below. Treat them as state or treatment subsets unless the text explicitly says they define the full SPS-spectrum cohort."
         )
     if package.preferred_candidate().manual_review_required:
         lines.append(
@@ -187,6 +262,9 @@ def format_candidate_package_for_local_llm(package: CountCandidatePackage) -> st
     subgroup_lines = _explicit_subgroup_lines(package)
     uncertainty_lines = package.sps_status_uncertainty_signals or ["none"]
     notes = package.candidate_generation_notes or ["none"]
+    direct_named_counts = _direct_named_sps_count_lines(package) or ["none"]
+    treatment_subset_lines = _treatment_state_subset_lines(package) or ["none"]
+    candidate_counts = _candidate_count_values(package)
     parts = [
         f"Paper ID: {package.paper_id}",
         "",
@@ -213,9 +291,16 @@ def format_candidate_package_for_local_llm(package: CountCandidatePackage) -> st
         "## SPS-status uncertainty signals",
         *[f"- {line}" for line in uncertainty_lines],
         "",
+        "## Direct named SPS-spectrum subgroup cues",
+        *[f"- {line}" for line in direct_named_counts],
+        "",
+        "## Treatment-state subset cues",
+        *[f"- {line}" for line in treatment_subset_lines],
+        "",
         "## Deterministic candidate hints",
         f"- preferred_candidate_id: {package.preferred_candidate_id}",
         f"- fallback_candidate_id: {package.fallback_candidate_id}",
+        f"- deterministic_candidate_counts: {candidate_counts}",
         f"- candidate_generation_notes: {json.dumps(notes, ensure_ascii=False)}",
         "",
         "## Local safety hints",

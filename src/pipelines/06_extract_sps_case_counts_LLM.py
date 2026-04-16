@@ -20,6 +20,7 @@ from src.pipelines._proceedings_ready import (
 from src.pipelines._sps_case_count_registry import (
     HEURISTIC_VERSION,
     build_case_count_candidate_package,
+    count_row_from_resolution,
     count_row_fieldnames,
     relative_to_repo,
 )
@@ -150,6 +151,70 @@ def _local_status(call_status: str, flags: list[str]) -> str:
     return "parsed_ok"
 
 
+def local_decision_count_row(
+    package: object,
+    *,
+    local_model_status: str,
+    local_model_error: str,
+    local_flags: list[str],
+    local_parsed: object | None,
+    candidate_json_path: str,
+    count_version: str,
+) -> dict[str, str]:
+    if local_parsed is None:
+        fallback_candidate = package.fallback_candidate()
+        reasons = [f"local_model_status={local_model_status}"]
+        if local_model_error:
+            reasons.append(f"local_model_error={local_model_error}")
+        if local_flags:
+            reasons.append(f"local_validation_flags={'; '.join(local_flags)}")
+        return count_row_from_resolution(
+            package=package,
+            final_count=fallback_candidate.proposed_count,
+            final_confidence=fallback_candidate.count_confidence,
+            final_basis=fallback_candidate.count_basis,
+            final_manual_review_required=True,
+            final_reason=" | ".join(reasons),
+            count_version=count_version,
+            count_verification_status="local_model_invalid_manual_review_required",
+            count_candidate_json_path=candidate_json_path,
+            heuristic_fallback_used=True,
+            count_validator_flags=local_flags,
+            count_audit_status="local_only",
+        )
+
+    matching_candidate = next(
+        (candidate for candidate in package.candidates if candidate.proposed_count == local_parsed.n_spsd_patients),
+        None,
+    )
+    final_basis = "local_llm_direct_count"
+    if matching_candidate is not None:
+        final_basis = matching_candidate.count_basis
+    elif local_flags:
+        final_basis = "local_llm_non_candidate_count"
+
+    reasons = [
+        f"local_model_status={local_model_status}",
+        f"local_confidence={local_parsed.confidence}",
+        local_parsed.reasoning_short,
+    ]
+    if local_flags:
+        reasons.append(f"local_validation_flags={'; '.join(local_flags)}")
+    return count_row_from_resolution(
+        package=package,
+        final_count=local_parsed.n_spsd_patients,
+        final_confidence=local_parsed.confidence,
+        final_basis=final_basis,
+        final_manual_review_required=local_parsed.needs_review or bool(local_flags),
+        final_reason=" | ".join(reason for reason in reasons if reason),
+        count_version=count_version,
+        count_verification_status="local_model_only",
+        count_candidate_json_path=candidate_json_path,
+        count_validator_flags=local_flags,
+        count_audit_status="local_only",
+    )
+
+
 def build_local_adviser_notes(
     *,
     local_model_name: str,
@@ -212,6 +277,7 @@ def compare_local_to_final_row(local_parsed: object | None, final_row: dict[str,
 def augment_calibration_row(
     final_row: dict[str, str],
     *,
+    gpt_ran: bool,
     local_model_name: str,
     local_model_status: str,
     local_duration_seconds: float,
@@ -236,8 +302,12 @@ def augment_calibration_row(
             "local_possibility_count": "0" if local_parsed is None else str(len(local_parsed.possibilities)),
             "local_validation_flags": "; ".join(local_flags),
             "local_result_json_path": local_result_json_path,
-            "gpt_ran": "true",
-            "local_vs_gpt_status": compare_local_to_final_row(local_parsed, final_row, local_model_status),
+            "gpt_ran": str(gpt_ran).lower(),
+            "local_vs_gpt_status": (
+                compare_local_to_final_row(local_parsed, final_row, local_model_status)
+                if gpt_ran
+                else "not_run"
+            ),
         }
     )
     return augmented
@@ -261,6 +331,11 @@ def parse_args() -> argparse.Namespace:
         "--allow-paid-run",
         action="store_true",
         help="Required before any GPT-5.4 calibration call is made.",
+    )
+    parser.add_argument(
+        "--local-only",
+        action="store_true",
+        help="Run only the local Gemma adviser and write a comparable QA CSV without any GPT calls.",
     )
     parser.add_argument("--local-model", default=DEFAULT_OLLAMA_MODEL, help="Ollama model for the local first pass.")
     parser.add_argument("--local-base-url", default=DEFAULT_OLLAMA_BASE_URL, help="Base URL for the local Ollama server.")
@@ -307,7 +382,7 @@ def main() -> None:
         _estimate_summary(packages)
         return
 
-    if packages and not args.allow_paid_run:
+    if packages and not args.allow_paid_run and not args.local_only:
         raise SystemExit(
             "Refusing to start a paid GPT calibration run without --allow-paid-run. "
             "Re-run with --estimate-only first if you want to inspect the selection."
@@ -327,6 +402,7 @@ def main() -> None:
             "local_model": args.local_model,
             "local_base_url": args.local_base_url,
             "gpt_model": args.gpt_model,
+            "local_only": args.local_only,
             "output_path": str(output_path),
             "paper_ids": [path.stem for path, _, _, _ in packages],
         },
@@ -375,16 +451,28 @@ def main() -> None:
             local_flags=local_flags,
             parsed_output=local_call.parsed,
         )
-        final_row = adjudicated_count_row(
-            package,
-            model=args.gpt_model,
-            run_dir=run_dir,
-            count_version=f"llm_calibration_v1_{args.gpt_model}",
-            candidate_json_path=candidate_json_path,
-            adviser_notes=adviser_notes,
-        )
+        if args.local_only:
+            final_row = local_decision_count_row(
+                package,
+                local_model_status=local_model_status,
+                local_model_error=local_call.error,
+                local_flags=local_flags,
+                local_parsed=local_call.parsed,
+                candidate_json_path=candidate_json_path,
+                count_version=f"llm_local_only_v1_{args.local_model}",
+            )
+        else:
+            final_row = adjudicated_count_row(
+                package,
+                model=args.gpt_model,
+                run_dir=run_dir,
+                count_version=f"llm_calibration_v1_{args.gpt_model}",
+                candidate_json_path=candidate_json_path,
+                adviser_notes=adviser_notes,
+            )
         augmented_row = augment_calibration_row(
             final_row,
+            gpt_ran=not args.local_only,
             local_model_name=local_call.model_id,
             local_model_status=local_model_status,
             local_duration_seconds=local_call.duration_seconds,

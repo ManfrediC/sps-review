@@ -91,6 +91,7 @@ class TestStage06ExtractSpsCaseCountsLlm(unittest.TestCase):
         )
         row = mod.augment_calibration_row(
             {"likely_sps_case_count": "3", "count_manual_review_required": "true"},
+            gpt_ran=True,
             local_model_name="gemma4:e4b",
             local_model_status="parsed_with_flags",
             local_duration_seconds=1.234,
@@ -103,6 +104,33 @@ class TestStage06ExtractSpsCaseCountsLlm(unittest.TestCase):
         self.assertEqual(row["local_model_status"], "parsed_with_flags")
         self.assertEqual(row["local_n_spsd_patients"], "3")
         self.assertEqual(row["local_vs_gpt_status"], "agree")
+
+    def test_augment_calibration_row_marks_local_only_when_gpt_not_run(self) -> None:
+        mod = _load_module("stage06_count_llm_augment_local_only", CASE_COUNT_LLM_SCRIPT)
+        parsed_output = mod.sys.modules["src.pipelines.stage06_counting.local_models"].LocalCountDecisionOutput.model_validate(
+            {
+                "n_spsd_patients": 1,
+                "evidence_span": "Case 10 ... stiff-person syndrome.",
+                "data_granularity": "group-level",
+                "confidence": "medium",
+                "needs_review": True,
+                "reasoning_short": "Local-only advisory count.",
+                "possibilities": [],
+            }
+        )
+        row = mod.augment_calibration_row(
+            {"likely_sps_case_count": "1", "count_manual_review_required": "true"},
+            gpt_ran=False,
+            local_model_name="gemma4:e4b",
+            local_model_status="parsed_ok",
+            local_duration_seconds=1.0,
+            local_model_error="",
+            local_flags=[],
+            local_result_json_path="results/stage06_count_llm_runs/test/local_model_results/22.json",
+            local_parsed=parsed_output,
+        )
+        self.assertEqual(row["gpt_ran"], "false")
+        self.assertEqual(row["local_vs_gpt_status"], "not_run")
 
 
 if __name__ == "__main__":
