@@ -33,17 +33,21 @@ Your task:
 - propose a bounded alternative only when the paper text contains explicit count evidence not captured by the candidate list
 - otherwise require manual review
 
-Count only unique original SPS-spectrum patients reported in this paper.
+Count only unique original, confirmed or diagnosis-supported SPS-spectrum patients reported in this paper.
 
 Do not count:
 - cited-literature cases
 - controls or non-SPSD participants unless the SPS subset is explicit
+- suspected or referred SPS cohorts without explicit diagnostic support
+- donor-material, serum, CSF, assay-source, or specimen-source patients unless the paper also reports clinically extractable original SPSD patient data
 - samples, sera, CSF specimens, biopsies, assays, titres, visits, or repeated measurements
 - overlapping subgroup totals
 - administrative datasets that are not extractable case-level or cohort-level SPS counts
+- background trial counts from other papers
 
 Subgroup handling:
 - Separate the full cohort from the SPS-spectrum subset whenever the paper reports a broader antibody-positive or mixed-neurology cohort.
+- When a paper reports a suspected or referred SPS cohort plus a stricter confirmed or diagnosis-supported subset, prefer the stricter confirmed subset.
 - If the package includes an explicit SPS-spectrum subgroup count, treat that as the safest upper bound unless the evidence clearly supports a different bounded alternative.
 - If only some patients are explicitly labelled SPS/PERM/stiff-limb syndrome and others are only suggestive because of symptoms such as rigidity or spasms, require manual review rather than counting the whole cohort.
 - Treat statements such as "only 1 patient had clinical rigidity" as uncertainty about SPS-spectrum membership, not proof that every reported patient qualifies.
@@ -51,6 +55,7 @@ Subgroup handling:
 
 Fixed-category handling:
 - If the fixed source category is `review_article` or `non_clinical_basic_science`, prefer an exact zero-count candidate unless the supplied evidence clearly shows an original single-patient report within the paper itself.
+- If the fixed source category is `review_format_with_embedded_original_cohort`, you may count the explicit embedded cohort, but keep `count_manual_review_required=true` whenever provenance overlap is uncertain.
 
 Decision guidance:
 - `candidate_exact`: one heuristic candidate is clearly best supported
@@ -63,6 +68,7 @@ Conservatism:
 - Prefer selecting a valid candidate over inventing a new number.
 - Use `bounded_alternative` when the review evidence pack contains a clearer explicit count than any listed candidate.
 - If the SPS-spectrum subset is ambiguous, prefer `manual_review_required` over a confident whole-cohort count.
+- If the package says `original_cohort_provenance_uncertain=true`, keep `count_manual_review_required=true`.
 - If confidence is not high, set `count_manual_review_required=true`.
 - High confidence should usually have at least 2 evidence items.
 - Return JSON only.

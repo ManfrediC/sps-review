@@ -18,6 +18,8 @@ from src.pipelines.source_categorisation.models import (
     OriginalSpsData,
     SourceCategory,
 )
+from src.pipelines.source_categorisation.prepare import PaperPayload
+from src.pipelines.source_categorisation.validate import apply_validator_effects, run_validators
 from src.pipelines.source_categorisation.run_state import (
     append_result_record,
     build_run_manifest,
@@ -383,6 +385,48 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
         self.assertIn("4/4 this pass", output)
         self.assertIn("durable 7/10", output)
         self.assertIn("done", output)
+
+    def test_embedded_review_category_forces_manual_review(self) -> None:
+        output = ClassificationResult(
+            paper_id="184",
+            source_type=SourceCategory.review_format_with_embedded_original_cohort,
+            original_sps_spectrum_data=OriginalSpsData.yes,
+            contains_individual_level_data=False,
+            contains_group_level_data=True,
+            manual_review_required=False,
+            confidence=Confidence.high,
+            likely_sps_case_count=20,
+            count_confidence=Confidence.high,
+            count_manual_review_required=False,
+            count_reasoning_summary="The paper reports an embedded cohort of 20 SPS patients.",
+            reasoning_summary="Review-format paper with an embedded original cohort.",
+            evidence=[
+                EvidenceItem(
+                    quote="In our series, 20 consecutive patients presented with rigidity and spasms.",
+                    page=2,
+                    section="conference discussion",
+                    supports="embedded original cohort",
+                )
+            ],
+            validator_flags=[],
+            classification_source="llm",
+        )
+        payload = PaperPayload(
+            paper_id="184",
+            metadata={"title": "The Stiff-Person Syndrome", "abstract": ""},
+            text_content="In our series, 20 consecutive patients presented with rigidity and spasms.",
+            text_source="full_text",
+            text_page_count=1,
+            proceedings_detected=False,
+            trim_status="",
+        )
+
+        flags, worst = run_validators(output, payload)
+        validated = apply_validator_effects(output, flags, worst)
+
+        self.assertIn("EMBEDDED_REVIEW_NO_MANUAL_REVIEW", flags)
+        self.assertTrue(validated.manual_review_required)
+        self.assertEqual(validated.source_type, SourceCategory.review_format_with_embedded_original_cohort)
 
 
 if __name__ == "__main__":

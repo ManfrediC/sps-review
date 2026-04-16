@@ -50,6 +50,9 @@ class CountCandidatePackage:
     explicit_sps_subgroup_basis: str = ""
     explicit_sps_subgroup_evidence: list[str] = field(default_factory=list)
     sps_status_uncertainty_signals: list[str] = field(default_factory=list)
+    original_cohort_provenance_uncertain: bool = False
+    original_cohort_provenance_signals: list[str] = field(default_factory=list)
+    confirmed_only_guardrail_signals: list[str] = field(default_factory=list)
 
     def preferred_candidate(self) -> CountCandidate:
         for candidate in self.candidates:
@@ -89,6 +92,9 @@ class CountCandidatePackage:
             "explicit_sps_subgroup_basis": self.explicit_sps_subgroup_basis,
             "explicit_sps_subgroup_evidence": list(self.explicit_sps_subgroup_evidence),
             "sps_status_uncertainty_signals": list(self.sps_status_uncertainty_signals),
+            "original_cohort_provenance_uncertain": self.original_cohort_provenance_uncertain,
+            "original_cohort_provenance_signals": list(self.original_cohort_provenance_signals),
+            "confirmed_only_guardrail_signals": list(self.confirmed_only_guardrail_signals),
         }
 
 

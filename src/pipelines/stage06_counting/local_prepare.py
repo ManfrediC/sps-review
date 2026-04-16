@@ -219,6 +219,10 @@ def _local_safety_hint_lines(package: CountCandidatePackage) -> list[str]:
         lines.append(
             "When an enumerated subgroup list separately names SPS and PERM, count both SPS-spectrum diagnoses unless overlap is explicitly stated."
         )
+    if package.source_category == "review_format_with_embedded_original_cohort":
+        lines.append(
+            "This is a review-format paper with an embedded original cohort. You may count the explicit cohort, but keep needs_review=true unless provenance overlap is clearly resolved."
+        )
     if package.explicit_sps_subgroup_count is not None:
         lines.append(
             "An explicit deterministic SPS-spectrum subtotal is provided below. If you choose a different count, include that subtotal as an alternative and set needs_review=true."
@@ -247,6 +251,10 @@ def _local_safety_hint_lines(package: CountCandidatePackage) -> list[str]:
     if treatment_subset_lines:
         lines.append(
             "Treatment-state subset cues are present below. Treat them as state or treatment subsets unless the text explicitly says they define the full SPS-spectrum cohort."
+        )
+    if package.original_cohort_provenance_uncertain:
+        lines.append(
+            "Original-cohort provenance is uncertain in this paper, so keep needs_review=true even if the numeric count itself looks explicit."
         )
     if package.preferred_candidate().manual_review_required:
         lines.append(
@@ -301,6 +309,8 @@ def _key_evidence_lines(package: CountCandidatePackage) -> list[str]:
 def format_candidate_package_for_local_llm(package: CountCandidatePackage) -> str:
     subgroup_lines = _explicit_subgroup_lines(package)
     uncertainty_lines = package.sps_status_uncertainty_signals or ["none"]
+    provenance_lines = package.original_cohort_provenance_signals or ["none"]
+    guardrail_lines = package.confirmed_only_guardrail_signals or ["none"]
     notes = package.candidate_generation_notes or ["none"]
     direct_named_counts = _direct_named_sps_count_lines(package) or ["none"]
     treatment_subset_lines = _treatment_state_subset_lines(package) or ["none"]
@@ -330,6 +340,13 @@ def format_candidate_package_for_local_llm(package: CountCandidatePackage) -> st
         "",
         "## SPS-status uncertainty signals",
         *[f"- {line}" for line in uncertainty_lines],
+        "",
+        "## Original-cohort provenance signals",
+        f"- original_cohort_provenance_uncertain: {package.original_cohort_provenance_uncertain}",
+        *[f"- {line}" for line in provenance_lines],
+        "",
+        "## Confirmed-only guardrail signals",
+        *[f"- {line}" for line in guardrail_lines],
         "",
         "## Direct named SPS-spectrum subgroup cues",
         *[f"- {line}" for line in direct_named_counts],

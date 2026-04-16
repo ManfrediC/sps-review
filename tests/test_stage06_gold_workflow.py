@@ -44,6 +44,7 @@ class TestStage06GoldWorkflow(unittest.TestCase):
             "preferred_text_json_path": r"data\extraction_json\text\71.json",
             "preferred_text_source": "full_text",
             "likely_sps_case_count": "9",
+            "count_original_cohort_provenance_uncertain": "false",
         }
         source_row = {
             "paper_id": "71",
@@ -83,6 +84,7 @@ class TestStage06GoldWorkflow(unittest.TestCase):
         self.assertEqual(payload["count_row"]["source_subtype"], "")
         self.assertEqual(payload["count_row"]["count_eligible"], "false")
         self.assertEqual(payload["count_row"]["count_basis"], "manual_gold_review")
+        self.assertEqual(payload["count_row"]["count_original_cohort_provenance_uncertain"], "false")
         self.assertEqual(payload["gold_review"]["prediction_correct"], False)
         self.assertEqual(payload["attached_run_artifacts"]["run_id"], "stage06_llm_test_71")
         self.assertEqual(
@@ -239,6 +241,7 @@ class TestStage06GoldWorkflow(unittest.TestCase):
                             "preferred_text_json_path",
                             "preferred_text_source",
                             "likely_sps_case_count",
+                            "count_original_cohort_provenance_uncertain",
                         ]
                         rows = [
                             {
@@ -251,6 +254,7 @@ class TestStage06GoldWorkflow(unittest.TestCase):
                                 "preferred_text_json_path": r"data\extraction_json\text\71.json",
                                 "preferred_text_source": "full_text",
                                 "likely_sps_case_count": "9",
+                                "count_original_cohort_provenance_uncertain": "true",
                             },
                             {
                                 "paper_id": "72",
@@ -262,6 +266,7 @@ class TestStage06GoldWorkflow(unittest.TestCase):
                                 "preferred_text_json_path": r"data\extraction_json\text\72.json",
                                 "preferred_text_source": "full_text",
                                 "likely_sps_case_count": "1",
+                                "count_original_cohort_provenance_uncertain": "false",
                             },
                         ]
                     writer = csv.DictWriter(handle, fieldnames=fieldnames)
@@ -318,6 +323,7 @@ class TestStage06GoldWorkflow(unittest.TestCase):
 
             written_payload = gold.load_json(output_dir / "papers" / "71.json")
             self.assertEqual(written_payload["count_row"]["likely_sps_case_count"], "3")
+            self.assertEqual(written_payload["count_row"]["count_original_cohort_provenance_uncertain"], "true")
             self.assertEqual(written_payload["attached_run_artifacts"]["run_id"], "stage06_demo")
 
 

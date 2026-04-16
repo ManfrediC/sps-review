@@ -84,8 +84,20 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
                 source_path_text="results/stage06_count_runs/demo_scope",
             )
             review_rows = [
-                {"paper_id": "71", "title": "Paper 71", "likely_sps_case_count": "3", "count_verification_status": "llm_candidate_exact"},
-                {"paper_id": "214", "title": "Paper 214", "likely_sps_case_count": "2", "count_verification_status": "llm_candidate_exact"},
+                {
+                    "paper_id": "71",
+                    "title": "Paper 71",
+                    "likely_sps_case_count": "3",
+                    "count_verification_status": "llm_candidate_exact",
+                    "count_original_cohort_provenance_uncertain": "true",
+                },
+                {
+                    "paper_id": "214",
+                    "title": "Paper 214",
+                    "likely_sps_case_count": "2",
+                    "count_verification_status": "llm_candidate_exact",
+                    "count_original_cohort_provenance_uncertain": "false",
+                },
             ]
 
             row_214 = review.build_response_row(
@@ -128,6 +140,8 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         self.assertEqual(list(responses_by_id), ["214", "71"])
         self.assertEqual([row["paper_id"] for row in saved_rows], ["71", "214"])
         self.assertEqual(saved_rows[0]["reviewed_count"], "3")
+        self.assertEqual(saved_rows[0]["predicted_original_cohort_provenance_uncertain"], "true")
+        self.assertEqual(saved_rows[0]["reviewed_original_cohort_provenance_uncertain"], "true")
         self.assertEqual(saved_rows[1]["review_status"], "needs_follow_up")
         self.assertEqual([row["paper_id"] for row in override_rows], ["71", "214"])
         self.assertEqual(override_rows[0]["review_status"], "reviewed")

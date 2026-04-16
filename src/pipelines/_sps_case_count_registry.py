@@ -225,7 +225,34 @@ NON_SPS_MIXED_DIAGNOSIS_MARKERS = (
 NON_ORIGINAL_COHORT_SIGNAL_RE = re.compile(
     r"\b(?:previously|earlier|prior(?:ly)?)\s+(?:described|reported|published|identified)\b|"
     r"\b(?:described|reported|published|identified)\s+(?:previously|earlier)\b|"
-    r"\bour most recent case\b",
+    r"\bour most recent case\b|"
+    r"\b[A-Za-z][A-Za-z-]+\s+et\s+al\.\s*(?:\(\d+\))?\b|"
+    r"\bet\s+al\.\s*\(\d+\)\b",
+    re.IGNORECASE,
+)
+DONOR_MATERIAL_SIGNAL_RE = re.compile(
+    r"\b(?:sera?|serum|csf|igg(?:\s+fraction)?|gad65-?ab|antibod(?:y|ies)|specimen|sample|samples)\b"
+    r"[\s\S]{0,80}?\bfrom\s+(?:a|an|the|one)?\s*"
+    r"(?:(?:patient\s+with\s+|patients?\s+with\s+)"
+    r"(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms|perm|stiff limb syndrome)|"
+    r"(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms|perm|stiff limb syndrome)\s+patients?)\b",
+    re.IGNORECASE,
+)
+SUSPECTED_SPS_COHORT_SIGNAL_RE = re.compile(
+    r"\b(?:suspected|clinically suspected|referred specifically for)\b"
+    r"[\s\S]{0,60}?"
+    r"\b(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms)\b",
+    re.IGNORECASE,
+)
+CONFIRMED_SPS_CONTEXT_RE = re.compile(
+    r"\b(?:icc-confirmed|confirmed)\s+(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms)\b|"
+    r"\bcharacteristic\s+of\s+icc-confirmed\s+(?:stiff[- ]person syndrome|sps)\b",
+    re.IGNORECASE,
+)
+DIAGNOSIS_SUPPORTED_SUBSET_RE = re.compile(
+    rf"\b(?:there\s+(?:were|was)\s+)?(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\s+"
+    r"(?:positive|confirmed)\b[\s\S]{0,80}?\b(?:by|with)\s+"
+    r"(?:immunocytochemistr(?:y|ic)|icc|western blot|validated diagnostic criteria|diagnostic criteria)\b",
     re.IGNORECASE,
 )
 TABLE_ROW_SPS_COUNT_RE = re.compile(
@@ -241,6 +268,12 @@ TABLE_ROW_CONTEXT_MARKERS = (
     "no of the patients",
     "mean age",
     "sex (",
+)
+SERIES_COHORT_RE = re.compile(
+    rf"\b(?:in\s+our\s+series|our\s+series\s+of|we\s+studied|we\s+examined|we\s+report(?:ed)?|"
+    rf"we\s+described|we\s+identified)\b[\s,;:-]{{0,12}}"
+    rf"(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+(?:consecutive\s+)?patients?\b",
+    re.IGNORECASE,
 )
 
 
@@ -260,6 +293,7 @@ def count_eligibility_status(source_category: str) -> str:
         "interventional_study",
         "lab_heavy_clinical_or_translational",
         "conference_abstract",
+        "review_format_with_embedded_original_cohort",
     }:
         return "extractable"
     if source_category == "unclear_manual_review":
@@ -454,6 +488,36 @@ def _extract_named_sps_cohort_signal(text: str) -> SubgroupSignal | None:
                 if score > best_score:
                     best_score = score
                     best_signal = signal
+    return best_signal
+
+
+def _extract_series_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    cleaned = _clean_signal_text(text)
+    if not cleaned:
+        return None
+    for match in SERIES_COHORT_RE.finditer(cleaned):
+        count = parse_count_token(match.group("count"))
+        if count <= 0:
+            continue
+        context_start = max(0, match.start() - 220)
+        context_end = min(len(cleaned), match.end() + 140)
+        context = cleaned[context_start:context_end]
+        if _is_non_original_case_context(context):
+            continue
+        if not LLM_EVIDENCE_SPS_RE.search(context):
+            continue
+        signal = SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_series_cohort_count",
+            count_confidence="high",
+            evidence_units=(context[:420],),
+        )
+        score = count
+        if score > best_score:
+            best_score = score
+            best_signal = signal
     return best_signal
 
 
@@ -671,7 +735,15 @@ def _extract_explicit_patient_case_signal(text: str) -> SubgroupSignal | None:
         reference_matches = _iter_patient_reference_matches(snippet)
         if not reference_matches:
             continue
-        label = reference_matches[-1][2]
+        local_match_start = match.start() - snippet_start
+        candidate_labels = [
+            label
+            for start, _, label in reference_matches
+            if 0 <= local_match_start - start <= 80
+        ]
+        if not candidate_labels:
+            continue
+        label = candidate_labels[-1]
         evidence_by_label[label] = snippet[:420]
 
     if not evidence_by_label:
@@ -716,6 +788,8 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
     combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
     for extractor in (
         _extract_direct_sps_cohort_signal,
+        _extract_series_cohort_signal,
+        _extract_diagnosis_supported_subset_signal,
         _extract_named_sps_cohort_signal,
         _extract_group_breakdown_subgroup_signal,
         _extract_enumerated_sps_subgroup_signal,
@@ -743,6 +817,61 @@ def extract_non_original_case_signals(*, abstract: str, raw_preferred_text: str)
             continue
         seen.add(normalized)
         signals.append(unit[:420])
+    return signals[:4]
+
+
+def _has_confirmed_sps_context(text: str) -> bool:
+    return bool(
+        SUSPECTED_SPS_COHORT_SIGNAL_RE.search(text)
+        or CONFIRMED_SPS_CONTEXT_RE.search(text)
+    )
+
+
+def _extract_diagnosis_supported_subset_signal(text: str) -> SubgroupSignal | None:
+    cleaned_text = _clean_signal_text(text)
+    if not _has_confirmed_sps_context(cleaned_text):
+        return None
+
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for unit in _raw_evidence_units(cleaned_text):
+        if _is_non_original_case_context(unit):
+            continue
+        if not DIAGNOSIS_SUPPORTED_SUBSET_RE.search(unit):
+            continue
+        for match in DIAGNOSIS_SUPPORTED_SUBSET_RE.finditer(unit):
+            count = parse_count_token(match.group("count"))
+            if count <= 0:
+                continue
+            score = count
+            evidence_units = [unit[:420]]
+            if CONFIRMED_SPS_CONTEXT_RE.search(cleaned_text):
+                evidence_units.append(
+                    _clean_signal_text(CONFIRMED_SPS_CONTEXT_RE.search(cleaned_text).group(0))[:420]
+                )
+            signal = SubgroupSignal(
+                count=count,
+                count_basis="diagnosis_specific_confirmed_subset_count",
+                count_confidence="high",
+                evidence_units=tuple(dict.fromkeys(evidence_units)),
+            )
+            if score > best_score:
+                best_score = score
+                best_signal = signal
+    return best_signal
+
+
+def extract_confirmed_only_guardrail_signals(*, abstract: str, raw_preferred_text: str) -> list[str]:
+    signals: list[str] = []
+    seen: set[str] = set()
+    combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
+    for unit in _raw_evidence_units(combined_text):
+        normalized = normalize_text(unit)
+        if not normalized or normalized in seen:
+            continue
+        if DONOR_MATERIAL_SIGNAL_RE.search(unit) or SUSPECTED_SPS_COHORT_SIGNAL_RE.search(unit) or CONFIRMED_SPS_CONTEXT_RE.search(unit):
+            seen.add(normalized)
+            signals.append(unit[:420])
     return signals[:4]
 
 
@@ -852,6 +981,7 @@ def build_llm_evidence_text(
     explicit_sps_subgroup_evidence: tuple[str, ...] | list[str] = (),
     non_original_case_signals: tuple[str, ...] | list[str] = (),
     sps_status_uncertainty_signals: tuple[str, ...] | list[str] = (),
+    confirmed_only_guardrail_signals: tuple[str, ...] | list[str] = (),
 ) -> str:
     parts: list[str] = []
     if title.strip():
@@ -868,6 +998,11 @@ def build_llm_evidence_text(
     if non_original_block_items:
         non_original_block = "\n".join(f"- {snippet[:420]}" for snippet in non_original_block_items[:4])
         parts.append(f"Potential non-original or reused-cohort signals:\n{non_original_block}")
+
+    guardrail_block_items = [snippet for snippet in confirmed_only_guardrail_signals if str(snippet or "").strip()]
+    if guardrail_block_items:
+        guardrail_block = "\n".join(f"- {snippet[:420]}" for snippet in guardrail_block_items[:4])
+        parts.append(f"Confirmed-only guardrail signals:\n{guardrail_block}")
 
     uncertainty_block_items = [snippet for snippet in sps_status_uncertainty_signals if str(snippet or "").strip()]
     if uncertainty_block_items:
@@ -938,6 +1073,13 @@ def adjust_estimate_for_source_context(
             estimate = estimate_sps_case_count(title=title, abstract=abstract, early_body_text="")
 
     if single_case_default_ok and estimate.likely_case_count == 0:
+        if source_category == "lab_heavy_clinical_or_translational":
+            return CaseCountEstimate(
+                likely_case_count=0,
+                count_confidence="low",
+                count_basis="lab_context_no_extractable_count",
+                manual_review_required=False,
+            )
         return CaseCountEstimate(
             likely_case_count=1,
             count_confidence="medium",
@@ -1317,7 +1459,11 @@ def _llm_routing_reason(candidates: list[CountCandidate], preferred_text_source:
         return True, "ambiguous_heuristic_basis"
     if source_category == "conference_abstract" and preferred_text_source == "full_text":
         return True, "conference_abstract_using_full_text"
-    if source_category in {"lab_heavy_clinical_or_translational", "observational_group_study"}:
+    if source_category in {
+        "lab_heavy_clinical_or_translational",
+        "observational_group_study",
+        "review_format_with_embedded_original_cohort",
+    }:
         return True, "high_risk_source_category"
     return False, "preferred_candidate_clear"
 
@@ -1357,11 +1503,22 @@ def build_case_count_candidate_package(
         abstract=abstract,
         raw_preferred_text=raw_preferred_text,
     )
+    confirmed_only_guardrail_signals = extract_confirmed_only_guardrail_signals(
+        abstract=abstract,
+        raw_preferred_text=raw_preferred_text,
+    )
     uncertainty_signals = extract_sps_status_uncertainty_signals(
         abstract=abstract,
         raw_preferred_text=raw_preferred_text,
         subgroup_signal=subgroup_signal,
     )
+    provenance_signals = list(non_original_case_signals)
+    if source_category == "review_format_with_embedded_original_cohort":
+        provenance_signals.insert(
+            0,
+            "Review-format paper with an embedded original cohort; patient overlap or prior publication status may need confirmation.",
+        )
+    provenance_uncertain = bool(provenance_signals)
 
     base_estimate = estimate_sps_case_count(
         title=title,
@@ -1551,8 +1708,12 @@ def build_case_count_candidate_package(
         notes.append(f"explicit_sps_subgroup_count={subgroup_signal.count}")
     if non_original_case_signals:
         notes.append(f"non_original_case_signals={len(non_original_case_signals)}")
+    if confirmed_only_guardrail_signals:
+        notes.append(f"confirmed_only_guardrail_signals={len(confirmed_only_guardrail_signals)}")
     if uncertainty_signals:
         notes.append(f"sps_status_uncertainty_signals={len(uncertainty_signals)}")
+    if provenance_uncertain:
+        notes.append("original_cohort_provenance_uncertain=true")
 
     return CountCandidatePackage(
         paper_id=paper_id,
@@ -1584,6 +1745,7 @@ def build_case_count_candidate_package(
             explicit_sps_subgroup_evidence=() if subgroup_signal is None else subgroup_signal.evidence_units,
             non_original_case_signals=non_original_case_signals,
             sps_status_uncertainty_signals=uncertainty_signals,
+            confirmed_only_guardrail_signals=confirmed_only_guardrail_signals,
         ),
         candidate_generation_notes=[*notes, f"count_eligibility_status={eligibility_status}"],
         candidates=resolved_candidates,
@@ -1595,6 +1757,9 @@ def build_case_count_candidate_package(
         explicit_sps_subgroup_basis="" if subgroup_signal is None else subgroup_signal.count_basis,
         explicit_sps_subgroup_evidence=[] if subgroup_signal is None else list(subgroup_signal.evidence_units),
         sps_status_uncertainty_signals=uncertainty_signals,
+        original_cohort_provenance_uncertain=provenance_uncertain,
+        original_cohort_provenance_signals=provenance_signals[:4],
+        confirmed_only_guardrail_signals=confirmed_only_guardrail_signals,
     )
 
 
@@ -1618,6 +1783,9 @@ def count_row_from_resolution(
     count_audit_status: str = "not_run",
 ) -> dict[str, str]:
     preferred_candidate = package.preferred_candidate()
+    effective_manual_review_required = package.count_eligible and (
+        final_manual_review_required or package.original_cohort_provenance_uncertain
+    )
     return {
         "paper_id": package.paper_id,
         "covidence_id": package.covidence_id,
@@ -1631,7 +1799,10 @@ def count_row_from_resolution(
         "likely_sps_case_count": str(final_count),
         "count_confidence": final_confidence,
         "count_basis": final_basis,
-        "count_manual_review_required": bool_text(package.count_eligible and final_manual_review_required),
+        "count_manual_review_required": bool_text(effective_manual_review_required),
+        "count_original_cohort_provenance_uncertain": bool_text(
+            package.original_cohort_provenance_uncertain
+        ),
         "count_reason": final_reason,
         "count_version": count_version,
         "heuristic_likely_sps_case_count": str(preferred_candidate.proposed_count),
@@ -1706,6 +1877,7 @@ def count_row_fieldnames() -> list[str]:
         "count_confidence",
         "count_basis",
         "count_manual_review_required",
+        "count_original_cohort_provenance_uncertain",
         "count_reason",
         "count_version",
         "heuristic_likely_sps_case_count",

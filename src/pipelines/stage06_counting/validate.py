@@ -46,6 +46,8 @@ MECHANICAL_REJECT_FLAGS = frozenset(
         "COUNT_DECISION_UNRESOLVED",
     }
 )
+DONOR_MATERIAL_RE = re.compile(r"\b(?:sera?|serum|csf|igg|specimen|sample|samples|antibod(?:y|ies))\b", re.IGNORECASE)
+SUSPECTED_COHORT_RE = re.compile(r"\b(?:suspected|referred specifically for)\b", re.IGNORECASE)
 
 
 def resolved_count_from_decision(
@@ -179,6 +181,49 @@ def check_uncertain_sps_status_requires_review(
     return ValidatorResult(Severity.REJECT, "COUNT_SPS_STATUS_UNCERTAIN")
 
 
+def check_original_cohort_provenance_requires_review(
+    package: CountCandidatePackage,
+    decision: LLMCountDecisionOutput,
+) -> ValidatorResult:
+    if not package.original_cohort_provenance_uncertain:
+        return ValidatorResult(Severity.PASS, "")
+    if decision.count_manual_review_required:
+        return ValidatorResult(Severity.PASS, "")
+    return ValidatorResult(Severity.REJECT, "COUNT_PROVENANCE_UNCERTAIN")
+
+
+def check_confirmed_only_guardrail_conflicts(
+    package: CountCandidatePackage,
+    decision: LLMCountDecisionOutput,
+) -> ValidatorResult:
+    if not package.confirmed_only_guardrail_signals:
+        return ValidatorResult(Severity.PASS, "")
+    resolved_count = resolved_count_from_decision(package, decision)
+    if resolved_count is None:
+        return ValidatorResult(Severity.REJECT, "COUNT_DECISION_UNRESOLVED")
+    if resolved_count <= 0:
+        return ValidatorResult(Severity.PASS, "")
+
+    has_donor_material_signal = any(
+        DONOR_MATERIAL_RE.search(signal or "") for signal in package.confirmed_only_guardrail_signals
+    )
+    has_suspected_cohort_signal = any(
+        SUSPECTED_COHORT_RE.search(signal or "") for signal in package.confirmed_only_guardrail_signals
+    )
+
+    if has_donor_material_signal and package.explicit_sps_subgroup_count is None:
+        return ValidatorResult(Severity.REJECT, "COUNT_DONOR_MATERIAL_ONLY")
+    if has_suspected_cohort_signal and package.explicit_sps_subgroup_count is None:
+        return ValidatorResult(Severity.REJECT, "COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP")
+    if (
+        has_suspected_cohort_signal
+        and package.explicit_sps_subgroup_count is not None
+        and resolved_count != package.explicit_sps_subgroup_count
+    ):
+        return ValidatorResult(Severity.REJECT, "COUNT_PREFERS_SUSPECTED_OVER_CONFIRMED_SUBGROUP")
+    return ValidatorResult(Severity.PASS, "")
+
+
 ALL_VALIDATORS = [
     check_candidate_exact_has_selected_candidate,
     check_bounded_alternative_has_count_and_evidence,
@@ -188,6 +233,8 @@ ALL_VALIDATORS = [
     check_reasoning_consistent_with_selected_candidate,
     check_resolved_count_not_above_explicit_sps_subgroup,
     check_uncertain_sps_status_requires_review,
+    check_original_cohort_provenance_requires_review,
+    check_confirmed_only_guardrail_conflicts,
     check_fixed_category_constraints,
 ]
 

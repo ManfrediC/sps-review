@@ -33,7 +33,7 @@ For this review, stiff person spectrum disorder (SPSD) includes:
 `Stiff man syndrome (SMS)` is an older designation for SPS.
 
 The source category is fixed. Do not reclassify the paper.
-Count only unique original SPS-spectrum patients or cohorts reported in this paper.
+Count only unique original, confirmed or diagnosis-supported SPS-spectrum patients or cohorts reported in this paper.
 
 Return exactly one JSON object with these keys:
 {
@@ -57,12 +57,17 @@ Return exactly one JSON object with these keys:
 Do not count:
 - cited-literature cases
 - controls or non-SPSD patients unless an explicit SPS-spectrum subgroup is given
+- suspected or referred SPS cohorts without explicit diagnostic support
+- donor-material, serum, CSF, assay-source, or specimen-source patients unless the paper also reports clinically extractable original SPSD patient data
 - samples, sera, assays, titres, biopsies, visits, or repeated measurements
 - overlapping subgroup totals
 - background prevalence or historical literature counts
+- background trial counts from other papers
 
 Conservatism rules:
 - If the SPS-spectrum subset is ambiguous, set `needs_review=true`.
+- If the evidence card shows a suspected or referred SPS cohort plus a stricter confirmed or diagnosis-supported subset, prefer the stricter confirmed subset.
+- If the evidence card says `original_cohort_provenance_uncertain=true`, set `needs_review=true`.
 - If confidence is not high, set `needs_review=true`.
 - If the evidence presents more than one plausible count, put the best guess in the top-level fields and record the alternatives in `possibilities`.
 - If any alternative in `possibilities` has a different count from the top-level count, set `needs_review=true`.

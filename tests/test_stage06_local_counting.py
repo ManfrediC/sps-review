@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+import json
 from pathlib import Path
 from unittest import mock
 
@@ -34,6 +35,13 @@ def make_package():
             "source_subtype": "case_series",
         },
     )
+
+
+def load_text_record(path_text: str) -> dict[str, object]:
+    path = Path(path_text)
+    record = json.loads(path.read_text(encoding="utf-8"))
+    record["_path"] = str(path)
+    return record
 
 
 def make_review_package():
@@ -243,6 +251,49 @@ def make_late_count_package():
         source_row={
             "source_category": "conference_abstract",
             "source_subtype": "group_conference_abstract",
+        },
+    )
+
+
+def make_donor_material_package():
+    path = Path("data/extraction_json/text/560.json")
+    record = load_text_record(str(path))
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "560",
+            "Title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia",
+            "Authors": "Manto, M U; Hampe, C S; Rogemond, V; Honnorat, J",
+            "Abstract": (
+                "To investigate whether stiff-person syndrome and cerebellar ataxia are associated with distinct "
+                "GAD65-Ab epitope specificities and neuronal effects."
+            ),
+        },
+        text_record=record,
+        preferred_record=record,
+        preferred_path=path,
+        source_row={
+            "source_category": "lab_heavy_clinical_or_translational",
+            "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        },
+    )
+
+
+def make_embedded_review_package():
+    path = Path("data/extraction_json/text/184.json")
+    record = load_text_record(str(path))
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "184",
+            "Title": "The Stiff-Person Syndrome: An Autoimmune Disorder Affecting Neurotransmission of Gamma-Aminobutyric Acid",
+            "Authors": "Levy, L M; Dalakas, M C; Floeter, M K",
+            "Abstract": "",
+        },
+        text_record=record,
+        preferred_record=record,
+        preferred_path=path,
+        source_row={
+            "source_category": "review_format_with_embedded_original_cohort",
+            "source_subtype": "embedded_original_cohort",
         },
     )
 
@@ -466,6 +517,36 @@ class TestStage06LocalCounting(unittest.TestCase):
         )
         flags = validate_local_count_decision(make_treatment_subset_package(), parsed)
         self.assertIn("LOCAL_TREATMENT_STATE_SUBSET_COUNT", flags)
+
+    def test_validate_local_decision_flags_donor_material_positive_count(self) -> None:
+        parsed = parse_local_count_output(
+            """{
+              "n_spsd_patients": 1,
+              "evidence_span": "Intra-cerebellar administration of GAD65-Ab from a SPS patient impaired glutamate turnover.",
+              "data_granularity": "group-level",
+              "confidence": "high",
+              "needs_review": true,
+              "reasoning_short": "A SPS patient is explicitly mentioned.",
+              "possibilities": []
+            }"""
+        )
+        flags = validate_local_count_decision(make_donor_material_package(), parsed)
+        self.assertIn("LOCAL_DONOR_MATERIAL_NONZERO", flags)
+
+    def test_validate_local_decision_flags_embedded_review_without_review(self) -> None:
+        parsed = parse_local_count_output(
+            """{
+              "n_spsd_patients": 20,
+              "evidence_span": "In our series, 20 consecutive patients presented with rigidity and spasms.",
+              "data_granularity": "group-level",
+              "confidence": "high",
+              "needs_review": false,
+              "reasoning_short": "The embedded cohort is explicit.",
+              "possibilities": []
+            }"""
+        )
+        flags = validate_local_count_decision(make_embedded_review_package(), parsed)
+        self.assertIn("LOCAL_PROVENANCE_UNCERTAIN_NO_REVIEW", flags)
 
     def test_ensure_ollama_model_available_checks_model_list(self) -> None:
         with mock.patch("src.pipelines.stage06_counting.local_ollama.requests.get") as get_mock:

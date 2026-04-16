@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 import unittest
 from pathlib import Path
 
-from src.pipelines._sps_case_count_registry import build_case_count_candidate_package
+from src.pipelines._sps_case_count_registry import build_case_count_candidate_package, count_row_from_resolution
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,12 @@ def _load_module(name: str, path: Path):
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
     return module
+
+
+def _load_text_record(path: Path) -> dict[str, object]:
+    record = json.loads(path.read_text(encoding="utf-8"))
+    record["_path"] = str(path)
+    return record
 
 
 class TestStage06CountCandidates(unittest.TestCase):
@@ -488,9 +495,12 @@ class TestStage06CountCandidates(unittest.TestCase):
         )
         self.assertEqual(package.explicit_sps_subgroup_count, 1)
         self.assertEqual(package.fallback_candidate().proposed_count, 1)
-        self.assertIn(
-            "diagnosis_specific_patient_case_count",
-            {candidate.count_basis for candidate in package.candidates},
+        self.assertTrue(
+            {
+                "diagnosis_specific_patient_case_count",
+                "diagnosis_specific_patient_label_count",
+            }
+            & {candidate.count_basis for candidate in package.candidates}
         )
 
     def test_candidate_package_prefers_explicit_homogeneous_sps_cohort_over_single_patient_response_snippet(self) -> None:
@@ -597,6 +607,121 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertEqual(package.preferred_candidate().proposed_count, 0)
         self.assertEqual({candidate.proposed_count for candidate in package.candidates}, {0})
         self.assertEqual({candidate.count_basis for candidate in package.candidates}, {"not_count_eligible"})
+
+    def test_candidate_package_excludes_reused_case_label_leak_from_mixed_trial(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "12137.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "12137",
+                "Title": "Therapeutic Trial of Milacemide in Patients With Myoclonus and Other Intractable Movement Disorders",
+                "Authors": "Gordon, M F; Diaz-Olivo, R; Hunt, A L; Fahn, S",
+                "Abstract": (
+                    "We performed a therapeutic trial with milacemide on 10 patients with intractable movement disorders. "
+                    "Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino "
+                    "X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "interventional_study",
+                "source_subtype": "controlled_or_therapeutic_group_study",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 1)
+        self.assertEqual(package.preferred_candidate().count_basis, "diagnosis_specific_list_count")
+        self.assertNotIn(2, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn(
+            "diagnosis_specific_list_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_keeps_lab_heavy_donor_material_paper_at_zero(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "560.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "560",
+                "Title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia",
+                "Authors": "Manto, M U; Hampe, C S; Rogemond, V; Honnorat, J",
+                "Abstract": (
+                    "To investigate whether stiff-person syndrome and cerebellar ataxia are associated with distinct "
+                    "GAD65-Ab epitope specificities and neuronal effects."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 0)
+        self.assertEqual(package.preferred_candidate().count_basis, "lab_context_no_extractable_count")
+        self.assertTrue(package.confirmed_only_guardrail_signals)
+
+    def test_candidate_package_prefers_confirmed_subset_in_suspected_sms_cohort(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "270.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "270",
+                "Title": "Markedly elevated GAD antibodies in SPS",
+                "Authors": "Murinson, B B; Butler, M; Marfurt, K; Gleason, S; De Camilli, P; Solimena, M",
+                "Abstract": (
+                    "Five hundred seventy-six patients with suspected stiff-person syndrome underwent immunocytochemistry. "
+                    "Of these, 286 underwent radioimmunoassay for glutamic acid decarboxylase antibodies; 116 were GAD "
+                    "antibody positive by one or both tests. Marked elevations were characteristic of ICC-confirmed SPS."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 107)
+        self.assertEqual(package.fallback_candidate().proposed_count, 107)
+        self.assertIn(
+            "diagnosis_specific_confirmed_subset_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_count_row_marks_embedded_review_provenance_as_manual_review(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "184.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "184",
+                "Title": "The Stiff-Person Syndrome: An Autoimmune Disorder Affecting Neurotransmission of Gamma-Aminobutyric Acid",
+                "Authors": "Levy, L M; Dalakas, M C; Floeter, M K",
+                "Abstract": "",
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "review_format_with_embedded_original_cohort",
+                "source_subtype": "embedded_original_cohort",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 20)
+        self.assertTrue(package.original_cohort_provenance_uncertain)
+
+        row = count_row_from_resolution(
+            package=package,
+            final_count=20,
+            final_confidence="high",
+            final_basis="diagnosis_specific_series_cohort_count",
+            final_manual_review_required=False,
+            final_reason="count_basis=diagnosis_specific_series_cohort_count",
+            count_version="test_v1",
+            count_verification_status="heuristic_only",
+        )
+        self.assertEqual(row["likely_sps_case_count"], "20")
+        self.assertEqual(row["count_original_cohort_provenance_uncertain"], "true")
+        self.assertEqual(row["count_manual_review_required"], "true")
 
     def test_stage06_defaults_to_llm_for_all_rows(self) -> None:
         count_mod = _load_module("case_count_module_stage06_defaults", CASE_COUNT_SCRIPT)

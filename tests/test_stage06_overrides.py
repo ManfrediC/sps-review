@@ -18,9 +18,11 @@ class TestStage06Overrides(unittest.TestCase):
                     "paper_id": "214",
                     "title": "Paper 214",
                     "predicted_count": "2",
+                    "predicted_original_cohort_provenance_uncertain": "false",
                     "predicted_verification_status": "llm_candidate_exact",
                     "prediction_correct": "false",
                     "reviewed_count": "3",
+                    "reviewed_original_cohort_provenance_uncertain": "false",
                     "review_status": "reviewed",
                     "reviewer_notes": "Updated count.",
                     "reviewer_id": "tester",
@@ -36,9 +38,11 @@ class TestStage06Overrides(unittest.TestCase):
                     "paper_id": "71",
                     "title": "Paper 71",
                     "predicted_count": "3",
+                    "predicted_original_cohort_provenance_uncertain": "true",
                     "predicted_verification_status": "llm_candidate_exact",
                     "prediction_correct": "true",
                     "reviewed_count": "3",
+                    "reviewed_original_cohort_provenance_uncertain": "true",
                     "review_status": "reviewed",
                     "reviewer_notes": "",
                     "reviewer_id": "tester",
@@ -60,6 +64,7 @@ class TestStage06Overrides(unittest.TestCase):
                 "count_confidence": "medium",
                 "count_basis": "llm_bounded_alternative",
                 "count_manual_review_required": "true",
+                "count_original_cohort_provenance_uncertain": "false",
                 "count_reason": "verification_status=llm_manual_review_required",
                 "count_version": "hybrid_v1_gpt-5.4",
                 "count_audit_status": "hybrid_local_gpt",
@@ -72,9 +77,11 @@ class TestStage06Overrides(unittest.TestCase):
                 "paper_id": "214",
                 "title": "Paper 214",
                 "predicted_count": "2",
+                "predicted_original_cohort_provenance_uncertain": "true",
                 "predicted_verification_status": "llm_manual_review_required",
                 "prediction_correct": "false",
                 "reviewed_count": "3",
+                "reviewed_original_cohort_provenance_uncertain": "true",
                 "review_status": "reviewed",
                 "reviewer_notes": "Three original cases.",
                 "reviewer_id": "tester",
@@ -87,6 +94,7 @@ class TestStage06Overrides(unittest.TestCase):
         self.assertEqual(overridden["count_confidence"], "high")
         self.assertEqual(overridden["count_basis"], "manual_review_override")
         self.assertEqual(overridden["count_manual_review_required"], "false")
+        self.assertEqual(overridden["count_original_cohort_provenance_uncertain"], "true")
         self.assertEqual(overridden["count_verification_status"], "manual_review_override")
         self.assertEqual(overridden["count_audit_status"], "manual_review_override")
         self.assertEqual(overridden["counted_at_utc"], "2026-04-16T10:06:00+00:00")

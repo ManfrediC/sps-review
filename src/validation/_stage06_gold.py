@@ -223,6 +223,10 @@ def build_gold_count_row(
         count_row.get("likely_sps_case_count"),
         "0",
     )
+    provenance_uncertain = (
+        reviewed_source_category == "review_format_with_embedded_original_cohort"
+        or truthy(count_row.get("count_original_cohort_provenance_uncertain") or "")
+    )
     source_text_path = source_text_json_path(
         artifact_row=artifact_row,
         gold_row=gold_row,
@@ -259,6 +263,7 @@ def build_gold_count_row(
         "count_confidence": "high",
         "count_basis": "manual_gold_review",
         "count_manual_review_required": "false",
+        "count_original_cohort_provenance_uncertain": "true" if provenance_uncertain else "false",
         "count_reason": build_count_reason(
             gold_row=gold_row,
             count_row=count_row,

@@ -41,6 +41,19 @@ def format_candidate_package_for_llm(package: CountCandidatePackage, *, adviser_
             for snippet in (package.explicit_sps_subgroup_evidence or ["[no subgroup evidence excerpt available]"])
         )
     uncertainty_lines = package.sps_status_uncertainty_signals or ["none"]
+    provenance_lines = ["none"]
+    if package.original_cohort_provenance_uncertain:
+        provenance_lines = [
+            f"original_cohort_provenance_uncertain: {package.original_cohort_provenance_uncertain}",
+            *(
+                f"signal: {snippet}"
+                for snippet in (
+                    package.original_cohort_provenance_signals
+                    or ["[no provenance signal excerpt available]"]
+                )
+            ),
+        ]
+    guardrail_lines = package.confirmed_only_guardrail_signals or ["none"]
     parts = [
         f"Paper ID: {package.paper_id}",
         "",
@@ -63,6 +76,12 @@ def format_candidate_package_for_llm(package: CountCandidatePackage, *, adviser_
         "",
         "## SPS-status uncertainty signals",
         *[f"- {line}" for line in uncertainty_lines],
+        "",
+        "## Original-cohort provenance signals",
+        *[f"- {line}" for line in provenance_lines],
+        "",
+        "## Confirmed-only guardrail signals",
+        *[f"- {line}" for line in guardrail_lines],
         "",
         "## Heuristic package",
         f"- heuristic_version: {package.heuristic_version}",

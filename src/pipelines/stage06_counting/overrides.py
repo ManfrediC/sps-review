@@ -13,9 +13,11 @@ OVERRIDE_FIELDNAMES = [
     "paper_id",
     "title",
     "predicted_count",
+    "predicted_original_cohort_provenance_uncertain",
     "predicted_verification_status",
     "prediction_correct",
     "reviewed_count",
+    "reviewed_original_cohort_provenance_uncertain",
     "review_status",
     "reviewer_notes",
     "reviewer_id",
@@ -138,6 +140,12 @@ def apply_override_to_count_row(
             "count_confidence": "high",
             "count_basis": "manual_review_override",
             "count_manual_review_required": "false",
+            "count_original_cohort_provenance_uncertain": str(
+                override_row.get("reviewed_original_cohort_provenance_uncertain")
+                or override_row.get("predicted_original_cohort_provenance_uncertain")
+                or count_row.get("count_original_cohort_provenance_uncertain")
+                or "false"
+            ).strip(),
             "count_reason": " | ".join(reason_bits),
             "count_version": _override_count_version(str(count_row.get("count_version") or "")),
             "count_audit_status": "manual_review_override",

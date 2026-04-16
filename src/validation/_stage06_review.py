@@ -252,9 +252,17 @@ def build_response_row(
         "paper_id": str(review_row.get("paper_id") or "").strip(),
         "title": str(review_row.get("title") or "").strip(),
         "predicted_count": str(review_row.get("likely_sps_case_count") or "").strip(),
+        "predicted_original_cohort_provenance_uncertain": str(
+            review_row.get("count_original_cohort_provenance_uncertain") or "false"
+        ).strip(),
         "predicted_verification_status": str(review_row.get("count_verification_status") or "").strip(),
         "prediction_correct": "true" if prediction_correct else "false",
         "reviewed_count": reviewed_count_text,
+        "reviewed_original_cohort_provenance_uncertain": str(
+            existing_row.get("reviewed_original_cohort_provenance_uncertain")
+            or review_row.get("count_original_cohort_provenance_uncertain")
+            or "false"
+        ).strip(),
         "review_status": str(review_status or "pending").strip() or "pending",
         "reviewer_notes": str(reviewer_notes or "").strip(),
         "reviewer_id": str(reviewer_id or "").strip() or DEFAULT_REVIEWER,

@@ -17,6 +17,11 @@ TREATMENT_STATE_PATTERN = re.compile(
     r"reported improvement|required fewer|response to|treated with|months after)\b",
     re.IGNORECASE,
 )
+DONOR_MATERIAL_PATTERN = re.compile(
+    r"\b(?:sera?|serum|csf|igg(?:\s+fraction)?|gad65-?ab|specimen|sample|samples|antibod(?:y|ies))\b",
+    re.IGNORECASE,
+)
+SUSPECTED_COHORT_PATTERN = re.compile(r"\b(?:suspected|referred specifically for)\b", re.IGNORECASE)
 
 
 def _candidate_count_values(package: CountCandidatePackage) -> set[int]:
@@ -74,6 +79,19 @@ def validate_local_count_decision(
         flags.append("LOCAL_TREATMENT_STATE_SUBSET_COUNT")
     if package.sps_status_uncertainty_signals and resolved_count > 0 and not decision.needs_review:
         flags.append("LOCAL_SPS_STATUS_UNCERTAIN_NO_REVIEW")
+    if package.original_cohort_provenance_uncertain and not decision.needs_review:
+        flags.append("LOCAL_PROVENANCE_UNCERTAIN_NO_REVIEW")
+    if resolved_count > 0 and package.confirmed_only_guardrail_signals:
+        if (
+            any(DONOR_MATERIAL_PATTERN.search(signal or "") for signal in package.confirmed_only_guardrail_signals)
+            and package.explicit_sps_subgroup_count is None
+        ):
+            flags.append("LOCAL_DONOR_MATERIAL_NONZERO")
+        if any(SUSPECTED_COHORT_PATTERN.search(signal or "") for signal in package.confirmed_only_guardrail_signals):
+            if package.explicit_sps_subgroup_count is None:
+                flags.append("LOCAL_SUSPECTED_COHORT_NONZERO")
+            elif resolved_count != package.explicit_sps_subgroup_count:
+                flags.append("LOCAL_CONFIRMED_SUBGROUP_MISMATCH")
     if decision.confidence != "high" and not decision.needs_review:
         flags.append("LOCAL_NON_HIGH_CONFIDENCE_NO_REVIEW")
     return flags
