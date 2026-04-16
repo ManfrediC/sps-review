@@ -131,6 +131,30 @@ def make_556_package():
     )
 
 
+def make_560_package():
+    donor_text = (
+        "Methods: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope "
+        "specificities were administered in vivo to rat cerebellum. Results: Intra-cerebellar administration of "
+        "GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, while Ab CA was "
+        "derived from a patient with cerebellar ataxia."
+    )
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "560",
+            "Title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia",
+            "Authors": "Manto, M U; Hampe, C S; Rogemond, V; Honnorat, J",
+            "Abstract": donor_text,
+        },
+        text_record={"paper_id": "560", "_path": "data/extraction_json/text/560.json"},
+        preferred_record={"pages": [{"text": donor_text}]},
+        preferred_path=REPO_ROOT / "data" / "extraction_json" / "text_trimmed" / "560.json",
+        source_row={
+            "source_category": "lab_heavy_clinical_or_translational",
+            "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        },
+    )
+
+
 def make_710_package():
     return build_case_count_candidate_package(
         reference_row={
@@ -513,6 +537,48 @@ class TestStage06LlmCounting(unittest.TestCase):
         self.assertEqual(row["heuristic_fallback_used"], "false")
         self.assertEqual(row["count_manual_review_required"], "true")
         self.assertIn("COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP", row["count_validator_flags"])
+
+    def test_adjudicated_count_row_uses_conservative_fallback_for_donor_material_conflict(self) -> None:
+        package = make_560_package()
+        selected_candidate_id = next(
+            candidate.candidate_id for candidate in package.candidates if candidate.proposed_count == 1
+        )
+        decision = LLMCountDecisionOutput(
+            decision_type="candidate_exact",
+            selected_candidate_id=selected_candidate_id,
+            alternative_count=None,
+            count_confidence="medium",
+            count_manual_review_required=True,
+            count_reasoning_summary=(
+                "The abstract refers to GAD65-Ab from a SPS patient, so at least one SPS-spectrum patient contributed "
+                "material to the study."
+            ),
+            evidence=[
+                CountEvidenceItem(
+                    quote="Purified GAD65-Ab from neurological patients were administered in vivo to rat cerebellum.",
+                    page=1,
+                    section="methods",
+                    supports="patient-derived antibody material",
+                ),
+                CountEvidenceItem(
+                    quote="Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired glutamate turnover.",
+                    page=1,
+                    section="results",
+                    supports="one SPS-labelled donor source",
+                ),
+            ],
+        )
+        with mock.patch(
+            "src.pipelines.stage06_counting.controller.adjudicate_count_package",
+            return_value=(decision, "gpt-5.4-test"),
+        ):
+            row = adjudicated_count_row(package)
+        self.assertEqual(row["likely_sps_case_count"], "0")
+        self.assertEqual(row["llm_likely_sps_case_count"], "1")
+        self.assertEqual(row["count_verification_status"], "llm_semantic_conflict_manual_review_required")
+        self.assertEqual(row["heuristic_fallback_used"], "true")
+        self.assertEqual(row["count_manual_review_required"], "true")
+        self.assertIn("COUNT_DONOR_MATERIAL_ONLY", row["count_validator_flags"])
 
 
 if __name__ == "__main__":

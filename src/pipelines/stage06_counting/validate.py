@@ -46,8 +46,19 @@ MECHANICAL_REJECT_FLAGS = frozenset(
         "COUNT_DECISION_UNRESOLVED",
     }
 )
-DONOR_MATERIAL_RE = re.compile(r"\b(?:sera?|serum|csf|igg|specimen|sample|samples|antibod(?:y|ies))\b", re.IGNORECASE)
+DONOR_MATERIAL_RE = re.compile(
+    r"\b(?:sera?|serum|csf|igg(?:\s+fraction)?|gad65-?ab|specimen|sample|samples|antibod(?:y|ies))\b",
+    re.IGNORECASE,
+)
 SUSPECTED_COHORT_RE = re.compile(r"\b(?:suspected|referred specifically for)\b", re.IGNORECASE)
+CONSERVATIVE_FALLBACK_SEMANTIC_FLAGS = frozenset(
+    {
+        "COUNT_DONOR_MATERIAL_ONLY",
+        "COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP",
+        "COUNT_PREFERS_SUSPECTED_OVER_CONFIRMED_SUBGROUP",
+        "COUNT_SKIP_CATEGORY_NONZERO",
+    }
+)
 
 
 def resolved_count_from_decision(
@@ -275,3 +286,7 @@ def summarise_validator_results(results: list[ValidatorResult]) -> tuple[list[st
             if result.action > worst:
                 worst = result.action
     return flags, worst
+
+
+def requires_conservative_fallback_for_semantic_conflict(flags: list[str]) -> bool:
+    return any(flag in CONSERVATIVE_FALLBACK_SEMANTIC_FLAGS for flag in flags)

@@ -17,6 +17,7 @@ from src.pipelines.stage06_counting.models import CountCandidatePackage, LLMCoun
 from src.pipelines.stage06_counting.validate import (
     Severity,
     collect_validator_results,
+    requires_conservative_fallback_for_semantic_conflict,
     resolved_count_from_decision,
     split_reject_flags,
     summarise_validator_results,
@@ -416,12 +417,22 @@ def hybrid_count_row(
 
         _, semantic_reject_flags = split_reject_flags(final_validator_results)
         if semantic_reject_flags and final_count is not None:
+            use_conservative_fallback = requires_conservative_fallback_for_semantic_conflict(
+                semantic_reject_flags
+            )
             reasons = [
                 "challenge_stage=" + decision_stage,
                 f"llm_semantic_conflict={'; '.join(semantic_reject_flags)}",
                 "manual_review_gate=true",
                 f"llm_count_confidence={final_decision.count_confidence}",
             ]
+            if use_conservative_fallback:
+                reasons.extend(
+                    [
+                        f"conservative_fallback_candidate_id={fallback_candidate.candidate_id}",
+                        f"conservative_fallback_basis={fallback_candidate.count_basis}",
+                    ]
+                )
             if challenge_reasons:
                 reasons.append(f"challenge_reasons={'; '.join(challenge_reasons)}")
             if final_decision.selected_candidate_id:
@@ -430,11 +441,18 @@ def hybrid_count_row(
                 reasons.append(f"validator_flags={'; '.join(final_validator_flags)}")
             if final_decision.count_reasoning_summary:
                 reasons.append(final_decision.count_reasoning_summary)
+            resolved_final_count = final_count
+            resolved_final_confidence = final_decision.count_confidence
+            resolved_final_basis = final_basis
+            if use_conservative_fallback:
+                resolved_final_count = fallback_candidate.proposed_count
+                resolved_final_confidence = fallback_candidate.count_confidence
+                resolved_final_basis = fallback_candidate.count_basis
             return count_row_from_resolution(
                 package=package,
-                final_count=final_count,
-                final_confidence=final_decision.count_confidence,
-                final_basis=final_basis,
+                final_count=resolved_final_count,
+                final_confidence=resolved_final_confidence,
+                final_basis=resolved_final_basis,
                 final_manual_review_required=True,
                 final_reason=" | ".join(reasons),
                 count_version=count_version,
@@ -446,6 +464,7 @@ def hybrid_count_row(
                 llm_selected_candidate_id=final_decision.selected_candidate_id or "",
                 count_validator_flags=final_validator_flags,
                 count_audit_status="hybrid_local_gpt",
+                heuristic_fallback_used=use_conservative_fallback,
             )
 
         if final_worst >= Severity.REJECT or final_count is None:

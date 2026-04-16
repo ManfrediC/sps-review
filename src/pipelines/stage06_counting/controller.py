@@ -10,6 +10,7 @@ from src.pipelines.stage06_counting.models import CountCandidatePackage, LLMCoun
 from src.pipelines.stage06_counting.validate import (
     Severity,
     collect_validator_results,
+    requires_conservative_fallback_for_semantic_conflict,
     resolved_count_from_decision,
     split_reject_flags,
     summarise_validator_results,
@@ -125,11 +126,21 @@ def adjudicated_count_row(
         final_basis = _resolved_basis_from_decision(package, decision)
 
         if semantic_reject_flags and resolved_count is not None:
+            use_conservative_fallback = requires_conservative_fallback_for_semantic_conflict(
+                semantic_reject_flags
+            )
             reasons = [
                 f"llm_semantic_conflict={'; '.join(semantic_reject_flags)}",
                 "manual_review_gate=true",
                 f"llm_count_confidence={decision.count_confidence}",
             ]
+            if use_conservative_fallback:
+                reasons.extend(
+                    [
+                        f"conservative_fallback_candidate_id={fallback_candidate.candidate_id}",
+                        f"conservative_fallback_basis={fallback_candidate.count_basis}",
+                    ]
+                )
             if decision.selected_candidate_id:
                 reasons.append(f"llm_selected_candidate_id={decision.selected_candidate_id}")
             if validator_flags:
@@ -151,10 +162,16 @@ def adjudicated_count_row(
                     run_dir / "count_evidence" / f"{package.paper_id}.json",
                     {"paper_id": package.paper_id, "evidence": [item.model_dump() for item in decision.evidence]},
                 )
+            final_count = resolved_count
+            final_confidence = decision.count_confidence
+            if use_conservative_fallback:
+                final_count = fallback_candidate.proposed_count
+                final_confidence = fallback_candidate.count_confidence
+                final_basis = fallback_candidate.count_basis
             return count_row_from_resolution(
                 package=package,
-                final_count=resolved_count,
-                final_confidence=decision.count_confidence,
+                final_count=final_count,
+                final_confidence=final_confidence,
                 final_basis=final_basis,
                 final_manual_review_required=True,
                 final_reason=" | ".join(reasons),
@@ -166,6 +183,7 @@ def adjudicated_count_row(
                 llm_count_confidence=decision.count_confidence,
                 llm_selected_candidate_id=decision.selected_candidate_id or "",
                 count_validator_flags=validator_flags,
+                heuristic_fallback_used=use_conservative_fallback,
             )
 
         if worst >= Severity.REJECT:

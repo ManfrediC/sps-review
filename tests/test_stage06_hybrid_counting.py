@@ -71,6 +71,30 @@ def make_zero_review_package():
     )
 
 
+def make_donor_material_package():
+    donor_text = (
+        "Methods: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope "
+        "specificities were administered in vivo to rat cerebellum. Results: Intra-cerebellar administration of "
+        "GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, while Ab CA was "
+        "derived from a patient with cerebellar ataxia."
+    )
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "560",
+            "Title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia",
+            "Authors": "Manto, M U; Hampe, C S; Rogemond, V; Honnorat, J",
+            "Abstract": donor_text,
+        },
+        text_record={"paper_id": "560", "_path": "data/extraction_json/text/560.json"},
+        preferred_record={"pages": [{"text": donor_text}]},
+        preferred_path=REPO_ROOT / "data" / "extraction_json" / "text_trimmed" / "560.json",
+        source_row={
+            "source_category": "lab_heavy_clinical_or_translational",
+            "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        },
+    )
+
+
 class TestStage06HybridCounting(unittest.TestCase):
     def test_gpt_adjudication_needed_skips_clear_zero_review_rows(self) -> None:
         self.assertFalse(gpt_adjudication_needed(make_zero_review_package()))
@@ -161,6 +185,88 @@ class TestStage06HybridCounting(unittest.TestCase):
         self.assertEqual(row["count_manual_review_required"], "false")
         self.assertIn("challenge_stage=challenge", row["count_reason"])
         self.assertIn("challenge_reasons=", row["count_reason"])
+
+    def test_hybrid_count_row_uses_conservative_fallback_for_donor_material_conflict(self) -> None:
+        package = make_donor_material_package()
+        local_parsed = LocalCountDecisionOutput.model_validate(
+            {
+                "n_spsd_patients": 0,
+                "evidence_span": "Purified GAD65-Ab from neurological patients",
+                "data_granularity": "unclear",
+                "confidence": "low",
+                "needs_review": True,
+                "reasoning_short": "The paper uses donor material but does not report an extractable clinical cohort.",
+                "possibilities": [],
+            }
+        )
+        local_call = LocalModelCallResult(
+            model_id="gemma4:e4b",
+            status="parsed_ok",
+            raw_output="{}",
+            response_payload={},
+            parsed=local_parsed,
+            duration_seconds=0.5,
+        )
+        selected_candidate_id = next(
+            candidate.candidate_id for candidate in package.candidates if candidate.proposed_count == 1
+        )
+        primary_decision = LLMCountDecisionOutput(
+            decision_type="candidate_exact",
+            selected_candidate_id=selected_candidate_id,
+            alternative_count=None,
+            count_confidence="medium",
+            count_manual_review_required=True,
+            count_reasoning_summary=(
+                "The abstract mentions GAD65-Ab from a SPS patient, so one SPS-spectrum patient contributed material."
+            ),
+            evidence=[
+                CountEvidenceItem(
+                    quote="Purified GAD65-Ab from neurological patients were administered in vivo to rat cerebellum.",
+                    page=1,
+                    section="methods",
+                    supports="patient-derived antibody material",
+                ),
+                CountEvidenceItem(
+                    quote="Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired glutamate turnover.",
+                    page=1,
+                    section="results",
+                    supports="one SPS-labelled donor source",
+                ),
+            ],
+        )
+        challenge_decision = LLMCountDecisionOutput(
+            decision_type="candidate_exact",
+            selected_candidate_id=selected_candidate_id,
+            alternative_count=None,
+            count_confidence="medium",
+            count_manual_review_required=True,
+            count_reasoning_summary=(
+                "The donor source still indicates one SPS-spectrum patient, but manual review is appropriate."
+            ),
+            evidence=primary_decision.evidence,
+        )
+
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            run_dir = Path(tmp_dir_text)
+            with (
+                mock.patch("src.pipelines.stage06_counting.hybrid.run_local_count_package", return_value=local_call),
+                mock.patch(
+                    "src.pipelines.stage06_counting.hybrid.adjudicate_count_package",
+                    side_effect=[(primary_decision, "gpt-5.4-primary"), (challenge_decision, "gpt-5.4-challenge")],
+                ),
+            ):
+                row = hybrid_count_row(
+                    package,
+                    run_dir=run_dir,
+                    candidate_json_path="results/stage06_count_runs/test/candidate_packages/560.json",
+                )
+
+        self.assertEqual(row["likely_sps_case_count"], "0")
+        self.assertEqual(row["llm_likely_sps_case_count"], "1")
+        self.assertEqual(row["count_verification_status"], "llm_semantic_conflict_manual_review_required")
+        self.assertEqual(row["heuristic_fallback_used"], "true")
+        self.assertEqual(row["count_manual_review_required"], "true")
+        self.assertIn("COUNT_DONOR_MATERIAL_ONLY", row["count_validator_flags"])
 
 
 if __name__ == "__main__":
