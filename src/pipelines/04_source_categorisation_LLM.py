@@ -29,6 +29,11 @@ from typing import TextIO
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
+from src.pipelines._proceedings_ready import (
+    load_ready_rows_by_id,
+    preferred_proceedings_text_path,
+    preferred_proceedings_text_source,
+)
 from src.pipelines.source_categorisation.controller import (
     process_paper,
     result_to_count_registry_row,
@@ -59,6 +64,8 @@ REFERENCES_CSV = REPO_ROOT / "data" / "references" / "sps_references_export.csv"
 TEXT_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
+TEXT_PROCEEDINGS_READY_DIR = REPO_ROOT / "data" / "extraction_json" / "text_proceedings_ready"
+TEXT_PROCEEDINGS_READY_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_proceedings_ready_registry.csv"
 MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 
 # Canonical outputs.
@@ -244,6 +251,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input-dir", type=Path, default=TEXT_DIR)
     parser.add_argument("--trimmed-dir", type=Path, default=TEXT_TRIMMED_DIR)
     parser.add_argument("--trim-registry-path", type=Path, default=TEXT_TRIM_REGISTRY_PATH)
+    parser.add_argument("--proceedings-ready-dir", type=Path, default=TEXT_PROCEEDINGS_READY_DIR)
+    parser.add_argument(
+        "--proceedings-ready-registry-path",
+        type=Path,
+        default=TEXT_PROCEEDINGS_READY_REGISTRY_PATH,
+    )
     parser.add_argument("--manual-review-path", type=Path, default=MANUAL_REVIEW_PATH)
     parser.add_argument("--output-path", type=Path, default=OUTPUT_PATH)
     parser.add_argument("--count-output-path", type=Path, default=COUNT_OUTPUT_PATH)
@@ -380,6 +393,10 @@ def apply_manifest_config(args: argparse.Namespace, manifest: dict[str, object])
     args.input_dir = Path(str(config.get("input_dir") or args.input_dir))
     args.trimmed_dir = Path(str(config.get("trimmed_dir") or args.trimmed_dir))
     args.trim_registry_path = Path(str(config.get("trim_registry_path") or args.trim_registry_path))
+    args.proceedings_ready_dir = Path(str(config.get("proceedings_ready_dir") or args.proceedings_ready_dir))
+    args.proceedings_ready_registry_path = Path(
+        str(config.get("proceedings_ready_registry_path") or args.proceedings_ready_registry_path)
+    )
     args.manual_review_path = Path(str(config.get("manual_review_path") or args.manual_review_path))
     args.model = str(config.get("model") or args.model)
     args.skip_manual_overrides = bool(config.get("skip_manual_overrides", args.skip_manual_overrides))
@@ -440,6 +457,7 @@ def main() -> None:
 
     reference_rows = load_reference_rows(args.references_csv)
     trim_rows = load_csv_rows_by_id(args.trim_registry_path, "paper_id")
+    ready_rows = load_ready_rows_by_id(args.proceedings_ready_registry_path)
     manual_rows: dict[str, dict[str, str]] = {}
     if not args.skip_manual_overrides:
         manual_rows = load_csv_rows_by_id(args.manual_review_path, "paper_id")
@@ -509,7 +527,9 @@ def main() -> None:
             references_csv=args.references_csv,
             input_dir=args.input_dir,
             trimmed_dir=args.trimmed_dir,
+            proceedings_ready_dir=args.proceedings_ready_dir,
             trim_registry_path=args.trim_registry_path,
+            proceedings_ready_registry_path=args.proceedings_ready_registry_path,
             manual_review_path=args.manual_review_path,
             model=args.model,
             skip_manual_overrides=args.skip_manual_overrides,
@@ -585,12 +605,23 @@ def main() -> None:
         manual_row = manual_rows.get(paper_id)
 
         text_record = load_text_json(text_path)
-        preferred_path = args.trimmed_dir / text_path.name
+        preferred_path = preferred_proceedings_text_path(
+            text_path,
+            ready_dir=args.proceedings_ready_dir,
+            fallback_trimmed_dir=args.trimmed_dir,
+        )
         preferred_record = None
         preferred_text_source = "full_text"
-        if preferred_path.exists():
+        if preferred_path != text_path and preferred_path.exists():
             preferred_record = load_text_json(preferred_path)
-            preferred_text_source = "trimmed"
+            if preferred_path.parent == args.proceedings_ready_dir:
+                preferred_text_source = preferred_proceedings_text_source(
+                    paper_id,
+                    ready_rows=ready_rows,
+                    ready_registry_path=args.proceedings_ready_registry_path,
+                )
+            else:
+                preferred_text_source = "trimmed"
 
         try:
             result = process_paper(

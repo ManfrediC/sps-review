@@ -264,7 +264,8 @@ This script is the canonical stage-04 routing pass and uses the LLM workflow to 
 It:
 
 - reads the full text JSON from `data/extraction_json/text`,
-- prefers `data/extraction_json/text_trimmed/{paper_id}.json` when available,
+- prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when available,
+- falls back to legacy `data/extraction_json/text_trimmed/{paper_id}.json`,
 - reuses `data/references/text_trim_registry.csv` for proceedings signals,
 - assigns categories such as `single_case_report`, `case_series_or_multi_case`, `observational_group_study`, `conference_abstract`, `review_article`, `non_clinical_basic_science`, or `unclear_manual_review`,
 - estimates `likely_sps_case_count` from the same LLM pass,

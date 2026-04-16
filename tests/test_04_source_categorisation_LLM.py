@@ -81,11 +81,13 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
     def setUp(self) -> None:
         self.llm_mod = _load_module("llm_source_categorisation_module", LLM_SCRIPT)
 
-    def build_workspace(self) -> tuple[Path, Path, Path, Path, Path, Path, Path]:
+    def build_workspace(self) -> tuple[Path, Path, Path, Path, Path, Path, Path, Path, Path]:
         tmp_dir = Path(tempfile.mkdtemp())
         references_csv = tmp_dir / "references.csv"
         input_dir = tmp_dir / "text"
         trimmed_dir = tmp_dir / "text_trimmed"
+        proceedings_ready_dir = tmp_dir / "text_proceedings_ready"
+        proceedings_ready_registry_path = tmp_dir / "text_proceedings_ready_registry.csv"
         run_root = tmp_dir / "runs"
         output_path = tmp_dir / "source_registry.csv"
         count_output_path = tmp_dir / "count_registry.csv"
@@ -119,6 +121,18 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
         )
         input_dir.mkdir(parents=True, exist_ok=True)
         trimmed_dir.mkdir(parents=True, exist_ok=True)
+        proceedings_ready_dir.mkdir(parents=True, exist_ok=True)
+        write_csv(
+            proceedings_ready_registry_path,
+            [],
+            [
+                "paper_id",
+                "ready_text_mode",
+                "ready_source_kind",
+                "ready_reason",
+                "ready_text_json_path",
+            ],
+        )
         for paper_id, count in (("321", 2), ("322", 3)):
             (input_dir / f"{paper_id}.json").write_text(
                 json.dumps(
@@ -134,15 +148,37 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-        return references_csv, input_dir, trimmed_dir, run_root, output_path, count_output_path, progress_path
+        return (
+            references_csv,
+            input_dir,
+            trimmed_dir,
+            proceedings_ready_dir,
+            proceedings_ready_registry_path,
+            run_root,
+            output_path,
+            count_output_path,
+            progress_path,
+        )
 
     def test_requires_allow_paid_run_before_llm_calls(self) -> None:
-        references_csv, input_dir, trimmed_dir, run_root, output_path, count_output_path, _ = self.build_workspace()
+        (
+            references_csv,
+            input_dir,
+            trimmed_dir,
+            proceedings_ready_dir,
+            proceedings_ready_registry_path,
+            run_root,
+            output_path,
+            count_output_path,
+            _,
+        ) = self.build_workspace()
         args = argparse.Namespace(
             references_csv=references_csv,
             input_dir=input_dir,
             trimmed_dir=trimmed_dir,
             trim_registry_path=run_root / "trim.csv",
+            proceedings_ready_dir=proceedings_ready_dir,
+            proceedings_ready_registry_path=proceedings_ready_registry_path,
             manual_review_path=run_root / "manual.csv",
             output_path=output_path,
             count_output_path=count_output_path,
@@ -176,12 +212,24 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
         self.assertFalse((run_root / "approval_gate").exists())
 
     def test_main_checkpoints_and_publishes_complete_run(self) -> None:
-        references_csv, input_dir, trimmed_dir, run_root, output_path, count_output_path, _ = self.build_workspace()
+        (
+            references_csv,
+            input_dir,
+            trimmed_dir,
+            proceedings_ready_dir,
+            proceedings_ready_registry_path,
+            run_root,
+            output_path,
+            count_output_path,
+            _,
+        ) = self.build_workspace()
         args = argparse.Namespace(
             references_csv=references_csv,
             input_dir=input_dir,
             trimmed_dir=trimmed_dir,
             trim_registry_path=run_root / "trim.csv",
+            proceedings_ready_dir=proceedings_ready_dir,
+            proceedings_ready_registry_path=proceedings_ready_registry_path,
             manual_review_path=run_root / "manual.csv",
             output_path=output_path,
             count_output_path=count_output_path,
@@ -230,14 +278,26 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
         self.assertNotEqual(progress["published_at_utc"], "")
 
     def test_resume_continues_from_existing_checkpoint(self) -> None:
-        references_csv, input_dir, trimmed_dir, run_root, output_path, count_output_path, _ = self.build_workspace()
+        (
+            references_csv,
+            input_dir,
+            trimmed_dir,
+            proceedings_ready_dir,
+            proceedings_ready_registry_path,
+            run_root,
+            output_path,
+            count_output_path,
+            _,
+        ) = self.build_workspace()
         manifest = build_run_manifest(
             run_id="resume_run",
             paper_ids=["321", "322"],
             references_csv=references_csv,
             input_dir=input_dir,
             trimmed_dir=trimmed_dir,
+            proceedings_ready_dir=proceedings_ready_dir,
             trim_registry_path=run_root / "trim.csv",
+            proceedings_ready_registry_path=proceedings_ready_registry_path,
             manual_review_path=run_root / "manual.csv",
             model=self.llm_mod.DEFAULT_MODEL,
             skip_manual_overrides=True,
@@ -317,6 +377,8 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
             input_dir=input_dir,
             trimmed_dir=trimmed_dir,
             trim_registry_path=run_root / "trim.csv",
+            proceedings_ready_dir=proceedings_ready_dir,
+            proceedings_ready_registry_path=proceedings_ready_registry_path,
             manual_review_path=run_root / "manual.csv",
             output_path=output_path,
             count_output_path=count_output_path,
@@ -349,6 +411,88 @@ class TestLlMCategorisationPipeline(unittest.TestCase):
         self.assertEqual(len(source_rows), 2)
         self.assertEqual([row["paper_id"] for row in source_rows], ["321", "322"])
         mocked_process.assert_called_once()
+
+    def test_main_prefers_proceedings_ready_text_over_trimmed(self) -> None:
+        (
+            references_csv,
+            input_dir,
+            trimmed_dir,
+            proceedings_ready_dir,
+            proceedings_ready_registry_path,
+            run_root,
+            output_path,
+            count_output_path,
+            _,
+        ) = self.build_workspace()
+        (trimmed_dir / "321.json").write_text(
+            json.dumps({"paper_id": "321", "pages": [{"page_num": 1, "text": "Legacy trimmed text."}]}),
+            encoding="utf-8",
+        )
+        (proceedings_ready_dir / "321.json").write_text(
+            json.dumps({"paper_id": "321", "pages": [{"page_num": 1, "text": "Proceedings-ready text."}]}),
+            encoding="utf-8",
+        )
+        write_csv(
+            proceedings_ready_registry_path,
+            [
+                {
+                    "paper_id": "321",
+                    "ready_text_mode": "trimmed_abstract",
+                    "ready_source_kind": "gold_manual_trim",
+                    "ready_reason": "Manual localisation.",
+                    "ready_text_json_path": "text_proceedings_ready/321.json",
+                }
+            ],
+            [
+                "paper_id",
+                "ready_text_mode",
+                "ready_source_kind",
+                "ready_reason",
+                "ready_text_json_path",
+            ],
+        )
+        args = argparse.Namespace(
+            references_csv=references_csv,
+            input_dir=input_dir,
+            trimmed_dir=trimmed_dir,
+            trim_registry_path=run_root / "trim.csv",
+            proceedings_ready_dir=proceedings_ready_dir,
+            proceedings_ready_registry_path=proceedings_ready_registry_path,
+            manual_review_path=run_root / "manual.csv",
+            output_path=output_path,
+            count_output_path=count_output_path,
+            run_root=run_root,
+            run_id="preferred_ready_run",
+            resume=False,
+            publish=True,
+            publish_only=False,
+            estimate_only=False,
+            allow_paid_run=True,
+            paper_id=["321"],
+            limit=0,
+            model=self.llm_mod.DEFAULT_MODEL,
+            checkpoint_every=1,
+            max_runtime_minutes=0.0,
+            skip_manual_overrides=True,
+            dry_run=False,
+            skip_registry_refresh=True,
+            show_progress=False,
+        )
+
+        with (
+            mock.patch.object(self.llm_mod, "parse_args", return_value=args),
+            mock.patch.object(self.llm_mod, "process_paper", return_value=make_result("321", count=2)) as mocked_process,
+        ):
+            self.llm_mod.main()
+
+        process_kwargs = mocked_process.call_args.kwargs
+        self.assertEqual(process_kwargs["preferred_record"]["pages"][0]["text"], "Proceedings-ready text.")
+        self.assertEqual(process_kwargs["preferred_text_source"], "proceedings_ready")
+
+        with output_path.open(encoding="utf-8", newline="") as source_handle:
+            source_rows = list(csv.DictReader(source_handle))
+        self.assertEqual(source_rows[0]["preferred_text_source"], "proceedings_ready")
+        self.assertTrue(source_rows[0]["preferred_text_json_path"].endswith("text_proceedings_ready/321.json"))
 
     def test_progress_bar_renders_invocation_and_durable_progress(self) -> None:
         stream = io.StringIO()
