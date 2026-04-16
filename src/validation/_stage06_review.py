@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from src.pipelines.stage06_counting import overrides
 from src.validation import _stage04_gold as gold
 
 
@@ -15,6 +16,7 @@ RUN_ROOT = REPO_ROOT / "results" / "stage06_count_runs"
 COUNT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_registry.csv"
 ARTIFACT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "paper_artifact_registry.csv"
 REVIEW_ROOT = REPO_ROOT / "qa" / "validation" / "stage06_count_review"
+OVERRIDE_LEDGER_PATH = overrides.MANUAL_REVIEW_LEDGER_PATH
 RESPONSES_FILENAME = "responses.csv"
 MANIFEST_FILENAME = "review_manifest.json"
 DEFAULT_REVIEWER = "human_reviewer"
@@ -142,21 +144,7 @@ def responses_path(review_dir: Path) -> Path:
 
 
 def response_fieldnames() -> list[str]:
-    return [
-        "source_scope_id",
-        "source_scope_label",
-        "paper_id",
-        "title",
-        "predicted_count",
-        "predicted_verification_status",
-        "prediction_correct",
-        "reviewed_count",
-        "review_status",
-        "reviewer_notes",
-        "reviewer_id",
-        "reviewed_at_utc",
-        "updated_at_utc",
-    ]
+    return list(overrides.OVERRIDE_FIELDNAMES)
 
 
 def ensure_review_workspace(
@@ -168,6 +156,7 @@ def ensure_review_workspace(
     source_path_text: str,
 ) -> None:
     review_dir.mkdir(parents=True, exist_ok=True)
+    overrides.ensure_override_ledger(OVERRIDE_LEDGER_PATH)
     manifest_path = review_manifest_path(review_dir)
     manifest = {
         "source_scope_id": source_scope_id,
@@ -208,6 +197,8 @@ def save_response_row(
     review_dir: Path,
     review_rows: list[dict[str, str]],
     response_row: dict[str, str],
+    *,
+    override_ledger_path: Path = OVERRIDE_LEDGER_PATH,
 ) -> dict[str, dict[str, str]]:
     responses_by_id = load_responses_by_id(review_dir)
     paper_id = str(response_row.get("paper_id") or "").strip()
@@ -219,6 +210,7 @@ def save_response_row(
         writer = csv.DictWriter(handle, fieldnames=response_fieldnames())
         writer.writeheader()
         writer.writerows(ordered_rows)
+    overrides.upsert_override_row(response_row, path=override_ledger_path)
     return responses_by_id
 
 

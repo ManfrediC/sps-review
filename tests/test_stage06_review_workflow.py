@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from src.pipelines.stage06_counting import overrides
 from src.validation import _stage06_review as review
 
 
@@ -74,6 +75,7 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp_dir_text:
             root = Path(tmp_dir_text)
             review_dir = root / "review_scope"
+            override_ledger_path = root / "source_sps_case_count_manual_review.csv"
             review.ensure_review_workspace(
                 review_dir,
                 source_scope_id="demo_scope",
@@ -107,15 +109,28 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
                 reviewer_id="tester",
             )
 
-            review.save_response_row(review_dir, review_rows, row_214)
-            responses_by_id = review.save_response_row(review_dir, review_rows, row_71)
+            review.save_response_row(
+                review_dir,
+                review_rows,
+                row_214,
+                override_ledger_path=override_ledger_path,
+            )
+            responses_by_id = review.save_response_row(
+                review_dir,
+                review_rows,
+                row_71,
+                override_ledger_path=override_ledger_path,
+            )
 
             saved_rows = review.load_csv_rows(review.responses_path(review_dir))
+            override_rows = overrides.load_override_rows(override_ledger_path)
 
         self.assertEqual(list(responses_by_id), ["214", "71"])
         self.assertEqual([row["paper_id"] for row in saved_rows], ["71", "214"])
         self.assertEqual(saved_rows[0]["reviewed_count"], "3")
         self.assertEqual(saved_rows[1]["review_status"], "needs_follow_up")
+        self.assertEqual([row["paper_id"] for row in override_rows], ["71", "214"])
+        self.assertEqual(override_rows[0]["review_status"], "reviewed")
 
     def test_registry_row_without_paths_attaches_latest_run_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir_text:
