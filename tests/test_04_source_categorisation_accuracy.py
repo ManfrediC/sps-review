@@ -78,6 +78,7 @@ MANUAL_TO_HEURISTIC_CATEGORY = {
     "lab_heavy_clinical_or_translational": "lab_heavy_clinical_or_translational",
     "non_clinical_basic_science": "non_clinical_basic_science",
     "review_article": "review_article",
+    "review_format_with_embedded_original_cohort": "review_format_with_embedded_original_cohort",
     "unclear_manual_review": "unclear_manual_review",
     # Subtypes used as category -> map to parent:
     "case_report": "single_case_report",

@@ -129,6 +129,7 @@ def normalise_manual_review_category(category: str) -> str:
     category = category.strip()
     mapping = {
         "review_article": "review_article",
+        "review_format_with_embedded_original_cohort": "review_format_with_embedded_original_cohort",
         "teaching_review": "review_article",
         "editorial_review": "review_article",
         "conference_abstract": "conference_abstract",

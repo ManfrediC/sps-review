@@ -46,6 +46,7 @@ SOURCE_CATEGORY_OPTIONS = (
     "lab_heavy_clinical_or_translational",
     "non_clinical_basic_science",
     "review_article",
+    "review_format_with_embedded_original_cohort",
     "unclear_manual_review",
 )
 PDF_ALIGNMENT_OPTIONS = (

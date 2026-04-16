@@ -43,6 +43,7 @@ Determine:
 Categories:
 - `conference_abstract`: meeting/proceedings/supplement abstract; use supplement issue, short page span, DOI supplement markers, proceedings flag, or very short text.
 - `review_article`: synthesises prior literature without clinically useful original SPSD patient data.
+- `review_format_with_embedded_original_cohort`: review-style, teaching-review, or conference-style narrative paper that explicitly reports an original confirmed or diagnosis-supported SPSD cohort or subgroup from the current authors.
 - `single_case_report`: main original clinical content is 1 SPSD patient.
 - `case_series_or_multi_case`: 2+ original SPSD patients with patient-level, case-by-case, or otherwise individually linkable reporting.
 - `observational_group_study`: original grouped clinical data from a non-interventional design such as retrospective, prospective, registry, or cohort work.
@@ -54,6 +55,8 @@ Categories:
 Rules:
 - Prefer `unclear_manual_review` over a forced guess. Never output `incorrect_reference`.
 - Distinguish original patient data from discussion of prior literature.
+- Use `review_article` only when there is no clinically useful original confirmed or diagnosis-supported SPSD cohort in the paper.
+- Use `review_format_with_embedded_original_cohort` only when the paper itself explicitly reports an original confirmed or diagnosis-supported SPSD cohort or subgroup despite being review-format.
 - Distinguish conference abstracts from short full articles using metadata and proceedings signals.
 - For translational papers, classify by the primary content, not by incidental mention of one patient.
 - Observational treatment reports are not interventional unless there is a deliberate trial or controlled intervention design.
@@ -70,9 +73,10 @@ Granularity:
 - Set both booleans to `false` only when there is no original SPSD patient data or the evidence is too unclear.
 
 Counting:
-- Count only unique original SPSD patients in this paper.
-- Do not count cited-literature patients, controls, non-SPSD cohorts unless the SPSD subset is explicit, assay/specimen/serum/CSF/biopsy/sample counts, repeated specimens, repeated visits, overlapping subgroup totals, or large administrative datasets that are not extractable SPSD case reports or cohorts.
+- Count only unique original, confirmed or diagnosis-supported SPSD patients in this paper.
+- Do not count cited-literature patients, controls, suspected or referred SPS cohorts without diagnostic support, non-SPSD cohorts unless the confirmed SPSD subset is explicit, assay/specimen/serum/CSF/biopsy/sample counts, repeated specimens, repeated visits, overlapping subgroup totals, or large administrative datasets that are not extractable SPSD case reports or cohorts.
 - `review_article` and `non_clinical_basic_science` usually have count `0`.
+- `review_format_with_embedded_original_cohort` must have `original_sps_spectrum_data=yes`, a positive count, and `manual_review_required=true`.
 - If a mixed cohort clearly includes only one SPSD patient, return `1`.
 - If the exact count is uncertain, give the best estimate, lower `count_confidence`, and set `count_manual_review_required=true`.
 

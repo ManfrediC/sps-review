@@ -274,6 +274,7 @@ def review_lab_edge_signals(row: dict[str, str]) -> list[str]:
 
     if category not in {
         "review_article",
+        "review_format_with_embedded_original_cohort",
         "lab_heavy_clinical_or_translational",
         "non_clinical_basic_science",
         "unclear_manual_review",

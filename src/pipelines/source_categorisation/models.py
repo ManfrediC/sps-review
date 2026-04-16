@@ -34,6 +34,7 @@ class SourceCategory(str, Enum):
 
     conference_abstract = "conference_abstract"
     review_article = "review_article"
+    review_format_with_embedded_original_cohort = "review_format_with_embedded_original_cohort"
     single_case_report = "single_case_report"
     case_series_or_multi_case = "case_series_or_multi_case"
     observational_group_study = "observational_group_study"
@@ -177,6 +178,7 @@ class ClassificationResult(BaseModel):
             "interventional_study",
             "lab_heavy_clinical_or_translational",
             "conference_abstract",
+            "review_format_with_embedded_original_cohort",
         }
 
     def derive_routing_fields(
@@ -324,6 +326,7 @@ def _derive_subtype(category: str, individual: bool, group: bool) -> str:
         "lab_heavy_clinical_or_translational": "group_or_frequency_focused_lab_clinical_study",
         "non_clinical_basic_science": "basic_science_or_mechanistic",
         "review_article": "review",
+        "review_format_with_embedded_original_cohort": "embedded_original_cohort",
         "unclear_manual_review": "unclear",
     }
     if category == "conference_abstract":

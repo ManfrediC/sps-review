@@ -32,12 +32,18 @@ def bool_text(value: bool) -> str:
 def normalize_category_subtype(category: str, subtype: str) -> tuple[str, str]:
     category = (category or "").strip()
     subtype = (subtype or "").strip()
+    if category == "review_format_with_embedded_original_cohort":
+        return category, subtype or "embedded_original_cohort"
     subtype_aliases = {
         "case_report": ("single_case_report", "case_report"),
         "paraneoplastic_case_report": ("single_case_report", "paraneoplastic_case_report"),
         "single_case_conference_abstract": ("conference_abstract", "single_case_conference_abstract"),
         "case_series_conference_abstract": ("conference_abstract", "case_series_conference_abstract"),
         "group_conference_abstract": ("conference_abstract", "group_conference_abstract"),
+        "embedded_original_cohort": (
+            "review_format_with_embedded_original_cohort",
+            "embedded_original_cohort",
+        ),
         "group_or_frequency_focused_lab_clinical_study": (
             "lab_heavy_clinical_or_translational",
             "group_or_frequency_focused_lab_clinical_study",
@@ -72,6 +78,8 @@ def infer_mode(category: str, subtype: str) -> str:
         return "individual"
     if category in {"observational_group_study", "interventional_study", "lab_heavy_clinical_or_translational"}:
         return "group"
+    if category == "review_format_with_embedded_original_cohort":
+        return "manual_review"
     if category in {"non_clinical_basic_science", "review_article"}:
         return "skip"
     return "manual_review"

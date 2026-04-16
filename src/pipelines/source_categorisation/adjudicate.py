@@ -44,12 +44,15 @@ Rules:
 - If the original answer is still correct, you may keep it, but the revised output must resolve or appropriately reflect the flagged issue.
 - Never output `incorrect_reference`.
 - Prefer `unclear_manual_review` over a forced guess.
+- `review_article` means there is no clinically useful original confirmed or diagnosis-supported SPSD cohort in the paper.
+- `review_format_with_embedded_original_cohort` is reserved for review-format papers that explicitly report an original confirmed or diagnosis-supported SPSD cohort or subgroup from the current authors.
 - `contains_individual_level_data=true` when the paper links features to specific patients.
 - `contains_group_level_data=true` when the paper reports aggregated cohort-level or subgroup-level results.
 - If both forms are present, set both booleans to `true`.
 - Set both booleans to `false` only when there is no original SPSD patient data or the evidence is too unclear to decide safely.
-- Count only unique original SPSD patients reported in this paper.
-- Do not count cited-literature patients, controls, non-SPSD cohorts unless the SPSD subset is explicit, sample counts, repeated specimens, repeated visits, or overlapping subgroup totals.
+- Count only unique original, confirmed or diagnosis-supported SPSD patients reported in this paper.
+- Do not count cited-literature patients, controls, suspected or referred SPS cohorts without diagnostic support, non-SPSD cohorts unless the confirmed SPSD subset is explicit, sample counts, repeated specimens, repeated visits, or overlapping subgroup totals.
+- `review_format_with_embedded_original_cohort` must remain `manual_review_required=true`.
 - If the exact count is uncertain, provide the best estimate, lower `count_confidence`, and set `count_manual_review_required=true`.
 - Every classification must be supported by evidence from this paper.
 - Provide evidence that supports the corrected category and, where available, the count or reporting granularity.

@@ -45,6 +45,7 @@ RUNNABLE_MODELS = (
 
 CLEAR_CATEGORY_TARGETS = (
     ("clear_review", "review_article"),
+    ("clear_review_embedded_original_cohort", "review_format_with_embedded_original_cohort"),
     ("clear_conference_abstract", "conference_abstract"),
     ("clear_single_case", "single_case_report"),
     ("clear_case_series", "case_series_or_multi_case"),
@@ -256,6 +257,7 @@ def infer_gold_data_presence(
         "observational_group_study": ("false", "true"),
         "interventional_study": ("false", "true"),
         "lab_heavy_clinical_or_translational": ("false", "true"),
+        "review_format_with_embedded_original_cohort": ("false", "true"),
         "conference_abstract": ("false", "true"),
         "review_article": ("false", "false"),
         "non_clinical_basic_science": ("false", "false"),

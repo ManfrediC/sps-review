@@ -44,6 +44,26 @@ class TestSourceRouting(unittest.TestCase):
         self.assertEqual(resolved["resolved_langextract_eligible"], "false")
         self.assertEqual(resolved["manual_override_present"], "true")
 
+    def test_embedded_review_category_routes_to_manual_review_with_fixed_subtype(self) -> None:
+        resolved = self.module.resolve_source_row(
+            paper_id="184",
+            heuristic_row={
+                "source_category": "review_format_with_embedded_original_cohort",
+                "source_subtype": "",
+                "classification_confidence": "medium",
+            },
+            manual_row=None,
+        )
+
+        self.assertEqual(
+            resolved["resolved_source_category"],
+            "review_format_with_embedded_original_cohort",
+        )
+        self.assertEqual(resolved["resolved_source_subtype"], "embedded_original_cohort")
+        self.assertEqual(resolved["resolved_langextract_mode"], "manual_review")
+        self.assertEqual(resolved["resolved_langextract_eligible"], "false")
+        self.assertEqual(resolved["resolved_case_series_split_candidate"], "false")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -76,6 +76,19 @@ def check_review_with_original_data(output: LLMClassificationOutput) -> Validato
     return ValidatorResult(Severity.PASS, "")
 
 
+def check_embedded_review_requirements(output: LLMClassificationOutput) -> ValidatorResult:
+    """Embedded-cohort review papers must look like original-data papers."""
+    if output.source_type != SourceCategory.review_format_with_embedded_original_cohort:
+        return ValidatorResult(Severity.PASS, "")
+    if output.original_sps_spectrum_data != OriginalSpsData.yes:
+        return ValidatorResult(Severity.REJECT, "EMBEDDED_REVIEW_NO_ORIGINAL_DATA")
+    if output.likely_sps_case_count <= 0:
+        return ValidatorResult(Severity.REJECT, "EMBEDDED_REVIEW_NONPOSITIVE_COUNT")
+    if not output.manual_review_required:
+        return ValidatorResult(Severity.DOWNGRADE, "EMBEDDED_REVIEW_NO_MANUAL_REVIEW")
+    return ValidatorResult(Severity.PASS, "")
+
+
 def check_single_case_individual(output: LLMClassificationOutput) -> ValidatorResult:
     """Single case report must have individual-level data."""
     if (
@@ -221,6 +234,7 @@ ALL_VALIDATORS_OUTPUT_ONLY = [
     check_evidence_present,
     check_high_confidence_evidence_count,
     check_review_with_original_data,
+    check_embedded_review_requirements,
     check_single_case_individual,
     check_group_study_group_data,
     check_evidence_quality,
@@ -301,6 +315,9 @@ def apply_validator_effects(
             data["confidence"] = Confidence.medium.value
         if "INSUFFICIENT_INPUT" in flags:
             data["confidence"] = Confidence.low.value
+
+    if "EMBEDDED_REVIEW_NO_MANUAL_REVIEW" in flags:
+        data["manual_review_required"] = True
 
     if any(flag in count_downgrade_flags for flag in flags):
         data["count_manual_review_required"] = True
