@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.411009+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.350598+00:00",
   "paper_id": "292",
   "count_row": {
     "paper_id": "292",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=review_lab_edge | prediction_correct=false | reviewed_count=0 | reviewed_source_category=observational_group_study | predicted_count=2 | predicted_source_category=lab_heavy_clinical_or_translational | reviewer_notes=no extractable data",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:57:01.659026+00:00"
@@ -139,14 +140,233 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\292.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\292.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\292.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\292.json",
+    "result_payload": {
+      "paper_id": "292",
+      "count_row": {
+        "paper_id": "292",
+        "covidence_id": "292",
+        "title": "Amphiphysin autoimmunity: paraneoplastic accompaniments.",
+        "authors": "Pittock, Sean J; Lucchinetti, Claudia F; Parisi, Joseph E; Benarroch, Eduardo E; Mokri, Bahram; Stephan, Christina L; Kim, Kwang-Kuk; Kilimann, Manfred W; Lennon, Vanda A",
+        "source_category": "observational_group_study",
+        "source_subtype": "retrospective_or_cohort_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\292.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "low",
+        "count_basis": "observational_context_no_extractable_sps_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper reports a 63-patient amphiphysin-IgG cohort, but the SPS-spectrum subset is not given as an explicit integer. 'Stiff-man phenomena' and percentages fulfilling stiff-man syndrome criteria are reported without the sex denominators needed to derive a unique SPS-spectrum count safely, so neither 0 nor 2 is adequately supported.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "observational_context_no_extractable_sps_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\292.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\292.json",
+        "counted_at_utc": "2026-04-16T14:10:02.222322+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "292",
+        "covidence_id": "292",
+        "title": "Amphiphysin autoimmunity: paraneoplastic accompaniments.",
+        "authors": "Pittock, Sean J; Lucchinetti, Claudia F; Parisi, Joseph E; Benarroch, Eduardo E; Mokri, Bahram; Stephan, Christina L; Kim, Kwang-Kuk; Kilimann, Manfred W; Lennon, Vanda A",
+        "source_category": "observational_group_study",
+        "source_subtype": "retrospective_or_cohort_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\292.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "low",
+        "count_basis": "observational_context_no_extractable_sps_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper reports a 63-patient amphiphysin-IgG cohort, but the SPS-spectrum subset is not given as an explicit integer. 'Stiff-man phenomena' and percentages fulfilling stiff-man syndrome criteria are reported without the sex denominators needed to derive a unique SPS-spectrum count safely, so neither 0 nor 2 is adequately supported.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "observational_context_no_extractable_sps_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\292.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\292.json",
+        "counted_at_utc": "2026-04-16T14:10:02.222322+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\292.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\292.json"
+    },
+    "candidate_payload": {
+      "paper_id": "292",
+      "covidence_id": "292",
+      "title": "Amphiphysin autoimmunity: paraneoplastic accompaniments.",
+      "authors": "Pittock, Sean J; Lucchinetti, Claudia F; Parisi, Joseph E; Benarroch, Eduardo E; Mokri, Bahram; Stephan, Christina L; Kim, Kwang-Kuk; Kilimann, Manfred W; Lennon, Vanda A",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\292.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\292.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "292_Pittock-2005-Amphiphysin autoimmunity_ paraneo.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Amphiphysin-IgG was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies. Clinical information was available for 63 patients. Cancer was detected in 50 (mostly limited), proven histologically in 46, and was imaged intrathoracically in 4 patients (lung, small-cell [27] and non-small cell [1]), breast [16] and melanoma [2]). Neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome. In a case examined neuropathologically, parenchymal T-lymphocyte infiltration (predominantly CD8(+)) was prominent in lower brainstem, spinal cord, and dorsal root ganglion. Coexisting paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal autoantigen targets that plausibly explained several neurological manifestations; for example, P/Q-type Ca(2+)-channel antibody with Lambert-Eaton syndrome (n = 5), anti-neuronal nuclear antibody type 1 with sensory neuronopathy (n = 7), K(+)-channel antibody with limbic encephalitis (n = 1) or neuromyotonia (n = 1), and collapsin response-mediator protein-5-IgG with optic neuritis (n = 3). Patients with isolated amphiphysin-IgG (n = 19) were more likely to be women (with breast cancer, p < 0.05) and to have myelopathy or stiff-man phenomena (p < 0.01). Overall, a minority of women (39%) and men (12%) had stiff-man phenomena. Only 10% of women (some with lung carcinoma) and 4% of men fulfilled diagnostic criteria for stiff-man syndrome.",
+      "early_body_text": "amphiphysin autoimmunity: paraneoplastic accompaniments sean j. pittock, md, 1,2 claudia f. lucchinetti, md, 1 joseph e. parisi, md, 1,2 eduardo e. benarroch, md, 1 bahram mokri, md, 1 christina l. stephan, md, 2 kwang-kuk kim, md, phd, 3 manfred w. kilimann, md, 4 and vanda a. lennon, md, phd 1,2,5 amphiphysin-igg was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies. clinical information was available for 63 patients. cancer was detected in 50 (mostly limited), proven histologically in 46, and was imaged intrathoracically in 4 patients (lung, small–cell [27] and non–small cell [1]), breast [16] and mel- anoma [2]). neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome. in a case examined neuropathologically, parenchymal t-lymphocyte infiltration (predominantly cd8 /h11545) was prominent in lower brainstem, spinal cord, and dorsal root ganglion. coexisting paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal autoantigen targets that plausibly explained several neurological manifestations; for example, p/q-type ca 2/h11545-channel antibody with lambert–eaton syndrome (n /h115495), anti-neuronal nuclear antibody type 1 with sensory neuronopathy (n /h11549 7), k /h11545-channel antibody with limbic encephalitis (n /h115491) or neuromyotonia (n /h115491), and collapsin response-mediator protein-5-igg with optic neuritis (n /h115493). patients with isolated amphiphysin-igg (n /h1154919) were more likely to be women (with breast cancer, p < 0.05) and to have myelopathy or stiff-man phenomena ( p < 0.01). overall, a minority of women (39%) and men (12%) had stiff-man phenomena. only 10% of women (some with lung carcinoma) and 4% of men fulfilled diagnostic criteria for stiff-man syndrome. ann neurol 2005;58:96 –107 the synaptic vesicle protein amphiphysin was discov- ered in 1992 by lichte and colleagues. 1 it plays a crit - ical role in retrieving vesicle membranes from the axon terminal’s plasma membrane after depolarization- induced exocytosis of neurotransmitter. in 1993, de camilli and colleagues 2 first reported an autoantibody specific for amphiphysin in the serum of three women who presented with “paraneoplastic stiff-man syn- drome” associated with breast carcinoma. in contrast to patients with classic stiff-man (moersch–woltman) syndrome, 3 patients initially reported to have the para - neoplastic syndrome lacked detectable glutamic acid decarboxylase– 65 (gad65) autoantibody. 4 in 1996, dropcho5 reported detection of amphiphysin autoanti - body in three patients who had paraneoplastic enceph- alomyelitis associated with small–cell lung carcinoma; some had sensory neuropathy. subsequent case reports suggest a broader spectrum of neurological manifesta- tions with amphiphysin autoimmunity, and coexisting paraneoplastic autoantibodies have been identified in some patients. 6–8 autoantibodies currently recognized in serum and spinal fluid as markers of paraneoplastic neurological disorders include four reactive with neuronal nuclear proteins (anti-neuronal nuclear antibody [anna] type 1 [anti-hu], anna-2 [anti-ri], anna-3, and anna-ma2) and five reactive with neuronal cytoplas- mic proteins (purkinje cell cytoplasmic antibody [pca] type 1, pca-2, pca-tr, collapsin response-mediator protein [crmp]-5-igg, and amphiphysin-igg). un- like plasma membrane antigens, in which some epitopes are accessible to pathogenic igg, 9,10 intracel- lular antigens are inaccessible to circulating autoanti- bodies in the context of viable neurons. however, these antigens are readily accessible to antibodies after death or during cryosectioning. the passive transfer of igg directed at a tissue-restricted intracellular antigen does not transfer organ-specific disease. furthermore, active from the departments of 1neurology and 2laboratory medicine and pathology, mayo clinic college of medicine, rochester, mn; 3department of neurology, university of visan college of medi - cine, seoul, korea; 4department of cell and molecular biology, uppsala university biomedical center, uppsala, sweden; and 5de- partment of immunology, mayo clinic college of medicine, roch- ester, mn. received dec 29, 2004, and in revised form apr 11 and apr 27, 2005. accepted for publication apr 29, 2005. published online jun 27, 2005, in wiley interscience (www.interscience.wiley.com). doi: 10.1002/ana.20529 address correspondence to dr lennon, neuroimmunology labora- tory, guggenheim building, rm. 828, mayo clinic, 200 first street s.w., rochester, mn 55905. e-mail: lennon.vanda@mayo.edu96 © 2005 american neurological association published by wiley-liss, inc., through wiley subscription services immunization of animals with intracellular onconeural proteins thus far has not induced clinical signs or his- topathological outcomes consistent with any human neur",
+      "llm_evidence_text": "Title:\nAmphiphysin autoimmunity: paraneoplastic accompaniments.\n\nMetadata abstract:\nAmphiphysin-IgG was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies. Clinical information was available for 63 patients. Cancer was detected in 50 (mostly limited), proven histologically in 46, and was imaged intrathoracically in 4 patients (lung, small-cell [27] and non-small cell [1]), breast [16] and melanoma [2]). Neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome. In a case examined neuropathologically, parenchymal T-lymphocyte infiltration (predominantly CD8(+)) was prominent in lower brainstem, spinal cord, and dorsal root ganglion. Coexisting paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal autoantigen targets that plausibly explained several neurological manifestations; for example, P/Q-type Ca(2+)-channel antibody with Lambert-Eaton syndrome (n = 5), anti-neuronal nuclear antibody type 1 with sensory neuronopathy (n = 7), K(+)-channel antibody with limbic encephalitis (n = 1) or neuromyotonia (n = 1), and collapsin response-mediator protein-5-IgG with optic neuritis (n = 3). Patients with isolated amphiphysin-IgG (n = 19) were more likely to be women (with breast cancer, p < 0.05) and to have myelopathy or stiff-man phenomena (p < 0.01). Overall, a minority of women (39%) and men (12%) had stiff-man phenomena. Only 10% of women (some with lung carcinoma) and 4% of men fulfilled diagnostic criteria for stiff-man syndrome.\n\nPotential non-original or reused-cohort signals:\n- As described previously,\n\nPotential SPS-status uncertainty signals:\n- SMS /H11005stiff-man syndrome; LE /H11005lower extremity; UE /H11005upper extremity; L /H11005limbic encephalitis (patients had signal abnormalities in the\n\nPreferred text count-salient snippets:\n- Amphiphysin-IgG was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies.\n- Clinical information was available for 63 patients.\n- 46, and was imaged intrathoracically in 4 patients (lung, small–cell [27] and non–small cell [1]), breast [16] and mel-\n- paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal\n- 3 patients initially reported to have the para -\n- body in three patients who had paraneoplastic enceph-\n- 11–13 and CD8 /H11001T cells derived from patients\n- screening on sera from approximately 120,000 patients with",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "source_context_adjusted_primary_estimate",
+        "abstract_only_candidate_added",
+        "distinct_candidate_counts=[0, 2]",
+        "non_original_case_signals=1",
+        "sps_status_uncertainty_signals=1",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "observational_context_no_extractable_sps_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 75,
+          "rationale": "basis=observational_context_no_extractable_sps_count | confidence=low | source_category=observational_group_study",
+          "evidence_text": "Amphiphysin-IgG was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies. Clinical information was available for 63 patients. Cancer was detected in 50 (mostly limited), proven histologically in 46, and was imaged intrathoracically in 4 patients (lung, small-cell [27] and non-small cell [1]), breast [16] and melanoma [2]). Neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome. In a case examined neuropathologically, parenchymal T-lymphocyte infiltration (predominantly CD8(+)) was prominent in lower brainstem, spinal cord, and dorsal root ganglion. Coexisting paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal autoantigen targets that plausibly explained several neurological manifestations; for example, P/Q-type Ca(2+)-channel antibody with Lambert-Eaton syndrome (n = 5), anti-neuronal nuclear antibody type 1 with sensory neuronopathy (n = 7), K(+)-channel antibody with limbic encephalitis (n = 1) or neuromyotonia (n = 1), and collapsin response-mediator protein-5-IgG with optic neu",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 2,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "patient_label_count",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 70,
+          "rationale": "basis=patient_label_count | confidence=medium | source_category=observational_group_study",
+          "evidence_text": "amphiphysin autoimmunity: paraneoplastic accompaniments sean j. pittock, md, 1,2 claudia f. lucchinetti, md, 1 joseph e. parisi, md, 1,2 eduardo e. benarroch, md, 1 bahram mokri, md, 1 christina l. stephan, md, 2 kwang-kuk kim, md, phd, 3 manfred w. kilimann, md, 4 and vanda a. lennon, md, phd 1,2,5 amphiphysin-igg was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies. clinical information was available for 63 patients. cancer was detected in 50 (mostly limited), proven histologically in 46, and was imaged intrathoracically in 4 patients (lung, small–cell [27] and non–small cell [1]), breast [16] and mel- anoma [2]). neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome. in a case examined neuropathologically, parenchymal t-lymphocyte infiltration (predominantly cd8 /h11545) was prominent in lower brainstem, spinal cord, and dorsal root ganglion. coexisting paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal autoantigen targets that plausibly explained several neurological manif",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 45,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=observational_group_study",
+          "evidence_text": "Amphiphysin-IgG was identified in 71 patients among 120,000 evaluated serologically for paraneoplastic autoantibodies. Clinical information was available for 63 patients. Cancer was detected in 50 (mostly limited), proven histologically in 46, and was imaged intrathoracically in 4 patients (lung, small-cell [27] and non-small cell [1]), breast [16] and melanoma [2]). Neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome. In a case examined neuropathologically, parenchymal T-lymphocyte infiltration (predominantly CD8(+)) was prominent in lower brainstem, spinal cord, and dorsal root ganglion. Coexisting paraneoplastic autoantibodies, identified in 74% of patients, predicted a common neoplasm and indicated other neuronal autoantigen targets that plausibly explained several neurological manifestations; for example, P/Q-type Ca(2+)-channel antibody with Lambert-Eaton syndrome (n = 5), anti-neuronal nuclear antibody type 1 with sensory neuronopathy (n = 7), K(+)-channel antibody with limbic encephalitis (n = 1) or neuromyotonia (n = 1), and collapsin response-mediator protein-5-IgG with optic neu",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": [
+        "SMS /H11005stiff-man syndrome; LE /H11005lower extremity; UE /H11005upper extremity; L /H11005limbic encephalitis (patients had signal abnormalities in the"
+      ]
+    },
+    "count_decision_payload": {
+      "paper_id": "292",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_manual_review_required",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "manual_review_required",
+        "selected_candidate_id": null,
+        "alternative_count": null,
+        "count_confidence": "low",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper reports a 63-patient amphiphysin-IgG cohort, but the SPS-spectrum subset is not given as an explicit integer. 'Stiff-man phenomena' and percentages fulfilling stiff-man syndrome criteria are reported without the sex denominators needed to derive a unique SPS-spectrum count safely, so neither 0 nor 2 is adequately supported.",
+        "evidence": [
+          {
+            "quote": "Clinical information was available for 63 patients.",
+            "page": null,
+            "section": "abstract/preferred text",
+            "supports": "Defines the analyzable amphiphysin-IgG cohort from which any SPS-spectrum subset would need to be derived."
+          },
+          {
+            "quote": "Neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome.",
+            "page": null,
+            "section": "abstract/preferred text",
+            "supports": "Shows that some patients had SPS-related manifestations, so an exact zero count is not supported."
+          },
+          {
+            "quote": "Overall, a minority of women (39%) and men (12%) had stiff-man phenomena. Only 10% of women (some with lung carcinoma) and 4% of men fulfilled diagnostic criteria for stiff-man syndrome.",
+            "page": null,
+            "section": "abstract/preferred text",
+            "supports": "Indicates SPS-spectrum cases existed, but only as percentages by sex; without explicit sex denominators or integer counts, the exact number of unique SPS-spectrum patients cannot be safely extracted."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "292",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Clinical information was available for 63 patients.",
+          "page": null,
+          "section": "abstract/preferred text",
+          "supports": "Defines the analyzable amphiphysin-IgG cohort from which any SPS-spectrum subset would need to be derived."
+        },
+        {
+          "quote": "Neurological accompaniments included (decreasing frequency): neuropathy, encephalopathy, myelopathy, stiff-man phenomena, and cerebellar syndrome.",
+          "page": null,
+          "section": "abstract/preferred text",
+          "supports": "Shows that some patients had SPS-related manifestations, so an exact zero count is not supported."
+        },
+        {
+          "quote": "Overall, a minority of women (39%) and men (12%) had stiff-man phenomena. Only 10% of women (some with lung carcinoma) and 4% of men fulfilled diagnostic criteria for stiff-man syndrome.",
+          "page": null,
+          "section": "abstract/preferred text",
+          "supports": "Indicates SPS-spectrum cases existed, but only as percentages by sex; without explicit sex denominators or integer counts, the exact number of unique SPS-spectrum patients cannot be safely extracted."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\292.json",
+      "challenge_json_path": ""
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.313459+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.134114+00:00",
   "paper_id": "131",
   "count_row": {
     "paper_id": "131",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=24 | reviewed_source_category=case_series_or_multi_case | predicted_count=24 | predicted_source_category=case_series_or_multi_case",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:43:11.860702+00:00"
@@ -139,14 +140,229 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\131.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\131.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\131.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\131.json",
+    "result_payload": {
+      "paper_id": "131",
+      "count_row": {
+        "paper_id": "131",
+        "covidence_id": "131",
+        "title": "Psychiatric consultations in stiff-man syndrome.",
+        "authors": "Tinsley, J A; Barth, E M; Black, J L; Williams, D E",
+        "source_category": "observational_group_study",
+        "source_subtype": "retrospective_or_cohort_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\131.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "24",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=24 vs 1; broad_total_exceeds_explicit_subgroup=24 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a cohort of 24 unique SPS-spectrum cases. The smaller count of 1 comes from an individual case mention within the detailed psychiatric subset and does not limit the full confirmed SMS cohort.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "24",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\131.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "24",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\131.json",
+        "counted_at_utc": "2026-04-16T14:07:27.206585+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "131",
+        "covidence_id": "131",
+        "title": "Psychiatric consultations in stiff-man syndrome.",
+        "authors": "Tinsley, J A; Barth, E M; Black, J L; Williams, D E",
+        "source_category": "observational_group_study",
+        "source_subtype": "retrospective_or_cohort_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\131.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "24",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=24 vs 1; broad_total_exceeds_explicit_subgroup=24 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a cohort of 24 unique SPS-spectrum cases. The smaller count of 1 comes from an individual case mention within the detailed psychiatric subset and does not limit the full confirmed SMS cohort.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "24",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\131.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "24",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\131.json",
+        "counted_at_utc": "2026-04-16T14:07:27.206585+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\131.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\131.json"
+    },
+    "candidate_payload": {
+      "paper_id": "131",
+      "covidence_id": "131",
+      "title": "Psychiatric consultations in stiff-man syndrome.",
+      "authors": "Tinsley, J A; Barth, E M; Black, J L; Williams, D E",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\131.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\131.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "131_16480_psychiatric-consultations-stiffman-syndrome.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "BACKGROUND: Stiff-man syndrome is a rare central nervous system disease first described nearly 40 years ago. Its cause has been attributed to both neurologic and psychiatric processes. In recent years, it has been accepted as a neurologic condition in which the gamma-aminobutyric acid (GABA) system malfunctions, probably because of an autoimmune process. Published reports that have described psychiatric manifestations of the disease have relied on descriptions of one or two cases and literature reviews., METHOD: We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation. This review was done to better determine the psychiatric manifestations of stiff-man syndrome., RESULTS: Retrospective analysis of these 12 cases showed that the most common psychiatric symptoms were anxiety, depression, and alcohol abuse., CONCLUSION: We speculate that the GABA system is involved in both the neurologic and psychiatric symptoms of these patients. Psychiatrists have a significant role in the management of patients with stiff-man syndrome and may be expected to manage anxiety, depression, and substance misuse.",
+      "early_body_text": "j clin psychiatry 58:10, october 1997 stiff-man syndrome 443 © copyright 1997 physicians postgraduate press, inc. one personal copy may be printed tiff-man syndrome (sms) is a rare central nervous system disease characterized by continuous muscle psychiatric consultations in stiff-man syndrome joyce a. tinsley, m.d., elaine m. barth, m.d., john l. black, m.d., f .a.p .m., f .a.p .a., and donald e. williams, ph.d. background: stiff-man syndrome is a rare central nervous system disease first described nearly 40 years ago. its cause has been attributed to both neurologic and psychiatric processes. in recent years, it has been accepted as a neurologic condition in which the γ-aminobutyric acid (gaba) system malfunctions, probably because of an autoimmune process. published reports that have described psychiatric manifestations of the disease have relied on descriptions of one or two cases and literature reviews. method: we reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consulta- tion. this review was done to better determine the psychiatric manifestations of stiff-man syndrome. results: retrospective analysis of these 12 cases showed that the most common psychiatric symptoms were anxiety, depression, and alcohol abuse. conclusion: we speculate that the gaba sys- tem is involved in both the neurologic and psy- chiatric symptoms of these patients. psychiatrists have a significant role in the management of pa- tients with stiff-man syndrome and may be ex- pected to manage anxiety, depression, and sub- stance misuse. (j clin psychiatry 1997;58:444 –449) received may 14, 1997; accepted july 15, 1997. from the department of psychiatry and psychology, mayo clinic and mayo foundation (drs. tinsley, black, and williams), and the zumbro valley mental health center (dr. barth), rochester, minn. reprint requests to: joyce a. tinsley, m.d., department of psychiatry and psychology, mayo clinic, 200 first street southwest, rochester , mn 55905.rigidity and painful spasms that resemble a chronic form of tetanus. it was first described by moersch and woltman in 1956. 1 by 1991, 24 more cases that met a rigorous set of diagnostic criteria had been diagnosed at the mayo clinic. these patients have disabling stiffness and fre- quently fall. an increased prevalence of diabetes mellitus and autoimmune thyroid disease has been described in the s patients and their families. also, there is evidence that sms is an autoimmune disease. 2 sms is associated with an antibody to glutamic acid decarboxylase, an enzyme needed to produce γ-aminobutyric acid (gaba) from glutamic acid. an antibody to glutamic acid decarboxy- lase may produce a relative gaba deficiency, which in turn may prevent the inhibition of muscle rigidity. 3,4 the gaba agonists diazepam and baclofen have been effec- tive in treating some patients. diazepam, often used in high doses, is commonly a first-line treatment for sms. 5 other treatments include immunosuppressive agents and plasmapheresis. lorish et al. 6 stated that patients need to meet seven criteria for a definite diagnosis of sms to be made. these are (1) a prodrome of stiffness and rigidity in the axial muscles; (2) slow progression of stiffness to include proximal limb muscles, making volitional movements and ambulation difficult; (3) a fixed deformity of the spine (most often, pronounced lordosis); (4) the presence of superimposed episodic spasms precipitated by sudden movements, jarring noise, and emotional upset; (5) nor- mal findings on motor and sensory nerve examinations; (6) normal intellect; and (7) electromyographic findings typical of continuous motor activity that can be abolished by the intravenous administration of diazepam or a posi- tive response to a therapeutic trial of orally administered diazepam. 6 the literature that describes the psychiatric manifesta- tions of sms is scant. according to the earliest reports, patients with sms may come to the attention of a psychia- trist before their neurologic disorder is recognized. of the 14 patients reported by moersch and woltman 1 in 1956, 5 had first been given the diagnosis of a “functional condi- tion.” subsequent reports described the diagnosis of con- version disorder as a clear misdiagnosis and neglected the possibility that psychogenic factors had a role in the patient’s symptoms. 7,8 in 1960, trethowan et al. 9 con- cluded that sms had a neurologic cause, but they reported a case in which emotional disturbance led to exacerbation of symptoms. in 1961, werk et al. 10 reported the first case with associated hyperthyroidism. they recorded a thor- ough psychiatric history and believed that the patient ’s personality and neurologic condition were interrelated. in 1965, gold11 returned to a psychogenic explanation, con- 444 444 j clin psychiatry 58:10, october 1997 tinsley et al. © copyright 1997 physicians postgraduate press, inc. one personal copy may be printed cluding that “‘",
+      "llm_evidence_text": "Title:\nPsychiatric consultations in stiff-man syndrome.\n\nMetadata abstract:\nBACKGROUND: Stiff-man syndrome is a rare central nervous system disease first described nearly 40 years ago. Its cause has been attributed to both neurologic and psychiatric processes. In recent years, it has been accepted as a neurologic condition in which the gamma-aminobutyric acid (GABA) system malfunctions, probably because of an autoimmune process. Published reports that have described psychiatric manifestations of the disease have relied on descriptions of one or two cases and literature reviews., METHOD: We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation. This review was done to better determine the psychiatric manifestations of stiff-man syndrome., RESULTS: Retrospective analysis of these 12 cases showed that the most common psychiatric symptoms were anxiety, depression, and alcohol abuse., CONCLUSION: We speculate that the GABA system is involved in both the neurologic and psychiatric symptoms of these patients. Psychiatrists have a significant role in the management of patients with stiff-man syndrome and may be expected to manage anxiety, depression, and substance misuse.\n\nExplicit SPS-spectrum subgroup signals:\n- prescribed and resulted in temporary improvement in her mood. Marital and family therapy was also recommended. Patient 3 (Alcohol Dependence) A 50-year-old man diagnosed with SMS presented for a second opinion. Ten years earlier, he had begun to experience stiffness that interf\n\nPotential non-original or reused-cohort signals:\n- and 10 were previously reported by McEvoy 2 from a neu-\n- bThe patient was previously reported by McEvoy.\n\nPreferred text count-salient snippets:\n- 24 patients with confirmed stiff-man syndrome,\n- 1 By 1991, 24 more cases that met a rigorous set\n- 6 stated that patients need to meet seven\n- addition, his paper purports that 70% of patients with SMS\n- case of SMS and reviewed four other cases to conclude\n- Psychiatric Symptoms, Diagnosis, Treatment, and Follow-Up of 12 Patients With Stiff-Man Syndrome\n- males and 6 females in 13 confirmed patients of SMS at\n- backgrounds vary in patients with SMS, and in 1971, the",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[1, 24]",
+        "explicit_sps_subgroup_count=1",
+        "non_original_case_signals=2",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 24,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=abstract_count_signal | confidence=high | source_category=observational_group_study",
+          "evidence_text": "BACKGROUND: Stiff-man syndrome is a rare central nervous system disease first described nearly 40 years ago. Its cause has been attributed to both neurologic and psychiatric processes. In recent years, it has been accepted as a neurologic condition in which the gamma-aminobutyric acid (GABA) system malfunctions, probably because of an autoimmune process. Published reports that have described psychiatric manifestations of the disease have relied on descriptions of one or two cases and literature reviews., METHOD: We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation. This review was done to better determine the psychiatric manifestations of stiff-man syndrome., RESULTS: Retrospective analysis of these 12 cases showed that the most common psychiatric symptoms were anxiety, depression, and alcohol abuse., CONCLUSIO",
+          "evidence_section": "abstract",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_patient_case_count",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 74,
+          "rationale": "basis=diagnosis_specific_patient_case_count | confidence=medium | source_category=observational_group_study | heuristic_manual_review=true",
+          "evidence_text": "prescribed and resulted in temporary improvement in her mood. Marital and family therapy was also recommended. Patient 3 (Alcohol Dependence) A 50-year-old man diagnosed with SMS presented for a second opinion. Ten years earlier, he had begun to experience stiffness that interf",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 24,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "early_body_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 70,
+          "rationale": "basis=early_body_count_signal | confidence=medium | source_category=observational_group_study",
+          "evidence_text": "j clin psychiatry 58:10, october 1997 stiff-man syndrome 443 © copyright 1997 physicians postgraduate press, inc. one personal copy may be printed tiff-man syndrome (sms) is a rare central nervous system disease characterized by continuous muscle psychiatric consultations in stiff-man syndrome joyce a. tinsley, m.d., elaine m. barth, m.d., john l. black, m.d., f .a.p .m., f .a.p .a., and donald e. williams, ph.d. background: stiff-man syndrome is a rare central nervous system disease first described nearly 40 years ago. its cause has been attributed to both neurologic and psychiatric processes. in recent years, it has been accepted as a neurologic condition in which the γ-aminobutyric acid (gaba) system malfunctions, probably because of an autoimmune process. published reports that have described psychiatric manifestations of the disease have relied on descriptions of one or two cases and literature reviews. method: we reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consulta- tion. this review was done to better determine the psychiatric manifestations of stiff-man syndrome. results: retrospective analysis of these ",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand02",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 1,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_patient_case_count",
+      "explicit_sps_subgroup_evidence": [
+        "prescribed and resulted in temporary improvement in her mood. Marital and family therapy was also recommended. Patient 3 (Alcohol Dependence) A 50-year-old man diagnosed with SMS presented for a second opinion. Ten years earlier, he had begun to experience stiffness that interf"
+      ],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "131",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [
+        "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP"
+      ],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
+        "explicit_sps_subgroup_conflict=24 vs 1",
+        "broad_total_exceeds_explicit_subgroup=24 > 1"
+      ],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a cohort of 24 unique SPS-spectrum cases. The smaller count of 1 comes from an individual case mention within the detailed psychiatric subset and does not limit the full confirmed SMS cohort.",
+        "evidence": [
+          {
+            "quote": "We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation.",
+            "page": null,
+            "section": "Abstract/Method",
+            "supports": "Directly states the total original cohort size of confirmed SPS-spectrum patients in this paper is 24."
+          },
+          {
+            "quote": "By 1991, 24 more cases that met a rigorous set of diagnostic criteria had been diagnosed at the Mayo Clinic.",
+            "page": null,
+            "section": "Introduction/background",
+            "supports": "Corroborates that the Mayo Clinic cohort comprised 24 diagnosed SMS cases, consistent with the reviewed cohort."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "131",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
+        "explicit_sps_subgroup_conflict=24 vs 1",
+        "broad_total_exceeds_explicit_subgroup=24 > 1"
+      ],
+      "evidence": [
+        {
+          "quote": "We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation.",
+          "page": null,
+          "section": "Abstract/Method",
+          "supports": "Directly states the total original cohort size of confirmed SPS-spectrum patients in this paper is 24."
+        },
+        {
+          "quote": "By 1991, 24 more cases that met a rigorous set of diagnostic criteria had been diagnosed at the Mayo Clinic.",
+          "page": null,
+          "section": "Introduction/background",
+          "supports": "Corroborates that the Mayo Clinic cohort comprised 24 diagnosed SMS cases, consistent with the reviewed cohort."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\131.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_challenges\\131.json"
+    }
   }
 }

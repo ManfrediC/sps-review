@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.182222+00:00",
+  "generated_at_utc": "2026-04-16T18:35:07.964450+00:00",
   "paper_id": "62",
   "count_row": {
     "paper_id": "62",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=count_ambiguity | prediction_correct=true | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=1 | predicted_source_category=single_case_report",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:03:22.411325+00:00"
@@ -139,14 +140,233 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\62.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\62.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\62.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\62.json",
+    "result_payload": {
+      "paper_id": "62",
+      "count_row": {
+        "paper_id": "62",
+        "covidence_id": "62",
+        "title": "Autoimmunity in stiff-Man syndrome with breast cancer is targeted to the C-terminal region of human amphiphysin, a protein similar to the yeast proteins, Rvs167 and Rvs161.",
+        "authors": "David, C; Solimena, M; De Camilli, P",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\62.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "medium",
+        "count_basis": "diagnosis_specific_patient_case_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand03 | This paper appears to contribute one new original SPS-spectrum patient: a newly referred 75-year-old woman with stiff-man syndrome designated patient 1. The other SMS breast-cancer patients discussed are explicitly described as previously reported, so the safest extractable original count for this paper is 1.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "lab_context_no_extractable_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\62.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand03",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\62.json",
+        "counted_at_utc": "2026-04-16T14:00:05.867864+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "62",
+        "covidence_id": "62",
+        "title": "Autoimmunity in stiff-Man syndrome with breast cancer is targeted to the C-terminal region of human amphiphysin, a protein similar to the yeast proteins, Rvs167 and Rvs161.",
+        "authors": "David, C; Solimena, M; De Camilli, P",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\62.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "medium",
+        "count_basis": "diagnosis_specific_patient_case_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand03 | This paper appears to contribute one new original SPS-spectrum patient: a newly referred 75-year-old woman with stiff-man syndrome designated patient 1. The other SMS breast-cancer patients discussed are explicitly described as previously reported, so the safest extractable original count for this paper is 1.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "lab_context_no_extractable_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\62.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand03",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\62.json",
+        "counted_at_utc": "2026-04-16T14:00:05.867864+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\62.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\62.json"
+    },
+    "candidate_payload": {
+      "paper_id": "62",
+      "covidence_id": "62",
+      "title": "Autoimmunity in stiff-Man syndrome with breast cancer is targeted to the C-terminal region of human amphiphysin, a protein similar to the yeast proteins, Rvs167 and Rvs161.",
+      "authors": "David, C; Solimena, M; De Camilli, P",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\62.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\62.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "62_David-1994-Autoimmunity in stiff-Man syndrome.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with breast cancer. We have now cloned human amphiphysin and found the N- and C-terminal domains of the protein to be highly conserved between chicken and human. Patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its C-terminal region, which contains an SH3 domain. Portions of chicken and human amphiphysin are also homologous to portions of Rvs167 and Rvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions.",
+      "early_body_text": "febs letters 351 (1994) 73-79 febs 14439 autoimmunity in stiff-man syndrome with breast cancer is targeted to the c-terminal region of human amphiphysin, a protein similar to the yeast proteins, rvs167 and rvs161 carol david”, michele solimenab, pietro de camilli”,* of cell biology and howard hughes medical institute, yale university school of medicine, boyer center for molecular medicine, 295 congress avenue, new haven, ct 06510, usa b department of internal medicine, section of endocrinology, yale university school of medicine, new haven, ct 06510, usa “department received 16 june 1994; revised version received 21 july 1994 abstract amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of stiff-man syndrome (sms) associated with breast cancer. we have now cloned human amphiphysin and found the n- and c-terminal domains of the protein to be highly conserved between chicken and human. patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its c-terminal region, which contains an sh3 domain. portions of chicken and human amphiphysin are also homologous to portions of rvs167 and rvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions. key words: stiff-man syndrome; amphiphysin; breast cancer; 1. introduction stiff-man syndrome (sms) is a rare neurological disease characterized by rigidity of the body musculature with superimposed painful spasms [l&4]. sms is one of the few human diseases for which evidence of an autoimmune process directed against cns neuronal antigens has been found. high titer antibodies directed against neuronal autoantigens are found both in the serum and in the cerebrospinal fluid of the majority of sms patients t51. two main targets of humoral autoimmunity have been identified in two populations of sms patients which have similar neurological characteristics but different associated conditions. in 50-60% of the cases, autoantibodies are primarily directed against the gaba-synthesizing enzyme glutamic acid decarboxylase (gad). in these patients, insulin-dependent diabetes mellitus and other organ-specific autoimmune diseases are frequently present [5-71. in five of the more than 100 cases of sms patients whose sera we have tested, autoantibodies are directed against another neuronal protein of 128 k da [8]. this protein was recently identified as amphiphysin [9], a synaptic vesicle-associated protein originally cloned from chicken brain [lo]. strikingly, all five patients with am- *corresponding author. fax: (1) (203) 787-3364. abbreviations: a.a., amino acid; c amph, chicken amphiphysin; cns, central nervous system; gad, glutamic acid decarboxylase; h amph, human amphiphysin; page, polyacrylamide gel electrophoresis; pcr, polymerase chain reaction; sms, stiff-man syndrome. synaptic vesicle; rvs161; rvs167 phiphysin autoimmunity are women with breast cancer. in fact, in two of these patients, an infiltrating ductal adenocarcinoma of the breast was searched for, and found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)). a remission of the neurological symptoms was documented in three of the five patients after removal of the cancer and steroid therapy ([8, 9, 1 i] and this study (dr. m. myers, jackson, mi, personal communication)) supporting the hypothesis that the condition results from a functional rather than structural damage of the cns. other cases of sms associated with cancer have been described [12, 13]. these findings raise the possibility that in some cases sms may have an autoimmune paraneoplastic origin. as in the case of autoantigens of other autoimmune paraneoplastic diseases of the cns, as well as of gad, amphiphysin is an intracellular protein and the link between humoral autoimmunity directed against the autoantigen and the clinical symptoms remains to be explained. in other neurological autoimmune paraneoplastic conditions, expression of the neuronal autoantigen in the tumor was reported [14, 15]. it was proposed that the ectopic expression of the brain antigen by cancer cells may trigger the autoimmune response [16]. in some cases, the autoantigen is thought to play a role in neoplastic growth [17]. as a first step to investigate mechanisms of amphiphysin autoimmunity and a possible role of amphiphysin in the biology of human breast cancer, we have now cloned human amphiphysin and mapped the autoepitopes. by western blotting, a stereotypic humoral autoimmune response to amphiphysin was detected similarly to what we have previously shown for 0014-5793/94/$7. 00 0 1994 federation of european biochemical societies. all rights reserved. ssdi 0014-5793(94)00826-4 gad autoimmunity in sms [ls]. the region of amphiphysin most highly conserved -between chicken and human is also similar to two yeast proteins",
+      "llm_evidence_text": "Title:\nAutoimmunity in stiff-Man syndrome with breast cancer is targeted to the C-terminal region of human amphiphysin, a protein similar to the yeast proteins, Rvs167 and Rvs161.\n\nMetadata abstract:\nAmphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with breast cancer. We have now cloned human amphiphysin and found the N- and C-terminal domains of the protein to be highly conserved between chicken and human. Patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its C-terminal region, which contains an SH3 domain. Portions of chicken and human amphiphysin are also homologous to portions of Rvs167 and Rvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions.\n\nExplicit SPS-spectrum subgroup signals:\n- elated protein, has a role in the biology of breast cancer. 2. Materials and methods 2. 1. Human sera A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us (Dr. S. Songcharden, Dr. M. Myers, Jackson, MI) to be tested for the presence of\n\nPotential non-original or reused-cohort signals:\n- found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).\n- Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9].\n- However, a similar aberrant electrophoretic mobility was previously reported for chicken amphiphysin\n- As was previously reported for chicken amphiphysin [lo], the human\n\nPreferred text count-salient snippets:\n- identified in two populations of SMS patients which have\n- In 50-60% of the cases, autoantibodies\n- In five of the more than 100 cases of SMS patients\n- Strikingly, all five patients with am-\n- In fact, in two of these patients, an infiltrating ductal\n- Other cases of SMS associated with cancer have been described [12, 13].\n- Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9].\n- from all 5 breast cancer patients with SMS as well as",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "source_context_adjusted_primary_estimate",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[0, 1]",
+        "explicit_sps_subgroup_count=1",
+        "non_original_case_signals=4",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 75,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with breast cancer. We have now cloned human amphiphysin and found the N- and C-terminal domains of the protein to be highly conserved between chicken and human. Patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its C-terminal region, which contains an SH3 domain. Portions of chicken and human amphiphysin are also homologous to portions of Rvs167 and Rvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions. febs letters 351 (1994) 73-79 febs 14439 autoimmunity in stiff-man syndrome with breast cancer is targeted to the c-terminal region of human amphiphysin, a protein similar to the yeast proteins, rvs167 and rvs161 carol david”, michele solimenab, pietro de camilli”,* of cell biology and howard hughes medical institute, yale university school of medicine, boyer center for molecular medicine, 295 congress avenue, new haven, ct 06510, usa b department of internal medicine, section of endocrinology,  Autoi",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "single_case_text_signal",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=single_case_text_signal | confidence=medium | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with breast cancer. We have now cloned human amphiphysin and found the N- and C-terminal domains of the protein to be highly conserved between chicken and human. Patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its C-terminal region, which contains an SH3 domain. Portions of chicken and human amphiphysin are also homologous to portions of Rvs167 and Rvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions.",
+          "evidence_section": "abstract",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 1,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_patient_case_count",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 74,
+          "rationale": "basis=diagnosis_specific_patient_case_count | confidence=medium | source_category=lab_heavy_clinical_or_translational | heuristic_manual_review=true",
+          "evidence_text": "elated protein, has a role in the biology of breast cancer. 2. Materials and methods 2. 1. Human sera A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us (Dr. S. Songcharden, Dr. M. Myers, Jackson, MI) to be tested for the presence of",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand03",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 1,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_patient_case_count",
+      "explicit_sps_subgroup_evidence": [
+        "elated protein, has a role in the biology of breast cancer. 2. Materials and methods 2. 1. Human sera A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us (Dr. S. Songcharden, Dr. M. Myers, Jackson, MI) to be tested for the presence of"
+      ],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "62",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand03",
+        "alternative_count": null,
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "This paper appears to contribute one new original SPS-spectrum patient: a newly referred 75-year-old woman with stiff-man syndrome designated patient 1. The other SMS breast-cancer patients discussed are explicitly described as previously reported, so the safest extractable original count for this paper is 1.",
+        "evidence": [
+          {
+            "quote": "A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us ...",
+            "page": null,
+            "section": "Materials and methods, Human sera",
+            "supports": "Explicitly identifies one original SMS patient in this study."
+          },
+          {
+            "quote": "Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9].",
+            "page": null,
+            "section": "Human sera / prior-case context",
+            "supports": "Shows that four additional SMS patients mentioned in the paper were not original to this paper and should not be counted."
+          },
+          {
+            "quote": "in two of these patients, an infiltrating ductal adenocarcinoma of the breast was searched for, and found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).",
+            "page": null,
+            "section": "Introduction",
+            "supports": "Confirms patient 1 is the paper's most recent case and distinguishes it from earlier cited cases."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "62",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us ...",
+          "page": null,
+          "section": "Materials and methods, Human sera",
+          "supports": "Explicitly identifies one original SMS patient in this study."
+        },
+        {
+          "quote": "Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9].",
+          "page": null,
+          "section": "Human sera / prior-case context",
+          "supports": "Shows that four additional SMS patients mentioned in the paper were not original to this paper and should not be counted."
+        },
+        {
+          "quote": "in two of these patients, an infiltrating ductal adenocarcinoma of the breast was searched for, and found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).",
+          "page": null,
+          "section": "Introduction",
+          "supports": "Confirms patient 1 is the paper's most recent case and distinguishes it from earlier cited cases."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\62.json",
+      "challenge_json_path": ""
+    }
   }
 }

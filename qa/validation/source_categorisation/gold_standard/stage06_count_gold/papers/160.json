@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.321240+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.149016+00:00",
   "paper_id": "160",
   "count_row": {
     "paper_id": "160",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=23 | reviewed_source_category=observational_group_study | predicted_count=23 | predicted_source_category=observational_group_study",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T14:57:12.334753+00:00"
@@ -139,14 +140,194 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\160.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\160.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\160.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\160.json",
+    "result_payload": {
+      "paper_id": "160",
+      "count_row": {
+        "paper_id": "160",
+        "covidence_id": "160",
+        "title": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+        "authors": "Barker, R A; Revesz, T; Thom, M; Marsden, C D; Brown, P",
+        "source_category": "observational_group_study",
+        "source_subtype": "retrospective_or_cohort_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\160.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "23",
+        "count_confidence": "high",
+        "count_basis": "title_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper reports an original cohort of 23 referred patients with SPS-spectrum disorders and explicitly subdivides them into PERM (2), stiff man syndrome (8), and stiff limb syndrome (13), which sums to 23 unique cases. These are all within the review's SPS-spectrum definition.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "23",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "title_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\160.json",
+        "heuristic_candidate_count": "1",
+        "llm_likely_sps_case_count": "23",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\160.json",
+        "counted_at_utc": "2026-04-16T14:07:46.732658+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "160",
+        "covidence_id": "160",
+        "title": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+        "authors": "Barker, R A; Revesz, T; Thom, M; Marsden, C D; Brown, P",
+        "source_category": "observational_group_study",
+        "source_subtype": "retrospective_or_cohort_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\160.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "23",
+        "count_confidence": "high",
+        "count_basis": "title_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper reports an original cohort of 23 referred patients with SPS-spectrum disorders and explicitly subdivides them into PERM (2), stiff man syndrome (8), and stiff limb syndrome (13), which sums to 23 unique cases. These are all within the review's SPS-spectrum definition.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "23",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "title_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\160.json",
+        "heuristic_candidate_count": "1",
+        "llm_likely_sps_case_count": "23",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\160.json",
+        "counted_at_utc": "2026-04-16T14:07:46.732658+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\160.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\160.json"
+    },
+    "candidate_payload": {
+      "paper_id": "160",
+      "covidence_id": "160",
+      "title": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+      "authors": "Barker, R A; Revesz, T; Thom, M; Marsden, C D; Brown, P",
+      "source_category": "observational_group_study",
+      "source_subtype": "retrospective_or_cohort_group_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\160.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\160.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "160_Barker-1998-Review of 23 patients affected by.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "OBJECTIVE: To investigate whether the stiff limb syndrome may be separated from the stiff man syndrome and progressive encephalomyelitis with rigidity on simple clinical grounds, and whether such a distinction has implications for aetiology, treatment, and prognosis., METHODS: Twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity, but without evidence of neuromyotonia, extrapyramidal or pyramidal dysfunction or focal lesions of the spinal cord were reviewed. The patients were divided into those with an acute or subacute illness, leading to death within 1 year, and those with a chronic course. The latter were divided into those in whom rigidity and spasms dominated in the axial muscles, or in one or more distal limbs, at the time of their first assessment., RESULTS: This simple division identified three distinct groups of patients. (1) Progressive encephalomyelitis with rigidity: two patients had a rapidly progressive condition characterised by widespread rigidity which resulted in death within 6 and 16 weeks. One patient had negative anti-GAD and anti-neuronal antibodies, but had markedly abnormal CSF and widespread denervation. The principal pathological findings in this case were a subacute encephalomyelitis which primarily affected the grey matter. In the remaining patient anti-GAD antibodies were not tested, and postmortem was refused. (2) Stiff man syndrome: eight patients had rigidity and painful spasms of the lumbar paraspinal, abdominal, and occasionally proximal leg muscles associated with a lumbar hyperlordosis. There was no involvement of the upper limbs, distal lower limbs, sphincters or cranial nerves. Seven had anti-GAD antibodies and most had additional evidence of autoimmune disease. Neurophysiologically there was continuous motor unit activity with abnormal exteroceptive reflexes, but a normal interference pattern during spasms. The patients all responded to baclofen/diazepam and remained ambulant. (3) Stiff limb syndrome: thirteen patients had rigidity, painful spasm, and abnormal postures of the distal limb, ususphincter or brainstem involvement. Generalised myoclonic jerks were not a feature. Only two had truncal rigidity, and another two had anti-GAD antibodies. Most had no evidence of autoimmune disease. Neurophysiologically they had continuous motor unit activity in the affected limb, abnormal exteroceptive reflexes, and abnormally segmented EMG activity during spasms. The disease ran a protracted course, and most patients had only a partial response to baclofen or diazepam. About half became wheelchair bound., CONCLUSIONS: The stiff limb syndrome seems distinct from the stiff man syndrome or progressive encephalomyelitis with rigidity, and is an important cause of rigidity and spasm in the setting of continuous motor unit activity.",
+      "early_body_text": "review of 23 patients avected by the stiv man syndrome: clinical subdivision into stiv trunk (man) syndrome, stiv limb syndrome, and progressive encephalomyelitis with rigidity r a barker, t revesz, m thom, c d marsden, p brown abstract objective—t o investigate whether the stiv limb syndrome may be separated from the stiv man syndrome and progressive en- cephalomyelitis with rigidity on simple clinical grounds, and whether such a distinction has implications for aetiology, treatment, and prognosis. methods— twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity, but without evidence of neuromyotonia, extrapyramidal or py- ramidal dysfunction or focal lesions of the spinal cord were reviewed. the patients were divided into those with an acute or subacute illness, leading to death within 1 year, and those with a chronic course. the latter were divided into those in whom rigidity and spasms dominated in the axial muscles, or in one or more distal limbs, at the time of their ﬁrst assessment. results—this simple division identiﬁed three distinct groups of patients. (1) progressive encephalomyelitis with rigid- ity: two patients had a rapidly progressive condition characterised by widespread rigidity which resulted in death within 6 and 16 weeks. one patient had negative anti-gad and anti-neuronal antibodies, but had markedly abnormal csf and widespread denervation. the principal pathological ﬁndings in this case were a subacute encephalomyelitis which prima- rily a vected the grey matter. in the remaining patient anti-gad antibodies were not tested, and postmortem was refused. (2) stiv man syndrome: eight patients had rigidity and painful spasms of the lumbar paraspinal, abdominal, and occasionally proximal leg muscles associ- ated with a lumbar hyperlordosis. there was no involvement of the upper limbs, distal lower limbs, sphincters or cranial nerves. seven had anti-gad antibodies and most had additional evidence of autoimmune disease. neurophysiologi- cally there was continuous motor unit activity with abnormal exteroceptive re- ﬂexes, but a normal interference pattern during spasms. the patients all responded to baclofen/diazepam and remained am- bulant. (3) sti v limb syndrome: thirteen patients had rigidity, painful spasm, and abnormal postures of the distal limb, usu- ally the leg. about half went on to develop sphincter or brainstem involvement. gen- eralised myoclonic jerks were not a fea- ture. only two had truncal rigidity, and another two had anti-gad antibodies. most had no evidence of autoimmune dis- ease. neurophysiologically they had con- tinuous motor unit activity in the a vected limb, abnormal exteroceptive reﬂexes, and abnormally segmented emg activity during spasms. the disease ran a pro- tracted course, and most patients had only a partial response to baclofen or di- azepam. about half became wheelchair bound. conclusions—the stiv limb syndrome seems distinct from the sti v man syn- drome or progressive encephalomyelitis with rigidity, and is an important cause of rigidity and spasm in the setting of continuous motor unit activity. (j neurol neurosurg psychiatry 1998;65:633–640) keywords: stiv man syndrome; progressive encephalo- myelitis with rigidity; stiv limb syndrome the combination of rigidity, reﬂex, and action induced spasms and continuous motor unit activity at rest is rare, and may be due to teta- nus, encephalomyelitis, corticobasal degenera- tion, focal lesions of the spinal cord, or the stiv man syndrome. stiv man syndrome is a chronic disorder involving stivness and painful spasms of the trunk. 1 an exaggerated lumbar lordosis is an almost universal ﬁnding, but signs of cerebral, brainstem, or long tract disturbance are absent. the diagnosis is supported by the ﬁnding of anti-gad antibod- ies in blood and csf. however, most series to date report the presence of anti-gad antibod- ies in only around 60% of patients. 23 moreo- ver, many patients do not show the classic axial distribution of stivness and spasms. recently, brown et al reported a small series of patients in whom stivness and spasms remained conﬁned to the lower limbs. 4 these patients were anti-gad negative, and it was suggested that they represented a distinct syndrome, possibly due to a chronic spinal interneuronitis. here, we review the 23 patients of sti v people who presented to our hospital over a 10 year period, in an attempt to redeﬁne the conditions that may present with rigidity and spasm in associ- ation with continuous motor unit activity at rest. j neurol neurosurg psychiatry 1998;65:633–640 633 national hospital for neurology and neurosurgery r a barker c d marsden p brown department of neuropathology t revesz m thom mrc human movement and balance unit, institute of neurology, london wc1n 3bg, uk c d marsden p brown correspondence to: dr p brown, mrc human movement and balance unit, institute of neurology, london wc1n 3bg, uk. t",
+      "llm_evidence_text": "Title:\nReview of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.\n\nMetadata abstract:\nOBJECTIVE: To investigate whether the stiff limb syndrome may be separated from the stiff man syndrome and progressive encephalomyelitis with rigidity on simple clinical grounds, and whether such a distinction has implications for aetiology, treatment, and prognosis., METHODS: Twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity, but without evidence of neuromyotonia, extrapyramidal or pyramidal dysfunction or focal lesions of the spinal cord were reviewed. The patients were divided into those with an acute or subacute illness, leading to death within 1 year, and those with a chronic course. The latter were divided into those in whom rigidity and spasms dominated in the axial muscles, or in one or more distal limbs, at the time of their first assessment., RESULTS: This simple division identified three distinct groups of patients. (1) Progressive encephalomyelitis with rigidity: two patients had a rapidly progressive condition characterised by widespread rigidity which resulted in death within 6 and 16 weeks. One patient had negative anti-GAD and anti-neuronal antibodies, but had markedly abnormal CSF and widespread denervation. The principal pathological findings in this case were a subacute encephalomyelitis which primarily affected the grey matter. In the remaining patient anti-GAD antibodies were not tested, and postmortem was refused. (2) Stiff man syndrome: eight patients had rigidity and painful spasms of the lumbar paraspinal, abdominal, and occasionally proximal leg muscles associated with a lumbar hyperlordosis. There was no involvement of the upper limbs, distal lower limbs, sphincters or cranial nerves. Seven had anti-GAD antibodies and most had additional evidence of autoimmune disea\n\nPotential non-original or reused-cohort signals:\n- previously described.\n\nPreferred text count-salient snippets:\n- Review of 23 patients aVected by the stiV man\n- Methods— Twenty three patients referred\n- three distinct groups of patients.\n- ity: two patients had a rapidly progressive\n- ies in only around 60% of patients.\n- 4 These patients were\n- we review the 23 patients of sti V people who\n- Six patients were no longer under",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "distinct_candidate_counts=[23]",
+        "non_original_case_signals=1",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 23,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "title_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=title_count_signal | confidence=high | source_category=observational_group_study",
+          "evidence_text": "Review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalomyelitis with rigidity.",
+          "evidence_section": "title",
+          "blockers": []
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "high_risk_source_category",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "160",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper reports an original cohort of 23 referred patients with SPS-spectrum disorders and explicitly subdivides them into PERM (2), stiff man syndrome (8), and stiff limb syndrome (13), which sums to 23 unique cases. These are all within the review's SPS-spectrum definition.",
+        "evidence": [
+          {
+            "quote": "Methods— Twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity... were reviewed.",
+            "page": null,
+            "section": "Abstract/Methods",
+            "supports": "Establishes the total original cohort size as 23 patients."
+          },
+          {
+            "quote": "Results—This simple division identified three distinct groups of patients. (1) Progressive encephalomyelitis with rigidity: two patients... (2) Stiff man syndrome: eight patients... (3) Stiff limb syndrome: thirteen patients...",
+            "page": null,
+            "section": "Abstract/Results",
+            "supports": "Confirms the 23 patients are SPS-spectrum cases divided into 2 PERM + 8 SPS + 13 stiff limb syndrome = 23."
+          },
+          {
+            "quote": "here, we review the 23 patients of stiff people who presented to our hospital over a 10 year period",
+            "page": null,
+            "section": "Preferred text excerpt",
+            "supports": "Supports that these were the paper's own hospital patients rather than only cited literature cases."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "160",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Methods— Twenty three patients referred over a 10 year period with rigidity and spasms in association with continuous motor unit activity... were reviewed.",
+          "page": null,
+          "section": "Abstract/Methods",
+          "supports": "Establishes the total original cohort size as 23 patients."
+        },
+        {
+          "quote": "Results—This simple division identified three distinct groups of patients. (1) Progressive encephalomyelitis with rigidity: two patients... (2) Stiff man syndrome: eight patients... (3) Stiff limb syndrome: thirteen patients...",
+          "page": null,
+          "section": "Abstract/Results",
+          "supports": "Confirms the 23 patients are SPS-spectrum cases divided into 2 PERM + 8 SPS + 13 stiff limb syndrome = 23."
+        },
+        {
+          "quote": "here, we review the 23 patients of stiff people who presented to our hospital over a 10 year period",
+          "page": null,
+          "section": "Preferred text excerpt",
+          "supports": "Supports that these were the paper's own hospital patients rather than only cited literature cases."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\160.json",
+      "challenge_json_path": ""
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.803720+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.612666+00:00",
   "paper_id": "12137",
   "count_row": {
     "paper_id": "12137",
@@ -12,11 +12,12 @@
     "preferred_text_json_path": "data\\extraction_json\\text\\12137.json",
     "preferred_text_source": "full_text",
     "count_eligible": "true",
-    "likely_sps_case_count": "10",
+    "likely_sps_case_count": "1",
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
-    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=count_ambiguity | prediction_correct=true | reviewed_count=10 | reviewed_source_category=interventional_study | predicted_count=10 | predicted_source_category=interventional_study",
+    "count_original_cohort_provenance_uncertain": "false",
+    "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=count_ambiguity | prediction_correct=true | reviewed_count=1 | reviewed_source_category=interventional_study | predicted_count=10 | predicted_source_category=interventional_study | reviewer_notes=Only one current-paper SPS patient; cited Brown trial counts excluded.",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:53:04.387853+00:00"
   },
@@ -37,9 +38,9 @@
     "selection_signals": "count_non_high_confidence; count_basis=patient_label_count",
     "prediction_correct": true,
     "reviewed_source_category": "interventional_study",
-    "reviewed_extractable_sps_case_count": "10",
+    "reviewed_extractable_sps_case_count": "1",
     "pdf_content_alignment_tag": "appears_matched",
-    "reviewer_notes": "",
+    "reviewer_notes": "Only one current-paper SPS patient; cited Brown trial counts excluded.",
     "reviewer_id": "human_reviewer",
     "reviewed_at_utc": "2026-04-05T15:53:04.387853+00:00",
     "source_gold_master_path": "qa\\validation\\source_categorisation\\gold_standard\\04_categorisation_gold_standard.csv"
@@ -75,9 +76,9 @@
       "prediction_correct": "true",
       "review_status": "reviewed",
       "reviewed_source_category": "interventional_study",
-      "reviewed_extractable_sps_case_count": "10",
+      "reviewed_extractable_sps_case_count": "1",
       "pdf_content_alignment_tag": "appears_matched",
-      "reviewer_notes": "",
+      "reviewer_notes": "Only one current-paper SPS patient; cited Brown trial counts excluded.",
       "reviewer_id": "human_reviewer",
       "reviewed_at_utc": "2026-04-05T15:53:04.387853+00:00"
     },
@@ -139,14 +140,219 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\12137.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\12137.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\12137.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\12137.json",
+    "result_payload": {
+      "paper_id": "12137",
+      "count_row": {
+        "paper_id": "12137",
+        "covidence_id": "12137",
+        "title": "THERAPEUTIC TRIAL OF MILACEMIDE IN PATIENTS WITH MYOCLONUS AND OTHER INTRACTABLE MOVEMENT-DISORDERS",
+        "authors": "GORDON, MF; DIAZOLIVO, R; HUNT, AL; FAHN, S",
+        "source_category": "interventional_study",
+        "source_subtype": "controlled_or_therapeutic_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\12137.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "low",
+        "count_basis": "diagnosis_specific_list_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=explicit_sps_subgroup_conflict=1 vs 2 | The paper clearly includes 1 explicit stiff-person syndrome patient in its own 10-patient therapeutic cohort. However, the evidence pack also contains an upstream explicit SPS-spectrum subgroup signal of 2 that is not cleanly supported by the quoted text, and the full excerpt references another study with three stiff-person syndrome subjects, creating unresolved ambiguity about whether any second SPS-spectrum case belongs to this paper or to cited literature. Per the challenge instruction, this unresolved 1-vs-2 conflict requires manual review.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "diagnosis_specific_list_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\12137.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\12137.json",
+        "counted_at_utc": "2026-04-16T14:06:45.701640+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "12137",
+        "covidence_id": "12137",
+        "title": "THERAPEUTIC TRIAL OF MILACEMIDE IN PATIENTS WITH MYOCLONUS AND OTHER INTRACTABLE MOVEMENT-DISORDERS",
+        "authors": "GORDON, MF; DIAZOLIVO, R; HUNT, AL; FAHN, S",
+        "source_category": "interventional_study",
+        "source_subtype": "controlled_or_therapeutic_group_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\12137.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "low",
+        "count_basis": "diagnosis_specific_list_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=explicit_sps_subgroup_conflict=1 vs 2 | The paper clearly includes 1 explicit stiff-person syndrome patient in its own 10-patient therapeutic cohort. However, the evidence pack also contains an upstream explicit SPS-spectrum subgroup signal of 2 that is not cleanly supported by the quoted text, and the full excerpt references another study with three stiff-person syndrome subjects, creating unresolved ambiguity about whether any second SPS-spectrum case belongs to this paper or to cited literature. Per the challenge instruction, this unresolved 1-vs-2 conflict requires manual review.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "diagnosis_specific_list_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\12137.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\12137.json",
+        "counted_at_utc": "2026-04-16T14:06:45.701640+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\12137.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\12137.json"
+    },
+    "candidate_payload": {
+      "paper_id": "12137",
+      "covidence_id": "12137",
+      "title": "THERAPEUTIC TRIAL OF MILACEMIDE IN PATIENTS WITH MYOCLONUS AND OTHER INTRACTABLE MOVEMENT-DISORDERS",
+      "authors": "GORDON, MF; DIAZOLIVO, R; HUNT, AL; FAHN, S",
+      "source_category": "interventional_study",
+      "source_subtype": "controlled_or_therapeutic_group_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\12137.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\12137.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "12137_gordon1993.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "We performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with intractable movement disorders. Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome. Milacemide was initiated at a dose of 2,400 mg/day, orally, and increased gradually to a maximum of 4,800 mg/day. No clear-cut observable improvement occurred. There were no serious adverse effects.",
+      "early_body_text": "movement disorders vol. 8, no. 4, 1993, pp. 484-488. 0 1993 movement disorder society therapeutic trial of milacemide in patients with myoclonus and other intractable movement disorders mark forrest gordon, roland0 diaz-olivo, ann l. hunt, and stanley fahn department of neurology. the neurological institute, columbia-presbyterian medical center, new york, new york, u.s.a. summary: we performed a therapeutic trial with the glycine precursor, mila- cemide, on 10 patients with intractable movement disorders. six had myoclo- nus of various etiologies and one each had progressive supranuclear palsy, filipino x-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome. milacemide was initiated at a dose of 2,400 mg/day, orally, and increased gradually to a maximum of 4,800 mg/day. no clear-cut observable improvement occurred. there were no serious adverse effects. key words: milacemide-glycine-myoclonus-stiff-person syndrome-x-linked dystonia-progressive supranuclear palsy-cortical-basal ganglionic degener- ation-striatonigral degeneration. myoclonus refers to sudden, brief, shock-like in- voluntary movements caused by active muscle con- tractions (positive myoclonus) or by sudden, brief lapses of tonic contraction in active postural mus- cles (negative myoclonus) (1). current therapy for myoclonus is often not satisfactory. treatments may include clonazepam, valproic acid, primidone, and l-5-hydroxytryptophan (l-5-htp) with carbi- dopa (to prevent peripheral decarboxylation). in ad- dition, piracetam, fluoxetine, clomipramine, dopa- mine or dopamine agonists, opiates (codeine), tri- hexyphenidyl, carbamazepine, and tetrabenazine have occasionally been beneficial. specific thera- pies for the various types of myoclonus have not been delineated. epileptic and cortical myoclonus may respond best to anticonvulsants, such as clo- nazepam, valproic acid, and primidone. the brainstem and spinal cord inhibitory neuro- transmitter, glycine, has been implicated in the pathophysiology of myoclonus. stereotactic infu- sion of the glycine receptor antagonist, strychnine, into the medullary reticular formation induces gen- address correspondence and reprint requests to dr. s. fahn, neurological institute, 710 west 168th street, new york, ny 10032-3784, u.s.a. eralized stimulus-sensitive myoclonus in the rat (2). the glycine receptor is involved in urea-induced myoclonus (3). whole-brain and brainstem glycine levels are decreased in ddt-induced myoclonus in mice and rats (43). intraventricular glycine sup- presses ddt-induced myoclonus (6). animal models of myoclonus, implicating glycin- ergic dysfunction led truong and fahn (7) to try glycine in patients with myoclonus; however, gly- cine in doses up to 6 g/day was unsuccessful in the treatment of myoclonus. csf glycine levels did not change during treatment; this finding suggested that this dose did not effectively enter the brain. animal studies had previously shown that glycine does not easily cross the blood-brain barrier (8,9). milacemide (2-n-pentylaminoacetamide), rnanu- factured by searle, is a prodrug of glycine. milace- mide readily penetrates the blood-brain barrier; in the brain; it is metabolized by monoamine oxi- dase-b (mao-b) to glycineamide and then to gly- cine (10). in rats, systemic administration of mila- cemide blocks the myoclonus induced by ddt (1 1) as effectively as glycine infused into the ventricles (6). glycine levels in the brain increase with admin- istration of milacemide, but serine levels do not change. therefore, increasing brain glycine levels, 484 milacemide in myoclonus 485 either by systemic administration of milacemide or by intraventricular infusion of glycine, may be a mechanism to produce an antimyoclonic effect. it is not clear if milacemide, while preventing myoclo- nus in the ddt model, could also do so via seroto- nin neurotransmission since it inhibits mao-b ac- tivity (12-14). milacemide also increases y-ami- nobutyric acid (gaba) concentrations in the substantia nigra (10). milacemide has an acceptable safety profile in animals (10). in humans, milacemide has been eval- uated for safety in healthy volunteers. milacemide has been relatively well-tolerated in therapeutic tri- als conducted in patients with epilepsy (15). ad- verse effects may include vasomotor disorders (flushing), nausea and vomiting, palpitations, and elevations in hepatic transaminases (10). these ab- normalities generally return to normal following cessation of drug or reduction of dosage (10). since glycine, gaba, and the monoamines are major inhibitory neurotransmitters in the cns, mi- lacemide may be a potential agent in the therapy of myoclonus and other movement disorders. brown et al. (16), in an open-label trial of milacemide ti- trated to 2,400 mglday in seven subjects with my- oclonus and three with stiff-person syndrome, found no significant improvement. we report a trial of milacemide in nine patients with intracta",
+      "llm_evidence_text": "Title:\nTHERAPEUTIC TRIAL OF MILACEMIDE IN PATIENTS WITH MYOCLONUS AND OTHER INTRACTABLE MOVEMENT-DISORDERS\n\nMetadata abstract:\nWe performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with intractable movement disorders. Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome. Milacemide was initiated at a dose of 2,400 mg/day, orally, and increased gradually to a maximum of 4,800 mg/day. No clear-cut observable improvement occurred. There were no serious adverse effects.\n\nExplicit SPS-spectrum subgroup signals:\n- h myoclonus of various etiologies and four others with intractable movement disorders (one each with progressive supranuclear palsy, Filipino x-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome; Table 1). CASE REPORTS Case 1 A 40-year-old man with rhythmic segmental myoclonus of the right arm\n- dopa, 75 mg, and levodopa, 300 mglday . Case 9 A 68-year-old woman has a 17-year history of painful legs and moving toes. She is troubled by severe pain, which has been refractory to multiple therapies. Case 10 A 62-year-old woman with stiff-person syndrome has a 5-year history of progressive stiffness and intermittent muscle spasms in her lower back and \n\nPotential non-original or reused-cohort signals:\n- His clinical picture has been described previously\n- has been described previously (18,19).\n\nPreferred text count-salient snippets:\n- cemide, on 10 patients with intractable movement disorders.\n- als conducted in patients with epilepsy (15).\n- trated to 2,400 mglday in seven subjects with my-\n- of milacemide in nine patients with intractable\n- Ten subjects were enrolled: six with myoclonus\n- cantly in nine patients treated with milacemide.\n- Only one (case 6, with presumed cortical-basal gan-\n- Eight of the I0 subjects completed Phase I (the",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[1, 2]",
+        "explicit_sps_subgroup_count=2",
+        "non_original_case_signals=2",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_list_count",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 122,
+          "rationale": "basis=diagnosis_specific_list_count | confidence=high | source_category=interventional_study",
+          "evidence_text": "movement disorders vol. 8, no. 4, 1993, pp. 484-488. 0 1993 movement disorder society therapeutic trial of milacemide in patients with myoclonus and other intractable movement disorders mark forrest gordon, roland0 diaz-olivo, ann l. hunt, and stanley fahn department of neurology. the neurological institute, columbia-presbyterian medical center, new york, new york, u.s.a. summary: we performed a therapeutic trial with the glycine precursor, mila- cemide, on 10 patients with intractable movement disorders. six had myoclo- nus of various etiologies and one each had progressive supranuclear palsy, filipino x-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome. milacemide was initiated at a dose of 2,400 mg/day, orally, and increased gradually to a maximum of 4,800 mg/day. no clear-cut observable improvement occurred. there were no serious adverse effects. key words: milacemide-glycine-myoclonus-stiff-person syndrome-x-linked dystonia-progressive supranuclear palsy-cortical-basal ganglionic degener- ation-striatonigral degeneration. myoclonus refers to sudden, brief, shock-like in- voluntary movements caused by active muscle con- tractions (positi",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 2,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_patient_case_count",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 74,
+          "rationale": "basis=diagnosis_specific_patient_case_count | confidence=medium | source_category=interventional_study | heuristic_manual_review=true",
+          "evidence_text": "h myoclonus of various etiologies and four others with intractable movement disorders (one each with progressive supranuclear palsy, Filipino x-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome; Table 1). CASE REPORTS Case 1 A 40-year-old man with rhythmic segmental myoclonus of the right arm",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand02",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 2,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_patient_case_count",
+      "explicit_sps_subgroup_evidence": [
+        "h myoclonus of various etiologies and four others with intractable movement disorders (one each with progressive supranuclear palsy, Filipino x-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome; Table 1). CASE REPORTS Case 1 A 40-year-old man with rhythmic segmental myoclonus of the right arm",
+        "dopa, 75 mg, and levodopa, 300 mglday . Case 9 A 68-year-old woman has a 17-year history of painful legs and moving toes. She is troubled by severe pain, which has been refractory to multiple therapies. Case 10 A 62-year-old woman with stiff-person syndrome has a 5-year history of progressive stiffness and intermittent muscle spasms in her lower back and "
+      ],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "12137",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_manual_review_required",
+      "validator_flags": [],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "explicit_sps_subgroup_conflict=1 vs 2"
+      ],
+      "decision": {
+        "decision_type": "manual_review_required",
+        "selected_candidate_id": null,
+        "alternative_count": null,
+        "count_confidence": "low",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper clearly includes 1 explicit stiff-person syndrome patient in its own 10-patient therapeutic cohort. However, the evidence pack also contains an upstream explicit SPS-spectrum subgroup signal of 2 that is not cleanly supported by the quoted text, and the full excerpt references another study with three stiff-person syndrome subjects, creating unresolved ambiguity about whether any second SPS-spectrum case belongs to this paper or to cited literature. Per the challenge instruction, this unresolved 1-vs-2 conflict requires manual review.",
+        "evidence": [
+          {
+            "quote": "We performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with intractable movement disorders. Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome.",
+            "page": null,
+            "section": "abstract/summary",
+            "supports": "Supports at least 1 original SPS-spectrum patient in this paper's cohort."
+          },
+          {
+            "quote": "Case 10 A 62-year-old woman with stiff-person syndrome has a 5-year history of progressive stiffness and intermittent muscle spasms in her lower back and",
+            "page": null,
+            "section": "case reports",
+            "supports": "Supports a concrete original SPS-spectrum case within this paper."
+          },
+          {
+            "quote": "brown et al. (16), in an open-label trial of milacemide titrated to 2,400 mglday in seven subjects with myoclonus and three with stiff-person syndrome, found no significant improvement.",
+            "page": null,
+            "section": "introduction/background",
+            "supports": "Shows that additional stiff-person syndrome counts mentioned in the excerpt may refer to prior literature rather than this paper's original cohort, contributing to the unresolved 1 vs 2 conflict."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "12137",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "explicit_sps_subgroup_conflict=1 vs 2"
+      ],
+      "evidence": [
+        {
+          "quote": "We performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with intractable movement disorders. Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome.",
+          "page": null,
+          "section": "abstract/summary",
+          "supports": "Supports at least 1 original SPS-spectrum patient in this paper's cohort."
+        },
+        {
+          "quote": "Case 10 A 62-year-old woman with stiff-person syndrome has a 5-year history of progressive stiffness and intermittent muscle spasms in her lower back and",
+          "page": null,
+          "section": "case reports",
+          "supports": "Supports a concrete original SPS-spectrum case within this paper."
+        },
+        {
+          "quote": "brown et al. (16), in an open-label trial of milacemide titrated to 2,400 mglday in seven subjects with myoclonus and three with stiff-person syndrome, found no significant improvement.",
+          "page": null,
+          "section": "introduction/background",
+          "supports": "Shows that additional stiff-person syndrome counts mentioned in the excerpt may refer to prior literature rather than this paper's original cohort, contributing to the unresolved 1 vs 2 conflict."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\12137.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_challenges\\12137.json"
+    }
   }
 }

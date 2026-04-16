@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.369467+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.241380+00:00",
   "paper_id": "242",
   "count_row": {
     "paper_id": "242",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=count_ambiguity | prediction_correct=true | reviewed_count=1 | reviewed_source_category=interventional_study | predicted_count=1 | predicted_source_category=interventional_study",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:50:16.803957+00:00"
@@ -139,14 +140,213 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\242.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\242.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\242.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\242.json",
+    "result_payload": {
+      "paper_id": "242",
+      "count_row": {
+        "paper_id": "242",
+        "covidence_id": "242",
+        "title": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+        "authors": "Ruegg, Stephan J; Steck, Andreas J; Fuhr, Peter",
+        "source_category": "unclear_manual_review",
+        "source_subtype": "unclear",
+        "preferred_text_json_path": "data\\extraction_json\\text\\242.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-patient case report. The title explicitly says \"a patient with stiff-person syndrome,\" and the body presents one detailed case history of a 63-year-old woman diagnosed with SPS and followed longitudinally after treatment changes.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\242.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\242.json",
+        "counted_at_utc": "2026-04-16T14:08:58.456400+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "242",
+        "covidence_id": "242",
+        "title": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+        "authors": "Ruegg, Stephan J; Steck, Andreas J; Fuhr, Peter",
+        "source_category": "unclear_manual_review",
+        "source_subtype": "unclear",
+        "preferred_text_json_path": "data\\extraction_json\\text\\242.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-patient case report. The title explicitly says \"a patient with stiff-person syndrome,\" and the body presents one detailed case history of a 63-year-old woman diagnosed with SPS and followed longitudinally after treatment changes.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\242.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\242.json",
+        "counted_at_utc": "2026-04-16T14:08:58.456400+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\242.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\242.json"
+    },
+    "candidate_payload": {
+      "paper_id": "242",
+      "covidence_id": "242",
+      "title": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+      "authors": "Ruegg, Stephan J; Steck, Andreas J; Fuhr, Peter",
+      "source_category": "unclear_manual_review",
+      "source_subtype": "unclear",
+      "preferred_text_json_path": "data\\extraction_json\\text\\242.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\242.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "242_Ruegg-2004-Levetiracetam improves paroxysmal s.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "",
+      "early_body_text": "tution in his mother (b), and, in his grandfather, heterozygous g3a transition occurring in the sense strand (c) and c3t transition in the antisense strand (d). january (2 of 2) 2004 neurology 62 337 levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome stephan j. rüegg, md; andreas j. steck, md; and peter fuhr, md stiff-person syndrome (sps) is a disorder of the cns that leads to slowly increasing rigidity predominantly of the axial musculature and painful spasms in trunk and limb muscles. the spasms are often triggered by emotions such as fear and unexpected noises and may be aggravated by secondary phobias. 1,2 therapy focuses on the causal treatment of the autoimmune mechanisms by immu- nomodulatory agents and on symptomatic treatment enhancing gabaergic transmission. 3 whereas immunomodulation often shows only modest efficacy, enhancement of gabaergic transmis- sion results in significant improvement of axial rigidity, but may be associated with serious side effects. the following case illus- trates these therapeutic challenges and demonstrates the success- ful treatment of paroxysms with the new antiepileptic drug (aed) levetiracetam (lev). case report. a 63-year-old woman had experienced increasing musculoskeletal pain of the trunk starting 20 years previously. she became unable to relax her muscles and had attacks of gener- alized stiffness and respiratory arrest, which were triggered by emotion, especially startle. neurologic evaluations at this time showed marked stiffness and permanent activity of axial muscles. no pyramidal, extrapyramidal, or cerebellar tract signs were present. electromyography (emg) revealed continuous spontane- ous discharges of normal-appearing motor unit potentials. a diag- nosis of sps was made, and the patient was treated with diazepam and dantrolene. although the stiffness markedly improved, the paroxysms in- creased in frequency and severity over time. eventually, she was unable to leave her apartment, became dependent on her hus- band, and had several attacks with life-threatening hypoxemic respiratory arrests. her medical history included graves’ disease, but diabetes mellitus was absent. when hospitalized in our institution, she had marked lumbar hyperlordosis, with mild axial rigidity, brisk tendon reflexes, and flexor plantar responses. the most prominent signs were severe gait ataxia, sedation, and an excessive startle reaction. she also reported debilitating fatigue and severe phobia of dogs. her med- ication consisted of diazepam (30 mg/day), dantrolene (75 mg/day), carbimazole (15 mg/day), fluoxetine (20 mg/day), and pravastatin (20 mg/day). during emg, the patient completely relaxed her musculature while under medication. anti-glutamic acid decar- boxylase autoantibodies were markedly elevated in both serum (136 u/ml [normal /h110211.0 u/ml]) and csf (64.6 u/ml [normal /h110210.001 u/ml]); anti-amphiphysin autoantibodies were absent. csf protein and cell count were within normal limits, but three oligoclonal bands were present. mri of the whole neuraxis was unremarkable. because of the side effects, her medical therapy was changed by reducing the diazepam dosage, stopping dantrolene, and intro- ducing the gabaergic drug valproic acid (vpa; 900 mg/day). ad- ditionally, the patient received one course of iv immunoglobulins (ivig; 0.4 g/kg body wt/day for 5 days). the paroxysms dimin- ished, the muscle tone became normal, and ataxia, sedation, and fatigue improved. however, she showed marked bradykinesia, shuffling gait, and inclined posture when she was re-evaluated 6 months later. vpa-induced parkinsonism was suspected, and therapy was switched to lev (2,000 mg/day), which was well tolerated and proved even more effective than vpa. during 2 years of follow-up, the patient never experienced a paroxysm, was able to walk distances up to 3 miles without aids, and began to enjoy an independent social life. discussion. the most prominent and disabling signs and symptoms of sps are axial stiffness and superimposed painful spasms. symptomatic treatment enhances gabaergic transmis- sion with drugs like benzodiazepines, baclofen, and vpa. re- cently, the newer gabaergic aed tiagabine, vigabatrin, and gabapentin have been reported to reduce axial rigidity in patients with sps. 3 however, these drugs may lead to substantial side effects, especially during long-term use and after increasing the dose due to disease progression. in our patient, diazepam almost completely normalized the axial muscle tone, but at the expense of debilitating gait ataxia and sedation. additionally, the paroxys- mal spasms increased in frequency and intensity over time, irre- spective of increased doses of diazepam. lev is a new aed",
+      "llm_evidence_text": "Title:\nLevetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.\n\nPotential non-original or reused-cohort signals:\n- with changes previously reported in high-altitude cerebral edema\n- primers, as previously published.\n- Somatic mosaicism was previously reported in CMT1A disease\n\nPreferred text count-salient snippets:\n- Systemic thrombosis is well recognized in cancer patients\n- we report two patients receiving tamoxifen treatment who devel-\n- 5 years previously treated with quadrantectomy, axillary dissec-\n- 1 Our two patients presented\n- two patients with breast cancer receiving tamoxifen in the ab-\n- 3,4 In this article, we describe\n- improvement of some patients after IVIG therapy lasting up to 1\n- etate in three patients with MELAS.",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1]",
+        "non_original_case_signals=3",
+        "count_eligibility_status=uncertain"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=unclear_manual_review",
+          "evidence_text": "tution in his mother (b), and, in his grandfather, heterozygous g3a transition occurring in the sense strand (c) and c3t transition in the antisense strand (d). january (2 of 2) 2004 neurology 62 337 levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome stephan j. rüegg, md; andreas j. steck, md; and peter fuhr, md stiff-person syndrome (sps) is a disorder of the cns that leads to slowly increasing rigidity predominantly of the axial musculature and painful spasms in Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=unclear_manual_review",
+          "evidence_text": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome. tution in his mother (b), and, in his grandfather, heterozygous g3a transition occurring in the sense strand (c) and c3t transition in the antisense strand (d). january (2 of 2) 2004 neurology 62 337 levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome stephan j. rüegg, md; andreas j. steck, md; and peter fuhr, md stiff-person syndrome (sps) is a disorder of the cns that leads to slowly increasing rigidity predominantly of the axial musculature and painful spasms in",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "uncertain_source_category",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "242",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper is an original single-patient case report. The title explicitly says \"a patient with stiff-person syndrome,\" and the body presents one detailed case history of a 63-year-old woman diagnosed with SPS and followed longitudinally after treatment changes.",
+        "evidence": [
+          {
+            "quote": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+            "page": null,
+            "section": "title",
+            "supports": "The paper reports a single SPS patient."
+          },
+          {
+            "quote": "the following case illustrates these therapeutic challenges and demonstrates the successful treatment of paroxysms with the new antiepileptic drug (aed) levetiracetam (lev). case report. a 63-year-old woman had experienced increasing musculoskeletal pain of the trunk starting 20 years previously.",
+            "page": null,
+            "section": "case report",
+            "supports": "The article contains one original case report, identifying a single patient."
+          },
+          {
+            "quote": "a diagnosis of sps was made, and the patient was treated with diazepam and dantrolene.",
+            "page": null,
+            "section": "case report",
+            "supports": "Confirms the reported patient is an SPS-spectrum case."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "242",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Levetiracetam improves paroxysmal symptoms in a patient with stiff-person syndrome.",
+          "page": null,
+          "section": "title",
+          "supports": "The paper reports a single SPS patient."
+        },
+        {
+          "quote": "the following case illustrates these therapeutic challenges and demonstrates the successful treatment of paroxysms with the new antiepileptic drug (aed) levetiracetam (lev). case report. a 63-year-old woman had experienced increasing musculoskeletal pain of the trunk starting 20 years previously.",
+          "page": null,
+          "section": "case report",
+          "supports": "The article contains one original case report, identifying a single patient."
+        },
+        {
+          "quote": "a diagnosis of sps was made, and the patient was treated with diazepam and dantrolene.",
+          "page": null,
+          "section": "case report",
+          "supports": "Confirms the reported patient is an SPS-spectrum case."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\242.json",
+      "challenge_json_path": ""
+    }
   }
 }

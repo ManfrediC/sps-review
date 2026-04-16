@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.460495+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.462375+00:00",
   "paper_id": "629",
   "count_row": {
     "paper_id": "629",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=review_lab_edge | prediction_correct=false | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=0 | predicted_source_category=review_article",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:58:14.121024+00:00"
@@ -139,14 +140,196 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\629.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\629.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\629.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\629.json",
+    "result_payload": {
+      "paper_id": "629",
+      "count_row": {
+        "paper_id": "629",
+        "covidence_id": "629",
+        "title": "Anaesthesia for Stiff-Person Syndrome.",
+        "authors": "Haslam, N; Price, K",
+        "source_category": "unclear_manual_review",
+        "source_subtype": "unclear",
+        "preferred_text_json_path": "data\\extraction_json\\text\\629.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "low",
+        "count_basis": "no_reliable_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The provided full-text excerpt appears to be mismatched correspondence unrelated to stiff person syndrome, while the paper title suggests an SPS-focused article. Because the evidence pack contains no reliable extractable patient-count statement from the actual paper, a zero count cannot be supported safely and manual review is required.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "no_reliable_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\629.json",
+        "heuristic_candidate_count": "1",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\629.json",
+        "counted_at_utc": "2026-04-16T14:00:34.701454+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "629",
+        "covidence_id": "629",
+        "title": "Anaesthesia for Stiff-Person Syndrome.",
+        "authors": "Haslam, N; Price, K",
+        "source_category": "unclear_manual_review",
+        "source_subtype": "unclear",
+        "preferred_text_json_path": "data\\extraction_json\\text\\629.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "low",
+        "count_basis": "no_reliable_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The provided full-text excerpt appears to be mismatched correspondence unrelated to stiff person syndrome, while the paper title suggests an SPS-focused article. Because the evidence pack contains no reliable extractable patient-count statement from the actual paper, a zero count cannot be supported safely and manual review is required.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "no_reliable_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\629.json",
+        "heuristic_candidate_count": "1",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\629.json",
+        "counted_at_utc": "2026-04-16T14:00:34.701454+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\629.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\629.json"
+    },
+    "candidate_payload": {
+      "paper_id": "629",
+      "covidence_id": "629",
+      "title": "Anaesthesia for Stiff-Person Syndrome.",
+      "authors": "Haslam, N; Price, K",
+      "source_category": "unclear_manual_review",
+      "source_subtype": "unclear",
+      "preferred_text_json_path": "data\\extraction_json\\text\\629.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\629.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "629_Haslam-2002-Anaesthesia for Stiff-Person Syndr.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "",
+      "early_body_text": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation dr mcbrien et al. describe three interesting cases of electromechanical dissociation (emd) resistant to epineph- rine treatment (mcbrien et al. anaes- thesia 2001; 56: 1085–9). in these cases, an a adrenergic agonist (methoxamine) proved to be lifesaving. however, to ôconsider an a agonist for any case of cardiac arrest secondary to electro- mechanical dissociation which is unres- ponsive to epinephrine õ may not be appropriate. these cases involved a speciﬁc situation where the likely cause of hypotension was a fall in the systemic vascular resistance (svr). this occurred as a result of proven type 1 hypersensi- tivity in two cases and direct action of methylmethacrylate cement in the other. clearly in this case, an a agonist is a logical choice. the advanced life support guidelines are designed to cover a wide range of differing conditions for use by practitioners of differing experi- ence who may or may not be aware of the originating event. indeed, hypotension causing emd may be as a result of cardiac tamponade, tension pneumothorax or hypovolaemia. it is unlikely that the use of a agonists would be helpful in these situations. it would seem prudent to continue to use epinephrine as the ﬁrst line treatment for an emd cardiac arrest and to advise using ana agonist in cases of hypotension where reduced svr is suspected as the cause when epinephrine may not be effective in restoring the blood pressure. however, as methoxam- ine has now been withdrawn from clinical use, other a agonists such as metaraminol or phenylephrine may be more readily available. f . m. j. harban queen elizabeth hospital, birmingham b15 2th, uk reference 1 european resuscitation council guidelines 2000 for advanced life support. a statement from the advanced life support group and approved by the executive committee of the european resuscitation council. resuscitation 2001; 48: 211–21. outreach critical care services we read with interest the editorial:ôthe acute pain service: a model for outreach critical careõ (counsell. anaesthesia 2001; 56: 925–6). we would like to make a few observations regarding this. just as the publication of ôpain after surgeryõ led to the development of the acute pain service, the department of health has commissioned comprehensive critical care – a review of adult critical care services as a response to the audit commission’s report ôcritical to successõ. indeed, it is the ﬁrst time that there has been a review of critical care services in the uk. with the nhs being a monopoly, at least as far as critical care services in this country goes, we deﬁnitely need the government’s backing and blessing to make any meaningful progress in this ﬁeld. in this regard the ôheavy biasõ of nhs execu- tives is welcome, especially if it means that there would be more money for the service and a commitment to the im- provement of the services to the pa- tients. there is no pleasure without pain – so we suppose that we cannot ignore that comprehensive critical care is a package that comes with a number of recommendations and ôoutreach crit- ical careõ is one small aspect of it. the service is to be developed with the following three essential objectives: to avert admissions, to enable discharges and to share critical care skills; we feel that the latter is the most important aspect of the package. we are not sure how the acute pain team evolved, but it was probably similar to how the intensive care services evolved in this country, i.e. based on historic legacy and ad hoc development, led by a few anaesthetists who were interested. as advanced level trainees, we have been to local and regional meetings for the introduction of the outreach servi- ces as a part of our management train- ing. we are convinced that the experiences of the acute pain services have been considered in the planning of the ôoutreach servicesõ. the main pit- falls previously or still being experi- enced with the acute pain services are being avoided. in this aspect there is a push to educate the ward staff and junior doctors about management of ill all correspondence should be addressed to professor m. harmer, editor of anaesthesia, department of anaesthetics, university of wales college of medicine, health park, cardiff cf14 4xn uk. letters (two copies) must be typewritten on one side of the paper only and double spaced with wide margins. in addition, please include your letter as a word for windows or .rtf document on disk or alternatively submit as an e-mail attachment addressed to harmerm@cf.ac.uk copy should be prepared in the usual style and format of the correspondence section. authors must follow the advice about references and other matters contained in the notice to contributors toanaesthesia printed at the back of each issue. the degree and diploma of each author must be given in a covering letter personally signed by all the author",
+      "llm_evidence_text": "Title:\nAnaesthesia for Stiff-Person Syndrome.\n\nPreferred text count-salient snippets:\n- tivity in two cases and direct action of\n- 10 years to include support for patients\n- All patients were starved for 6 h\n- cases with a median volume of 22 ml and\n- might occur in up to 360 patients per year\n- in UK practice [4].If elective cases may\n- three cases in which regurgitated matter\n- laryngeal mask is 1 in 11 000 cases, as has",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "distinct_candidate_counts=[0]",
+        "count_eligibility_status=uncertain"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 65,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=unclear_manual_review",
+          "evidence_text": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation dr mcbrien et al. describe three interesting cases of electromechanical dissociation (emd) resistant to epineph- rine treatment (mcbrien et al. anaes- thesia 2001; 56: 1085–9). in these cases, an a adrenergic agonist (methoxamine) proved to be lifesaving. however, to ôconsider an a agonist for any case of cardiac arrest secondary to electro- mechanical dissociation which is unres- ponsi Anaesthesia for Stiff-Person Syndrome.",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "uncertain_source_category",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "629",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_manual_review_required",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "manual_review_required",
+        "selected_candidate_id": null,
+        "alternative_count": null,
+        "count_confidence": "low",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The provided full-text excerpt appears to be mismatched correspondence unrelated to stiff person syndrome, while the paper title suggests an SPS-focused article. Because the evidence pack contains no reliable extractable patient-count statement from the actual paper, a zero count cannot be supported safely and manual review is required.",
+        "evidence": [
+          {
+            "quote": "title: Anaesthesia for Stiff-Person Syndrome.",
+            "page": null,
+            "section": "Title",
+            "supports": "Indicates the target paper is about SPS, so an automatic zero based on absent signals is unsafe."
+          },
+          {
+            "quote": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation ... describe three interesting cases of electromechanical dissociation",
+            "page": null,
+            "section": "Preferred text excerpt",
+            "supports": "Shows the supplied excerpt is about unrelated EMD correspondence rather than clearly the SPS paper, so the count cannot be resolved from this text."
+          },
+          {
+            "quote": "candidate_kind: forced_zero ... count_basis: no_reliable_count_signal ... source_category=unclear_manual_review",
+            "page": null,
+            "section": "Heuristic package",
+            "supports": "The only candidate is a heuristic forced zero based on missing reliable count evidence, not on explicit paper text."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "629",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "title: Anaesthesia for Stiff-Person Syndrome.",
+          "page": null,
+          "section": "Title",
+          "supports": "Indicates the target paper is about SPS, so an automatic zero based on absent signals is unsafe."
+        },
+        {
+          "quote": "correspondence use of methoxamine in the resuscitation of epinephrine resistant electromechanical dissociation ... describe three interesting cases of electromechanical dissociation",
+          "page": null,
+          "section": "Preferred text excerpt",
+          "supports": "Shows the supplied excerpt is about unrelated EMD correspondence rather than clearly the SPS paper, so the count cannot be resolved from this text."
+        },
+        {
+          "quote": "candidate_kind: forced_zero ... count_basis: no_reliable_count_signal ... source_category=unclear_manual_review",
+          "page": null,
+          "section": "Heuristic package",
+          "supports": "The only candidate is a heuristic forced zero based on missing reliable count evidence, not on explicit paper text."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\629.json",
+      "challenge_json_path": ""
+    }
   }
 }

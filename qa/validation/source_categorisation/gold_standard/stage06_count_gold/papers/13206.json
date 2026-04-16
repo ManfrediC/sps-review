@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.872965+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.960514+00:00",
   "paper_id": "13206",
   "count_row": {
     "paper_id": "13206",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=review_lab_edge | prediction_correct=true | reviewed_count=4 | reviewed_source_category=lab_heavy_clinical_or_translational | predicted_count=4 | predicted_source_category=lab_heavy_clinical_or_translational",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T18:49:12.216684+00:00"
@@ -139,14 +140,231 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\13206.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\13206.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\13206.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\13206.json",
+    "result_payload": {
+      "paper_id": "13206",
+      "count_row": {
+        "paper_id": "13206",
+        "covidence_id": "13206",
+        "title": "GAD AUTOANTIBODIES IN IDDM, STIFF-MAN SYNDROME, AND AUTOIMMUNE POLYENDOCRINE SYNDROME TYPE-I RECOGNIZE DIFFERENT EPITOPES",
+        "authors": "BJORK, E; VELLOSO, LA; KAMPE, O; KARLSSON, FA",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\13206.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "4",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=high | challenge_reasons=explicit_sps_subgroup_conflict=4 vs 7 | llm_selected_candidate_id=cand01 | The paper explicitly studies three diagnostic groups and only one is SPS-spectrum: 4 patients with stiff-man syndrome (an older term for SPS). The conflicting subgroup signal of 7 is unsupported because the quoted sentence clearly assigns 7 to IDDM, not SPS/SMS.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "4",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\13206.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "4",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\13206.json",
+        "counted_at_utc": "2026-04-16T13:52:51.209267+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "13206",
+        "covidence_id": "13206",
+        "title": "GAD AUTOANTIBODIES IN IDDM, STIFF-MAN SYNDROME, AND AUTOIMMUNE POLYENDOCRINE SYNDROME TYPE-I RECOGNIZE DIFFERENT EPITOPES",
+        "authors": "BJORK, E; VELLOSO, LA; KAMPE, O; KARLSSON, FA",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\13206.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "4",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=high | challenge_reasons=explicit_sps_subgroup_conflict=4 vs 7 | llm_selected_candidate_id=cand01 | The paper explicitly studies three diagnostic groups and only one is SPS-spectrum: 4 patients with stiff-man syndrome (an older term for SPS). The conflicting subgroup signal of 7 is unsupported because the quoted sentence clearly assigns 7 to IDDM, not SPS/SMS.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "4",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\13206.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "4",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\13206.json",
+        "counted_at_utc": "2026-04-16T13:52:51.209267+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\13206.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\13206.json"
+    },
+    "candidate_payload": {
+      "paper_id": "13206",
+      "covidence_id": "13206",
+      "title": "GAD AUTOANTIBODIES IN IDDM, STIFF-MAN SYNDROME, AND AUTOIMMUNE POLYENDOCRINE SYNDROME TYPE-I RECOGNIZE DIFFERENT EPITOPES",
+      "authors": "BJORK, E; VELLOSO, LA; KAMPE, O; KARLSSON, FA",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\13206.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\13206.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "13206_Bjork-1994-GAD AUTOANTIBODIES IN IDDM, STIFF-M.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Glutamic acid decarboxylase (GAD) is a major islet cell autoantigen in insulin-dependent diabetes mellitus (IDDM), and autoantibodies are found in high frequencies in patients with recent-onset IDDM, stiff-man syndrome (SMS), and autoimmune polyendocrine syndrome type I (APS I). Antigens in autoimmune disorders are often enzymes, and autoantibody binding frequently inhibit their activity. In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I. All sera immunoprecipitated GAD from [S-35]methionine-labeled rat islet lysates and the sera from patients with SMS and APS I, but none of the IDDM patients' sera, identified the GAD protein in Western blots. Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD. When the various sera were tested with the GAD(65) and GAD(67) isoforms, produced separately by transient expression in COS cells, the enzymatic activity of GAD(65) was inhibited by sera from patients with SMS and APS I, whereas no effect on the GAD(67) activity was observed. Taken together, the results demonstrate that the GAD autoantibodies in these three disorders display marked differences in epitope recognition and indicate that, during the development of the diseases, the autoantigen is being presented to the immune system through separate pathogenetic mechanisms.",
+      "early_body_text": "rapid publication gad autoantibodies in iddm, stiff-man syndrome, and autoimmune polyendocrine syndrome type i recognize different epitopes elisabeth bjork, licio a. velloso, olle kampe, and f. anders karlsson glutamic acid decarboxylase (gad) is a major islet cell autoantigen in insulin-dependent diabetes mellitus (iddm), and autoantibodies are found in high frequencies in patients with recent-onset iddm, stiff-man syndrome (sms), and autoimmune polyendocrine syndrome type i (aps i). antigens in autoimmune disorders are often enzymes, and autoantibody binding frequently inhibit their activity. in this study, we examined the reactivity of anti-gad-containing sera from 7 patients with iddm, 4 patients with sms, and 5 patients with aps i. all sera immunoprecipitated gad from [ 35s]methionine-labeled rat islet lysates and the sera from patients with sms and aps i, but none of the iddm patients' sera, identified the gad protein in western blots. two of four sms patients' sera and 5 of 5 aps i patients' sera, in contrast to 0 of 7 iddm patients' sera, inhibited the enzymatic activity of gad. when the various sera were tested with the gad 65 and gad 67 isoforms, produced separately by transient expression in cos cells, the enzymatic activity of gad 65 was inhibited by sera from patients with sms and aps i, whereas no effect on the gad 67 activity was observed. taken together, the results demonstrate that the gad autoantibodies in these three disorders display marked differences in epitope recognition and indicate that, during the development of the diseases, the autoantigen is being presented to the immune system through separate pathogenetic mechanisms. diabetes 43:161-65,1994 from the department of internal medicine, university hospital, uppsala, sweden. address correspondence and reprint requests to dr. elisabeth bjork, department of internal medicine, university hospital, s-751 85 uppsala, sweden. received for publication 29 june 1993 and accepted in revised form 26 august 1993. gad, glutamic acid decarboxylase; iddm, insulin-dependent diabetes mellitus; gaba, 7-aminobutyric acid; plp, pyridoxal phosphate; sms, stiff- man syndrome; aps i, autoimmune polyendocrine syndrome type i; ica, islet cell antibody; sds, sodium dodecyl sulfate; mhc, major histocompatability complex. g lutamic acid decarboxylase (gad) is the bio- synthesizing enzyme of the inhibitory neuro- transmitter 7-aminobutyric acid (gaba). the enzyme is expressed in gaba-producing neurons and in several extraneuronal tissues including the pancreatic p-cells (1). two isoforms of gad, gad65 and gad 67, derived from two genes, differ in their binding of the cofactor pyridoxal phosphate (plp) and their subcellular neuronal localization (2). gad65 is the only isoform detectable in normal human islets (3), and the autoantibodies in autoimmune diabetes are pre- dominantly produced against this isoform (4). the obser- vations that stiff-man syndrome (sms) and insulin- dependent diabetes mellitus (iddm) are frequently asso- ciated with each other and that sera from patients with sms often contain autoantibodies against gad (5) pro- vided the basis for the important identification of an iddm-related autoantigen as the enzyme gad (6). in sms, antibodies against gad have been demonstrated by western blots and by immunocytochemical staining with the use of fixed or unfixed tissues. in contrast, the antibodies against gad present in sera from iddm patients are demonstrated with immunoprecipitation techniques and fail to detect the gad antigen in western blots or fixed tissue sections (6). antibodies against gad also are present at high titers in patients with autoimmune polyendocrine syndrome type i (aps i) (7), a rare disorder with an autosomal recessive inheritance (8). in this syndrome, mucocutane- ous candidiasis, hypoparathyroidism, and adrenal failure are common features and appear in early childhood, whereas other components, like iddm, gastric parietal cell failure, and hypothyroidism may develop later in a smaller fraction of the cases (9). in autoimmune disorders, enzymes are often autoanti- gens (10), and autoantibodies frequently inhibit their activity, whereas antibodies produced by immunization diabetes, vol. 43, january 1994 161 downloaded from http://diabetesjournals.org/diabetes/article-pdf/43/1/161/360269/43-1-161.pdf by guest on 07 january 2024 different gad epitopes of experimental animals rarely affect the enzymatic func- tions (11), illustrating that the route of immunization influences the selection of antibody-producing lympho- cytes. in this study, we examined the autoantibodies against gad found in patients with iddm, sms, or aps i with respect to their ability to bind to the gad protein and affect its enzymatic activity. research design and methods characterization of patient sera. sera from 7 patients with newly diagnosed iddm (1 man and 6 women, 17-79 years of age); 4 patients with sms (1 man and 3 women, 31-50 years of age), one of",
+      "llm_evidence_text": "Title:\nGAD AUTOANTIBODIES IN IDDM, STIFF-MAN SYNDROME, AND AUTOIMMUNE POLYENDOCRINE SYNDROME TYPE-I RECOGNIZE DIFFERENT EPITOPES\n\nMetadata abstract:\nGlutamic acid decarboxylase (GAD) is a major islet cell autoantigen in insulin-dependent diabetes mellitus (IDDM), and autoantibodies are found in high frequencies in patients with recent-onset IDDM, stiff-man syndrome (SMS), and autoimmune polyendocrine syndrome type I (APS I). Antigens in autoimmune disorders are often enzymes, and autoantibody binding frequently inhibit their activity. In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I. All sera immunoprecipitated GAD from [S-35]methionine-labeled rat islet lysates and the sera from patients with SMS and APS I, but none of the IDDM patients' sera, identified the GAD protein in Western blots. Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD. When the various sera were tested with the GAD(65) and GAD(67) isoforms, produced separately by transient expression in COS cells, the enzymatic activity of GAD(65) was inhibited by sera from patients with SMS and APS I, whereas no effect on the GAD(67) activity was observed. Taken together, the results demonstrate that the GAD autoantibodies in these three disorders display marked differences in epitope recognition and indicate that, during the development of the diseases, the autoantigen is being presented to the immune system through separate pathogenetic mechanisms.\n\nExplicit SPS-spectrum subgroup signals:\n- In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.\n\nPotential non-original or reused-cohort signals:\n- antibodies using a method described previously (4).\n- described previously (4).\n\nPreferred text count-salient snippets:\n- anti-GAD-containing sera from 7 patients with IDDM,\n- 4 patients with SMS, and 5 patients with APS I.\n- four SMS patients' sera and 5 of 5 APS I patients' sera,\n- years of age); 4 patients with SMS (1 man and 3 women,\n- years before the development of SMS; 5 patients with\n- other hand, two of four sera from patients with SMS\n- One of the patients with SMS had IDDM for 20 years\n- observed in three of four sera from patients with SMS but",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[0, 4, 7]",
+        "explicit_sps_subgroup_count=7",
+        "non_original_case_signals=2",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 4,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=abstract_count_signal | confidence=high | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Glutamic acid decarboxylase (GAD) is a major islet cell autoantigen in insulin-dependent diabetes mellitus (IDDM), and autoantibodies are found in high frequencies in patients with recent-onset IDDM, stiff-man syndrome (SMS), and autoimmune polyendocrine syndrome type I (APS I). Antigens in autoimmune disorders are often enzymes, and autoantibody binding frequently inhibit their activity. In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I. All sera immunoprecipitated GAD from [S-35]methionine-labeled rat islet lysates and the sera from patients with SMS and APS I, but none of the IDDM patients' sera, identified the GAD protein in Western blots. Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD. When t",
+          "evidence_section": "abstract",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 7,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_direct_cohort_count",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 102,
+          "rationale": "basis=diagnosis_specific_direct_cohort_count | confidence=high | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 55,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Glutamic acid decarboxylase (GAD) is a major islet cell autoantigen in insulin-dependent diabetes mellitus (IDDM), and autoantibodies are found in high frequencies in patients with recent-onset IDDM, stiff-man syndrome (SMS), and autoimmune polyendocrine syndrome type I (APS I). Antigens in autoimmune disorders are often enzymes, and autoantibody binding frequently inhibit their activity. In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I. All sera immunoprecipitated GAD from [S-35]methionine-labeled rat islet lysates and the sera from patients with SMS and APS I, but none of the IDDM patients' sera, identified the GAD protein in Western blots. Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD. When the various sera were tested with the GAD(65) and GAD(67) isoforms, produced separately by transient expression in COS cells, the enzymatic activity of GAD(65) was inhibited by sera from patients with SMS and APS I, whereas no effect on the GAD(67) activity was observed. Taken together, the results d",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand02",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 7,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_direct_cohort_count",
+      "explicit_sps_subgroup_evidence": [
+        "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I."
+      ],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "13206",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "explicit_sps_subgroup_conflict=4 vs 7"
+      ],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly studies three diagnostic groups and only one is SPS-spectrum: 4 patients with stiff-man syndrome (an older term for SPS). The conflicting subgroup signal of 7 is unsupported because the quoted sentence clearly assigns 7 to IDDM, not SPS/SMS.",
+        "evidence": [
+          {
+            "quote": "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.",
+            "page": 1,
+            "section": "abstract / opening paragraph",
+            "supports": "Direct diagnosis-specific cohort count showing the SPS-spectrum subgroup is 4 SMS patients, not 7."
+          },
+          {
+            "quote": "sera from 7 patients with newly diagnosed IDDM (1 man and 6 women, 17-79 years of age); 4 patients with SMS (1 man and 3 women, 31-50 years of age)",
+            "page": 1,
+            "section": "Research Design and Methods - Characterization of patient sera",
+            "supports": "Methods section confirms there were 4 unique SMS patients in the study cohort."
+          },
+          {
+            "quote": "Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD.",
+            "page": 1,
+            "section": "abstract / results",
+            "supports": "Result denominators consistently use 4 as the SMS cohort size, reinforcing that the extractable SPS-spectrum count is 4."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "13206",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "explicit_sps_subgroup_conflict=4 vs 7"
+      ],
+      "evidence": [
+        {
+          "quote": "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.",
+          "page": 1,
+          "section": "abstract / opening paragraph",
+          "supports": "Direct diagnosis-specific cohort count showing the SPS-spectrum subgroup is 4 SMS patients, not 7."
+        },
+        {
+          "quote": "sera from 7 patients with newly diagnosed IDDM (1 man and 6 women, 17-79 years of age); 4 patients with SMS (1 man and 3 women, 31-50 years of age)",
+          "page": 1,
+          "section": "Research Design and Methods - Characterization of patient sera",
+          "supports": "Methods section confirms there were 4 unique SMS patients in the study cohort."
+        },
+        {
+          "quote": "Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD.",
+          "page": 1,
+          "section": "abstract / results",
+          "supports": "Result denominators consistently use 4 as the SMS cohort size, reinforcing that the extractable SPS-spectrum count is 4."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\13206.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\13206.json"
+    }
   }
 }

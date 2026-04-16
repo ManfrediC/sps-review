@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.345066+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.196619+00:00",
   "paper_id": "187",
   "count_row": {
     "paper_id": "187",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=conference_edge | prediction_correct=true | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=1 | predicted_source_category=single_case_report",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T18:44:38.739991+00:00"
@@ -139,14 +140,213 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\187.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\187.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\187.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\187.json",
+    "result_payload": {
+      "paper_id": "187",
+      "count_row": {
+        "paper_id": "187",
+        "covidence_id": "187",
+        "title": "Long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin.",
+        "authors": "Khanlou, H; Eiger, G",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\187.json",
+        "preferred_text_source": "trimmed",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is a single-patient case report of stiff-man syndrome/stiff-person syndrome. The abstract and body both explicitly state that the authors report one case, and the case description concerns a single 43-year-old man.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\187.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\187.json",
+        "counted_at_utc": "2026-04-16T13:55:18.007903+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "187",
+        "covidence_id": "187",
+        "title": "Long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin.",
+        "authors": "Khanlou, H; Eiger, G",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\187.json",
+        "preferred_text_source": "trimmed",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is a single-patient case report of stiff-man syndrome/stiff-person syndrome. The abstract and body both explicitly state that the authors report one case, and the case description concerns a single 43-year-old man.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\187.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\187.json",
+        "counted_at_utc": "2026-04-16T13:55:18.007903+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\187.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\187.json"
+    },
+    "candidate_payload": {
+      "paper_id": "187",
+      "covidence_id": "187",
+      "title": "Long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin.",
+      "authors": "Khanlou, H; Eiger, G",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\187.json",
+      "preferred_text_source": "trimmed",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\187.json",
+        "preferred_text_source": "trimmed",
+        "source_filename": "187_Khanlou Long-term Remission of Refractory Stiff-Man Syndrome After Treatment With Intravenous Immunoglobulin.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": "data\\extraction_json\\text\\187.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "The stiff-man syndrome is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and intermittent spasm of axial and extremity muscles. Its etiology is unknown. Different therapeutic regimens have been used with variable success. We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg). This case gives evidence that IVIg can be a safe and an efficient treatment of refractory stiff-man syndrome. The exact indication for and the cost-effectiveness of IVIg in the treatment of this rare entity remain to be determined.",
+      "early_body_text": "long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin homa youn khanlou, md, and glenn eiger, md the stiff-man syndrome is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and inter­ mittent spasm of axial and extremity muscles. its etiology is unknown. different therapeutic regimens have been used with variable success. we present a case of refractory stiff-man syndrome, in which the symptoms were success­ fully controlled by the administration of intravenous im­ munoglobulin (ivig). this case gives evidence that ivig can be a safe and an efficient treatment of refractory stiff- t he stiff-man syndrome (sms) or stiff-person syn­ drome, originally described by moersch and wolt­ man,i is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and intermittent spasm of axial and extremity muscles. the etiology of sms is un­ known, but new evidence suggests a possible autoimmune basis.i\" up to 60% of patients with sms may be sero­ positive for anti-glutamic acid decarboxylase (gad) anti­ bodies, an enzyme regulating the synthesis of y-amino­ butyric acid (gaba).4.5diagnostic criteria for sms have been extensively reviewed by lorish et a1.6however, many patients do not show the classic axial distribution of stiff­ ness. recently, brown et al? and barker et al\" reported a small series of patients with the stiff-limb syndrome in whom the rigidity and spasms were confined to the distal limbs, mainly legs, and were associated with sphincter or brain stem involvement. it was suggested that these pa­ tients represented a distinct syndrome, probably caused by a chronic spinal interneuritis.\" various therapeutic regimens, including diazepam, clonazepam, baclofen, corticosteroids, and plasmapheresis or intravenous immunoglobulin (tvlg), have been tried with variable success.s\"\" we report a case of a patient who presented with the diagnosis of sms, whose symptoms were successfully controlled by the administration of ivig. from the department of medicine, albert einstein medical center, philadelphia, pa. this report is dedicated to the memory of our mentor, dr mark faynberg. individual reprints of this article are not available. address corre­ spondence to glenn eiger, md, department of medicine, klein 3, albert einstein medical center, 5501 old york rd, philadelphia, pa 19141. mayo clin proc. 1999;74:1231-1232 1231 man syndrome. the exact indication for and the cost­ effectiveness of ivig in the treatment of this rare entity remain to be determined. mayo clin proc. 1999;74:1231-1232 gaba = y-aminobutyric acid; gad = glutamic acid decar­ boxylase; ivlg = intravenous immunoglobulin; sms = stiff­ man syndrome report of a case a 43-year-old man presented in 1997 with a 9-year history of frequent spasms affecting both legs and neck. he had on 1 occasion been prescribed diazepam, which he did not take. he noticed that sudden auditory (such as telephone rings) or emotional stimuli (such as anger, fear) exagger­ ated these spasms. these episodes were absent during sleep. several other visits to multiple physicians did not alleviate his symptoms despite prescriptions of drugs such as aspirin, ibuprofen, and quinine. continuous back rigidity and stiffness, progressive development of back deformity, and difficulty in ambulation secondary to the rigidity and intermittent severe spasms of his thighs prompted this medical visit. findings on his physical examination were normal ex­ cept for an exaggerated lordosis with tense contracture of his prominent paraspinal muscles. magnetic resonance im­ aging of the head and spinal cord was normal. his complete blood cell count, erythrocyte sedimentation rate, and serum glucose, triiodothyronine, thyroxine, thyroid-stimulating hormone, and cortisol levels were within normal limits. an electromyogram revealed the presence of persistent motor unit potentials in both agonist and antagonist muscles de­ spite the patient's intention to relax, consistent with the diagnosis of sms.6 furthermore, a serum anti-gad anti­ body assay was positive. the patient was started on diazepam with gradual increment up to 40 mg/d but had only mild improvement of the symptoms. baclofen, 10 mg 3 times a day, was added to the regimen without clinical benefit. four months later with persistent symptoms and lack of response to diazepam and baclofen, the patient was hospitalized and was treated with 0.4 g/kg of ivig for 5 days, followed by 2 additional injections at a l-week inter- , © 1999 mayo foundation for medical education and research for personal use. mass reproduce only with permission from mayo clinic proceedings. 1232 stitt-man syndrome and ivig val. one week after the first course of ivig, the patient no longer complained of muscle spasms or stiffness. complete resolution of rigidity and spasms followed the second and third doses of ivig. he remains free of such symptoms after 2 years of follow-up. discussion t",
+      "llm_evidence_text": "Title:\nLong-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin.\n\nMetadata abstract:\nThe stiff-man syndrome is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and intermittent spasm of axial and extremity muscles. Its etiology is unknown. Different therapeutic regimens have been used with variable success. We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg). This case gives evidence that IVIg can be a safe and an efficient treatment of refractory stiff-man syndrome. The exact indication for and the cost-effectiveness of IVIg in the treatment of this rare entity remain to be determined.\n\nPreferred text count-salient snippets:\n- basis.i\" Up to 60% of patients with SMS may be sero­\n- patients do not show the classic axial distribution of stiff­\n- small series of patients with the stiff-limb syndrome in\n- with variable success.s\"\" We report a case of a patient who\n- 15% to 30% of these patients have clinical evidence of\n- myasthenia gravis.v\" About two thirds of patients have\n- patients with type 1 diabetes mellitus have anti-GAD anti­\n- patients diagnosed as having SMS who fail to respond to",
+      "candidate_generation_notes": [
+        "preferred_text_source=trimmed",
+        "body_only_candidate_added",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=single_case_report",
+          "evidence_text": "The stiff-man syndrome is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and intermittent spasm of axial and extremity muscles. Its etiology is unknown. Different therapeutic regimens have been used with variable success. We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg). This case gives evidence that IVIg can be a safe and an efficient treatment of refractory stiff-man syndrome. The exact indication for and the cost-effectiveness of IVIg in the treatment of this rare entity remain to be determined.",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin. The stiff-man syndrome is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and intermittent spasm of axial and extremity muscles. Its etiology is unknown. Different therapeutic regimens have been used with variable success. We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg). This case gives evidence that IVIg can be a safe and an efficient treatment of refractory stiff-man syndrome. The exact indication for and the cost-effectiveness of IVIg in the treatment of this rare entity remain to be determined. long-term remission of refractory stiff-man syndrome after treatment with intravenous immunoglobulin homa youn khanlou, md, and glenn eiger, md the stiff-man syndrome is a rare neuromuscular disorder characterized by progressive rigidity, stiffness, and inter­ mittent spasm of axial and extremity muscles. its etiology is unknown. different therapeutic regimens have been used with variable success. we present a case of refractory stiff-man syndr",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "preferred_candidate_non_high_confidence",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "187",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "This paper is a single-patient case report of stiff-man syndrome/stiff-person syndrome. The abstract and body both explicitly state that the authors report one case, and the case description concerns a single 43-year-old man.",
+        "evidence": [
+          {
+            "quote": "We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg).",
+            "page": null,
+            "section": "abstract",
+            "supports": "Explicitly identifies the paper as reporting one SPS-spectrum case."
+          },
+          {
+            "quote": "we report a case of a patient who presented with the diagnosis of sms, whose symptoms were successfully controlled by the administration of ivig.",
+            "page": 1,
+            "section": "report of a case / introduction",
+            "supports": "Confirms a single original patient with stiff-man syndrome (SPS-spectrum)."
+          },
+          {
+            "quote": "a 43-year-old man presented in 1997 with a 9-year history of frequent spasms affecting both legs and neck.",
+            "page": 1,
+            "section": "report of a case",
+            "supports": "Provides the individual case description, indicating one unique patient."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "187",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg).",
+          "page": null,
+          "section": "abstract",
+          "supports": "Explicitly identifies the paper as reporting one SPS-spectrum case."
+        },
+        {
+          "quote": "we report a case of a patient who presented with the diagnosis of sms, whose symptoms were successfully controlled by the administration of ivig.",
+          "page": 1,
+          "section": "report of a case / introduction",
+          "supports": "Confirms a single original patient with stiff-man syndrome (SPS-spectrum)."
+        },
+        {
+          "quote": "a 43-year-old man presented in 1997 with a 9-year history of frequent spasms affecting both legs and neck.",
+          "page": 1,
+          "section": "report of a case",
+          "supports": "Provides the individual case description, indicating one unique patient."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\187.json",
+      "challenge_json_path": ""
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.482522+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.526521+00:00",
   "paper_id": "642",
   "count_row": {
     "paper_id": "642",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=5 | reviewed_source_category=lab_heavy_clinical_or_translational | predicted_count=5 | predicted_source_category=lab_heavy_clinical_or_translational",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T18:43:09.881409+00:00"
@@ -139,14 +140,219 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\642.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\642.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\642.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\642.json",
+    "result_payload": {
+      "paper_id": "642",
+      "count_row": {
+        "paper_id": "642",
+        "covidence_id": "642",
+        "title": "Increased brainstem excitability in stiff-person syndrome.",
+        "authors": "Molloy, F M; Dalakas, M C; Floeter, Mary Kay",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\642.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "5",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The full text explicitly describes a study cohort of five patients with a history of SPS who fulfilled clinical diagnostic criteria for SPS. This is a direct original SPS-spectrum cohort count, so candidate 5 is best supported.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "5",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\642.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "5",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\642.json",
+        "counted_at_utc": "2026-04-16T14:12:23.580706+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "642",
+        "covidence_id": "642",
+        "title": "Increased brainstem excitability in stiff-person syndrome.",
+        "authors": "Molloy, F M; Dalakas, M C; Floeter, Mary Kay",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\642.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "5",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The full text explicitly describes a study cohort of five patients with a history of SPS who fulfilled clinical diagnostic criteria for SPS. This is a direct original SPS-spectrum cohort count, so candidate 5 is best supported.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "5",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\642.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "5",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\642.json",
+        "counted_at_utc": "2026-04-16T14:12:23.580706+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\642.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\642.json"
+    },
+    "candidate_payload": {
+      "paper_id": "642",
+      "covidence_id": "642",
+      "title": "Increased brainstem excitability in stiff-person syndrome.",
+      "authors": "Molloy, F M; Dalakas, M C; Floeter, Mary Kay",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\642.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\642.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "642_Molloy - Increased brainstem excitability in stiff-person syndrome..pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circuits in SPS. Hyperexcitability may result from abnormal input from suprasegmental structures or loss of inhibition by interneurons and is compatible with the proposal that there is a widespread dysfunction of central inhibitory mechanisms in SPS.",
+      "early_body_text": "increased brainstem excitability in stiff- person syndrome abstract—the recovery cycle of the r2 component of the blink reflex was studied in five patients with stiff-person syndrome (sps) and in seven healthy control subjects. r2 recovery was enhanced in patients with sps. this result is suggestive of hyperexcitability of brainstem interneuronal cir- cuits in sps. hyperexcitability may result from abnormal input from supra- segmental structures or loss of inhibition by interneurons and is compatible with the proposal that there is a widespread dysfunction of central inhibitory mechanisms in sps. neurology 2002;59:449 –451 f.m. molloy, md; m.c. dalakas, md; and m.k. floeter, md, phd stiff-person syndrome (sps) is a disorder of motor control with characteristic clinical features of fluctuat- ing muscle stiffness with superimposed spasms pre- dominantly affecting the axial and proximal limb musculature. 1 though not typical, symptoms may ex- tend to the face, hands, and feet.1 the symptoms result from involuntary firing of motor units in a pattern that resembles a normal contraction but persists even dur- ing contraction of antagonist muscles. 2 widespread dysfunction of inhibitory mechanisms, in particular those related to the /h9253-aminobutyric acid (gaba)ergic system, has been implicated in the clinical manifesta- tions of sps. 1,2 this theory is supported by the pres- ence of antibodies against the enzyme glutamic acid decarboxylase and the responsiveness of the symptoms to benzodiazepines in this patient population. 1 to further determine the possible role of impaired inhibitory mechanisms in sps, we studied electri- cally evoked blink reflexes in patients with sps and control subjects. the blink reflex consists of two com- ponents: an early ipsilateral component, r1, which reflects activation of an oligosynaptic pathway, and a later bilateral polysynaptic component, r2, which is mediated by brainstem interneurons and is modu- lated by both segmental and suprasegmental influ- ences. 3 excitability of these interneurons can be examined by obtaining r1 and r2 recovery curves after application of two shocks (conditioning and test stimuli) to the supraorbital nerve at varying inter- vals. 3 normally, the r2 response takes up to a sec- ond to recover after a conditioning shock. 3 if there is a widespread dysfunction of central inhibitory cir- cuits in sps, enhanced r2 recovery in these patients would be expected. methods. seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of sps (ages 47 to 60 years; mean, 51 years) gave written in- formed consent for the study protocol, which was approved by the institutional review board. patients selected for the study fulfilled clinical criteria for diagnosis of sps. 1 all five patients had autoantibodies against glutamic acid de- carboxylase. clinical characteristics of the sps patients are given in the table. blink reflexes were elicited by delivering paired electri- cal pulses with a duration of 0.2 ms over the supraorbital nerve at the supraorbital foramen on the right side as described previously. 3 paired pulses were delivered at the following interstimulus intervals: 160, 300, 500, 700, and 1,000 ms. electromyograms were recorded from the con- tralateral orbicularis oculi with surface electrodes using a viking 1v (nicolet, madison, wi) electromyograph. eight traces were recorded for each interval with at least a 15- to 20-second pause between each stimulation. the waveform traces were rectified and averaged. the r2 area was mea- sured from the averaged waveform trace between 32 and 90 ms after the stimulus artifacts (figure 1). the ratio of the area of the second r2 (r2b) to the first r2 (r2a) was computed for each interstimulus interval in each subject from the averaged waveform. the means of this ratio for all subjects in the patient and control groups were calcu- lated at each interval and plotted against the interstimu- lus intervals to construct a blink reflex recovery curve. blink recovery curves were compared between patients and control subjects. statistical analysis consisted of repeated-measures analysis of variance to determine the effects of groups (pa- tients versus controls). post hoc comparisons using the dunnett test were used to determine the significant inter- stimulus intervals. differences were considered significant at p values /h110210.05. results. examples of blink reflex responses to paired stimuli in a normal subject and a patient with sps are shown in figure 1. in both patients and control subjects, paired pulse stimulation produced suppression of the r2 component of the second blink reflex (r2b) (figure 2). sup- pression was maximal at the shortest interstimulus inter- val tested and recovered gradually in the control group. the recovery curve was significantly different between pa- tients and normal control subjects. post hoc testing showed that patients had less suppression of the r2b at an ",
+      "llm_evidence_text": "Title:\nIncreased brainstem excitability in stiff-person syndrome.\n\nMetadata abstract:\nThe recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circuits in SPS. Hyperexcitability may result from abnormal input from suprasegmental structures or loss of inhibition by interneurons and is compatible with the proposal that there is a widespread dysfunction of central inhibitory mechanisms in SPS.\n\nPotential non-original or reused-cohort signals:\n- described previously.\n\nPotential SPS-status uncertainty signals:\n- flex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circ\n\nPreferred text count-salient snippets:\n- studied in five patients with stiff-person syndrome (SPS) and in seven\n- R2 recovery was enhanced in patients with SPS.\n- cally evoked blink reflexes in patients with SPS and\n- mean, 44 years) and five patients with a history of SPS\n- five patients had autoantibodies against glutamic acid de-\n- normal control subjects (p /H110210.05, with correction).\n- syndrome: neurophysiological findings in eight patients.\n- Seven out of nine patients",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "distinct_candidate_counts=[0, 5]",
+        "non_original_case_signals=1",
+        "sps_status_uncertainty_signals=1",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 5,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=abstract_count_signal | confidence=high | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circuits in SPS. Hyperexcitability may result from abnormal input from suprasegmental structures or loss of inhibition by interneurons and is compatible with the proposal that there is a widespread dysfunction of central inhibitory mechanisms in SPS.",
+          "evidence_section": "abstract",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 55,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circuits in SPS. Hyperexcitability may result from abnormal input from suprasegmental structures or loss of inhibition by interneurons and is compatible with the proposal that there is a widespread dysfunction of central inhibitory mechanisms in SPS. increased brainstem excitability in stiff- person syndrome abstract—the recovery cycle of the r2 component of the blink reflex was studied in five patients with stiff-person syndrome (sps) and in seven healthy control subjects. r2 recovery was enhanced in patients with sps. this result is suggestive of hyperexcitability of brainstem interneuronal cir- cuits in sps. hyperexcitability may result from abnormal input from supra- segmental structures or loss of inhibition by interneurons and is compa Increased brainstem excitability in stiff-person syndrome.",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": [
+        "flex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects. R2 recovery was enhanced in patients with SPS. This result is suggestive of hyperexcitability of brainstem interneuronal circ"
+      ]
+    },
+    "count_decision_payload": {
+      "paper_id": "642",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [
+        "COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The full text explicitly describes a study cohort of five patients with a history of SPS who fulfilled clinical diagnostic criteria for SPS. This is a direct original SPS-spectrum cohort count, so candidate 5 is best supported.",
+        "evidence": [
+          {
+            "quote": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects.",
+            "page": null,
+            "section": "abstract",
+            "supports": "Direct abstract-level count of 5 SPS patients studied."
+          },
+          {
+            "quote": "Methods. Seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of SPS (ages 47 to 60 years; mean, 51 years) gave written informed consent for the study protocol... Patients selected for the study fulfilled clinical criteria for diagnosis of SPS.",
+            "page": null,
+            "section": "Methods",
+            "supports": "Confirms the original cohort included 5 unique SPS patients meeting clinical diagnostic criteria."
+          },
+          {
+            "quote": "All five patients had autoantibodies against glutamic acid decarboxylase.",
+            "page": null,
+            "section": "Methods",
+            "supports": "Reinforces that the same cohort consists of five SPS patients, not a mixed or uncertain subgroup."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "642",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "evidence": [
+        {
+          "quote": "The recovery cycle of the R2 component of the blink reflex was studied in five patients with stiff-person syndrome (SPS) and in seven healthy control subjects.",
+          "page": null,
+          "section": "abstract",
+          "supports": "Direct abstract-level count of 5 SPS patients studied."
+        },
+        {
+          "quote": "Methods. Seven healthy volunteers (ages 35 to 60 years; mean, 44 years) and five patients with a history of SPS (ages 47 to 60 years; mean, 51 years) gave written informed consent for the study protocol... Patients selected for the study fulfilled clinical criteria for diagnosis of SPS.",
+          "page": null,
+          "section": "Methods",
+          "supports": "Confirms the original cohort included 5 unique SPS patients meeting clinical diagnostic criteria."
+        },
+        {
+          "quote": "All five patients had autoantibodies against glutamic acid decarboxylase.",
+          "page": null,
+          "section": "Methods",
+          "supports": "Reinforces that the same cohort consists of five SPS patients, not a mixed or uncertain subgroup."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\642.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_challenges\\642.json"
+    }
   }
 }

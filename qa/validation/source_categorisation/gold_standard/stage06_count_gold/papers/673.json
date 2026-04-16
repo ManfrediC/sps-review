@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.489556+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.573339+00:00",
   "paper_id": "673",
   "count_row": {
     "paper_id": "673",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=count_ambiguity | prediction_correct=true | reviewed_count=1 | reviewed_source_category=interventional_study | predicted_count=1 | predicted_source_category=interventional_study",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:03:34.714045+00:00"
@@ -139,14 +140,229 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\673.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\673.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\673.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\673.json",
+    "result_payload": {
+      "paper_id": "673",
+      "count_row": {
+        "paper_id": "673",
+        "covidence_id": "673",
+        "title": "Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",
+        "authors": "Newton, J Camp; Harned, Michael E; Sloan, Paul A; Salles, Sara S",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\673.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of one original SPS patient. The abstract and full-text excerpt repeatedly state that the authors report one patient, while the mention of 5 cases refers to prior literature and should not be counted.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\673.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\673.json",
+        "counted_at_utc": "2026-04-16T14:12:46.258084+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "673",
+        "covidence_id": "673",
+        "title": "Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",
+        "authors": "Newton, J Camp; Harned, Michael E; Sloan, Paul A; Salles, Sara S",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\673.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of one original SPS patient. The abstract and full-text excerpt repeatedly state that the authors report one patient, while the mention of 5 cases refers to prior literature and should not be counted.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\673.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\673.json",
+        "counted_at_utc": "2026-04-16T14:12:46.258084+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\673.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\673.json"
+    },
+    "candidate_payload": {
+      "paper_id": "673",
+      "covidence_id": "673",
+      "title": "Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",
+      "authors": "Newton, J Camp; Harned, Michael E; Sloan, Paul A; Salles, Sara S",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text\\673.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\673.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "673_Newton et al. - 2013 - Trialing of intrathecal baclofen therapy for refra.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "OBJECTIVE: Stiff-person syndrome (SPS) is a rare disorder of the central nervous system characterized by stiffness and muscle spasms that may be progressive in nature. When oral medication is inadequate to control muscle spasticity, intrathecal baclofen may be used. We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)] (note: GAD(-) indicates the patient has no antibodies to GAD), refractory to oral standard therapies. The patient was effectively trialed with an intrathecal catheter and subsequently treated with chronic intrathecal baclofen, which provided significant relief of spasticity symptoms., CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic. His previous history showed that he met several diagnostic criteria for GAD(-) SPS and had a muscle biopsy positive for myositis. Oral medications were unable to control his muscle spasticity, preventing him from working. The patient received an intrathecal trial using a lumbar approach for placement of a thoracic catheter with an initial baclofen dose of 50 mug/d. Gradual titration to symptom relief was performed up to 150 mug/d. Functional evaluation by our physical therapist showed improved motor function, the temporary catheter was removed, and a permanent intrathecal pump placed for intrathecal baclofen infusion. The patient reported excellent symptom relief over the next 6 months and improved activity., CONCLUSIONS: Refractory SPS is difficult to treat and has few therapeutic options. We report a GAD(-) patient with SPS and resulting debilitating spasticity that was refractory to oral medications who underwent successful continuous intrathecal catheter trial of baclofen over 4 days and subsequently went on to implantation of intrathecal pump. The literature reports only 5 cases of GAD(-) SPS patients treated with intrathecal baclofen therapy, and these resulted in poor long-term success. Our patient completed a 4-day trial of intrathecal baclofen titrated to effect before pump implantation. We advocate continuous intrathecal trialing, as opposed to single-injection technique, to possibly better determine the effective therapeutic dose and ensure posttrialing successful therapy.",
+      "early_body_text": "trialing of intrathecal baclofen therapy for refractory stiff-person syndrome j. camp newton, md,* michael e. harned, md,* paul a. sloan, md,* and sara s. salles, do þ objective: stiff-person syndrome (sps) is a rare disorder of the cen- tral nervous system characterized by stiffness and muscle spasms that may be progressive in nature. when oral medication is inadequate to control muscle spasticity, intrathecal baclofen may be used. w e report a patient with severe sps and glutamate decarboxylase negative [gad(j)] (note: gad( j) indicates the patient has no antibodies to gad), refractory to oral standard therapies. the patient was effectively trialed with an intrathecal catheter and subsequently treated with chronic intrathecal baclofen, which provided significant relief of spasticity symptoms. case report: a 48-year-old white man with a history consistent with sps presented to the clinic. his previous history showed that he met several diagnostic criteria for gad( j) sps and had a muscle biopsy positive for myositis. oral medications were unable to control his mus- cle spasticity, preventing him from working. the patient received an intrathecal trial using a lumbar approach for placement of a thoracic catheter with an initial baclofen dose of 50 kg/d. gradual titration to symptom relief was performed up to 150 kg/d. functional evaluation by our physical therapist showed improved motor function, the temporary catheter was removed, and a permanent intrathecal pump placed for in- trathecal baclofen infusion. the patient reported excellent symptom re- lief over the next 6 months and improved activity. conclusions: refractory sps is difficult to treat and has few thera- peutic options. w e report a gad( j) patient with sps and resulting debilitating spasticity that was refractory to oral medications who underwent successful continuous intrathecal catheter trial of baclofen over 4 days and subsequently went on to implantation of intrathecal pump. the literature reports only 5 cases of gad( j) sps patients treated with intrathecal baclofen therapy, and these resulted in poor long-term success. our patient completed a 4-day trial of intrathecal baclofen titrated to effect before pump implantation. w e advocate con- tinuous intrathecal trialing, as opposed to single-injection technique, to possibly better determine the effective therapeutic dose and ensure posttrialing successful therapy. (reg anesth pain med 2013;38: 248y250) s tiff-person syndrome (sps) is a rare disorder (1 per 200,000) of the central nervous system with autoimmune features that usually presents in the fourth to sixth decade of life. orig- inally described in 1956 by moersch and woltman, it is char- acterized by stiffness and paroxysmal spasms of the axial and proximal extremity muscles that can be insidious or progressive in onset. 1y3 spasms can occur spontaneously or be elicited by external stimuli and may be violent enough to fracture bones. these symptoms occur with the lack of other neurological signs: weakness, sensory deficits, ataxia, cognitive impair- ment, pyramidal tract signs, or lower motor signs. diagnostic criteria were originally established in 1989 by lorish, but later grimaldi suggested that sps could more simply be subdivided into 3 main subgroups: (1) patients with associated organ- specific autoimmune disease, (2) patients with neoplasms and nonyorgan-specific antibodies, and (3) idiopathic, antibody negative. 1y3 electromyography typically shows sustained motor activity associated with sps is identical to normal voluntary motor activity. 1,3 the pathophysiology is related to disinhibition of inhibitory motor neurons that leads to excessive activity of agonist excitatory motor neurons. normal motor function re- quires coupling of excitatory (agonist) and inhibitory (antago- nist) muscle groups. loss of gabaergic ( f-aminobutyric acid [gaba]) pathways is thought to result in tonic firing of motor neurons at rest and excessive excitation in response to sensory inputs. 4 although the exact cause is unknown, there are several variants, the most common being associated with antibodies against glutamate decarboxylase [gad(+)], an enzyme neces- sary for the synthesis of gaba. 1y3 the gad status of a patient is determined by testing for plasma antibodies present against gad. if gad is inhibited by antibodies, reduced levels of gaba result in decreased motor neuron inhibition and thus continuous stimulation of muscles via excitatory motor neu- rons. 5,6 however, it must be noted that antibodies to gad alone do not explain the complete syndrome of sps. indeed, our pa- tient was gad negative yet had the clinical picture and diag- nosis of sps. the mainstay for therapy for sps patients has been gaba agonists such as benzodiazepines and baclofen or immunomodulation to reduce gad antibodies. 5 baclofen is a direct agonist of gaba-b receptors and does not require en- dogenous gaba to exert presynaptic inhibition at the brain and spinal co",
+      "llm_evidence_text": "Title:\nTrialing of intrathecal baclofen therapy for refractory stiff-person syndrome.\n\nMetadata abstract:\nOBJECTIVE: Stiff-person syndrome (SPS) is a rare disorder of the central nervous system characterized by stiffness and muscle spasms that may be progressive in nature. When oral medication is inadequate to control muscle spasticity, intrathecal baclofen may be used. We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)] (note: GAD(-) indicates the patient has no antibodies to GAD), refractory to oral standard therapies. The patient was effectively trialed with an intrathecal catheter and subsequently treated with chronic intrathecal baclofen, which provided significant relief of spasticity symptoms., CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic. His previous history showed that he met several diagnostic criteria for GAD(-) SPS and had a muscle biopsy positive for myositis. Oral medications were unable to control his muscle spasticity, preventing him from working. The patient received an intrathecal trial using a lumbar approach for placement of a thoracic catheter with an initial baclofen dose of 50 mug/d. Gradual titration to symptom relief was performed up to 150 mug/d. Functional evaluation by our physical therapist showed improved motor function, the temporary catheter was removed, and a permanent intrathecal pump placed for intrathecal baclofen infusion. The patient reported excellent symptom relief over the next 6 months and improved activity., CONCLUSIONS: Refractory SPS is difficult to treat and has few therapeutic options. We report a GAD(-) patient with SPS and resulting debilitating spasticity that was refractory to oral medications who underwent successful continuous intrathecal catheter trial of baclofen over 4 days and subsequently went on to implantation of intrathecal pump. The\n\nPreferred text count-salient snippets:\n- The literature reports only 5 cases of GAD( j) SPS patients\n- into 3 main subgroups: (1) patients with associated organ-\n- specific autoimmune disease, (2) patients with neoplasms and\n- The mainstay for therapy for SPS patients has\n- Of the current 5 cases reported, only 2 patients went on\n- of patients being maintained at 300 to 800 Kg/d,\n- The literature reports only 5 cases of GAD( j) SPS pa-\n- baclofen in patients with hemiparetic spasticity: a description of 3 cases.",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=single_case_report",
+          "evidence_text": "OBJECTIVE: Stiff-person syndrome (SPS) is a rare disorder of the central nervous system characterized by stiffness and muscle spasms that may be progressive in nature. When oral medication is inadequate to control muscle spasticity, intrathecal baclofen may be used. We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)] (note: GAD(-) indicates the patient has no antibodies to GAD), refractory to oral standard therapies. The patient was effectively trialed with an intrathecal catheter and subsequently treated with chronic intrathecal baclofen, which provided significant relief of spasticity symptoms., CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic. His previous history showed that he met several diagnostic criteria for GAD(-) SPS and had a muscle biopsy positive for myositis. Oral medications were unable to contro",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome. OBJECTIVE: Stiff-person syndrome (SPS) is a rare disorder of the central nervous system characterized by stiffness and muscle spasms that may be progressive in nature. When oral medication is inadequate to control muscle spasticity, intrathecal baclofen may be used. We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)] (note: GAD(-) indicates the patient has no antibodies to GAD), refractory to oral standard therapies. The patient was effectively trialed with an intrathecal catheter and subsequently treated with chronic intrathecal baclofen, which provided significant relief of spasticity symptoms., CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic. His previous history showed that he met several diagnostic criteria for GAD(-) SPS and had a muscle biopsy positive for myositis. Oral medications were unable to control his muscle spasticity, preventing him from working. The patient received an intrathecal trial using a lumbar approach for placement of a thoracic catheter with an initial baclofen dose of 50 mug/d. Gradual titration to ",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_override",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_override | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome. OBJECTIVE: Stiff-person syndrome (SPS) is a rare disorder of the central nervous system characterized by stiffness and muscle spasms that may be progressive in nature. When oral medication is inadequate to control muscle spasticity, intrathecal baclofen may be used. We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)] (note: GAD(-) indicates the patient has no antibodies to GAD), refractory to oral standard therapies. The patient was effectively trialed with an intrathecal catheter and subsequently treated with chronic intrathecal baclofen, which provided significant relief of spasticity symptoms., CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic. His previous history showed that he met several diagnostic criteria for GAD(-) SPS and had a muscle biopsy positive for myositis. Oral medications were unable to control his muscle spasticity, preventing him from working. The patient received an intrathecal trial using a lumbar approach for placement of a thoracic catheter with an initial baclofen dose of 50 mug/d. Gradual titration to ",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "preferred_candidate_non_high_confidence",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "673",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "This is a single-patient case report of one original SPS patient. The abstract and full-text excerpt repeatedly state that the authors report one patient, while the mention of 5 cases refers to prior literature and should not be counted.",
+        "evidence": [
+          {
+            "quote": "We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)]",
+            "page": null,
+            "section": "abstract/objective",
+            "supports": "The paper reports one original SPS patient."
+          },
+          {
+            "quote": "CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic.",
+            "page": null,
+            "section": "abstract/case report",
+            "supports": "The case report describes a single individual with SPS."
+          },
+          {
+            "quote": "The literature reports only 5 cases of GAD(-) SPS patients treated with intrathecal baclofen therapy",
+            "page": null,
+            "section": "abstract/conclusions",
+            "supports": "The count of 5 refers to previously reported literature cases, not additional original patients in this paper."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "673",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "We report a patient with severe SPS and glutamate decarboxylase negative [GAD(-)]",
+          "page": null,
+          "section": "abstract/objective",
+          "supports": "The paper reports one original SPS patient."
+        },
+        {
+          "quote": "CASE REPORT: A 48-year-old white man with a history consistent with SPS presented to the clinic.",
+          "page": null,
+          "section": "abstract/case report",
+          "supports": "The case report describes a single individual with SPS."
+        },
+        {
+          "quote": "The literature reports only 5 cases of GAD(-) SPS patients treated with intrathecal baclofen therapy",
+          "page": null,
+          "section": "abstract/conclusions",
+          "supports": "The count of 5 refers to previously reported literature cases, not additional original patients in this paper."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\673.json",
+      "challenge_json_path": ""
+    }
   }
 }

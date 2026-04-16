@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.706046+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.374468+00:00",
   "paper_id": "1805",
   "count_row": {
     "paper_id": "1805",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=conference_edge | prediction_correct=true | reviewed_count=4 | reviewed_source_category=lab_heavy_clinical_or_translational | predicted_count=4 | predicted_source_category=lab_heavy_clinical_or_translational",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T18:47:50.935349+00:00"
@@ -139,14 +140,212 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\1805.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1805.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\1805.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1805.json",
+    "result_payload": {
+      "paper_id": "1805",
+      "count_row": {
+        "paper_id": "1805",
+        "covidence_id": "1805",
+        "title": "Possible link of genetic variants to autoimmunity in GAD-antibody-associated neurological disorders",
+        "authors": "Thaler F.S.; Bangol B.; Biljecki M.; Havla J.; Schumacher A.-M.; Kumpfel T.",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\1805.json",
+        "preferred_text_source": "trimmed",
+        "count_eligible": "true",
+        "likely_sps_case_count": "4",
+        "count_confidence": "high",
+        "count_basis": "llm_bounded_alternative",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but explicitly breaks phenotypes down and identifies only 4 with stiff person syndrome. Because only the SPS subgroup should be counted for this review, the best-supported extractable SPS-spectrum count is 4 rather than the full cohort of 19.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "19",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1805.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "4",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1805.json",
+        "counted_at_utc": "2026-04-16T13:54:24.876174+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "1805",
+        "covidence_id": "1805",
+        "title": "Possible link of genetic variants to autoimmunity in GAD-antibody-associated neurological disorders",
+        "authors": "Thaler F.S.; Bangol B.; Biljecki M.; Havla J.; Schumacher A.-M.; Kumpfel T.",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\1805.json",
+        "preferred_text_source": "trimmed",
+        "count_eligible": "true",
+        "likely_sps_case_count": "4",
+        "count_confidence": "high",
+        "count_basis": "llm_bounded_alternative",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but explicitly breaks phenotypes down and identifies only 4 with stiff person syndrome. Because only the SPS subgroup should be counted for this review, the best-supported extractable SPS-spectrum count is 4 rather than the full cohort of 19.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "19",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1805.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "4",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1805.json",
+        "counted_at_utc": "2026-04-16T13:54:24.876174+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\1805.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\1805.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1805",
+      "covidence_id": "1805",
+      "title": "Possible link of genetic variants to autoimmunity in GAD-antibody-associated neurological disorders",
+      "authors": "Thaler F.S.; Bangol B.; Biljecki M.; Havla J.; Schumacher A.-M.; Kumpfel T.",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\1805.json",
+      "preferred_text_source": "trimmed",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\1805.json",
+        "preferred_text_source": "trimmed",
+        "source_filename": "1805_Thaler F.S. et al. - 2020 - Possible link of genetic variants to autoimmunity .pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": "data\\extraction_json\\text\\1805.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "OBJECTIVE: In patients with GAD-antibody (ab) associated neurological disorders coexistence of other autoimmune disorders is observed. METHOD(S): In this exploratory study we analysed variations in 33 candidate genes involved in autoimmunity or representing immunological check-points using next-generation sequencing. We performed haplotype-analysis of HLA-DRB1 and HLA-DQB1. Additionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhibited at least one other autoimmune disorder and/or showed other auto-ab. We identified several variations in genes linked to autoimmunity or representing check-point proteins. Most frequently (14/19 patients, allele frequency: 42.1%), we observed an amino acid exchange in the cytotoxic T-lymphocyte-associated protein 4 (CTLA4) gene. Two of the observed variants are known to cause alterations of protein function (Y446C in caspase-10, K750N in protein-tyrosin-phosphatase, non-receptor type 22). These latter variants were detected in two related patients (mother and daughter) who both present with GAD-ab-associated neurological disorders but with different clinical phenotypes. The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients with GAD-ab-associated neurological disorders was not observed in any of our patients. No elevated serum levels of sFasL, IL18 or IL10 were observed in patients indicating no typical phenotype of autoimmune lymphoproliferate syndrome. CONCLUSION(S): These findings suggest genetic risk factors in patients with GAD-ab-associated neurological disorders.Copyright © 2020 Elsevier B.V. All rights reserved.",
+      "early_body_text": "possible link of genetic variants to autoimmunity in gad-antibody- associated neurological disorders franziska s. thalera,⁎ , barbara bangolb, michelle biljeckia, joachim havlaa, adrian-minh schumachera, tania kümpfela ainstitute of clinical neuroimmunology, university hospital and biomedical center, ludwig-maximilians university munich, munich, germany bcenter for human genetics and laboratory diagnostics, martinsried, germany article info keywords: gad65 autoantibodies neurological disorders genetic variants abstract objective:in patients with gad-antibody (ab) associated neurological disorders coexistence of other auto- immune disorders is observed. methods:in this exploratory study we analysed variations in 33 candidate genes involved in autoimmunity or representing immunological check-points using next-generation sequencing. we performed haplotype-analysis of hla-drb1 and hla-dqb1. additionally, we analysed levels of sfasl, il10, and il18 in serum of patients and healthy controls. results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive gad-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating cns disease with recurrent optic neuritis. 15 patients exhibited at least one other autoimmune disorder and/or showed other auto-ab. we identified several variations in genes linked to autoimmunity or representing check-point proteins. most frequently (14/19 patients, allele frequency: 42.1%), we observed an amino acid exchange in thecytotoxict-lymphocyte-associatedprotein4(ctla4)gene. two of the observed variants are known to cause alterations of protein function (y446c incaspase-10, k750n inprotein- tyrosin-phosphatase,non-receptortype22). these latter variants were detected in two related patients (mother and daughter) who both present with gad-ab-associated neurological disorders but with different clinical pheno- types. the rare haplotype drb1*15:01:01 ~ dqa1*01:02:01 ~ dqb1*05:02:01 previously described in patients with gad-ab-associated neurological disorders was not observed in any of our patients. no elevated serum levels of sfasl, il18 or il10 were observed in patients indicating no typical phenotype of autoimmune lymphoproli- ferate syndrome. conclusions:these findings suggest genetic risk factors in patients with gad-ab-associated neurological dis- orders.",
+      "llm_evidence_text": "Title:\nPossible link of genetic variants to autoimmunity in GAD-antibody-associated neurological disorders\n\nMetadata abstract:\nOBJECTIVE: In patients with GAD-antibody (ab) associated neurological disorders coexistence of other autoimmune disorders is observed. METHOD(S): In this exploratory study we analysed variations in 33 candidate genes involved in autoimmunity or representing immunological check-points using next-generation sequencing. We performed haplotype-analysis of HLA-DRB1 and HLA-DQB1. Additionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhibited at least one other autoimmune disorder and/or showed other auto-ab. We identified several variations in genes linked to autoimmunity or representing check-point proteins. Most frequently (14/19 patients, allele frequency: 42.1%), we observed an amino acid exchange in the cytotoxic T-lymphocyte-associated protein 4 (CTLA4) gene. Two of the observed variants are known to cause alterations of protein function (Y446C in caspase-10, K750N in protein-tyrosin-phosphatase, non-receptor type 22). These latter variants were detected in two related patients (mother and daughter) who both present with GAD-ab-associated neurological disorders but with different clinical phenotypes. The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients with GAD-ab-associated neurological disorders was not observed in any of our patients. No elevated serum levels of sFasL, IL18 or IL10 were observed in patients indicating no typical phenotype of autoimmune lymphoproliferate s\n\nPotential non-original or reused-cohort signals:\n- The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients with GAD-ab-associated neurological disorders was not observed in any of our patients.\n- The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients\n\nPotential SPS-status uncertainty signals:\n- itionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exh\n- itionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhi\n- RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.\n\nPreferred text count-salient snippets:\n- Objective:In patients with GAD-antibody (ab) associated neurological disorders coexistence of other auto-\n- Additionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and\n- Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following\n- neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person\n- 15 patients exhibited at least one\n- Most frequently (14/19 patients, allele frequency: 42.1%),\n- These latter variants were detected in two related patients (mother and\n- The rare haplotype DRB1*15:01:01 ~ DQA1*01:02:01 ~ DQB1*05:02:01 previously described in patients",
+      "candidate_generation_notes": [
+        "preferred_text_source=trimmed",
+        "body_only_candidate_added",
+        "distinct_candidate_counts=[0, 19]",
+        "non_original_case_signals=2",
+        "sps_status_uncertainty_signals=3",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 19,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 82,
+          "rationale": "basis=abstract_count_signal | confidence=medium | source_category=lab_heavy_clinical_or_translational | heuristic_manual_review=true",
+          "evidence_text": "OBJECTIVE: In patients with GAD-antibody (ab) associated neurological disorders coexistence of other autoimmune disorders is observed. METHOD(S): In this exploratory study we analysed variations in 33 candidate genes involved in autoimmunity or representing immunological check-points using next-generation sequencing. We performed haplotype-analysis of HLA-DRB1 and HLA-DQB1. Additionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhibited at least one other autoimmune disorder and/or showed other auto-ab. We identified several variations i",
+          "evidence_section": "abstract",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 55,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "OBJECTIVE: In patients with GAD-antibody (ab) associated neurological disorders coexistence of other autoimmune disorders is observed. METHOD(S): In this exploratory study we analysed variations in 33 candidate genes involved in autoimmunity or representing immunological check-points using next-generation sequencing. We performed haplotype-analysis of HLA-DRB1 and HLA-DQB1. Additionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhibited at least one other autoimmune disorder and/or showed other auto-ab. We identified several variations in genes linked to autoimmunity or representing check-point proteins. Most frequently (14/19 patients, allele frequency: 42.1%), we observed an amino acid exchange in the cytotoxic T-lymphocyte-associated protein 4 (CTLA4) gene. Two of the observed variants are known to cause alterations of protein f",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": [
+        "itionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exh",
+        "itionally, we analysed levels of sFasL, IL10, and IL18 in serum of patients and healthy controls. Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating CNS disease with recurrent optic neuritis. 15 patients exhi",
+        "RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis."
+      ]
+    },
+    "count_decision_payload": {
+      "paper_id": "1805",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_bounded_alternative",
+      "validator_flags": [
+        "COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision": {
+        "decision_type": "bounded_alternative",
+        "selected_candidate_id": null,
+        "alternative_count": 4,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper reports a mixed cohort of 19 GAD-antibody-associated neurological disorder patients, but explicitly breaks phenotypes down and identifies only 4 with stiff person syndrome. Because only the SPS subgroup should be counted for this review, the best-supported extractable SPS-spectrum count is 4 rather than the full cohort of 19.",
+        "evidence": [
+          {
+            "quote": "RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.",
+            "page": null,
+            "section": "abstract/results",
+            "supports": "Shows the total cohort is mixed and explicitly identifies 4 SPS cases."
+          },
+          {
+            "quote": "Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating cns disease with recurrent optic neuritis.",
+            "page": null,
+            "section": "preferred text excerpt/results",
+            "supports": "Confirms the phenotype-specific subgroup count of 4 stiff person syndrome patients."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1805",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "evidence": [
+        {
+          "quote": "RESULT(S): 19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included: n = 8 cerebellar ataxia, n = 6 limbic encephalitis, n = 4 stiff person syndrome, n = 1 demyelinating CNS disease with recurrent optic neuritis.",
+          "page": null,
+          "section": "abstract/results",
+          "supports": "Shows the total cohort is mixed and explicitly identifies 4 SPS cases."
+        },
+        {
+          "quote": "Results:19 patients (3 males, 16 females; mean age at onset: 46.4 years) with positive GAD-ab and the following neurological phenotypes were included:n = 8 cerebellar ataxia,n = 6 limbic encephalitis,n = 4 stiff person syndrome,n = 1 demyelinating cns disease with recurrent optic neuritis.",
+          "page": null,
+          "section": "preferred text excerpt/results",
+          "supports": "Confirms the phenotype-specific subgroup count of 4 stiff person syndrome patients."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\1805.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\1805.json"
+    }
   }
 }

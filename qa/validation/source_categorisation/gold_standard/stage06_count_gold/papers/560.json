@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.445009+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.430770+00:00",
   "paper_id": "560",
   "count_row": {
     "paper_id": "560",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=conference_edge | prediction_correct=false | reviewed_count=0 | reviewed_source_category=lab_heavy_clinical_or_translational | predicted_count=1 | predicted_source_category=conference_abstract",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T14:58:52.757388+00:00"
@@ -139,14 +140,229 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\560.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\560.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\560.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\560.json",
+    "result_payload": {
+      "paper_id": "560",
+      "count_row": {
+        "paper_id": "560",
+        "covidence_id": "560",
+        "title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia.",
+        "authors": "Manto, Mario U; Hampe, Christiane S; Rogemond, Veronique; Honnorat, Jerome",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\560.json",
+        "preferred_text_source": "trimmed",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "medium",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The abstract explicitly states that purified GAD65 antibodies were obtained from 'a SPS patient' and contrasts this with antibodies from 'a patient with cerebellar ataxia,' supporting at least one original SPS-spectrum patient in this paper. No evidence in the provided text supports more than one SPS-spectrum case, so the single-case candidate is the best-supported option, though manual review remains appropriate because the evidence is limited to abstract-level wording in a lab-focused study.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "lab_context_no_extractable_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\560.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand02",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\560.json",
+        "counted_at_utc": "2026-04-16T14:11:51.959424+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "560",
+        "covidence_id": "560",
+        "title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia.",
+        "authors": "Manto, Mario U; Hampe, Christiane S; Rogemond, Veronique; Honnorat, Jerome",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\560.json",
+        "preferred_text_source": "trimmed",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "medium",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The abstract explicitly states that purified GAD65 antibodies were obtained from 'a SPS patient' and contrasts this with antibodies from 'a patient with cerebellar ataxia,' supporting at least one original SPS-spectrum patient in this paper. No evidence in the provided text supports more than one SPS-spectrum case, so the single-case candidate is the best-supported option, though manual review remains appropriate because the evidence is limited to abstract-level wording in a lab-focused study.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "lab_context_no_extractable_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\560.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand02",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\560.json",
+        "counted_at_utc": "2026-04-16T14:11:51.959424+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\560.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\560.json"
+    },
+    "candidate_payload": {
+      "paper_id": "560",
+      "covidence_id": "560",
+      "title": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia.",
+      "authors": "Manto, Mario U; Hampe, Christiane S; Rogemond, Veronique; Honnorat, Jerome",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\560.json",
+      "preferred_text_source": "trimmed",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_trimmed\\560.json",
+        "preferred_text_source": "trimmed",
+        "source_filename": "560_Manto et al. - 2011 - Respective implications of glutamate decarboxylase.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": "data\\extraction_json\\text\\560.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "BACKGROUND: To investigate whether Stiff-person syndrome (SPS) and cerebellar ataxia (CA) are associated with distinct GAD65-Ab epitope specificities and neuronal effects., METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum. Effects of intra-cerebellar administration of GAD65-Ab were determined using neurophysiological and neurochemical methods., RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol. By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol. Both GAD65-Ab increased the excitability of the spinal cord, as assessed by the F wave/M wave ratios. The administration of BFA, an inhibitor of the recycling of vesicles, followed by high-frequency stimulation of the cerebellum, severely impaired the cerebello-cortical inhibition only when Ab CA was used. Moreover, administration of transcranial direct current stimulation (tDCS) of the motor cortex revealed a strong disinhibition of the motor cortex with Ab CA. Monoclonal antibodies b78 and b96.11 showed distinct effects, with greater effects of b78 in terms of increase of glutamate concentrations, impairment of the adaptation of the motor cortex to repetitive peripheral stimulation, disinhibition of the motor cortex following tDCS, and increase of the F/M ratios. Ab SPS shared antibody characteristics with b78, both in epitope recognition and ability to inhibit enzyme activity, while Ab CA had no effect on GAD65 enzyme activity., CONCLUSIONS: These results suggest that, in vivo, neurological impairments caused by GAD65-Ab could vary according to epitope specificities. These results could explain the different neurological syndromes observed in patients with GAD65-Ab.",
+      "early_body_text": "respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia mario u manto 1, christiane s hampe 2*, véronique rogemond 3,4, jérome honnorat 3,4 abstract background: to investigate whether stiff-person syndrome (sps) and cerebellar ataxia (ca) are associated with distinct gad65-ab epitope specificities and neuronal effects. methods: purified gad65-ab from neurological patients and monoclonal gad65-ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum. effects of intra-cerebellar administration of gad65-ab were determined using neurophysiological and neurochemical methods. results: intra-cerebellar administration of gad65-ab from a sps patient (ab sps) impaired the nmda-mediated turnover of glutamate, but had no effect on nmda-mediated turnover of glycerol. by contrast, gad65-ab from a patient with cerebellar ataxia (ab ca) markedly decreased the nmda-mediated turnover of glycerol. both gad65- ab increased the excitability of the spinal cord, as assessed by the f wave/m wave ratios. the administration of bfa, an inhibitor of the recycling of vesicles, followed by high-frequency stimulation of the cerebellum, severely impaired the cerebello-cortical inhibition only when ab ca was used. moreover, administration of transcranial direct current stimulation (tdcs) of the motor cortex revealed a strong disinhibition of the motor cortex with ab ca. monoclonal antibodies b78 and b96.11 showed distinct effects, with greater effects of b78 in terms of increase of glutamate concentrations, impairment of the adaptation of the motor cortex to repetitive peripheral stimulation, disinhibition of the motor cortex following tdcs, and increase of the f/m ratios. ab sps shared antibody characteristics with b78, both in epitope recognition and ability to inhibit enzyme activity, while ab ca had no effect on gad65 enzyme activity. conclusions: these results suggest that, in vivo, neurological impairments caused by gad65-ab could vary according to epitope specificities. these results could explain the different neurological syndromes observed in patients with gad65-ab. background stiff person syndrome (sps) is a rare neurological dis- ease with features of an autoimmune disease. it is char- acterized by progressive muscle stiffness, trigger-induced spasms, spinal deformity, and high affinity autoantibo- dies to the smaller isoform of glutamate decarboxylase (gad65-ab) [1]. gad65-ab are also found in other immune-mediated disorders affecting the central ner- vous system (cns), including some patients with cere- bellar ataxia (ca) [2,3], and in the majority of patients with autoimmune type 1 diabetes (t1d) [4]. while in",
+      "llm_evidence_text": "Title:\nRespective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia.\n\nMetadata abstract:\nBACKGROUND: To investigate whether Stiff-person syndrome (SPS) and cerebellar ataxia (CA) are associated with distinct GAD65-Ab epitope specificities and neuronal effects., METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum. Effects of intra-cerebellar administration of GAD65-Ab were determined using neurophysiological and neurochemical methods., RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol. By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol. Both GAD65-Ab increased the excitability of the spinal cord, as assessed by the F wave/M wave ratios. The administration of BFA, an inhibitor of the recycling of vesicles, followed by high-frequency stimulation of the cerebellum, severely impaired the cerebello-cortical inhibition only when Ab CA was used. Moreover, administration of transcranial direct current stimulation (tDCS) of the motor cortex revealed a strong disinhibition of the motor cortex with Ab CA. Monoclonal antibodies b78 and b96.11 showed distinct effects, with greater effects of b78 in terms of increase of glutamate concentrations, impairment of the adaptation of the motor cortex to repetitive peripheral stimulation, disinhibition of the motor cortex following tDCS, and increase of the F/M ratios. Ab SPS shared antibody characteristics with b78, both in epitope recognition and ability to inhibit enzyme activity, while Ab CA had no effect on GAD65 enzyme activity., CONCLUSIONS: These results suggest that, in vivo, neurological imp\n\nPreferred text count-salient snippets:\n- Mario U Manto 1, Christiane S Hampe 2*, Véronique Rogemond 3,4, Jérome Honnorat 3,4\n- Methods: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope\n- specificities (b78 and b96.11) were administered in vivo to rat cerebellum.\n- Results: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated\n- patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol.\n- patients with GAD65-Ab.\n- vous system (CNS), including some patients with cere-\n- bellar ataxia (CA) [2,3], and in the majority of patients",
+      "candidate_generation_notes": [
+        "preferred_text_source=trimmed",
+        "source_context_adjusted_primary_estimate",
+        "body_only_candidate_added",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[0, 1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 75,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "BACKGROUND: To investigate whether Stiff-person syndrome (SPS) and cerebellar ataxia (CA) are associated with distinct GAD65-Ab epitope specificities and neuronal effects., METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum. Effects of intra-cerebellar administration of GAD65-Ab were determined using neurophysiological and neurochemical methods., RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol. By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol. Both GAD65-Ab increased the excitability of the spinal cord, as assessed by the F wave/M wave ratios. The administration of BFA, an inhibitor of the recycling of vesicles, followed by high-frequency stimulation of the cerebellum, severely impaired the cerebello-cortical inhibition only when Ab CA was used. Moreover, administration of transcranial direct current stimulation (tDCS) of the motor cortex revealed ",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "BACKGROUND: To investigate whether Stiff-person syndrome (SPS) and cerebellar ataxia (CA) are associated with distinct GAD65-Ab epitope specificities and neuronal effects., METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum. Effects of intra-cerebellar administration of GAD65-Ab were determined using neurophysiological and neurochemical methods., RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol. By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol. Both GAD65-Ab increased the excitability of the spinal cord, as assessed by the F wave/M wave ratios. The admini",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Respective implications of glutamate decarboxylase antibodies in stiff person syndrome and cerebellar ataxia. BACKGROUND: To investigate whether Stiff-person syndrome (SPS) and cerebellar ataxia (CA) are associated with distinct GAD65-Ab epitope specificities and neuronal effects., METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum. Effects of intra-cerebellar administration of GAD65-Ab were determined using neurophysiological and neurochemical methods., RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol. By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol. Both GAD65-Ab increased the excitability of the spinal cord, as assessed by the F wave/M wave ratios. The administration of BFA, an inhibitor of the recycling of vesicles, followed by high-frequency stimulation of the cerebellum, severely impaired the cerebello-cortical inhibition only when Ab CA was ",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "560",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand02",
+        "alternative_count": null,
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The abstract explicitly states that purified GAD65 antibodies were obtained from 'a SPS patient' and contrasts this with antibodies from 'a patient with cerebellar ataxia,' supporting at least one original SPS-spectrum patient in this paper. No evidence in the provided text supports more than one SPS-spectrum case, so the single-case candidate is the best-supported option, though manual review remains appropriate because the evidence is limited to abstract-level wording in a lab-focused study.",
+        "evidence": [
+          {
+            "quote": "Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum.",
+            "page": null,
+            "section": "Abstract/Methods",
+            "supports": "The study used patient-derived antibodies from original neurological patients rather than only literature discussion."
+          },
+          {
+            "quote": "Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate",
+            "page": null,
+            "section": "Abstract/Results",
+            "supports": "Explicitly identifies one SPS-spectrum patient contributing material to the study."
+          },
+          {
+            "quote": "By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol.",
+            "page": null,
+            "section": "Abstract/Results",
+            "supports": "Shows the comparison is between one SPS patient and one non-SPS patient, with only the SPS patient countable for SPS-spectrum extraction."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "560",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum.",
+          "page": null,
+          "section": "Abstract/Methods",
+          "supports": "The study used patient-derived antibodies from original neurological patients rather than only literature discussion."
+        },
+        {
+          "quote": "Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate",
+          "page": null,
+          "section": "Abstract/Results",
+          "supports": "Explicitly identifies one SPS-spectrum patient contributing material to the study."
+        },
+        {
+          "quote": "By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol.",
+          "page": null,
+          "section": "Abstract/Results",
+          "supports": "Shows the comparison is between one SPS patient and one non-SPS patient, with only the SPS patient countable for SPS-spectrum extraction."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\560.json",
+      "challenge_json_path": ""
+    }
   }
 }

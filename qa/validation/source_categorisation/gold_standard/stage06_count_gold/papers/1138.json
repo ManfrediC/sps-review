@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.614931+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.029811+00:00",
   "paper_id": "1138",
   "count_row": {
     "paper_id": "1138",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=conference_edge | prediction_correct=true | reviewed_count=14 | reviewed_source_category=conference_abstract | predicted_count=14 | predicted_source_category=conference_abstract",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:49:39.652355+00:00"
@@ -139,14 +140,193 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1138.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1138.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1138.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1138.json",
+    "result_payload": {
+      "paper_id": "1138",
+      "count_row": {
+        "paper_id": "1138",
+        "covidence_id": "1138",
+        "title": "Stiff person syndrome: Review of 14 patients",
+        "authors": "Cavalcante V.; Souza Bulle Oliveira A.",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1138.json",
+        "preferred_text_source": "proceedings_ready",
+        "count_eligible": "true",
+        "likely_sps_case_count": "14",
+        "count_confidence": "high",
+        "count_basis": "title_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "14",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "title_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1138.json",
+        "heuristic_candidate_count": "1",
+        "llm_likely_sps_case_count": "14",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1138.json",
+        "counted_at_utc": "2026-04-16T14:05:12.318154+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "1138",
+        "covidence_id": "1138",
+        "title": "Stiff person syndrome: Review of 14 patients",
+        "authors": "Cavalcante V.; Souza Bulle Oliveira A.",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1138.json",
+        "preferred_text_source": "proceedings_ready",
+        "count_eligible": "true",
+        "likely_sps_case_count": "14",
+        "count_confidence": "high",
+        "count_basis": "title_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "14",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "title_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1138.json",
+        "heuristic_candidate_count": "1",
+        "llm_likely_sps_case_count": "14",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1138.json",
+        "counted_at_utc": "2026-04-16T14:05:12.318154+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\1138.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1138.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1138",
+      "covidence_id": "1138",
+      "title": "Stiff person syndrome: Review of 14 patients",
+      "authors": "Cavalcante V.; Souza Bulle Oliveira A.",
+      "source_category": "conference_abstract",
+      "source_subtype": "group_conference_abstract",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1138.json",
+      "preferred_text_source": "proceedings_ready",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1138.json",
+        "preferred_text_source": "proceedings_ready",
+        "source_filename": "1138_Cavalcante V. and Souza Bulle Oliveira A. - 2015 - Stiff person syndrome Review of 14 patients.pdf",
+        "proceedings_ready_source_kind": "gold_manual",
+        "proceedings_ready_text_mode": "trimmed_abstract",
+        "proceedings_ready_reason": "Published active manually checked gold-standard proceedings trim.",
+        "source_text_json_path": "data\\extraction_json\\text\\1138.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Stiff person syndrome (SPS) is an autoimmune disorder of the central nervous system presenting with muscular rigidity in the axial (trunk) and or limbs muscles; episodic spasms; continuous co-contraction of agonist and antagonist muscles confirmed electro-physiologically and positive serum anti-GAD65 antibodies. Early diagnosis allows treatment and can prevents severe disabilities. Objective(s): To describe patients affected by SPS. Patients and Methods: Retrospective analysis of 14 medical records of patients diagnosed with SPS from January 1989 to April 2015. Result(s): Gender: 11 women and 3 men. Rating: classic SPS, 9 cases, SL, 5 cases. Index event:1 in the second decade of life, 2 in the third and fifth, 4 in fourth, 5 on sixth. Diagnostic: 1-156 months. Stiffness/ rigidity and spasms: thoracolumbar rigidity 14, abdominal 3, cervical 2, 13 in proximal lower limbs, 5 in distal lower limb, 3 in masseter muscle. Spasms precipitated by: emotional upset,10 cases, unexpected noises,11; obstacles,14. Immune diseases: DM, 9 cases; hypothyroidism, 2, hyperthyroidism, 2, vitiligo, 1 , Sjogren S., 1. Psychiatric disorders: depression, 3; bipolar disorder, 1; anxiety specific phobia type (across the street), 4; unspecified anxiety, 4; generalized anxiety,1. Time to diagnosis and work capacity: more than 12 months to diagnosis: 9 inactive patients; less than 12 months for diagnosis: 3 and all active cases. Electromyography: 6 positives. Ac anti GAD65, 14 cases. After beginning treatment with GABAergic drugs: 8 used baclofen (B) and benzodiazepines (D); 3 used only D; 1 only B. Result(s): Heterogeneous but there were partial clinical improvement in all. Ten patients used IVIg,1 quit by allergic reaction, 1 for personal reason. he remaining 8 showed clinical improvement more pronounced and permanent that when used GABAergics only. Conclusion(s): The results are compatible with literature.",
+      "early_body_text": "stiff person syndrome: review of 14 patients v. cavalcante, a. souza bulle oliveira. neurology and neurosurgery, federal university of são paulo, são paulo, brazil stiff person syndrome (sps) is an autoimmune disorder of the central nervous system presenting with muscular rigidity in the axial (trunk) and or limbs muscles; episodic spasms; continuous co- contraction of agonist and antagonist muscles con ﬁrmed electro- physiologically and positive serum anti-gad65 antibodies. early diagnosis allows treatment and can prevents severe disabilities. objectives: to describe patients affected by sps. patients and methods: retrospective analysis of 14 medical records of patients diagnosed with sps from january 1989 to april 2015. results: gender: 11 women and 3 men. rating: classic sps, 9 cases, sl, 5 cases. index event:1 in the second decade of life, 2 in the third and ﬁfth, 4 in fourth, 5 on sixth. diagnostic: 1-156 months. stiffness/ rigidity and spasms: thoracolumbar rigidity 14, abdominal 3, cervical 2, 13 in proximal lower limbs, 5 in distal lower limb, 3 in masseter muscle. spasms precipitated by: emotional upset,10 cases, unex- pected noises,11; obstacles,14. immune diseases: dm, 9 cases; hypothyroidism, 2, hyperthyroidism, 2, vitiligo, 1 , sjogren s., 1. psychiatric disorders: depression, 3; bipolar disorder, 1; anxiety speciﬁc phobia type (across the street), 4; unspeci ﬁed anxiety, 4; generalized anxiety,1. time to diagnosis and work capacity:more than 12 months to diagnosis: 9 inactive patients; less than 12 months for diagnosis: 3 and all active cases. electromyography: 6 positives. ac anti gad65, 14 cases. after beginning treatment with gabaergic drugs: 8 used baclofen (b) and benzodiazepines (d); 3 used only d; 1 only b. results: heterogeneous but there were partial clinical improvement in all. ten patients used ivig,1 quit by allergic reaction, 1 for personal reason. he remaining 8 showed clinical improvement more pro- nounced and permanent that when used gabaergics only. conclusion: the results are compatible with literature.",
+      "llm_evidence_text": "Title:\nStiff person syndrome: Review of 14 patients\n\nMetadata abstract:\nStiff person syndrome (SPS) is an autoimmune disorder of the central nervous system presenting with muscular rigidity in the axial (trunk) and or limbs muscles; episodic spasms; continuous co-contraction of agonist and antagonist muscles confirmed electro-physiologically and positive serum anti-GAD65 antibodies. Early diagnosis allows treatment and can prevents severe disabilities. Objective(s): To describe patients affected by SPS. Patients and Methods: Retrospective analysis of 14 medical records of patients diagnosed with SPS from January 1989 to April 2015. Result(s): Gender: 11 women and 3 men. Rating: classic SPS, 9 cases, SL, 5 cases. Index event:1 in the second decade of life, 2 in the third and fifth, 4 in fourth, 5 on sixth. Diagnostic: 1-156 months. Stiffness/ rigidity and spasms: thoracolumbar rigidity 14, abdominal 3, cervical 2, 13 in proximal lower limbs, 5 in distal lower limb, 3 in masseter muscle. Spasms precipitated by: emotional upset,10 cases, unexpected noises,11; obstacles,14. Immune diseases: DM, 9 cases; hypothyroidism, 2, hyperthyroidism, 2, vitiligo, 1 , Sjogren S., 1. Psychiatric disorders: depression, 3; bipolar disorder, 1; anxiety specific phobia type (across the street), 4; unspecified anxiety, 4; generalized anxiety,1. Time to diagnosis and work capacity: more than 12 months to diagnosis: 9 inactive patients; less than 12 months for diagnosis: 3 and all active cases. Electromyography: 6 positives. Ac anti GAD65, 14 cases. After beginning treatment with GABAergic drugs: 8 used baclofen (B) and benzodiazepines (D); 3 used only D; 1 only B. Result(s): Heterogeneous but there were partial clinical improvement in all. Ten patients used IVIg,1 quit by allergic reaction, 1 for personal reason. he remaining 8 showed clinical improvement more pro\n\nPreferred text count-salient snippets:\n- Stiff person syndrome: review of 14 patients\n- Patients and methods: Retrospective analysis of 14 medical records\n- of patients diagnosed with SPS from January 1989 to April 2015.\n- Rating: classic SPS, 9 cases,\n- Spasms precipitated by: emotional upset,10 cases, unex-\n- Immune diseases: DM, 9 cases;\n- than 12 months to diagnosis: 9 inactive patients; less than\n- 12 months for diagnosis: 3 and all active cases.",
+      "candidate_generation_notes": [
+        "preferred_text_source=proceedings_ready",
+        "distinct_candidate_counts=[14]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 14,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "title_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=title_count_signal | confidence=high | source_category=conference_abstract",
+          "evidence_text": "Stiff person syndrome: Review of 14 patients",
+          "evidence_section": "title",
+          "blockers": []
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": false,
+      "llm_routing_reason": "preferred_candidate_clear",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "1138",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The abstract explicitly reports a retrospective analysis of 14 medical records of patients diagnosed with SPS, and the subtype breakdown sums to the same total (9 classic SPS + 5 stiff limb). This supports counting 14 unique SPS-spectrum patients.",
+        "evidence": [
+          {
+            "quote": "Patients and Methods: Retrospective analysis of 14 medical records of patients diagnosed with SPS from January 1989 to April 2015.",
+            "page": null,
+            "section": "Methods/abstract",
+            "supports": "Direct cohort size of unique SPS patients reported in this paper."
+          },
+          {
+            "quote": "Rating: classic SPS, 9 cases, SL, 5 cases.",
+            "page": null,
+            "section": "Results/abstract",
+            "supports": "Subtype breakdown within the SPS spectrum summing to 14 total patients."
+          },
+          {
+            "quote": "Stiff person syndrome: Review of 14 patients",
+            "page": null,
+            "section": "Title",
+            "supports": "Title-level confirmation of the reported cohort size."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1138",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Patients and Methods: Retrospective analysis of 14 medical records of patients diagnosed with SPS from January 1989 to April 2015.",
+          "page": null,
+          "section": "Methods/abstract",
+          "supports": "Direct cohort size of unique SPS patients reported in this paper."
+        },
+        {
+          "quote": "Rating: classic SPS, 9 cases, SL, 5 cases.",
+          "page": null,
+          "section": "Results/abstract",
+          "supports": "Subtype breakdown within the SPS spectrum summing to 14 total patients."
+        },
+        {
+          "quote": "Stiff person syndrome: Review of 14 patients",
+          "page": null,
+          "section": "Title",
+          "supports": "Title-level confirmation of the reported cohort size."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1138.json",
+      "challenge_json_path": ""
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.690777+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.273507+00:00",
   "paper_id": "1699",
   "count_row": {
     "paper_id": "1699",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=false | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=1 | predicted_source_category=observational_group_study",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T14:58:00.715762+00:00"
@@ -139,14 +140,223 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\1699.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1699.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\1699.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1699.json",
+    "result_payload": {
+      "paper_id": "1699",
+      "count_row": {
+        "paper_id": "1699",
+        "covidence_id": "1699",
+        "title": "Stiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour",
+        "authors": "Vithoosan S.; Herath T.; Gamlaksha D.S.; Yogendranathan N.; Kulatunga A.; Senanayake B.",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\1699.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "source_single_case_default",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | This is an original single-case report, and the paper explicitly states that the authors report a 58-year-old man with stiff person syndrome. The full-text excerpt also presents one detailed case report beginning with a single patient presentation, with no indication of additional original SPS-spectrum patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "source_single_case_default",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1699.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1699.json",
+        "counted_at_utc": "2026-04-16T13:53:25.213775+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "1699",
+        "covidence_id": "1699",
+        "title": "Stiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour",
+        "authors": "Vithoosan S.; Herath T.; Gamlaksha D.S.; Yogendranathan N.; Kulatunga A.; Senanayake B.",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\1699.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "source_single_case_default",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | This is an original single-case report, and the paper explicitly states that the authors report a 58-year-old man with stiff person syndrome. The full-text excerpt also presents one detailed case report beginning with a single patient presentation, with no indication of additional original SPS-spectrum patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "source_single_case_default",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\1699.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\1699.json",
+        "counted_at_utc": "2026-04-16T13:53:25.213775+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\1699.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\1699.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1699",
+      "covidence_id": "1699",
+      "title": "Stiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour",
+      "authors": "Vithoosan S.; Herath T.; Gamlaksha D.S.; Yogendranathan N.; Kulatunga A.; Senanayake B.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text\\1699.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\1699.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "1699_Vithoosan S. et al. - 2019 - Stiff person syndrome An unusual paraneoplastic n.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Stiff person syndrome is a rare neurologic disorder characterised by rigidity of the truncal and proximal limb muscles with intermittent superimposed spasms. It's unique because it lacks similarity to any other neurologic disorder. Possibly tetanus is the closest related condition with both inhibiting central gamma-aminobutyric (GABA) systems. Stiff person syndrome is extremely rare with less than 20 cases reported from South Asia which has a population of nearly 2 billion. In its classic form, it is associated with the presence of high titres of glutamic acid decarboxylase (GAD) antibodies. Paraneoplastic stiff person syndrome comprising of around 5% of the patients has been reported with malignancies of the breast, colon, lung, thymus and Hodgkin's lymphoma. Antibodies against amphiphysin and gephyrin are detected in paraneoplastic stiff person syndrome. We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour. We postulate that stiff person syndrome was a paraneoplastic phenomenon secondary to the carcinoid in this case. Although neurological syndromes such as sensory neuropathy, limbic encephalitis and, myelopathy have been described as paraneoplastic features in carcinoid, we believe this is the first report of stiff person syndrome associated with carcinoid tumour.Copyright © 2019, Brazilian Association of Computational Mechanics. All rights reserved.",
+      "early_body_text": "277 stiff person syndrome: an unusual paraneoplastic neurological phenomenon in carcinoid tumour sahathevan vithoosan mb bs, tharuka herath mb bs, dayal s. gamlaksha mb bs, nilukshana yogendranathan mb bs, aruna kulatunga md frcp, bimsara senanayake md frcp national hospital, colombo, sri lanka abstract stiff person syndrome is a rare neurologic disorder characterised by rigidity of the truncal and proximal limb muscles with intermittent superimposed spasms. it’s unique because it lacks similarity to any other neurologic disorder. possibly tetanus is the closest related condition with both inhibiting central gamma-aminobutyric (gaba) systems. stiff person syndrome is extremely rare with less than 20 cases reported from south asia which has a population of nearly 2 billion. in its classic form, it is associated with the presence of high titres of glutamic acid decarboxylase (gad) antibodies. paraneoplastic stiff person syndrome comprising of around 5% of the patients has been reported with malignancies of the breast, colon, lung, thymus and hodgkin’s lymphoma. antibodies against amphiphysin and gephyrin are detected in paraneoplastic stiff person syndrome. we report a 58 year old sri lankan male with stiff person syndrome with a high gad antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour. we postulate that stiff person syndrome was a paraneoplastic phenomenon secondary to the carcinoid in this case. although neurological syndromes such as sensory neuropathy, limbic encephalitis and, myelopathy have been described as paraneoplastic features in carcinoid, we believe this is the first report of stiff person syndrome associated with carcinoid tumour. keywords: paraneoplastic, stiff person syndrome, carcinoid, anti-gad antibody neurology asia 2019; 24(3) : 277 – 279 address correspondence to: sahathevan vithoosan (mb.bs.), national hospital, colombo, sri lanka. no. 15b1, campbell place, dehiwela, sri lanka. tel: 0094774435759, e-mail: vithoosan@gmail.com being a serotonin-related myopathy. 5 sps as paraneoplastic phenomenon secondary to a carcinoid tumour has not been reported previously. case report a previously healthy 58 year old sri lankan male, presented with progressive difficulty in walking and painful stiffness of the back for 3 months. he also had intermittent painful muscle spasms lasting for 10-15seconds predominantly in the truncal muscles and proximal lower limb muscles. in between the spasms he noted rigidity especially in the axial muscles. bladder and bowel functions were normal. there were no psychiatric manifestations and his cognition was normal. on examination he had hyperlordosis of the lumbar spine due to the rigid contraction of the thoraco- lumbar paraspinal muscles. he had increased tone in both lower limbs with brisk knee reflexes and normal ankle reflexes but with normal muscle power. clonus was absent and plantar responses were flexor. the gait was spastic. the upper limb, cranial nerves and sensory examinations introduction stiff person syndrome (sps) is a rare neurological disorder of unclear aetiology. it is characterized by progressive rigidity and stiffness primarily affecting the truncal muscles and is superimposed by spasms and postural deformities. 1 it frequently affects people in their 40s but can occur between 30-60years. 2 it is unique because it lacks similarity to any other neurologic disorder. sps is extremely rare with less than 20 cases reported from south asia which has a population of nearly 2 billion. 3 muscle rigidity in sps waxes and wanes with concurrent spasms. the pathophysiology of the disease is autoimmune. 4 the most common pathologic correlate is anti–glutamic acid decarboxylase (gad) antibodies which is associated with the idiopathic form. 4 the paraneoplastic form which comprises around 5% was reported with malignancies of the breast, colon, lung, and thymus. 1 only a few reports associate paraneoplastic neurological syndromes with a carcinoid tumour of which the majority neurology asia september 2019 278 were normal. even though he was initially able to walk at the onset of the illness, his mobility was greatly reduced subsequently especially due to the stiffness. his distribution of stiffness index was 4 / 6 while the modified rankin score was 4/6. routine hematological and biochemical assays including full blood count, renal and liver function tests, and inflammatory markers and septic screening were normal. the mri of the brain and the whole spine was normal. the auto immune markers were negative. electromyography revealed continuous uniform activation of normal motor unit potential especially in para spinal muscles which was in favour of sps. the nerve conduction study was normal. the gad antibody titre was 1826.0 iu/ml (normal< 10). other causes of rigidity and spasm were excluded. he had elevated thyroid microsomal antibodies of 696 iu/ml (normal <35 iu/ml) but with a normal thyroid function",
+      "llm_evidence_text": "Title:\nStiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour\n\nMetadata abstract:\nStiff person syndrome is a rare neurologic disorder characterised by rigidity of the truncal and proximal limb muscles with intermittent superimposed spasms. It's unique because it lacks similarity to any other neurologic disorder. Possibly tetanus is the closest related condition with both inhibiting central gamma-aminobutyric (GABA) systems. Stiff person syndrome is extremely rare with less than 20 cases reported from South Asia which has a population of nearly 2 billion. In its classic form, it is associated with the presence of high titres of glutamic acid decarboxylase (GAD) antibodies. Paraneoplastic stiff person syndrome comprising of around 5% of the patients has been reported with malignancies of the breast, colon, lung, thymus and Hodgkin's lymphoma. Antibodies against amphiphysin and gephyrin are detected in paraneoplastic stiff person syndrome. We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour. We postulate that stiff person syndrome was a paraneoplastic phenomenon secondary to the carcinoid in this case. Although neurological syndromes such as sensory neuropathy, limbic encephalitis and, myelopathy have been described as paraneoplastic features in carcinoid, we believe this is the first report of stiff person syndrome associated with carcinoid tumour.Copyright © 2019, Brazilian Association of Computational Mechanics. All rights reserved.\n\nPotential non-original or reused-cohort signals:\n- carcinoid tumour has not been reported previously.\n- SPS has never been previously reported in\n\nPotential SPS-status uncertainty signals:\n- Although neurological syndromes such as sensory neuropathy, limbic encephalitis and, myelopathy have been described as paraneoplastic features in carcinoid, we believe this is the first report of stiff person syndrome associated with carcinoid tumour.Copyright © 2019, Brazilian Association of Computational Mechanics.\n\nPreferred text count-salient snippets:\n- 20 cases reported from South Asia which has a population of nearly 2 billion.\n- Paraneoplastic stiff person syndrome comprising of around 5% of the patients has been reported\n- rare with less than 20 cases reported from\n- In most patients, activities of daily living are\n- Rarely typical SPS patients\n- 1 In our patient with possible\n- found in about 5% of the cases SPS.\n- in all cases of SPS.",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "source_context_adjusted_primary_estimate",
+        "distinct_candidate_counts=[0, 1]",
+        "non_original_case_signals=2",
+        "sps_status_uncertainty_signals=1",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Stiff person syndrome: An unusual paraneoplastic neurological phenomenon in Carcinoid tumour Stiff person syndrome is a rare neurologic disorder characterised by rigidity of the truncal and proximal limb muscles with intermittent superimposed spasms. It's unique because it lacks similarity to any other neurologic disorder. Possibly tetanus is the closest related condition with both inhibiting central gamma-aminobutyric (GABA) systems. Stiff person syndrome is extremely rare with less than 20 cases reported from South Asia which has a population of nearly 2 billion. In its classic form, it is associated with the presence of high titres of glutamic acid decarboxylase (GAD) antibodies. Paraneoplastic stiff person syndrome comprising of around 5% of the patients has been reported with malignancies of the breast, colon, lung, thymus and Hodgkin's lymphoma. Antibodies against amphiphysin and gephyrin are detected in paraneoplastic stiff person syndrome. We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour. We postulate that stiff person syndrome was a",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 45,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=single_case_report",
+          "evidence_text": "Stiff person syndrome is a rare neurologic disorder characterised by rigidity of the truncal and proximal limb muscles with intermittent superimposed spasms. It's unique because it lacks similarity to any other neurologic disorder. Possibly tetanus is the closest related condition with both inhibiting central gamma-aminobutyric (GABA) systems. Stiff person syndrome is extremely rare with less than 20 cases reported from South Asia which has a population of nearly 2 billion. In its classic form, it is associated with the presence of high titres of glutamic acid decarboxylase (GAD) antibodies. Paraneoplastic stiff person syndrome comprising of around 5% of the patients has been reported with malignancies of the breast, colon, lung, thymus and Hodgkin's lymphoma. Antibodies against amphiphysin and gephyrin are detected in paraneoplastic stiff person syndrome. We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour. We postulate that stiff person syndrome was a paraneoplastic phenomenon secondary to the carcinoid in this case. Although neurological syn",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": [
+        "Although neurological syndromes such as sensory neuropathy, limbic encephalitis and, myelopathy have been described as paraneoplastic features in carcinoid, we believe this is the first report of stiff person syndrome associated with carcinoid tumour.Copyright © 2019, Brazilian Association of Computational Mechanics."
+      ]
+    },
+    "count_decision_payload": {
+      "paper_id": "1699",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [
+        "COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "This is an original single-case report, and the paper explicitly states that the authors report a 58-year-old man with stiff person syndrome. The full-text excerpt also presents one detailed case report beginning with a single patient presentation, with no indication of additional original SPS-spectrum patients.",
+        "evidence": [
+          {
+            "quote": "We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour.",
+            "page": null,
+            "section": "abstract",
+            "supports": "Explicitly identifies one original SPS patient reported in the paper."
+          },
+          {
+            "quote": "case report a previously healthy 58 year old sri lankan male, presented with progressive difficulty in walking and painful stiffness of the back for 3 months.",
+            "page": null,
+            "section": "Case report",
+            "supports": "Confirms the paper contains a single individual case report rather than a cohort."
+          },
+          {
+            "quote": "we believe this is the first report of stiff person syndrome associated with carcinoid tumour.",
+            "page": null,
+            "section": "abstract/discussion context",
+            "supports": "Supports originality of this reported case and argues against the count being zero or a reused cohort."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1699",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "evidence": [
+        {
+          "quote": "We report a 58 year old Sri Lankan male with stiff person syndrome with a high GAD antibody titre and classical electromyographic changes, who was found to have an underlying carcinoid tumour.",
+          "page": null,
+          "section": "abstract",
+          "supports": "Explicitly identifies one original SPS patient reported in the paper."
+        },
+        {
+          "quote": "case report a previously healthy 58 year old sri lankan male, presented with progressive difficulty in walking and painful stiffness of the back for 3 months.",
+          "page": null,
+          "section": "Case report",
+          "supports": "Confirms the paper contains a single individual case report rather than a cohort."
+        },
+        {
+          "quote": "we believe this is the first report of stiff person syndrome associated with carcinoid tumour.",
+          "page": null,
+          "section": "abstract/discussion context",
+          "supports": "Supports originality of this reported case and argues against the count being zero or a reused cohort."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\1699.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\1699.json"
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.697806+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.325232+00:00",
   "paper_id": "1785",
   "count_row": {
     "paper_id": "1785",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=review_lab_edge | prediction_correct=true | reviewed_count=1 | reviewed_source_category=review_article | predicted_count=1 | predicted_source_category=review_article",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:58:58.036982+00:00"
@@ -139,14 +140,213 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1785.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1785.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1785.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1785.json",
+    "result_payload": {
+      "paper_id": "1785",
+      "count_row": {
+        "paper_id": "1785",
+        "covidence_id": "1785",
+        "title": "Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man",
+        "authors": "Ali T.; Ginjupally D.; Guduru Z.",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\1785.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly framed as a single case report and repeatedly describes one 52-year-old man with stiff limb syndrome progressing to stiff person syndrome, which is within the SPS spectrum. No evidence suggests additional original SPS-spectrum patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1785.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1785.json",
+        "counted_at_utc": "2026-04-16T14:08:05.821159+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "1785",
+        "covidence_id": "1785",
+        "title": "Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man",
+        "authors": "Ali T.; Ginjupally D.; Guduru Z.",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\1785.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly framed as a single case report and repeatedly describes one 52-year-old man with stiff limb syndrome progressing to stiff person syndrome, which is within the SPS spectrum. No evidence suggests additional original SPS-spectrum patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1785.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1785.json",
+        "counted_at_utc": "2026-04-16T14:08:05.821159+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\1785.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\1785.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1785",
+      "covidence_id": "1785",
+      "title": "Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man",
+      "authors": "Ali T.; Ginjupally D.; Guduru Z.",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text\\1785.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\1785.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "1785_Ali - Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a non.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Objective: Stiff person syndrome is a rare CNS disorder characterized by fluctuating muscle rigidity of truncal and proximal limb muscles with superimposed painful spasms. Involved muscles most often include the paraspinal, abdominal, and occasionally proximal leg musculature. Most patients have anti-glutamic acid decarboxylase (GAD) antibodies in serum. Background(s): We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome. Method(s): A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen. He described progressive difficulty with ambulation, and over time required the use of a walker. He denied any associated pain, sensory disturbance, urinary or bowel symptoms. His family history was unremarkable. There was marked rigidity in both lower extremities, right greater than left. His reflexes were normal, and sensation was intact across all modalities. His gait was broad-based and cautious. His knee was notably rigid without any degree of flexion while ambulating, and his toes remained curled. His abdominal muscles were stiff and prominent. Result(s): Laboratory testing for CBC, CMP, A1c, RPR, HTLVI/II, HIV, Vitamin B12, Vitamin E, Folate, and Creatine Kinase were all normal. His anti-Glutamic Acid Decarboxylase (GAD) antibody however was markedly elevated at greater than 50,000. HbA1c was in normal range. A CT abdomen and pelvis revealed no evidence of neoplastic disease. After initiation of diazepam 15mg/ day, his symptoms significantly improved and was able to walk without assistance, could flex at the knees, and participate in physical therapy. His toes, which were initially curled on the right foot had released, except at the great toe. Conclusion(s): We present a non-diabetic case of Stiff limb syndrome who progressed to stiff person syndrome with a high anti-GAD antibody level. Though the hallmark diagnostic sign remains the presence of hyperlordosis and co-contractures of the abdominal wall and thoracic paraspinal muscles, our patient did not present with any of these features. There was a significant improvement with benzodiazepine.",
+      "early_body_text": "stiff limb syndrome progressing to stiff man syndrome in a non-diabetic man t. ali, d. ginjupally, z. guduru (lexington, ky, usa) objective: stiff person syndrome is a rare cns disorder characterized by fluctuating muscle rigidity of truncal and proximal limb muscles with superimposed painful spasms. involved muscles most often include the paraspinal, abdominal, and occasionally proximal leg musculature. most patients have anti-glutamic acid decarboxylase (gad) antibodies in serum. background: we present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome. method: a 52-year-old male from the congo presented with a 2-year history of stiffness of the right lower extremity and abdomen. he described progressive difficulty with ambulation, and over time required the use of a walker. he denied any associated pain, sensory disturbance, urinary or bowel symptoms. his family history was unremarkable. there was marked rigidity in both lower extremities, right greater than left. his reflexes were normal, and sensation was intact across all modalities. his gait was broad-based and cautious. his knee was notably rigid without any degree of flexion while ambulating, and his toes remained curled. his abdominal muscles were stiff and prominent. results: laboratory testing for cbc, cmp, a1c, rpr, htlvi/ii, hiv, vitamin b12, vitamin e, folate, and creatine kinase were all normal. his anti-glutamic acid decarboxylase (gad) antibody however was markedly elevated at greater than 50,000. hba1c was in normal range. a ct abdomen and pelvis revealed no evidence of neoplastic disease. after initiation of diazepam 15mg/ day, his symptoms significantly improved and was able to walk without assistance, could flex at the knees, and participate in physical therapy. his toes, which were initially curled on the right foot had released, except at the great toe. conclusion: we present a non-diabetic case of stiff limb syndrome who progressed to stiff person syndrome with a high anti-gad antibody level. though the hallmark diagnostic sign remains the presence of hyperlordosis and co-contractures of the abdominal wall and thoracic paraspinal muscles, our patient did not present with any of these features. there was a significant improvement with benzodiazepine. references: dalakas mc, fujii m, li m, lutfi b, kyhos j, mcelroy b. high dose intravenous immune globulin for stiff person syndrome. the new england journal of medicine; 2001; 345 dalakas mc, fujii m, li m, mcelroy b. the clinical spectrum of anti-gad antibody -positive patients with stiff person syndrome. neurology 2000; 55, 1531-35 barker ra, revesz t, thom a, marsden cd, brown p. review of 23 patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) syndrome, stiff limb syndrome, and progressive encephalom",
+      "llm_evidence_text": "Title:\nStiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man\n\nMetadata abstract:\nObjective: Stiff person syndrome is a rare CNS disorder characterized by fluctuating muscle rigidity of truncal and proximal limb muscles with superimposed painful spasms. Involved muscles most often include the paraspinal, abdominal, and occasionally proximal leg musculature. Most patients have anti-glutamic acid decarboxylase (GAD) antibodies in serum. Background(s): We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome. Method(s): A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen. He described progressive difficulty with ambulation, and over time required the use of a walker. He denied any associated pain, sensory disturbance, urinary or bowel symptoms. His family history was unremarkable. There was marked rigidity in both lower extremities, right greater than left. His reflexes were normal, and sensation was intact across all modalities. His gait was broad-based and cautious. His knee was notably rigid without any degree of flexion while ambulating, and his toes remained curled. His abdominal muscles were stiff and prominent. Result(s): Laboratory testing for CBC, CMP, A1c, RPR, HTLVI/II, HIV, Vitamin B12, Vitamin E, Folate, and Creatine Kinase were all normal. His anti-Glutamic Acid Decarboxylase (GAD) antibody however was markedly elevated at greater than 50,000. HbA1c was in normal range. A CT abdomen and pelvis revealed no evidence of neoplastic disease. After initiation of diazepam 15mg/ day, his symptoms significantly improved and was able to walk without assistance, could flex at the knees, and participate in physical therapy. His toes, which were initially curled on the right foot had released, except at the great toe. Conclusion(s): We pres\n\nPreferred text count-salient snippets:\n- Most patients have anti-glutamic acid\n- Background: We present a case of non-diabetic man with stiff limb syndrome who\n- Method: A 52-year-old male from the Congo presented with a 2-year history of\n- He described progressive\n- Results: Laboratory testing for CBC, CMP, A1c, RPR, HTLVI/II, HIV, Vitamin B12,\n- Conclusion: We present a non-diabetic case of Stiff limb syndrome who progressed\n- anti-GAD antibody -positive patients with stiff person syndrome.\n- patients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man)",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Objective: Stiff person syndrome is a rare CNS disorder characterized by fluctuating muscle rigidity of truncal and proximal limb muscles with superimposed painful spasms. Involved muscles most often include the paraspinal, abdominal, and occasionally proximal leg musculature. Most patients have anti-glutamic acid decarboxylase (GAD) antibodies in serum. Background(s): We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome. Method(s): A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen. He described progressive difficulty with ambulation, and over time required the use of a walker. He denied any associated pain, sensory disturbance, urinary or bowel symptoms. His family history was unremarkable. There was marked rigidity in both lower extremities, right greater than left. H",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Stiff Limb Syndrome Progressing to Stiff Man Syndrome in a nondiabetic man Objective: Stiff person syndrome is a rare CNS disorder characterized by fluctuating muscle rigidity of truncal and proximal limb muscles with superimposed painful spasms. Involved muscles most often include the paraspinal, abdominal, and occasionally proximal leg musculature. Most patients have anti-glutamic acid decarboxylase (GAD) antibodies in serum. Background(s): We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome. Method(s): A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen. He described progressive difficulty with ambulation, and over time required the use of a walker. He denied any associated pain, sensory disturbance, urinary or bowel symptoms. His family history was unremarkable. There was marked rigidity in both lower extremities, right greater than left. His reflexes were normal, and sensation was intact across all modalities. His gait was broad-based and cautious. His knee was notably rigid without any degree of flexion while ambulating, and his toes remained curled. His abdo",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "preferred_candidate_non_high_confidence",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "1785",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper is explicitly framed as a single case report and repeatedly describes one 52-year-old man with stiff limb syndrome progressing to stiff person syndrome, which is within the SPS spectrum. No evidence suggests additional original SPS-spectrum patients.",
+        "evidence": [
+          {
+            "quote": "We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome.",
+            "page": null,
+            "section": "Background/abstract",
+            "supports": "Explicitly identifies the report as a single SPS-spectrum case."
+          },
+          {
+            "quote": "A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen.",
+            "page": null,
+            "section": "Method/abstract",
+            "supports": "Describes the single individual patient reported in the paper."
+          },
+          {
+            "quote": "We present a non-diabetic case of Stiff limb syndrome who progressed to stiff person syndrome with a high anti-GAD antibody level.",
+            "page": null,
+            "section": "Conclusion/abstract",
+            "supports": "Reaffirms that the article reports one original SPS-spectrum patient."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1785",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome.",
+          "page": null,
+          "section": "Background/abstract",
+          "supports": "Explicitly identifies the report as a single SPS-spectrum case."
+        },
+        {
+          "quote": "A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen.",
+          "page": null,
+          "section": "Method/abstract",
+          "supports": "Describes the single individual patient reported in the paper."
+        },
+        {
+          "quote": "We present a non-diabetic case of Stiff limb syndrome who progressed to stiff person syndrome with a high anti-GAD antibody level.",
+          "page": null,
+          "section": "Conclusion/abstract",
+          "supports": "Reaffirms that the article reports one original SPS-spectrum patient."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1785.json",
+      "challenge_json_path": ""
+    }
   }
 }

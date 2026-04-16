@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.224868+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.022853+00:00",
   "paper_id": "89",
   "count_row": {
     "paper_id": "89",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=high_confidence_control | prediction_correct=false | reviewed_count=0 | reviewed_source_category=lab_heavy_clinical_or_translational | predicted_count=500 | predicted_source_category=single_case_report | reviewer_notes=no extractable data",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:07:13.698694+00:00"
@@ -139,14 +140,225 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\89.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\89.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\89.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\89.json",
+    "result_payload": {
+      "paper_id": "89",
+      "count_row": {
+        "paper_id": "89",
+        "covidence_id": "89",
+        "title": "Glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition.",
+        "authors": "Daw, K; Ujihara, N; Atkinson, M; Powers, A C",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\89.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "low",
+        "count_basis": "lab_context_no_extractable_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper is a lab-focused epitope study using SMS sera, but the provided evidence pack does not contain a clear explicit count of unique original SPS-spectrum patients. The only numeric signal in the candidate list (2) appears to come from a corrupted front-matter excerpt rather than a patient-count statement, while the paper also contains reuse signals suggesting previously described sera/cohorts.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "lab_context_no_extractable_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\89.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\89.json",
+        "counted_at_utc": "2026-04-16T14:02:31.789536+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "89",
+        "covidence_id": "89",
+        "title": "Glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition.",
+        "authors": "Daw, K; Ujihara, N; Atkinson, M; Powers, A C",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\89.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "low",
+        "count_basis": "lab_context_no_extractable_count",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper is a lab-focused epitope study using SMS sera, but the provided evidence pack does not contain a clear explicit count of unique original SPS-spectrum patients. The only numeric signal in the candidate list (2) appears to come from a corrupted front-matter excerpt rather than a patient-count statement, while the paper also contains reuse signals suggesting previously described sera/cohorts.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "lab_context_no_extractable_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\89.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\89.json",
+        "counted_at_utc": "2026-04-16T14:02:31.789536+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\89.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\89.json"
+    },
+    "candidate_payload": {
+      "paper_id": "89",
+      "covidence_id": "89",
+      "title": "Glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition.",
+      "authors": "Daw, K; Ujihara, N; Atkinson, M; Powers, A C",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\89.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\89.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "89_Daw-1996-Glutamic acid decarboxylase autoantib.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Glutamic acid decarboxylase (GAD) is an autoantigen in two autoimmune diseases, insulin-dependent diabetes mellitus (IDDM) and stiff-man syndrome (SMS). However, most individuals with one of these diseases do not have the other disease. Prior studies have suggested that the natures of the GAD Abs associated with each of these diseases are different, which may have implications for the autoimmune pathogenesis. We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins. Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM. The population of GAD Abs in SMS sera is quite complex and includes those that recognize at least three GAD 65 epitope regions located between amino acids 1-16, 188-442, and 442-563. These types of GAD Abs are not found in IDDM sera. All SMS sera also had Ab specificity that binds GAD 67 in a region highly homologous to amino acids 188-442 of GAD 65. In contrast to prior studies that used immunoblotting to measure GAD Abs, we find GAD Abs in SMS sera also target two conformation-dependent regions of GAD 65, one located in the middle and one near the C-terminus of the protein. These two regions of the GAD 65 protein are similar to regions targeted by GAD 65-specific Abs found in individuals with IDDM. These results indicate that although disease-specific epitopes may exist, there is also overlap in the humoral response between the two diseases.",
+      "early_body_text": "research article|january 15 1996 glutam ic acid decarboxylase autoantibodies in sti\u0000-m an syndrom e and insulin-dependent diabetes m ellitus exhibit sim ilarities and di\u0000erences in epitope recognition.  k daw; ... et. al j immunol (1996) 156 (2): 818–825. https://doi.org/10.4049/jimmunol.156.2.818 related content identi\u0000cation of autoantibody epitopes of glutamic acid decarboxylase in stiff-man syndrome patients. j immunol (january,1994) therapeutic alteration of insulin-dependent diabetes mellitus progression by t cell tolerance to glutamic acid decarboxylase 65 peptides in vitro and in vivo j immunol (july,2001) b lymphocytes are critical antigen-presenting cells for the initiation of t cell-mediated autoimmune diabetes in nonobese diabetic mice j immunol (october,1998) downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by university of zurich user on 27 may 2023 glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition' kendra daw,2* noriko ujihara,'* mark atkinson,+ and alvin c. powers3** glutamic acid decarboxylase (gad) is an autoantigen in two autoimmune diseases, insulin-dependent diabetes mellitus (iddm) and stiff-man syndrome (sms). however, most individuals with one of these diseases do not have the other disease. prior studies have suggested that the natures of the gad abs associated with each of these diseases are different, which may have impli- cations for the autoimmune pathogenesis. we have compared the gad autoantibody profile and have mapped gad protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant gad 65 and gad 67 proteins, gad protein fragments, and synthetic gad peptides, as well as chimeric gad proteins. our results indicate that individuals with sms have gad abs in 100- to 500-fold higher titer than individuals with iddm. the population of gad abs in sms sera is quite complex and includes those that recognize at least three gad 65 epitope regions located between amino acids i-16,188-442, and 442-563. these types of gad abs are not found in iddm sera. all sms sera also had ab specificity that binds gad 67 in a region highly homologous to amino acids 188-442 of gad 65. in contrast to prior studies that used immunoblotting to measure gad abs, we find gad abs in sms sera also target two conformation-dependent regions of gad 65, one located in the middle and one near the c-terminus of the protein. these two regions of the gad 65 protein are similar to regions targeted by gad 65-specific abs found in individuals with iddm. these results indicate that although disease-specific epitopes may exist, there is also overlap in the humoral response between the two diseases. the journal of immunology, 1996, 156: 818-825. t ype i or insulin-dependent diabetes mellitus (iddm)\" is an autoimmune disease directed at the pancreatic 0 cell (1). a major antigenic target in iddm is glutamic acid decarboxylase (gad), which also is an autoantigen in the rare neurologic disease, stiff-man syndrome (sms) (2, 3). gad, which converts glutamic acid to the neurotransmitter y-aminobutyric acid (gaba), is found in the cytoplasm and microsecretory vesicles of gaba-secreting neurons and pancreatic cells (4, 5). gad exists as two protein isoforms of 65 kda (585 amino acids) and 67 kda (594 amino acids), which are encoded by two distinct genes (6). the amino acid sequences of gad 65 and gad 67 are highly *division of endocrinology, department of medicine, vanderbilt university. nashville, tn 37232; 'department of pathology and laboratory medicine, col- lege of medicine, universlty oi florida, gainesville, fl 32610; *department of veterans affairs medical center, nashville, tn 37232 received for publication december 14, 1994. accepted for publ~cat~on october 30, 1995. the costs of publication of this alticle were defrayed in part by the payment of page charges. this article must therefore be hereby marked adverfisemenf in accordance with 18 u.s.c. section 1734 solely to indicate this fact. ' this work was supported by national institutes of health grant r01 dk43736. career development awards from the department of veterans affairs research service and the american diabetes association, a merit review award from the veterans affairs research service, the diabetes research and training center at vanderbilt university (national institutes of health dk205931, a university grant from vanderbilt university, a biomedical research support grant admin- ~stered by vanderbilt university (brsc rr054241, and a grant from the diabetes research and education foundation. k.d. and n.u. contributed equally to this work of endocrinology, 715 mrb 11, vanderbilt university, nashville, tn 37232. ' address correspondence and reprint requests to dr. alvin c. powers, division abbreviations used in this paper: iddm, insulin-dependent diabetes mellitus; gad, glutam",
+      "llm_evidence_text": "Title:\nGlutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition.\n\nMetadata abstract:\nGlutamic acid decarboxylase (GAD) is an autoantigen in two autoimmune diseases, insulin-dependent diabetes mellitus (IDDM) and stiff-man syndrome (SMS). However, most individuals with one of these diseases do not have the other disease. Prior studies have suggested that the natures of the GAD Abs associated with each of these diseases are different, which may have implications for the autoimmune pathogenesis. We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins. Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM. The population of GAD Abs in SMS sera is quite complex and includes those that recognize at least three GAD 65 epitope regions located between amino acids 1-16, 188-442, and 442-563. These types of GAD Abs are not found in IDDM sera. All SMS sera also had Ab specificity that binds GAD 67 in a region highly homologous to amino acids 188-442 of GAD 65. In contrast to prior studies that used immunoblotting to measure GAD Abs, we find GAD Abs in SMS sera also target two conformation-dependent regions of GAD 65, one located in the middle and one near the C-terminus of the protein. These two regions of the GAD 65 protein are similar to regions targeted by GAD 65-specific Abs found in individuals with IDDM. These results indicate that although disease-specific epitopes may exist, there is also overlap in the humoral response between the two diseases.\n\nPotential non-original or reused-cohort signals:\n- The clinical features of these sera have been previously described\n- in the GAD protein fragment)) as previously described (23).\n- as previously described (16) and had a purity greater than 85% by mass\n- IDDM sera that have been previously reported (23).\n\nPreferred text count-salient snippets:\n- Identi\u0000cation of autoantibody epitopes of glutamic acid decarboxylase in stiff-man syndrome patients.\n- However, most individuals with one of these diseases do not have the other disease.\n- Our results indicate that individuals with SMS\n- have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM.\n- by GAD 65-specific Abs found in individuals with IDDM.\n- Two of the individuals with SMS\n- uals with stiff-man syndrome, new-onset IDDM, or from control subjects\n- The results with IDDM sera are typical of a cohort of 30",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "source_context_adjusted_primary_estimate",
+        "distinct_candidate_counts=[0, 2]",
+        "non_original_case_signals=4",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 75,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Glutamic acid decarboxylase (GAD) is an autoantigen in two autoimmune diseases, insulin-dependent diabetes mellitus (IDDM) and stiff-man syndrome (SMS). However, most individuals with one of these diseases do not have the other disease. Prior studies have suggested that the natures of the GAD Abs associated with each of these diseases are different, which may have implications for the autoimmune pathogenesis. We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins. Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM. The population of GAD Abs in SMS sera is quite complex and includes those that recognize at least three GAD 65 epitope regions located between amino acids 1-16, 188-442, and 442-563. These types of GAD Abs are not found in IDDM sera. All SMS sera also had Ab specificity that binds GAD 67 in a region highly homologous to amino acids 188-442 of GAD 65. In contrast to prior studies that used",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 2,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "early_body_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 70,
+          "rationale": "basis=early_body_count_signal | confidence=medium | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "research article|january 15 1996 glutam ic acid decarboxylase autoantibodies in sti\u0000-m an syndrom e and insulin-dependent diabetes m ellitus exhibit sim ilarities and di\u0000erences in epitope recognition.  k daw; ... et. al j immunol (1996) 156 (2): 818–825. https://doi.org/10.4049/jimmunol.156.2.818 related content identi\u0000cation of autoantibody epitopes of glutamic acid decarboxylase in stiff-man syndrome patients. j immunol (january,1994) therapeutic alteration of insulin-dependent diabetes mellitus progression by t cell tolerance to glutamic acid decarboxylase 65 peptides in vitro and in vivo j immunol (july,2001) b lymphocytes are critical antigen-presenting cells for the initiation of t cell-mediated autoimmune diabetes in nonobese diabetic mice j immunol (october,1998) downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by university of zurich user on 27 may 2023 glutamic acid decarboxylase autoantibodies in stiff-man syndrome and insulin-dependent diabetes mellitus exhibit similarities and differences in epitope recognition' kendra daw,2* noriko ujihara,'* mark atkinson,+ and alvin c. powers3** glutamic acid decarboxylase (gad) is an autoanti",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "89",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_manual_review_required",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "manual_review_required",
+        "selected_candidate_id": null,
+        "alternative_count": null,
+        "count_confidence": "low",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The paper is a lab-focused epitope study using SMS sera, but the provided evidence pack does not contain a clear explicit count of unique original SPS-spectrum patients. The only numeric signal in the candidate list (2) appears to come from a corrupted front-matter excerpt rather than a patient-count statement, while the paper also contains reuse signals suggesting previously described sera/cohorts.",
+        "evidence": [
+          {
+            "quote": "We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins.",
+            "page": null,
+            "section": "Abstract / preferred text excerpt",
+            "supports": "Shows this is primarily a laboratory assay study on sera rather than a clearly enumerated clinical cohort."
+          },
+          {
+            "quote": "Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM.",
+            "page": null,
+            "section": "Abstract / preferred text excerpt",
+            "supports": "Confirms inclusion of SMS patients but gives no explicit number of unique SPS-spectrum cases."
+          },
+          {
+            "quote": "Two of the individuals with SMS",
+            "page": null,
+            "section": "Preferred text count-salient snippets",
+            "supports": "Suggests at least 2 SMS individuals were discussed, but this isolated fragment is insufficient to establish the total unique case count."
+          },
+          {
+            "quote": "The clinical features of these sera have been previously described",
+            "page": null,
+            "section": "Potential non-original or reused-cohort signals",
+            "supports": "Raises concern that the sera/cases may be reused from prior reports, increasing ambiguity about extractable original case counting."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "89",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "We have compared the GAD autoantibody profile and have mapped GAD protein epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins.",
+          "page": null,
+          "section": "Abstract / preferred text excerpt",
+          "supports": "Shows this is primarily a laboratory assay study on sera rather than a clearly enumerated clinical cohort."
+        },
+        {
+          "quote": "Our results indicate that individuals with SMS have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM.",
+          "page": null,
+          "section": "Abstract / preferred text excerpt",
+          "supports": "Confirms inclusion of SMS patients but gives no explicit number of unique SPS-spectrum cases."
+        },
+        {
+          "quote": "Two of the individuals with SMS",
+          "page": null,
+          "section": "Preferred text count-salient snippets",
+          "supports": "Suggests at least 2 SMS individuals were discussed, but this isolated fragment is insufficient to establish the total unique case count."
+        },
+        {
+          "quote": "The clinical features of these sera have been previously described",
+          "page": null,
+          "section": "Potential non-original or reused-cohort signals",
+          "supports": "Raises concern that the sera/cases may be reused from prior reports, increasing ambiguity about extractable original case counting."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\89.json",
+      "challenge_json_path": ""
+    }
   }
 }

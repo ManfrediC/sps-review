@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.298056+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.112956+00:00",
   "paper_id": "116",
   "count_row": {
     "paper_id": "116",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=false | reviewed_count=18 | reviewed_source_category=observational_group_study | predicted_count=18 | predicted_source_category=observational_group_study",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T14:54:03.635282+00:00"
@@ -139,14 +140,244 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\116.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\116.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\116.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\116.json",
+    "result_payload": {
+      "paper_id": "116",
+      "count_row": {
+        "paper_id": "116",
+        "covidence_id": "116",
+        "title": "Antibodies to 125I-glutamic acid decarboxylase in patients with stiff man syndrome.",
+        "authors": "Vincent, A; Grimaldi, L M; Martino, G; Davenport, C; Todd, I",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\116.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "18",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN; explicit_sps_subgroup_conflict=18 vs 8; local_safer_abstention_conflict=8 vs 18; broad_total_exceeds_explicit_subgroup=18 > 8 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, indicating a cohort of 18 SPS-spectrum patients. The subgroup of 8 refers only to the previously anti-GAD-positive SMS patients within that larger SMS cohort, while the methods further specify 8 positive plus 10 negative SMS samples, totaling 18 unique SMS patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "18",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\116.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "18",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\116.json",
+        "counted_at_utc": "2026-04-16T13:48:16.478735+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "116",
+        "covidence_id": "116",
+        "title": "Antibodies to 125I-glutamic acid decarboxylase in patients with stiff man syndrome.",
+        "authors": "Vincent, A; Grimaldi, L M; Martino, G; Davenport, C; Todd, I",
+        "source_category": "lab_heavy_clinical_or_translational",
+        "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        "preferred_text_json_path": "data\\extraction_json\\text\\116.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "18",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN; explicit_sps_subgroup_conflict=18 vs 8; local_safer_abstention_conflict=8 vs 18; broad_total_exceeds_explicit_subgroup=18 > 8 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, indicating a cohort of 18 SPS-spectrum patients. The subgroup of 8 refers only to the previously anti-GAD-positive SMS patients within that larger SMS cohort, while the methods further specify 8 positive plus 10 negative SMS samples, totaling 18 unique SMS patients.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "18",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\116.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "18",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_semantic_conflict_manual_review_required",
+        "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\116.json",
+        "counted_at_utc": "2026-04-16T13:48:16.478735+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\116.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\116.json"
+    },
+    "candidate_payload": {
+      "paper_id": "116",
+      "covidence_id": "116",
+      "title": "Antibodies to 125I-glutamic acid decarboxylase in patients with stiff man syndrome.",
+      "authors": "Vincent, A; Grimaldi, L M; Martino, G; Davenport, C; Todd, I",
+      "source_category": "lab_heavy_clinical_or_translational",
+      "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+      "preferred_text_json_path": "data\\extraction_json\\text\\116.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\116.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "116_Vincent-1997-Antibodies to 125I-glutamic acid.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Antibodies to glutamic acid decarboxylase (GAD) are found in about 40% of patients with stiff man syndrome. A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome. Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with (125)I-GAD and one gave an equivocal result. Other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis. Nine of 35 serum samples referred for testing were positive; in two of these the serum titre was 20-50 times higher than that in the CSF. This assay should prove useful in the diagnosis, management, and investigation of stiff man syndrome.",
+      "early_body_text": "journal of neurology, neurosurgery, and psychiatry 1997; 62: 395-397 395 antibodies to 125i-glutamic acid decarboxylase in patients with stiff man syndrome angela vincent, luigi m e grimaldi, gianvito martino, claire davenport, ian todd abstract antibodies to glutamic acid decarboxylase (gad) are found in about 40% of patients with stiff man syndrome. a new assay involving immunoprecipitation of l25l-glutamic acid decarboxylase was used to measure anti-gad antibodies in 18 patients with stiff man syndrome. of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of 35s-gad, seven were strongly positive with '2ii-gad and one gave an equivocal result. other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis. nine of 35 serum samples referred for testing were positive; in two of these the serum titre was 20-50 times higher than that in the csf. this assay should prove useful in the diagnosis, management, and investigation of stiff man syndrome. (j neurol neurosurg psychiatry 1997; 62: 395-397) neurosciences group, institute of molecular medicine, john radcliffe hospital, oxford ox3 9du, uk a vincent neuroimmunology unit, dibit, san raffaele scientific institute, milan, italy l m e grimaldi g martino division of molecular and clinical immunology, department of clinical laboratory sciences, university hospital, queen's medical centre, nottingham, uk c davenport i todd correspondence to: dr a vincent, neurosciences group, institute of molecular medicine, john radcliffe hospital, oxford ox3 9du, uk. keywords: stiff man syndrome; glutamic acid decarboxylase; neuromyotonia stiff man syndrome is a rare neurological disorder in which muscle rigidity and cramps are thought to result from immune mediated inhibition of gabaergic neuron function. some cases occur in association with insulin dependent diabetes mellitus and others are paraneoplastic, with breast tumours being most common. for a recent review see pender. i antibodies to glutamic acid decarboxylase (gad) were first identified in stiff man syndrome associated with insulin dependent diabetes mellitus, 23 and were subsequently shown to be present in some cases of stiff man syndrome without diabetes, 4 and in many cases of diabetes without neurological disease. 5 antigad antibodies are present in around 40% of patients with stiff man syndrome. they have not been identified in paraneoplastic stiff man syndrome, in which antibodies to amphiphysin are typically present. 467 the measurement of anti-gad antibodies has previously relied on immunoprecipitation of 35s-methionine labelled gad produced in cell free lysates, or immunoblotting of recombinant gad, or of rat or human brain homogenates. these methods are not easily available to routine laboratories and are impractical for quantitative studies. here, we used an assay based on immunopecipitation of '25i-recombinant gad which has been shown to detect anti-gad antibodies in insulin dependent diabetes mellitus. 8 methods we tested 22 samples (coded by it and lmeg). eight were from patients with stiff man syndrome who had previously been found positive for anti-gad antibodies by immunoprecipitation of 35s-methionine-recombinant gad; 10 were from patients with stiff man syndrome previously found negative for antigad antibodies, including four with cancer. three were from healthy subjects and one was from a patient with chronic inflammatory demyelinating polyneuropathy (cidp). as further controls, we tested 15 serum samples from patients with myasthenia gravis with thymoma, all of whom were positive for antiacetylcholine receptor (anti-achr) antibodies; 30 serum samples from patients with acquired neuromyotonia, 13 of whom had positive titres of antibodies to voltage gated potassium channels9; and 47 serum samples referred to us that had proved negative for both antibodies. three control serum samples from healthy subjects were run with each assay. in addition, we have since tested 35 serum samples and two csf samples referred by clinicians for anti-gad antibody testing. 125 i-gad was obtained from rsr ltd (cardiff, uk) and used according to the instructions with slight modifications. serum (0-5-5 pl) was diluted 1: 10 in 0-02 m phosphate ph 7 2/0 1% triton x- 100 (ptx) buffer and added to 25-50 ml of \"25i-gad (10 00030 000 total cpm) for two hours at room temperature. excess anti-igg was added, the precipitates spun at 5000 rpm for two minutes, washed in ptx, and counted. j neurol neurosurg psychiatry: first published as 10. 1136/jnnp. 62. 4. 395 on 1 april 1997. downloaded from http://jnnp.bmj.com/ on may 26, 2023 at university library zurich. protected by copyright. short report 396 vincent, grimaldi, martino, davenport, todd a) .-q e c-a me. *sms /gad+ *sms/iddm/gad+ o sms/gad75 q eet 50 < -0 vsms/paraneoplastic/gado healt",
+      "llm_evidence_text": "Title:\nAntibodies to 125I-glutamic acid decarboxylase in patients with stiff man syndrome.\n\nMetadata abstract:\nAntibodies to glutamic acid decarboxylase (GAD) are found in about 40% of patients with stiff man syndrome. A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome. Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with (125)I-GAD and one gave an equivocal result. Other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis. Nine of 35 serum samples referred for testing were positive; in two of these the serum titre was 20-50 times higher than that in the CSF. This assay should prove useful in the diagnosis, management, and investigation of stiff man syndrome.\n\nExplicit SPS-spectrum subgroup signals:\n- five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus. Of the 14 antiGAD negative serum samples tested, 10 had stiff man syndrome, an\n\nPotential SPS-status uncertainty signals:\n- E. *SMS /GAD+ *SMS/IDDM/GAD+ o SMS/GAD75 Q EEt 50 < -0 VSMS/paraneoplastic/GADo Healthy controls (n = 3) and CIDP (n = 1) 25 K o -25 Clinical groups Figure 1 Results of '-I-GAD antibody assay in coded samples. Eight samples had previously been found positive (filled symbols) for anti-GAD antibody; these included five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus. Of\n- s precipitated > 8500 cpm, and one other precipitated 1589 cpm. The three coded healthy control serum samples and the serum from a patient with CIDP precipitated between 285 and 757 cpm. Figure 1 gives the results expressed as % of total cpm. The mean for the Figure 2 Titration of two stiff man syndrome serum samples and comparison with CSF. The titres were calculated from the line\n- itating less than 600 cpm/5 pl (not shown). 30 000 r E 40 SMS serum 0 SMS CSF * Healthy control V0 20 000 serum . a) 0. < 10 000 (D1 -L ur s~ 0 U 3 1 2 Serum or CSF (stl) 25 000 rE0. 20 000 -0 V SMS a) X 15 000 F0._ 0. a) 0. 10000 -r O SMS CSF n_ 0 LO 5000 _1. 9% 0 0 1 2 Serum \n\nPreferred text count-salient snippets:\n- eight serum samples from patients with\n- to be present in some cases of stiff man syndrome without diabetes, 4 and in many cases of\n- Eight were from patients with stiff\n- GAD; 10 were from patients with stiff man\n- Three were from healthy subjects and one was\n- thymoma, all of whom were positive for antiacetylcholine receptor (anti-AChR) antibodies; 30 serum samples from patients with\n- seven patients who had previously been found\n- patients with stiff man syndrome, 23 it is possible",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "explicit_sps_subgroup_candidate_added",
+        "distinct_candidate_counts=[0, 8, 18]",
+        "explicit_sps_subgroup_count=8",
+        "sps_status_uncertainty_signals=3",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 18,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=abstract_count_signal | confidence=high | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Antibodies to glutamic acid decarboxylase (GAD) are found in about 40% of patients with stiff man syndrome. A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome. Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with (125)I-GAD and one gave an equivocal result. Other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis. Nine of 35 serum samples referred for testing were positive; in two of these the serum titre was 20-50 times higher than that in the CSF. This assay should prove useful in the diagnosis, management, and investigation of stiff ma",
+          "evidence_section": "abstract",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 8,
+          "candidate_kind": "diagnosis_specific_subset_count",
+          "count_basis": "diagnosis_specific_group_breakdown_count",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 102,
+          "rationale": "basis=diagnosis_specific_group_breakdown_count | confidence=high | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus. Of the 14 antiGAD negative serum samples tested, 10 had stiff man syndrome, an",
+          "evidence_section": "explicit_sps_subgroup_signal",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "lab_context_no_extractable_count",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 55,
+          "rationale": "basis=lab_context_no_extractable_count | confidence=low | source_category=lab_heavy_clinical_or_translational",
+          "evidence_text": "Antibodies to glutamic acid decarboxylase (GAD) are found in about 40% of patients with stiff man syndrome. A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome. Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with (125)I-GAD and one gave an equivocal result. Other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis. Nine of 35 serum samples referred for testing were positive; in two of these the serum titre was 20-50 times higher than that in the CSF. This assay should prove useful in the diagnosis, management, and investigation of stiff man syndrome. journal of neurology, neurosurgery, and psychiatry 1997; 62: 395-397 395 antibodies to 125i-glutamic acid decarboxylase in patients with stiff man syndrome angela vincent, luigi m e grimaldi, gianvito martino, claire davenport, ian todd abstract antibodies to glutamic acid decarboxylase ",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand02",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": 8,
+      "explicit_sps_subgroup_basis": "diagnosis_specific_group_breakdown_count",
+      "explicit_sps_subgroup_evidence": [
+        "five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus. Of the 14 antiGAD negative serum samples tested, 10 had stiff man syndrome, an"
+      ],
+      "sps_status_uncertainty_signals": [
+        "E. *SMS /GAD+ *SMS/IDDM/GAD+ o SMS/GAD75 Q EEt 50 < -0 VSMS/paraneoplastic/GADo Healthy controls (n = 3) and CIDP (n = 1) 25 K o -25 Clinical groups Figure 1 Results of '-I-GAD antibody assay in coded samples. Eight samples had previously been found positive (filled symbols) for anti-GAD antibody; these included five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus. Of",
+        "s precipitated > 8500 cpm, and one other precipitated 1589 cpm. The three coded healthy control serum samples and the serum from a patient with CIDP precipitated between 285 and 757 cpm. Figure 1 gives the results expressed as % of total cpm. The mean for the Figure 2 Titration of two stiff man syndrome serum samples and comparison with CSF. The titres were calculated from the line",
+        "itating less than 600 cpm/5 pl (not shown). 30 000 r E 40 SMS serum 0 SMS CSF * Healthy control V0 20 000 serum . a) 0. < 10 000 (D1 -L ur s~ 0 U 3 1 2 Serum or CSF (stl) 25 000 rE0. 20 000 -0 V SMS a) X 15 000 F0._ 0. a) 0. 10000 -r O SMS CSF n_ 0 LO 5000 _1. 9% 0 0 1 2 Serum "
+      ]
+    },
+    "count_decision_payload": {
+      "paper_id": "116",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [
+        "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
+        "COUNT_SPS_STATUS_UNCERTAIN"
+      ],
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN",
+        "explicit_sps_subgroup_conflict=18 vs 8",
+        "local_safer_abstention_conflict=8 vs 18",
+        "broad_total_exceeds_explicit_subgroup=18 > 8"
+      ],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, indicating a cohort of 18 SPS-spectrum patients. The subgroup of 8 refers only to the previously anti-GAD-positive SMS patients within that larger SMS cohort, while the methods further specify 8 positive plus 10 negative SMS samples, totaling 18 unique SMS patients.",
+        "evidence": [
+          {
+            "quote": "A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome.",
+            "page": 1,
+            "section": "Abstract",
+            "supports": "Direct total SPS-spectrum cohort size of 18."
+          },
+          {
+            "quote": "We tested 22 samples (coded by IT and LMEG). Eight were from patients with stiff man syndrome who had previously been found positive for anti-GAD antibodies by immunoprecipitation of 35S-methionine-recombinant GAD; 10 were from patients with stiff man syndrome previously found negative for anti-GAD antibodies, including four with cancer. Three were from healthy subjects and one was from a patient with chronic inflammatory demyelinating polyneuropathy (CIDP).",
+            "page": 1,
+            "section": "Methods",
+            "supports": "Breakdown shows 8 SMS-positive plus 10 SMS-negative patients = 18 unique stiff man syndrome patients; non-SPS controls are separate."
+          },
+          {
+            "quote": "Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with (125)I-GAD and one gave an equivocal result.",
+            "page": 1,
+            "section": "Abstract",
+            "supports": "Confirms that the count of 8 is a subgroup within the larger SMS cohort, not the full cohort."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "116",
+      "decision_stage": "challenge",
+      "challenge_reasons": [
+        "semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN",
+        "explicit_sps_subgroup_conflict=18 vs 8",
+        "local_safer_abstention_conflict=8 vs 18",
+        "broad_total_exceeds_explicit_subgroup=18 > 8"
+      ],
+      "evidence": [
+        {
+          "quote": "A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome.",
+          "page": 1,
+          "section": "Abstract",
+          "supports": "Direct total SPS-spectrum cohort size of 18."
+        },
+        {
+          "quote": "We tested 22 samples (coded by IT and LMEG). Eight were from patients with stiff man syndrome who had previously been found positive for anti-GAD antibodies by immunoprecipitation of 35S-methionine-recombinant GAD; 10 were from patients with stiff man syndrome previously found negative for anti-GAD antibodies, including four with cancer. Three were from healthy subjects and one was from a patient with chronic inflammatory demyelinating polyneuropathy (CIDP).",
+          "page": 1,
+          "section": "Methods",
+          "supports": "Breakdown shows 8 SMS-positive plus 10 SMS-negative patients = 18 unique stiff man syndrome patients; non-SPS controls are separate."
+        },
+        {
+          "quote": "Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with (125)I-GAD and one gave an equivocal result.",
+          "page": 1,
+          "section": "Abstract",
+          "supports": "Confirms that the count of 8 is a subgroup within the larger SMS cohort, not the full cohort."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\116.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_challenges\\116.json"
+    }
   }
 }

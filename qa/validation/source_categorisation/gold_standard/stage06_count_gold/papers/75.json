@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.209792+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.001579+00:00",
   "paper_id": "75",
   "count_row": {
     "paper_id": "75",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_02 | selection_bucket=high_confidence_control | prediction_correct=true | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=1 | predicted_source_category=single_case_report",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T18:47:57.078704+00:00"
@@ -139,14 +140,212 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\75.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\75.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\75.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\75.json",
+    "result_payload": {
+      "paper_id": "75",
+      "count_row": {
+        "paper_id": "75",
+        "covidence_id": "75",
+        "title": "Stiff-man syndrome: case report.",
+        "authors": "Kuhn, W F; Light, P J; Kuhn, S C",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\75.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly a single case report of stiff-man syndrome and repeatedly describes one 39-year-old woman as the patient. Other numbers in the text refer to prior literature cases, not additional original patients in this paper.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\75.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\75.json",
+        "counted_at_utc": "2026-04-16T14:13:45.376820+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "75",
+        "covidence_id": "75",
+        "title": "Stiff-man syndrome: case report.",
+        "authors": "Kuhn, W F; Light, P J; Kuhn, S C",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\75.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly a single case report of stiff-man syndrome and repeatedly describes one 39-year-old woman as the patient. Other numbers in the text refer to prior literature cases, not additional original patients in this paper.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\75.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\75.json",
+        "counted_at_utc": "2026-04-16T14:13:45.376820+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\75.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\75.json"
+    },
+    "candidate_payload": {
+      "paper_id": "75",
+      "covidence_id": "75",
+      "title": "Stiff-man syndrome: case report.",
+      "authors": "Kuhn, W F; Light, P J; Kuhn, S C",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text\\75.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\75.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "75_Kuhn-1995-Stiff-man syndrome_ case report.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Stiff-man syndrome is a rare neurologic disorder characterized by progressive, fluctuating muscle rigidity with painful muscle contractions affecting predominantly the back and proximal extremities. In the ED, the diagnosis can be easily overlooked and misdiagnosed as acute or chronic low back pain and muscle spasm. This syndrome is often associated with diabetes, autoimmune diseases, and cancer. This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain that had become so severe in the preceding two days that she was unable to ambulate. Clues to the patient's proper diagnosis coincide with the diagnostic criteria for stiff-man syndrome: the presence of a slowly progressive stiffness of the axial muscles and proximal limb muscles, making ambulation difficult; hyperlordosis of the lumbar spine; episodic spasms precipitated by jarring or sudden movement; a normal intellectual, sensory, and motor examination when not in spasm; and a marked amelioration of symptoms with the IV administration of diazepam. High-dose oral diazepam is the maintenance drug of choice.",
+      "early_body_text": "stiff-man syndrome. kuhn cf al. 735 medical college of georgia. augusta. ga department of family medicine. section of emergency medicine (wfk. pjl. sck) received: august 5. 1994 revision received: october 31. 1994 accepted: sovember 15. 1994 acknowledgments: the authors acknowledge the contribution made by van wwltz. md. for his assistance with the diagnosis of the patient. address for correspondence and reprints: walter f. kuhn. md section of emergency medicine box s158 medical college of georgia augusta. ga 30912 key words: neurological disorder: musculoskeletal disorder; stiff-man syndrome; muscle spasm: back pain: autoimmune disease stiff-man syndrome: case report walter f. kuhn, md, peter j. light, md, sharon c. kuhn, md i abstract stiff-man syndrome is a rare neurologic disorder characterized by progressive, fluctuating muscle rigidity with painful muscle contrac- tions affecting predominantly the back and proximal extremities. in the ed, the diagnosis can be easily overlooked and misdiagnosed as acute or chronic low back pain and muscle spasm. this syndrome is often associated with diabetes, autoimmune diseases, and cancer. this report describes an illustrative case of a 39-year-old woman who presented to the ed with a two-year history of right leg spasms and low back pain that had become so severe in the preceding two days that she was unable to ambulate. clues to the patient’s proper di- agnosis coincide with the diagnostic criteria for stiff-man syndrome: the presence of a slowly progressive stiffness of the axial muscles and proximal limb muscles, making ambulation difficult; hyperlordosis of the lumbar spine; episodic spasms precipitated by jarring or sudden movement; a normal intellectual, sensory, and motor examination when not in spasm; and a marked amelioration of symptoms with the iv administration of diazepam. high-dose oral diazepam is the main- tenance drug of choice. acad. emerg. med. 1995; 2:735-738. , . . . . . . . . . . . . . . . . . . . . . . . . . . , . . , . . , . . , . . . . . . . . . . . . . , . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . , . . . . . . . . . . . . . . , i the stiff-man syndrome is a rare neurologic disease characterized by episodes of progressive, rigid stiffness of the axial and limb mus- culature with superimposed painful muscle spasms. the syndrome is not well known by emergency physicians (eps). because of its non- specific presentation, it may be overlooked or erroneously diagnosed as a psychiatric disorder, drug-seeking behavior, opisthotonic extra- pyramidal reaction to drugs, tetanus, or other musculoskeletal back and limb pain. the syndrome is frequently associated with diabetes, autoimmune diseases, and cancer. stiff-man syndrome is usually not life-threatening but it can cause significant long-term morbidity. the exact mechanism of the disorder is not fully understood but it is believed to have an autoimmune basis. treatment has been successful with high doses of benzodiazepines. this case report describes a patient who presented to the ed with stiff-man syndrome and dis- cusses the diagnosis, etiology, immunology, and management of this rare disease. i casereport history a 39-year-old black woman who had back pain was carried into the ed by two relatives. she related that she had had severe, inter- mittent back spasms over the preceding week. two days earlier, she had seen an orthopedist who had treated her with diazepam, 5 mg bid, and chlorzoxazone, 500 mg qid. he had referred her to a neu- 736 academic emergency medicine aug 1995 vol 2/no 8 rologist the following day, but upon arrival at the neu- rologist’s office, the woman driving the patient had been unable to get the patient out of the car due to the severity of her back spasms. the patient reported similar but less intense low back pains and severe right leg spasms over the pre- ceding year. review of her medical record showed a history of low back pain with spasms and right lower- extremity spasms for about three years. magnetic res- onance imaging of the cervical spine three years pre- viously had been unremarkable, and mri of the lum- bosacral spine one year earlier had been inconclusive. electromyography (emg) performed at that time had been inconclusive. the patient’s review of systems was significant for occasional vomiting when she attempted to take med- ications. the patient denied any recent travel or history of skin lesions or wounds, fever, chills, night sweats, or incontinence. her past medical history was significant for a vitamin b12 deficiency and atrophic gastritis for which she received monthly b12 injections. there was no history of a psychiatric disorder. her only other medications were those prescribed in the three days prior, which included the diazepam and chlorzoxazone mentioned above and zolpidem tartrate, 10 mg qh. her tetanus immunization was not current. physical examination o",
+      "llm_evidence_text": "Title:\nStiff-man syndrome: case report.\n\nMetadata abstract:\nStiff-man syndrome is a rare neurologic disorder characterized by progressive, fluctuating muscle rigidity with painful muscle contractions affecting predominantly the back and proximal extremities. In the ED, the diagnosis can be easily overlooked and misdiagnosed as acute or chronic low back pain and muscle spasm. This syndrome is often associated with diabetes, autoimmune diseases, and cancer. This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain that had become so severe in the preceding two days that she was unable to ambulate. Clues to the patient's proper diagnosis coincide with the diagnostic criteria for stiff-man syndrome: the presence of a slowly progressive stiffness of the axial muscles and proximal limb muscles, making ambulation difficult; hyperlordosis of the lumbar spine; episodic spasms precipitated by jarring or sudden movement; a normal intellectual, sensory, and motor examination when not in spasm; and a marked amelioration of symptoms with the IV administration of diazepam. High-dose oral diazepam is the maintenance drug of choice.\n\nPreferred text count-salient snippets:\n- This report describes an illustrative case of a 39-year-old woman who\n- had seen an orthopedist who had treated her with diazepam, 5 mg\n- The patient was given diazepam, 5 mg IV, with con-\n- and Woltman’ in 1956, in a series of 14 cases at the\n- Over the last 38 years, 100 patients have\n- shoulder girdle.”4 In long-standing cases, there may be\n- Of the patients described in the literature, the male-\n- some observations in 13 other cases.",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Stiff-man syndrome is a rare neurologic disorder characterized by progressive, fluctuating muscle rigidity with painful muscle contractions affecting predominantly the back and proximal extremities. In the ED, the diagnosis can be easily overlooked and misdiagnosed as acute or chronic low back pain and muscle spasm. This syndrome is often associated with diabetes, autoimmune diseases, and cancer. This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain that had become so severe in the preceding two days that she was unable to ambulate. Clues to the patient's proper diagnosis coincide with the diagnostic criteria for stiff-man syndrome: the presence of a slowly progressive stiffness of the axial muscles and proximal limb muscles, making ambulation difficult; hyperlordosis of the lumbar spine; ep",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Stiff-man syndrome: case report. Stiff-man syndrome is a rare neurologic disorder characterized by progressive, fluctuating muscle rigidity with painful muscle contractions affecting predominantly the back and proximal extremities. In the ED, the diagnosis can be easily overlooked and misdiagnosed as acute or chronic low back pain and muscle spasm. This syndrome is often associated with diabetes, autoimmune diseases, and cancer. This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain that had become so severe in the preceding two days that she was unable to ambulate. Clues to the patient's proper diagnosis coincide with the diagnostic criteria for stiff-man syndrome: the presence of a slowly progressive stiffness of the axial muscles and proximal limb muscles, making ambulation difficult; hyperlordosis of the lumbar spine; episodic spasms precipitated by jarring or sudden movement; a normal intellectual, sensory, and motor examination when not in spasm; and a marked amelioration of symptoms with the IV administration of diazepam. High-dose oral diazepam is the maintenance drug of choice.",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "preferred_candidate_non_high_confidence",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "75",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper is explicitly a single case report of stiff-man syndrome and repeatedly describes one 39-year-old woman as the patient. Other numbers in the text refer to prior literature cases, not additional original patients in this paper.",
+        "evidence": [
+          {
+            "quote": "This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain",
+            "page": null,
+            "section": "abstract",
+            "supports": "The paper reports one original SPS-spectrum patient."
+          },
+          {
+            "quote": "this case report describes a patient who presented to the ed with stiff-man syndrome",
+            "page": null,
+            "section": "introduction/case report lead-in",
+            "supports": "Confirms the article is centered on a single patient with stiff-man syndrome."
+          },
+          {
+            "quote": "a 39-year-old black woman who had back pain was carried into the ed by two relatives.",
+            "page": null,
+            "section": "case report history",
+            "supports": "Identifies the single unique patient described in the report."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "75",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "This report describes an illustrative case of a 39-year-old woman who presented to the ED with a two-year history of right leg spasms and low back pain",
+          "page": null,
+          "section": "abstract",
+          "supports": "The paper reports one original SPS-spectrum patient."
+        },
+        {
+          "quote": "this case report describes a patient who presented to the ed with stiff-man syndrome",
+          "page": null,
+          "section": "introduction/case report lead-in",
+          "supports": "Confirms the article is centered on a single patient with stiff-man syndrome."
+        },
+        {
+          "quote": "a 39-year-old black woman who had back pain was carried into the ed by two relatives.",
+          "page": null,
+          "section": "case report history",
+          "supports": "Identifies the single unique patient described in the report."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\75.json",
+      "challenge_json_path": ""
+    }
   }
 }

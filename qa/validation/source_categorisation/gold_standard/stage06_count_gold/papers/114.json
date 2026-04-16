@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.281909+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.091702+00:00",
   "paper_id": "114",
   "count_row": {
     "paper_id": "114",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=case_group_boundary | prediction_correct=true | reviewed_count=4 | reviewed_source_category=case_series_or_multi_case | predicted_count=4 | predicted_source_category=case_series_or_multi_case",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T14:53:07.056557+00:00"
@@ -139,14 +140,213 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\114.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\114.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\114.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\114.json",
+    "result_payload": {
+      "paper_id": "114",
+      "count_row": {
+        "paper_id": "114",
+        "covidence_id": "114",
+        "title": "The stiff leg syndrome.",
+        "authors": "Brown, P; Rothwell, J C; Marsden, C D",
+        "source_category": "case_series_or_multi_case",
+        "source_subtype": "case_series",
+        "preferred_text_json_path": "data\\extraction_json\\text\\114.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "4",
+        "count_confidence": "high",
+        "count_basis": "patient_label_count",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports a case series of four patients with stiff leg syndrome, which falls within focal/partial SPS-spectrum disorders. Multiple text locations confirm that the report concerns four original patients and then discusses them individually as patients 1-4.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "4",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "patient_label_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\114.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "4",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\114.json",
+        "counted_at_utc": "2026-04-16T14:05:35.019967+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "114",
+        "covidence_id": "114",
+        "title": "The stiff leg syndrome.",
+        "authors": "Brown, P; Rothwell, J C; Marsden, C D",
+        "source_category": "case_series_or_multi_case",
+        "source_subtype": "case_series",
+        "preferred_text_json_path": "data\\extraction_json\\text\\114.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "4",
+        "count_confidence": "high",
+        "count_basis": "patient_label_count",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports a case series of four patients with stiff leg syndrome, which falls within focal/partial SPS-spectrum disorders. Multiple text locations confirm that the report concerns four original patients and then discusses them individually as patients 1-4.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "4",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "patient_label_count",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\114.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "4",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\114.json",
+        "counted_at_utc": "2026-04-16T14:05:35.019967+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\114.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\114.json"
+    },
+    "candidate_payload": {
+      "paper_id": "114",
+      "covidence_id": "114",
+      "title": "The stiff leg syndrome.",
+      "authors": "Brown, P; Rothwell, J C; Marsden, C D",
+      "source_category": "case_series_or_multi_case",
+      "source_subtype": "case_series",
+      "preferred_text_json_path": "data\\extraction_json\\text\\114.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\114.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "114_Brown-1997-The stiff leg syndrome.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs. Spasms were spontaneous, reflex, and induced by voluntary movement. Patients had rigidity and abnormal postures of one or both legs. There was no truncal rigidity or exaggerated lumbar lordosis. Despite the presence of symptoms for up to 16 years, symptoms and signs of brainstem, pyramidal, and sensory dysfunction were absent. Sphincter disturbance developed after many years in one patient. Extensive investigation, including imaging of the whole neuroaxis, failed to disclose a cause. Anti-GAD antibodies were absent. Baclofen and diazepam led to some reduction in the painful spasms, but patients remained disabled by the condition. There were four core electrophysiological features. (1) Continuous motor unit activity was present at rest in at least one limb muscle. (2) Spasms tended to involve the repetitive grouped discharge of motor units. (3) Cutaneomuscular reflexes were abnormal. (4) There was little or no electrophysiological evidence of long tract disturbance. The patients form a characteristic syndrome, separate from the stiff man syndrome, and distinguishable from encephalomyelitis with rigidity. It is suggested that the condition is due to a chronic spinal interneuronitis.",
+      "early_body_text": "31 the stiff leg syndrome p brown, j c rothwell, c d marsden abstract four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs. spasms were spontaneous, reflex, and induced by voluntary movement. patients had rigidity and abnormal postures of one or both legs. there was no truncal rigidity or exaggerated lumbar lordosis. despite the presence of symptoms for up to 16 years, symptoms and signs of brainstem, pyramidal, and sensory dysfunction were absent. sphincter disturbance developed after many years in one patient. extensive investigation, including imaging of the whole neuroaxis, failed to disclose a cause. anti-gad antibodies were absent. baclofen and diazepam led to some reduction in the painful spasms, but patients remained disabled by the condition. there were four core electrophysiological features. (1) continuous motor unit activity was present at rest in at least one limb muscle. (2) spasms tended to involve the repetitive grouped discharge of motor units. (3) cutaneomuscular reflexes were abnormal. (4) there was little or no electrophysiological evidence of long tract disturbance. the patients form a characteristic syndrome, separate from the stiff man syndrome, and distinguishable from encephalomyelitis with rigidity. it is suggested that the condition is due to a chronic spinal interneuronitis. (3 neurol neurosurg psychiatry 1997; 62: 31-37) keywords: stiffness; spasms; spinal intemeuronitis mrc human movement and balance unit, institute of neurology, queen square, london wc1n 3bg, uk p brown j c rothwell c d marsden correspondence to: dr p brown, mrc human movement and balance unit, institute of neurology, queen square, london wc1n 3bg, uk. received 15 february 1996 and in revised form 29 july 1996 accepted 7 august 1996 the combination of chronic axial rigidity, reflex, and action induced spasms and continuous motor unit activity at rest (cmua) is well recognised in the stiff man syndrome. occasionally, the same features may be confined to one or both legs, when corticobasal degeneration, focal lesions of the spinal cord, and encephalomyelitis must be excluded. in these instances there are associated symptoms and signs of cerebral, extrapyramidal, brainstem, or long tract involvement. here we report four patients with a chronic progressive disorder characterised by painful involuntary spasms, stiffness, and cmua confined to the legs, with no evidence of cerebral, brainstem, extrapyramidal, pyramidal, or sensory dysfunction. we suggest that the stiffness and spasms in these patients is due to an indolent interneuronitis of the spinal cord. methods investigations were performed with the approval of the local ethics committee and with the consent of each patient. surface emg recordings were made using bipolar silver/silver chloride electrodes placed 2 to 4 cm apart longitudinally over the muscle bellies. the minimum number of muscles recorded were right and left lumbar paraspinal muscles, quadriceps, hamstrings, tibialis anterior, and the gastrocnemius-soleus complex. biceps, stemocleidomatoid, and thoracic paraspinals were also recorded in patients 1 and 2, and rectus abdominis in patients 1, 2, and 3. muscle spasms were elicited by various stimuli, and were recorded by triggering the computer at the time of delivery of the stimulus. the stimuli consisted of electrical stimulation of peripheral nerves (rectangular pulses of 200 is duration), taps to the body with a tendon hammer equipped with a microswitch, auditory tone bursts (1000 hz, 50 ms duration, and 100 db) presented binaurally through earphones, or magnetic stimulation of the motor cortex using a 9 cm diameter round coil powered by novametrix magstim 200. the duration of the silent period in the tibialis anterior was measured with magnetic shocks 30% above resting motor threshold. cutaneomuscular (sometimes referred to as exteroceptive) reflexes were elicited by a train of four nerve shocks separated by 3 ms and repeated about every 90 s, except in patient 1 in whom single shocks were used. shocks were delivered to the tibial nerve at the ankle of the worst affected leg. emg signals were bandpass filtered at 1000 hz with a time constant of 30 ms. the sampling rate was 2000 hz per channel. reflex latencies were measured by the visual inspection of single trials on a computer display. patients the clinical histories and abnormal findings of the four patients are summarised below. there was no relevant medical or family history, except in patient 3. symptoms and signs suggestive of brainstem or sensory dysfunction were absent, and only patient 2 developed sphincter disturbance. there was no hyperlordosis of the lumbar spine or abdominal rigidj neurol neurosurg psychiatry: first published as 10. 1136/jnnp. 62. 1. 31 on 1 january 1997. downloaded from http://jnnp.bmj.com/ on may 26, 2023 at university library zurich. protected by copyright. journal of neurology, ne",
+      "llm_evidence_text": "Title:\nThe stiff leg syndrome.\n\nMetadata abstract:\nFour patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs. Spasms were spontaneous, reflex, and induced by voluntary movement. Patients had rigidity and abnormal postures of one or both legs. There was no truncal rigidity or exaggerated lumbar lordosis. Despite the presence of symptoms for up to 16 years, symptoms and signs of brainstem, pyramidal, and sensory dysfunction were absent. Sphincter disturbance developed after many years in one patient. Extensive investigation, including imaging of the whole neuroaxis, failed to disclose a cause. Anti-GAD antibodies were absent. Baclofen and diazepam led to some reduction in the painful spasms, but patients remained disabled by the condition. There were four core electrophysiological features. (1) Continuous motor unit activity was present at rest in at least one limb muscle. (2) Spasms tended to involve the repetitive grouped discharge of motor units. (3) Cutaneomuscular reflexes were abnormal. (4) There was little or no electrophysiological evidence of long tract disturbance. The patients form a characteristic syndrome, separate from the stiff man syndrome, and distinguishable from encephalomyelitis with rigidity. It is suggested that the condition is due to a chronic spinal interneuronitis.\n\nPreferred text count-salient snippets:\n- Four patients had a chronic progressive\n- report four patients with a chronic progressive\n- were also recorded in patients 1 and 2, and\n- rectus abdominis in patients 1, 2, and 3.\n- about every 90 s, except in patient 1 in whom\n- the four patients are summarised below.\n- except in patient 3.\n- were absent, and only patient 2 developed",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "abstract_only_candidate_added",
+        "distinct_candidate_counts=[0, 4]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 4,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "patient_label_count",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 90,
+          "rationale": "basis=patient_label_count | confidence=medium | source_category=case_series_or_multi_case",
+          "evidence_text": "31 the stiff leg syndrome p brown, j c rothwell, c d marsden abstract four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs. spasms were spontaneous, reflex, and induced by voluntary movement. patients had rigidity and abnormal postures of one or both legs. there was no truncal rigidity or exaggerated lumbar lordosis. despite the presence of symptoms for up to 16 years, symptoms and signs of brainstem, pyramidal, and sensory dysfunction were absent. sphincter disturbance developed after many years in one patient. extensive investigation, including imaging of the whole neuroaxis, failed to disclose a cause. anti-gad antibodies were absent. baclofen and diazepam led to some reduction in the painful spasms, but patients remained disabled by the condition. there were four core electrophysiological features. (1) continuous motor unit activity was present at rest in at least one limb muscle. (2) spasms tended to involve the repetitive grouped discharge of motor units. (3) cutaneomuscular reflexes were abnormal. (4) there was little or no electrophysiological evidence of long tract disturbance. the patients f",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 45,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=case_series_or_multi_case",
+          "evidence_text": "Four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs. Spasms were spontaneous, reflex, and induced by voluntary movement. Patients had rigidity and abnormal postures of one or both legs. There was no truncal rigidity or exaggerated lumbar lordosis. Despite the presence of symptoms for up to 16 years, symptoms and signs of brainstem, pyramidal, and sensory dysfunction were absent. Sphincter disturbance developed after many years in one patient. Extensive investigation, including imaging of the whole neuroaxis, failed to disclose a cause. Anti-GAD antibodies were absent. Baclofen and diazepam led to some reduction in the painful spasms, but patients remained disabled by the condition. There were four core electrophysiological features. (1) Continuous motor unit activity was present at rest in at least one limb muscle. (2) Spasms tended to involve the repetitive grouped discharge of motor units. (3) Cutaneomuscular reflexes were abnormal. (4) There was little or no electrophysiological evidence of long tract disturbance. The patients form a characteristic syndrome, separate from the stiff man syndrome, a",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "114",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The paper explicitly reports a case series of four patients with stiff leg syndrome, which falls within focal/partial SPS-spectrum disorders. Multiple text locations confirm that the report concerns four original patients and then discusses them individually as patients 1-4.",
+        "evidence": [
+          {
+            "quote": "Four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs.",
+            "page": 1,
+            "section": "Abstract",
+            "supports": "Explicit total number of original reported patients is four."
+          },
+          {
+            "quote": "here we report four patients with a chronic progressive disorder characterised by painful involuntary spasms, stiffness, and cmua confined to the legs",
+            "page": 1,
+            "section": "Introduction/Preferred text excerpt",
+            "supports": "Confirms this paper is an original report of four patients in the stiff leg syndrome case series."
+          },
+          {
+            "quote": "the clinical histories and abnormal findings of the four patients are summarised below.",
+            "page": 1,
+            "section": "Patients",
+            "supports": "Confirms the cohort size is four unique patients described in the paper."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "114",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs.",
+          "page": 1,
+          "section": "Abstract",
+          "supports": "Explicit total number of original reported patients is four."
+        },
+        {
+          "quote": "here we report four patients with a chronic progressive disorder characterised by painful involuntary spasms, stiffness, and cmua confined to the legs",
+          "page": 1,
+          "section": "Introduction/Preferred text excerpt",
+          "supports": "Confirms this paper is an original report of four patients in the stiff leg syndrome case series."
+        },
+        {
+          "quote": "the clinical histories and abnormal findings of the four patients are summarised below.",
+          "page": 1,
+          "section": "Patients",
+          "supports": "Confirms the cohort size is four unique patients described in the paper."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\114.json",
+      "challenge_json_path": ""
+    }
   }
 }

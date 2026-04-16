@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.837434+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.792479+00:00",
   "paper_id": "12623",
   "count_row": {
     "paper_id": "12623",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=count_ambiguity | prediction_correct=false | reviewed_count=0 | reviewed_source_category=observational_group_study | predicted_count=182 | predicted_source_category=interventional_study | reviewer_notes=1094 sps cases are mentioned, but there is no extractable data",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:04:36.621132+00:00"
@@ -139,14 +140,217 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold30_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\results\\12623.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\12623.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_decisions\\12623.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\12623.json",
+    "result_payload": {
+      "paper_id": "12623",
+      "count_row": {
+        "paper_id": "12623",
+        "covidence_id": "12623",
+        "title": "Inpatient care for stiff person syndrome in the United States: A nationwide readmission study",
+        "authors": "Crispo, J; Thibault, D; Fortin, Y; Willis, A",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\12623.json",
+        "preferred_text_source": "proceedings_ready",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "medium",
+        "count_basis": "administrative_dataset_not_extractable",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This conference abstract reports a nationwide readmission database analysis using ICD-9-coded SPS inpatient encounters and explicitly counts '1,094 SPS index events,' not unique original SPS-spectrum patients. Because the study is based on administrative hospitalization events rather than extractable patient-level or cohort-level unique cases, the best-supported candidate is the administrative-dataset zero count.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "administrative_dataset_not_extractable",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\12623.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\12623.json",
+        "counted_at_utc": "2026-04-16T13:50:36.779970+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "12623",
+        "covidence_id": "12623",
+        "title": "Inpatient care for stiff person syndrome in the United States: A nationwide readmission study",
+        "authors": "Crispo, J; Thibault, D; Fortin, Y; Willis, A",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\12623.json",
+        "preferred_text_source": "proceedings_ready",
+        "count_eligible": "true",
+        "likely_sps_case_count": "0",
+        "count_confidence": "medium",
+        "count_basis": "administrative_dataset_not_extractable",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This conference abstract reports a nationwide readmission database analysis using ICD-9-coded SPS inpatient encounters and explicitly counts '1,094 SPS index events,' not unique original SPS-spectrum patients. Because the study is based on administrative hospitalization events rather than extractable patient-level or cohort-level unique cases, the best-supported candidate is the administrative-dataset zero count.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "0",
+        "heuristic_count_confidence": "low",
+        "heuristic_count_basis": "administrative_dataset_not_extractable",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\candidate_packages\\12623.json",
+        "heuristic_candidate_count": "3",
+        "llm_likely_sps_case_count": "0",
+        "llm_count_confidence": "medium",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\count_evidence\\12623.json",
+        "counted_at_utc": "2026-04-16T13:50:36.779970+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\12623.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\12623.json"
+    },
+    "candidate_payload": {
+      "paper_id": "12623",
+      "covidence_id": "12623",
+      "title": "Inpatient care for stiff person syndrome in the United States: A nationwide readmission study",
+      "authors": "Crispo, J; Thibault, D; Fortin, Y; Willis, A",
+      "source_category": "conference_abstract",
+      "source_subtype": "group_conference_abstract",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\12623.json",
+      "preferred_text_source": "proceedings_ready",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\12623.json",
+        "preferred_text_source": "proceedings_ready",
+        "source_filename": "12623_Crispo-2017-Inpatient care for stiff person sy.pdf",
+        "proceedings_ready_source_kind": "llm_validated",
+        "proceedings_ready_text_mode": "trimmed_abstract",
+        "proceedings_ready_reason": "LLM selected a line inside the overshoot candidate as the abstract end.",
+        "source_text_json_path": "data\\extraction_json\\text\\12623.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "",
+      "early_body_text": "1305 inpatient care for stiff person syndrome in the united states: a nationwide readmission study j. crispo, d. thibault, y. fortin, a. willis (sudbury, on, canada) objective: to describe national inpatient care for stiff person syn- drome (sps) in the united states and characterize all-cause 30-day readmission. background: sps is a rare and progressive autoimmune disorder that is characterized by axial muscle rigidity and involuntary spasms, which may lead to signiﬁcant patient disability. to date, many case reports have described sps onset, progression, and treatment; however, there is a paucity of population-based data on sps hospitalizations. methods: the 2013 nationwide readmission database was queried for sps index events, which were deﬁned as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented, length of stay was recorded, and the patient was discharged alive. december discharges were excluded to ensure that sufﬁcient follow-up was available for read- mission analyses. survey weighting methods were used to generate nationally representative estimates of sps index events, all-cause read- mission within 30 days of inpatient discharge, and principal reasons for readmission. secondary analyses examined whether readmissions were to the same index event hospital. results: a total of 1,094 sps index events were identiﬁed, with an all-cause 30-day readmission rate of 19.4%. sps was the principal diag- nosis for 27.4% of index events, but only 14.0% of readmissions. read- missions were primarily for neurological conditions (22.9%), epilepsy/ convulsions (5.9%), septicemia (5.2%), pneumonia (4.7%), diabetes mel- litus with complications (4.0%), and respiratory failure (3.8%). length of stay was comparable between index events (7.0 days) and readmis- sions (6.4 days). among readmissions, 27.4% presented to a different hospital. conclusions: hospital readmissions among individuals with sps are relatively common, and include potential disease complications or medi- cal conditions associated with sps. our ﬁnding of readmission to a dif- ferent hospital may reﬂect specialty care patterns or gaps in discharge planning. future studies are needed to determine the extent to which readmissions in sps patients are avoidable.",
+      "llm_evidence_text": "Title:\nInpatient care for stiff person syndrome in the United States: A nationwide readmission study\n\nPreferred text count-salient snippets:\n- Objective: To describe national inpatient care for stiff person syn-\n- drome (SPS) in the United States and characterize all-cause 30-day\n- which may lead to signiﬁcant patient disability.\n- reports have described SPS onset, progression, and treatment; however,\n- an ICD-9 diagnosis of SPS (333.91) was documented, length of stay was\n- Results: A total of 1,094 SPS index events were identiﬁed, with an\n- Conclusions: Hospital readmissions among individuals with SPS are\n- readmissions in SPS patients are avoidable.",
+      "candidate_generation_notes": [
+        "preferred_text_source=proceedings_ready",
+        "source_context_adjusted_primary_estimate",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[0, 1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "administrative_dataset_not_extractable",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 75,
+          "rationale": "basis=administrative_dataset_not_extractable | confidence=low | source_category=conference_abstract",
+          "evidence_text": "1305 inpatient care for stiff person syndrome in the united states: a nationwide readmission study j. crispo, d. thibault, y. fortin, a. willis (sudbury, on, canada) objective: to describe national inpatient care for stiff person syn- drome (sps) in the united states and characterize all-cause 30-day readmission. background: sps is a rare and progressive autoimmune disorder that is characterized by axial muscle rigidity and involuntary spasms, which may lead to signiﬁcant patient disability. to  Inpatient care for stiff person syndrome in the United States: A nationwide readmission study",
+          "evidence_section": "context",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=conference_abstract",
+          "evidence_text": "Inpatient care for stiff person syndrome in the United States: A nationwide readmission study 1305 inpatient care for stiff person syndrome in the united states: a nationwide readmission study j. crispo, d. thibault, y. fortin, a. willis (sudbury, on, canada) objective: to describe national inpatient care for stiff person syn- drome (sps) in the united states and characterize all-cause 30-day readmission. background: sps is a rare and progressive autoimmune disorder that is characterized by axial muscle rigidity and involuntary spasms, which may lead to signiﬁcant patient disability. to",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand03",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 45,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=conference_abstract",
+          "evidence_text": "1305 inpatient care for stiff person syndrome in the united states: a nationwide readmission study j. crispo, d. thibault, y. fortin, a. willis (sudbury, on, canada) objective: to describe national inpatient care for stiff person syn- drome (sps) in the united states and characterize all-cause 30-day readmission. background: sps is a rare and progressive autoimmune disorder that is characterized by axial muscle rigidity and involuntary spasms, which may lead to signiﬁcant patient disability. to  Inpatient care for stiff person syndrome in the United States: A nationwide readmission study",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "12623",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "medium",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "This conference abstract reports a nationwide readmission database analysis using ICD-9-coded SPS inpatient encounters and explicitly counts '1,094 SPS index events,' not unique original SPS-spectrum patients. Because the study is based on administrative hospitalization events rather than extractable patient-level or cohort-level unique cases, the best-supported candidate is the administrative-dataset zero count.",
+        "evidence": [
+          {
+            "quote": "the 2013 nationwide readmission database was queried for sps index events, which were defined as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented",
+            "page": null,
+            "section": "Methods",
+            "supports": "The unit of analysis is administrative inpatient encounters/index events, not unique original SPS-spectrum patients."
+          },
+          {
+            "quote": "a total of 1,094 sps index events were identified",
+            "page": null,
+            "section": "Results",
+            "supports": "The reported count is for index events/hospitalizations rather than unique patients, so it should not be counted as extractable SPS cases."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "12623",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "the 2013 nationwide readmission database was queried for sps index events, which were defined as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented",
+          "page": null,
+          "section": "Methods",
+          "supports": "The unit of analysis is administrative inpatient encounters/index events, not unique original SPS-spectrum patients."
+        },
+        {
+          "quote": "a total of 1,094 sps index events were identified",
+          "page": null,
+          "section": "Results",
+          "supports": "The reported count is for index events/hospitalizations rather than unique patients, so it should not be counted as extractable SPS cases."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_20260416\\local_model_results\\12623.json",
+      "challenge_json_path": ""
+    }
   }
 }

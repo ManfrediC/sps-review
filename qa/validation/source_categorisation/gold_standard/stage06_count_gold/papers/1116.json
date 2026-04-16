@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.607790+00:00",
+  "generated_at_utc": "2026-04-16T18:35:08.982687+00:00",
   "paper_id": "1116",
   "count_row": {
     "paper_id": "1116",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_03 | selection_bucket=conference_edge | prediction_correct=false | reviewed_count=6 | reviewed_source_category=conference_abstract | predicted_count=6 | predicted_source_category=conference_abstract",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:49:31.860514+00:00"
@@ -139,14 +140,214 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1116.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1116.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1116.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1116.json",
+    "result_payload": {
+      "paper_id": "1116",
+      "count_row": {
+        "paper_id": "1116",
+        "covidence_id": "1116",
+        "title": "Paediatric neurological syndromes associated with glycine receptor antibodies",
+        "authors": "Gadian J.; Hacohen Y.; Kariyawasam S.; Woodhall M.; Brilot F.; Pillai S.; Suleiman J.; Lascelles K.; Pike M.; Munot P.; Vincent A.; Dale R.C.; Lim M.",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1116.json",
+        "preferred_text_source": "proceedings_ready",
+        "count_eligible": "true",
+        "likely_sps_case_count": "6",
+        "count_confidence": "low",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The abstract reports a cohort of six GlyR-antibody-positive children, but only one is explicitly described as having features of PERM, which is within the SPS spectrum. The remaining children are described mainly by seizures, cognitive/behavioural changes, tremor, and gait abnormalities, so the SPS-spectrum subset cannot be safely counted from the provided text.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "6",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1116.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "6",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1116.json",
+        "counted_at_utc": "2026-04-16T14:04:48.830886+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "1116",
+        "covidence_id": "1116",
+        "title": "Paediatric neurological syndromes associated with glycine receptor antibodies",
+        "authors": "Gadian J.; Hacohen Y.; Kariyawasam S.; Woodhall M.; Brilot F.; Pillai S.; Suleiman J.; Lascelles K.; Pike M.; Munot P.; Vincent A.; Dale R.C.; Lim M.",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1116.json",
+        "preferred_text_source": "proceedings_ready",
+        "count_eligible": "true",
+        "likely_sps_case_count": "6",
+        "count_confidence": "low",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "true",
+        "count_reason": "challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The abstract reports a cohort of six GlyR-antibody-positive children, but only one is explicitly described as having features of PERM, which is within the SPS spectrum. The remaining children are described mainly by seizures, cognitive/behavioural changes, tremor, and gait abnormalities, so the SPS-spectrum subset cannot be safely counted from the provided text.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "6",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1116.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "6",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_manual_review_required",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1116.json",
+        "counted_at_utc": "2026-04-16T14:04:48.830886+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\1116.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1116.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1116",
+      "covidence_id": "1116",
+      "title": "Paediatric neurological syndromes associated with glycine receptor antibodies",
+      "authors": "Gadian J.; Hacohen Y.; Kariyawasam S.; Woodhall M.; Brilot F.; Pillai S.; Suleiman J.; Lascelles K.; Pike M.; Munot P.; Vincent A.; Dale R.C.; Lim M.",
+      "source_category": "conference_abstract",
+      "source_subtype": "group_conference_abstract",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1116.json",
+      "preferred_text_source": "proceedings_ready",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1116.json",
+        "preferred_text_source": "proceedings_ready",
+        "source_filename": "1116_Gadian - PIIS109037981530088X.pdf",
+        "proceedings_ready_source_kind": "gold_manual",
+        "proceedings_ready_text_mode": "trimmed_abstract",
+        "proceedings_ready_reason": "Published active manually checked gold-standard proceedings trim.",
+        "source_text_json_path": "data\\extraction_json\\text\\1116.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Background: In patients with glycine receptor antibodies (GlyRAb), a range of neurological syndromes that includes Stiff Person Syndrome (SPS) and its more severe variant Progressive Encephalitis with Rigidity and Myoclonus (PERM) have recently been reported in a predominantly adult cohort (Carvajal-Gonzalez et al., Brain 2014;137(Pt 8):2178-92). Objective(s): To report the clinical features and outcome of children with GlyR-Ab. Method(s): Cases were identified from samples sent to the Nuffield Department of Clinical Neurology, Oxford for a range of neuronal surface antibody testing. Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified (2 London, 1 Oxford, and 3 Australia). The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM. During the course of the illness, seizures featured in 5 patients and cognitive/behavioural changes in all. Electroencephalogram (EEG) during the illness revealed features of encephalopathy (n=3) and focal/multifocal epileptiform discharges (n=2). Two children had early imaging features of brain inflammation, and in another 2, global atrophy were identified on serial imaging despite normal acute scans. GlyR-Abs were detected in the serum (n=6) and/or CSF (n=2). Co-occurrence of low levels (<400 pmol) VGKC-Abs were identified in 2 patients, and no further neuronal surface antibodies or GAD-Abs were found. Intrathecal oligoclonal bands were identified in 1/5 tested. Immune modulation improved seizure control transiently in one patient. One patient had normal neurological function at 5 month follow-up (untreated), and one patient died after 5 years. Ongoing cognitive impairment occurred in 4 children and ongoing seizure disorder in 3. Conclusion(s): The paediatric phenotype is predominated by female sex, seizures, and, where PERM occurs, it is associated with additional features. The clinical relevance of GlyR antibodies needs to be determined, to help guide therapies.",
+      "early_body_text": "op87 - 3001 paediatric neurological syndromes associated with glycine receptor antibodies j. gadian, y. hacohen, s. kariyawasam, m.woodhall, f. brilot, s. pillai, j. suleiman, k. lascelles, m. pike, p. munot, a. vincent, r.c. dale, m. lim. children’sn eurosciencesc entre,e velina london children’s hospital,s tt homas’h ospital, london, uk background: in patients with glycine recept o r antibodies (glyr- ab), a range of neurological syndromes that includes stiff person syndrome (sps) and its more se vere variant pr ogressivee n - cephalitis with rigidity and myoclonus (perm) haver ecently been reported in a predominantly adult cohort (carv ajal-gonzález et al., brain 2014;137(pt 8):2178–92). objectives: to report the clinical features and outcome of children with glyr-ab. meth ods: cases were identiﬁed fr om samples sent to the nufﬁeld department of clinical neur ology, oxford f or a range of neur onal surface antibody testing. results: six girls with a mean age of 8 years (median 7.5; range 1–15) were identiﬁed (2 london, 1o xford, and 3 australia). the children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) ofw h omt wo had trem or and gait abnormalities and one features of perm. during the course of the illness, seizures featured in 5 patients and cognitive/behavioural changes in all. electroencephalogram (eeg) during the illness revealed features ofe ncephalopathy (n=3) and focal/multifocal epileptiform disc harges (n=2). t woc hildren had early imaging features of brain inﬂammation, and in another 2, global atrophy were identiﬁed on serial imaging despite normal acute scans. glyr-abs were detected in the serum (n=6) and/or csf (n=2). co-occurrence o fl owl e vels ( <400 pmol) vgkc-abs were identiﬁed in 2 patients, and no further neur onal surface antibodies or gad-abs were found. intrathecal oligoclonal bands were identiﬁed in 1/5 tested. immune modulation impr oved seizure control transiently in one patient. one patient had nor - mal neurological functiona t 5 month follow-up (untreated), and one patient died after 5 years. ongoing cognitive impairment occurred in 4c hildren and ongoing seizure disorder in 3. conclu- sions: the paediatric phenotype is predominated by female sex, seizures, and, where perm occurs, it is associated with additional features. the clinical rele vance of glyr antibodies needs to be determined, to help guide therapies.",
+      "llm_evidence_text": "Title:\nPaediatric neurological syndromes associated with glycine receptor antibodies\n\nMetadata abstract:\nBackground: In patients with glycine receptor antibodies (GlyRAb), a range of neurological syndromes that includes Stiff Person Syndrome (SPS) and its more severe variant Progressive Encephalitis with Rigidity and Myoclonus (PERM) have recently been reported in a predominantly adult cohort (Carvajal-Gonzalez et al., Brain 2014;137(Pt 8):2178-92). Objective(s): To report the clinical features and outcome of children with GlyR-Ab. Method(s): Cases were identified from samples sent to the Nuffield Department of Clinical Neurology, Oxford for a range of neuronal surface antibody testing. Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified (2 London, 1 Oxford, and 3 Australia). The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM. During the course of the illness, seizures featured in 5 patients and cognitive/behavioural changes in all. Electroencephalogram (EEG) during the illness revealed features of encephalopathy (n=3) and focal/multifocal epileptiform discharges (n=2). Two children had early imaging features of brain inflammation, and in another 2, global atrophy were identified on serial imaging despite normal acute scans. GlyR-Abs were detected in the serum (n=6) and/or CSF (n=2). Co-occurrence of low levels (<400 pmol) VGKC-Abs were identified in 2 patients, and no further neuronal surface antibodies or GAD-Abs were found. Intrathecal oligoclonal bands were identified in 1/5 tested. Immune modulation improved seizure control transiently in one patient. One patient had normal neurological function at 5 month follow-up (untreated), and one patient died after 5 years. Ongoing cognitive impairment occurred in 4 childre\n\nPreferred text count-salient snippets:\n- Background: In patients with glycine recept o r antibodies (GlyR-\n- reported in a predominantly adult cohort (Carv ajal-González et\n- Results: Six girls with a mean age of 8 years\n- the course of the illness, seizures featured in 5 patients and\n- were identiﬁed in 2 patients, and no further neur onal surface\n- seizure control transiently in one patient.\n- One patient had nor -\n- one patient died after 5 years.",
+      "candidate_generation_notes": [
+        "preferred_text_source=proceedings_ready",
+        "body_only_candidate_added",
+        "distinct_candidate_counts=[2, 6]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 6,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 82,
+          "rationale": "basis=abstract_count_signal | confidence=medium | source_category=conference_abstract | heuristic_manual_review=true",
+          "evidence_text": "Background: In patients with glycine receptor antibodies (GlyRAb), a range of neurological syndromes that includes Stiff Person Syndrome (SPS) and its more severe variant Progressive Encephalitis with Rigidity and Myoclonus (PERM) have recently been reported in a predominantly adult cohort (Carvajal-Gonzalez et al., Brain 2014;137(Pt 8):2178-92). Objective(s): To report the clinical features and outcome of children with GlyR-Ab. Method(s): Cases were identified from samples sent to the Nuffield Department of Clinical Neurology, Oxford for a range of neuronal surface antibody testing. Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified (2 London, 1 Oxford, and 3 Australia). The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM. During th",
+          "evidence_section": "abstract",
+          "blockers": [
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 2,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "early_body_count_signal",
+          "count_confidence": "medium",
+          "manual_review_required": true,
+          "score": 62,
+          "rationale": "basis=early_body_count_signal | confidence=medium | source_category=conference_abstract | heuristic_manual_review=true",
+          "evidence_text": "op87 - 3001 paediatric neurological syndromes associated with glycine receptor antibodies j. gadian, y. hacohen, s. kariyawasam, m.woodhall, f. brilot, s. pillai, j. suleiman, k. lascelles, m. pike, p. munot, a. vincent, r.c. dale, m. lim. children’sn eurosciencesc entre,e velina london children’s hospital,s tt homas’h ospital, london, uk background: in patients with glycine recept o r antibodies (glyr- ab), a range of neurological syndromes that includes stiff person syndrome (sps) and its more se vere variant pr ogressivee n - cephalitis with rigidity and myoclonus (perm) haver ecently been reported in a predominantly adult cohort (carv ajal-gonzález et al., brain 2014;137(pt 8):2178–92). objectives: to report the clinical features and outcome of children with glyr-ab. meth ods: cases were identiﬁed fr om samples sent to the nufﬁeld department of clinical neur ology, oxford f or a range of neur onal surface antibody testing. results: six girls with a mean age of 8 years (median 7.5; range 1–15) were identiﬁed (2 london, 1o xford, and 3 australia). the children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) ofw h omt wo had trem or and gait ",
+          "evidence_section": "preferred_text_excerpt",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "heuristic_manual_review_required",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "1116",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_manual_review_required",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "manual_review_required",
+        "selected_candidate_id": null,
+        "alternative_count": null,
+        "count_confidence": "low",
+        "count_manual_review_required": true,
+        "count_reasoning_summary": "The abstract reports a cohort of six GlyR-antibody-positive children, but only one is explicitly described as having features of PERM, which is within the SPS spectrum. The remaining children are described mainly by seizures, cognitive/behavioural changes, tremor, and gait abnormalities, so the SPS-spectrum subset cannot be safely counted from the provided text.",
+        "evidence": [
+          {
+            "quote": "Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified",
+            "page": null,
+            "section": "abstract/results",
+            "supports": "Shows the full original pediatric GlyR-antibody cohort size is 6, but this is not explicitly an SPS-spectrum cohort."
+          },
+          {
+            "quote": "The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM.",
+            "page": null,
+            "section": "abstract/results",
+            "supports": "Only one patient is explicitly identified with an SPS-spectrum diagnosis/features (PERM); the others are not clearly classifiable as SPS-spectrum cases."
+          },
+          {
+            "quote": "Conclusion(s): The paediatric phenotype is predominated by female sex, seizures, and, where PERM occurs, it is associated with additional features.",
+            "page": null,
+            "section": "abstract/conclusions",
+            "supports": "Confirms PERM occurred only as a subset within this broader GlyR-antibody pediatric phenotype rather than indicating all 6 had SPS-spectrum disorders."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1116",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Result(s): Six girls with a mean age of 8 years (median 7.5; range 1-15) were identified",
+          "page": null,
+          "section": "abstract/results",
+          "supports": "Shows the full original pediatric GlyR-antibody cohort size is 6, but this is not explicitly an SPS-spectrum cohort."
+        },
+        {
+          "quote": "The children presented with refractory focal seizures (n=2), or cognitive/behavioural changes (n=4) of whom two had tremor and gait abnormalities and one features of PERM.",
+          "page": null,
+          "section": "abstract/results",
+          "supports": "Only one patient is explicitly identified with an SPS-spectrum diagnosis/features (PERM); the others are not clearly classifiable as SPS-spectrum cases."
+        },
+        {
+          "quote": "Conclusion(s): The paediatric phenotype is predominated by female sex, seizures, and, where PERM occurs, it is associated with additional features.",
+          "page": null,
+          "section": "abstract/conclusions",
+          "supports": "Confirms PERM occurred only as a subset within this broader GlyR-antibody pediatric phenotype rather than indicating all 6 had SPS-spectrum disorders."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1116.json",
+      "challenge_json_path": ""
+    }
   }
 }

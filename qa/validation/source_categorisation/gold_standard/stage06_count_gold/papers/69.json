@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.190981+00:00",
+  "generated_at_utc": "2026-04-16T18:35:07.977277+00:00",
   "paper_id": "69",
   "count_row": {
     "paper_id": "69",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=2026-04-05_round_02 | selection_bucket=high_confidence_control | prediction_correct=true | reviewed_count=1 | reviewed_source_category=single_case_report | predicted_count=1 | predicted_source_category=single_case_report",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T15:05:15.152505+00:00"
@@ -139,14 +140,224 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\69.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\69.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\69.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\69.json",
+    "result_payload": {
+      "paper_id": "69",
+      "count_row": {
+        "paper_id": "69",
+        "covidence_id": "69",
+        "title": "Stiff-man syndrome. Report of a case.",
+        "authors": "Tarsy, D; Miyawaki, E K",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\69.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is explicitly a single case report of stiff-man syndrome, and both the title and abstract/full-text excerpt describe one female patient presented as the report's original case. The other patient numbers in the excerpt refer to prior literature and should not be counted.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\69.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\69.json",
+        "counted_at_utc": "2026-04-16T14:13:08.993114+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "69",
+        "covidence_id": "69",
+        "title": "Stiff-man syndrome. Report of a case.",
+        "authors": "Tarsy, D; Miyawaki, E K",
+        "source_category": "single_case_report",
+        "source_subtype": "case_report",
+        "preferred_text_json_path": "data\\extraction_json\\text\\69.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "1",
+        "count_confidence": "high",
+        "count_basis": "case_report_marker_single_case",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is explicitly a single case report of stiff-man syndrome, and both the title and abstract/full-text excerpt describe one female patient presented as the report's original case. The other patient numbers in the excerpt refer to prior literature and should not be counted.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "1",
+        "heuristic_count_confidence": "medium",
+        "heuristic_count_basis": "case_report_marker_single_case",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\69.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "1",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\69.json",
+        "counted_at_utc": "2026-04-16T14:13:08.993114+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\69.json",
+      "preferred_text_json_path": "data\\extraction_json\\text\\69.json"
+    },
+    "candidate_payload": {
+      "paper_id": "69",
+      "covidence_id": "69",
+      "title": "Stiff-man syndrome. Report of a case.",
+      "authors": "Tarsy, D; Miyawaki, E K",
+      "source_category": "single_case_report",
+      "source_subtype": "case_report",
+      "preferred_text_json_path": "data\\extraction_json\\text\\69.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text\\69.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "69_Tarsy-1994-Stiff-man syndrome. Report of a cas.pdf",
+        "proceedings_ready_source_kind": "",
+        "proceedings_ready_text_mode": "",
+        "proceedings_ready_reason": "",
+        "source_text_json_path": ""
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Stiff-man syndrome is a well-described, but rare and often overlooked, neuromuscular syndrome of rigidity, spasm, and gait abnormality that is associated with several endocrinologic and autoimmune disorders. A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made. Similar to many described patients, she was diabetic, hyperthyroid, and had elevated islet cell, antithyroid, and glutamic acid decarboxylase antibody levels. The high frequency of diabetes mellitus among patients with stiff-man syndrome is emphasized, as is increasing evidence to suggest that elaboration of anti-glutamic acid decarboxylase and anti-islet cell antibodies may play a role in the pathophysiologic state of the disorder.",
+      "early_body_text": "stiff-man syndrome report of a case daniel tarsy, md, edison k. miyawaki, md stiff-man syndrome is a well-described, but rare and often overlooked, neuromuscular syndrome of rigidity, spasm, and gait abnormality that is associated with several en- docrinologic and autoimmune disorders. a patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct di- agnosis was made. similar to many described patients, she was diabetic, hyperthyroid, and had elevated islet cell, antithyroid, and glutamic acid decarboxylase antibody levels. the high fre- quency of diabetes mellitus among patients with stiff-man syndrome is emphasized, as is in- creasing evidence to suggest that elaboration of anti\\p=m-\\glutamic acid decarboxylase and anti\\p=m-\\islet cell antibodies may play a role in the pathophysiologic state of the disorder. (arch intern med. 1994;154:1285-1288) stiff-man syndrome (sms) is a rare neu¬ rologic disorder of unknown cause characterized by progressive and fluctu¬ ating axial muscular rigidity, painful muscle spasms, and abnormal gait. an association with diabetes mellitus has long been recognized,1 and in a recent review, 20 of 84 patients with sms were found to have diabetes mellitus.2 moersch and woltman1 first described 14 patients with this distinctive clinical syndrome who were seen at the mayo clinic, rochester, minn, over a 32-year period. no specific laboratory or elec- trophysiologic abnormalities were de¬ scribed, although four patients had \"re¬ ducing substances\" in the urine. since their report, several reviews have been published and criteria have been estab¬ lished for the diagnosis of sms.3\"6 be¬ cause of the extreme rarity of this disor¬ der, its highly unusual and sometimes bizarre symptoms, absence of abnormal neurologic findings, lack of specific laboratory abnormalities, and frequent association with psychological abnor- malities, patients' conditions usually re¬ main undiagnosed for prolonged peri¬ ods, and many patients are mistakenly thought to suffer from a hysterical psy¬ chiatric disorder. the patient presented in this report was symptomatic for 22 years before the diagnosis was made. report of a case a 54-year-old woman presented in 1986 with a 17-year history of intermittent, painless extensor spasms of both legs. insulin-dependent diabetes began in 1968 and she was treated with a combi¬ nation of isophane insulin suspension (nph insulin) and regular human insu¬ lin. multinodular goiter with intermit¬ tent hyperthyroidism had been diag¬ nosed and the patient was treated with radioactive iodine 131 in 1982. exami¬ nation in 1986 disclosed anxiety, left leg stiffness, exaggerated lumbar lordosis, and a hesitant gait. brain magnetic reso¬ nance imaging, cervical myelography, cerebrospinal fluid (csf) examination, and thyroid function test results were normal. she was placed on a regimen of from the division of neurology, new england deaconess hospital, and the department of neurology, harvard medical school, boston, mass. downloaded from: https://jamanetwork.com/ by a uzh hauptbibliothek / zentralbibliothek zuerich user on 05/26/2023 diazepam for management of anxiety with gradual improvement in gait over several weeks. she re¬ mained relatively asymptomatic until 1990 when identical symp¬ toms reappeared. anxiety was again prominent, and she was treated with buspirone hydrochlo- ride; this was followed by in¬ creased symptoms. in 1991, inter¬ mittent spasms of the legs, lower part of the trunk, and left shoul¬ der appeared that were once again attributed to anxiety. spasms were precipitated by movements of the legs in bed and attempts to walk, resulting in frequent sudden falls. at the time of hospital admis¬ sion, she was extremely anxious and unwilling to leave her bed because of fear of precipitating spasms. ex¬ tensor spasms and tremor appeared in both legs with any attempt to arise from bed and following rectal ex¬ amination. painful spasms lasted for 30 to 60 seconds and were associ¬ ated with fear and anxiety. there was lumbar hyperlordosis with marked hypertrophy of the paralumbar muscles. while the patient was in a supine position, rigidity was absent but the hyperlordotic posture per¬ sisted. there was no muscle weak¬ ness or atrophy. sensation was nor¬ mal. electromyography showed continuous firing of motor units in paralumbar muscles with the pa¬ tient at rest. thyroid function stud¬ ies indicated hyperthyroidism, in¬ cluding the following values: triiodothyronine, 3.6 nmol/l (234 ng/dl) (reference range, 1.5 to 2.9 nmol/l [100 to 190 ng/dl]); thy- roxine, 216 nmol/l (reference range, 58 to 148 nmol/l); thyrotropin, 0.08 mu/l (reference range, 0.15 to 3.2 mu/l); and free thyroxine, 9 pmol/l (reference range, 9 to 23 pmol/l). thyroid isotope scan showed evi¬ dence for toxic multinodular goi¬ ter. islet cell antibody levels were el¬ evated at 1:640 jdf units, thyroid microsomal antibody levels were el¬ evated at 1:",
+      "llm_evidence_text": "Title:\nStiff-man syndrome. Report of a case.\n\nMetadata abstract:\nStiff-man syndrome is a well-described, but rare and often overlooked, neuromuscular syndrome of rigidity, spasm, and gait abnormality that is associated with several endocrinologic and autoimmune disorders. A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made. Similar to many described patients, she was diabetic, hyperthyroid, and had elevated islet cell, antithyroid, and glutamic acid decarboxylase antibody levels. The high frequency of diabetes mellitus among patients with stiff-man syndrome is emphasized, as is increasing evidence to suggest that elaboration of anti-glutamic acid decarboxylase and anti-islet cell antibodies may play a role in the pathophysiologic state of the disorder.\n\nPreferred text count-salient snippets:\n- review, 20 of 84 patients with SMS were\n- 14 patients with this distinctive clinical\n- scribed, although four patients had \"re¬\n- individual patients.14\"16\n- der.27 Young18 reported two cases of\n- four patients had a reducing sub¬\n- (8%) of 84 patients with SMS re¬\n- 18 patients with SMS recently de¬",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "single_case_default_candidate_added",
+        "distinct_candidate_counts=[1]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "case_report_marker_single_case",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 94,
+          "rationale": "basis=case_report_marker_single_case | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Stiff-man syndrome is a well-described, but rare and often overlooked, neuromuscular syndrome of rigidity, spasm, and gait abnormality that is associated with several endocrinologic and autoimmune disorders. A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made. Similar to many described patients, she was diabetic, hyperthyroid, and had elevated islet cell, antithyroid, and glutamic acid decarboxylase antibody levels. The high frequency of diabetes mellitus among patients with stiff-man syndrome is emphasized, as is increasing evidence to suggest that elaboration of anti-glutamic acid decarboxylase and anti-islet cell antibodies may play a role in the pathophysiologic state of the disorder.",
+          "evidence_section": "abstract",
+          "blockers": [
+            "non_high_confidence"
+          ]
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 1,
+          "candidate_kind": "single_case_default",
+          "count_basis": "source_single_case_default",
+          "count_confidence": "medium",
+          "manual_review_required": false,
+          "score": 74,
+          "rationale": "basis=source_single_case_default | confidence=medium | source_category=single_case_report",
+          "evidence_text": "Stiff-man syndrome. Report of a case. Stiff-man syndrome is a well-described, but rare and often overlooked, neuromuscular syndrome of rigidity, spasm, and gait abnormality that is associated with several endocrinologic and autoimmune disorders. A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made. Similar to many described patients, she was diabetic, hyperthyroid, and had elevated islet cell, antithyroid, and glutamic acid decarboxylase antibody levels. The high frequency of diabetes mellitus among patients with stiff-man syndrome is emphasized, as is increasing evidence to suggest that elaboration of anti-glutamic acid decarboxylase and anti-islet cell antibodies may play a role in the pathophysiologic state of the disorder. stiff-man syndrome report of a case daniel tarsy, md, edison k. miyawaki, md stiff-man syndrome is a well-described, but rare and often overlooked, neuromuscular syndrome of rigidity, spasm, and gait abnormality that is associated with several en- docrinologic and autoimmune disorders. a patient exhibiting many typical features of stiff-man syndrome had intermittent sympt",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "preferred_candidate_non_high_confidence",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "69",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "This paper is explicitly a single case report of stiff-man syndrome, and both the title and abstract/full-text excerpt describe one female patient presented as the report's original case. The other patient numbers in the excerpt refer to prior literature and should not be counted.",
+        "evidence": [
+          {
+            "quote": "Stiff-man syndrome. Report of a case.",
+            "page": null,
+            "section": "title",
+            "supports": "The paper is framed as a single original case report."
+          },
+          {
+            "quote": "A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made.",
+            "page": null,
+            "section": "abstract",
+            "supports": "Confirms one original SPS-spectrum patient is reported."
+          },
+          {
+            "quote": "REPORT OF A CASE A 54-year-old woman presented in 1986 with a 17-year history of intermittent, painless extensor spasms of both legs.",
+            "page": null,
+            "section": "Report of a case",
+            "supports": "Identifies the single individual patient described in the case report."
+          },
+          {
+            "quote": "in a recent review, 20 of 84 patients with sms were found to have diabetes mellitus",
+            "page": null,
+            "section": "introduction",
+            "supports": "Shows larger counts in the excerpt are literature-review background, not additional original cases in this paper."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "69",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "Stiff-man syndrome. Report of a case.",
+          "page": null,
+          "section": "title",
+          "supports": "The paper is framed as a single original case report."
+        },
+        {
+          "quote": "A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made.",
+          "page": null,
+          "section": "abstract",
+          "supports": "Confirms one original SPS-spectrum patient is reported."
+        },
+        {
+          "quote": "REPORT OF A CASE A 54-year-old woman presented in 1986 with a 17-year history of intermittent, painless extensor spasms of both legs.",
+          "page": null,
+          "section": "Report of a case",
+          "supports": "Identifies the single individual patient described in the case report."
+        },
+        {
+          "quote": "in a recent review, 20 of 84 patients with sms were found to have diabetes mellitus",
+          "page": null,
+          "section": "introduction",
+          "supports": "Shows larger counts in the excerpt are literature-review background, not additional original cases in this paper."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\69.json",
+      "challenge_json_path": ""
+    }
   }
 }

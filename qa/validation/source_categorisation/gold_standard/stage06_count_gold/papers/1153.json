@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-15T21:59:05.622292+00:00",
+  "generated_at_utc": "2026-04-16T18:35:09.081407+00:00",
   "paper_id": "1153",
   "count_row": {
     "paper_id": "1153",
@@ -16,6 +16,7 @@
     "count_confidence": "high",
     "count_basis": "manual_gold_review",
     "count_manual_review_required": "false",
+    "count_original_cohort_provenance_uncertain": "false",
     "count_reason": "count_basis=manual_gold_review | count_confidence=high | round_id=stage04_llm_category_2026-04-05_round_01 | selection_bucket=conference_edge | prediction_correct=true | reviewed_count=12 | reviewed_source_category=conference_abstract | predicted_count=12 | predicted_source_category=conference_abstract",
     "count_version": "gold_reviewed_stage06_v1",
     "counted_at_utc": "2026-04-05T17:58:20.143677+00:00"
@@ -139,14 +140,198 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "",
-    "result_json_path": "",
-    "candidate_json_path": "",
-    "count_decision_json_path": "",
-    "count_evidence_json_path": "",
-    "result_payload": null,
-    "candidate_payload": null,
-    "count_decision_payload": null,
-    "count_evidence_payload": null
+    "run_id": "stage06_gold20_hybrid_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\results\\1153.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1153.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_decisions\\1153.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1153.json",
+    "result_payload": {
+      "paper_id": "1153",
+      "count_row": {
+        "paper_id": "1153",
+        "covidence_id": "1153",
+        "title": "A new clinical tool (BRIT) to monitor IVIg efficacy in patients with stiff person syndrome",
+        "authors": "Weerasinghe S.; Sadalage G.; Jacob S.",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1153.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "12",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports a prospective study of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and matches candidate cand01 exactly.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "12",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1153.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "12",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1153.json",
+        "counted_at_utc": "2026-04-16T14:05:55.057530+00:00"
+      },
+      "model_count_row": {
+        "paper_id": "1153",
+        "covidence_id": "1153",
+        "title": "A new clinical tool (BRIT) to monitor IVIg efficacy in patients with stiff person syndrome",
+        "authors": "Weerasinghe S.; Sadalage G.; Jacob S.",
+        "source_category": "conference_abstract",
+        "source_subtype": "group_conference_abstract",
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1153.json",
+        "preferred_text_source": "full_text",
+        "count_eligible": "true",
+        "likely_sps_case_count": "12",
+        "count_confidence": "high",
+        "count_basis": "abstract_count_signal",
+        "count_manual_review_required": "false",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports a prospective study of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and matches candidate cand01 exactly.",
+        "count_version": "hybrid_v2_gpt-5.4",
+        "heuristic_likely_sps_case_count": "12",
+        "heuristic_count_confidence": "high",
+        "heuristic_count_basis": "abstract_count_signal",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\candidate_packages\\1153.json",
+        "heuristic_candidate_count": "2",
+        "llm_likely_sps_case_count": "12",
+        "llm_count_confidence": "high",
+        "llm_selected_candidate_id": "cand01",
+        "heuristic_fallback_used": "false",
+        "count_audit_status": "hybrid_local_gpt",
+        "count_verification_status": "llm_candidate_exact",
+        "count_validator_flags": "",
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\count_evidence\\1153.json",
+        "counted_at_utc": "2026-04-16T14:05:55.057530+00:00"
+      },
+      "manual_override_row": {},
+      "source_text_json_path": "data\\extraction_json\\text\\1153.json",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1153.json"
+    },
+    "candidate_payload": {
+      "paper_id": "1153",
+      "covidence_id": "1153",
+      "title": "A new clinical tool (BRIT) to monitor IVIg efficacy in patients with stiff person syndrome",
+      "authors": "Weerasinghe S.; Sadalage G.; Jacob S.",
+      "source_category": "conference_abstract",
+      "source_subtype": "group_conference_abstract",
+      "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1153.json",
+      "preferred_text_source": "full_text",
+      "preferred_text_metadata": {
+        "preferred_text_json_path": "data\\extraction_json\\text_proceedings_ready\\1153.json",
+        "preferred_text_source": "full_text",
+        "source_filename": "1153_Weerasinghe S. et al. - 2015 - A new clinical tool (BRIT) to monitor IVIg efficac.pdf",
+        "proceedings_ready_source_kind": "source_text_passthrough",
+        "proceedings_ready_text_mode": "full_text_passthrough",
+        "proceedings_ready_reason": "Resolved conference abstract did not require proceedings trimming; published the source abstract text as-is.",
+        "source_text_json_path": "data\\extraction_json\\text\\1153.json"
+      },
+      "count_eligible": true,
+      "heuristic_version": "heuristic_v2",
+      "abstract_text": "Stiff person syndrome (SPS) is a chronic, progressive neurological disorder characterized by painful muscle spasms and rigidity with high titres of circulating anti-GAD antibodies. Intravenous immunoglobulin (IVIg) has been proven to be very effective in reducing the symptoms associated with SPS, most notably stiffness. Patients report being able to walk for the first time in months or even years and partake in activities of daily living including showering and household chores. A reduction in falls is also noted in patients receiving IVIg. Most patients report a drastically improved quality of life after receiving IVIg with significant improvement in pain, general mental health, social functioning, vitality and energy. At present, there is no standardised method of monitoring the effectiveness of IVIg treatment in patients with stiff person syndrome. We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy. We named this the Birmingham Response to IVIg Treatment (BRIT) scale. The BRIT scale can be used to monitor IVIg efficacy in a variety of chronic neurological conditions (especially ones without other monitoring tools, eg: INCAT score for CIDP) and would be a very useful addition to the neurology practice.",
+      "early_body_text": "efficacy in patients with stiff person syndrome savinda weerasinghe,1 girija sadalage,2 saiju jacob1,2. 1university of birmingham; 2queen elizabeth neuroscience centre, university hospitals birmingham 10.1136/jnnp-2015-312379.132 stiff person syndrome (sps) is a chronic, progressive neuro- logical disorder characterized by painful muscle spasms and rigidity with high titres of circulating anti-gad antibodies. intravenous immunoglobulin (ivig) has been proven to be very effective in reducing the symptoms associated with sps, most notably stiffness. patients report being able to walk for the ﬁrst time in months or even years and partake in activities of daily living including showering and household chores. abn abstracts 2015 36 of 53 j neurol neurosurg psychiatry 2015;86:e4 protected by copyright. on may 9, 2023 at calgary afmc consortia.http://jnnp.bmj.com/ j neurol neurosurg psychiatry: first published as 10.1136/jnnp-2015-312379.132 on 14 october 2015. downloaded from a reduction in falls is also noted in patients receiving ivig. most patients report a drastically improved quality of life after receiving ivig with signi ﬁcant improvement in pain, general mental health, social functioning, vitality and energy . at present, there is no standardised method of monitoring the effectiveness of ivig treatment in patients with stiff person syndrome. w e devised a standardised questionnaire with a com- bination of modi ﬁed rankin scale and flanagan ’s qols and prospectively studied 12 sps patients receiving ivig therapy . w e named this the birmingham response to ivig t reatment (brit) scale. the brit scale can be used to monitor ivig ef ﬁcacy in a variety of chronic neurological conditions (especially ones without other monitoring tools, eg: incat score for cidp) and would be a very useful addition to the neurology practice. abn abstracts 2015 j neurol neurosurg psychiatry 2015;86:e4 37 of 53",
+      "llm_evidence_text": "Title:\nA new clinical tool (BRIT) to monitor IVIg efficacy in patients with stiff person syndrome\n\nMetadata abstract:\nStiff person syndrome (SPS) is a chronic, progressive neurological disorder characterized by painful muscle spasms and rigidity with high titres of circulating anti-GAD antibodies. Intravenous immunoglobulin (IVIg) has been proven to be very effective in reducing the symptoms associated with SPS, most notably stiffness. Patients report being able to walk for the first time in months or even years and partake in activities of daily living including showering and household chores. A reduction in falls is also noted in patients receiving IVIg. Most patients report a drastically improved quality of life after receiving IVIg with significant improvement in pain, general mental health, social functioning, vitality and energy. At present, there is no standardised method of monitoring the effectiveness of IVIg treatment in patients with stiff person syndrome. We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy. We named this the Birmingham Response to IVIg Treatment (BRIT) scale. The BRIT scale can be used to monitor IVIg efficacy in a variety of chronic neurological conditions (especially ones without other monitoring tools, eg: INCAT score for CIDP) and would be a very useful addition to the neurology practice.\n\nPreferred text count-salient snippets:\n- EFFICACY IN PATIENTS WITH STIFF PERSON\n- Savinda Weerasinghe,1 Girija Sadalage,2 Saiju Jacob1,2.\n- 10.1136/jnnp-2015-312379.132\n- Patients report being able to walk for the\n- A reduction in falls is also noted in patients receiving IVIg.\n- Most patients report a drastically improved quality of life after\n- the effectiveness of IVIg treatment in patients with stiff person\n- prospectively studied 12 SPS patients receiving IVIg therapy .",
+      "candidate_generation_notes": [
+        "preferred_text_source=full_text",
+        "body_only_candidate_added",
+        "distinct_candidate_counts=[0, 12]",
+        "count_eligibility_status=extractable"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "cand01",
+          "proposed_count": 12,
+          "candidate_kind": "exact_numeric_count",
+          "count_basis": "abstract_count_signal",
+          "count_confidence": "high",
+          "manual_review_required": false,
+          "score": 110,
+          "rationale": "basis=abstract_count_signal | confidence=high | source_category=conference_abstract",
+          "evidence_text": "Stiff person syndrome (SPS) is a chronic, progressive neurological disorder characterized by painful muscle spasms and rigidity with high titres of circulating anti-GAD antibodies. Intravenous immunoglobulin (IVIg) has been proven to be very effective in reducing the symptoms associated with SPS, most notably stiffness. Patients report being able to walk for the first time in months or even years and partake in activities of daily living including showering and household chores. A reduction in falls is also noted in patients receiving IVIg. Most patients report a drastically improved quality of life after receiving IVIg with significant improvement in pain, general mental health, social functioning, vitality and energy. At present, there is no standardised method of monitoring the effectiveness of IVIg treatment in patients with stiff person syndrome. We devised a standardised questionna",
+          "evidence_section": "abstract",
+          "blockers": []
+        },
+        {
+          "candidate_id": "cand02",
+          "proposed_count": 0,
+          "candidate_kind": "forced_zero",
+          "count_basis": "no_reliable_count_signal",
+          "count_confidence": "low",
+          "manual_review_required": false,
+          "score": 45,
+          "rationale": "basis=no_reliable_count_signal | confidence=low | source_category=conference_abstract",
+          "evidence_text": "Stiff person syndrome (SPS) is a chronic, progressive neurological disorder characterized by painful muscle spasms and rigidity with high titres of circulating anti-GAD antibodies. Intravenous immunoglobulin (IVIg) has been proven to be very effective in reducing the symptoms associated with SPS, most notably stiffness. Patients report being able to walk for the first time in months or even years and partake in activities of daily living including showering and household chores. A reduction in falls is also noted in patients receiving IVIg. Most patients report a drastically improved quality of life after receiving IVIg with significant improvement in pain, general mental health, social functioning, vitality and energy. At present, there is no standardised method of monitoring the effectiveness of IVIg treatment in patients with stiff person syndrome. We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy. We named this the Birmingham Response to IVIg Treatment (BRIT) scale. The BRIT scale can be used to monitor IVIg efficacy in a variety of chronic neurological conditi",
+          "evidence_section": "context",
+          "blockers": [
+            "ambiguous_heuristic_basis",
+            "non_high_confidence"
+          ]
+        }
+      ],
+      "preferred_candidate_id": "cand01",
+      "fallback_candidate_id": "cand01",
+      "llm_routing_recommended": true,
+      "llm_routing_reason": "multiple_candidate_counts",
+      "explicit_sps_subgroup_count": null,
+      "explicit_sps_subgroup_basis": "",
+      "explicit_sps_subgroup_evidence": [],
+      "sps_status_uncertainty_signals": []
+    },
+    "count_decision_payload": {
+      "paper_id": "1153",
+      "model_id": "gpt-5.4-2026-03-05",
+      "verification_status": "llm_candidate_exact",
+      "validator_flags": [],
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "decision": {
+        "decision_type": "candidate_exact",
+        "selected_candidate_id": "cand01",
+        "alternative_count": null,
+        "count_confidence": "high",
+        "count_manual_review_required": false,
+        "count_reasoning_summary": "The conference abstract explicitly reports a prospective study of 12 patients with stiff person syndrome receiving IVIg therapy. This is a direct SPS-spectrum cohort count and matches candidate cand01 exactly.",
+        "evidence": [
+          {
+            "quote": "We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy.",
+            "page": null,
+            "section": "abstract",
+            "supports": "Direct explicit count of unique SPS-spectrum patients in this study."
+          },
+          {
+            "quote": "prospectively studied 12 SPS patients receiving IVIg therapy.",
+            "page": null,
+            "section": "preferred text excerpt",
+            "supports": "Confirms the study cohort size is 12 SPS patients."
+          }
+        ]
+      }
+    },
+    "count_evidence_payload": {
+      "paper_id": "1153",
+      "decision_stage": "primary",
+      "challenge_reasons": [],
+      "evidence": [
+        {
+          "quote": "We devised a standardised questionnaire with a combination of modified Rankin scale and Flanagan's QOLS and prospectively studied 12 SPS patients receiving IVIg therapy.",
+          "page": null,
+          "section": "abstract",
+          "supports": "Direct explicit count of unique SPS-spectrum patients in this study."
+        },
+        {
+          "quote": "prospectively studied 12 SPS patients receiving IVIg therapy.",
+          "page": null,
+          "section": "preferred text excerpt",
+          "supports": "Confirms the study cohort size is 12 SPS patients."
+        }
+      ],
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_20260416\\local_model_results\\1153.json",
+      "challenge_json_path": ""
+    }
   }
 }
