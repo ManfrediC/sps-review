@@ -180,6 +180,13 @@ DIRECT_SPS_DIAGNOSIS_FIRST_COHORT_RE = re.compile(
     rf"(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\s+patients?\b",
     re.IGNORECASE,
 )
+TOTAL_THEN_SPS_SUBGROUP_RE = re.compile(
+    rf"\b(?:identified|detected|found|seen|observed|recorded|included)\s+in\s+"
+    rf"(?P<total>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\b"
+    rf"[\s\S]{{0,160}}?\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s*(?:\([^)]{{0,16}}\))?\s+had\s+"
+    rf"(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
+    re.IGNORECASE,
+)
 NAMED_SPS_COHORT_RE = re.compile(
     rf"\b(?:group|cohort|arm|series)\s*(?:\d+|[ivx]+)?\b[\s\S]{{0,60}}?"
     rf"(?:consisted\s+of|comprised|included|contained|enrolled|described)\s+"
@@ -214,6 +221,12 @@ DIRECT_SPS_COHORT_NEGATIVE_MARKERS = (
     "screening cohort",
     "identified in a retrospective cohort",
     "samples were also identified",
+)
+SPS_ANTIBODY_GROUP_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\s+had\s+"
+    r"(?P<label>(?:GAD(?:65)?|glutamic acid decarboxylase)\s+antibod(?:y|ies)|"
+    r"amphiphysin\s+(?:Ab|antibod(?:y|ies)))\b",
+    re.IGNORECASE,
 )
 MIXED_DIAGNOSIS_SUBGROUP_CONTEXT_MARKERS = (
     "broader spectrum of symptoms",
@@ -556,6 +569,15 @@ def _canonicalize_subgroup_diagnosis(text: str) -> str:
     return cleaned
 
 
+def _canonicalize_antibody_group_label(text: str) -> str:
+    cleaned = normalize_text(_clean_signal_text(text))
+    if "amphiphysin" in cleaned:
+        return "amphiphysin"
+    if "gad" in cleaned or "glutamic acid decarboxylase" in cleaned:
+        return "gad"
+    return cleaned
+
+
 def _subgroup_pairs_from_unit(unit: str) -> list[tuple[str, int]]:
     pairs: list[tuple[str, int]] = []
     cleaned = _clean_signal_text(unit)
@@ -647,6 +669,35 @@ def _extract_methods_sps_cohort_signal(text: str) -> SubgroupSignal | None:
             count_confidence="high",
             evidence_units=(context[:420],),
         )
+        if score > best_score:
+            best_score = score
+            best_signal = signal
+    return best_signal
+
+
+def _extract_total_then_sps_subgroup_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    cleaned = _clean_signal_text(text)
+    if not cleaned:
+        return None
+    for match in TOTAL_THEN_SPS_SUBGROUP_RE.finditer(cleaned):
+        total = parse_count_token(match.group("total"))
+        count = parse_count_token(match.group("count"))
+        if total <= 0 or count <= 0 or count >= total:
+            continue
+        context_start = max(0, match.start() - 120)
+        context_end = min(len(cleaned), match.end() + 140)
+        context = cleaned[context_start:context_end]
+        if _is_non_original_case_context(context):
+            continue
+        signal = SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_total_then_sps_subgroup_count",
+            count_confidence="high",
+            evidence_units=(context[:420],),
+        )
+        score = total + count
         if score > best_score:
             best_score = score
             best_signal = signal
@@ -933,6 +984,29 @@ def _extract_table_row_subgroup_signal(text: str) -> SubgroupSignal | None:
     return best_signal
 
 
+def _extract_antibody_group_total_signal(*, title: str, abstract: str) -> SubgroupSignal | None:
+    cleaned_title = _clean_signal_text(title)
+    cleaned_abstract = _clean_signal_text(abstract)
+    if not cleaned_title or not cleaned_abstract:
+        return None
+    if not LLM_EVIDENCE_SPS_RE.search(cleaned_title):
+        return None
+    groups: dict[str, int] = {}
+    for match in SPS_ANTIBODY_GROUP_RE.finditer(cleaned_abstract):
+        count = parse_count_token(match.group("count"))
+        if count <= 0:
+            continue
+        groups[_canonicalize_antibody_group_label(match.group("label"))] = count
+    if {"gad", "amphiphysin"} - set(groups):
+        return None
+    return SubgroupSignal(
+        count=sum(groups.values()),
+        count_basis="diagnosis_specific_antibody_group_total",
+        count_confidence="high",
+        evidence_units=(cleaned_abstract[:420],),
+    )
+
+
 def _iter_patient_reference_matches(unit: str) -> list[tuple[int, int, str]]:
     matches: list[tuple[int, int, str]] = []
     for pattern in (PATIENT_CASE_LABEL_RE, DESCRIPTIVE_PATIENT_LABEL_RE):
@@ -1014,7 +1088,7 @@ def _extract_patient_label_subgroup_signal(text: str) -> SubgroupSignal | None:
     )
 
 
-def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: str) -> SubgroupSignal | None:
+def extract_explicit_sps_subgroup_signal(*, title: str, abstract: str, raw_preferred_text: str) -> SubgroupSignal | None:
     combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
     for extractor in (
         _extract_methods_sps_cohort_signal,
@@ -1024,6 +1098,7 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
         _extract_named_sps_cohort_signal,
         _extract_group_breakdown_subgroup_signal,
         _extract_enumerated_sps_subgroup_signal,
+        _extract_total_then_sps_subgroup_signal,
         _extract_mixed_diagnosis_subgroup_signal,
         _extract_table_row_subgroup_signal,
         _extract_suffix_count_subgroup_signal,
@@ -1033,7 +1108,7 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
         signal = extractor(combined_text)
         if signal is not None:
             return signal
-    return None
+    return _extract_antibody_group_total_signal(title=title, abstract=abstract)
 
 
 def extract_non_original_case_signals(*, abstract: str, raw_preferred_text: str) -> list[str]:
@@ -1484,6 +1559,11 @@ def _estimate_score(estimate: CaseCountEstimate, *, preferred: bool = False) -> 
     if estimate.count_basis.startswith("diagnosis_specific_"):
         score += 12
     if estimate.count_basis in {
+        "diagnosis_specific_total_then_sps_subgroup_count",
+        "diagnosis_specific_antibody_group_total",
+    }:
+        score += 10
+    if estimate.count_basis in {
         "not_count_eligible",
         "administrative_dataset_not_extractable",
         "lab_context_no_extractable_count",
@@ -1731,6 +1811,7 @@ def build_case_count_candidate_package(
         title,
     )
     subgroup_signal = extract_explicit_sps_subgroup_signal(
+        title=title,
         abstract=abstract,
         raw_preferred_text=raw_preferred_text,
     )

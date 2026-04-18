@@ -2,12 +2,12 @@
 
 ## 456 - PET evidence of central GABAergic changes in stiff-person syndrome.
 - predicted_count: 2
-- predicted_basis: abstract_count_signal
-- verification_status: llm_candidate_exact
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports PET findings in two SPS patients and provides individual descriptions for Subject 1 and Subject 2, supporting an original extractable count of 2 SPS-spectrum cases. However, because the evidence pack flags the cohort as possibly previously described, manual review is still warranted for provenance overlap.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=2 | prediction_correct=true | reviewed_count=2 | reviewer_notes=The extracted count was 2, and it is the likelier count because the paper reports two SPS subjects with separate PET findings for Subject 1 and Subject 2. The provenance-overlap flag may still matter for reuse, but the extractable SPS-spectrum count itself is 2. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports PET findings in two SPS patients and provides individual descriptions for Subject 1 and Subject 2, supporting an original extractable count of 2 SPS-spectrum cases. However, because the evidence pack flags the cohort as possibly previously described, manual review is still warranted for provenance overlap.
 - batch_artifacts_status: complete
 - local_model_count: 2 (medium; needs_review=True)
 - local_reasoning: The abstract explicitly states 'two subjects' but the original cohort provenance is uncertain.
@@ -25,12 +25,12 @@
 
 ## 460 - Acute ataxia, Graves' disease, and stiff person syndrome.
 - predicted_count: 1
-- predicted_basis: case_report_marker_single_case
-- verification_status: llm_candidate_exact
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This is a single-case report and the abstract/full-text explicitly state that the authors describe one patient with Graves' disease and SPS. However, because the evidence pack flags possible prior-report/provenance uncertainty, the count should be retained as 1 but marked for manual review.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=1 | prediction_correct=true | reviewed_count=1 | reviewer_notes=The extracted count was 1, and it is the likelier count because this is a single-patient case report linking acute ataxia, Graves' disease, and SPS in one woman. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This is a single-case report and the abstract/full-text explicitly state that the authors describe one patient with Graves' disease and SPS. However, because the evidence pack flags possible prior-report/provenance uncertainty, the count should be retained as 1 but marked for manual review.
 - batch_artifacts_status: complete
 - local_model_count: 1 (medium; needs_review=True)
 - local_reasoning: The evidence describes one patient with undiagnosed SPS, but provenance uncertainty requires manual review.
@@ -48,12 +48,12 @@
 
 ## 461 - Isolated navicular fracture presenting as stiff limb syndrome: a case report.
 - predicted_count: 1
-- predicted_basis: case_report_marker_single_case
-- verification_status: llm_candidate_exact
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper is a single case report and explicitly describes one 52-year-old woman presenting with stiff limb syndrome. Although the report ultimately argues this was an unusual presentation of a navicular fracture rather than confirmed SPS-spectrum disease, the fixed routing context marks it as count-eligible and the best-supported candidate is the single-case count.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=1 | prediction_correct=true | reviewed_count=1 | reviewer_notes=The extracted count was 1, and it is the likelier count because this is a single-case report. Even though the discussion questions SPS as the true cause, only one putative SPS-spectrum patient is described. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper is a single case report and explicitly describes one 52-year-old woman presenting with stiff limb syndrome. Although the report ultimately argues this was an unusual presentation of a navicular fracture rather than confirmed SPS-spectrum disease, the fixed routing context marks it as count-eligible and the best-supported candidate is the single-case count.
 - batch_artifacts_status: complete
 - local_model_count: 1 (medium; needs_review=True)
 - local_reasoning: The source is a case report, indicating one unique patient.
@@ -113,12 +113,12 @@
 
 ## 472 - High definition profiling of autoantibodies to glutamic acid decarboxylases GAD65/GAD67 in stiff-person syndrome.
 - predicted_count: 20
-- predicted_basis: llm_bounded_alternative
-- verification_status: llm_bounded_alternative
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper explicitly reports that the sera were derived from 20 well-characterized SPS patients and 20 controls, so the extractable SPS-spectrum cohort is 20 rather than 0. Manual review remains warranted because the evidence pack flags possible prior description/provenance uncertainty ('previously described [16]').
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=20 | prediction_correct=true | reviewed_count=20 | reviewer_notes=The extracted counts were 20 and 0. The likelier count is 20, because the abstract explicitly states that sera were derived from 20 well-characterised SPS patients and 20 controls; 0 only reflects an over-conservative lab-context fallback. | prior_reason=challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper explicitly reports that the sera were derived from 20 well-characterized SPS patients and 20 controls, so the extractable SPS-spectrum cohort is 20 rather than 0. Manual review remains warranted because the evidence pack flags possible prior description/provenance uncertainty ('previously described [16]').
 - batch_artifacts_status: complete
 - local_model_count: 0 (low; needs_review=True)
 - local_reasoning: The text mentions 40 sera samples from SPS, but this represents a group tested, not a confirmed count of unique patients.
@@ -137,12 +137,12 @@
 
 ## 473 - Progressive encephalomyelitis with rigidity and myoclonus in an 81-year-old patient.
 - predicted_count: 1
-- predicted_basis: source_single_case_default
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=source_single_case_default | challenge_reasons=semantic_validator_reject=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | This is an original single-patient case report, and the paper explicitly presents one 81-year-old woman with PERM, which is within the SPS-spectrum. Although the text says SPS was initially suspected, the title, abstract, and case discussion identify the reported diagnosis as progressive encephalomyelitis with rigidity and myoclonus rather than an unconfirmed referral cohort.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=1 | prediction_correct=true | reviewed_count=1 | reviewer_notes=The extracted count was 1, and it is the likelier count because this is a single original PERM case report in an 81-year-old patient. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=source_single_case_default | challenge_reasons=semantic_validator_reject=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | This is an original single-patient case report, and the paper explicitly presents one 81-year-old woman with PERM, which is within the SPS-spectrum. Although the text says SPS was initially suspected, the title, abstract, and case discussion identify the reported diagnosis as progressive encephalomyelitis with rigidity and myoclonus rather than an unconfirmed referral cohort.
 - batch_artifacts_status: complete
 - local_model_count: 1 (medium; needs_review=True)
 - local_reasoning: The evidence explicitly describes a single patient case meeting the criteria for SPS-spectrum disorder.
@@ -225,12 +225,12 @@
 
 ## 488 - GAD65 IgG autoantibodies in stiff person syndrome: clonality, avidity and persistence.
 - predicted_count: 5
-- predicted_basis: abstract_count_signal
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=5 vs 1; broad_total_exceeds_explicit_subgroup=5 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the study used serum and CSF from five SPS patients, and the table snippet lists SPS 1 through SPS 5 as individual SPS cases. The explicit subgroup count of 1 appears to be a parsing artifact from the table-row heuristic rather than the true SPS-spectrum cohort size.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=5 | prediction_correct=true | reviewed_count=5 | reviewer_notes=The extracted counts were 5 and 1. The likelier count is 5, because the paper explicitly studies serum and CSF from five SPS patients; the competing 1 is a table-row parsing artefact rather than the cohort denominator. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=5 vs 1; broad_total_exceeds_explicit_subgroup=5 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the study used serum and CSF from five SPS patients, and the table snippet lists SPS 1 through SPS 5 as individual SPS cases. The explicit subgroup count of 1 appears to be a parsing artifact from the table-row heuristic rather than the true SPS-spectrum cohort size.
 - batch_artifacts_status: complete
 - local_model_count: 5 (high; needs_review=True)
 - local_reasoning: The table explicitly lists 5 patients diagnosed with SPS, but the deterministic candidate count of 5 conflicts with the explicit subgroup count of 1.
@@ -268,13 +268,13 @@
   - pNone: Our patient had parkinsonism rather than ataxia...
 
 ## 491 - Spectrum of neurological syndromes associated with glutamic acid decarboxylase antibodies: diagnostic clues for this association.
-- predicted_count: 4
-- predicted_basis: diagnosis_specific_suffix_count
-- verification_status: llm_manual_review_required
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_count: 22
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=22 vs 4; broad_total_exceeds_explicit_subgroup=22 > 4 | The paper clearly reports a broader mixed GAD-antibody cohort of 61 patients, including 22 with SPS, but the heuristic package also contains an explicit SPS-specific subgroup count of 4 derived from a table suffix that may reflect only a comorbidity subset rather than the full SPS cohort. Because the evidence pack presents a direct conflict between 22 SPS patients and an explicit subgroup signal of 4, and provenance overlap is flagged as uncertain, the safest resolution is manual review rather than selecting either count.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=4 | prediction_correct=false | reviewed_count=22 | reviewer_notes=The extracted counts were 61, 22, and 4. The likelier extractable SPS-spectrum count is 22, because the paper reports 61 high-GAD patients overall, of whom 22 had SPS; the competing 4 is a narrower table suffix subgroup rather than the full SPS cohort. | prior_reason=challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=22 vs 4; broad_total_exceeds_explicit_subgroup=22 > 4 | The paper clearly reports a broader mixed GAD-antibody cohort of 61 patients, including 22 with SPS, but the heuristic package also contains an explicit SPS-specific subgroup count of 4 derived from a table suffix that may reflect only a comorbidity subset rather than the full SPS cohort. Because the evidence pack presents a direct conflict between 22 SPS patients and an explicit subgroup signal of 4, and provenance overlap is flagged as uncertain, the safest resolution is manual review rather than selecting either count.
 - batch_artifacts_status: complete
 - local_model_count: 4 (medium; needs_review=True)
 - local_reasoning: The explicit subgroup evidence suggests a count of 4 for SPS, but the overall cohort provenance is uncertain.
@@ -358,13 +358,13 @@
   - pNone: case report a 31-year-old woman developed severe back pain in 1995.
 
 ## 499 - Stiff-person syndrome with amphiphysin antibodies: distinctive features of a rare disease.
-- predicted_count: 116
-- predicted_basis: abstract_count_signal
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_count: 127
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: COUNT_DONOR_MATERIAL_ONLY
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=low | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=abstract_count_signal | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper describes a broader cohort of 621 clinically suspected SPS patients, within which 116 had GAD antibodies and 11 had amphiphysin antibodies, but the evidence pack does not clearly establish that either antibody-positive subgroup should be counted as the extractable unique SPS-spectrum case total for this paper. Because the study appears to compare antibody-defined subgroups within a suspected cohort and provenance overlap/reuse is flagged, the safest decision is manual review.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=116 | prediction_correct=false | reviewed_count=127 | reviewer_notes=The extracted counts were 621, 116, and 11. The likelier extractable SPS-spectrum count is 127, because the paper compares two SPS groups within the suspected referral cohort: 116 GAD-antibody-positive patients plus 11 amphiphysin-antibody-positive patients. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=low | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=abstract_count_signal | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper describes a broader cohort of 621 clinically suspected SPS patients, within which 116 had GAD antibodies and 11 had amphiphysin antibodies, but the evidence pack does not clearly establish that either antibody-positive subgroup should be counted as the extractable unique SPS-spectrum case total for this paper. Because the study appears to compare antibody-defined subgroups within a suspected cohort and provenance overlap/reuse is flagged, the safest decision is manual review.
 - batch_artifacts_status: complete
 - local_model_count: 116 (medium; needs_review=True)
 - local_reasoning: The count of 116 is explicitly stated for GAD antibody positive patients, but the overall cohort size is unclear due to provenance uncertainty.
@@ -847,12 +847,12 @@
 
 ## 545 - GAD antibodies associated neurological disorders: incidence and phenotype distribution among neurological inflammatory diseases.
 - predicted_count: 7
-- predicted_basis: abstract_count_signal
-- verification_status: llm_candidate_exact
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly identifies 7 hGADAb-positive original patients and states that stiff-person plus syndrome was the commonest clinical accompaniment, supporting an SPS-spectrum cohort count of 7. However, because the cohort is framed as a broader hGADAb-associated neurological series rather than a clean SPS-only cohort, manual review remains appropriate.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=7 | prediction_correct=true | reviewed_count=7 | reviewer_notes=The extracted counts were 7 and 4. The likelier count is 7, because the study reports seven hGADAb-positive original patients overall, while 4 refers to a narrower subgroup. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly identifies 7 hGADAb-positive original patients and states that stiff-person plus syndrome was the commonest clinical accompaniment, supporting an SPS-spectrum cohort count of 7. However, because the cohort is framed as a broader hGADAb-associated neurological series rather than a clean SPS-only cohort, manual review remains appropriate.
 - batch_artifacts_status: complete
 - local_model_count: 7 (medium; needs_review=True)
 - local_reasoning: The text explicitly states 7 cases were identified, and stiff-person plus syndrome is an SPS-spectrum disorder.
@@ -891,12 +891,12 @@
 
 ## 548 - Qualitative and quantitative evidence of anti-glutamic acid decarboxylase-specific intrathecal antibody synthesis in patients with stiff person syndrome.
 - predicted_count: 10
-- predicted_basis: abstract_count_signal
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: COUNT_DONOR_MATERIAL_ONLY
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=abstract_count_signal | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN; COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly reports paired CSF/serum samples from ten patients with SPS, and the results are consistently presented as 10/10 patients with GAD-positive SPS. Although this is a lab-heavy specimen study, the text identifies an original clinically defined SPS cohort rather than only anonymous donor material, so candidate 10 is best supported; manual review remains appropriate because the study is specimen-focused and prior validation flagged possible donor-material ambiguity.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=10 | prediction_correct=true | reviewed_count=10 | reviewer_notes=The extracted counts were 10 and 0. The likelier count is 10, because the paper explicitly reports paired serum/CSF samples from ten SPS patients; 0 only reflects an over-conservative specimen-only fallback. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=abstract_count_signal | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN; COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly reports paired CSF/serum samples from ten patients with SPS, and the results are consistently presented as 10/10 patients with GAD-positive SPS. Although this is a lab-heavy specimen study, the text identifies an original clinically defined SPS cohort rather than only anonymous donor material, so candidate 10 is best supported; manual review remains appropriate because the study is specimen-focused and prior validation flagged possible donor-material ambiguity.
 - batch_artifacts_status: complete
 - local_model_count: 10 (medium; needs_review=True)
 - local_reasoning: The abstract explicitly states results for 10/10 patients with GAD-positive SPS.
@@ -1001,12 +1001,12 @@
 
 ## 559 - Antiglycine-receptor encephalomyelitis with rigidity.
 - predicted_count: 3
-- predicted_basis: patient_label_count
-- verification_status: llm_candidate_exact
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper explicitly states that the aim is to describe three new patients with GlyR antibodies, and the abstract/case reports detail three clinically described original SPS-spectrum patients. Although the abstract mentions a previously reported PERM patient, that appears to be prior literature rather than an additional original case in this paper, so the safest extractable count is 3; manual review remains warranted because provenance overlap is flagged as uncertain.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b003_n50_20260418 | predicted_count=3 | prediction_correct=true | reviewed_count=3 | reviewer_notes=The extracted counts were 3 and 1. The likelier count is 3, because the paper explicitly describes three new GlyR-antibody patients with SPS-spectrum phenotypes; 1 reflects only a single-case signal within the larger case series. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper explicitly states that the aim is to describe three new patients with GlyR antibodies, and the abstract/case reports detail three clinically described original SPS-spectrum patients. Although the abstract mentions a previously reported PERM patient, that appears to be prior literature rather than an additional original case in this paper, so the safest extractable count is 3; manual review remains warranted because provenance overlap is flagged as uncertain.
 - batch_artifacts_status: complete
 - local_model_count: 3 (medium; needs_review=True)
 - local_reasoning: The evidence mentions one initial patient and then explicitly states three additional patients were described, leading to a count of 4, but the deterministic candidate suggests 3, so I prioritize the explicit 'Three additional patients' count as the primary group size.

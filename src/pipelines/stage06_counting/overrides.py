@@ -111,6 +111,15 @@ def _override_count_version(existing: str) -> str:
     return f"{base}+manual_review_override"
 
 
+def _root_prior_reason(existing: str) -> str:
+    reason = str(existing or "").strip()
+    while reason.startswith("manual_review_override_applied=true") and " | prior_reason=" in reason:
+        reason = reason.split(" | prior_reason=", 1)[1].strip()
+    if reason.startswith("manual_review_override_applied=true"):
+        return ""
+    return reason
+
+
 def apply_override_to_count_row(
     count_row: dict[str, str],
     override_row: dict[str, str],
@@ -120,7 +129,7 @@ def apply_override_to_count_row(
         raise ValueError("Reviewed override row is missing reviewed_count.")
 
     overridden = dict(count_row)
-    prior_reason = str(count_row.get("count_reason") or "").strip()
+    prior_reason = _root_prior_reason(str(count_row.get("count_reason") or ""))
     reason_bits = [
         "manual_review_override_applied=true",
         f"source_scope_id={str(override_row.get('source_scope_id') or '').strip()}",

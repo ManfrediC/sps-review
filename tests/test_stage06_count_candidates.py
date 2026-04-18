@@ -1038,6 +1038,70 @@ class TestStage06CountCandidates(unittest.TestCase):
             {candidate.count_basis for candidate in package.candidates},
         )
 
+    def test_candidate_package_prefers_total_then_sps_subgroup_in_mixed_gad_cohort(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "491.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "491",
+                "Title": (
+                    "Spectrum of neurological syndromes associated with glutamic acid decarboxylase "
+                    "antibodies: diagnostic clues for this association."
+                ),
+                "Authors": (
+                    "Saiz, Albert; Blanco, Yolanda; Sabater, Lidia; Gonzalez, Felix; Bataller, Luis; "
+                    "Casamitjana, Roser; Ramio-Torrenta, Lluis; Graus, Francesc"
+                ),
+                "Abstract": (
+                    "High GAD-ab levels were identified in 61 patients, 22 (36%) had SPS, 17 (28%) "
+                    "cerebellar ataxia, 11 (18%) other neurological disorders, and 11 (18%) isolated DM1."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 22)
+        self.assertEqual(package.preferred_candidate().proposed_count, 22)
+        self.assertEqual(
+            package.preferred_candidate().count_basis,
+            "diagnosis_specific_total_then_sps_subgroup_count",
+        )
+        self.assertEqual({candidate.proposed_count for candidate in package.candidates}, {22, 61})
+
+    def test_candidate_package_sums_distinct_antibody_defined_sps_groups(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "499.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "499",
+                "Title": "Stiff-person syndrome with amphiphysin antibodies: distinctive features of a rare disease.",
+                "Authors": "Murinson, Beth B; Guarnaccia, Joseph B",
+                "Abstract": (
+                    "Records associated with 845 sera tested in the Yale SPS project were examined, and 621 patients "
+                    "with clinically suspected SPS were included in the study. Results: In all, 116 patients had GAD "
+                    "antibodies and 11 patients had amphiphysin Ab; some clinical information was available for 112 "
+                    "and 11 of these patients, respectively."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 127)
+        self.assertEqual(package.preferred_candidate().proposed_count, 127)
+        self.assertIn(
+            "diagnosis_specific_antibody_group_total",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+        self.assertIn(116, {candidate.proposed_count for candidate in package.candidates})
+
     def test_count_row_marks_embedded_review_provenance_as_manual_review(self) -> None:
         path = REPO_ROOT / "data" / "extraction_json" / "text" / "184.json"
         package = build_case_count_candidate_package(
