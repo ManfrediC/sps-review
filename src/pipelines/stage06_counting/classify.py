@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-import os
-
 from openai import OpenAI
 
 from src.pipelines.stage06_counting.models import CountCandidatePackage, LLMCountDecisionOutput
 from src.pipelines.stage06_counting.prepare import format_candidate_package_for_llm
+from src.pipelines.stage06_counting.runtime import resolve_openai_api_key
 
 
 DEFAULT_MODEL = "gpt-5.4"
@@ -84,7 +83,7 @@ def adjudicate_count_package(
     api_key: str | None = None,
     adviser_notes: str = "",
 ) -> tuple[LLMCountDecisionOutput, str]:
-    client = OpenAI(api_key=api_key or os.environ.get("OPENAI_API_KEY"))
+    client = OpenAI(api_key=resolve_openai_api_key(api_key))
     response = client.responses.parse(
         model=model,
         temperature=temperature,

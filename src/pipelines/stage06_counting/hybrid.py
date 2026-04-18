@@ -14,6 +14,7 @@ from src.pipelines.stage06_counting.local_ollama import (
 )
 from src.pipelines.stage06_counting.local_validate import validate_local_count_decision
 from src.pipelines.stage06_counting.models import CountCandidatePackage, LLMCountDecisionOutput
+from src.pipelines.stage06_counting.runtime import Stage06DependencyError, is_openai_dependency_error
 from src.pipelines.stage06_counting.validate import (
     Severity,
     collect_validator_results,
@@ -310,6 +311,10 @@ def hybrid_count_row(
         local_flags=local_flags,
         parsed_output=local_call.parsed,
     )
+    if local_call.status == "request_failed":
+        raise Stage06DependencyError(
+            f"Local Ollama adjudication failed for paper {package.paper_id}: {local_call.error or 'request_failed'}"
+        )
 
     primary_decision_json_path = ""
     evidence_json_path = ""
@@ -528,7 +533,13 @@ def hybrid_count_row(
             count_validator_flags=final_validator_flags,
             count_audit_status="hybrid_local_gpt",
         )
+    except Stage06DependencyError:
+        raise
     except Exception as exc:
+        if is_openai_dependency_error(exc):
+            raise Stage06DependencyError(
+                f"OpenAI adjudication failed for paper {package.paper_id}: {exc.__class__.__name__}: {exc}"
+            ) from exc
         reasons = [
             f"llm_request_failed={exc.__class__.__name__}",
             "manual_review_gate=true",

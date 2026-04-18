@@ -99,6 +99,61 @@ class TestStage06HybridCounting(unittest.TestCase):
     def test_gpt_adjudication_needed_skips_clear_zero_review_rows(self) -> None:
         self.assertFalse(gpt_adjudication_needed(make_zero_review_package()))
 
+    def test_hybrid_count_row_preserves_manual_review_for_non_count_eligible_rows(self) -> None:
+        package = make_zero_review_package()
+        local_call = LocalModelCallResult(
+            model_id="gemma4:e4b",
+            status="parsed_ok",
+            raw_output="{}",
+            response_payload={},
+            parsed=LocalCountDecisionOutput.model_validate(
+                {
+                    "n_spsd_patients": 0,
+                    "evidence_span": "A survey of the medical literature in 1967 identified 44 cases.",
+                    "data_granularity": "unclear",
+                    "confidence": "low",
+                    "needs_review": True,
+                    "reasoning_short": "This looks like a review article rather than an extractable cohort.",
+                    "possibilities": [],
+                }
+            ),
+            duration_seconds=0.5,
+        )
+        decision = LLMCountDecisionOutput(
+            decision_type="manual_review_required",
+            selected_candidate_id=None,
+            alternative_count=None,
+            count_confidence="low",
+            count_manual_review_required=True,
+            count_reasoning_summary="The paper discusses prior literature rather than a clean original cohort.",
+            evidence=[
+                CountEvidenceItem(
+                    quote="A survey of the medical literature in 1967 identified 44 cases.",
+                    page=1,
+                    section="review context",
+                    supports="This is literature background, not an extractable original cohort count.",
+                )
+            ],
+        )
+
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            run_dir = Path(tmp_dir_text)
+            with (
+                mock.patch("src.pipelines.stage06_counting.hybrid.run_local_count_package", return_value=local_call),
+                mock.patch(
+                    "src.pipelines.stage06_counting.hybrid.adjudicate_count_package",
+                    return_value=(decision, "gpt-5.4-primary"),
+                ),
+            ):
+                row = hybrid_count_row(
+                    package,
+                    run_dir=run_dir,
+                    candidate_json_path="results/stage06_count_runs/test/candidate_packages/12720.json",
+                )
+
+        self.assertEqual(row["count_verification_status"], "llm_manual_review_required")
+        self.assertEqual(row["count_manual_review_required"], "true")
+
     def test_hybrid_count_row_runs_challenge_on_subgroup_conflict(self) -> None:
         package = make_enumerated_subgroup_package()
         local_parsed = LocalCountDecisionOutput.model_validate(

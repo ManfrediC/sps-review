@@ -123,8 +123,12 @@ SPS_SUBGROUP_PAIR_RE = re.compile(
     re.IGNORECASE,
 )
 SPS_SUBGROUP_SUFFIX_RE = re.compile(
-    rf"\b(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b\s*\(\s*(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\b"
-    rf"(?=(?:\s+(?:with|case|cases|patient|patients|who|and|or))|\s*[\);:]|$)",
+    rf"\b(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b\s*\(\s*"
+    rf"(?:[a-z-]+\s*,\s*)?"
+    rf"(?:n\s*[=:]\s*)?"
+    rf"(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\b"
+    rf"(?:\s*/\s*\d+\b)?"
+    rf"(?=(?:\s*,\s*\d+(?:\.\d+)?\s*%?)|(?:\s+(?:with|case|cases|patient|patients|who|and|or))|\s*[\);:]|$)",
     re.IGNORECASE,
 )
 PATIENT_CASE_LABEL_RE = re.compile(
@@ -175,6 +179,7 @@ MIXED_DIAGNOSIS_SUBGROUP_CONTEXT_MARKERS = (
     "broader spectrum of symptoms",
     "coexisting autoimmune disorders",
     "control patients",
+    "control subjects",
     "control group",
     "disease control groups",
     "were classified as",
@@ -186,11 +191,13 @@ ENUMERATED_SPS_SUBGROUP_MARKERS = (
 )
 CONTROL_GROUP_UNCERTAINTY_MARKERS = (
     "control patients",
+    "control subjects",
     "healthy controls",
+    "healthy control subjects",
     "disease control groups",
 )
 CONTROL_GROUP_SPS_CONTEXT_RE = re.compile(
-    rf"\b(?:control patients?|healthy controls?|disease control groups?)\b"
+    rf"\b(?:control patients?|control subjects?|healthy controls?|healthy control subjects?|disease control groups?)\b"
     rf"[\s\S]{{0,260}}?\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
     re.IGNORECASE,
 )
@@ -239,9 +246,12 @@ DONOR_MATERIAL_SIGNAL_RE = re.compile(
     re.IGNORECASE,
 )
 SUSPECTED_SPS_COHORT_SIGNAL_RE = re.compile(
-    r"\b(?:suspected|clinically suspected|referred specifically for)\b"
-    r"[\s\S]{0,60}?"
-    r"\b(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms)\b",
+    r"\b(?:suspected|clinically suspected)\s+"
+    r"(?:patients?\s+with\s+|cases?\s+of\s+|cohort\s+of\s+)?"
+    r"(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms)\b|"
+    r"\breferred specifically for\s+"
+    r"(?:a\s+|an\s+)?(?:possible\s+)?"
+    r"(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms)\b",
     re.IGNORECASE,
 )
 CONFIRMED_SPS_CONTEXT_RE = re.compile(
@@ -261,14 +271,35 @@ TABLE_ROW_SPS_COUNT_RE = re.compile(
     rf"(?P<trailing>(?:\s+[0-9][0-9()/.-]*){{3,8}})",
     re.IGNORECASE,
 )
+TABLE_ROW_SPS_LABEL_PATTERN = (
+    rf"(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN}|"
+    r"stiff[- ]person phenomena|stiff[- ]man phenomena)"
+)
+TABLE_ROW_SPS_LABEL_COUNT_RE = re.compile(
+    rf"\b(?P<label>{TABLE_ROW_SPS_LABEL_PATTERN})\b\s+"
+    rf"(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\b"
+    rf"(?:\s*\((?P<paren>[^)]{{1,24}})\))?",
+    re.IGNORECASE,
+)
 TABLE_ROW_CONTEXT_MARKERS = (
     "table",
     "diagnosis",
     "no. of the patients",
     "no of the patients",
+    "no. of cases",
+    "no of cases",
+    "no. (%)",
+    "groups of patients",
+    "signs and symptoms",
+    "level involved",
     "mean age",
     "sex (",
 )
+CONTROL_COMPARISON_CONTEXT_RE = re.compile(
+    r"\b(?:relative to|compared with|versus|vs\.?)\s+(?:the\s+)?(?:healthy\s+)?control",
+    re.IGNORECASE,
+)
+CITATION_LIST_PAREN_RE = re.compile(r"\(\s*\d+(?:\s*[-,]\s*\d+){1,5}\s*\)")
 SERIES_COHORT_RE = re.compile(
     rf"\b(?:in\s+our\s+series|our\s+series\s+of|we\s+studied|we\s+examined|we\s+report(?:ed)?|"
     rf"we\s+described|we\s+identified)\b[\s,;:-]{{0,12}}"
@@ -398,8 +429,47 @@ def _contains_subgroup_count_signal(unit: str, subgroup_signal: SubgroupSignal |
     return any(count == subgroup_signal.count for _, count in _subgroup_pairs_from_unit(unit))
 
 
+def _resolved_control_group_context(unit: str, subgroup_signal: SubgroupSignal | None) -> bool:
+    if subgroup_signal is None:
+        return False
+    normalized = normalize_text(_clean_signal_text(unit))
+    if CONTROL_COMPARISON_CONTEXT_RE.search(unit):
+        return True
+    non_sps_hits = sum(1 for marker in NON_SPS_MIXED_DIAGNOSIS_MARKERS if marker in normalized)
+    return non_sps_hits == 0
+
+
 def _is_non_original_case_context(unit: str) -> bool:
     return bool(NON_ORIGINAL_COHORT_SIGNAL_RE.search(_clean_signal_text(unit)))
+
+
+def _suffix_match_looks_like_citation(cleaned: str, match: re.Match[str]) -> bool:
+    window = cleaned[match.start() : min(len(cleaned), match.end() + 24)]
+    parenthetical = re.search(r"\(\s*[^)]*\)", window)
+    if parenthetical is None:
+        return False
+    return bool(CITATION_LIST_PAREN_RE.fullmatch(parenthetical.group(0)))
+
+
+def _table_row_label_priority(label: str) -> int:
+    normalized = normalize_text(label)
+    if "phenomena" in normalized:
+        return 1
+    return 0
+
+
+def _table_row_context_priority(normalized_context: str) -> int:
+    priority = 0
+    if any(marker in normalized_context for marker in ("groups of patients", "no of cases")):
+        priority += 2
+    if any(
+        marker in normalized_context
+        for marker in ("no of the patients", "mean age", "signs and symptoms", "level involved")
+    ):
+        priority += 1
+    if "positive cases" in normalized_context:
+        priority -= 2
+    return priority
 
 
 def _canonicalize_subgroup_diagnosis(text: str) -> str:
@@ -419,6 +489,8 @@ def _subgroup_pairs_from_unit(unit: str) -> list[tuple[str, int]]:
             continue
         pairs.append((_canonicalize_subgroup_diagnosis(match.group("diagnosis")), count))
     for match in SPS_SUBGROUP_SUFFIX_RE.finditer(cleaned):
+        if _suffix_match_looks_like_citation(cleaned, match):
+            continue
         preceding_context = cleaned[max(0, match.start() - 60) : match.start()]
         if re.search(
             rf"\b{COUNT_TOKEN_TEXT_PATTERN}\b\s+"
@@ -649,13 +721,23 @@ def _extract_suffix_count_subgroup_signal(text: str) -> SubgroupSignal | None:
         if _is_non_original_case_context(cleaned):
             continue
         for match in SPS_SUBGROUP_SUFFIX_RE.finditer(cleaned):
-            count = parse_count_token(match.group("count"))
-            if count <= 0 or count > 25:
+            if _suffix_match_looks_like_citation(cleaned, match):
                 continue
-            score = 50 - count
+            matched_text = match.group(0)
+            count = parse_count_token(match.group("count"))
+            if count <= 0:
+                continue
+            max_allowed = 200 if "/" in matched_text else 25
+            if count > max_allowed:
+                continue
+            score = 120 - count if "/" in matched_text else 50 - count
             signal = SubgroupSignal(
                 count=count,
-                count_basis="diagnosis_specific_suffix_count",
+                count_basis=(
+                    "diagnosis_specific_fraction_suffix_count"
+                    if "/" in matched_text
+                    else "diagnosis_specific_suffix_count"
+                ),
                 count_confidence="high",
                 evidence_units=(unit[:420],),
             )
@@ -696,7 +778,38 @@ def _extract_table_row_subgroup_signal(text: str) -> SubgroupSignal | None:
             count_confidence="high",
             evidence_units=(snippet,),
         )
-        score = (len(numeric_tokens) * 10) + (30 - count)
+        score = (_table_row_context_priority(normalized_context) * 100) + (len(numeric_tokens) * 10) + (30 - count)
+        if score > best_score:
+            best_score = score
+            best_signal = signal
+
+    for match in TABLE_ROW_SPS_LABEL_COUNT_RE.finditer(cleaned):
+        count = parse_count_token(match.group("count"))
+        if count <= 0 or count > 200:
+            continue
+        context_start = max(0, match.start() - 1200)
+        context_end = min(len(cleaned), match.end() + 180)
+        context_window = cleaned[context_start:context_end]
+        snippet_start = max(0, match.start() - 220)
+        snippet_end = min(len(cleaned), match.end() + 180)
+        snippet = cleaned[snippet_start:snippet_end][:420]
+        normalized_context = normalize_text(context_window)
+        if _is_non_original_case_context(snippet):
+            continue
+        if not any(marker in normalized_context for marker in TABLE_ROW_CONTEXT_MARKERS):
+            continue
+        label = match.group("label") or ""
+        signal = SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_table_row_count",
+            count_confidence="high",
+            evidence_units=(snippet,),
+        )
+        score = (
+            (_table_row_label_priority(label) * 1000)
+            + (_table_row_context_priority(normalized_context) * 100)
+            + (300 - count)
+        )
         if score > best_score:
             best_score = score
             best_signal = signal
@@ -794,8 +907,8 @@ def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: s
         _extract_group_breakdown_subgroup_signal,
         _extract_enumerated_sps_subgroup_signal,
         _extract_mixed_diagnosis_subgroup_signal,
-        _extract_suffix_count_subgroup_signal,
         _extract_table_row_subgroup_signal,
+        _extract_suffix_count_subgroup_signal,
         _extract_explicit_patient_case_signal,
         _extract_patient_label_subgroup_signal,
     ):
@@ -905,6 +1018,8 @@ def extract_sps_status_uncertainty_signals(
         snippet = cleaned_combined_text[snippet_start:snippet_end][:420]
         if _matches_evidence_snippet(snippet, subgroup_units) or _contains_subgroup_count_signal(snippet, subgroup_signal):
             continue
+        if _resolved_control_group_context(snippet, subgroup_signal):
+            continue
         normalized_snippet = normalize_text(snippet)
         if normalized_snippet and normalized_snippet not in seen:
             seen.add(normalized_snippet)
@@ -920,11 +1035,6 @@ def extract_sps_status_uncertainty_signals(
             LLM_EVIDENCE_SPS_RE.search(normalized)
             and any(marker in normalized for marker in CONTROL_GROUP_UNCERTAINTY_MARKERS)
         )
-        mixed_context_uncertainty = bool(
-            LLM_EVIDENCE_SPS_RE.search(normalized)
-            and sum(1 for marker in NON_SPS_MIXED_DIAGNOSIS_MARKERS if marker in normalized) >= 2
-            and len(_subgroup_pairs_from_unit(unit)) < 2
-        )
         if unit.lower().startswith("keywords:"):
             continue
         if SPS_STATUS_SUBSET_UNCERTAINTY_RE.search(unit) or SPS_STATUS_SINGLE_PATIENT_OCR_UNCERTAINTY_RE.search(unit):
@@ -932,6 +1042,8 @@ def extract_sps_status_uncertainty_signals(
             signals.append(unit[:420])
             continue
         if has_control_group_uncertainty:
+            if _resolved_control_group_context(unit, subgroup_signal):
+                continue
             seen.add(normalized)
             signals.append(unit[:420])
             continue
@@ -1783,7 +1895,7 @@ def count_row_from_resolution(
     count_audit_status: str = "not_run",
 ) -> dict[str, str]:
     preferred_candidate = package.preferred_candidate()
-    effective_manual_review_required = package.count_eligible and (
+    effective_manual_review_required = (
         final_manual_review_required or package.original_cohort_provenance_uncertain
     )
     return {

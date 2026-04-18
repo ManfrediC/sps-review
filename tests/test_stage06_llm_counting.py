@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
 
 from src.pipelines._sps_case_count_registry import build_case_count_candidate_package
 from src.pipelines.stage06_counting.controller import adjudicated_count_row
+from src.pipelines.stage06_counting import classify as classify_mod
 from src.pipelines.stage06_counting.classify import SYSTEM_PROMPT
 from src.pipelines.stage06_counting.models import CountEvidenceItem, LLMCountDecisionOutput
 from src.pipelines.stage06_counting.prepare import format_candidate_package_for_llm
@@ -222,6 +224,23 @@ def make_12584_package():
 
 
 class TestStage06LlmCounting(unittest.TestCase):
+    def test_resolve_openai_api_key_uses_env_file(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            env_file = Path(tmp_dir_text) / "openai_api_key.env"
+            env_file.write_text("OPENAI_API_KEY=test-file-key\n", encoding="utf-8")
+            resolved = classify_mod.resolve_openai_api_key(env={}, env_file=env_file)
+        self.assertEqual(resolved, "test-file-key")
+
+    def test_resolve_openai_api_key_ignores_environment_value(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            env_file = Path(tmp_dir_text) / "openai_api_key.env"
+            env_file.write_text("OPENAI_API_KEY=test-file-key\n", encoding="utf-8")
+            resolved = classify_mod.resolve_openai_api_key(
+                env={"OPENAI_API_KEY": "shell-key"},
+                env_file=env_file,
+            )
+        self.assertEqual(resolved, "test-file-key")
+
     def test_llm_system_prompt_defines_spsd_scope(self) -> None:
         self.assertIn("classic stiff person syndrome (SPS)", SYSTEM_PROMPT)
         self.assertIn("partial or focal SPS, including stiff limb syndrome", SYSTEM_PROMPT)

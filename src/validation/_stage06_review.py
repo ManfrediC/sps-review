@@ -299,13 +299,15 @@ def _enrich_review_row(
     artifact_rows: dict[str, dict[str, str]],
     run_id: str,
     source_scope_label: str,
+    attach_latest_run_artifacts: bool = True,
 ) -> dict[str, str]:
     paper_id = str(row.get("paper_id") or "").strip()
     artifact_row = artifact_rows.get(paper_id, {})
     enriched = dict(row)
-    attached_run = latest_run_artifacts_for_paper(paper_id)
-    if attached_run:
-        enriched.update({key: value for key, value in attached_run.items() if value})
+    if attach_latest_run_artifacts:
+        attached_run = latest_run_artifacts_for_paper(paper_id)
+        if attached_run:
+            enriched.update({key: value for key, value in attached_run.items() if value})
     enriched["run_id"] = run_id
     enriched["source_scope_label"] = source_scope_label
     enriched["pdf_path_relative"] = first_pipe_separated_value(artifact_row.get("pdf_paths_relative") or "")
@@ -346,6 +348,7 @@ def load_review_rows_from_registry(
                 artifact_rows=artifact_rows,
                 run_id=run_id,
                 source_scope_label=source_scope_label,
+                attach_latest_run_artifacts=True,
             )
         )
     return rows
@@ -370,15 +373,17 @@ def load_review_rows_from_run(
         count_row["preferred_text_json_path"] = str(
             payload.get("preferred_text_json_path") or count_row.get("preferred_text_json_path") or ""
         ).strip()
-        count_row["count_decision_json_path"] = display_path(run_dir / "count_decisions" / f"{count_row['paper_id']}.json")
-        if not (run_dir / "count_decisions" / f"{count_row['paper_id']}.json").exists():
-            count_row["count_decision_json_path"] = ""
+        decision_path = run_dir / "count_decisions" / f"{count_row['paper_id']}.json"
+        evidence_path = run_dir / "count_evidence" / f"{count_row['paper_id']}.json"
+        count_row["count_decision_json_path"] = display_path(decision_path) if decision_path.exists() else ""
+        count_row["count_evidence_json_path"] = display_path(evidence_path) if evidence_path.exists() else ""
         rows.append(
             _enrich_review_row(
                 count_row,
                 artifact_rows=artifact_rows,
                 run_id=run_dir.name,
                 source_scope_label=run_dir.name,
+                attach_latest_run_artifacts=False,
             )
         )
     return rows

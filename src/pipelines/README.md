@@ -448,8 +448,12 @@ It:
 
 - reads the same preferred proceedings-ready/full-text inputs as the other stage-06 scripts,
 - writes run artefacts under `results/stage06_count_runs/{run_id}/`,
+- loads the OpenAI credential from `env/openai_api_key.env` for real runs instead of relying on ambient shell state,
+- auto-starts Ollama when needed and aborts if `gemma4:e4b` still is not reachable,
+- performs a tiny live OpenAI preflight call before processing any paper,
 - applies reviewed overrides during publish,
 - refuses canonical export when unresolved manual-review rows remain uncovered by overrides unless `--allow-unresolved-export` is passed explicitly, and
+- aborts and cleans up the current failed attempt if Ollama or OpenAI fails mid-run rather than emitting provisional fallback rows, and
 - refreshes `data/references/paper_artifact_registry.csv` after a canonical write unless skipped.
 
 Estimate-only:
@@ -463,6 +467,19 @@ Canonical hybrid run:
 ```bash
 python src/pipelines/06_extract_sps_case_counts_hybrid.py --allow-paid-run
 ```
+
+After manual adjudications have been written to
+`data/references/source_sps_case_count_manual_review.csv`, you can sync those
+reviewed counts into the canonical stage-06 registry without rerunning the
+models:
+
+```bash
+python src/pipelines/06b_apply_sps_case_count_overrides.py
+```
+
+This rewrites `data/references/source_sps_case_count_registry.csv` in place and
+refreshes `data/references/paper_artifact_registry.csv` unless
+`--skip-registry-refresh` is passed.
 
 ## `07_split_case_series.py`
 

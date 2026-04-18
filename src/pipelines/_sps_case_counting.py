@@ -184,29 +184,30 @@ COUNT_TOKEN_PATTERN = (
     r"ninety(?:[- ](?:one|two|three|four|five|six|seven|eight|nine))?)"
 )
 COUNT_TOKEN_NONGROUP_PATTERN = COUNT_TOKEN_PATTERN.replace("?P<count>", "?:")
+COUNT_NON_PERCENT_LOOKAHEAD = r"(?!\s*(?:%|percent\b))"
 COUNT_NOUN_PATTERN = (
     r"(?:patients|patient|cases|case subjects|subjects|participants|participant|"
     r"women|men|children|girls|boys|people|individuals|twins)"
 )
 PATIENT_COUNT_RE = re.compile(
-    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",
+    rf"\b{COUNT_TOKEN_PATTERN}{COUNT_NON_PERCENT_LOOKAHEAD}\s+{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",
     re.IGNORECASE,
 )
 CONTEXTUAL_PATIENT_COUNT_RE = re.compile(
     rf"\b(?:of|in|among|with|included|including|includes|review of|series of|cohort of|study of|"
-    rf"observations in|observed in|our|these|those|following)\s+{COUNT_TOKEN_PATTERN}(?!\s*%)\s+"
+    rf"observations in|observed in|our|these|those|following)\s+{COUNT_TOKEN_PATTERN}{COUNT_NON_PERCENT_LOOKAHEAD}\s+"
     rf"{COUNT_FILLER_PATTERN}{{0,4}}?{COUNT_NOUN_PATTERN}\b",
     re.IGNORECASE,
 )
 SPS_DIRECT_COUNT_RE = re.compile(
-    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,2}}?"
+    rf"\b{COUNT_TOKEN_PATTERN}{COUNT_NON_PERCENT_LOOKAHEAD}\s+{COUNT_FILLER_PATTERN}{{0,2}}?"
     rf"(?:had|with|were|diagnosed with|presented with)\s+{COUNT_FILLER_PATTERN}{{0,3}}?"
     rf"{SPS_DIAGNOSIS_PATTERN}\b",
     re.IGNORECASE,
 )
 COUNT_RANGE_RE = re.compile(r"\b\d+\s+to\s+\d+\s+(?:percent|cases|patients)\b", re.IGNORECASE)
 TITLE_CASE_COUNT_RE = re.compile(
-    rf"\b{COUNT_TOKEN_PATTERN}(?!\s*%)\s+{COUNT_FILLER_PATTERN}{{0,4}}?(?:cases|patients|participants)\b",
+    rf"\b{COUNT_TOKEN_PATTERN}{COUNT_NON_PERCENT_LOOKAHEAD}\s+{COUNT_FILLER_PATTERN}{{0,4}}?(?:cases|patients|participants)\b",
     re.IGNORECASE,
 )
 PATIENT_LABEL_RE = re.compile(r"\b(?:patient|case)\s*(?:#\s*)?(?:\d+|i|ii|iii|iv|v|vi|vii|viii|ix|x)\b")
@@ -236,9 +237,40 @@ SPS_SUBGROUP_TRAILING_TABLE_COUNT_RE = re.compile(
     rf"\b{SPS_SUBGROUP_DIAGNOSIS_PATTERN}\b\s+\d+\s+\([^)]*\)\S*\s+(?P<count>\d+)\b",
     re.IGNORECASE,
 )
+SPS_TABLE_ROW_LABEL_PATTERN = (
+    rf"(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN}|"
+    r"stiff person phenomena|stiff-person phenomena|stiff man phenomena|stiff-man phenomena)"
+)
+SPS_TABLE_ROW_LABEL_COUNT_RE = re.compile(
+    rf"\b(?P<label>{SPS_TABLE_ROW_LABEL_PATTERN})\b\s+(?P<count>{COUNT_TOKEN_NONGROUP_PATTERN})\b(?:\s*\([^)]{{1,24}}\))?",
+    re.IGNORECASE,
+)
 SPS_TABLE_ROW_SEGMENT_RE = re.compile(
     r"\b(?:diagnosis|other symptoms)\b(?P<row>[\s\S]{0,280}?)\b(?:aeds|treatment|therapy|response|effect|mri|eeg|past history)\b",
     re.IGNORECASE,
+)
+SPS_TABLE_CONTEXT_MARKERS = (
+    "table",
+    "groups of patients",
+    "no of cases",
+    "no of the patients",
+    "no %",
+    "signs and symptoms",
+    "level involved",
+    "mean age",
+)
+SPS_TABLE_PRIORITY_MARKERS = (
+    "groups of patients",
+    "no of cases",
+)
+SPS_TABLE_SECONDARY_MARKERS = (
+    "no of the patients",
+    "mean age",
+    "signs and symptoms",
+    "level involved",
+)
+SPS_TABLE_DEPRIORITISE_MARKERS = (
+    "positive cases",
 )
 NON_ORIGINAL_COHORT_CONTEXT_RE = re.compile(
     r"\b(?:previously|earlier|prior(?:ly)?)\s+(?:described|reported|published|identified)\b|"
@@ -377,6 +409,7 @@ def has_explicit_multi_case_signal(text: str) -> bool:
 
 def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
     normalized = normalize_count_text(text)
+    cleaned_text = " ".join(str(text or "").split())
     if not normalized:
         return None
 
@@ -411,6 +444,36 @@ def extract_sps_subgroup_count(text: str) -> tuple[int, str, str] | None:
             candidates.append(count)
     if candidates:
         return min(candidates), "high", "diagnosis_specific_trailing_table_count"
+
+    table_row_candidates: list[tuple[int, int, int]] = []
+    for match in SPS_TABLE_ROW_LABEL_COUNT_RE.finditer(cleaned_text):
+        count = parse_count_token(match.group("count"))
+        if count <= 0 or count > 200:
+            continue
+        context_start = max(0, match.start() - 1200)
+        context_end = min(len(cleaned_text), match.end() + 240)
+        normalized_context = normalize_text(cleaned_text[context_start:context_end])
+        if not any(marker in normalized_context for marker in SPS_TABLE_CONTEXT_MARKERS):
+            continue
+        label = normalize_text(match.group("label"))
+        priority = 1 if "phenomena" in label else 0
+        context_priority = 0
+        if any(marker in normalized_context for marker in SPS_TABLE_PRIORITY_MARKERS):
+            context_priority += 2
+        if any(marker in normalized_context for marker in SPS_TABLE_SECONDARY_MARKERS):
+            context_priority += 1
+        if any(marker in normalized_context for marker in SPS_TABLE_DEPRIORITISE_MARKERS):
+            context_priority -= 2
+        table_row_candidates.append((priority, context_priority, count))
+    if table_row_candidates:
+        best_priority, best_context_priority, best_count = sorted(
+            table_row_candidates,
+            key=lambda item: (item[0], item[1], -item[2]),
+            reverse=True,
+        )[0]
+        if best_priority > 0 or best_context_priority != 0:
+            return best_count, "high", "diagnosis_specific_table_row_count"
+        return min(count for _, _, count in table_row_candidates), "high", "diagnosis_specific_table_row_count"
 
     candidates = []
     for match in SPS_TABLE_ROW_SEGMENT_RE.finditer(normalized):

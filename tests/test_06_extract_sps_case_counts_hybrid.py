@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -20,6 +21,43 @@ def _load_module(name: str, path: Path):
 
 
 class TestStage06ExtractSpsCaseCountsHybrid(unittest.TestCase):
+    def test_cleanup_failed_attempt_removes_new_outputs_only(self) -> None:
+        mod = _load_module("stage06_count_hybrid_cleanup", CASE_COUNT_HYBRID_SCRIPT)
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            run_dir = root / "stage06_demo"
+            output_path = root / "qa_output.csv"
+            run_dir.mkdir()
+            output_path.write_text("paper_id\n71\n", encoding="utf-8")
+
+            mod._cleanup_failed_attempt(
+                run_dir=run_dir,
+                run_dir_created=True,
+                output_path=output_path,
+                output_preexisting=False,
+            )
+            self.assertFalse(run_dir.exists())
+            self.assertFalse(output_path.exists())
+
+    def test_cleanup_failed_attempt_preserves_preexisting_output(self) -> None:
+        mod = _load_module("stage06_count_hybrid_cleanup_existing", CASE_COUNT_HYBRID_SCRIPT)
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            run_dir = root / "stage06_demo"
+            output_path = root / "source_sps_case_count_registry.csv"
+            run_dir.mkdir()
+            output_path.write_text("paper_id\n71\n", encoding="utf-8")
+
+            mod._cleanup_failed_attempt(
+                run_dir=run_dir,
+                run_dir_created=True,
+                output_path=output_path,
+                output_preexisting=True,
+            )
+
+            self.assertFalse(run_dir.exists())
+            self.assertTrue(output_path.exists())
+
     def test_apply_review_override_if_present_uses_tracked_override(self) -> None:
         mod = _load_module("stage06_count_hybrid_override", CASE_COUNT_HYBRID_SCRIPT)
         row = mod._apply_review_override_if_present(

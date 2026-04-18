@@ -119,6 +119,33 @@ class TestSpsCaseCounting(unittest.TestCase):
         self.assertEqual(estimate.likely_case_count, 2)
         self.assertEqual(estimate.count_basis, "diagnosis_specific_table_row_count")
 
+    def test_extracts_table_no_of_cases_sps_row(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="The spectrum of antineuronal autoantibodies in a series of neurological patients.",
+            abstract="",
+            early_body_text=(
+                "Table 1 Groups of patients No. of cases "
+                "Patients with neurological disorder and systemic autoimmune disease "
+                "Stiff-Person syndrome 18 Connective tissue diseases 38"
+            ),
+        )
+        self.assertEqual(estimate.likely_case_count, 18)
+        self.assertEqual(estimate.count_basis, "diagnosis_specific_table_row_count")
+
+    def test_extracts_stiff_man_phenomena_table_row_count(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Glutamic acid decarboxylase autoimmunity with brainstem, extrapyramidal, and spinal cord dysfunction.",
+            abstract="",
+            early_body_text=(
+                "TABLE 1. Neurological Manifestations in 62 Patients Seropositive for GAD65 Antibody "
+                "No. (%) Level involved of patients Signs and symptoms Miscellaneous "
+                "Extrapyramidal 10 (16) Axial or neck rigidity (8) "
+                "Stiff-man phenomena 16 (26) Leg or arm spasms (14); stiff-man syndrome (2)"
+            ),
+        )
+        self.assertEqual(estimate.likely_case_count, 16)
+        self.assertEqual(estimate.count_basis, "diagnosis_specific_table_row_count")
+
     def test_ignores_literature_case_totals_in_single_patient_interventional_report(self) -> None:
         estimate = estimate_sps_case_count(
             title="Trialing of intrathecal baclofen therapy for refractory stiff-person syndrome.",

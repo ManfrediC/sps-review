@@ -184,6 +184,14 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
   - Supports focused batches via repeated `--paper-id` flags before any wider audit pass.
   - Writes review queues and snippet packs under `qa/validation/missed_proceedings_audit_*/`.
 
+- `validation/build_stage06_backfill_campaign.py`
+  - Builds the stage-06 backfill campaign manifest from manual-gold coverage plus discovered `hybrid_v2_*` run artifacts.
+  - Emits one batch manifest per 50-paper chunk together with a status table under `qa/validation/stage06_llm/backfill_campaign/`.
+
+- `validation/run_stage06_backfill_batch.py`
+  - Runs or resumes one subset stage-06 hybrid batch from a batch manifest.
+  - Rebuilds the combined batch CSV, inspection Markdown pack, review-comments CSV, and review-notes Markdown scaffold after each invocation.
+
 - `validation/README.md`
   - Notes for the validation scripts and example commands.
 

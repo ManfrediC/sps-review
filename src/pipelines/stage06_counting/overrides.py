@@ -159,3 +159,20 @@ def apply_override_to_count_row(
         }
     )
     return overridden
+
+
+def apply_reviewed_overrides_to_rows(
+    rows: list[dict[str, str]],
+    override_rows: dict[str, dict[str, str]],
+) -> tuple[list[dict[str, str]], list[str]]:
+    updated_rows: list[dict[str, str]] = []
+    applied_paper_ids: list[str] = []
+    for row in rows:
+        paper_id = str(row.get("paper_id") or "").strip()
+        override_row = override_rows.get(paper_id)
+        if override_row is None:
+            updated_rows.append(dict(row))
+            continue
+        updated_rows.append(apply_override_to_count_row(row, override_row))
+        applied_paper_ids.append(paper_id)
+    return updated_rows, applied_paper_ids

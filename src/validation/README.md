@@ -203,6 +203,63 @@ Run:
 streamlit run src/validation/review_stage06_count_app.py
 ```
 
+### `build_stage06_backfill_campaign.py`
+
+Builds the stage-06 hybrid backfill campaign inventory for papers that are still
+neither manual-gold reviewed nor processed by a `hybrid_v2_*` stage-06 run.
+
+It:
+- reads active stage-06 gold papers from `qa/validation/source_categorisation/gold_standard/stage06_count_gold/manifest.json`
+- reads reviewed rows from `data/references/source_sps_case_count_manual_review.csv`
+- scans `results/stage06_count_runs/` for `hybrid_v2_*` result payloads
+- writes a campaign manifest, one batch manifest per 50-paper chunk, and a
+  running status table under `qa/validation/stage06_llm/backfill_campaign/`
+- treats each campaign ID as a frozen target set once created; if the source
+  universe changes or a new batch layout is needed, create a new campaign ID
+  instead of mutating an existing campaign's membership
+- supports an explicit in-place repair mode for a drifted existing campaign;
+  this reconstructs the frozen batch partition from the completed batch runs
+  already on disk plus the current uncovered remainder
+
+Run:
+
+```bash
+python src/validation/build_stage06_backfill_campaign.py
+```
+
+Repair an existing campaign in place:
+
+```bash
+python src/validation/build_stage06_backfill_campaign.py --campaign-id stage06_backfill_20260418 --repair-existing-campaign
+```
+
+### `run_stage06_backfill_batch.py`
+
+Runs or resumes one subset stage-06 hybrid backfill batch from a batch manifest
+and then builds the batch QA pack.
+
+It:
+  - expands the batch manifest into repeated `--paper-id` flags for `06_extract_sps_case_counts_hybrid.py`
+  - runs the same stage-06 dependency preflight as the canonical hybrid entrypoint before a paid batch starts
+  - writes raw batch-run CSVs under `qa/validation/stage06_llm/`
+  - supports resume batches by appending `_resumeNN` run IDs for remaining papers
+  - rebuilds the combined batch CSV, inspection Markdown pack, review-comments CSV,
+    and review-notes Markdown scaffold after each successful invocation
+  - keeps the batch inspection pack tied to the batch's own run artefacts instead of attaching decision/evidence JSON from unrelated runs
+  - refreshes the campaign manifest/status snapshot after the batch completes
+
+Estimate a batch without model calls:
+
+```bash
+python src/validation/run_stage06_backfill_batch.py --batch-manifest qa/validation/stage06_llm/backfill_campaign/stage06_backfill_20260418/batches/b001.json --estimate-only
+```
+
+Run a paid batch:
+
+```bash
+python src/validation/run_stage06_backfill_batch.py --batch-manifest qa/validation/stage06_llm/backfill_campaign/stage06_backfill_20260418/batches/b001.json --allow-paid-run
+```
+
 ### `benchmark_stage06_hybrid.py`
 
 Benchmarks one or more stage-06 workflow CSV outputs against the reviewed stage-06 gold JSON corpus.

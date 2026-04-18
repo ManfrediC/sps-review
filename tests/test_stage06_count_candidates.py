@@ -6,6 +6,7 @@ import sys
 import unittest
 from pathlib import Path
 
+from src.pipelines._sps_case_counting import estimate_sps_case_count
 from src.pipelines._sps_case_count_registry import build_case_count_candidate_package, count_row_from_resolution
 
 
@@ -29,6 +30,16 @@ def _load_text_record(path: Path) -> dict[str, object]:
 
 
 class TestStage06CountCandidates(unittest.TestCase):
+    def test_estimate_sps_case_count_does_not_treat_percentages_as_counts(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Brain and Muscle Metabolic Changes by FDG-PET in Stiff Person Syndrome Spectrum Disorders.",
+            abstract=(
+                "Results: Of the patients, 82% had SPS (majority being classic phenotype), and 18% had CA."
+            ),
+            early_body_text="",
+        )
+        self.assertNotEqual(estimate.likely_case_count, 82)
+
     def test_candidate_package_preserves_proceedings_ready_metadata(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={
@@ -305,6 +316,77 @@ class TestStage06CountCandidates(unittest.TestCase):
             {candidate.count_basis for candidate in package.candidates},
         )
 
+    def test_candidate_package_extracts_fraction_style_sps_subgroup_count(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "11893",
+                "Title": "Brain and Muscle Metabolic Changes by FDG-PET in Stiff Person Syndrome Spectrum Disorders.",
+                "Authors": "Wang Y",
+                "Abstract": (
+                    "Retrospective cohort study identified 170 individuals with SPS or cerebellar ataxia. "
+                    "Fifty-one underwent FDG-PET, with 50 involving the body. "
+                    "Of the patients, 82% had SPS and 18% had CA."
+                ),
+            },
+            text_record={"paper_id": "11893", "_path": "data/extraction_json/text/11893.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Clinical phenotype within the cohort was SPS (41/50, 82%), "
+                            "remaining participants had pure CA (9/50, 18%)."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "11893.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        proposed_counts = {candidate.proposed_count for candidate in package.candidates}
+        self.assertEqual(package.explicit_sps_subgroup_count, 41)
+        self.assertIn(41, proposed_counts)
+        self.assertNotIn(82, proposed_counts)
+
+    def test_candidate_package_extracts_parenthetical_n_equals_sps_subgroup(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "11923",
+                "Title": (
+                    "Seizure semiology and predictors of outcomes in Chinese patients with "
+                    "glutamic acid decarboxylase antibody-associated neurological syndrome."
+                ),
+                "Authors": "Lin N",
+                "Abstract": (
+                    "Concomitant neurological syndromes were observed in 22 patients, including "
+                    "limbic encephalitis (n = 20), stiff-person syndrome (SPS, n = 1), "
+                    "and cerebellar ataxia (n = 1)."
+                ),
+            },
+            text_record={"paper_id": "11923", "_path": "data/extraction_json/text/11923.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Concomitant neurological syndromes were observed in 22 patients, including "
+                            "limbic encephalitis (n = 20), stiff-person syndrome (SPS, n = 1), "
+                            "and cerebellar ataxia (n = 1)."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "11923.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 1)
+        self.assertEqual(package.fallback_candidate().proposed_count, 1)
+        self.assertIn(1, {candidate.proposed_count for candidate in package.candidates})
+
     def test_candidate_package_marks_control_group_subgroup_counts_as_uncertain(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={
@@ -381,9 +463,12 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertEqual(package.fallback_candidate().proposed_count, 1)
         self.assertEqual(package.explicit_sps_subgroup_count, 1)
         self.assertIn(1, {candidate.proposed_count for candidate in package.candidates})
-        self.assertIn(
-            "diagnosis_specific_suffix_count",
-            {candidate.count_basis for candidate in package.candidates},
+        self.assertTrue(
+            {
+                "diagnosis_specific_suffix_count",
+                "diagnosis_specific_table_row_count",
+            }
+            & {candidate.count_basis for candidate in package.candidates}
         )
         self.assertFalse(package.sps_status_uncertainty_signals)
 
@@ -465,6 +550,208 @@ class TestStage06CountCandidates(unittest.TestCase):
             "diagnosis_specific_table_row_count",
             {candidate.count_basis for candidate in package.candidates},
         )
+
+    def test_candidate_package_extracts_no_of_cases_table_row_subgroup(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "252",
+                "Title": "The spectrum of antineuronal autoantibodies in a series of neurological patients.",
+                "Authors": "Vianello, M",
+                "Abstract": (
+                    "The records of 882 patients were reviewed and their sera and cerebrospinal fluids tested for "
+                    "antineuronal antibodies."
+                ),
+            },
+            text_record={"paper_id": "252", "_path": "data/extraction_json/text/252.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Table 1 Groups of patients No. of cases "
+                            "Patients with neurological disorder and systemic autoimmune disease "
+                            "Stiff-Person syndrome 18 Connective tissue diseases 38"
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "252.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 18)
+        self.assertEqual(package.fallback_candidate().proposed_count, 18)
+        self.assertIn(18, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn(
+            "diagnosis_specific_table_row_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_prefers_stiff_man_phenomena_table_row_count(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "432",
+                "Title": "Glutamic acid decarboxylase autoimmunity with brainstem, extrapyramidal, and spinal cord dysfunction.",
+                "Authors": "Pittock, S J",
+                "Abstract": "This retrospective study describes 62 patients incidentally found to have GAD65 autoimmunity.",
+            },
+            text_record={"paper_id": "432", "_path": "data/extraction_json/text/432.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "TABLE 1. Neurological Manifestations in 62 Patients Seropositive for GAD65 Antibody "
+                            "No. (%) Level involved of patients Signs and symptoms Miscellaneous "
+                            "Extrapyramidal 10 (16) Axial or neck rigidity (8); parkinsonism (4) "
+                            "Stiff-man phenomena 16 (26) Leg or arm spasms (14); stiff-man syndrome (2)"
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "432.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 16)
+        self.assertEqual(package.fallback_candidate().proposed_count, 16)
+        self.assertIn(16, {candidate.proposed_count for candidate in package.candidates})
+
+    def test_candidate_package_ignores_citation_like_suffix_count(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "404",
+                "Title": (
+                    "Intravenous immunoglobulin in patients with anti-GAD antibody-associated neurological diseases "
+                    "and patients with inflammatory myopathies: effects on clinicopathological features and "
+                    "immunoregulatory genes."
+                ),
+                "Authors": "Dalakas, Marinos C",
+                "Abstract": (
+                    "The following patients were randomised in three separate trials: "
+                    "(a) 16 patients with anti-GAD antibody-positive SPS; "
+                    "(b) 15 patients with dermatomyositis; and (c) 19 patients with IBM."
+                ),
+            },
+            text_record={"paper_id": "404", "_path": "data/extraction_json/text/404.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "In this article, the efficacy of IVIg on two groups of autoimmune neurological disorders, "
+                            "anti-glutamic acid decarboxylase-positive SPS and inflammatory myopathies, is summarised. "
+                            "SPS (19,20), we performed a randomised trial. "
+                            "The following patients were randomised in three separate trials: "
+                            "(a) 16 patients with anti-GAD antibody-positive SPS; "
+                            "(b) 15 patients with dermatomyositis; and (c) 19 patients with IBM."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "404.json",
+            source_row={
+                "source_category": "interventional_study",
+                "source_subtype": "controlled_or_therapeutic_group_study",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 16)
+        self.assertEqual(package.fallback_candidate().proposed_count, 16)
+        self.assertNotIn(19, {candidate.proposed_count for candidate in package.candidates})
+        self.assertNotEqual(package.explicit_sps_subgroup_count, 19)
+
+    def test_candidate_package_extracts_sms_subgroup_with_control_subjects(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "264",
+                "Title": "Hyperekplexia and stiff-man syndrome: abnormal brainstem reflexes suggest a physiological relationship.",
+                "Authors": "Khasani, S",
+                "Abstract": (
+                    "Using four-channel EMG, we examined four trigeminal brainstem reflexes in five patients with "
+                    "familial hyperekplexia, two with acquired hyperekplexia, 10 with SMS, and 15 healthy control subjects."
+                ),
+            },
+            text_record={"paper_id": "264", "_path": "data/extraction_json/text/264.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Patients and controls: we investigated five patients with FH, two patients with AH, "
+                            "10 patients with SMS, and 15 healthy control subjects."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "264.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 10)
+        self.assertEqual(package.explicit_sps_subgroup_basis, "diagnosis_specific_mixed_diagnosis_subgroup_count")
+        self.assertEqual(package.sps_status_uncertainty_signals, [])
+
+    def test_candidate_package_ignores_control_comparison_when_explicit_sps_cohort_exists(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "288",
+                "Title": "Brain gamma-aminobutyric acid changes in stiff-person syndrome.",
+                "Authors": "Levy, Lucien M",
+                "Abstract": (
+                    "Patients: Eight patients with SPS with high titers of circulating anti-glutamic acid decarboxylase "
+                    "antibodies and 16 control subjects. Results: GABA levels were reduced in patients with SPS relative "
+                    "to controls."
+                ),
+            },
+            text_record={"paper_id": "288", "_path": "data/extraction_json/text/288.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Methods: We studied 8 patients with SPS and 16 age-matched healthy volunteers as control "
+                            "subjects. Results: GABA levels were reduced in patients with SPS relative to controls."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "288.json",
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 8)
+        self.assertEqual(package.sps_status_uncertainty_signals, [])
+
+    def test_candidate_package_does_not_treat_suspected_exacerbation_as_suspected_cohort(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "411",
+                "Title": "Prevention of an acute severe exacerbation of Stiff-person syndrome during surgery.",
+                "Authors": "Gros, Albert J Jr",
+                "Abstract": "",
+            },
+            text_record={"paper_id": "411", "_path": "data/extraction_json/text/411.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "We present a case of a woman with SPS who had an acute exacerbation during surgery. "
+                            "There was a high suspicion that the seizure-like activity reported by the patient was an "
+                            "acute exacerbation of SPS."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "411.json",
+            source_row={
+                "source_category": "single_case_report",
+                "source_subtype": "case_report",
+            },
+        )
+        self.assertEqual(package.confirmed_only_guardrail_signals, [])
 
     def test_candidate_package_extracts_single_sps_case_from_mixed_two_patient_abstract(self) -> None:
         package = build_case_count_candidate_package(

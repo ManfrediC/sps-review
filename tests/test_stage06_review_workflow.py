@@ -7,6 +7,7 @@ import unittest
 from pathlib import Path
 
 from src.pipelines.stage06_counting import overrides
+from src.validation import _stage06_backfill as backfill
 from src.validation import _stage06_review as review
 
 
@@ -70,6 +71,66 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         self.assertEqual(row["pdf_path_relative"], r"data\pdf_original\71_test.pdf")
         self.assertEqual(row["source_text_json_path"], r"data\extraction_json\text\71.json")
         self.assertTrue(row["count_decision_json_path"].endswith(r"stage06_demo\count_decisions\71.json"))
+
+    def test_load_review_rows_from_run_does_not_attach_latest_foreign_artifacts(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            run_root = root / "stage06_count_runs"
+            run_dir = run_root / "stage06_demo"
+            later_run_dir = run_root / "stage06_later"
+            (run_dir / "results").mkdir(parents=True)
+            (later_run_dir / "results").mkdir(parents=True)
+            (later_run_dir / "candidate_packages").mkdir()
+            (later_run_dir / "count_decisions").mkdir()
+            (later_run_dir / "count_evidence").mkdir()
+
+            artifact_registry_path = root / "paper_artifact_registry.csv"
+            with artifact_registry_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=["paper_id", "pdf_paths_relative", "text_json_path"])
+                writer.writeheader()
+                writer.writerow(
+                    {
+                        "paper_id": "71",
+                        "pdf_paths_relative": r"data\pdf_original\71_test.pdf",
+                        "text_json_path": r"data\extraction_json\text\71.json",
+                    }
+                )
+
+            (run_dir / "results" / "71.json").write_text(
+                json.dumps(
+                    {
+                        "paper_id": "71",
+                        "count_row": {
+                            "paper_id": "71",
+                            "title": "Example paper",
+                            "likely_sps_case_count": "3",
+                            "count_verification_status": "llm_candidate_exact",
+                            "count_candidate_json_path": r"results\stage06_count_runs\stage06_demo\candidate_packages\71.json",
+                        },
+                        "source_text_json_path": r"data\extraction_json\text\71.json",
+                        "preferred_text_json_path": r"data\extraction_json\text\71.json",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (later_run_dir / "results" / "71.json").write_text("{}", encoding="utf-8")
+            (later_run_dir / "candidate_packages" / "71.json").write_text("{}", encoding="utf-8")
+            (later_run_dir / "count_decisions" / "71.json").write_text("{}", encoding="utf-8")
+            (later_run_dir / "count_evidence" / "71.json").write_text("{}", encoding="utf-8")
+
+            original_run_root = review.RUN_ROOT
+            try:
+                review.RUN_ROOT = run_root
+                rows = review.load_review_rows_from_run(run_dir, artifact_registry_path=artifact_registry_path)
+            finally:
+                review.RUN_ROOT = original_run_root
+
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row["run_id"], "stage06_demo")
+        self.assertEqual(row["count_decision_json_path"], "")
+        self.assertEqual(row["count_evidence_json_path"], "")
+        self.assertEqual(row.get("attached_run_id", ""), "")
 
     def test_save_response_row_preserves_review_order(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir_text:
@@ -202,6 +263,71 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         self.assertTrue(row["count_candidate_json_path"].endswith(r"stage06_llm_test_711\candidate_packages\711.json"))
         self.assertTrue(row["count_decision_json_path"].endswith(r"stage06_llm_test_711\count_decisions\711.json"))
         self.assertTrue(row["count_evidence_json_path"].endswith(r"stage06_llm_test_711\count_evidence\711.json"))
+
+    def test_build_review_comments_rows_seeds_competing_count_commentary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            candidate_path = root / "404_candidates.json"
+            decision_path = root / "404_decision.json"
+            candidate_path.write_text(
+                json.dumps(
+                    {
+                        "candidates": [
+                            {
+                                "candidate_id": "cand01",
+                                "proposed_count": 19,
+                                "count_basis": "diagnosis_specific_suffix_count",
+                                "evidence_text": "SPS (19,20), we performed a randomized trial.",
+                            },
+                            {
+                                "candidate_id": "cand02",
+                                "proposed_count": 16,
+                                "count_basis": "abstract_count_signal",
+                                "evidence_text": "The following patients were randomised: (a) 16 patients with anti-GAD antibody-positive SPS.",
+                            },
+                            {
+                                "candidate_id": "cand03",
+                                "proposed_count": 16,
+                                "count_basis": "early_body_count_signal",
+                                "evidence_text": "At enrolment, all 16 patients were receiving treatment for SPS.",
+                            },
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            decision_path.write_text(
+                json.dumps(
+                    {
+                        "decision": {
+                            "decision_type": "candidate_exact",
+                            "count_confidence": "medium",
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            rows = backfill.build_review_comments_rows(
+                [
+                    {
+                        "paper_id": "404",
+                        "title": "Example 404",
+                        "likely_sps_case_count": "19",
+                        "count_verification_status": "llm_manual_review_required",
+                        "count_manual_review_required": "true",
+                        "count_candidate_json_path": str(candidate_path),
+                        "count_decision_json_path": str(decision_path),
+                    }
+                ]
+            )
+
+        self.assertEqual(len(rows), 1)
+        comment = rows[0]["review_comment"]
+        self.assertIn("Pipeline output: 19.", comment)
+        self.assertIn("Extracted counts seen: 19 (diagnosis_specific_suffix_count), 16 (abstract_count_signal; early_body_count_signal).", comment)
+        self.assertIn("GPT decision: candidate_exact; medium.", comment)
+        self.assertIn("16 looks likelier because 19 only comes from a citation-like suffix snippet.", comment)
 
 
 if __name__ == "__main__":
