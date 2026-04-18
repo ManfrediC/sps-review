@@ -113,12 +113,12 @@
 
 ## 39 - Heterogeneity of autoantibodies in stiff-man syndrome.
 - predicted_count: 13
-- predicted_basis: abstract_count_signal
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=13 vs 4; broad_total_exceeds_explicit_subgroup=13 > 4 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that serum samples were collected from 13 patients with a diagnosis of stiff-man syndrome according to accepted criteria, which supports a full SPS-spectrum cohort of 13 unique patients. The subgroup of 4 patients with associated solid tumor is a nested subset within those 13, not a safer SPS-only denominator; however, because seven of the 13 were previously described and provenance overlap is uncertain, manual review remains required.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=13 | prediction_correct=true | reviewed_count=13 | reviewer_notes=The competing counts are 13 from the interview and psychologic-testing cohort and 39 from the larger diagnosed/referral pool. The extractable SPS-spectrum count is 13 because only 13 patients were actually studied in this paper. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=13 vs 4; broad_total_exceeds_explicit_subgroup=13 > 4 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that serum samples were collected from 13 patients with a diagnosis of stiff-man syndrome according to accepted criteria, which supports a full SPS-spectrum cohort of 13 unique patients. The subgroup of 4 patients with associated solid tumor is a nested subset within those 13, not a safer SPS-only denominator; however, because seven of the 13 were previously described and provenance overlap is uncertain, manual review remains required.
 - batch_artifacts_status: complete
 - local_model_count: 4 (medium; needs_review=True)
 - local_reasoning: The explicit subgroup count of 4 is preferred over the broader cohort count of 13 due to the specific nature of the subgroup finding.
@@ -135,13 +135,13 @@
   - pNone: seven of the 13 sms patients have been previously described
 
 ## 43 - Higher autoantibody levels and recognition of a linear NH2-terminal epitope in the autoantigen GAD65, distinguish stiff-man syndrome from insulin-dependent diabetes mellitus.
-- predicted_count: 35
-- predicted_basis: llm_bounded_alternative
-- verification_status: llm_bounded_alternative
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_count: 33
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper explicitly reports an original cohort of 35 stiff-man syndrome (SMS/SPS) patients studied for GAD65 autoantibodies. The listed candidate count of 9 appears to come from an HLA-haplotyped subgroup, not the full SPS-spectrum cohort. Because provenance overlap/reuse is flagged as uncertain, the count should be retained with manual review.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=35 | prediction_correct=false | reviewed_count=33 | reviewer_notes=The extracted counts are 35 from the abstract total, 33 from Methods (`Sera were obtained with informed consent from 33 SMS patients identified ...`), and 9 from the HLA-haplotyped subgroup. The extractable SPS-spectrum count is 33 because the methods cohort is the main diagnosed sample counted under standard criteria. | prior_reason=challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper explicitly reports an original cohort of 35 stiff-man syndrome (SMS/SPS) patients studied for GAD65 autoantibodies. The listed candidate count of 9 appears to come from an HLA-haplotyped subgroup, not the full SPS-spectrum cohort. Because provenance overlap/reuse is flagged as uncertain, the count should be retained with manual review.
 - batch_artifacts_status: complete
 - local_model_count: 0 (medium; needs_review=True)
 - local_reasoning: The text mentions SMS but does not provide a specific count of original SPS-spectrum patients.
@@ -247,13 +247,13 @@
   - p2: we report on eight patients, five female and three male
 
 ## 92 - Antiamphiphysin antibodies with small-cell lung carcinoma and paraneoplastic encephalomyelitis.
-- predicted_count: 2
-- predicted_basis: patient_label_count
-- verification_status: llm_manual_review_required
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_count: 1
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=3 vs 1 | The paper reports 3 original patients with paraneoplastic encephalomyelitis, but only 1 is explicitly described as having rigidity and myoclonus and the text states that only 1 patient had clinical rigidity. Because PEM/PERM membership versus broader non-SPSD paraneoplastic encephalomyelitis is not explicit for all 3 patients, and no candidate cleanly matches a safely extractable SPS-spectrum count, this requires manual review.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=2 | prediction_correct=false | reviewed_count=1 | reviewer_notes=The paper reports 3 paraneoplastic encephalomyelitis patients, but only patient 3 is clearly tied to rigidity and the SPS-spectrum signal. The safest extractable SPS-spectrum count is therefore 1. | prior_reason=challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=3 vs 1 | The paper reports 3 original patients with paraneoplastic encephalomyelitis, but only 1 is explicitly described as having rigidity and myoclonus and the text states that only 1 patient had clinical rigidity. Because PEM/PERM membership versus broader non-SPSD paraneoplastic encephalomyelitis is not explicit for all 3 patients, and no candidate cleanly matches a safely extractable SPS-spectrum count, this requires manual review.
 - batch_artifacts_status: complete
 - local_model_count: 3 (medium; needs_review=True)
 - local_reasoning: The abstract explicitly mentions 3 patients with paraneoplastic encephalomyelitis, which falls under the SPS-spectrum.
@@ -293,12 +293,12 @@
 
 ## 102 - The insulin-dependent diabetes mellitus-associated ICA 105 autoantigen in stiff-man syndrome patients.
 - predicted_count: 11
-- predicted_basis: diagnosis_specific_mixed_diagnosis_subgroup_count
-- verification_status: llm_candidate_exact
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper explicitly reports testing antibodies in 11 stiff-man syndrome patients and 56 neurological controls, making 11 the best-supported extractable SPS-spectrum cohort count. The 105 figure refers to the ICA 105 autoantigen name, not a patient count; however, provenance signals suggest possible prior/cohort overlap, so manual review remains appropriate.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=11 | prediction_correct=true | reviewed_count=11 | reviewer_notes=The competing numbers are 11 patients and 105. The extractable SPS-spectrum count is 11 because 105 is the ICA 105 autoantigen name rather than a patient denominator. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper explicitly reports testing antibodies in 11 stiff-man syndrome patients and 56 neurological controls, making 11 the best-supported extractable SPS-spectrum cohort count. The 105 figure refers to the ICA 105 autoantigen name, not a patient count; however, provenance signals suggest possible prior/cohort overlap, so manual review remains appropriate.
 - batch_artifacts_status: complete
 - local_model_count: 11 (medium; needs_review=True)
 - local_reasoning: The explicit subgroup count of 11 SMS patients is the most direct evidence for an SPS-spectrum cohort size.
@@ -469,12 +469,12 @@
 
 ## 140 - Stiff-leg syndrome: a focal form of stiff-man syndrome.
 - predicted_count: 2
-- predicted_basis: abstract_count_signal
-- verification_status: llm_candidate_exact
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=2 vs 4 | llm_selected_candidate_id=cand01 | The paper itself is an original 2-patient case series of stiff-leg syndrome, a focal SPS-spectrum disorder. The competing count of 4 refers to four previously published cases discussed in the introduction, not original patients reported in this paper, so the extractable original SPS-spectrum count is 2; however, because of the explicit 2-versus-4 conflict in the evidence pack, manual review remains appropriate.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=2 | prediction_correct=true | reviewed_count=2 | reviewer_notes=The competing counts are 2 and 4. The extractable SPS-spectrum count is 2 because this paper reports two original stiff-leg syndrome patients, while 4 refers to previously published literature cases in the introduction. | prior_reason=challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=2 vs 4 | llm_selected_candidate_id=cand01 | The paper itself is an original 2-patient case series of stiff-leg syndrome, a focal SPS-spectrum disorder. The competing count of 4 refers to four previously published cases discussed in the introduction, not original patients reported in this paper, so the extractable original SPS-spectrum count is 2; however, because of the explicit 2-versus-4 conflict in the evidence pack, manual review remains appropriate.
 - batch_artifacts_status: complete
 - local_model_count: 2 (high; needs_review=True)
 - local_reasoning: The abstract explicitly states '2 patients', but another section mentions 'four recently published cases', creating a conflict.
@@ -491,12 +491,12 @@
 
 ## 146 - Stiff-man syndrome. Results of interviews and psychologic testing.
 - predicted_count: 13
-- predicted_basis: abstract_count_signal
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=abstract_count_signal | challenge_reasons=semantic_validator_reject=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | The paper explicitly reports results of psychologic testing and interviews on 13 patients with stiff-man syndrome, which is the clearest extractable original SPS-spectrum cohort. Although 39 patients with a diagnosis of SMS were initially identified, that appears to be a broader source pool from which only 13 were actually studied, so 13 is the safest count; manual review remains appropriate because the body text also mentions the larger diagnosed pool.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=13 | prediction_correct=true | reviewed_count=13 | reviewer_notes=The competing counts are 13 and 39. The extractable SPS-spectrum count is 13 because the paper reports interviews and psychologic testing on 13 studied patients, whereas 39 is the broader diagnosed pool from which they were drawn. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=abstract_count_signal | challenge_reasons=semantic_validator_reject=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP | The paper explicitly reports results of psychologic testing and interviews on 13 patients with stiff-man syndrome, which is the clearest extractable original SPS-spectrum cohort. Although 39 patients with a diagnosis of SMS were initially identified, that appears to be a broader source pool from which only 13 were actually studied, so 13 is the safest count; manual review remains appropriate because the body text also mentions the larger diagnosed pool.
 - batch_artifacts_status: complete
 - local_model_count: 13 (high; needs_review=True)
 - local_reasoning: The abstract explicitly states that thirteen patients with stiff-man syndrome were studied.
@@ -669,13 +669,13 @@
   - pNone: described previously [11].
 
 ## 180 - Paraneoplastic stiff limb syndrome.
-- predicted_count: 8
-- predicted_basis: early_body_count_signal
-- verification_status: llm_manual_review_required
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_count: 1
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The supplied full-text excerpt is clearly from an unrelated vegetative-state case report and does not provide usable evidence about original SPS-spectrum patients in this paper. Because the routing is unclear and the only numeric candidate (8) is unsupported by the provided SPS-relevant evidence, a safe extractable count cannot be determined from this pack.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=8 | prediction_correct=false | reviewed_count=1 | reviewer_notes=This is a single-patient paraneoplastic stiff-limb case report. The correct extractable SPS-spectrum count is 1; the earlier 8 came from unrelated stitched-issue text rather than the article itself. | prior_reason=challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The supplied full-text excerpt is clearly from an unrelated vegetative-state case report and does not provide usable evidence about original SPS-spectrum patients in this paper. Because the routing is unclear and the only numeric candidate (8) is unsupported by the provided SPS-relevant evidence, a safe extractable count cannot be determined from this pack.
 - batch_artifacts_status: complete
 - local_model_count: 0 (low; needs_review=True)
 - local_reasoning: The evidence provided is too general and does not contain a clear count of unique SPS-spectrum patients.
@@ -779,12 +779,12 @@
 
 ## 191 - Motor evoked potentials in a case of stiff-man syndrome: a longitudinal study.
 - predicted_count: 1
-- predicted_basis: case_report_marker_single_case
-- verification_status: llm_candidate_exact
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=1 vs 135 | llm_selected_candidate_id=cand02 | This paper is a single case report and repeatedly describes findings in one patient with typical stiff-man syndrome. The apparent count of 135 is a page/table artifact from the PDF text extraction rather than a true patient count, but provenance uncertainty remains flagged, so manual review is still warranted.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=1 | prediction_correct=true | reviewed_count=1 | reviewer_notes=The competing numbers are 1 and 135. The extractable SPS-spectrum count is 1 because this is a longitudinal single-case report; 135 is a page or table artefact from the PDF text layer. | prior_reason=challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=1 vs 135 | llm_selected_candidate_id=cand02 | This paper is a single case report and repeatedly describes findings in one patient with typical stiff-man syndrome. The apparent count of 135 is a page/table artifact from the PDF text extraction rather than a true patient count, but provenance uncertainty remains flagged, so manual review is still warranted.
 - batch_artifacts_status: complete
 - local_model_count: 1 (medium; needs_review=True)
 - local_reasoning: The source is a single case report, suggesting one patient, despite a misleading count of 135 in a table.
@@ -956,12 +956,12 @@
 
 ## 219 - Quality of life in stiff-person syndrome.
 - predicted_count: 24
-- predicted_basis: abstract_count_signal
-- verification_status: llm_candidate_exact
-- manual_review_required: true
-- provenance_uncertain: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
+- provenance_uncertain: false
 - validator_flags: 
-- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports a cohort of 24 SPS patients who completed the study assessments, and the methods describe these as patients classified as classical SPS or limb variants. This supports candidate 24 as the best extractable count, but provenance overlap is uncertain because 6 patients were previously published and the evidence pack flags original cohort provenance uncertainty.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=24 | prediction_correct=true | reviewed_count=24 | reviewer_notes=The extractable SPS-spectrum count is 24 because the quality-of-life analysis is reported on 24 SPS patients who completed the study assessments. Smaller numbers in the paper refer to narrower subgroups or previously published overlap. | prior_reason=challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly reports a cohort of 24 SPS patients who completed the study assessments, and the methods describe these as patients classified as classical SPS or limb variants. This supports candidate 24 as the best extractable count, but provenance overlap is uncertain because 6 patients were previously published and the evidence pack flags original cohort provenance uncertainty.
 - batch_artifacts_status: complete
 - local_model_count: 24 (medium; needs_review=True)
 - local_reasoning: The evidence explicitly states 24 SPS patients, but the original cohort provenance is uncertain.
@@ -1022,12 +1022,12 @@
 
 ## 224 - Specific phobia is a frequent non-motor feature in stiff man syndrome.
 - predicted_count: 43
-- predicted_basis: abstract_count_signal
-- verification_status: llm_semantic_conflict_manual_review_required
-- manual_review_required: true
+- predicted_basis: manual_review_override
+- verification_status: manual_review_override
+- manual_review_required: false
 - provenance_uncertain: false
 - validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
-- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=43 vs 7; broad_total_exceeds_explicit_subgroup=43 > 7 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 43 consecutive patients with stiff man syndrome were investigated, and the full text clarifies that the authors use 'stiff man syndrome' as an umbrella term for this group of disorders including PERM and stiff leg syndrome. The table row count of 7 reflects only the PERM subgroup, not the total SPS-spectrum cohort.
+- count_reason: manual_review_override_applied=true | source_scope_id=stage06_backfill_b002_n50_20260418 | predicted_count=43 | prediction_correct=true | reviewed_count=43 | reviewer_notes=The competing counts are 43 and 7. The extractable SPS-spectrum count is 43 because the paper investigates 43 consecutive stiff-man-spectrum patients overall, while 7 is only the PERM subgroup row in the table. | prior_reason=challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=43 vs 7; broad_total_exceeds_explicit_subgroup=43 > 7 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 43 consecutive patients with stiff man syndrome were investigated, and the full text clarifies that the authors use 'stiff man syndrome' as an umbrella term for this group of disorders including PERM and stiff leg syndrome. The table row count of 7 reflects only the PERM subgroup, not the total SPS-spectrum cohort.
 - batch_artifacts_status: complete
 - local_model_count: 43 (high; needs_review=True)
 - local_reasoning: The abstract states 43 consecutive patients, but the explicit subgroup count is 7, creating a conflict.

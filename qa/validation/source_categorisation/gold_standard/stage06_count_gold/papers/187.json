@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.611244+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.869505+00:00",
   "paper_id": "187",
   "count_row": {
     "paper_id": "187",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper presents a detailed report of a single patient with stiff-person syndrome (SPS), including clinical presentation, diagnostic workup, treatment, and follow-up. There is no evidence of additional original SPS cases.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:56:50.172459+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\187.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\187.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\187.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\187.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\187.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\187.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\187.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\187.json",
     "result_payload": {
       "paper_id": "187",
       "count_row": {
@@ -167,7 +181,7 @@
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\187.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\187.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\187.json",
-        "counted_at_utc": "2026-04-16T18:44:19.576390+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\187.json",
+        "counted_at_utc": "2026-04-16T21:03:25.892802+00:00"
       },
       "model_count_row": {
         "paper_id": "187",
@@ -199,7 +213,7 @@
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\187.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\187.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\187.json",
-        "counted_at_utc": "2026-04-16T18:44:19.576390+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\187.json",
+        "counted_at_utc": "2026-04-16T21:03:25.892802+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\187.json",
@@ -309,25 +323,25 @@
             "quote": "We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg).",
             "page": null,
             "section": "abstract",
-            "supports": "Explicit statement that the paper reports a single SMS/SPS-spectrum case."
+            "supports": "The paper reports a single original SPS-spectrum case."
           },
           {
             "quote": "we report a case of a patient who presented with the diagnosis of sms, whose symptoms were successfully controlled by the administration of ivig.",
             "page": 1,
-            "section": "introduction",
-            "supports": "Confirms one original patient with SMS is being reported."
+            "section": "introduction/case report lead-in",
+            "supports": "Confirms one original patient with stiff-man syndrome in this paper."
           },
           {
             "quote": "report of a case a 43-year-old man presented in 1997 with a 9-year history of frequent spasms affecting both legs and neck.",
             "page": 1,
             "section": "Report of a Case",
-            "supports": "Identifies the single individual patient described in the case report."
+            "supports": "Identifies the single individual patient being described."
           },
           {
             "quote": "an electromyogram revealed the presence of persistent motor unit potentials in both agonist and antagonist muscles despite the patient's intention to relax, consistent with the diagnosis of sms.6 furthermore, a serum anti-gad anti-body assay was positive.",
             "page": 1,
             "section": "Report of a Case",
-            "supports": "Provides diagnostic support confirming this patient qualifies as an SPS-spectrum case."
+            "supports": "Provides diagnostic support confirming this patient as an SPS-spectrum case."
           }
         ]
       }
@@ -341,28 +355,28 @@
           "quote": "We present a case of refractory stiff-man syndrome, in which the symptoms were successfully controlled by the administration of intravenous immunoglobulin (IVIg).",
           "page": null,
           "section": "abstract",
-          "supports": "Explicit statement that the paper reports a single SMS/SPS-spectrum case."
+          "supports": "The paper reports a single original SPS-spectrum case."
         },
         {
           "quote": "we report a case of a patient who presented with the diagnosis of sms, whose symptoms were successfully controlled by the administration of ivig.",
           "page": 1,
-          "section": "introduction",
-          "supports": "Confirms one original patient with SMS is being reported."
+          "section": "introduction/case report lead-in",
+          "supports": "Confirms one original patient with stiff-man syndrome in this paper."
         },
         {
           "quote": "report of a case a 43-year-old man presented in 1997 with a 9-year history of frequent spasms affecting both legs and neck.",
           "page": 1,
           "section": "Report of a Case",
-          "supports": "Identifies the single individual patient described in the case report."
+          "supports": "Identifies the single individual patient being described."
         },
         {
           "quote": "an electromyogram revealed the presence of persistent motor unit potentials in both agonist and antagonist muscles despite the patient's intention to relax, consistent with the diagnosis of sms.6 furthermore, a serum anti-gad anti-body assay was positive.",
           "page": 1,
           "section": "Report of a Case",
-          "supports": "Provides diagnostic support confirming this patient qualifies as an SPS-spectrum case."
+          "supports": "Provides diagnostic support confirming this patient as an SPS-spectrum case."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\187.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\187.json",
       "challenge_json_path": ""
     }
   }

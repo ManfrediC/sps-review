@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.202980+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.734237+00:00",
   "paper_id": "116",
   "count_row": {
     "paper_id": "116",
@@ -96,8 +96,22 @@
       "count_confidence": "medium",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "true",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper reports testing anti-GAD antibodies in 18 patients with stiff man syndrome using a new assay. While some samples are described as previously positive or negative, the total number of original SPS-spectrum patients tested is stated as 18. However, the reporting is somewhat mixed with additional samples referred for testing, so a manual review is recommended to confirm the precise count.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:07:42.062965+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\116.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\116.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\116.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\116.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\116.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\116.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\116.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\116.json",
     "result_payload": {
       "paper_id": "116",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN; explicit_sps_subgroup_conflict=18 vs 8; local_safer_abstention_conflict=8 vs 18; broad_total_exceeds_explicit_subgroup=18 > 8 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, which is a diagnosis-supported SPS-spectrum cohort. The subgroup of 8 refers only to the previously anti-GAD-positive SMS patients within that larger SMS cohort, while another 10 SMS patients were previously anti-GAD-negative, yielding 18 unique SMS patients total.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN; explicit_sps_subgroup_conflict=18 vs 8; local_safer_abstention_conflict=8 vs 18; broad_total_exceeds_explicit_subgroup=18 > 8 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, and the methods section breaks these down as 8 previously anti-GAD-positive SMS patients plus 10 previously anti-GAD-negative SMS patients. The count of 8 refers only to the anti-GAD-positive subset, not the full SPS cohort.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "18",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\116.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\116.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "18",
         "llm_count_confidence": "high",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\116.json",
-        "counted_at_utc": "2026-04-16T18:39:02.612014+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\116.json",
+        "counted_at_utc": "2026-04-16T20:57:09.282151+00:00"
       },
       "model_count_row": {
         "paper_id": "116",
@@ -194,12 +208,12 @@
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN; explicit_sps_subgroup_conflict=18 vs 8; local_safer_abstention_conflict=8 vs 18; broad_total_exceeds_explicit_subgroup=18 > 8 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, which is a diagnosis-supported SPS-spectrum cohort. The subgroup of 8 refers only to the previously anti-GAD-positive SMS patients within that larger SMS cohort, while another 10 SMS patients were previously anti-GAD-negative, yielding 18 unique SMS patients total.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN; explicit_sps_subgroup_conflict=18 vs 8; local_safer_abstention_conflict=8 vs 18; broad_total_exceeds_explicit_subgroup=18 > 8 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN | The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, and the methods section breaks these down as 8 previously anti-GAD-positive SMS patients plus 10 previously anti-GAD-negative SMS patients. The count of 8 refers only to the anti-GAD-positive subset, not the full SPS cohort.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "18",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\116.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\116.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "18",
         "llm_count_confidence": "high",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; COUNT_SPS_STATUS_UNCERTAIN",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\116.json",
-        "counted_at_utc": "2026-04-16T18:39:02.612014+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\116.json",
+        "counted_at_utc": "2026-04-16T20:57:09.282151+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\116.json",
@@ -333,25 +347,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, which is a diagnosis-supported SPS-spectrum cohort. The subgroup of 8 refers only to the previously anti-GAD-positive SMS patients within that larger SMS cohort, while another 10 SMS patients were previously anti-GAD-negative, yielding 18 unique SMS patients total.",
+        "count_reasoning_summary": "The paper explicitly states that the assay was used in 18 patients with stiff man syndrome, and the methods section breaks these down as 8 previously anti-GAD-positive SMS patients plus 10 previously anti-GAD-negative SMS patients. The count of 8 refers only to the anti-GAD-positive subset, not the full SPS cohort.",
         "evidence": [
           {
             "quote": "A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome.",
             "page": 1,
             "section": "Abstract",
-            "supports": "Direct diagnosis-supported total SPS/SMS cohort size is 18."
+            "supports": "Direct statement of the total original SPS cohort size studied."
           },
           {
             "quote": "We tested 22 samples (coded by IT and LMEG). Eight were from patients with stiff man syndrome who had previously been found positive for anti-GAD antibodies by immunoprecipitation of 35S-methionine-recombinant GAD; 10 were from patients with stiff man syndrome previously found negative for anti-GAD antibodies, including four with cancer. Three were from healthy subjects and one was from a patient with chronic inflammatory demyelinating polyneuropathy (CIDP).",
             "page": 1,
             "section": "Methods",
-            "supports": "Confirms the 18 unique SMS patients are composed of 8 previously anti-GAD-positive SMS patients plus 10 previously anti-GAD-negative SMS patients."
+            "supports": "Confirms that 18 of the 22 coded samples were from stiff man syndrome patients: 8 positive subset + 10 negative subset."
           },
           {
-            "quote": "Eight samples had previously been found positive (filled symbols) for anti-GAD antibody; these included five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus.",
-            "page": 2,
-            "section": "Figure 1 / Results",
-            "supports": "Shows the count of 8 is a subgroup within the SMS cohort, not the full cohort."
+            "quote": "Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with 125I-GAD and one gave an equivocal result. Other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis.",
+            "page": 1,
+            "section": "Abstract",
+            "supports": "Shows that the 8-patient figure is a subset within the broader SMS cohort, not the total count."
           }
         ]
       }
@@ -370,23 +384,23 @@
           "quote": "A new assay involving immunoprecipitation of (125)I-glutamic acid decarboxylase was used to measure anti-GAD antibodies in 18 patients with stiff man syndrome.",
           "page": 1,
           "section": "Abstract",
-          "supports": "Direct diagnosis-supported total SPS/SMS cohort size is 18."
+          "supports": "Direct statement of the total original SPS cohort size studied."
         },
         {
           "quote": "We tested 22 samples (coded by IT and LMEG). Eight were from patients with stiff man syndrome who had previously been found positive for anti-GAD antibodies by immunoprecipitation of 35S-methionine-recombinant GAD; 10 were from patients with stiff man syndrome previously found negative for anti-GAD antibodies, including four with cancer. Three were from healthy subjects and one was from a patient with chronic inflammatory demyelinating polyneuropathy (CIDP).",
           "page": 1,
           "section": "Methods",
-          "supports": "Confirms the 18 unique SMS patients are composed of 8 previously anti-GAD-positive SMS patients plus 10 previously anti-GAD-negative SMS patients."
+          "supports": "Confirms that 18 of the 22 coded samples were from stiff man syndrome patients: 8 positive subset + 10 negative subset."
         },
         {
-          "quote": "Eight samples had previously been found positive (filled symbols) for anti-GAD antibody; these included five with stiff man syndrome and three with stiff man syndrome and insulin dependent diabetes mellitus.",
-          "page": 2,
-          "section": "Figure 1 / Results",
-          "supports": "Shows the count of 8 is a subgroup within the SMS cohort, not the full cohort."
+          "quote": "Of the eight serum samples from patients with stiff man syndrome, that had previously been found positive by immunoprecipitation of (35)S-GAD, seven were strongly positive with 125I-GAD and one gave an equivocal result. Other serum samples from patients with stiff man syndrome and from controls were negative except one from a patient who had a thymoma, acquired neuromyotonia, and myasthenia gravis.",
+          "page": 1,
+          "section": "Abstract",
+          "supports": "Shows that the 8-patient figure is a subset within the broader SMS cohort, not the total count."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\116.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\116.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\116.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_challenges\\116.json"
     }
   }
 }

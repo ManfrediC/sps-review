@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:40.833284+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.679796+00:00",
   "paper_id": "12760",
   "count_row": {
     "paper_id": "12760",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper reports a retrospective observational study of 39 SPS-spectrum patients treated with therapeutic plasma exchange (TPE) at Johns Hopkins Hospital and outside institutions. The count of 39 is explicitly stated as the number of original SPSD patients included in their cohort, distinct from the literature review cases.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:31:18.715257+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\12760.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12760.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\12760.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12760.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\12760.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\12760.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\12760.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\12760.json",
     "result_payload": {
       "paper_id": "12760",
       "count_row": {
@@ -158,26 +172,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "39",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "early_body_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown given in the same results sentence sums to 39 (24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia). Although the heuristic package lists an explicit subgroup count of 36, the quoted diagnosis-specific breakdown itself supports 39 unique SPSD patients; however, manual review remains required because provenance overlap/embedded literature-review signals are flagged upstream.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown of 24 classic SPS, 10 SPS-plus, 2 PERM, and 3 pure cerebellar ataxia also sums to 39. Although the heuristic package lists an explicit SPS-spectrum subgroup count of 36, the text itself supports 39 as the full original SPSD cohort; manual review remains required because provenance overlap/embedded literature-review context is flagged as uncertain.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "36",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_group_breakdown_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12760.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\12760.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "39",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand02",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12760.json",
-        "counted_at_utc": "2026-04-16T18:41:24.017894+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\12760.json",
+        "counted_at_utc": "2026-04-16T20:59:47.789257+00:00"
       },
       "model_count_row": {
         "paper_id": "12760",
@@ -190,26 +204,26 @@
         "preferred_text_source": "full_text",
         "count_eligible": "true",
         "likely_sps_case_count": "39",
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_basis": "early_body_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown given in the same results sentence sums to 39 (24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia). Although the heuristic package lists an explicit subgroup count of 36, the quoted diagnosis-specific breakdown itself supports 39 unique SPSD patients; however, manual review remains required because provenance overlap/embedded literature-review signals are flagged upstream.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=39 vs 36; broad_total_exceeds_explicit_subgroup=39 > 36 | llm_selected_candidate_id=cand02 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown of 24 classic SPS, 10 SPS-plus, 2 PERM, and 3 pure cerebellar ataxia also sums to 39. Although the heuristic package lists an explicit SPS-spectrum subgroup count of 36, the text itself supports 39 as the full original SPSD cohort; manual review remains required because provenance overlap/embedded literature-review context is flagged as uncertain.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "36",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_group_breakdown_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12760.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\12760.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "39",
-        "llm_count_confidence": "high",
+        "llm_count_confidence": "medium",
         "llm_selected_candidate_id": "cand02",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12760.json",
-        "counted_at_utc": "2026-04-16T18:41:24.017894+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\12760.json",
+        "counted_at_utc": "2026-04-16T20:59:47.789257+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\12760.json",
@@ -331,33 +345,33 @@
         "decision_type": "candidate_exact",
         "selected_candidate_id": "cand02",
         "alternative_count": null,
-        "count_confidence": "high",
+        "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown given in the same results sentence sums to 39 (24 classic SPS + 10 SPS-plus + 2 PERM + 3 pure cerebellar ataxia). Although the heuristic package lists an explicit subgroup count of 36, the quoted diagnosis-specific breakdown itself supports 39 unique SPSD patients; however, manual review remains required because provenance overlap/embedded literature-review signals are flagged upstream.",
+        "count_reasoning_summary": "The paper explicitly states that 39 SPSD patients were treated with TPE, and the diagnosis breakdown of 24 classic SPS, 10 SPS-plus, 2 PERM, and 3 pure cerebellar ataxia also sums to 39. Although the heuristic package lists an explicit SPS-spectrum subgroup count of 36, the text itself supports 39 as the full original SPSD cohort; manual review remains required because provenance overlap/embedded literature-review context is flagged as uncertain.",
         "evidence": [
           {
             "quote": "Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside institutions)",
             "page": null,
-            "section": "Results/Abstract",
-            "supports": "Direct total count of original SPSD patients in the case series"
+            "section": "Abstract/Results",
+            "supports": "Explicit original cohort size reported as 39 SPSD patients"
           },
           {
             "quote": "Twenty-four patients (62%) had classic SPS, 10 (26%) had SPS-plus, 2 (5%) had progressive encephalomyelitis with rigidity and myoclonus, and 3 (8%) had pure cerebellar ataxia.",
             "page": null,
-            "section": "Results/Abstract",
-            "supports": "Diagnosis-specific breakdown summing to 39 patients"
+            "section": "Abstract/Results",
+            "supports": "Diagnosis-specific breakdown sums to 39 and matches the reported SPSD cohort"
           },
           {
             "quote": "a retrospective review of SPSD patients seen at Johns Hopkins Hospital (JHH) from 1997 to 2021 was performed.",
             "page": null,
-            "section": "Methods/Abstract",
-            "supports": "Indicates an original retrospective cohort rather than only literature-derived cases"
+            "section": "Abstract/Methods",
+            "supports": "Indicates an original retrospective cohort rather than only cited literature cases"
           },
           {
-            "quote": "literature review identified 57 additional patients with SPSD; 43 (75%) reported temporary improvement after TPE.",
+            "quote": "literature review identified 57 additional patients with SPSD",
             "page": null,
-            "section": "Results/Abstract",
-            "supports": "Separates the literature-review cases from the 39-patient retrospective cohort"
+            "section": "Abstract/Results",
+            "supports": "Separates the literature-review cases from the 39-patient study cohort, supporting that 39 are the original cases in this paper"
           }
         ]
       }
@@ -374,30 +388,30 @@
         {
           "quote": "Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside institutions)",
           "page": null,
-          "section": "Results/Abstract",
-          "supports": "Direct total count of original SPSD patients in the case series"
+          "section": "Abstract/Results",
+          "supports": "Explicit original cohort size reported as 39 SPSD patients"
         },
         {
           "quote": "Twenty-four patients (62%) had classic SPS, 10 (26%) had SPS-plus, 2 (5%) had progressive encephalomyelitis with rigidity and myoclonus, and 3 (8%) had pure cerebellar ataxia.",
           "page": null,
-          "section": "Results/Abstract",
-          "supports": "Diagnosis-specific breakdown summing to 39 patients"
+          "section": "Abstract/Results",
+          "supports": "Diagnosis-specific breakdown sums to 39 and matches the reported SPSD cohort"
         },
         {
           "quote": "a retrospective review of SPSD patients seen at Johns Hopkins Hospital (JHH) from 1997 to 2021 was performed.",
           "page": null,
-          "section": "Methods/Abstract",
-          "supports": "Indicates an original retrospective cohort rather than only literature-derived cases"
+          "section": "Abstract/Methods",
+          "supports": "Indicates an original retrospective cohort rather than only cited literature cases"
         },
         {
-          "quote": "literature review identified 57 additional patients with SPSD; 43 (75%) reported temporary improvement after TPE.",
+          "quote": "literature review identified 57 additional patients with SPSD",
           "page": null,
-          "section": "Results/Abstract",
-          "supports": "Separates the literature-review cases from the 39-patient retrospective cohort"
+          "section": "Abstract/Results",
+          "supports": "Separates the literature-review cases from the 39-patient study cohort, supporting that 39 are the original cases in this paper"
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\12760.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\12760.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\12760.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_challenges\\12760.json"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.275345+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.761984+00:00",
   "paper_id": "131",
   "count_row": {
     "paper_id": "131",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper reports a retrospective review of 12 patients with confirmed stiff-man syndrome who received psychiatric consultation. Individual-level data are provided for these 12 patients, including detailed case histories and a summary table.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:35:58.872507+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\131.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\131.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\131.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\131.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\131.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\131.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\131.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\131.json",
     "result_payload": {
       "paper_id": "131",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=24 vs 1; broad_total_exceeds_explicit_subgroup=24 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a cohort of 24 diagnosis-supported SPS-spectrum cases. The separate mention of 12 patients refers only to the psychiatric-consult subset, while the single-patient snippet is not the total cohort; however, provenance overlap with previously reported Mayo cases remains uncertain, so manual review is required.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=24 vs 1; broad_total_exceeds_explicit_subgroup=24 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a diagnosis-supported SPS cohort. Although only 12 received psychiatric consultation and one case is visible in the subgroup snippet, the broader cohort is clearly described as confirmed SMS; however, provenance overlap with previously reported Mayo/McEvoy cases makes human review appropriate.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "24",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\131.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\131.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "24",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\131.json",
-        "counted_at_utc": "2026-04-16T18:54:28.119841+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\131.json",
+        "counted_at_utc": "2026-04-16T21:14:39.767483+00:00"
       },
       "model_count_row": {
         "paper_id": "131",
@@ -194,12 +208,12 @@
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=24 vs 1; broad_total_exceeds_explicit_subgroup=24 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a cohort of 24 diagnosis-supported SPS-spectrum cases. The separate mention of 12 patients refers only to the psychiatric-consult subset, while the single-patient snippet is not the total cohort; however, provenance overlap with previously reported Mayo cases remains uncertain, so manual review is required.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=24 vs 1; broad_total_exceeds_explicit_subgroup=24 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a diagnosis-supported SPS cohort. Although only 12 received psychiatric consultation and one case is visible in the subgroup snippet, the broader cohort is clearly described as confirmed SMS; however, provenance overlap with previously reported Mayo/McEvoy cases makes human review appropriate.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "24",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\131.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\131.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "24",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\131.json",
-        "counted_at_utc": "2026-04-16T18:54:28.119841+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\131.json",
+        "counted_at_utc": "2026-04-16T21:14:39.767483+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\131.json",
@@ -336,31 +350,25 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a cohort of 24 diagnosis-supported SPS-spectrum cases. The separate mention of 12 patients refers only to the psychiatric-consult subset, while the single-patient snippet is not the total cohort; however, provenance overlap with previously reported Mayo cases remains uncertain, so manual review is required.",
+        "count_reasoning_summary": "The paper explicitly states that the authors reviewed medical records of 24 patients with confirmed stiff-man syndrome, indicating a diagnosis-supported SPS cohort. Although only 12 received psychiatric consultation and one case is visible in the subgroup snippet, the broader cohort is clearly described as confirmed SMS; however, provenance overlap with previously reported Mayo/McEvoy cases makes human review appropriate.",
         "evidence": [
           {
             "quote": "We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation.",
             "page": null,
-            "section": "abstract/method",
-            "supports": "Supports a total cohort of 24 confirmed SPS/SMS patients in this paper."
+            "section": "Abstract/Methods",
+            "supports": "Direct evidence that the paper's underlying confirmed SPS/SMS cohort size is 24."
           },
           {
             "quote": "by 1991, 24 more cases that met a rigorous set of diagnostic criteria had been diagnosed at the Mayo Clinic.",
             "page": null,
-            "section": "preferred text excerpt",
-            "supports": "Supports that the broader Mayo cohort discussed consists of 24 diagnosis-supported SMS cases rather than a mixed cohort."
-          },
-          {
-            "quote": "Retrospective analysis of these 12 cases showed that the most common psychiatric symptoms were anxiety, depression, and alcohol abuse.",
-            "page": null,
-            "section": "abstract/results",
-            "supports": "Clarifies that 12 is an analyzed psychiatric-consult subgroup, not the total number of SPS-spectrum patients."
+            "section": "Introduction/background",
+            "supports": "Supports that the Mayo cohort comprised 24 diagnosis-supported SMS cases, consistent with the reviewed cohort."
           },
           {
             "quote": "and 10 were previously reported by McEvoy",
             "page": null,
-            "section": "provenance signal",
-            "supports": "Supports uncertainty about originality/overlap of some cases, requiring manual review despite selecting 24 as the best-supported count."
+            "section": "Provenance signal",
+            "supports": "Indicates possible overlap with previously reported cases, so the count should be retained with manual review."
           }
         ]
       }
@@ -377,30 +385,24 @@
         {
           "quote": "We reviewed the medical records of 24 patients with confirmed stiff-man syndrome, 12 of whom had received psychiatric consultation.",
           "page": null,
-          "section": "abstract/method",
-          "supports": "Supports a total cohort of 24 confirmed SPS/SMS patients in this paper."
+          "section": "Abstract/Methods",
+          "supports": "Direct evidence that the paper's underlying confirmed SPS/SMS cohort size is 24."
         },
         {
           "quote": "by 1991, 24 more cases that met a rigorous set of diagnostic criteria had been diagnosed at the Mayo Clinic.",
           "page": null,
-          "section": "preferred text excerpt",
-          "supports": "Supports that the broader Mayo cohort discussed consists of 24 diagnosis-supported SMS cases rather than a mixed cohort."
-        },
-        {
-          "quote": "Retrospective analysis of these 12 cases showed that the most common psychiatric symptoms were anxiety, depression, and alcohol abuse.",
-          "page": null,
-          "section": "abstract/results",
-          "supports": "Clarifies that 12 is an analyzed psychiatric-consult subgroup, not the total number of SPS-spectrum patients."
+          "section": "Introduction/background",
+          "supports": "Supports that the Mayo cohort comprised 24 diagnosis-supported SMS cases, consistent with the reviewed cohort."
         },
         {
           "quote": "and 10 were previously reported by McEvoy",
           "page": null,
-          "section": "provenance signal",
-          "supports": "Supports uncertainty about originality/overlap of some cases, requiring manual review despite selecting 24 as the best-supported count."
+          "section": "Provenance signal",
+          "supports": "Indicates possible overlap with previously reported cases, so the count should be retained with manual review."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\131.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_challenges\\131.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\131.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_challenges\\131.json"
     }
   }
 }

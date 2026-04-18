@@ -7,52 +7,49 @@
 ## Outcome
 
 - Reviewed papers: 50
-- `llm_bounded_alternative`: 2
-- `llm_candidate_exact`: 42
-- `llm_manual_review_required`: 2
-- `llm_semantic_conflict_manual_review_required`: 4
+- `llm_bounded_alternative`: 1
+- `llm_candidate_exact`: 38
+- `llm_semantic_conflict_manual_review_required`: 1
+- `manual_review_override`: 10
 
 ## Model-Based Triage
 
 - Likely clean on first pass: 10, 17, 19, 80, 113, 121, 127, 133, 134, 139, 150, 154, 162, 166, 167, 182, 189, 190, 206, 213, 214, 220, 229, 231
-- Likely user review candidates: 25, 34, 39, 43, 49, 58, 65, 92, 95, 102, 126, 140, 146, 155, 175, 180, 185, 191, 193, 197, 208, 211, 219, 223, 224, 228
+- Likely user review candidates: 25, 34, 49, 58, 65, 95, 126, 155, 175, 185, 193, 197, 208, 211, 223, 228
 
 ## Resolved Manual Overrides
 
-- None applied for this batch.
+- `39 -> 13`: The competing counts are 13 from the interview and psychologic-testing cohort and 39 from the larger diagnosed/referral pool. The extractable SPS-spectrum count is 13 because only 13 patients were actually studied in this paper.
+- `43 -> 33`: The extracted counts are 35 from the abstract total, 33 from Methods (`Sera were obtained with informed consent from 33 SMS patients identified ...`), and 9 from the HLA-haplotyped subgroup. The extractable SPS-spectrum count is 33 because the methods cohort is the main diagnosed sample counted under standard criteria.
+- `92 -> 1`: The paper reports 3 paraneoplastic encephalomyelitis patients, but only patient 3 is clearly tied to rigidity and the SPS-spectrum signal. The safest extractable SPS-spectrum count is therefore 1.
+- `102 -> 11`: The competing numbers are 11 patients and 105. The extractable SPS-spectrum count is 11 because 105 is the ICA 105 autoantigen name rather than a patient denominator.
+- `140 -> 2`: The competing counts are 2 and 4. The extractable SPS-spectrum count is 2 because this paper reports two original stiff-leg syndrome patients, while 4 refers to previously published literature cases in the introduction.
+- `146 -> 13`: The competing counts are 13 and 39. The extractable SPS-spectrum count is 13 because the paper reports interviews and psychologic testing on 13 studied patients, whereas 39 is the broader diagnosed pool from which they were drawn.
+- `180 -> 1`: This is a single-patient paraneoplastic stiff-limb case report. The correct extractable SPS-spectrum count is 1; the earlier 8 came from unrelated stitched-issue text rather than the article itself.
+- `191 -> 1`: The competing numbers are 1 and 135. The extractable SPS-spectrum count is 1 because this is a longitudinal single-case report; 135 is a page or table artefact from the PDF text layer.
+- `219 -> 24`: The extractable SPS-spectrum count is 24 because the quality-of-life analysis is reported on 24 SPS patients who completed the study assessments. Smaller numbers in the paper refer to narrower subgroups or previously published overlap.
+- `224 -> 43`: The competing counts are 43 and 7. The extractable SPS-spectrum count is 43 because the paper investigates 43 consecutive stiff-man-spectrum patients overall, while 7 is only the PERM subgroup row in the table.
 
-## Recommended QA Order
+## Priority Review Candidates
 
-- `180`: output `8`, but the extracted text pack appears unrelated to the paper and does not support any SPS-spectrum cohort at all. Treat this as the main routing/text-quality failure in `b002`.
-- `92`: output `2`, but the evidence points to a broader three-patient paraneoplastic encephalomyelitis paper with only one patient clearly tied to rigidity/myoclonus. This needs a direct source read before trusting any SPS-spectrum count.
-- `43`: current output is bounded to `35`, while the candidate package only surfaced `9`. The likely story is full SMS cohort `35` versus HLA-haplotyped subgroup `9`, but this should be confirmed in the source because GPT had to recover beyond the explicit candidate package.
-- `39`: output `13`, with competing `4`. `13` looks like the full SMS cohort and `4` the tumour-associated subset, but seven of the 13 were reportedly described previously, so this is both a subgroup and provenance question.
-- `224`: output `43`, with competing `7`. `43` likely represents the umbrella stiff-man-spectrum cohort, while `7` is the PERM subgroup row from the table.
-- `102`: output `11`, with competing `105`. `11` looks right; `105` appears to be the ICA 105 autoantigen name rather than a patient count.
-- `140`: output `2`, with competing `4`. `2` likely reflects the original case series, while `4` appears to be previously published literature cases mentioned in the introduction.
-- `146`: output `13`, with competing `39`. `13` looks like the actually studied psychologic-testing cohort, while `39` is the identified/referral pool.
-- `219`: output `24`, with competing `9`. `24` looks like the cohort who completed the quality-of-life study; the main caution is that six patients were published previously.
-- `191`: output `1`, with competing `135`. `1` is probably the true single-case count and `135` looks like a page or table artefact.
-
-## Probably Correct But Provenance-Sensitive
-
-- `25 -> 30`: explicit SMS cohort, but the paper also references a larger previously studied SMS sample, so this is mostly a reuse/provenance check.
-- `34 -> 2`: two SMS antisera/patients are reported consistently, but the paper itself flags relation to previously reported antisera.
-- `49 -> 18`: GPT recovered `18` from HLA-typed SMS patients even though the heuristic candidate package did not surface a clean count; likely a brief-letter provenance issue rather than a real numeric conflict.
-- `58 -> 3`: the open-label IVIG cohort of three looks consistent across abstract, body, and table; the main reason it is still flagged is cohort provenance uncertainty.
-- `65 -> 8`: the title, abstract, and Table 1 all support eight SMS patients; the flag is mainly because some preliminary findings and at least two patients were published previously.
-- `95 -> 9`: nine patients were studied, but several appear to overlap with earlier reports.
-
-## Likely Correct Single-Case Or Low-Noise Rows
-
-- `126 -> 1`: semantic flag only; the paper reads as one SMS case plus comparator IDDM/control material.
-- `155 -> 1`: likely one case, with `2` coming from surrounding comparison language rather than a true SPS cohort.
-- `175 -> 1`: likely one non-diabetic SMS index patient, with the extra `2` coming from comparison patients.
-- `185 -> 1`, `193 -> 1`, `197 -> 1`, `208 -> 1`, `211 -> 1`, `223 -> 1`, `228 -> 1`: all look like single-case or single-index-patient papers, but the extracted text is noisy enough that a quick source confirmation is still worthwhile.
+- `25`: Pipeline output: 30. Extracted counts seen: 30 (abstract_count_signal). GPT decision: candidate_exact; medium.
+- `34`: Pipeline output: 2. Extracted counts seen: 2 (diagnosis_specific_direct_cohort_count; abstract_count_signal). GPT decision: candidate_exact; medium.
+- `49`: pipeline output `18` still needs manual source comparison.
+- `58`: Pipeline output: 3. Extracted counts seen: 3 (abstract_count_signal; diagnosis_specific_suffix_count; early_body_count_signal). GPT decision: candidate_exact; high.
+- `65`: Pipeline output: 8. Extracted counts seen: 8 (title_count_signal; diagnosis_specific_named_cohort_count). GPT decision: candidate_exact; medium.
+- `95`: Pipeline output: 9. Extracted counts seen: 9 (abstract_count_signal; diagnosis_specific_series_cohort_count; early_body_count_signal). GPT decision: candidate_exact; medium.
+- `126`: Pipeline output: 1. Extracted counts seen: 1 (single_case_text_signal; source_single_case_default; source_single_case_override). GPT decision: candidate_exact; high.
+- `155`: Pipeline output: 1. Extracted counts seen: 1 (source_single_case_override; case_report_marker_single_case; source_single_case_default), 2 (abstract_count_signal). GPT decision: candidate_exact; medium. The likelier count is still unclear because the candidate package surfaced competing counts: 1, 2.
+- `175`: Pipeline output: 1. Extracted counts seen: 1 (diagnosis_specific_table_row_count), 2 (abstract_count_signal). GPT decision: candidate_exact; medium. The likelier count is still unclear because the candidate package surfaced competing counts: 1, 2.
+- `185`: Pipeline output: 1. Extracted counts seen: 1 (source_single_case_default). GPT decision: candidate_exact; medium.
+- `193`: Pipeline output: 1. Extracted counts seen: 1 (source_single_case_default). GPT decision: candidate_exact; medium.
+- `197`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). GPT decision: candidate_exact; medium.
+- `208`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). GPT decision: candidate_exact; medium.
+- `211`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). GPT decision: candidate_exact; medium.
+- `223`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). GPT decision: candidate_exact; medium.
+- `228`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). GPT decision: candidate_exact; medium.
 
 ## Assistant QA Notes
 
-- No reviewed override rows were available for this batch when these notes were generated.
-- Most `b002` risk comes from three patterns: subgroup-versus-full-cohort conflicts, previously reported/potentially reused patients, and a smaller set of OCR or routing artefacts.
-- If time is limited, review `180`, `92`, `43`, `39`, and `224` first.
-- Use the paired review-comments CSV to record the final adjudication and note which competing number won.
+- Reviewed overrides have already been folded into the combined QA CSV and these notes.
+- Populate the paired review-comments CSV during manual batch QA for the remaining review candidates.

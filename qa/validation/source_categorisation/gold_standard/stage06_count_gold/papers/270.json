@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.904164+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.005546+00:00",
   "paper_id": "270",
   "count_row": {
     "paper_id": "270",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper reports that 576 patients with suspected SPS were tested, and 116 were GAD antibody positive by either ICC or RIA, which the authors use as a marker for SPS. The 116 GAD antibody positive patients represent the original SPS-spectrum cohort analyzed for clinical and laboratory features.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T20:14:02.866393+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\270.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\270.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\270.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\270.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\270.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\270.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\270.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\270.json",
     "result_payload": {
       "paper_id": "270",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "diagnosis_specific_confirmed_subset_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader 576 suspected referrals or the unsupported 76. Because the paper appears lab-heavy and provenance overlap is flagged as uncertain, this count should still be manually checked.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader suspected cohort of 576 or the unsupported 76. Because the paper also contains provenance uncertainty signals ('as previously described'), this should remain flagged for human review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "76",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\270.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\270.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "107",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\270.json",
-        "counted_at_utc": "2026-04-16T18:56:28.314237+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\270.json",
+        "counted_at_utc": "2026-04-16T21:16:49.349602+00:00"
       },
       "model_count_row": {
         "paper_id": "270",
@@ -194,12 +208,12 @@
         "count_basis": "diagnosis_specific_confirmed_subset_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader 576 suspected referrals or the unsupported 76. Because the paper appears lab-heavy and provenance overlap is flagged as uncertain, this count should still be manually checked.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader suspected cohort of 576 or the unsupported 76. Because the paper also contains provenance uncertainty signals ('as previously described'), this should remain flagged for human review.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "76",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\270.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\270.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "107",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\270.json",
-        "counted_at_utc": "2026-04-16T18:56:28.314237+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\270.json",
+        "counted_at_utc": "2026-04-16T21:16:49.349602+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\270.json",
@@ -327,31 +341,31 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader 576 suspected referrals or the unsupported 76. Because the paper appears lab-heavy and provenance overlap is flagged as uncertain, this count should still be manually checked.",
+        "count_reasoning_summary": "The safest extractable SPS-spectrum count is the explicit diagnosis-specific confirmed subset of 107 ICC-positive patients, rather than the broader suspected cohort of 576 or the unsupported 76. Because the paper also contains provenance uncertainty signals ('as previously described'), this should remain flagged for human review.",
         "evidence": [
-          {
-            "quote": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
-            "page": null,
-            "section": "abstract",
-            "supports": "The 576 figure is a suspected/referred cohort and should not be counted as confirmed SPS-spectrum cases."
-          },
           {
             "quote": "There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.",
             "page": null,
             "section": "body / explicit SPS subgroup signal",
-            "supports": "Provides an explicit diagnosis-specific confirmed subset count of 107."
+            "supports": "Explicit diagnosis-specific confirmed SPS subset count of 107."
           },
           {
             "quote": "Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.",
             "page": null,
             "section": "abstract",
-            "supports": "Supports that the ICC-positive subgroup corresponds to the confirmed SPS subset rather than the broader suspected cohort."
+            "supports": "Indicates the paper distinguishes confirmed SPS from the broader suspected cohort, supporting use of the confirmed subset rather than all referred patients."
+          },
+          {
+            "quote": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
+            "page": null,
+            "section": "abstract",
+            "supports": "Shows 576 is only a suspected/referred cohort and should not be counted as confirmed SPS-spectrum cases."
           },
           {
             "quote": "western blot was performed on all sera as previously described.",
             "page": null,
-            "section": "provenance signal",
-            "supports": "Indicates possible cohort reuse/provenance uncertainty, so manual review remains appropriate even though 107 is the best-supported count."
+            "section": "original-cohort provenance signal",
+            "supports": "Introduces possible cohort overlap/provenance uncertainty, so manual review remains required despite selecting 107."
           }
         ]
       }
@@ -362,31 +376,31 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
-          "page": null,
-          "section": "abstract",
-          "supports": "The 576 figure is a suspected/referred cohort and should not be counted as confirmed SPS-spectrum cases."
-        },
-        {
           "quote": "There were 107 patients positive for GAD antibodies by ICC; in 9 of these, RIA was not performed owing to a lack of residual serum.",
           "page": null,
           "section": "body / explicit SPS subgroup signal",
-          "supports": "Provides an explicit diagnosis-specific confirmed subset count of 107."
+          "supports": "Explicit diagnosis-specific confirmed SPS subset count of 107."
         },
         {
           "quote": "Marked elevations of RIA for GAD antibodies were characteristic of ICC-confirmed SPS, and modest elevations were not.",
           "page": null,
           "section": "abstract",
-          "supports": "Supports that the ICC-positive subgroup corresponds to the confirmed SPS subset rather than the broader suspected cohort."
+          "supports": "Indicates the paper distinguishes confirmed SPS from the broader suspected cohort, supporting use of the confirmed subset rather than all referred patients."
+        },
+        {
+          "quote": "Five hundred seventy-six patients with suspected stiff-person syndrome (SPS) underwent immunocytochemistry (ICC).",
+          "page": null,
+          "section": "abstract",
+          "supports": "Shows 576 is only a suspected/referred cohort and should not be counted as confirmed SPS-spectrum cases."
         },
         {
           "quote": "western blot was performed on all sera as previously described.",
           "page": null,
-          "section": "provenance signal",
-          "supports": "Indicates possible cohort reuse/provenance uncertainty, so manual review remains appropriate even though 107 is the best-supported count."
+          "section": "original-cohort provenance signal",
+          "supports": "Introduces possible cohort overlap/provenance uncertainty, so manual review remains required despite selecting 107."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\270.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\270.json",
       "challenge_json_path": ""
     }
   }

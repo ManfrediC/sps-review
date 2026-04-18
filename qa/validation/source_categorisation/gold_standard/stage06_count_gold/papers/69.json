@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:37.700746+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.539812+00:00",
   "paper_id": "69",
   "count_row": {
     "paper_id": "69",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper presents a detailed clinical description of a single patient with stiff-person syndrome, including history, examination, laboratory findings, and treatment course. There is no evidence of additional original SPS-spectrum patients reported.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T20:59:43.436391+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\69.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\69.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\69.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\69.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\69.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\69.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\69.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\69.json",
     "result_payload": {
       "paper_id": "69",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This paper is framed as a single case report and the abstract/full-text excerpt explicitly describes one woman with stiff-man syndrome. Although the count of 1 is best supported, manual review is still required because the evidence pack flags original cohort provenance uncertainty.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This is a single-case report and the abstract/full-text excerpt explicitly describes one woman with stiff-man syndrome. Count 1 is best supported, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\69.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\69.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\69.json",
-        "counted_at_utc": "2026-04-16T18:59:40.182708+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\69.json",
+        "counted_at_utc": "2026-04-16T21:20:38.761071+00:00"
       },
       "model_count_row": {
         "paper_id": "69",
@@ -194,12 +208,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This paper is framed as a single case report and the abstract/full-text excerpt explicitly describes one woman with stiff-man syndrome. Although the count of 1 is best supported, manual review is still required because the evidence pack flags original cohort provenance uncertainty.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This is a single-case report and the abstract/full-text excerpt explicitly describes one woman with stiff-man syndrome. Count 1 is best supported, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\69.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\69.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\69.json",
-        "counted_at_utc": "2026-04-16T18:59:40.182708+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\69.json",
+        "counted_at_utc": "2026-04-16T21:20:38.761071+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\69.json",
@@ -306,13 +320,13 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "This paper is framed as a single case report and the abstract/full-text excerpt explicitly describes one woman with stiff-man syndrome. Although the count of 1 is best supported, manual review is still required because the evidence pack flags original cohort provenance uncertainty.",
+        "count_reasoning_summary": "This is a single-case report and the abstract/full-text excerpt explicitly describes one woman with stiff-man syndrome. Count 1 is best supported, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty.",
         "evidence": [
           {
             "quote": "Stiff-man syndrome. Report of a case.",
             "page": null,
             "section": "title",
-            "supports": "The paper is presented as a single case report, supporting a count of one patient."
+            "supports": "The paper is framed as a single case report."
           },
           {
             "quote": "A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made.",
@@ -323,8 +337,8 @@
           {
             "quote": "REPORT OF A CASE A 54-year-old woman presented in 1986 with a 17-year history of intermittent, painless extensor spasms of both legs.",
             "page": null,
-            "section": "Report of a case",
-            "supports": "The body text describes one individual patient in detail, confirming an original single-patient report."
+            "section": "report of a case",
+            "supports": "Confirms an original individual patient case is described in detail."
           }
         ]
       }
@@ -338,7 +352,7 @@
           "quote": "Stiff-man syndrome. Report of a case.",
           "page": null,
           "section": "title",
-          "supports": "The paper is presented as a single case report, supporting a count of one patient."
+          "supports": "The paper is framed as a single case report."
         },
         {
           "quote": "A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made.",
@@ -349,11 +363,11 @@
         {
           "quote": "REPORT OF A CASE A 54-year-old woman presented in 1986 with a 17-year history of intermittent, painless extensor spasms of both legs.",
           "page": null,
-          "section": "Report of a case",
-          "supports": "The body text describes one individual patient in detail, confirming an original single-patient report."
+          "section": "report of a case",
+          "supports": "Confirms an original individual patient case is described in detail."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\69.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\69.json",
       "challenge_json_path": ""
     }
   }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:39.194289+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.087060+00:00",
   "paper_id": "560",
   "count_row": {
     "paper_id": "560",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper describes laboratory experiments using antibodies purified from a single SPS patient and a single cerebellar ataxia patient, but does not provide any clinical or demographic data about these patients. The focus is on the effects of these antibodies in animal models, not on reporting original SPS patient data.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T20:40:01.071870+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\560.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\560.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\560.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\560.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\560.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\560.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\560.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\560.json",
     "result_payload": {
       "paper_id": "560",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper explicitly reports use of GAD65 antibodies from 'a SPS patient (Ab SPS),' which supports at least one original SPS-spectrum patient contributing material/data to the study. No larger SPS cohort count is stated, so the best-supported extractable count among candidates is 1, but because this is a lab-heavy study centered on purified antibodies rather than a clearly described clinical cohort, manual review remains appropriate.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The abstract explicitly refers to antibody purified from 'a SPS patient (Ab SPS),' which supports at least one original SPS-spectrum patient contributing material/data in this paper. No larger SPS cohort count is stated, so the best-supported extractable count among the candidates is 1, but manual review remains appropriate because the paper is highly lab-focused and the clinical extractability is limited.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "lab_context_no_extractable_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\560.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\560.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\560.json",
-        "counted_at_utc": "2026-04-16T18:58:33.079729+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\560.json",
+        "counted_at_utc": "2026-04-16T21:19:21.350195+00:00"
       },
       "model_count_row": {
         "paper_id": "560",
@@ -194,12 +208,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper explicitly reports use of GAD65 antibodies from 'a SPS patient (Ab SPS),' which supports at least one original SPS-spectrum patient contributing material/data to the study. No larger SPS cohort count is stated, so the best-supported extractable count among candidates is 1, but because this is a lab-heavy study centered on purified antibodies rather than a clearly described clinical cohort, manual review remains appropriate.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The abstract explicitly refers to antibody purified from 'a SPS patient (Ab SPS),' which supports at least one original SPS-spectrum patient contributing material/data in this paper. No larger SPS cohort count is stated, so the best-supported extractable count among the candidates is 1, but manual review remains appropriate because the paper is highly lab-focused and the clinical extractability is limited.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "lab_context_no_extractable_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\560.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\560.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\560.json",
-        "counted_at_utc": "2026-04-16T18:58:33.079729+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\560.json",
+        "counted_at_utc": "2026-04-16T21:19:21.350195+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\560.json",
@@ -322,25 +336,25 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly reports use of GAD65 antibodies from 'a SPS patient (Ab SPS),' which supports at least one original SPS-spectrum patient contributing material/data to the study. No larger SPS cohort count is stated, so the best-supported extractable count among candidates is 1, but because this is a lab-heavy study centered on purified antibodies rather than a clearly described clinical cohort, manual review remains appropriate.",
+        "count_reasoning_summary": "The abstract explicitly refers to antibody purified from 'a SPS patient (Ab SPS),' which supports at least one original SPS-spectrum patient contributing material/data in this paper. No larger SPS cohort count is stated, so the best-supported extractable count among the candidates is 1, but manual review remains appropriate because the paper is highly lab-focused and the clinical extractability is limited.",
         "evidence": [
           {
-            "quote": "RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate",
+            "quote": "Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum.",
             "page": null,
-            "section": "abstract/results",
-            "supports": "Explicitly identifies one SPS-spectrum patient."
+            "section": "Methods/abstract",
+            "supports": "The study used patient-derived antibody material from original neurological patients rather than only literature review content."
           },
           {
-            "quote": "METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum.",
+            "quote": "Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol.",
             "page": null,
-            "section": "abstract/methods",
-            "supports": "Shows original patient-derived material was used in this study, supporting that the named SPS patient is part of the paper's original source material."
+            "section": "Results/abstract",
+            "supports": "Explicitly identifies one SPS-spectrum patient contributing the SPS-derived antibody source, supporting a count of 1 SPS patient."
           },
           {
             "quote": "By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol.",
             "page": null,
-            "section": "abstract/results",
-            "supports": "Confirms the study contrasts one SPS patient with one non-SPS patient, with no evidence of a larger SPS cohort count."
+            "section": "Results/abstract",
+            "supports": "Shows the paper distinguishes one SPS patient from one non-SPS neurological comparator, so only the SPS patient should be counted for SPS-spectrum extraction."
           }
         ]
       }
@@ -351,25 +365,25 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "RESULTS: Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate",
+          "quote": "Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum.",
           "page": null,
-          "section": "abstract/results",
-          "supports": "Explicitly identifies one SPS-spectrum patient."
+          "section": "Methods/abstract",
+          "supports": "The study used patient-derived antibody material from original neurological patients rather than only literature review content."
         },
         {
-          "quote": "METHODS: Purified GAD65-Ab from neurological patients and monoclonal GAD65-Ab with distinct epitope specificities (b78 and b96.11) were administered in vivo to rat cerebellum.",
+          "quote": "Intra-cerebellar administration of GAD65-Ab from a SPS patient (Ab SPS) impaired the NMDA-mediated turnover of glutamate, but had no effect on NMDA-mediated turnover of glycerol.",
           "page": null,
-          "section": "abstract/methods",
-          "supports": "Shows original patient-derived material was used in this study, supporting that the named SPS patient is part of the paper's original source material."
+          "section": "Results/abstract",
+          "supports": "Explicitly identifies one SPS-spectrum patient contributing the SPS-derived antibody source, supporting a count of 1 SPS patient."
         },
         {
           "quote": "By contrast, GAD65-Ab from a patient with cerebellar ataxia (Ab CA) markedly decreased the NMDA-mediated turnover of glycerol.",
           "page": null,
-          "section": "abstract/results",
-          "supports": "Confirms the study contrasts one SPS patient with one non-SPS patient, with no evidence of a larger SPS cohort count."
+          "section": "Results/abstract",
+          "supports": "Shows the paper distinguishes one SPS patient from one non-SPS neurological comparator, so only the SPS patient should be counted for SPS-spectrum extraction."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\560.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\560.json",
       "challenge_json_path": ""
     }
   }

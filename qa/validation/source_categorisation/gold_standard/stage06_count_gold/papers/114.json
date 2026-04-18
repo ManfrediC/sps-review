@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.128378+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.708598+00:00",
   "paper_id": "114",
   "count_row": {
     "paper_id": "114",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper presents detailed clinical and electrophysiological descriptions of four individual patients with stiff leg syndrome, a variant within the SPS spectrum. Each patient is described separately, and a summary table provides individual-level data, confirming the count of four original SPS-spectrum patients.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:06:48.314597+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\114.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\114.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\114.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\114.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\114.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\114.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\114.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\114.json",
     "result_payload": {
       "paper_id": "114",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "patient_label_count",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This case series explicitly reports four original patients with stiff leg syndrome, a focal/partial SPS-spectrum phenotype. Multiple text snippets identify a cohort of four patients and refer to individual patients 1-4 within the same report.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This case series explicitly reports four original patients with stiff leg syndrome, a focal/partial SPS-spectrum phenotype. Multiple text locations confirm the cohort size as four patients and describe them as the paper's own reported cases.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "4",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "patient_label_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\114.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\114.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "4",
         "llm_count_confidence": "high",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\114.json",
-        "counted_at_utc": "2026-04-16T18:53:01.068356+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\114.json",
+        "counted_at_utc": "2026-04-16T21:13:09.099107+00:00"
       },
       "model_count_row": {
         "paper_id": "114",
@@ -194,12 +208,12 @@
         "count_basis": "patient_label_count",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This case series explicitly reports four original patients with stiff leg syndrome, a focal/partial SPS-spectrum phenotype. Multiple text snippets identify a cohort of four patients and refer to individual patients 1-4 within the same report.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This case series explicitly reports four original patients with stiff leg syndrome, a focal/partial SPS-spectrum phenotype. Multiple text locations confirm the cohort size as four patients and describe them as the paper's own reported cases.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "4",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "patient_label_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\114.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\114.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "4",
         "llm_count_confidence": "high",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\114.json",
-        "counted_at_utc": "2026-04-16T18:53:01.068356+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\114.json",
+        "counted_at_utc": "2026-04-16T21:13:09.099107+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\114.json",
@@ -303,7 +317,7 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "This case series explicitly reports four original patients with stiff leg syndrome, a focal/partial SPS-spectrum phenotype. Multiple text snippets identify a cohort of four patients and refer to individual patients 1-4 within the same report.",
+        "count_reasoning_summary": "This case series explicitly reports four original patients with stiff leg syndrome, a focal/partial SPS-spectrum phenotype. Multiple text locations confirm the cohort size as four patients and describe them as the paper's own reported cases.",
         "evidence": [
           {
             "quote": "Four patients had a chronic progressive disorder beginning in middle age and involving stiffness and painful spasms of the lower limbs.",
@@ -314,14 +328,14 @@
           {
             "quote": "here we report four patients with a chronic progressive disorder characterised by painful involuntary spasms, stiffness, and cmua confined to the legs",
             "page": 1,
-            "section": "Introduction/Case series description",
-            "supports": "Confirms the paper is reporting four original patients in this syndrome."
+            "section": "Introduction/Preferred text excerpt",
+            "supports": "Confirms these are the authors' own reported cases and that the count is 4."
           },
           {
             "quote": "the clinical histories and abnormal findings of the four patients are summarised below.",
             "page": 1,
             "section": "Patients",
-            "supports": "Confirms four unique patients are described in the case series."
+            "supports": "Reinforces that the paper contains four unique patient cases."
           }
         ]
       }
@@ -340,17 +354,17 @@
         {
           "quote": "here we report four patients with a chronic progressive disorder characterised by painful involuntary spasms, stiffness, and cmua confined to the legs",
           "page": 1,
-          "section": "Introduction/Case series description",
-          "supports": "Confirms the paper is reporting four original patients in this syndrome."
+          "section": "Introduction/Preferred text excerpt",
+          "supports": "Confirms these are the authors' own reported cases and that the count is 4."
         },
         {
           "quote": "the clinical histories and abnormal findings of the four patients are summarised below.",
           "page": 1,
           "section": "Patients",
-          "supports": "Confirms four unique patients are described in the case series."
+          "supports": "Reinforces that the paper contains four unique patient cases."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\114.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\114.json",
       "challenge_json_path": ""
     }
   }

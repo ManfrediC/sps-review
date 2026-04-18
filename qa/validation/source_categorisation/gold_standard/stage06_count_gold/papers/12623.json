@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:40.757663+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.668190+00:00",
   "paper_id": "12623",
   "count_row": {
     "paper_id": "12623",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "This is a conference abstract reporting a nationwide readmission study using the 2013 Nationwide Readmission Database. The results are aggregate, database-derived, and do not provide extractable original SPS patient-level data.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:28:40.633858+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\12623.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12623.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\12623.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12623.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\12623.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\12623.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\12623.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\12623.json",
     "result_payload": {
       "paper_id": "12623",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "administrative_dataset_not_extractable",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This conference abstract reports a nationwide readmission database analysis of SPS inpatient encounters, not an extractable cohort of unique original SPS-spectrum patients. The reported 1,094 figure is explicitly 'SPS index events' from administrative data and should not be counted as unique cases, so the zero administrative-dataset candidate is the best-supported option.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This conference abstract reports a nationwide readmission database analysis based on SPS inpatient index events identified by ICD-9 code, not an extractable cohort of unique original SPS-spectrum patients. The reported 1,094 figure is explicitly for index events rather than unique patients, so the safest supported choice is the administrative-dataset zero-count candidate.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "administrative_dataset_not_extractable",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12623.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\12623.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "0",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12623.json",
-        "counted_at_utc": "2026-04-16T18:40:40.441123+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\12623.json",
+        "counted_at_utc": "2026-04-16T20:58:45.836326+00:00"
       },
       "model_count_row": {
         "paper_id": "12623",
@@ -194,12 +208,12 @@
         "count_basis": "administrative_dataset_not_extractable",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This conference abstract reports a nationwide readmission database analysis of SPS inpatient encounters, not an extractable cohort of unique original SPS-spectrum patients. The reported 1,094 figure is explicitly 'SPS index events' from administrative data and should not be counted as unique cases, so the zero administrative-dataset candidate is the best-supported option.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This conference abstract reports a nationwide readmission database analysis based on SPS inpatient index events identified by ICD-9 code, not an extractable cohort of unique original SPS-spectrum patients. The reported 1,094 figure is explicitly for index events rather than unique patients, so the safest supported choice is the administrative-dataset zero-count candidate.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "administrative_dataset_not_extractable",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\12623.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\12623.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "0",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\12623.json",
-        "counted_at_utc": "2026-04-16T18:40:40.441123+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\12623.json",
+        "counted_at_utc": "2026-04-16T20:58:45.836326+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\12623.json",
@@ -319,19 +333,19 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "This conference abstract reports a nationwide readmission database analysis of SPS inpatient encounters, not an extractable cohort of unique original SPS-spectrum patients. The reported 1,094 figure is explicitly 'SPS index events' from administrative data and should not be counted as unique cases, so the zero administrative-dataset candidate is the best-supported option.",
+        "count_reasoning_summary": "This conference abstract reports a nationwide readmission database analysis based on SPS inpatient index events identified by ICD-9 code, not an extractable cohort of unique original SPS-spectrum patients. The reported 1,094 figure is explicitly for index events rather than unique patients, so the safest supported choice is the administrative-dataset zero-count candidate.",
         "evidence": [
           {
-            "quote": "the 2013 nationwide readmission database was queried for sps index events, which were defined as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented",
+            "quote": "methods: the 2013 nationwide readmission database was queried for sps index events, which were defined as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented",
             "page": null,
             "section": "Methods",
-            "supports": "Shows the study is based on administrative inpatient encounters/index events rather than a clinically extractable original patient cohort."
+            "supports": "The study is an administrative database analysis using inpatient encounters/index events, not a directly extractable original patient cohort."
           },
           {
-            "quote": "a total of 1,094 sps index events were identified",
+            "quote": "results: a total of 1,094 sps index events were identified",
             "page": null,
             "section": "Results",
-            "supports": "Shows the reported count is events, not unique SPS-spectrum patients, so it should not be counted as extractable cases."
+            "supports": "The reported count is events, not unique SPS-spectrum patients, so it should not be counted as extractable cases."
           }
         ]
       }
@@ -342,19 +356,19 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "the 2013 nationwide readmission database was queried for sps index events, which were defined as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented",
+          "quote": "methods: the 2013 nationwide readmission database was queried for sps index events, which were defined as inpatient encounters where an icd-9 diagnosis of sps (333.91) was documented",
           "page": null,
           "section": "Methods",
-          "supports": "Shows the study is based on administrative inpatient encounters/index events rather than a clinically extractable original patient cohort."
+          "supports": "The study is an administrative database analysis using inpatient encounters/index events, not a directly extractable original patient cohort."
         },
         {
-          "quote": "a total of 1,094 sps index events were identified",
+          "quote": "results: a total of 1,094 sps index events were identified",
           "page": null,
           "section": "Results",
-          "supports": "Shows the reported count is events, not unique SPS-spectrum patients, so it should not be counted as extractable cases."
+          "supports": "The reported count is events, not unique SPS-spectrum patients, so it should not be counted as extractable cases."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\12623.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\12623.json",
       "challenge_json_path": ""
     }
   }

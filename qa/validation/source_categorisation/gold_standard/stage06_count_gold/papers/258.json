@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.819240+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.987526+00:00",
   "paper_id": "258",
   "count_row": {
     "paper_id": "258",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper explicitly states that 16 patients with typical SPS and elevated serum anti-GAD antibody titers were studied. The methods and results sections confirm that all 16 patients were original cases included in the analysis.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T20:11:02.083395+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\258.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\258.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\258.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\258.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\258.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\258.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\258.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\258.json",
     "result_payload": {
       "paper_id": "258",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "early_body_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods state that all 16 fulfilled established diagnostic criteria for SPS. Although the study includes serum/CSF assays, it is not specimen-only because it reports a clinically characterized SPS cohort; however, provenance uncertainty ('used, as previously described') warrants manual review.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods further state that serum and CSF were examined from 16 patients who fulfilled established diagnostic criteria for SPS. Although the study is assay-focused and provenance is flagged as previously described/uncertain, the text supports counting 16 unique diagnosis-supported SPS patients, with manual review retained because overlap with prior reports is possible.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "16",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "early_body_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\258.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\258.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "16",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_DONOR_MATERIAL_ONLY",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\258.json",
-        "counted_at_utc": "2026-04-16T18:46:50.139804+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\258.json",
+        "counted_at_utc": "2026-04-16T21:06:16.407684+00:00"
       },
       "model_count_row": {
         "paper_id": "258",
@@ -194,12 +208,12 @@
         "count_basis": "early_body_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods state that all 16 fulfilled established diagnostic criteria for SPS. Although the study includes serum/CSF assays, it is not specimen-only because it reports a clinically characterized SPS cohort; however, provenance uncertainty ('used, as previously described') warrants manual review.",
+        "count_reason": "challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand01 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods further state that serum and CSF were examined from 16 patients who fulfilled established diagnostic criteria for SPS. Although the study is assay-focused and provenance is flagged as previously described/uncertain, the text supports counting 16 unique diagnosis-supported SPS patients, with manual review retained because overlap with prior reports is possible.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "16",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "early_body_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\258.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\258.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "16",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_semantic_conflict_manual_review_required",
         "count_validator_flags": "COUNT_DONOR_MATERIAL_ONLY",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\258.json",
-        "counted_at_utc": "2026-04-16T18:46:50.139804+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\258.json",
+        "counted_at_utc": "2026-04-16T21:06:16.407684+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\258.json",
@@ -314,25 +328,25 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods state that all 16 fulfilled established diagnostic criteria for SPS. Although the study includes serum/CSF assays, it is not specimen-only because it reports a clinically characterized SPS cohort; however, provenance uncertainty ('used, as previously described') warrants manual review.",
+        "count_reasoning_summary": "The paper explicitly describes an original cohort of 16 patients with typical SPS, and the methods further state that serum and CSF were examined from 16 patients who fulfilled established diagnostic criteria for SPS. Although the study is assay-focused and provenance is flagged as previously described/uncertain, the text supports counting 16 unique diagnosis-supported SPS patients, with manual review retained because overlap with prior reports is possible.",
         "evidence": [
           {
             "quote": "PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers.",
             "page": null,
-            "section": "Abstract / Patients",
-            "supports": "Explicit cohort size of SPS-spectrum patients reported in this paper."
+            "section": "Abstract/Patients",
+            "supports": "Explicit cohort size of diagnosis-supported SPS patients"
           },
           {
-            "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years (mean, 52 years)",
+            "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years",
             "page": null,
             "section": "Methods",
-            "supports": "Original study cohort consists of 16 patients with SPS."
+            "supports": "Original study cohort size is 16 unique SPS patients"
           },
           {
             "quote": "all patients had elevated titers of serum anti-gad antibodies and fulfilled the established diagnostic criteria for sps.",
             "page": null,
             "section": "Methods",
-            "supports": "Confirms the 16 patients were diagnosis-supported SPS cases rather than merely specimen sources or suspected referrals."
+            "supports": "Confirms the 16 patients were diagnosis-supported SPS cases rather than only specimen sources"
           }
         ]
       }
@@ -347,24 +361,24 @@
         {
           "quote": "PATIENTS: Sixteen patients with typical SPS and elevated serum anti-GAD antibody titers.",
           "page": null,
-          "section": "Abstract / Patients",
-          "supports": "Explicit cohort size of SPS-spectrum patients reported in this paper."
+          "section": "Abstract/Patients",
+          "supports": "Explicit cohort size of diagnosis-supported SPS patients"
         },
         {
-          "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years (mean, 52 years)",
+          "quote": "we examined serum and csf from 16 patients with sps, 6 men and 10 women, aged 37 to 62 years",
           "page": null,
           "section": "Methods",
-          "supports": "Original study cohort consists of 16 patients with SPS."
+          "supports": "Original study cohort size is 16 unique SPS patients"
         },
         {
           "quote": "all patients had elevated titers of serum anti-gad antibodies and fulfilled the established diagnostic criteria for sps.",
           "page": null,
           "section": "Methods",
-          "supports": "Confirms the 16 patients were diagnosis-supported SPS cases rather than merely specimen sources or suspected referrals."
+          "supports": "Confirms the 16 patients were diagnosis-supported SPS cases rather than only specimen sources"
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\258.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\258.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\258.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_challenges\\258.json"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.494653+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.853547+00:00",
   "paper_id": "184",
   "count_row": {
     "paper_id": "184",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper describes a series of 12 original SPS patients studied by the authors, with detailed clinical, laboratory, and immunological findings reported for this group. There is no indication that these patients were previously published elsewhere.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:55:37.760503+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\184.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\184.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\184.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\184.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\184.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\184.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\184.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\184.json",
     "result_payload": {
       "paper_id": "184",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "diagnosis_specific_series_cohort_count",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly describes an original diagnosis-specific series of 20 consecutive patients with stiff-person syndrome. References to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly describes an original diagnosis-specific series of 20 consecutive stiff-person syndrome patients. The repeated references to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "20",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_series_cohort_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\184.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\184.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "20",
         "llm_count_confidence": "high",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\184.json",
-        "counted_at_utc": "2026-04-16T18:43:58.817615+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\184.json",
+        "counted_at_utc": "2026-04-16T21:03:04.422246+00:00"
       },
       "model_count_row": {
         "paper_id": "184",
@@ -194,12 +208,12 @@
         "count_basis": "diagnosis_specific_series_cohort_count",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly describes an original diagnosis-specific series of 20 consecutive patients with stiff-person syndrome. References to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly describes an original diagnosis-specific series of 20 consecutive stiff-person syndrome patients. The repeated references to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "20",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_series_cohort_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\184.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\184.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "20",
         "llm_count_confidence": "high",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\184.json",
-        "counted_at_utc": "2026-04-16T18:43:58.817615+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\184.json",
+        "counted_at_utc": "2026-04-16T21:03:04.422246+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\184.json",
@@ -321,25 +335,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "The paper explicitly describes an original diagnosis-specific series of 20 consecutive patients with stiff-person syndrome. References to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
+        "count_reasoning_summary": "The paper explicitly describes an original diagnosis-specific series of 20 consecutive stiff-person syndrome patients. The repeated references to 12 patients pertain to a controlled-trial subset, not the full cohort, so the best-supported extractable SPS-spectrum count is 20.",
         "evidence": [
           {
             "quote": "during the past 2 years, we studied the stiff-person syndrome to better define the disease, explore its pathogenetic mechanisms, and apply specific therapies.",
             "page": null,
             "section": "Preferred text excerpt",
-            "supports": "Supports that this is the authors' own original cohort rather than only a literature review."
+            "supports": "Establishes that the authors are reporting their own original SPS cohort rather than only reviewing prior literature."
           },
           {
             "quote": "in our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed on the rigidity.",
             "page": null,
             "section": "Preferred text excerpt",
-            "supports": "Directly supports a diagnosis-specific SPS cohort count of 20, with 12 as a subset."
+            "supports": "Directly supports an original diagnosis-specific SPS cohort count of 20, with 12 as a subset."
           },
           {
             "quote": "in our series, 9 of 12 patients had an asymmetric presentation: one leg was affected more than the other (stiff-limb syndrome)",
             "page": null,
             "section": "Preferred text excerpt",
-            "supports": "Confirms that later counts of 12 refer to a subgroup/subset analysis within the larger series, not the total number of SPS-spectrum patients."
+            "supports": "Confirms that 12 refers to an analyzed subgroup/subset within the larger series, not the total number of unique SPS-spectrum patients."
           }
         ]
       }
@@ -353,22 +367,22 @@
           "quote": "during the past 2 years, we studied the stiff-person syndrome to better define the disease, explore its pathogenetic mechanisms, and apply specific therapies.",
           "page": null,
           "section": "Preferred text excerpt",
-          "supports": "Supports that this is the authors' own original cohort rather than only a literature review."
+          "supports": "Establishes that the authors are reporting their own original SPS cohort rather than only reviewing prior literature."
         },
         {
           "quote": "in our series, 20 consecutive patients—12 of whom have participated in a controlled trial—presented with two sets of symptoms: muscular rigidity and episodic spasms superimposed on the rigidity.",
           "page": null,
           "section": "Preferred text excerpt",
-          "supports": "Directly supports a diagnosis-specific SPS cohort count of 20, with 12 as a subset."
+          "supports": "Directly supports an original diagnosis-specific SPS cohort count of 20, with 12 as a subset."
         },
         {
           "quote": "in our series, 9 of 12 patients had an asymmetric presentation: one leg was affected more than the other (stiff-limb syndrome)",
           "page": null,
           "section": "Preferred text excerpt",
-          "supports": "Confirms that later counts of 12 refer to a subgroup/subset analysis within the larger series, not the total number of SPS-spectrum patients."
+          "supports": "Confirms that 12 refers to an analyzed subgroup/subset within the larger series, not the total number of unique SPS-spectrum patients."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\184.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\184.json",
       "challenge_json_path": ""
     }
   }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:39.770275+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.281061+00:00",
   "paper_id": "969",
   "count_row": {
     "paper_id": "969",
@@ -96,8 +96,22 @@
       "count_confidence": "medium",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "true",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The abstract and title both state this is a series of 17 GlyRalpha1-IgG-positive patients, with 13 of 17 having SPS-spectrum phenotypes. However, the abstract groups all 17 as the main cohort, and the title and methods suggest all are relevant. Due to possible ambiguity about how many had SPS-spectrum presentations, manual review is recommended.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-06T00:36:22.205927+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\969.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\969.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\969.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\969.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\969.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\969.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\969.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\969.json",
     "result_payload": {
       "paper_id": "969",
       "count_row": {
@@ -158,26 +172,26 @@
         "preferred_text_source": "trimmed",
         "count_eligible": "true",
         "likely_sps_case_count": "13",
-        "count_confidence": "medium",
+        "count_confidence": "low",
         "count_basis": "diagnosis_specific_of_total_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=local_safer_abstention_conflict=0 vs 13; local_validation_conflict=0 vs 13 | llm_selected_candidate_id=cand01 | The abstract explicitly states that 13 of 17 GlyRα1-IgG-positive patients had stiff-person syndrome phenotypes, while the remaining patients included other presentations such as autoimmune epilepsy and parkinsonism-like syndromes. Because the total cohort is broader than SPS-spectrum and the SPS subset is the only explicit diagnosis-supported SPS count provided, 13 is the safest extractable count, but conference-abstract brevity warrants manual review.",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_safer_abstention_conflict=0 vs 13; local_validation_conflict=0 vs 13 | The abstract describes a mixed cohort of 17 GlyRα1-IgG-positive patients, with 13 having SPS phenotypes, but the wording also includes parkinsonism/cerebellar signs and does not cleanly establish that all 13 are confirmed SPS-spectrum cases extractable under the review rules. Because there is no explicit SPS-spectrum subgroup signal beyond this phenotype description and the challenge instruction prefers abstention when the conflict is unresolved, manual review is required.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "13",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_of_total_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\969.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\969.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "13",
-        "llm_count_confidence": "medium",
-        "llm_selected_candidate_id": "cand01",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_candidate_exact",
+        "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\969.json",
-        "counted_at_utc": "2026-04-16T18:50:48.010812+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\969.json",
+        "counted_at_utc": "2026-04-16T21:10:41.045302+00:00"
       },
       "model_count_row": {
         "paper_id": "969",
@@ -190,26 +204,26 @@
         "preferred_text_source": "trimmed",
         "count_eligible": "true",
         "likely_sps_case_count": "13",
-        "count_confidence": "medium",
+        "count_confidence": "low",
         "count_basis": "diagnosis_specific_of_total_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=local_safer_abstention_conflict=0 vs 13; local_validation_conflict=0 vs 13 | llm_selected_candidate_id=cand01 | The abstract explicitly states that 13 of 17 GlyRα1-IgG-positive patients had stiff-person syndrome phenotypes, while the remaining patients included other presentations such as autoimmune epilepsy and parkinsonism-like syndromes. Because the total cohort is broader than SPS-spectrum and the SPS subset is the only explicit diagnosis-supported SPS count provided, 13 is the safest extractable count, but conference-abstract brevity warrants manual review.",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_safer_abstention_conflict=0 vs 13; local_validation_conflict=0 vs 13 | The abstract describes a mixed cohort of 17 GlyRα1-IgG-positive patients, with 13 having SPS phenotypes, but the wording also includes parkinsonism/cerebellar signs and does not cleanly establish that all 13 are confirmed SPS-spectrum cases extractable under the review rules. Because there is no explicit SPS-spectrum subgroup signal beyond this phenotype description and the challenge instruction prefers abstention when the conflict is unresolved, manual review is required.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "13",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_of_total_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\969.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\969.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "13",
-        "llm_count_confidence": "medium",
-        "llm_selected_candidate_id": "cand01",
+        "llm_count_confidence": "low",
+        "llm_selected_candidate_id": "",
         "heuristic_fallback_used": "false",
         "count_audit_status": "hybrid_local_gpt",
-        "count_verification_status": "llm_candidate_exact",
+        "count_verification_status": "llm_manual_review_required",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\969.json",
-        "counted_at_utc": "2026-04-16T18:50:48.010812+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\969.json",
+        "counted_at_utc": "2026-04-16T21:10:41.045302+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\969.json",
@@ -290,7 +304,7 @@
     "count_decision_payload": {
       "paper_id": "969",
       "model_id": "gpt-5.4-2026-03-05",
-      "verification_status": "llm_candidate_exact",
+      "verification_status": "llm_manual_review_required",
       "validator_flags": [],
       "decision_stage": "challenge",
       "challenge_reasons": [
@@ -298,30 +312,30 @@
         "local_validation_conflict=0 vs 13"
       ],
       "decision": {
-        "decision_type": "candidate_exact",
-        "selected_candidate_id": "cand01",
+        "decision_type": "manual_review_required",
+        "selected_candidate_id": null,
         "alternative_count": null,
-        "count_confidence": "medium",
+        "count_confidence": "low",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The abstract explicitly states that 13 of 17 GlyRα1-IgG-positive patients had stiff-person syndrome phenotypes, while the remaining patients included other presentations such as autoimmune epilepsy and parkinsonism-like syndromes. Because the total cohort is broader than SPS-spectrum and the SPS subset is the only explicit diagnosis-supported SPS count provided, 13 is the safest extractable count, but conference-abstract brevity warrants manual review.",
+        "count_reasoning_summary": "The abstract describes a mixed cohort of 17 GlyRα1-IgG-positive patients, with 13 having SPS phenotypes, but the wording also includes parkinsonism/cerebellar signs and does not cleanly establish that all 13 are confirmed SPS-spectrum cases extractable under the review rules. Because there is no explicit SPS-spectrum subgroup signal beyond this phenotype description and the challenge instruction prefers abstention when the conflict is unresolved, manual review is required.",
         "evidence": [
+          {
+            "quote": "Patients with a positive serum GlyRalpha1-IgG were identified during a 2-year period from July 2016 to December 2018 at 2 academic centers and followed prospectively.",
+            "page": null,
+            "section": "Metadata abstract - Methods",
+            "supports": "The full cohort is a broader antibody-positive cohort, not explicitly an all-SPSD cohort."
+          },
           {
             "quote": "Thirteen of 17 patients had phenotypes more typically associated with glutamic acid decarboxylase (GAD65) antibody syndromes, consisting of stiff-person syndrome (SPS) with parkinsonism or cerebellar signs.",
             "page": null,
             "section": "Metadata abstract - Results",
-            "supports": "Explicit SPS-spectrum subset count of 13 within the broader 17-patient GlyR antibody cohort."
+            "supports": "There is a possible SPS-related subgroup of 13, but the phenotype wording leaves ambiguity about exact SPS-spectrum membership and extractable confirmed case counting."
           },
           {
             "quote": "Three of 17 patients presented with primarily autoimmune epilepsy accompanied by psychiatric symptoms.",
             "page": null,
             "section": "Metadata abstract - Results",
-            "supports": "Shows that not all 17 patients were SPS-spectrum, so the full cohort should not be counted as SPSD."
-          },
-          {
-            "quote": "Objective: To describe novel clinical features of GlyRalpha1-IgG-positive patients.",
-            "page": null,
-            "section": "Metadata abstract - Objective",
-            "supports": "Confirms the overall cohort was defined by GlyR antibody positivity rather than SPS diagnosis, supporting use of the explicit SPS subset rather than the total cohort."
+            "supports": "Confirms the 17-case series is diagnostically mixed rather than entirely SPS-spectrum."
           }
         ]
       }
@@ -335,26 +349,26 @@
       ],
       "evidence": [
         {
+          "quote": "Patients with a positive serum GlyRalpha1-IgG were identified during a 2-year period from July 2016 to December 2018 at 2 academic centers and followed prospectively.",
+          "page": null,
+          "section": "Metadata abstract - Methods",
+          "supports": "The full cohort is a broader antibody-positive cohort, not explicitly an all-SPSD cohort."
+        },
+        {
           "quote": "Thirteen of 17 patients had phenotypes more typically associated with glutamic acid decarboxylase (GAD65) antibody syndromes, consisting of stiff-person syndrome (SPS) with parkinsonism or cerebellar signs.",
           "page": null,
           "section": "Metadata abstract - Results",
-          "supports": "Explicit SPS-spectrum subset count of 13 within the broader 17-patient GlyR antibody cohort."
+          "supports": "There is a possible SPS-related subgroup of 13, but the phenotype wording leaves ambiguity about exact SPS-spectrum membership and extractable confirmed case counting."
         },
         {
           "quote": "Three of 17 patients presented with primarily autoimmune epilepsy accompanied by psychiatric symptoms.",
           "page": null,
           "section": "Metadata abstract - Results",
-          "supports": "Shows that not all 17 patients were SPS-spectrum, so the full cohort should not be counted as SPSD."
-        },
-        {
-          "quote": "Objective: To describe novel clinical features of GlyRalpha1-IgG-positive patients.",
-          "page": null,
-          "section": "Metadata abstract - Objective",
-          "supports": "Confirms the overall cohort was defined by GlyR antibody positivity rather than SPS diagnosis, supporting use of the explicit SPS subset rather than the total cohort."
+          "supports": "Confirms the 17-case series is diagnostically mixed rather than entirely SPS-spectrum."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\969.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\969.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\969.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_challenges\\969.json"
     }
   }
 }

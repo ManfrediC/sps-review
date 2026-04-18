@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:38.457743+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.821599+00:00",
   "paper_id": "173",
   "count_row": {
     "paper_id": "173",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper presents a detailed clinical, laboratory, and immunological description of a single patient with stiff-man syndrome (SPS) and anti-GAD antibodies who developed immune-mediated retinopathy. There is no evidence of additional SPS-spectrum patients being reported.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:51:36.328900+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\173.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\173.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\173.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\173.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\173.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\173.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\173.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\173.json",
     "result_payload": {
       "paper_id": "173",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one 32-year-old patient with stiff-man syndrome and anti-GAD antibodies. The title, abstract, and case report text consistently indicate a single original SPS-spectrum patient.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-case report explicitly describing one 32-year-old patient with stiff-man syndrome (older term for SPS) and anti-GAD antibodies. The paper repeatedly refers to a single patient and provides original clinical details, supporting a count of 1 unique SPS-spectrum case.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\173.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\173.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\173.json",
-        "counted_at_utc": "2026-04-16T18:43:08.038729+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\173.json",
+        "counted_at_utc": "2026-04-16T21:02:06.466521+00:00"
       },
       "model_count_row": {
         "paper_id": "173",
@@ -194,12 +208,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one 32-year-old patient with stiff-man syndrome and anti-GAD antibodies. The title, abstract, and case report text consistently indicate a single original SPS-spectrum patient.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-case report explicitly describing one 32-year-old patient with stiff-man syndrome (older term for SPS) and anti-GAD antibodies. The paper repeatedly refers to a single patient and provides original clinical details, supporting a count of 1 unique SPS-spectrum case.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\173.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\173.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\173.json",
-        "counted_at_utc": "2026-04-16T18:43:08.038729+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\173.json",
+        "counted_at_utc": "2026-04-16T21:02:06.466521+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\173.json",
@@ -302,25 +316,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "This single-case report explicitly describes one 32-year-old patient with stiff-man syndrome and anti-GAD antibodies. The title, abstract, and case report text consistently indicate a single original SPS-spectrum patient.",
+        "count_reasoning_summary": "This is a single-case report explicitly describing one 32-year-old patient with stiff-man syndrome (older term for SPS) and anti-GAD antibodies. The paper repeatedly refers to a single patient and provides original clinical details, supporting a count of 1 unique SPS-spectrum case.",
         "evidence": [
-          {
-            "quote": "Immune-mediated retinopathy in a patient with stiff-man syndrome.",
-            "page": null,
-            "section": "title",
-            "supports": "The paper is framed as a single-patient case report."
-          },
           {
             "quote": "We report a 32-year-old patient with stiff-man syndrome and anti-GAD antibodies who developed subacute progressive loss of vision in the right eye, and in the left eye 18 months thereafter.",
             "page": 1,
-            "section": "abstract",
-            "supports": "Explicitly states one original patient with diagnosis-supported stiff-man syndrome (SPS-spectrum)."
+            "section": "Abstract",
+            "supports": "Explicit report of one original SPS-spectrum patient."
           },
           {
             "quote": "We report a patient with longstanding stiff-man syndrome who developed severe bilateral visual deterioration.",
             "page": 2,
-            "section": "case report/introduction",
-            "supports": "Confirms the paper reports one original patient with stiff-man syndrome."
+            "section": "Introduction/Case report lead-in",
+            "supports": "Confirms the paper is centered on a single patient with stiff-man syndrome."
+          },
+          {
+            "quote": "The patient's symptoms began at the age of 14 years with progressive stiffness and hyperlordosis of the lower spine.",
+            "page": 2,
+            "section": "Case report",
+            "supports": "Provides individual-level original clinical history for the same single SPS-spectrum case."
           }
         ]
       }
@@ -331,25 +345,25 @@
       "challenge_reasons": [],
       "evidence": [
         {
-          "quote": "Immune-mediated retinopathy in a patient with stiff-man syndrome.",
-          "page": null,
-          "section": "title",
-          "supports": "The paper is framed as a single-patient case report."
-        },
-        {
           "quote": "We report a 32-year-old patient with stiff-man syndrome and anti-GAD antibodies who developed subacute progressive loss of vision in the right eye, and in the left eye 18 months thereafter.",
           "page": 1,
-          "section": "abstract",
-          "supports": "Explicitly states one original patient with diagnosis-supported stiff-man syndrome (SPS-spectrum)."
+          "section": "Abstract",
+          "supports": "Explicit report of one original SPS-spectrum patient."
         },
         {
           "quote": "We report a patient with longstanding stiff-man syndrome who developed severe bilateral visual deterioration.",
           "page": 2,
-          "section": "case report/introduction",
-          "supports": "Confirms the paper reports one original patient with stiff-man syndrome."
+          "section": "Introduction/Case report lead-in",
+          "supports": "Confirms the paper is centered on a single patient with stiff-man syndrome."
+        },
+        {
+          "quote": "The patient's symptoms began at the age of 14 years with progressive stiffness and hyperlordosis of the lower spine.",
+          "page": 2,
+          "section": "Case report",
+          "supports": "Provides individual-level original clinical history for the same single SPS-spectrum case."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\173.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\173.json",
       "challenge_json_path": ""
     }
   }

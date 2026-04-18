@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:40.928336+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.713585+00:00",
   "paper_id": "13206",
   "count_row": {
     "paper_id": "13206",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper reports original laboratory and clinical data from 4 patients with stiff-man syndrome (SMS), including their demographics, antibody profiles, and functional assays. The count is directly stated in both the methods and results sections.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:37:22.549935+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\13206.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\13206.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\13206.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\13206.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\13206.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\13206.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\13206.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\13206.json",
     "result_payload": {
       "paper_id": "13206",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=4 vs 7 | llm_selected_candidate_id=cand01 | The paper explicitly reports a mixed cohort including 4 patients with stiff-man syndrome (an SPS-spectrum diagnosis), alongside non-SPSD groups with IDDM and APS I. The competing count of 7 reflects the broader mixed cohort, not the SPS-spectrum subset, but provenance is flagged as uncertain, so the count should be manually checked.",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=4 vs 7 | llm_selected_candidate_id=cand01 | The paper explicitly reports a mixed cohort of 7 IDDM, 4 stiff-man syndrome, and 5 APS I patients; only the 4 SMS patients are SPS-spectrum cases. The competing count of 7 reflects the non-SPS IDDM subgroup, not an SPS-spectrum subset. Because provenance may overlap with previously described antibody methods/cohorts, manual review remains appropriate.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "4",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\13206.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\13206.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "4",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\13206.json",
-        "counted_at_utc": "2026-04-16T18:42:21.834222+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\13206.json",
+        "counted_at_utc": "2026-04-16T21:01:08.891543+00:00"
       },
       "model_count_row": {
         "paper_id": "13206",
@@ -194,12 +208,12 @@
         "count_basis": "abstract_count_signal",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=4 vs 7 | llm_selected_candidate_id=cand01 | The paper explicitly reports a mixed cohort including 4 patients with stiff-man syndrome (an SPS-spectrum diagnosis), alongside non-SPSD groups with IDDM and APS I. The competing count of 7 reflects the broader mixed cohort, not the SPS-spectrum subset, but provenance is flagged as uncertain, so the count should be manually checked.",
+        "count_reason": "challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=4 vs 7 | llm_selected_candidate_id=cand01 | The paper explicitly reports a mixed cohort of 7 IDDM, 4 stiff-man syndrome, and 5 APS I patients; only the 4 SMS patients are SPS-spectrum cases. The competing count of 7 reflects the non-SPS IDDM subgroup, not an SPS-spectrum subset. Because provenance may overlap with previously described antibody methods/cohorts, manual review remains appropriate.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "4",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "abstract_count_signal",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\13206.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\13206.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "4",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\13206.json",
-        "counted_at_utc": "2026-04-16T18:42:21.834222+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\13206.json",
+        "counted_at_utc": "2026-04-16T21:01:08.891543+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\13206.json",
@@ -329,31 +343,31 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly reports a mixed cohort including 4 patients with stiff-man syndrome (an SPS-spectrum diagnosis), alongside non-SPSD groups with IDDM and APS I. The competing count of 7 reflects the broader mixed cohort, not the SPS-spectrum subset, but provenance is flagged as uncertain, so the count should be manually checked.",
+        "count_reasoning_summary": "The paper explicitly reports a mixed cohort of 7 IDDM, 4 stiff-man syndrome, and 5 APS I patients; only the 4 SMS patients are SPS-spectrum cases. The competing count of 7 reflects the non-SPS IDDM subgroup, not an SPS-spectrum subset. Because provenance may overlap with previously described antibody methods/cohorts, manual review remains appropriate.",
         "evidence": [
           {
             "quote": "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.",
             "page": null,
             "section": "abstract / study cohort description",
-            "supports": "Supports that the explicit SPS-spectrum subgroup is 4 SMS patients within a broader mixed cohort."
+            "supports": "Direct diagnosis-specific count of 4 SPS-spectrum patients (SMS) within a mixed cohort."
           },
           {
             "quote": "sera from 7 patients with newly diagnosed IDDM (1 man and 6 women, 17-79 years of age); 4 patients with sms (1 man and 3 women, 31-50 years of age)",
             "page": null,
             "section": "Research Design and Methods - Characterization of patient sera",
-            "supports": "Supports that the study included 4 diagnosis-specific SMS patients as original study participants."
+            "supports": "Confirms that the SMS subgroup contains 4 patients and is distinct from the 7 IDDM patients."
           },
           {
             "quote": "Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD.",
             "page": null,
             "section": "abstract / results",
-            "supports": "Confirms the SMS subgroup denominator is 4 and that analyses were performed on those 4 SPS-spectrum patients."
+            "supports": "Reinforces that there were exactly four SMS patients analyzed as the SPS-spectrum subgroup."
           },
           {
             "quote": "antibodies using a method described previously (4).",
             "page": null,
             "section": "provenance signal",
-            "supports": "Supports uncertainty about original cohort provenance, indicating manual review is warranted despite selecting the 4-patient candidate."
+            "supports": "Introduces uncertainty about originality/provenance overlap, supporting manual review despite selecting the 4-patient candidate."
           }
         ]
       }
@@ -369,29 +383,29 @@
           "quote": "In this study, we examined the reactivity of anti-GAD-containing sera from 7 patients with IDDM, 4 patients with SMS, and 5 patients with APS I.",
           "page": null,
           "section": "abstract / study cohort description",
-          "supports": "Supports that the explicit SPS-spectrum subgroup is 4 SMS patients within a broader mixed cohort."
+          "supports": "Direct diagnosis-specific count of 4 SPS-spectrum patients (SMS) within a mixed cohort."
         },
         {
           "quote": "sera from 7 patients with newly diagnosed IDDM (1 man and 6 women, 17-79 years of age); 4 patients with sms (1 man and 3 women, 31-50 years of age)",
           "page": null,
           "section": "Research Design and Methods - Characterization of patient sera",
-          "supports": "Supports that the study included 4 diagnosis-specific SMS patients as original study participants."
+          "supports": "Confirms that the SMS subgroup contains 4 patients and is distinct from the 7 IDDM patients."
         },
         {
           "quote": "Two of four SMS patients' sera and 5 of 5 APS I patients' sera, in contrast to 0 of 7 IDDM patients' sera, inhibited the enzymatic activity of GAD.",
           "page": null,
           "section": "abstract / results",
-          "supports": "Confirms the SMS subgroup denominator is 4 and that analyses were performed on those 4 SPS-spectrum patients."
+          "supports": "Reinforces that there were exactly four SMS patients analyzed as the SPS-spectrum subgroup."
         },
         {
           "quote": "antibodies using a method described previously (4).",
           "page": null,
           "section": "provenance signal",
-          "supports": "Supports uncertainty about original cohort provenance, indicating manual review is warranted despite selecting the 4-patient candidate."
+          "supports": "Introduces uncertainty about originality/provenance overlap, supporting manual review despite selecting the 4-patient candidate."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\13206.json",
-      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_challenges\\13206.json"
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\13206.json",
+      "challenge_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_challenges\\13206.json"
     }
   }
 }

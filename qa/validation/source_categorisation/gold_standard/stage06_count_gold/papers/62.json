@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:37.637127+00:00",
+  "generated_at_utc": "2026-04-18T12:13:21.522972+00:00",
   "paper_id": "62",
   "count_row": {
     "paper_id": "62",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper describes a new serum from a 75-year-old woman with SMS and breast cancer (patient 1), whose case is newly reported in this study. The other four patients with SMS and breast cancer were previously described in references [8,9], so only one new SPS-spectrum patient is counted.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T20:48:42.312967+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold30_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\results\\62.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\62.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_decisions\\62.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\62.json",
+    "run_id": "stage06_gold30_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\results\\62.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\62.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_decisions\\62.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\62.json",
     "result_payload": {
       "paper_id": "62",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "diagnosis_specific_patient_case_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand03 | The paper explicitly introduces one new SMS patient (patient 1) in its Materials and Methods, while also stating that four additional SMS+b breast cancer patients (patients 2-5) were previously described elsewhere. Because those four are reused prior cases and provenance overlap is explicitly uncertain, the safest extractable original count from this paper is 1, with manual review retained.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand03 | The paper explicitly introduces one new original SMS patient ('patient 1') in the Methods, while also stating that patients 2-5 were previously described elsewhere. Therefore the safest extractable original SPS-spectrum count from this paper is 1, but manual review remains required because provenance overlap/novelty is explicitly uncertain.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "lab_context_no_extractable_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\62.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\62.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\62.json",
-        "counted_at_utc": "2026-04-16T18:47:58.902677+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\62.json",
+        "counted_at_utc": "2026-04-16T21:07:43.338795+00:00"
       },
       "model_count_row": {
         "paper_id": "62",
@@ -194,12 +208,12 @@
         "count_basis": "diagnosis_specific_patient_case_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand03 | The paper explicitly introduces one new SMS patient (patient 1) in its Materials and Methods, while also stating that four additional SMS+b breast cancer patients (patients 2-5) were previously described elsewhere. Because those four are reused prior cases and provenance overlap is explicitly uncertain, the safest extractable original count from this paper is 1, with manual review retained.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand03 | The paper explicitly introduces one new original SMS patient ('patient 1') in the Methods, while also stating that patients 2-5 were previously described elsewhere. Therefore the safest extractable original SPS-spectrum count from this paper is 1, but manual review remains required because provenance overlap/novelty is explicitly uncertain.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "0",
         "heuristic_count_confidence": "low",
         "heuristic_count_basis": "lab_context_no_extractable_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\candidate_packages\\62.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\candidate_packages\\62.json",
         "heuristic_candidate_count": "3",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\count_evidence\\62.json",
-        "counted_at_utc": "2026-04-16T18:47:58.902677+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\count_evidence\\62.json",
+        "counted_at_utc": "2026-04-16T21:07:43.338795+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\62.json",
@@ -332,25 +346,25 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper explicitly introduces one new SMS patient (patient 1) in its Materials and Methods, while also stating that four additional SMS+b breast cancer patients (patients 2-5) were previously described elsewhere. Because those four are reused prior cases and provenance overlap is explicitly uncertain, the safest extractable original count from this paper is 1, with manual review retained.",
+        "count_reasoning_summary": "The paper explicitly introduces one new original SMS patient ('patient 1') in the Methods, while also stating that patients 2-5 were previously described elsewhere. Therefore the safest extractable original SPS-spectrum count from this paper is 1, but manual review remains required because provenance overlap/novelty is explicitly uncertain.",
         "evidence": [
           {
             "quote": "A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us ...",
             "page": null,
             "section": "Materials and methods, Human sera",
-            "supports": "Supports that this paper includes at least one original diagnosis-specific SMS patient newly reported in this study."
+            "supports": "Supports that this paper includes at least one original diagnosis-supported SPS/SMS patient."
           },
           {
             "quote": "Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9].",
             "page": null,
-            "section": "Human sera / prior-case provenance",
-            "supports": "Supports excluding these four from the original count because they were previously described and are not new unique cases in this paper."
+            "section": "Human sera / cohort provenance",
+            "supports": "Supports excluding those four as previously published rather than newly countable original cases in this paper."
           },
           {
-            "quote": "in two of these patients, an infiltrating ductal adenocarcinoma of the breast was searched for, and found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).",
+            "quote": "...found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).",
             "page": null,
             "section": "Introduction",
-            "supports": "Supports that patient 1 is the paper's most recent/new case, distinct from earlier cited cases."
+            "supports": "Supports that patient 1 is the most recent case of this study and distinct from the previously described cases, while also indicating provenance uncertainty that warrants manual review."
           }
         ]
       }
@@ -364,22 +378,22 @@
           "quote": "A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us ...",
           "page": null,
           "section": "Materials and methods, Human sera",
-          "supports": "Supports that this paper includes at least one original diagnosis-specific SMS patient newly reported in this study."
+          "supports": "Supports that this paper includes at least one original diagnosis-supported SPS/SMS patient."
         },
         {
           "quote": "Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9].",
           "page": null,
-          "section": "Human sera / prior-case provenance",
-          "supports": "Supports excluding these four from the original count because they were previously described and are not new unique cases in this paper."
+          "section": "Human sera / cohort provenance",
+          "supports": "Supports excluding those four as previously published rather than newly countable original cases in this paper."
         },
         {
-          "quote": "in two of these patients, an infiltrating ductal adenocarcinoma of the breast was searched for, and found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).",
+          "quote": "...found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)).",
           "page": null,
           "section": "Introduction",
-          "supports": "Supports that patient 1 is the paper's most recent/new case, distinct from earlier cited cases."
+          "supports": "Supports that patient 1 is the most recent case of this study and distinct from the previously described cases, while also indicating provenance uncertainty that warrants manual review."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_20260416\\local_model_results\\62.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold30_hybrid_confirmed_refresh_20260416\\local_model_results\\62.json",
       "challenge_json_path": ""
     }
   }

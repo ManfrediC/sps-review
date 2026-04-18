@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:40.349721+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.466533+00:00",
   "paper_id": "1785",
   "count_row": {
     "paper_id": "1785",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The paper presents a detailed clinical description of a single patient with stiff limb syndrome progressing to stiff person syndrome, including history, examination, laboratory findings, treatment, and outcome. There is no mention of additional original SPS-spectrum patients.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:53:51.192058+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\1785.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1785.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\1785.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1785.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\1785.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\1785.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\1785.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\1785.json",
     "result_payload": {
       "paper_id": "1785",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original SPS-spectrum patient: a man with stiff limb syndrome progressing to stiff person syndrome. The text repeatedly uses singular case language and provides individual clinical, laboratory, and treatment details for one patient.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original SPS-spectrum patient: a man with stiff limb syndrome progressing to stiff person syndrome. The text repeatedly uses singular case language and provides individual clinical details, diagnostic support, and treatment response for one patient only.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1785.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\1785.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1785.json",
-        "counted_at_utc": "2026-04-16T18:55:11.933328+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\1785.json",
+        "counted_at_utc": "2026-04-16T21:15:23.217293+00:00"
       },
       "model_count_row": {
         "paper_id": "1785",
@@ -194,12 +208,12 @@
         "count_basis": "case_report_marker_single_case",
         "count_manual_review_required": "false",
         "count_original_cohort_provenance_uncertain": "false",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original SPS-spectrum patient: a man with stiff limb syndrome progressing to stiff person syndrome. The text repeatedly uses singular case language and provides individual clinical, laboratory, and treatment details for one patient.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original SPS-spectrum patient: a man with stiff limb syndrome progressing to stiff person syndrome. The text repeatedly uses singular case language and provides individual clinical details, diagnostic support, and treatment response for one patient only.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "medium",
         "heuristic_count_basis": "case_report_marker_single_case",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\1785.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\1785.json",
         "heuristic_candidate_count": "2",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "high",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\1785.json",
-        "counted_at_utc": "2026-04-16T18:55:11.933328+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\1785.json",
+        "counted_at_utc": "2026-04-16T21:15:23.217293+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\1785.json",
@@ -303,25 +317,25 @@
         "alternative_count": null,
         "count_confidence": "high",
         "count_manual_review_required": false,
-        "count_reasoning_summary": "This single-case report explicitly describes one original SPS-spectrum patient: a man with stiff limb syndrome progressing to stiff person syndrome. The text repeatedly uses singular case language and provides individual clinical, laboratory, and treatment details for one patient.",
+        "count_reasoning_summary": "This single-case report explicitly describes one original SPS-spectrum patient: a man with stiff limb syndrome progressing to stiff person syndrome. The text repeatedly uses singular case language and provides individual clinical details, diagnostic support, and treatment response for one patient only.",
         "evidence": [
           {
             "quote": "We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome.",
             "page": null,
-            "section": "abstract/background",
+            "section": "Background/abstract",
             "supports": "Explicitly identifies the paper as reporting a single original SPS-spectrum case."
           },
           {
             "quote": "A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen.",
             "page": null,
-            "section": "abstract/method",
+            "section": "Methods/abstract",
             "supports": "Provides individual-level clinical description of one unique patient."
           },
           {
             "quote": "We present a non-diabetic case of Stiff limb syndrome who progressed to stiff person syndrome with a high anti-GAD antibody level.",
             "page": null,
-            "section": "abstract/conclusion",
-            "supports": "Confirms diagnosis-supported SPS-spectrum case status for the same single patient."
+            "section": "Conclusion/abstract",
+            "supports": "Confirms the diagnosis-supported SPS-spectrum case and reinforces that only one case is reported."
           }
         ]
       }
@@ -334,23 +348,23 @@
         {
           "quote": "We present a case of non-diabetic man with stiff limb syndrome who progressed to stiff person syndrome.",
           "page": null,
-          "section": "abstract/background",
+          "section": "Background/abstract",
           "supports": "Explicitly identifies the paper as reporting a single original SPS-spectrum case."
         },
         {
           "quote": "A 52-year-old male from the Congo presented with a 2-year history of stiffness of the right lower extremity and abdomen.",
           "page": null,
-          "section": "abstract/method",
+          "section": "Methods/abstract",
           "supports": "Provides individual-level clinical description of one unique patient."
         },
         {
           "quote": "We present a non-diabetic case of Stiff limb syndrome who progressed to stiff person syndrome with a high anti-GAD antibody level.",
           "page": null,
-          "section": "abstract/conclusion",
-          "supports": "Confirms diagnosis-supported SPS-spectrum case status for the same single patient."
+          "section": "Conclusion/abstract",
+          "supports": "Confirms the diagnosis-supported SPS-spectrum case and reinforces that only one case is reported."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\1785.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\1785.json",
       "challenge_json_path": ""
     }
   }

@@ -1,6 +1,6 @@
 {
   "schema_version": "stage06_count_gold_result_v1",
-  "generated_at_utc": "2026-04-16T20:31:40.649045+00:00",
+  "generated_at_utc": "2026-04-18T12:13:22.627873+00:00",
   "paper_id": "12137",
   "count_row": {
     "paper_id": "12137",
@@ -96,8 +96,22 @@
       "count_confidence": "high",
       "count_basis": "llm_joint_extraction",
       "count_manual_review_required": "false",
+      "count_original_cohort_provenance_uncertain": "",
       "count_reason": "The study enrolled 10 patients with various movement disorders, of whom one (case 10) had stiff-person syndrome. The paper provides both group-level and individual-level data, including a case description and a summary table. Only one original SPS-spectrum patient is included.",
       "count_version": "llm_v1_gpt4.1",
+      "heuristic_likely_sps_case_count": "",
+      "heuristic_count_confidence": "",
+      "heuristic_count_basis": "",
+      "count_candidate_json_path": "",
+      "heuristic_candidate_count": "",
+      "llm_likely_sps_case_count": "",
+      "llm_count_confidence": "",
+      "llm_selected_candidate_id": "",
+      "heuristic_fallback_used": "",
+      "count_audit_status": "",
+      "count_verification_status": "",
+      "count_validator_flags": "",
+      "count_evidence_json_path": "",
       "counted_at_utc": "2026-04-05T19:21:08.583184+00:00"
     },
     "live_source_registry_row": {
@@ -140,11 +154,11 @@
     }
   },
   "attached_run_artifacts": {
-    "run_id": "stage06_gold20_hybrid_confirmed_20260416",
-    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\results\\12137.json",
-    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\12137.json",
-    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_decisions\\12137.json",
-    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\12137.json",
+    "run_id": "stage06_gold20_hybrid_confirmed_refresh_20260416",
+    "result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\results\\12137.json",
+    "candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\12137.json",
+    "count_decision_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_decisions\\12137.json",
+    "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\12137.json",
     "result_payload": {
       "paper_id": "12137",
       "count_row": {
@@ -162,12 +176,12 @@
         "count_basis": "diagnosis_specific_list_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports 10 patients with mixed movement disorders, with only one explicitly identified as having stiff-person syndrome. That supports an extractable SPS-spectrum subset count of 1, but manual review remains appropriate because the evidence pack flags possible prior description/provenance uncertainty.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports 10 treated patients with mixed movement disorders, of whom exactly one is explicitly identified as having stiff-person syndrome. That supports counting 1 SPS-spectrum patient, but manual review remains appropriate because the evidence pack flags possible prior description/provenance uncertainty for at least some cases.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_list_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\12137.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\12137.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -176,8 +190,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\12137.json",
-        "counted_at_utc": "2026-04-16T18:53:56.154366+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\12137.json",
+        "counted_at_utc": "2026-04-16T21:14:07.372939+00:00"
       },
       "model_count_row": {
         "paper_id": "12137",
@@ -194,12 +208,12 @@
         "count_basis": "diagnosis_specific_list_count",
         "count_manual_review_required": "true",
         "count_original_cohort_provenance_uncertain": "true",
-        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports 10 patients with mixed movement disorders, with only one explicitly identified as having stiff-person syndrome. That supports an extractable SPS-spectrum subset count of 1, but manual review remains appropriate because the evidence pack flags possible prior description/provenance uncertainty.",
+        "count_reason": "challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports 10 treated patients with mixed movement disorders, of whom exactly one is explicitly identified as having stiff-person syndrome. That supports counting 1 SPS-spectrum patient, but manual review remains appropriate because the evidence pack flags possible prior description/provenance uncertainty for at least some cases.",
         "count_version": "hybrid_v2_gpt-5.4",
         "heuristic_likely_sps_case_count": "1",
         "heuristic_count_confidence": "high",
         "heuristic_count_basis": "diagnosis_specific_list_count",
-        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\candidate_packages\\12137.json",
+        "count_candidate_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\candidate_packages\\12137.json",
         "heuristic_candidate_count": "1",
         "llm_likely_sps_case_count": "1",
         "llm_count_confidence": "medium",
@@ -208,8 +222,8 @@
         "count_audit_status": "hybrid_local_gpt",
         "count_verification_status": "llm_candidate_exact",
         "count_validator_flags": "",
-        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\count_evidence\\12137.json",
-        "counted_at_utc": "2026-04-16T18:53:56.154366+00:00"
+        "count_evidence_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\count_evidence\\12137.json",
+        "counted_at_utc": "2026-04-16T21:14:07.372939+00:00"
       },
       "manual_override_row": {},
       "source_text_json_path": "data\\extraction_json\\text\\12137.json",
@@ -288,25 +302,25 @@
         "alternative_count": null,
         "count_confidence": "medium",
         "count_manual_review_required": true,
-        "count_reasoning_summary": "The paper reports 10 patients with mixed movement disorders, with only one explicitly identified as having stiff-person syndrome. That supports an extractable SPS-spectrum subset count of 1, but manual review remains appropriate because the evidence pack flags possible prior description/provenance uncertainty.",
+        "count_reasoning_summary": "The paper reports 10 treated patients with mixed movement disorders, of whom exactly one is explicitly identified as having stiff-person syndrome. That supports counting 1 SPS-spectrum patient, but manual review remains appropriate because the evidence pack flags possible prior description/provenance uncertainty for at least some cases.",
         "evidence": [
           {
             "quote": "We performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with intractable movement disorders. Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome.",
             "page": null,
-            "section": "abstract / summary",
-            "supports": "Explicitly identifies a mixed cohort of 10 with exactly one stiff-person syndrome patient."
+            "section": "Abstract / summary",
+            "supports": "Explicit diagnosis-specific subgroup count showing 1 stiff-person syndrome patient within the 10-patient interventional cohort."
           },
           {
             "quote": "Ten subjects were enrolled: six with myoclonus",
             "page": null,
-            "section": "count-salient snippet",
-            "supports": "Confirms the study enrolled a broader mixed movement-disorder cohort rather than 10 SPS-spectrum patients."
+            "section": "Count-salient snippet",
+            "supports": "Confirms this is an original enrolled treatment cohort rather than a literature-only discussion."
           },
           {
             "quote": "His clinical picture has been described previously",
             "page": null,
-            "section": "provenance signal",
-            "supports": "Indicates possible prior reporting/overlap, so the SPS count of 1 should be retained with manual review due to provenance uncertainty."
+            "section": "Potential non-original or reused-cohort signals",
+            "supports": "Introduces provenance uncertainty, so the count should be retained with manual review despite the explicit SPS count."
           }
         ]
       }
@@ -319,23 +333,23 @@
         {
           "quote": "We performed a therapeutic trial with the glycine precursor, milacemide, on 10 patients with intractable movement disorders. Six had myoclonus of various etiologies and one each had progressive supranuclear palsy, Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, and stiff-person syndrome.",
           "page": null,
-          "section": "abstract / summary",
-          "supports": "Explicitly identifies a mixed cohort of 10 with exactly one stiff-person syndrome patient."
+          "section": "Abstract / summary",
+          "supports": "Explicit diagnosis-specific subgroup count showing 1 stiff-person syndrome patient within the 10-patient interventional cohort."
         },
         {
           "quote": "Ten subjects were enrolled: six with myoclonus",
           "page": null,
-          "section": "count-salient snippet",
-          "supports": "Confirms the study enrolled a broader mixed movement-disorder cohort rather than 10 SPS-spectrum patients."
+          "section": "Count-salient snippet",
+          "supports": "Confirms this is an original enrolled treatment cohort rather than a literature-only discussion."
         },
         {
           "quote": "His clinical picture has been described previously",
           "page": null,
-          "section": "provenance signal",
-          "supports": "Indicates possible prior reporting/overlap, so the SPS count of 1 should be retained with manual review due to provenance uncertainty."
+          "section": "Potential non-original or reused-cohort signals",
+          "supports": "Introduces provenance uncertainty, so the count should be retained with manual review despite the explicit SPS count."
         }
       ],
-      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_20260416\\local_model_results\\12137.json",
+      "local_result_json_path": "results\\stage06_count_runs\\stage06_gold20_hybrid_confirmed_refresh_20260416\\local_model_results\\12137.json",
       "challenge_json_path": ""
     }
   }
