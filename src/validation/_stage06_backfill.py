@@ -1019,7 +1019,8 @@ def _candidate_support_by_count(candidate_payload: dict[str, Any]) -> tuple[list
     ordered_counts: list[str] = []
     support_by_count: dict[str, dict[str, Any]] = {}
     for candidate in candidate_payload.get("candidates") or []:
-        count_text = str(candidate.get("proposed_count") or "").strip()
+        raw_count = candidate.get("proposed_count")
+        count_text = "" if raw_count is None else str(raw_count).strip()
         if not count_text:
             continue
         if count_text not in ordered_counts:
@@ -1098,6 +1099,40 @@ def _likely_count_note(
     return ""
 
 
+def _count_reason_summary(count_reason: str) -> str:
+    reason_text = str(count_reason or "").strip()
+    if not reason_text:
+        return ""
+    parts = [part.strip() for part in reason_text.split("|") if part.strip()]
+    if len(parts) == 1:
+        return parts[0]
+    for part in reversed(parts):
+        lower = part.lower()
+        if lower.startswith(
+            (
+                "the ",
+                "this ",
+                "although ",
+                "because ",
+                "however ",
+                "however,",
+                "despite ",
+                "manual review:",
+            )
+        ):
+            return part
+        if len(part.split()) >= 8 and "=" not in part:
+            return part
+    return ""
+
+
+def _looks_like_auto_review_comment(review_comment: str) -> bool:
+    text = str(review_comment or "").strip()
+    if not text:
+        return False
+    return text.startswith("Pipeline output:") or "Extracted counts seen:" in text
+
+
 def _auto_review_comment(row: dict[str, str]) -> str:
     candidate_payload = review.load_candidate_package(str(row.get("count_candidate_json_path") or ""))
     if not candidate_payload:
@@ -1133,6 +1168,9 @@ def _auto_review_comment(row: dict[str, str]) -> str:
     )
     if likely_note:
         parts.append(likely_note)
+    reason_summary = _count_reason_summary(str(row.get("count_reason") or ""))
+    if reason_summary:
+        parts.append(f"Model rationale: {reason_summary}")
     return " ".join(part for part in parts if part).strip()
 
 
@@ -1151,10 +1189,15 @@ def build_review_comments_rows(
         verification_status = str(row.get("count_verification_status") or "").strip()
         override_row = override_rows_by_id.get(paper_id, {})
         review_comment = str(existing.get("review_comment") or "").strip()
+        has_curated_fields = any(
+            str(existing.get(field) or "").strip()
+            for field in ("assessment", "failure_modes")
+        )
         if verification_status == "manual_review_override":
             review_comment = str(override_row.get("reviewer_notes") or "").strip() or review_comment
-        if not review_comment:
-            review_comment = _auto_review_comment(row)
+        auto_comment = _auto_review_comment(row)
+        if auto_comment and (not review_comment or _looks_like_auto_review_comment(review_comment)) and not has_curated_fields:
+            review_comment = auto_comment
         merged = _review_comment_defaults(row)
         merged.update(
             {

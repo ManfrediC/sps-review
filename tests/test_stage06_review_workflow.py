@@ -391,6 +391,151 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["review_comment"], "Table 1 supports four SPS patients.")
 
+    def test_build_review_comments_rows_includes_model_rationale_summary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            candidate_path = root / "472_candidates.json"
+            candidate_path.write_text(
+                json.dumps(
+                    {
+                        "candidates": [
+                            {
+                                "candidate_id": "cand01",
+                                "proposed_count": 20,
+                                "count_basis": "abstract_count_signal",
+                                "evidence_text": "The sera were derived from 20 well-characterized SPS patients and 20 controls.",
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            rows = backfill.build_review_comments_rows(
+                [
+                    {
+                        "paper_id": "472",
+                        "title": "Example 472",
+                        "likely_sps_case_count": "20",
+                        "count_verification_status": "llm_bounded_alternative",
+                        "count_manual_review_required": "true",
+                        "count_candidate_json_path": str(candidate_path),
+                        "count_reason": (
+                            "challenge_stage=primary | verification_status=llm_bounded_alternative | "
+                            "llm_count_confidence=medium | The paper explicitly reports that the sera were "
+                            "derived from 20 well-characterized SPS patients and 20 controls, so the "
+                            "extractable SPS-spectrum cohort is 20 rather than 0."
+                        ),
+                    }
+                ]
+            )
+
+        self.assertEqual(len(rows), 1)
+        comment = rows[0]["review_comment"]
+        self.assertIn("Pipeline output: 20.", comment)
+        self.assertIn("Model rationale: The paper explicitly reports that the sera were derived from 20 well-characterized SPS patients and 20 controls, so the extractable SPS-spectrum cohort is 20 rather than 0.", comment)
+
+    def test_build_review_comments_rows_refreshes_prior_auto_comment(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            candidate_path = root / "472_candidates.json"
+            candidate_path.write_text(
+                json.dumps(
+                    {
+                        "candidates": [
+                            {
+                                "candidate_id": "cand01",
+                                "proposed_count": 20,
+                                "count_basis": "abstract_count_signal",
+                                "evidence_text": "The sera were derived from 20 well-characterized SPS patients and 20 controls.",
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            rows = backfill.build_review_comments_rows(
+                [
+                    {
+                        "paper_id": "472",
+                        "title": "Example 472",
+                        "likely_sps_case_count": "20",
+                        "count_verification_status": "llm_bounded_alternative",
+                        "count_manual_review_required": "true",
+                        "count_candidate_json_path": str(candidate_path),
+                        "count_reason": (
+                            "challenge_stage=primary | verification_status=llm_bounded_alternative | "
+                            "llm_count_confidence=medium | The paper explicitly reports that the sera were "
+                            "derived from 20 well-characterized SPS patients and 20 controls, so the "
+                            "extractable SPS-spectrum cohort is 20 rather than 0."
+                        ),
+                    }
+                ],
+                existing_rows_by_id={
+                    "472": {
+                        "paper_id": "472",
+                        "title": "Example 472",
+                        "review_comment": "Pipeline output: 20. Extracted counts seen: 20 (abstract_count_signal).",
+                        "assessment": "",
+                        "failure_modes": "",
+                    }
+                },
+            )
+
+        self.assertEqual(len(rows), 1)
+        self.assertIn("Model rationale:", rows[0]["review_comment"])
+
+    def test_build_review_comments_rows_keeps_zero_count_candidates(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            candidate_path = root / "472_zero_candidates.json"
+            candidate_path.write_text(
+                json.dumps(
+                    {
+                        "candidates": [
+                            {
+                                "candidate_id": "cand01",
+                                "proposed_count": 0,
+                                "count_basis": "lab_context_no_extractable_count",
+                                "evidence_text": "The sera analyzed were derived from 20 well-characterized SPS patients and 20 controls.",
+                            },
+                            {
+                                "candidate_id": "cand02",
+                                "proposed_count": 0,
+                                "count_basis": "no_reliable_count_signal",
+                                "evidence_text": "The sera analyzed were derived from 20 well-characterized SPS patients and 20 controls.",
+                            },
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            rows = backfill.build_review_comments_rows(
+                [
+                    {
+                        "paper_id": "472",
+                        "title": "Example 472",
+                        "likely_sps_case_count": "20",
+                        "count_verification_status": "llm_bounded_alternative",
+                        "count_manual_review_required": "true",
+                        "count_candidate_json_path": str(candidate_path),
+                        "count_reason": (
+                            "challenge_stage=primary | verification_status=llm_bounded_alternative | "
+                            "llm_count_confidence=medium | The paper explicitly reports that the sera were "
+                            "derived from 20 well-characterized SPS patients and 20 controls, so the "
+                            "extractable SPS-spectrum cohort is 20 rather than 0."
+                        ),
+                    }
+                ]
+            )
+
+        self.assertEqual(len(rows), 1)
+        comment = rows[0]["review_comment"]
+        self.assertIn("Extracted counts seen: 0 (lab_context_no_extractable_count; no_reliable_count_signal).", comment)
+        self.assertIn("Model rationale:", comment)
+
 
 if __name__ == "__main__":
     unittest.main()
