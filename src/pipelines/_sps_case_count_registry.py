@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import re
+from itertools import combinations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -26,6 +27,31 @@ from src.pipelines.stage06_counting.models import CountCandidate, CountCandidate
 REPO_ROOT = Path(__file__).resolve().parents[2]
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 HEURISTIC_VERSION = "heuristic_v2"
+TITLE_ANCHOR_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "as",
+    "at",
+    "by",
+    "for",
+    "from",
+    "in",
+    "into",
+    "of",
+    "on",
+    "or",
+    "the",
+    "to",
+    "with",
+    "without",
+}
+CASE_PRESENTATION_START_RE = re.compile(
+    r"\b(?:we\s+(?:present|report)\s+a\s+patient|"
+    r"a\s+\d{1,3}\s+year\s+old\s+(?:man|woman|boy|girl|patient)|"
+    r"an\s+\d{1,3}\s+year\s+old\s+(?:man|woman|boy|girl|patient))\b",
+    re.IGNORECASE,
+)
 ADMINISTRATIVE_DATASET_MARKERS = (
     "nationwide readmission study",
     "nationwide study",
@@ -149,6 +175,11 @@ DIRECT_SPS_COHORT_RE = re.compile(
     rf"\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
     re.IGNORECASE,
 )
+DIRECT_SPS_DIAGNOSIS_FIRST_COHORT_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+"
+    rf"(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\s+patients?\b",
+    re.IGNORECASE,
+)
 NAMED_SPS_COHORT_RE = re.compile(
     rf"\b(?:group|cohort|arm|series)\s*(?:\d+|[ivx]+)?\b[\s\S]{{0,60}}?"
     rf"(?:consisted\s+of|comprised|included|contained|enrolled|described)\s+"
@@ -168,6 +199,15 @@ DIRECT_SPS_COHORT_POSITIVE_MARKERS = (
     "participants",
     "we present",
     "our patients",
+)
+METHODS_SPS_COHORT_POSITIVE_MARKERS = (
+    "sera were obtained",
+    "serum samples were collected",
+    "patients identified",
+    "identified at",
+    "identified through",
+    "diagnosed using",
+    "uniform standardized criteria",
 )
 DIRECT_SPS_COHORT_NEGATIVE_MARKERS = (
     "retrospective cohort",
@@ -365,6 +405,14 @@ def title_localised_window(
     leading_chars: int = 200,
     trailing_chars: int = 4500,
 ) -> str:
+    def _case_localised_window(window: str, *, anchored_later: bool, anchor_text: str) -> str:
+        if not anchored_later:
+            return window
+        case_match = CASE_PRESENTATION_START_RE.search(window[:2200])
+        if case_match is None or case_match.start() <= len(anchor_text):
+            return window
+        return window[case_match.start() :]
+
     normalized_text = normalize_text(text)
     normalized_title = normalize_text(title)
     if not normalized_text or not normalized_title:
@@ -382,7 +430,35 @@ def title_localised_window(
             return normalized_text
         start = max(0, index - leading_chars)
         end = min(len(normalized_text), index + len(anchor) + trailing_chars)
-        return normalized_text[start:end]
+        return _case_localised_window(
+            normalized_text[start:end],
+            anchored_later=True,
+            anchor_text=anchor,
+        )
+
+    salient_tokens = [
+        re.sub(r"^[^a-z0-9]+|[^a-z0-9]+$", "", token)
+        for token in title_tokens
+    ]
+    salient_tokens = [
+        token for token in salient_tokens if len(token) >= 4 and token not in TITLE_ANCHOR_STOPWORDS
+    ][:8]
+    for combo_size in range(min(4, len(salient_tokens)), 2, -1):
+        for combo in combinations(salient_tokens, combo_size):
+            pattern = r"\b" + r"\b[\s\S]{0,40}\b".join(re.escape(token) for token in combo) + r"\b"
+            match = re.search(pattern, normalized_text)
+            if match is None:
+                continue
+            index = match.start()
+            if index < min_prefix_skip:
+                return normalized_text
+            start = index
+            end = min(len(normalized_text), match.end() + trailing_chars)
+            return _case_localised_window(
+                normalized_text[start:end],
+                anchored_later=True,
+                anchor_text=" ".join(combo),
+            )
     return normalized_text
 
 
@@ -533,6 +609,47 @@ def _extract_direct_sps_cohort_signal(text: str) -> SubgroupSignal | None:
             if score > best_score:
                 best_score = score
                 best_signal = signal
+    return best_signal
+
+
+def _extract_methods_sps_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    cleaned = _clean_signal_text(text)
+    if not cleaned:
+        return None
+    for match in DIRECT_SPS_DIAGNOSIS_FIRST_COHORT_RE.finditer(cleaned):
+        context_start = max(0, match.start() - 160)
+        context_end = min(len(cleaned), match.end() + 240)
+        context = cleaned[context_start:context_end]
+        normalized = normalize_text(context)
+        if _is_non_original_case_context(context):
+            continue
+        if not any(marker in normalized for marker in METHODS_SPS_COHORT_POSITIVE_MARKERS):
+            continue
+        if any(marker in normalized for marker in DIRECT_SPS_COHORT_NEGATIVE_MARKERS):
+            continue
+        count = parse_count_token(match.group("count"))
+        if count <= 0:
+            continue
+        score = count
+        if "identified at" in normalized or "identified through" in normalized:
+            score += 12
+        if "sera were obtained" in normalized or "serum samples were collected" in normalized:
+            score += 12
+        if "diagnosed using" in normalized or "uniform standardized criteria" in normalized:
+            score += 12
+        if "of whom" in normalized or "among whom" in normalized:
+            score -= 10
+        signal = SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_direct_cohort_count",
+            count_confidence="high",
+            evidence_units=(context[:420],),
+        )
+        if score > best_score:
+            best_score = score
+            best_signal = signal
     return best_signal
 
 
@@ -900,6 +1017,7 @@ def _extract_patient_label_subgroup_signal(text: str) -> SubgroupSignal | None:
 def extract_explicit_sps_subgroup_signal(*, abstract: str, raw_preferred_text: str) -> SubgroupSignal | None:
     combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
     for extractor in (
+        _extract_methods_sps_cohort_signal,
         _extract_direct_sps_cohort_signal,
         _extract_series_cohort_signal,
         _extract_diagnosis_supported_subset_signal,
@@ -1144,6 +1262,11 @@ def prefer_single_case_default(
     if source_category == "single_case_report":
         return True
     if source_subtype == "single_case_conference_abstract":
+        return True
+    local_text_for_signal = " ".join([title, abstract, early_body_text[:1600]])
+    if has_single_case_signal(local_text_for_signal) and not has_explicit_multi_case_signal(
+        " ".join([title, abstract, early_body_text[:1200]])
+    ):
         return True
     explicit_multi_case = has_explicit_multi_case_signal(" ".join([title, abstract, early_body_text[:5000]]))
     if explicit_multi_case:

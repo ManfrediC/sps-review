@@ -329,6 +329,68 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         self.assertIn("GPT decision: candidate_exact; medium.", comment)
         self.assertIn("16 looks likelier because 19 only comes from a citation-like suffix snippet.", comment)
 
+    def test_build_review_comments_rows_prefers_manual_override_note(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            manual_review_path = root / "source_sps_case_count_manual_review.csv"
+            with manual_review_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=[
+                        "source_scope_id",
+                        "source_scope_label",
+                        "paper_id",
+                        "title",
+                        "predicted_count",
+                        "predicted_original_cohort_provenance_uncertain",
+                        "predicted_verification_status",
+                        "prediction_correct",
+                        "reviewed_count",
+                        "reviewed_original_cohort_provenance_uncertain",
+                        "review_status",
+                        "reviewer_notes",
+                        "reviewer_id",
+                        "reviewed_at_utc",
+                        "updated_at_utc",
+                    ],
+                )
+                writer.writeheader()
+                writer.writerow(
+                    {
+                        "source_scope_id": "stage06_backfill_demo",
+                        "source_scope_label": "stage06_backfill_demo",
+                        "paper_id": "214",
+                        "title": "Example 214",
+                        "predicted_count": "1",
+                        "predicted_original_cohort_provenance_uncertain": "true",
+                        "predicted_verification_status": "llm_manual_review_required",
+                        "prediction_correct": "false",
+                        "reviewed_count": "4",
+                        "reviewed_original_cohort_provenance_uncertain": "false",
+                        "review_status": "reviewed",
+                        "reviewer_notes": "Table 1 supports four SPS patients.",
+                        "reviewer_id": "tester",
+                        "reviewed_at_utc": "2026-04-18T10:00:00Z",
+                        "updated_at_utc": "2026-04-18T10:00:00Z",
+                    }
+                )
+
+            rows = backfill.build_review_comments_rows(
+                [
+                    {
+                        "paper_id": "214",
+                        "title": "Example 214",
+                        "likely_sps_case_count": "4",
+                        "count_verification_status": "manual_review_override",
+                        "count_manual_review_required": "false",
+                    }
+                ],
+                manual_review_path=manual_review_path,
+            )
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["review_comment"], "Table 1 supports four SPS patients.")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1140,18 +1140,27 @@ def build_review_comments_rows(
     review_rows: list[dict[str, str]],
     *,
     existing_rows_by_id: dict[str, dict[str, str]] | None = None,
+    manual_review_path: Path = MANUAL_REVIEW_PATH,
 ) -> list[dict[str, str]]:
     existing_rows_by_id = existing_rows_by_id or {}
+    override_rows_by_id = reviewed_override_rows_by_id(manual_review_path)
     rows: list[dict[str, str]] = []
     for row in review_rows:
         paper_id = str(row.get("paper_id") or "").strip()
         existing = existing_rows_by_id.get(paper_id, {})
+        verification_status = str(row.get("count_verification_status") or "").strip()
+        override_row = override_rows_by_id.get(paper_id, {})
+        review_comment = str(existing.get("review_comment") or "").strip()
+        if verification_status == "manual_review_override":
+            review_comment = str(override_row.get("reviewer_notes") or "").strip() or review_comment
+        if not review_comment:
+            review_comment = _auto_review_comment(row)
         merged = _review_comment_defaults(row)
         merged.update(
             {
                 "assessment": str(existing.get("assessment") or "").strip(),
                 "failure_modes": str(existing.get("failure_modes") or "").strip(),
-                "review_comment": str(existing.get("review_comment") or "").strip() or _auto_review_comment(row),
+                "review_comment": review_comment,
             }
         )
         rows.append(merged)
@@ -1162,6 +1171,7 @@ def write_review_comments_csv(
     *,
     review_rows: list[dict[str, str]],
     output_path: Path,
+    manual_review_path: Path = MANUAL_REVIEW_PATH,
 ) -> None:
     existing_rows_by_id: dict[str, dict[str, str]] = {}
     if output_path.exists():
@@ -1170,7 +1180,11 @@ def write_review_comments_csv(
             for row in load_csv_rows(output_path)
             if str(row.get("paper_id") or "").strip()
         }
-    rows = build_review_comments_rows(review_rows, existing_rows_by_id=existing_rows_by_id)
+    rows = build_review_comments_rows(
+        review_rows,
+        existing_rows_by_id=existing_rows_by_id,
+        manual_review_path=manual_review_path,
+    )
     write_csv_rows(
         output_path,
         rows,
@@ -1318,7 +1332,11 @@ def write_batch_qa_pack(
         inspection_markdown(batch_manifest=batch_manifest, review_rows=review_rows),
         encoding="utf-8",
     )
-    write_review_comments_csv(review_rows=review_rows, output_path=comments_path)
+    write_review_comments_csv(
+        review_rows=review_rows,
+        output_path=comments_path,
+        manual_review_path=manual_review_path,
+    )
     notes_path.parent.mkdir(parents=True, exist_ok=True)
     notes_path.write_text(
         review_notes_markdown(

@@ -384,6 +384,15 @@ def empty_manifest() -> dict[str, Any]:
     }
 
 
+def load_manifest(manifest_path: Path = MANIFEST_PATH) -> dict[str, Any]:
+    if not manifest_path.exists():
+        return empty_manifest()
+    payload = load_json(manifest_path)
+    if not isinstance(payload, dict):
+        return empty_manifest()
+    return payload
+
+
 def save_manifest(entries: list[dict[str, Any]], manifest_path: Path = MANIFEST_PATH) -> dict[str, Any]:
     ordered_entries = sorted(entries, key=lambda entry: parse_int(str(entry.get("paper_id") or ""), default=10**9))
     payload = {
@@ -397,6 +406,26 @@ def save_manifest(entries: list[dict[str, Any]], manifest_path: Path = MANIFEST_
     }
     write_json(manifest_path, payload)
     return payload
+
+
+def merge_preserved_manifest_entries(
+    *,
+    existing_entries: list[dict[str, Any]],
+    updated_entries: list[dict[str, Any]],
+    replaced_paper_ids: set[str],
+) -> list[dict[str, Any]]:
+    merged_by_paper_id: dict[str, dict[str, Any]] = {}
+    for entry in existing_entries:
+        paper_id = str(entry.get("paper_id") or "").strip()
+        if not paper_id or paper_id in replaced_paper_ids:
+            continue
+        merged_by_paper_id[paper_id] = dict(entry)
+    for entry in updated_entries:
+        paper_id = str(entry.get("paper_id") or "").strip()
+        if not paper_id:
+            continue
+        merged_by_paper_id[paper_id] = dict(entry)
+    return list(merged_by_paper_id.values())
 
 
 def bootstrap_stage06_gold_store(
@@ -489,4 +518,11 @@ def bootstrap_stage06_gold_store(
             "conflict_paper_count": sum(1 for entry in ordered_entries if entry.get("gold_status") == "conflict"),
             "entries": ordered_entries,
         }
+    if paper_id_filter:
+        existing_entries = list(load_manifest(manifest_path).get("entries") or [])
+        entries = merge_preserved_manifest_entries(
+            existing_entries=existing_entries,
+            updated_entries=entries,
+            replaced_paper_ids=paper_id_filter,
+        )
     return save_manifest(entries, manifest_path)

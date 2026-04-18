@@ -215,6 +215,68 @@ class TestStage06CountCandidates(unittest.TestCase):
             any(note.startswith("sps_status_uncertainty_signals=") for note in package.candidate_generation_notes)
         )
 
+    def test_candidate_package_prefers_identified_sms_methods_cohort_over_hla_subgroup(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "43",
+                "Title": (
+                    "Higher autoantibody levels and recognition of a linear NH2-terminal epitope in the "
+                    "autoantigen GAD65, distinguish stiff-man syndrome from insulin-dependent diabetes mellitus."
+                ),
+                "Authors": "Kim, J",
+                "Abstract": (
+                    "Here we report the characterization of humoral autoimmune responses to GAD65 in 35 SMS patients, "
+                    "of whom 13 also had IDDM. Nine of nine individuals who were HLA-haplotyped in this group carried "
+                    "an IDDM susceptibility haplotype."
+                ),
+            },
+            text_record={"paper_id": "43", "_path": "data/extraction_json/text/43.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Materials and Methods. Antisera. Sera were obtained with informed consent from 33 SMS "
+                            "patients identified at the Mayo Clinic during the period of 1989-1992, and from two "
+                            "patients who attended the UCSF Neurology Clinic during the period of 1991-1993. "
+                            "The patients were diagnosed using uniform standardized criteria."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "43.json",
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 33)
+        self.assertEqual(package.fallback_candidate().proposed_count, 33)
+        self.assertIn(
+            "diagnosis_specific_direct_cohort_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_uses_fuzzy_title_anchor_for_stitched_issue_case_report(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "180.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "180",
+                "Title": "Paraneoplastic stiff limb syndrome.",
+                "Authors": "Silverman, I E",
+                "Abstract": "",
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "unclear_manual_review",
+                "source_subtype": "unclear",
+            },
+        )
+        self.assertIn("we present a patient clinically consistent", package.early_body_text)
+        self.assertEqual(package.fallback_candidate().proposed_count, 1)
+        self.assertIn(1, {candidate.proposed_count for candidate in package.candidates})
+
     def test_candidate_package_marks_ocr_split_single_rigidity_patient_as_uncertain(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={

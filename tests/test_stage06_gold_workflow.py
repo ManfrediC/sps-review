@@ -326,6 +326,236 @@ class TestStage06GoldWorkflow(unittest.TestCase):
             self.assertEqual(written_payload["count_row"]["count_original_cohort_provenance_uncertain"], "true")
             self.assertEqual(written_payload["attached_run_artifacts"]["run_id"], "stage06_demo")
 
+    def test_targeted_bootstrap_preserves_existing_manifest_entries(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            gold_master_path = root / "04_categorisation_gold_standard.csv"
+            source_registry_path = root / "source_categorisation_registry.csv"
+            count_registry_path = root / "source_sps_case_count_registry.csv"
+            artifact_registry_path = root / "paper_artifact_registry.csv"
+            output_dir = root / "stage06_count_gold"
+            run_root = root / "stage06_count_runs"
+
+            with gold_master_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=[
+                        "round_id",
+                        "paper_id",
+                        "covidence_id",
+                        "title",
+                        "authors",
+                        "published_year",
+                        "journal",
+                        "selection_bucket",
+                        "selection_signals",
+                        "preferred_text_json_path",
+                        "preferred_text_source",
+                        "predicted_source_category",
+                        "predicted_source_subtype",
+                        "predicted_likely_sps_case_count",
+                        "prediction_correct",
+                        "review_status",
+                        "reviewed_source_category",
+                        "reviewed_extractable_sps_case_count",
+                        "pdf_content_alignment_tag",
+                        "reviewer_notes",
+                        "reviewer_id",
+                        "reviewed_at_utc",
+                    ],
+                )
+                writer.writeheader()
+                writer.writerows(
+                    [
+                        {
+                            "round_id": "round_01",
+                            "paper_id": "71",
+                            "covidence_id": "71",
+                            "title": "Paper 71",
+                            "authors": "Authors 71",
+                            "published_year": "1995",
+                            "journal": "Neurology",
+                            "selection_bucket": "conference_edge",
+                            "selection_signals": "count_ambiguity",
+                            "preferred_text_json_path": r"data\extraction_json\text\71.json",
+                            "preferred_text_source": "full_text",
+                            "predicted_source_category": "observational_group_study",
+                            "predicted_source_subtype": "retrospective",
+                            "predicted_likely_sps_case_count": "9",
+                            "prediction_correct": "false",
+                            "review_status": "reviewed",
+                            "reviewed_source_category": "observational_group_study",
+                            "reviewed_extractable_sps_case_count": "3",
+                            "pdf_content_alignment_tag": "appears_matched",
+                            "reviewer_notes": "",
+                            "reviewer_id": "tester",
+                            "reviewed_at_utc": "2026-04-15T10:00:00+00:00",
+                        },
+                        {
+                            "round_id": "round_01",
+                            "paper_id": "72",
+                            "covidence_id": "72",
+                            "title": "Paper 72",
+                            "authors": "Authors 72",
+                            "published_year": "1996",
+                            "journal": "Journal 72",
+                            "selection_bucket": "count_ambiguity",
+                            "selection_signals": "count_ambiguity",
+                            "preferred_text_json_path": r"data\extraction_json\text\72.json",
+                            "preferred_text_source": "full_text",
+                            "predicted_source_category": "conference_abstract",
+                            "predicted_source_subtype": "conference",
+                            "predicted_likely_sps_case_count": "1",
+                            "prediction_correct": "false",
+                            "review_status": "reviewed",
+                            "reviewed_source_category": "conference_abstract",
+                            "reviewed_extractable_sps_case_count": "1",
+                            "pdf_content_alignment_tag": "appears_matched",
+                            "reviewer_notes": "",
+                            "reviewer_id": "tester",
+                            "reviewed_at_utc": "2026-04-15T10:05:00+00:00",
+                        },
+                    ]
+                )
+
+            with source_registry_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=["paper_id", "title", "authors", "source_category", "source_subtype"],
+                )
+                writer.writeheader()
+                writer.writerows(
+                    [
+                        {
+                            "paper_id": "71",
+                            "title": "Paper 71",
+                            "authors": "Authors 71",
+                            "source_category": "observational_group_study",
+                            "source_subtype": "retrospective",
+                        },
+                        {
+                            "paper_id": "72",
+                            "title": "Paper 72",
+                            "authors": "Authors 72",
+                            "source_category": "conference_abstract",
+                            "source_subtype": "conference",
+                        },
+                    ]
+                )
+
+            with count_registry_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=[
+                        "paper_id",
+                        "covidence_id",
+                        "title",
+                        "authors",
+                        "source_category",
+                        "source_subtype",
+                        "preferred_text_json_path",
+                        "preferred_text_source",
+                        "likely_sps_case_count",
+                        "count_original_cohort_provenance_uncertain",
+                    ],
+                )
+                writer.writeheader()
+                writer.writerows(
+                    [
+                        {
+                            "paper_id": "71",
+                            "covidence_id": "71",
+                            "title": "Paper 71",
+                            "authors": "Authors 71",
+                            "source_category": "observational_group_study",
+                            "source_subtype": "retrospective",
+                            "preferred_text_json_path": r"data\extraction_json\text\71.json",
+                            "preferred_text_source": "full_text",
+                            "likely_sps_case_count": "9",
+                            "count_original_cohort_provenance_uncertain": "true",
+                        },
+                        {
+                            "paper_id": "72",
+                            "covidence_id": "72",
+                            "title": "Paper 72",
+                            "authors": "Authors 72",
+                            "source_category": "conference_abstract",
+                            "source_subtype": "conference",
+                            "preferred_text_json_path": r"data\extraction_json\text\72.json",
+                            "preferred_text_source": "full_text",
+                            "likely_sps_case_count": "1",
+                            "count_original_cohort_provenance_uncertain": "false",
+                        },
+                    ]
+                )
+
+            with artifact_registry_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=["paper_id", "pdf_filenames", "pdf_paths_relative", "text_json_path"],
+                )
+                writer.writeheader()
+                writer.writerows(
+                    [
+                        {
+                            "paper_id": "71",
+                            "pdf_filenames": "71.pdf",
+                            "pdf_paths_relative": r"data\pdf_original\71.pdf",
+                            "text_json_path": r"data\extraction_json\text\71.json",
+                        },
+                        {
+                            "paper_id": "72",
+                            "pdf_filenames": "72.pdf",
+                            "pdf_paths_relative": r"data\pdf_original\72.pdf",
+                            "text_json_path": r"data\extraction_json\text\72.json",
+                        },
+                    ]
+                )
+
+            existing_entry = {
+                "paper_id": "71",
+                "gold_status": "active",
+                "reason": "",
+                "gold_json_path": "stage06_count_gold/papers/71.json",
+                "canonical_json_hash": "existing_hash_71",
+                "round_id": "round_01",
+                "selection_bucket": "conference_edge",
+                "prediction_correct": "false",
+                "reviewed_source_category": "observational_group_study",
+                "reviewed_extractable_sps_case_count": "3",
+                "pdf_content_alignment_tag": "appears_matched",
+                "reviewer_id": "tester",
+                "reviewed_at_utc": "2026-04-15T10:00:00+00:00",
+                "attached_run_id": "",
+                "has_attached_result_payload": False,
+                "has_attached_candidate_payload": False,
+                "has_attached_count_decision_payload": False,
+                "has_attached_count_evidence_payload": False,
+            }
+            output_dir.mkdir(parents=True, exist_ok=True)
+            gold.save_manifest([existing_entry], output_dir / "manifest.json")
+
+            original_run_root = review.RUN_ROOT
+            try:
+                review.RUN_ROOT = run_root
+                manifest = gold.bootstrap_stage06_gold_store(
+                    gold_master_path=gold_master_path,
+                    source_registry_path=source_registry_path,
+                    count_registry_path=count_registry_path,
+                    artifact_registry_path=artifact_registry_path,
+                    gold_papers_dir=output_dir / "papers",
+                    manifest_path=output_dir / "manifest.json",
+                    paper_ids=["72"],
+                )
+            finally:
+                review.RUN_ROOT = original_run_root
+
+            self.assertEqual(manifest["active_paper_count"], 2)
+            self.assertEqual({entry["paper_id"] for entry in manifest["entries"]}, {"71", "72"})
+            preserved_entry = next(entry for entry in manifest["entries"] if entry["paper_id"] == "71")
+            self.assertEqual(preserved_entry["canonical_json_hash"], "existing_hash_71")
+            self.assertTrue((output_dir / "papers" / "72.json").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
