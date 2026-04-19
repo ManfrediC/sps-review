@@ -59,6 +59,14 @@ CONSERVATIVE_FALLBACK_SEMANTIC_FLAGS = frozenset(
         "COUNT_SKIP_CATEGORY_NONZERO",
     }
 )
+PATIENT_LEVEL_SINGLE_CASE_BASES = frozenset(
+    {
+        "single_case_text_signal",
+        "source_single_case_override",
+        "diagnosis_specific_patient_case_count",
+        "diagnosis_specific_patient_label_count",
+    }
+)
 
 
 def resolved_count_from_decision(
@@ -221,8 +229,16 @@ def check_confirmed_only_guardrail_conflicts(
     has_suspected_cohort_signal = any(
         SUSPECTED_COHORT_RE.search(signal or "") for signal in package.confirmed_only_guardrail_signals
     )
+    has_patient_level_single_case_support = any(
+        candidate.proposed_count == 1 and candidate.count_basis in PATIENT_LEVEL_SINGLE_CASE_BASES
+        for candidate in package.candidates
+    )
 
-    if has_donor_material_signal and package.explicit_sps_subgroup_count is None:
+    if (
+        has_donor_material_signal
+        and package.explicit_sps_subgroup_count is None
+        and not (resolved_count == 1 and has_patient_level_single_case_support)
+    ):
         return ValidatorResult(Severity.REJECT, "COUNT_DONOR_MATERIAL_ONLY")
     if has_suspected_cohort_signal and package.explicit_sps_subgroup_count is None:
         return ValidatorResult(Severity.REJECT, "COUNT_SUSPECTED_COHORT_WITHOUT_CONFIRMED_SUBGROUP")

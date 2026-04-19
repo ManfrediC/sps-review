@@ -334,6 +334,22 @@ TABLE_ROW_SPS_LABEL_COUNT_RE = re.compile(
     rf"(?:\s*\((?P<paren>[^)]{{1,24}})\))?",
     re.IGNORECASE,
 )
+SPS_DIAGNOSIS_FIRST_PAREN_COHORT_RE = re.compile(
+    rf"\b(?P<diagnosis>{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\s+patients?\s*\(\s*"
+    rf"(?:n\s*[=:]\s*)?(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s*\)",
+    re.IGNORECASE,
+)
+SPS_PHENOTYPE_COHORT_RE = re.compile(
+    rf"\b(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\s+with\s+"
+    rf"(?P<diagnosis>stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms)\s+phenotype\b",
+    re.IGNORECASE,
+)
+SPS_TABLE_TITLE_COHORT_RE = re.compile(
+    rf"\btable\s+\d+\.?\s*[\s\S]{{0,80}}?\b(?:symptoms|clinical features|features|characteristics)\b"
+    rf"[\s\S]{{0,80}}?\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b"
+    rf"[\s\S]{{0,40}}?\bin\s+(?P<count>{COUNT_TOKEN_TEXT_PATTERN})\s+patients?\b",
+    re.IGNORECASE,
+)
 TABLE_ROW_CONTEXT_MARKERS = (
     "table",
     "diagnosis",
@@ -353,6 +369,15 @@ CONTROL_COMPARISON_CONTEXT_RE = re.compile(
     re.IGNORECASE,
 )
 CITATION_LIST_PAREN_RE = re.compile(r"\(\s*\d+(?:\s*[-,]\s*\d+){1,5}\s*\)")
+CASE_DIAGNOSIS_TABLE_RE = re.compile(
+    r"\btable\s+\d+\b.*\bfinal diagnoses\b",
+    re.IGNORECASE,
+)
+CASE_DIAGNOSIS_TABLE_LINE_RE = re.compile(
+    r"\b(?:(?:idiopathic|classic|variant|paraneoplastic|autoimmune)\s+)?"
+    r"(?:stiff[- ]person syndrome|stiff[- ]man syndrome|sps|sms|perm)\b",
+    re.IGNORECASE,
+)
 SERIES_COHORT_RE = re.compile(
     rf"\b(?:in\s+our\s+series|our\s+series\s+of|we\s+studied|we\s+examined|we\s+report(?:ed)?|"
     rf"we\s+described|we\s+identified)\b[\s,;:-]{{0,12}}"
@@ -478,6 +503,14 @@ def title_localised_window(
 def _clean_signal_text(text: str) -> str:
     joined = re.sub(r"(?<=\w)-\s+(?=\w)", "", str(text or ""))
     return " ".join(joined.split())
+
+
+def _clean_signal_lines(text: str) -> list[str]:
+    return [
+        cleaned
+        for raw_line in str(text or "").splitlines()
+        if (cleaned := _clean_signal_text(raw_line))
+    ]
 
 
 def _raw_evidence_units(text: str) -> list[str]:
@@ -672,6 +705,50 @@ def _extract_methods_sps_cohort_signal(text: str) -> SubgroupSignal | None:
         if score > best_score:
             best_score = score
             best_signal = signal
+    return best_signal
+
+
+def _extract_parenthetical_sps_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for line in _clean_signal_lines(text):
+        if _is_non_original_case_context(line):
+            continue
+        for match in SPS_DIAGNOSIS_FIRST_PAREN_COHORT_RE.finditer(line):
+            count = parse_count_token(match.group("count"))
+            if count <= 0:
+                continue
+            signal = SubgroupSignal(
+                count=count,
+                count_basis="diagnosis_specific_parenthetical_cohort_count",
+                count_confidence="high",
+                evidence_units=(line[:420],),
+            )
+            if count > best_score:
+                best_score = count
+                best_signal = signal
+    return best_signal
+
+
+def _extract_phenotype_sps_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for line in _clean_signal_lines(text):
+        if _is_non_original_case_context(line):
+            continue
+        for match in SPS_PHENOTYPE_COHORT_RE.finditer(line):
+            count = parse_count_token(match.group("count"))
+            if count <= 0:
+                continue
+            signal = SubgroupSignal(
+                count=count,
+                count_basis="diagnosis_specific_phenotype_cohort_count",
+                count_confidence="high",
+                evidence_units=(line[:420],),
+            )
+            if count > best_score:
+                best_score = count
+                best_signal = signal
     return best_signal
 
 
@@ -984,6 +1061,99 @@ def _extract_table_row_subgroup_signal(text: str) -> SubgroupSignal | None:
     return best_signal
 
 
+def _extract_table_title_sps_cohort_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    for line in _clean_signal_lines(text):
+        if _is_non_original_case_context(line):
+            continue
+        for match in SPS_TABLE_TITLE_COHORT_RE.finditer(line):
+            count = parse_count_token(match.group("count"))
+            if count <= 0:
+                continue
+            signal = SubgroupSignal(
+                count=count,
+                count_basis="diagnosis_specific_table_title_cohort_count",
+                count_confidence="high",
+                evidence_units=(line[:420],),
+            )
+            if count > best_score:
+                best_score = count
+                best_signal = signal
+    return best_signal
+
+
+def _extract_case_table_sps_diagnosis_count_signal(text: str) -> SubgroupSignal | None:
+    best_signal: SubgroupSignal | None = None
+    best_score = -1
+    collecting = False
+    block_lines: list[str] = []
+    saw_case_header = False
+
+    def _finalise_block(lines: list[str], has_case_header: bool) -> SubgroupSignal | None:
+        if not has_case_header:
+            return None
+        matched_lines: list[str] = []
+        count = 0
+        for line in lines:
+            normalized = normalize_text(line)
+            if "final diagnosis" in normalized:
+                continue
+            if "sps stiff person syndrome" in normalized or "sms stiff person syndrome" in normalized:
+                continue
+            matches = list(CASE_DIAGNOSIS_TABLE_LINE_RE.finditer(line))
+            if not matches:
+                continue
+            count += len(matches)
+            matched_lines.append(line[:220])
+        if count <= 0:
+            return None
+        evidence = " | ".join(dict.fromkeys(matched_lines))[:420]
+        return SubgroupSignal(
+            count=count,
+            count_basis="diagnosis_specific_case_table_diagnosis_count",
+            count_confidence="high",
+            evidence_units=(evidence,),
+        )
+
+    for line in _clean_signal_lines(text):
+        normalized = normalize_text(line)
+        if not collecting and CASE_DIAGNOSIS_TABLE_RE.search(line):
+            collecting = True
+            block_lines = [line]
+            saw_case_header = False
+            continue
+        if not collecting:
+            continue
+        if normalized.startswith("table") and "continued" not in normalized and not CASE_DIAGNOSIS_TABLE_RE.search(line):
+            signal = _finalise_block(block_lines, saw_case_header)
+            if signal is not None and signal.count > best_score:
+                best_score = signal.count
+                best_signal = signal
+            collecting = False
+            block_lines = []
+            saw_case_header = False
+            continue
+        if "sps stiff person syndrome" in normalized or "sms stiff person syndrome" in normalized:
+            signal = _finalise_block(block_lines, saw_case_header)
+            if signal is not None and signal.count > best_score:
+                best_score = signal.count
+                best_signal = signal
+            collecting = False
+            block_lines = []
+            saw_case_header = False
+            continue
+        block_lines.append(line)
+        if "case #" in normalized and "final diagnosis" in normalized:
+            saw_case_header = True
+
+    if collecting:
+        signal = _finalise_block(block_lines, saw_case_header)
+        if signal is not None and signal.count > best_score:
+            best_signal = signal
+    return best_signal
+
+
 def _extract_antibody_group_total_signal(*, title: str, abstract: str) -> SubgroupSignal | None:
     cleaned_title = _clean_signal_text(title)
     cleaned_abstract = _clean_signal_text(abstract)
@@ -1093,9 +1263,13 @@ def extract_explicit_sps_subgroup_signal(*, title: str, abstract: str, raw_prefe
     for extractor in (
         _extract_methods_sps_cohort_signal,
         _extract_direct_sps_cohort_signal,
+        _extract_parenthetical_sps_cohort_signal,
+        _extract_phenotype_sps_cohort_signal,
         _extract_series_cohort_signal,
         _extract_diagnosis_supported_subset_signal,
         _extract_named_sps_cohort_signal,
+        _extract_table_title_sps_cohort_signal,
+        _extract_case_table_sps_diagnosis_count_signal,
         _extract_group_breakdown_subgroup_signal,
         _extract_enumerated_sps_subgroup_signal,
         _extract_total_then_sps_subgroup_signal,

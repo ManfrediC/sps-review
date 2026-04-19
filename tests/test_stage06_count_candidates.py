@@ -1102,6 +1102,136 @@ class TestStage06CountCandidates(unittest.TestCase):
         )
         self.assertIn(116, {candidate.proposed_count for candidate in package.candidates})
 
+    def test_candidate_package_extracts_sms_phenotype_cohort_total(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "659.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "659",
+                "Title": "Glycine receptor autoimmune spectrum with stiff-man syndrome phenotype.",
+                "Authors": (
+                    "McKeon, Andrew; Martinez-Hernandez, Eugenia; Lancaster, Eric; Matsumoto, Joseph Y; "
+                    "Harvey, Robert J; McEvoy, Kathleen M; Pittock, Sean J; Lennon, Vanda A; Dalmau, Josep"
+                ),
+                "Abstract": (
+                    "OBJECTIVES: To determine whether glycine receptor alpha1 subunit-specific autoantibodies "
+                    "(GlyRalpha1-IgG) occur in a broader spectrum of brainstem and spinal hyperexcitability "
+                    "disorders than the progressive encephalomyelitis with rigidity and myoclonus phenotype "
+                    "recognized to date, and to ascertain disease specificity. PATIENTS: Eighty-one patients "
+                    "with stiff-man syndrome phenotype, 80 neurologic control subjects, and 20 healthy control "
+                    "subjects. RESULTS: Seropositive cases (12% of cases) included 9 with stiff-man syndrome "
+                    "(4 classic; 5 variant; 66% were glutamic acid decarboxylase 65-IgG positive) and 1 with "
+                    "progressive encephalomyelitis with rigidity and myoclonus."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 81)
+        self.assertEqual(package.fallback_candidate().proposed_count, 81)
+        self.assertIn(
+            "diagnosis_specific_phenotype_cohort_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_extracts_parenthetical_sps_cohort_total(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "667.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "667",
+                "Title": "Characteristics of in-vitro phenotypes of glutamic acid decarboxylase 65 autoantibodies in high-titre individuals.",
+                "Authors": "Cheramy, M; Hampe, C S; Ludvigsson, J; Casas, R",
+                "Abstract": (
+                    "This study aimed to analyse GADA levels in four cohorts with very high GADA titres: "
+                    "T1D patients (n = 7), GAD-alum-treated T1D patients (n = 9), T1D high-risk individuals "
+                    "(n = 6) and SPS patients (n = 12)."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 12)
+        self.assertEqual(package.fallback_candidate().proposed_count, 12)
+        self.assertIn(
+            "diagnosis_specific_parenthetical_cohort_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_extracts_sps_count_from_table_title(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "723.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "723",
+                "Title": "Cerebellar ataxia and glutamic acid decarboxylase antibodies: immunologic profile and long-term effect of immunotherapy.",
+                "Authors": (
+                    "Arino, Helena; Gresa-Arribas, Nuria; Blanco, Yolanda; Martinez-Hernandez, Eugenia; "
+                    "Sabater, Lidia; Petit-Pedrol, Mar; Rouco, Idoia; Bataller, Luis; Dalmau, Josep O; "
+                    "Saiz, Albert; Graus, Francesc"
+                ),
+                "Abstract": (
+                    "IMPORTANCE: Current clinical and immunologic knowledge on cerebellar ataxia (CA) with "
+                    "glutamic acid decarboxylase 65 antibodies (GAD65-Abs) is based on case reports and small "
+                    "series with short-term follow-up data. DESIGN, SETTING, AND PARTICIPANTS: Retrospective "
+                    "cohort study and laboratory investigations among 34 patients with CA and GAD65-Abs. "
+                    "Twenty-eight patients with stiff person syndrome and GAD65-Abs served as controls. "
+                    "Nine patients had coexisting stiff person syndrome symptoms."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 9)
+        self.assertEqual(package.fallback_candidate().proposed_count, 9)
+        self.assertIn(
+            "diagnosis_specific_table_title_cohort_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
+    def test_candidate_package_counts_sps_rows_in_final_diagnosis_table(self) -> None:
+        path = REPO_ROOT / "data" / "extraction_json" / "text" / "800.json"
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "800",
+                "Title": "Neuronal autoantibodies: differentiating clinically relevant and clinically irrelevant results.",
+                "Authors": (
+                    "Abboud, Hesham; Rossman, Ian; Mealy, Maureen A; Hill, Eddie; Thompson, Nicolas; "
+                    "Banerjee, Aditya; Probasco, John; Levy, Michael"
+                ),
+                "Abstract": (
+                    "We reviewed 401 neurological patients who were tested for the Mayo-Clinic paraneoplastic "
+                    "panel. Fifty-three patients tested positive for one or more neuronal autoantibodies. "
+                    "There were 17 clinically relevant, 33 clinically irrelevant, and 3 indeterminate patients."
+                ),
+            },
+            text_record=_load_text_record(path),
+            preferred_record=_load_text_record(path),
+            preferred_path=path,
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 5)
+        self.assertEqual(package.fallback_candidate().proposed_count, 5)
+        self.assertIn(
+            "diagnosis_specific_case_table_diagnosis_count",
+            {candidate.count_basis for candidate in package.candidates},
+        )
+
     def test_count_row_marks_embedded_review_provenance_as_manual_review(self) -> None:
         path = REPO_ROOT / "data" / "extraction_json" / "text" / "184.json"
         package = build_case_count_candidate_package(

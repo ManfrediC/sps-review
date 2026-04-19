@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -150,6 +151,34 @@ def make_560_package():
         text_record={"paper_id": "560", "_path": "data/extraction_json/text/560.json"},
         preferred_record={"pages": [{"text": donor_text}]},
         preferred_path=REPO_ROOT / "data" / "extraction_json" / "text_trimmed" / "560.json",
+        source_row={
+            "source_category": "lab_heavy_clinical_or_translational",
+            "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+        },
+    )
+
+
+def make_646_package():
+    path = REPO_ROOT / "data" / "extraction_json" / "text" / "646.json"
+    with path.open(encoding="utf-8") as handle:
+        text_record = json.load(handle)
+    return build_case_count_candidate_package(
+        reference_row={
+            "Covidence": "646",
+            "Title": "Stiff-man syndrome: identification of 17 beta-hydroxysteroid dehydrogenase type 4 as a novel 80-kDa antineuronal antigen.",
+            "Authors": "Dinkel, Klaus",
+            "Abstract": (
+                "Stiff-man syndrome (SMS) is a rare autoimmune disorder of the central nervous system associated with "
+                "autoantibodies to glutamate decarboxylase (GAD). We isolated five brain-reactive human monoclonal "
+                "antibodies, with reactivity distinct from GAD, from peripheral blood of a patient newly diagnosed "
+                "with SMS. Two antibodies reacted with both Purkinje cells and ependymal cells, and precipitated an "
+                "80-kDa protein from rat neuronal primary cultures, which was also recognized by 12% (3/25) of SMS "
+                "sera and 13% (2/15) of SMS cerebrospinal fluid samples."
+            ),
+        },
+        text_record=text_record,
+        preferred_record=text_record,
+        preferred_path=path,
         source_row={
             "source_category": "lab_heavy_clinical_or_translational",
             "source_subtype": "group_or_frequency_focused_lab_clinical_study",
@@ -598,6 +627,42 @@ class TestStage06LlmCounting(unittest.TestCase):
         self.assertEqual(row["heuristic_fallback_used"], "true")
         self.assertEqual(row["count_manual_review_required"], "true")
         self.assertIn("COUNT_DONOR_MATERIAL_ONLY", row["count_validator_flags"])
+
+    def test_validator_allows_single_case_resolution_for_specimen_heavy_paper(self) -> None:
+        package = make_646_package()
+        selected_candidate_id = next(
+            candidate.candidate_id
+            for candidate in package.candidates
+            if candidate.proposed_count == 1 and candidate.count_basis in {"single_case_text_signal", "source_single_case_override"}
+        )
+        decision = LLMCountDecisionOutput(
+            decision_type="candidate_exact",
+            selected_candidate_id=selected_candidate_id,
+            alternative_count=None,
+            count_confidence="medium",
+            count_manual_review_required=True,
+            count_reasoning_summary=(
+                "The study is specimen-heavy, but it explicitly derives monoclonal antibodies from one newly diagnosed "
+                "SMS patient, so one extractable SPS-spectrum case is still supported."
+            ),
+            evidence=[
+                CountEvidenceItem(
+                    quote="We isolated five brain-reactive human monoclonal antibodies from peripheral blood of a patient newly diagnosed with SMS.",
+                    page=1,
+                    section="abstract",
+                    supports="one explicitly described original SMS patient",
+                ),
+                CountEvidenceItem(
+                    quote="Two antibodies were also recognized by 12% (3/25) of SMS sera and 13% (2/15) of SMS cerebrospinal fluid samples.",
+                    page=1,
+                    section="abstract",
+                    supports="the remaining counts are specimen totals rather than additional extractable patients",
+                ),
+            ],
+        )
+        flags, worst = run_validators(package, decision)
+        self.assertNotIn("COUNT_DONOR_MATERIAL_ONLY", flags)
+        self.assertEqual(worst, Severity.PASS)
 
 
 if __name__ == "__main__":
