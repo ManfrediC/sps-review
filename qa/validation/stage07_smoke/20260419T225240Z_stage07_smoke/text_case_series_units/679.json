@@ -1,0 +1,76 @@
+{
+  "paper_id": "679",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\679.json",
+  "source_filename": "679_Nakane et al. - 2013 - Successful treatment of stiff person syndrome with.pdf",
+  "source_sha256": "db9cd34bd84c0da608c9af0e71bbdaf1c38436eda85883580c8a6931893237b8",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/679.json",
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "gpt-5.4",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T22:53:40.952053+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 0,
+    "published_individual_count": 0,
+    "published_group_count": 0,
+    "shared_context_count": 0,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "manual_review_required",
+    "manual_review_required": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings."
+  },
+  "shared_context_blocks": [],
+  "units": [],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 0,
+        "line_start": 0,
+        "line_end": 28
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 0,
+        "line_end": 52
+      }
+    ],
+    "text": "Successful treatment of stiff\nperson syndrome with\nsequential use of tacrolimus\nStiff person syndrome (SPS) is a rare neuro-\nlogical disease with features of an auto-\nimmune disease. SPS is characterised by\nsevere progressive muscle stiffness of the\nspine and lower extremities with superim-\nposed muscle spasms triggered by external\nstimuli such as noise, touch and emotional\ndistress.\n1 Patients with SPS respond to high\ndoses of muscle relaxants, such as diazepam\nand baclofen, several anticonvulsants, and\ngabapentin. Previous studies have reported\nthat several causal treatments with corticos-\nteroids, plasmapheresis, intravenous\nimmunoglobulin (Ig) and new immunomo-\ndulating agents can reduce stiffness and\nlower sensitivity to stimuli and stress in\npatients with SPS.\n23 Because SPS is a\nchronic disease, patients generally require\nlong-term treatments, which may be effect-\nive but difﬁcult to take for long periods.\nJ Neurol Neurosurg Psychiatry October 2013 Vol 84 No 10 1177\nPostScript\nLIBRARY. Protected by copyright.\non May 9, 2023 at UNIVERSITY OF CALGARYhttp://jnnp.bmj.com/ J Neurol Neurosurg Psychiatry: first published as 10.1136/jnnp-2013-305425 on 28 May 2013. Downloaded from\nT acrolimus (Prograf, FK506) is a macro-\nlide molecule belonging to the same\nimmunosuppressant class as cyclosporine.\nT acrolimus has a lower molecular weight\nand is 100-fold more potent in inhibiting T\ncell proliferation than cyclosporine. It acts\nthrough inhibition of the calcium-\ncalcineurin (CaN) pathway and exerts its\nimmunosuppressive effect by reducing the\nproliferation of activated T cells.\n4 We n o w\nreport the successful treatment of patients\nwith SPS using tacrolimus as the immuno-\nsuppressive agent.\nMETHODS\nPatients\nW e assigned two patients with SPS who\nhad incomplete responses to conventional\ntherapies and ful ﬁlled the de ﬁned clinical\ncriteria (online supplementary table 1).\n3\nClinical evaluations\nAt baseline and each month thereafter, a\nneurologist used the distribution of stiff-\nness index, the most consistent indicator\nof stiffness among patients and within\npatients, to evaluate the patients with\nSPS.\n3 Scores on this index range from\n0 to 6 and re ﬂect the extent of stiffness.\nThe same neurologist also assessed the\npatients for changes in frequency of\nspasms with use of the heightened-\nsensitivity scale, which has been a repro-\nducible and consistent means of assessing\nthe number of factors triggering spasms.\n3\nScores range from 1 to 7, with 1 point\nbeing given for each type of spasm.\nA neurologist blinded to the clinical\nindices and therapeutic regimen.\nMeasurement of anti-GAD Ab titres\nAntiglutamic acid decarboxylase (anti-GAD)\nantibody (Ab) titres were measured by\nradioimmunoassay in the sera obtained\nbefore and after each 3-month treatment\nperiod.\nBrain GABA changes in MRS (case 1)\nLevy et al reported that MR spectroscopy\n(MRS) showed a prominent and signi ﬁcant\ndecrease in γ-aminobutyric acid (GABA)\nlevel in the sensorimotor cortices of patients\nwith SPS."
+  },
+  "stage07_adjudication": {
+    "requested_model": "gpt-5.4",
+    "model_id": "gpt-5.4-2026-03-05",
+    "decision_type": "manual_review_required",
+    "decision_summary": "The excerpt confirms a 2-patient SPS case series and mentions 'case 1' in a subsection header, but the provided lines do not contain attribution-safe patient-specific findings for either patient. Most available content is background or methods applying jointly to both patients, and no non-overlapping individual case narratives can be recovered from the supplied lines alone.",
+    "unresolved_remainder_reason": "Relevant material likely exists elsewhere in the paper, but within the provided lines there are no publishable patient-specific spans beyond a header reference to 'case 1', which is insufficient to form an individual unit, and no explicit bounded subgroup beyond the full two-patient set.",
+    "validation_status": "model_abstained"
+  }
+}

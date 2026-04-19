@@ -1,0 +1,318 @@
+{
+  "paper_id": "140",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\140.json",
+  "source_filename": "140_Saiz-1998-Stiff-leg syndrome_ a focal form of.pdf",
+  "source_sha256": "e33b866fdce3d959f1240ca25ab1d9710130bb98af7da89dc2d4bfd81accaeb3",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/140.json",
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "gpt-5.4",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T22:52:53.226397+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 2,
+    "published_individual_count": 2,
+    "published_group_count": 0,
+    "shared_context_count": 8,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "partial_publish_with_unresolved_remainder",
+    "manual_review_required": true,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior."
+  },
+  "shared_context_blocks": [
+    {
+      "context_id": "140__shared__001",
+      "context_type": "shared_context",
+      "text": "muscles. Two patients had clinical or serological evi-",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 1,
+          "line_start": 16,
+          "line_end": 16
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__002",
+      "context_type": "shared_context",
+      "text": "We report on 2 patients with stiffness and spasms",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 1,
+          "line_start": 21,
+          "line_end": 21
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__003",
+      "context_type": "shared_context",
+      "text": "The results were essentially identical in both patients.",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 1,
+          "line_start": 103,
+          "line_end": 103
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__004",
+      "context_type": "shared_context",
+      "text": "median nerves in both patients.",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 3,
+          "line_end": 3
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__005",
+      "context_type": "shared_context",
+      "text": "The serum and CSF of the 2 patients recognized a",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 5,
+          "line_end": 5
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__006",
+      "context_type": "shared_context",
+      "text": "2 patients immunoreacted with GABA-ergic nerve ter-",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 18,
+          "line_end": 18
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__007",
+      "context_type": "shared_context",
+      "text": "We describe 2 patients with a similar clinical picture,",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 25,
+          "line_end": 25
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "140__shared__008",
+      "context_type": "shared_context",
+      "text": "bition of the spinal motoneurons. Both patients had",
+      "applies_to_unit_ids": [
+        "140__individual__001",
+        "140__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 32,
+          "line_end": 32
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "140__individual__001",
+      "unit_order": 1,
+      "unit_type": "individual",
+      "unit_label": "Patient 1",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 1\nA 63-year-old woman noticed rigidity of the right leg with\nprogressive gait instability in October 1991. Two months\nlater, she developed episodes of sudden, painful spasms in-\nvolving dorsiflexion and inversion of her right foot with ex-\ntension of the leg. Her symptoms progressed, leading to a\npersistent abnormal posture of the leg with considerable dif-\nficulty in walking. Treatment with diazepam provided relief\nof the spasms, but the gait disturbance persisted. Past med-\nical history was significant for hyperthyroidism at 50 years of\nage that reverted to normal with treatment in 1 year. On\nneurological examination, there was abnormal posturing,\nwith persistent extension and abduction, of the right leg and\nmedial inversion of the foot and hyperextension of the toes.\nThe leg was rigid, more so distally, and movements were\nseverely limited, with no palpable muscle tenderness. Volun-\ntary movements of the leg and tactile stimuli often precipi-\ntated a spasm. She could only walk with assistance. Her gait\nwas characterized by shuffling, mild widened base, and short-\nened stride. She admitted a fear of failing and refused to\nwalk without the help of another person. The rest of the\nneurological and general examination was normal. Results of\nmagnetic resonance imaging of the brain and spinal cord,\nCSF examination, and routine laboratory analysis, including\nthyroid hormones, were normal. The patient was treated\nwith intravenous immune globulin (IVIG) (400 mg/kg/day\nfor 5 days). The rigidity improved with almost normalization\nin her abnormal posture within a few days. Improvement has\nbeen maintained for 2 years with bimonthly 1-day courses of\nIVIG, but she still needs a cane to walk in the street.",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 46,
+          "line_end": 75
+        }
+      ],
+      "linked_shared_context_ids": [
+        "140__shared__001",
+        "140__shared__002",
+        "140__shared__003",
+        "140__shared__004",
+        "140__shared__005",
+        "140__shared__006",
+        "140__shared__007",
+        "140__shared__008"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    },
+    {
+      "unit_id": "140__individual__002",
+      "unit_order": 2,
+      "unit_type": "individual",
+      "unit_label": "Patient 2",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 2\nA 56-year-old woman was referred for evaluation of a pro-\ngressive gait disorder that started 11 years ago when she no-\nticed occasional episodes in which the right leg suddenly be-\ncame stiff, usually when the patient attempted to cross the\nstreet or was forced to walk in a hurry. The episodes became\nmore frequent and provoked unexpected falls. She was diag-\nnosed as having agoraphobic anxiety neurosis and treated\nwith benzodiazepines with partial relief of her spasms. Over\nthe ensuing 6 years, her symptoms progressed slowly, leading\nto permanent stiffness of the right leg, with abnormal pos-\nture and increased gait disturbance. Past medical history was\nsignificant for epilepsy diagnosed in childhood and IDDM\ndiscovered at 52 years of age. General examination was nor-\nmal. On neurological examination there was abnormal pos-\nturing of the right leg, with knee extension, ankle plantar-\nflexion, and inversion of the foot. The leg was rigid, with\nlimitation of the movements of the foot. Voluntary move-\nment of the leg and tactile stimuli occasionally precipitated a\nspasm. The gait was slow and very cautious, searching for\npoints of support. She walked only with assistance on short\nsteps, with a mildly widened base and stiffness of the right\nleg. Results of magnetic resonance imaging of the brain and\nspinal cord, CSF analysis, and routine laboratory analysis, in-\ncluding thyroid hormones, were normal.",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 76,
+          "line_end": 100
+        }
+      ],
+      "linked_shared_context_ids": [
+        "140__shared__001",
+        "140__shared__002",
+        "140__shared__003",
+        "140__shared__004",
+        "140__shared__005",
+        "140__shared__006",
+        "140__shared__007",
+        "140__shared__008"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    }
+  ],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 30,
+        "line_end": 31
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 33,
+        "line_end": 48
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 50,
+        "line_end": 73
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 75,
+        "line_end": 82
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 84,
+        "line_end": 86
+      }
+    ],
+    "text": "disclosed continuous motor unit activity and abnor-\nmally enhanced exteroceptive reflexes suggesting dishi-\nhigh-titer GAD-Ab, a useful marker of SMS in the\nsetting of appropriate clinical and electrophysiological\nfeatures.\nGAD-Ab are also reported in a few patients with\nother neurological disorders, particularly cerebellar\nata~ia.~.’-’~ The refore, the finding of GAD-Ab by it-\nself does not absolutely mean our patients’ syndrome\nrepresents a particular clinical expression of SMS.\nHowever, we favor the possibility of a focal form of\nSMS based on the following reasons:\n1. The clinical and electrophysiological profile is\nsimilar to that described in SMS except for the\nconfinement of symptoms to one leg. 13a1* Initial\ninvolvement of the distal muscles of one leg,\nmimicking a focal dystonia, is occasionally re-\nported in patients who later develop SMS.”\nThe fear to walk unaided and the gait disturbance\nwas more severe than expected from the leg stiff-\nness. This discrepancy led to the initial misdiag-\nnosis of agoraphobic anxiety neurosis, a feature\nfrequently reported in SMS.16\nThe association with high-titers of GAD-Ab and\nclinical evidence of organ-specific autoimmunity\nis a common feature of patients with SMS. In\naddition, Patient 2 had epilepsy, which is also re-\nported in 10% of patients with SMS.’\nOther disorders were reasonably excluded. The\nchronic evolution and the absence of brainstem\nsigns does not support the diagnosis of progres-\nsive encephalomyelitis with rigidity, l7 a disorder\ncaused by widespread inflammatory infiltrates\nand neuronal loss more important in the spinal\ncord that causes a subacute downhill clinical\ncourse. Roobol and co-workers’’ described a pa-\ntient with subacute onset of rigidity and painful\nspasms confined to one leg who subsequently de-\nveloped a small cell lung cancer. In our patients,\nthe absence of cancer after more than 3 years\nrules out the possible paraneoplastic origin of the\nsymptoms.\nOur findings suggest that the clinical spectrum of SMS\nmay be more extensive than expected and reinforces\nthe need to redefine the SMS diagnostic criteria. We\npropose the term focal SMS for those patients who ful-\nfill the diagnostic criteria of SMS except for the distri-\nbution of the affected muscles that are restricted to one\nlimb. Detection of GAD-Ab strongly supports the di-\nagnosis of these focal forms.\nClinic.\nWe thank Merck Bonastre, Eva Sinchez, Rosa Pagt-s, and Dr Roser\nCasamitjana for their technical assistance."
+  },
+  "stage07_adjudication": {
+    "requested_model": "gpt-5.4",
+    "model_id": "gpt-5.4-2026-03-05",
+    "decision_type": "publish_units",
+    "decision_summary": "Two attribution-safe individual patient units are explicitly labeled and match the stage-06 count prior. Additional results that clearly apply to both patients are captured as shared context rather than assigned to one patient.",
+    "unresolved_remainder_reason": "Narrative discussion and conclusion lines are largely article-level interpretation or mixed both-patient commentary; they are not needed for safe individual unit publication beyond the shared context captured above.",
+    "validation_status": "valid_but_not_selected",
+    "adjudicated_resolution": {
+      "status": "partial_publish_with_unresolved_remainder",
+      "reason_code": "individual_units_match_stage06_count",
+      "published_unit_count": 2
+    }
+  }
+}

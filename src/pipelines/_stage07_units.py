@@ -182,6 +182,19 @@ STOP_HEADING_RE = re.compile(
     r"legends?\b|supplementary\b|appendix\b|results\b|tables?\b)\b",
     re.IGNORECASE,
 )
+AGE_ANCHOR_RE = re.compile(r"\b\d{1,2}-year-old\b", re.IGNORECASE)
+DEMOGRAPHIC_ANCHOR_RE = re.compile(
+    r"\b(?:man|woman|male|female|boy|girl|father|mother|daughter|son|brother|sister)\b",
+    re.IGNORECASE,
+)
+GENERIC_PATIENT_SUMMARY_RE = re.compile(
+    r"^(?:one|another|the other|a second|second|third|fourth)\s+patient\b",
+    re.IGNORECASE,
+)
+METHODS_HEAVY_RE = re.compile(
+    r"\b(?:screened|macroarray|serum|sera|assay|elisa|hek293|materials and methods|methods|conclusion|conclusions)\b",
+    re.IGNORECASE,
+)
 BOUNDED_SHARED_CONTEXT_RE = re.compile(
     rf"\b(?P<count>both|{COUNT_TOKEN_TEXT_PATTERN})\b\s+"
     r"(?:(?:individually|separately)\s+described\s+)?(?:patients?|cases?)\b",
@@ -1017,6 +1030,31 @@ def renumber_units(units: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return units
 
 
+def individual_unit_has_stable_anchor(selected_lines: list[dict[str, Any]], unit_text: str) -> bool:
+    if not selected_lines:
+        return False
+    first_line = str(selected_lines[0]["text"])
+    if parse_case_marker(first_line):
+        return True
+    if AGE_ANCHOR_RE.search(unit_text):
+        return True
+    if DEMOGRAPHIC_ANCHOR_RE.search(unit_text) and len(unit_text) >= 120:
+        return True
+    if first_line.lower().startswith("patient ") and len(unit_text) >= 120:
+        return True
+    return False
+
+
+def validate_adjudicated_individual_unit(selected_lines: list[dict[str, Any]], unit_text: str) -> str:
+    if not individual_unit_has_stable_anchor(selected_lines, unit_text):
+        return "missing a stable patient anchor"
+    if GENERIC_PATIENT_SUMMARY_RE.match(unit_text) and not AGE_ANCHOR_RE.search(unit_text):
+        return "looks like a generic patient mention rather than a self-contained case narrative"
+    if METHODS_HEAVY_RE.search(unit_text) and not AGE_ANCHOR_RE.search(unit_text):
+        return "looks methods-heavy rather than a patient-specific narrative block"
+    return ""
+
+
 def build_units_from_adjudication(
     *,
     paper_id: str,
@@ -1057,6 +1095,12 @@ def build_units_from_adjudication(
             raise ValueError(
                 f"Adjudicated unit {unit_label} is too short after filtering ({len(unit_text)} chars)."
             )
+        if proposed_unit.unit_type == "individual":
+            validation_issue = validate_adjudicated_individual_unit(selected_lines, unit_text)
+            if validation_issue:
+                raise ValueError(
+                    f"Adjudicated individual unit {unit_label} is not attribution-safe: {validation_issue}."
+                )
         primary_occupied.update(line_indices)
         type_counters[proposed_unit.unit_type] += 1
         unit_id = f"{paper_id}__{proposed_unit.unit_type}__{type_counters[proposed_unit.unit_type]:03d}"

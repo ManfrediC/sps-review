@@ -1,0 +1,283 @@
+{
+  "paper_id": "748",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\748.json",
+  "source_filename": "748_Bowen et al. - 2015 - Apraxia in anti-glutamic acid decarboxylase-associ.pdf",
+  "source_sha256": "ecf5574eae96af2ec14877e79cf14578e69023bfa18f17402d4130528e8ca7ef",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/748.json",
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "gpt-5.4",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T22:53:54.336653+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 2,
+    "published_individual_count": 2,
+    "published_group_count": 0,
+    "shared_context_count": 4,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "partial_publish_with_unresolved_remainder",
+    "manual_review_required": true,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior."
+  },
+  "shared_context_blocks": [
+    {
+      "context_id": "748__shared__001",
+      "context_type": "shared_context",
+      "text": "have not been reported to coexist. We report 2 patients",
+      "applies_to_unit_ids": [
+        "748__individual__001",
+        "748__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 0,
+          "line_start": 16,
+          "line_end": 16
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "748__shared__002",
+      "context_type": "shared_context",
+      "text": "we evaluated 2 patients with SPS who revealed asymmet-",
+      "applies_to_unit_ids": [
+        "748__individual__001",
+        "748__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 0,
+          "line_start": 62,
+          "line_end": 62
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "748__shared__003",
+      "context_type": "shared_context",
+      "text": "tion, both patients also had an asymmetrical ideomotor",
+      "applies_to_unit_ids": [
+        "748__individual__001",
+        "748__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 36,
+          "line_end": 36
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "748__shared__004",
+      "context_type": "shared_context",
+      "text": "ical atrophy with SPS. The 2 patients being reported, like",
+      "applies_to_unit_ids": [
+        "748__individual__001",
+        "748__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 45,
+          "line_end": 45
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "748__individual__001",
+      "unit_order": 1,
+      "unit_type": "individual",
+      "unit_label": "Patient 1",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 1\nIn October 2013, a 49-year-old African American\nwoman was admitted to the inpatient Neurology Service\nsive stiffness and muscle spasms of her back and neck.\nT wo years prior to admission, she developed lower back\npain and underwent L5 discectomy with fixation for pre-\nsumed disk disease. In July of 2013, she had worsening\nof her lower back pain and spasms, with impairment of\nher ability to walk as well as falls. If touched unexpect-\nedly, her spasms increased. While in clinic, her Mini-\nMental Status Examination was normal (29 of 30), but\non Montreal Cognitive Assessment she had a score of 24\nof 30, with errors in visuospatial and executive domains,\nletter fluency tasks, and delayed recall.\nT o test for the presence of IMA, she was verbally\nasked to perform, with each upper limb, several transitive\npantomimes to verbal command, which is the most sensi-\ntive test for IMA.\n7 The errors associated with IMA are\noften postural, such as using a body part as the tool or\nholding the hand and arm in the incorrect position, as\nwell as movement errors, with incorrect joint move-\nments.\n7 On this praxis testing, she frequently made\nMedicine, Gainesville, FL.\nof Neurology, MBI 1149 Newell Drive, Room L3-100, Gainesville, FL\n32611. E-mail: lauren.bowen@neurology.ufl.edu\npublication Aug 2, 2014.\nView this article online at wileyonlinelibrary.com. DOI: 10.1002/ana.\n24245\nVC 2014 American Neurological Association 173\npostural and movement errors, revealing that she had an\nIMA that was more severe in her right than left upper\nlimb. For example, she was asked to make believe she was\nholding a pair of scissors in her hand and to show how\nshe would cut a piece of paper in half. She was also told\nto not use her fingers as blades. When she attempted to\nperform this pantomime she made a postural error, keep-\ning her index finger fully extended. She also made a\nmovement error. When pantomiming the use of scissors,\nrather than moving her thumb toward and away from her\nindex finger, she moved it sideways, so that the thumb’s\nmovement was parallel to her index finger.\nPatients who have limb-kinetic apraxia have a loss of\nfinger–hand deftness, with a loss of the ability to perform\nprecise, independent but coordinated finger movements.\n7\nT o test for limb-kinetic apraxia, she was assessed with the\ncoin rotation test, where patients attempt to rotate a nickel\nas rapidly as possible between their thumb, index, and mid-\ndle finger for 20 rotations.\n8 Rotating a coin requires pre-\ncise, independent but coordinated finger movements. She\nwas unable to make any successful rotations with her right\nhand. She was able to perform a few rotations with her left\nhand, but had so much difficulty we terminated this test.\nWhen asked to write with her right hand she demonstrated\nan impaired ability to move the pen in the spatial direc-\ntions needed to correctly form the letters of the words she\nwanted to write, a sign of apraxic agraphia.\nCranial nerve examination was normal. On motor\nexamination her strength was normal, but she had prom-\ninent axial rigidity and increased rigidity when startled.\nShe also had moderate plastic rigidity of her upper limbs,\nthe right being more rigid than the left. Although no\ndystonia, myoclonus, or alien hand was observed, when\nasked about these symptoms she stated that her right\narm would occasionally appear to spontaneously elevate.\nHer sensory and her cerebellar examinations were nor-\nmal, but her gait was abnormal, with a wide base, stiff\nlegs, and small steps (marche /C18a petits pas).\nMagnetic resonance imaging (MRI) of her head\nrevealed no significant abnormalities. MRI of her cervical,\nthoracic, and lumbosacral spine without contrast showed\nedema of the paraspinous muscles, most prominently in\nthe right lumbar spine, but there was no abnormality of\nthe spinal cord. An analysis of her cerebrospinal fluid\n(CSF) was positive for oligoclonal bands. Her CSF GAD-\nab count was 210nmol/l (normal < 0.02 nmol/L), and\nserum GAD-ab count was 2449.1U/ml (normal < 1U/ml).",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 66,
+          "line_end": 68
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 70,
+          "line_end": 90
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 92,
+          "line_end": 92
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 94,
+          "line_end": 95
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 97,
+          "line_end": 100
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 0,
+          "line_end": 48
+        }
+      ],
+      "linked_shared_context_ids": [
+        "748__shared__001",
+        "748__shared__002",
+        "748__shared__003",
+        "748__shared__004"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    },
+    {
+      "unit_id": "748__individual__002",
+      "unit_order": 2,
+      "unit_type": "individual",
+      "unit_label": "Patient 2",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 2\nIn January 2013, a 68-year-old Caucasian woman with a\npast medical history of type II diabetes was admitted to\nSeven years prior to admission, she developed gradual\ndifficulty walking. She started to use a cane 5\n1=2 years\nprior to presentation and a walker 2 years prior to admis-\nsion when her right leg became stiff. Occasionally, she\nfelt a sense of her lower extremities being alien limbs,\nwith an inability to control their movements. During the\nsame time, she noticed increasing difficulty writing and\nusing utensils with her right hand. T wo years prior to\npresentation she underwent cervical laminectomy for\nstiffness in her neck and pain radiating down her right\narm.\nHer neurological examination on admission\nrevealed several abnormalities. Except for defective\ncrossed response inhibition, her mental status and cranial\nnerve examinations were normal. There was no ataxia or\nadiadochokinesia. Muscle tone was normal in both upper\nextremities, but increased in her lower extremities, the\nright lower being more rigid than the left. Her back\nmuscles showed paraspinous muscle hypertrophy in the\nlumbar spine. She was not able to stand without assis-\ntance and used a rolling walker to ambulate. Her gait\nappeared rigid.\nShe had limb-kinetic apraxia with her right hand\nduring the coin rotation test,\n8 as well as bilateral IMA\nwith mild bilateral agraphesthesia and constructional\napraxia as tested by having her attempt to copy a draw-\ning of intersecting pentagons. The patient’s handwriting\nwas small, with some evidence of apraxic agraphia with\nthe right hand. Although handwriting with the left hand\nwas unsteady, it was not clearly agraphic.\nImaging studies revealed no spinal cord abnormal-\nities, and she had mild cerebellar atrophy on brain MRI.\nAn analysis of her CSF was positive for oligoclonal\nbands. Her GAD-ab were elevated (2,560U/ml).\nIn February 2014, she was seen for a 1-year follow-\nup after intravenous immunoglobulin treatment. She had\nbilateral lower extremity rigidity, greatest in the right leg.\nIn addition, she now demonstrated rigidity of her upper\nextremities, with more rigidity on the right than the left.\nShe also had axial rigidity. She had positive Myerson\nsign, but no other cranial nerve abnormalities including\nvertical eye movements.\nShe was tested for IMA by being asked to panto-\nmime, with each upper limb, several transitive actions to\nverbal command.\n7 On this testing, she revealed spatial\npostural and movement errors that were worse when\nusing her right than left upper extremity. For example,\nwhen asked to pantomime using a pair of scissors with\nher right hand, but not to use her fingers as the blades,\nshe held her forefinger in a fully extended position and\nmoved her hand at her wrist making ulnar and radial\n174 V olume 77, No. 1\ndeviations. This was also seen in the left hand, but was\nless pronounced. When asked to scramble eggs in a\nbowel on her lap with a fork held in her right hand, she\ndemonstrated some flexion–extension motions at her\nwrist, but no rotation of her wrist so that her imaginary\nfork would rotate. She performed this pantomime nor-\nmally with her left hand. She was also tested with the\ncoin rotation task for limb-kinetic apraxia, and she\nrevealed bilateral limb-kinetic apraxia that was more\nsevere in her right than left hand, but when compared to\nher prior testing this appeared as less severe.\n8",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 49,
+          "line_end": 51
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 54,
+          "line_end": 107
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 109,
+          "line_end": 109
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 2,
+          "line_start": 0,
+          "line_end": 11
+        }
+      ],
+      "linked_shared_context_ids": [
+        "748__shared__001",
+        "748__shared__002",
+        "748__shared__003",
+        "748__shared__004"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    }
+  ],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 13,
+        "line_end": 35
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 37,
+        "line_end": 44
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 46,
+        "line_end": 57
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 59,
+        "line_end": 59
+      }
+    ],
+    "text": "SPS, originally described by Moersch and Woltman, is\ncharacterized by progressive axial and limbic rigidity lack-\ning extrapyramidal features, with associated triggered\nmuscle spasms. 9 Subsequent work divided SPS into sev-\neral subtypes, including stiff limb and progressive\nencephalomyelitis with rigidity.\n10 Diagnosis originally\nwas made by clinical presentation and electromyography\ndemonstrating involuntary firing of motor units with\nabsent reciprocal firing.\n11 The association between GAD-\nab and SPS was first described in 1990, with 60% of\nSPS patients testing positive for GAD-ab. 12 GAD is the\nrate-limiting enzyme in the synthesis of c-aminobutyric\nacid (GABA), the major inhibitory neurotransmitter of\nthe nervous system. Since then other antibodies such as\nantiamphiphysin, antigephyrin, and anti-GABA\nA recep-\ntor–associated protein have also been noted in SPS seen\nas a paraneoplastic syndrome; nearly 80% of patients\nwith SPS test positive for an autoantibody. 11–13\nBoth of the patients described above had symptoms\nand signs of SPS and were anti-GAD positive. In addi-\nand limb-kinetic apraxia, asymmetrical rigidity, and an\nasymmetrical apraxic agraphia. In addition, Patient 1 even\ndescribed an alien limb. All are signs of possible CBS.\n5 In\nregard to the loci of the pathological changes that may\nhave induced the asymmetrical (right greater than left)\nideomotor and limb-kinetic apraxia observed in these 2\npatients, we could find no article that described focal cort-\nmany other patients with CBS, have an asymmetrical\nideomotor and limb-kinetic apraxia; however, the reason\nthis disorder is asymmetrical is not known. If these\npatients had a loss of their left parietal visuospatial–kines-\nthetic movement representations, then both upper limbs\nshould be equally apraxic. Therefore, this asymmetry sug-\ngests that their deficit is more anterior and perhaps\ninvolves the lateral or medial premotor cortex or the con-\nnections between the premotor cortex and the primary\nmotor cortex. A study of patients with CBS who had\nundergone MRI during life and came to autopsy revealed\nthat all CBS pathologic groups showed gray matter loss in\n14"
+  },
+  "stage07_adjudication": {
+    "requested_model": "gpt-5.4",
+    "model_id": "gpt-5.4-2026-03-05",
+    "decision_type": "publish_units",
+    "decision_summary": "Two attribution-safe individual case units are identifiable from explicit case headings ('Patient 1' and 'Patient 2'). Article metadata and discussion-level statements were excluded from primary unit spans. A bounded shared context block captures the paper-level statement that both reported patients had GAD-ab–positive SPS with CBS-like signs.",
+    "unresolved_remainder_reason": "Excluded non-attributable article metadata, references/citations, and general discussion content not safely attributable to a single patient or bounded shared context.",
+    "validation_status": "valid_but_not_selected",
+    "adjudicated_resolution": {
+      "status": "partial_publish_with_unresolved_remainder",
+      "reason_code": "individual_units_match_stage06_count",
+      "published_unit_count": 2
+    }
+  }
+}

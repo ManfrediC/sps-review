@@ -340,6 +340,45 @@ class TestStage07SplitCaseSeries(unittest.TestCase):
                 mod.TEXT_DIR = old_text_dir
                 mod.reference_row_for_paper = old_reference_row_for_paper
 
+    def test_build_units_from_adjudication_rejects_generic_patient_mentions(self) -> None:
+        mod = _load_module("stage07_units_adjudication_validation", STAGE07_HELPER)
+        lines = [
+            {
+                "page_index": 0,
+                "line_index": 0,
+                "global_index": 0,
+                "text": "One patient was discovered to have renal cell carcinoma and Ma3-antibodies after an extended antibody work-up, but no stable patient-level narrative anchor was provided in the excerpt.",
+            },
+            {
+                "page_index": 0,
+                "line_index": 1,
+                "global_index": 1,
+                "text": "Another patient with LGI1 antibodies showed a good response to immunotherapy, but the paper fragment still reads as a generic mention rather than a self-contained case description.",
+            },
+        ]
+        adjudication = mod.Stage07AdjudicationOutput(
+            decision_type="publish_units",
+            decision_summary="Two patients were mentioned.",
+            units=[
+                mod.Stage07AdjudicatedUnit(
+                    unit_type="individual",
+                    unit_label="patient_1",
+                    line_spans=[mod.Stage07LineSpan(start_global_index=0, end_global_index=0)],
+                    evidence_summary="A generic patient mention appears in the abstract.",
+                )
+            ],
+            shared_context_blocks=[],
+            unresolved_remainder_reason="",
+        )
+
+        with self.assertRaisesRegex(ValueError, "not attribution-safe"):
+            mod.build_units_from_adjudication(
+                paper_id="9999",
+                lines=lines,
+                stage06_prior={"final_count": 2},
+                adjudication=adjudication,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

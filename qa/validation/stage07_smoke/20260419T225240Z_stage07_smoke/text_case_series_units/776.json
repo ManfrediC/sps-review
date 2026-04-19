@@ -1,0 +1,74 @@
+{
+  "paper_id": "776",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\776.json",
+  "source_filename": "776_Sabatino and Newsome - 2017 - Stiff person syndrome masquerading as multiple scl.pdf",
+  "source_sha256": "90fe0437f51ebd41e89ee8225652cfd4ffa8932b61c858c79ac81510dce1c3e7",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": true,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/776.json",
+    "final_count": 5,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "gpt-5.4",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T22:54:11.630757+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 0,
+    "published_individual_count": 0,
+    "published_group_count": 0,
+    "shared_context_count": 0,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "manual_review_required",
+    "manual_review_required": true,
+    "reason_code": "group_structure_unclear",
+    "reason": "Case or patient headings were found, but the numbering was not sequential."
+  },
+  "shared_context_blocks": [],
+  "units": [],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "group_structure_unclear",
+    "reason": "Case or patient headings were found, but the numbering was not sequential.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 0,
+        "line_start": 1,
+        "line_end": 76
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 0,
+        "line_end": 18
+      }
+    ],
+    "text": "Stiff person syndrome masquerading as multiple sclerosis\nJoseph J. Sabatino Jr a,b, Scott D. Newsome a,⁎\na Department of Neurology, Johns Hopkins University, Baltimore, USA\nb University of California San Francisco, Department of Neurology, 1500 Owens St. Suite 320, San Francisco, CA 94158, USA\nabstractarticle info\nArticle history:\nReceived 5 September 2016\nReceived in revised form 8 November 2016\nAccepted 28 November 2016\nAvailable online 30 November 2016\nBackground:Stiff person syndrome (SPS) is a rare neuroimmunological disorder presenting with a wide variety of\nsigns and symptoms that mimic neuro-inﬂammatory diseases, such as multiple sclerosis (MS), thus delaying di-\nagnosis.\nMethods: We performed a retrospective chart review of over 100 patients with SPS who were treated at Johns\nHopkins Hospital and identiﬁed ﬁve patients previously diagnosed with MS.\nResults: Patients were female with a mean age of 53 years old (range 43 – 64). Mean time to SPS diagnosis was\n5.5 years. They presented with typical SPS features (axial/leg spasms, torso rigidity, hyperlordosis, and gait insta-\nbility) as well as atypical features (hemiparesis, hemisensory dysfunction,ﬁne motor impairment) and were all\ninitially given a diagnosis of MS. In all patients, brain MRI demonstrated non-speci ﬁc white matter lesions and\nCSF was negative for intrathecal antibodies in the 4 out of 5 patients who underwent lumbar puncture. SPS diag-\nnosis was supported by elevated anti-glutamic acid decarboxylase (GAD65) antibodies in each patient. Two pa-\ntients were treated with disease-modifying therapies for MS before being diagnosed with SPS. Following\ndiagnosis with SPS, the patients were treated with varying combinations of immunosuppressants and symptom-\natic therapies resulting in stabilization or improvement in four of the patients.\nConclusion:We presentﬁve patients with SPS, who were initially thought to have MS, including one patient treat-\ned with three different MS therapies due to“disease progression”. These cases demonstrate the need to consider\nless common neuroimmunological disorders, such as SPS, especially in patients with atypical features for MS.\n© 2016 Elsevier B.V. All rights reserved.\nKeywords:\nMultiple sclerosis\nStiff person syndrome\nNeuroinﬂammatory diseases\n1. Introduction\nStiff person syndrome (SPS) is a rare autoimmune or paraneoplastic\ndisorder that classically causes rigidity and spasms of the proximal and\naxial muscles, gait dysfunction and falls. Continuous co-contraction of\nagonist and antagonist muscles, which can be evident clinically even\nin the absence of electrophysiologic ﬁndings (i.e. continuous motor\nunit activity on EMG), can cause severe hyperlordosis and greatly hin-\nder basic movements such as walking, bending at the waist, and chest\nmovement during breathing [1]. SPS is typically associated with auto-\nantibodies against glutamic acid decarboxylase 65 (GAD65)[1] though\nother less common auto-antibodies have been linked to SPS as well.\nThere are also variants of SPS with atypical signs and symptoms includ-\ning rigidity and spasms of a single limb, ataxia, or progressive encepha-\nlomyelitis and myoclonus[1,2]. In addition, SPS patients may have other\nseemingly unrelated neurologic symptoms as well as anxiety and pho-\nbias. Consequently, SPS often goes undiagnosed or misdiagnosed for\nyears. We describe a case series of patients with a diagnosis of SPS\nwho were previously diagnosed with multiple sclerosis (MS).\n2. Materials and methods\nWe performed a retrospective chart review of over 100 patients with\nSPS who were treated at Johns Hopkins Hospital from 1996 to 2016 and\nidentiﬁed ﬁve patients previously diagnosed with MS. A diagnosis of SPS\nwas given based on prototypic exam ﬁndings (axial and/or limb stiff-\nness and rigidity, episodic spasms, and lumbar hyperlordosis), elevated\nanti-GAD65 antibodies, and response to treatment. All review was done\nin accordance with the IRB-approved protocol. Detailed pertinent de-\nmographic, medical, and treatment history is outlined in Table 1.\n3. Results\nPatient 1 presented with progressive gait instability and axial and leg\nmuscle spasms and rigidity. Exam was additionally notable for\nhypomimia, dysarthria, mild proximal left-sided weakness and\ndysmetria with a slow unsteady gait. MRI brain revealed scattered\nnon-enhancing T2 hyperintense subcortical lesions and mild global at-\nrophy and MRI spine showed mild-moderate degenerative disc disease\nJournal of the Neurological Sciences 372 (2017) 297– 299\n⁎ Corresponding author at: Johns Hopkins Neuroimmunology and Neuroinfectious\nDiseases, Johns Hopkins Hospital, 600 N. Wolfe St., Pathology 627, Baltimore, MD 21287,\nUSA.\nE-mail address: snewsom2@jhmi.edu(S.D. Newsome).\nhttp://dx.doi.org/10.1016/j.jns.2016.11.066\n0022-510X/© 2016 Elsevier B.V. All rights reserved.\nContents lists available at ScienceDirect\nJournal of the Neurological Sciences\njournal homepage: www.elsevier.com/locate/jns\nin the cervical spine without any spinal cord signal abnormality. Patient\n2 had a history of anxiety, poor memory recall, generalized fatigue, sub-\njective mild hemiparesis/hemisensory dysfunction, gait imbalance, axial\nrigidity and spasms. Her exam revealed lumbar hyperlordosis, positive\nRomberg sign and a spastic-appearing gait. MRI brain revealed several\nnon-enhancing T2 hyperintense lesions in the subcortical and\nperiventricular white matter (PVWM); MRI spine revealed degenera-\ntive disc disease most prominent at C5 – 6 and questionable hyperin-\ntense T2 signal at C6 without enhancement. Patient 3 presented with\ngait and balance instability and leg stiffness. Abnormal exam ﬁndings\nincluded lumbar hyperlordosis, hypometric horizontal saccades, axial\nrigidity, lower extremity hyperre ﬂexia, left hemisensory de ﬁcits,\ndysdiadochokinesia, and impaired tandem gait. MRI brain demonstrat-\ned scattered non-enhancing T2 hyperintense lesions in the subcortical\nand PVWM and MRI spine was unrevealing. Patient 4 had a history of\nleg spasms and weakness, ﬁne motor impairment, atypical sensory\nsymptoms in the thighs, and urinary urgency. Her exam revealed\nhyperreﬂexia, vibratory sensory de ﬁcits in the hands and feet, and an\nantalgic-appearing gait. MRI brain revealed numerous non-enhancing"
+  },
+  "stage07_adjudication": {
+    "requested_model": "gpt-5.4",
+    "error_type": "ValueError",
+    "error_message": "Adjudicated individual unit patient_2 is not attribution-safe: missing a stable patient anchor.",
+    "validation_status": "error_fallback_to_heuristics"
+  }
+}

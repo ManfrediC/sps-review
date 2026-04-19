@@ -1,0 +1,81 @@
+{
+  "paper_id": "456",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\456.json",
+  "source_filename": "456_Perani-2007-PET evidence of central GABAergic.pdf",
+  "source_sha256": "78b54bad5cdcfd30dc2e49336d396fc38fa55da9073b86fbb5dd4edab5811b02",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/456.json",
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "gpt-5.4",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T22:53:14.241273+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 0,
+    "published_individual_count": 0,
+    "published_group_count": 0,
+    "shared_context_count": 0,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "manual_review_required",
+    "manual_review_required": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings."
+  },
+  "shared_context_blocks": [],
+  "units": [],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 0,
+        "line_start": 34,
+        "line_end": 90
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 0,
+        "line_end": 95
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 0,
+        "line_end": 50
+      }
+    ],
+    "text": "PET Evidence of Central\nGABAergic Changes in Stiff-\nPerson Syndrome\nDaniela Perani, MD, 1,2* Valentina Garibotto, MD, 2,3\nAndrea Panzacchi, MD, 2,4\nRosa Maria Moresco, MSc, 2,3,4 Paola Ortelli, MSc, 2\nMassimo Corbo, MD, 5 Ferruccio Fazio, MD, 2,3,4\nand Franco Folli, MD 6\n1Istituto Nazionale di Neuroscienze, Vita-Salute San Raffaele\nUniversity, Milan, Italy; 2Scientiﬁc Institute San Raffaele,\nDepartment of Nuclear Medicine, Milan, Italy; 3Milano-\nBicocca University, Department of Nuclear Medicine, Milan,\nItaly; 4Consiglio Nazionale delle Ricerche, Istituto di\nBioimmagini e Fisiologia Molecolare, Milan, Italy;\n5University of Milan Medical School, IRCCS Istituto\nAuxologico Italiano, Department of Neurology, Milan, Italy;\n6Division of Diabetes, Department of Medicine, University of\nTexas Health Science Center, San Antonio, Texas, USA\nAbstract: We measured expression of central nervous sys-\ntem GABA-A receptors with 11C-ﬂumazenil ( 11C-FMZ)\nand PET in two subjects with stiff person syndrome (SPS).\nWe found reduced 11C-FMZ binding potential (BP) in mo -\ntor-premotor cortex, and increased 11C-FMZ BP in the\ncerebellar nuclei. This is the ﬁrst in vivo PET evidence of\ncentral GABA-A receptors dysfunction in SPS, possibly\nconcurring to the motor symptoms. © 2007 Movement Dis-\norder Society\nKey words: positron emission tomography; stiff person syn-\ndrome;\n11C-ﬂumazenil; GABA.\nStiff person syndrome (SPS) is a rare and disabling\ndisorder characterized by muscle rigidity and episodic\nspasms involving the axial and limb musculature.\n1 The\ncause of SPS is unknown, but an autoimmune pathogen-\nesis has been proposed on the basis of the presence of\nantiglutamic acid decarboxylase (GAD) antibodies in the\nserum and in the CSF,\n2 the association with other auto-\nimmune disorders and autoantibodies, and the response\nto immunotherapies.\n3 Recently, in vivo MRI spectros-\ncopy showed a prominent and signiﬁcant decrease in\nGABA level in the sensorimotor cortex.\n4\nThese data were presented at the 58th Meeting of the American\nAcademy of Neurology, 2006, and published in Abstract form, Neu-\nrology, vol. 66 (S2), page A134.\n*Correspondence to: Daniela Perani, Vita-Salute San Raffaele Uni-\nversity, Via Olgettina 60, 20132 Milan, Italy.\nE-mail: daniela.perani@hsr.it\nReceived 9 October 2006; Revised 16 January 2007; Accepted 18\nJanuary 2007\nPublished online 7 March 2007 in Wiley InterScience (www.\ninterscience.wiley.com). DOI: 10.1002/mds.21441\n1030 D. PERANI ET AL.\nMovement Disorders, Vol. 22, No. 7, 2007\nAim of this study is to explore the GABAergic system\nin vivo by using PET and the central GABA-A receptors\nlinked benzodiazepine binding sites antagonist\n11C-\nﬂumazenil ( 11C-FMZ) as a ligand.\nMETHODS\nClinical Characteristics of the Patients\nSubject 1 is a 45-year-old man affected by type 1\ndiabetes mellitus, complaining of leg proximal rigidity\nand falls; symptoms ameliorated by using diazepam. On\nthe basis of clinical history and laboratory data (Table 1),\na diagnosis of SPS and epilepsy was done.\nSubject 2 is a 53-year-old woman; her medical history\nwas notable for onset of vitiligo at age 33, Graves’\ndisease at age 38, and type 1 diabetes mellitus at age 51.\nAt age 52 she began complaining of muscle rigidity,\ncramps, and painful spasms. These symptoms involved\nmainly the axial musculature, but also the proximal por-\ntion of lower and upper limbs, and were partially ame-\nliorated by low doses of diazepam. On the basis of\nclinical and laboratory examinations (Table 1), a diag-\nnosis of probable SPS was made. She also presented\nsevere anxiety symptoms (sudden heart pulsations, dif-\nfused perspiration, sense of suffocation, general trem-\nbling, and vertigo), resembling panic attacks. She had\nhigh scores on the HARS scale (clinically signiﬁcant\nanxiety).\n5\nClinical and Laboratory Assessment\nThe two patients underwent complete medical, neuro-\nlogical, and electrophysiological investigations, in asso-\nciation with laboratory testing (listed in Table 1). A\nformal psychiatric evaluation was performed to detect\nand quantify disorders commonly associated with SPS,\nnamely anxiety and depression, together with an exten-\nsive neuropsychological battery, which included global\nscreening test and evaluation of language, memory,\nvisuospatial abilities, and executive functions.\n6\n11C-FMZ PET\nThe studies were performed with an 18-ring whole-\nbody PET scanner (GE Advance, General Electric Med-\nical System, Milwaukee, WI). Acquisition protocols and\nimages analysis were performed according to methods\npreviously described.\n7 We obtained parametric images\nfor binding potential (BP), representing in vivo radioli-\ngand binding under conditions of trace receptor occu-\npancy, and parametric images of relative\n11C-FMZ K1\n(termed RI), reﬂecting brain perfusion; we used RI im-\nages to check for the presence of perfusion deﬁcits.\nReconstructed images were analyzed using Statistical\nparametric mapping, SPM2.8 11C-FMZ BP spatially nor -\nmalized images of each patient were compared with a\ngroup of nine male healthy subjects (mean age: 26 /H110063;\nrange: 23 to 32 years) previously collected in our depart-\nment.\n7 This control group is younger than the patients;\nhowever PET studies using this tracer showed its invari-\nance over age.\n9 Statistical threshold was set at P /H110210.01.\nRESULTS\nNeuropsychological Evaluation\nSubject 1 scored within normal ranges in all the ex-\nplored cognitive domains, while Subject 2 showed deﬁ-\ncits in executive functions, namely working memory,\nproblem solving, and categorizing.\nPET Results\nSPM-2 analysis of\n11C-FMZ PET data in the two SPS\nsubjects, as compared with normal controls, revealed a\nsigniﬁcant and extensive reduction of 11C-FMZ BP in the\npremotor cortex, bilaterally. There was also a partial involve-\nment of the motor cortex and the right supplementary motor\nTABLE 1. Laboratory data of SPS patients\nPatient 1 Patient 2\nCirculating organ speciﬁc autoantibodies\nGAD 80 U/L 63.1 U/L\nGABAergic synapses (on rat cerebellar sect.) Pos Pos\nTSH-R 97 U/L 97 U/L\nThyroid microsomal Neg Pos (1:102,400 dil)\nGastric parietal cells Pos Neg\nIslet cells Pos Weakly pos\nCFS autoantibodies against GAD Pos Pos\nNeedle electromyography Continuous motor unit activity at rest\nexacerbated by auditory\nstimulation abolished by 10 mg\ni.v. Diazepam\nContinuous motor unit activity at rest\nexacerbated by auditory\nstimulation abolished by 10 mg\ni.v. Diazepam\nPET EVIDENCE OF CENTRAL GABAERGIC CHANGES IN SPS 1031\nMovement Disorders, Vol. 22, No. 7, 2007\n15318257, 2007, 7, Downloaded from https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.21441 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License\ncortex. The only signiﬁcant increase in the11C-FMZ BP was\nconﬁned to the cerebellar nuclei (Table 2 and Fig. 1).\nThe two subject’s RI maps did not show any signiﬁ-\ncant alteration of brain perfusion in these areas, when\ncompared with normal controls.\nWith the aim of providing some preliminary, explor-\native data in a rare disorder, we also performed a single\nsubject analysis that revealed in Subject 2, the patient\nreporting anxiety disorders,\n11C-FMZ BP reductions in\nthe amygdala complex, bilaterally.\nDISCUSSION\nThis is the ﬁrst 11C-FMZ PET study in SPS, showing\nchanges in central GABA-A receptors linked benzodiaz-\nepine binding sites in selected brain regions. This is also\nconsistent with recent MRI spectroscopy data.\n4\nThe decreases in 11C-FMZ BP might be explained as\n(1) a direct consequence of the reduction in GABA\nlevels, followed by a downregulation of the receptors, in\nchronic patients; (2) local and selective alterations of the\nsubunit composition of the GABA-A complex, related to\nthe SPS disease process; (3) focal dysfunctions, how-\never, not supported by regional perfusion changes; (4)\nfocal atrophy that would need further evaluations using\nunbiased voxel-based methods.\nOur data support the view that SPS is also a central\ndisorder; a regional decrease in GABA tone in the pre-\nmotor–motor cortex may impair the action of inhibitory\npathways, contributing to muscle rigidity and spasms.\nThe evidence of a reduced\n11C-FMZ BP also in limbic\nstructures, in the patient with anxiety disorders, is com-\nparable with the signiﬁcant reduction found in patients\nwith panic disorder.\n10\nThe selective GABAergic involvement of premotor–\nmotor and limbic cortices might be due to the high\ndemand of modulator control in these regions, based on\ntheir ﬁnely tuned GABAergic transmission.\n11\nAs for the relative increase of 11C-FMZ BP in the\ncerebellar nuclei, it may be related to an upregulation of\nthe GABA cerebellar system control, compensating for\nthe reduction of GABA neurotransmitter at the motor\nlevel.\nWe are aware that these data represent just a prelim-\ninary, descriptive report in a rare disorder. More evi-\ndences, coming from further molecular, functional, and\nstructural studies, will help in explaining the pathophys-\niology of SPS."
+  },
+  "stage07_adjudication": {
+    "requested_model": "gpt-5.4",
+    "error_type": "ValueError",
+    "error_message": "Adjudicated unit subject_2 overlaps existing unit spans at indices [167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179].",
+    "validation_status": "error_fallback_to_heuristics"
+  }
+}

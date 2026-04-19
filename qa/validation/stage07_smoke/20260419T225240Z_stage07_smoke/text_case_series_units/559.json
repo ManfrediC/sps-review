@@ -1,0 +1,239 @@
+{
+  "paper_id": "559",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\559.json",
+  "source_filename": "559_Mas et al. - 2011 - Antiglycine-receptor encephalomyelitis with rigidi.pdf",
+  "source_sha256": "a115cd620ba743f2d2063b9023c008f8dfd1e2dbea118e5ff425ad517ac9cb30",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "small_case_series",
+    "resolved_source_route_source": "manual_review",
+    "contains_individual_level_data": false,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/559.json",
+    "final_count": 3,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "gpt-5.4",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T22:53:22.102136+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 3,
+    "published_individual_count": 3,
+    "published_group_count": 0,
+    "shared_context_count": 2,
+    "has_unresolved_remainder": false
+  },
+  "publication_decision": {
+    "status": "publish_all_units",
+    "manual_review_required": false,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior."
+  },
+  "shared_context_blocks": [
+    {
+      "context_id": "559__shared__001",
+      "context_type": "shared_context",
+      "text": "We have reported on three patients with GlyR-ab who exhibited",
+      "applies_to_unit_ids": [
+        "559__individual__001",
+        "559__individual__002",
+        "559__individual__003"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 1,
+          "line_start": 53,
+          "line_end": 53
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "559__shared__002",
+      "context_type": "shared_context",
+      "text": "uniform. The three patients had normal brain and spinal cord",
+      "applies_to_unit_ids": [
+        "559__individual__001",
+        "559__individual__002",
+        "559__individual__003"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 1,
+          "line_start": 56,
+          "line_end": 56
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "559__individual__001",
+      "unit_order": 1,
+      "unit_type": "individual",
+      "unit_label": "Patient 1",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 1\nA 33-year-old woman, with autoimmune thyroid-\nitis, presented in September 1999 with subacute\nonset of brainstem symptoms, diplopia, dysphagia\nand gait ataxia that improved spontaneously in\n5 weeks. In January 2000, she progressively devel-\noped rigidity of lower limbs with painful spasms,\ninvoluntary jerks and contracture of both ankles\nand urinary retention. Brain and spinal MRI and\ncerebrospinal ﬂuid (CSF) examination was normal\nwith negative oligoclonal bands. EMG demon-\nstrated involuntary continuous motor unit activity\nand abnormal exteroceptive reﬂ exes. Onconeural\nantibodies (Hu, Y o, Ri, T r, CV2, Ma2, amphiphysin)\nand GAD-ab were negative. A progressive complete\nrecovery was obtained with corticosteroids, diaz-\nepam and baclofen. She relapsed with stiffness and\npainful spasms predominantly of the right leg in\nNovember 2001. She was treated with a course of\nintravenous immunoglobulin (IVIG) (0.4 g/kg/\nday35 days) and restarted with symptomatic\ntherapy. By May 2002, she returned to work, and\nshe has been asymptomatic for 8 years. GlyR-ab\nwere found positive, with a score of 3.5 in serum\nstored from 2001 (CSF was not available for anal-\nysis). A follow-up serum sample obtained in 2009\nwas low positive with a score of 1.",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 81,
+          "line_end": 107
+        }
+      ],
+      "linked_shared_context_ids": [
+        "559__shared__001",
+        "559__shared__002"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    },
+    {
+      "unit_id": "559__individual__002",
+      "unit_order": 2,
+      "unit_type": "individual",
+      "unit_label": "Patient 2",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 2\nA 60-year-old man complained of progressive\ndysphagia. Five days later, he began to experience\nbrief attacks of rigidity of his legs with painful\nspasms and back pain. T wo days later, the spasms\nbecame more frequent; he noticed diplopia and right\nfacial numbness that prompted his admission. The\nClı´nic and Institut d’ Investigacio´\nBiome`dica August Pi i Sunyer\n(IDIBAPS), Barcelona, Spain\nNeurosciences, Weatheral\nInstitut of Molecular Medicine,\nUK\nUniversitario Fundacio´n\nAlcorco´n, Madrid, Spain\nSant Joan D’Alacant, Alicante,\nSpain\nCorrespondence to\nDr Francesc Graus, Servei de\nVillarroel 170, Barcelona 08036,\nSpain; fgraus@clinic.ub.es\nRevised 18 October 2010\nAccepted 20 October 2010\nPublished Online First\n10 December 2010\nJ Neurol Neurosurg Psychiatry 2011;82:1399e1401. doi:10.1136/jnnp.2010.229104 1399\nShort report\nfamily had also noted emotional irritability, anxiety and behav-\nioural changes in the last month. On examination, he was anxious\nwith no evidence of cognitive deterioration. There was a mild\nparesis of the VI and VII left cranial nerves, right trigeminal\nhypoaesthesia and dysarthria. He had dif ﬁculties in swallowing,\nand the tongue was weak. The rigidity and spasms of the legs were\nspontaneous and easily elicited by sensory stimuli accompanied\nby diaphoresis and tachycardia. Routine haematological,\nbiochemical and CSF analysis, CSF oligoclonal bands, whole body\nCT and brain MRI were normal or negative. EMG demonstrated\ninvoluntary continuous motor unit activity. Onconeural anti-\nbodies and GAD-ab were negative, but GlyR-ab were present in\nserum and CSF (both at score 3.5). In the ensuing days, the\nbrainstem symptoms worsened, and he developed spastic para-\nparesis with bilateral Babinski signs and ankle clonus. There was\nalso severe stimuli-sensitive multifocal myoclonus. Seven days\nafter admission, he developed repetitive right and left motor\nseizures, with severe autonomic instability (profuse sweating,\nmydriasis, tachycardia, high blood pressure and hyperthermia)\nfollowed by a cardiac arrest. He was intubated and ventilated but\ndid not recover, and he has remained in a persistent vegetative\nstate and ventilator-dependent.",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 108,
+          "line_end": 114
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 116,
+          "line_end": 118
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 120,
+          "line_end": 121
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 123,
+          "line_end": 123
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 125,
+          "line_end": 126
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 128,
+          "line_end": 131
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 133,
+          "line_end": 134
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 136,
+          "line_end": 141
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 0,
+          "line_end": 21
+        }
+      ],
+      "linked_shared_context_ids": [
+        "559__shared__001",
+        "559__shared__002"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    },
+    {
+      "unit_id": "559__individual__003",
+      "unit_order": 3,
+      "unit_type": "individual",
+      "unit_label": "Patient 3",
+      "source_mode": "narrative_block",
+      "unit_text": "Patient 3\nA 48-year-old man presented in September 2009 with 2 months\nof pruritus that involved the left scapula, right arm and right\nT11eT12 dermatome. At the same time, he became progres-\nsively more aggressive and developed emotional irritability,\ndysgeusia (metallic taste) and severe diurnal hypersommia. Over\nthe ensuing weeks, he presented progressive rigidity in the right\nleg, severe trismus elicited by yawning or deglutition that\nprevent him to drink or eat, and frequent spells of trismus, axial\nrigidity with leg spasms that were followed by an opisthotonic\nposture and accompanied by facial ﬂushing and diaphoresis of\nbrief duration. These spells were easily elicited by sensory\nstimuli. Neurological examination revealed an alert patient with\nnormal cognitive status. There was diffuse rigidity of the right\nleg with hyper-re ﬂexia and Babinski response. A light touch\ncaused dysesthesia in the areas with pruritus. Sensory, but not\nauditory, stimuli (tactile cutaneous and pharyngeal) elicited the\nspells described above.\nRoutine haematological, biochemical and CSF analysis, CSF\noligoclonal bands, whole-body CT , brain and spinal MRI scans\nwere normal or negative. An EMG performed while he was on\ntreatment did not show continuous motor unit activity. Onco-\nneural antibodies and GAD-ab were negative. GlyR-ab were\npresent in the serum and CSF (score 3). T reatment with diaz-\nepam and gabapentin provided an immediate complete relief of\nthe spasms. The patient received 10 monthly courses of IVIG\nand oral corticosteroids. He showed a partial improvement with\nresolution of his leg rigidity but persistence of the pruritus,\ndysgeusia, hypersomnia, masseter spasms with yawn, and\nbehavioural changes.",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 22,
+          "line_end": 51
+        }
+      ],
+      "linked_shared_context_ids": [
+        "559__shared__001",
+        "559__shared__002"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    }
+  ],
+  "unresolved_remainder": {
+    "present": false,
+    "reason_code": "",
+    "reason": "",
+    "source_span_refs": [],
+    "text": ""
+  },
+  "stage07_adjudication": {
+    "requested_model": "gpt-5.4",
+    "model_id": "gpt-5.4-2026-03-05",
+    "decision_type": "publish_units",
+    "decision_summary": "Three attribution-safe individual case units are explicitly labeled in the case reports section. Patient 2 required exclusion of intervening author/metadata lines, so its unit is represented by two non-overlapping primary spans. No shared context blocks are needed.",
+    "unresolved_remainder_reason": "Abstract, discussion, methods, and metadata lines were not assigned because they are article-level summaries, duplicated cross-patient context, or non-clinical content.",
+    "validation_status": "valid_but_not_selected",
+    "adjudicated_resolution": {
+      "status": "partial_publish_with_unresolved_remainder",
+      "reason_code": "individual_units_match_stage06_count",
+      "published_unit_count": 3
+    }
+  }
+}
