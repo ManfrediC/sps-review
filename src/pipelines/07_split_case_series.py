@@ -10,6 +10,7 @@ from _source_routing import load_csv_rows_by_id
 from _stage07_units import (
     DEFAULT_ADJUDICATION_MODEL,
     DEFAULT_CANDIDATE_GENERATION_MODE,
+    DEFAULT_OPENAI_ENV_FILE,
     SOURCE_CASE_COUNT_PATH,
     SOURCE_CATEGORISATION_PATH,
     SOURCE_MANUAL_REVIEW_PATH,
@@ -18,7 +19,9 @@ from _stage07_units import (
     STAGE07_UNITS_DIR,
     build_manifest_run_id,
     collect_candidate_ids,
+    preflight_openai,
     process_paper,
+    resolve_openai_api_key,
     write_manifest,
     write_registry,
 )
@@ -91,6 +94,27 @@ def parse_args() -> argparse.Namespace:
         help="Adjudication model label recorded in stage07_method.adjudication_model.",
     )
     parser.add_argument(
+        "--allow-paid-run",
+        action="store_true",
+        help="Required before any paid GPT adjudication call is made.",
+    )
+    parser.add_argument(
+        "--openai-api-key",
+        default="",
+        help="Optional explicit OpenAI API key override for stage-07 adjudication.",
+    )
+    parser.add_argument(
+        "--openai-env-file",
+        type=Path,
+        default=DEFAULT_OPENAI_ENV_FILE,
+        help="Env file used to resolve OPENAI_API_KEY when --openai-api-key is not supplied.",
+    )
+    parser.add_argument(
+        "--skip-openai-preflight",
+        action="store_true",
+        help="Skip the tiny OpenAI preflight probe before processing papers.",
+    )
+    parser.add_argument(
         "--skip-registry-refresh",
         action="store_true",
         help="Do not rebuild paper_artifact_registry.csv after writing outputs.",
@@ -110,11 +134,22 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
 
 def main() -> None:
     args = parse_args()
+    adjudication_api_key: str | None = None
     if args.adjudication_model != DEFAULT_ADJUDICATION_MODEL:
-        raise SystemExit(
-            "OpenAI adjudication is not wired in this rewrite yet. "
-            "Rerun with --adjudication-model disabled."
+        if not args.allow_paid_run:
+            raise SystemExit(
+                "Refusing to start a paid stage-07 adjudication run without --allow-paid-run."
+            )
+        adjudication_api_key = resolve_openai_api_key(
+            args.openai_api_key or None,
+            env_file=args.openai_env_file,
         )
+        if not args.skip_openai_preflight:
+            preflight_openai(
+                model=args.adjudication_model,
+                api_key=adjudication_api_key,
+                env_file=args.openai_env_file,
+            )
 
     source_rows = load_csv_rows_by_id(args.source_categorisation_path, "paper_id")
     manual_rows = load_csv_rows_by_id(args.source_manual_review_path, "paper_id")
@@ -144,6 +179,7 @@ def main() -> None:
             manifest_run_id=manifest_run_id,
             candidate_generation_mode=args.candidate_generation_mode,
             adjudication_model=args.adjudication_model,
+            adjudication_api_key=adjudication_api_key,
         )
         paper_output_path = args.output_dir / f"{paper_id}.json"
         paper_output_path.write_text(

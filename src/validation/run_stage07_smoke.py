@@ -19,6 +19,7 @@ SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categor
 SOURCE_CASE_COUNT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_registry.csv"
 OUTPUT_ROOT = REPO_ROOT / "qa" / "validation" / "stage07_smoke"
 STAGE07_SCRIPT = REPO_ROOT / "src" / "pipelines" / "07_split_case_series.py"
+DEFAULT_OPENAI_ENV_FILE = REPO_ROOT / "env" / "openai_api_key.env"
 
 
 def load_csv_rows(path: Path) -> list[dict[str, str]]:
@@ -71,6 +72,27 @@ def parse_args() -> argparse.Namespace:
         default=OUTPUT_ROOT,
         help="Root directory for smoke-run outputs.",
     )
+    parser.add_argument(
+        "--adjudication-model",
+        default="disabled",
+        help="Stage-07 adjudication model. Use 'disabled' for heuristics-only smoke runs.",
+    )
+    parser.add_argument(
+        "--allow-paid-run",
+        action="store_true",
+        help="Required before any paid GPT adjudication call is made.",
+    )
+    parser.add_argument(
+        "--openai-env-file",
+        type=Path,
+        default=DEFAULT_OPENAI_ENV_FILE,
+        help="Env file used to resolve OPENAI_API_KEY for stage-07 adjudication.",
+    )
+    parser.add_argument(
+        "--skip-openai-preflight",
+        action="store_true",
+        help="Skip the stage-07 OpenAI preflight probe.",
+    )
     return parser.parse_args()
 
 
@@ -86,6 +108,10 @@ def main() -> None:
     )
     if not paper_ids:
         raise SystemExit("No finalised stage-06 split papers matched the requested smoke-test criteria.")
+    if args.adjudication_model != "disabled" and not args.allow_paid_run:
+        raise SystemExit(
+            "Refusing to start a paid stage-07 smoke run without --allow-paid-run."
+        )
 
     run_id = build_run_id()
     run_root = args.output_root / run_id
@@ -117,6 +143,18 @@ def main() -> None:
         run_id,
         "--skip-registry-refresh",
     ]
+    if args.adjudication_model != "disabled":
+        stage07_cmd.extend(
+            [
+                "--adjudication-model",
+                args.adjudication_model,
+                "--allow-paid-run",
+                "--openai-env-file",
+                str(args.openai_env_file),
+            ]
+        )
+        if args.skip_openai_preflight:
+            stage07_cmd.append("--skip-openai-preflight")
     for paper_id in paper_ids:
         stage07_cmd.extend(["--paper-id", paper_id])
     subprocess.run(stage07_cmd, check=True, cwd=str(REPO_ROOT))
@@ -130,6 +168,7 @@ def main() -> None:
         "run_id": run_id,
         "paper_count": len(registry_rows),
         "paper_ids": paper_ids,
+        "adjudication_model": args.adjudication_model,
         "published_paper_count": len(published_rows),
         "manual_review_paper_count": len(registry_rows) - len(published_rows),
         "published_unit_count": sum(int((row.get("published_unit_count") or "0").strip() or "0") for row in registry_rows),

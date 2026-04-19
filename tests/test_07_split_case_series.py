@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -223,6 +226,119 @@ class TestStage07SplitCaseSeries(unittest.TestCase):
 
         self.assertEqual(article_lines[0]["text"], "Stiff-leg syndrome:")
         self.assertEqual(article_lines[-1]["text"], "Patient 2 had progressive stiffness, startle-induced spasms, and gait impairment with partial benzodiazepine response and later IVIg benefit.")
+
+    def test_process_paper_can_use_adjudication_when_heuristics_fail(self) -> None:
+        mod = _load_module("stage07_units_adjudication", STAGE07_HELPER)
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            tmp_path = Path(tmp_dir_text)
+            text_dir = tmp_path / "text"
+            output_dir = tmp_path / "out"
+            text_dir.mkdir()
+            output_dir.mkdir()
+            (text_dir / "9004.json").write_text(
+                json.dumps(
+                    {
+                        "source_filename": "9004.pdf",
+                        "source_sha256": "abc123",
+                        "pages": [
+                            {
+                                "page_index": 0,
+                                "text": "\n".join(
+                                    [
+                                        "Case series of two patients with SPS.",
+                                        "A 42-year-old woman developed progressive axial stiffness with painful spasms and frequent falls before treatment.",
+                                        "She improved substantially after diazepam and immunotherapy, although residual stiffness persisted at follow-up.",
+                                        "A second patient, a 51-year-old man, had startle-provoked spasms with lower-limb rigidity and anti-GAD positivity.",
+                                        "He showed partial improvement after diazepam and physiotherapy but still needed walking support.",
+                                        "All 2 patients had anti-GAD antibodies and disabling axial stiffness.",
+                                        "Discussion",
+                                    ]
+                                ),
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+
+            adjudication = mod.Stage07AdjudicationOutput(
+                decision_type="publish_units",
+                decision_summary="Two attribution-safe individual units were recoverable from the narrative text.",
+                units=[
+                    mod.Stage07AdjudicatedUnit(
+                        unit_type="individual",
+                        unit_label="Patient 1",
+                        line_spans=[mod.Stage07LineSpan(start_global_index=1, end_global_index=2)],
+                        evidence_summary="The first two narrative lines describe one woman consistently.",
+                    ),
+                    mod.Stage07AdjudicatedUnit(
+                        unit_type="individual",
+                        unit_label="Patient 2",
+                        line_spans=[mod.Stage07LineSpan(start_global_index=3, end_global_index=4)],
+                        evidence_summary="The next two lines describe a distinct second patient consistently.",
+                    ),
+                ],
+                shared_context_blocks=[
+                    mod.Stage07AdjudicatedSharedContext(
+                        context_label="Both patients shared anti-GAD positivity and axial stiffness",
+                        applies_to_unit_labels=["Patient 1", "Patient 2"],
+                        line_spans=[mod.Stage07LineSpan(start_global_index=5, end_global_index=5)],
+                        evidence_summary="The paper explicitly states that both patients shared these features.",
+                    )
+                ],
+                unresolved_remainder_reason="",
+            )
+
+            old_text_dir = mod.TEXT_DIR
+            old_reference_row_for_paper = mod.reference_row_for_paper
+            mod.TEXT_DIR = text_dir
+            mod.reference_row_for_paper = lambda paper_id: {}
+            try:
+                with mock.patch.object(
+                    mod,
+                    "adjudicate_stage07_units",
+                    return_value=(adjudication, "gpt-5.4-test"),
+                ) as mocked_adjudicator:
+                    result = mod.process_paper(
+                        paper_id="9004",
+                        source_row={
+                            "source_category": "case_series_or_multi_case",
+                            "source_subtype": "case_series",
+                            "classification_confidence": "high",
+                            "contains_individual_level_data": "true",
+                            "contains_group_level_data": "false",
+                            "preferred_langextract_mode": "individual_case_split",
+                            "recommended_next_action": "split_cases_then_langextract",
+                        },
+                        manual_row={},
+                        stage06_row={
+                            "likely_sps_case_count": "2",
+                            "count_confidence": "high",
+                            "count_verification_status": "manual_review_override",
+                        },
+                        paper_output_dir=output_dir,
+                        manifest_run_id="20260420T120000Z_stage07",
+                        candidate_generation_mode="heuristics_v1",
+                        adjudication_model="gpt-5.4",
+                        adjudication_api_key="test-key",
+                    )
+                self.assertEqual(mocked_adjudicator.call_count, 1)
+                self.assertEqual(result.paper_payload["publication_decision"]["status"], "publish_all_units")
+                self.assertEqual(len(result.paper_payload["units"]), 2)
+                self.assertEqual(result.paper_payload["stage07_adjudication"]["validation_status"], "selected")
+                self.assertEqual(
+                    [unit["unit_label"] for unit in result.paper_payload["units"]],
+                    ["Patient 1", "Patient 2"],
+                )
+                self.assertIn(
+                    "All 2 patients had anti-GAD antibodies and disabling axial stiffness.",
+                    result.manifest_records[0]["langextract_input_text"],
+                )
+            finally:
+                mod.TEXT_DIR = old_text_dir
+                mod.reference_row_for_paper = old_reference_row_for_paper
 
 
 if __name__ == "__main__":
