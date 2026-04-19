@@ -10,7 +10,7 @@ These scripts are intentionally separate from `src/pipelines/`:
 
 The retired stage-05 autoresearch bundle is now archived under `legacy/stage_05_autoresearch/`. `src/validation/` keeps the live manual batch-management, review, and feedback utilities for stage 05.
 
-The retired deterministic stage-05 validation bundle now lives under `legacy/stage_05_deterministic/src/validation/`.
+The retired deterministic stage-05 manifests, reports, and verification packs now live under `legacy/stage_05_deterministic/qa/trimming/`. The old deterministic helper wrappers and tests that still pointed at deleted entrypoints were removed during cleanup.
 
 ## Available scripts
 
@@ -313,7 +313,7 @@ It:
 Run:
 
 ```bash
-python src/validation/update_trimming_review_outputs.py --batch-id batch_009
+python src/validation/update_trimming_review_outputs.py --batch-id <current_batch_id>
 ```
 
 ### `apply_trimming_manual_overrides.py`
@@ -330,7 +330,7 @@ It:
 Run:
 
 ```bash
-python src/validation/apply_trimming_manual_overrides.py --batch-id batch_009 --only-enabled
+python src/validation/apply_trimming_manual_overrides.py --batch-id <current_batch_id> --only-enabled
 ```
 
 ### `build_stage04_gold_batch.py`
