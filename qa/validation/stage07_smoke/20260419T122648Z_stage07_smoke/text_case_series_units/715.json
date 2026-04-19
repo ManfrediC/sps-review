@@ -1,0 +1,75 @@
+{
+  "paper_id": "715",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\715.json",
+  "source_filename": "715_Balint et al. - 2014 - Progressive encephalomyelitis with rigidity and my.pdf",
+  "source_sha256": "8168b03a76934446cd9ca8acd10b32a2a8f39796e52633c009619a5bef37ad29",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": true,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/715.json",
+    "final_count": 3,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "disabled",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T12:26:52.481778+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 0,
+    "published_individual_count": 0,
+    "published_group_count": 0,
+    "shared_context_count": 0,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "manual_review_required",
+    "manual_review_required": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings."
+  },
+  "shared_context_blocks": [],
+  "units": [],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 8,
+        "line_start": 4,
+        "line_end": 26
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 8,
+        "line_start": 28,
+        "line_end": 31
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 8,
+        "line_start": 33,
+        "line_end": 38
+      }
+    ],
+    "text": "Progressive encephalomyelitis with rigidity and myoclonus: A new variant with DPPX\nThis information is current as of April 2, 2014\nServices\nUpdated Information &\nhttp://n.neurology.org/content/82/17/1521.full\nincluding high resolution figures, can be found at:\nSupplementary Material\n372.DC2\nhttp://n.neurology.org/content/suppl/2015/04/01/WNL.0000000000000\n372.DC1\nhttp://n.neurology.org/content/suppl/2014/04/02/WNL.0000000000000\nSupplementary material can be found at:\nReferences\nhttp://n.neurology.org/content/82/17/1521.full#ref-list-1\nThis article cites 15 articles, 6 of which you can access for free at:\nCitations\nhttp://n.neurology.org/content/82/17/1521.full##otherarticles\nThis article has been cited by 7 HighWire-hosted articles:\nSubspecialty Collections\nhttp://n.neurology.org/cgi/collection/stiff_person_syndrome\nStiff person syndrome\nfollowing collection(s):\nThis article, along with others on similar topics, appears in the\nPermissions & Licensing\nhttp://www.neurology.org/about/about_the_journal#permissions\nits entirety can be found online at:\nInformation about reproducing this article in parts (figures,tables) or in\nReprints\nhttp://n.neurology.org/subscribers/advertise\nInformation about ordering reprints can be found online:\nrights reserved. Print ISSN: 0028-3878. Online ISSN: 1526-632X.\n1951, it is now a weekly with 48 issues per year. Copyright © 2014 American Academy of Neurology. All\n® is the official journal of the American Academy of Neurology. Published continuously sinceNeurology"
+  }
+}

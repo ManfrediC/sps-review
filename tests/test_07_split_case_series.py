@@ -54,9 +54,15 @@ class TestStage07SplitCaseSeries(unittest.TestCase):
                 "page_index": 0,
                 "line_index": 6,
                 "global_index": 6,
+                "text": "1Department of Neurology, Example University Hospital, London, UK",
+            },
+            {
+                "page_index": 0,
+                "line_index": 7,
+                "global_index": 7,
                 "text": "Her gait improved after treatment and residual stiffness persisted at long-term review but she regained independent transfers.",
             },
-            {"page_index": 0, "line_index": 7, "global_index": 7, "text": "Discussion"},
+            {"page_index": 0, "line_index": 8, "global_index": 8, "text": "Discussion"},
         ]
         stage06_prior = {
             "final_count": 2,
@@ -76,6 +82,7 @@ class TestStage07SplitCaseSeries(unittest.TestCase):
         )
         self.assertEqual(reason, "")
         self.assertEqual(len(units), 2)
+        self.assertNotIn("Example University Hospital", units[1]["unit_text"])
 
         shared_blocks = mod.build_shared_context_blocks(
             paper_id="9001",
@@ -149,6 +156,44 @@ class TestStage07SplitCaseSeries(unittest.TestCase):
         self.assertEqual(units[0]["unit_type"], "group")
         self.assertEqual(units[0]["group_size"], 10)
         self.assertEqual(units[1]["group_size"], 4)
+
+    def test_inline_case_markers_are_recognised(self) -> None:
+        mod = _load_module("stage07_units_inline_markers", STAGE07_HELPER)
+        lines = [
+            {
+                "page_index": 0,
+                "line_index": 0,
+                "global_index": 0,
+                "text": "Subjects, methods, and results. Case 1. A 53-year-old man developed episodic right leg stiffness with painful spasms and later improved after IVIg and diazepam therapy.",
+            },
+            {
+                "page_index": 0,
+                "line_index": 1,
+                "global_index": 1,
+                "text": "He had thyroiditis and pernicious anaemia but no truncal rigidity during the early course of illness.",
+            },
+            {
+                "page_index": 0,
+                "line_index": 2,
+                "global_index": 2,
+                "text": "Case 2. His daughter developed recurrent axial opisthotonos with anxiety-provoked spasms and later partial response to baclofen treatment.",
+            },
+            {
+                "page_index": 0,
+                "line_index": 3,
+                "global_index": 3,
+                "text": "Her serum GAD65 antibody remained strongly positive and episodic symptoms persisted at long-term follow-up.",
+            },
+        ]
+
+        units, reason = mod.build_individual_units(
+            paper_id="9003",
+            lines=lines,
+            stage06_prior={"final_count": 2},
+        )
+
+        self.assertEqual(reason, "")
+        self.assertEqual([unit["unit_label"] for unit in units], ["Case 1", "Case 2"])
 
     def test_restrict_to_article_window_discards_neighbouring_articles(self) -> None:
         mod = _load_module("stage07_units_article_window", STAGE07_HELPER)

@@ -1,0 +1,82 @@
+{
+  "paper_id": "668",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\668.json",
+  "source_filename": "668_Shugaiv et al. - 2013 - Progressive encephalomyelitis with rigidity and my.pdf",
+  "source_sha256": "3fe995a0404dc23ea8ad5f516e7f18c8fa8a60baa11df154ae5f31912bc78bb0",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/668.json",
+    "final_count": 3,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "disabled",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T12:26:51.642865+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 0,
+    "published_individual_count": 0,
+    "published_group_count": 0,
+    "shared_context_count": 0,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "manual_review_required",
+    "manual_review_required": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings."
+  },
+  "shared_context_blocks": [],
+  "units": [],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 0,
+        "line_start": 4,
+        "line_end": 64
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 0,
+        "line_end": 7
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 9,
+        "line_end": 16
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 18,
+        "line_end": 75
+      }
+    ],
+    "text": "Progressive Encephalomyelitis with Rigidity and\nMyoclonus: A Syndrome with Diverse Clinical\nFeatures and Antibody Responses\nErkingül Shugaiv Maria Isabel\na Leite f Elçin Şehitoğ lu b Mark Woodhall f\nFiliz Çavuş b Patrick Waters f Sema İçöz a Ömer Birişik a Elif Uğurel b\nCanan Ulusoy b Murat Kürtüncü d Burçak Vural b Angela Vincent f\nGulsen Akman-Demir e Erdem Tüzün a, c\na Department of Neurology, Istanbul Faculty of Medicine, and Departments of b Genetics and c Neuroscience,\nInstitute of Experimental Medicine and Research, Istanbul University, d\nDepartment of Neurology, School of\nMedicine, Acibadem University, and e Department of Neurology, School of Medicine, Istanbul Bilim University,\nIstanbul , Turkey; f Neuroimmunology Group, Nuffield, Department of Clinical Neurosciences, University of Oxford,\nOxford , UK\nthat PERM is caused by diverse pathogenic mechanisms. Se-\nropositivity to well-characterized neuronal cell surface anti-\ngens might indicate a good treatment response.\nCopyright © 2013 S. Karger AG, Basel\nIntroduction\nStiff-person syndrome (SPS) is characterized by often\nsymmetrical rigidity and muscle stiffness, particularly of\naxial and proximal limb muscles. Alternatively, patients\nwith progressive encephalomyelitis with rigidity and my-\noclonus (PERM), part of the SPS spectrum, present with\nSPS symptoms and a combination of inflammatory cere-\nbrospinal fluid (CSF) signs, startle response, myoclonus,\nbrainstem symptoms, long tract signs, cognitive involve-\nment and rarely seizures [1–3] . Once considered as con-\nsistently fatal due to its aggressive course, PERM patients\nwith different degrees of response to immunotherapy\nhave been reported [4, 5] .\nKey Words\nProgressive encephalomyelitis with rigidity and\nmyoclonus · Autoimmune encephalitis · Paraneoplastic ·\nProtein macroarray · Antibody · Autoimmunity\nAbstract\nBackground/Aims: To better characterize progressive en-\ncephalomyelitis with rigidity and myoclonus (PERM) syn-\ndrome and identify novel PERM phenotypes. Methods: The\nclinical features and antibody status of PERM patients were\ninvestigated using immunoblots, cell-based assays, RIA, pro-\ntein macroarray and ELISA. Results: Two patients with supra-\ntentorial involvement showed abnormal PET or EEG find-\nings. One patient was discovered to have renal cell carcino-\nma, and protein macroarray revealed Ma3-antibodies.\nAnother patient with leucine-rich, glioma-inactivated 1\n(LGI1) and glutamic acid decarboxylase (GAD) antibodies\nshowed a good response to immunotherapy. Conclusion:\nThe heterogeneity of the immunological features suggests\nReceived: May 14, 2012\nAccepted: July 29, 2012\nPublished online: February 20, 2013\nDr. Erdem Tüzün\nDepartment of Neuroscience\nInstitute for Experimental Medicine, Istanbul University\nTR–34093 Istanbul (Turkey)\nE-Mail drerdem @ yahoo.com\n© 2013 S. Karger AG, Basel\n0014–3022/13/0695–0257$38.00/0\nwww.karger.com/ene\nDownloaded from http://karger.com/ene/article-pdf/69/5/257/2723517/000342237.pdf by UniversitÃ¤t ZÃ¼rich user on 26 May 2023\nShugaiv et al. Eur Neurol 2013;69:257–262\nDOI: 10.1159/000342237\n258\nA significant fraction of PERM and SPS patients dis-\nplays glutamic acid decarboxylase (GAD) antibodies [4,\n6, 7] . Antibodies to other neuronal synapse proteins such\nas amphiphysin and glycine receptor (GlyR) have also\nbeen identified in PERM patients with or without a tumor\n[2, 3, 8, 9] . Despite rare reports of PERM patients without\nantineuronal antibodies [10] , several reported PERM cas-\nes with inflammatory CSF features, antineuronal anti-\nbodies and good response to immunotherapy indicate the\nautoimmune nature of PERM\n[1] .\nPERM is still an expanding clinical entity, which is con-\nstantly being enriched with new symptoms and antibodies\n[3, 8, 9] . The heterogeneity of the immunological features\nof PERM patients suggests that PERM is caused by diverse\npathogenic mechanisms in different patients. To better\ncharacterize the PERM syndrome and to identify novel\nclinical PERM phenotypes and associated immune re-\nsponses, we conducted an extensive screening of clinical\nfeatures and antibody responses of 3 PERM patients.\nMaterials and Methods\nSerum Samples\nSera were collected from all patients within the first 2 months\nof the disease onset prior to initiation of any immunosuppressive\ntreatments. All sera were kept frozen at –80\n° C until assayed. The\nstudy was approved by the Ethics Committee of Istanbul Faculty\nof Medicine of Istanbul University.\nAutoantibodies to Ion Channels, Onconeural Antigens and\nGAD\nN-methyl-\nD -aspartate receptor (NMDAR), leucine-rich, glio-\nma-inactivated 1 (LGI1), contactin-associated protein-like 2\n(CASPR2) and GlyR antibodies were detected by binding to\nHEK293 cells transfected with plasmids containing the NR1/NR2\nsubunits of the NMDAR, LGI1, CASPR2 and the α1 subunit of the\nGlyR, respectively. NMDAR NR1/NR2 subunit transfected cells\nwere grown in the presence of 500 μ\nM ketamine after transfection.\nTransfected cells were then incubated with patients’ sera (1: 20)\nand the appropriate Alexa Fluor secondary antibody, as described\npreviously\n[11, 12] . Serum antibodies to voltage-gated potassium\nchannel (VGKC) complex were measured by radioimmunoassay\nusing\n125 I-dendrotoxin, as described previously [13] . GAD anti-\nbodies were determined by a commercial ELISA assay, as per man-\nufacturer’s instructions (Euroimmun, Lubeck, Germany). Com-\nmercially available immunoblots were used to detect paraneoplas-\ntic antibodies directed against amphiphysin, Hu, Yo, Ri, Ma2 and\nCV2/CRMP5 according to the manufacturer’s instructions (Euro-\nimmun).\nProtein Macroarray, Sequencing of cDNA Inserts and Protein\nExpression\nSerum of patient 2 was screened using a high-density protein\nmacroarray derived from human fetal brain cDNA expression li-\nbrary (hEX1), which contains approximately 24,000 clones (Ima-\nGenes, Berlin, Germany), as described previously\n[14] . Images\nwere captured and analyzed for signal intensity (Visual-Grid, GPC\nBiotech, Martinsried, Germany). The arrays were scored between\n0 (absent), 1 (weak) and 3 (strong). Plasmid DNAs from selected\nclones were isolated according to the manufacturer’s instructions\n(Qiagen, Hilden, Germany). Cloned cDNAs in the purified plas-\nmid DNA were sequenced by Iontek Laboratory (Istanbul, Tur-\nkey). Nucleotide and translated amino acid sequences were com-\npared with known sequences using BLAST algorithms (National\nCenter for Biotechnology Information, Bethesda, MD, USA). Fol-\nlowing the confirmation of the selected clones, His-tagged proteins\nwere recombinantly expressed in E. coli , purified by affinity chro-\nmatography and the purity of the proteins was documented by"
+  }
+}

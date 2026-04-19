@@ -1,0 +1,68 @@
+{
+  "paper_id": "766",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\766.json",
+  "source_filename": "766_Lo-2016-Presynaptic neuromuscular transmission.pdf",
+  "source_sha256": "01fd397144b9920056179e4b09cf4dd0c7b9e5a4d41b206f6322014ac911eea0",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/766.json",
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "disabled",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T12:26:53.317394+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 0,
+    "published_individual_count": 0,
+    "published_group_count": 0,
+    "shared_context_count": 0,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "manual_review_required",
+    "manual_review_required": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings."
+  },
+  "shared_context_blocks": [],
+  "units": [],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "no_stable_units_found",
+    "reason": "Could not find at least two distinct explicit case or patient headings.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 0,
+        "line_start": 1,
+        "line_end": 73
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 0,
+        "line_end": 10
+      }
+    ],
+    "text": "Presynaptic neuromuscular transmission\ndefect in the stiff person syndrome\nY. L. Lo 1,2* and Y. E. Tan 3\nAbstract\nBackground: The stiff person syndrome (SPS) is a rare disorder characterized by muscular rigidity and stiffness.\nCase presentations: We describe an SPS patient presenting with longstanding fatigue and electrophysiological\nevidence of presynaptic neuromuscular transmission defect, who responded to administration of pyridostigmine.\nIn contrast, no electrophysiolgical evidence of neuromuscular transmission defect was demonstrated in 2 other\nSPS patients without fatigue symptoms.\nConclusions: Our findings suggest that glutamic acid decarboxylase (GAD) antibodies may play a role in presynaptic\nneuromuscular transmission defect of SPS patients with fatigue.\nKeywords: Stiff person syndrome, Fatigue, Presynaptic, Neuromuscular transmission\nBackground\nThe stiff person syndrome (SPS) is a rare disorder\ncharacterized by progressive rigidity and stiffness. SPS\ncharacteristically affects the truncal or axial muscles,\nand may lead to chronic pain, spasms, postural deform-\nities and impaired motility. Variants of SPS, including\nstiff limb syndrome, jerking man syndrome and paraneo-\nplastic associations have been described.\nUp to 80% [1] of SPS patients have elevated glutamic\nacid decarboxylase (GAD) antibodies, but its exact role\nin the pathogenesis remains unclear. GAD antibody\nlevels generally do not correlate with disease severity [2],\nnor has it been determined as the sole cause of clinical\nmanifestations.\nGAD is a presynaptic molecule which exists in 2 main\nisoforms: GAD67 and GAD65. The latter is of interest\nas it is localized to the nerve terminals and synthesizes\ngamma-aminobutyric acid (GABA) for neurotransmis-\nsion [3]. Most SPS patients with GAD antibodies also\nhave antibodies which inhibit GABA-receptor-associated\nprotein, leading to GABA functional impairment and\nhence the clinical features [4].\nThe occurrence of fatigue has been reported in SPS [5]\nbut may be overshadowed by other muscular complaints.\nNeuromuscular fatigue is well correlated with neuro-\nmuscular transmission defect. This may be postsynaptic,\nas in myasthenia gravis, or presynaptic, as in the Lam-\nbert Eaton and Miller Fisher syndromes [6, 7].\nWe describe an SPS patient presenting with longstand-\ning fatigue and electrophysiological evidence of pre-\nsynaptic neuromuscular transmission defect.\nCase presentations\nPatient 1\nA 62-year old previously healthy Caucasian female expe-\nrienced a 20 year history of pain in the neck, truncal and\nlimb muscles. The symptoms were exacerbated by exer-\ncise and had a fluctuating course. In addition, she has\nmuscle cramps, stiffness and spasms which she needed\nperiods of rest to allow symptoms to alleviate.\nNotably, she reported severe fatigue symptoms for the\nsame period of time, made worse with physical exertion\nand mental stress. She had consulted multiple doctors\nand given diagnoses, including chronic fatigue syndrome\n(CFS) or myalic encephalomyelitis, and fibromyalgia.\nThese symptoms had severely affected her lifestyle and\ncan last up to several days in duration.\nThere were no complaints of confusion, memory loss,\nseizures, vertigo, loss of appetite or weight.\n* Correspondence: lo.yew.long@singhealth.com.sg\n1Department of Neurology, National Neuroscience Institute, Singapore\nGeneral Hospital, Outram Road, Academia Level 4, Singapore 169608,\nSingapore\n2Duke-NUS Graduate Medical School, Singapore, Singapore\nFull list of author information is available at the end of the article\n© The Author(s). 2016 Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0\nInternational License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and\nreproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to\nthe Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver\n(http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.\nLo and Tan BMC Neurology (2016) 16:249\nDOI 10.1186/s12883-016-0773-2\nClinical examination showed a well and alert middle-\naged woman. No signs of muscle wasting, tremor, dystonia\nor fasciculations were observed. There was no obvious\nmuscle weakness or fatigability. Examination of cranial\nnerves, cerebellar system, sensation and position sense\nwere unremarkable.\nNerve conduction study is not suggestive of sensori-\nmotor polyneuropathy. Needle electromyography per-\nformed showed involuntary firing of motor units with\nnormal morphology at rest. During voluntary activation,\nthere was normal recruitment of motor units seen."
+  }
+}

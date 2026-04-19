@@ -3,15 +3,20 @@ from __future__ import annotations
 import csv
 import json
 import re
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 from _proceedings_text import (
     LineRef,
     collect_title_cluster,
+    is_footer_like,
     is_header_noise,
     is_potential_title_line,
     is_uppercase_title_like,
@@ -44,6 +49,10 @@ DEFAULT_ADJUDICATION_MODEL = "disabled"
 
 CASE_MARKER_RE = re.compile(
     r"^(?P<lemma>case|patient)\b\s*(?:no\.?|number)?\s*(?P<num>\d+|[ivxlcdm]+|[a-z])\b[:.\-)]?",
+    re.IGNORECASE,
+)
+INLINE_CASE_MARKER_RE = re.compile(
+    r"(?:^|[.:;]\s+)(?P<lemma>case|patient)\b\s*(?:no\.?|number)?\s*(?P<num>\d+|[ivxlcdm]+|[a-z])\b[:.\-)]?",
     re.IGNORECASE,
 )
 ORDINAL_MARKER_RE = re.compile(
@@ -240,15 +249,46 @@ def strict_author_line(line_text: str) -> bool:
         return False
     if STRICT_AUTHOR_CREDENTIAL_RE.search(stripped):
         return True
-    if len(STRICT_AUTHOR_PAIR_RE.findall(stripped)) >= 2:
+    if ";" in stripped and STRICT_AUTHOR_PAIR_RE.search(stripped):
         return True
-    if stripped.count(",") >= 2:
-        capital_tokens = re.findall(r"\b(?:[A-Z][a-z]{2,}|[A-Z]\.)\b", stripped)
-        if len(capital_tokens) >= 4:
-            return True
-    if re.search(r"\b[A-Z]\.\s*[A-Z][a-z]+", stripped) and stripped.count(",") >= 1:
+    if stripped.count(",") >= 1 and re.search(r"\b[A-Z]\.", stripped):
+        return True
+    if stripped.count(",") >= 2 and len(STRICT_AUTHOR_PAIR_RE.findall(stripped)) >= 2:
         return True
     return False
+
+
+def affiliation_like_line(line_text: str) -> bool:
+    normalized = " ".join(line_text.strip().lower().split())
+    if not normalized:
+        return False
+    if normalized.startswith(
+        (
+            "* correspondence",
+            "correspondence:",
+            "full list of author information",
+            "doi ",
+            "doi:",
+            "© the author",
+        )
+    ):
+        return True
+    if normalized.startswith(("1department", "2department", "3department", "1service", "2service", "3service")):
+        return True
+    return any(
+        marker in normalized
+        for marker in (
+            "department of",
+            "service of",
+            "division of",
+            "university",
+            "hospital",
+            "institute",
+            "centre",
+            "center",
+            "school of medicine",
+        )
+    )
 
 
 def article_metadata_line(line_text: str) -> bool:
@@ -260,7 +300,20 @@ def article_metadata_line(line_text: str) -> bool:
         or normalized.startswith("received ")
         or normalized.startswith("address correspondence")
         or normalized.startswith("copyright ")
+        or normalized.startswith("doi:")
+        or normalized.startswith("© ")
     )
+
+
+def ignorable_noise_line(line_text: str) -> bool:
+    if is_footer_like(line_text):
+        return True
+    if article_metadata_line(line_text):
+        return True
+    if affiliation_like_line(line_text):
+        return True
+    normalized = " ".join(line_text.strip().lower().split())
+    return normalized.startswith(("supported in part by", "presented at the "))
 
 
 def find_article_anchor(
@@ -340,6 +393,8 @@ def find_next_article_header_index(
     upper_bound = min(len(line_refs), start_index + 1200)
     for index in range(lower_bound, upper_bound):
         line_text = line_refs[index].text
+        if affiliation_like_line(line_text) or article_metadata_line(line_text):
+            continue
         if not is_potential_title_line(line_text):
             continue
         if is_header_noise(line_text):
@@ -355,7 +410,7 @@ def find_next_article_header_index(
             continue
 
         lookahead = line_refs[index + len(cluster) : min(len(line_refs), index + len(cluster) + 6)]
-        if any(strict_author_line(item.text) or article_metadata_line(item.text) for item in lookahead):
+        if any(strict_author_line(item.text) for item in lookahead):
             return index
     return None
 
@@ -440,11 +495,14 @@ def build_line_range_refs(
 
 def parse_case_marker(line: str) -> str | None:
     stripped = line.strip()
-    if len(stripped) > 120:
+    if len(stripped) > 220:
         return None
     match = CASE_MARKER_RE.match(stripped)
     if match:
         return f"{match.group('lemma').title()} {match.group('num').upper()}"
+    inline_match = INLINE_CASE_MARKER_RE.search(stripped)
+    if inline_match:
+        return f"{inline_match.group('lemma').title()} {inline_match.group('num').upper()}"
     ordinal_match = ORDINAL_MARKER_RE.match(stripped)
     if ordinal_match:
         label = ordinal_match.group("label")
@@ -625,7 +683,11 @@ def build_individual_units(
             start_index=marker["start_index"],
             default_end_index=default_end,
         )
-        segment_lines = lines[marker["start_index"] : end_index]
+        segment_lines = [
+            line
+            for line in lines[marker["start_index"] : end_index]
+            if not ignorable_noise_line(line["text"])
+        ]
         unit_text = render_lines(segment_lines)
         if len(unit_text) < 160:
             continue
@@ -753,7 +815,11 @@ def build_shared_context_blocks(
     if not units or any(unit["unit_type"] != "individual" for unit in units):
         return []
     occupied = {index for unit in units for index in unit.get("_line_indices", [])}
-    candidate_lines = [line for line in lines if line["global_index"] not in occupied]
+    candidate_lines = [
+        line
+        for line in lines
+        if line["global_index"] not in occupied and not ignorable_noise_line(line["text"])
+    ]
     blocks: list[dict[str, Any]] = []
     for line in candidate_lines:
         bounded_count = bounded_shared_context_count(line["text"])
@@ -803,7 +869,9 @@ def build_unresolved_remainder(
         unresolved_lines = [
             line
             for line in lines[scope_start:scope_end]
-            if line["global_index"] not in occupied and not STOP_HEADING_RE.match(line["text"])
+            if line["global_index"] not in occupied
+            and not STOP_HEADING_RE.match(line["text"])
+            and not ignorable_noise_line(line["text"])
         ]
     if publication_status == "manual_review_required" and not unresolved_lines:
         unresolved_lines = lines

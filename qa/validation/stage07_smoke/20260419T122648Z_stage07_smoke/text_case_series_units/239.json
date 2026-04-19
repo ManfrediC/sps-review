@@ -1,0 +1,228 @@
+{
+  "paper_id": "239",
+  "stage07_schema_version": "stage07_units_v1",
+  "source_text_json_path": "data\\extraction_json\\text\\239.json",
+  "source_filename": "239_Burns-2003-Clinically disparate stiff-person s.pdf",
+  "source_sha256": "e57af9f8cd66a1587a14c1e4282ee26814ff3824c20aa5426bdfb1328dccf26a",
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_source_route_source": "heuristic",
+    "contains_individual_level_data": true,
+    "contains_group_level_data": false,
+    "preferred_langextract_mode": "individual_case_split",
+    "recommended_next_action": "split_cases_then_langextract"
+  },
+  "stage06_prior": {
+    "preferred_text_json_path": "data/extraction_json/text/239.json",
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_verification_status": "manual_review_override",
+    "original_cohort_provenance_uncertain": false
+  },
+  "stage07_method": {
+    "candidate_generation_mode": "heuristics_v1",
+    "adjudication_model": "disabled",
+    "pipeline_entrypoint": "07_split_case_series.py",
+    "generated_at_utc": "2026-04-19T12:26:50.150147+00:00"
+  },
+  "stage07_resolution_summary": {
+    "published_unit_count": 2,
+    "published_individual_count": 2,
+    "published_group_count": 0,
+    "shared_context_count": 3,
+    "has_unresolved_remainder": true
+  },
+  "publication_decision": {
+    "status": "partial_publish_with_unresolved_remainder",
+    "manual_review_required": true,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior."
+  },
+  "shared_context_blocks": [
+    {
+      "context_id": "239__shared__001",
+      "context_type": "shared_context",
+      "text": "bers (in low titer except in our two patients) and one or more",
+      "applies_to_unit_ids": [
+        "239__individual__001",
+        "239__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 1,
+          "line_end": 1
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "239__shared__002",
+      "context_type": "shared_context",
+      "text": "Discussion. We consider these two patients to rep-",
+      "applies_to_unit_ids": [
+        "239__individual__001",
+        "239__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 21,
+          "line_end": 21
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    },
+    {
+      "context_id": "239__shared__003",
+      "context_type": "shared_context",
+      "text": "sider that the presence of GAD65Ab in both patients",
+      "applies_to_unit_ids": [
+        "239__individual__001",
+        "239__individual__002"
+      ],
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "supporting_context",
+          "page_index": 2,
+          "line_start": 45,
+          "line_end": 45
+        }
+      ],
+      "attribution_status": "bounded_multi_unit"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "239__individual__001",
+      "unit_order": 1,
+      "unit_type": "individual",
+      "unit_label": "Case 1",
+      "source_mode": "narrative_block",
+      "unit_text": "Subjects, methods, and results. Case 1. At age 53, the fa-\nther experienced episodic stiffness and discomfort in the right leg.\nOn two occasions, while driving, he had transient, involuntary\nextension of his right leg. This necessitated removing his foot from\nthe automobile accelerator with his hand. One of these episodes\ncontributed to a minor motor vehicle accident. At neurologic eval-\nuation 15 months after symptom onset, he had episodic right leg\nAdditional material related to this article can be found on the Neurology\nWeb site. Go to www.neurology.org and scroll down the Table of Con-\ntents for the November 11 issue to find the title link for this article.\nImmunology, Neurology, and Laboratory Medicine and Pathology (Dr. Lennon), Mayo Clinic, Mayo Graduate and Medical Schools, Rochester, MN.\n22908; e-mail: tmb8r@virginia.edu\nstiffness and spasm especially provoked by anxiety. He had a\nhistory of pernicious anemia and thyroiditis. His family history\nincluded type 1 diabetes, thyroiditis, and pernicious anemia (fig-\nure 1). Neurologic examination demonstrated episodic stiffening of\nthe right leg with knee extension and ankle dorsiflexion. The right\npatellar muscle stretch reflex was disproportionately brisk and its\nelicitation was followed immediately by prolonged spasm of the\nquadriceps femoris. Plantar responses were flexor. There was no\nlumbar hyperlordosis.\nHead and cervicothoracic spine MRI and CSF studies had normal",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 70,
+          "line_end": 79
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 82,
+          "line_end": 82
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 0,
+          "line_start": 87,
+          "line_end": 87
+        },
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 0,
+          "line_end": 9
+        }
+      ],
+      "linked_shared_context_ids": [
+        "239__shared__001",
+        "239__shared__002",
+        "239__shared__003"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    },
+    {
+      "unit_id": "239__individual__002",
+      "unit_order": 2,
+      "unit_type": "individual",
+      "unit_label": "Case 2",
+      "source_mode": "narrative_block",
+      "unit_text": "Case 2. His daughter’s initial symptom of SPS began at age\n31 years. She experienced recurrent, episodic extension of her\nhead and neck. These episodes were initially brief, lasting only 2\nto 3 seconds, and were provoked by anxiety and startle, but pro-\ngressed over 6 years to last as long as 8 seconds. More severe\nepisodes were uncomfortable and associated with a transient\n“tightness” in her throat that interfered with swallowing and\nspeaking. On examination, tapping of left or right patellar tendon\nprovoked opisthotonos lasting 4 to 6 seconds (see video E-1 at\nwww.neurology.org). This was more pronounced when the left pa-\ntellar tendon was tapped while the patient was engaged in casual\nconversation. The opisthotonic response abated when the patient\nsimultaneously performed mental arithmetic. Muscle stretch re-\nflex testing elsewhere in the body did not elicit an abnormal re-\nsponse. There was no lumbar hyperlordosis.\nSurface electrodes recorded abnormally protracted motor unit\nactivity lasting up to 8 seconds following patellar tendon tapping\n(figure 2). GAD65Ab values were 88.7 nmol/L and 95.6 nmol/L,\nand thyroperoxidase antibody value was 100 IU/mL (normal /H1102120\nIU/mL). She did not have clinical evidence of thyroiditis. Baclofen\nrelieved symptoms initially; it was gradually tapered and discon-\ntinued as spontaneous opisthotonos became infrequent. However,\nprovocative maneuvers and anxiety continue to cause opisthoto-\nnos, 48 months after initial presentation.\nDuring this period, the daughter gave birth to a healthy infant\ngirl. Despite acquiring maternal GAD65 antibodies transplacen-\ntally, the infant (now 3 years old) has not exhibited clinical symp-\ntoms or signs of SPS. Serial serum evaluations revealed GAD65Ab\nvalues of 72.7 nmol/L at birth, 6.65 nmol/L at 3 months, and 0.65\nnmol/L at 7 months.\nFamilial genetic and autoantibody investigation. With pro-\ntocol approval by the Lahey Clinic Investigational Review Board\n(LCID 2001–041), and the patient’s informed consent, we obtained\nblood samples from the father, daughter, and nine other family\nmembers (see figure 1). Serologic tests were performed for the\nfollowing autoantibodies: GAD65, thyrogastric, thyroid microso-\nmal (peroxidase), gastric parietal cell, voltage-gated calcium chan-\nnel N-type and P/Q-type, muscle acetylcholine receptor binding,\nstriated muscle, antinuclear (ANA), smooth muscle, mitochon-\ndrial, IA-2 islet cell, and neuronal cytoplasmic and nuclear anti-\nbodies. Consistent with a hereditary predisposition to thyrogastric\nFigure 1. Pedigree of family with stiff-person syndrome,\nGAD65 antibodies, and multiple thyrogastric autoimmune\ndisorders. Circles represent female subjects; squares repre-\nsent male subjects. Diagonal slash symbols represent de-\nceased individuals. Black arrow indicates father. Asterisks\nindicate individuals who were assessed clinically and had\nserologic testing and MHC II haplotyping. The exception is\nIII-13, who was not haplotyped. Detected autoantibodies\nare indicated near each subject. Negative autoantibody",
+      "source_span_refs": [
+        {
+          "ref_type": "line_range",
+          "role": "primary",
+          "page_index": 1,
+          "line_start": 27,
+          "line_end": 76
+        }
+      ],
+      "linked_shared_context_ids": [
+        "239__shared__001",
+        "239__shared__002",
+        "239__shared__003"
+      ],
+      "stage06_unit_prior": {
+        "expected_unit_type": "individual",
+        "paper_level_granularity": ""
+      }
+    }
+  ],
+  "unresolved_remainder": {
+    "present": true,
+    "reason_code": "individual_units_match_stage06_count",
+    "reason": "Explicit individual unit headings matched the stage-06 patient-count prior.",
+    "source_span_refs": [
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 20,
+        "line_end": 26
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 1,
+        "line_start": 78,
+        "line_end": 91
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 0,
+        "line_end": 0
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 2,
+        "line_end": 20
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 22,
+        "line_end": 44
+      },
+      {
+        "ref_type": "line_range",
+        "role": "supporting_context",
+        "page_index": 2,
+        "line_start": 46,
+        "line_end": 104
+      }
+    ],
+    "text": "prednisone plus diazepam. Follow-up GAD65Ab were 12.9 nmol/L\nand 15.9 nmol/L. Subsequently he developed similar but milder prob-\nlems with his other leg, requiring an increase in medications. Low-\ndose prednisone was discontinued 5.5 years after initial presentation\nand 6 months after initiating azathioprine. Now, 8 years after pre-\nsentation, he is maintained on azathioprine 150 mg daily with diaz-\nepam, and has mild residual symptoms of SPS.\ncal of endpoint dilution) or nmol/L. Abbreviations for au-\ntoantibodies: ANA /H11005antinuclear; GAD /H11005glutamic acid\ndecarboxylase 65; SMA /H11005smooth muscle; Tg /H11005thyroglob-\nulin; TPO /H11005thyroperoxidase (microsomal). Generation IV\n(not shown) includes the asymptomatic infant who ac-\nquired GAD65 antibodies transplacentally.\nFigure 2. Multichannel free run EMG recordings from\nPatient 2. Surface recordings were made from 1) sterno-\ncleidomastoid, 2) lower cervical paraspinal, 3) upper tho-\nracic paraspinal, 4) lower thoracic paraspinal, 5) low\nlumbar paraspinal, 6) rectus femoris, 7) biceps femoris\n(short head), and 8) tibialis anterior muscles. The arrow\nindicates when the ipsilateral patellar reflex was elicited.\n1292 NEUROLOGY 61 November (1 of 2) 2003\nautoimmune disorders, GAD65Ab was detected in six family mem-\nthyroid antibodies were detected in five subjects, including three\nwithout clinically evident thyroiditis (see figure 1). ANA was de-\ntected in three relatives and smooth muscle antibody in one.\nMHC class II PCR/SSOP-based typing was performed for hu-\nman leukocyte antigen (HLA) class II DRB1 and DQB1. The DNA\nwas extracted from blood and purified from 200 mL of blood using\nQIA Amp DNA kit (Qiagen, Valencia, CA). Between 50 and 100 ng\nof genomic DNA was PCR amplified and typed for DRB1 and\nDQB1 using immobilized sequence-specific oligonucleotide probes\nin linear array format.\n6,7 The HLA-DQB1*0201 and HLA-\nDRB1*0301 alleles, which have previously been shown to be sus-\nceptibility alleles for SPS,\n2,4 did not segregate with SPS in this\nfamily. The father with SPS carried the DQB1*0201 allele but the\ndaughter did not. Neither carried the HLA-DRB1*0301 allele. The\nfather and daughter shared haplotypes DRB1*1303-DQB1*0301.\nThese haplotypes did not segregate with asymptomatic family\nmembers with low levels of GAD65Ab.\nresent familial autoimmune SPS for the following\nreasons: 1) each subject had episodic stiffness and\nrigidity; 2) the father had painful spasms precipi-\ntated by anxiety and relieved by diazepam and im-\nmunomodulatory therapy; 3) his daughter had\nabnormal axial posture (opisthotonos) that was pre-\ncipitated by tactile and emotional stimuli and re-\nlieved by baclofen; 4) prolonged motor unit activity\nwas demonstrated electrophysiologically in the\ndaughter following tactile stimulation and was clini-\ncally apparent in the father; 5) the GAD65Ab value\nin both subjects exceeded 20 nmol/L; 6) the father\nhad clinical documentation of two coexisting autoim-\nmune diseases and the daughter had serologic evi-\ndence of thyroid autoimmunity; and 7) alternative\ndiagnoses were excluded.\nGAD65Ab is characteristic but not specific for\nSPS. High values (/H1102220.0 nmol/L) may be encoun-\ntered in patients with polyendocrine autoimmunity.\n5\nHowever, the neurologic findings in both our pa-\ntients were consistent with dysregulation of spinal or\nsupraspinal inhibitory circuits. We therefore con-\nrepresents a biologic marker of SPS. Although\nGAD65Ab was detected in four other family mem-\nbers without SPS-like symptoms or signs, levels\nwere two log orders lower than the characteristic\nthreshold level for SPS, further supporting our con-\ntention that GAD65 autoimmunity is related to the\nneurologic disorders exhibited by the father and\ndaughter.\nOur two familial cases of SPS had disparate clini-\ncal presentations— one with asymmetric limb in-\nvolvement and the other intermittent, axial\ninvolvement. Although neither subject had lumbar\nhyperlordosis, a characteristic feature of SPS, this\ndoes not develop in all patients and is frequently\nabsent early in the disease.\n1,2 Furthermore, lumbar\nhyperlordosis is usually absent in the stiff limb vari-\nant of SPS.\n3 In our cases, the focal limb involvement\nwith early diagnosis and medical intervention in the\nfather and the intermittent nature of axial involve-\nment in the daughter provide explanations for the\nabsence of lumbar hyperlordosis. A judicious liberal-\nization of diagnostic criteria to accommodate the full\nspectrum of SPS perhaps could permit earlier diag-\nnosis and intervention aimed at preventing progres-\nsion to a more severe phenotype.\nAlthough intrathecal production of GAD65Ab oc-\ncurs in SPS,\n8 the antigen’s location in the cytoplasm\nof neurons suggests that this immunoglobulin G re-\nflects rather than effects the pathogenic process in\nSPS, as has been demonstrated for the type 1 Pur-\nkinje cell cytoplasmic autoantibody marker of cere-\nbellar ataxia.\n9 The lack of abnormal neurologic signs\nin the grandchild who acquired GAD65Ab transpla-\ncentally is consistent with GAD65Ab per se lacking\npathogenicity. However, it is instructive that even in\nthe instance of muscle acetylcholine receptor anti-\nbodies of known pathogenicity in mothers who have\nmyasthenia gravis, only about 20% of infant recipi-\nents develop signs of neonatal myasthenia gravis.\nThe outcome in this instance is known to depend on\nthe fine specificity of the maternal antibodies.\n10 It is\nalso possible that GAD65Ab may be accompanied by\nan as yet unidentified effector autoantibody directed\nat a neuronal plasma membrane component.\nMHC II typing demonstrated that the HLA-\nDQB1*0201 and DRB1*0301 alleles, which in white\nsubjects are considered susceptibility alleles for\nSPS,\n2,4 did not segregate with SPS in this family.\nBecause the data were derived from only one family\nand the sample size is small, we cannot draw conclu-\nsions from analysis of the shared haplotypes of fa-\nther and daughter (DRB1*1303-DQB1*0301), or of\nthe family members with evidence of autoimmunity."
+  }
+}
