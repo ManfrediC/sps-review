@@ -7,7 +7,8 @@ This folder is the working area for resumable stage-05 trimming review rounds. I
 
 ## Structure
 - `batches/`
-  - one JSON manifest per active or completed trimming batch
+  - one JSON manifest per live LLM trimming batch
+  - this folder may be empty between runs; `src/validation/manage_trimming_batches.py` recreates it as needed
 - `feedback/`
   - structured human-reviewed source-of-truth files
 - `gold_standard/`
@@ -15,7 +16,8 @@ This folder is the working area for resumable stage-05 trimming review rounds. I
 - `regression/`
   - frozen accepted cases used as a regression corpus
 - `reports/`
-  - per-batch stage-05 subset outputs, review files, and evaluation reports
+  - per-batch stage-05 subset outputs, review files, and evaluation reports for the live LLM workflow
+  - this folder may be empty between runs; `src/validation/manage_trimming_batches.py` recreates it as needed
 
 ## Workflow
 1. Prepare one batch of 50 unreviewed proceedings candidates in ascending `paper_id` order.
@@ -44,4 +46,6 @@ This folder is the working area for resumable stage-05 trimming review rounds. I
 
 The former stage-05 autoresearch harness, the isolated `_autoresearch` scripts, the watcher marker, and the saved benchmark runs have been retired to `legacy/stage_05_autoresearch/`.
 
-The live proceedings-trimming workflow in `qa/trimming/` no longer depends on that archived bundle.
+The older deterministic stage-05 batch manifests, batch reports, regression guard outputs, and retired tranche-verification packs now live under `legacy/stage_05_deterministic/qa/trimming/`.
+
+The live proceedings-trimming workflow in `qa/trimming/` no longer depends on either archived bundle.
