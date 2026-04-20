@@ -98,6 +98,63 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertTrue(package.llm_routing_recommended)
         self.assertEqual(package.preferred_candidate().proposed_count, 1)
 
+    def test_candidate_package_promotes_explicit_group_conference_cohort_over_single_case_default(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "12554",
+                "Title": "Clinical profile of seropositive stiff person syndrome",
+                "Authors": "Example, A",
+                "Abstract": "",
+            },
+            text_record={"paper_id": "12554", "_path": "data/extraction_json/text/12554.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Retrospective analysis of seropositive SPS patients. "
+                            "Twenty SPS patients were included."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "12554.json",
+            source_row={
+                "source_category": "conference_abstract",
+                "source_subtype": "group_conference_abstract",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 20)
+        self.assertEqual(package.preferred_candidate().count_basis, "diagnosis_specific_direct_cohort_count")
+        self.assertIn("explicit_sps_subgroup_promoted_over_ambiguous_primary", package.candidate_generation_notes)
+
+    def test_candidate_package_promotes_explicit_lab_cohort_over_zero_fallback(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "12613",
+                "Title": "Metabolic imaging in stiff-person spectrum disorder",
+                "Authors": "Example, B",
+                "Abstract": "",
+            },
+            text_record={"paper_id": "12613", "_path": "data/extraction_json/text/12613.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "For serum analysis, twelve SPS patients were included and compared with controls."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "12613.json",
+            source_row={
+                "source_category": "lab_heavy_clinical_or_translational",
+                "source_subtype": "group_or_frequency_focused_lab_clinical_study",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 12)
+        self.assertEqual(package.preferred_candidate().count_basis, "diagnosis_specific_direct_cohort_count")
+        self.assertNotEqual(package.preferred_candidate().count_basis, "lab_context_no_extractable_count")
+
     def test_unclear_manual_review_is_treated_as_uncertain_and_llm_routed(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={
@@ -921,6 +978,45 @@ class TestStage06CountCandidates(unittest.TestCase):
             {
                 "diagnosis_specific_enumerated_subgroup_count",
                 "diagnosis_specific_group_breakdown_count",
+            }
+            & {candidate.count_basis for candidate in package.candidates}
+        )
+
+    def test_candidate_package_counts_extended_sps_spectrum_breakdown_aliases(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "1528",
+                "Title": "Expanded SPS-spectrum phenotypes in glycine receptor autoimmunity",
+                "Authors": "Example, C",
+                "Abstract": (
+                    "SPS spectrum phenotypes included progressive encephalomyelitis with rigidity and myoclonus (8), "
+                    "classic SPS (5), stiff limb (5), stiff trunk (1), and isolated exaggerated startle (1)."
+                ),
+            },
+            text_record={"paper_id": "1528", "_path": "data/extraction_json/text/1528.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "SPS spectrum phenotypes included progressive encephalomyelitis with rigidity and "
+                            "myoclonus (8), classic SPS (5), stiff limb (5), stiff trunk (1), and isolated "
+                            "exaggerated startle (1)."
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "1528.json",
+            source_row={
+                "source_category": "observational_group_study",
+                "source_subtype": "retrospective_or_cohort_group_study",
+            },
+        )
+        self.assertEqual(package.explicit_sps_subgroup_count, 20)
+        self.assertIn(20, {candidate.proposed_count for candidate in package.candidates})
+        self.assertTrue(
+            {
+                "diagnosis_specific_group_breakdown_count",
+                "diagnosis_specific_enumerated_subgroup_count",
             }
             & {candidate.count_basis for candidate in package.candidates}
         )

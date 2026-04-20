@@ -106,6 +106,18 @@ class TestSpsCaseCounting(unittest.TestCase):
         self.assertEqual(estimate.likely_case_count, 6)
         self.assertEqual(estimate.count_basis, "early_body_count_signal")
 
+    def test_ignores_title_only_count_when_title_is_not_sps_specific(self) -> None:
+        estimate = estimate_sps_case_count(
+            title="Neurological syndromes associated with glutamic acid decarboxylase antibodies in 121 patients",
+            abstract=(
+                "We characterised mixed neurological phenotypes including cerebellar ataxia, epilepsy, "
+                "encephalitis, and occasional stiff-person syndrome."
+            ),
+            early_body_text="",
+        )
+        self.assertEqual(estimate.likely_case_count, 0)
+        self.assertEqual(estimate.count_basis, "no_reliable_count_signal")
+
     def test_extracts_table_row_sps_subgroup_count(self) -> None:
         estimate = estimate_sps_case_count(
             title="Intravenous methylprednisolone or immunoglobulin for anti-GAD65 autoimmune encephalitis.",

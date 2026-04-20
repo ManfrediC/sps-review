@@ -125,15 +125,29 @@ SPS_DIAGNOSIS_CANONICAL_BY_ALIAS = {
     "sms": "stiff person syndrome",
     "spsd": "stiff person syndrome",
     "classic sps": "classic sps",
+    "classic sms": "classic sps",
     "classic stiff person syndrome": "classic sps",
     "atypical sps": "atypical sps",
     "atypical stiff person syndrome": "atypical sps",
     "jerking sps": "jerking sps",
     "jerking stiff person syndrome": "jerking sps",
+    "partial sps": "partial sps",
+    "partial-sps": "partial sps",
+    "partial sms": "partial sps",
+    "partial-sms": "partial sps",
+    "partial stiff person syndrome": "partial sps",
+    "sps plus": "sps plus",
+    "sps-plus": "sps plus",
     "stiff limb syndrome": "stiff limb syndrome",
     "stiff-limb syndrome": "stiff limb syndrome",
+    "stiff limb": "stiff limb syndrome",
     "stiff leg syndrome": "stiff limb syndrome",
     "stiff-leg syndrome": "stiff limb syndrome",
+    "stiff leg": "stiff limb syndrome",
+    "stiff trunk": "stiff trunk syndrome",
+    "stiff trunk syndrome": "stiff trunk syndrome",
+    "isolated exaggerated startle": "hyperekplexia",
+    "hyperekplexia": "hyperekplexia",
     "progressive encephalomyelitis with rigidity and myoclonus": "perm",
     "progressive encephalomyelitis with myoclonus and rigidity": "perm",
     "perm": "perm",
@@ -203,13 +217,26 @@ DIRECT_SPS_COHORT_POSITIVE_MARKERS = (
     "we report",
     "we describe",
     "in this study",
+    "retrospective analysis",
+    "retrospective review",
     "participants",
+    "reviewed",
+    "were included",
+    "met inclusion criteria",
+    "fulfilled selection criteria",
+    "identified",
     "we present",
     "our patients",
 )
 METHODS_SPS_COHORT_POSITIVE_MARKERS = (
     "sera were obtained",
     "serum samples were collected",
+    "were included",
+    "reviewed",
+    "met inclusion criteria",
+    "fulfilled selection criteria",
+    "retrospective analysis",
+    "retrospective review",
     "patients identified",
     "identified at",
     "identified through",
@@ -241,6 +268,7 @@ ENUMERATED_SPS_SUBGROUP_MARKERS = (
     "among those patients",
     "among these patients",
     "among the patients",
+    "phenotypes included",
 )
 CONTROL_GROUP_UNCERTAINTY_MARKERS = (
     "control patients",
@@ -253,6 +281,29 @@ CONTROL_GROUP_SPS_CONTEXT_RE = re.compile(
     rf"\b(?:control patients?|control subjects?|healthy controls?|healthy control subjects?|disease control groups?)\b"
     rf"[\s\S]{{0,260}}?\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
     re.IGNORECASE,
+)
+PROMOTABLE_EXPLICIT_SUBGROUP_BASES = frozenset(
+    {
+        "diagnosis_specific_direct_cohort_count",
+        "diagnosis_specific_parenthetical_cohort_count",
+        "diagnosis_specific_phenotype_cohort_count",
+        "diagnosis_specific_total_then_sps_subgroup_count",
+        "diagnosis_specific_named_cohort_count",
+        "diagnosis_specific_series_cohort_count",
+        "diagnosis_specific_group_breakdown_count",
+        "diagnosis_specific_enumerated_subgroup_count",
+        "diagnosis_specific_table_title_cohort_count",
+        "diagnosis_specific_antibody_group_total",
+        "diagnosis_specific_confirmed_subset_count",
+    }
+)
+PROMOTABLE_AMBIGUOUS_PRIMARY_BASES = frozenset(
+    {
+        "source_single_case_default",
+        "source_single_case_override",
+        "lab_context_no_extractable_count",
+        "no_reliable_count_signal",
+    }
 )
 EXPLICIT_PATIENT_SPS_ACTION_RE = re.compile(
     rf"\b(?:diagnosed\s+with|treated\s+for|had|has|with|affected\s+by|who\s+had)\b[\s\S]{{0,80}}?"
@@ -1873,6 +1924,33 @@ def _build_subgroup_candidate(
     )
 
 
+def _promote_explicit_subgroup_over_ambiguous_primary(
+    *,
+    subgroup_signal: SubgroupSignal | None,
+    estimate: CaseCountEstimate,
+    source_category: str,
+    source_subtype: str,
+) -> CaseCountEstimate:
+    if subgroup_signal is None:
+        return estimate
+    if estimate.count_basis not in PROMOTABLE_AMBIGUOUS_PRIMARY_BASES:
+        return estimate
+    if source_category in {"review_article", "non_clinical_basic_science", "single_case_report"}:
+        return estimate
+    if source_subtype == "single_case_conference_abstract":
+        return estimate
+    if subgroup_signal.count <= 1:
+        return estimate
+    if subgroup_signal.count_basis not in PROMOTABLE_EXPLICIT_SUBGROUP_BASES:
+        return estimate
+    return CaseCountEstimate(
+        likely_case_count=subgroup_signal.count,
+        count_confidence=subgroup_signal.count_confidence,
+        count_basis=subgroup_signal.count_basis,
+        manual_review_required=subgroup_signal.count_confidence != "high",
+    )
+
+
 def _with_candidate_ids(candidates: list[CountCandidate]) -> list[CountCandidate]:
     resolved: list[CountCandidate] = []
     for index, candidate in enumerate(candidates, start=1):
@@ -2024,6 +2102,17 @@ def build_case_count_candidate_package(
         source_subtype=source_subtype,
         preferred_text_source=preferred_text_source,
     )
+    promoted_final_estimate = _promote_explicit_subgroup_over_ambiguous_primary(
+        subgroup_signal=subgroup_signal,
+        estimate=final_estimate,
+        source_category=source_category,
+        source_subtype=source_subtype,
+    )
+    subgroup_promoted_primary = (
+        promoted_final_estimate.likely_case_count != final_estimate.likely_case_count
+        or promoted_final_estimate.count_basis != final_estimate.count_basis
+    )
+    final_estimate = promoted_final_estimate
 
     abstract_only_estimate = estimate_sps_case_count(
         title=title,
@@ -2066,6 +2155,8 @@ def build_case_count_candidate_package(
         )
     ]
     notes: list[str] = [f"preferred_text_source={preferred_text_source}"]
+    if subgroup_promoted_primary:
+        notes.append("explicit_sps_subgroup_promoted_over_ambiguous_primary")
     suppress_nonzero_alternatives = (
         eligibility_status == "not_extractable" and final_estimate.count_basis == "not_count_eligible"
     )

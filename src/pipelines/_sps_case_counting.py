@@ -577,15 +577,17 @@ def estimate_sps_case_count(*, title: str, abstract: str, early_body_text: str) 
                 manual_review_required=confidence != "high",
             )
 
-    for match in TITLE_CASE_COUNT_RE.finditer(normalized_title):
-        count = parse_count_token(match.group("count"))
-        if count > 0:
-            score = 6 if title_mentions_sps else 3
-            if any(marker in normalized_title for marker in COUNT_NEGATIVE_CONTEXT_MARKERS):
-                score -= 3
-            if is_comparison_title_with_count(title):
-                score -= 5
-            title_candidates.append((score, count))
+    # Non-SPS titles are too noisy to use as sole cohort-count evidence.
+    if title_mentions_sps:
+        for match in TITLE_CASE_COUNT_RE.finditer(normalized_title):
+            count = parse_count_token(match.group("count"))
+            if count > 0:
+                score = 6 if title_mentions_sps else 3
+                if any(marker in normalized_title for marker in COUNT_NEGATIVE_CONTEXT_MARKERS):
+                    score -= 3
+                if is_comparison_title_with_count(title):
+                    score -= 5
+                title_candidates.append((score, count))
 
     if title_candidates:
         best_score, best_count = sorted(title_candidates, key=lambda item: (-item[0], -item[1]))[0]
