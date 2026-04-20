@@ -1,0 +1,2221 @@
+# stage06_backfill_b007_n100_20260419 Inspection Pack
+
+## 11813 - Exacerbation of Stiff Person Syndrome by Selective Serotonin Reuptake Inhibitors
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly presented as a case report and the full-text excerpt describes one 80-year-old woman with SPS/stiff limb syndrome followed longitudinally. Other counts in the text refer to prior literature reports, not additional original patients in this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single case report, suggesting one patient, which aligns with the deterministic anchors.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper is explicitly presented as a case report and the full-text excerpt describes one 80-year-old woman with SPS/stiff limb syndrome followed longitudinally. Other counts in the text refer to prior literature reports, not additional original patients in this paper.
+- evidence:
+  - pNone: case report we report profound worsening of symptoms in response to citalopram in an 80-year-old-right handed woman with a 16-year history of a sps.
+  - pNone: she presented originally at the age of 64 with isolated stiff limb syndrome, manifesting left leg stiffness and painful spasms
+  - pNone: and colleagues reported four cases of SPS worsening associated
+
+## 11814 - Rehabilitation in paraneoplastic stiff-person syndrome-case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report with repeated singular language and explicit diagnostic support for paraneoplastic SPS. The best-supported extractable count is 1 unique SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly discusses one patient diagnosed with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report with repeated singular language and explicit diagnostic support for paraneoplastic SPS. The best-supported extractable count is 1 unique SPS-spectrum patient.
+- evidence:
+  - pNone: We aimed to share our rehabilitation experience in a patient diagnosed with paraneoplastic Stiff-person syndrome(SPS).
+  - pNone: A 45-year-old female patient was admitted to neurology with the complaint of widespread painful contractions.
+  - pNone: EMG was evaluated in favor of SPS. Amphiphysin-antibody was +++ in CSF.
+
+## 11822 - Quantitative Assessment of Response to Long-Term Treatment with Intravenous Immunoglobulin in Patients with Stiff Person Syndrome
+- predicted_count: 23
+- predicted_basis: abstract_count_signal
+- verification_status: llm_semantic_conflict_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
+- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=23 vs 2; broad_total_exceeds_explicit_subgroup=23 > 2 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that 23 patients fulfilled selection criteria and describes them as a single-center experience of patients with SPS and related syndromes, which are within the review's SPS-spectrum definition. The smaller counts for PERM and focal SPS are diagnosis-specific subgroups within this broader SPS-spectrum cohort, not the total extractable case count.
+- batch_artifacts_status: complete
+- local_model_count: 23 (high; needs_review=True)
+- local_reasoning: The abstract states a total of 23 patients were included, conflicting with the explicit subgroup count of 4 (2+2).
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper explicitly states that 23 patients fulfilled selection criteria and describes them as a single-center experience of patients with SPS and related syndromes, which are within the review's SPS-spectrum definition. The smaller counts for PERM and focal SPS are diagnosis-specific subgroups within this broader SPS-spectrum cohort, not the total extractable case count.
+- evidence:
+  - p1: Results: A total of 23 patients fulfilled the selection criteria.
+  - p1: This article describes one of the largest single-center experiences of 23 patients with SPS and related syndromes
+  - p1: patients were identified from a tertiary neuroimmunology clinic based on classical clinical symptoms, autoimmune profiles, and neurophysiological changes (Dalakas criteria).
+  - pNone: rigidity and myoclonus (PERM; n = 2), focal SPS (n = 2)
+
+## 11834 - Stiff Person Syndrome: A Case Report with Sudden Onset and Coexistence of Sero-Positive Antibodies to Glutamic Acid Decarboxylase and Anti-SOX1 Antibodies.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report with repeated explicit language that the paper reports one female patient diagnosed with SPS. No evidence suggests additional original SPS-spectrum patients in this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single female patient diagnosed with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report with repeated explicit language that the paper reports one female patient diagnosed with SPS. No evidence suggests additional original SPS-spectrum patients in this paper.
+- evidence:
+  - p1: In this paper, we report a case of a 25-year-old Vietnamese female patient with SPS presenting with unusual clinical manifestations of sudden onset, rapidly progressive spinal, abdominal, and lower limb rigidity accompanied by painful spasms, autonomic disorders, and severe, multiple bone fractures.
+  - p2: in this paper, we present a patient diagnosed with sps who had both anti-gad and anti-sox1 antibodies in whom intravenous immunoglobulin (ivig) therapy elicited a complete response.
+  - p2: a 25-year-old female patient with a previously unremarkable medical history presented with the sudden onset of severe vomiting, neck pain, and high fever.
+
+## 11835 - A Rare Case of Stiff Person Syndrome With Pulmonary Complications.
+- predicted_count: 1
+- predicted_basis: diagnosis_specific_patient_case_count
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand03 | This is a single-patient case report with explicit diagnosis-supported SPS language. The paper repeatedly describes one female patient with SPS/positive anti-GAD antibodies, so the extractable SPS-spectrum count is 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single female patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand03
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report with explicit diagnosis-supported SPS language. The paper repeatedly describes one female patient with SPS/positive anti-GAD antibodies, so the extractable SPS-spectrum count is 1.
+- evidence:
+  - pNone: In this case report, we present a 36-year-old female with a long history of SPS, with positive anti-GAD antibodies
+  - pNone: In our case, we reported a female patient with SPS and pulmonary complications.
+
+## 11849 - Stiff-person syndrome: an atypical presentation and a review of the literature.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is a single case report and explicitly states that it presents a rare case of a 79-year-old woman diagnosed with stiff-limb syndrome, which is within the SPS spectrum. No evidence suggests additional original SPS-spectrum patients beyond this one case.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single, diagnosed case of SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper is a single case report and explicitly states that it presents a rare case of a 79-year-old woman diagnosed with stiff-limb syndrome, which is within the SPS spectrum. No evidence suggests additional original SPS-spectrum patients beyond this one case.
+- evidence:
+  - pNone: Case report; In this report, we present a rare case of a 79-year-old woman who presented with bilateral lower extremity weakness who was ultimately diagnosed with stiff-limb syndrome, a rare variant of SPS.
+  - pNone: Clinical Features - Case report
+  - pNone: She was subsequently started on oral diazepam with significant improvement in her symptoms.
+
+## 11850 - Successful Treatment of Stiff Person Syndrome with Intrathecal Baclofen.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-case report and explicitly describes one unique SPS-spectrum patient: a 59-year-old woman diagnosed with sero-negative stiff person syndrome. No evidence suggests additional original SPS-spectrum cases in this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly describes one 59-year-old woman with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper is an original single-case report and explicitly describes one unique SPS-spectrum patient: a 59-year-old woman diagnosed with sero-negative stiff person syndrome. No evidence suggests additional original SPS-spectrum cases in this paper.
+- evidence:
+  - pNone: We report here a case of stiff person syndrome in Australia, treated with intrathecal baclofen followed by a rehabilitation programme with substantial clinical and functional improvements.
+  - pNone: A 59-year-old woman diagnosed with stiff person syndrome had become hoist-dependent and required full care due to severe spasticity over the past 12 years.
+  - p1: We report here a case of SPS in Australia, which was treated with intrathecal baclofen with substantial clinical and functional improvements.
+  - p2: A diagnosis of sero-negative SPS was made.
+
+## 11884 - Effectiveness of Intrathecal Baclofen for Intractable Stiffperson Syndrome: a Case Report.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report with explicit individual-level description of one 38-year-old woman diagnosed with stiff-person syndrome. The paper discusses prior literature case series separately, but only one original SPS-spectrum patient is reported in this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly describes one single patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report with explicit individual-level description of one 38-year-old woman diagnosed with stiff-person syndrome. The paper discusses prior literature case series separately, but only one original SPS-spectrum patient is reported in this paper.
+- evidence:
+  - p1: CASE REPORT: A 38-year-old woman with stiff- person syndrome initially presented to inpatient rehabilitation for intractable muscle spasms.
+  - p1: In this report, we describe a 38 year old woman with “stiff-person-syndrome” that responded very well to intrathecal baclofen.
+  - p2: A 38-year-old woman with a medical history of type I diabetes mellitus and SPS initially presented to inpatient rehabilitation with intractable and painful muscle spasms due to SPS. The diagnosis of SPS was confirmed by elevated anti-glutamic acid decarboxylase antibody levels (>250 IU/ml).
+
+## 11903 - Pediatric stiff limb syndrome with polyautoimmunity of anti-GAD-65, anti-islet cell, and thyroid peroxidase antibodies: A case report and review of literature.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This paper is a single case report describing one original pediatric stiff limb syndrome patient. The mention of 52 cases refers to previously reported literature cases and should not be counted as original cases in this paper; because provenance uncertainty is flagged, manual review remains appropriate.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The primary report details one case, but the text also mentions reviewing 52 previously reported cases.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This paper is a single case report describing one original pediatric stiff limb syndrome patient. The mention of 52 cases refers to previously reported literature cases and should not be counted as original cases in this paper; because provenance uncertainty is flagged, manual review remains appropriate.
+- evidence:
+  - pNone: We report an early childhood onset Stiff Limb Syndrome (SLS) in association with unusual polyautoimmunity of GAD-65, anti-islet cell, and Thyroid Peroxidase (TPO) autoantibodies, who has achieved a nearly complete neurological recovery following combined immunotherapy, symptomatic and physical therapy.
+  - pNone: The patient had normal MRIs of the brain and spinal cord and a negative paraneoplastic work-up. Subsequently, she developed hypothyroidism requiring levothyroxine supplementation.
+  - pNone: We then conducted an extensive review of literature and identified 52 previously reported pediatric Stiff Man Syndrome (SMS)/Stiff Person Syndrome (SPS) or SLS cases
+
+## 11904 - One in a Million: A Case Report of Stiff Person Syndrome.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is a single case report and explicitly describes one 50-year-old woman who was diagnosed with stiff person syndrome and treated successfully. The cited cohort numbers in the text are background literature, not original cases from this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a case report describing one patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is a single case report and explicitly describes one 50-year-old woman who was diagnosed with stiff person syndrome and treated successfully. The cited cohort numbers in the text are background literature, not original cases from this paper.
+- evidence:
+  - pNone: One in a Million: A Case Report of Stiff Person Syndrome.
+  - pNone: We present a 50-year-old woman with a history of ongoing gait and balance issues for 5 years with multiple negative workups.
+  - pNone: She then presented to our institution due to worsening of her condition and was ultimately diagnosed with SPS which was successfully treated.
+  - pNone: we report a case of a patient who had a history of difficulty walking with reported gait and balance issues for 5 years with multiple negative workups by her primary care physician and outside consultants.
+
+## 11913 - A Case of Anti-GAD 65 Autoimmune Encephalitis Associated with Focal Segmental Stiff-Person Syndrome.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-case report explicitly describing one middle-aged woman with focal segmental stiff-person syndrome associated with anti-GAD65 autoimmune encephalitis. The title, abstract, and case description consistently indicate one original SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single, rare case of SPS-spectrum disorder.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-case report explicitly describing one middle-aged woman with focal segmental stiff-person syndrome associated with anti-GAD65 autoimmune encephalitis. The title, abstract, and case description consistently indicate one original SPS-spectrum patient.
+- evidence:
+  - pNone: A Case of Anti-GAD 65 Autoimmune Encephalitis Associated with Focal Segmental Stiff-Person Syndrome.
+  - pNone: We report on a rare case of GAD antibody-associated encephalitis complicated with focal segmental stiffness-person syndrome (SPS) in a middle-aged woman.
+  - pNone: This report describes a rare case of GAD antibody-associated autoimmune encephalitis with focal segmental SPS.
+  - p2: A 44-year-old woman was hospitalized in a local public hospital in 2011 for transient loss of consciousness after being depressed and irritable.
+
+## 11915 - Therapeutic plasma exchange in the management of stiff person syndrome spectrum disorders: a case series and review of the literature.
+- predicted_count: 39
+- predicted_basis: abstract_count_signal
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=24 vs 39 | The paper explicitly reports 39 'SPSD patients' treated with TPE, but the phenotype breakdown includes 3 patients with pure cerebellar ataxia, which is not within the review's SPS-spectrum definition. The extractable SPS-spectrum count could therefore be 36 if those 3 should be excluded, but the paper labels the whole cohort as SPSD; this unresolved definitional mismatch requires manual review rather than accepting 39.
+- batch_artifacts_status: complete
+- local_model_count: 24 (high; needs_review=True)
+- local_reasoning: The explicit subgroup signal provides a clear breakdown of SPS-spectrum patients, totaling 24 + 10 + 2 = 36, but the top-level deterministic count of 39 is also present, necessitating a review.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper explicitly reports 39 'SPSD patients' treated with TPE, but the phenotype breakdown includes 3 patients with pure cerebellar ataxia, which is not within the review's SPS-spectrum definition. The extractable SPS-spectrum count could therefore be 36 if those 3 should be excluded, but the paper labels the whole cohort as SPSD; this unresolved definitional mismatch requires manual review rather than accepting 39.
+- evidence:
+  - pNone: Results: Thirty-nine SPSD patients were treated with TPE (21 at JHH and 18 at outside institutions)
+  - pNone: Twenty-four patients (62%) had classic SPS, 10 (26%) had SPS-plus, 2 (5%) had progressive encephalomyelitis with rigidity and myoclonus, and 3 (8%) had pure cerebellar ataxia.
+  - pNone: the presentation of spsd is heterogenous and varies based on the phenotype as follows: classic, partial, sps-plus, pure cerebellar ataxia (ca), progressive encephalomyelitis with rigidity and myoclonus (perm)
+
+## 11916 - Stiff person spectrum disorder diagnosis, misdiagnosis, and suggested diagnostic criteria.
+- predicted_count: 48
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper evaluates 173 referred/suspected cases, but explicitly states that only 48 were diagnosed with SPSD. Because the review should count confirmed or diagnosis-supported SPS-spectrum patients rather than the broader suspected cohort, 48 is the supported extractable SPSD count; manual review remains warranted because provenance overlap is flagged as uncertain ('as previously reported').
+- batch_artifacts_status: complete
+- local_model_count: 48 (high; needs_review=True)
+- local_reasoning: The abstract explicitly states that 48 cases were diagnosed with SPSD out of a total of 173 cases.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 48
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper evaluates 173 referred/suspected cases, but explicitly states that only 48 were diagnosed with SPSD. Because the review should count confirmed or diagnosis-supported SPS-spectrum patients rather than the broader suspected cohort, 48 is the supported extractable SPSD count; manual review remains warranted because provenance overlap is flagged as uncertain ('as previously reported').
+- evidence:
+  - pNone: Of 173 cases, 48 (28%) were diagnosed with SPSD and 125 (72%) with non-SPSD.
+  - pNone: We included 173 patients; 48 (27.7%) were diagnosed
+  - pNone: SPSD diagnosis was defined as clinical SPSD manifestations confirmed by an autoimmune neurologist and seropositivity for high-titer GAD65-IgG (>20.0 nmol/L), glycine-receptor-IgG or amphiphysin-IgG, and/or confirmatory electrodiagnostic studies (essential if seronegative).
+  - pNone: original_cohort_provenance_uncertain: True
+
+## 11922 - Case report: Amphiphysin-IgG autoimmunity: a paraneoplastic presentation of appendiceal goblet cell carcinoma.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | This is a single-patient case report, but the reported patient has definite amphiphysin-IgG-positive encephalitis/cerebellar dysfunction rather than an SPS-spectrum diagnosis. The mention of stiff-person syndrome is background only, so no extractable confirmed SPS-spectrum case can be counted safely from the provided evidence.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a case report, and the deterministic anchors suggest a count of 1 for the single case described.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a single-patient case report, but the reported patient has definite amphiphysin-IgG-positive encephalitis/cerebellar dysfunction rather than an SPS-spectrum diagnosis. The mention of stiff-person syndrome is background only, so no extractable confirmed SPS-spectrum case can be counted safely from the provided evidence.
+- evidence:
+  - pNone: Amphiphysin-immunoglobulin G (IgG) autoimmunity was first described in stiff-person syndrome with breast cancer.
+  - pNone: Amphiphysin-IgG was detected in the patient's serum and CSF by immunoblotting and tissue-based indirect immunofluorescence assay confirming the diagnosis of definite paraneoplastic amphiphysin-IgG-positive encephalitis.
+  - pNone: here, we first report a patient with agcc who developed le related to amphiphysin-abs after tumor removal.
+
+## 11927 - Prevalence, Clinical Profiles, and Prognosis of Stiff-Person Syndrome in a Japanese Nationwide Survey.
+- predicted_count: 65
+- predicted_basis: abstract_count_signal
+- verification_status: llm_semantic_conflict_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
+- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=low | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=30 vs 4; broad_total_exceeds_explicit_subgroup=30 > 4 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper contains multiple conflicting cohort figures (94 reported, 55 final diagnosis of SPS, 30 GAD65-positive SPS, and a table fragment showing 4 classic SPS in one subgroup). The explicit subgroup count of 4 is clearly not the whole SPS-spectrum cohort, but the provided evidence pack does not cleanly establish whether 30, 34, 55, or another deduplicated diagnosis-supported SPS-spectrum total is the correct extractable count, so a safe exact count cannot be resolved from the supplied text alone.
+- batch_artifacts_status: complete
+- local_model_count: 4 (medium; needs_review=True)
+- local_reasoning: The explicit subgroup count of 4 for Classic SPS is preferred over the conflicting total of 65 or 55.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper contains multiple conflicting cohort figures (94 reported, 55 final diagnosis of SPS, 30 GAD65-positive SPS, and a table fragment showing 4 classic SPS in one subgroup). The explicit subgroup count of 4 is clearly not the whole SPS-spectrum cohort, but the provided evidence pack does not cleanly establish whether 30, 34, 55, or another deduplicated diagnosis-supported SPS-spectrum total is the correct extractable count, so a safe exact count cannot be resolved from the supplied text alone.
+- evidence:
+  - pNone: responded, reporting 94 patients with SPS in total (Figure 1).
+  - pNone: thus consisted of 55 patients with the final diagnosis of SPS
+  - pNone: Thirty cases were identified as glutamic acid decarboxylase 65 (GAD65)-positive SPS cases on the basis of detailed clinical data of 55 cases. Four patients had alpha1 subunit of glycine receptor (GlyR) antibodies, and 1 patient had both GAD65 and GlyR antibodies.
+  - pNone: Clinical phenotype (%) ... Classic SPS 4 (67) 17 (71) SLS 2 (33) 7 (29) PERM 0( 0 ) 0( 0 )
+
+## 11931 - Progressive encephalomyelitis with rigidity and myoclonus (PERM) associated with anti-glycine receptor antibodies and urothelial carcinoma: a case report.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This is a single-patient case report of PERM, which is within the SPS spectrum. The abstract explicitly describes one 72-year-old male whose clinical presentation plus anti-GlyR antibodies led to a diagnosis of PERM, but manual review remains appropriate because the package flags original cohort provenance uncertainty and confidence is not high.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single case of PERM, which is an SPS-spectrum disorder.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a single-patient case report of PERM, which is within the SPS spectrum. The abstract explicitly describes one 72-year-old male whose clinical presentation plus anti-GlyR antibodies led to a diagnosis of PERM, but manual review remains appropriate because the package flags original cohort provenance uncertainty and confidence is not high.
+- evidence:
+  - pNone: Progressive encephalomyelitis with rigidity and myoclonus (PERM) associated with anti-glycine receptor antibodies and urothelial carcinoma: a case report.
+  - pNone: CASE PRESENTATION: A 72-years-old Caucasian male was admitted with acute onset of dysarthria, dysphagia and trismus three years after initial surgical treatment for bladder cancer.
+  - pNone: Diagnostic workup on readmission revealed lung and paraaortal metastases from bladder cancer and anti-glycine receptor (anti-GlyR) antibodies both in the cerebrospinal fluid and in serum, which supplemented with the clinical presentation led to the diagnosis of PERM, presumably related to bladder cancer.
+
+## 11936 - Assessment of anti-GAD65-associated cerebellar ataxia with 18F-FDG cerebellar uptake: ROC analysis.
+- predicted_count: 19
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The paper reports an original cohort of 30 anti-GAD65-associated neurological disorder patients, with 11 having cerebellar ataxia and the remainder serving as the SPS comparison group. This supports 19 SPS-spectrum patients, but because the excerpt does not fully clarify whether any non-CA patients include SPS-plus overlap rather than pure SPS, manual review remains appropriate.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The text mentions SPS as a phenotype but provides no specific count of original SPS-spectrum patients.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 19
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper reports an original cohort of 30 anti-GAD65-associated neurological disorder patients, with 11 having cerebellar ataxia and the remainder serving as the SPS comparison group. This supports 19 SPS-spectrum patients, but because the excerpt does not fully clarify whether any non-CA patients include SPS-plus overlap rather than pure SPS, manual review remains appropriate.
+- evidence:
+  - p1: This study was based on STARD 2015 guidelines: thirty patients with anti-GAD65-associated neurological disorders, 11 of whom with CA were studied.
+  - p1: Cerebellar 18F-FDG PET uptake can differentiate CA phenotypes from patients with SPS with high specificity.
+  - p1: auto-antibodies against glutamic acid decarboxylase 65 (gad65) are associated with a rare spectrum of distinct neurological disorders including classic stiff person syndrome (sps), pure cerebellar ataxia (ca), and sps plus (sps and ca and/or brainstem signs/symptoms)
+
+## 11937 - Centripetal Nystagmus, Slow Saccades, Cerebellar Ataxia, and Parkinsonism in a Patient With Anti-GAD65-Associated Stiff Person Syndrome Spectrum Disorder.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-case report describing one 68-year-old woman whose workup and examination were consistent with anti-GAD65-associated stiff person syndrome-plus, which is within the SPS-spectrum definition. The evidence supports exactly 1 unique original SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a single case report describing one patient with SPS-spectrum disorder.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-case report describing one 68-year-old woman whose workup and examination were consistent with anti-GAD65-associated stiff person syndrome-plus, which is within the SPS-spectrum definition. The evidence supports exactly 1 unique original SPS-spectrum patient.
+- evidence:
+  - pNone: A 68-year-old woman with positional dizziness and progressive imbalance presented for vestibular evaluation.
+  - pNone: Overall, the clinical presentation, examination findings, and extensive workup were consistent with a diagnosis of anti-GAD65-associated stiff person syndrome-plus (musculoskeletal plus cerebellar and/or brainstem involvement).
+  - pNone: the patient was referred to neuroimmunology, where torso rigidity, spasticity, and significant paravertebral muscle spasms were noted.
+
+## 11939 - Respiratory symptoms are common in stiff person syndrome spectrum disorders and are associated with number of body regions involved.
+- predicted_count: 199
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_bounded_alternative | llm_count_confidence=high | challenge_reasons=local_validation_conflict=0 vs 199 | The paper explicitly reports that 199 participants with stiff person syndrome spectrum disorders were included in the final analyses. The larger figure of 242 refers to medical records reviewed rather than confirmed analyzable SPS-spectrum cases, and the candidate count of 1 is clearly unsupported as the cohort size. Manual review remains required because the evidence pack flags possible overlap with a previously published Johns Hopkins SPS cohort.
+- batch_artifacts_status: complete
+- local_model_count: 0 (medium; needs_review=True)
+- local_reasoning: The text mentions 'Two patients died' but does not provide a clear total cohort size for SPS-spectrum patients.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 199
+- gpt_confidence: high
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper explicitly reports that 199 participants with stiff person syndrome spectrum disorders were included in the final analyses. The larger figure of 242 refers to medical records reviewed rather than confirmed analyzable SPS-spectrum cases, and the candidate count of 1 is clearly unsupported as the cohort size. Manual review remains required because the evidence pack flags possible overlap with a previously published Johns Hopkins SPS cohort.
+- evidence:
+  - pNone: RESULTS: One-hundred ninety-nine participants (mean age = 53.4 +/- 13.6 years, median time to diagnosis = 36 [IQR 66] months, 74.9% women, 69.8% White, 62.8% classic SPS phenotype) were included in final analyses
+  - pNone: Methods: Participants were recruited from the Johns Hopkins SPS Center between 1997 and 2021, as part of an ongoing, longitudinal observational study.
+  - pNone: A total of 242 medical records of participants diagnosed with SPSSD
+
+## 11940 - Rare Association of Autoimmune Limbic Encephalitis and Stiff Person Syndrome.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | This is a single-patient case report. The paper explicitly states that the authors present one 48-year-old woman and that she was diagnosed with both limbic encephalitis and SPS; because the challenge flag notes SPS-status uncertainty, the safest resolution is to keep the count at 1 but require manual review.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly presents a single case of a patient with symptoms related to SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a single-patient case report. The paper explicitly states that the authors present one 48-year-old woman and that she was diagnosed with both limbic encephalitis and SPS; because the challenge flag notes SPS-status uncertainty, the safest resolution is to keep the count at 1 but require manual review.
+- evidence:
+  - pNone: We present a case of a 48-year-old Caucasian female who presented with symptoms of recurrent severe headaches, behavioral and cognitive dysfunction, and an episode of seizure.
+  - pNone: She was diagnosed with LE and SPS, and was started on immunosuppressive therapy with steroids and intravenous immunoglobulins (IVIG).
+  - pNone: here we present a rare case of concurrent le and sps
+
+## 11943 - Coexisting Stiff Limb Syndrome, Myositis, and Myasthenia Gravis in a Patient with Thymoma.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is a single-patient case report. The title and body explicitly describe one patient with stiff limb syndrome, and the report states that the authors are presenting the first such triple-combination case, supporting a count of 1 unique SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single case report describing one patient with SPS-spectrum features.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is a single-patient case report. The title and body explicitly describe one patient with stiff limb syndrome, and the report states that the authors are presenting the first such triple-combination case, supporting a count of 1 unique SPS-spectrum patient.
+- evidence:
+  - pNone: Coexisting Stiff Limb Syndrome, Myositis, and Myasthenia Gravis in a Patient with Thymoma.
+  - pNone: Here, we report the first case of a triple combination of MG, myositis, and stiff limb syndrome (SLS) associated with thymoma.
+  - pNone: A 41-year-old female initially presented with recurrent migratory pruritic macular rash.
+  - pNone: Accordingly, concomitant myositis, GAD-positive SLS, and MG associated with malignant thymoma were diagnosed.
+
+## 11946 - Psychiatric Symptoms in Stiff-Person Syndrome: A Systematic Review and a Report of Two Cases.
+- predicted_count: 0
+- predicted_basis: not_count_eligible
+- verification_status: heuristic_only
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: count_basis=not_count_eligible | count_confidence=low | source_category=review_article | candidate_notes=preferred_text_source=trimmed; distinct_candidate_counts=[0]; count_eligibility_status=not_extractable
+- batch_artifacts_status: missing count_decision, count_evidence
+- local_model_count: None (; needs_review=)
+- local_reasoning: 
+- gpt_decision_type: 
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: 
+- gpt_manual_review_required: None
+- gpt_reasoning: 
+- evidence:
+  - None
+
+## 11948 - A genome-wide association study in autoimmune neurological syndromes with anti-GAD65 autoantibodies.
+- predicted_count: 48
+- predicted_basis: diagnosis_specific_table_row_count
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper reports a broader original cohort of 167 anti-GAD65 autoimmune neurological syndrome patients, and within that cohort an explicit diagnosis-specific subgroup row lists 48 patients with stiff-person syndrome. Because only the SPS-spectrum subset should be counted, the best-supported extractable SPS-spectrum count is 48.
+- batch_artifacts_status: complete
+- local_model_count: 48 (high; needs_review=)
+- local_reasoning: The evidence explicitly states a cohort size of 48 for Stiff-person syndrome.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper reports a broader original cohort of 167 anti-GAD65 autoimmune neurological syndrome patients, and within that cohort an explicit diagnosis-specific subgroup row lists 48 patients with stiff-person syndrome. Because only the SPS-spectrum subset should be counted, the best-supported extractable SPS-spectrum count is 48.
+- evidence:
+  - p1: These included 167 patients with anti-GAD65 AINS, recruited by the German Network for Research on Autoimmune Encephalitis (GENERATE), and 1047 individuals without neurological or endocrine disease as population-based controls.
+  - pNone: Cases 167 51 116 10 2 8 ... Stiff-person syndrome 48 9 39 1 0 1 ... Overlap 17 3 14 1 0 1
+
+## 11952 - Glutamic acid decarboxylase antibody-associated neurological syndromes: Clinical and antibody characteristics and therapy response.
+- predicted_count: 22
+- predicted_basis: diagnosis_specific_table_row_count
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper reports a broader cohort of 101 GAD-antibody-associated neurological syndrome patients, with an explicit diagnosis-specific subgroup of "SPS/PERM 22 (21.8%)" in Table 1 and text stating "SPS was diagnosed in 22 patients." This supports selecting the 22-patient SPS-spectrum subset, but manual review remains appropriate because the evidence pack flags original cohort provenance as uncertain.
+- batch_artifacts_status: complete
+- local_model_count: 22 (high; needs_review=True)
+- local_reasoning: The table explicitly lists 22 patients in the SPS/PERM category, but provenance is uncertain.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper reports a broader cohort of 101 GAD-antibody-associated neurological syndrome patients, with an explicit diagnosis-specific subgroup of "SPS/PERM 22 (21.8%)" in Table 1 and text stating "SPS was diagnosed in 22 patients." This supports selecting the 22-patient SPS-spectrum subset, but manual review remains appropriate because the evidence pack flags original cohort provenance as uncertain.
+- evidence:
+  - pNone: neurological Table 1 Phenotypes and therapies of all GAD-ab positive patients with suspected auto - immune neurological syndromes. Categories All GAD patients ( N = 101) Syndromes, n (%) E/LE 39 (38.6) CAT 28 (27.7) SPS/PERM 22 (21.8) Overlap 12 (11.9)
+  - pNone: We identified 101 patients with SAINS-GAD + from the database.
+  - pNone: SPS was diagnosed in 22 patients (21.8%).
+  - pNone: Intrathecal GAD-ab synthesis was calculated as described previously
+
+## 11954 - Thymoma-Related Stiff-Person Syndrome with Successfully Treated by Surgery.
+- predicted_count: 4
+- predicted_basis: diagnosis_specific_table_row_count
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: COUNT_SINGLE_CASE_MISMATCH
+- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=explicit_sps_subgroup_conflict=1 vs 4 | validator_flags=COUNT_SINGLE_CASE_MISMATCH | The paper is clearly written as a single-patient case report, with repeated singular language describing one 26-year-old woman diagnosed with SPS. However, the evidence pack also contains an explicit SPS-spectrum subgroup signal of 4 derived from a likely literature-review table, and the provided snippets do not fully resolve whether that table reflects original cases in this paper or prior published cases. Because this 1-versus-4 conflict is not fully resolved by explicit paper evidence, manual review is required.
+- batch_artifacts_status: complete
+- local_model_count: 1 (high; needs_review=True)
+- local_reasoning: The single-case report context suggests a count of 1, overriding the higher count from the table structure.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper is clearly written as a single-patient case report, with repeated singular language describing one 26-year-old woman diagnosed with SPS. However, the evidence pack also contains an explicit SPS-spectrum subgroup signal of 4 derived from a likely literature-review table, and the provided snippets do not fully resolve whether that table reflects original cases in this paper or prior published cases. Because this 1-versus-4 conflict is not fully resolved by explicit paper evidence, manual review is required.
+- evidence:
+  - pNone: We present a rare case of thymoma accompanied by SPS successfully treated using surgery.
+  - pNone: A 26-year-old woman presented with lower limbs convulsions and gait disturbance and complained of leg pain.
+  - pNone: she was diagnosed with sps
+  - pNone: There have been 11 cases of patients who underwent
+  - pNone: SPS: Stiff-person syndrome 4 Ann Thorac Cardiovasc Surg Advance Published Date: July 16, 2021 Stiff-Person Syndrome Accompanied by Thymoma
+
+## 11957 - Postoperative hypotonia in a patient with stiff person syndrome: a case report and literature review.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is a single-patient case report with explicit diagnosis-specific wording: the abstract states both that the authors 'present a patient with SPS' and describes 'a 46-yr-old female patient with SPS.' The additional counts in the paper refer to literature-review cases, which should not be counted as original patients from this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly describes one 46-year-old female patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is a single-patient case report with explicit diagnosis-specific wording: the abstract states both that the authors 'present a patient with SPS' and describes 'a 46-yr-old female patient with SPS.' The additional counts in the paper refer to literature-review cases, which should not be counted as original patients from this paper.
+- evidence:
+  - pNone: we present a patient with SPS who experienced hypotonia following total intravenous anesthesia (TIVA), which was promptly reversed with sugammadex.
+  - pNone: A 46-yr-old female patient with SPS underwent breast lumpectomy and sentinel node biopsy.
+  - pNone: A literature review identified six instances of postoperative hypotonia (TIVA, n = 3; volatile anesthetics, n = 3)
+
+## 11960 - Glutamic acid decarboxylase (GAD) antibody-positive paraneoplastic stiff person syndrome associated with mediastinal liposarcoma.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This BMJ case report explicitly describes a single original SPS-spectrum patient: a young woman diagnosed with paraneoplastic SPS. The best-supported count is 1, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single case of SPS, but provenance uncertainty requires a review.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This BMJ case report explicitly describes a single original SPS-spectrum patient: a young woman diagnosed with paraneoplastic SPS. The best-supported count is 1, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty.
+- evidence:
+  - p1: We report a case of a young woman who presented with seizures and painful spasms of the thoracolumbar muscles who was subsequently diagnosed with SPS.
+  - p1: This case highlights a rare case of GAD antibody-positive paraneoplastic SPS associated with mediastinal liposarcoma.
+  - p1: we report an interesting case of gad-seropositive sps in a patient with mediastinal liposarcoma (ml)
+
+## 11971 - Neuropsychiatric Manifestations of Autoimmune Encephalitis in a Tertiary Hospital: A Case Series and Current Perspectives.
+- predicted_count: 1
+- predicted_basis: diagnosis_specific_patient_case_count
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=local_validation_conflict=2 vs 1 | llm_selected_candidate_id=cand02 | The paper is a 7-patient autoimmune encephalitis case series, but only one patient is explicitly described as having an SPS-spectrum diagnosis: case 7 with stiff-person syndrome. Case 6 is GAD65-positive but is described with speech dysfunction and altered mentation rather than SPS-spectrum features, so the safest extractable SPS-spectrum count is 1; manual review remains required because provenance overlap/originality is flagged as uncertain.
+- batch_artifacts_status: complete
+- local_model_count: 2 (medium; needs_review=True)
+- local_reasoning: The explicit subgroup evidence mentions two specific cases (case 6 and case 7), and only case 7 explicitly mentions SPS, but counting both mentioned cases (6 and 7) is the most conservative approach given the context.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand02
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper is a 7-patient autoimmune encephalitis case series, but only one patient is explicitly described as having an SPS-spectrum diagnosis: case 7 with stiff-person syndrome. Case 6 is GAD65-positive but is described with speech dysfunction and altered mentation rather than SPS-spectrum features, so the safest extractable SPS-spectrum count is 1; manual review remains required because provenance overlap/originality is flagged as uncertain.
+- evidence:
+  - pNone: case 7 was an elderly male with GAD65 antibody who had stiff-person syndrome, ataxia, cognitive decline, and thymoma.
+  - pNone: This retrospective case series describes the clinical details of 7 individuals with AE and overlapping neuropsychiatric symptoms.
+  - pNone: Case 6, with glutamic acid decarboxylase 65 (GAD65) antibody, was an elderly female with speech dysfunction and altered mentation, and case 7 was an elderly male with GAD65 antibody who had stiff-person syndrome, ataxia, cognitive decline, and thymoma.
+
+## 11972 - Unusual presentation of stiff-person syndrome in a patient with type 1 diabetes mellitus.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report describing one woman with stiff-limb syndrome, which is within the SPS spectrum. The abstract and full-text excerpt consistently refer to a single patient and provide diagnosis-supporting clinical and antibody findings.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a single case report describing one patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report describing one woman with stiff-limb syndrome, which is within the SPS spectrum. The abstract and full-text excerpt consistently refer to a single patient and provide diagnosis-supporting clinical and antibody findings.
+- evidence:
+  - p1: Here, we describe a woman with stiff-limb syndrome who initially presented with concerns about right foot swelling and pain.
+  - p1: case presentation the patient was a woman in her early 40 s.
+  - p1: laboratory evaluations showed elevated levels of serum anti-gad65 antibody (185 nmol/l; reference range,<0.02 nmol/l)
+
+## 11974 - Inspiratory laryngeal stridor as the main feature of progressive encephalomyelitis with rigidity and myoclonus: a case report and literature review.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is an original single-patient case report of progressive encephalomyelitis with rigidity and myoclonus (PERM), which is within the SPS-spectrum definition. The text consistently describes one 52-year-old man as the reported patient, with diagnosis-supported clinical features and anti-GlyR antibody positivity.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a case report describing one patient with PERM, which is an SPS-spectrum disorder.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is an original single-patient case report of progressive encephalomyelitis with rigidity and myoclonus (PERM), which is within the SPS-spectrum definition. The text consistently describes one 52-year-old man as the reported patient, with diagnosis-supported clinical features and anti-GlyR antibody positivity.
+- evidence:
+  - p1: CASE PRESENTATION: A 52-year-old man was admitted to the hospital for evaluation of tension headache for 20 days and mild dysarthria.
+  - p2: We present an illustrative case report and discuss relevant literature.
+  - p1: Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.
+
+## 11975 - Stiff Person Syndrome and Encephalitis with GAD Antibodies with Severe Anterograde Amnesia in an Adolescent: A Case Study and Literature Review.
+- predicted_count: 1
+- predicted_basis: single_case_text_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This paper is a single-patient case report describing one original adolescent patient managed by the authors, with explicit clinical stiff person syndrome plus GAD-positive encephalitis. The count is best supported as 1, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty and the article also includes a literature review component.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper describes a single case of SPS-spectrum presentation in an adolescent.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This paper is a single-patient case report describing one original adolescent patient managed by the authors, with explicit clinical stiff person syndrome plus GAD-positive encephalitis. The count is best supported as 1, but manual review remains appropriate because the evidence pack flags original cohort provenance uncertainty and the article also includes a literature review component.
+- evidence:
+  - pNone: A 14-year-old female adolescent was managed in our department.
+  - pNone: Upon her arrival at the University Hospital Centre, she showed a classical form of stiff person syndrome.
+  - pNone: Case report The patient is a 14-year-old girl with normal psychomotor development...
+
+## 11976 - Severe dysautonomia in glycine receptor antibody-positive progressive encephalomyelitis with rigidity and myoclonus (PERM): A case report.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is an explicit single-patient case report of a confirmed SPS-spectrum disorder, PERM. The title and abstract both indicate one original 59-year-old man, with glycine receptor antibodies identified in serum and CSF, supporting a count of 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single 59-year-old man with a confirmed SPS-spectrum disorder (PERM).
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is an explicit single-patient case report of a confirmed SPS-spectrum disorder, PERM. The title and abstract both indicate one original 59-year-old man, with glycine receptor antibodies identified in serum and CSF, supporting a count of 1.
+- evidence:
+  - pNone: Severe dysautonomia in glycine receptor antibody-positive progressive encephalomyelitis with rigidity and myoclonus (PERM): A case report.
+  - pNone: We report a 59-year-old man who presented with progressive encephalomyelitis causing diplopia, bulbar palsy, severe dysautonomia, followed by stiffness and myoclonic cluster.
+  - pNone: Glycine-receptor antibodies were identified in both serum and CSF.
+
+## 11979 - Progressive encephalomyelitis with rigidity and myoclonus (PERM).
+- predicted_count: 1
+- predicted_basis: single_case_text_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This single-case report explicitly describes one original patient, a 65-year-old man, who was diagnosed with antiglycine receptor antibody-positive PERM. PERM is within the SPS-spectrum, and no evidence suggests additional original SPS-spectrum cases in this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single 65-year-old man with PERM, which is an SPS-spectrum disorder.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This single-case report explicitly describes one original patient, a 65-year-old man, who was diagnosed with antiglycine receptor antibody-positive PERM. PERM is within the SPS-spectrum, and no evidence suggests additional original SPS-spectrum cases in this paper.
+- evidence:
+  - p1: We describe a 65-year-old man who presented with odynophagia together with tongue and neck swelling, followed by multiple cranial nerve palsies culminating in bilateral vocal cord paralysis with acute stridor.
+  - p1: Serum antiglycine receptor antibody was strongly positive, but antiglutamic acid decarboxylase and other antibodies relating to stiff-person syndrome were negative. We diagnosed PERM
+  - p1: we report a gentleman with antiglycine receptor (glyr) antibody positive perm
+
+## 11981 - Serum glutamate decarboxylase antibodies and neurological disorders: when to suspect their association?.
+- predicted_count: 1
+- predicted_basis: diagnosis_specific_table_row_count
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | The paper studies a broad cohort of 173 patients tested for GAD antibodies, not an all-SPSD cohort. The clearest extractable SPS-spectrum count is the diagnosis-specific table row showing 1 patient with stiff-person syndrome; because the broader anti-GAD/neurology cohort creates some SPS-status ambiguity, this should remain flagged for manual review.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The table explicitly lists 'Stiff-person syndrome' with a count of 1, while the overall cohort size is 173, requiring manual review.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper studies a broad cohort of 173 patients tested for GAD antibodies, not an all-SPSD cohort. The clearest extractable SPS-spectrum count is the diagnosis-specific table row showing 1 patient with stiff-person syndrome; because the broader anti-GAD/neurology cohort creates some SPS-status ambiguity, this should remain flagged for manual review.
+- evidence:
+  - pNone: A total of 173 patients (51.7% men, mean age 51.62) were included.
+  - pNone: GAD-Abs were found in the serum of 22 patients (12.7%); of those, 15 (68.18%) suffered a typical anti-GAD syndrome.
+  - pNone: Stiff-person syndrome 1 1 (100) 2000 0 1 (100)
+
+## 11985 - Quantitative brain imaging analysis of neurological syndromes associated with anti-GAD antibodies.
+- predicted_count: 52
+- predicted_basis: early_body_count_signal
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=local_validation_conflict=26 vs 52 | The paper clearly reports an original anti-GAD neurological cohort of 26 imaged patients, but it is a mixed phenotype cohort rather than an explicit SPS-spectrum cohort. Although the text notes that six patients had an SPS presentation, the evidence pack does not clearly establish whether all six are unique confirmed SPS-spectrum cases extractable for this review, so no listed candidate is well supported and human review is needed.
+- batch_artifacts_status: complete
+- local_model_count: 26 (medium; needs_review=True)
+- local_reasoning: The abstract explicitly mentions 26 patients undergoing MRI for neurological syndromes including SPS.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper clearly reports an original anti-GAD neurological cohort of 26 imaged patients, but it is a mixed phenotype cohort rather than an explicit SPS-spectrum cohort. Although the text notes that six patients had an SPS presentation, the evidence pack does not clearly establish whether all six are unique confirmed SPS-spectrum cases extractable for this review, so no listed candidate is well supported and human review is needed.
+- evidence:
+  - pNone: The morphological MRI of 26 patients (T1-weighted and Fluid-attenuated inversion recovery (FLAIR)-weighted images) was analyzed at the initial stage of diagnosis, matched by age and sex to 26 healthy subjects.
+  - pNone: Among the 46 patients with positive anti-GAD antibodies identified at the Pitie Salpetriere laboratory, 20 patients did not have brain MRI
+  - pNone: Finally, 26 patients were included in this
+  - pNone: Six patients had a SPS presentation, but only two were isolated
+
+## 11988 - Progressive encephalomyelitis with rigidity: A Taiwanese case and review of literature.
+- predicted_count: 13
+- predicted_basis: diagnosis_specific_fraction_suffix_count
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper is primarily a Taiwanese case report plus a literature review of previously reported PERM cases, so the abstract total of 81 is not an original extractable cohort from this paper. The clearest SPS-spectrum count tied to original data in the evidence pack is the explicit PERM subgroup count of 13, but provenance and context are uncertain, so this should remain flagged for manual review.
+- batch_artifacts_status: complete
+- local_model_count: 13 (medium; needs_review=True)
+- local_reasoning: The count of 13 is explicitly cited in relation to PERM, but the overall cohort provenance is uncertain.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper is primarily a Taiwanese case report plus a literature review of previously reported PERM cases, so the abstract total of 81 is not an original extractable cohort from this paper. The clearest SPS-spectrum count tied to original data in the evidence pack is the explicit PERM subgroup count of 13, but provenance and context are uncertain, so this should remain flagged for manual review.
+- evidence:
+  - pNone: we present a case with PERM. the literature review aimed to identify all the reported cases of PERM until the end of 2020.
+  - pNone: Results: 81 patients were collected and analyzed.
+  - pNone: PERM (13/15), 2 cases with breast cancer were found remotely from the
+
+## 11990 - Thymoma and Autoimmune Encephalitis: Clinical Manifestations and Antibodies.
+- predicted_count: 0
+- predicted_basis: no_reliable_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | The paper reports a cohort of 43 patients with autoimmune encephalitis and thymoma, not an SPS-spectrum cohort. Within that cohort, only 4 patients are described as having PERM, which is SPS-spectrum, but this explicit subgroup count is not represented in the candidate list; because the available candidates are 61 and 0, 61 is clearly unsupported for SPSD and the safest listed candidate is 0, with manual review required due to the missed PERM subgroup and provenance uncertainty.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The count of 61 refers to the prevalence of a specific antibody type in a group, not the number of unique SPS-spectrum patients.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand02
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper reports a cohort of 43 patients with autoimmune encephalitis and thymoma, not an SPS-spectrum cohort. Within that cohort, only 4 patients are described as having PERM, which is SPS-spectrum, but this explicit subgroup count is not represented in the candidate list; because the available candidates are 61 and 0, 61 is clearly unsupported for SPSD and the safest listed candidate is 0, with manual review required due to the missed PERM subgroup and provenance uncertainty.
+- evidence:
+  - pNone: METHODS: A retrospective cohort study of 43 patients was conducted.
+  - pNone: The most common clinical presentation was ... progressive encephalomyelitis with rigidity and myoclonus in 4 (9%; 3 GlyR and 1 AMPAR antibodies)
+  - pNone: We identified 61 patients with thymoma and suspected AE, 18 of
+  - pNone: been previously reported (including patients 5 and 6 of reference
+
+## 12012 - Ocular Motor and Vestibular Characteristics of Antiglutamic Acid Decarboxylase-Associated Neurologic Disorders.
+- predicted_count: 4
+- predicted_basis: abstract_count_signal
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_manual_review_required | llm_count_confidence=low | The paper reports a mixed anti-GAD cohort of 22 patients with SPS or cerebellar ataxia, not a clean SPS-spectrum cohort. Only 4 patients in the early-dominant subgroup are explicitly stated to have additional SPS features, while the 14-patient nondominant subgroup is described only as 'most had an SPS phenotype,' which does not provide an exact extractable SPS-spectrum count.
+- batch_artifacts_status: complete
+- local_model_count: 4 (medium; needs_review=True)
+- local_reasoning: The abstract explicitly mentions 4 patients with SPS features, but the overall cohort size is unclear.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper reports a mixed anti-GAD cohort of 22 patients with SPS or cerebellar ataxia, not a clean SPS-spectrum cohort. Only 4 patients in the early-dominant subgroup are explicitly stated to have additional SPS features, while the 14-patient nondominant subgroup is described only as 'most had an SPS phenotype,' which does not provide an exact extractable SPS-spectrum count.
+- evidence:
+  - pNone: Retrospective review of the Johns Hopkins Hospital medical records from 1997 to 2018 identified a total of 22 patients with a diagnosis of anti-GAD-associated SPS or CA who had detailed VOM assessments.
+  - pNone: In the 8 patients with early dominant VOM dysfunction... Seven had features of CA, and 4 had additional features of SPS.
+  - pNone: By contrast, in the 14 patients in whom VOM dysfunction was nondominant, most had an SPS phenotype and were women.
+
+## 12013 - The effect of clinical pilates-based physiotherapy program for a Stiff Person Syndrome patient: a case report.
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is an explicit single-patient case report of SPS. The title, abstract, and full-text excerpt all describe one 43-year-old female patient with a 3-year history of SPS who underwent the intervention, so candidate 1 is directly supported.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly describes a single patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is an explicit single-patient case report of SPS. The title, abstract, and full-text excerpt all describe one 43-year-old female patient with a 3-year history of SPS who underwent the intervention, so candidate 1 is directly supported.
+- evidence:
+  - pNone: The effect of clinical pilates-based physiotherapy program for a Stiff Person Syndrome patient: a case report.
+  - pNone: The aim of the present report is to show the effects of a clinical pilates-based physiotherapy training program on physical functioning, including balance ability, flexibility, muscle strength, and pain severity in a case with Stiff Person Syndrome (SPS).
+  - pNone: A 43-year-old female with a 3-year history of SPS participated in the study.
+
+## 12031 - Transient Neurological Symptoms Preceding Cerebellar Ataxia with Glutamic Acid Decarboxylase Antibodies.
+- predicted_count: 31
+- predicted_basis: early_body_count_signal
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=semantic_validator_reject=COUNT_PROVENANCE_UNCERTAIN | The paper reports an original cohort of 31 patients with cerebellar ataxia and GAD antibodies, with an 11-patient subgroup having transient prodromal symptoms, but it does not report an explicit SPS-spectrum subgroup. Because SPS is only mentioned as background context and cohort provenance is flagged as uncertain, no listed candidate can be safely accepted as an extractable SPS-spectrum count.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The cohort described is for CA/GAD-Abs, not explicitly SPS-spectrum, and the count of 11 is a subset of a larger group of 31.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper reports an original cohort of 31 patients with cerebellar ataxia and GAD antibodies, with an 11-patient subgroup having transient prodromal symptoms, but it does not report an explicit SPS-spectrum subgroup. Because SPS is only mentioned as background context and cohort provenance is flagged as uncertain, no listed candidate can be safely accepted as an extractable SPS-spectrum count.
+- evidence:
+  - pNone: We searched retrospectively for similar presentations in a cohort of 31 patients diagnosed with CA and GAD-Abs.
+  - pNone: We found 11 (35.4%) patients ... with transient neurological symptoms antedating CA onset
+  - pNone: cerebellar ataxia (ca) is one of the main immune-mediated neurological syndromes associated with antibodies against glutamic acid decarboxylase (gad-abs), along with stiff-person syndrome (sps) and limbic encephalitis (le)
+  - pNone: original_cohort_provenance_uncertain: True
+
+## 12094 - Diplopia management in a patient with stiff person syndrome
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-case report, and the full-text excerpt explicitly describes one 43-year-old male patient who was diagnosed with stiff person syndrome by a neurologist. No evidence suggests additional original SPS-spectrum patients in this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The title and context indicate a single case report of an SPS-spectrum patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-case report, and the full-text excerpt explicitly describes one 43-year-old male patient who was diagnosed with stiff person syndrome by a neurologist. No evidence suggests additional original SPS-spectrum patients in this paper.
+- evidence:
+  - pNone: Diplopia management in a patient with stiff person syndrome
+  - pNone: the following case illustrates a patient with sps-induced strabismus and the role of the optometrist in managing the resultant diplopia.
+  - pNone: a 43-year-old african american male presented to an urban urgent eye care clinic with a complaint of sudden onset vertical diplopia.
+  - pNone: case history revealed that one week after the onset of diplo - pia, the patient began to have muscle stiffness and difficulty walking. he had then been diagnosed with sps by a neurologist.
+
+## 12114 - Case Report: Amphiphysin Antibody-Associated Stiff-Limb Syndrome and Myelopathy: An Unusual Presentation of Breast Cancer in an Elderly Woman
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | This is a single-patient case report with explicit wording that the authors present one case of anti-amphiphysin antibody-associated paraneoplastic stiff-limb syndrome, which is within the SPS spectrum. Although the paper mentions myelopathy and broader SPS-spectrum entities in background text, the reported original patient is clearly one diagnosis-supported SLS case; because of the validator uncertainty flag, manual review remains appropriate.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single case of SPS-spectrum disorder in an 83-year-old woman.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a single-patient case report with explicit wording that the authors present one case of anti-amphiphysin antibody-associated paraneoplastic stiff-limb syndrome, which is within the SPS spectrum. Although the paper mentions myelopathy and broader SPS-spectrum entities in background text, the reported original patient is clearly one diagnosis-supported SLS case; because of the validator uncertainty flag, manual review remains appropriate.
+- evidence:
+  - p1: Case Description: We present a case of anti-amphiphysin antibody (Ab)-associated paraneoplastic SLS, in an 83-year-old woman with invasive ductal carcinoma of the breast.
+  - p1: we hereby present a case of rapid progressive paraneoplastic sls with the coexistence of myelopathic features.
+  - p1: sps variants include focal forms like stiff-limb syndrome (sls), jerking sps, progressive encephalomyelitis with rigidity and myoclonus (perm), and sps plus
+
+## 12117 - Stiff-person syndrome with sensorimotor polyneuropathy - case report
+- predicted_count: 1
+- predicted_basis: source_single_case_override
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is explicitly a single case report and repeatedly states that the authors present a case report of a patient diagnosed with stiff-person syndrome. The numeric signal of 50 comes from background age/prevalence text, not an SPS cohort count, so the best-supported extractable count is 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single case report, suggesting one patient, despite prevalence data being quoted.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is explicitly a single case report and repeatedly states that the authors present a case report of a patient diagnosed with stiff-person syndrome. The numeric signal of 50 comes from background age/prevalence text, not an SPS cohort count, so the best-supported extractable count is 1.
+- evidence:
+  - p1: Stiff-person syndrome with sensorimotor polyneuropathy – case report
+  - p1: we present a case report of a patient diagnosed with stiff-person syndrome overlapping with axonal and demyelinating sensorimotor polyneuropathy.
+
+## 12138 - Glycine Receptor Antibody-Associated Progressive Encephalomyelitis with Rigidity and Myoclonus (PERM) During SARS-CoV-2 Infection: a Video-Case Report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This is a single-patient PERM video-case report with explicit diagnosis of progressive encephalomyelitis with rigidity and myoclonus, so the best-supported extractable count is 1. However, the evidence pack notes the patient 'has been previously reported during SARS-CoV-2 infection,' so provenance overlap is uncertain and manual review is required.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single case report, suggesting one patient, but provenance is uncertain.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a single-patient PERM video-case report with explicit diagnosis of progressive encephalomyelitis with rigidity and myoclonus, so the best-supported extractable count is 1. However, the evidence pack notes the patient 'has been previously reported during SARS-CoV-2 infection,' so provenance overlap is uncertain and manual review is required.
+- evidence:
+  - pNone: case report a 65-year-old man with no previous medical history was admitted to our hospital
+  - pNone: the patient was diagnosed with progressive encephalomyelitis with rigidity and myoclonus (perm)
+  - pNone: has been previously reported during SARS-CoV-2 infection.
+
+## 12141 - Paraneoplastic Stiff Person Syndrome With Anti-amphiphysin Antibodies Presenting With Pruritus as the Initial Manifestation: An Unusual Case
+- predicted_count: 1
+- predicted_basis: diagnosis_specific_patient_case_count
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand03 | This is a single-patient case report with explicit diagnosis-supported language for one woman with paraneoplastic stiff person syndrome. The abstract and full-text excerpt both describe one unique SPS-spectrum patient, so the diagnosis-specific 1-patient candidate is best supported.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly describes one female patient with paraneoplastic SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand03
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report with explicit diagnosis-supported language for one woman with paraneoplastic stiff person syndrome. The abstract and full-text excerpt both describe one unique SPS-spectrum patient, so the diagnosis-specific 1-patient candidate is best supported.
+- evidence:
+  - pNone: We present an unusual case of a female patient diagnosed with paraneoplastic SPS, secondary to invasive ductal breast carcinoma, who was found to be seropositive for anti-amphiphys
+  - pNone: We thus describe a case of anti-amphiphysin antibody-positive SPS, which initially manifested with generalized pruritus.
+  - p2: A 64-year-old female patient... neurological examination showed that... she had stiffness of both lower limbs... this finding was consistent with a diagnosis of SPS.
+
+## 12202 - Progressive Encephalomyelitis with Rigidity and Myoclonus with an Aggressive Presentation Mimicking Septic Shock: A Pediatric Case Report and Literature Review
+- predicted_count: 1
+- predicted_basis: diagnosis_specific_table_row_count
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand02 | This is a pediatric single-case report with explicit text stating the authors report one 16-year-old girl diagnosed with PERM. The competing count of 2 is not supported by clear original-patient evidence and likely reflects heuristic misreading of surrounding review/table material; because provenance uncertainty signals are present, human review is still warranted.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single patient case report, which is the most reliable count despite conflicting candidate counts.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand02
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a pediatric single-case report with explicit text stating the authors report one 16-year-old girl diagnosed with PERM. The competing count of 2 is not supported by clear original-patient evidence and likely reflects heuristic misreading of surrounding review/table material; because provenance uncertainty signals are present, human review is still warranted.
+- evidence:
+  - pNone: We report a 16-year-old girl with PERM associated with an anti-glutamic acid decarboxylase (GAD) antibody.
+  - pNone: we present a case of perm with a unique initial presentation mimicking fulminant septic shock.
+  - pNone: Compared with other variants of SPS, PERM has a wide array of clinical manifestations. This is exemplified by our patient
+
+## 12219 - Stiff person syndrome associated with dermatitis herpetiformis: a case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is explicitly a case report and repeatedly states that it reports one 46-year-old patient with classic autoimmune stiff person syndrome. The evidence supports a single unique SPS-spectrum case with no indication of additional original patients.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a case report, indicating a single patient case.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is explicitly a case report and repeatedly states that it reports one 46-year-old patient with classic autoimmune stiff person syndrome. The evidence supports a single unique SPS-spectrum case with no indication of additional original patients.
+- evidence:
+  - pNone: We report the case of a 46-year-old patient with a classic form of autoimmune stiff person syndrome associated with dermatitis herpetiformis.
+  - pNone: nous rapportons le cas d'un patient de 46 ans ayant une forme classique de syndrome de la personne raide auto-immune associée à une dermatite herpétiforme.
+  - pNone: Informations du patient: un patient âgé de 46 ans, sans antécédents pathologiques notables, avait consulté dans notre formation pour bilan de rigidité axiale majeure, d’installation rapidement progressive.
+
+## 12222 - A THERAPEUTIC TRIAL OF MILACEMIDE IN MYOCLONUS AND THE STIFF-PERSON SYNDROME
+- predicted_count: 3
+- predicted_basis: abstract_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=3 vs 5 | llm_selected_candidate_id=cand01 | The paper text explicitly reports an open-label trial in 'seven patients with myoclonus and three patients with the stiff-person syndrome,' and later identifies cases 8-10 as the three stiff-person syndrome patients. Although an upstream subgroup signal suggests 5, the full-text cohort description and case table consistently support 3 SPS-spectrum patients; manual review remains warranted because provenance uncertainty is flagged and there is a 3-vs-5 package conflict.
+- batch_artifacts_status: complete
+- local_model_count: 3 (high; needs_review=True)
+- local_reasoning: The abstract explicitly states 'three patients with the stiff-person syndrome', which is the most direct count for SPS-spectrum patients.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper text explicitly reports an open-label trial in 'seven patients with myoclonus and three patients with the stiff-person syndrome,' and later identifies cases 8-10 as the three stiff-person syndrome patients. Although an upstream subgroup signal suggests 5, the full-text cohort description and case table consistently support 3 SPS-spectrum patients; manual review remains warranted because provenance uncertainty is flagged and there is a 3-vs-5 package conflict.
+- evidence:
+  - pNone: We investigated the therapeutic effects of milacemide in seven patients with myoclonus and three patients with the stiff-person syndrome in an open-label trial.
+  - pNone: we report an open-label trial of milacemide in seven patients with myoclonus of various types, and three patients with the stiff-person syndrome.
+  - pNone: the final three patients (cases 8, 9, and 10) had slowly progressive axial stiffness... The diagnosis of stiff-person syndrome was made in these three cases.
+  - pNone: case no. ... 8 ... stiff-person syndrome ... 9 ... stiff-person syndrome ... 10 ... stiff-person syndrome
+  - pNone: one patient (case 6) had propriospinal myoclonus of unknown aetiology, and has been previously reported (12). another patient (case 7) had axial myoclonus and paroxysmal axial spasms, presumed to be propriospinal in origin, and has also been previously reported
+
+## 12234 - Anti-glycine receptor antibody-positive progressive encephalomyelitis with rigidity and myoclonus initially presenting with one-sided stiff face: A case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_semantic_conflict_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: COUNT_SPS_STATUS_UNCERTAIN
+- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_SPS_STATUS_UNCERTAIN | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SPS_STATUS_UNCERTAIN | This is an original single-patient case report, and the paper explicitly describes one 71-year-old man diagnosed with anti-GlyR antibody-positive PERM. PERM is within the review's SPS-spectrum definition, so the best-supported extractable count is 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single patient presenting with symptoms consistent with SPS-spectrum disorder.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is an original single-patient case report, and the paper explicitly describes one 71-year-old man diagnosed with anti-GlyR antibody-positive PERM. PERM is within the review's SPS-spectrum definition, so the best-supported extractable count is 1.
+- evidence:
+  - pNone: Anti-glycine receptor antibody-positive progressive encephalomyelitis with rigidity and myoclonus initially presenting with one-sided stiff face: A case report
+  - pNone: Case presentation: A 71-year-old man experienced left-sided stiff face
+  - pNone: The patient's serum was positive for anti-glycine receptor (anti-GlyR) antibody, suggesting PERM.
+
+## 12236 - Stiff person syndrome in a Nepalese man with uncontrolled diabetes mellitus and ketonuria: A rare case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-case report with explicit language stating that the paper reports a rare case of SPS in one middle-aged Nepalese man. The full-text excerpt also consistently describes one patient and provides diagnosis-supporting clinical, EMG, and GAD65 antibody findings.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single case of SPS in one patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-case report with explicit language stating that the paper reports a rare case of SPS in one middle-aged Nepalese man. The full-text excerpt also consistently describes one patient and provides diagnosis-supporting clinical, EMG, and GAD65 antibody findings.
+- evidence:
+  - pNone: Here, we report a rare case of SPS in a middle-aged Nepalese man with uncontrolled diabetes mellitus and ketonuria.
+  - pNone: a test of gad- 65 (glutamic acid decarboxylase- 65) immunoglobulin g via serum enzyme immunoassay showed gad autoantibodies to be high in our patient with the value of more than 2000 iu/ ml... hence, the presence of muscle spasms and limb pain, positive gad autoantibodies, positive therapeutic response to oral diazepam, and findings of emg while simultaneously ruling out other differentials pointed toward the diagnosis of sps
+
+## 12244 - Successful management of dyspnea in a patient with stiff person syndrome with noninvasive positive-pressure ventilation: A case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report with explicit diagnosis-supported SPS language. The paper repeatedly states that it presents one patient with SPS and then describes a 38-year-old female patient in detail, supporting a count of 1 unique SPS-spectrum case.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly describes and reports on a single patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report with explicit diagnosis-supported SPS language. The paper repeatedly states that it presents one patient with SPS and then describes a 38-year-old female patient in detail, supporting a count of 1 unique SPS-spectrum case.
+- evidence:
+  - p1: Here, we describe a patient with stiff person syndrome whose nighttime dyspnea was successfully controlled by noninvasive positive-pressure ventilation (NIPPV).
+  - p1: In the current study, we present a patient with SPS whose dyspnea was successfully managed by NIPPV.
+  - p1: A year ago, a 38-year-old female patient with SPS visited the emergency room (ER) of a university hospital due to nighttime dyspnea
+
+## 12247 - AUTOANTIBODIES TO A 128-KD SYNAPTIC PROTEIN IN 3 WOMEN WITH THE STIFF-MAN SYNDROME AND BREAST-CANCER
+- predicted_count: 3
+- predicted_basis: abstract_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=explicit_sps_subgroup_conflict=3 vs 4 | llm_selected_candidate_id=cand01 | The paper explicitly states that the authors studied three women with stiff-man syndrome and breast cancer, and the title/case-report structure supports a 3-patient original SPS cohort. Although an upstream subgroup signal suggests 4, the supplied text only clearly identifies three indexed patients, while provenance overlap is uncertain because at least one patient was previously described; therefore the safest resolution is candidate 3 with manual review retained.
+- batch_artifacts_status: complete
+- local_model_count: 3 (medium; needs_review=True)
+- local_reasoning: The abstract and candidate summary point to 3 patients, while the explicit subgroup signals suggest 4, creating a conflict.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper explicitly states that the authors studied three women with stiff-man syndrome and breast cancer, and the title/case-report structure supports a 3-patient original SPS cohort. Although an upstream subgroup signal suggests 4, the supplied text only clearly identifies three indexed patients, while provenance overlap is uncertain because at least one patient was previously described; therefore the safest resolution is candidate 3 with manual review retained.
+- evidence:
+  - pNone: AUTOANTIBODIES TO A 128-KD SYNAPTIC PROTEIN IN 3 WOMEN WITH THE STIFF-MAN SYNDROME AND BREAST-CANCER
+  - pNone: Methods. We studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid by immunocytochemical techniques, Western blotting, and immunoprecipitation.
+  - pNone: we describe three women with the stiff-man syn- drome and ductal breast cancer who had autoantibodies directed against a 128-kd neuronal protein
+  - pNone: case reports patient 1 patient | has been described previously by piccolo et al.!? (patient 2 in their report).
+
+## 12262 - STIFF-MAN SYNDROME - REPORT OF A CASE
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This paper is explicitly a case report and the abstract/full-text excerpt describe one woman with stiff-man syndrome. The cited larger patient numbers are background literature, not original cases from this paper; however, provenance uncertainty is flagged, so human review remains appropriate.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single patient with SPS-spectrum features, but provenance is uncertain.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This paper is explicitly a case report and the abstract/full-text excerpt describe one woman with stiff-man syndrome. The cited larger patient numbers are background literature, not original cases from this paper; however, provenance uncertainty is flagged, so human review remains appropriate.
+- evidence:
+  - pNone: STIFF-MAN SYNDROME - REPORT OF A CASE
+  - pNone: A patient exhibiting many typical features of stiff-man syndrome had intermittent symptoms for 22 years before the correct diagnosis was made.
+  - pNone: REPORT OF A CASE A 54-year-old woman presented in 1986 with a 17-year history of intermittent, painless extensor spasms of both legs.
+  - pNone: in a recent review, 20 of 84 patients with sms were found to have diabetes mellitus.
+
+## 12270 - Rapid Onset Stiff Person Syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This conference abstract explicitly presents a single original SPS case. The text repeatedly refers to 'a case,' describes one 24-year-old male patient, and states the diagnosis of SPS was confirmed, supporting a count of 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract explicitly states the objective is to present a case of SPS in one patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This conference abstract explicitly presents a single original SPS case. The text repeatedly refers to 'a case,' describes one 24-year-old male patient, and states the diagnosis of SPS was confirmed, supporting a count of 1.
+- evidence:
+  - pNone: Objective: To present a case of rapid onset Stiff Person Syndrome
+  - pNone: 1 We present a case of SPS with an atypical onset.
+  - pNone: Methods: A 24-year-old male presented with 1 week of left lower extremity pain and spasms
+  - pNone: after diagnoses of SPS was confirmed, he received 3 days of IVIG
+
+## 12288 - MRI abnormalities in stiff person syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN; local_safer_abstention_conflict=1 vs 25 | llm_selected_candidate_id=cand01 | The abstract explicitly states that 25 SPS patients were examined, which is stronger than the single-case routing heuristic and supports an original SPS cohort count rather than zero. However, because this is a conference abstract routed as a single-case subtype and the challenge flags unresolved SPS-status uncertainty, the count should be retained with manual review.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract is a single-case abstract, suggesting a single patient, but the text refers to 'SPS patients' in a group context.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The abstract explicitly states that 25 SPS patients were examined, which is stronger than the single-case routing heuristic and supports an original SPS cohort count rather than zero. However, because this is a conference abstract routed as a single-case subtype and the challenge flags unresolved SPS-status uncertainty, the count should be retained with manual review.
+- evidence:
+  - pNone: Methods: 25 SPS patients were examined by a neurologist, underwent questionnaires about chronic pain and were compared to 25 sex and age matched healthy controls (HC).
+  - pNone: Conclusion: this study provides a comprehensive radiological description of the pain pathology associated with GAD positive SPS, using advanced MRI analyses.
+
+## 12301 - Stiff Person Syndrome Presenting with Dystonia
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly states this is a case report and describes a single 58-year-old woman with stiff person syndrome supported by anti-GAD positivity and EMG findings. This directly supports a count of 1 unique SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract explicitly describes a case report of one patient with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly states this is a case report and describes a single 58-year-old woman with stiff person syndrome supported by anti-GAD positivity and EMG findings. This directly supports a count of 1 unique SPS-spectrum patient.
+- evidence:
+  - pNone: Objective: to describe a case report of a patient with stiff person syndrome presenting with dystonia.
+  - pNone: Methods: This is a case report.
+  - pNone: Results: A 58-year-old woman with history of systemic lupus erythematosus and Addison’s disease presented to our center... Serum testing revealed elevated anti-GAD antibodies, >250 IU/mL.
+  - pNone: Needle EMG showed continuous motor unit activity potentials in flexor and extensor muscles of the left arm
+
+## 12302 - STIFF EYES IN STIFF-PERSON SYNDROME
+- predicted_count: 0
+- predicted_basis: not_count_eligible
+- verification_status: llm_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_manual_review_required | llm_count_confidence=low | challenge_reasons=explicit_sps_subgroup_conflict=0 vs 62; local_safer_abstention_conflict=62 vs 0; local_validation_conflict=62 vs 0 | This paper is routed as a review article/letter and the explicit nonzero count in the text refers to a previously described GAD65 autoimmunity series rather than an extractable original SPS-spectrum cohort within this paper. The cited 62-patient series is broader mixed neurology/GAD65 autoimmunity and only a small subset is explicitly described as having stiff-man phenomena, so neither 0 nor 62 can be accepted confidently without human review.
+- batch_artifacts_status: complete
+- local_model_count: 62 (high; needs_review=True)
+- local_reasoning: The evidence explicitly states a cohort size of 62 patients with high GAD65 antibody levels related to the spectrum.
+- gpt_decision_type: manual_review_required
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: This paper is routed as a review article/letter and the explicit nonzero count in the text refers to a previously described GAD65 autoimmunity series rather than an extractable original SPS-spectrum cohort within this paper. The cited 62-patient series is broader mixed neurology/GAD65 autoimmunity and only a small subset is explicitly described as having stiff-man phenomena, so neither 0 nor 62 can be accepted confidently without human review.
+- evidence:
+  - pNone: we described 62 patients in whom high gad 65 antibody levels were detected by indirect immunofluorescence screening on brain tissue in the course of service evaluation for igg paraneoplastic autoantibodies.
+  - pNone: our patients presented with brainstem, extrapyramidal, and spinal cord syndromes.
+  - pNone: stiff-man phenomena (2), cerebellar ataxia (4), and seizures (5)— considered more typical manifestations of gad65 autoimmunity—were observed in 26%, 63%, and 27% of our patients, respectively.
+  - pNone: to the editor: oskarsson et al. 1 describe a 54-year-old woman ... she exhibited some phenomena of stiff-man syndrome (sms)
+
+## 12305 - Breast Carcinoma Presenting with Anti-amphiphysin Antibody-associated Stiff-limb Syndrome
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | This is an original single-patient case report describing an 83-year-old woman with anti-amphiphysin antibody-associated paraneoplastic stiff-limb syndrome, which is within the SPS spectrum. Although the paper also contains background discussion of broader SPS-spectrum entities, the extractable original data support one unique SPS-spectrum patient; due to the validator's SPS-status uncertainty flag, manual review remains appropriate.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single case report, indicating one patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This is an original single-patient case report describing an 83-year-old woman with anti-amphiphysin antibody-associated paraneoplastic stiff-limb syndrome, which is within the SPS spectrum. Although the paper also contains background discussion of broader SPS-spectrum entities, the extractable original data support one unique SPS-spectrum patient; due to the validator's SPS-status uncertainty flag, manual review remains appropriate.
+- evidence:
+  - pNone: case description: we present a case of anti-amphiphysin antibody (ab)-associated paraneoplastic sls, in an 83-year-old woman with invasive ductal carcinoma of the breast.
+  - pNone: we hereby present a case of rapid progressive paraneoplastic sls with the coexistence of myelopathic features.
+  - pNone: case presentation an 83-year-old white female with a medical history of hypertension, celiac disease, and gout presented with bilateral lower-extremity weakness and painful spasms for 3 months
+
+## 12322 - Celiac Disease With Concurrent Stiff Person Syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports a single patient case: a 35-year-old woman with an acute flare of stiff person syndrome. This supports the single-case default candidate of 1, and there is no evidence of additional SPS-spectrum patients in this abstract.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract title suggests a single case study, leading to a count of one.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The conference abstract explicitly reports a single patient case: a 35-year-old woman with an acute flare of stiff person syndrome. This supports the single-case default candidate of 1, and there is no evidence of additional SPS-spectrum patients in this abstract.
+- evidence:
+  - pNone: we report a rare case of celiac disease in concurrence with stiff person syndrome
+  - pNone: a 35-year-old white female with a past medical history of celiac disease, hypothyroidism, and polycystic ovarian syndrome presented with an acute flare of stiff person syndrome
+
+## 12328 - Painful spasms during childhood: Stiff-person syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The preferred text explicitly describes a single original pediatric SPS patient: 'a 10-year-old boy' whose clinical course, EMG findings, treatment, and follow-up are presented. This directly supports the single-case candidate count of 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case report, suggesting one patient, which aligns with the deterministic anchor.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The preferred text explicitly describes a single original pediatric SPS patient: 'a 10-year-old boy' whose clinical course, EMG findings, treatment, and follow-up are presented. This directly supports the single-case candidate count of 1.
+- evidence:
+  - pNone: reports of pediatric-onset sps are scarce. we report and present the videos of a 10-year-old boy
+  - pNone: at seven years of age, he started having involuntary, painful, paroxysmal muscle contractions
+  - pNone: emg findings were supportive of sps with simultaneous and continuous firing of motor units at rest and co-contraction of agonist-antagonist muscles.
+
+## 12345 - Partial Stiff Person Syndrome as a Stroke Mimic
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This conference abstract explicitly describes a single original patient and states that the patient was diagnosed with partial SPS, which is within the SPS spectrum. The single-case candidate is directly supported by both the objective and case description/results text.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract reports on a single case of partial SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This conference abstract explicitly describes a single original patient and states that the patient was diagnosed with partial SPS, which is within the SPS spectrum. The single-case candidate is directly supported by both the objective and case description/results text.
+- evidence:
+  - pNone: objective: to report a rare case of a patient presenting with unilateral symptoms whose work-up revealed partial stiff per- son syndrome (sps).
+  - pNone: design/methods: our patient is a 62 year old female
+  - pNone: results: the patient was diagnosed with partial sps
+
+## 12358 - Type 1 Diabetes Mellitus and Stiff-Person Syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly presents a single original clinical case and states that the diagnosis of SPS was made in that patient. This directly supports counting 1 unique SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case abstract, defaulting the count to 1 patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly presents a single original clinical case and states that the diagnosis of SPS was made in that patient. This directly supports counting 1 unique SPS-spectrum patient.
+- evidence:
+  - pNone: Clinical case: We present the case of a 32-year-old female patient diagnosed with T1DM at 18 years old.
+  - pNone: the diagnosis of sps was made.
+  - pNone: the patient started human immunoglobulin therapy with progressive clinical improvement.
+
+## 12387 - Successful treatment of Stiff Person Syndrome with botulinum toxin
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly states this is a case report and describes one 48-year-old woman with clinically supported stiff person syndrome, so the best-supported extractable count is 1. There is no evidence of additional SPS-spectrum patients or of this being a non-original review-only report.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract describes a single case, which aligns with the single-case source type.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly states this is a case report and describes one 48-year-old woman with clinically supported stiff person syndrome, so the best-supported extractable count is 1. There is no evidence of additional SPS-spectrum patients or of this being a non-original review-only report.
+- evidence:
+  - pNone: Objective: Describe a case of Stiff Person Syndrome (SPS) treated with
+  - pNone: Methods: Case report.
+  - pNone: Results: A 48-year-old woman with past medical history of
+  - pNone: serum testing revealed elevated anti-gad antibodies (>250 iu/ml)
+
+## 12390 - Stiff Person Syndrome Misdiagnosis: Clinical and Ancillary Testing Characteristics
+- predicted_count: 48
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=high | The abstract reports a mixed referral cohort of 173 cases evaluated for possible SPS, of whom 48 were actually diagnosed with SPS and 125 with non-SPS. Because only confirmed SPS-spectrum patients should be counted, the extractable SPS-spectrum count is 48 rather than the full referred cohort of 173.
+- batch_artifacts_status: complete
+- local_model_count: 48 (high; needs_review=True)
+- local_reasoning: The text explicitly states that 48 cases were diagnosed with SPS.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 48
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract reports a mixed referral cohort of 173 cases evaluated for possible SPS, of whom 48 were actually diagnosed with SPS and 125 with non-SPS. Because only confirmed SPS-spectrum patients should be counted, the extractable SPS-spectrum count is 48 rather than the full referred cohort of 173.
+- evidence:
+  - pNone: SPS diagnosis was defined as compatible clinical syndrome confirmed by an autoimmune neurologist and either serum positivity for high-titer GAD65-IgG (>20.0 nmol/l), glycine-receptor-IgG or amphiphysin-IgG (seropositive cases), or confirmatory electrodiagnostic studies (seronegative cases).
+  - pNone: Seven patients were excluded (diagnostic uncertainty).
+  - pNone: Results Of 173 cases, 48 (28%) were diagnosed with SPS and 125 (72%) with non-SPS.
+
+## 12399 - Neuropsychological performance and psychiatric symptoms in stiff person syndrome
+- predicted_count: 11
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: COUNT_SINGLE_CASE_CONFERENCE_MISMATCH
+- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | validator_flags=COUNT_SINGLE_CASE_CONFERENCE_MISMATCH | The abstract reports an original SPS cohort review and gives an explicit analysable SPS subset: 21 had past neuropsychological testing, of which 11 testing reports were available and described in detail. This explicit count is better supported than the heuristic single-case default, but manual review is still warranted because the cohort is a retrospective conference abstract and the relationship between the 21 tested patients and the 11 evaluable reports could affect the preferred extractable count.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case abstract, defaulting to a count of 1 patient.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 11
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The abstract reports an original SPS cohort review and gives an explicit analysable SPS subset: 21 had past neuropsychological testing, of which 11 testing reports were available and described in detail. This explicit count is better supported than the heuristic single-case default, but manual review is still warranted because the cohort is a retrospective conference abstract and the relationship between the 21 tested patients and the 11 evaluable reports could affect the preferred extractable count.
+- evidence:
+  - pNone: a retrospective review of medical records from 1997 to 2020 at johns hopkins hospital was performed. sps patients who had received neuropsychological testing as part of routine clinical care for subjective cognitive complaints were included.
+  - pNone: of 192 patient records reviewed, 21 had past neuropsychological testing, of which 11 were available in the electronic medical record
+  - pNone: of those with testing reports available, 7 (64%) patients had impairments in memory, 6 (55%) had impairments in attention, 6 (55%) in executive function
+
+## 12405 - Immunotherapy in Stiff Person Syndrome, is Timing Really Important?
+- predicted_count: 211
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_bounded_alternative | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=0 vs 211 | The abstract explicitly describes a retrospective review of medical records from 211 SPS patients seen at Johns Hopkins, indicating the full original cohort is entirely SPS-spectrum. Although only 132 received immunotherapy and 89 had complete follow-up, those are treatment and analysis subsets rather than the total unique SPS cohort reported in the paper.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The evidence card provides no explicit count of unique SPS-spectrum patients.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 211
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly describes a retrospective review of medical records from 211 SPS patients seen at Johns Hopkins, indicating the full original cohort is entirely SPS-spectrum. Although only 132 received immunotherapy and 89 had complete follow-up, those are treatment and analysis subsets rather than the total unique SPS cohort reported in the paper.
+- evidence:
+  - pNone: Retrospective review of medical records from 211 SPS patients seen at Johns Hopkins.
+  - pNone: One-hundred and thirty-two SPS patients received some type of immunotherapy in our cohort.
+  - pNone: complete data/follow-up was available in 89 patients; median follow-up of 44 months.
+
+## 12412 - Long-term effect of gabapentin in stiff limb syndrome: A case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is an explicit single-patient case report of stiff limb syndrome within the SPS spectrum. The text repeatedly refers to one patient and confirms the diagnosis with clinical features, EMG findings, and anti-GAD65 antibodies.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a case report, indicating a single patient with stiff limb syndrome.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is an explicit single-patient case report of stiff limb syndrome within the SPS spectrum. The text repeatedly refers to one patient and confirms the diagnosis with clinical features, EMG findings, and anti-GAD65 antibodies.
+- evidence:
+  - p1: Long-term effect of gabapentin in stiff limb syndrome: A case report
+  - p1: case report the patient is a 39-year-old previously healthy female
+  - p1: electromyography showed continuous and simultaneous motor unit firing in agonistic and antagonistic muscles. a diagnosis of sls/sps was confirmed by elevated antibodies against the 65-kd isoform of glutamic acid decarboxylase (gad65) in serum (1,164 units, normal ! 100), and presence of anti-gad65 antibodies in cerebrospinal fluid.
+  - p2: the combination of leg symptoms, elevated anti-gad antibodies and excellent response to gabaergic treatment indicates that this is a case of sls related to sps.
+
+## 12414 - The stiff limb syndrome - a new case and a literature review
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper explicitly reports one new original stiff limb syndrome case: a 69-year-old woman. The additional table and discussion summarize previously published literature and should not be counted as original cases from this paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a single case report, suggesting one unique patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper explicitly reports one new original stiff limb syndrome case: a 69-year-old woman. The additional table and discussion summarize previously published literature and should not be counted as original cases from this paper.
+- evidence:
+  - pNone: Here,we report the case of a 69 year old woman with clinical,elec-trophysiological and laboratory findings consistent with a stiff limb syndrome of the right leg.
+  - pNone: In addition,we also summarized the published reports to date of stiff limb cases.
+
+## 12424 - Unanticipated Improvement of Stiff Person Syndrome after severe COVID-19
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly reports a single original SPS patient: the authors state they "describe a patient" and then provide individual clinical details for a 51-year-old woman diagnosed with SPS and anti-GAD positivity. This directly supports the single-case candidate count of 1.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract describes a single patient with SPS, which aligns with the single-case source type.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The conference abstract explicitly reports a single original SPS patient: the authors state they "describe a patient" and then provide individual clinical details for a 51-year-old woman diagnosed with SPS and anti-GAD positivity. This directly supports the single-case candidate count of 1.
+- evidence:
+  - pNone: we describe a patient with stiff-person syndrome (sps)
+  - pNone: 51-year-old woman with history of diabetes ... she was diagnosed with sps in 2017. her cerebrospinal fluid analysis was positive for anti-glutamic acid decarboxylase (gad) antibodies.
+
+## 12428 - Unrecognized thymoma-associated paraneoplastic "stiff person" syndrome - a case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract is explicitly framed as a case report and repeatedly describes a single patient with a diagnosis of stiff-person syndrome and subsequent thymoma workup/treatment. This supports an extractable count of 1 unique SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract explicitly describes a single patient presenting with SPS-spectrum symptoms.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The conference abstract is explicitly framed as a case report and repeatedly describes a single patient with a diagnosis of stiff-person syndrome and subsequent thymoma workup/treatment. This supports an extractable count of 1 unique SPS-spectrum patient.
+- evidence:
+  - pNone: Unrecognized thymoma-associated paraneoplastic “stiff person” syndrome - a case report
+  - pNone: Aim/Introduction: this case presents a patient with a history of unspecified neurological symptoms.
+  - pNone: in the first year the patient was evaluated by a neurologist... and the diagnosis of “stiff-person” syndrome was put into place.
+
+## 12433 - AUTOANTIBODIES TO GABAERGIC NEURONS AND RESPONSE TO PLASMAPHERESIS IN STIFF-MAN SYNDROME
+- predicted_count: 1
+- predicted_basis: source_single_case_override
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | This paper is framed as a single case report and explicitly states 'We describe a patient with progressive stiff-man syndrome.' The 'more than 200 other patients' refers to comparison samples, not original extractable SPS-spectrum cases reported in this paper; however, provenance overlap signals warrant manual review.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract describes one patient, overriding the larger cohort number mentioned in cand03.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This paper is framed as a single case report and explicitly states 'We describe a patient with progressive stiff-man syndrome.' The 'more than 200 other patients' refers to comparison samples, not original extractable SPS-spectrum cases reported in this paper; however, provenance overlap signals warrant manual review.
+- evidence:
+  - pNone: We describe a patient with progressive stiff-man syndrome and high titers of GAD-like immunoreactivity in serum but not spinal fluid.
+  - pNone: Case report. a 37-year-old woman noted persistent low back pain following a minor motor vehicle accident in 1982.
+  - pNone: This antibody response was not present in samples from more than 200 other patients.
+
+## 12437 - SEROTONIN-NOREPINEPHRINE REUPTAKE INHIBITORS MAY EXACERBATE STIFF-PERSON SYNDROME
+- predicted_count: 4
+- predicted_basis: early_body_count_signal
+- verification_status: llm_semantic_conflict_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
+- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=4 vs 3; local_safer_abstention_conflict=3 vs 4; broad_total_exceeds_explicit_subgroup=4 > 3 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The paper explicitly states that it reports 4 cases of anti-GAD65-positive patients with SPS, and the body text then presents Case 1 through Case 4 as individual original patient reports. Although the extracted subgroup signals only captured 3 diagnosis-specific snippets, Case 1 is also diagnosis-supported because the text says EMG was consistent with SPS, so the full cohort of 4 is supported.
+- batch_artifacts_status: complete
+- local_model_count: 3 (medium; needs_review=True)
+- local_reasoning: The explicit subgroup evidence details three distinct patient cases, while the general text mentions a count of 4.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper explicitly states that it reports 4 cases of anti-GAD65-positive patients with SPS, and the body text then presents Case 1 through Case 4 as individual original patient reports. Although the extracted subgroup signals only captured 3 diagnosis-specific snippets, Case 1 is also diagnosis-supported because the text says EMG was consistent with SPS, so the full cohort of 4 is supported.
+- evidence:
+  - p1: Herein, we report 4 cases of anti-GAD65-positive patients with SPS
+  - p1: Case reports. Case 1. ... elevated anti-GAD65 antibodies were detected in serum (11,350 u/ml). EMG was consistent with the diagnosis of SPS.
+  - p1: Case 2. A 38-year-old woman with anti-GAD65-positive SPS
+  - p1: Case 3. A 49-year-old woman with anxiety disorder and anti-GAD65-positive stiff-limb syndrome
+  - p1: Case 4. A 30-year-old man with ... anti-GAD65-positive SPS
+
+## 12440 - The Evolving Spectrum of Gastrointestinal Dysfunction in Stiff Person Syndrome
+- predicted_count: 211
+- predicted_basis: early_body_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=0 vs 211 | llm_selected_candidate_id=cand01 | The paper describes a retrospective chart review of patients seen at an SPS center and explicitly states that 211 individuals were diagnosed with SPS. The 53-patient figure is a GI-symptom subset within that SPS cohort, so the extractable SPS-spectrum count is the full 211 unique SPS patients.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The evidence card provides no explicit patient count, only metadata for a study.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper describes a retrospective chart review of patients seen at an SPS center and explicitly states that 211 individuals were diagnosed with SPS. The 53-patient figure is a GI-symptom subset within that SPS cohort, so the extractable SPS-spectrum count is the full 211 unique SPS patients.
+- evidence:
+  - pNone: Retrospective chart review of SPS patients seen at the Johns Hopkins SPS center from 1997 to 2020.
+  - pNone: Of 211 individuals diagnosed with SPS, 53 (25%) reported GI symptoms.
+  - pNone: Patients were included if they reported GI symptoms and had specific descriptors of symptoms in their medical records.
+
+## 12457 - TREATMENT OF STIFF MAN SYNDROME WITH INTRAVENOUS IMMUNOGLOBULIN
+- predicted_count: 3
+- predicted_basis: early_body_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports an uncontrolled pilot study on three patients with stiff-man syndrome, and the methods section confirms that all three fulfilled clinical diagnostic criteria with supportive GAD antibodies and EMG findings. This supports counting 3 unique original SPS-spectrum patients.
+- batch_artifacts_status: complete
+- local_model_count: 3 (medium; needs_review=True)
+- local_reasoning: The deterministic anchor suggests a count of 3, which is used here despite the abstract not explicitly stating the number.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper explicitly reports an uncontrolled pilot study on three patients with stiff-man syndrome, and the methods section confirms that all three fulfilled clinical diagnostic criteria with supportive GAD antibodies and EMG findings. This supports counting 3 unique original SPS-spectrum patients.
+- evidence:
+  - pNone: led us to try ivig in an uncontrolled pilot study on three patients. all three showed subjective and objective improvement.
+  - pNone: one patient (patient 1) was newly diagnosed by one of the authors ... the other two patients had been previously diagnosed
+  - pNone: all three patients ful- filled the clinical diagnostic criteria proposed by lorish et al, and all had detectable serum antibodies to gad.
+  - pNone: electrodiagnostic studies in all three were negative for an underlying peripheral nerve or muscle disorder, and emgs revealed continuous mups at rest.
+
+## 12465 - Successful treatment of stiff man syndrome with intravenous immunoglobulin
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper text describes one original SPS/SMS patient in detail: a 43-year-old man with classic stiff-man syndrome features treated with IVIG. Although the article cites prior IVIG-treated patients from earlier studies, those are clearly background literature rather than additional original cases; however, provenance uncertainty signals warrant manual review.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single case report, suggesting one patient, but provenance is uncertain.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper text describes one original SPS/SMS patient in detail: a 43-year-old man with classic stiff-man syndrome features treated with IVIG. Although the article cites prior IVIG-treated patients from earlier studies, those are clearly background literature rather than additional original cases; however, provenance uncertainty signals warrant manual review.
+- evidence:
+  - pNone: a 43 year old man developed low back pain six years before admission... on examination he walked with a stiff gait punctuated by excessive startle responses... he had a lumbar hyperlordosis with pronounced paraspinal, abdominal, and lower limb rigidity
+  - pNone: he was given three courses of intravenous immunoglobulin (alphaglobulin; 0 4 g/kg/day for five days) about a month apart
+  - pNone: the significant response to ivig is in agreement with earlier studies, in which six patients in total have received between one and three courses of ivig
+
+## 12473 - Stiff-person syndrome - a 15-year review at a tertiary hospital
+- predicted_count: 4
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: COUNT_SINGLE_CASE_CONFERENCE_MISMATCH
+- count_reason: challenge_stage=challenge | verification_status=llm_bounded_alternative | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=1 vs 4 | validator_flags=COUNT_SINGLE_CASE_CONFERENCE_MISMATCH | The abstract explicitly reports a retrospective analysis of patients with SPS and states that 4 patients were identified. It further classifies the cohort as 1 PERM case and 3 classic SPS cases, so the whole reported cohort is within the SPS-spectrum and exceeds the single-case heuristic candidate.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract describes a review of a cohort, and the deterministic anchors suggest a count of 1, which is appropriate for a single-case abstract context.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 4
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly reports a retrospective analysis of patients with SPS and states that 4 patients were identified. It further classifies the cohort as 1 PERM case and 3 classic SPS cases, so the whole reported cohort is within the SPS-spectrum and exceeds the single-case heuristic candidate.
+- evidence:
+  - pNone: Methods: retrospective analysis of patients with SPS admitted to a Portuguese tertiary hospital over the last 15 years (January 2005 to December 2020).
+  - pNone: Results: we identified 4 patients, 3 females, with a median age of 59 years.
+  - pNone: The clinical diagnosis was progressive encephalomyelitis with rigidity and myoclonus in one patient and classic SPS in the others.
+
+## 12474 - F-18 fluorodeoxyglucose positron emission tomography/computed tomography muscle uptake in antiglutamic acid decarboxylase antibody-positive stiff-person syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports a single original SPS patient: a 64-year-old woman with clinical rigidity, elevated anti-GAD65 antibody, PET/CT findings, and treatment response. This directly supports the single-case candidate and there is no evidence of additional original SPS-spectrum patients in the paper.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case report, suggesting one patient, which aligns with the deterministic anchors.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper explicitly reports a single original SPS patient: a 64-year-old woman with clinical rigidity, elevated anti-GAD65 antibody, PET/CT findings, and treatment response. This directly supports the single-case candidate and there is no evidence of additional original SPS-spectrum patients in the paper.
+- evidence:
+  - pNone: a 64‑year‑old female with diabetes mellitus and hypertension presented with bilateral leg pain and difficulty in walking for the last 1 month.
+  - pNone: clinical examination revealed stiff contracted muscle with rigidity in extremities.
+  - pNone: with suspicion of stiff‑person syndrome (sps), her antiglutamic acid decarboxylase‑65 (gad65) antibody was elevated.
+  - pNone: she was started on rituximab 500 mg and has good clinical improvement.
+
+## 12484 - Stiff-person Syndrome Associated with Anti-Yo1 Antibodies: A Case Report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly a case report of one woman with clinically and EMG-supported stiff-person syndrome. The title, methods, and results all indicate a single original SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a case report, indicating a single patient presentation of SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper is explicitly a case report of one woman with clinically and EMG-supported stiff-person syndrome. The title, methods, and results all indicate a single original SPS-spectrum patient.
+- evidence:
+  - pNone: Stiff-person Syndrome Associated with Anti-Yo1 Antibodies: A Case Report
+  - pNone: methods: case report.
+  - pNone: results: a 40-year-old woman presented to our clinic with stiffness and involuntary spasms in the lower extremities.
+  - pNone: however, our patient’s disease corresponded to the clinical and emg diagnostic criteria of sps.
+
+## 12486 - Early Predictors of Future Disability in Stiff Person Syndrome Spectrum Disorders
+- predicted_count: 215
+- predicted_basis: diagnosis_specific_group_breakdown_count
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper reports a diagnosis-specific phenotype breakdown totaling 215 SPS-spectrum patients: 154 classic SPS, 45 SPS-plus, 16 PERM, and 9 partial-SPS, plus 11 pure cerebellar ataxia cases. Because pure cerebellar ataxia is not included in the review's SPS-spectrum definition, the safest extractable SPS-spectrum count is 215 rather than the broader 235 individuals with SPSD.
+- batch_artifacts_status: complete
+- local_model_count: 215 (high; needs_review=True)
+- local_reasoning: The explicit subgroup evidence provides a detailed breakdown summing to 215 unique patients.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper reports a diagnosis-specific phenotype breakdown totaling 215 SPS-spectrum patients: 154 classic SPS, 45 SPS-plus, 16 PERM, and 9 partial-SPS, plus 11 pure cerebellar ataxia cases. Because pure cerebellar ataxia is not included in the review's SPS-spectrum definition, the safest extractable SPS-spectrum count is 215 rather than the broader 235 individuals with SPSD.
+- evidence:
+  - pNone: retrospective review of medical records from 1997–2022 at johns hopkins yielded 235 individuals with spsd.
+  - pNone: phenotype breakdown: 154 classic sps, 45 sps-plus, 16 perm, 11 pure ca, and 9 partial-sps.
+
+## 12495 - ATYPICAL STIFF PERSON SYNDROME WITH ANTI-IGLON5 ANTIBODIES: A CASE REPORT
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly describes a single case report and then details one 82-year-old man with atypical stiff person syndrome overlap, supporting a count of 1 unique SPS-spectrum patient. This exactly matches candidate cand01.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract is a case report, indicating a single patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The conference abstract explicitly describes a single case report and then details one 82-year-old man with atypical stiff person syndrome overlap, supporting a count of 1 unique SPS-spectrum patient. This exactly matches candidate cand01.
+- evidence:
+  - pNone: ATYPICAL STIFF PERSON SYNDROME WITH ANTI-IGLON5 ANTIBODIES: A CASE REPORT
+  - pNone: Herein we report a case of neuromuscular hyperexcitability overlap-ping with stiff person syndrome associated with anti-IgLON5 anti-bodies positivity.
+  - pNone: A 82-year-old man presented to visit with muscular fasciculations and cramps, together with diffuse limb stiffness and frequent falls.
+
+## 12497 - Late-onset Stiff Person Syndrome (SPS): Challenges in Diagnosis and Management
+- predicted_count: 8
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: COUNT_SINGLE_CASE_CONFERENCE_MISMATCH
+- count_reason: challenge_stage=challenge | verification_status=llm_bounded_alternative | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=1 vs 8 | validator_flags=COUNT_SINGLE_CASE_CONFERENCE_MISMATCH | The abstract explicitly reports a reviewed cohort of 8 GAD-positive patients with symptom onset above age 60 in a study framed throughout as late-onset SPS, and all subsequent results are described across this same cohort. The candidate counts of 1 and 5 are not supported as total SPS-spectrum case counts; 5 refers only to a misdiagnosis subgroup.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case abstract, defaulting the count to 1 despite a conflicting candidate count of 5.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 8
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly reports a reviewed cohort of 8 GAD-positive patients with symptom onset above age 60 in a study framed throughout as late-onset SPS, and all subsequent results are described across this same cohort. The candidate counts of 1 and 5 are not supported as total SPS-spectrum case counts; 5 refers only to a misdiagnosis subgroup.
+- evidence:
+  - pNone: objective: highlight treatment challenges in sps patients with symptom onset above the age of 60
+  - pNone: design/methods: charts of 8 gad-positive patients with symptom onset above age 60, examined, treated and followed-up by the same neurology experts, were reviewed
+  - pNone: results: median current age of all patients was 75 years with median age of symptom onset above 60.5 years and median time to diagnosis 3 years.
+  - pNone: appropriate treatment was delayed in all patients due to misdiagnoses; 5 patients were treated for lumbosacral radiculopathy and osteoarthritis, 2 for parkinson’s disease and 1 with steroids for multiple sclerosis.
+
+## 12501 - Stiff person syndrome is commonly associated with gastrointestinal symptoms and dysmotility
+- predicted_count: 30
+- predicted_basis: early_body_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports a retrospective chart review that yielded 30 individuals with SPS and gastrointestinal manifestations presenting to a tertiary referral center. Subsequent denominators throughout the results use 30 as the cohort base, supporting cand01 as the extractable original SPS-spectrum cohort count.
+- batch_artifacts_status: complete
+- local_model_count: 30 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly states that 30 individuals with SPS & GI manifestations were collected.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper explicitly reports a retrospective chart review that yielded 30 individuals with SPS and gastrointestinal manifestations presenting to a tertiary referral center. Subsequent denominators throughout the results use 30 as the cohort base, supporting cand01 as the extractable original SPS-spectrum cohort count.
+- evidence:
+  - pNone: relevant clinical data were collected retrospectively by chart review of patients from 2006–2021, which yielded 30 individuals with SPS & GI manifestations presenting to a tertiary referral center.
+  - pNone: motility workup consisted of whole gut scintigraphy (WGTTS) completed by 12/30 patients and pelvic floor workup (anorectal manometry “ARM” and/or MR defecography) completed by 9/30 patients.
+  - pNone: 26/30 tested positive for anti-glutamic acid decarboxylase antibodies (GAD65)
+
+## 12512 - Teaching Neuro<i>Images</i>: PET-CT hypermetabolism paralleling muscle hyperactivity in stiff-person syndrome
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is an original single-case report describing one 72-year-old woman with clinically and serologically supported stiff-person syndrome. The mention of '13 other cases' appears only in a historical reference and should not be counted.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case report, suggesting one patient, which aligns with the deterministic anchor.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper is an original single-case report describing one 72-year-old woman with clinically and serologically supported stiff-person syndrome. The mention of '13 other cases' appears only in a historical reference and should not be counted.
+- evidence:
+  - p1: A 72-year-old woman with autoimmune hypothy- roidism and type 1 diabetes mellitus presented with 1 year of progressively worsening neck, back, and right thigh spasms and leg stiffness.
+  - p1: Serum glutamic acid decarboxylase 65 antibody was markedly elevated (1,118 nmol/L; nor- mal value =0.02 nmol/L).
+  - p1: EMG demonstrated poor relaxation in thoracic paraspinal muscles and right quadriceps and failure of the acoustic startle response to habituate consistent with stiff-person syndrome.
+  - p1: report of a case and some observations in 13 other cases.
+
+## 12515 - Stiff-Person Syndrome <i>Persistent Elevation of Glutamic Acid Decarboxylase Antibodies Despite Successful Treatment With Rituximab</i>
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is a single case report and explicitly states that the authors report one case of stiff-person syndrome. The text consistently describes a single 62-year-old male patient with diagnosis-supported SPS features and treatment course.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence explicitly reports on a single case of a patient with SPS-spectrum symptoms.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is a single case report and explicitly states that the authors report one case of stiff-person syndrome. The text consistently describes a single 62-year-old male patient with diagnosis-supported SPS features and treatment course.
+- evidence:
+  - pNone: We report a case of a 62-year-old man with diabetes who developed progressive stiffness of the hips and legs and elevated levels of antibody to glutamic acid decarboxylase.
+  - pNone: we report the case of a patient with sps, who had good clinical response to rituximab treatment in spite of persistently elevated anti-gad levels.
+  - pNone: case report a 62-year-old african-american man was referred to the rheumatology clinic because of lower extremity weakness and stiffness.
+
+## 12517 - THE ACOUSTIC STARTLE REFLEX IN STIFF-MAN SYNDROME
+- predicted_count: 8
+- predicted_basis: abstract_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper explicitly reports an original cohort of eight patients with stiff-man syndrome (an older term for SPS), and the full text repeats this as the study population. There is no indication that this is a mixed cohort, suspected-only group, or overlapping subgroup total.
+- batch_artifacts_status: complete
+- local_model_count: 8 (high; needs_review=)
+- local_reasoning: The abstract explicitly states the study was conducted on eight patients with stiff-man syndrome.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper explicitly reports an original cohort of eight patients with stiff-man syndrome (an older term for SPS), and the full text repeats this as the study population. There is no indication that this is a mixed cohort, suspected-only group, or overlapping subgroup total.
+- evidence:
+  - pNone: We studied the EMG response to loud noise in eight patients with stiff-man syndrome (SMS).
+  - pNone: We studied eight patients with SMS to determine the relationship of their audiogenic jerks to the acoustic startle reflex (ASR) in an attempt to clarify the sites of major physiologic abnormality in SMS.
+  - pNone: Eight patients with SMS (six women and two men with a mean age of 46.5 years; range, 35 to 59 years) underwent physiologic testing.
+
+## 12531 - STIFF-MAN SYNDROME AND ENCEPHALOMYELITIS MAY COEXIST - CLINICAL-PATHOLOGICAL CORRELATIONS
+- predicted_count: 1
+- predicted_basis: source_single_case_default
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper text describes one original individual patient with stiff-man syndrome and subsequent encephalomyelitis, consistent with a single-case report. Although prior similar cases are mentioned in the background, the report's extractable original SPS-spectrum count is 1; manual review remains appropriate because provenance uncertainty was flagged upstream.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single case, which is consistent with the single-case report routing and deterministic anchors.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper text describes one original individual patient with stiff-man syndrome and subsequent encephalomyelitis, consistent with a single-case report. Although prior similar cases are mentioned in the background, the report's extractable original SPS-spectrum count is 1; manual review remains appropriate because provenance uncertainty was flagged upstream.
+- evidence:
+  - p80: stiff-man syndrome (sms) developed in a 60-year-old woman.
+  - p80: we conclude that our patient is an example of coexistence of these 2 conditions.
+  - p80: there have been rare cases of sms associated with encepha- lomyelitis reported previously.
+
+## 12532 - Standing Still: A Case of Stiff-person Syndrome and Common Variable Immunodeficiency
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The conference abstract explicitly presents a single patient: a 54-year-old man with a history of stiff-person syndrome and CVID. This directly supports a count of 1 unique original SPS-spectrum case, matching candidate cand01.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract describes a single case of SPS, consistent with the single-case source type.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The conference abstract explicitly presents a single patient: a 54-year-old man with a history of stiff-person syndrome and CVID. This directly supports a count of 1 unique original SPS-spectrum case, matching candidate cand01.
+- evidence:
+  - pNone: Standing Still: A Case of Stiff-person Syndrome and Common Variable Immunodeficiency
+  - pNone: we present a 54-year-old caucasian man with a history of sps and cvid.
+  - pNone: our patient has been treated with high doses of igg concurrently with rituximab for the past 2 years
+
+## 12536 - Misdiagnosis of Stiff Person Syndrome Spectrum Disorders: Identifying the Most Common Culprits
+- predicted_count: 240
+- predicted_basis: early_body_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The abstract explicitly reports an original SPS-spectrum cohort: 'Of 240 patients diagnosed with SPSD, 145 (58%) had a prior misdiagnosis.' This is a direct cohort-level count of diagnosed SPSD patients from the Johns Hopkins SPS Center longitudinal observational database, so the best-supported extractable count is 240.
+- batch_artifacts_status: complete
+- local_model_count: 240 (medium; needs_review=True)
+- local_reasoning: The count of 240 is derived from a deterministic anchor, but the evidence snippet itself does not explicitly state the number.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly reports an original SPS-spectrum cohort: 'Of 240 patients diagnosed with SPSD, 145 (58%) had a prior misdiagnosis.' This is a direct cohort-level count of diagnosed SPSD patients from the Johns Hopkins SPS Center longitudinal observational database, so the best-supported extractable count is 240.
+- evidence:
+  - pNone: the johns hopkins sps center’s longitudinal observational database was used, which contains clinical characteristics of people with spsd.
+  - pNone: results: of 240 patients diagnosed with spsd, 145 (58%) had a prior misdiagnosis.
+
+## 12537 - Caesarean section under spinal anaesthesia for a patient with stiff person syndrome
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a single-patient case report of one woman with confirmed stiff person syndrome undergoing caesarean section. The title and case description both explicitly indicate one SPS patient, with diagnostic support from prior diagnosis and anti-GAD antibodies.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The evidence describes a single patient case with SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This is a single-patient case report of one woman with confirmed stiff person syndrome undergoing caesarean section. The title and case description both explicitly indicate one SPS patient, with diagnostic support from prior diagnosis and anti-GAD antibodies.
+- evidence:
+  - pNone: Caesarean section under spinal anaesthesia for a patient with stiff person syndrome
+  - pNone: A 39-year-old woman with SPS presented for caesarean section at 39+1 weeks gestation.
+  - pNone: the diagnosis of SPS had been made 18 years previously... she was found to have anti-glutamic acid decarboxylase antibodies.
+
+## 12538 - Characterization of Spasm-Related Respiratory Impairment in Stiff Person Syndrome Spectrum Disorders
+- predicted_count: 0
+- predicted_basis: no_reliable_count_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=low | challenge_reasons=local_safer_abstention_conflict=0 vs 211 | llm_selected_candidate_id=cand01 | The abstract reports 'our SPS cohort of 211 patients,' which suggests an original cohort, but it does not clearly define whether all 211 are confirmed SPS-spectrum cases versus a broader center cohort. Because the challenge instructions require manual review when the conflict is not fully resolved by explicit paper evidence, the safest resolution is to retain the zero candidate as a placeholder exact candidate while flagging for human review.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The evidence card describes the topic but does not provide an explicit count of unique SPS-spectrum patients.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: low
+- gpt_manual_review_required: True
+- gpt_reasoning: The abstract reports 'our SPS cohort of 211 patients,' which suggests an original cohort, but it does not clearly define whether all 211 are confirmed SPS-spectrum cases versus a broader center cohort. Because the challenge instructions require manual review when the conflict is not fully resolved by explicit paper evidence, the safest resolution is to retain the zero candidate as a placeholder exact candidate while flagging for human review.
+- evidence:
+  - pNone: participants were recruited from the johns hopkins sps center as part of our ongoing longitudinal observational study.
+  - pNone: our sps cohort of 211 patients were 52.1 ± 14.1 years old, had a disease duration of 9.6 ± 7.4 years, and 73.5% were female.
+  - pNone: to assess spirometry patterns in a large stiff person syndrome (sps) cohort.
+
+## 12545 - Case Report: Deep Brain Stimulation as a Potential Treatment for Stiff-Person Syndrome
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=medium | llm_selected_candidate_id=cand01 | The paper explicitly describes itself as a case report and repeatedly refers to a single patient ('our aim is to report a case of such a patient' and 'this is a case report of a 22-year-old female'). The diagnosis is diagnosis-supported rather than perfectly definitive, so count 1 SPS-spectrum patient with manual review retained due to medium confidence.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a case report, indicating a single patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper explicitly describes itself as a case report and repeatedly refers to a single patient ('our aim is to report a case of such a patient' and 'this is a case report of a 22-year-old female'). The diagnosis is diagnosis-supported rather than perfectly definitive, so count 1 SPS-spectrum patient with manual review retained due to medium confidence.
+- evidence:
+  - pNone: our aim is to report a case of such a patient that responded well to dbs treatment.
+  - pNone: methods: this is a case report of a 22-year-old female with involuntary movements characterized by hyperextension of the trunk and flexion of the arms and legs
+  - pNone: she was suspected to have sps given history of painful spasms, an emg consistent with possible sps, and positive gad65 antibodies.
+
+## 12554 - Botulinum Toxin Could Be Helpful as an Adjunct Therapy in Stiff Person Syndrome
+- predicted_count: 20
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: COUNT_SINGLE_CASE_CONFERENCE_MISMATCH
+- count_reason: challenge_stage=challenge | verification_status=llm_bounded_alternative | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=1 vs 20 | validator_flags=COUNT_SINGLE_CASE_CONFERENCE_MISMATCH | The abstract explicitly reports a retrospective analysis of seropositive SPS patients and states that twenty SPS patients were included. This is stronger direct count evidence than the heuristic single-case default for conference abstracts, and the cohort appears entirely SPS-spectrum rather than a mixed population.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The source is a single-case abstract, suggesting one patient, but the text does not explicitly state the count.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 20
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly reports a retrospective analysis of seropositive SPS patients and states that twenty SPS patients were included. This is stronger direct count evidence than the heuristic single-case default for conference abstracts, and the cohort appears entirely SPS-spectrum rather than a mixed population.
+- evidence:
+  - pNone: we conducted a retrospective analysis of seropositive sps patients who received 3 or more bont treatments by a single injector
+  - pNone: results: twenty sps patients (19 anti-gad-65, 1 amphiphysin) were included
+  - pNone: nineteen patients reported improvement in stiffness and/or spasms after the first injection
+
+## 12567 - A Case of Stiff Person Syndrome with Response to Methotrexate Therapy for Lymphoma
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=medium | challenge_reasons=semantic_validator_reject=COUNT_SPS_STATUS_UNCERTAIN | llm_selected_candidate_id=cand01 | This conference abstract reports a single original patient: a 57-year-old woman described in case-report format with clinical features and antibody-supported SPS. Although there is an upstream SPS-status uncertainty flag, the text itself explicitly presents one patient as having stiff person syndrome, so the best-supported extractable count is 1, but manual review remains appropriate due to the flagged uncertainty.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The abstract describes a single case of SPS, which is consistent with the single-case report context.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: This conference abstract reports a single original patient: a 57-year-old woman described in case-report format with clinical features and antibody-supported SPS. Although there is an upstream SPS-status uncertainty flag, the text itself explicitly presents one patient as having stiff person syndrome, so the best-supported extractable count is 1, but manual review remains appropriate due to the flagged uncertainty.
+- evidence:
+  - pNone: A Case of Stiff Person Syndrome with Response to Methotrexate Therapy for Lymphoma
+  - pNone: we report a 57 yo woman who initially presented in 2015 with intermittent proximal rle stiffness and pain that progressed to become constant and bilateral.
+  - pNone: brain and full spine mri were normal, with positive glycine receptor antibodies.
+
+## 12594 - Rituximab is Associated with Limiting Progression in Individuals with Stiff Person Syndrome Spectrum Disorders
+- predicted_count: 69
+- predicted_basis: llm_bounded_alternative
+- verification_status: llm_bounded_alternative
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_bounded_alternative | llm_count_confidence=medium | The abstract reports an original SPSD cohort with rituximab exposure and explicitly states that 69 SPSD patients had rituximab exposure. Although only 63 met inclusion criteria for analysis, the larger 69 appears to be the unique treated SPS-spectrum cohort, so this is the best extractable count; manual review remains appropriate because this is a conference abstract and the analyzed subset could be mistaken for the cohort count.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The abstract mentions the condition but provides no specific count of unique original patients.
+- gpt_decision_type: bounded_alternative
+- gpt_selected_candidate_id: 
+- gpt_alternative_count: 69
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The abstract reports an original SPSD cohort with rituximab exposure and explicitly states that 69 SPSD patients had rituximab exposure. Although only 63 met inclusion criteria for analysis, the larger 69 appears to be the unique treated SPS-spectrum cohort, so this is the best extractable count; manual review remains appropriate because this is a conference abstract and the analyzed subset could be mistaken for the cohort count.
+- evidence:
+  - pNone: Demographic and clinical data from 235 SPSD patients evaluated at the Johns Hopkins SPS Center were obtained as part of an ongoing longitudinal observational study.
+  - pNone: Data analysis was performed in patients who met the following inclusion criteria: confirmed diagnosis of SPSD, exposure to rituximab therapy, and >1 follow-up visit with adequate clinical information for outcome measure comparisons.
+  - pNone: Of 69 SPSD patients with rituximab exposure (81% female, age M+SD=49y+13.6y), data analysis was performed in 63 patients who met the inclusion criteria.
+
+## 12600 - Catatonia or Depression - A Diagnostic Dilemma in Stiff Person Syndrome: A rare case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This paper is explicitly presented as a rare case report and the full text describes a single 70-year-old woman with provisionally diagnosed stiff person syndrome supported by classical EMG findings and clinical workup. No evidence suggests additional SPS-spectrum patients were reported.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper is a single case report, indicating one patient.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: This paper is explicitly presented as a rare case report and the full text describes a single 70-year-old woman with provisionally diagnosed stiff person syndrome supported by classical EMG findings and clinical workup. No evidence suggests additional SPS-spectrum patients were reported.
+- evidence:
+  - pNone: Catatonia or Depression - A Diagnostic Dilemma in Stiff Person Syndrome: A rare case report
+  - pNone: Case Description: 70 year old woman presents with gradually progressive stiffness and spasms involving both extremities and trunk with difficulty in walking since past 2 years.
+  - pNone: she was provisionally diagnosed with sps after classical emg findings (with iv diazepam test) and ruled out all other differential diagnoses after thorough investigations and clinical examination.
+
+## 12613 - AUTOANTIBODIES TO GABAERGIC NEURONS AND PANCREATIC BETA-CELLS IN STIFF-MAN SYNDROME
+- predicted_count: 0
+- predicted_basis: lab_context_no_extractable_count
+- verification_status: llm_semantic_conflict_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: COUNT_DONOR_MATERIAL_ONLY
+- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_DONOR_MATERIAL_ONLY | manual_review_gate=true | llm_count_confidence=medium | conservative_fallback_candidate_id=cand01 | conservative_fallback_basis=lab_context_no_extractable_count | challenge_reasons=semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY | llm_selected_candidate_id=cand02 | validator_flags=COUNT_DONOR_MATERIAL_ONLY | The paper explicitly states that serum samples were obtained from 32 patients diagnosed with stiff-man syndrome, and also references a previously described index patient with stiff-man syndrome, yielding an original SPS cohort of 33 patients. However, because the study is highly lab-focused and provenance overlap/reuse is flagged as uncertain, the safest choice from the candidate list is the nonzero candidate with manual review retained.
+- batch_artifacts_status: complete
+- local_model_count: 0 (low; needs_review=True)
+- local_reasoning: The evidence mentions a range of samples (2 to 11) but does not provide a definitive, unique count of original SPS-spectrum patients.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand02
+- gpt_alternative_count: None
+- gpt_confidence: medium
+- gpt_manual_review_required: True
+- gpt_reasoning: The paper explicitly states that serum samples were obtained from 32 patients diagnosed with stiff-man syndrome, and also references a previously described index patient with stiff-man syndrome, yielding an original SPS cohort of 33 patients. However, because the study is highly lab-focused and provenance overlap/reuse is flagged as uncertain, the safest choice from the candidate list is the nonzero candidate with manual review retained.
+- evidence:
+  - pNone: we subsequently observed autoantibodies to gabaergic neurons in 20 of 33 patients with stiff-man syndrome.
+  - pNone: we recently described a patient with stiff-man syndrome, epilepsy, and insulin-dependent diabetes mellitus ... (patient 1, table 1).
+  - pNone: serum samples from 32 patients (11 men and 21 women) who had been given a diagnosis of stiff-man syndrome according to the criteria of gordon and coworkers were collected and stored at −20°C until used.
+  - pNone: cerebrospinal fluid samples, obtained after informed consent had been given, were available from 24 patients.
+
+## 12627 - Coexistence of neuromyelitis optica and stiff person syndrome in a single patient: a case report
+- predicted_count: 1
+- predicted_basis: case_report_marker_single_case
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | The paper is explicitly a single-patient case report, and the text describes one 47-year-old woman diagnosed with stiff person syndrome who later developed neuromyelitis optica. This supports counting 1 unique original SPS-spectrum patient.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The title and context indicate a single patient case report involving SPS.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The paper is explicitly a single-patient case report, and the text describes one 47-year-old woman diagnosed with stiff person syndrome who later developed neuromyelitis optica. This supports counting 1 unique original SPS-spectrum patient.
+- evidence:
+  - pNone: Coexistence of neuromyelitis optica and stiff person syndrome in a single patient: a case report
+  - pNone: Objective: To report a case of seropositive neuromyelitis optica (NMO) and coexistent glutamic acid decarboxylase (GAD) associated stiff person syndrome (SPS).
+  - pNone: Results: A 47-year old Caucasian female ... a serum glutamic acid decarboxylase (GAD) antibody was positive at greater than 250 IU/ml ... She was diagnosed with stiff person syndrome.
+
+## 12630 - Autologous Haematopoietic Stem Cell Transplantation (Auto-HSCT) in Stiff Person Syndrome (SPS): The Sheffield Experience
+- predicted_count: 6
+- predicted_basis: early_body_count_signal
+- verification_status: llm_semantic_conflict_manual_review_required
+- manual_review_required: true
+- provenance_uncertain: false
+- validator_flags: COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP
+- count_reason: challenge_stage=challenge | llm_semantic_conflict=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | manual_review_gate=true | llm_count_confidence=high | challenge_reasons=semantic_validator_reject=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP; explicit_sps_subgroup_conflict=6 vs 1; local_validation_conflict=2 vs 6; broad_total_exceeds_explicit_subgroup=6 > 1 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_EXCEEDS_EXPLICIT_SPS_SUBGROUP | The abstract explicitly states that the authors 'reviewed six patients with SPS,' indicating the full original cohort consisted of six SPS-spectrum patients. The later detailed descriptions of only two treated patients reflect a treated subset, not the total number of SPS cases reported in the paper.
+- batch_artifacts_status: complete
+- local_model_count: 2 (medium; needs_review=True)
+- local_reasoning: The text explicitly details diagnoses for two patients (Patient 1 and Patient 2), despite mentioning a larger group size.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly states that the authors 'reviewed six patients with SPS,' indicating the full original cohort consisted of six SPS-spectrum patients. The later detailed descriptions of only two treated patients reflect a treated subset, not the total number of SPS cases reported in the paper.
+- evidence:
+  - pNone: Methods: Between 2015-2017 we reviewed six patients with SPS from across the UK as summarised in table 1.
+  - pNone: one patient (patient 6) was declined auto-HSCT as they were found to be stable on mycophenolate and five were deemed suitable for autograft (patients 1-5).
+  - pNone: Two patients have been treated. Patient 1 had the Progressive Encephalomyelitis with Rigidity and Myoclonus (PERM) variant of SPS with ataxia. Patient 2 had Classical SPS.
+
+## 12642 - Identifying Key Components for Diagnosing Stiff Person Syndrome Spectrum Disorders: A Sensitivity and Specificity Study
+- predicted_count: 206
+- predicted_basis: diagnosis_specific_group_breakdown_count
+- verification_status: llm_candidate_exact
+- manual_review_required: false
+- provenance_uncertain: false
+- validator_flags: COUNT_SINGLE_CASE_CONFERENCE_MISMATCH
+- count_reason: challenge_stage=challenge | verification_status=llm_candidate_exact | llm_count_confidence=high | challenge_reasons=local_safer_abstention_conflict=161 vs 206; local_validation_conflict=161 vs 206 | llm_selected_candidate_id=cand01 | validator_flags=COUNT_SINGLE_CASE_CONFERENCE_MISMATCH | The abstract explicitly reports 161 Classic SPS cases and 45 SPS-plus cases, compared against 66 controls. Both Classic SPS and SPS-plus are within the SPS-spectrum definition, so the extractable SPS-spectrum cohort is 206 unique patients, excluding controls.
+- batch_artifacts_status: complete
+- local_model_count: 161 (high; needs_review=True)
+- local_reasoning: The evidence explicitly lists counts for three distinct groups (Classic SPS, SPS-plus, controls), requiring a decision on which count to prioritize.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: False
+- gpt_reasoning: The abstract explicitly reports 161 Classic SPS cases and 45 SPS-plus cases, compared against 66 controls. Both Classic SPS and SPS-plus are within the SPS-spectrum definition, so the extractable SPS-spectrum cohort is 206 unique patients, excluding controls.
+- evidence:
+  - pNone: Patients with a diagnosis of either classic SPS or SPS-plus phenotypes were compared to patients who were evaluated for SPSD but received an alternative diagnosis (control group).
+  - pNone: A total of 161 Classic SPS cases, 45 SPS-plus cases, and 66 controls were included.
+
+## 12660 - Epilepsia Partialis Continua & Stiff Person Syndrome Occurring Together in a Child with Anti-GAD Antibody Positivity
+- predicted_count: 1
+- predicted_basis: single_case_text_signal
+- verification_status: llm_candidate_exact
+- manual_review_required: true
+- provenance_uncertain: true
+- validator_flags: 
+- count_reason: challenge_stage=primary | verification_status=llm_candidate_exact | llm_count_confidence=high | llm_selected_candidate_id=cand01 | This is a case report describing one original child patient with explicit SPS symptoms and a concluding statement that the child had EPC and SPS. The mention of three previously reported EPC cases refers to prior literature, not additional patients in this paper; however, provenance uncertainty is flagged upstream, so manual review should remain required.
+- batch_artifacts_status: complete
+- local_model_count: 1 (medium; needs_review=True)
+- local_reasoning: The paper describes a single case presenting with SPS-spectrum features.
+- gpt_decision_type: candidate_exact
+- gpt_selected_candidate_id: cand01
+- gpt_alternative_count: None
+- gpt_confidence: high
+- gpt_manual_review_required: True
+- gpt_reasoning: This is a case report describing one original child patient with explicit SPS symptoms and a concluding statement that the child had EPC and SPS. The mention of three previously reported EPC cases refers to prior literature, not additional patients in this paper; however, provenance uncertainty is flagged upstream, so manual review should remain required.
+- evidence:
+  - pNone: objective: case-report
+  - pNone: design/methods: an 11-year-old boy with history of tonic-clonic seizures presented with gradual onset of truncal stiffness, episodic painful muscle spasms, right upper extremity rigidity
+  - pNone: results: clonazepam and ivig, in addition to anti-epileptic medications, led to rapid reduction of sps symptoms
+  - pNone: conclusions: we report a child with high serum and csf anti-gad antibody positivity resulting in widespread neurological manifestations including epc and sps
+  - pNone: there are three previously reported cases of epilepsia partialis continua (epc) in association with anti-gad-antibody encephalitis

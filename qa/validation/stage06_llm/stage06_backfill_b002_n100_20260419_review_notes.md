@@ -1,0 +1,46 @@
+# Stage 06 b002 Review Notes
+
+- Combined QA CSV: `qa\validation\stage06_llm\stage06_backfill_b002_n100_20260419_combined.csv`
+- Inspection pack: `qa\validation\stage06_llm\stage06_backfill_b002_n100_20260419_inspection.md`
+- Per-paper comments: `qa\validation\stage06_llm\stage06_backfill_b002_n100_20260419_review_comments.csv`
+
+## Outcome
+
+- Reviewed papers: 100
+- `llm_bounded_alternative`: 4
+- `llm_candidate_exact`: 87
+- `llm_manual_review_required`: 6
+- `llm_semantic_conflict_manual_review_required`: 3
+
+## Model-Based Triage
+
+- Likely clean on first pass: 834, 836, 837, 840, 841, 843, 848, 850, 857, 859, 861, 862, 867, 869, 871, 872, 874, 875, 876, 880, 881, 886, 887, 888, 890, 891, 892, 893, 896, 897, 900, 901, 904, 905, 908, 910, 912, 915, 922, 925, 927, 929, 930, 933, 938, 944, 951, 952, 958, 960, 964, 965, 966, 967, 968, 970, 972, 973, 974, 1010, 1011, 1017, 1028, 1054, 1068, 1094, 1105, 1106, 1133, 1135, 1149, 1154, 1210, 1215, 1216, 1220, 1229, 1230, 1231, 1233, 1237, 1242, 1245, 1246, 1248, 1249, 1257
+- Must review: 947, 953, 963, 1129, 1217, 1251
+- Should review: 842, 919, 921, 942, 1097, 1239
+
+## Resolved Manual Overrides
+
+- None applied for this batch.
+
+## Must Review Candidates
+
+- `947`: Pipeline output: 53. Extracted counts seen: 53 (abstract_count_signal), 0 (no_reliable_count_signal). Review trigger: verification_status=llm_manual_review_required. GPT decision: manual_review_required; low. Model rationale: The paper reports 53 amphiphysin-IgG-positive cases and 33 patients with neuropathy, but SPS-spectrum is only mentioned as a CNS accompaniment and no explicit SPS-spectrum patient count is provided in the supplied evidence. Because the cohort is broader than SPS-spectrum and the SPS subset is not extractably quantified, a safe SPSD count cannot be determined from the evidence pack.
+- `953`: Pipeline output: 14. Extracted counts seen: 14 (abstract_count_signal), 0 (no_reliable_count_signal). Review trigger: verification_status=llm_manual_review_required. GPT decision: manual_review_required; low. Model rationale: The paper reports 14 patients with SCMUSD, but only one patient is explicitly identified as having an SPS-spectrum diagnosis (stiff-limb syndrome). The remaining patients had other diagnoses, so no listed candidate cleanly captures the extractable SPS-spectrum count, and the safest resolution is manual review rather than counting the whole 14-patient SCMUSD cohort.
+- `963`: Pipeline output: 8. Extracted counts seen: 8 (diagnosis_specific_mixed_diagnosis_subgroup_count), 27 (abstract_count_signal; early_body_count_signal). Review trigger: verification_status=llm_manual_review_required. GPT decision: manual_review_required; low. The likelier count is still unclear because the candidate package surfaced competing counts: 8, 27. Model rationale: The abstract explicitly reports an SPS subgroup of 9 within a broader 27-patient neurological cohort, but the evidence pack also contains a conflicting explicit SPS-spectrum subgroup signal of 8 ('for 12 patients (eight had SPS, two had cerebellar atax-)'). Because the paper-level evidence provided is internally inconsistent on the SPS count and provenance is flagged as uncertain, the safest resolution is manual review rather than selecting 8 or proposing 9.
+- `1129`: Pipeline output: 121. Extracted counts seen: 121 (title_count_signal). Review trigger: verification_status=llm_manual_review_required. GPT decision: manual_review_required; low. Model rationale: The abstract reports a mixed cohort of 121 patients with several GAD antibody-associated neurological syndromes, only one of which is SPS. It does not provide an explicit SPS-spectrum subgroup count, so the number of extractable SPS-spectrum patients cannot be safely determined from the provided text.
+- `1217`: Pipeline output: 79. Extracted counts seen: 79 (abstract_count_signal), 0 (no_reliable_count_signal). Review trigger: verification_status=llm_manual_review_required. GPT decision: manual_review_required; low. Model rationale: The abstract reports 79 unique patients meeting screening criteria, but it explicitly says these patients were then characterized as SPS variants or other disease mimics. Because the 79 includes at least some non-SPSD mimics and no explicit SPS-spectrum subset count is provided, the extractable SPS-spectrum case count cannot be resolved safely from the provided text.
+- `1251`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). Review trigger: verification_status=llm_manual_review_required. GPT decision: manual_review_required; low. Model rationale: The abstract clearly reports a single original patient, but SPS-spectrum membership is not confirmed: it says the case was 'raising the possibility of concurrent stiff person syndrome' while nerve conduction studies supported Guillain-Barre syndrome. Because the paper frames SPS as a consideration rather than an explicit diagnosis-supported confirmed SPS-spectrum case, the extractable SPS count is ambiguous and should be manually reviewed.
+
+## Should Review Candidates
+
+- `842`: Pipeline output: 1. Extracted counts seen: 8 (early_body_count_signal), 0 (no_reliable_count_signal). Review trigger: llm_bounded_alternative_competing_counts=8, 0. GPT decision: bounded_alternative; high. Model rationale: The paper is a letter with an explicit single original case report: 'the case of a patient with PER is presented' followed by detailed clinical description of one 50-year-old man. The mention of 'a case series of 8 patients' is clearly cited background literature rather than this paper's own cohort, so candidate 8 is not supported for original extractable cases in this paper.
+- `919`: Pipeline output: 121. Extracted counts seen: 121 (abstract_count_signal; early_body_count_signal), 27 (diagnosis_specific_table_row_count). Review trigger: verification_status=llm_semantic_conflict_manual_review_required. GPT decision: candidate_exact; medium. The likelier count is still unclear because the candidate package surfaced competing counts: 121, 27. Model rationale: The paper explicitly states that the study included 121 patients with clinical features of SPSD, and the syndrome breakdown in the abstract sums to 121, indicating the full cohort is SPS-spectrum rather than a mixed broader cohort. However, because provenance overlap is flagged as uncertain and there is a competing diagnosis-specific subgroup count of 27 from one antibody-defined column, human review remains appropriate.
+- `921`: Pipeline output: 2. Extracted counts seen: 4 (diagnosis_specific_suffix_count), 1 (source_single_case_default), 0 (no_reliable_count_signal). Review trigger: llm_bounded_alternative_competing_counts=4, 1, 0. GPT decision: bounded_alternative; high. Model rationale: The paper is a case series of paraneoplastic stiff person syndrome and explicitly states that it describes the rehabilitation courses of 2 patients. The candidate count of 4 is unsupported because the '(4)' appears to be a citation number in background text, not a patient count from this paper.
+- `942`: Pipeline output: 10. Extracted counts seen: 10 (abstract_count_signal; early_body_count_signal), 1 (diagnosis_specific_patient_case_count). Review trigger: verification_status=llm_semantic_conflict_manual_review_required. GPT decision: candidate_exact; high. The likelier count is still unclear because the candidate package surfaced competing counts: 10, 1. Model rationale: The paper explicitly describes a retrospective analysis of ten patients with the clinical diagnosis of anti-GAD65 positive stiff person syndrome, and the body text reiterates that the authors present their experience in ten patients with SPS treated with TPE. The single-patient 'variant of SPS' mention appears to describe one member of this already-SPS cohort rather than a narrower SPS-spectrum subset replacing the full cohort.
+- `1097`: Pipeline output: 2. Extracted counts seen: 4 (patient_label_count), 0 (no_reliable_count_signal). Review trigger: llm_bounded_alternative_competing_counts=4, 0. GPT decision: bounded_alternative; high. Model rationale: The paper explicitly states that it presents two cases of established stiff limb syndrome, which is within the SPS-spectrum. The full text excerpt then details Case 1 and Case 2 as original diagnosis-supported patients, so the best-supported extractable count is 2 rather than candidate 4.
+- `1239`: Pipeline output: 1. Extracted counts seen: 1 (case_report_marker_single_case; source_single_case_default). Review trigger: verification_status=llm_semantic_conflict_manual_review_required. GPT decision: candidate_exact; medium. Model rationale: This conference abstract reports a single original patient. Although the methods line says 'suspected SPS,' the results and conclusion explicitly state that the diagnosis of SPS was made based on typical clinical features, EMG pattern, and anti-GAD65 positivity, supporting 1 diagnosis-supported SPS-spectrum case; because of the initial suspected wording and validator challenge, manual review should remain required.
+
+## Assistant QA Notes
+
+- No reviewed override rows were available for this batch when these notes were generated.
+- Populate the paired review-comments CSV during manual batch QA for the remaining review candidates.
