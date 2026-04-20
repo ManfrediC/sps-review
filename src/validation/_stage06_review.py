@@ -45,7 +45,10 @@ def rows_by_id(path: Path, key_column: str = "paper_id") -> dict[str, dict[str, 
 def load_json(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
-    return json.loads(path.read_text(encoding="utf-8"))
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
 
 
 def sort_key_for_paper_id(paper_id: str) -> tuple[int, str]:
@@ -364,6 +367,9 @@ def load_review_rows_from_run(
     results_dir = run_dir / "results"
     for result_path in sorted(results_dir.glob("*.json"), key=lambda path: sort_key_for_paper_id(path.stem)):
         payload = load_json(result_path)
+        resolved_paper_id = str(payload.get("paper_id") or (payload.get("count_row") or {}).get("paper_id") or "").strip()
+        if payload and resolved_paper_id and resolved_paper_id != result_path.stem:
+            continue
         count_row = _stringify_row(payload.get("count_row") or {})
         if not count_row:
             continue

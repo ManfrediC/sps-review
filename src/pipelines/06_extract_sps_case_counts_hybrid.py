@@ -3,9 +3,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import shutil
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -120,7 +120,61 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
 
 def _write_json(path: Path, payload: dict[str, object]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_text = json.dumps(payload, ensure_ascii=False, indent=2)
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        delete=False,
+    ) as handle:
+        handle.write(json_text)
+        temp_path = Path(handle.name)
+    temp_path.replace(path)
+
+
+def _load_json_if_valid(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
+def _resolved_result_paper_id(payload: dict[str, object], fallback: str = "") -> str:
+    count_row = payload.get("count_row") if isinstance(payload.get("count_row"), dict) else {}
+    return str(payload.get("paper_id") or count_row.get("paper_id") or fallback).strip()
+
+
+def _completed_result_paper_ids(run_dir: Path) -> list[str]:
+    results_dir = run_dir / "results"
+    if not results_dir.exists():
+        return []
+    completed_ids: list[str] = []
+    for result_path in sorted(results_dir.glob("*.json")):
+        payload = _load_json_if_valid(result_path)
+        if not payload:
+            continue
+        paper_id = _resolved_result_paper_id(payload, fallback=result_path.stem)
+        if paper_id and paper_id == result_path.stem:
+            completed_ids.append(paper_id)
+    return completed_ids
+
+
+def _update_run_manifest(
+    run_dir: Path,
+    *,
+    default_payload: dict[str, object] | None = None,
+    **updates: object,
+) -> None:
+    manifest_path = run_dir / "run_manifest.json"
+    payload = _load_json_if_valid(manifest_path)
+    if not payload and default_payload:
+        payload.update(default_payload)
+    payload.update({key: value for key, value in updates.items() if value is not None})
+    _write_json(manifest_path, payload)
 
 
 def _estimate_summary(packages: list[tuple[Path, object, object, object]], override_rows: dict[str, dict[str, str]]) -> None:
@@ -168,9 +222,22 @@ def _cleanup_failed_attempt(
     run_dir_created: bool,
     output_path: Path,
     output_preexisting: bool,
+    total_paper_count: int,
+    error: BaseException | None = None,
 ) -> None:
     if run_dir_created and run_dir.exists():
-        shutil.rmtree(run_dir, ignore_errors=True)
+        completed_ids = _completed_result_paper_ids(run_dir)
+        failure_status = "interrupted" if isinstance(error, KeyboardInterrupt) else "failed"
+        _update_run_manifest(
+            run_dir,
+            run_status=failure_status,
+            finished_at_utc=now_utc_iso(),
+            completed_result_count=len(completed_ids),
+            total_paper_count=total_paper_count,
+            completed_paper_ids=completed_ids,
+            failure_type=type(error).__name__ if error is not None else "",
+            failure_message=str(error or "").strip(),
+        )
     if not output_preexisting and output_path.exists():
         output_path.unlink(missing_ok=True)
 
@@ -282,21 +349,28 @@ def main() -> None:
 
         run_dir.mkdir(parents=True, exist_ok=False)
         run_dir_created = True
-        _write_json(
-            run_dir / "run_manifest.json",
-            {
-                "run_id": run_id,
-                "created_at_utc": now_utc_iso(),
-                "local_model": args.local_model,
-                "local_base_url": args.local_base_url,
-                "gpt_model": args.gpt_model,
-                "runtime_preflight": preflight.to_dict(),
-                "manual_review_path": str(args.manual_review_path),
-                "skip_manual_overrides": args.skip_manual_overrides,
-                "output_path": str(args.output_path),
-                "paper_ids": [path.stem for path, _, _, _ in packages],
-            },
-        )
+        manifest_payload = {
+            "run_id": run_id,
+            "created_at_utc": now_utc_iso(),
+            "run_status": "running",
+            "started_at_utc": now_utc_iso(),
+            "finished_at_utc": "",
+            "local_model": args.local_model,
+            "local_base_url": args.local_base_url,
+            "gpt_model": args.gpt_model,
+            "runtime_preflight": preflight.to_dict(),
+            "manual_review_path": str(args.manual_review_path),
+            "skip_manual_overrides": args.skip_manual_overrides,
+            "output_path": str(args.output_path),
+            "paper_ids": [path.stem for path, _, _, _ in packages],
+            "total_paper_count": len(packages),
+            "completed_result_count": 0,
+            "completed_paper_ids": [],
+            "failure_type": "",
+            "failure_message": "",
+            "last_completed_paper_id": "",
+        }
+        _write_json(run_dir / "run_manifest.json", manifest_payload)
 
         rows: list[dict[str, str]] = []
         for text_path, package, _, _ in packages:
@@ -338,6 +412,12 @@ def main() -> None:
                     "preferred_text_json_path": package.preferred_text_json_path,
                 },
             )
+            _update_run_manifest(
+                run_dir,
+                completed_result_count=len(rows),
+                completed_paper_ids=[row["paper_id"] for row in rows if str(row.get("paper_id") or "").strip()],
+                last_completed_paper_id=package.paper_id,
+            )
 
         unresolved_paper_ids = _unresolved_paper_ids(rows)
         if unresolved_paper_ids and not args.allow_unresolved_export:
@@ -352,13 +432,25 @@ def main() -> None:
 
         write_count_rows(rows, args.output_path)
         refresh_artifact_registry(args.skip_registry_refresh)
+        _update_run_manifest(
+            run_dir,
+            run_status="completed",
+            finished_at_utc=now_utc_iso(),
+            completed_result_count=len(rows),
+            completed_paper_ids=[row["paper_id"] for row in rows if str(row.get("paper_id") or "").strip()],
+            unresolved_paper_ids=unresolved_paper_ids,
+            failure_type="",
+            failure_message="",
+        )
         print(f"Wrote {len(rows)} rows to {args.output_path}")
-    except BaseException:
+    except BaseException as error:
         _cleanup_failed_attempt(
             run_dir=run_dir,
             run_dir_created=run_dir_created,
             output_path=args.output_path,
             output_preexisting=output_preexisting,
+            total_paper_count=len(packages),
+            error=error,
         )
         raise
 

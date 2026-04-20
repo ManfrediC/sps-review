@@ -326,6 +326,7 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         comment = rows[0]["review_comment"]
         self.assertIn("Pipeline output: 19.", comment)
         self.assertIn("Extracted counts seen: 19 (diagnosis_specific_suffix_count), 16 (abstract_count_signal; early_body_count_signal).", comment)
+        self.assertIn("Review trigger: verification_status=llm_manual_review_required.", comment)
         self.assertIn("GPT decision: candidate_exact; medium.", comment)
         self.assertIn("16 looks likelier because 19 only comes from a citation-like suffix snippet.", comment)
 
@@ -535,6 +536,44 @@ class TestStage06ReviewWorkflow(unittest.TestCase):
         comment = rows[0]["review_comment"]
         self.assertIn("Extracted counts seen: 0 (lab_context_no_extractable_count; no_reliable_count_signal).", comment)
         self.assertIn("Model rationale:", comment)
+        self.assertNotIn("looks likelier because", comment)
+
+    def test_review_notes_markdown_ignores_plain_candidate_exact_manual_flag_without_hard_conflict(self) -> None:
+        notes = backfill.review_notes_markdown(
+            batch_manifest={
+                "batch_id": "b001",
+                "combined_output_csv_path": "qa/demo_combined.csv",
+                "inspection_md_path": "qa/demo_inspection.md",
+                "review_comments_csv_path": "qa/demo_review_comments.csv",
+            },
+            review_rows=[
+                {
+                    "paper_id": "71",
+                    "title": "Example 71",
+                    "likely_sps_case_count": "1",
+                    "count_verification_status": "llm_candidate_exact",
+                    "count_manual_review_required": "true",
+                    "count_reason": "verification_status=llm_candidate_exact",
+                },
+                {
+                    "paper_id": "214",
+                    "title": "Example 214",
+                    "likely_sps_case_count": "1",
+                    "count_verification_status": "llm_manual_review_required",
+                    "count_manual_review_required": "true",
+                    "count_reason": (
+                        "verification_status=llm_manual_review_required | "
+                        "explicit_sps_subgroup_conflict=4 vs 1"
+                    ),
+                },
+            ],
+        )
+
+        self.assertIn("Likely clean on first pass: 71", notes)
+        self.assertIn("Must review: 214", notes)
+        self.assertNotIn("`71`: Pipeline output", notes)
+        self.assertIn("`214`: Pipeline output: 1.", notes)
+        self.assertIn("Review trigger: verification_status=llm_manual_review_required; explicit_sps_subgroup_conflict=4 vs 1.", notes)
 
 
 if __name__ == "__main__":

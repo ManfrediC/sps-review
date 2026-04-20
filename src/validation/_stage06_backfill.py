@@ -8,6 +8,7 @@ import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+import tempfile
 from typing import Any
 
 if __package__ in {None, ""}:
@@ -41,6 +42,7 @@ HYBRID_SCRIPT_PATH = REPO_ROOT / "src" / "pipelines" / "06_extract_sps_case_coun
 DEFAULT_BATCH_SIZE = 50
 CAMPAIGN_STATUS_FILENAME = "status.tsv"
 CAMPAIGN_MANIFEST_FILENAME = "manifest.json"
+CAMPAIGN_HIGH_RISK_REVIEW_FILENAME = "high_risk_review_rollup.md"
 BATCH_DIRNAME = "batches"
 BATCH_PATH_OVERRIDE_KEYS = (
     "run_root",
@@ -59,6 +61,20 @@ UNRESOLVED_VERIFICATION_STATUSES = {
     "llm_manual_review_required",
     "llm_unable_to_determine",
 }
+MUST_REVIEW_VERIFICATION_STATUSES = {
+    "llm_invalid_manual_review_required",
+    "llm_request_failed_manual_review_required",
+    "llm_manual_review_required",
+    "llm_unable_to_determine",
+}
+SHOULD_REVIEW_VERIFICATION_STATUSES = {
+    "llm_semantic_conflict_manual_review_required",
+}
+HARD_REVIEW_REASON_PREFIXES = (
+    "explicit_sps_subgroup_conflict=",
+    "local_validation_conflict=",
+    "local_safer_abstention_conflict=",
+)
 INLINE_CITATION_PAREN_RE = re.compile(r"\(\s*\d+(?:\s*,\s*\d+){1,5}\s*\)")
 
 
@@ -80,7 +96,18 @@ def load_json(path: Path) -> dict[str, Any]:
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_text = json.dumps(payload, ensure_ascii=False, indent=2)
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        delete=False,
+    ) as handle:
+        handle.write(json_text)
+        temp_path = Path(handle.name)
+    temp_path.replace(path)
 
 
 def load_csv_rows(path: Path) -> list[dict[str, str]]:
@@ -112,6 +139,10 @@ def sort_key_for_paper_id(paper_id: str) -> tuple[int, str]:
 
 def sorted_paper_ids(paper_ids: set[str] | list[str]) -> list[str]:
     return sorted({str(paper_id).strip() for paper_id in paper_ids if str(paper_id).strip()}, key=sort_key_for_paper_id)
+
+
+def campaign_high_risk_review_path(campaign_id: str, campaign_root: Path = CAMPAIGN_ROOT) -> Path:
+    return campaign_dir(campaign_id, campaign_root) / CAMPAIGN_HIGH_RISK_REVIEW_FILENAME
 
 
 @dataclass(frozen=True)
@@ -170,9 +201,35 @@ def load_reviewed_override_ids(manual_review_path: Path = MANUAL_REVIEW_PATH) ->
     return set(reviewed_override_rows_by_id(manual_review_path))
 
 
+def load_json_if_valid(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        return load_json(path)
+    except json.JSONDecodeError:
+        return {}
+
+
+def result_payload_paper_id(payload: dict[str, Any], *, fallback: str = "") -> str:
+    count_row = payload.get("count_row") if isinstance(payload.get("count_row"), dict) else {}
+    return str(payload.get("paper_id") or count_row.get("paper_id") or fallback).strip()
+
+
+def load_valid_result_payload(result_path: Path) -> dict[str, Any]:
+    payload = load_json_if_valid(result_path)
+    if not payload:
+        return {}
+    if "count_row" in payload and not isinstance(payload.get("count_row"), dict):
+        return {}
+    paper_id = result_payload_paper_id(payload, fallback=result_path.stem)
+    if not paper_id or paper_id != result_path.stem:
+        return {}
+    return payload
+
+
 def _payload_has_hybrid_v2(payload: dict[str, Any]) -> bool:
-    count_row = payload.get("count_row") or {}
-    model_row = payload.get("model_count_row") or {}
+    count_row = payload.get("count_row") if isinstance(payload.get("count_row"), dict) else {}
+    model_row = payload.get("model_count_row") if isinstance(payload.get("model_count_row"), dict) else {}
     versions = [
         str(count_row.get("count_version") or "").strip(),
         str(model_row.get("count_version") or "").strip(),
@@ -189,13 +246,10 @@ def load_hybrid_processed_ids(run_root: Path = RUN_ROOT) -> set[str]:
         if not run_dir.is_dir() or not results_dir.exists():
             continue
         for result_path in results_dir.glob("*.json"):
-            try:
-                payload = load_json(result_path)
-            except json.JSONDecodeError:
-                continue
+            payload = load_valid_result_payload(result_path)
             if not _payload_has_hybrid_v2(payload):
                 continue
-            paper_id = str(payload.get("paper_id") or (payload.get("count_row") or {}).get("paper_id") or result_path.stem).strip()
+            paper_id = result_payload_paper_id(payload, fallback=result_path.stem)
             if paper_id:
                 hybrid_ids.add(paper_id)
     return hybrid_ids
@@ -532,6 +586,7 @@ def build_campaign_payload(
         "campaign_root": display_path(campaign_path),
         "qa_output_dir": display_path(qa_output_dir),
         "run_root": display_path(run_root),
+        "high_risk_review_rollup_path": display_path(campaign_high_risk_review_path(campaign_id, campaign_root)),
         "coverage": snapshot.to_dict(),
         "status_rows": status_rows_for_snapshot(snapshot),
         "batch_count": len(batch_entries),
@@ -788,7 +843,12 @@ def completed_paper_ids_for_run_dir(run_dir: Path) -> set[str]:
     results_dir = run_dir / "results"
     if not results_dir.exists():
         return set()
-    return {path.stem for path in results_dir.glob("*.json")}
+    completed_ids: set[str] = set()
+    for result_path in results_dir.glob("*.json"):
+        payload = load_valid_result_payload(result_path)
+        if payload:
+            completed_ids.add(result_payload_paper_id(payload, fallback=result_path.stem))
+    return completed_ids
 
 
 def completed_paper_ids_for_batch(batch_manifest: dict[str, Any], run_root: Path = RUN_ROOT) -> set[str]:
@@ -851,17 +911,6 @@ def run_hybrid_batch_command(command: list[str]) -> None:
     subprocess.run(command, check=True, cwd=str(REPO_ROOT))
 
 
-def _count_row_from_result_payload(result_path: Path) -> dict[str, str]:
-    payload = load_json(result_path)
-    count_row = {
-        fieldname: str((payload.get("count_row") or {}).get(fieldname) or "")
-        for fieldname in count_row_fieldnames()
-    }
-    if not count_row.get("paper_id"):
-        count_row["paper_id"] = result_path.stem
-    return count_row
-
-
 def load_count_rows_from_run_dir(
     run_dir: Path,
     *,
@@ -875,10 +924,19 @@ def load_count_rows_from_run_dir(
         ]
 
     results_dir = run_dir / "results"
-    return [
-        _count_row_from_result_payload(result_path)
-        for result_path in sorted(results_dir.glob("*.json"), key=lambda path: sort_key_for_paper_id(path.stem))
-    ]
+    rows: list[dict[str, str]] = []
+    for result_path in sorted(results_dir.glob("*.json"), key=lambda path: sort_key_for_paper_id(path.stem)):
+        payload = load_valid_result_payload(result_path)
+        if not payload:
+            continue
+        count_row = {
+            fieldname: str((payload.get("count_row") or {}).get(fieldname) or "")
+            for fieldname in count_row_fieldnames()
+        }
+        if not count_row.get("paper_id"):
+            count_row["paper_id"] = result_path.stem
+        rows.append(count_row)
+    return rows
 
 
 def combined_count_rows_for_batch(
@@ -1061,9 +1119,13 @@ def _likely_count_note(
     ordered_counts: list[str],
     support_by_count: dict[str, dict[str, Any]],
     manual_review_required: bool,
+    verification_status: str,
 ) -> str:
     nonzero_counts = [count_text for count_text in ordered_counts if count_text != "0"]
     predicted_support = support_by_count.get(predicted_count_text, {})
+
+    if verification_status == "llm_bounded_alternative" and predicted_count_text not in support_by_count:
+        return ""
 
     if predicted_support.get("citation_like") and nonzero_counts:
         alternative_counts = [count_text for count_text in nonzero_counts if count_text != predicted_count_text]
@@ -1126,6 +1188,91 @@ def _count_reason_summary(count_reason: str) -> str:
     return ""
 
 
+def _reason_tokens(row: dict[str, str]) -> list[str]:
+    return [
+        token.strip()
+        for token in str(row.get("count_reason") or "").split("|")
+        if token.strip()
+    ]
+
+
+def _validator_flag_tokens(row: dict[str, str]) -> list[str]:
+    return [
+        token.strip()
+        for token in str(row.get("count_validator_flags") or "").split(";")
+        if token.strip()
+    ]
+
+
+def _has_material_count_disagreement(ordered_counts: list[str]) -> bool:
+    material_counts = [count_text for count_text in ordered_counts if count_text]
+    return len(set(material_counts)) > 1
+
+
+def _review_trigger_bits(row: dict[str, str], ordered_counts: list[str]) -> list[str]:
+    verification_status = str(row.get("count_verification_status") or "").strip()
+    reason_tokens = _reason_tokens(row)
+    validator_tokens = _validator_flag_tokens(row)
+    triggers: list[str] = []
+
+    if verification_status in MUST_REVIEW_VERIFICATION_STATUSES | SHOULD_REVIEW_VERIFICATION_STATUSES:
+        triggers.append(f"verification_status={verification_status}")
+
+    if "COUNT_DONOR_MATERIAL_ONLY" in validator_tokens or any(
+        token.startswith("semantic_validator_reject=") and "COUNT_DONOR_MATERIAL_ONLY" in token
+        for token in reason_tokens
+    ):
+        triggers.append("semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY")
+
+    for prefix in HARD_REVIEW_REASON_PREFIXES:
+        matched_token = next((token for token in reason_tokens if token.startswith(prefix)), "")
+        if matched_token:
+            triggers.append(matched_token)
+
+    if verification_status == "llm_bounded_alternative" and _has_material_count_disagreement(ordered_counts):
+        triggers.append(f"llm_bounded_alternative_competing_counts={', '.join(ordered_counts)}")
+
+    deduped_triggers: list[str] = []
+    for trigger in triggers:
+        if trigger and trigger not in deduped_triggers:
+            deduped_triggers.append(trigger)
+    return deduped_triggers
+
+
+def _review_priority(row: dict[str, str], ordered_counts: list[str]) -> str:
+    verification_status = str(row.get("count_verification_status") or "").strip()
+    if verification_status == "manual_review_override":
+        return ""
+    review_triggers = _review_trigger_bits(row, ordered_counts)
+    if verification_status in MUST_REVIEW_VERIFICATION_STATUSES:
+        return "must"
+    if any(
+        trigger == "semantic_validator_reject=COUNT_DONOR_MATERIAL_ONLY"
+        or trigger.startswith(HARD_REVIEW_REASON_PREFIXES)
+        for trigger in review_triggers
+    ):
+        return "must"
+    if verification_status in SHOULD_REVIEW_VERIFICATION_STATUSES:
+        return "should"
+    if any(trigger.startswith("llm_bounded_alternative_competing_counts=") for trigger in review_triggers):
+        return "should"
+    return ""
+
+
+def _review_triage_context(row: dict[str, str]) -> dict[str, Any]:
+    candidate_payload = review.load_candidate_package(str(row.get("count_candidate_json_path") or ""))
+    if candidate_payload:
+        ordered_counts, support_by_count = _candidate_support_by_count(candidate_payload)
+    else:
+        ordered_counts, support_by_count = [], {}
+    return {
+        "ordered_counts": ordered_counts,
+        "support_by_count": support_by_count,
+        "review_triggers": _review_trigger_bits(row, ordered_counts),
+        "review_priority": _review_priority(row, ordered_counts),
+    }
+
+
 def _looks_like_auto_review_comment(review_comment: str) -> bool:
     text = str(review_comment or "").strip()
     if not text:
@@ -1133,17 +1280,22 @@ def _looks_like_auto_review_comment(review_comment: str) -> bool:
     return text.startswith("Pipeline output:") or "Extracted counts seen:" in text
 
 
-def _auto_review_comment(row: dict[str, str]) -> str:
-    candidate_payload = review.load_candidate_package(str(row.get("count_candidate_json_path") or ""))
-    if not candidate_payload:
-        return ""
-    ordered_counts, support_by_count = _candidate_support_by_count(candidate_payload)
-    if not ordered_counts:
-        return ""
-
+def _auto_review_comment(
+    row: dict[str, str],
+    *,
+    triage_context: dict[str, Any] | None = None,
+) -> str:
+    triage = triage_context or _review_triage_context(row)
+    ordered_counts = list(triage.get("ordered_counts") or [])
+    support_by_count = dict(triage.get("support_by_count") or {})
     verification_status = str(row.get("count_verification_status") or "").strip()
     manual_review_required = str(row.get("count_manual_review_required") or "").strip().lower() == "true"
-    if len(set(ordered_counts)) <= 1 and not (manual_review_required or verification_status in UNRESOLVED_VERIFICATION_STATUSES):
+    review_triggers = list(triage.get("review_triggers") or [])
+    if (
+        len(set(ordered_counts)) <= 1
+        and not review_triggers
+        and not (manual_review_required or verification_status in UNRESOLVED_VERIFICATION_STATUSES)
+    ):
         return ""
 
     predicted_count_text = str(row.get("likely_sps_case_count") or "").strip()
@@ -1152,8 +1304,11 @@ def _auto_review_comment(row: dict[str, str]) -> str:
 
     parts = [
         f"Pipeline output: {predicted_count_text or 'unknown'}.",
-        f"Extracted counts seen: {_format_candidate_support(ordered_counts, support_by_count)}.",
     ]
+    if ordered_counts:
+        parts.append(f"Extracted counts seen: {_format_candidate_support(ordered_counts, support_by_count)}.")
+    if review_triggers:
+        parts.append(f"Review trigger: {'; '.join(review_triggers)}.")
     decision_type = str(decision.get("decision_type") or "").strip()
     decision_confidence = str(decision.get("count_confidence") or "").strip()
     if decision_type or decision_confidence:
@@ -1165,6 +1320,7 @@ def _auto_review_comment(row: dict[str, str]) -> str:
         ordered_counts=ordered_counts,
         support_by_count=support_by_count,
         manual_review_required=manual_review_required,
+        verification_status=verification_status,
     )
     if likely_note:
         parts.append(likely_note)
@@ -1188,6 +1344,7 @@ def build_review_comments_rows(
         existing = existing_rows_by_id.get(paper_id, {})
         verification_status = str(row.get("count_verification_status") or "").strip()
         override_row = override_rows_by_id.get(paper_id, {})
+        triage = _review_triage_context(row)
         review_comment = str(existing.get("review_comment") or "").strip()
         has_curated_fields = any(
             str(existing.get(field) or "").strip()
@@ -1195,14 +1352,15 @@ def build_review_comments_rows(
         )
         if verification_status == "manual_review_override":
             review_comment = str(override_row.get("reviewer_notes") or "").strip() or review_comment
-        auto_comment = _auto_review_comment(row)
+        auto_comment = _auto_review_comment(row, triage_context=triage)
         if auto_comment and (not review_comment or _looks_like_auto_review_comment(review_comment)) and not has_curated_fields:
             review_comment = auto_comment
+        auto_failure_modes = "; ".join(triage.get("review_triggers") or [])
         merged = _review_comment_defaults(row)
         merged.update(
             {
                 "assessment": str(existing.get("assessment") or "").strip(),
-                "failure_modes": str(existing.get("failure_modes") or "").strip(),
+                "failure_modes": str(existing.get("failure_modes") or "").strip() or auto_failure_modes,
                 "review_comment": review_comment,
             }
         )
@@ -1252,25 +1410,31 @@ def review_notes_markdown(
 ) -> str:
     verification_counts: dict[str, int] = {}
     likely_clean_ids: list[str] = []
-    likely_user_review_ids: list[str] = []
+    must_review_ids: list[str] = []
+    should_review_ids: list[str] = []
     override_rows_by_id = reviewed_override_rows_by_id(manual_review_path)
     resolved_override_lines: list[str] = []
-    priority_review_lines: list[str] = []
+    must_review_lines: list[str] = []
+    should_review_lines: list[str] = []
     for row in review_rows:
         verification_status = str(row.get("count_verification_status") or "").strip() or "<blank>"
         verification_counts[verification_status] = verification_counts.get(verification_status, 0) + 1
         paper_id = str(row.get("paper_id") or "").strip()
         predicted_count = str(row.get("likely_sps_case_count") or "").strip() or "unknown"
-        requires_manual = str(row.get("count_manual_review_required") or "").strip().lower() == "true"
-        if requires_manual or verification_status in UNRESOLVED_VERIFICATION_STATUSES:
-            likely_user_review_ids.append(paper_id)
-            auto_comment = _auto_review_comment(row)
-            if auto_comment:
-                priority_review_lines.append(f"- `{paper_id}`: {auto_comment}")
-            else:
-                priority_review_lines.append(
-                    f"- `{paper_id}`: pipeline output `{predicted_count}` still needs manual source comparison."
-                )
+        triage = _review_triage_context(row)
+        review_priority = str(triage.get("review_priority") or "")
+        if review_priority == "must":
+            must_review_ids.append(paper_id)
+            auto_comment = _auto_review_comment(row, triage_context=triage)
+            must_review_lines.append(
+                f"- `{paper_id}`: {auto_comment or f'pipeline output `{predicted_count}` still needs manual source comparison.'}"
+            )
+        elif review_priority == "should":
+            should_review_ids.append(paper_id)
+            auto_comment = _auto_review_comment(row, triage_context=triage)
+            should_review_lines.append(
+                f"- `{paper_id}`: {auto_comment or f'pipeline output `{predicted_count}` has unresolved competing evidence.'}"
+            )
         elif verification_status == "llm_candidate_exact":
             likely_clean_ids.append(paper_id)
         if verification_status == "manual_review_override":
@@ -1300,10 +1464,8 @@ def review_notes_markdown(
             "## Model-Based Triage",
             "",
             f"- Likely clean on first pass: {', '.join(likely_clean_ids) if likely_clean_ids else 'None'}",
-            (
-                "- Likely user review candidates: "
-                f"{', '.join(likely_user_review_ids) if likely_user_review_ids else 'None'}"
-            ),
+            f"- Must review: {', '.join(must_review_ids) if must_review_ids else 'None'}",
+            f"- Should review: {', '.join(should_review_ids) if should_review_ids else 'None'}",
             "",
             "## Resolved Manual Overrides",
             "",
@@ -1316,14 +1478,25 @@ def review_notes_markdown(
     lines.extend(
         [
             "",
-            "## Priority Review Candidates",
+            "## Must Review Candidates",
             "",
         ]
     )
-    if priority_review_lines:
-        lines.extend(priority_review_lines)
+    if must_review_lines:
+        lines.extend(must_review_lines)
     else:
-        lines.append("- None remaining after applying reviewed overrides.")
+        lines.append("- None remaining in the highest-risk tier after applying reviewed overrides.")
+    lines.extend(
+        [
+            "",
+            "## Should Review Candidates",
+            "",
+        ]
+    )
+    if should_review_lines:
+        lines.extend(should_review_lines)
+    else:
+        lines.append("- None remaining in the secondary-review tier.")
     lines.extend(
         [
             "",
@@ -1336,12 +1509,110 @@ def review_notes_markdown(
             ),
             (
                 "- Populate the paired review-comments CSV during manual batch QA for the remaining review candidates."
-                if priority_review_lines
+                if must_review_lines or should_review_lines
                 else "- No remaining model-flagged review candidates are present in this batch."
             ),
         ]
     )
     return "\n".join(lines)
+
+
+def campaign_high_risk_review_markdown(
+    *,
+    campaign_payload: dict[str, Any],
+    batch_review_rows: list[tuple[str, list[dict[str, str]]]],
+    manual_review_path: Path = MANUAL_REVIEW_PATH,
+) -> str:
+    override_rows_by_id = reviewed_override_rows_by_id(manual_review_path)
+    must_review_lines: list[str] = []
+    should_review_lines: list[str] = []
+
+    for batch_id, review_rows in batch_review_rows:
+        for row in review_rows:
+            paper_id = str(row.get("paper_id") or "").strip()
+            if not paper_id:
+                continue
+            if str(row.get("count_verification_status") or "").strip() == "manual_review_override":
+                continue
+            if override_rows_by_id.get(paper_id):
+                continue
+            triage = _review_triage_context(row)
+            review_priority = str(triage.get("review_priority") or "")
+            if not review_priority:
+                continue
+            comment = _auto_review_comment(row, triage_context=triage)
+            fallback = f"pipeline output `{str(row.get('likely_sps_case_count') or '').strip() or 'unknown'}` still needs review."
+            line = f"- `{paper_id}` ({batch_id}): {comment or fallback}"
+            if review_priority == "must":
+                must_review_lines.append(line)
+            elif review_priority == "should":
+                should_review_lines.append(line)
+
+    lines = [
+        f"# Stage 06 {str(campaign_payload.get('campaign_id') or '').strip()} High-Risk Review Roll-up",
+        "",
+        f"- Campaign manifest: `{str(campaign_payload.get('campaign_root') or '').strip()}/{CAMPAIGN_MANIFEST_FILENAME}`",
+        f"- Combined coverage remaining: {parse_int((campaign_payload.get('coverage') or {}).get('summary_counts', {}).get('remaining'), default=0)}",
+        "",
+        "## Must Review",
+        "",
+    ]
+    if must_review_lines:
+        lines.extend(must_review_lines)
+    else:
+        lines.append("- None currently unresolved in the highest-risk tier.")
+    lines.extend(
+        [
+            "",
+            "## Should Review",
+            "",
+        ]
+    )
+    if should_review_lines:
+        lines.extend(should_review_lines)
+    else:
+        lines.append("- None currently unresolved in the secondary-review tier.")
+    return "\n".join(lines)
+
+
+def write_campaign_high_risk_review_rollup(
+    *,
+    campaign_id: str,
+    campaign_root: Path = CAMPAIGN_ROOT,
+    run_root: Path = RUN_ROOT,
+    manual_review_path: Path = MANUAL_REVIEW_PATH,
+) -> Path:
+    manifest_path = campaign_dir(campaign_id, campaign_root) / CAMPAIGN_MANIFEST_FILENAME
+    campaign_payload = load_json(manifest_path)
+    batch_review_rows: list[tuple[str, list[dict[str, str]]]] = []
+    for batch_entry in campaign_payload.get("batches") or []:
+        batch_manifest_path_text = str(batch_entry.get("batch_manifest_path") or "").strip()
+        if not batch_manifest_path_text:
+            continue
+        batch_manifest_path = review.resolve_repo_path(batch_manifest_path_text)
+        if not batch_manifest_path.exists():
+            continue
+        batch_manifest = load_batch_manifest(batch_manifest_path)
+        run_dirs = batch_run_dirs(batch_manifest, run_root)
+        if not run_dirs:
+            continue
+        review_rows, _ = _overlay_reviewed_overrides(
+            _merged_review_rows_from_run_dirs(run_dirs),
+            manual_review_path=manual_review_path,
+        )
+        batch_review_rows.append((str(batch_manifest.get("batch_id") or "").strip(), review_rows))
+
+    output_path = campaign_high_risk_review_path(campaign_id, campaign_root)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        campaign_high_risk_review_markdown(
+            campaign_payload=campaign_payload,
+            batch_review_rows=batch_review_rows,
+            manual_review_path=manual_review_path,
+        ),
+        encoding="utf-8",
+    )
+    return output_path
 
 
 def write_combined_count_csv(rows: list[dict[str, str]], output_path: Path) -> None:

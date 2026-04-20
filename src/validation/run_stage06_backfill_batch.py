@@ -14,6 +14,37 @@ from src.pipelines.stage06_counting.runtime import run_stage06_dependency_prefli
 from src.validation import _stage06_backfill as backfill
 
 
+def _batch_resume_payload(
+    batch_manifest: dict[str, object],
+    *,
+    batch_manifest_path: Path,
+    run_root: Path,
+) -> dict[str, object]:
+    existing_run_dirs = backfill.batch_run_dirs(batch_manifest, run_root)
+    completed_ids = backfill.completed_paper_ids_for_batch(batch_manifest, run_root)
+    remaining_ids = backfill.remaining_paper_ids_for_batch(batch_manifest, run_root)
+    payload: dict[str, object] = {
+        "batch_manifest_path": backfill.display_path(batch_manifest_path),
+        "batch_id": batch_manifest.get("batch_id"),
+        "run_id_base": batch_manifest.get("run_id_base"),
+        "existing_run_dirs": [backfill.display_path(path) for path in existing_run_dirs],
+        "completed_count": len(completed_ids),
+        "remaining_count": len(remaining_ids),
+        "remaining_paper_ids": remaining_ids,
+    }
+    if remaining_ids:
+        planned_run_id = backfill.next_run_id_for_batch(batch_manifest, run_root)
+        payload["planned_run_id"] = planned_run_id
+        payload["planned_command"] = backfill.build_hybrid_command(
+            batch_manifest=batch_manifest,
+            paper_ids=remaining_ids,
+            run_id=planned_run_id,
+            allow_paid_run=True,
+            estimate_only=False,
+        )
+    return payload
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run or resume one stage-06 hybrid backfill batch and build the batch QA pack."
@@ -31,29 +62,13 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     batch_manifest = backfill.load_batch_manifest(args.batch_manifest)
-    existing_run_dirs = backfill.batch_run_dirs(batch_manifest, args.run_root)
-    completed_ids = backfill.completed_paper_ids_for_batch(batch_manifest, args.run_root)
-    remaining_ids = backfill.remaining_paper_ids_for_batch(batch_manifest, args.run_root)
-
-    plan_payload = {
-        "batch_manifest_path": backfill.display_path(args.batch_manifest),
-        "batch_id": batch_manifest.get("batch_id"),
-        "run_id_base": batch_manifest.get("run_id_base"),
-        "existing_run_dirs": [backfill.display_path(path) for path in existing_run_dirs],
-        "completed_count": len(completed_ids),
-        "remaining_count": len(remaining_ids),
-        "remaining_paper_ids": remaining_ids,
-    }
+    plan_payload = _batch_resume_payload(
+        batch_manifest,
+        batch_manifest_path=args.batch_manifest,
+        run_root=args.run_root,
+    )
+    remaining_ids = list(plan_payload.get("remaining_paper_ids") or [])
     if args.dry_run:
-        if remaining_ids:
-            planned_run_id = backfill.next_run_id_for_batch(batch_manifest, args.run_root)
-            plan_payload["planned_command"] = backfill.build_hybrid_command(
-                batch_manifest=batch_manifest,
-                paper_ids=remaining_ids,
-                run_id=planned_run_id,
-                allow_paid_run=True,
-                estimate_only=False,
-            )
         print(json.dumps(plan_payload, ensure_ascii=False, indent=2))
         return
 
@@ -85,7 +100,46 @@ def main() -> None:
             allow_paid_run=True,
             estimate_only=False,
         )
-        backfill.run_hybrid_batch_command(command)
+        try:
+            backfill.run_hybrid_batch_command(command)
+        except BaseException as error:
+            qa_pack_paths = backfill.write_batch_qa_pack(
+                batch_manifest=batch_manifest,
+                run_root=args.run_root,
+                qa_output_dir=args.qa_output_dir,
+            )
+            manifest_path = backfill.write_campaign_outputs(
+                campaign_id=str(batch_manifest.get("campaign_id") or "").strip(),
+                campaign_root=args.campaign_root,
+                qa_output_dir=args.qa_output_dir,
+                run_root=args.run_root,
+            )
+            high_risk_rollup_path = backfill.write_campaign_high_risk_review_rollup(
+                campaign_id=str(batch_manifest.get("campaign_id") or "").strip(),
+                campaign_root=args.campaign_root,
+                run_root=args.run_root,
+            )
+            print(
+                json.dumps(
+                    {
+                        "batch_id": batch_manifest.get("batch_id"),
+                        "run_status": "interrupted_or_failed",
+                        "resume_summary": _batch_resume_payload(
+                            batch_manifest,
+                            batch_manifest_path=args.batch_manifest,
+                            run_root=args.run_root,
+                        ),
+                        "qa_pack_paths": qa_pack_paths,
+                        "campaign_manifest_path": backfill.display_path(manifest_path),
+                        "high_risk_review_rollup_path": backfill.display_path(high_risk_rollup_path),
+                        "failure_type": type(error).__name__,
+                        "failure_message": str(error),
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+            )
+            raise
 
     qa_pack_paths = backfill.write_batch_qa_pack(
         batch_manifest=batch_manifest,
@@ -98,12 +152,18 @@ def main() -> None:
         qa_output_dir=args.qa_output_dir,
         run_root=args.run_root,
     )
+    high_risk_rollup_path = backfill.write_campaign_high_risk_review_rollup(
+        campaign_id=str(batch_manifest.get("campaign_id") or "").strip(),
+        campaign_root=args.campaign_root,
+        run_root=args.run_root,
+    )
     print(
         json.dumps(
             {
                 "batch_id": batch_manifest.get("batch_id"),
                 "qa_pack_paths": qa_pack_paths,
                 "campaign_manifest_path": backfill.display_path(manifest_path),
+                "high_risk_review_rollup_path": backfill.display_path(high_risk_rollup_path),
             },
             ensure_ascii=False,
             indent=2,

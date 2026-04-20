@@ -508,6 +508,34 @@ class TestStage06Backfill(unittest.TestCase):
 
         self.assertEqual(next_run_id, "stage06_backfill_b001_n50_20260418_resume04")
 
+    def test_completed_paper_ids_for_batch_ignores_invalid_result_payloads(self) -> None:
+        batch_manifest = {
+            "run_id_base": "stage06_backfill_b001_n3_20260419",
+            "paper_ids": ["1", "2", "3"],
+        }
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            run_root = Path(tmp_dir_text)
+            run_dir = run_root / "stage06_backfill_b001_n3_20260419"
+            results_dir = run_dir / "results"
+            results_dir.mkdir(parents=True)
+            (results_dir / "1.json").write_text(
+                json.dumps({"paper_id": "1", "count_row": {"paper_id": "1"}}),
+                encoding="utf-8",
+            )
+            (results_dir / "2.json").write_text("{", encoding="utf-8")
+            (results_dir / "3.json").write_text(
+                json.dumps({"paper_id": "999", "count_row": {"paper_id": "999"}}),
+                encoding="utf-8",
+            )
+
+            completed_ids = backfill.completed_paper_ids_for_batch(batch_manifest, run_root)
+            remaining_ids = backfill.remaining_paper_ids_for_batch(batch_manifest, run_root)
+            count_rows = backfill.load_count_rows_from_run_dir(run_dir)
+
+        self.assertEqual(completed_ids, {"1"})
+        self.assertEqual(remaining_ids, ["2", "3"])
+        self.assertEqual([row["paper_id"] for row in count_rows], ["1"])
+
     def test_build_hybrid_command_uses_subset_run_defaults(self) -> None:
         batch_manifest = {"qa_output_dir": "qa/validation/stage06_llm"}
         command = backfill.build_hybrid_command(
@@ -702,11 +730,118 @@ class TestStage06Backfill(unittest.TestCase):
         self.assertIn("## 71 - Paper 71", inspection_text)
         self.assertIn("batch_artifacts_status: complete", inspection_text)
         self.assertIn("Quote for 71", inspection_text)
-        self.assertIn("Likely user review candidates: None", notes_text)
+        self.assertIn("Must review: None", notes_text)
+        self.assertIn("Should review: None", notes_text)
         self.assertIn("Resolved Manual Overrides", notes_text)
         self.assertIn("`214 -> 4`", notes_text)
         self.assertIn("Table 1 supports four SPS patients.", notes_text)
-        self.assertIn("None remaining after applying reviewed overrides.", notes_text)
+        self.assertIn("None remaining in the highest-risk tier after applying reviewed overrides.", notes_text)
+        self.assertIn("None remaining in the secondary-review tier.", notes_text)
+
+    def test_write_campaign_high_risk_review_rollup_filters_to_high_risk_rows(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            campaign_root = root / "campaigns"
+            run_root = root / "results"
+            manual_review_path = root / "source_sps_case_count_manual_review.csv"
+            campaign_path = campaign_root / "stage06_backfill_demo"
+            batch_manifest_path = campaign_path / "batches" / "b001.json"
+            run_dir = run_root / "stage06_backfill_b001_n2_20260419"
+
+            (run_dir / "results").mkdir(parents=True)
+            (run_dir / "candidate_packages").mkdir()
+            (run_dir / "count_decisions").mkdir()
+            with manual_review_path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=overrides.OVERRIDE_FIELDNAMES)
+                writer.writeheader()
+
+            backfill.write_json(
+                campaign_path / "manifest.json",
+                {
+                    "campaign_id": "stage06_backfill_demo",
+                    "campaign_root": "campaigns/stage06_backfill_demo",
+                    "coverage": {"summary_counts": {"remaining": 1}},
+                    "batches": [
+                        {
+                            "batch_id": "b001",
+                            "batch_manifest_path": backfill.display_path(batch_manifest_path),
+                        }
+                    ],
+                },
+            )
+            backfill.write_json(
+                batch_manifest_path,
+                {
+                    "campaign_id": "stage06_backfill_demo",
+                    "batch_id": "b001",
+                    "run_id_base": run_dir.name,
+                    "paper_ids": ["71", "214"],
+                },
+            )
+            for paper_id, verification_status, manual_review_required, count_reason in [
+                ("71", "llm_candidate_exact", "false", "verification_status=llm_candidate_exact"),
+                (
+                    "214",
+                    "llm_manual_review_required",
+                    "true",
+                    "verification_status=llm_manual_review_required | explicit_sps_subgroup_conflict=4 vs 1",
+                ),
+            ]:
+                (run_dir / "results" / f"{paper_id}.json").write_text(
+                    json.dumps(
+                        {
+                            "paper_id": paper_id,
+                            "count_row": {
+                                "paper_id": paper_id,
+                                "title": f"Paper {paper_id}",
+                                "likely_sps_case_count": "1" if paper_id == "214" else "3",
+                                "count_verification_status": verification_status,
+                                "count_manual_review_required": manual_review_required,
+                                "count_reason": count_reason,
+                                "count_candidate_json_path": backfill.display_path(
+                                    run_dir / "candidate_packages" / f"{paper_id}.json"
+                                ),
+                                "count_decision_json_path": backfill.display_path(
+                                    run_dir / "count_decisions" / f"{paper_id}.json"
+                                ),
+                            },
+                            "source_text_json_path": rf"data\extraction_json\text\{paper_id}.json",
+                            "preferred_text_json_path": rf"data\extraction_json\text\{paper_id}.json",
+                        }
+                    ),
+                    encoding="utf-8",
+                )
+            (run_dir / "candidate_packages" / "71.json").write_text(
+                json.dumps({"candidates": [{"proposed_count": 3, "count_basis": "single_case_report"}]}),
+                encoding="utf-8",
+            )
+            (run_dir / "candidate_packages" / "214.json").write_text(
+                json.dumps(
+                    {
+                        "candidates": [
+                            {"proposed_count": 1, "count_basis": "source_single_case_default"},
+                            {"proposed_count": 4, "count_basis": "table_count_signal"},
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (run_dir / "count_decisions" / "214.json").write_text(
+                json.dumps({"decision": {"decision_type": "candidate_exact", "count_confidence": "medium"}}),
+                encoding="utf-8",
+            )
+
+            rollup_path = backfill.write_campaign_high_risk_review_rollup(
+                campaign_id="stage06_backfill_demo",
+                campaign_root=campaign_root,
+                run_root=run_root,
+                manual_review_path=manual_review_path,
+            )
+            rollup_text = rollup_path.read_text(encoding="utf-8")
+
+        self.assertIn("## Must Review", rollup_text)
+        self.assertIn("`214` (b001)", rollup_text)
+        self.assertNotIn("`71` (b001)", rollup_text)
 
 
 if __name__ == "__main__":

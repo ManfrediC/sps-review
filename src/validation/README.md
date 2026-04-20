@@ -243,10 +243,12 @@ It:
   - runs the same stage-06 dependency preflight as the canonical hybrid entrypoint before a paid batch starts
   - writes raw batch-run CSVs under `qa/validation/stage06_llm/`
   - supports resume batches by appending `_resumeNN` run IDs for remaining papers
+  - preserves valid per-paper JSON artefacts when a paid run is interrupted or fails, marks the run status in `run_manifest.json`, and recomputes the resume summary from those preserved results
   - rebuilds the combined batch CSV, inspection Markdown pack, review-comments CSV,
-    and review-notes Markdown scaffold after each successful invocation
+    and risk-ranked review-notes Markdown scaffold after each invocation with any preserved results
   - keeps the batch inspection pack tied to the batch's own run artefacts instead of attaching decision/evidence JSON from unrelated runs
   - refreshes the campaign manifest/status snapshot after the batch completes
+  - writes a campaign-level `high_risk_review_rollup.md` that aggregates unresolved must-review and should-review cases across the campaign
 
 Estimate a batch without model calls:
 

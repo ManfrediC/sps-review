@@ -21,7 +21,7 @@ def _load_module(name: str, path: Path):
 
 
 class TestStage06ExtractSpsCaseCountsHybrid(unittest.TestCase):
-    def test_cleanup_failed_attempt_removes_new_outputs_only(self) -> None:
+    def test_cleanup_failed_attempt_preserves_failed_run_and_removes_new_output(self) -> None:
         mod = _load_module("stage06_count_hybrid_cleanup", CASE_COUNT_HYBRID_SCRIPT)
         with tempfile.TemporaryDirectory() as tmp_dir_text:
             root = Path(tmp_dir_text)
@@ -35,9 +35,15 @@ class TestStage06ExtractSpsCaseCountsHybrid(unittest.TestCase):
                 run_dir_created=True,
                 output_path=output_path,
                 output_preexisting=False,
+                total_paper_count=2,
+                error=RuntimeError("boom"),
             )
-            self.assertFalse(run_dir.exists())
+            manifest = mod._load_json_if_valid(run_dir / "run_manifest.json")
+            self.assertTrue(run_dir.exists())
             self.assertFalse(output_path.exists())
+            self.assertEqual(manifest["run_status"], "failed")
+            self.assertEqual(manifest["completed_result_count"], 0)
+            self.assertEqual(manifest["failure_type"], "RuntimeError")
 
     def test_cleanup_failed_attempt_preserves_preexisting_output(self) -> None:
         mod = _load_module("stage06_count_hybrid_cleanup_existing", CASE_COUNT_HYBRID_SCRIPT)
@@ -53,10 +59,41 @@ class TestStage06ExtractSpsCaseCountsHybrid(unittest.TestCase):
                 run_dir_created=True,
                 output_path=output_path,
                 output_preexisting=True,
+                total_paper_count=1,
+                error=KeyboardInterrupt(),
             )
 
-            self.assertFalse(run_dir.exists())
+            manifest = mod._load_json_if_valid(run_dir / "run_manifest.json")
+            self.assertTrue(run_dir.exists())
             self.assertTrue(output_path.exists())
+            self.assertEqual(manifest["run_status"], "interrupted")
+
+    def test_cleanup_failed_attempt_records_completed_partial_results(self) -> None:
+        mod = _load_module("stage06_count_hybrid_cleanup_partial", CASE_COUNT_HYBRID_SCRIPT)
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            root = Path(tmp_dir_text)
+            run_dir = root / "stage06_demo"
+            results_dir = run_dir / "results"
+            output_path = root / "qa_output.csv"
+            results_dir.mkdir(parents=True)
+            (results_dir / "71.json").write_text(
+                '{"paper_id": "71", "count_row": {"paper_id": "71"}}',
+                encoding="utf-8",
+            )
+
+            mod._cleanup_failed_attempt(
+                run_dir=run_dir,
+                run_dir_created=True,
+                output_path=output_path,
+                output_preexisting=False,
+                total_paper_count=3,
+                error=RuntimeError("network lost"),
+            )
+
+            manifest = mod._load_json_if_valid(run_dir / "run_manifest.json")
+            self.assertEqual(manifest["completed_result_count"], 1)
+            self.assertEqual(manifest["completed_paper_ids"], ["71"])
+            self.assertEqual(manifest["total_paper_count"], 3)
 
     def test_apply_review_override_if_present_uses_tracked_override(self) -> None:
         mod = _load_module("stage06_count_hybrid_override", CASE_COUNT_HYBRID_SCRIPT)
