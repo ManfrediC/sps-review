@@ -98,6 +98,26 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertTrue(package.llm_routing_recommended)
         self.assertEqual(package.preferred_candidate().proposed_count, 1)
 
+    def test_candidate_package_does_not_force_single_case_for_explicit_group_conference_cohort(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "7230",
+                "Title": "Clinical observations in SPS",
+                "Authors": "Example, E",
+                "Abstract": "Retrospective review of 14 patients with stiff person syndrome treated at our centre.",
+            },
+            text_record={"paper_id": "7230", "_path": "data/extraction_json/text/7230.json"},
+            preferred_record={"pages": [{"text": ""}]},
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "7230.json",
+            source_row={
+                "source_category": "conference_abstract",
+                "source_subtype": "single_case_conference_abstract",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 14)
+        self.assertNotEqual(package.preferred_candidate().count_basis, "source_single_case_override")
+        self.assertNotIn("single_case_default_candidate_added", package.candidate_generation_notes)
+
     def test_candidate_package_promotes_explicit_group_conference_cohort_over_single_case_default(self) -> None:
         package = build_case_count_candidate_package(
             reference_row={
@@ -126,6 +146,40 @@ class TestStage06CountCandidates(unittest.TestCase):
         self.assertEqual(package.preferred_candidate().proposed_count, 20)
         self.assertEqual(package.preferred_candidate().count_basis, "diagnosis_specific_direct_cohort_count")
         self.assertIn("explicit_sps_subgroup_promoted_over_ambiguous_primary", package.candidate_generation_notes)
+
+    def test_candidate_package_single_case_routing_downgrades_stray_table_row_count(self) -> None:
+        package = build_case_count_candidate_package(
+            reference_row={
+                "Covidence": "31110",
+                "Title": "Stiff person syndrome rehabilitation update",
+                "Authors": "Example, F",
+                "Abstract": "",
+            },
+            text_record={"paper_id": "31110", "_path": "data/extraction_json/text/31110.json"},
+            preferred_record={
+                "pages": [
+                    {
+                        "text": (
+                            "Table 1 Groups of patients No. of cases "
+                            "Stiff-Person syndrome 6 Connective tissue diseases 38"
+                        )
+                    }
+                ]
+            },
+            preferred_path=REPO_ROOT / "data" / "extraction_json" / "text" / "31110.json",
+            source_row={
+                "source_category": "single_case_report",
+                "source_subtype": "case_report",
+            },
+        )
+        self.assertEqual(package.preferred_candidate().proposed_count, 1)
+        self.assertIn(
+            package.preferred_candidate().count_basis,
+            {"source_single_case_default", "source_single_case_override"},
+        )
+        self.assertIn(6, {candidate.proposed_count for candidate in package.candidates})
+        self.assertIn("source_context_adjusted_primary_estimate", package.candidate_generation_notes)
+        self.assertIn("single_case_routing_blocks_small_table_or_suffix_subgroup", package.candidate_generation_notes)
 
     def test_candidate_package_promotes_explicit_lab_cohort_over_zero_fallback(self) -> None:
         package = build_case_count_candidate_package(

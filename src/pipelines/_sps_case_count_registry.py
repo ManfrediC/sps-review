@@ -305,6 +305,30 @@ PROMOTABLE_AMBIGUOUS_PRIMARY_BASES = frozenset(
         "no_reliable_count_signal",
     }
 )
+GROUP_COHORT_SOURCE_SUBTYPES = frozenset(
+    {
+        "group_conference_abstract",
+        "case_series_conference_abstract",
+        "multi_case_conference_abstract",
+    }
+)
+SINGLE_CASE_ROUTING_OVERRIDE_BASES = frozenset(
+    {
+        "abstract_count_signal",
+        "early_body_count_signal",
+        "patient_label_count",
+        "diagnosis_specific_table_row_count",
+        "diagnosis_specific_suffix_count",
+        "diagnosis_specific_fraction_suffix_count",
+    }
+)
+SINGLE_CASE_ROUTING_LEAK_PRONE_SUBGROUP_BASES = frozenset(
+    {
+        "diagnosis_specific_table_row_count",
+        "diagnosis_specific_suffix_count",
+        "diagnosis_specific_fraction_suffix_count",
+    }
+)
 EXPLICIT_PATIENT_SPS_ACTION_RE = re.compile(
     rf"\b(?:diagnosed\s+with|treated\s+for|had|has|with|affected\s+by|who\s+had)\b[\s\S]{{0,80}}?"
     rf"\b(?:{SPS_SUBGROUP_DIAGNOSIS_PATTERN})\b",
@@ -1351,6 +1375,41 @@ def extract_non_original_case_signals(*, abstract: str, raw_preferred_text: str)
     return signals[:4]
 
 
+def _has_explicit_group_cohort_override_signal(
+    *,
+    source_subtype: str,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+) -> bool:
+    if source_subtype in GROUP_COHORT_SOURCE_SUBTYPES:
+        return True
+
+    combined_context = " ".join(part for part in [title, abstract, early_body_text[:5000]] if part)
+    if has_explicit_multi_case_signal(combined_context):
+        return True
+
+    combined_text = "\n".join(part for part in [abstract, early_body_text] if part)
+    for extractor in (
+        _extract_methods_sps_cohort_signal,
+        _extract_direct_sps_cohort_signal,
+        _extract_parenthetical_sps_cohort_signal,
+        _extract_phenotype_sps_cohort_signal,
+        _extract_series_cohort_signal,
+        _extract_diagnosis_supported_subset_signal,
+        _extract_named_sps_cohort_signal,
+        _extract_table_title_sps_cohort_signal,
+        _extract_group_breakdown_subgroup_signal,
+        _extract_enumerated_sps_subgroup_signal,
+        _extract_total_then_sps_subgroup_signal,
+        _extract_mixed_diagnosis_subgroup_signal,
+    ):
+        signal = extractor(combined_text)
+        if signal is not None and signal.count > 1:
+            return True
+    return False
+
+
 def _has_confirmed_sps_context(text: str) -> bool:
     return bool(
         SUSPECTED_SPS_COHORT_SIGNAL_RE.search(text)
@@ -1559,6 +1618,13 @@ def prefer_single_case_default(
     abstract: str,
     early_body_text: str,
 ) -> bool:
+    if _has_explicit_group_cohort_override_signal(
+        source_subtype=source_subtype,
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+    ):
+        return False
     if source_category == "single_case_report":
         return True
     if source_subtype == "single_case_conference_abstract":
@@ -1625,7 +1691,7 @@ def adjust_estimate_for_source_context(
     if (
         single_case_default_ok
         and estimate.likely_case_count > 1
-        and estimate.count_basis in {"abstract_count_signal", "early_body_count_signal", "patient_label_count"}
+        and estimate.count_basis in SINGLE_CASE_ROUTING_OVERRIDE_BASES
     ):
         return CaseCountEstimate(
             likely_case_count=1,
@@ -1924,6 +1990,29 @@ def _build_subgroup_candidate(
     )
 
 
+def _single_case_routing_blocks_subgroup_signal(
+    *,
+    subgroup_signal: SubgroupSignal | None,
+    source_category: str,
+    source_subtype: str,
+    title: str,
+    abstract: str,
+    early_body_text: str,
+) -> bool:
+    if subgroup_signal is None:
+        return False
+    if source_category != "single_case_report" and source_subtype != "single_case_conference_abstract":
+        return False
+    if subgroup_signal.count_basis not in SINGLE_CASE_ROUTING_LEAK_PRONE_SUBGROUP_BASES:
+        return False
+    return not _has_explicit_group_cohort_override_signal(
+        source_subtype=source_subtype,
+        title=title,
+        abstract=abstract,
+        early_body_text=early_body_text,
+    )
+
+
 def _promote_explicit_subgroup_over_ambiguous_primary(
     *,
     subgroup_signal: SubgroupSignal | None,
@@ -2217,15 +2306,39 @@ def build_case_count_candidate_package(
 
     if not suppress_nonzero_alternatives and subgroup_signal is not None:
         notes.append("explicit_sps_subgroup_candidate_added")
-        candidates.append(
-            _build_subgroup_candidate(
-                subgroup_signal,
-                title=title,
-                abstract=abstract,
-                early_body_text=early_body_text,
-                source_category=source_category,
-            )
+        subgroup_candidate = _build_subgroup_candidate(
+            subgroup_signal,
+            title=title,
+            abstract=abstract,
+            early_body_text=early_body_text,
+            source_category=source_category,
         )
+        if _single_case_routing_blocks_subgroup_signal(
+            subgroup_signal=subgroup_signal,
+            source_category=source_category,
+            source_subtype=source_subtype,
+            title=title,
+            abstract=abstract,
+            early_body_text=early_body_text,
+        ):
+            notes.append("single_case_routing_blocks_small_table_or_suffix_subgroup")
+            subgroup_candidate = CountCandidate(
+                candidate_id=subgroup_candidate.candidate_id,
+                proposed_count=subgroup_candidate.proposed_count,
+                candidate_kind=subgroup_candidate.candidate_kind,
+                count_basis=subgroup_candidate.count_basis,
+                count_confidence=subgroup_candidate.count_confidence,
+                manual_review_required=True,
+                score=max(subgroup_candidate.score - 45, 1),
+                rationale=(
+                    f"{subgroup_candidate.rationale} | "
+                    "blocked_by=single_case_routing_without_group_cohort"
+                ),
+                evidence_text=subgroup_candidate.evidence_text,
+                evidence_section=subgroup_candidate.evidence_section,
+                blockers=[*subgroup_candidate.blockers, "single_case_routing_conflict"],
+            )
+        candidates.append(subgroup_candidate)
 
     if (
         source_category not in {"review_article", "non_clinical_basic_science"}

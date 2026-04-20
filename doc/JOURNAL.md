@@ -1812,3 +1812,25 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 
 - `556`: add broader subgroup-candidate generation so explicit cohort counts like `Group 1 consisted of seven patients with SPS` enter the candidate list directly.
 - `710`: strengthen the non-extractable/lab-heavy filter so mixed assay-control papers do not promote incidental SPS mentions into final case counts.
+
+## 2026-04-21
+
+### Stage-06 ledger completion and single-case guardrails
+
+- Published the reviewed `1217 -> 79` adjudication into the derived stage-06 gold JSON store:
+  - `qa/validation/source_categorisation/gold_standard/stage06_count_gold/papers/1217.json`
+  - `qa/validation/source_categorisation/gold_standard/stage06_count_gold/manifest.json`
+- Tightened the stage-06 candidate package logic so misrouted single-case papers no longer override explicit group-cohort evidence, while stray small table-row or suffix subgroup counts remain visible as alternatives instead of becoming the preferred answer on single-case routes without corroborating cohort evidence.
+- Added focused regressions covering:
+  - explicit group-conference cohorts on single-case routes
+  - single-case routes polluted by table-row leakage
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_count_candidates.py -k "explicit_group_conference_cohort or stray_table_row_count or promotes_explicit_group_conference_cohort_over_single_case_default or promotes_explicit_lab_cohort_over_zero_fallback" -q`
+  - `.venv\Scripts\python.exe -m pytest tests/test_sps_case_counting.py -k "stage_defaults_single_case_when_no_count_signal_exists or stage_does_not_force_single_case_when_multi_case_is_explicit or ignores_title_only_count_when_title_is_not_sps_specific or extracts_table_row_sps_subgroup_count" -q`
+  - `.venv\Scripts\ruff.exe check src/pipelines/_sps_case_count_registry.py tests/test_stage06_count_candidates.py`
+- Result:
+  - `8` focused pytest checks passed
+  - `ruff check` passed
