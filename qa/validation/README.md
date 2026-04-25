@@ -64,3 +64,11 @@ Focused audit pack for proceedings-like sources that stage 04 did not currently 
   - a smaller reviewed mixed batch under `focused_batch_mixed/`
   - per-paper snippet TXT files for the selected candidates
 - Use the focused batch as the current heuristic-check pack while the audit logic is still being calibrated.
+
+## `stage07_xml/`
+
+Human-verification material for Stage 07 XML patient/group assignment.
+
+- Static HTML review rounds and editable response CSVs live under `stage07_xml/gold_standard/<round_id>/`.
+- The cumulative reviewed ledger is `stage07_xml/gold_standard/07_xml_assignment_gold_standard.csv`.
+- These files are QA evidence only; canonical Stage 07 XML outputs remain under `data/extraction_json/stage07_xml/`.

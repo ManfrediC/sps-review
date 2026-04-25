@@ -260,6 +260,29 @@ Run a paid batch:
 python src/validation/run_stage06_backfill_batch.py --batch-manifest qa/validation/stage06_llm/backfill_campaign/stage06_backfill_20260418/batches/b001.json --allow-paid-run
 ```
 
+### `build_stage07_xml_gold_pack.py`
+
+Builds the static human-verification pack for Stage 07 XML patient/group assignment.
+
+It:
+- reads canonical Stage 07 XML outputs and `data/references/stage07_xml_registry.csv`
+- writes non-canonical HTML review pages under `qa/validation/stage07_xml/gold_standard/<round_id>/`
+- colour-codes patients/groups with visible labels and target chips
+- seeds `review_queue.csv` and editable `review_responses.csv`
+- refreshes the cumulative reviewed ledger `07_xml_assignment_gold_standard.csv`
+
+Build the next review round:
+
+```bash
+python src/validation/build_stage07_xml_gold_pack.py
+```
+
+Refresh the cumulative ledger after editing response rows:
+
+```bash
+python src/validation/build_stage07_xml_gold_pack.py --refresh-gold-only
+```
+
 ### `benchmark_stage06_hybrid.py`
 
 Benchmarks one or more stage-06 workflow CSV outputs against the reviewed stage-06 gold JSON corpus.
