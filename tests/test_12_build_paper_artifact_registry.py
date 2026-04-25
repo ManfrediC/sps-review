@@ -166,6 +166,79 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertEqual(written_row["text_cleanup_stage2_profile"], "combined_basic")
         self.assertEqual(written_row["source_count_basis"], "abstract_count_signal")
 
+    def test_build_row_indexes_stage07_xml_outputs(self) -> None:
+        module = self.module
+        paper_path = self.tmp_path / "stage07_xml" / "papers" / "9001.json"
+        annotated_path = self.tmp_path / "stage07_xml" / "annotated_text" / "9001.annotated.txt"
+        segments_path = self.tmp_path / "stage07_xml" / "segments" / "9001.segments.json"
+        target_views_dir = self.tmp_path / "stage07_xml" / "target_views" / "9001"
+        validation_path = self.tmp_path / "stage07_xml" / "validation" / "9001.validation.json"
+        for path in (paper_path, annotated_path, segments_path, validation_path):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("{}", encoding="utf-8")
+        target_views_dir.mkdir(parents=True)
+
+        row = module.build_row(
+            paper_id="9001",
+            reference_row={"Covidence": "9001", "Title": "Example", "Authors": "Author", "Published Year": "2026"},
+            manifest_row={},
+            pdf_paths=[],
+            text_record={},
+            text_path=None,
+            text_preclean_path=None,
+            text_preclean_stage2_path=None,
+            text_proceedings_ready_path=None,
+            text_proceedings_ready_row={},
+            text_trim_record={},
+            text_trim_path=None,
+            text_trim_registry_row={},
+            source_categorisation_row={},
+            source_case_count_row={},
+            source_manual_review_row={},
+            proceedings_qc_row={},
+            case_series_split_row={},
+            case_series_split_path=None,
+            langextract_record={},
+            langextract_path=None,
+            summary_record={},
+            summary_path=None,
+            quality_raw_record={},
+            quality_raw_path=None,
+            quality_record={},
+            quality_record_path=None,
+            stage07_xml_row={
+                "validation_status": "passed",
+                "roundtrip_status": "passed",
+                "n_target_views": "2",
+                "n_ready_target_views": "2",
+                "ready_for_langextract": "true",
+                "manual_review_required": "false",
+                "stage06_diverged": "false",
+                "manifest_run_id": "test_manifest",
+            },
+            stage07_xml_paper_path=paper_path,
+            stage07_xml_annotated_text_path=annotated_path,
+            stage07_xml_segments_path=segments_path,
+            stage07_xml_target_views_dir=target_views_dir,
+            stage07_xml_validation_path=validation_path,
+        )
+
+        self.assertEqual(row["stage07_xml_present"], "true")
+        self.assertEqual(row["stage07_xml_registry_present"], "true")
+        self.assertEqual(row["stage07_xml_validation_status"], "passed")
+        self.assertEqual(row["stage07_xml_n_ready_target_views"], "2")
+        self.assertEqual(row["stage07_xml_ready_for_langextract"], "true")
+        self.assertIn("stage07_xml", row["artifact_types_present"])
+
+        module.write_registry([row], self.output_path)
+        with self.output_path.open(encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            written = list(reader)
+
+        self.assertEqual(len(written), 1)
+        self.assertIn("stage07_xml_present", reader.fieldnames or [])
+        self.assertEqual(written[0]["stage07_xml_manifest_run_id"], "test_manifest")
+
 
 if __name__ == "__main__":
     unittest.main()

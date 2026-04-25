@@ -22,6 +22,12 @@ TEXT_PRECLEAN_STAGE2_DIR = REPO_ROOT / "data" / "extraction_json" / "text_precle
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 TEXT_PROCEEDINGS_READY_DIR = PROCEEDINGS_READY_DIR
 CASE_SERIES_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_units"
+STAGE07_XML_ROOT = REPO_ROOT / "data" / "extraction_json" / "stage07_xml"
+STAGE07_XML_PAPERS_DIR = STAGE07_XML_ROOT / "papers"
+STAGE07_XML_ANNOTATED_TEXT_DIR = STAGE07_XML_ROOT / "annotated_text"
+STAGE07_XML_SEGMENTS_DIR = STAGE07_XML_ROOT / "segments"
+STAGE07_XML_TARGET_VIEWS_DIR = STAGE07_XML_ROOT / "target_views"
+STAGE07_XML_VALIDATION_DIR = STAGE07_XML_ROOT / "validation"
 LANGEXTRACT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 QUALITY_RAW_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
@@ -34,6 +40,7 @@ SOURCE_CASE_COUNT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_co
 SOURCE_MANUAL_REVIEW_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_manual_review.csv"
 PROCEEDINGS_QC_PATH = REPO_ROOT / "data" / "references" / "proceedings_text_qc_registry.csv"
 CASE_SERIES_SPLIT_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "case_series_split_registry.csv"
+STAGE07_XML_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "stage07_xml_registry.csv"
 OUTPUT_PATH = REPO_ROOT / "data" / "references" / "paper_artifact_registry.csv"
 
 
@@ -153,6 +160,23 @@ def load_json_paths(path: Path) -> dict[str, Path]:
     return {file_path.stem: file_path for file_path in sorted(path.glob("*.json"))}
 
 
+# Load Stage 07 XML annotated text paths.
+def load_stage07_xml_annotated_paths(path: Path) -> dict[str, Path]:
+    if not path.exists():
+        return {}
+    return {
+        file_path.name.removesuffix(".annotated.txt"): file_path
+        for file_path in sorted(path.glob("*.annotated.txt"))
+    }
+
+
+# Load Stage 07 XML target-view directories.
+def load_stage07_xml_target_view_dirs(path: Path) -> dict[str, Path]:
+    if not path.exists():
+        return {}
+    return {child.name: child for child in sorted(path.iterdir()) if child.is_dir()}
+
+
 # Load JSON record.
 def load_json_record(path: Path | None) -> dict[str, Any]:
     if path is None or not path.exists():
@@ -175,6 +199,7 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "source_sps_case_count": row["source_case_count_present"] == "true",
         "proceedings_qc": row["proceedings_qc_present"] == "true",
         "case_series_split": row["case_series_split_present"] == "true",
+        "stage07_xml": row["stage07_xml_present"] == "true",
         "langextract": row["langextract_raw_present"] == "true",
         "summary": row["summary_json_present"] == "true",
         "quality_raw": row["quality_raw_present"] == "true",
@@ -223,7 +248,14 @@ def build_row(
     quality_raw_path: Path | None,
     quality_record: dict[str, Any],
     quality_record_path: Path | None,
+    stage07_xml_row: dict[str, str] | None = None,
+    stage07_xml_paper_path: Path | None = None,
+    stage07_xml_annotated_text_path: Path | None = None,
+    stage07_xml_segments_path: Path | None = None,
+    stage07_xml_target_views_dir: Path | None = None,
+    stage07_xml_validation_path: Path | None = None,
 ) -> dict[str, str]:
+    stage07_xml_row = stage07_xml_row or {}
     export_title = (reference_row.get("Title") or "").strip()
     export_authors = (reference_row.get("Authors") or "").strip()
     export_year = (reference_row.get("Published Year") or "").strip()
@@ -390,6 +422,27 @@ def build_row(
         "case_series_split_method": str(case_series_split_row.get("split_method") or ""),
         "case_series_split_case_count": str(case_series_split_row.get("case_count") or ""),
         "case_series_split_text_json_path": relative_to_repo(case_series_split_path) if case_series_split_path else "",
+        "stage07_xml_present": bool_text(bool(stage07_xml_paper_path)),
+        "stage07_xml_registry_present": bool_text(bool(stage07_xml_row)),
+        "stage07_xml_paper_json_path": relative_to_repo(stage07_xml_paper_path) if stage07_xml_paper_path else "",
+        "stage07_xml_annotated_text_path": (
+            relative_to_repo(stage07_xml_annotated_text_path) if stage07_xml_annotated_text_path else ""
+        ),
+        "stage07_xml_segments_json_path": relative_to_repo(stage07_xml_segments_path) if stage07_xml_segments_path else "",
+        "stage07_xml_target_views_dir": (
+            relative_to_repo(stage07_xml_target_views_dir) if stage07_xml_target_views_dir else ""
+        ),
+        "stage07_xml_validation_json_path": (
+            relative_to_repo(stage07_xml_validation_path) if stage07_xml_validation_path else ""
+        ),
+        "stage07_xml_validation_status": str(stage07_xml_row.get("validation_status") or ""),
+        "stage07_xml_roundtrip_status": str(stage07_xml_row.get("roundtrip_status") or ""),
+        "stage07_xml_n_target_views": str(stage07_xml_row.get("n_target_views") or ""),
+        "stage07_xml_n_ready_target_views": str(stage07_xml_row.get("n_ready_target_views") or ""),
+        "stage07_xml_ready_for_langextract": str(stage07_xml_row.get("ready_for_langextract") or ""),
+        "stage07_xml_manual_review_required": str(stage07_xml_row.get("manual_review_required") or ""),
+        "stage07_xml_stage06_diverged": str(stage07_xml_row.get("stage06_diverged") or ""),
+        "stage07_xml_manifest_run_id": str(stage07_xml_row.get("manifest_run_id") or ""),
         "langextract_raw_present": bool_text(bool(langextract_path)),
         "langextract_raw_path": relative_to_repo(langextract_path) if langextract_path else "",
         "langextract_model_id": str(langextract_record.get("model_id") or ""),
@@ -436,6 +489,12 @@ def build_registry_rows() -> list[dict[str, str]]:
     source_manual_review_rows = load_csv_rows_by_id(SOURCE_MANUAL_REVIEW_PATH, "paper_id")
     proceedings_qc_rows = load_csv_rows_by_id(PROCEEDINGS_QC_PATH, "paper_id")
     case_series_split_rows = load_csv_rows_by_id(CASE_SERIES_SPLIT_REGISTRY_PATH, "paper_id")
+    stage07_xml_rows = load_csv_rows_by_id(STAGE07_XML_REGISTRY_PATH, "paper_id")
+    stage07_xml_paper_paths = load_json_paths(STAGE07_XML_PAPERS_DIR)
+    stage07_xml_annotated_text_paths = load_stage07_xml_annotated_paths(STAGE07_XML_ANNOTATED_TEXT_DIR)
+    stage07_xml_segments_paths = load_json_paths(STAGE07_XML_SEGMENTS_DIR)
+    stage07_xml_target_view_dirs = load_stage07_xml_target_view_dirs(STAGE07_XML_TARGET_VIEWS_DIR)
+    stage07_xml_validation_paths = load_json_paths(STAGE07_XML_VALIDATION_DIR)
     langextract_paths = load_json_paths(LANGEXTRACT_DIR)
     summary_paths = load_json_paths(SUMMARY_DIR)
     quality_raw_paths = load_json_paths(QUALITY_RAW_DIR)
@@ -458,6 +517,12 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(source_manual_review_rows)
         | set(proceedings_qc_rows)
         | set(case_series_split_rows)
+        | set(stage07_xml_rows)
+        | set(stage07_xml_paper_paths)
+        | set(stage07_xml_annotated_text_paths)
+        | set(stage07_xml_segments_paths)
+        | set(stage07_xml_target_view_dirs)
+        | set(stage07_xml_validation_paths)
         | set(langextract_paths)
         | set(summary_paths)
         | set(quality_raw_paths)
@@ -471,6 +536,7 @@ def build_registry_rows() -> list[dict[str, str]]:
         text_preclean_stage2_path = text_preclean_stage2_paths.get(paper_id)
         text_trim_path = text_trimmed_paths.get(paper_id)
         text_proceedings_ready_path = text_proceedings_ready_paths.get(paper_id)
+        stage07_xml_paper_path = stage07_xml_paper_paths.get(paper_id)
         langextract_path = langextract_paths.get(paper_id)
         summary_path = summary_paths.get(paper_id)
         quality_raw_path = quality_raw_paths.get(paper_id)
@@ -504,6 +570,12 @@ def build_registry_rows() -> list[dict[str, str]]:
                 quality_raw_path=quality_raw_path,
                 quality_record=load_json_record(quality_record_path),
                 quality_record_path=quality_record_path,
+                stage07_xml_row=stage07_xml_rows.get(paper_id, {}),
+                stage07_xml_paper_path=stage07_xml_paper_path,
+                stage07_xml_annotated_text_path=stage07_xml_annotated_text_paths.get(paper_id),
+                stage07_xml_segments_path=stage07_xml_segments_paths.get(paper_id),
+                stage07_xml_target_views_dir=stage07_xml_target_view_dirs.get(paper_id),
+                stage07_xml_validation_path=stage07_xml_validation_paths.get(paper_id),
             )
         )
     return rows
@@ -648,6 +720,21 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "case_series_split_method",
         "case_series_split_case_count",
         "case_series_split_text_json_path",
+        "stage07_xml_present",
+        "stage07_xml_registry_present",
+        "stage07_xml_paper_json_path",
+        "stage07_xml_annotated_text_path",
+        "stage07_xml_segments_json_path",
+        "stage07_xml_target_views_dir",
+        "stage07_xml_validation_json_path",
+        "stage07_xml_validation_status",
+        "stage07_xml_roundtrip_status",
+        "stage07_xml_n_target_views",
+        "stage07_xml_n_ready_target_views",
+        "stage07_xml_ready_for_langextract",
+        "stage07_xml_manual_review_required",
+        "stage07_xml_stage06_diverged",
+        "stage07_xml_manifest_run_id",
         "langextract_raw_present",
         "langextract_raw_path",
         "langextract_model_id",
