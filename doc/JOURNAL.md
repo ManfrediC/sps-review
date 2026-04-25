@@ -1,3 +1,58 @@
+## 2026-04-25
+
+### Stage-07 XML/JSON LangExtract preparation
+
+- Added the new Stage-07 XML pipeline under `src/pipelines/stage07_XML/` without modifying the existing `src/pipelines/07_split_case_series.py`.
+- The new pipeline prepares deterministic source blocks, asks GPT-style annotators for span metadata only, validates offsets against unchanged source text, and inserts XML-style `<seg>` tags in Python.
+- Outputs now include:
+  - per-paper JSON under `data/extraction_json/stage07_xml/papers/`
+  - annotated source text under `data/extraction_json/stage07_xml/annotated_text/`
+  - segment metadata under `data/extraction_json/stage07_xml/segments/`
+  - per-patient/group LangExtract-ready target views under `data/extraction_json/stage07_xml/target_views/`
+  - validation reports and manifests under the Stage-07 XML output root
+- Added `data/references/stage07_xml_registry.csv` indexing support and extended the paper artefact registry so Stage-07 XML readiness, paths, and validation status are discoverable.
+- Added hybrid routing safeguards:
+  - single-patient sources use deterministic pass-through
+  - live GPT-5.5 span annotation is only used for split/group routes when `--allow-paid-run` is supplied
+  - mock annotation payloads remain supported for tests and dry validation
+- Documented the Stage-07 XML/JSON contract in `doc/plans/stage07_XML_JSON_plan.md`.
+
+### Stage-07 XML human verification pack
+
+- Added a static human-verification workflow:
+  - `src/validation/_stage07_xml_review.py`
+  - `src/validation/build_stage07_xml_gold_pack.py`
+- The workflow writes non-canonical QA material under `qa/validation/stage07_xml/gold_standard/<round_id>/`.
+- Review packs include:
+  - `index.html`
+  - one colour-coded HTML page per paper
+  - `review_queue.csv`
+  - editable `review_responses.csv`
+  - cumulative `07_xml_assignment_gold_standard.csv`
+- The visual review design gives every patient/group a target chip and colour, uses neutral shared styling for multi-target segments, and keeps labels visible so high-count papers remain reviewable.
+- The gold-standard ledger records reviewed segment assignments but does not rewrite canonical Stage-07 XML outputs.
+
+### Commits
+
+- `4fb0fb1` `Milestone 1: add Stage 07 XML span pipeline`
+- `c061f2f` `Milestone 2: index Stage 07 XML artefacts`
+- `90265b9` `Milestone 3: document Stage 07 XML contract`
+- `ab44f00` `Milestone 4: enforce hybrid Stage 07 XML routing`
+- `82948db` `Milestone 5: add Stage 07 XML verification pack`
+
+### Verification
+
+- Ran:
+  - `py -3.14 -m pytest tests/test_stage07_xml.py tests/test_12_build_paper_artifact_registry.py tests/test_07_split_case_series.py -q`
+  - `py -3.14 src\pipelines\stage07_XML\run_stage07_xml.py --help`
+  - `py -3.14 -m pytest tests\test_stage07_xml_review.py tests\test_stage07_xml.py tests\test_stage07_review_workflow.py tests\test_12_build_paper_artifact_registry.py -q`
+  - `py -3.14 -m ruff check src\validation\_stage07_xml_review.py src\validation\build_stage07_xml_gold_pack.py tests\test_stage07_xml_review.py`
+- Results:
+  - Stage-07 XML core and artefact-registry tests passed.
+  - Stage-07 XML review-pack tests passed.
+  - Ruff passed on the new review-pack code.
+- No paid model/API calls were run during this implementation.
+
 ## 2026-04-15
 
 ### Stage-06 hybrid production cutover
