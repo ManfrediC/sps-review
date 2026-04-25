@@ -1,159 +1,3 @@
-## 2026-04-25
-
-### Stage-07 XML/JSON LangExtract preparation
-
-- Added the new Stage-07 XML pipeline under `src/pipelines/stage07_XML/` without modifying the existing `src/pipelines/07_split_case_series.py`.
-- The new pipeline prepares deterministic source blocks, asks GPT-style annotators for span metadata only, validates offsets against unchanged source text, and inserts XML-style `<seg>` tags in Python.
-- Outputs now include:
-  - per-paper JSON under `data/extraction_json/stage07_xml/papers/`
-  - annotated source text under `data/extraction_json/stage07_xml/annotated_text/`
-  - segment metadata under `data/extraction_json/stage07_xml/segments/`
-  - per-patient/group LangExtract-ready target views under `data/extraction_json/stage07_xml/target_views/`
-  - validation reports and manifests under the Stage-07 XML output root
-- Added `data/references/stage07_xml_registry.csv` indexing support and extended the paper artefact registry so Stage-07 XML readiness, paths, and validation status are discoverable.
-- Added hybrid routing safeguards:
-  - single-patient sources use deterministic pass-through
-  - live GPT-5.5 span annotation is only used for split/group routes when `--allow-paid-run` is supplied
-  - mock annotation payloads remain supported for tests and dry validation
-- Documented the Stage-07 XML/JSON contract in `doc/plans/stage07_XML_JSON_plan.md`.
-
-### Stage-07 XML human verification pack
-
-- Added a static human-verification workflow:
-  - `src/validation/_stage07_xml_review.py`
-  - `src/validation/build_stage07_xml_gold_pack.py`
-- The workflow writes non-canonical QA material under `qa/validation/stage07_xml/gold_standard/<round_id>/`.
-- Review packs include:
-  - `index.html`
-  - one colour-coded HTML page per paper
-  - `review_queue.csv`
-  - editable `review_responses.csv`
-  - cumulative `07_xml_assignment_gold_standard.csv`
-- The visual review design gives every patient/group a target chip and colour, uses neutral shared styling for multi-target segments, and keeps labels visible so high-count papers remain reviewable.
-- The gold-standard ledger records reviewed segment assignments but does not rewrite canonical Stage-07 XML outputs.
-
-### Commits
-
-- `4fb0fb1` `Milestone 1: add Stage 07 XML span pipeline`
-- `c061f2f` `Milestone 2: index Stage 07 XML artefacts`
-- `90265b9` `Milestone 3: document Stage 07 XML contract`
-- `ab44f00` `Milestone 4: enforce hybrid Stage 07 XML routing`
-- `82948db` `Milestone 5: add Stage 07 XML verification pack`
-
-### Verification
-
-- Ran:
-  - `py -3.14 -m pytest tests/test_stage07_xml.py tests/test_12_build_paper_artifact_registry.py tests/test_07_split_case_series.py -q`
-  - `py -3.14 src\pipelines\stage07_XML\run_stage07_xml.py --help`
-  - `py -3.14 -m pytest tests\test_stage07_xml_review.py tests\test_stage07_xml.py tests\test_stage07_review_workflow.py tests\test_12_build_paper_artifact_registry.py -q`
-  - `py -3.14 -m ruff check src\validation\_stage07_xml_review.py src\validation\build_stage07_xml_gold_pack.py tests\test_stage07_xml_review.py`
-- Results:
-  - Stage-07 XML core and artefact-registry tests passed.
-  - Stage-07 XML review-pack tests passed.
-  - Ruff passed on the new review-pack code.
-- No paid model/API calls were run during this implementation.
-
-## 2026-04-15
-
-### Stage-06 hybrid production cutover
-
-- Added the new canonical hybrid stage-06 runner:
-  - `src/pipelines/06_extract_sps_case_counts_hybrid.py`
-- Added the shared hybrid controller:
-  - `src/pipelines/stage06_counting/hybrid.py`
-- The hybrid flow now combines:
-  - deterministic candidate generation and hard safety rails from the legacy stage-06 path
-  - local Ollama-served `gemma4:e4b` advice on every selected paper
-  - GPT-5.4 adjudication with a contradiction-focused challenge pass when deterministic or conservative evidence conflicts
-  - a tracked reviewed override ledger at `data/references/source_sps_case_count_manual_review.csv`
-- Added the shared override support layer:
-  - `src/pipelines/stage06_counting/overrides.py`
-- Updated the stage-06 review workflow so saved reviewer responses now also sync into the canonical override ledger:
-  - `src/validation/_stage06_review.py`
-  - `src/validation/review_stage06_count_app.py`
-- Added the hybrid benchmark utility and regression-pack support:
-  - `src/validation/benchmark_stage06_hybrid.py`
-  - `qa/validation/stage06_llm/stage06_historical_regression_papers.json`
-- Preserved the earlier stage-06 scripts as non-canonical comparators:
-  - `src/pipelines/06_extract_sps_case_counts.py`
-  - `src/pipelines/06_extract_sps_case_counts_LLM.py`
-
-### Verification
-
-- Ran:
-  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_overrides.py tests/test_stage06_review_workflow.py tests/test_stage06_hybrid_counting.py tests/test_06_extract_sps_case_counts_hybrid.py tests/test_stage06_hybrid_benchmark.py -q`
-  - `.venv\Scripts\python.exe -m py_compile src/pipelines/stage06_counting/hybrid.py src/pipelines/06_extract_sps_case_counts_hybrid.py src/validation/benchmark_stage06_hybrid.py`
-  - `.venv\Scripts\python.exe src/pipelines/06_extract_sps_case_counts_hybrid.py --estimate-only --limit 3`
-
-### Stage-06 local Gemma calibration runner
-
-- Added a new QA-only alternative stage-06 runner:
-  - `src/pipelines/06_extract_sps_case_counts_LLM.py`
-- The new runner keeps the existing deterministic stage-06 candidate packaging and safety rails, then adds:
-  - a local Ollama first pass using `gemma4:e4b`
-  - a GPT-5.4 adjudication pass on every selected row during calibration
-- The local model now receives a derived evidence pack rather than the raw OCR JSON so the prompt stays compact and inspectable.
-- The GPT adjudicator can now optionally receive advisory notes without changing the existing canonical stage-06 flow:
-  - `src/pipelines/stage06_counting/prepare.py`
-  - `src/pipelines/stage06_counting/classify.py`
-  - `src/pipelines/stage06_counting/controller.py`
-
-### Local-model support modules
-
-- Added the local stage-06 support layer under `src/pipelines/stage06_counting/`:
-  - `local_models.py`
-  - `local_prepare.py`
-  - `local_ollama.py`
-  - `local_validate.py`
-- The local layer:
-  - formats a compact evidence pack for Gemma
-  - calls Ollama with `think=false`
-  - tolerantly extracts JSON from plain or fenced responses
-  - validates the local count against key deterministic guardrails
-- Local parse failures and guardrail conflicts are recorded as artefacts rather than silently discarded.
-
-### QA outputs and docs
-
-- Added the stage-06 calibration output guide:
-  - `qa/validation/stage06_llm/README.md`
-- Updated `src/pipelines/README.md` with a dedicated section for `06_extract_sps_case_counts_LLM.py`.
-- The new runner writes:
-  - per-run artefacts under `results/stage06_count_llm_runs/{run_id}/`
-  - non-canonical comparison CSVs under `qa/validation/stage06_llm/`
-
-### Verification
-
-- Ran:
-  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_local_counting.py tests/test_stage06_llm_counting.py tests/test_stage06_count_candidates.py tests/test_06_extract_sps_case_counts_LLM.py -q`
-- Result:
-  - `38 passed`
-
-## 2026-04-14
-
-### Stage-05 officialisation around the LLM workflow
-
-- Retired the old deterministic stage-05 entrypoints to `legacy/stage_05_deterministic/`:
-  - `src/pipelines/05_trim_proceedings_text.py`
-  - `src/pipelines/05b_validate_proceedings_text.py`
-  - the paired deterministic-only validation helpers and tests
-- Kept the `_LLM` filenames as the canonical live stage-05 CLI surface:
-  - `src/pipelines/05_trim_proceedings_text_LLM.py`
-  - `src/pipelines/05b_validate_proceedings_text_LLM.py`
-  - `src/pipelines/05c_publish_proceedings_ready.py`
-- Repointed the active stage-05 validation tooling so batch preparation, manual overrides, and overnight orchestration now target the LLM candidate, validation, and publication layers rather than the archived deterministic scripts.
-- Updated the live Streamlit review app so it can inspect either the canonical LLM registries or batch-local stage-05 registries.
-- Updated the active repo docs so the published stage-05 contract is now:
-  - candidate layer: `data/extraction_json/text_trimmed_llm_candidates/` plus `data/references/text_trim_llm_candidate_registry.csv`
-  - final LLM layer: `data/extraction_json/text_trimmed_llm/` plus `data/references/text_trim_llm_registry.csv`
-  - canonical published layer: `data/extraction_json/text_proceedings_ready/` plus `data/references/text_proceedings_ready_registry.csv`
-
-### Verification
-
-- Ran:
-  - `.venv\Scripts\python.exe -m pytest tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py tests/test_manage_trimming_batches.py tests/test_apply_trimming_manual_overrides.py -q`
-- Result:
-  - `24 passed`
-
 ## 21.02.2026
 
 Initialized the reproducible SPS-review repository structure and added source reference exports for downstream extraction and verification.
@@ -1867,3 +1711,159 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
 
 - `556`: add broader subgroup-candidate generation so explicit cohort counts like `Group 1 consisted of seven patients with SPS` enter the candidate list directly.
 - `710`: strengthen the non-extractable/lab-heavy filter so mixed assay-control papers do not promote incidental SPS mentions into final case counts.
+
+## 2026-04-14
+
+### Stage-05 officialisation around the LLM workflow
+
+- Retired the old deterministic stage-05 entrypoints to `legacy/stage_05_deterministic/`:
+  - `src/pipelines/05_trim_proceedings_text.py`
+  - `src/pipelines/05b_validate_proceedings_text.py`
+  - the paired deterministic-only validation helpers and tests
+- Kept the `_LLM` filenames as the canonical live stage-05 CLI surface:
+  - `src/pipelines/05_trim_proceedings_text_LLM.py`
+  - `src/pipelines/05b_validate_proceedings_text_LLM.py`
+  - `src/pipelines/05c_publish_proceedings_ready.py`
+- Repointed the active stage-05 validation tooling so batch preparation, manual overrides, and overnight orchestration now target the LLM candidate, validation, and publication layers rather than the archived deterministic scripts.
+- Updated the live Streamlit review app so it can inspect either the canonical LLM registries or batch-local stage-05 registries.
+- Updated the active repo docs so the published stage-05 contract is now:
+  - candidate layer: `data/extraction_json/text_trimmed_llm_candidates/` plus `data/references/text_trim_llm_candidate_registry.csv`
+  - final LLM layer: `data/extraction_json/text_trimmed_llm/` plus `data/references/text_trim_llm_registry.csv`
+  - canonical published layer: `data/extraction_json/text_proceedings_ready/` plus `data/references/text_proceedings_ready_registry.csv`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py tests/test_manage_trimming_batches.py tests/test_apply_trimming_manual_overrides.py -q`
+- Result:
+  - `24 passed`
+
+## 2026-04-15
+
+### Stage-06 hybrid production cutover
+
+- Added the new canonical hybrid stage-06 runner:
+  - `src/pipelines/06_extract_sps_case_counts_hybrid.py`
+- Added the shared hybrid controller:
+  - `src/pipelines/stage06_counting/hybrid.py`
+- The hybrid flow now combines:
+  - deterministic candidate generation and hard safety rails from the legacy stage-06 path
+  - local Ollama-served `gemma4:e4b` advice on every selected paper
+  - GPT-5.4 adjudication with a contradiction-focused challenge pass when deterministic or conservative evidence conflicts
+  - a tracked reviewed override ledger at `data/references/source_sps_case_count_manual_review.csv`
+- Added the shared override support layer:
+  - `src/pipelines/stage06_counting/overrides.py`
+- Updated the stage-06 review workflow so saved reviewer responses now also sync into the canonical override ledger:
+  - `src/validation/_stage06_review.py`
+  - `src/validation/review_stage06_count_app.py`
+- Added the hybrid benchmark utility and regression-pack support:
+  - `src/validation/benchmark_stage06_hybrid.py`
+  - `qa/validation/stage06_llm/stage06_historical_regression_papers.json`
+- Preserved the earlier stage-06 scripts as non-canonical comparators:
+  - `src/pipelines/06_extract_sps_case_counts.py`
+  - `src/pipelines/06_extract_sps_case_counts_LLM.py`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_overrides.py tests/test_stage06_review_workflow.py tests/test_stage06_hybrid_counting.py tests/test_06_extract_sps_case_counts_hybrid.py tests/test_stage06_hybrid_benchmark.py -q`
+  - `.venv\Scripts\python.exe -m py_compile src/pipelines/stage06_counting/hybrid.py src/pipelines/06_extract_sps_case_counts_hybrid.py src/validation/benchmark_stage06_hybrid.py`
+  - `.venv\Scripts\python.exe src/pipelines/06_extract_sps_case_counts_hybrid.py --estimate-only --limit 3`
+
+### Stage-06 local Gemma calibration runner
+
+- Added a new QA-only alternative stage-06 runner:
+  - `src/pipelines/06_extract_sps_case_counts_LLM.py`
+- The new runner keeps the existing deterministic stage-06 candidate packaging and safety rails, then adds:
+  - a local Ollama first pass using `gemma4:e4b`
+  - a GPT-5.4 adjudication pass on every selected row during calibration
+- The local model now receives a derived evidence pack rather than the raw OCR JSON so the prompt stays compact and inspectable.
+- The GPT adjudicator can now optionally receive advisory notes without changing the existing canonical stage-06 flow:
+  - `src/pipelines/stage06_counting/prepare.py`
+  - `src/pipelines/stage06_counting/classify.py`
+  - `src/pipelines/stage06_counting/controller.py`
+
+### Local-model support modules
+
+- Added the local stage-06 support layer under `src/pipelines/stage06_counting/`:
+  - `local_models.py`
+  - `local_prepare.py`
+  - `local_ollama.py`
+  - `local_validate.py`
+- The local layer:
+  - formats a compact evidence pack for Gemma
+  - calls Ollama with `think=false`
+  - tolerantly extracts JSON from plain or fenced responses
+  - validates the local count against key deterministic guardrails
+- Local parse failures and guardrail conflicts are recorded as artefacts rather than silently discarded.
+
+### QA outputs and docs
+
+- Added the stage-06 calibration output guide:
+  - `qa/validation/stage06_llm/README.md`
+- Updated `src/pipelines/README.md` with a dedicated section for `06_extract_sps_case_counts_LLM.py`.
+- The new runner writes:
+  - per-run artefacts under `results/stage06_count_llm_runs/{run_id}/`
+  - non-canonical comparison CSVs under `qa/validation/stage06_llm/`
+
+### Verification
+
+- Ran:
+  - `.venv\Scripts\python.exe -m pytest tests/test_stage06_local_counting.py tests/test_stage06_llm_counting.py tests/test_stage06_count_candidates.py tests/test_06_extract_sps_case_counts_LLM.py -q`
+- Result:
+  - `38 passed`
+
+## 2026-04-25
+
+### Stage-07 XML/JSON LangExtract preparation
+
+- Added the new Stage-07 XML pipeline under `src/pipelines/stage07_XML/` without modifying the existing `src/pipelines/07_split_case_series.py`.
+- The new pipeline prepares deterministic source blocks, asks GPT-style annotators for span metadata only, validates offsets against unchanged source text, and inserts XML-style `<seg>` tags in Python.
+- Outputs now include:
+  - per-paper JSON under `data/extraction_json/stage07_xml/papers/`
+  - annotated source text under `data/extraction_json/stage07_xml/annotated_text/`
+  - segment metadata under `data/extraction_json/stage07_xml/segments/`
+  - per-patient/group LangExtract-ready target views under `data/extraction_json/stage07_xml/target_views/`
+  - validation reports and manifests under the Stage-07 XML output root
+- Added `data/references/stage07_xml_registry.csv` indexing support and extended the paper artefact registry so Stage-07 XML readiness, paths, and validation status are discoverable.
+- Added hybrid routing safeguards:
+  - single-patient sources use deterministic pass-through
+  - live GPT-5.5 span annotation is only used for split/group routes when `--allow-paid-run` is supplied
+  - mock annotation payloads remain supported for tests and dry validation
+- Documented the Stage-07 XML/JSON contract in `doc/plans/stage07_XML_JSON_plan.md`.
+
+### Stage-07 XML human verification pack
+
+- Added a static human-verification workflow:
+  - `src/validation/_stage07_xml_review.py`
+  - `src/validation/build_stage07_xml_gold_pack.py`
+- The workflow writes non-canonical QA material under `qa/validation/stage07_xml/gold_standard/<round_id>/`.
+- Review packs include:
+  - `index.html`
+  - one colour-coded HTML page per paper
+  - `review_queue.csv`
+  - editable `review_responses.csv`
+  - cumulative `07_xml_assignment_gold_standard.csv`
+- The visual review design gives every patient/group a target chip and colour, uses neutral shared styling for multi-target segments, and keeps labels visible so high-count papers remain reviewable.
+- The gold-standard ledger records reviewed segment assignments but does not rewrite canonical Stage-07 XML outputs.
+
+### Commits
+
+- `4fb0fb1` `Milestone 1: add Stage 07 XML span pipeline`
+- `c061f2f` `Milestone 2: index Stage 07 XML artefacts`
+- `90265b9` `Milestone 3: document Stage 07 XML contract`
+- `ab44f00` `Milestone 4: enforce hybrid Stage 07 XML routing`
+- `82948db` `Milestone 5: add Stage 07 XML verification pack`
+
+### Verification
+
+- Ran:
+  - `py -3.14 -m pytest tests/test_stage07_xml.py tests/test_12_build_paper_artifact_registry.py tests/test_07_split_case_series.py -q`
+  - `py -3.14 src\pipelines\stage07_XML\run_stage07_xml.py --help`
+  - `py -3.14 -m pytest tests\test_stage07_xml_review.py tests\test_stage07_xml.py tests\test_stage07_review_workflow.py tests\test_12_build_paper_artifact_registry.py -q`
+  - `py -3.14 -m ruff check src\validation\_stage07_xml_review.py src\validation\build_stage07_xml_gold_pack.py tests\test_stage07_xml_review.py`
+- Results:
+  - Stage-07 XML core and artefact-registry tests passed.
+  - Stage-07 XML review-pack tests passed.
+  - Ruff passed on the new review-pack code.
+- No paid model/API calls were run during this implementation.
