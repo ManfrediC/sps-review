@@ -21,15 +21,20 @@ from stage07_XML.core import (
     build_manifest_run_id,
     collect_candidate_ids,
     ensure_output_dirs,
+    initial_targets,
     load_csv_rows_by_id,
     output_paths,
+    parse_stage06_prior,
     process_paper,
-    repo_path_from_relative,
+    prepare_source,
+    resolve_source_json_path,
+    route_mode,
     write_manifest,
     write_process_result,
     write_registry,
 )
 from stage07_XML.openai_client import annotate_with_openai
+from _source_routing import resolve_source_row
 
 
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
@@ -194,48 +199,33 @@ def main() -> None:
             continue
 
         annotation_payload = load_mock_annotation(args.mock_annotation_dir, paper_id)
-        if annotation_payload is None and args.mock_annotation_dir is None:
-            if not args.allow_paid_run:
-                annotation_payload = None
-            else:
-                # Build once without annotation to obtain source blocks and declared targets.
-                draft = process_paper(
+        if annotation_payload is None and args.mock_annotation_dir is None and args.allow_paid_run:
+            source_row = source_rows.get(paper_id, {})
+            prior = parse_stage06_prior(stage06_rows.get(paper_id, {}))
+            resolved = resolve_source_row(
+                paper_id=paper_id,
+                heuristic_row=source_row,
+                manual_row=manual_rows.get(paper_id, {}),
+            )
+            route = route_mode(source_row, resolved)
+            if route in {"individual_case_split", "group"}:
+                source_path = resolve_source_json_path(
                     paper_id=paper_id,
-                    source_row=source_rows.get(paper_id, {}),
-                    manual_row=manual_rows.get(paper_id, {}),
-                    stage06_row=stage06_rows.get(paper_id, {}),
-                    paths=paths,
-                    manifest_run_id=manifest_run_id,
-                    annotation_model=args.annotation_model,
-                    annotation_payload=None,
+                    source_row=source_row,
+                    stage06_prior=prior,
+                )
+                prepared_source = prepare_source(
+                    paper_id=paper_id,
+                    source_path=source_path,
                     max_block_chars=args.max_block_chars,
                 )
-                source_path = repo_path_from_relative(draft.paper_payload.get("source", {}).get("source_text_json_path", ""))
-                if source_path is None:
-                    annotation_payload = None
-                else:
-                    from stage07_XML.core import initial_targets, parse_stage06_prior, prepare_source, route_mode
-                    from _source_routing import resolve_source_row
-
-                    resolved = resolve_source_row(
-                        paper_id=paper_id,
-                        heuristic_row=source_rows.get(paper_id, {}),
-                        manual_row=manual_rows.get(paper_id, {}),
-                    )
-                    route = route_mode(source_rows.get(paper_id, {}), resolved)
-                    prior = parse_stage06_prior(stage06_rows.get(paper_id, {}))
-                    prepared_source = prepare_source(
-                        paper_id=paper_id,
-                        source_path=source_path,
-                        max_block_chars=args.max_block_chars,
-                    )
-                    annotation_payload = annotate_with_openai(
-                        prepared_source=prepared_source,
-                        targets=initial_targets(route=route, stage06_prior=prior),
-                        model=args.annotation_model,
-                        api_key=api_key,
-                        trace_dir=trace_dir,
-                    )
+                annotation_payload = annotate_with_openai(
+                    prepared_source=prepared_source,
+                    targets=initial_targets(route=route, stage06_prior=prior),
+                    model=args.annotation_model,
+                    api_key=api_key,
+                    trace_dir=trace_dir,
+                )
 
         result = process_paper(
             paper_id=paper_id,
@@ -265,4 +255,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
