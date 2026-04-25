@@ -29,6 +29,72 @@ Use only declared target IDs unless an explicit source-backed group target is ne
 """.strip()
 
 
+STAGE07_RESPONSE_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "targets": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "kind": {"type": "string"},
+                    "label": {"type": "string"},
+                    "evidence": {"type": "string"},
+                },
+                "required": ["id", "kind", "label", "evidence"],
+                "additionalProperties": False,
+            },
+        },
+        "segments": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "targets": {"type": "array", "items": {"type": "string"}},
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "patient_specific",
+                            "shared",
+                            "group_summary",
+                            "group_specific",
+                            "uncertain",
+                            "background",
+                        ],
+                    },
+                    "confidence": {"type": "string"},
+                    "evidence": {"type": "string"},
+                    "spans": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "block_id": {"type": "string"},
+                                "start_offset": {"type": "integer"},
+                                "end_offset": {"type": "integer"},
+                                "selected_text": {"type": "string"},
+                            },
+                            "required": [
+                                "block_id",
+                                "start_offset",
+                                "end_offset",
+                                "selected_text",
+                            ],
+                            "additionalProperties": False,
+                        },
+                    },
+                },
+                "required": ["targets", "role", "confidence", "evidence", "spans"],
+                "additionalProperties": False,
+            },
+        },
+    },
+    "required": ["segments"],
+    "additionalProperties": False,
+}
+
+
 def build_user_payload(
     *,
     prepared_source: PreparedSource,
@@ -89,7 +155,7 @@ def annotate_with_openai(
     model: str,
     api_key: str,
     trace_dir: Path | None = None,
-    max_output_tokens: int = 8000,
+    max_output_tokens: int = 20000,
 ) -> dict[str, Any]:
     if OpenAI is None:
         raise RuntimeError("The openai package is not installed.")
@@ -117,13 +183,33 @@ def annotate_with_openai(
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
         ],
+        reasoning={"effort": "low"},
+        text={
+            "format": {
+                "type": "json_schema",
+                "name": "stage07_span_metadata",
+                "schema": STAGE07_RESPONSE_SCHEMA,
+                "strict": False,
+            },
+            "verbosity": "low",
+        },
         max_output_tokens=max_output_tokens,
     )
     output_text = getattr(response, "output_text", "")
     if trace_dir is not None:
+        (trace_dir / f"{prepared_source.paper_id}.response.raw.json").write_text(
+            response.model_dump_json(indent=2),
+            encoding="utf-8",
+        )
         (trace_dir / f"{prepared_source.paper_id}.response.txt").write_text(
             output_text,
             encoding="utf-8",
         )
+    if not output_text.strip():
+        status = getattr(response, "status", "")
+        incomplete_details = getattr(response, "incomplete_details", None)
+        raise RuntimeError(
+            f"OpenAI response did not contain output_text; status={status} "
+            f"incomplete_details={incomplete_details}"
+        )
     return json.loads(output_text)
-
