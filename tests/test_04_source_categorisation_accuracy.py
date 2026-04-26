@@ -245,14 +245,14 @@ def print_report(results: dict[str, Any]) -> None:
     skipped = results["skipped"]
 
     print(f"\n{'='*70}")
-    print(f"CATEGORISATION ACCURACY BENCHMARK")
+    print("CATEGORISATION ACCURACY BENCHMARK")
     print(f"{'='*70}")
     print(f"Total evaluated: {total}  |  Correct: {correct}  |  Accuracy: {accuracy:.1%}")
     if skipped:
         print(f"Skipped (no text JSON): {skipped}")
 
     print(f"\n{'-'*70}")
-    print(f"PER-CATEGORY METRICS")
+    print("PER-CATEGORY METRICS")
     print(f"{'-'*70}")
     print(f"{'Category':<45} {'Prec':>6} {'Rec':>6} {'F1':>6} {'TP':>4} {'FP':>4} {'FN':>4}")
     print(f"{'-'*45} {'-'*6} {'-'*6} {'-'*6} {'-'*4} {'-'*4} {'-'*4}")
@@ -262,7 +262,7 @@ def print_report(results: dict[str, Any]) -> None:
     confusion = results["confusion"]
     if confusion:
         print(f"\n{'-'*70}")
-        print(f"CONFUSION (expected -> got)")
+        print("CONFUSION (expected -> got)")
         print(f"{'-'*70}")
         for expected, got_counts in sorted(confusion.items()):
             for got, count in sorted(got_counts.items(), key=lambda x: -x[1]):

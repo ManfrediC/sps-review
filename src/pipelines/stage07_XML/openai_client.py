@@ -25,11 +25,14 @@ For every useful segment, return paragraph block coordinates:
 
 The selected_text must exactly equal block_text[start_offset:end_offset].
 Prefer coherent sentence or paragraph spans. Do not invent patients, groups, findings, or targets.
+Use the declared target labels as the paper's native patient labels.
 For statements that apply to multiple declared patients, use all relevant patient IDs with role "shared".
 Do not create a group target merely for all-patient context in an individual case split.
 Use only declared target IDs unless an explicit source-backed group target is needed, or a group-routed paper has explicit source-backed individual case units.
 For single-patient papers, exclude front matter, library coversheets, references, author bios, and generic disease-context sections unless they contain facts about the patient.
 For tables in mixed cohorts, use prose to identify which case/patient rows are SPSD-relevant, and select only those rows when the source text makes row boundaries clear.
+Split spans around OCR page headers, footers, figure legends, and interrupted words instead of fabricating continuous text.
+For lab-heavy group papers without declared patient units, return sparse clinical/sample-population and clinically relevant group findings only.
 """.strip()
 
 

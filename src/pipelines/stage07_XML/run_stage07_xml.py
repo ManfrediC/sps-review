@@ -23,7 +23,6 @@ from stage07_XML.core import (
     collect_candidate_ids,
     deterministic_annotation_for_route,
     ensure_output_dirs,
-    heuristic_route_override,
     initial_targets,
     load_csv_rows_by_id,
     output_paths,
@@ -31,6 +30,7 @@ from stage07_XML.core import (
     process_paper,
     prepare_source,
     resolve_source_json_path,
+    resolve_route_decision,
     route_mode,
     write_manifest,
     write_process_result,
@@ -251,13 +251,20 @@ def main() -> None:
                 manual_row=manual_rows.get(paper_id, {}),
             )
             route = route_mode(source_row, resolved)
-            route, _, _ = heuristic_route_override(
+            route_decision = resolve_route_decision(
                 route=route,
                 stage06_prior=prior,
                 prepared_source=prepared_source,
             )
-            targets = initial_targets(route=route, stage06_prior=prior)
-            if route == "individual":
+            route = route_decision.route
+            targets = initial_targets(
+                route=route,
+                stage06_prior=prior,
+                recovered_target_labels=route_decision.recovered_target_labels,
+            )
+            if route_decision.manual_review_reasons:
+                annotation_payload = None
+            elif route == "individual":
                 deterministic_payload = deterministic_annotation_for_route(
                     prepared_source=prepared_source,
                     targets=targets,

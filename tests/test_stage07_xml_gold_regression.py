@@ -99,6 +99,7 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
 
         paper22 = self.run_reviewed("22")
         self.assert_ready(paper22, {"p1"}, "individual")
+        self.assertEqual(paper22.target_view_payloads["p1"]["target_label"], "Case 10")
         self.assertIn("Case 10", paper22.target_view_payloads["p1"]["input_text"])
         self.assertIn("Stiff-person syndrome 4,800", paper22.target_view_payloads["p1"]["input_text"])
         self.assertNotIn("clinical rating score did not change", paper22.target_view_payloads["p1"]["input_text"])
@@ -125,6 +126,9 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
 
         paper30 = self.run_reviewed("30")
         self.assert_ready(paper30, {"p1", "p2", "p3"}, "individual_case_split")
+        self.assertEqual(paper30.target_view_payloads["p1"]["target_label"], "Patient 1")
+        self.assertEqual(paper30.target_view_payloads["p2"]["target_label"], "Patient 2")
+        self.assertEqual(paper30.target_view_payloads["p3"]["target_label"], "Patient 3")
         self.assertIn("Patient | has been described previously", paper30.target_view_payloads["p1"]["input_text"])
         self.assertIn("A 76-year-old woman began", paper30.target_view_payloads["p2"]["input_text"])
         self.assertIn("A 66-year-old woman began", paper30.target_view_payloads["p3"]["input_text"])
@@ -135,6 +139,8 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
         paper34 = self.run_reviewed("34")
         self.assert_ready(paper34, {"p1", "p2"}, "individual_case_split")
         self.assertEqual(paper34.registry_row["stage06_diverged"], "true")
+        self.assertEqual(paper34.target_view_payloads["p1"]["target_label"], "Patient Be")
+        self.assertEqual(paper34.target_view_payloads["p2"]["target_label"], "Patient Rm")
         self.assertIn("Patient Be. A 37-year-old man", paper34.target_view_payloads["p1"]["input_text"])
         self.assertIn("Abnormal visual evoked potentials", paper34.target_view_payloads["p1"]["input_text"])
         self.assertIn("tinued, the patient was admitted", paper34.target_view_payloads["p1"]["input_text"])

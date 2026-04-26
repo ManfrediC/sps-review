@@ -126,6 +126,21 @@ class Target:
 
 
 @dataclass(frozen=True)
+class SourcePatientLabel:
+    label: str
+    start: int
+
+
+@dataclass(frozen=True)
+class RouteDecision:
+    route: str
+    warnings: tuple[str, ...] = ()
+    diverged: bool = False
+    recovered_target_labels: tuple[str, ...] = ()
+    manual_review_reasons: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
 class PhysicalSegment:
     segment_id: str
     logical_segment_id: str
@@ -475,9 +490,13 @@ def route_mode(source_row: dict[str, str], resolved_source: dict[str, str]) -> s
     return str(source_row.get("preferred_langextract_mode") or "").strip() or resolved_mode
 
 
+def spsd_label_pattern() -> str:
+    return r"(?:SPSD|SPS|SMS|stiff[- ](?:person|man)|stiff-person|stiff-man)"
+
+
 def explicit_spsd_case_ids(text: str) -> set[str]:
     ids: set[str] = set()
-    spsd_pattern = r"(?:SPSD|SPS|stiff[- ](?:person|man)|stiff-person|stiff-man)"
+    spsd_pattern = spsd_label_pattern()
     for match in re.finditer(
         rf"\b(?:case|patient)\s+(\d+)\b(?:(?!\b(?:case|patient)\s+\d+\b).){{0,180}}{spsd_pattern}",
         text,
@@ -491,7 +510,8 @@ def explicit_spsd_case_ids(text: str) -> set[str]:
     ):
         ids.add(match.group(1))
     for match in re.finditer(
-        rf"\b(?:cases|patients)\s+([0-9,\sand]+)\)\s+had(?:(?!\.).){{0,220}}{spsd_pattern}",
+        rf"\b(?:cases|patients)\s*\(?\s*(?:cases?|patients?)?\s*([0-9][0-9,\sand]*)\)?"
+        rf"(?:(?!\.).){{0,220}}{spsd_pattern}",
         text,
         flags=re.IGNORECASE | re.DOTALL,
     ):
@@ -499,8 +519,105 @@ def explicit_spsd_case_ids(text: str) -> set[str]:
     return ids
 
 
+def normalise_source_label(kind: str, value: str) -> str:
+    kind_label = "Patient" if kind.strip().casefold() == "patient" else "Case"
+    return f"{kind_label} {value.strip()}".strip().rstrip(".,:;")
+
+
+def source_patient_labels(text: str, *, include_headings: bool = True) -> list[SourcePatientLabel]:
+    labels: list[SourcePatientLabel] = []
+    seen: set[str] = set()
+    label_token = r"(?:\d{1,3}|[A-Z][A-Za-z0-9-]{0,12})"
+    label_kind = r"(?:Patient|PATIENT|patient|Case|CASE|case)"
+    heading_pattern = re.compile(
+        rf"(?m)^\s*({label_kind})\s+({label_token})(?=\s*(?:[.:]|\n|$))"
+    )
+    prose_patterns = [
+        re.compile(
+            rf"\b({label_kind})\s+({label_token})\b"
+            rf"(?:(?!\b{label_kind}\s+{label_token}\b).){{0,180}}{spsd_label_pattern()}",
+            flags=re.DOTALL,
+        ),
+        re.compile(
+            rf"{spsd_label_pattern()}"
+            r"(?:\s+|[- ]affected\s+)"
+            rf"\b({label_kind})\s+({label_token})\b",
+            flags=re.DOTALL,
+        ),
+    ]
+    patterns = [heading_pattern, *prose_patterns] if include_headings else prose_patterns
+    for pattern in patterns:
+        for match in pattern.finditer(text):
+            if match.group(2).casefold() in {"report", "reports", "presentation", "presentations"}:
+                continue
+            label = normalise_source_label(match.group(1), match.group(2))
+            key = label.casefold()
+            if key in seen:
+                continue
+            labels.append(SourcePatientLabel(label=label, start=match.start()))
+            seen.add(key)
+    return sorted(labels, key=lambda item: item.start)
+
+
+def labels_for_explicit_spsd_ids(text: str, ids: set[str]) -> list[str]:
+    if not ids:
+        return []
+    labels = source_patient_labels(text)
+    matched: list[str] = []
+    for label in labels:
+        parts = label.label.split()
+        if parts and parts[-1] in ids:
+            matched.append(label.label)
+    return matched
+
+
 def has_embedded_single_spsd_case(prepared_source: PreparedSource) -> bool:
     return len(explicit_spsd_case_ids(prepared_source.source_text)) == 1
+
+
+def resolve_route_decision(
+    *,
+    route: str,
+    stage06_prior: Stage06Prior,
+    prepared_source: PreparedSource,
+) -> RouteDecision:
+    if route != "group":
+        return RouteDecision(route=route)
+
+    text = prepared_source.source_text
+    final_count = stage06_prior.final_count
+    explicit_ids = explicit_spsd_case_ids(text)
+    labels = source_patient_labels(text)
+    spsd_context_labels = source_patient_labels(text, include_headings=False)
+    if final_count == 1:
+        recovered_labels = [label.label for label in spsd_context_labels]
+        if not recovered_labels and len(explicit_ids) == 1:
+            recovered_labels = labels_for_explicit_spsd_ids(text, explicit_ids)
+        if not recovered_labels and len(labels) == 1:
+            recovered_labels = [labels[0].label]
+        if not recovered_labels:
+            return RouteDecision(route=route)
+        return RouteDecision(
+            route="individual",
+            warnings=("route_override:group_to_individual:embedded_single_spsd_case",),
+            diverged=True,
+            recovered_target_labels=tuple(recovered_labels[:1]),
+        )
+
+    if final_count is None or final_count < 2 or final_count > 20:
+        return RouteDecision(route=route)
+
+    if len(labels) == final_count:
+        return RouteDecision(
+            route="individual_case_split",
+            warnings=("route_override:group_to_individual_case_split:source_labelled_patients",),
+            diverged=True,
+            recovered_target_labels=tuple(label.label for label in labels),
+        )
+    if labels:
+        reason = f"ambiguous_route_recovery_label_count:{len(labels)}:{final_count}"
+        return RouteDecision(route=route, warnings=(reason,), manual_review_reasons=(reason,))
+    return RouteDecision(route=route)
 
 
 def heuristic_route_override(
@@ -509,24 +626,37 @@ def heuristic_route_override(
     stage06_prior: Stage06Prior,
     prepared_source: PreparedSource,
 ) -> tuple[str, list[str], bool]:
-    if route == "group" and stage06_prior.final_count == 1 and has_embedded_single_spsd_case(prepared_source):
-        return "individual", ["route_override:group_to_individual:embedded_single_spsd_case"], True
-    return route, [], False
+    decision = resolve_route_decision(
+        route=route,
+        stage06_prior=stage06_prior,
+        prepared_source=prepared_source,
+    )
+    return decision.route, list(decision.warnings), decision.diverged
 
 
 def initial_targets(
     *,
     route: str,
     stage06_prior: Stage06Prior,
+    recovered_target_labels: list[str] | tuple[str, ...] | None = None,
 ) -> list[Target]:
+    recovered_target_labels = list(recovered_target_labels or [])
     if route == "individual":
-        return [Target("p1", "patient", "Patient 1", "stage06_single_patient_prior")]
+        label = recovered_target_labels[0] if recovered_target_labels else "Patient 1"
+        source = "stage07_route_recovery" if recovered_target_labels else "stage06_single_patient_prior"
+        return [Target("p1", "patient", label, source)]
     if route == "individual_case_split":
-        if stage06_prior.final_count is None or stage06_prior.final_count < 1:
+        count = len(recovered_target_labels) or stage06_prior.final_count
+        if count is None or count < 1:
             return []
         return [
-            Target(f"p{index}", "patient", f"Patient {index}", "stage06_count_prior")
-            for index in range(1, stage06_prior.final_count + 1)
+            Target(
+                f"p{index}",
+                "patient",
+                recovered_target_labels[index - 1] if index <= len(recovered_target_labels) else f"Patient {index}",
+                "stage07_route_recovery" if index <= len(recovered_target_labels) else "stage06_count_prior",
+            )
+            for index in range(1, count + 1)
         ]
     if route == "group":
         return [Target("g1", "group", "SPSD group", "stage06_group_prior")]
@@ -694,40 +824,146 @@ def first_marker_index(text: str, markers: list[str], start: int = 0) -> int | N
     return min(found)
 
 
-def single_patient_clinical_range(prepared_source: PreparedSource) -> tuple[int, int, bool]:
-    text = prepared_source.source_text
-    start_markers = [
-        "CasePresentation",
-        "Case Presentation",
-        "CASE PRESENTATION",
-        "Case presentation",
-        "Case report",
-        "CASE REPORT",
-        "Patient",
-        "PATIENT",
-        "Case ",
-        "CASE ",
-    ]
-    end_markers = [
-        "\nTheCaseinContext",
-        "\nThe Case in Context",
-        "\nDiscussion",
-        "\nDISCUSSION",
-        "\nSelectedReading",
-        "\nSelected Reading",
-        "\nReferences",
-        "\nREFERENCES",
-        "\nAcknowledgment",
-        "\nAcknowledgement",
-        "\nDr.",
-    ]
-    start = first_marker_index(text, start_markers)
+def trim_source_range(text: str, start: int, end: int) -> tuple[int, int]:
+    while start < end and text[start].isspace():
+        start += 1
+    while end > start and text[end - 1].isspace():
+        end -= 1
+    return start, end
+
+
+def merge_source_ranges(ranges: list[tuple[int, int]]) -> list[tuple[int, int]]:
+    merged: list[tuple[int, int]] = []
+    for start, end in sorted(ranges):
+        if start >= end:
+            continue
+        if merged and start <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+        else:
+            merged.append((start, end))
+    return merged
+
+
+def clinical_stop_index(text: str, start: int) -> int | None:
+    return first_marker_index(
+        text,
+        [
+            "\nTheCaseinContext",
+            "\nThe Case in Context",
+            "\nDiscussion",
+            "\nDISCUSSION",
+            "\nMethods",
+            "\nMETHODS",
+            "\nSelectedReading",
+            "\nSelected Reading",
+            "\nReferences",
+            "\nREFERENCES",
+            "\nAcknowledgment",
+            "\nAcknowledgement",
+            "\nDr.",
+        ],
+        start,
+    )
+
+
+def summary_clinical_range(text: str) -> tuple[int, int] | None:
+    start = first_marker_index(text, ["Summary:", "Abstract", "ABSTRACT"])
     if start is None:
-        return 0, len(text), False
-    end = first_marker_index(text, end_markers, start + 1)
+        return None
+    nearby = text[start : min(len(text), start + 1800)]
+    if not re.search(r"\b(?:patient|man|woman|boy|girl)\b", nearby, flags=re.IGNORECASE):
+        return None
+    if not re.search(spsd_label_pattern(), nearby, flags=re.IGNORECASE):
+        return None
+    end = first_marker_index(
+        text,
+        ["Key Words:", "Key words:", "\nKey Words", "\nStiff-person syndrome is", "\nIntroduction"],
+        start + 1,
+    )
     if end is None:
-        return start, len(text), False
-    return start, end, True
+        end = clinical_stop_index(text, start + 1)
+    if end is None:
+        return None
+    return trim_source_range(text, start, end)
+
+
+def case_report_clinical_range(text: str) -> tuple[int, int] | None:
+    start = first_marker_index(
+        text,
+        [
+            "CasePresentation",
+            "Case Presentation",
+            "CASE PRESENTATION",
+            "Case presentation",
+            "CASE REPORT",
+            "Case report",
+            "Patient",
+            "PATIENT",
+            "Case ",
+            "CASE ",
+        ],
+    )
+    if start is None:
+        return None
+    end = clinical_stop_index(text, start + 1)
+    if end is None:
+        return None
+    return trim_source_range(text, start, end)
+
+
+def patient_discussion_clinical_range(text: str) -> tuple[int, int] | None:
+    discussion_start = first_marker_index(text, ["\nDiscussion", "\nDISCUSSION"], 0)
+    if discussion_start is None:
+        return None
+    body_end = first_marker_index(
+        text,
+        [
+            "\nAcknowledgment",
+            "\nAcknowledgement",
+            "\nReferences",
+            "\nREFERENCES",
+            "\nAddress correspondence",
+        ],
+        discussion_start + 1,
+    )
+    if body_end is None:
+        body_end = len(text)
+    start = first_marker_index(
+        text,
+        [
+            "The decreased tone",
+            "This patient",
+            "The patient",
+            "Our patient",
+            "This case",
+            "In conclusion",
+        ],
+        discussion_start,
+    )
+    if start is None or start >= body_end:
+        return None
+    return trim_source_range(text, start, body_end)
+
+
+def single_patient_clinical_ranges(prepared_source: PreparedSource) -> tuple[list[tuple[int, int]], bool]:
+    text = prepared_source.source_text
+    ranges = [
+        item
+        for item in [
+            summary_clinical_range(text),
+            case_report_clinical_range(text),
+            patient_discussion_clinical_range(text),
+        ]
+        if item is not None
+    ]
+    if not ranges:
+        return [(0, len(text))], False
+    return merge_source_ranges(ranges), True
+
+
+def single_patient_clinical_range(prepared_source: PreparedSource) -> tuple[int, int, bool]:
+    ranges, confident = single_patient_clinical_ranges(prepared_source)
+    return ranges[0][0], ranges[-1][1], confident
 
 
 def deterministic_annotation_for_route(
@@ -741,7 +977,10 @@ def deterministic_annotation_for_route(
     target = targets[0]
     if route == "individual":
         role = "patient_specific"
-        start, end, confident = single_patient_clinical_range(prepared_source)
+        ranges, confident = single_patient_clinical_ranges(prepared_source)
+        spans: list[dict[str, Any]] = []
+        for start, end in ranges:
+            spans.extend(source_range_to_span_payloads(prepared_source, start, end))
         payload = {
             "annotation_mode": "deterministic_clinical_window" if confident else "deterministic_pass_through",
             "segments": [
@@ -754,7 +993,7 @@ def deterministic_annotation_for_route(
                         if confident
                         else "Deterministic pass-through used because clinical-window boundaries were uncertain."
                     ),
-                    "spans": source_range_to_span_payloads(prepared_source, start, end),
+                    "spans": spans,
                 }
             ],
         }
@@ -1567,11 +1806,12 @@ def process_paper(
             annotation_model=annotation_model,
         )
 
-    route, heuristic_route_warnings, heuristic_route_diverged = heuristic_route_override(
+    route_decision = resolve_route_decision(
         route=route,
         stage06_prior=stage06_prior,
         prepared_source=prepared_source,
     )
+    route = route_decision.route
     annotation_route_diverged = False
     if annotation_payload is not None:
         annotation_route = str(annotation_payload.get("route_mode") or "").strip()
@@ -1579,7 +1819,11 @@ def process_paper(
             route = annotation_route
             annotation_route_diverged = True
 
-    base_targets = initial_targets(route=route, stage06_prior=stage06_prior)
+    base_targets = initial_targets(
+        route=route,
+        stage06_prior=stage06_prior,
+        recovered_target_labels=route_decision.recovered_target_labels,
+    )
     annotation_mode = "stage07_span_metadata"
     if annotation_payload is None:
         annotation_payload = deterministic_annotation_for_route(
@@ -1610,10 +1854,12 @@ def process_paper(
         validation_report.add_error(error)
     for warning in preliminary_report.warnings or []:
         validation_report.add_warning(warning)
-    for warning in heuristic_route_warnings:
+    for warning in route_decision.warnings:
         validation_report.add_warning(warning)
     for warning in annotation_payload.get("validation_warnings") or []:
         validation_report.add_warning(str(warning))
+    for reason in route_decision.manual_review_reasons:
+        validation_report.add_review_reason(reason)
     for reason in annotation_payload.get("manual_review_reasons") or []:
         validation_report.add_review_reason(str(reason))
 
@@ -1657,10 +1903,10 @@ def process_paper(
         "validation": validation_payload,
     }
     stage06_diverged = bool(
-        target_diverged or route_diverged or heuristic_route_diverged or annotation_route_diverged
+        target_diverged or route_diverged or route_decision.diverged or annotation_route_diverged
     )
     divergence_dimensions = ["target_inventory"]
-    if route_diverged or heuristic_route_diverged or annotation_route_diverged:
+    if route_diverged or route_decision.diverged or annotation_route_diverged:
         divergence_dimensions.append("route_mode")
     registry_row = build_registry_row(
         paper_id=paper_id,
