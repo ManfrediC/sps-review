@@ -12,7 +12,7 @@ PIPELINES_DIR = REPO_ROOT / "src" / "pipelines"
 if str(PIPELINES_DIR) not in sys.path:
     sys.path.insert(0, str(PIPELINES_DIR))
 
-from stage07_XML import core
+from stage07_XML import core  # noqa: E402
 
 
 class TestStage07XmlCore(unittest.TestCase):
@@ -109,6 +109,44 @@ class TestStage07XmlCore(unittest.TestCase):
 
         self.assertTrue(report.failed)
         self.assertIn("offset_text_mismatch:l0001:b0001:0:6", report.errors)
+        self.assertEqual(report.rejected_spans[0]["reason"], "offset_text_mismatch:l0001:b0001:0:6")
+
+    def test_unique_selected_text_relocates_offset_mismatch(self) -> None:
+        source_path = self.write_text_json(
+            "9006",
+            "Intro text. Case 1 had axial stiffness.",
+        )
+        prepared = core.prepare_source(paper_id="9006", source_path=source_path)
+        selected = "Case 1 had axial stiffness."
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["p1"],
+                    "role": "patient_specific",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": "b0001",
+                            "start_offset": 0,
+                            "end_offset": len(selected),
+                            "selected_text": selected,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        segments, report = core.validate_annotation_payload(
+            annotation_payload=annotation,
+            prepared_source=prepared,
+            declared_targets=[core.Target("p1", "patient", "Patient 1", "test")],
+        )
+
+        self.assertFalse(report.failed)
+        self.assertEqual(segments[0].text, selected)
+        self.assertEqual(segments[0].source_start, prepared.source_text.index(selected))
+        self.assertIn("relocated_span:l0001:b0001:0:27->12:39", report.warnings)
+        self.assertEqual(report.span_adjustments[0]["relocated_offsets"], {"start": 12, "end": 39})
 
     def test_process_multi_patient_annotation_builds_ready_target_views(self) -> None:
         text = (
@@ -219,7 +257,7 @@ class TestStage07XmlCore(unittest.TestCase):
         self.assertIn("missing_target_evidence:p1", result.registry_row["manual_review_reasons"])
         self.assertIn("missing_target_evidence:p2", result.registry_row["manual_review_reasons"])
 
-    def test_single_patient_source_gets_deterministic_pass_through_view(self) -> None:
+    def test_single_patient_source_without_clear_window_requires_review(self) -> None:
         source_path = self.write_text_json(
             "9005",
             "A 40-year-old woman had SPS.\n\nShe improved after diazepam.",
@@ -244,11 +282,298 @@ class TestStage07XmlCore(unittest.TestCase):
         )
 
         self.assertEqual(result.registry_row["annotation_mode"], "deterministic_pass_through")
-        self.assertEqual(result.registry_row["ready_for_langextract"], "true")
-        self.assertTrue(result.target_view_payloads["p1"]["ready_for_langextract"])
+        self.assertEqual(result.registry_row["ready_for_langextract"], "false")
+        self.assertFalse(result.target_view_payloads["p1"]["ready_for_langextract"])
         self.assertIn("A 40-year-old woman had SPS.", result.target_view_payloads["p1"]["input_text"])
+        self.assertIn("single_patient_clinical_window_uncertain", result.registry_row["manual_review_reasons"])
+
+    def test_single_patient_source_gets_deterministic_clinical_window(self) -> None:
+        source_path = self.write_text_json(
+            "9008",
+            "Library cover sheet.\n\nCasePresentation\nA patient had SPS.\nTreatment helped.\nTheCaseinContext\nGeneric SPS background.\nSelectedReading\nReference.",
+        )
+
+        result = core.process_paper(
+            paper_id="9008",
+            source_row={
+                "preferred_langextract_mode": "individual",
+                "langextract_eligible": "true",
+            },
+            manual_row={},
+            stage06_row={
+                "preferred_text_json_path": str(source_path),
+                "likely_sps_case_count": "1",
+                "count_confidence": "high",
+            },
+            paths=self.output_paths,
+            manifest_run_id="test_stage07_xml",
+            annotation_model="gpt-5.5",
+            annotation_payload=None,
+        )
+
+        self.assertEqual(result.registry_row["annotation_mode"], "deterministic_clinical_window")
+        self.assertEqual(result.registry_row["ready_for_langextract"], "true")
+        text = result.target_view_payloads["p1"]["input_text"]
+        self.assertIn("CasePresentation", text)
+        self.assertIn("Treatment helped.", text)
+        self.assertNotIn("Library cover sheet", text)
+        self.assertNotIn("Generic SPS background", text)
+
+    def test_group_route_can_recover_source_backed_patient_targets(self) -> None:
+        text = "Preamble. Case A had axial stiffness.\n\nCase B had startle-provoked spasms."
+        source_path = self.write_text_json("9007", text)
+        prepared = core.prepare_source(paper_id="9007", source_path=source_path)
+        first = prepared.blocks[0]
+        second = prepared.blocks[1]
+        selected = "Case A had axial stiffness."
+        annotation = {
+            "targets": [
+                {"id": "p1", "kind": "patient", "label": "Case A", "evidence": ""},
+                {"id": "p2", "kind": "patient", "label": "Case B", "evidence": ""},
+            ],
+            "segments": [
+                {
+                    "targets": ["p1"],
+                    "role": "patient_specific",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": first.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(selected),
+                            "selected_text": selected,
+                        }
+                    ],
+                },
+                {
+                    "targets": ["p2"],
+                    "role": "patient_specific",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": second.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(second.text),
+                            "selected_text": second.text,
+                        }
+                    ],
+                },
+            ],
+        }
+
+        result = core.process_paper(
+            paper_id="9007",
+            source_row={
+                "preferred_langextract_mode": "group",
+                "langextract_eligible": "true",
+            },
+            manual_row={},
+            stage06_row={
+                "preferred_text_json_path": str(source_path),
+                "likely_sps_case_count": "2",
+                "count_confidence": "high",
+            },
+            paths=self.output_paths,
+            manifest_run_id="test_stage07_xml",
+            annotation_model="gpt-5.5",
+            annotation_payload=annotation,
+        )
+
+        self.assertEqual(result.registry_row["route_mode"], "individual_case_split")
+        self.assertEqual(result.registry_row["n_declared_patients"], "2")
+        self.assertEqual(result.registry_row["n_declared_groups"], "0")
+        self.assertEqual(result.registry_row["ready_for_langextract"], "true")
+        self.assertEqual(result.registry_row["stage06_diverged"], "true")
+        self.assertTrue(result.target_view_payloads["p1"]["ready_for_langextract"])
+        self.assertTrue(result.target_view_payloads["p2"]["ready_for_langextract"])
+        self.assertIn("route_override:group_to_individual_case_split", " ".join(result.validation_payload["warnings"]))
+        self.assertEqual(result.validation_payload["span_adjustments"][0]["relocated_offsets"], {"start": 10, "end": 37})
+
+    def test_reviewed_annotation_compiles_source_anchors(self) -> None:
+        source_path = self.write_text_json(
+            "9009",
+            "Intro.\n\nCase 1. A patient had SPS.\n\nDiscussion generic.",
+        )
+        prepared = core.prepare_source(paper_id="9009", source_path=source_path)
+        reviewed = {
+            "paper_id": "9009",
+            "route_mode": "individual",
+            "targets": [{"id": "p1", "kind": "patient", "label": "Patient 1", "evidence": "reviewed"}],
+            "segments": [
+                {
+                    "targets": ["p1"],
+                    "role": "patient_specific",
+                    "confidence": "reviewed",
+                    "evidence": "Reviewed case span.",
+                    "selections": [{"start_text": "Case 1.", "end_text": "had SPS."}],
+                }
+            ],
+        }
+
+        annotation = core.compile_reviewed_annotation_payload(
+            reviewed_payload=reviewed,
+            prepared_source=prepared,
+        )
+
+        self.assertEqual(annotation["annotation_mode"], "reviewed_gold")
+        self.assertEqual(annotation["route_mode"], "individual")
+        self.assertEqual(annotation["segments"][0]["spans"][0]["selected_text"], "Case 1. A patient had SPS.")
+
+    def test_table_heuristic_trims_recognisable_rows_to_spsd_ids(self) -> None:
+        source_path = self.write_text_json(
+            "9010",
+            "The final patient (case 2) had stiff-person syndrome.\n\n"
+            "TABLE 1\n"
+            "Case Diagnosis Age\n"
+            "1 irrelevant myoclonus 40\n"
+            "2 stiff-person syndrome 62\n"
+            "3 irrelevant dystonia 55",
+        )
+        prepared = core.prepare_source(paper_id="9010", source_path=source_path)
+        table_block = prepared.blocks[1]
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["g1"],
+                    "role": "group_summary",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": table_block.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(table_block.text),
+                            "selected_text": table_block.text,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        segments, report = core.validate_annotation_payload(
+            annotation_payload=annotation,
+            prepared_source=prepared,
+            declared_targets=[core.Target("g1", "group", "SPSD group", "test")],
+        )
+
+        self.assertFalse(report.failed)
+        self.assertEqual(len(segments), 1)
+        self.assertEqual(segments[0].text, "2 stiff-person syndrome 62")
+        self.assertIn("trimmed_table_to_relevant_rows:s0001", report.warnings)
+
+    def test_table_heuristic_accepts_direct_spsd_diagnosis_rows(self) -> None:
+        source_path = self.write_text_json(
+            "9012",
+            "The final patient (case 10) had stiff-person syndrome.\n\n"
+            "TABLE 1\n"
+            "Diagnosis Antibody titre\n"
+            "Postanoxic myoclonus 200\n"
+            "Stiff-person syndrome 4,800",
+        )
+        prepared = core.prepare_source(paper_id="9012", source_path=source_path)
+        table_block = prepared.blocks[1]
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["g1"],
+                    "role": "group_summary",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": table_block.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(table_block.text),
+                            "selected_text": table_block.text,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        segments, report = core.validate_annotation_payload(
+            annotation_payload=annotation,
+            prepared_source=prepared,
+            declared_targets=[core.Target("g1", "group", "SPSD group", "test")],
+        )
+
+        self.assertFalse(report.failed)
+        self.assertEqual(len(segments), 1)
+        self.assertEqual(segments[0].text, "Stiff-person syndrome 4,800")
+        self.assertIn("trimmed_table_to_relevant_rows:s0001", report.warnings)
+
+    def test_table_heuristic_warns_when_rows_are_ambiguous(self) -> None:
+        source_path = self.write_text_json(
+            "9011",
+            "The final patient (case 2) had stiff-person syndrome.\n\n"
+            "TABLE 1\n"
+            "Case\n"
+            "1\n"
+            "2\n"
+            "Diagnosis\n"
+            "irrelevant myoclonus\n"
+            "stiff-person syndrome",
+        )
+        prepared = core.prepare_source(paper_id="9011", source_path=source_path)
+        table_block = prepared.blocks[1]
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["g1"],
+                    "role": "group_summary",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": table_block.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(table_block.text),
+                            "selected_text": table_block.text,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        _, report = core.validate_annotation_payload(
+            annotation_payload=annotation,
+            prepared_source=prepared,
+            declared_targets=[core.Target("g1", "group", "SPSD group", "test")],
+        )
+
+        self.assertIn("ambiguous_table_row_mapping:s0001", report.review_reasons)
+
+    def test_group_route_embedded_single_spsd_case_recovers_individual_route(self) -> None:
+        source_path = self.write_text_json(
+            "9013",
+            "Mixed movement-disorder cohort.\n\n"
+            "Case 10 A 62-year-old woman had stiff-person syndrome.\nTreatment helped.\n"
+            "Discussion\nThe remaining trial-level summary was not SPSD-specific.",
+        )
+
+        result = core.process_paper(
+            paper_id="9013",
+            source_row={
+                "preferred_langextract_mode": "group",
+                "langextract_eligible": "true",
+            },
+            manual_row={},
+            stage06_row={
+                "preferred_text_json_path": str(source_path),
+                "likely_sps_case_count": "1",
+                "count_confidence": "high",
+            },
+            paths=self.output_paths,
+            manifest_run_id="test_stage07_xml",
+            annotation_model="gpt-5.5",
+            annotation_payload=None,
+        )
+
+        self.assertEqual(result.registry_row["route_mode"], "individual")
+        self.assertEqual(result.registry_row["annotation_mode"], "deterministic_clinical_window")
+        self.assertEqual(result.registry_row["stage06_diverged"], "true")
+        self.assertEqual(result.registry_row["ready_for_langextract"], "true")
+        self.assertIn("Case 10 A 62-year-old woman", result.target_view_payloads["p1"]["input_text"])
+        self.assertNotIn("remaining trial-level summary", result.target_view_payloads["p1"]["input_text"])
+        self.assertIn("route_override:group_to_individual", " ".join(result.validation_payload["warnings"]))
 
 
 if __name__ == "__main__":
     unittest.main()
-

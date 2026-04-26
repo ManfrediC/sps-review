@@ -335,6 +335,30 @@ def manual_review_reasons(item: ReviewItem) -> list[str]:
     return [str(reason) for reason in reasons]
 
 
+def rejected_spans_for_item(item: ReviewItem) -> list[dict[str, Any]]:
+    validation_sources = [
+        item.validation_payload,
+        item.segments_payload.get("validation") or {},
+    ]
+    for validation in validation_sources:
+        spans = validation.get("rejected_spans") or []
+        if spans:
+            return [dict(span) for span in spans]
+    return []
+
+
+def span_adjustments_for_item(item: ReviewItem) -> list[dict[str, Any]]:
+    validation_sources = [
+        item.validation_payload,
+        item.segments_payload.get("validation") or {},
+    ]
+    for validation in validation_sources:
+        adjustments = validation.get("span_adjustments") or []
+        if adjustments:
+            return [dict(adjustment) for adjustment in adjustments]
+    return []
+
+
 def paper_title(item: ReviewItem) -> str:
     return str(item.paper_payload.get("title") or item.registry_row.get("title") or "").strip()
 
@@ -448,6 +472,68 @@ def render_segment_table(
         "<thead><tr>"
         "<th>Segment</th><th>Group</th><th>Role</th><th>Targets</th>"
         "<th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th>"
+        "</tr></thead><tbody>"
+        + "".join(rows)
+        + "</tbody></table>"
+    )
+
+
+def render_rejected_span_table(
+    rejected_spans: list[dict[str, Any]],
+    labels: dict[str, str],
+    colours: dict[str, dict[str, str]],
+) -> str:
+    if not rejected_spans:
+        return ""
+    rows: list[str] = []
+    for span in rejected_spans:
+        requested = span.get("requested_offsets") or {}
+        source_offsets = span.get("source_offsets") or {}
+        targets = [str(target) for target in span.get("targets") or []]
+        rows.append(
+            "<tr>"
+            f"<td>{html_escape(span.get('rejected_segment_id'))}</td>"
+            f"<td>{html_escape(span.get('logical_segment_id'))}</td>"
+            f"<td>{html_escape(span.get('role'))}</td>"
+            f"<td>{chips_html(targets, labels, colours)}</td>"
+            f"<td>{html_escape(span.get('source_block_id'))}</td>"
+            f"<td>{html_escape(requested.get('start'))}-{html_escape(requested.get('end'))}</td>"
+            f"<td>{html_escape(source_offsets.get('start'))}-{html_escape(source_offsets.get('end'))}</td>"
+            f"<td>{html_escape(span.get('reason'))}</td>"
+            f"<td>{html_escape(text_preview(str(span.get('selected_text') or ''), 180))}</td>"
+            "</tr>"
+        )
+    return (
+        '<table class="segment-table rejected-table">'
+        "<thead><tr>"
+        "<th>Rejected</th><th>Group</th><th>Role</th><th>Targets</th>"
+        "<th>Block</th><th>Requested Offsets</th><th>Requested Source Offsets</th><th>Reason</th><th>Selected Text</th>"
+        "</tr></thead><tbody>"
+        + "".join(rows)
+        + "</tbody></table>"
+    )
+
+
+def render_span_adjustment_table(span_adjustments: list[dict[str, Any]]) -> str:
+    if not span_adjustments:
+        return ""
+    rows: list[str] = []
+    for adjustment in span_adjustments:
+        requested = adjustment.get("requested_offsets") or {}
+        relocated = adjustment.get("relocated_offsets") or {}
+        rows.append(
+            "<tr>"
+            f"<td>{html_escape(adjustment.get('logical_segment_id'))}</td>"
+            f"<td>{html_escape(adjustment.get('source_block_id'))}</td>"
+            f"<td>{html_escape(requested.get('start'))}-{html_escape(requested.get('end'))}</td>"
+            f"<td>{html_escape(relocated.get('start'))}-{html_escape(relocated.get('end'))}</td>"
+            f"<td>{html_escape(adjustment.get('selected_text_sha256'))}</td>"
+            "</tr>"
+        )
+    return (
+        '<table class="segment-table">'
+        "<thead><tr>"
+        "<th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th>"
         "</tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table>"
@@ -625,6 +711,12 @@ th {
   border-radius: 6px;
   padding: 12px 18px;
 }
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
 .target-summary {
   display: flex;
   flex-wrap: wrap;
@@ -650,6 +742,8 @@ def render_paper_html(item: ReviewItem, paper_html_path: Path) -> str:
     labels = target_label_lookup(entities)
     colours = target_colour_assignments(entities)
     segments = [dict(segment) for segment in item.segments_payload.get("segments") or []]
+    rejected_spans = rejected_spans_for_item(item)
+    span_adjustments = span_adjustments_for_item(item)
     source_text = source_text_for_item(item)
     reasons = manual_review_reasons(item)
     warning_html = ""
@@ -660,6 +754,12 @@ def render_paper_html(item: ReviewItem, paper_html_path: Path) -> str:
             + "".join(f"<li>{html_escape(reason)}</li>" for reason in reasons)
             + "</ul>"
         )
+    span_adjustment_html = render_span_adjustment_table(span_adjustments)
+    if not span_adjustment_html:
+        span_adjustment_html = '<p class="muted">No span relocations were applied.</p>'
+    rejected_span_html = render_rejected_span_table(rejected_spans, labels, colours)
+    if not rejected_span_html:
+        rejected_span_html = '<p class="muted">No rejected span proposals.</p>'
     body = (
         "<main>"
         '<p class="top-links"><a href="../index.html">Back to index</a></p>'
@@ -678,6 +778,10 @@ def render_paper_html(item: ReviewItem, paper_html_path: Path) -> str:
         f'<div class="source-text">{render_source_html(source_text, segments, labels, colours)}</div>'
         "<h2>Segments</h2>"
         f"{render_segment_table(segments, labels, colours)}"
+        "<h2>Relocated Spans</h2>"
+        f"{span_adjustment_html}"
+        "<h2>Rejected Proposals</h2>"
+        f"{rejected_span_html}"
         "<h2>Artefacts</h2>"
         "<p class=\"meta\">"
         f"Paper JSON: {html_escape(display_path(item.paper_json_path))}<br>"
@@ -744,6 +848,56 @@ def queue_row_for_segment(
     }
 
 
+def queue_row_for_rejected_span(
+    *,
+    round_id: str,
+    item: ReviewItem,
+    rejected_span: dict[str, Any],
+    labels: dict[str, str],
+    paper_html_path: Path,
+    generated_at_utc: str,
+) -> dict[str, str]:
+    targets = normalise_targets(rejected_span.get("targets"))
+    offsets = rejected_span.get("source_offsets") or {}
+    source = item.segments_payload.get("source") or item.paper_payload.get("source") or {}
+    target_labels = " | ".join(labels.get(target_id, target_id) for target_id in targets)
+    segment_text = str(rejected_span.get("selected_text") or "")
+    return {
+        "round_id": round_id,
+        "row_type": "rejected_segment",
+        "paper_id": item.paper_id,
+        "paper_title": paper_title(item),
+        "stage07_schema_version": str(item.paper_payload.get("stage07_schema_version") or ""),
+        "source_text_sha256": str(source.get("source_text_sha256") or ""),
+        "prepared_source_sha256": str(source.get("prepared_source_sha256") or ""),
+        "route_mode": first_present(item.paper_payload.get("source_route", {}).get("resolved_langextract_mode"), item.registry_row.get("route_mode")),
+        "annotation_mode": first_present(item.paper_payload.get("annotation", {}).get("annotation_mode"), item.registry_row.get("annotation_mode")),
+        "validation_status": first_present(item.paper_payload.get("annotation", {}).get("validation_status"), item.registry_row.get("validation_status")),
+        "roundtrip_status": first_present(item.paper_payload.get("annotation", {}).get("roundtrip_status"), item.registry_row.get("roundtrip_status")),
+        "manual_review_required": first_present(item.paper_payload.get("manual_review", {}).get("manual_review_required"), item.registry_row.get("manual_review_required")),
+        "manual_review_reasons": " | ".join(manual_review_reasons(item)),
+        "segment_id": str(rejected_span.get("rejected_segment_id") or ""),
+        "logical_segment_id": str(rejected_span.get("logical_segment_id") or ""),
+        "source_block_id": str(rejected_span.get("source_block_id") or ""),
+        "source_start": csv_value(offsets.get("start")),
+        "source_end": csv_value(offsets.get("end")),
+        "predicted_targets": " ".join(targets),
+        "predicted_target_labels": target_labels,
+        "predicted_role": str(rejected_span.get("role") or ""),
+        "predicted_confidence": str(rejected_span.get("confidence") or ""),
+        "predicted_evidence": str(rejected_span.get("evidence") or ""),
+        "segment_text": segment_text,
+        "segment_text_sha256": sha256_text(segment_text),
+        "paper_issue_prompt": f"Rejected proposal: {rejected_span.get('reason') or ''}",
+        "paper_json_path": display_path(item.paper_json_path),
+        "segments_json_path": display_path(item.segments_json_path),
+        "annotated_text_path": display_path(item.annotated_text_path),
+        "validation_json_path": display_path(item.validation_json_path),
+        "paper_html_path": display_path(paper_html_path),
+        "generated_at_utc": generated_at_utc,
+    }
+
+
 def paper_issue_queue_row(
     *,
     round_id: str,
@@ -790,7 +944,7 @@ def paper_issue_queue_row(
 
 def response_row_from_queue(row: dict[str, str]) -> dict[str, str]:
     response = {fieldname: str(row.get(fieldname) or "") for fieldname in QUEUE_FIELDNAMES}
-    if row.get("row_type") == "segment":
+    if row.get("row_type") in {"segment", "rejected_segment"}:
         response["reviewed_targets"] = str(row.get("predicted_targets") or "")
         response["reviewed_role"] = str(row.get("predicted_role") or "")
     else:
@@ -822,12 +976,24 @@ def build_queue_rows(
         entities = entities_for_item(item)
         labels = target_label_lookup(entities)
         segments = [dict(segment) for segment in item.segments_payload.get("segments") or []]
+        rejected_spans = rejected_spans_for_item(item)
         for segment in segments:
             rows.append(
                 queue_row_for_segment(
                     round_id=round_id,
                     item=item,
                     segment=segment,
+                    labels=labels,
+                    paper_html_path=paper_html_path,
+                    generated_at_utc=generated_at_utc,
+                )
+            )
+        for rejected_span in rejected_spans:
+            rows.append(
+                queue_row_for_rejected_span(
+                    round_id=round_id,
+                    item=item,
+                    rejected_span=rejected_span,
                     labels=labels,
                     paper_html_path=paper_html_path,
                     generated_at_utc=generated_at_utc,

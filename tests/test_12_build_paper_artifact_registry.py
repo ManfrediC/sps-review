@@ -239,6 +239,23 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertIn("stage07_xml_present", reader.fieldnames or [])
         self.assertEqual(written[0]["stage07_xml_manifest_run_id"], "test_manifest")
 
+    def test_stage07_xml_json_path_loader_keys_by_paper_id(self) -> None:
+        module = self.module
+        segments_dir = self.tmp_path / "segments"
+        validation_dir = self.tmp_path / "validation"
+        segments_dir.mkdir()
+        validation_dir.mkdir()
+        (segments_dir / "9001.segments.json").write_text("{}", encoding="utf-8")
+        (validation_dir / "9001.validation.json").write_text("{}", encoding="utf-8")
+
+        segments = module.load_stage07_xml_json_paths(segments_dir, ".segments.json")
+        validation = module.load_stage07_xml_json_paths(validation_dir, ".validation.json")
+
+        self.assertEqual(list(segments), ["9001"])
+        self.assertEqual(list(validation), ["9001"])
+        self.assertEqual(segments["9001"].name, "9001.segments.json")
+        self.assertEqual(validation["9001"].name, "9001.validation.json")
+
 
 if __name__ == "__main__":
     unittest.main()

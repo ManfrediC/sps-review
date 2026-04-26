@@ -24,6 +24,7 @@ STAGE07_XML_SCHEMA_VERSION = "stage07_xml_v1"
 SEGMENTS_SCHEMA_VERSION = "stage07_xml_segments_v1"
 TARGET_VIEW_SCHEMA_VERSION = "stage07_xml_target_view_v1"
 MANIFEST_SCHEMA_VERSION = "stage07_xml_manifest_v1"
+REVIEWED_ANNOTATION_SCHEMA_VERSION = "stage07_reviewed_annotation_v1"
 DEFAULT_ANNOTATION_MODEL = "gpt-5.5"
 DEFAULT_MAX_BLOCK_CHARS = 3500
 ALLOWED_ROLES = {
@@ -144,12 +145,21 @@ class ValidationReport:
     roundtrip_status: str = "not_run"
     errors: list[str] | None = None
     warnings: list[str] | None = None
+    review_reasons: list[str] | None = None
+    span_adjustments: list[dict[str, Any]] | None = None
+    rejected_spans: list[dict[str, Any]] | None = None
 
     def __post_init__(self) -> None:
         if self.errors is None:
             self.errors = []
         if self.warnings is None:
             self.warnings = []
+        if self.review_reasons is None:
+            self.review_reasons = []
+        if self.span_adjustments is None:
+            self.span_adjustments = []
+        if self.rejected_spans is None:
+            self.rejected_spans = []
 
     @property
     def failed(self) -> bool:
@@ -161,6 +171,16 @@ class ValidationReport:
 
     def add_warning(self, message: str) -> None:
         self.warnings.append(message)
+
+    def add_review_reason(self, message: str) -> None:
+        if message not in self.review_reasons:
+            self.review_reasons.append(message)
+
+    def add_span_adjustment(self, payload: dict[str, Any]) -> None:
+        self.span_adjustments.append(payload)
+
+    def add_rejected_span(self, payload: dict[str, Any]) -> None:
+        self.rejected_spans.append(payload)
 
 
 @dataclass(frozen=True)
@@ -455,6 +475,45 @@ def route_mode(source_row: dict[str, str], resolved_source: dict[str, str]) -> s
     return str(source_row.get("preferred_langextract_mode") or "").strip() or resolved_mode
 
 
+def explicit_spsd_case_ids(text: str) -> set[str]:
+    ids: set[str] = set()
+    spsd_pattern = r"(?:SPSD|SPS|stiff[- ](?:person|man)|stiff-person|stiff-man)"
+    for match in re.finditer(
+        rf"\b(?:case|patient)\s+(\d+)\b(?:(?!\b(?:case|patient)\s+\d+\b).){{0,180}}{spsd_pattern}",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        ids.add(match.group(1))
+    for match in re.finditer(
+        rf"{spsd_pattern}(?:(?!\b(?:case|patient)\s+\d+\b).){{0,180}}\b(?:case|patient)\s+(\d+)\b",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        ids.add(match.group(1))
+    for match in re.finditer(
+        rf"\b(?:cases|patients)\s+([0-9,\sand]+)\)\s+had(?:(?!\.).){{0,220}}{spsd_pattern}",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        ids.update(re.findall(r"\d+", match.group(1)))
+    return ids
+
+
+def has_embedded_single_spsd_case(prepared_source: PreparedSource) -> bool:
+    return len(explicit_spsd_case_ids(prepared_source.source_text)) == 1
+
+
+def heuristic_route_override(
+    *,
+    route: str,
+    stage06_prior: Stage06Prior,
+    prepared_source: PreparedSource,
+) -> tuple[str, list[str], bool]:
+    if route == "group" and stage06_prior.final_count == 1 and has_embedded_single_spsd_case(prepared_source):
+        return "individual", ["route_override:group_to_individual:embedded_single_spsd_case"], True
+    return route, [], False
+
+
 def initial_targets(
     *,
     route: str,
@@ -490,6 +549,8 @@ def merge_declared_targets(
     base_targets: list[Target],
     annotation_payload: dict[str, Any],
     report: ValidationReport,
+    *,
+    allow_annotation_patient_targets: bool = False,
 ) -> tuple[list[Target], bool]:
     targets_by_id = {target.target_id: target for target in base_targets}
     stage06_diverged = False
@@ -507,10 +568,166 @@ def merge_declared_targets(
         if target_id not in targets_by_id:
             if target_kind == "group" and evidence:
                 targets_by_id[target_id] = Target(target_id, target_kind, label, "stage07_annotation")
+                report.add_warning(f"source_backed_group_target_added:{target_id}")
+                stage06_diverged = True
+            elif target_kind == "patient" and allow_annotation_patient_targets:
+                targets_by_id[target_id] = Target(target_id, target_kind, label, "stage07_annotation")
+                if evidence:
+                    report.add_warning(f"source_backed_patient_target_added:{target_id}")
+                else:
+                    report.add_warning(f"provisional_patient_target_added:{target_id}")
                 stage06_diverged = True
             else:
                 report.add_error(f"undeclared_target_without_source_evidence:{target_id}")
     return list(targets_by_id.values()), stage06_diverged
+
+
+def source_range_to_span_payloads(
+    prepared_source: PreparedSource,
+    start: int,
+    end: int,
+) -> list[dict[str, Any]]:
+    spans: list[dict[str, Any]] = []
+    for block in prepared_source.blocks:
+        overlap_start = max(start, block.source_start)
+        overlap_end = min(end, block.source_end)
+        if overlap_start >= overlap_end:
+            continue
+        block_start = overlap_start - block.source_start
+        block_end = overlap_end - block.source_start
+        selected_text = prepared_source.source_text[overlap_start:overlap_end]
+        if selected_text:
+            spans.append(
+                {
+                    "block_id": block.block_id,
+                    "start_offset": block_start,
+                    "end_offset": block_end,
+                    "selected_text": selected_text,
+                }
+            )
+    return spans
+
+
+def nth_index(value: str, needle: str, occurrence: int = 1, start: int = 0) -> int:
+    if not needle:
+        return -1
+    cursor = start
+    found = -1
+    for _ in range(max(1, occurrence)):
+        found = value.find(needle, cursor)
+        if found < 0:
+            return -1
+        cursor = found + len(needle)
+    return found
+
+
+def reviewed_selection_range(
+    prepared_source: PreparedSource,
+    selection: dict[str, Any],
+) -> tuple[int, int]:
+    occurrence = parse_int(selection.get("occurrence")) or 1
+    after_text = str(selection.get("after_text") or "")
+    search_start = 0
+    if after_text:
+        after_index = nth_index(prepared_source.source_text, after_text, 1)
+        if after_index < 0:
+            raise ValueError(f"Reviewed selection after_text not found: {after_text[:80]}")
+        search_start = after_index + len(after_text)
+
+    exact_text = str(selection.get("text") or "")
+    if exact_text:
+        start = nth_index(prepared_source.source_text, exact_text, occurrence, search_start)
+        if start < 0:
+            raise ValueError(f"Reviewed selection text not found: {exact_text[:80]}")
+        return start, start + len(exact_text)
+
+    start_text = str(selection.get("start_text") or "")
+    end_text = str(selection.get("end_text") or "")
+    if not start_text or not end_text:
+        raise ValueError("Reviewed selections require either text or start_text/end_text.")
+    start = nth_index(prepared_source.source_text, start_text, occurrence, search_start)
+    if start < 0:
+        raise ValueError(f"Reviewed selection start_text not found: {start_text[:80]}")
+    end_marker_start = prepared_source.source_text.find(end_text, start + len(start_text))
+    if end_marker_start < 0:
+        raise ValueError(f"Reviewed selection end_text not found after start: {end_text[:80]}")
+    return start, end_marker_start + len(end_text)
+
+
+def compile_reviewed_annotation_payload(
+    *,
+    reviewed_payload: dict[str, Any],
+    prepared_source: PreparedSource,
+) -> dict[str, Any]:
+    if str(reviewed_payload.get("paper_id") or "") != prepared_source.paper_id:
+        raise ValueError(f"Reviewed annotation paper_id mismatch for {prepared_source.paper_id}.")
+    segments: list[dict[str, Any]] = []
+    for segment in reviewed_payload.get("segments") or []:
+        spans: list[dict[str, Any]] = []
+        for selection in segment.get("selections") or []:
+            start, end = reviewed_selection_range(prepared_source, selection)
+            spans.extend(source_range_to_span_payloads(prepared_source, start, end))
+        segments.append(
+            {
+                "targets": [str(target) for target in segment.get("targets") or []],
+                "role": str(segment.get("role") or ""),
+                "confidence": str(segment.get("confidence") or "reviewed"),
+                "evidence": str(segment.get("evidence") or ""),
+                "spans": spans,
+            }
+        )
+    return {
+        "annotation_mode": "reviewed_gold",
+        "route_mode": str(reviewed_payload.get("route_mode") or ""),
+        "targets": reviewed_payload.get("targets") or [],
+        "segments": segments,
+        "validation_warnings": list(reviewed_payload.get("validation_warnings") or []),
+        "manual_review_reasons": list(reviewed_payload.get("manual_review_reasons") or []),
+    }
+
+
+def first_marker_index(text: str, markers: list[str], start: int = 0) -> int | None:
+    found = [text.find(marker, start) for marker in markers]
+    found = [index for index in found if index >= 0]
+    if not found:
+        return None
+    return min(found)
+
+
+def single_patient_clinical_range(prepared_source: PreparedSource) -> tuple[int, int, bool]:
+    text = prepared_source.source_text
+    start_markers = [
+        "CasePresentation",
+        "Case Presentation",
+        "CASE PRESENTATION",
+        "Case presentation",
+        "Case report",
+        "CASE REPORT",
+        "Patient",
+        "PATIENT",
+        "Case ",
+        "CASE ",
+    ]
+    end_markers = [
+        "\nTheCaseinContext",
+        "\nThe Case in Context",
+        "\nDiscussion",
+        "\nDISCUSSION",
+        "\nSelectedReading",
+        "\nSelected Reading",
+        "\nReferences",
+        "\nREFERENCES",
+        "\nAcknowledgment",
+        "\nAcknowledgement",
+        "\nDr.",
+    ]
+    start = first_marker_index(text, start_markers)
+    if start is None:
+        return 0, len(text), False
+    end = first_marker_index(text, end_markers, start + 1)
+    if end is None:
+        return start, len(text), False
+    return start, end, True
 
 
 def deterministic_annotation_for_route(
@@ -524,6 +741,27 @@ def deterministic_annotation_for_route(
     target = targets[0]
     if route == "individual":
         role = "patient_specific"
+        start, end, confident = single_patient_clinical_range(prepared_source)
+        payload = {
+            "annotation_mode": "deterministic_clinical_window" if confident else "deterministic_pass_through",
+            "segments": [
+                {
+                    "targets": [target.target_id],
+                    "role": role,
+                    "confidence": "high" if confident else "low",
+                    "evidence": (
+                        "Deterministic clinical-window selection for single-patient route."
+                        if confident
+                        else "Deterministic pass-through used because clinical-window boundaries were uncertain."
+                    ),
+                    "spans": source_range_to_span_payloads(prepared_source, start, end),
+                }
+            ],
+        }
+        if not confident:
+            payload["validation_warnings"] = ["single_patient_clinical_window_uncertain"]
+            payload["manual_review_reasons"] = ["single_patient_clinical_window_uncertain"]
+        return payload
     elif route == "group":
         role = "group_summary"
     else:
@@ -549,6 +787,55 @@ def deterministic_annotation_for_route(
     }
 
 
+def unique_text_offsets(block_text: str, selected_text: str) -> tuple[int, int] | None:
+    if not selected_text:
+        return None
+    first = block_text.find(selected_text)
+    if first < 0:
+        return None
+    if block_text.find(selected_text, first + 1) >= 0:
+        return None
+    return first, first + len(selected_text)
+
+
+def rejected_span_payload(
+    *,
+    report: ValidationReport,
+    logical_segment_id: str,
+    targets: list[str],
+    role: str,
+    confidence: str,
+    evidence: str,
+    block: SourceBlock | None,
+    block_id: str,
+    start: int | None,
+    end: int | None,
+    selected_text: str,
+    reason: str,
+) -> dict[str, Any]:
+    requested_offsets: dict[str, Any] = {"start": start, "end": end}
+    source_offsets: dict[str, Any] = {"start": "", "end": ""}
+    if block is not None and start is not None and end is not None:
+        source_offsets = {
+            "start": block.source_start + start,
+            "end": block.source_start + end,
+        }
+    return {
+        "rejected_segment_id": f"r{len(report.rejected_spans or []) + 1:04d}",
+        "logical_segment_id": logical_segment_id,
+        "targets": targets,
+        "role": role,
+        "confidence": confidence,
+        "evidence": evidence,
+        "source_block_id": block_id,
+        "requested_offsets": requested_offsets,
+        "source_offsets": source_offsets,
+        "selected_text": selected_text,
+        "selected_text_sha256": sha256_text(selected_text),
+        "reason": reason,
+    }
+
+
 def validate_annotation_payload(
     *,
     annotation_payload: dict[str, Any],
@@ -570,33 +857,155 @@ def validate_annotation_payload(
         if not targets:
             report.add_error(f"missing_targets:{logical_segment_id}")
             continue
+        targets_valid = True
         for target_id in targets:
             if target_id == "unknown":
                 if role != "uncertain":
                     report.add_error(f"unknown_target_requires_uncertain_role:{logical_segment_id}")
+                    targets_valid = False
                 continue
             if target_id not in declared_ids:
                 report.add_error(f"unknown_target:{logical_segment_id}:{target_id}")
+                targets_valid = False
         confidence = str(item.get("confidence") or "").strip() or "unspecified"
         evidence = str(item.get("evidence") or "").strip()
         for span in item.get("spans") or []:
             block_id = str(span.get("block_id") or "").strip()
             block = blocks_by_id.get(block_id)
             if block is None:
-                report.add_error(f"unknown_block:{logical_segment_id}:{block_id}")
+                reason = f"unknown_block:{logical_segment_id}:{block_id}"
+                report.add_error(reason)
+                report.add_rejected_span(
+                    rejected_span_payload(
+                        report=report,
+                        logical_segment_id=logical_segment_id,
+                        targets=targets,
+                        role=role,
+                        confidence=confidence,
+                        evidence=evidence,
+                        block=None,
+                        block_id=block_id,
+                        start=parse_int(span.get("start_offset")),
+                        end=parse_int(span.get("end_offset")),
+                        selected_text=str(span.get("selected_text") or ""),
+                        reason=reason,
+                    )
+                )
                 continue
             start = parse_int(span.get("start_offset"))
             end = parse_int(span.get("end_offset"))
             selected_text = str(span.get("selected_text") or "")
             if start is None or end is None:
-                report.add_error(f"invalid_offsets:{logical_segment_id}:{block_id}")
+                reason = f"invalid_offsets:{logical_segment_id}:{block_id}"
+                report.add_error(reason)
+                report.add_rejected_span(
+                    rejected_span_payload(
+                        report=report,
+                        logical_segment_id=logical_segment_id,
+                        targets=targets,
+                        role=role,
+                        confidence=confidence,
+                        evidence=evidence,
+                        block=block,
+                        block_id=block_id,
+                        start=start,
+                        end=end,
+                        selected_text=selected_text,
+                        reason=reason,
+                    )
+                )
                 continue
             if start < 0 or end < start or end > len(block.text):
-                report.add_error(f"offsets_out_of_bounds:{logical_segment_id}:{block_id}:{start}:{end}")
-                continue
+                relocated = unique_text_offsets(block.text, selected_text)
+                if relocated is None:
+                    reason = f"offsets_out_of_bounds:{logical_segment_id}:{block_id}:{start}:{end}"
+                    report.add_error(reason)
+                    report.add_rejected_span(
+                        rejected_span_payload(
+                            report=report,
+                            logical_segment_id=logical_segment_id,
+                            targets=targets,
+                            role=role,
+                            confidence=confidence,
+                            evidence=evidence,
+                            block=block,
+                            block_id=block_id,
+                            start=start,
+                            end=end,
+                            selected_text=selected_text,
+                            reason=reason,
+                        )
+                    )
+                    continue
+                old_start, old_end = start, end
+                start, end = relocated
+                report.add_warning(
+                    f"relocated_span:{logical_segment_id}:{block_id}:{old_start}:{old_end}->{start}:{end}"
+                )
+                report.add_span_adjustment(
+                    {
+                        "logical_segment_id": logical_segment_id,
+                        "source_block_id": block_id,
+                        "requested_offsets": {"start": old_start, "end": old_end},
+                        "relocated_offsets": {"start": start, "end": end},
+                        "selected_text_sha256": sha256_text(selected_text),
+                    }
+                )
             actual_text = block.text[start:end]
             if actual_text != selected_text:
-                report.add_error(f"offset_text_mismatch:{logical_segment_id}:{block_id}:{start}:{end}")
+                relocated = unique_text_offsets(block.text, selected_text)
+                if relocated is None:
+                    reason = f"offset_text_mismatch:{logical_segment_id}:{block_id}:{start}:{end}"
+                    report.add_error(reason)
+                    report.add_rejected_span(
+                        rejected_span_payload(
+                            report=report,
+                            logical_segment_id=logical_segment_id,
+                            targets=targets,
+                            role=role,
+                            confidence=confidence,
+                            evidence=evidence,
+                            block=block,
+                            block_id=block_id,
+                            start=start,
+                            end=end,
+                            selected_text=selected_text,
+                            reason=reason,
+                        )
+                    )
+                    continue
+                old_start, old_end = start, end
+                start, end = relocated
+                actual_text = block.text[start:end]
+                report.add_warning(
+                    f"relocated_span:{logical_segment_id}:{block_id}:{old_start}:{old_end}->{start}:{end}"
+                )
+                report.add_span_adjustment(
+                    {
+                        "logical_segment_id": logical_segment_id,
+                        "source_block_id": block_id,
+                        "requested_offsets": {"start": old_start, "end": old_end},
+                        "relocated_offsets": {"start": start, "end": end},
+                        "selected_text_sha256": sha256_text(selected_text),
+                    }
+                )
+            if not targets_valid:
+                report.add_rejected_span(
+                    rejected_span_payload(
+                        report=report,
+                        logical_segment_id=logical_segment_id,
+                        targets=targets,
+                        role=role,
+                        confidence=confidence,
+                        evidence=evidence,
+                        block=block,
+                        block_id=block_id,
+                        start=start,
+                        end=end,
+                        selected_text=selected_text,
+                        reason=f"invalid_targets:{logical_segment_id}",
+                    )
+                )
                 continue
             segment_id = f"s{len(physical_segments) + 1:04d}"
             physical_segments.append(
@@ -614,6 +1023,11 @@ def validate_annotation_payload(
                 )
             )
 
+    physical_segments = apply_table_relevance_heuristics(
+        prepared_source=prepared_source,
+        segments=physical_segments,
+        report=report,
+    )
     validate_segment_overlaps(physical_segments, report)
     for segment in physical_segments:
         if "unknown" in segment.targets or segment.role == "uncertain":
@@ -626,6 +1040,93 @@ def parse_int(value: Any) -> int | None:
         return int(value)
     except (TypeError, ValueError):
         return None
+
+
+def table_row_ranges_for_relevant_ids(
+    *,
+    block: SourceBlock,
+    relevant_ids: set[str],
+) -> list[tuple[int, int]]:
+    ranges: list[tuple[int, int]] = []
+    cursor = 0
+    for line in block.text.splitlines(keepends=True):
+        stripped = line.strip()
+        line_start = cursor
+        line_end = cursor + len(line.rstrip("\n"))
+        cursor += len(line)
+        if not stripped:
+            continue
+        match = re.match(r"^(?:case\s*)?(\d+)\b", stripped, flags=re.IGNORECASE)
+        direct_spsd = re.search(r"\b(?:SPSD|SPS|stiff[- ](?:person|man))\b", stripped, flags=re.IGNORECASE)
+        has_row_content = bool(match and stripped[match.end() :].strip())
+        direct_diagnosis_row = bool(direct_spsd and re.search(r"\d", stripped))
+        if (match and match.group(1) in relevant_ids and has_row_content) or direct_diagnosis_row:
+            ranges.append((line_start, line_end))
+    return ranges
+
+
+def apply_table_relevance_heuristics(
+    *,
+    prepared_source: PreparedSource,
+    segments: list[PhysicalSegment],
+    report: ValidationReport,
+) -> list[PhysicalSegment]:
+    relevant_ids = explicit_spsd_case_ids(prepared_source.source_text)
+    if not relevant_ids:
+        return segments
+    blocks_by_id = {block.block_id: block for block in prepared_source.blocks}
+    adjusted: list[PhysicalSegment] = []
+    for segment in segments:
+        if "table" not in segment.text.lower():
+            adjusted.append(segment)
+            continue
+        block = blocks_by_id.get(segment.block_id)
+        if block is None:
+            adjusted.append(segment)
+            continue
+        row_ranges = table_row_ranges_for_relevant_ids(block=block, relevant_ids=relevant_ids)
+        row_ranges = [
+            (start, end)
+            for start, end in row_ranges
+            if segment.source_start <= block.source_start + start < block.source_start + end <= segment.source_end
+        ]
+        if not row_ranges:
+            reason = f"ambiguous_table_row_mapping:{segment.segment_id}"
+            report.add_warning(reason)
+            report.add_review_reason(reason)
+            adjusted.append(segment)
+            continue
+        report.add_warning(f"trimmed_table_to_relevant_rows:{segment.segment_id}")
+        for start, end in row_ranges:
+            adjusted.append(
+                PhysicalSegment(
+                    segment_id="",
+                    logical_segment_id=segment.logical_segment_id,
+                    targets=segment.targets,
+                    role=segment.role,
+                    text=block.text[start:end],
+                    source_start=block.source_start + start,
+                    source_end=block.source_start + end,
+                    block_id=segment.block_id,
+                    confidence=segment.confidence,
+                    evidence=segment.evidence,
+                )
+            )
+    return [
+        PhysicalSegment(
+            segment_id=f"s{index:04d}",
+            logical_segment_id=segment.logical_segment_id,
+            targets=segment.targets,
+            role=segment.role,
+            text=segment.text,
+            source_start=segment.source_start,
+            source_end=segment.source_end,
+            block_id=segment.block_id,
+            confidence=segment.confidence,
+            evidence=segment.evidence,
+        )
+        for index, segment in enumerate(sorted(adjusted, key=lambda item: (item.source_start, item.source_end)), start=1)
+    ]
 
 
 def validate_segment_overlaps(segments: list[PhysicalSegment], report: ValidationReport) -> None:
@@ -777,6 +1278,45 @@ def missing_target_reasons(targets: list[Target], segments: list[PhysicalSegment
         if not relevant_segments_for_target(target, segments):
             reasons.append(f"missing_target_evidence:{target.target_id}")
     return reasons
+
+
+def apply_group_patient_override(
+    *,
+    route: str,
+    targets: list[Target],
+    segments: list[PhysicalSegment],
+    stage06_prior: Stage06Prior,
+    report: ValidationReport,
+) -> tuple[str, list[Target], bool]:
+    if route != "group":
+        return route, targets, False
+    annotation_patients = [
+        target
+        for target in targets
+        if target.target_kind == "patient" and target.source == "stage07_annotation"
+    ]
+    if not annotation_patients:
+        return route, targets, False
+    expected_count = stage06_prior.final_count
+    if expected_count is not None and len(annotation_patients) != expected_count:
+        report.add_error(
+            f"stage07_patient_target_count_mismatch:{len(annotation_patients)}:{expected_count}"
+        )
+    group_targets_with_segments = [
+        target
+        for target in targets
+        if target.target_kind == "group" and relevant_segments_for_target(target, segments)
+    ]
+    if group_targets_with_segments:
+        report.add_warning("group_route_with_source_backed_patient_targets")
+        return route, targets, True
+    updated_targets = [
+        target
+        for target in targets
+        if not (target.target_kind == "group" and target.source == "stage06_group_prior")
+    ]
+    report.add_warning("route_override:group_to_individual_case_split:source_backed_patient_targets")
+    return "individual_case_split", updated_targets, True
 
 
 def build_manifest_records(
@@ -975,7 +1515,14 @@ def report_payload(report: ValidationReport) -> dict[str, Any]:
         "roundtrip_status": report.roundtrip_status,
         "errors": list(report.errors or []),
         "warnings": list(report.warnings or []),
+        "manual_review_reasons": list(report.review_reasons or []),
+        "span_adjustments": list(report.span_adjustments or []),
+        "rejected_spans": list(report.rejected_spans or []),
     }
+
+
+def annotation_uses_model(annotation_mode: str) -> bool:
+    return annotation_mode not in {"deterministic_pass_through", "deterministic_clinical_window", "reviewed_gold"}
 
 
 def process_paper(
@@ -1020,6 +1567,18 @@ def process_paper(
             annotation_model=annotation_model,
         )
 
+    route, heuristic_route_warnings, heuristic_route_diverged = heuristic_route_override(
+        route=route,
+        stage06_prior=stage06_prior,
+        prepared_source=prepared_source,
+    )
+    annotation_route_diverged = False
+    if annotation_payload is not None:
+        annotation_route = str(annotation_payload.get("route_mode") or "").strip()
+        if annotation_route in {"individual", "individual_case_split", "group"} and annotation_route != route:
+            route = annotation_route
+            annotation_route_diverged = True
+
     base_targets = initial_targets(route=route, stage06_prior=stage06_prior)
     annotation_mode = "stage07_span_metadata"
     if annotation_payload is None:
@@ -1028,10 +1587,20 @@ def process_paper(
             targets=base_targets,
             route=route,
         )
-        annotation_mode = "deterministic_pass_through"
+    annotation_mode = str(annotation_payload.get("annotation_mode") or annotation_mode).strip() or annotation_mode
 
     preliminary_report = ValidationReport()
-    targets, target_diverged = merge_declared_targets(base_targets, annotation_payload, preliminary_report)
+    allow_annotation_patient_targets = (
+        route == "group"
+        and stage06_prior.final_count is not None
+        and 1 < stage06_prior.final_count <= 20
+    )
+    targets, target_diverged = merge_declared_targets(
+        base_targets,
+        annotation_payload,
+        preliminary_report,
+        allow_annotation_patient_targets=allow_annotation_patient_targets,
+    )
     segments, validation_report = validate_annotation_payload(
         annotation_payload=annotation_payload,
         prepared_source=prepared_source,
@@ -1041,15 +1610,29 @@ def process_paper(
         validation_report.add_error(error)
     for warning in preliminary_report.warnings or []:
         validation_report.add_warning(warning)
+    for warning in heuristic_route_warnings:
+        validation_report.add_warning(warning)
+    for warning in annotation_payload.get("validation_warnings") or []:
+        validation_report.add_warning(str(warning))
+    for reason in annotation_payload.get("manual_review_reasons") or []:
+        validation_report.add_review_reason(str(reason))
 
     annotated_text = insert_xml_tags(prepared_source.source_text, segments)
     validate_roundtrip(prepared_source.source_text, annotated_text, validation_report)
+    route, targets, route_diverged = apply_group_patient_override(
+        route=route,
+        targets=targets,
+        segments=segments,
+        stage06_prior=stage06_prior,
+        report=validation_report,
+    )
     coverage_reasons = missing_target_reasons(targets, segments)
     for reason in coverage_reasons:
         validation_report.add_warning(reason)
     manual_review_reasons = list(validation_report.errors or [])
+    manual_review_reasons.extend(validation_report.review_reasons or [])
     manual_review_reasons.extend(coverage_reasons)
-    paper_ready = not validation_report.failed and not coverage_reasons
+    paper_ready = not validation_report.failed and not coverage_reasons and not validation_report.review_reasons
     target_views = build_target_views(
         paper_id=paper_id,
         targets=targets,
@@ -1073,7 +1656,12 @@ def process_paper(
         "segments": segment_payloads(segments),
         "validation": validation_payload,
     }
-    stage06_diverged = bool(target_diverged)
+    stage06_diverged = bool(
+        target_diverged or route_diverged or heuristic_route_diverged or annotation_route_diverged
+    )
+    divergence_dimensions = ["target_inventory"]
+    if route_diverged or heuristic_route_diverged or annotation_route_diverged:
+        divergence_dimensions.append("route_mode")
     registry_row = build_registry_row(
         paper_id=paper_id,
         prepared_source=prepared_source,
@@ -1084,7 +1672,7 @@ def process_paper(
         paths=paper_paths,
         route=route,
         annotation_mode=annotation_mode,
-        annotation_model=annotation_model if annotation_mode != "deterministic_pass_through" else "none",
+        annotation_model=annotation_model if annotation_uses_model(annotation_mode) else "none",
         stage06_prior=stage06_prior,
         stage06_diverged=stage06_diverged,
         manifest_run_id=manifest_run_id,
@@ -1121,7 +1709,7 @@ def process_paper(
         },
         "annotation": {
             "annotation_mode": annotation_mode,
-            "annotation_model": annotation_model if annotation_mode != "deterministic_pass_through" else "none",
+            "annotation_model": annotation_model if annotation_uses_model(annotation_mode) else "none",
             "annotated_text_path": relative_to_repo(paper_paths["annotated_text_path"]),
             "roundtrip_status": validation_report.roundtrip_status,
             "validation_status": validation_report.status,
@@ -1156,8 +1744,8 @@ def process_paper(
     if stage06_diverged:
         paper_payload["stage06_divergence"] = {
             "diverged": True,
-            "dimensions": ["target_inventory"],
-            "reason": "Stage 07 declared source-backed group targets beyond the Stage 06 prior.",
+            "dimensions": divergence_dimensions,
+            "reason": "Stage 07 declared source-backed targets beyond the Stage 06 route prior.",
         }
 
     return ProcessResult(

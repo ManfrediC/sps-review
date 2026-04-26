@@ -1,0 +1,29 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "22",
+  "route_mode": "individual",
+  "reviewer_notes": "Reviewed feedback: one SPSD case embedded in a mixed myoclonus trial; exclude trial-level group summary.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Case 10", "evidence": "Case 10 stiff-person syndrome"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Case 10 narrative block.",
+      "selections": [
+        {"start_text": "Case 10 \nA 62-year-old woman with stiff-person syndrome", "end_text": "microsomal fraction of the thyroid."}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Case 10 table fragment.",
+      "selections": [
+        {"text": "Stiff-person syndrome 4,800"}
+      ]
+    }
+  ]
+}

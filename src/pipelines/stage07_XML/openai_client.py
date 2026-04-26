@@ -25,7 +25,11 @@ For every useful segment, return paragraph block coordinates:
 
 The selected_text must exactly equal block_text[start_offset:end_offset].
 Prefer coherent sentence or paragraph spans. Do not invent patients, groups, findings, or targets.
-Use only declared target IDs unless an explicit source-backed group target is needed.
+For statements that apply to multiple declared patients, use all relevant patient IDs with role "shared".
+Do not create a group target merely for all-patient context in an individual case split.
+Use only declared target IDs unless an explicit source-backed group target is needed, or a group-routed paper has explicit source-backed individual case units.
+For single-patient papers, exclude front matter, library coversheets, references, author bios, and generic disease-context sections unless they contain facts about the patient.
+For tables in mixed cohorts, use prose to identify which case/patient rows are SPSD-relevant, and select only those rows when the source text makes row boundaries clear.
 """.strip()
 
 

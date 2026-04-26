@@ -170,6 +170,15 @@ def load_stage07_xml_annotated_paths(path: Path) -> dict[str, Path]:
     }
 
 
+def load_stage07_xml_json_paths(path: Path, suffix: str) -> dict[str, Path]:
+    if not path.exists():
+        return {}
+    return {
+        file_path.name.removesuffix(suffix): file_path
+        for file_path in sorted(path.glob(f"*{suffix}"))
+    }
+
+
 # Load Stage 07 XML target-view directories.
 def load_stage07_xml_target_view_dirs(path: Path) -> dict[str, Path]:
     if not path.exists():
@@ -492,9 +501,9 @@ def build_registry_rows() -> list[dict[str, str]]:
     stage07_xml_rows = load_csv_rows_by_id(STAGE07_XML_REGISTRY_PATH, "paper_id")
     stage07_xml_paper_paths = load_json_paths(STAGE07_XML_PAPERS_DIR)
     stage07_xml_annotated_text_paths = load_stage07_xml_annotated_paths(STAGE07_XML_ANNOTATED_TEXT_DIR)
-    stage07_xml_segments_paths = load_json_paths(STAGE07_XML_SEGMENTS_DIR)
+    stage07_xml_segments_paths = load_stage07_xml_json_paths(STAGE07_XML_SEGMENTS_DIR, ".segments.json")
     stage07_xml_target_view_dirs = load_stage07_xml_target_view_dirs(STAGE07_XML_TARGET_VIEWS_DIR)
-    stage07_xml_validation_paths = load_json_paths(STAGE07_XML_VALIDATION_DIR)
+    stage07_xml_validation_paths = load_stage07_xml_json_paths(STAGE07_XML_VALIDATION_DIR, ".validation.json")
     langextract_paths = load_json_paths(LANGEXTRACT_DIR)
     summary_paths = load_json_paths(SUMMARY_DIR)
     quality_raw_paths = load_json_paths(QUALITY_RAW_DIR)

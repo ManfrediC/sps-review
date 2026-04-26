@@ -1,0 +1,41 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "23",
+  "route_mode": "individual_case_split",
+  "reviewer_notes": "Reviewed positive control: preserve patient split and shared context.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Patient 1", "evidence": "Patient 1 heading"},
+    {"id": "p2", "kind": "patient", "label": "Patient 2", "evidence": "Patient 2 heading"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 1 case block.",
+      "selections": [
+        {"start_text": "Patient 1. A 42-year old man", "end_text": "Babinski sgn was not present."},
+        {"start_text": "‘A lumbar puncture was performed", "end_text": "his spasms recurred."}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 2 case block.",
+      "selections": [
+        {"start_text": "Patient 2. A 68-year-old woman", "end_text": "atrophy and ankylosis."}
+      ]
+    },
+    {
+      "targets": ["p1", "p2"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed shared discussion for both patients.",
+      "selections": [
+        {"start_text": "Discussion. Both patients meet the criterion", "end_text": "intrathecal baclofen treatment."},
+        {"start_text": "Intrathecal baclofen is now approved", "end_text": "intrathecal infusion,"}
+      ]
+    }
+  ]
+}

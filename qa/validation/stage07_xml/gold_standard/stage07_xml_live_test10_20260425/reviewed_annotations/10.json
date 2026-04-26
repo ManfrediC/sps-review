@@ -1,0 +1,49 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "10",
+  "route_mode": "individual_case_split",
+  "reviewer_notes": "Reviewed feedback: two patient blocks plus two shared/common blocks only.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Patient 1", "evidence": "PATIENT 1 heading"},
+    {"id": "p2", "kind": "patient", "label": "Patient 2", "evidence": "PATIENT 2 heading"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 1 case block.",
+      "selections": [
+        {"start_text": "PATIENT 1 \nA 63-year-old Hispanic woman", "end_text": "her ankle contractures."}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 2 case block.",
+      "selections": [
+        {"start_text": "PATIENT 2 \nA 53-year-old black man", "end_text": "residual stiffness."}
+      ]
+    },
+    {
+      "targets": ["p1", "p2"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed introductory shared context for both patients.",
+      "selections": [
+        {"start_text": "We describe here \ntwo patients with SPS", "end_text": "in this disabling disease."}
+      ]
+    },
+    {
+      "targets": ["p1", "p2"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed discussion comparing both patients.",
+      "selections": [
+        {"start_text": "Both fulfill the diagnostic criteria", "end_text": "progressive stiffness of"},
+        {"start_text": "axial musculature, each patient had characteristic", "end_text": "a sister with IDDM."}
+      ]
+    }
+  ]
+}

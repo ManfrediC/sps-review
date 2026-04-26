@@ -56,8 +56,10 @@ class TestStage07XmlReview(unittest.TestCase):
         segments: list[dict[str, object]],
         route_mode: str = "individual_case_split",
         manual_reasons: list[str] | None = None,
+        rejected_spans: list[dict[str, object]] | None = None,
     ) -> None:
         manual_reasons = manual_reasons or []
+        rejected_spans = rejected_spans or []
         source_sha = review.sha256_text(source_text)
         paper_json_path = self.stage07_root / "papers" / f"{paper_id}.json"
         segments_json_path = self.stage07_root / "segments" / f"{paper_id}.segments.json"
@@ -122,7 +124,13 @@ class TestStage07XmlReview(unittest.TestCase):
         )
         annotated_text_path.write_text(source_text, encoding="utf-8")
         validation_json_path.write_text(
-            json.dumps({"status": "failed" if manual_reasons else "passed", "errors": manual_reasons}),
+            json.dumps(
+                {
+                    "status": "failed" if manual_reasons else "passed",
+                    "errors": manual_reasons,
+                    "rejected_spans": rejected_spans,
+                }
+            ),
             encoding="utf-8",
         )
         self.registry_rows.append(
@@ -320,6 +328,57 @@ class TestStage07XmlReview(unittest.TestCase):
         self.assertEqual(colours["p21"]["index"], "21")
         self.assertIn("Patient 21", chips)
         self.assertIn("p24", chips)
+
+    def test_review_pack_surfaces_rejected_span_proposals(self) -> None:
+        source_text = "Case 1 had axial stiffness."
+        rejected_span = {
+            "rejected_segment_id": "r0001",
+            "logical_segment_id": "l0001",
+            "targets": ["p1"],
+            "role": "patient_specific",
+            "confidence": "high",
+            "evidence": "Case-labelled patient text.",
+            "source_block_id": "b0001",
+            "requested_offsets": {"start": 0, "end": 6},
+            "source_offsets": {"start": 0, "end": 6},
+            "selected_text": "Wrong!",
+            "selected_text_sha256": review.sha256_text("Wrong!"),
+            "reason": "offset_text_mismatch:l0001:b0001:0:6",
+        }
+        self.write_stage07_output(
+            paper_id="1005",
+            source_text=source_text,
+            entities=[{"id": "p1", "kind": "patient", "label": "Patient 1"}],
+            segments=[],
+            manual_reasons=["offset_text_mismatch:l0001:b0001:0:6"],
+            rejected_spans=[rejected_span],
+        )
+        self.write_registry()
+
+        review.build_review_pack(
+            round_id="2026-04-25_round_01",
+            stage07_root=self.stage07_root,
+            registry_path=self.registry_path,
+            gold_root=self.gold_root,
+        )
+
+        paper_html = (
+            self.gold_root / "2026-04-25_round_01" / "papers" / "1005.html"
+        ).read_text(encoding="utf-8")
+        queue_rows = review.load_csv_rows(
+            self.gold_root / "2026-04-25_round_01" / "review_queue.csv"
+        )
+        response_rows = review.load_csv_rows(
+            self.gold_root / "2026-04-25_round_01" / "review_responses.csv"
+        )
+
+        self.assertIn("Rejected Proposals", paper_html)
+        self.assertIn("offset_text_mismatch:l0001:b0001:0:6", paper_html)
+        self.assertIn("rejected_segment", {row["row_type"] for row in queue_rows})
+        rejected_row = next(row for row in queue_rows if row["row_type"] == "rejected_segment")
+        self.assertEqual(rejected_row["segment_id"], "r0001")
+        rejected_response = next(row for row in response_rows if row["row_type"] == "rejected_segment")
+        self.assertEqual(rejected_response["reviewed_targets"], "p1")
 
     def test_refresh_gold_standard_merges_reviewed_rows_deterministically(self) -> None:
         self.build_fixture_outputs()

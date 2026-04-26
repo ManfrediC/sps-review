@@ -1,0 +1,62 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "19",
+  "route_mode": "individual_case_split",
+  "reviewer_notes": "Reviewed feedback: two cases plus shared discussion, with mixed clauses split where exact non-overlapping spans allow it.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Case 1", "evidence": "Case 1 heading"},
+    {"id": "p2", "kind": "patient", "label": "Case 2", "evidence": "Case 2 heading"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Case 1 block.",
+      "selections": [
+        {"start_text": "\"Case 1. A 46- -year-old black woman", "end_text": "She has returned to work."}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Case 2 block.",
+      "selections": [
+        {"start_text": "Case 2. A 25-year-old black man", "end_text": "the spasms are less\npainful."}
+      ]
+    },
+    {
+      "targets": ["p1", "p2"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed shared criteria and clinical similarities.",
+      "selections": [
+        {"start_text": "Both cases fulfill the clinical criteria", "end_text": "Both\npatients had normal intellect and normal findings"},
+        {"start_text": "on neurologic examination except for the limita-", "end_text": "Both responded favorably to baclofen,"},
+        {"start_text": "The two patients\npresented here have no currently identified", "end_text": "with regard to\nantibody status"}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Case 1-specific statements embedded in discussion.",
+      "selections": [
+        {"start_text": "though the patient in Case 1 had a more signifi-", "end_text": "cant response."},
+        {"start_text": "Patient 1 had autoantibodies to GABA-ergic neu-", "end_text": "rons"},
+        {"start_text": "Our first patient had hyperchloremic acidosis", "end_text": "renal tubular acidosis (RTA)"}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Case 2-specific statements embedded in discussion.",
+      "selections": [
+        {"start_text": "Interestingly, the patient in Case\n2 was thought", "end_text": "labeling of their patients."},
+        {"text": "and patient 2 did not."}
+      ]
+    }
+  ]
+}

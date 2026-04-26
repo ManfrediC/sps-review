@@ -1,0 +1,40 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "11",
+  "route_mode": "group",
+  "reviewer_notes": "Reviewed feedback: group-level output; keep cases 8, 9, and 10 only for table evidence.",
+  "targets": [
+    {"id": "g1", "kind": "group", "label": "SPSD group", "evidence": "cases 8, 9, and 10 had stiff-person syndrome"}
+  ],
+  "segments": [
+    {
+      "targets": ["g1"],
+      "role": "group_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed prose identifying the three SPSD trial patients.",
+      "selections": [
+        {"start_text": "patients (cases 8, 9, and 10) had slowly progressive axial", "end_text": "despite conventional treatments."}
+      ]
+    },
+    {
+      "targets": ["g1"],
+      "role": "group_summary",
+      "confidence": "reviewed",
+      "evidence": "Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.",
+      "selections": [
+        {"text": "8 \n9 \n10"},
+        {"text": "Stiff-person \nsyndrome \nStiff-person \nsyndrome \nStiff-person \nsyndrome"},
+        {"text": "511F \n5 IIM \n45lM"}
+      ]
+    },
+    {
+      "targets": ["g1"],
+      "role": "group_summary",
+      "confidence": "reviewed",
+      "evidence": "Reviewed conclusion about milacemide response in the SPSD group.",
+      "selections": [
+        {"start_text": "Despite this, milacemide, up to a dosage of 2,400 mg", "end_text": "person syndrome."}
+      ]
+    }
+  ]
+}

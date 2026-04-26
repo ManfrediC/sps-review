@@ -19,8 +19,11 @@ from stage07_XML.core import (
     SOURCE_CATEGORISATION_PATH,
     SOURCE_MANUAL_REVIEW_PATH,
     build_manifest_run_id,
+    compile_reviewed_annotation_payload,
     collect_candidate_ids,
+    deterministic_annotation_for_route,
     ensure_output_dirs,
+    heuristic_route_override,
     initial_targets,
     load_csv_rows_by_id,
     output_paths,
@@ -99,6 +102,12 @@ def parse_args() -> argparse.Namespace:
         help="Directory containing {paper_id}.json mocked span-metadata responses.",
     )
     parser.add_argument(
+        "--reviewed-annotation-dir",
+        type=Path,
+        default=None,
+        help="Directory containing {paper_id}.json reviewed source-backed annotation specs.",
+    )
+    parser.add_argument(
         "--annotation-model",
         default=DEFAULT_ANNOTATION_MODEL,
         help="OpenAI model used when live annotation is needed.",
@@ -139,6 +148,24 @@ def load_mock_annotation(mock_dir: Path | None, paper_id: str) -> dict[str, Any]
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_reviewed_annotation(
+    *,
+    reviewed_dir: Path | None,
+    paper_id: str,
+    prepared_source: Any,
+) -> dict[str, Any] | None:
+    if reviewed_dir is None:
+        return None
+    path = reviewed_dir / f"{paper_id}.json"
+    if not path.exists():
+        return None
+    reviewed_payload = json.loads(path.read_text(encoding="utf-8"))
+    return compile_reviewed_annotation_payload(
+        reviewed_payload=reviewed_payload,
+        prepared_source=prepared_source,
+    )
 
 
 def resolve_api_key(explicit_key: str) -> str:
@@ -198,30 +225,56 @@ def main() -> None:
             skipped += 1
             continue
 
-        annotation_payload = load_mock_annotation(args.mock_annotation_dir, paper_id)
+        source_row = source_rows.get(paper_id, {})
+        prior = parse_stage06_prior(stage06_rows.get(paper_id, {}))
+        source_path = resolve_source_json_path(
+            paper_id=paper_id,
+            source_row=source_row,
+            stage06_prior=prior,
+        )
+        prepared_source = prepare_source(
+            paper_id=paper_id,
+            source_path=source_path,
+            max_block_chars=args.max_block_chars,
+        )
+        annotation_payload = load_reviewed_annotation(
+            reviewed_dir=args.reviewed_annotation_dir,
+            paper_id=paper_id,
+            prepared_source=prepared_source,
+        )
+        if annotation_payload is None:
+            annotation_payload = load_mock_annotation(args.mock_annotation_dir, paper_id)
         if annotation_payload is None and args.mock_annotation_dir is None and args.allow_paid_run:
-            source_row = source_rows.get(paper_id, {})
-            prior = parse_stage06_prior(stage06_rows.get(paper_id, {}))
             resolved = resolve_source_row(
                 paper_id=paper_id,
                 heuristic_row=source_row,
                 manual_row=manual_rows.get(paper_id, {}),
             )
             route = route_mode(source_row, resolved)
-            if route in {"individual_case_split", "group"}:
-                source_path = resolve_source_json_path(
-                    paper_id=paper_id,
-                    source_row=source_row,
-                    stage06_prior=prior,
+            route, _, _ = heuristic_route_override(
+                route=route,
+                stage06_prior=prior,
+                prepared_source=prepared_source,
+            )
+            targets = initial_targets(route=route, stage06_prior=prior)
+            if route == "individual":
+                deterministic_payload = deterministic_annotation_for_route(
+                    prepared_source=prepared_source,
+                    targets=targets,
+                    route=route,
                 )
-                prepared_source = prepare_source(
-                    paper_id=paper_id,
-                    source_path=source_path,
-                    max_block_chars=args.max_block_chars,
-                )
+                if deterministic_payload.get("manual_review_reasons"):
+                    annotation_payload = annotate_with_openai(
+                        prepared_source=prepared_source,
+                        targets=targets,
+                        model=args.annotation_model,
+                        api_key=api_key,
+                        trace_dir=trace_dir,
+                    )
+            elif route in {"individual_case_split", "group"}:
                 annotation_payload = annotate_with_openai(
                     prepared_source=prepared_source,
-                    targets=initial_targets(route=route, stage06_prior=prior),
+                    targets=targets,
                     model=args.annotation_model,
                     api_key=api_key,
                     trace_dir=trace_dir,

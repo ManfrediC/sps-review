@@ -1,0 +1,20 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "17",
+  "route_mode": "individual",
+  "reviewer_notes": "Reviewed feedback: keep only the clinical case presentation; exclude front matter, context, bios, selected reading, and references.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Patient 1", "evidence": "single case presentation"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed clinical case presentation only.",
+      "selections": [
+        {"start_text": "CasePresentation\nIn1983.", "end_text": "Thepatientremains\nalert,withnosedation."}
+      ]
+    }
+  ]
+}
