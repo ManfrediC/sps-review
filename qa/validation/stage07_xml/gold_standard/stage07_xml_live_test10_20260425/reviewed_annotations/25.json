@@ -1,0 +1,29 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "25",
+  "route_mode": "group",
+  "reviewer_notes": "Reviewed feedback: lab-heavy paper with limited extractable clinical/group information only.",
+  "targets": [
+    {"id": "g1", "kind": "group", "label": "SPSD group", "evidence": "SMS patient sera group"}
+  ],
+  "segments": [
+    {
+      "targets": ["g1"],
+      "role": "group_summary",
+      "confidence": "reviewed",
+      "evidence": "Reviewed summary-level group antibody finding.",
+      "selections": [
+        {"start_text": "We have investigated the reactivity of autoantibodies of 30", "end_text": "clinical condition ."}
+      ]
+    },
+    {
+      "targets": ["g1"],
+      "role": "group_summary",
+      "confidence": "reviewed",
+      "evidence": "Reviewed group-level study population and principal laboratory result.",
+      "selections": [
+        {"start_text": "In this study we have investigated the properties ofGADAbs", "end_text": "substantially from GAD-67 ."}
+      ]
+    }
+  ]
+}

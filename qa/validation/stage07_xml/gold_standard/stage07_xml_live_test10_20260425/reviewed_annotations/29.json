@@ -1,0 +1,38 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "29",
+  "route_mode": "individual",
+  "reviewer_notes": "Reviewed feedback: single patient is usable, but front matter, broad disease background, acknowledgements, and references should be trimmed.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Patient 1", "evidence": "36-year-old man with stiff-person syndrome"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed abstract clinical summary.",
+      "selections": [
+        {"start_text": "Summary: Following several months of low back pain", "end_text": "ment of ambulation and cessation of pain."}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed case-report block.",
+      "selections": [
+        {"start_text": "CASE REPORT \nThe patient was a 36-year-old right-handed black man", "end_text": "did not wish more injections at this time."}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed patient-specific treatment interpretation.",
+      "selections": [
+        {"start_text": "The decreased tone of uninjected thigh muscles after", "end_text": "reduced the need for systemic agents."}
+      ]
+    }
+  ]
+}

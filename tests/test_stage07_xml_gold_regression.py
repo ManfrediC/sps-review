@@ -70,7 +70,7 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
         self.assertEqual(result.validation_payload["roundtrip_status"], "passed")
         self.assertEqual(result.validation_payload["status"], "passed")
 
-    def test_reviewed_gold_subset_matches_feedback(self) -> None:
+    def test_reviewed_gold_batch_matches_feedback(self) -> None:
         paper10 = self.run_reviewed("10")
         self.assert_ready(paper10, {"p1", "p2"}, "individual_case_split")
         self.assertIn("A 63-year-old Hispanic woman", paper10.target_view_payloads["p1"]["input_text"])
@@ -108,6 +108,38 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
         self.assertIn("Patient 1. A 42-year", paper23.target_view_payloads["p1"]["input_text"])
         self.assertIn("Patient 2. A 68-year-old", paper23.target_view_payloads["p2"]["input_text"])
         self.assertIn("Both patients meet the criterion", paper23.target_view_payloads["p1"]["input_text"])
+
+        paper25 = self.run_reviewed("25")
+        self.assert_ready(paper25, {"g1"}, "group")
+        self.assertIn("autoantibodies of 30", paper25.target_view_payloads["g1"]["input_text"])
+        self.assertIn("30 of the 72 GAD-Abs positive SMS sera", paper25.target_view_payloads["g1"]["input_text"])
+        self.assertNotIn("Purification of Rat Brain GAD", paper25.target_view_payloads["g1"]["input_text"])
+
+        paper29 = self.run_reviewed("29")
+        self.assert_ready(paper29, {"p1"}, "individual")
+        self.assertIn("Following several months of low back pain", paper29.target_view_payloads["p1"]["input_text"])
+        self.assertIn("The patient was a 36-year-old right-handed black man", paper29.target_view_payloads["p1"]["input_text"])
+        self.assertIn("The decreased tone of uninjected thigh muscles", paper29.target_view_payloads["p1"]["input_text"])
+        self.assertNotIn("Address correspondence", paper29.target_view_payloads["p1"]["input_text"])
+        self.assertNotIn("REFERENCES", paper29.target_view_payloads["p1"]["input_text"])
+
+        paper30 = self.run_reviewed("30")
+        self.assert_ready(paper30, {"p1", "p2", "p3"}, "individual_case_split")
+        self.assertIn("Patient | has been described previously", paper30.target_view_payloads["p1"]["input_text"])
+        self.assertIn("A 76-year-old woman began", paper30.target_view_payloads["p2"]["input_text"])
+        self.assertIn("A 66-year-old woman began", paper30.target_view_payloads["p3"]["input_text"])
+        self.assertIn("In none of the patients", paper30.target_view_payloads["p1"]["input_text"])
+        self.assertNotIn("A 76-year-old woman began", paper30.target_view_payloads["p1"]["input_text"])
+        self.assertNotIn("Downloaded from nejm.org", paper30.target_view_payloads["p3"]["input_text"])
+
+        paper34 = self.run_reviewed("34")
+        self.assert_ready(paper34, {"p1", "p2"}, "individual_case_split")
+        self.assertEqual(paper34.registry_row["stage06_diverged"], "true")
+        self.assertIn("Patient Be. A 37-year-old man", paper34.target_view_payloads["p1"]["input_text"])
+        self.assertIn("Abnormal visual evoked potentials", paper34.target_view_payloads["p1"]["input_text"])
+        self.assertIn("tinued, the patient was admitted", paper34.target_view_payloads["p1"]["input_text"])
+        self.assertIn("Patient Rm. A published abstractlo", paper34.target_view_payloads["p2"]["input_text"])
+        self.assertNotIn("Patient Rm. A published abstractlo", paper34.target_view_payloads["p1"]["input_text"])
 
 
 if __name__ == "__main__":

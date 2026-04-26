@@ -1,0 +1,48 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "34",
+  "route_mode": "individual_case_split",
+  "reviewer_notes": "Reviewed feedback: group-routed lab-heavy paper contains two source-backed SMS patients, Be and Rm.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Patient Be", "evidence": "Patient Be heading"},
+    {"id": "p2", "kind": "patient", "label": "Patient Rm", "evidence": "Patient Rm heading"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient Be opening clinical block.",
+      "selections": [
+        {"start_text": "Patient Be. A 37-year-old man developed", "end_text": "had been discon-"}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient Be VEP figure legend.",
+      "selections": [
+        {"start_text": "Figure 1. Abnormal visual evoked potentials", "end_text": "25 msec (horizontal)."}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient Be continuation after interrupted word and footer.",
+      "selections": [
+        {"start_text": "tinued, the patient was admitted", "end_text": "resulted in no significant change in symptoms."}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient Rm clinical summary.",
+      "selections": [
+        {"start_text": "Patient Rm. A published abstractlo provides", "end_text": "clinical improvement after taking benzodiazepines."}
+      ]
+    }
+  ]
+}

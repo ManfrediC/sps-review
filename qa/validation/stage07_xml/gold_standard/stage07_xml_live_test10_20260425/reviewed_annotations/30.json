@@ -1,0 +1,85 @@
+{
+  "stage07_reviewed_annotation_schema_version": "stage07_reviewed_annotation_v1",
+  "paper_id": "30",
+  "route_mode": "individual_case_split",
+  "reviewer_notes": "Reviewed feedback: three patients with shared abstract/introduction and shared autoantibody context; journal footers within body text are excluded by reviewed spans.",
+  "targets": [
+    {"id": "p1", "kind": "patient", "label": "Patient 1", "evidence": "Patient 1 heading"},
+    {"id": "p2", "kind": "patient", "label": "Patient 2", "evidence": "Patient 2 heading"},
+    {"id": "p3", "kind": "patient", "label": "Patient 3", "evidence": "Patient 3 heading"}
+  ],
+  "segments": [
+    {
+      "targets": ["p1", "p2", "p3"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed shared abstract methods/results block.",
+      "selections": [
+        {"start_text": "Methods. We studied three women with the stiff-man", "end_text": "women with the stiffman syndrome and breast cancer."}
+      ]
+    },
+    {
+      "targets": ["p1", "p2", "p3"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed shared introduction and abstract continuation.",
+      "selections": [
+        {"start_text": "We describe three women with the stiff-man syn-", "end_text": "directed against glutamic acid\ndecarboxylase."}
+      ]
+    },
+    {
+      "targets": ["p1"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 1 case block.",
+      "selections": [
+        {"start_text": "Patient 1\n\nPatient | has been described previously", "end_text": "fluid samples obtained in October 1986 and January 1987."}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 2 first case block.",
+      "selections": [
+        {"start_text": "Patient 2\nA 76-year-old woman began", "end_text": "differentiated ductal adenocarcinoma."}
+      ]
+    },
+    {
+      "targets": ["p2"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 2 continuation after page footer.",
+      "selections": [
+        {"start_text": "breast cancer was excised, and the patient was treated", "end_text": "a few weeks after surgery in 1987."}
+      ]
+    },
+    {
+      "targets": ["p3"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 3 first case block.",
+      "selections": [
+        {"start_text": "Patient 3\nA 66-year-old woman began", "end_text": "Electromyography revealed continu-"}
+      ]
+    },
+    {
+      "targets": ["p3"],
+      "role": "patient_specific",
+      "confidence": "reviewed",
+      "evidence": "Reviewed Patient 3 continuation after page break.",
+      "selections": [
+        {"start_text": "ous motor-unit activity at rest. A diagnosis of stiff-man syndrome", "end_text": "in 1990, 1991, and 1992."}
+      ]
+    },
+    {
+      "targets": ["p1", "p2", "p3"],
+      "role": "shared",
+      "confidence": "reviewed",
+      "evidence": "Reviewed shared patient-level discussion.",
+      "selections": [
+        {"start_text": "In none of the patients could it be established", "end_text": "other than antineuronal antibodies were negative."}
+      ]
+    }
+  ]
+}
