@@ -110,7 +110,6 @@ def adjudicated_count_row(
 ) -> dict[str, str]:
     preferred_candidate = package.preferred_candidate()
     fallback_candidate = package.fallback_candidate()
-    decision_json_path = ""
     evidence_json_path = ""
     try:
         decision, model_id = adjudicate_count_package(
@@ -148,7 +147,7 @@ def adjudicated_count_row(
             if decision.count_reasoning_summary:
                 reasons.append(decision.count_reasoning_summary)
             if run_dir is not None:
-                decision_json_path = _write_json(
+                _write_json(
                     run_dir / "count_decisions" / f"{package.paper_id}.json",
                     _decision_to_payload(
                         package,
@@ -198,7 +197,7 @@ def adjudicated_count_row(
             if decision.count_reasoning_summary:
                 reasons.append(decision.count_reasoning_summary)
             if run_dir is not None:
-                decision_json_path = _write_json(
+                _write_json(
                     run_dir / "count_decisions" / f"{package.paper_id}.json",
                     _decision_to_payload(
                         package,
@@ -255,7 +254,7 @@ def adjudicated_count_row(
             reasons.append(decision.count_reasoning_summary)
 
         if run_dir is not None:
-            decision_json_path = _write_json(
+            _write_json(
                 run_dir / "count_decisions" / f"{package.paper_id}.json",
                 _decision_to_payload(
                     package,

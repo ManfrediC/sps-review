@@ -8,19 +8,53 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
-import requests
-from openai import (
-    APIConnectionError,
-    APIStatusError,
-    APITimeoutError,
-    AuthenticationError,
-    BadRequestError,
-    NotFoundError,
-    OpenAI,
-    OpenAIError,
-    PermissionDeniedError,
-    RateLimitError,
-)
+try:
+    import requests
+except ModuleNotFoundError:  # pragma: no cover - only used in incomplete environments.
+    requests = None  # type: ignore[assignment]
+
+try:
+    from openai import (
+        APIConnectionError,
+        APIStatusError,
+        APITimeoutError,
+        AuthenticationError,
+        BadRequestError,
+        NotFoundError,
+        OpenAI,
+        OpenAIError,
+        PermissionDeniedError,
+        RateLimitError,
+    )
+except ModuleNotFoundError:  # pragma: no cover - only used in incomplete environments.
+    OpenAI = None  # type: ignore[assignment]
+
+    class OpenAIError(Exception):
+        pass
+
+    class APIConnectionError(OpenAIError):
+        pass
+
+    class APIStatusError(OpenAIError):
+        pass
+
+    class APITimeoutError(OpenAIError):
+        pass
+
+    class AuthenticationError(OpenAIError):
+        pass
+
+    class BadRequestError(OpenAIError):
+        pass
+
+    class NotFoundError(OpenAIError):
+        pass
+
+    class PermissionDeniedError(OpenAIError):
+        pass
+
+    class RateLimitError(OpenAIError):
+        pass
 
 from src.pipelines.stage06_counting.local_ollama import (
     DEFAULT_OLLAMA_BASE_URL,
@@ -46,6 +80,9 @@ OPENAI_DEPENDENCY_EXCEPTIONS = (
     BadRequestError,
     APIStatusError,
     OpenAIError,
+)
+REQUEST_DEPENDENCY_EXCEPTIONS = (
+    requests.RequestException if requests is not None else OSError,
 )
 
 
@@ -174,6 +211,10 @@ def _ollama_models_payload(
     base_url: str = DEFAULT_OLLAMA_BASE_URL,
     timeout_seconds: float = DEFAULT_OLLAMA_PROBE_TIMEOUT_SECONDS,
 ) -> dict[str, Any]:
+    if requests is None:
+        raise Stage06ConfigurationError(
+            "Stage 06 requires the 'requests' package before Ollama can be checked."
+        )
     response = requests.get(f"{base_url.rstrip('/')}/v1/models", timeout=timeout_seconds)
     response.raise_for_status()
     return response.json()
@@ -210,7 +251,9 @@ def preflight_ollama(
 ) -> OllamaPreflightResult:
     try:
         payload = _ollama_models_payload(base_url=base_url, timeout_seconds=probe_timeout_seconds)
-    except requests.RequestException:
+    except Stage06ConfigurationError:
+        raise
+    except REQUEST_DEPENDENCY_EXCEPTIONS:
         executable_path = discover_ollama_executable()
         start_ollama_server(executable_path)
         deadline = time.monotonic() + startup_timeout_seconds
@@ -219,7 +262,9 @@ def preflight_ollama(
             try:
                 payload = _ollama_models_payload(base_url=base_url, timeout_seconds=probe_timeout_seconds)
                 break
-            except requests.RequestException as exc:
+            except Stage06ConfigurationError:
+                raise
+            except REQUEST_DEPENDENCY_EXCEPTIONS as exc:
                 last_error = f"{exc.__class__.__name__}: {exc}"
                 time.sleep(startup_poll_seconds)
         else:
@@ -260,6 +305,10 @@ def preflight_openai(
     api_key: str | None = None,
     env_file: Path = DEFAULT_OPENAI_ENV_FILE,
 ) -> OpenAIPreflightResult:
+    if OpenAI is None:
+        raise Stage06ConfigurationError(
+            "Stage 06 requires the 'openai' package before GPT adjudication can be checked."
+        )
     resolved_key = resolve_openai_api_key(api_key, env_file=env_file)
     client = OpenAI(api_key=resolved_key)
     try:
@@ -289,8 +338,19 @@ def run_stage06_dependency_preflight(
     gpt_model: str,
     api_key: str | None = None,
     env_file: Path = DEFAULT_OPENAI_ENV_FILE,
+    require_openai: bool = True,
 ) -> Stage06PreflightResult:
+    openai_result = (
+        preflight_openai(model=gpt_model, api_key=api_key, env_file=env_file)
+        if require_openai
+        else OpenAIPreflightResult(
+            status="skipped",
+            model=gpt_model,
+            credential_source="not_required_for_selected_papers",
+            env_file_path=str(env_file),
+        )
+    )
     return Stage06PreflightResult(
         ollama=preflight_ollama(model=ollama_model, base_url=ollama_base_url),
-        openai=preflight_openai(model=gpt_model, api_key=api_key, env_file=env_file),
+        openai=openai_result,
     )

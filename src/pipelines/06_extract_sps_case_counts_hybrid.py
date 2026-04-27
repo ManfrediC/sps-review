@@ -108,6 +108,28 @@ def collect_text_paths(input_dir: Path, paper_ids: list[str], limit: int) -> lis
     return paths
 
 
+def _is_canonical_output_path(path: Path) -> bool:
+    return path.resolve() == OUTPUT_PATH.resolve()
+
+
+def _is_partial_selection(args: argparse.Namespace) -> bool:
+    return bool(args.paper_id) or bool(args.limit and args.limit > 0)
+
+
+def _validate_output_scope(args: argparse.Namespace) -> None:
+    if not _is_partial_selection(args):
+        return
+    if not _is_canonical_output_path(args.output_path):
+        return
+    if args.allow_partial_canonical_export:
+        return
+    raise SystemExit(
+        "Refusing to write a subset stage-06 run to the canonical registry. "
+        "Use --output-path under qa/validation/ for partial QA exports, or rerun "
+        "without --paper-id/--limit for a full canonical refresh."
+    )
+
+
 def refresh_artifact_registry(skip_refresh: bool) -> None:
     if skip_refresh:
         return
@@ -291,6 +313,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Allow writing the output CSV even when manual-review rows remain unresolved and uncovered by overrides.",
     )
+    parser.add_argument(
+        "--allow-partial-canonical-export",
+        action="store_true",
+        help="Explicitly allow --paper-id/--limit runs to write the canonical registry. Intended only for supervised recovery.",
+    )
     return parser.parse_args()
 
 
@@ -330,9 +357,11 @@ def main() -> None:
     if args.estimate_only:
         _estimate_summary(packages, override_rows)
         return
+    _validate_output_scope(args)
 
     try:
-        if any(gpt_adjudication_needed(package) for _, package, _, _ in packages) and not args.allow_paid_run:
+        gpt_required = any(gpt_adjudication_needed(package) for _, package, _, _ in packages)
+        if gpt_required and not args.allow_paid_run:
             raise SystemExit(
                 "Refusing to start a paid hybrid run without --allow-paid-run. "
                 "Re-run with --estimate-only first if you want to inspect the candidate mix."
@@ -345,6 +374,7 @@ def main() -> None:
             ollama_model=args.local_model,
             ollama_base_url=args.local_base_url,
             gpt_model=args.gpt_model,
+            require_openai=gpt_required,
         )
 
         run_dir.mkdir(parents=True, exist_ok=False)

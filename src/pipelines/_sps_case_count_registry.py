@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import re
+import tempfile
 from itertools import combinations
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -2593,7 +2594,17 @@ def count_row_fieldnames() -> list[str]:
 
 def write_count_rows(rows: list[dict[str, str]], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8", newline="") as handle:
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        newline="",
+        dir=output_path.parent,
+        prefix=f".{output_path.name}.",
+        suffix=".tmp",
+        delete=False,
+    ) as handle:
         writer = csv.DictWriter(handle, fieldnames=count_row_fieldnames())
         writer.writeheader()
         writer.writerows(rows)
+        temp_path = Path(handle.name)
+    temp_path.replace(output_path)

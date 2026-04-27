@@ -20,7 +20,6 @@ from src.pipelines._proceedings_ready import (
 from src.pipelines._sps_case_count_registry import (
     HEURISTIC_VERSION,
     build_case_count_candidate_package,
-    build_case_count_record,
     relative_to_repo,
     write_count_rows,
 )

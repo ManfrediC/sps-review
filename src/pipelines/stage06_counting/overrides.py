@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import tempfile
 from pathlib import Path
 
 
@@ -38,9 +39,19 @@ def ensure_override_ledger(path: Path = MANUAL_REVIEW_LEDGER_PATH) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
         return
-    with path.open("w", encoding="utf-8", newline="") as handle:
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        newline="",
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        delete=False,
+    ) as handle:
         writer = csv.DictWriter(handle, fieldnames=OVERRIDE_FIELDNAMES)
         writer.writeheader()
+        temp_path = Path(handle.name)
+    temp_path.replace(path)
 
 
 def load_override_rows(path: Path = MANUAL_REVIEW_LEDGER_PATH) -> list[dict[str, str]]:
@@ -86,10 +97,20 @@ def upsert_override_row(
         rows_by_id[candidate_paper_id]
         for candidate_paper_id in sorted(rows_by_id, key=sort_key_for_paper_id)
     ]
-    with path.open("w", encoding="utf-8", newline="") as handle:
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        newline="",
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        delete=False,
+    ) as handle:
         writer = csv.DictWriter(handle, fieldnames=OVERRIDE_FIELDNAMES)
         writer.writeheader()
         writer.writerows(ordered_rows)
+        temp_path = Path(handle.name)
+    temp_path.replace(path)
     return rows_by_id
 
 

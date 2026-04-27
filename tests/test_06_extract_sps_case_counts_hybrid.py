@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import argparse
 import sys
 import tempfile
 import unittest
@@ -149,6 +150,28 @@ class TestStage06ExtractSpsCaseCountsHybrid(unittest.TestCase):
             ]
         )
         self.assertEqual(unresolved_ids, ["525"])
+
+    def test_validate_output_scope_refuses_partial_canonical_export(self) -> None:
+        mod = _load_module("stage06_count_hybrid_output_scope", CASE_COUNT_HYBRID_SCRIPT)
+        args = argparse.Namespace(
+            paper_id=["71"],
+            limit=0,
+            output_path=mod.OUTPUT_PATH,
+            allow_partial_canonical_export=False,
+        )
+        with self.assertRaises(SystemExit):
+            mod._validate_output_scope(args)
+
+    def test_validate_output_scope_allows_partial_qa_export(self) -> None:
+        mod = _load_module("stage06_count_hybrid_output_scope_qa", CASE_COUNT_HYBRID_SCRIPT)
+        with tempfile.TemporaryDirectory() as tmp_dir_text:
+            args = argparse.Namespace(
+                paper_id=["71"],
+                limit=0,
+                output_path=Path(tmp_dir_text) / "stage06_subset.csv",
+                allow_partial_canonical_export=False,
+            )
+            mod._validate_output_scope(args)
 
 
 if __name__ == "__main__":

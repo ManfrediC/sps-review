@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -674,10 +675,20 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "registry_updated_at_utc",
     ]
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8", newline="") as handle:
+    with tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        newline="",
+        dir=output_path.parent,
+        prefix=f".{output_path.name}.",
+        suffix=".tmp",
+        delete=False,
+    ) as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
+        temp_path = Path(handle.name)
+    temp_path.replace(output_path)
 
 
 # Run the pipeline entrypoint.

@@ -5,7 +5,10 @@ import os
 import time
 from typing import Any
 
-import requests
+try:
+    import requests
+except ModuleNotFoundError:  # pragma: no cover - only used in incomplete environments.
+    requests = None  # type: ignore[assignment]
 from pydantic import ValidationError
 
 from src.pipelines.stage06_counting.local_models import LocalCountDecisionOutput, LocalModelCallResult
@@ -85,6 +88,8 @@ def ensure_ollama_model_available(
     base_url: str = DEFAULT_OLLAMA_BASE_URL,
     timeout_seconds: float = 20.0,
 ) -> None:
+    if requests is None:
+        raise RuntimeError("The 'requests' package is required before Ollama can be checked.")
     response = requests.get(f"{base_url.rstrip('/')}/v1/models", timeout=timeout_seconds)
     response.raise_for_status()
     payload = response.json()
@@ -342,6 +347,8 @@ def run_local_count_package(
     prompt = format_candidate_package_for_local_llm(package)
     started = time.monotonic()
     try:
+        if requests is None:
+            raise RuntimeError("The 'requests' package is required before Ollama can be called.")
         response = requests.post(
             f"{base_url.rstrip('/')}/api/chat",
             json={
