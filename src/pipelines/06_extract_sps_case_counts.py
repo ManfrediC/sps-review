@@ -19,6 +19,7 @@ from src.pipelines._proceedings_ready import (
 )
 from src.pipelines._sps_case_count_registry import (
     HEURISTIC_VERSION,
+    build_case_count_record as _build_case_count_record,
     build_case_count_candidate_package,
     relative_to_repo,
     write_count_rows,
@@ -42,6 +43,9 @@ UNRESOLVED_VERIFICATION_STATUSES = {
     "llm_manual_review_required",
     "llm_unable_to_determine",
 }
+
+# Backwards-compatible script-level export used by legacy tests and notebooks.
+build_case_count_record = _build_case_count_record
 
 
 def now_utc_iso() -> str:

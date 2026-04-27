@@ -1336,6 +1336,9 @@ def _extract_patient_label_subgroup_signal(text: str) -> SubgroupSignal | None:
 
 def extract_explicit_sps_subgroup_signal(*, title: str, abstract: str, raw_preferred_text: str) -> SubgroupSignal | None:
     combined_text = "\n".join(part for part in [abstract, raw_preferred_text] if part)
+    antibody_group_signal = _extract_antibody_group_total_signal(title=title, abstract=abstract)
+    if antibody_group_signal is not None:
+        return antibody_group_signal
     for extractor in (
         _extract_methods_sps_cohort_signal,
         _extract_direct_sps_cohort_signal,
@@ -1358,7 +1361,7 @@ def extract_explicit_sps_subgroup_signal(*, title: str, abstract: str, raw_prefe
         signal = extractor(combined_text)
         if signal is not None:
             return signal
-    return _extract_antibody_group_total_signal(title=title, abstract=abstract)
+    return None
 
 
 def extract_non_original_case_signals(*, abstract: str, raw_preferred_text: str) -> list[str]:
@@ -1386,7 +1389,7 @@ def _has_explicit_group_cohort_override_signal(
     if source_subtype in GROUP_COHORT_SOURCE_SUBTYPES:
         return True
 
-    combined_context = " ".join(part for part in [title, abstract, early_body_text[:5000]] if part)
+    combined_context = " ".join(part for part in [title, abstract, early_body_text[:1200]] if part)
     if has_explicit_multi_case_signal(combined_context):
         return True
 
