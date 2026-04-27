@@ -755,6 +755,24 @@ def reviewed_selection_range(
     prepared_source: PreparedSource,
     selection: dict[str, Any],
 ) -> tuple[int, int]:
+    explicit_start = parse_int(selection.get("source_start"))
+    explicit_end = parse_int(selection.get("source_end"))
+    if explicit_start is None:
+        explicit_start = parse_int(selection.get("start_offset"))
+    if explicit_end is None:
+        explicit_end = parse_int(selection.get("end_offset"))
+    if explicit_start is not None or explicit_end is not None:
+        if explicit_start is None or explicit_end is None:
+            raise ValueError("Reviewed offset selections require both source_start and source_end.")
+        if explicit_start < 0 or explicit_end < explicit_start or explicit_end > len(prepared_source.source_text):
+            raise ValueError(
+                f"Reviewed offset selection is outside prepared source bounds: {explicit_start}:{explicit_end}"
+            )
+        exact_text = str(selection.get("text") or "")
+        if exact_text and prepared_source.source_text[explicit_start:explicit_end] != exact_text:
+            raise ValueError(f"Reviewed offset selection text mismatch: {exact_text[:80]}")
+        return explicit_start, explicit_end
+
     occurrence = parse_int(selection.get("occurrence")) or 1
     after_text = str(selection.get("after_text") or "")
     search_start = 0

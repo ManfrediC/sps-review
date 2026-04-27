@@ -283,6 +283,29 @@ Refresh the cumulative ledger after editing response rows:
 python src/validation/build_stage07_xml_gold_pack.py --refresh-gold-only
 ```
 
+### `build_stage07_xml_docx_review_pack.py` and `import_stage07_xml_docx_review.py`
+
+Builds and imports DOCX-based Stage 07 XML gold review rounds.
+
+It:
+- writes one editable DOCX and one editable colour legend/notes Markdown file per paper
+- gives every patient/group target its own DOCX highlight colour
+- repeats the source text in one review section per target so shared spans can be marked by highlighting the same text for multiple targets
+- imports edited DOCX highlights into reviewed annotation JSON specs
+- can regenerate QA-local gold Stage 07 XML/JSON outputs from those reviewed specs
+
+Build a DOCX review round:
+
+```bash
+python src/validation/build_stage07_xml_docx_review_pack.py --round-id stage07_xml_live_batch2_20260427
+```
+
+Import edited DOCX/Markdown files and regenerate QA-local gold XML/JSON:
+
+```bash
+python src/validation/import_stage07_xml_docx_review.py --round-dir qa/validation/stage07_xml/docx_review/stage07_xml_live_batch2_20260427 --force
+```
+
 ### `benchmark_stage06_hybrid.py`
 
 Benchmarks one or more stage-06 workflow CSV outputs against the reviewed stage-06 gold JSON corpus.
