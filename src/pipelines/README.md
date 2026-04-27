@@ -434,7 +434,7 @@ python src/pipelines/06_extract_sps_case_counts_LLM.py --allow-paid-run --output
 
 ## `06_extract_sps_case_counts_hybrid.py`
 
-This script is the canonical stage-06 production candidate and is the intended final writer for `data/references/source_sps_case_count_registry.csv`.
+This script is the canonical stage-06 hybrid runner. Use it to produce full hybrid run artefacts and candidate count rows; use `06c_publish_sps_case_count_registry.py` to publish the final canonical registry from reviewed sources.
 
 It combines:
 
@@ -450,8 +450,9 @@ It:
 - writes run artefacts under `results/stage06_count_runs/{run_id}/`,
 - loads the OpenAI credential from `env/openai_api_key.env` for real runs instead of relying on ambient shell state,
 - auto-starts Ollama when needed and aborts if `gemma4:e4b` still is not reachable,
-- performs a tiny live OpenAI preflight call before processing any paper,
+- performs a tiny live OpenAI preflight call only when selected papers require GPT adjudication,
 - applies reviewed overrides during publish,
+- refuses subset canonical writes from `--paper-id` or `--limit` runs unless explicitly overridden for supervised recovery,
 - refuses canonical export when unresolved manual-review rows remain uncovered by overrides unless `--allow-unresolved-export` is passed explicitly, and
 - aborts and cleans up the current failed attempt if Ollama or OpenAI fails mid-run rather than emitting provisional fallback rows, and
 - refreshes `data/references/paper_artifact_registry.csv` after a canonical write unless skipped.
@@ -480,6 +481,26 @@ python src/pipelines/06b_apply_sps_case_count_overrides.py
 This rewrites `data/references/source_sps_case_count_registry.csv` in place and
 refreshes `data/references/paper_artifact_registry.csv` unless
 `--skip-registry-refresh` is passed.
+
+## `06c_publish_sps_case_count_registry.py`
+
+This script publishes the canonical stage-06 count registry from already-reviewed local evidence. It does not call paid APIs.
+
+It applies, in order:
+
+- hybrid/backfill QA rows from `qa/validation/stage06_llm/`,
+- reviewed manual overrides from `data/references/source_sps_case_count_manual_review.csv`,
+- active gold rows from `qa/validation/source_categorisation/gold_standard/stage06_count_gold/`,
+- source-linkage exclusions such as `incorrect_reference`, and
+- reference-only heuristic fallbacks for rows that otherwise have no count, with `count_manual_review_required=true`.
+
+Run:
+
+```bash
+python src/pipelines/06c_publish_sps_case_count_registry.py
+python src/pipelines/12_build_paper_artifact_registry.py
+python src/validation/benchmark_stage06_hybrid.py --workflow canonical=data/references/source_sps_case_count_registry.csv
+```
 
 ## `07_split_case_series.py`
 
@@ -569,7 +590,27 @@ This script reads text JSON files from `data/extraction_json/text`, prefers `dat
 
 Records reviewed as `incorrect_reference` are explicitly excluded before any downstream model calls.
 
+## `13_build_paper_revisit_registry.py`
+
+This script builds the canonical cross-stage revisit registry at `data/references/paper_revisit_registry.csv`.
+
+It records one row per paper/stage issue from:
+
+- PDF acquisition failures or still-missing acquisition queue entries,
+- proceedings trim and proceedings QC manual-follow-up rows,
+- failed or fallback LLM trim validation,
+- source-linkage failures such as `incorrect_reference`,
+- unresolved source-categorisation review rows,
+- stage-06 count rows still marked for manual review, and
+- case-series split rows requiring manual boundary review.
+
+Run after refreshing the artefact registry or any QC/manual-review ledger:
+
+```bash
+python src/pipelines/13_build_paper_revisit_registry.py
+```
+
 ## Directory Contents Snapshot
-- Last updated: `2026-04-13`
+- Last updated: `2026-04-27`
 - Immediate subdirectories (0): _None_
-- Immediate files (23, excluding `README.md`): `01_download_covidence_pdfs.py`, `02_build_pdf_source_registry.py`, `03_extract_text.py`, `03b_clean_text.py`, `04_source_categorisation_LLM.py`, `05_trim_proceedings_text_LLM.py`, `05b_validate_proceedings_text_LLM.py`, `05c_publish_proceedings_ready.py`, `06_extract_sps_case_counts.py`, `07_split_case_series.py`, `09_build_langextract_examples.py`, `10_langextract.py`, ... (+11 more)
+- Immediate files include the stage entry points `01_download_covidence_pdfs.py` through `13_build_paper_revisit_registry.py`, including `06_extract_sps_case_counts_hybrid.py`, `06b_apply_sps_case_count_overrides.py`, and `06c_publish_sps_case_count_registry.py`.

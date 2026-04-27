@@ -22,13 +22,15 @@
 7. `05_trim_proceedings_text_LLM.py` for proceedings / `conference_abstract` candidates; this writes the stage-05 candidate layer under `data/extraction_json/text_trimmed_llm_candidates/` and `data/references/text_trim_llm_candidate_registry.csv`.
 8. `05b_validate_proceedings_text_LLM.py` after candidate generation; this writes the final LLM-reviewed trim layer under `data/extraction_json/text_trimmed_llm/` and `data/references/text_trim_llm_registry.csv`.
 9. `05c_publish_proceedings_ready.py` after validation or approved manual stage-05 overrides; this publishes the canonical downstream proceedings layer under `data/extraction_json/text_proceedings_ready/` and `data/references/text_proceedings_ready_registry.csv`.
-10. `06_extract_sps_case_counts_hybrid.py` after stage 05 when the canonical SPS case-count registry should be refreshed; this writes `data/references/source_sps_case_count_registry.csv`, uses tracked reviewed overrides from `data/references/source_sps_case_count_manual_review.csv`, and should be treated as the production stage-06 entrypoint.
-11. `07_split_case_series.py` for reviewed case-series candidates before LangExtract.
-12. `09_build_langextract_examples.py` when curated examples change.
-13. `10_langextract.py`
-14. `11_quality_assessment.py`
-15. `12_build_paper_artifact_registry.py` as the cross-pipeline provenance refresh; most stages call it automatically, but run it directly after manual artefact changes.
-16. `99_overnight_run.py` is the orchestration wrapper for staged batch runs, not a separate canonical data-processing stage.
+10. `06_extract_sps_case_counts_hybrid.py` after stage 05 when full hybrid stage-06 run artefacts should be refreshed; this writes candidate count rows, uses tracked reviewed overrides from `data/references/source_sps_case_count_manual_review.csv`, and should be treated as the production stage-06 runner.
+11. `06c_publish_sps_case_count_registry.py` after hybrid QA, reviewed gold, or manual count overrides change; this publishes the canonical `data/references/source_sps_case_count_registry.csv` from reviewed local evidence without making paid API calls.
+12. `07_split_case_series.py` for reviewed case-series candidates before LangExtract.
+13. `09_build_langextract_examples.py` when curated examples change.
+14. `10_langextract.py`
+15. `11_quality_assessment.py`
+16. `12_build_paper_artifact_registry.py` as the cross-pipeline provenance refresh; most stages call it automatically, but run it directly after manual artefact changes.
+17. `13_build_paper_revisit_registry.py` after cross-stage QC, processing, manual-review, or artefact-registry changes; this publishes `data/references/paper_revisit_registry.csv`, the canonical list of papers that need source, QC, or processing follow-up.
+18. `99_overnight_run.py` is the orchestration wrapper for staged batch runs, not a separate canonical data-processing stage.
 
 ## Stopping conditions
 - Stop if host-level install or admin access is required; log blocked status.
