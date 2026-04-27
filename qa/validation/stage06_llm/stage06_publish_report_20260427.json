@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-26T22:28:09.985436+00:00",
+  "generated_at_utc": "2026-04-27T13:42:36.690967+00:00",
   "schema_version": "stage06_publish_report_v1",
   "input_registry_path": "data\\references\\source_sps_case_count_registry.csv",
   "output_registry_path": "data\\references\\source_sps_case_count_registry.csv",
@@ -31,7 +31,7 @@
     "manual_override": 181,
     "active_gold": 248,
     "bad_alignment_exclusion": 1,
-    "reference_heuristic_fallback": 20
+    "reference_heuristic_fallback": 0
   },
   "applied_paper_ids": {
     "hybrid": [
@@ -1385,28 +1385,7 @@
     "bad_alignment_exclusion": [
       "8182"
     ],
-    "reference_heuristic_fallback": [
-      "108",
-      "1001",
-      "1031",
-      "1087",
-      "1098",
-      "1117",
-      "1118",
-      "1120",
-      "1150",
-      "10801",
-      "11823",
-      "11933",
-      "11941",
-      "11947",
-      "11951",
-      "11978",
-      "11984",
-      "12206",
-      "12246",
-      "12251"
-    ]
+    "reference_heuristic_fallback": []
   },
   "validation": {
     "blank_count_paper_ids": [],
