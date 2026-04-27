@@ -167,3 +167,21 @@ For substantial tasks, use:
 - No giant rewrites without warning.
 - No irreversible actions without approval.
 - No secrets in commits or tracked files.
+
+## Comments
+- Comment intent, assumptions, edge cases, and non-obvious logic.
+- Do not comment obvious code.
+- Prefer readable names and simple structure over explanatory comments.
+
+## Function complexity and CRAP score
+For new or substantially modified code, keep functions small, readable, and well tested.
+
+Use CRAP score as a review signal where tooling is available:
+
+- Aim for CRAP < 30 for each new function/method.
+- Treat CRAP >= 30 as a warning that the function is probably too complex, insufficiently tested, or both.
+- Prefer simplifying branching, extracting well-named helper functions, and adding meaningful tests.
+- Do not game the metric by splitting code into awkward tiny functions or adding superficial tests that merely increase coverage.
+- If a function must remain above 30, explain why and document the behavioural tests or invariants that make it safe to change.
+- New code should not introduce new CRAP >= 30 functions without justification.
+- When touching existing CRAP >= 30 functions, either reduce the score, improve test coverage, or explain why the change is intentionally limited.
