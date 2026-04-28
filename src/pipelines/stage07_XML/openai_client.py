@@ -9,11 +9,19 @@ benchmarking.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .core import PreparedSource, Target, source_blocks_payload
+from .core import PreparedSource, Target, relative_to_repo, source_blocks_payload
+from stage07_benchmarking.telemetry import (
+    append_telemetry_csv,
+    append_telemetry_jsonl,
+    telemetry_row,
+)
 
 try:
     from openai import OpenAI
@@ -168,6 +176,16 @@ def incomplete_reason(response: Any) -> str:
     return str(getattr(details, "reason", "") or "")
 
 
+def now_utc_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def sha256_json(payload: Any) -> str:
+    return hashlib.sha256(
+        json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    ).hexdigest()
+
+
 def build_user_payload(
     *,
     prepared_source: PreparedSource,
@@ -239,6 +257,14 @@ def annotate_with_openai(
     max_output_tokens: int = DEFAULT_OPENAI_MAX_OUTPUT_TOKENS,
     reasoning_effort: str = DEFAULT_OPENAI_REASONING_EFFORT,
     strict_json_schema: bool = True,
+    telemetry_rows: list[dict[str, str]] | None = None,
+    telemetry_jsonl_path: Path | None = None,
+    telemetry_csv_path: Path | None = None,
+    telemetry_context: dict[str, Any] | None = None,
+    temperature: float | None = None,
+    top_p: float | None = None,
+    retry_count: int = 0,
+    retry_reason: str = "",
 ) -> dict[str, Any]:
     """Request Stage 07 span metadata from OpenAI and return parsed JSON.
 
@@ -251,11 +277,15 @@ def annotate_with_openai(
     if OpenAI is None:
         raise RuntimeError("The openai package is not installed.")
     user_payload = build_user_payload(prepared_source=prepared_source, targets=targets)
+    request_trace_path = ""
+    response_trace_path = ""
+    meta_trace_path = ""
     if trace_dir is not None:
         # Trace requests include source text by design because Stage 07 debugging
         # needs exact provenance. API keys are never written here.
         trace_dir.mkdir(parents=True, exist_ok=True)
-        (trace_dir / f"{prepared_source.paper_id}.request.json").write_text(
+        request_path = trace_dir / f"{prepared_source.paper_id}.request.json"
+        request_path.write_text(
             json.dumps(
                 {
                     "model": model,
@@ -270,32 +300,73 @@ def annotate_with_openai(
             ),
             encoding="utf-8",
         )
+        request_trace_path = relative_to_repo(request_path)
 
     client = OpenAI(api_key=api_key)
-    response = client.responses.create(
-        model=model,
-        store=False,
-        input=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
-        ],
-        reasoning={"effort": reasoning_effort},
-        text={
-            "format": {
-                "type": "json_schema",
-                "name": "stage07_span_metadata",
-                "schema": STAGE07_RESPONSE_SCHEMA,
-                "strict": strict_json_schema,
+    started_at = now_utc_iso()
+    started_counter = time.perf_counter()
+    try:
+        response = client.responses.create(
+            model=model,
+            store=False,
+            input=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
+            ],
+            reasoning={"effort": reasoning_effort},
+            text={
+                "format": {
+                    "type": "json_schema",
+                    "name": "stage07_span_metadata",
+                    "schema": STAGE07_RESPONSE_SCHEMA,
+                    "strict": strict_json_schema,
+                },
+                "verbosity": "low",
             },
-            "verbosity": "low",
-        },
-        max_output_tokens=max_output_tokens,
-    )
+            max_output_tokens=max_output_tokens,
+        )
+    except Exception as exc:
+        finished_at = now_utc_iso()
+        latency_ms = round((time.perf_counter() - started_counter) * 1000)
+        context = telemetry_context or {}
+        row = telemetry_row(
+            benchmark_run_id=str(context.get("benchmark_run_id") or ""),
+            matrix_config_name=str(context.get("matrix_config_name") or ""),
+            paper_id=prepared_source.paper_id,
+            provider="openai",
+            model=model,
+            endpoint="responses",
+            architecture_variant=str(context.get("architecture_variant") or "block_offsets"),
+            reasoning_effort=reasoning_effort,
+            max_output_tokens=max_output_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            strict_json_schema=strict_json_schema,
+            prompt_hash=hashlib.sha256(SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
+            schema_hash=sha256_json(STAGE07_RESPONSE_SCHEMA),
+            started_at_utc=started_at,
+            finished_at_utc=finished_at,
+            latency_ms=latency_ms,
+            response_status=f"exception:{type(exc).__name__}",
+            retry_count=retry_count,
+            retry_reason=retry_reason,
+            trace_request_path=request_trace_path,
+        )
+        record_telemetry_row(
+            row,
+            telemetry_rows=telemetry_rows,
+            telemetry_jsonl_path=telemetry_jsonl_path,
+            telemetry_csv_path=telemetry_csv_path,
+        )
+        raise
+    finished_at = now_utc_iso()
+    latency_ms = round((time.perf_counter() - started_counter) * 1000)
     output_text = getattr(response, "output_text", "")
     if trace_dir is not None:
         # Keep both the raw response and a small metadata sidecar. The sidecar is
         # what benchmark summaries should usually consume.
-        (trace_dir / f"{prepared_source.paper_id}.response.raw.json").write_text(
+        response_path = trace_dir / f"{prepared_source.paper_id}.response.raw.json"
+        response_path.write_text(
             response.model_dump_json(indent=2),
             encoding="utf-8",
         )
@@ -303,10 +374,47 @@ def annotate_with_openai(
             output_text,
             encoding="utf-8",
         )
-        (trace_dir / f"{prepared_source.paper_id}.response.meta.json").write_text(
+        meta_path = trace_dir / f"{prepared_source.paper_id}.response.meta.json"
+        meta_path.write_text(
             json.dumps(response_metadata(response), ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+        response_trace_path = relative_to_repo(response_path)
+        meta_trace_path = relative_to_repo(meta_path)
+    context = telemetry_context or {}
+    row = telemetry_row(
+        benchmark_run_id=str(context.get("benchmark_run_id") or ""),
+        matrix_config_name=str(context.get("matrix_config_name") or ""),
+        paper_id=prepared_source.paper_id,
+        provider="openai",
+        model=model,
+        endpoint="responses",
+        architecture_variant=str(context.get("architecture_variant") or "block_offsets"),
+        reasoning_effort=reasoning_effort,
+        max_output_tokens=max_output_tokens,
+        temperature=temperature,
+        top_p=top_p,
+        strict_json_schema=strict_json_schema,
+        prompt_hash=hashlib.sha256(SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
+        schema_hash=sha256_json(STAGE07_RESPONSE_SCHEMA),
+        started_at_utc=started_at,
+        finished_at_utc=finished_at,
+        latency_ms=latency_ms,
+        response_status=str(getattr(response, "status", "") or ""),
+        incomplete_reason=incomplete_reason(response),
+        usage=getattr(response, "usage", None),
+        retry_count=retry_count,
+        retry_reason=retry_reason,
+        trace_request_path=request_trace_path,
+        trace_response_path=response_trace_path,
+        trace_meta_path=meta_trace_path,
+    )
+    record_telemetry_row(
+        row,
+        telemetry_rows=telemetry_rows,
+        telemetry_jsonl_path=telemetry_jsonl_path,
+        telemetry_csv_path=telemetry_csv_path,
+    )
     if getattr(response, "status", "") == "incomplete":
         # Treat truncation as a hard failure rather than trying to parse partial
         # JSON; hidden reasoning tokens can exhaust the cap before visible output
@@ -324,3 +432,18 @@ def annotate_with_openai(
             f"incomplete_details={incomplete_details}"
         )
     return json.loads(output_text)
+
+
+def record_telemetry_row(
+    row: dict[str, str],
+    *,
+    telemetry_rows: list[dict[str, str]] | None,
+    telemetry_jsonl_path: Path | None,
+    telemetry_csv_path: Path | None,
+) -> None:
+    if telemetry_rows is not None:
+        telemetry_rows.append(row)
+    if telemetry_jsonl_path is not None:
+        append_telemetry_jsonl(telemetry_jsonl_path, row)
+    if telemetry_csv_path is not None:
+        append_telemetry_csv(telemetry_csv_path, row)

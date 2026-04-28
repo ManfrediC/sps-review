@@ -79,6 +79,7 @@ class TestStage07OpenAIClient(unittest.TestCase):
 
     def test_openai_call_uses_strict_schema_and_configurable_budget(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
+            telemetry_rows: list[dict[str, str]] = []
             result = openai_client.annotate_with_openai(
                 prepared_source=self.prepared_source(),
                 targets=[core.Target("p1", "patient", "Patient 1", "test")],
@@ -88,6 +89,12 @@ class TestStage07OpenAIClient(unittest.TestCase):
                 max_output_tokens=26000,
                 reasoning_effort="high",
                 strict_json_schema=True,
+                telemetry_rows=telemetry_rows,
+                telemetry_context={
+                    "benchmark_run_id": "run1",
+                    "matrix_config_name": "O1",
+                    "architecture_variant": "block_offsets",
+                },
             )
 
             self.assertEqual(result, {"targets": [], "segments": []})
@@ -98,6 +105,10 @@ class TestStage07OpenAIClient(unittest.TestCase):
             text_config = request["text"]  # type: ignore[index]
             self.assertTrue(text_config["format"]["strict"])
             self.assertTrue((Path(tmp_dir) / "9001.response.meta.json").exists())
+            self.assertEqual(telemetry_rows[0]["benchmark_run_id"], "run1")
+            self.assertEqual(telemetry_rows[0]["matrix_config_name"], "O1")
+            self.assertEqual(telemetry_rows[0]["input_tokens"], "10")
+            self.assertEqual(telemetry_rows[0]["output_tokens"], "5")
 
     def test_incomplete_openai_response_raises_before_parsing(self) -> None:
         FakeOpenAI.response = FakeResponse(
@@ -113,6 +124,30 @@ class TestStage07OpenAIClient(unittest.TestCase):
                 model="gpt-test",
                 api_key="test-key",
             )
+
+    def test_openai_exception_records_secret_free_telemetry(self) -> None:
+        class RaisingResponses:
+            def create(self, **kwargs: object) -> FakeResponse:
+                raise RuntimeError("network failed")
+
+        class RaisingOpenAI:
+            def __init__(self, *, api_key: str) -> None:
+                self.responses = RaisingResponses()
+
+        openai_client.OpenAI = RaisingOpenAI
+        telemetry_rows: list[dict[str, str]] = []
+
+        with self.assertRaisesRegex(RuntimeError, "network failed"):
+            openai_client.annotate_with_openai(
+                prepared_source=self.prepared_source(),
+                targets=[core.Target("p1", "patient", "Patient 1", "test")],
+                model="gpt-test",
+                api_key="secret-test-key",
+                telemetry_rows=telemetry_rows,
+            )
+
+        self.assertEqual(telemetry_rows[0]["response_status"], "exception:RuntimeError")
+        self.assertNotIn("secret-test-key", str(telemetry_rows[0]))
 
 
 if __name__ == "__main__":

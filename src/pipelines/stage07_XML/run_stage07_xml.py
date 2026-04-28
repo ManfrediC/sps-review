@@ -50,6 +50,7 @@ from stage07_XML.openai_client import (
     DEFAULT_OPENAI_REASONING_EFFORT,
     annotate_with_openai,
 )
+from stage07_benchmarking.telemetry import write_telemetry_csv, write_telemetry_jsonl
 from _source_routing import resolve_source_row
 
 
@@ -143,6 +144,33 @@ def parse_args() -> argparse.Namespace:
         help="Use non-strict JSON schema output for compatibility experiments.",
     )
     parser.add_argument(
+        "--benchmark-run-id",
+        default="",
+        help="Optional benchmark run id to attach to live API telemetry.",
+    )
+    parser.add_argument(
+        "--matrix-config-name",
+        default="",
+        help="Optional optimisation matrix configuration name for live API telemetry.",
+    )
+    parser.add_argument(
+        "--architecture-variant",
+        default="block_offsets",
+        help="Architecture variant label for live API telemetry.",
+    )
+    parser.add_argument(
+        "--telemetry-jsonl-path",
+        type=Path,
+        default=None,
+        help="Optional JSONL path for live API telemetry rows.",
+    )
+    parser.add_argument(
+        "--telemetry-csv-path",
+        type=Path,
+        default=None,
+        help="Optional CSV path for live API telemetry rows.",
+    )
+    parser.add_argument(
         "--openai-api-key",
         default="",
         help="Explicit OpenAI API key for live GPT-5.5 annotation.",
@@ -234,6 +262,24 @@ def refresh_artifact_registry(skip_refresh: bool) -> None:
     )
 
 
+def update_telemetry_validation(
+    telemetry_rows: list[dict[str, str]],
+    result: Any,
+) -> None:
+    """Attach Stage 07 validation outcomes to the latest API row for a paper."""
+
+    for row in reversed(telemetry_rows):
+        if row.get("paper_id") != result.paper_id:
+            continue
+        if row.get("validation_status"):
+            return
+        validation = result.validation_payload
+        row["validation_status"] = str(validation.get("status") or "")
+        row["validation_errors"] = "|".join(str(item) for item in validation.get("errors") or [])
+        row["manual_review_reasons"] = str(result.registry_row.get("manual_review_reasons") or "")
+        return
+
+
 def main() -> None:
     args = parse_args()
     paths = output_paths(args.output_root)
@@ -264,6 +310,7 @@ def main() -> None:
 
     registry_rows: list[dict[str, str]] = []
     manifest_records: list[dict[str, Any]] = []
+    telemetry_rows: list[dict[str, str]] = []
     skipped = 0
     for paper_id in candidate_ids:
         paper_json_path = paths.papers_dir / f"{paper_id}.json"
@@ -331,6 +378,12 @@ def main() -> None:
                         max_output_tokens=args.max_output_tokens,
                         reasoning_effort=args.reasoning_effort,
                         strict_json_schema=not args.relaxed_json_schema,
+                        telemetry_rows=telemetry_rows,
+                        telemetry_context={
+                            "benchmark_run_id": args.benchmark_run_id or manifest_run_id,
+                            "matrix_config_name": args.matrix_config_name,
+                            "architecture_variant": args.architecture_variant,
+                        },
                     )
             elif route in {"individual_case_split", "group"}:
                 # Multi-target and group papers are the attribution-heavy cases
@@ -344,6 +397,12 @@ def main() -> None:
                     max_output_tokens=args.max_output_tokens,
                     reasoning_effort=args.reasoning_effort,
                     strict_json_schema=not args.relaxed_json_schema,
+                    telemetry_rows=telemetry_rows,
+                    telemetry_context={
+                        "benchmark_run_id": args.benchmark_run_id or manifest_run_id,
+                        "matrix_config_name": args.matrix_config_name,
+                        "architecture_variant": args.architecture_variant,
+                    },
                 )
 
         result = process_paper(
@@ -358,11 +417,22 @@ def main() -> None:
             max_block_chars=args.max_block_chars,
         )
         write_process_result(result)
+        update_telemetry_validation(telemetry_rows, result)
         registry_rows.append(result.registry_row)
         manifest_records.extend(result.manifest_records)
 
     write_registry(registry_rows, args.registry_path)
     write_manifest(manifest_records, manifest_path)
+    telemetry_jsonl_path = args.telemetry_jsonl_path or (
+        trace_dir / "api_telemetry.jsonl" if telemetry_rows else None
+    )
+    telemetry_csv_path = args.telemetry_csv_path or (
+        trace_dir / "api_telemetry.csv" if telemetry_rows else None
+    )
+    if telemetry_rows and telemetry_jsonl_path is not None:
+        write_telemetry_jsonl(telemetry_jsonl_path, telemetry_rows)
+    if telemetry_rows and telemetry_csv_path is not None:
+        write_telemetry_csv(telemetry_csv_path, telemetry_rows)
     refresh_artifact_registry(args.skip_artifact_registry_refresh)
 
     ready_records = sum(1 for record in manifest_records if record.get("ready_for_langextract"))

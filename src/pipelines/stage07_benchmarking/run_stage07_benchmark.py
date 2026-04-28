@@ -27,6 +27,7 @@ from stage07_benchmarking.manifest import (
     write_benchmark_artifacts,
 )
 from stage07_benchmarking.metrics import score_segments_payloads, summarise_paper_scores
+from stage07_benchmarking.telemetry import load_telemetry_rows
 
 
 DEFAULT_REVIEWED_GOLD_DIR = (
@@ -60,6 +61,36 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--candidate-stage07-root",
+        type=Path,
+        default=None,
+        help="Optional existing Stage 07 output root to rescore instead of recompiling candidate annotations.",
+    )
+    parser.add_argument(
+        "--candidate-registry-path",
+        type=Path,
+        default=None,
+        help="Optional registry CSV for --candidate-stage07-root readiness/manual-review metadata.",
+    )
+    parser.add_argument(
+        "--gold-stage07-root",
+        type=Path,
+        default=None,
+        help="Optional existing gold Stage 07 output root, such as a DOCX-import regenerated gold root.",
+    )
+    parser.add_argument(
+        "--gold-registry-path",
+        type=Path,
+        default=None,
+        help="Optional registry CSV for --gold-stage07-root readiness metadata.",
+    )
+    parser.add_argument(
+        "--docx-round-dir",
+        type=Path,
+        default=None,
+        help="Use reviewed_annotations and regenerated gold outputs from an imported DOCX review round.",
+    )
+    parser.add_argument(
         "--evaluation-root",
         type=Path,
         default=DEFAULT_EVALUATION_ROOT,
@@ -72,6 +103,17 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="Optional JSON model/config matrix to record with the run.",
+    )
+    parser.add_argument(
+        "--matrix-config-name",
+        default="",
+        help="Configuration name to attach to candidate scores when scoring a single candidate.",
+    )
+    parser.add_argument(
+        "--api-telemetry-path",
+        type=Path,
+        default=None,
+        help="Optional CSV or JSONL telemetry file to merge into benchmark reports.",
     )
     parser.add_argument(
         "--max-block-chars",
@@ -120,6 +162,19 @@ def load_annotation_payload(path: Path, prepared_source: core.PreparedSource) ->
     return payload
 
 
+def load_stage07_segments(root: Path, paper_id: str) -> dict[str, Any]:
+    path = core.output_paths(root).segments_dir / f"{paper_id}.segments.json"
+    if not path.exists():
+        raise FileNotFoundError(f"Missing Stage 07 segments payload: {path}")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_registry_rows(path: Path | None) -> dict[str, dict[str, str]]:
+    if path is None or not path.exists():
+        return {}
+    return core.load_csv_rows_by_id(path, "paper_id")
+
+
 def process_with_annotation(
     *,
     paper_id: str,
@@ -162,11 +217,16 @@ def benchmark_paper(
     paper_id: str,
     reviewed_gold_dir: Path,
     candidate_annotation_dir: Path | None,
+    candidate_stage07_root: Path | None,
+    candidate_registry_rows: dict[str, dict[str, str]],
+    gold_stage07_root: Path | None,
+    gold_registry_rows: dict[str, dict[str, str]],
     output_root: Path,
     source_rows: dict[str, dict[str, str]],
     manual_rows: dict[str, dict[str, str]],
     stage06_rows: dict[str, dict[str, str]],
     max_block_chars: int,
+    matrix_config_name: str,
 ) -> dict[str, Any]:
     """Score one paper by compiling gold and candidate annotations side by side."""
 
@@ -187,38 +247,66 @@ def benchmark_paper(
         candidate_path = candidate_annotation_dir / f"{paper_id}.json"
         if candidate_path.exists():
             candidate_annotation = load_annotation_payload(candidate_path, prepared_source)
-    # Gold and candidate runs share the same scratch root. Filenames may overlap,
-    # but the benchmark keeps the returned in-memory payloads and writes only the
-    # final score artefacts for comparison.
-    gold_result = process_with_annotation(
-        paper_id=paper_id,
-        annotation_payload=gold_annotation,
-        output_root=output_root,
-        source_rows=source_rows,
-        manual_rows=manual_rows,
-        stage06_rows=stage06_rows,
-        max_block_chars=max_block_chars,
-    )
-    candidate_result = process_with_annotation(
-        paper_id=paper_id,
-        annotation_payload=candidate_annotation,
-        output_root=output_root,
-        source_rows=source_rows,
-        manual_rows=manual_rows,
-        stage06_rows=stage06_rows,
-        max_block_chars=max_block_chars,
-    )
+    if gold_stage07_root is None:
+        gold_result = process_with_annotation(
+            paper_id=paper_id,
+            annotation_payload=gold_annotation,
+            output_root=output_root,
+            source_rows=source_rows,
+            manual_rows=manual_rows,
+            stage06_rows=stage06_rows,
+            max_block_chars=max_block_chars,
+        )
+        gold_payload = gold_result.segments_payload
+        gold_registry_row = gold_result.registry_row
+    else:
+        gold_payload = load_stage07_segments(gold_stage07_root, paper_id)
+        gold_registry_row = gold_registry_rows.get(paper_id, {})
+    if candidate_stage07_root is None:
+        # Gold and candidate runs share the same scratch root. Filenames may overlap,
+        # but the benchmark keeps the returned in-memory payloads and writes only the
+        # final score artefacts for comparison.
+        candidate_result = process_with_annotation(
+            paper_id=paper_id,
+            annotation_payload=candidate_annotation,
+            output_root=output_root,
+            source_rows=source_rows,
+            manual_rows=manual_rows,
+            stage06_rows=stage06_rows,
+            max_block_chars=max_block_chars,
+        )
+        predicted_payload = candidate_result.segments_payload
+        registry_row = candidate_result.registry_row
+    else:
+        predicted_payload = load_stage07_segments(candidate_stage07_root, paper_id)
+        registry_row = candidate_registry_rows.get(paper_id, {})
     return score_segments_payloads(
-        gold_payload=gold_result.segments_payload,
-        predicted_payload=candidate_result.segments_payload,
+        gold_payload=gold_payload,
+        predicted_payload=predicted_payload,
         paper_id=paper_id,
-        registry_row=candidate_result.registry_row,
+        registry_row=registry_row,
+        gold_registry_row=gold_registry_row,
+        matrix_config_name=matrix_config_name,
     )
+
+
+def resolve_gold_inputs(args: argparse.Namespace) -> tuple[Path, Path | None, Path | None]:
+    reviewed_gold_dir = args.reviewed_gold_dir
+    gold_stage07_root = args.gold_stage07_root
+    gold_registry_path = args.gold_registry_path
+    if args.docx_round_dir is not None:
+        reviewed_gold_dir = args.docx_round_dir / "reviewed_annotations"
+        if gold_stage07_root is None and (args.docx_round_dir / "gold_stage07_xml").exists():
+            gold_stage07_root = args.docx_round_dir / "gold_stage07_xml"
+        if gold_registry_path is None and (args.docx_round_dir / "gold_stage07_xml_registry.csv").exists():
+            gold_registry_path = args.docx_round_dir / "gold_stage07_xml_registry.csv"
+    return reviewed_gold_dir, gold_stage07_root, gold_registry_path
 
 
 def main() -> None:
     args = parse_args()
-    paper_ids = selected_paper_ids(args.reviewed_gold_dir, args.paper_id)
+    reviewed_gold_dir, gold_stage07_root, gold_registry_path = resolve_gold_inputs(args)
+    paper_ids = selected_paper_ids(reviewed_gold_dir, args.paper_id)
     if not paper_ids:
         raise SystemExit("No reviewed gold annotations matched the benchmark request.")
 
@@ -231,37 +319,55 @@ def main() -> None:
     source_rows = core.load_csv_rows_by_id(core.SOURCE_CATEGORISATION_PATH, "paper_id")
     manual_rows = core.load_csv_rows_by_id(core.SOURCE_MANUAL_REVIEW_PATH, "paper_id")
     stage06_rows = core.load_csv_rows_by_id(core.SOURCE_CASE_COUNT_PATH, "paper_id")
+    candidate_registry_rows = load_registry_rows(args.candidate_registry_path)
+    gold_registry_rows = load_registry_rows(gold_registry_path)
     paper_scores = [
         benchmark_paper(
             paper_id=paper_id,
-            reviewed_gold_dir=args.reviewed_gold_dir,
+            reviewed_gold_dir=reviewed_gold_dir,
             candidate_annotation_dir=args.candidate_annotation_dir,
+            candidate_stage07_root=args.candidate_stage07_root,
+            candidate_registry_rows=candidate_registry_rows,
+            gold_stage07_root=gold_stage07_root,
+            gold_registry_rows=gold_registry_rows,
             output_root=scratch_output_root,
             source_rows=source_rows,
             manual_rows=manual_rows,
             stage06_rows=stage06_rows,
             max_block_chars=args.max_block_chars,
+            matrix_config_name=args.matrix_config_name,
         )
         for paper_id in paper_ids
     ]
+    telemetry_rows = load_telemetry_rows(args.api_telemetry_path)
     summary = summarise_paper_scores(paper_scores)
+    summary["estimated_cost_usd"] = sum(float(row.get("estimated_cost_usd") or 0.0) for row in telemetry_rows)
+    summary["latency_ms"] = sum(int(float(row.get("latency_ms") or 0.0)) for row in telemetry_rows)
     run_config = {
         "schema_version": RUN_CONFIG_SCHEMA_VERSION,
         "run_id": run_id,
-        "reviewed_gold_dir": str(args.reviewed_gold_dir),
+        "reviewed_gold_dir": str(reviewed_gold_dir),
         "candidate_annotation_dir": str(args.candidate_annotation_dir or ""),
+        "candidate_stage07_root": str(args.candidate_stage07_root or ""),
+        "candidate_registry_path": str(args.candidate_registry_path or ""),
+        "gold_stage07_root": str(gold_stage07_root or ""),
+        "gold_registry_path": str(gold_registry_path or ""),
+        "docx_round_dir": str(args.docx_round_dir or ""),
         "paper_ids": paper_ids,
         "max_block_chars": args.max_block_chars,
+        "matrix_config_name": args.matrix_config_name,
         "model_matrix": load_model_matrix(args.model_matrix),
         # This runner is intentionally offline. Future live benchmarks should
         # make paid execution explicit in a separate command path.
         "paid_api_calls": False,
+        "api_telemetry_path": str(args.api_telemetry_path or ""),
     }
     write_benchmark_artifacts(
         paths=paths,
         run_config=run_config,
         paper_scores=paper_scores,
         summary=summary,
+        telemetry_rows=telemetry_rows,
     )
     print(f"Wrote Stage 07 benchmark artefacts to {paths.run_dir}")
 

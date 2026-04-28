@@ -14,10 +14,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .matrix import MODEL_MATRIX_SCHEMA_VERSION, load_model_matrix
+from .telemetry import (
+    DEFAULT_PRICING_TABLE,
+    TELEMETRY_FIELDNAMES,
+    write_telemetry_csv,
+    write_telemetry_jsonl,
+)
+
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_EVALUATION_ROOT = REPO_ROOT / "qa" / "validation" / "stage07_xml" / "evaluation"
-MODEL_MATRIX_SCHEMA_VERSION = "stage07_benchmark_model_matrix_v1"
 RUN_CONFIG_SCHEMA_VERSION = "stage07_benchmark_run_config_v1"
 
 
@@ -28,9 +35,14 @@ class BenchmarkPaths:
     run_dir: Path
     config_path: Path
     paper_scores_path: Path
+    target_scores_csv_path: Path
     summary_csv_path: Path
     summary_json_path: Path
     summary_md_path: Path
+    pareto_summary_csv_path: Path
+    telemetry_csv_path: Path
+    telemetry_jsonl_path: Path
+    pricing_table_path: Path
 
 
 def now_run_id(prefix: str = "stage07_benchmark") -> str:
@@ -47,9 +59,14 @@ def benchmark_paths(evaluation_root: Path, run_id: str) -> BenchmarkPaths:
         run_dir=run_dir,
         config_path=run_dir / "run_config.json",
         paper_scores_path=run_dir / "paper_scores.jsonl",
+        target_scores_csv_path=run_dir / "target_scores.csv",
         summary_csv_path=run_dir / "paper_scores.csv",
         summary_json_path=run_dir / "summary.json",
         summary_md_path=run_dir / "summary.md",
+        pareto_summary_csv_path=run_dir / "pareto_summary.csv",
+        telemetry_csv_path=run_dir / "api_telemetry.csv",
+        telemetry_jsonl_path=run_dir / "api_telemetry.jsonl",
+        pricing_table_path=run_dir / "pricing_table.json",
     )
 
 
@@ -57,43 +74,6 @@ def ensure_benchmark_paths(paths: BenchmarkPaths) -> None:
     """Create the run directory without touching canonical output roots."""
 
     paths.run_dir.mkdir(parents=True, exist_ok=True)
-
-
-def load_model_matrix(path: Path | None) -> list[dict[str, Any]]:
-    """Load an optional provider/model matrix for provenance only.
-
-    The first-pass benchmark runner is offline. This matrix records the intended
-    model configurations for a later approved live run, but loading it never
-    resolves API keys or performs provider calls.
-    """
-
-    if path is None:
-        return []
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    configs = payload.get("configs") or payload.get("runs") or []
-    if not isinstance(configs, list):
-        raise ValueError("Model matrix must contain a list under 'configs' or 'runs'.")
-    normalised: list[dict[str, Any]] = []
-    for index, item in enumerate(configs, start=1):
-        if not isinstance(item, dict):
-            raise ValueError(f"Model matrix item {index} is not an object.")
-        name = str(item.get("name") or "").strip()
-        provider = str(item.get("provider") or "").strip()
-        model = str(item.get("model") or "").strip()
-        if not name or not provider or not model:
-            raise ValueError(f"Model matrix item {index} needs name, provider, and model.")
-        normalised.append(
-            {
-                "name": name,
-                "provider": provider,
-                "model": model,
-                "reasoning_effort": str(item.get("reasoning_effort") or "").strip(),
-                "max_output_tokens": item.get("max_output_tokens"),
-                "strict_json_schema": item.get("strict_json_schema"),
-                "notes": str(item.get("notes") or "").strip(),
-            }
-        )
-    return normalised
 
 
 def write_json(path: Path, payload: dict[str, Any] | list[dict[str, Any]]) -> None:
@@ -127,6 +107,13 @@ def write_paper_scores_csv(path: Path, paper_scores: list[dict[str, Any]]) -> No
         "contamination_flags",
         "ready_for_langextract",
         "manual_review_reasons",
+        "target_inventory_exact",
+        "role_attribution_errors",
+        "xml_roundtrip_status",
+        "json_validation_status",
+        "false_ready",
+        "false_not_ready",
+        "matrix_config_name",
     ]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
@@ -147,6 +134,89 @@ def write_paper_scores_csv(path: Path, paper_scores: list[dict[str, Any]]) -> No
                     "contamination_flags": "|".join(score.get("contamination_flags") or []),
                     "ready_for_langextract": score.get("ready_for_langextract", ""),
                     "manual_review_reasons": score.get("manual_review_reasons", ""),
+                    "target_inventory_exact": str(score.get("target_inventory_exact", "")).lower(),
+                    "role_attribution_errors": "|".join(score.get("role_attribution_errors") or []),
+                    "xml_roundtrip_status": score.get("xml_roundtrip_status", ""),
+                    "json_validation_status": score.get("json_validation_status", ""),
+                    "false_ready": str((score.get("readiness_calibration") or {}).get("false_ready", "")).lower(),
+                    "false_not_ready": str((score.get("readiness_calibration") or {}).get("false_not_ready", "")).lower(),
+                    "matrix_config_name": score.get("matrix_config_name", ""),
+                }
+            )
+
+
+def write_target_scores_csv(path: Path, paper_scores: list[dict[str, Any]]) -> None:
+    fieldnames = [
+        "paper_id",
+        "target_id",
+        "precision",
+        "recall",
+        "f1",
+        "predicted_chars",
+        "gold_chars",
+        "overlap_chars",
+        "matrix_config_name",
+    ]
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for score in paper_scores:
+            for target_score in score.get("target_scores") or []:
+                writer.writerow(
+                    {
+                        "paper_id": score.get("paper_id", ""),
+                        "target_id": target_score.get("target_id", ""),
+                        "precision": f"{float(target_score.get('precision') or 0):.6f}",
+                        "recall": f"{float(target_score.get('recall') or 0):.6f}",
+                        "f1": f"{float(target_score.get('f1') or 0):.6f}",
+                        "predicted_chars": target_score.get("predicted_chars", 0),
+                        "gold_chars": target_score.get("gold_chars", 0),
+                        "overlap_chars": target_score.get("overlap_chars", 0),
+                        "matrix_config_name": score.get("matrix_config_name", ""),
+                    }
+                )
+
+
+def write_pareto_summary_csv(path: Path, paper_scores: list[dict[str, Any]], telemetry_rows: list[dict[str, str]]) -> None:
+    fieldnames = [
+        "matrix_config_name",
+        "n_papers",
+        "mean_precision",
+        "mean_recall",
+        "mean_f1",
+        "n_contaminated_papers",
+        "n_false_ready",
+        "manual_review_papers",
+        "estimated_cost_usd",
+        "latency_ms",
+    ]
+    telemetry_by_config: dict[str, dict[str, float]] = {}
+    for row in telemetry_rows:
+        name = row.get("matrix_config_name", "")
+        telemetry_by_config.setdefault(name, {"cost": 0.0, "latency": 0.0})
+        telemetry_by_config[name]["cost"] += float(row.get("estimated_cost_usd") or 0.0)
+        telemetry_by_config[name]["latency"] += float(row.get("latency_ms") or 0.0)
+    scores_by_config: dict[str, list[dict[str, Any]]] = {}
+    for score in paper_scores:
+        scores_by_config.setdefault(str(score.get("matrix_config_name") or ""), []).append(score)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for name, scores in sorted(scores_by_config.items()):
+            micros = [score.get("micro") or {} for score in scores]
+            telemetry = telemetry_by_config.get(name, {})
+            writer.writerow(
+                {
+                    "matrix_config_name": name,
+                    "n_papers": len(scores),
+                    "mean_precision": f"{sum(float(item.get('precision') or 0) for item in micros) / max(1, len(micros)):.6f}",
+                    "mean_recall": f"{sum(float(item.get('recall') or 0) for item in micros) / max(1, len(micros)):.6f}",
+                    "mean_f1": f"{sum(float(item.get('f1') or 0) for item in micros) / max(1, len(micros)):.6f}",
+                    "n_contaminated_papers": sum(1 for score in scores if score.get("contamination_flags")),
+                    "n_false_ready": sum(1 for score in scores if (score.get("readiness_calibration") or {}).get("false_ready")),
+                    "manual_review_papers": sum(1 for score in scores if str(score.get("manual_review_reasons") or "")),
+                    "estimated_cost_usd": f"{float(telemetry.get('cost') or 0):.8f}",
+                    "latency_ms": f"{float(telemetry.get('latency') or 0):.0f}",
                 }
             )
 
@@ -162,6 +232,8 @@ def summary_markdown(summary: dict[str, Any]) -> str:
         f"- Micro F1: {float(summary.get('micro_f1') or 0):.4f}\n"
         f"- Contaminated papers: {summary.get('n_contaminated_papers', 0)}\n"
         f"- Papers with missing targets: {summary.get('n_missing_target_papers', 0)}\n"
+        f"- False-ready papers: {summary.get('n_false_ready_papers', 0)}\n"
+        f"- Estimated API cost: ${float(summary.get('estimated_cost_usd') or 0):.4f}\n"
     )
 
 
@@ -171,12 +243,34 @@ def write_benchmark_artifacts(
     run_config: dict[str, Any],
     paper_scores: list[dict[str, Any]],
     summary: dict[str, Any],
+    telemetry_rows: list[dict[str, str]] | None = None,
+    pricing_table: dict[str, Any] | None = None,
 ) -> None:
     """Write all benchmark artefacts into the run directory."""
 
     ensure_benchmark_paths(paths)
+    telemetry_payload = telemetry_rows or []
     write_json(paths.config_path, run_config)
     write_jsonl(paths.paper_scores_path, paper_scores)
     write_paper_scores_csv(paths.summary_csv_path, paper_scores)
+    write_target_scores_csv(paths.target_scores_csv_path, paper_scores)
+    write_telemetry_csv(paths.telemetry_csv_path, telemetry_payload)
+    write_telemetry_jsonl(paths.telemetry_jsonl_path, telemetry_payload)
+    write_pareto_summary_csv(paths.pareto_summary_csv_path, paper_scores, telemetry_payload)
+    write_json(paths.pricing_table_path, pricing_table or DEFAULT_PRICING_TABLE)
     write_json(paths.summary_json_path, summary)
     paths.summary_md_path.write_text(summary_markdown(summary), encoding="utf-8")
+
+
+__all__ = [
+    "BenchmarkPaths",
+    "DEFAULT_EVALUATION_ROOT",
+    "MODEL_MATRIX_SCHEMA_VERSION",
+    "RUN_CONFIG_SCHEMA_VERSION",
+    "TELEMETRY_FIELDNAMES",
+    "benchmark_paths",
+    "ensure_benchmark_paths",
+    "load_model_matrix",
+    "now_run_id",
+    "write_benchmark_artifacts",
+]

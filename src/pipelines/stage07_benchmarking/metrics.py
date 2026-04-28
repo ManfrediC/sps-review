@@ -10,9 +10,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any
+import re
 
 
 IGNORED_ROLES = {"background", "uncertain"}
+EXTRACTION_UNSAFE_SECTION_RE = re.compile(
+    r"\b(references?|bibliography|materials?\s+and\s+methods?|methods?|acknowledg(?:e)?ments?)\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -111,6 +116,42 @@ def declared_target_ids(segments_payload: dict[str, Any]) -> set[str]:
     }
 
 
+def entity_labels(segments_payload: dict[str, Any]) -> dict[str, str]:
+    labels: dict[str, str] = {}
+    for item in segments_payload.get("entities") or []:
+        target_id = str(item.get("id") or item.get("target_id") or "").strip()
+        label = str(item.get("label") or item.get("target_label") or "").strip()
+        if target_id and label:
+            labels[target_id] = label
+    return labels
+
+
+def validation_value(payload: dict[str, Any], key: str) -> str:
+    validation = payload.get("validation") or {}
+    return str(validation.get(key) or "")
+
+
+def target_segment_roles(segments_payload: dict[str, Any]) -> dict[str, list[tuple[Interval, str, str]]]:
+    roles: dict[str, list[tuple[Interval, str, str]]] = {}
+    for segment in segments_payload.get("segments") or []:
+        role = str(segment.get("role") or "").strip()
+        if role in IGNORED_ROLES:
+            continue
+        offsets = segment.get("source_offsets") or {}
+        try:
+            interval = Interval(int(offsets.get("start")), int(offsets.get("end")))
+        except (TypeError, ValueError):
+            continue
+        if interval.end <= interval.start:
+            continue
+        segment_id = str(segment.get("logical_segment_id") or segment.get("segment_id") or "").strip()
+        for target_id in segment.get("targets") or []:
+            target_text = str(target_id or "").strip()
+            if target_text and target_text != "unknown":
+                roles.setdefault(target_text, []).append((interval, role, segment_id))
+    return roles
+
+
 def target_intervals(segments_payload: dict[str, Any]) -> dict[str, list[Interval]]:
     """Collect scored source intervals by target ID.
 
@@ -141,9 +182,11 @@ def contamination_flags(
     *,
     predicted_payload: dict[str, Any],
     gold_target_ids: set[str],
+    gold_labels: dict[str, str] | None = None,
 ) -> list[str]:
     """Return precision-first flags that are not captured by interval F1 alone."""
 
+    labels = gold_labels or {}
     flags: list[str] = []
     for segment in predicted_payload.get("segments") or []:
         segment_id = str(segment.get("logical_segment_id") or segment.get("segment_id") or "").strip()
@@ -154,7 +197,60 @@ def contamination_flags(
         for target_id in sorted(targets):
             if target_id and target_id != "unknown" and gold_target_ids and target_id not in gold_target_ids:
                 flags.append(f"extra_target_segment:{target_id}:{segment_id}")
+        text = str(segment.get("text") or "")
+        if role not in IGNORED_ROLES and EXTRACTION_UNSAFE_SECTION_RE.search(text):
+            flags.append(f"unsafe_section_text:{segment_id}")
+        for target_id in sorted(target for target in targets if target in gold_target_ids):
+            for other_target, other_label in labels.items():
+                if other_target == target_id:
+                    continue
+                label = other_label.strip()
+                if label and len(label) >= 4 and label.casefold() in text.casefold():
+                    flags.append(f"cross_target_label_leak:{target_id}:{other_target}:{segment_id}")
     return sorted(set(flags))
+
+
+def role_attribution_errors(gold_payload: dict[str, Any], predicted_payload: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    gold_roles = target_segment_roles(gold_payload)
+    predicted_roles = target_segment_roles(predicted_payload)
+    for target_id, predicted_items in predicted_roles.items():
+        for predicted_interval, predicted_role, segment_id in predicted_items:
+            overlaps = [
+                gold_role
+                for gold_interval, gold_role, _ in gold_roles.get(target_id, [])
+                if intersection_length([predicted_interval], [gold_interval]) > 0
+            ]
+            if overlaps and predicted_role not in overlaps:
+                errors.append(f"role_mismatch:{target_id}:{segment_id}:{predicted_role}:{','.join(sorted(set(overlaps)))}")
+    return sorted(set(errors))
+
+
+def truthy(value: Any) -> bool:
+    return str(value or "").strip().casefold() in {"1", "true", "yes", "y"}
+
+
+def readiness_calibration(
+    *,
+    registry_row: dict[str, str] | None,
+    gold_registry_row: dict[str, str] | None,
+    contamination: list[str],
+    missing_targets: list[str],
+    extra_targets: list[str],
+    role_errors: list[str],
+) -> dict[str, bool]:
+    predicted_ready = truthy((registry_row or {}).get("ready_for_langextract"))
+    if gold_registry_row is None:
+        gold_ready = not contamination and not missing_targets and not extra_targets and not role_errors
+    else:
+        gold_ready = truthy(gold_registry_row.get("ready_for_langextract"))
+    semantically_unsafe = bool(contamination or missing_targets or extra_targets or role_errors)
+    return {
+        "predicted_ready": predicted_ready,
+        "gold_ready": gold_ready,
+        "false_ready": bool(predicted_ready and (not gold_ready or semantically_unsafe)),
+        "false_not_ready": bool((not predicted_ready) and gold_ready and not semantically_unsafe),
+    }
 
 
 def score_segments_payloads(
@@ -163,6 +259,8 @@ def score_segments_payloads(
     predicted_payload: dict[str, Any],
     paper_id: str | None = None,
     registry_row: dict[str, str] | None = None,
+    gold_registry_row: dict[str, str] | None = None,
+    matrix_config_name: str = "",
 ) -> dict[str, Any]:
     """Score one predicted Stage 07 segments payload against one gold payload.
 
@@ -191,9 +289,25 @@ def score_segments_payloads(
         target_scores.append({"target_id": target_id, **metrics})
     precision = ratio(total_overlap, total_predicted, empty_value=1.0 if total_gold == 0 else 0.0)
     recall = ratio(total_overlap, total_gold, empty_value=1.0 if total_predicted == 0 else 0.0)
-    contamination = contamination_flags(predicted_payload=predicted_payload, gold_target_ids=gold_ids)
+    missing_targets = sorted(gold_ids - predicted_ids)
+    extra_targets = sorted(predicted_ids - gold_ids)
+    role_errors = role_attribution_errors(gold_payload, predicted_payload)
+    contamination = contamination_flags(
+        predicted_payload=predicted_payload,
+        gold_target_ids=gold_ids,
+        gold_labels=entity_labels(gold_payload),
+    )
+    calibration = readiness_calibration(
+        registry_row=registry_row,
+        gold_registry_row=gold_registry_row,
+        contamination=contamination,
+        missing_targets=missing_targets,
+        extra_targets=extra_targets,
+        role_errors=role_errors,
+    )
     return {
         "paper_id": paper_id or str(predicted_payload.get("paper_id") or gold_payload.get("paper_id") or ""),
+        "matrix_config_name": matrix_config_name,
         "target_scores": target_scores,
         "micro": {
             "predicted_chars": total_predicted,
@@ -203,11 +317,16 @@ def score_segments_payloads(
             "recall": recall,
             "f1": f1_score(precision, recall),
         },
-        "missing_targets": sorted(gold_ids - predicted_ids),
-        "extra_targets": sorted(predicted_ids - gold_ids),
+        "target_inventory_exact": not missing_targets and not extra_targets,
+        "missing_targets": missing_targets,
+        "extra_targets": extra_targets,
+        "role_attribution_errors": role_errors,
         "contamination_flags": contamination,
+        "xml_roundtrip_status": validation_value(predicted_payload, "roundtrip_status"),
+        "json_validation_status": validation_value(predicted_payload, "status"),
         "ready_for_langextract": (registry_row or {}).get("ready_for_langextract", ""),
         "manual_review_reasons": (registry_row or {}).get("manual_review_reasons", ""),
+        "readiness_calibration": calibration,
     }
 
 
@@ -228,6 +347,10 @@ def summarise_paper_scores(paper_scores: list[dict[str, Any]]) -> dict[str, Any]
         "n_papers": len(paper_scores),
         "n_contaminated_papers": sum(1 for score in paper_scores if score.get("contamination_flags")),
         "n_missing_target_papers": sum(1 for score in paper_scores if score.get("missing_targets")),
+        "n_target_inventory_error_papers": sum(1 for score in paper_scores if not score.get("target_inventory_exact")),
+        "n_role_error_papers": sum(1 for score in paper_scores if score.get("role_attribution_errors")),
+        "n_false_ready_papers": sum(1 for score in paper_scores if (score.get("readiness_calibration") or {}).get("false_ready")),
+        "n_false_not_ready_papers": sum(1 for score in paper_scores if (score.get("readiness_calibration") or {}).get("false_not_ready")),
         "micro_predicted_chars": total_predicted,
         "micro_gold_chars": total_gold,
         "micro_overlap_chars": total_overlap,
