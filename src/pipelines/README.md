@@ -510,14 +510,14 @@ It:
 
 - reads the reviewed routing decision from `data/references/source_categorisation_manual_review.csv` when available,
 - limits automatic splitting to papers that are true case-series candidates,
-- requires proceedings conference abstracts to pass the proceedings QC gate first,
-- prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when available,
-- falls back to `data/extraction_json/text_trimmed/{paper_id}.json`,
-- searches for explicit `Case 1` / `Patient 1` style headings,
-- writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`, and
+- builds a composite stage-06 prior from the canonical count registry plus any available run artefacts,
+- prefers the stage-06 `preferred_text_json_path`,
+- searches for explicit `Case 1` / `Patient 1` style headings and bounded subgroup statements,
+- writes per-paper unit artifacts to `data/extraction_json/text_case_series_units/{paper_id}.json`,
+- derives a run-scoped JSONL manifest under `results/stage07_unit_manifests/`, and
 - writes `data/references/case_series_split_registry.csv`.
 
-It is intentionally conservative. If explicit case boundaries are not stable, the paper stays in manual review.
+It is intentionally conservative. If attribution-safe units are not stable, the paper stays in manual review.
 
 ### Run
 
@@ -549,10 +549,12 @@ python src/pipelines/09_build_langextract_examples.py
 
 ## `10_langextract.py`
 
-This script reads text JSON files from `data/extraction_json/text`, applies reviewed routing by default, prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when it exists, falls back to `data/extraction_json/text_trimmed/{paper_id}.json`, uses case-series split artifacts when appropriate, runs LangExtract with an OpenAI model, and writes:
+This script reads text JSON files from `data/extraction_json/text`, applies reviewed routing by default, prefers `data/extraction_json/text_proceedings_ready/{paper_id}.json` when it exists, falls back to `data/extraction_json/text_trimmed/{paper_id}.json`, uses stage-07 unit artifacts when appropriate, runs LangExtract with an OpenAI model, and writes:
 
 - Raw LangExtract entities to `data/extraction_json/langextract/{paper_id}.json`
 - Section summaries + overall summary to `data/extraction_json/summary/{paper_id}.json`
+
+The stage-07 unit source defaults to `data/extraction_json/text_case_series_units/` and can be overridden with `--case-units-dir` for smoke runs or isolated validation.
 
 Records reviewed as `incorrect_reference` are explicitly excluded and reported as `skipped_incorrect_reference` in the run summary.
 

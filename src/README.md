@@ -56,9 +56,9 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
    - Refreshes `data/references/paper_artifact_registry.csv`.
 
 9. `pipelines/07_split_case_series.py`
-   - Splits reviewed multi-case papers into explicit case segments when stable `Case 1` / `Patient 1` style headings are present.
-   - Prefers `data/extraction_json/text_proceedings_ready/` before falling back to legacy trimmed or full source text.
-   - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/{paper_id}.json`.
+   - Publishes patient/group unit packages for reviewed split papers using source-routing hints plus stage-06 priors.
+   - Prefers the stage-06 `preferred_text_json_path` and writes per-paper stage-07 artifacts to `data/extraction_json/text_case_series_units/{paper_id}.json`.
+   - Derives a run-scoped JSONL manifest under `results/stage07_unit_manifests/`.
    - Writes `data/references/case_series_split_registry.csv`.
 
 12. `pipelines/09_build_langextract_examples.py`
@@ -69,7 +69,7 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
    - Reads extracted text and runs LangExtract with OpenAI models.
    - Uses reviewed source routing by default.
    - Explicitly skips records reviewed as `incorrect_reference`.
-   - Prefers proceedings-ready text when available and uses case-series split artifacts for reviewed multi-case papers.
+   - Prefers proceedings-ready text when available and uses stage-07 unit artifacts for reviewed multi-case papers.
    - Writes raw extractions to `data/extraction_json/langextract/` and summaries to `data/extraction_json/summary/`.
 
 14. `pipelines/11_quality_assessment.py`
@@ -143,8 +143,9 @@ The retired stage-05 autoresearch bundle now lives under `legacy/stage_05_autore
 
 - `pipelines/07_split_case_series.py`
   - Uses reviewed routing to find case-series papers that should be split before LangExtract.
-  - Only auto-splits when explicit case/patient headings make the split stable.
-  - Writes per-paper split artifacts to `data/extraction_json/text_case_series_split/`.
+  - Publishes attribution-safe individual/group units when the split is stable enough for downstream extraction.
+  - Writes per-paper unit artifacts to `data/extraction_json/text_case_series_units/`.
+  - Derives a run-scoped unit manifest under `results/stage07_unit_manifests/`.
   - Writes `data/references/case_series_split_registry.csv`.
 
 - `pipelines/09_build_langextract_examples.py`

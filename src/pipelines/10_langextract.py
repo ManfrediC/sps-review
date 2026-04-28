@@ -15,6 +15,7 @@ from tqdm import tqdm
 
 from _proceedings_ready import TEXT_PROCEEDINGS_READY_DIR, preferred_proceedings_text_path
 from _source_routing import load_csv_rows_by_id, resolve_source_row, truthy
+from _stage07_units import build_input_blocks
 
 
 # Resolve repository-relative paths once so CLI defaults stay stable.
@@ -22,7 +23,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = REPO_ROOT / "config" / "prompts"
 TEXT_JSON_DIR = REPO_ROOT / "data" / "extraction_json" / "text"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
-CASE_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
+CASE_UNITS_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_units"
 RAW_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_OUT_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 ARTIFACT_REGISTRY_SCRIPT = REPO_ROOT / "src" / "pipelines" / "12_build_paper_artifact_registry.py"
@@ -260,6 +261,12 @@ def parse_args() -> argparse.Namespace:
         help="Directory containing prompt markdown and example JSON files.",
     )
     parser.add_argument(
+        "--case-units-dir",
+        type=Path,
+        default=CASE_UNITS_DIR,
+        help="Directory containing stage-07 per-paper unit JSON files.",
+    )
+    parser.add_argument(
         "--paper-id",
         action="append",
         default=[],
@@ -318,6 +325,24 @@ def preferred_text_record_path(path: Path) -> Path:
 # Load case split record.
 def load_case_split_record(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+# Build the exact LangExtract input text for one stage-07 unit.
+def build_stage07_unit_input_text(
+    unit: dict[str, Any],
+    shared_context_by_id: dict[str, dict[str, Any]],
+) -> str:
+    shared_context_blocks = [
+        shared_context_by_id[context_id]
+        for context_id in unit.get("linked_shared_context_ids") or []
+        if context_id in shared_context_by_id
+    ]
+    input_blocks = build_input_blocks(unit, shared_context_blocks)
+    return "\n\n".join(
+        (block.get("text") or "").strip()
+        for block in input_blocks
+        if (block.get("text") or "").strip()
+    ).strip()
 
 
 # Resolve route.
@@ -478,7 +503,7 @@ def should_run_group(args: argparse.Namespace) -> bool:
     return args.include_group
 
 
-# Build process case split file.
+# Process one stage-07 per-paper unit file.
 def process_case_split_file(
     paper_id: str,
     split_path: Path,
@@ -489,62 +514,91 @@ def process_case_split_file(
     route: dict[str, str],
 ) -> str:
     split_record = load_case_split_record(split_path)
-    cases = split_record.get("cases") or []
-    if not cases:
-        raise ValueError(f"No case segments found in {split_path}")
+    publication_decision = split_record.get("publication_decision") or {}
+    units = split_record.get("units") or []
+    if publication_decision.get("status") == "manual_review_required" or not units:
+        return "skipped_stage07_manual_review"
 
     if args.dry_run:
         return "validated"
 
-    case_runs_raw: list[dict[str, Any]] = []
-    case_runs_summary: list[dict[str, Any]] = []
-    shared_context = (split_record.get("shared_context_text") or "").strip()
+    shared_context_by_id = {
+        block.get("context_id"): block
+        for block in (split_record.get("shared_context_blocks") or [])
+        if block.get("context_id")
+    }
+    unit_runs_raw: list[dict[str, Any]] = []
+    unit_runs_summary: list[dict[str, Any]] = []
+    mode_counts: dict[str, dict[str, int]] = {}
 
-    for case in cases:
-        case_text = (case.get("text") or "").strip()
-        if shared_context:
-            case_text = f"{shared_context}\n\n{case_text}".strip()
-        annotated = run_langextract(
-            text=case_text,
-            args=args,
-            prompt_description=prompt_assets["individual_prompt"],
-            examples=prompt_assets["individual_examples"],
-        )
-        individual_extractions = [
-            serialise_extraction(x) for x in (annotated.extractions or [])
-        ]
-        rendered, overall = summarise_extractions(
-            individual_extractions,
-            INDIVIDUAL_SECTION_ORDER,
-            {
+    for unit in units:
+        unit_text = build_stage07_unit_input_text(unit, shared_context_by_id)
+        if not unit_text:
+            continue
+        unit_type = (unit.get("unit_type") or "individual").strip().lower()
+        if unit_type == "group":
+            prompt_description = prompt_assets["group_prompt"]
+            examples = prompt_assets["group_examples"]
+            section_order = GROUP_SECTION_ORDER
+            labels = {
+                "group_design": "Group design",
+                "group_characteristics": "Group characteristics",
+                "group_findings": "Group findings",
+                "group_treatment_outcomes": "Group treatment/outcomes",
+                "group_limitations": "Group limitations",
+            }
+            prompt_mode = "group"
+        else:
+            prompt_description = prompt_assets["individual_prompt"]
+            examples = prompt_assets["individual_examples"]
+            section_order = INDIVIDUAL_SECTION_ORDER
+            labels = {
                 "individual_presentation": "Individual presentation",
                 "individual_diagnostics": "Individual diagnostics",
                 "individual_treatment": "Individual treatment",
                 "individual_outcome": "Individual outcome",
                 "individual_limitations": "Individual limitations",
-            },
+            }
+            prompt_mode = "individual"
+
+        annotated = run_langextract(
+            text=unit_text,
+            args=args,
+            prompt_description=prompt_description,
+            examples=examples,
         )
-        case_runs_raw.append(
+        unit_extractions = [serialise_extraction(x) for x in (annotated.extractions or [])]
+        rendered, overall = summarise_extractions(
+            unit_extractions,
+            section_order,
+            labels,
+        )
+        mode_counts.setdefault(prompt_mode, {"unit_count": 0, "extraction_count": 0})
+        mode_counts[prompt_mode]["unit_count"] += 1
+        mode_counts[prompt_mode]["extraction_count"] += len(unit_extractions)
+        unit_runs_raw.append(
             {
-                "case_index": case.get("case_index"),
-                "case_label": case.get("case_label"),
-                "start_page_index": case.get("start_page_index"),
-                "end_page_index": case.get("end_page_index"),
-                "marker_text": case.get("marker_text"),
-                "text_char_count": len(case_text),
-                "extraction_count": len(individual_extractions),
-                "extractions": individual_extractions,
+                "unit_id": unit.get("unit_id"),
+                "unit_order": unit.get("unit_order"),
+                "unit_type": unit.get("unit_type"),
+                "unit_label": unit.get("unit_label"),
+                "prompt_mode": prompt_mode,
+                "linked_shared_context_ids": unit.get("linked_shared_context_ids") or [],
+                "text_char_count": len(unit_text),
+                "extraction_count": len(unit_extractions),
+                "extractions": unit_extractions,
             }
         )
-        case_runs_summary.append(
+        unit_runs_summary.append(
             {
-                "case_index": case.get("case_index"),
-                "case_label": case.get("case_label"),
-                "start_page_index": case.get("start_page_index"),
-                "end_page_index": case.get("end_page_index"),
+                "unit_id": unit.get("unit_id"),
+                "unit_order": unit.get("unit_order"),
+                "unit_type": unit.get("unit_type"),
+                "unit_label": unit.get("unit_label"),
+                "prompt_mode": prompt_mode,
                 "section_summaries": rendered,
                 "overall_summary": overall,
-                "extraction_count": len(individual_extractions),
+                "extraction_count": len(unit_extractions),
             }
         )
 
@@ -553,19 +607,14 @@ def process_case_split_file(
         "source_filename": split_record.get("source_filename"),
         "source_sha256": split_record.get("source_sha256"),
         "source_text_json_path": split_record.get("source_text_json_path"),
-        "used_trimmed_text": bool(split_record.get("used_trimmed_text")),
-        "source_case_series_split_path": str(split_path),
+        "source_case_series_units_path": str(split_path),
+        "publication_decision": publication_decision,
         "route": route,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "extraction_modes": {
-            "individual_case_split": {
-                "case_count": len(case_runs_raw),
-                "extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_raw),
-            }
-        },
-        "case_runs": case_runs_raw,
-        "total_extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_raw),
+        "extraction_modes": mode_counts,
+        "unit_runs": unit_runs_raw,
+        "total_extraction_count": sum(unit_run["extraction_count"] for unit_run in unit_runs_raw),
     }
     out_raw.write_text(json.dumps(raw_payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -574,19 +623,14 @@ def process_case_split_file(
         "source_filename": split_record.get("source_filename"),
         "source_sha256": split_record.get("source_sha256"),
         "source_text_json_path": split_record.get("source_text_json_path"),
-        "used_trimmed_text": bool(split_record.get("used_trimmed_text")),
-        "source_case_series_split_path": str(split_path),
+        "source_case_series_units_path": str(split_path),
+        "publication_decision": publication_decision,
         "route": route,
         "model_id": args.model_id,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "extraction_modes": {
-            "individual_case_split": {
-                "case_count": len(case_runs_summary),
-                "extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_summary),
-            }
-        },
-        "case_runs": case_runs_summary,
-        "total_extraction_count": sum(case_run["extraction_count"] for case_run in case_runs_summary),
+        "extraction_modes": mode_counts,
+        "unit_runs": unit_runs_summary,
+        "total_extraction_count": sum(unit_run["extraction_count"] for unit_run in unit_runs_summary),
     }
     out_summary.write_text(
         json.dumps(summary_payload, ensure_ascii=False, indent=2),
@@ -622,7 +666,7 @@ def process_file(
         return "skipped_by_routing"
 
     if split_enabled:
-        split_path = CASE_SPLIT_DIR / f"{paper_id}.json"
+        split_path = args.case_units_dir / f"{paper_id}.json"
         if not split_path.exists():
             return "skipped_missing_case_split"
         return process_case_split_file(
@@ -790,6 +834,7 @@ def main() -> None:
         "skipped_by_routing": 0,
         "skipped_incorrect_reference": 0,
         "skipped_missing_case_split": 0,
+        "skipped_stage07_manual_review": 0,
         "failed": 0,
     }
 
@@ -812,6 +857,7 @@ def main() -> None:
         f"skipped_by_routing={stats['skipped_by_routing']}",
         f"skipped_incorrect_reference={stats['skipped_incorrect_reference']}",
         f"skipped_missing_case_split={stats['skipped_missing_case_split']}",
+        f"skipped_stage07_manual_review={stats['skipped_stage07_manual_review']}",
         f"failed={stats['failed']}",
     )
 
