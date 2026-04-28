@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 89</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 89</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: failed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>offset_text_mismatch:l0001:b0005:1586:2058</li><li>offset_text_mismatch:l0004:b0011:82:1473</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0007</span></div><h2>Source Text</h2><div class="source-text">RESEARCH ARTICLE|JANUARY 15 1996
+Glutam ic acid decarboxylase autoantibodies in sti-m an syndrom e and
+insulin-dependent diabetes m ellitus exhibit sim ilarities and dierences in
+epitope recognition. 
+K Daw; ... et. al
+J Immunol (1996) 156 (2): 818–825.
+https://doi.org/10.4049/jimmunol.156.2.818
+Related Content
+Identication of autoantibody epitopes of glutamic acid decarboxylase in stiff-man syndrome patients.
+J Immunol (January,1994)
+Therapeutic Alteration of Insulin-Dependent Diabetes Mellitus Progression by T Cell Tolerance to Glutamic Acid
+Decarboxylase 65 Peptides In Vitro and In Vivo
+J Immunol (July,2001)
+B Lymphocytes Are Critical Antigen-Presenting Cells for the Initiation of T Cell-Mediated Autoimmune Diabetes in Nonobese
+Diabetic Mice
+J Immunol (October,1998)
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+Glutamic Acid Decarboxylase  Autoantibodies in Stiff-Man 
+Syndrome and Insulin-Dependent Diabetes Mellitus Exhibit 
+Similarities  and  Differences in Epitope  Recognition&#x27; 
+Kendra Daw,2*  Noriko Ujihara,&#x27;* Mark Atkinson,+  and Alvin C. Powers3** 
+Glutamic  acid decarboxylase (GAD) is an autoantigen in  two autoimmune diseases, insulin-dependent diabetes mellitus (IDDM) 
+and stiff-man syndrome (SMS). However,  most individuals with one of these  diseases do not have the other disease. Prior studies 
+have suggested that  the natures of the GAD Abs  associated with each of these  diseases are different, which may  have impli- 
+cations for the autoimmune pathogenesis. We have compared the GAD autoantibody profile and have  mapped GAD protein 
+epitope regions in the two diseases using an immunoprecipitation assay with recombinant GAD 65 and GAD 67 proteins, GAD 
+protein fragments, and synthetic GAD peptides, as well as chimeric GAD proteins. Our results indicate  that individuals with SMS 
+have GAD Abs in 100- to 500-fold higher titer than individuals with IDDM. The population of  GAD Abs in SMS sera is quite 
+complex and includes those that recognize at  least three GAD 65 epitope regions located between amino acids I-16,188-442, 
+and 442-563.  These  types of  GAD Abs are not found in IDDM sera. All SMS sera  also had Ab specificity  that binds GAD 67 in 
+a region highly homologous to amino acids 188-442  of GAD 65. In contrast to  prior studies that used immunoblotting to 
+measure GAD Abs, we find GAD Abs in SMS sera also target two conformation-dependent regions of  GAD 65, one located in 
+the  middle and one  near the C-terminus of the protein. These two regions of the GAD 65 protein are similar to regions targeted 
+by GAD 65-specific Abs found in individuals with  IDDM. These results indicate  that although disease-specific  epitopes  may 
+exist, there is also overlap in the humoral response between the two diseases. The journal of Immunology, 1996,  156: 
+818-825. 
+T 
+ype I or insulin-dependent diabetes mellitus (IDDM)&quot; is 
+an autoimmune disease directed at the pancreatic 0 cell 
+(1). A major antigenic target in IDDM is glutamic acid 
+decarboxylase (GAD), which also is an autoantigen in the rare 
+neurologic disease, stiff-man syndrome (SMS) (2, 3). GAD, which 
+converts glutamic acid to the neurotransmitter y-aminobutyric acid 
+(GABA), is found in the cytoplasm and microsecretory vesicles of 
+GABA-secreting neurons and pancreatic cells (4, 5). GAD exists 
+as two protein isoforms of 65 kDa (585 amino acids) and 67 kDa 
+(594 amino acids), which are encoded by two distinct genes (6). 
+The amino acid sequences of GAD 65 and GAD 67 are highly 
+*Division  of Endocrinology,  Department  of  Medicine,  Vanderbilt  University. 
+Nashville, TN 37232;  &#x27;Department  of Pathology and Laboratory Medicine,  Col- 
+lege of  Medicine,  Universlty oi Florida, Gainesville, FL 32610; *Department  of 
+Veterans Affairs Medical Center, Nashville, TN 37232 
+Received for  publication  December 14, 1994.  Accepted for publ~cat~on October 
+30, 1995. 
+The costs of  publication  of  this  alticle  were defrayed in part by the  payment  of 
+page charges. This article  must  therefore  be hereby marked  adverfisemenf in 
+accordance with  18 U.S.C. Section 1734  solely  to  indicate  this fact. 
+&#x27; This work was supported by National institutes of Health  Grant R01 DK43736. 
+Career Development  Awards  from  the  Department  of Veterans Affairs Research 
+Service and  the  American Diabetes Association, a Merit Review Award  from  the 
+Veterans Affairs Research Service, the Diabetes Research and  Training Center at 
+Vanderbilt  University  (National Institutes of Health DK205931, a University 
+Grant  from  Vanderbilt  University,  a  Biomedical Research Support Grant  admin- 
+~stered by Vanderbilt  University (BRSC  RR054241, and a grant from  the Diabetes 
+Research and  Education  Foundation. 
+K.D. and N.U. contributed  equally  to  this  work 
+of Endocrinology,  715 MRB 11, Vanderbilt  University, Nashville, TN  37232. 
+&#x27; Address correspondence  and reprint requests to  Dr. Alvin C. Powers, Division 
+Abbreviations used In  this  paper: IDDM, insulin-dependent diabetes mellitus; 
+GAD, glutamic  acid decarboxylase; SMS, stlff-man syndrome; ICA, islet cell au- 
+toantibodies: IDF, Juvenile Diabetes Foundation; PAS, protein A-Sepharose; 
+MICA,  monoclonal islet cell Ab; TBST, Tris-buffered sallne/0.05&#x27;% Tween 20; 
+GABA,  y-amlnobutyric  acid. 
+Copyright 0 1996 by The American  Association of Immunologists 
+homologous throughout the middle and carboxyl third of the pro- 
+tein, but differ substantially in the N-terminal region. Differences 
+in the N-terminus of the protein are responsible for targeting GAD 
+65 and GAD 67 to different intracellular locations (7). In contrast 
+to rat pancreatic islets that express both GAD 65 and GAD 67, 
+human pancreatic islets contain only GAD  65 (8, 9). 
+GAD autoantibodies were initially discovered in individuals 
+with SMS (3). Subsequent studies by Baekkeskov et al. demon- 
+strated that GAD autoantibodies are also found in individuals with 
+IDDM (1 0). GAD autoantibodies are an important marker of the 
+autoimmune process of IDDM since they are present in the vast 
+majority of individuals with new-onset diabetes as well as in many 
+individuals in the prediabetic stage of the disease (I 1-13). The 
+possible role of GAD as the primary autoantigen in IDDM has 
+been suggested by recent demonstrations of cellular autoimmunity 
+directed at GAD in IDDM (14, 15) as well as autoimmunity di- 
+rected at GAD in an animal model of IDDM (16, 17). 
+Although GAD Abs are found in both SMS and IDDM, the 
+GAD autoantibody profile in the two diseases differs. For example, 
+GAD Abs in SMS bind denatured GAD protein utilized in immu- 
+noblotting while the GAD autoantibodies in IDDM do not bind the 
+protein under such conditions (IO). In addition, co-incubation of 
+purified GAD protein and SMS sera inhibits the enzymatic activity 
+of GAD, which suggests that these GAD Abs from SMS bind the 
+active site of the enzyme (18). This inhibition does not occur with 
+GAD Abs from IDDM. 
+Other studies of the GAD Abs in the two diseases have focused 
+on the GAD protein epitopes at which the autoantibodies are di- 
+rected. Utilizing immunoblotting of recombinant GAD protein, 
+Butler et al. mapped the major GAD 65 epitope in a large number 
+of individuals with SMS to the COOH terminus of the protein 
+(amino  acids 475-484 and amino acids 571-585) (19). Li et al. 
+also used immunoblotting to detect reactivity of SMS sera to two 
+0022-1  767/96/$02.00 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+The Journal of Immunology 81 9 
+synthetic GAD peptides (amino acids 354-368 and amino acids 
+390-402) which are thought to span the active site of the GAD 
+enzyme (20). Kim et al. recently reported that SMS sera have 
+higher GAD autoantibody levels than IDDM sera and target a con- 
+tinuous protein epitope located in the first eight amino acids of 
+GAD 65 (21). The N-terminal epitope was not bound by IDDM 
+sera. These results suggest that SMS sera have GAD Abs that bind 
+linear protein epitopes. 
+Conversely, GAD Abs in IDDM do not bind denatured GAD 
+protein, GAD fragments, or GAD peptides, which implies that 
+these GAD Abs bind an epitope dependent on protein conforma- 
+tion (10, 22, 23). This concept has led to the suggestion that GAD 
+Abs in SMS and in IDDM differ in their epitope recognition pat- 
+tern  and that disease-specific epitopes may exist (1 8, 19, 21). How- 
+ever,  a limitation of prior reports is that studies with SMS sera 
+were optimized for detecting Abs that bind linear epitopes (immu- 
+noblotting), while studies in IDDM used immunoprecipitation of 
+nondenatured GAD protein as the assay system. Because of these 
+experimental differences, the results of epitope mapping are diffi- 
+cult to compare. To compare the GAD Abs in the two diseases and 
+to determine if disease-specific GAD epitopes exist, we have 
+mapped the protein epitope regions in sera from individuals with 
+SMS and individuals with IDDM in an immunoprecipitation assay 
+using recombinant GAD 65 and GAD 67 proteins, GAD protein 
+fragments, GAD peptides, and chimeric GAD proteins. 
+Materials and Methods 
+Preparation of GAD protein 
+Full length rat GAD  65 and human GAD  67 cDNAs were transcribed into 
+GAD RNA using T7 RNA Polymerase in an in vitro transcription system 
+(Megascript, Ambion, Austin, TX) (23). Metabolically labeled, recombi- 
+nant rat GAD 65 and human GAD 67 proteins were prepared by in vitro 
+translation of GAD RNA with reticulocyte lysate (Promega, Madison,WI) 
+using an amino acid mixture containing [&quot;Slmethionine (1 200 Ci/mmol) 
+(23).  TCA precipitation of the translation products was utilized to deter- 
+mine the percentage of incorporation of the labeled amino acid in the GAD 
+protein. Percentage of incorporation was calculated as (radioactivity in 
+TCA-precipitated proteidtotal radioactivity in the reaction) X 100 and 
+ranged from 20 to  60%.  The rat GAD 65 protein reacted with a widely used 
+sheep polyclonal GAD antiserum and two mAbs, GAD 1 and GAD 6  (24, 
+25).  The polyclonal GAD antiserum was a gift of  Dr. Enrico Mugnaini 
+(University of Connecticut, Hartford, CT) and Virginia Weise (Laboratory 
+of Clinical Science at the National Institute of Mental Health, Bethesda, 
+MD) and reacted with both GAD  65 and GAD 67. The GAD 1 mAb was 
+a gift of Dr. David Gottlieb (Washington University, Washington, MO); 
+the GAD  6 mAb was obtained from the Developmental Studies Hybridoma 
+Bank at the University of Iowa, Ames, 1A (National Institute of Child 
+Development Contract No. I-HD-2-3144). As shown by other groups, the 
+GAD  6 mAb reacted only with the GAD 65 isoform (9. 19, 21, 26, 27). 
+GAD 65 protein fragments containing amino acids 1-195  and  1-360 
+were prepared from restriction enzyme fragments of GAD  65 cDNA after 
+linearization with HinclI and NsiI enzymes, respectively. PCR was utilized 
+to create GAD 65 cDNA fragments encoding amino acids 188-585 and 
+444-585 (23). Each primer used was complementary to published GAD 
+cDNA sequence with incorporation of a unique restriction enzyme site to 
+facilitate subcloning. The PCR products were either purified using a Gene- 
+clean I1 kit (Bio 101, Vista, CA) after restriction enzyme digestion or 
+directly subcloned into pT7 Blue plasmid (Novagen, Madison, WI). The 
+GAD 65 cDNA fragment encoding amino acids 188-585 was digested 
+with Stul to create a cDNA fragment encoding amino acids 188-442. A 
+GAD 65 cDNA fragment encoding amino acids 361-585 was created with 
+a unique BglII site in the GAD  65  cDNA. Fragments of the GAD 65 protein 
+were then prepared from the cDNA fragments by  in vitro transcription and 
+translation as described above. Since there are 30 pmol of hot [&quot;Slmethi- 
+onine and 175 pmol  of unlabeled methionine in the translation reaction, 
+approximately one in  six to seven methionines will be labeled (28). Since 
+incorporation of [3sSJmethionine will be a random event. the number of 
+methionine residues in a protein fragment was linearly related to the 
+amount of label incorporated (R2 = 0.99).  Thus, the specific activity of a 
+GAD protein is a function of the number of methionine residues in that 
+protein. 
+Serum samples 
+Serum samples were collected from individuals with new-onset diabetes 
+(n = 30) as well as from control (nondiabetic) individuals and stored at 
+-20°C.  The clinical features of these sera have been previously described 
+(23). Serum samples from individuals with the clinical diagnosis of stiff- 
+man syndrome (n = 5) were obtained from Dr. Vanda Lennon, Mayo 
+Clinic, Rochester, MN; from Dr. Robert Schmidli, Royal Melbourne Hos- 
+pital, Melbourne, Australia; and from Drs. Roberto Gianani and George 
+Eisenbarth, Barbara Davis Center of Childhood Diabetes, Denver, CO. 
+SMS serum 3 (as noted in figures) was utilized as the standard serum in 
+both international GAD autoantibody comparisons sponsored by the Im- 
+munology of Diabetes Workshop (29).  Two of the individuals with SMS 
+also have diabetes (SMS 3  and  4). 
+Immunoprecipitation of GAD protein 
+A total of 15 yl of diluted serum (diluted 1/10 to 1/50,000) from individ- 
+uals with stiff-man syndrome, new-onset IDDM, or from control subjects 
+was incubated with 30 yl of metabolically-labeled GAD protein for 12 to 
+15 h at 4°C in a total assay volume of 60 pI (23). Based on percent 
+incorporation rate of [3sS]methionine, 50,000 cpm of each GAD protein 
+were used  in each assay tube. All dilutions of serum and GAD protein were 
+made with Tris-buffered saline/0.05% Tween 20 (TBST). Protein A-Sepha- 
+rose (PAS, Sigma Chemical Co., St. Louis, MO) was washed and resus- 
+pended in TBST to a 2% solution. Six microliters of PAS (final  bed vol- 
+ume) were added to the reaction and mixed for 1 h  at 4°C with gentle 
+rotation. Using this volume of PAS, protein A is  in excess of  Ig  in the 
+serum (manufacturer&#x27;s specification). We confirmed experimentally that 6 
+yl of PAS quantitatively immunoprecipitates Igs from the serum samples. 
+The protein A-Sepharose pellets were washed three times with 500 pl of 
+TBST and resuspended in 100 yl of 1% SDS and counted by p scintillation 
+counting. All samples were assayed in duplicates. The relative amount of 
+GAD protein immunoprecipitated was expressed as a molar ratio ((cpm of 
+GAD protein immunoprecipitated by test serum minus cpm  of GAD pro- 
+tein immunoprecipitated by normal serum)/(number of methionine residues 
+in the GAD protein fragment)) as previously described (23). In  an inter- 
+laboratory comparison of GAD Ab assays (29), this assay was positive in 
+82% of sera from individuals with new-onset diabetes, 100% of bera from 
+individuals with prediabetes, and 3% of normal individuals (1994 Work- 
+shop results). Whether SMS or IDDM sera reacted with a particular GAD 
+fragment was determined by assaying normal sera in parallel and from 
+standards established during our laboratory&#x27;s participation in international 
+GAD Ab workshops (29, 30). A serum was determined to be positive for 
+a particular GAD fragment if its reactivity exceeded the reactivity of five 
+normal sera with that GAD fragment. 
+Blocking of Ab  binding to GAD protein 
+Unlabeled, full length GAD  65,  GAD 67, and GAD protein fragments were 
+prepared in the reticulocyte lysate system as detailed above except that the 
+amino acid mixture contained only unlabeled methionine. Since the me- 
+thionine concentration in the reticulocyte lysate system is not limiting, 
+similar amounts of cold and labeled protein were synthesized in a trans- 
+lation reaction, diluted to the desired molar ratios, and then used for com- 
+petition studies. For competition experiments. a dilution curve of a partic- 
+ular serum was used to select the serum dilution in which binding to the 
+GAD protein was easily detectable but less than maximum. Both labeled 
+and unlabeled translation reactions were diluted five to eightfold so that the 
+molar ratio of labeled protein to cold protein was 1 :3 to 1 :6.  The molar ratio 
+was the same for different protein fragments. For the blocking studies, 
+unlabeled GAD protein or reticulocyte lysate without GAD protein (neg- 
+ative control) was incubated with a dilution of the test serum for 3 h at 
+room temperature; this mixture was then added to 50,000 cpm of 
+[&quot;SICAD protein and incubated for 12 to 15 h at 4°C (23). Each serum 
+used in the blocking studies was diluted according to a previously per- 
+formed serum dilution curve to allow for detection of Ab activity and to 
+insure that the blocking assay was performed under the condition of Ag 
+excess (serum dilutions ranged from 1/100 to 1/1000). PAS was added and 
+immunoprecipitation was performed as described above. The immunopre- 
+cipitate was analyzed by scintillation counting and expressed as the per- 
+centage of inhibition of GAD binding following preincubation with reticu- 
+locyte lysate without GAD protein. 
+Synthesis of GAD peptides 
+Synthetic  GAD  65  peptides  (20  amino  acids in length)  were  synthesized 
+as previously  described (16) and  had a purity  greater than 85% by mass 
+spectroscopy. 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+820 
+Creation of GAD 65/GAD 67 chimeric proteins 
+TO prepare chimeric GAD 65/GAD 67 cDNAs, a unique restriction enzyme 
+site was introduced into the rat GAD  65 cDNA or human GAD 67 cDNA 
+by  PCR or site-directed mutagenesis. Introduction of the unique restriction 
+site did not alter the predicted amino acid sequence and occurred in a 
+stretch of amino acids that were identical in GAD 65 and GAD 67. PCR 
+amplification was performed using either the human GAD 67 or rat GAD 
+65 plasmid cDNA and primers to incorporate a 1-, 2-, or 3-bp mutation, 
+Site-directed mutagenesis was performed with the transformer mutagenesis 
+system (Clontech, Palo Alto, CA). The presence of the mutation introduced 
+by PCR or site-directed mutagenesis was confirmed by dideoxy sequenc- 
+ing. Following insertion of the desired restriction enzyme site into one 
+GAD isoform, a  cDNA fragment was exchanged with the corresponding 
+cDNA fragment from the other  GAD cDNA to produce a chimeric cDNA 
+by standard subcloning techniques. For the production of GAD RNA, all 
+wild-type and chimeric GAD  cDNAs were subcloned into the plasmid, 
+pGOV, which contains a  T7 RNA polymerase promoter (23). 
+The following nomenclature for  GAD chimera was utilized: GAD  65  or 
+67 (amino acid number of that GAD species present in the GAD chimera)/ 
+GAD  65 or 67 (amino acid number of that GAD species present in the 
+GAD chimera). To create the chimera GAD  65  (l-I95)/GAD  67 (205- 
+594),  a  HincII site was introduced at the appropriate location of the GAD 
+67 cDNA by PCR and the resulting GAD  67 fragment exchanged with the 
+corresponding fragment of the GAD  65 cDNA (using a native HincII site 
+in the GAD  65  cDNA).  To create the chimera GAD 67 (I-230)/GAD 6.5 
+(221-585), an AflI site was introduced at the appropriate location of the 
+GAD  65 cDNA by PCR and the resulting GAD  65 fragment exchanged 
+with the corresponding fragment of the GAD  67 cDNA (using a native AflI 
+site in the GAD  67  cDNA).  To create the chimera GAD 65 (1-442)/GAD 
+67 (452-594) and the chimera  GAD  67 (1-451)/GAD 65 (443-585), a 
+unique StuI site was introduced by site-directed mutagenesis in the GAD 
+67 cDNA. Corresponding cDNA  fragments  encoding  GAD  65 (1-442) and 
+GAD  67 (1-451) were exchanged (using  a native SruI site in the GAD  65 
+cDNA) to produce the chimera GAD  65  (1-442)GAD  67 (452-594) and 
+the chimera GAD 67 (1-451)/GAD 65 (443-585). The chimera, GAD 67 
+(1-230)/GAD 65  (221-442)EAD  67 (452-594), was created by digesting 
+GAD  67 (1-230)/GAD 65 (221-585) and GAD 65 (1-442)/GAD 67 (452- 
+594) with StuI and exchanging cDNA fragments. The chimera, GAD 65 
+(1-195)/GAD 67 (205-441)/GAD 65 (443-585), was created by digesting 
+GAD  65 (1-195)/GAD 67 (205-594) with Afll and exchanging this frag- 
+ment with the corresponding fragment in GAD  67 (1-451)/GAD 65 (443- 
+585). Both the AflI and StuI sites are unique for  GAD  65 and GAD  67, 
+respectively. 
+The chimeric composition of the GAD  cDNAs was confirmed by re- 
+striction enzyme digestion and dideoxy DNA sequencing. Following in 
+vitro translation, chimeric proteins were of the expected m.w. by SDS- 
+PAGE. In addition, chimeric proteins containing the C-terminus of  GAD 
+65, but not the C-terminus of GAD  67, reacted with mAb GAD  6, which 
+is specific for the C-terminus of GAD 65. 
+Results 
+Reactivity with GAD 65 and GAD  67 
+Immunoprecipitation of recombinant GAD 65 and GAD 67 was 
+<span class="source-segment role-group_specific" id="src-s0001" data-segment="s0001" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">performed with 5 SMS sera and representative new-onset IDDM 
+sera (Fig. IA). The SMS sera immunoprecipitated more labeled 
+GAD protein than IDDM sera at low dilutions of serum (1/100) 
+and the reactivity of the SMS sera could be detected at a dilution 
+of 1/10,000 or greater. In contrast, reactivity of the IDDM sera to 
+GAD 65 could not be detected at  a titer greater than MOO (Fig. 
+IA). Five SMS sera immunoprecipitated GAD 67, but the reactiv- 
+ity was detected at approximately a 10-fold lower titer than with 
+GAD 65 (Fig. 1B).</span> Most sera from individuals with new-onset 
+diabetes do not immunoprecipitate GAD 67 (data not shown) (23, 
+31, 32). The results with IDDM sera are typical of a  cohort of 30 
+IDDM sera that have been previously reported (23). 
+Mapping of epitope region of GAD  65 
+To define the regions of the GAD 65 protein targeted by the GAD 
+autoantibodies, smaller fragments of the GAD 65 protein were 
+prepared and immunoprecipitated with SMS sera. The nomencla- 
+ture for GAD protein fragments utilizes the following pattern: 
+GAD 65 or 67 (number of amino acids of that GAD species 
+COMPARISON OF GAD  AUTOANTIBODY EPITOPES 
+A 
+2000 4 
+1500 1€ 
+1000 
+500 
+0 
+U SMS U1 
+- SMS X2 
+- SMS X3 
+SMS X4 
+IDDM X1 
+-&quot;- IDDM X2 
+- IDDM Y3 
+IDDM #4 
+10 100 loo0  10000  100000 
+SERUM DILUTION 
+B 
+500 - 
+&quot;-0&quot;- SMS x1 
+...... 0 ........ SMS X2 
+.... 0.&quot; SMS 113 
+&quot;is-- SMS X4 
+10 100 1000  10000 100000 
+SERUM DILUTION 
+FIGURE 1. Immunoprecipitation  of GAD 65 and GAD  67 by SMS and 
+IDDM sera. Metabolically-labeled GAD 65 (A) or GAD  67 (6) was im- 
+munoprecipitated with  dilutions  of four SMS sera (open symbols) and four 
+IDDM sera (closed symbols). The x-axis is a log scale of serum dilutions. 
+The y-axis is the relative amount of  GAD protein immunoprecipitated 
+expressed as a molar  ratio ((cpm of  GAD protein immunoprecipitated by 
+test  serum minus cpm  of  GAD protein immunoprecipitated by normal 
+serum)/(number of  methionine residues in the GAD protein fragment)). 
+Most IDDM sera do  not immunoprecipitate GAD  67 (23, 31 j.  The mean 
+2 SEM of at  least three measurements is shown. 
+present in the GAD fragment). If no amino acid number is shown 
+in parentheses, then the protein is full length GAD 65 (amino acids 
+1-585) or GAD 67 (amino acids 1-594). These results are ex- 
+pressed as the molar ratio of GAD protein immunoprecipitated at 
+that serum dilution. Since the GAD protein is labeled by the pres- 
+ence of [35S]methionine during protein synthesis, the molar ratio 
+of GAD protein immunoprecipitated ((cpm of immunoprecipitated 
+GAD protein)/(number of methionine residues in a particular pro- 
+tein fragment)) allows one to compare the relative amount of the 
+GAD fragments immunoprecipitated. Each serum was tested with 
+each of the  GAD fragments at one dilution between 1/10 and 
+1/100. <span class="source-segment role-group_specific" id="src-s0002" data-segment="s0002" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">In addition to binding to full length GAD 65, SMS sera bind 
+GAD 65 protein fragments containing amino acids 1-195, 1-360, 
+188-442, 361-585, and 444-585 whereas IDDM sera bind only 
+full length GAD 65 and the fragment containing amino acids 361- 
+585 (Fig. 2A) (data not shown) (23). The lower binding to wild- 
+type GAD 65 than to certain GAD protein fragments may indicate 
+that the epitope detected by the Ab in that serum is more accessible 
+in the protein fragment than in the full length protein. At the serum 
+dilution used in Figure 2A (1/10 to 1/100), Ab excess leads to an 
+underestimation of the amount of full length GAD 65 immuno-</span> 
+precipitated. 
+The binding by SMS sera to  GAD 65 (1-195) was blocked by 
+preincubating the serum with full length GAD 65, GAD 65 (1- 
+195), or a synthetic GAD peptide spanning amino acids 1-20 (Fig. 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+The Journal of Immunology 
+FIGURE 2. Mapping of epitope region of GAD 65 
+targeted by SMS sera. A, full length GAD 65 protein 
+(amino acids 1-585) and GAD 65 protein fragments 
+containing  amino acids 1-195,  1-360, 188-442, 
+361-585, and 444-585 were immunoprecipitated 
+with SMS sera, The y-axis  is the relative amount of 
+GAD protein immunoprecipitated that was ex- 
+pressed as a molar ratio ((cpm  of GAD protein im- 
+munoprecipitated by test  serum minus cpm  of GAD 
+protein immunoprecipitated by normal serum)/ 
+(number of  methionine residues in the GAD protein 
+fragment)) (23). Each  serum  was  used  at the same 
+dilution (between 1/10 and 1/100) for immunopre- 
+cipitation  of  all GAD fragments. The mean of two to 
+five determinations for each serum is shown with a 
+symbol. The experimental error bars  are not shown 
+for the sake of clarity, but the reactivity to GAD 65 
+(1-1 95) and GAD 65 (1-357) are not statistically dif- 
+ferent. To  allow the symbol for SMS 4 to be more 
+clearly seen, it is a closed symbol. For the 444-585 
+fragment, the symbol for SMS 2 is partially obscured 
+by the symbol for SMS  1. SMS 3 and SMS 4 also 
+have diabetes. B, SMS sera (1, 2, and 3) were pre- 
+incubated with  full length GAD 65, with a GAD 65 
+fragment containing  amino acids  1-195, or  with 
+GAD 65 peptides that span amino acids 1-195. The 
+result with peptides which span amino acids 1-20 
+and 16-38 are shown. Metabolically labeled GAD 
+65 (1-195) was then added and immunoprecipitated 
+as described for A. The percentage of  inhibition of 
+GAD 65 (1-195) binding after preincubation with 
+each GAD fragment or peptide is shown. The 
+amount of GAD 65 (1-195) immunoprecipitated af- 
+ter preincubation  with reticulocyte lysate without 
+GAD protein is defined as 100%. Preincubation 
+with other GAD synthetic peptides spanning amino 
+acids 36-1 95 showed similar results as the peptide 
+containing  amino acids 16-38 (data not shown). 
+The mean -t SEM of three SMS sera (three measure- 
+ments/sera)  is shown. The error bar for the 1-585 
+protein is too small to be seen. C, the reactivity of 
+SMS sera to full length GAD 65 (1 -585), GAD 65 (1 - 
+360), and GAD 65 (361-585) is shown. The x-axis is 
+a log scale of serum dilutions. The  y-axis is a relative 
+amount of each GAD protein fragment immunopre- 
+cipitated expressed as a molar ratio. The mean -t 
+SEM for two sera with SMS alone (three measure- 
+ments of each serum) as well as for two sera with 
+SMS and diabetes (three measurements of each se- 
+rum) are shown. Individuals with SMS alone are 
+shown with open symbols, while individuals with 
+SMS and diabetes are shown with closed svmbols. 
+3000 - 
+2500 - 
+2000 - 
+1500- 
+8 
+1000 - 
+0 0 
+0 
+0 0 
+SMS #3 
+SMS #4 
+0 0 0 
+0 0 
+A 
+500 - 0 A 
+A 0 
+0 Q P 
+I I I I 1 
+1-585  1-360  1-195 361-585 188-442  444-585 
+GAD 65 Protein (Amino Acid Boundary) 
+B c 
+2500 
+2000 
+In 
+m r 
+r - 
+In 
+W 
+0 
+c1 U 
+821 
+1-20  16-38  1-195 1-585 
+GAD 65 Protein (Amino Acid Boundary) 
++ GAD 65 (1-585) 
+--b GAD 65 (1-360) 2 SMS 
+U GAD 65 (361-585 
+----W.-.. GAD 65 (1-585) 
+----A.--- GAD 65 (1-360) 
+Diabetes 
+1000 ---.O---- GAD 65  (361-585) 
+10 
+28), but not by GAD peptides spanning amino acids 16-195 (Fig. 
+28) (data not shown).  The binding to GAD 65 fragments spanning 
+amino  acids  188-442 and 444-585 was blocked by full length 
+GAD 65 protein and by the respective GAD fragment, but not by 
+any other GAD peptide or combination of peptides spanning 
+amino acids 188-585 (data not shown). This suggests that these 
+Abs require a  degree of protein conformation not contained in the 
+relatively short GAD peptides. 
+SMS sera react with  full length GAD 65 and GAD 65 
+protein fragments 
+In four SMS sera, Abs reacting with full length GAD 65 were 
+detected at least a 10-fold higher dilution than Abs reacting with 
+GAD 65 protein fragments containing amino acids 1-360 or amino 
+100 1000 I0000  100000 
+SERUM  DILUTION 
+acids 361-585 (Fig. 2C). The binding of SMS sera to full length 
+GAD 65 could not be blocked by any GAD protein fragment, 
+peptide, or combination of peptides, but could be blocked by un- 
+labeled, full length GAD 65 protein (data not shown). At relatively 
+low serum dilutions (1/500 to 1/1000), SMS sera contain Abs that 
+react with GAD fragments and with full length GAD 65. However, 
+if one dilutes the sera further, then only binding to full length GAD 
+65 is detected. The binding of SMS sera to GAD (361-585) by 
+immunoprecipitation was detected at a similar serum dilution as 
+reactivity to the same GAD fragment by immunoblotting (data not 
+shown). In addition, the titer of Abs to full length GAD and  both 
+GAD  fragments was always greater in the two sera of SMS pa- 
+tients without diabetes as compared with the two sera with both 
+SMS and diabetes (Fig. 2C). 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+822 COMPARISON OF GAD  AUTOANTIBODY EPITOPES 
+1501 
+L 
+T 
+&quot; 
+GAD 65 GAD 65 GAD 65 GAD 65 GAD 67 
+(1-3M)) (361-585) (188.442) (1-585) 
+GAD Protein (Amino Acid Boundary) 
+FIGURE 3. Mapping of epitope region of GAD 67  targeted by SMS 
+sera. SMS sera (n = 3) were  preincubated with full length GAD 65, full 
+length GAD 67, or with GAD 65  fragments  containing amino acids 
+1-360,  361-585,  and 188-442. Metabolically  labeled GAD 67 was 
+then added and  immunoprecipitated  as in Figure 3. The percentage of 
+inhibition of GAD 67 binding  after  preincubation  with each GAD frag- 
+ment is shown. The amount of GAD 67 immunoprecipitated  after  pre- 
+incubation  with  reticulocyte  lysate  without GAD protein  is defined  as 
+100%. The  mean 2 SEM for three SMS sera (2 measurements/serum) is 
+shown. 
+<span class="source-segment role-group_specific" id="src-s0003" data-segment="s0003" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Mapping of epitope region of GAD  67 
+To characterize the GAD  67 autoantibodies in SMS  sera,  the  sera 
+were preincubated with unlabeled GAD  67,  GAD  65, or GAD 65 
+protein fragments. Preincubation of SMS sera with either unla- 
+beled, full length GAD 65 or GAD 67 blocked the Ab binding to 
+GAD  67 (Fig. 3). Preincubation with the unlabeled GAD 65 frag- 
+ment containing amino acids 188 -442 blocked GAD 67 reactivity, 
+but preincubation with the GAD 65 fragments containing amino 
+acids 1-360 and amino acids 361-585 did not block the binding of 
+GAD 67 by SMS  sera (Fig. 3). In addition, the reactivity of the 
+SMS sera to GAD 67 could not be blocked by any single GAD 65 
+synthetic peptide or a combination of peptides spanning amino 
+acids 188-442 (data not shown).  These results suggest that the set 
+of GAD 67 Abs binds a conformational epitope that is highly ho- 
+mologous with GAD 65 and is contained in amino acids 188-442 
+of GAD  65</span>, but not in GAD 65 (1-360), GAD 65 (361-585), or a 
+series of 20 amino acid peptides spanning  amino  acids  188-442. 
+Reactivity of SMS sera with  GAD  65/GAD  67 
+chimeric proteins 
+Since the highest titer GAD autoantibodies in both SMS and 
+IDDM react only with full length GAD 65 and do not bind GAD 
+65 protein fragments or GAD peptides, the conformation of the 
+GAD protein is important for binding of these Abs To define the 
+regions of the GAD 65 protein targeted by these conformation- 
+dependent Abs, we developed a method to examine the relative 
+importance of different regions of the GAD 65 protein while main- 
+taining the overall GAD protein conformation. This approach is 
+based on the following factors: 1) GAD 65 and GAD 67 are highly 
+homologous in the middle and COOH-terminus of the protein; 2) 
+GAD 65 and GAD 67 likely have similar protein conformations; 3) 
+GAD Abs present at the highest titer in SMS and IDDM bind GAD 
+65 but not GAD 67. By exchanging regions of the GAD 65 and 
+GAD 67 cDNAs, we created GAD chimeric proteins and examined 
+the binding of GAD 65-specific Abs to a specific region of the 
+GAD 65 protein. This approach utilized a serum dilution at which 
+reactivity to full length GAD 65 was detectable, but reactivity to 
+GAD 65 fragments or full length GAD 67 was not detectable. The 
+following nomenclature for  GAD chimera was utilized: GAD 65 
+or 67 (amino acid number of that GAD species present in the GAD 
+chimera)/GAD 65 or 67 (amino acid number of that GAD species 
+present in the GAD chimera). 
+Although GAD 65 and GAD 67 differ substantially in the N- 
+terminal third of the protein and the first eight amino acids of GAD 
+<span class="source-segment role-group_specific" id="src-s0004" data-segment="s0004" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">65 are targeted by low titer Abs in SMS sera (Fig.  2B) (19,21), the 
+high titer, GAD 65-specific autoantibodies from SMS sera do not 
+bind a chimeric protein consisting of the N-terminal third of GAD 
+65 and the C-terminal two-thirds of GAD 67 (GAD 65 (1-195)/ 
+GAD 67 (205-594)) (Fig. 4, A and B). Both SMS and IDDM sera 
+bind GAD 67 (1-230)/GAD 65 (221-585) (Fig. 4, A and B). An 
+identical pattern was seen with 12 other IDDM sera (33) and is 
+typically a larger cohort of 30 IDDM sera. The inability to detect 
+binding to the N-terminal third of GAD 65 with IDDM sera is 
+consistent with our prior observation that GAD 65 (188-585) is 
+capable of blocking the binding of IDDM sera to full length GAD 
+65 (23). 
+Two regions of the  C-terminal  two-thirds of GAD  65  are 
+targeted by both SMS  and  IDDM  sera. Most SMS  and  IDDM 
+sera  bind  chimeric  proteins  that  contain amino  acids 221-442 
+of GAD  65</span> and chimeric proteins  that  contain amino  acids 443- 
+585 of GAD  65 (Fig. 4, A and  B and  Fig. 5). One  serum  (SMS 
+4) targets GAD  65 (1-442)/GAD 67 (452-594), but  not GAD 
+67  (1-451)/GAD  65 (443-585),  which suggests  the presence of 
+only one Ab or a  much higher titer of this  Ab  in  this  serum. 
+Discussion 
+Comparisons of the autoimmune repertoires in  SMS and IDDM 
+are important since most individuals with one disease do not de- 
+velop the other disease despite the fact that GAD  is an important 
+autoantigen in both diseases. How an autoimmune process directed 
+at a single protein yields two different diseases is not known. One 
+potential explanation is that the GAD protein epitopes targeted by 
+the immune system are different in the two diseases. The current 
+study addresses this hypothesis by precisely characterizing and 
+comparing epitope regions targeted by GAD autoantibodies from 
+individuals with SMS and IDDM. Our results indicate that there 
+are both differences and similarities in the humoral autoimmunity 
+directed at GAD in the two diseases. 
+Differences in the humoral response to GAD in 
+SMS and IDDM sera 
+<span class="source-segment role-group_summary" id="src-s0005" data-segment="s0005" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Using an immunoprecipitation assay to measure anti-GAD speci- 
+ficity, our results demonstrate that the humoral response to GAD in 
+SMS  is quite complex as reflected by the presence of several GAD 
+autoantibody species directed at several regions of the GAD pro- 
+tein. SMS and IDDM  sera differ in titer and epitope specificity of 
+GAD Abs All SMS sera tested contained Abs to GAD 65 and 
+GAD 67 at titers greater than 1/1000 in distinction to IDDM sera 
+whose GAD autoantibodies bind GAD 65 only and can rarely be 
+detected at  a greater titer than 1/100. In this fashion, individuals 
+with SMS resemble individuals with the restricted ICA pattern 
+(GAD-absorbable pattern) that has been associated with a low rate 
+of progression to IDDM (23). SMS  sera also have Abs that bind 
+GAD protein fragments consisting of the amino-, middle-, and 
+carboxyl third of the GAD 65 protein. In contrast, the autoanti- 
+bodies in IDDM sera react predominantly with GAD 65, do not 
+bind GAD protein fragments or with denatured GAD protein by 
+immunoblotting, and thus target GAD protein epitopes dependent 
+on protein conformation (10, 23).</span> 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+The Journal of Immunology 823 
+A 
+GAD PROTEIN 
+GAD 65 (1-585) 
+GAD 67 (1-594) 
+GAD 65 (1-195)lGAD 67 (205-594) 
+GAD 67 (1-230)lGAD 65 (221.585)- 
+GAD 65 (1-442)lGAD 67 (452-594) 
+GAD 67 (1-451)IGAD 65 (443-585) 
+1 I 
+0 2500 5000 7500 10000 12500 
+GAD Immunoprecipitated  (cpm) 
+B 
+GAD PROTEIN 
+GAD 67 (1-594) 
+GAD 65 (1-195)lGAD 67 (205-594) 
+GAD 67 -23O)lGAD 65 (221-585) 
+GAD 65 (1-442)lGAD 67 (452-594) 
+GAD 67 (1-451)IGAD 65 (443-585) 
+1 
+150 
+GAD Immunoprecipitated [% of GAD 65 (1-585)] 
+FIGURE 4. Binding  of  chimeric GAD proteins  by SMS and IDDM 
+sera. A, a dilution  of SMS 1 serum (1/10,000) was chosen so that re- 
+activity  with GAD 65, but  not GAD 67 or GAD 65 protein fragments, 
+was present (see Fig. 2, A and B). Chimeric GAD proteins  were syn- 
+thesized as described in  Materials  and  Methods  and  the  amount  im- 
+munoprecipitated  (cpm) is shown on the x-axis. The horizontal bar 
+shows the mean 2 SEM of  three  to  four separate experiments. The 
+binding  to GAD  67 and GAD 65 (1-195)/GAD 67 (205-594) by  this 
+dilution  of SMS serum was not different from  normal sera. B, as de- 
+scribed in A, immunoprecipitations  of  the GAD chimera  were per- 
+formed  with three SMS sera and two IDDM sera. A dilution  of SMS 
+serum (1/5,000 to 1/20,000) was chosen so that  reactivity with GAD 
+65, but  not GAD  67 or GAD 65 protein fragments, was present (see 
+Fig. 2, A and B). Since the  amount  of GAD protein  immunoprecipi- 
+tated by the sera varied  from 2,000 to 10,000 cpm, the amount  of GAD 
+immunoprecipitated is expressed as a percentage of GAD 65 immu- 
+noprecipitated  (defined as 100%). Each serum is shown  by a bar of 
+different pattern. For some chimeras, the bar is too small to  be seen. 
+The horizontal bar shows the mean  of two  to four separate experiments 
+for each serum. The binding  to GAD 67 and GAD 65 (1-1 95)/GAD  67 
+(205-594) by IDDM and SMS sera  was not different from  normal sera. 
+Our findings support two recent reports which found that SMS 
+sera target: 1) a linear epitope contained in the N-terminal eight 
+amino acids of GAD 65; and 2) an epitope near the  COOH ter- 
+minus of GAD 65  (19,21). Butler  et al. utilized immunoblotting of 
+recombinant GAD 65 protein and identified the C-terminus of the 
+GAD protein (amino acids 475-585) as the major region targeted 
+1250 
+- I 
+1000 
+u - 
+rn 750 
+C 
+-0 
+C 
+m 500 
+0 
+4 
+a 250 
+.- 
+.- 
+0 0 
+W 
+B 
+0 SMS #1 
+0 SMS #2 
+0 SMS #3 
+A SMS #4 
+W SMS #5 
+e . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ......a .. . . . . . . . . 
+0 I I 
+GAD 67/65/67 GAD 65/67/65 
+FIGURE 5. Frequency of  binding  to different GAD epitopes in SMS 
+sera. Two  chimeric GAD proteins, GAD 67 (1-230)/GAD 65 (221- 
+442)/GAD 67 (452-594) (termed GAD 67/65/67), and GAD 65 (1- 
+195)/GAD 67 (205-441)/GAD 65 (443-585) (termed GAD 65/67/65), 
+were  immunoprecipitated  by SMS sera (n = 5).  A dilution  of SMS 
+serum (1/5,000 to 1/20,000) was chosen so that  reactivity with GAD 
+65, but  not GAD 67 or GAD 65 protein fragments, was present (see 
+Fig. 2, A and B). The binding  (cpm/methionine) of each GAD chimeric 
+protein  by each SMS serum is shown. Each point represents a duplicate 
+determination  for each serum. The binding  to GAD 67/65/67 by SMS 
+4 is obscured by the symbols for SMS 2 and SMS 3. The binding  of 
+GAD 65/67/65 by SMS 4 is not different from  normal sera (dotted  line 
+is the  binding  by  normal sera). 
+by a panel of 30 SMS sera (19). Kim et al. utilized a similar 
+experimental approach, but localized the major site of binding to 
+the first eight amino acids of GAD 65 and suggested that this was 
+the major linear GAD epitope targeted by SMS sera (21). Our 
+findings confirm the presence of such GAD Abs in SMS sera, but 
+indicate Abs with additional GAD specificities are present in equal 
+or higher titer in  SMS sera. For example, our study demonstrates 
+the presence of GAD Abs in  SMS sera that target the amino-, 
+middle-, and carboxyl-thirds of the GAD protein. Some of these 
+differences likely relate to our use of immunoprecipitation rather 
+than immunoblotting to detect GAD Abs (discussed below). It is 
+important to note that the dilutions of SMS sera we used (MOO to 
+1/1000) to detect binding to the amino, middle, and carboxyl thirds 
+of the GAD 65 protein are similar to the serum dilutions used by 
+Butler et al. and Kim et al. (1/500) to detect binding to the linear 
+epitopes at the N-terminus and C-terminus of the protein by im- 
+munoblotting (19, 21). We did not detect binding by IDDM sera to 
+the epitope located in the N-terminal 16 amino acids, and IDDM 
+sera usually do not bind those GAD protein fragments consisting 
+only of the mid- or C-terminal region of GAD 65 (10, 23). 
+Prior studies have not agreed on the existence of GAD 67 Abs 
+in  SMS sera, but our results with recombinant GAD 67 clearly 
+demonstrate the presence of such autoantibodies (10, 19-21). In 
+the current study, the binding of the autoantibodies to GAD 67 was 
+blocked by preincubation with GAD 6.5 (188-442) which indi- 
+cates that the GAD 67-reactive Abs target a region that is highly 
+homologous between the two GAD isoforms. It should be noted 
+that GAD 6.5 binding cannot be blocked by preincubation with 
+GAD  67) (23). Since this region of both GAD isoforms contains 
+the pyridoxal 5&quot;phosphate-binding site and the active site of the 
+enzyme, it  is possible that this Ab, which binds to both GAD 65 
+and GAD 67, is responsible for  the inhibition of GAD  enzyme 
+activity by SMS sera reported by Bjork et al. (18). 
+Similarities in  the humoral response to GAD in SMS and IDDM 
+sera. Our results confirm two recent reports that SMS sera contain 
+autoantibodies that bind amino- and carboxyl-terminal epitopes, 
+but indicate that such Abs represent a minor portion of the humoral 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+<span class="source-segment role-group_summary" id="src-s0006" data-segment="s0006" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">824 COMPARISON OF GAD  AUTOANTIBODY EPITOPES 
+response to GAD (19, 21). Despite clear differences in the GAD 
+Ab profile in SMS and IDDM, an extremely important similarity 
+exists. In both SMS and IDDM sera, Abs that are GAD  65-specific 
+and bind only full length GAD 65 protein and not GAD protein 
+fragments or peptides are present. Both SMS and IDDM Sera con- 
+tain Abs that bind a conformation-dependent region in the middle 
+third of the protein and a second set of Abs that binds a  confor- 
+mation-dependent epitope in the COOH terminus of the protein. 
+Abs specific for the two regions of GAD protein are present in 
+approximately equivalent titers in most sera although a single 
+specificity may predominate. These GAD Abs appear to be similar 
+in isoform reactivity and epitope recognition pattern to the MICA 
+1 and MICA 3 mAbs produced by Richter et al. from a single 
+IDDM patient (22).</span> Whether GAD and SMS Abs are identical will 
+require additional studies to precisely localize the amino acids res- 
+idues that comprise the conformation-dependent epitope. 
+GAD  Ab assay methodology 
+Our results support previously published work on mapping of SMS 
+epitopes, but demonstrate that prior studies have failed to discover 
+the complexity of GAD Abs in SMS sera. The likely reason is the 
+method of GAD  Ab analysis. Our assay was optimized for mea- 
+suring the GAD Abs found in IDDM sera and uses immunopre- 
+cipitation of GAD protein prepared by  in vitro translation. Two 
+workshops on GAD Abs and IDDM have emphasized that immu- 
+noprecipitation is the assay of choice in assessing IDDM-relevant 
+GAD Abs (29, 30). Since all prior studies of SMS sera used im- 
+munoblotting and IDDM sera do not react with GAD by immu- 
+noblotting, no prior study can compare epitopes in these two types 
+of sera (19, 21). Abs (monoclonal or polyclonal) often behave 
+quite differently in immunoprecipitation and immunoblotting sys- 
+tems and therefore our results are not directly comparable with 
+reports using immunoblotting. However, in certain instances there 
+is close agreement between the two assays. For example, we iden- 
+tified an aminoterminal epitope using immunoprecipitation of a 
+GAD fragment containing amino acids 1-195  and this is in perfect 
+agreement with the findings by immunoblotting (19, 21). 
+An alternative interpretation to the presence of two different 
+types of GAD Abs (one that binds a conformation-dependent 
+epitope and a second type that binds linear epitopes) is that there 
+exists a single type of  Ab having a different affinity for full length 
+GAD protein and GAD protein fragments. The apparent difference 
+in the titer of Abs dependent on protein conformation and Abs that 
+bind denatured GAD protein may simply reflect an Ab species 
+with a higher affinity for the full length protein than for the dena- 
+tured protein. The current study cannot distinguish between these 
+two interpretations since  SMS sera reflect a polyclonal response to 
+several epitope regions of the GAD protein. Further understanding 
+of the affinity/titer of a particular Ab species requires the isolation 
+of  mAb species. 
+The use of total human serum to map autoantibody epitopes may 
+be problematic because: 1) the immune response to an autoantigen 
+is likely to be polyclonal; 2) different autoantibodies may be 
+present at different titers; 3) the reactivity of a certain autoantibody 
+cannot be examined in isolation; and 4) the inability to discrimi- 
+nate between a single Ab species directed at an epitope and  a set 
+of closely-related Abs targeting the same epitope. A precise quan- 
+titation of the number of autoantibodies in a particular serum and 
+mAb approach, all lymphocyte clones are immortalized and the 
+contribution of a particular clone, which may  be present at an 
+extremely low frequency, to the total GAD autoantibody pool is 
+difficult to discern. The relative frequency of a particular autoan- 
+tibody species in relation to other autoantibody species can only be 
+answered with total serum. In the current study, we have focused 
+on particular GAD autoantibodies by using several GAD autoan- 
+tigens and several dilutions of serum. The use  of full length GAD 
+protein, GAD protein fragments, and GAD peptides as targets in 
+our assay allows one to focus on those Ab species that optimally 
+bind that target. For example, using a 1/10,000 dilution of SMS 
+sera, reactivity to only full length GAD protein is detected. In 
+contrast, SMS serum at a dilution of 1/100 contains not only such 
+full length, conformation-dependent Abs but also Abs that bind 
+GAD protein fragments. If one uses GAD protein fragments or 
+GAD peptides with SMS serum at a 1/100 dilution, then only Abs 
+capable of reacting with GAD protein fragments are detected, even 
+though this serum dilution would contain Abs that bind full length 
+GAD protein. 
+Imdications for oathogenesis of SMS and IDDM 
+Differences in GAD epitope recognition in SMS and IDDM have 
+led to speculation that differences in the autoimmune repertoire are 
+important in determining whether diabetes or neurologic symp- 
+toms develop ( 19, 21). Our observation that GAD Abs in both 
+SMS and IDDM are similar does not support this hypothesis, but 
+additional studies are required to determine if these SMS and 
+IDDM Abs target precisely the same amino acids or the same 
+regions of the protein. The lower titer GAD Abs in SMS that bind 
+linear epitopes may represent immunologic spreading of an ex- 
+tremely vigorous humoral response from conformation-dependent 
+GAD epitopes in SMS.  The failure to detect such Abs in IDDM 
+may simply reflect the much lower titer of GAD Abs in this dis- 
+ease. Perhaps, if a comparable level of GAD Abs from IDDM and 
+SMS sera were examined, GAD Abs that target linear epitopes 
+would be found in IDDM. The findings of Richter et al. support 
+this view since they isolated mAbs capable of immunoblotting 
+GAD from an individual with IDDM (22). 
+The presence of the SMS-specific Abs in individuals with SMS 
+alone and also in individuals with SMS and IDDM also suggests 
+that the difference in GAD epitope recognition in these two disease 
+is not the explanation for why IDDM or SMS develops. Since up 
+to one-third of individuals with SMS also have diabetes, it is as- 
+sumed that the pathogenesis of the diabetes in SMS is an autoim- 
+mune process that is comparable to IDDM in the absence of SMS. 
+If differences in the humoral response influence whether IDDM or 
+SMS develops, then one would expect the GAD Ab profile to differ 
+in individuals with SMS and IDDM and individuals with SMS 
+alone. Kim et al. found that Abs directed at a linear, N-terminal 
+epitope distinguished SMS from IDDM sera. However, both SMS 
+patients with and without IDDM had Abs directed at this epitope 
+and no epitope pattern distinguished individuals who also had 
+IDDM. This conclusion is supported by our findings that the two 
+<span class="source-segment role-group_summary" id="src-s0007" data-segment="s0007" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">individuals with SMS and diabetes targeted epitope regions similar 
+to those of the two individuals with SMS alone. Thus, other dif- 
+ferences in the autoimmune process (T lymphocyte responses) 
+may determine whether IDDM or SMS develops.</span> 
+the epitope targeted by each Ab species requires either the isola- 
+tion  of each Ab species or the production of human mAbs from 
+such patients. This later approach has been successfully employed Our finding of similar GAD Abs in SMS and  in IDDM sera also 
+by Richter et al. and sheds additional information on the actual has important implications for the immunologic screening with 
+number of Abs contained in a particular serum and the epitope GAD Abs to identify individuals who are at high risk for devel- 
+specificity of a particular autoantibody (22). However, using this oping IDDM. 
+Implications for prediction of IDDM 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023
+
+The Journal of Immunology 
+GAD Abs are an important immunologic marker for IDDM 
+since most individuals with new-onset IDDM and most individuals 
+in the prediabetic phase of IDDM are GAD  Ab positive (I 1-13). 
+However, several groups of individuals have now been recognized 
+to have GAD autoantibodies and yet have a low risk of developing 
+IDDM in the future. These GAD Ab-positive groups include in- 
+dividuals with SMS,  autoimmune polyglandular failure type I, and 
+nondiabetic individuals with the restricted or p cell-specific ICA 
+pattern (18,  34, 35). Such observations have led to the hypothesis 
+that differences in the GAD  Ab profile may allow one to distin- 
+guish between individuals of high and low risk of developing 
+IDDM (1 8). Our study demonstrates that one subset of individuals 
+who do not always have diabetes on long-term follow-up (SMS) 
+has GAD Abs similar to the GAD Abs found in individuals with 
+IDDM. A precise comparison of the GAD Ab profile in the other 
+nondiabetic GAD Ab-positive subsets is lacking and will be im- 
+portant in determining the precise role of GAD Abs as  a predictive 
+marker for IDDM. In addition, a precise localization of amino 
+acids targeted by the various GAD autoantibodies should now be 
+possible using the GAD  65/GAD 67 chimeric proteins and will be 
+important in determining if Abs that target the same region of 
+GAD actually target identical amino acids. 
+Acknowledgments 
+The authors thank Dr. James  Thomas, Vanderbilt University, for reading 
+the manuscript and for many helpful suggestions. The authors also thank 
+Dr. Vanda Lennon, Rochester, MN, Dr. Robert Schmidli, Melbourne, Aus- 
+tralia; and Drs. Roberto Gianani and George Eisenbarth, Denver, CO for 
+providing SMS  sera. 
+References 
+1. Castano, L., and G. S. Eisenbarth. 1990. Type-I diabetes: a chronic autoimmune 
+2. Clare-Salzler. M. J., A. J. Tobin. and D. L. Kaufman. 1992. Glutamate decar- 
+disease of human, mouse. and rat. Annu. Rev.  lmmunol. 8:647. 
+3. Solimena, M., and P. De Camilli. 1991. Autonnmunity to glutamic acid decar- 
+boxylase: an autoantigen in IDDM. Dlabetes  Cure 15.132. 
+boxylase (GAD) in stiff-man syndrome and insulin-dependent diabeteq mellitus. 
+Trends  Neurosci. 14:452. 
+4. Erlander, M. G.. and A. J. Tobin. 1991. The structural and functional heteroge- 
+neity of glutamic acid decarboxylase: a review. Neurochem.  Res. 16:2/5. 
+5. Reetz. A., M. Solimena, M. Matteoli, F. Folli, K. Takei, and P. De Camilli. 1991. 
+GABA and pancreatic beta-cells: colocalization of glutamic acid decarboxylase 
+(GAD) and GABA with synaptic-like microvesicles suggests their role in GABA 
+storage and secretion. EMBO J. 10:1275. 
+6. Bu, D. F., M. G. Erlander, B. C. Hitz, N. J. Tillakaratne. D. L. Kaufman, C.  B. 
+Wagner-McPherson, G. A. Evans, and A. J. Tobin. 1992. Two human glutamate 
+decarboxylases, 65-kDa GAD and 67-kDa GAD,  are encoded by a single gene. 
+Proc.  Natl.  Acad. Scr. USA 89:2115. 
+7. Solimena, M., D. Aggujaro, C. Muntzel, R. Dirkx, M. Butler, P. De Camilli, and 
+A. Hayday. 1993. Association of GAD-65, hut not of GAD-67, with the Golgi 
+complex of transfected Chinese hamster ovary cells mediated by the N-terminal 
+reglon. Proc. Narl. Acad. Sci. USA 90:3073. 
+8. Petersen, J. S..  S. Russel, M. 0. Marshall, H. Kofod, K. Buschard. N. Cambon, 
+A. E. Karlsen. E. Boel. W. A. Hagopian, K. R. Hejnaes, A. Moody, T. Dyrberg, 
+A. Lernmark, 0. D. Madsen, and B. K. Michelson. 1993. Differential expression 
+9. Kim, J., W. Richter, H. J. Aanstoot, Y. Shi, Q. Fu, R. Rajotte, G. Wamock, and 
+of glutamic acid decarboxylase in rat and human islets. Diabetes 42.484. 
+S. Baekkeskov. 1993. Differential expresssion of GAD  65 and GAD  67 in human, 
+rat, and mouse pancreatic islets. Diabetes 421799. 
+IO. Baekkeskov, S., H. J. Aanstoot, S. Christgau, A. Reetz, M. Solimena. 
+M. Cascalho. F. Folli, H. Richter-Olesen, and P. DeCamilli. 1990. Identification 
+of the 64K autoantigen in insulin-dependent diabetes as the GABA-synthesizing 
+I I. Hagopian. W. A,, A. E. Karlsen, A. Gottsater, M. Landin-Olsson, C. E. Grubin, 
+enzyme glutamic acid decarboxylase. Nature 347:lSl. 
+tltative assay using recombinant human islet glutamic acid decarboxylase 
+G. Sundkvist, J. S. Petersen, E. Boel, T. Dyrberg, and A. Lernmark. 1993. Quan- 
+(GAD651 shows that 64K autoantibody positivity at onset predicts diabetes type. 
+J. Clin.  Invest. 91:368. 
+12. Rowley, M. J., I. R. Mackay, Q. Y. Chen, W. J. Knowles, and P. Z. Zimmet. 
+1992. Antibodies to glutamic acid decarboxylase discrimmate major types of 
+dlabetes mellitus. Diabetes 41:548. 
+825 
+13. De Aizpurua, H. J., Y. M. Wilson, and L. C. Harrison. 1992. Glutamic acid 
+decarboxylase autoantibodies in preclinical insulin-dependent diabetes. Proc. 
+Null. Acud. Sci. USA 89:9841. 
+14. Honeyman, M.  C.,  D. S. Cram, and L. C. Harrison. 1993. Glutamic acid decar- 
+boxylase 67-reactive T cells: a marker of insulin-dependent diabetes. J. Exp. Med. 
+177:535. 
+15. Atkinson, M. A,, D. Kaufman, L. Campbell, K. A. Gibbs, S. C. Shah, D.  F. Bu, 
+M. G. Erlander, A. J. Tobin, and N. K. Maclaren. 1992. Response of peripheral 
+blood mononuclear cells to glutamate decarboxylase in insulin-dependent diabe- 
+tes. Luncet 339:458. 
+16. 
+17. 
+18. 
+19. 
+20. 
+21. 
+22. 
+23. 
+24 
+25 
+26 
+27 
+28 
+29 
+30 
+31 
+Kaufman, D. L., M. J. Clare-Salzler, J. Tian, T. Forsthuber, G. S. P. Ting, 
+P. Robinson, M. A. Atkinson. E. E. Seroarz, A. J. Tobin, and P. V. Lehman. 1993. 
+Spontaneous loss of T-cell tolerance to glutamic acid decarboxylase in murine 
+insulin-dependent diabetes. Nuture 366:69. 
+Tisch, R., Y. D. Yang, S. M. Singer, R. S. Liblau. L. Fugger, and H. 0. McDevitt. 
+1993. Immune response to glutamic acid decarboxylase correlates with insulitis 
+in non-obese diabetic mice. Nature 366:72. 
+Bjork, E., L. A. Velloso, 0. Kampe, and F. A. Karlsson. 1994. GAD autoanti- 
+bodies in IDDM, stiff-man syndrome, and autoimmune polyendocrine syndrome 
+type 1 recognlze different epitopes. Diabetes 43:161. 
+Butler, M. H.. M. Solimena, R. Dirkx, A. Hayday, and P. De Camilli. 1993. 
+recognized by autoantibodies in stiff-man syndrome. J. Exp. Med. 178:2097. 
+Identification of a dominant epitope of glutamic acid decarboxylase (GAD-65) 
+Li, L., W. A. Hagopian, R. Brashear. T. Daniels, and A. Lemmark. 1993. Iden- 
+tification of autoantibody epitopes of glutamic acid decarboxylase in stiff-man 
+syndrome patients. J. lmmunol. 152:930. 
+Kim, J., M. Manchuk, T. Bugawan. Q. Fu, M. Jaffe. Y. Shi, H. J. Aanstoot, C. W. 
+Turck. H. Erlich, V. Lennon, and S. Baekkeskov. 1994. Higher titer autoantibody 
+levels and recognition of a linear NH2-terminal epitope in the autoantigen, 
+GAD65, distinguish stiff-man syndrome from insulin-dependent diabetes melli- 
+tus. J. Exp.  Med. lR0:595. 
+Richter, W., Y.  Shi, and S. Baekkeskov. 1993. Autoreactive epitopes defined by 
+diabetes-associated human monoclonal antibodies are localized in the middle and 
+Acud. Sci. USA 90:2832. 
+C-terminal domains of the smaller form of glutamate decarboxylase. Proc.  Natl. 
+Ujihara, N.. K. Daw. R. Gianani, E. Boel. L. Yu, and A. C. Powers. 1994. 
+Identification of glutamic acid decarboxylase autoantibody heterogeneity and 
+epitope regions in type I diabetes. Diabetes 43:968. 
+Chang, Y. C., and D. L. Gottlieb. 1988. Characterization of the proteins purified 
+with monoclonal antibodies to glutamic acid decarboxylase. J. Neurosci. 8:2/23. 
+Mugnaini, E., and A.  L. Dahl. 1983. Zinc-aldehyde fixation for light-microscopic 
+immunocytochemistry of nervous tissue. J. Histochem.  Cvtochem. 31:1435. 
+Christgau, S., H. Schierheck, H. J. Aanstoot, L. Aagaard, K. Begley, H. Kofod, 
+K. Hejnaes, and S. Baekkeskov. 1991. Pancreatic beta cells express two autoan- 
+tigenic forms of glutamic acid decarboxylase, a 65-kDa hydrophilic form and a 
+64-kDa amphiphilic form which can be both membrane-bound and soluble [pub- 
+lished erratum appears in J. Bid. Chem. 1991;266(34):23516]. J. Biol. Chem. 
+266:21257. 
+Grubin, C. E.. T. Daniels, B. Toivola, M. Landin-Olsson, W. A. Hagopian, L. Li, 
+gand binding assay to determine diagnostic accuracy of isoform-specific glutamic 
+A. E. Karlsen, E. Boel, B. Michelsen, and A. Lemmark. 1994. A novel radioli- 
+acid decarboxylase antibodies in childhood IDDM. Diabetologia 37:344. 
+Jackson, R. J., and T. Hunt. 1983. Preparation and use of nuclease-treated rabbit 
+reticulocyte lysates for the translation of eukaryotic messenger RNA. Methods 
+Enzymol. 96:SO. 
+Schmidli, R. S., P. G. Colman. E. Bonifacio, G. F. Bottazzo, and L.  C. Harrison. 
+antibodies: the first international glutamic acid decarboxylase antibody work- 
+1994. High level of concordance between assays for glutamic acid decarboxylase 
+shop. Diubetes 43:1005. 
+Schmidli, R. S., P. G. Colman, and E. Bonifacio.  1995. Disease sensitivity and spec- 
+ificity of fifty-two assays for glutamic acid decarboxylase antibodies:  the second 
+international glutam~c acid decarboxylase antibody workshop. Diabetes 44:636. 
+Hayopian. W. A..  B. Michelsen, A. E. Karlsen, F. Larsen, A. Moody, C.  E. &quot; 
+Grubin, R. Rowe, J. Petersen, R. McEvoy, and A. Lernmark. 1993. Autoanti- 
+bodies in IDDM primarily recognize the 65,000-M, rather than the 67,000-Mr 
+isoform of glutamic acid decarboxylase, Diabetes 42:631. 
+32. Velloso, L. A,, 0. Kampe, A. Hallberg. L. Christmanson, C. Betsholtz, and F. A. 
+glutamate decarboxylase in Type I diabetes and determination of autoantibodies 
+Karlsson. 1993. Demonstration of GAD-65 as the main immunogenic isoform of 
+using a radioligand produced by eukaryotic expression. J. Clin.  Invest. 91:2084. 
+33. Daw, K., and A. C. Powers. 1995. Two distinct glutamic acid decarboxylase 
+autoantibody specificities in IDDM target different epitopes. Diabetes 44:216. 
+34. Genovese, S., E. Bonifacio, J. M. McNally, B.  M. Dean, R. Wagner, E.  Bosi. E. A. 
+Gale, and G. F. Bottazzo. 1992. Distinct cytoplasmic islet cell antibodies with dif- 
+ferent risks for type 1 (insulin-dependent) diabetes mellitus. Diabetologiu 35:385. 
+35. Gianani, R., A. Pugliese, S. Bonner-Weir, A. J. Shiffrin, J. S. Soeldner, H. Erlich, 
+Z. Awdeh, C. A. Alper, R. A. Jackson, and G. S. Eisenbarth. 1992. Prognostically 
+significant heterogeneity of cytoplasmic islet cell antibodies in relatives of pa- 
+tients with type I diabetes. Diabetes 4/:347. 
+Downloaded from http://journals.aai.org/jimmunol/article-pdf/156/2/818/1071722/818.pdf by University of Zurich user on 27 May 2023</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0002</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>20837-21372</td><td>high</td><td>Results summarize GAD65/GAD67 immunoprecipitation in the SMS sera compared with IDDM sera.</td><td>performed with 5 SMS sera and representative new-onset IDDM sera (Fig. IA). The SMS sera immunoprecipitated more labeled GAD protein than IDDM sera at low dilutions of serum (1/...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0003</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>23679-24323</td><td>high</td><td>Epitope mapping results for SMS sera against GAD65 fragments.</td><td>In addition to binding to full length GAD 65, SMS sera bind GAD 65 protein fragments containing amino acids 1-195, 1-360, 188-442, 361-585, and 444-585 whereas IDDM sera bind on...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0005</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>30404-31356</td><td>high</td><td>Mapping of GAD67 epitope region in SMS sera.</td><td>Mapping of epitope region of GAD 67 To characterize the GAD 67 autoantibodies in SMS sera, the sera were preincubated with unlabeled GAD 67, GAD 65, or GAD 65 protein fragments....</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0006</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>33033-33947</td><td>high</td><td>Chimeric protein experiments found shared conformation-dependent GAD65 epitope regions in SMS and IDDM sera.</td><td>65 are targeted by low titer Abs in SMS sera (Fig. 2B) (19,21), the high titer, GAD 65-specific autoantibodies from SMS sera do not bind a chimeric protein consisting of the N-t...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0007</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>35098-36228</td><td>high</td><td>Authors summarize key differences between SMS and IDDM GAD antibody profiles.</td><td>Using an immunoprecipitation assay to measure anti-GAD speci- ficity, our results demonstrate that the humoral response to GAD in SMS is quite complex as reflected by the presen...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0008</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>42316-43216</td><td>high</td><td>Authors conclude SMS and IDDM sera share conformation-dependent GAD65 antibody specificities.</td><td>824 COMPARISON OF GAD AUTOANTIBODY EPITOPES response to GAD (19, 21). Despite clear differences in the GAD Ab profile in SMS and IDDM, an extremely important similarity exists....</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0009</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>49256-49494</td><td>high</td><td>Findings compare SMS patients with and without diabetes.</td><td>individuals with SMS and diabetes targeted epitope regions similar to those of the two individuals with SMS alone. Thus, other dif- ferences in the autoimmune process (T lymphoc...</td></tr></tbody></table><h2>Relocated Spans</h2><table class="segment-table"><thead><tr><th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th></tr></thead><tbody><tr><td>l0002</td><td>b0008</td><td>-582</td><td>-535</td><td>a3ffeee31eaf23c0e55e53e9a77c96a80d0b16e37e25b03f8ac42c177f6420ae</td></tr><tr><td>l0003</td><td>b0008</td><td>2527-3284</td><td>2842-3486</td><td>491b17920d92357cc536e45971278e682bd11cf63034f7d90afbb30a0ec33629</td></tr><tr><td>l0005</td><td>b0012</td><td>778-1838</td><td>804-1756</td><td>27a3cc793261f5cd0f44e877b16b8accb792c11dce157c553d741db32bf08b1e</td></tr><tr><td>l0006</td><td>b0013</td><td>-1064</td><td>-914</td><td>fbcb6f4e9956415e90548e49e7fa456308d7f355810e93a2b05ea2ef1ae6ef51</td></tr><tr><td>l0007</td><td>b0013</td><td>1790-3327</td><td>2065-3195</td><td>1362fdb0846beb2e30194f706b4dadd00e6d79205f99f94a928ee575feff22c2</td></tr><tr><td>l0008</td><td>b0016</td><td>-971</td><td>-900</td><td>a7d62646d08e0a150d7c47c4fc44e0fd53be60cec4c4481567619ec9a6c31cea</td></tr><tr><td>l0009</td><td>b0018</td><td>-184</td><td>-238</td><td>bab155959f448a539e84543b43a115fa26716a60c36bfa498379bdb1e45d0117</td></tr></tbody></table><h2>Rejected Proposals</h2><table class="segment-table rejected-table"><thead><tr><th>Rejected</th><th>Group</th><th>Role</th><th>Targets</th><th>Block</th><th>Requested Offsets</th><th>Requested Source Offsets</th><th>Reason</th><th>Selected Text</th></tr></thead><tbody><tr><td>r0001</td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>b0005</td><td>1586-2058</td><td>12755-13227</td><td>offset_text_mismatch:l0001:b0005:1586:2058</td><td>Serum samples from individuals with the clinical diagnosis of stiff- man syndrome (n = 5) were obtained from Dr. Vanda Lennon, Mayo Clinic, Rochester, MN; from Dr. Robert Schmid...</td></tr><tr><td>r0002</td><td>l0004</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>b0011</td><td>82-1473</td><td>28207-29598</td><td>offset_text_mismatch:l0004:b0011:82:1473</td><td>SMS sera react with full length GAD 65 and GAD 65 protein fragments In four SMS sera, Abs reacting with full length GAD 65 were detected at least a 10-fold higher dilution than...</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\89.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\89.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\89.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\89.validation.json</p></main>
+</body>
+</html>

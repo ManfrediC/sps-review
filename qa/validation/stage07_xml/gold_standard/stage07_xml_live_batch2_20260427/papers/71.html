@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 71</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 71</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>ambiguous_table_row_mapping:s0024</li><li>ambiguous_table_row_mapping:s0025</li><li>ambiguous_table_row_mapping:s0056</li><li>ambiguous_table_row_mapping:s0077</li><li>ambiguous_route_recovery_label_count:1:3</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027, s0028, s0029, s0030, s0031, s0032, s0033, s0034, s0035, s0036, s0037, s0038, s0039, s0040, s0041, s0042, s0043, s0044, s0045, s0046, s0047, s0048, s0049, s0050, s0051, s0052, s0053, s0054, s0055, s0056, s0057, s0058, s0059, s0060, s0061, s0062, s0063, s0064, s0065, s0066, s0067, s0068, s0069, s0070, s0071, s0072, s0073, s0074, s0075, s0076, s0077, s0078, s0079, s0080, s0081</span></div><h2>Source Text</h2><div class="source-text"><span class="source-segment role-group_summary" id="src-s0001" data-segment="s0001" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">In.trathecal baclofen therapy
+in stiff-man syndrome:
+A double-blind, placebo-controlled trial
+P.L. Silbert, MBBS, FRACP; J.Y. Matsumoto, MD; P.G. McManis, MBBS, FRACP;
+K.A. Stolp-Smith, MD; B.A. Elliott, MD; and K.M. McEvoy, MD, PhD</span>
+
+<span class="source-segment role-group_summary" id="src-s0002" data-segment="s0002" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Article abstract-We performed a double-blind, placebo-controlled trial of intrathecal baclofen (ITB) in stiff-man syndrome. Three patients, unresponsive to current therapy, received 50 pg of ITB or placebo on sequential days. Following
+ITB, all patients demonstrated improvement in reflex EMG activity. The mean reduction in total EMG activity (from
+all muscles) following stimulation of the medial plantar nerve (cutaneous flexor reflex) was 72% following 50 pg of ITB
+compared with 18% following placebo (ANOVA: significance of F, p &lt; 0.0001). The mean latency to onset of the response was also significantly prolonged for all muscles following ITB (ANOVA: significance of F, p &lt; 0.05). Although reflex EMG activity was reduced in all patients, clinical improvement was evident in only one patient, who differed from
+the others studied by a longer duration of disease, greater severity of stiffness, less fear of falling, and greater electrophysiologic improvement.
+NEUROLOGY 1995;45:1893-1897</span>
+
+<span class="source-segment role-group_summary" id="src-s0003" data-segment="s0003" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Stiff-man syndrome (SMS) is a r a r e disorder
+characterized by involuntary stiffness of axial
+and lower-extremity muscles with superimposed
+painful muscle spasms.&#x27; The etiology is unknown, but a n immune-mediated mechanism is
+suggested by the presence of antibodies t o glutamic acid decarboxylase (GAD) and the strong
+association with other autoimmune diseases.2
+GAD catalyzes the conversion of glutamate t o
+GABA, and there are reduced CSF GABA levels
+in some patients with SMS,3 making baclofen
+(which acts on GABAB receptors) a logical therapy.
+CSF penetration of baclofen is poor following
+oral administration4 and, although effective in
+some case^,^,^ the response in SMS is often variable and inadequate.7 Intrathecal administration
+of baclofen avoids the high systemic levels required with oral administration because of limited
+CSF p e n e t r a t i ~ n CSF
+. ~ levels up to 50 times
+higher may be achieved with ?booth of the oral
+dose.* There are reports of intrathecal baclofen
+(ITB) in five cases of SMSg-llbut most trials were
+open, and there was no electrophysiologic monitoring of the effects of ITB. In the only reported patient with a blinded evaluation, no improvement
+could be documented.ll We report a double-blind,
+placebo-controlled trial of ITB therapy in three pa-</span>
+
+<span class="source-segment role-group_summary" id="src-s0004" data-segment="s0004" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">tients with SMS, with intensive clinical and electrophysiologic monitoring.
+Methods. Patient selection. Three patients with SMS
+were recruited for a double-blind, placebo-controlled trial
+of ITB therapy. The study was approved by the Mayo
+Clinic Institutional Review Board. Patients were selected
+because of inadequate control on their current therapy
+due to lack of efficacy or side effects. Symptoms of SMS
+had been present for 6 years in patient 1, 4 years in patient 2, and 10 years in patient 3, and these patients
+were currently on combinations of diazepam, clonazepam, baclofen, valproate, and prednisone. All patients
+fulfilled the clinical and electrophysiologic diagnostic criteria of Lorish et a17 and had positive anti-GAD antibodies. All patients had a n increased lumbar lordosis, reduced range of lumbar movement, paraspinal muscle hypertrophy, rigid abdominal muscles, spontaneous and
+startle-induced spasms, and at least a partial response to
+benzodiazepine therapy. Lower-extremity reflexes were
+brisk in all patients, with asymmetry of the stiffness and
+reflexes in patients 2 and 3. Informed consent was obtained and current medications were continued. The protocol allowed for patients to receive blinded intrathecal
+administration of either 50 pg of baclofen or placebo on
+day 1, with the other medication given on day 2. Following this, patients were eligible to receive a further trial of
+either 75 or 100 pg of ITB with placebo control, as determined by the patient&#x27;s subjective response and the observed clinical response to the lower dose.</span>
+
+<span class="source-segment role-group_summary" id="src-s0005" data-segment="s0005" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">From the Departments of Neurology (Drs. Silbert, Matsumoto, McManis, and McEvoy), Physical Medicine and Rehabilitation (Dr. Stolp-Smith), and
+Anesthesiology (Dr. Elliott), Mayo Clinic and Mayo Foundation, Rochester, MN.
+Presented in part at the annual meetings of the American Academy of Electrodiagnostic Medicine, San Francisco, CA, September 1994, and the American Neurological Association, San Francisco, CA, October 1994.
+Received August 22, 1994. Accepted in final form March 3, 1995.
+Address correspondence and reprint requests to Dr. K.M. McEvoy, Department of Neurology, Mayo Clinic, Rochester, MN 55904.</span>
+
+<span class="source-segment role-group_summary" id="src-s0006" data-segment="s0006" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">October 1995 NEUROLOGY 45 1893</span>
+
+<span class="source-segment role-group_summary" id="src-s0007" data-segment="s0007" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">!able 1. Results of reflex EMG activity for all patients
+IT placebo: Percentage change in reflex
+EMG activity from baseline
+Patient 1 Patient 2 Patient 3
+Mean
+Biceps brachii
+Triceps
+L-3 paraspinals
+Lower rectus abdominis
+Biceps femoris
+Rectus femoris
+Medial gastrocnemius
+Tibialis anterior
+Mean reduction in
+EMG activity</span>
+
+<span class="source-segment role-group_summary" id="src-s0008" data-segment="s0008" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-34%
++6%
+-10%
+-32%
+-81%
+-68%
++8%
+-34%</span>
+
+<span class="source-segment role-group_summary" id="src-s0009" data-segment="s0009" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-31‘%</span>
+
+<span class="source-segment role-group_summary" id="src-s0010" data-segment="s0010" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-67%
+-66%
+-54%
+-9%
+-52%
+~23%
+-4%
+-9%
+-30%</span>
+
+<span class="source-segment role-group_summary" id="src-s0011" data-segment="s0011" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">+4%
+-10%
+-24%
++7%
++71
++19%</span>
+
+<span class="source-segment role-group_summary" id="src-s0012" data-segment="s0012" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-32%
+-23%
+-29%
+-11%
+-42%
+-9%</span>
+
+<span class="source-segment role-group_summary" id="src-s0013" data-segment="s0013" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">+14%</span>
+
+<span class="source-segment role-group_summary" id="src-s0014" data-segment="s0014" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">+6%</span>
+
+<span class="source-segment role-group_summary" id="src-s0015" data-segment="s0015" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">+27%
++6%</span>
+
+<span class="source-segment role-group_summary" id="src-s0016" data-segment="s0016" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-5%
+-18%</span>
+
+<span class="source-segment role-group_summary" id="src-s0017" data-segment="s0017" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">IT baclofen:Percentage change in reflex
+EMG activity from baseline
+Patient 1 Patient 2 Patient 3
+Mean
++4%
+-33%
+-39%
+-26%
+-82%
+-72%
+-79%
+-96%
+-53%</span>
+
+<span class="source-segment role-group_summary" id="src-s0018" data-segment="s0018" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-55%
+-72%
+-75%
+-82%
+-90%’
+-87%
+-82%
+-80%
+-78%</span>
+
+<span class="source-segment role-group_summary" id="src-s0019" data-segment="s0019" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-63%
+-65%
+-78%
+-93%
+-99%
+-98%)
+-9m
+-95%
+-86%</span>
+
+<span class="source-segment role-group_summary" id="src-s0020" data-segment="s0020" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-38%
+-57%
+-64%
+-67%
+-90%
+-86%
+-858
+-90%
+-72%</span>
+
+<span class="source-segment role-group_summary" id="src-s0021" data-segment="s0021" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">IT Intrathecal</span>
+
+Patient evaluation. Patients completed the following
+evaluations before and after each intrathecal injection:
+<span class="source-segment role-group_summary" id="src-s0022" data-segment="s0022" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">1. Patient self-evaluation. A self-evaluation of changes</span>
+in stiffness, spasms, mobility, and walking. Each of these
+was rated as stable, or mildly (kl), moderately (*2), or
+markedly (k3) improved or deteriorated relative to baseline, with a maximum score of *12. Patients were encouraged to assess themselves by doing activities known
+to aggravate their symptoms. Evaluations were completed 90 minutes and 3% hours after the intrathecal injection, and the mean score was compared with a baseline 1 hour prior. The patient self-evaluation was also
+completed on two occasions each day (11AM and 1PM) for
+2 days prior t o the study.
+2. Electrophvsioloeic evaluation. Reflex EMG activity
+was assessed using the cutaneous flexor (exteroceptive)reflex obtained following medial plantar nerve stimulation
+using a modification of the techniques of Meinck et all2 and
+A train of three square-wave stimBrashear and Phi1li~s.l~
+uli of 0.1-msecduration at 200 Hz was delivered to the medial plantar nerve on the medial edge of the plantar fascia
+just proximal to the metatarsal head. We chose this site of
+stimulation as it gave the maximal reflex response. The
+bandpass was 20 to 2,000 Hz. The stimulus intensity was
+<span class="source-segment role-group_summary" id="src-s0023" data-segment="s0023" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">1.5 to 1.75 times the motor threshold, as determined by the</span>
+presence of a toe twitch. Stimuli were delivered at intervals
+of greater than 45 seconds to avoid habituation. Surface
+EMG activity was recorded over the biceps brachii, triceps,
+L-3 paraspinal muscles, lower rectus abdominis, biceps
+femoris, rectus femoris, medial gastrocnemius, and tibialis
+anterior muscles on the more symptomatic side. Recording
+positions were maintained for the duration of the study.
+Recorded muscle activity was rectified and three trials
+were performed, each consisting of five averaged responses
+(Nicolet Viking 11). The reproducibility of the response for
+all muscles in all patients (between trials) was determined
+by calculating the percentage variation from the mean for
+each muscle in each patient and then overall. The latency
+to onset was measured for each muscle, and the area under
+the curve for all reflex EMG activity between 50 and 800
+msec after the stimulus was recorded. The study was performed before and approximately 90 minutes following
+each intrathecal injection.
+3. Clinical evaluation. Muscle tone and stiffness were
+assessed clinically using the Ashworth score, before and
+approximately 2% hours following the intrathecal injection.14 This grades spasticity a s resistance to passive
+movement on a five-point scale, where a score of 1 corre1894 NEUROLOGY 45 October 1995
+
+<span class="source-segment role-group_summary" id="src-s0024" data-segment="s0024" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">sponds to no resistance, and rigidity in flexion or extension
+gives a score of five. A videotaped evaluation was performed using a standard format on all patients before and
+approximately 2 hours after intrathecal injection. Patients
+were videotaped while walking, turning, sitting down, rising from a chair, bending forward, and standing. The preand post-injectionvideos were then evaluated by two experienced blinded examiners (K.M.M., K.A.S.) for mobility,
+spasms, walking, stiffness, and overall function using the
+same measures as for the patients’ self-evaluation.
+For all evaluations, the pre- and post-injection assessments were compared on the given study day. The patients’ usual medications were given following the baseline assessments and a t least 2 hours prior t o the intrathecal injections. Times for administration of the patients’ usual medications, intrathecal injections, and subjective, objective, and electrophysiologic evaluations were
+consistent between the study days.
+Statistical analysis. Statistical significance between
+groups was assessed by ANOVA and Wilcoxon’s signed
+rank test for nonparametric variables. A p value of ~ 0 . 0 5
+was considered significant.</span>
+
+<span class="source-segment role-group_summary" id="src-s0025" data-segment="s0025" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Results. All intrathecal injections of baclofen were
+performed without cardiorespiratory complications.
+Patient self-eualuation. Patients 1and 2 noted an
+improvement following placebo ( + 5 in patient 1and
++4 in patient 2), with a deterioration following ITB
+(-3 in patient 1 and -1.5 in patient 2). The reported improvements following placebo were similar
+t o the improvements they normally experienced
+taking their usual oral medications on the days
+prior to the trial ( + 3 for both patients). Following
+ITB, these patients described feelings of unsteadiness of the legs and more difficulty walking. Patient
+3 deteriorated following placebo ( - 6 ) and improved
+following ITB ( + 8 ) . For patient 3, all individual
+components of the subjective evaluation score improved. The placebo response was similar t o his
+usual daily response (-4).The overall response to
+ITB for all patients was not statistically significant.
+Electrophysiologic evaluation. Reflex EMG activ&amp;y.The percentage change in EMG activity from
+baseline for each patient is presented in table 1,
+and a sample trial for patient 3 is presented in the</span>
+
+<span class="source-segment role-group_summary" id="src-s0026" data-segment="s0026" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Table 2. Mean onset latency (msec) following
+intrathecal placebo and baclofen</span>
+
+<span class="source-segment role-group_summary" id="src-s0027" data-segment="s0027" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Patient 3:Post-intrathecal placebo</span>
+
+<span class="source-segment role-group_summary" id="src-s0028" data-segment="s0028" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Biceps brachii</span>
+
+<span class="source-segment role-group_summary" id="src-s0029" data-segment="s0029" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Post-placebo</span>
+
+<span class="source-segment role-group_summary" id="src-s0030" data-segment="s0030" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Post-baclofen</span>
+
+<span class="source-segment role-group_summary" id="src-s0031" data-segment="s0031" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">148.5 (128.0-169.0)&quot;
+123.7 (121.0-126.31
+91.5 (89.0-95.3)
+96.2 (86.0-105.0)
+96.2 (91.0-109.7)
+105.2 (93.0-126.0)
+94.9 (92.0-101.2)
+86.9 (82.2-91.3)</span>
+
+<span class="source-segment role-group_summary" id="src-s0032" data-segment="s0032" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">130.7 199.0-168.0)
+128.8 106.0-155.5)
+146.6 (95.5-178.5)
+119.8 188.0-142.5)
+117.9 190.0-149.0)
+143.4 (116.0-165.2)
+119.5 (98.7-159.5)
+109.1 (95.3-132.0)</span>
+
+<span class="source-segment role-group_summary" id="src-s0033" data-segment="s0033" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Triceps</span>
+
+<span class="source-segment role-group_summary" id="src-s0034" data-segment="s0034" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Biceps brachii
+Triceps
+L-3 paraspinals
+Lower rectus abdominis
+Biceps femoris
+Rectus femoris
+Medial gastrocnemius
+Tibialis anterior</span>
+
+<span class="source-segment role-group_summary" id="src-s0035" data-segment="s0035" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">L3 paraspinals
+Lower rectus abdominis
+Biceps lemons
+Rectus femoris</span>
+
+<span class="source-segment role-group_summary" id="src-s0036" data-segment="s0036" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">*</span>
+
+<span class="source-segment role-group_summary" id="src-s0037" data-segment="s0037" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Medial gastrocnemius</span>
+
+<span class="source-segment role-group_summary" id="src-s0038" data-segment="s0038" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Tibialis anlenor</span>
+
+<span class="source-segment role-group_summary" id="src-s0039" data-segment="s0039" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">4</span>
+
+<span class="source-segment role-group_summary" id="src-s0040" data-segment="s0040" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Stimulus onset</span>
+
+<span class="source-segment role-group_summary" id="src-s0041" data-segment="s0041" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">_J</span>
+
+<span class="source-segment role-group_summary" id="src-s0042" data-segment="s0042" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">&quot; The range o f mean onset latencies for the three patients is given in</span>
+
+<span class="source-segment role-group_summary" id="src-s0043" data-segment="s0043" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">50 msec</span>
+
+<span class="source-segment role-group_summary" id="src-s0044" data-segment="s0044" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">parentheses.
+Patient 3: Post-intrathecal baclofen (50 pg)</span>
+
+<span class="source-segment role-group_summary" id="src-s0045" data-segment="s0045" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Biceps brachii
+Tnceps</span>
+
+<span class="source-segment role-group_summary" id="src-s0046" data-segment="s0046" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">L3 Wraspinals
+Lower rectus abdominis
+Biceps femoris
+Rectus femoris</span>
+
+<span class="source-segment role-group_summary" id="src-s0047" data-segment="s0047" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">-</span>
+
+<span class="source-segment role-group_summary" id="src-s0048" data-segment="s0048" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Medial gastrocnemius</span>
+
+<span class="source-segment role-group_summary" id="src-s0049" data-segment="s0049" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">A.</span>
+
+<span class="source-segment role-group_summary" id="src-s0050" data-segment="s0050" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Tibialis anterior</span>
+
+<span class="source-segment role-group_summary" id="src-s0051" data-segment="s0051" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">4</span>
+
+<span class="source-segment role-group_summary" id="src-s0052" data-segment="s0052" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Stimulus onset</span>
+
+<span class="source-segment role-group_summary" id="src-s0053" data-segment="s0053" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">i
+50 msec</span>
+
+<span class="source-segment role-group_summary" id="src-s0054" data-segment="s0054" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Figure. Average rectified reflex EMG activity (patient 3)
+following intrathecal placebo and intrathecal baclofen (50
+pg). The gains are identical for both figures with biceps
+brachii and triceps at 20 pvldivision, L-3 paraspinal
+muscles at 100 pvldiuision, and all other muscles
+recorded at 200 pvldivision.</span>
+
+<span class="source-segment role-group_summary" id="src-s0055" data-segment="s0055" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">figure. The mean percentage variation from the
+mean for all patients between trials was 24.6
+14.6%. A treatment effect following intrathecal
+placebo was evident as the patients&#x27; usual medications were continued throughout the study, and
+were taken immediately after the baseline electrophysiologic studies on both days. The pre-injection
+baseline reflex EMG activities for all patients were
+similar on both days. The mean reduction in EMG
+activity from all muscles for all patients was 72%
+following ITB compared with 18%following placebo
+(ANOVA: significance of F, p &lt; 0.0001). All patients
+had a lesser reduction in EMG activity following
+ITB for the biceps and triceps muscles as compared
+with the lower-extremity muscles. The reduction in
+EMG activity following ITB was significant in the
+lumbar paraspinal and lower rectus abdominis
+muscles (ANOVA: significance of F, p &lt; 0.021, biceps and rectus femoris muscles (ANOVA significance of F, p &lt; 0.02&gt;, and medial gastrocnemius
+and tibialis anterior muscles (ANOVA: significance
+of F, p &lt; O.OOOl), but not the biceps and triceps. Patient 3 displayed a dramatic reduction (86%) in
+total reflex EMG following ITB, compared with a
+6% increase following placebo (figure). Patient 1
+had a reduction in total EMG activity following
+ITB of 52% compared with 31% following placebo,</span>
+
+<span class="source-segment role-group_summary" id="src-s0056" data-segment="s0056" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">*</span>
+
+<span class="source-segment role-group_summary" id="src-s0057" data-segment="s0057" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">and for patient 2 the reductions were 78% following
+ITB and 30%following placebo.
+For all muscles, the mean latency to onset of the
+response following ITB was significantly prolonged
+(table 2) (ANOVA significance of F, p &lt; 0.05). The
+change in onset latency was not significant for biceps and triceps, or for the medial gastrocnemius
+and tibialis anterior muscles, but was statistically
+significant for lumbar paraspinal and lower rectus
+abdominis muscles (ANOVA: significance of F, p &lt;
+0.05) and biceps and rectus femoris (ANOVA: significance of F, p &lt; 0.05).
+Clinical evaluation. Stiffness. The Ashworth
+score to assess tone and stiffness was unchanged
+following placebo, but fell following ITB from Ashworth 3 t o Ashworth 2 for patients 1 and 2, and
+from Ashworth 4 to Ashworth 3 for patient 3. These
+changes were not statistically significant ip = 0.08).
+Observer videotaDe evaluation. The mean improvement for patient 1 following intrathecal
+placebo was +4.5 with a +0.5 improvement following ITB. The corresponding results for patient 2
+were - 1following intrathecal placebo and - 1.5 following ITB. The results for patient 3 were 0 following intrathecal placebo and +7 following ITB.
+These changes were not statistically significant.</span>
+
+<span class="source-segment role-group_summary" id="src-s0058" data-segment="s0058" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Discussion. Despite our small sample size, we were
+able t o detect a significant electrophysiologic response in SMS following ITB as evidenced by the reduction in total reflex EMG activity and prolongation
+of the onset latency of the cutaneous flexor reflex.
+The cutaneous flexor reflex is one of several exteroceptive reflexes consistently exaggerated in
+SMS.12J3J5Presumably, these reflex abnormalities
+reflect hyperexcitability along polysynaptic reflex
+arcs, most prominently at the spinal level. We observed maximal reflex EMG activity following medial plantar nerve stimulation, and found that this
+reflex could be reliably measured without habituation during the testing protocol, making it an excellent physiologic measure of SMS. Other electrophysiologic techniques are of limited value in evaluating the effects of treatments in SMS. Monosynaptic reflex arcs are usually normal,12 and although documentation of continuous muscle activOctober 1995 NEUROLOGY 45 1895</span>
+
+<span class="source-segment role-group_summary" id="src-s0059" data-segment="s0059" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">ity is useful in the initial evaluation of SMS, it may
+be absent in rested patients on medical therapy.
+This was apparent to us during the pretrial evaluation of our patients, and for this reason we did not
+employ this technique during the trial.
+Two aspects of the electrophysiologic response in
+our patients bear further comment. The reflex
+EMG activity was most markedly suppressed in
+the legs and paraspinal muscles, consistent with
+the known gradient of distribution of ITB following
+lumbar intrathecal administration.EThis pattern of
+response may also, i n part, reflect the known
+greater hyperexcitability of t r u n k a n d lowerextremity muscles in SMS.15 The prolongation of
+t h e onset latency i n t h e proximal leg a n d
+paraspinal muscles cannot be explained with certainty, but most likely reflects reduced temporal
+summation along the flexor reflex pathways due to
+baclofen’s effects on presynaptic inhibition and
+postsynaptic neuronal excitability.16J7 Together,
+these findings suggest that ITB was acting in a
+local and inhibitory manner at the spinal level.
+Although muscle stiffness was reduced in all patients, we were unable to document a statistically
+significant change. This may be due to a combination of the small sample size and lack of sensitivity
+of the Ashworth scale. Although we observed an
+electrophysiologic response to ITB in all patients,
+only one responded with clear clinical improvement. This patient was more severely affected, had
+asymmetric involvement of the lower extremities,
+had a longer duration of disease, and also showed
+greater electrophysiologic improvement following
+ITB. An insufficient dose, or a n early peak CSF
+level of ITB, may account for the lesser electrophysiologic improvement in the two patients who
+did not respond, but both patients reported increased unsteadiness of their legs and more difficulty walking following ITB, despite a reduction in
+muscle stiffness. We interpret these changes as
+treatment effects, and, together with the patients’
+“fear of falling,” we felt that, following unblinding
+of the first stage of the trial, a higher dose of ITB
+would not benefit these patients. In these patients
+(and in future trials), further evaluation of the effects of ITB would best be performed using continuous intrathecal infusion through an intraspinal
+catheter to allow time for adaptation and to adjust
+the dose if necessary.
+Brashear and Phillips13 previously noted the discrepancy between the electrophysiologic and clinical responses. Their patient’s subjective clinical response was significantly delayed in comparison
+with the observed changes in reflex muscle activity
+and muscle stiffness. This further supports our
+suggestion that a period of time may be needed in
+these patients to allow for adaptation to changes in
+their muscle tone, and that the exteroceptive reflexes are a sensitive indicator of changes in reflex
+pathways important in the pathophysiology of
+SMS.
+In previously reported patients receiving ITB for
+1896 NEUROLOGY 45 October 1995</span>
+
+<span class="source-segment role-group_summary" id="src-s0060" data-segment="s0060" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">SMS, three showed an impressive response to longterm ITB.gJOPenn and Mangierig documented a response to an open test dose of 75 pg, although the
+patient with advanced SMS, treated with a relatively limited dose of ITB (120 pg/d), showed longterm improvement in spasms and pain, but no
+functional improvement because of lower-extremity
+ankylosis. Ford and Fahnll reported a similar patient with advanced SMS, a relatively fixed increased lumbar lordosis, and ankylosis of the hips,
+who showed no improvement following doubleblind administration of bolus test doses up to 100
+bg. The pattern of response in these patients, together with t h e SMS patients reported in our
+study, suggests that those most likely to benefit
+from ITB are those with moderately severe disease,
+but without a fixed deformity or ankylosis. Of the
+three patients reported in our trial, patient 3 has
+recently commenced continuous long-term ITB infusion and is responding well to his current dose of
+730 pg/day. The other two patients have currently
+elected to continue their prestudy drug therapy,
+but may undergo further evaluation in the future
+using continuous infusion of ITB through an intraspinal catheter.
+In summary, our trial has demonstrated a significant electrophysiologic improvement in SMS following ITB. Although this supports the suggested
+efficacy of ITB in SMS,gJothe overall response in
+our patients did not always parallel the electrophysiologic improvement. Long-term clinical efficacy remains to be proven, but we believe that ITB may be
+efficacious in reducing the stiffness and spasms in
+some patients with SMS. Continuous infusion may
+be preferable to bolus administration for assessing
+the response to ITB in selected patients.</span>
+
+<span class="source-segment role-group_summary" id="src-s0061" data-segment="s0061" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Acknowledgments
+Bruce Aldrich provided technical assistance. Medtronic Inc. (St.
+Paul, MN) provided the baclofen for intrathecal injection.</span>
+
+<span class="source-segment role-group_summary" id="src-s0062" data-segment="s0062" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">References
+1. McEvoy KM. Stiff-man syndrome. Maya Clin Proc
+1991;66:300-304.
+2. Solimena M, Folli F, Aparisi R, Pozza G, De Camilli P. Autoantibodies to GABA-ergic neurons and pancreatic beta
+cells in stiff-man syndrome. N Engl J Med 1990;322:15551560.
+3. Williams AC, Nutt JG, Hare T. Autoimmunity in stiff man
+syndrome [letter]. Lancet 1988;2:222.
+4. Knutsson E, Lindblom U, Martensson A. Plasma and cerebrospinal fluid levels of baclofen (Lioresal) a t optimal therap e u t i c r e s p o n s e s i n s p a s t i c p a r e s i s . J Neural Sci
+1974;23:473-484.
+5. Whelan JL. Baclofen in treatment of the “stiff-man’’ syndrome. Arch Neurol 1980;37:600-601.
+6. Miller F, Korsvik H. Baclofen in the treatment of stiff-man
+syndrome. Ann Neural 1981;9:511-512.
+7. Lorish TR, Thorsteinsson G, Howard FM Jr. Stiff-man syndrome updated. Maya Clin Proc 1989;64:629-636.
+8, Kroin JS, Penn RD. Cerebrospinal fluid pharmacokinetics of
+lumbar intrathecal baclofen. In: Lakke JPWF, Delhaas EM,
+Rutgers AWF, eds. Parenteral drug therapy in spasticity</span>
+
+<span class="source-segment role-group_summary" id="src-s0063" data-segment="s0063" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">and Parkinson’s disease. Pearl River, NY: Parthenon Publishing Group, 1990:67-77.
+9. Penn RD, Mangieri EA. Stiff-man syndrome treated with intrathecal baclofen. Neurology 1993;43:2412.
+10. Meinck H-M, Ricker K, Hulser P-J, Schmid E, Peiffer J , Solimena M. Stiff man syndrome: clinical and laboratory findings in eight patients. J Neural 1994;241:157-166.
+11. Ford B, Fahn S. Intrathecal baclofen [letter]. Neurology
+1994;44:1367-1368.
+12. Meinck H-M, Ricker K, Conrad B. The stiff-man syndrome:
+new pathophysiological aspects from abnormal exteroceptive
+reflexes and the response to clomipramine, clonidine, and tizanidine. J Neural Neurosurg Psychiatry 1984;47:280-287.</span>
+
+<span class="source-segment role-group_summary" id="src-s0064" data-segment="s0064" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">13. Brashear HR, Phillips LH 11. Autoantibodies to GABAergic
+neurons and response to plasmapheresis in stiff-man syndrome. Neurology 1991;41:1588-1592.
+14. Ashworth B. Preliminary trial of carisoprodol in multiple
+sclerosis. Practitioner 1964;192:540-542.
+15. Matsumoto JY, Caviness J N , McEvoy KM. The acoustic
+startle reflex in stiff-man syndrome. Neurology 1994;44:
+1952-1955.
+16. Davidoff RA. Antispasticity drugs: mechanisms of action.
+Ann Neural 1985;17:107-116.
+17. Blaxter TJ, Carlen PL. Pre- and postsynaptic effects of baclofen in the rat hippocampal slice. Brain Res 1985;341:195199.</span>
+
+<span class="source-segment role-group_summary" id="src-s0065" data-segment="s0065" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Brainstern tumors in patients with
+neurofibrornatosis type 1:
+A distinct clinical entity
+P.T. Molloy, MD; L.T. Bilaniuk, MD; S.N. Vaughan, RN, BSN; M.N. Needle, MD;
+G.T. Liu, MD; E.H. Zackai, MD; and P.C. Phillips, MD</span>
+
+<span class="source-segment role-group_summary" id="src-s0066" data-segment="s0066" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Article abstract-The natural history and the clinical and neuroimaging features of brainstem tumors in neurofibromatosis type 1(NF1) are poorly understood. Magnetic resonance imaging (MRI) has been useful in NF1 in detecting intracranial abnormalities, especially of the brainstem. Brainstem tumors in NF1 have been confused clinically with
+non-NF1 brainstem tumors and radiographically with the increased T, signal abnormalities, also known as “unidentified bright objects” (UBOs), which are common in NF1 and often located in the brainstem. This study, which evaluated
+17 NF1 patients with brainstem tumors, is the largest series to date. Fifteen of 17 patients (88%)had neurologic signs
+and symptoms referable to brainstem dysfunction, including dysarthria, cranial neuropathies, and gross motor incoordination. Tumors were located primarily in the medulla in 14 of 17 NF1 patients (82%), in contrast to the pontine
+tumor location in the non-NF1 population. Seven NF1 patients (41%) required shunt placement for hydrocephalus at
+initial diagnosis, more frequent than in non-NF1 brainstem tumor patients. Six of 17 patients (35%)had evidence of
+radiographic tumor progression, but only three of them (18%) had correlative clinical progression. Two patients with
+progressive symptoms had partial surgical resection, and pathology revealed either fibrillary or anaplastic astrocytomas. Three patients were treated with radiation therapy, chemotherapy, or both, with two deaths. With a median
+follow-up of 52 months, 15 of 17 patients remain alive; 14 of them did not require adjuvant therapy. In our series, we
+describe NF1 brainstem tumors as a distinct clinical entity, much less aggressive than non-NF1 pontine tumors but
+more symptomatic than brainstem UBOs in NF1.
+NEUROLOGY 1995;45:1897-1902</span>
+
+<span class="source-segment role-group_summary" id="src-s0067" data-segment="s0067" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Cranial magnetic resonance imaging (MRI) has
+been helpful in the diagnostic evaluation of patients with neurofibromatosis type l (NF1) by
+defining both the CNS tumors and the characteristic high signal intensity lesions on T,-weighted
+MRI. CNS tumors in NF1 patients include astrocytomas of t h e visual pathways, ependymomas,
+meningiomas, and even primitive neuroectodermal
+tumors.l-‘j The high signal intensity lesions on T,weighted MRI, the most common neuroimaging abnormality in NF1 (38 t o 66%7-15),
+have been re-</span>
+
+<span class="source-segment role-group_summary" id="src-s0068" data-segment="s0068" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">ferred to as “unidentified bright objects” (UB0s)’‘j
+and even as “unidentified neurofibromatosis obj e c t ~ .These
+~ ’ ~ ~lesions are most often located in the
+basal ganglia, thalamus, brainstem, cerebellum,
+and subcortical white matter. They most likely represent sites of vacuolar or spongiotic change,l8 although they were thought initially to represent
+h a m a r t o m a s , heterotopias, or dysplastic
+~ h a n g e . ~ . ~An
+J ~important
+J ~ - ~ ~ distinguishing feature is that, unlike tumors, these lesions typically
+do not enhance with contrast administration, do</span>
+
+<span class="source-segment role-group_summary" id="src-s0069" data-segment="s0069" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">From the Divisions of Neurology (Drs. Molloy, Needle, and Phillips, and S.N. Vaughan), Oncology (Drs. Molloy, Needle, and Phillips), Radiology
+(Dr. Bilaniuk), Neuro-Ophthalmology (Dr. L i d , and Genetics (Dr. Zackai), The Children’s Hospital of Philadelphia, PA.
+Received October 24, 1994. Accepted in final form March 6, 1995.
+Address correspondence and reprint requests to Dr. Patricia T. Molloy, Division of Neurology, The Children’s Hospital of Philadelphia, 324 South 34th
+Street, Philadelphia, PA 19104.</span>
+
+<span class="source-segment role-group_summary" id="src-s0070" data-segment="s0070" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">October 1996 NEUROLOGY 45 1897</span>
+
+<span class="source-segment role-group_summary" id="src-s0071" data-segment="s0071" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Intrathecal baclofen therapy in stiff-man syndrome: A double-blind,
+placebo-controlled trial
+P.L. Silbert, J. Y. Matsumoto, P.G. McManis, et al.
+Neurology 1995;45;1893-1897
+DOI 10.1212/WNL.45.10.1893
+This information is current as of October 1, 1995
+Updated Information &amp;
+Services</span>
+
+<span class="source-segment role-group_summary" id="src-s0072" data-segment="s0072" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">including high resolution figures, can be found at:
+http://n.neurology.org/content/45/10/1893.full</span>
+
+<span class="source-segment role-group_summary" id="src-s0073" data-segment="s0073" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">References</span>
+
+<span class="source-segment role-group_summary" id="src-s0074" data-segment="s0074" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">This article cites 16 articles, 1 of which you can access for free at:
+http://n.neurology.org/content/45/10/1893.full#ref-list-1</span>
+
+<span class="source-segment role-group_summary" id="src-s0075" data-segment="s0075" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Citations</span>
+
+<span class="source-segment role-group_summary" id="src-s0076" data-segment="s0076" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">This article has been cited by 1 HighWire-hosted articles:
+http://n.neurology.org/content/45/10/1893.full##otherarticles</span>
+
+<span class="source-segment role-group_summary" id="src-s0077" data-segment="s0077" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Permissions &amp; Licensing</span>
+
+<span class="source-segment role-group_summary" id="src-s0078" data-segment="s0078" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Information about reproducing this article in parts (figures,tables)
+or in its entirety can be found online at:
+http://www.neurology.org/about/about_the_journal#permissions</span>
+
+<span class="source-segment role-group_summary" id="src-s0079" data-segment="s0079" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Reprints</span>
+
+<span class="source-segment role-group_summary" id="src-s0080" data-segment="s0080" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Information about ordering reprints can be found online:
+http://n.neurology.org/subscribers/advertise</span>
+
+<span class="source-segment role-group_summary" id="src-s0081" data-segment="s0081" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Neurology ® is the official journal of the American Academy of Neurology. Published continuously
+since 1951, it is now a weekly with 48 issues per year. Copyright Copyright 1995 by Advanstar
+Communications Inc.. All rights reserved. Print ISSN: 0028-3878. Online ISSN: 1526-632X.</span></div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>-232</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>In.trathecal baclofen therapy in stiff-man syndrome: A double-blind, placebo-controlled trial P.L. Silbert, MBBS, FRACP; J.Y. Matsumoto, MD; P.G. McManis, MBBS, FRACP; K.A. Stol...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>234-1229</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Article abstract-We performed a double-blind, placebo-controlled trial of intrathecal baclofen (ITB) in stiff-man syndrome. Three patients, unresponsive to current therapy, rece...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>1231-2520</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Stiff-man syndrome (SMS) is a r a r e disorder characterized by involuntary stiffness of axial and lower-extremity muscles with superimposed painful muscle spasms.&#x27; The etiology...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>2522-4088</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>tients with SMS, with intensive clinical and electrophysiologic monitoring. Methods. Patient selection. Three patients with SMS were recruited for a double-blind, placebo-contro...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>4090-4703</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>From the Departments of Neurology (Drs. Silbert, Matsumoto, McManis, and McEvoy), Physical Medicine and Rehabilitation (Dr. Stolp-Smith), and Anesthesiology (Dr. Elliott), Mayo...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>4705-4735</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>October 1995 NEUROLOGY 45 1893</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>4737-5057</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>!able 1. Results of reflex EMG activity for all patients IT placebo: Percentage change in reflex EMG activity from baseline Patient 1 Patient 2 Patient 3 Mean Biceps brachii Tri...</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5059-5096</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-34% +6% -10% -32% -81% -68% +8% -34%</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5098-5103</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-31‘%</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5105-5146</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-67% -66% -54% -9% -52% ~23% -4% -9% -30%</td></tr><tr><td><a href="#src-s0011">s0011</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5148-5174</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>+4% -10% -24% +7% +71 +19%</td></tr><tr><td><a href="#src-s0012">s0012</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5176-5204</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-32% -23% -29% -11% -42% -9%</td></tr><tr><td><a href="#src-s0013">s0013</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5206-5210</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>+14%</td></tr><tr><td><a href="#src-s0014">s0014</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5212-5215</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>+6%</td></tr><tr><td><a href="#src-s0015">s0015</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5217-5225</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>+27% +6%</td></tr><tr><td><a href="#src-s0016">s0016</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5227-5235</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-5% -18%</td></tr><tr><td><a href="#src-s0017">s0017</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5237-5382</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>IT baclofen:Percentage change in reflex EMG activity from baseline Patient 1 Patient 2 Patient 3 Mean +4% -33% -39% -26% -82% -72% -79% -96% -53%</td></tr><tr><td><a href="#src-s0018">s0018</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5384-5429</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-55% -72% -75% -82% -90%’ -87% -82% -80% -78%</td></tr><tr><td><a href="#src-s0019">s0019</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5431-5475</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-63% -65% -78% -93% -99% -98%) -9m -95% -86%</td></tr><tr><td><a href="#src-s0020">s0020</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5477-5521</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-38% -57% -64% -67% -90% -86% -858 -90% -72%</td></tr><tr><td><a href="#src-s0021">s0021</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5523-5537</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>IT Intrathecal</td></tr><tr><td><a href="#src-s0022">s0022</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5649-5705</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>1. Patient self-evaluation. A self-evaluation of changes</td></tr><tr><td><a href="#src-s0023">s0023</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>6855-6914</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>1.5 to 1.75 times the motor threshold, as determined by the</td></tr><tr><td><a href="#src-s0024">s0024</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>8237-9427</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>sponds to no resistance, and rigidity in flexion or extension gives a score of five. A videotaped evaluation was performed using a standard format on all patients before and app...</td></tr><tr><td><a href="#src-s0025">s0025</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>9429-10547</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Results. All intrathecal injections of baclofen were performed without cardiorespiratory complications. Patient self-eualuation. Patients 1and 2 noted an improvement following p...</td></tr><tr><td><a href="#src-s0026">s0026</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10549-10626</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Table 2. Mean onset latency (msec) following intrathecal placebo and baclofen</td></tr><tr><td><a href="#src-s0027">s0027</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10628-10662</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Patient 3:Post-intrathecal placebo</td></tr><tr><td><a href="#src-s0028">s0028</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10664-10678</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Biceps brachii</td></tr><tr><td><a href="#src-s0029">s0029</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10680-10692</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Post-placebo</td></tr><tr><td><a href="#src-s0030">s0030</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10694-10707</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Post-baclofen</td></tr><tr><td><a href="#src-s0031">s0031</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10709-10856</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>148.5 (128.0-169.0)&quot; 123.7 (121.0-126.31 91.5 (89.0-95.3) 96.2 (86.0-105.0) 96.2 (91.0-109.7) 105.2 (93.0-126.0) 94.9 (92.0-101.2) 86.9 (82.2-91.3)</td></tr><tr><td><a href="#src-s0032">s0032</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>10858-11010</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>130.7 199.0-168.0) 128.8 106.0-155.5) 146.6 (95.5-178.5) 119.8 188.0-142.5) 117.9 190.0-149.0) 143.4 (116.0-165.2) 119.5 (98.7-159.5) 109.1 (95.3-132.0)</td></tr><tr><td><a href="#src-s0033">s0033</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11012-11019</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Triceps</td></tr><tr><td><a href="#src-s0034">s0034</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11021-11151</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Biceps brachii Triceps L-3 paraspinals Lower rectus abdominis Biceps femoris Rectus femoris Medial gastrocnemius Tibialis anterior</td></tr><tr><td><a href="#src-s0035">s0035</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11153-11219</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>L3 paraspinals Lower rectus abdominis Biceps lemons Rectus femoris</td></tr><tr><td><a href="#src-s0036">s0036</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11221-11222</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>*</td></tr><tr><td><a href="#src-s0037">s0037</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11224-11244</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Medial gastrocnemius</td></tr><tr><td><a href="#src-s0038">s0038</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11246-11262</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Tibialis anlenor</td></tr><tr><td><a href="#src-s0039">s0039</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11264-11265</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>4</td></tr><tr><td><a href="#src-s0040">s0040</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11267-11281</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Stimulus onset</td></tr><tr><td><a href="#src-s0041">s0041</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11283-11285</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>_J</td></tr><tr><td><a href="#src-s0042">s0042</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11287-11358</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>&quot; The range o f mean onset latencies for the three patients is given in</td></tr><tr><td><a href="#src-s0043">s0043</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11360-11367</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>50 msec</td></tr><tr><td><a href="#src-s0044">s0044</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11369-11426</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>parentheses. Patient 3: Post-intrathecal baclofen (50 pg)</td></tr><tr><td><a href="#src-s0045">s0045</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11428-11449</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Biceps brachii Tnceps</td></tr><tr><td><a href="#src-s0046">s0046</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11451-11517</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>L3 Wraspinals Lower rectus abdominis Biceps femoris Rectus femoris</td></tr><tr><td><a href="#src-s0047">s0047</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11519-11520</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>-</td></tr><tr><td><a href="#src-s0048">s0048</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11522-11542</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Medial gastrocnemius</td></tr><tr><td><a href="#src-s0049">s0049</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11544-11546</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>A.</td></tr><tr><td><a href="#src-s0050">s0050</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11548-11565</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Tibialis anterior</td></tr><tr><td><a href="#src-s0051">s0051</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11567-11568</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>4</td></tr><tr><td><a href="#src-s0052">s0052</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11570-11584</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Stimulus onset</td></tr><tr><td><a href="#src-s0053">s0053</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11586-11595</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>i 50 msec</td></tr><tr><td><a href="#src-s0054">s0054</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11597-11904</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Figure. Average rectified reflex EMG activity (patient 3) following intrathecal placebo and intrathecal baclofen (50 pg). The gains are identical for both figures with biceps br...</td></tr><tr><td><a href="#src-s0055">s0055</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11906-13231</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>figure. The mean percentage variation from the mean for all patients between trials was 24.6 14.6%. A treatment effect following intrathecal placebo was evident as the patients&#x27;...</td></tr><tr><td><a href="#src-s0056">s0056</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>13233-13234</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>*</td></tr><tr><td><a href="#src-s0057">s0057</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>13236-14477</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>and for patient 2 the reductions were 78% following ITB and 30%following placebo. For all muscles, the mean latency to onset of the response following ITB was significantly prol...</td></tr><tr><td><a href="#src-s0058">s0058</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>14479-15453</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Discussion. Despite our small sample size, we were able t o detect a significant electrophysiologic response in SMS following ITB as evidenced by the reduction in total reflex E...</td></tr><tr><td><a href="#src-s0059">s0059</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>15455-18485</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>ity is useful in the initial evaluation of SMS, it may be absent in rested patients on medical therapy. This was apparent to us during the pretrial evaluation of our patients, a...</td></tr><tr><td><a href="#src-s0060">s0060</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>18487-20214</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>SMS, three showed an impressive response to longterm ITB.gJOPenn and Mangierig documented a response to an open test dose of 75 pg, although the patient with advanced SMS, treat...</td></tr><tr><td><a href="#src-s0061">s0061</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>20216-20355</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Acknowledgments Bruce Aldrich provided technical assistance. Medtronic Inc. (St. Paul, MN) provided the baclofen for intrathecal injection.</td></tr><tr><td><a href="#src-s0062">s0062</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>20357-21394</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>References 1. McEvoy KM. Stiff-man syndrome. Maya Clin Proc 1991;66:300-304. 2. Solimena M, Folli F, Aparisi R, Pozza G, De Camilli P. Autoantibodies to GABA-ergic neurons and p...</td></tr><tr><td><a href="#src-s0063">s0063</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>21396-22067</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>and Parkinson’s disease. Pearl River, NY: Parthenon Publishing Group, 1990:67-77. 9. Penn RD, Mangieri EA. Stiff-man syndrome treated with intrathecal baclofen. Neurology 1993;4...</td></tr><tr><td><a href="#src-s0064">s0064</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>22069-22664</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>13. Brashear HR, Phillips LH 11. Autoantibodies to GABAergic neurons and response to plasmapheresis in stiff-man syndrome. Neurology 1991;41:1588-1592. 14. Ashworth B. Prelimina...</td></tr><tr><td><a href="#src-s0065">s0065</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>22666-22883</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Brainstern tumors in patients with neurofibrornatosis type 1: A distinct clinical entity P.T. Molloy, MD; L.T. Bilaniuk, MD; S.N. Vaughan, RN, BSN; M.N. Needle, MD; G.T. Liu, MD...</td></tr><tr><td><a href="#src-s0066">s0066</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>22885-24682</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Article abstract-The natural history and the clinical and neuroimaging features of brainstem tumors in neurofibromatosis type 1(NF1) are poorly understood. Magnetic resonance im...</td></tr><tr><td><a href="#src-s0067">s0067</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>24684-25203</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Cranial magnetic resonance imaging (MRI) has been helpful in the diagnostic evaluation of patients with neurofibromatosis type l (NF1) by defining both the CNS tumors and the ch...</td></tr><tr><td><a href="#src-s0068">s0068</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>25205-25776</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>ferred to as “unidentified bright objects” (UB0s)’‘j and even as “unidentified neurofibromatosis obj e c t ~ .These ~ ’ ~ ~lesions are most often located in the basal ganglia, t...</td></tr><tr><td><a href="#src-s0069">s0069</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>25778-26288</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>From the Divisions of Neurology (Drs. Molloy, Needle, and Phillips, and S.N. Vaughan), Oncology (Drs. Molloy, Needle, and Phillips), Radiology (Dr. Bilaniuk), Neuro-Ophthalmolog...</td></tr><tr><td><a href="#src-s0070">s0070</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26290-26320</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>October 1996 NEUROLOGY 45 1897</td></tr><tr><td><a href="#src-s0071">s0071</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26322-26602</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Intrathecal baclofen therapy in stiff-man syndrome: A double-blind, placebo-controlled trial P.L. Silbert, J. Y. Matsumoto, P.G. McManis, et al. Neurology 1995;45;1893-1897 DOI...</td></tr><tr><td><a href="#src-s0072">s0072</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26604-26702</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>including high resolution figures, can be found at: http://n.neurology.org/content/45/10/1893.full</td></tr><tr><td><a href="#src-s0073">s0073</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26704-26714</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>References</td></tr><tr><td><a href="#src-s0074">s0074</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26716-26844</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>This article cites 16 articles, 1 of which you can access for free at: http://n.neurology.org/content/45/10/1893.full#ref-list-1</td></tr><tr><td><a href="#src-s0075">s0075</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26846-26855</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Citations</td></tr><tr><td><a href="#src-s0076">s0076</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26857-26977</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>This article has been cited by 1 HighWire-hosted articles: http://n.neurology.org/content/45/10/1893.full##otherarticles</td></tr><tr><td><a href="#src-s0077">s0077</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26979-27002</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Permissions &amp; Licensing</td></tr><tr><td><a href="#src-s0078">s0078</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>27004-27176</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Information about reproducing this article in parts (figures,tables) or in its entirety can be found online at: http://www.neurology.org/about/about_the_journal#permissions</td></tr><tr><td><a href="#src-s0079">s0079</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>27178-27186</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Reprints</td></tr><tr><td><a href="#src-s0080">s0080</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>27188-27289</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Information about ordering reprints can be found online: http://n.neurology.org/subscribers/advertise</td></tr><tr><td><a href="#src-s0081">s0081</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>27291-27570</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Neurology ® is the official journal of the American Academy of Neurology. Published continuously since 1951, it is now a weekly with 48 issues per year. Copyright Copyright 1995...</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\71.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\71.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\71.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\71.validation.json</p></main>
+</body>
+</html>

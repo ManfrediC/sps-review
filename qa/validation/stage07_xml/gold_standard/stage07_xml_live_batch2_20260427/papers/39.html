@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 39</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 39</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>ambiguous_table_row_mapping:s0005</li><li>ambiguous_table_row_mapping:s0009</li><li>ambiguous_route_recovery_label_count:2:13</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023</span></div><h2>Source Text</h2><div class="source-text"><span class="source-segment role-group_summary" id="src-s0001" data-segment="s0001" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Heterogeneity of Autoantibodies 
+in SdT-Man Syndrome 
+Luigi M. E. Grimaldi, MD,&quot;? Gianvito Martino, MD,*t Simona Braghi, MD,S Angelo Quattrini, MD,t 
+Roberto Furlan, MD,+t Emanuele Bosi, MD,$ and Giancarlo Comi, MD? 
+Stiff-man syndrome is a rare neurological disorder characterized by skeletal muscle rigidity and spasms in which 
+detection of circulating anti-glutamic acid decarboxylase antibodies has suggested an autoimmune pathogenesis. TO 
+further define the role of autoimmunity in the pathogenesis, we studied anti-glutamic acid decarboxylase antibodies, 
+as well as organ- and non-organ-specific autoantibodies in 13 patients with stiff-man syndrome and 127 patients with 
+other neurological disorders. Thyrogastric antibodies were more frequent in patients with stiff-man syndrome (46%) 
+than in those with other neurological disorders (12%) (p &lt; 0.05). Non-organ-specific antibodies were found at a 
+similar frequency in the patients with stiff-man syndrome (61%) and those with other neurological disorders (65%). 
+Islet-cell autoantibodies and anti-glutamic acid decarboxylase antibodies were more common in stiff-man syndrome 
+patients (38% and 31%) compared to the patients with other neurological disorders (6% and 396, respectively; fi &lt; 
+0.001). With the exception of 1 patient in the other neurological disorders group, anti-glutamic acid decarboxylase 
+antibodies were always associated with islet-cell autoantibodies. Four patients with stiff-man syndrome had an associ- 
+ated solid tumor: 3 of them had antibodies recognizing a 125/130-kd protein and not glutamic acid decarboxylase. 
+Our study indicates that with immunological markers, patients with stiff-man syndrome can be subdivided into 
+three groups: (1) patients with circulating islet-cell autoantibodies, anti-glutamic acid decarboxylase as well as other 
+organ-specific autoantibodies, and the frequent association with an autoimmune disease (autoimmune variant); (2) 
+patients with associated neoplasms and circulating non-organ-specific autoantibodies but neither islet-cell nor anti- 
+glutamic acid decarboxylase autoantibodies (paraneoplastic variant); and (3) patients with no evidence of any known 
+autoantibody or association with other clinically evident diseases (idiopathic variant). We conclude that the presence of 
+anti-glutamic acid decarboxylase antibodies is restricted to a subgroup of stiff-man syndrome patients with associated 
+autoimmune diseases. The absence of these antibodies does not exclude a diagnosis of stiff-man syndrome, which is 
+still based on clinical and neurophysiological evidence. 
+Grimaldi LME, Martino G, Braghi S, Quattrini A, Furlan R, Bosi E, Comi G Heterogeneity of 
+autoantibodies in stiff-man syndrome. Ann Neurol 1993;34:57-64 
+Stiff-man syndrome (SMS), a rare neurological disor- 
+der first described by Moersch and Woltman in 1956 
+111, is characterized by painful persistent axial and 
+proximal limb muscle rigidity, which is aggravated by 
+sensory stimuli and abolished by sleep and anesthesia 
+El]. Electromyography of affected muscles at rest 
+shows spontaneous constant firing of normal motor 
+units in a full recruitment pattern, reinforced by pas- 
+sive and voluntary movements {2]. The muscle con- 
+traction tends to become chronic and leads the patient 
+to a state of constant rigidity that is only relieved 
+by systemic administration of benzodiazepines or other 
+y-aminobutyric acid (GABA) ag-onists 12-41,</span> 
+<span class="source-segment role-group_summary" id="src-s0002" data-segment="s0002" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">The etiopathogenesis of SMS is still obscure. Recent 
+studies [S, 61 demonstrated circulating autoantibodies 
+directed against the GABAergic nerve terminals in up 
+to 60% of SMS patients, and suggested an autoim- 
+mune-mediated impairment of GABAergic neuro- 
+transmission due to autoreactivity to the GABA- 
+converting enzyme glutamic acid decarboxylase 
+(GAD). However, anti-GAD antibodies are not exclu- 
+sive of SMS patients: They have been reported in the 
+majority of patients with insulin-dependent diabetes 
+mellitus (IDDM) without any sign or symptom of mus- 
+cle rigidity {7}, and in at least 1 patient with IDDM 
+and another neurological disorder unrelated to SMS 
+[S). Moreover, the existence of a group of anti-GAD 
+antibody-negative, otherwise typical SMS patients r9- 
+1 11 further questions the pathogenetic relevance of 
+these antibodies in SMS. 
+We previously reported the presence of anti-GAD, 
+organ-, and non-organ-specific antibodies in IDDM 
+patients, blood donors, and patients with nonneurolog- 
+ical autoimmune disorders 17). We have extended the 
+From the &#x27;Neuroimmunology Unit, Department of Biological and 
+Technological Research (DIBIT), and ?Department of Neurology 
+and $Medicine VII, University of Milano, San Raffaele Hospital. 
+Milano, Italy. 
+Received Dec 1, 1992, and in revised form Feb 2, 1993. Accepted 
+for publication Feb 11, 1993. 
+Address correspondence to D~ Grim&amp;, C]inica Neurologic- IV, 
+Universiti di Milano, IRCCS Ospedale San Raffaele, Via Olgettina 
+60, 20132 Milano, Italy. 
+Copyright 0 1993 by the American Neurological Association 57</span>
+
+<span class="source-segment role-group_summary" id="src-s0003" data-segment="s0003" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">study and now report the frequency of anti-GAD anti- 
+bodies as well as organ- and non-organ-specific auto- 
+antibodies in 13 patients with SMS and in a group 
+of control subjects, including 127 patients with other 
+neurological disorders. 
+initial dilution of 1 : 100 by hemagglutination using commer- 
+cial kits (Serodia, Tokyo, Japan). 
+Anti-Glutumic Acid Decurboxyhse Antibodies 
+The presence of anti-GAD antibodies was assessed by an 
+imrnunotrapping enzyme activity assay, immunocytochemls- 
+try, immunoblotting, and immunoprecipitation. Patients and Methods 
+Patient Selection 
+We collected serum samples from 13 patients (5 males and 
+8 females; mean age, 48 years) with a diagnosis of SMS (mean 
+disease duration, 4 years) according to accepted criteria 
+11-31, Two of the SMS patients also had IDDM; 1 of them 
+had Graves&#x27; disease; and 4 of them had an associated neo- 
+plasm, including colon adenocarcinoma, breast adenocarci- 
+noma, Hodgkin&#x27;s lymphoma, and thymorna. The latter pa- 
+tient had also myasthenia gravis [lo]. The remaining ? 
+patients with SMS had no clinical evidence of other associ- 
+ated diseases. Seven of the 13 SMS patients have been previ- 
+ously described C5, 6, 9-12}. Oligoclonal bands were found 
+in only two of the eight cerebrospinal fluid samples from 
+SMS patients studied c5, 91. 
+Serum samples were also collected from 127 patients with 
+other neurological disorders including multiple sclerosis (j7), 
+Alzheimer&#x27;s disease (16), late- and early-onset cerebellar atro- 
+phy (lo), chronic idiopathic polyneuropathy (9), acute cere- 
+bral infarction (9), Guillain-Barre syndrome (8), Friedreich&#x27;s 
+ataxia (T), amyotrophic lateral sclerosis (61, Parkinson&#x27;s dis- 
+ease (5), cerebral neoplasms (4), multisystem atrophy (3), 
+olivopontocerebellar atrophy (3), multiinfarctual dementia 
+(2), hereditary sensory-motor neuropathy type I1 (2), Kearn- 
+Sayre syndrome (l), viral myelopathy (11, Hallervorden- 
+Span syndrome (l), subacute sclerosing panencephalitis (l), 
+Huntington&#x27;s chorea (l), and primary epilepsy (1). Seven pa- 
+tients with other neurological disorders (2 with multiple scle- 
+rosis, 1 with late-onset cerebellar atrophy, 1 with multisystem 
+atrophy, 1 with Guillain-Barre disease, 1 with Kedrn-Sayre 
+syndrome, 1 with Friedreich&#x27;s ataxia) also had associated 
+IDDM. The control group also included 168 patients with 
+IDDM, 40 patients with nonneurological autoimmune disor- 
+ders, and 87 blood donors. The clinical features of the pa- 
+tients with IDDM or nonneurological autoimmune disorders 
+have been reported elsewhere [7). 
+Orgun- and Non-Orgun-Speczjk Autoantibodies 
+Serum samples from the SMS patients and the control group 
+were tested for the presence of islet-cell autoantibodies, 
+other organ-specific (including parietal-cell, thyroglobulin, 
+and thyroid-microsomal) and non-organ-specific (including 
+nuclear, smooth-muscle, and mitochondrial) autoantibodies. 
+Islet-cell autoantibodies were detected by immunofluores- 
+cence on 4-pm-thick cryostat sections of blood group 0 hu- 
+man pancreas using undiluted sera as previously described 
+{13]. Gastric parietal-cell autoantibodies were tested at a 
+1 : 10 serum dilution in phosphate-buffered saline (PBS) solu- 
+tion on cryostat sections of blood group 0 human gastric 
+mucosa. Nuclear, smooth-muscle, and mitochondrial autoan- 
+tibodies were tested at a 1 : 10 serum dilution in PBS solution 
+on cryostat sections of rat kidney and liver. Thyroglobulin</span> 
+<span class="source-segment role-group_summary" id="src-s0004" data-segment="s0004" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">and thyroid-microsomal autoantibodies were tested at the 
+IMMUNOTRAPPING ENZYME ACTIVIIY ASSAY. The irnmuno- 
+trapping enzyme activity assay procedure and reference val- 
+ues for the detection of anti-GAD antibodies used in our 
+laboratory have been already reported C7). Briefly, 150 (*.I of 
+serum was added to 60 pl of packed protein-A Sepharose 
+CL4B (Pharmacia, Uppsala, Sweden) resuspended 1 : 5 in 
+PBS solution. After 3 hours of shaking at 4&quot;C, the samples 
+were washed three times with 1 ml of standard buffer (50 
+mM potassium phosphate buffer, pH 6.8, 0.2 mM pyridoxal 
+phosphate, and 1 mM arninoethylisothiouronium), and 200 
+~1 of homogenated total proteins of rat brain (20% wdvol), 
+obtained by centrifugation of adult Wistar rat brains in stan- 
+dard buffer at 100,000 g for GO minutes, was added. Follow- 
+ing an overnight incubation at 4°C with vigorous shaking, the 
+samples were washed three times with 1 ml of standard 
+buffer and divided into duplicate aliquots. Ten microliters of 
+standard buffer containing 20 mM of L-glutamic acid and 0.1 
+pCi of 55 mCiimmo1 (1-&quot;C)-L-glutamic acid (Amersham, 
+Arlington Heights, IL) was added to each sample as GAD 
+substrate. During a 3-hour incubation at 37&quot;C, the reaction 
+product (i.e., 14C02) was trapped on a small piece of paper 
+soaked with hyamine hydroxide (Sigma, St Louis, MO) in 
+tightly closed tubes. The radioactivity trapped in the paper 
+was measured in a P-counter. Values were expressed in arbi- 
+trary units as percentage of the GAD activity trapped by an 
+equivalent amount of our reference positive control (high- 
+titer anti-GAD antibody-positive serum from an IDDM pa- 
+tient [7}) in the same experimental conditions. 
+IMMUNOCYTOCHEMISTnY. An indirect imrnunoperoxidase 
+staining using serum samples from 13 SMS patients and 2 
+patients positive for anti-GAD by immunotrapping enzyme 
+activity assay who had other neurological disorders (1 with 
+multisystem atrophy, 1 with late-onset cerebellar atrophy) 
+was performed on 10-pm-thick sections of rat cerebellum. 
+Animals had been perfused transcardially with 4%, parafor- 
+maldehyde in 0.1 M sodium acetate (pH 6.0). Signal amplifi- 
+cation was obtained with a peroxidase-antiperoxidase system 
+(DAKO, Glostrup, Denmark). Diaminobenzidine (Sigma) 
+was used as a substrate. Serum samples were used at 1 : 150 
+dilution. Sheep anti-GAD antibody (kindly provided by M. 
+Tappaz, Lyon, France) was used as a positive control at 
+1 : 2,000 dilution. 
+IMMUNOBLOTTING. A crude homogenate or a GAD- 
+enriched fraction of rat brain was separated by 10% sodium- 
+dodecyl sulfate polyacrylamide gel electrophoresis. To avoid 
+nonspecific antibody binding to rat immunoglobulins, the 
+brain homogenate was precleared as follows: 250-kI aliquots 
+of homogenate were incubated with 100 pI of PBS- 
+reconstituted protein A for 75 minutes at 4°C; after centrifu- 
+gation at 10,000 g the supernatant was recovered and used. 
+58 Annals of Neurology Vol 34 No 1 July 1993 
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</span>
+
+<span class="source-segment role-group_summary" id="src-s0005" data-segment="s0005" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Table I. Autoantibodies in Patients with Stiff-Man Syndrorne and Control Sub@ 
+Patients PositivelPatients Tested (%) 
+Non-Organ- 
+Specific Thyrogastric Anti-GAD 
+Groups No. of Patients Autoantibodies” Autoantibodiesh ICA Antibodies‘ 
+SMS 13 
+OND 127 
+IDDM 168 
+NNAD 40 
+BD 87 
+8113 (61) 6113 (46) 5113 (38) 4113 (31) 
+781120 (65) 131118 (12) 71121 (6) 41127 (3) 
+311168 (18) 581168 (34) 1171168 (70) 371168 (22) 
+23140 (57) 26/40 (65) 0 0 
+2187 (2) 6187 (7) 0 0 
+aNon-organ-specific autoantibodies include nuclear and/or mitochondria1 and/or smooth muscle antibodies. 
+bOrganan-specific autoantibodies include thyroid-microsornal and/or thyroglobulin and/or gastric pariecal-cell antibodies. 
+‘Anti-glucamic acid decarboxylase (GAD) antibodies were detected by irnmunotrapping enzyme activity assay. 
+ICA = islet-cell antibodies; SMS = stiff-man syndrome; OND = ocher neurological disorders; IDDM = insulin-dependent diabetes mellitus; 
+NNAD = nonneurological autoimmune disorders; 0 = not cesced; BD = blood donors. 
+The GAD-enriched fraction was obtained by incubating 5 p.1 
+of sheep anti-GAD antiserum and 25 p,l of protein A, over- 
+night at 4°C. Packed resin was then recovered, washed, and 
+incubated for 2 hours at 4°C with 100 p.1 of homogenated 
+total proteins of rat brain (2094 wdvol). The precleared ho- 
+mogenate and the GAD-enriched fraction were both resus- 
+pended in reducing buffer, boiled for 5 minutes, and sepa- 
+rated for 4 hours at constant 20 V by sodium dodecyl sulfate 
+polyacrylamide ( 10%) gel electrophoresis 1141. Separated 
+proteins were electroblotted (90 V constant, 5”C, 2 hours) 
+onto nitrocellulose filters (Schleicher and Schuell, Keene, 
+Germany). After blocking for I hour with 5% dry milk- 
+PBS, filters were rinsed in PBS solution, pH 7.2, and incu- 
+bated overnight at 4°C with serum samples (diluted from 
+1 : 100 to 1 : 500 in 2% dry milk-PBS) from 11 SMS patients 
+and 2 patients positive for anti-GAD by immunotrapping 
+enzyme activity assay who had other neurological disorders 
+(1 with multisystem atrophy, 1 with late-onset cerebellar at- 
+rophy). After extensive washing, filters were incubated for 2 
+hours at room temperature with peroxidase-con jugated rab- 
+bit anti-human IgG (DAKO). After further washings, filters 
+were stained using diaminobenzidine (Sigma) as a substrate. 
+IMMUNOPRECIPITATION. Five microliters of serum from 6 
+patients with SMS (2 anti-GAD-positive and 4 anti-GAD- 
+negative by immunotrapping enzyme activity assay) and 2 
+patients with other neurological disorders (both anti-GAD- 
+positive by immunotrapping enzyme activity assay; 1 with 
+multisystem atrophy, 1 with late-onset cerebellar atrophy) 
+was incubated for 3 hours at 4°C with 10 p.1 of reconstituted 
+protein A resuspended in PBS solution (1 : 5). After centrifu- 
+gation, supernatant was discarded and the packed resin was 
+washed three times in PBS soluuon. One hundred microliters 
+of precleared brain homogenate was added to each sample. 
+Samples were then incubated overnight at 4°C. The next day, 
+the packed resin was recovered and washed. Ten microliters 
+of 10% sodium dodecyl sulfate in PBS was added to each 
+sample. Samples were boiled for 2 minutes; after centrifuga- 
+tion, the supernatant was recovered and diluted in 75 pl of 
+reducing sample buffer. After boiling for 5 minutes, sample 
+proteins were separated by sodium dodecyl sulfate polyacryl- 
+amide (10%) gel electrophoresis, electroblorted onto nitro-</span> 
+cellulose membranes (0.2 p,m), and incubated overnight at 
+<span class="source-segment role-group_summary" id="src-s0006" data-segment="s0006" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">4°C with a sheep anti-GAD antiserum (1 : 2,000 in PBS). </span>
+After washing, filters were incubated for 2 hours at room 
+temperature with a rabbit antisheep antiserum (DAKO) di- 
+luted 1 : 1,000 in PBS solution, washed for 2 hours at room 
+temperature, and incubated with a 1 : 3,000 dilution of perox- 
+idase-conjugated swine antirabbit antiserum (DAKO). After 
+further washes, filters were stained using diaminobenzidine 
+(Sigma) as a substrate. 
+Results 
+The results of autoantibody determinations in SMS pa- 
+tients and control subjects are summarized in Tables l 
+and 2. These are compared to the results from 168 
+patients with IDDM, 40 patients with nonneurological 
+autoimmune disorders, and 87 blood donors studied 
+previously [73. The significance of our results was eval- 
+uated by the x2 test and Student’s t test. 
+Non-Organ-Spec$c Autoantibodies 
+Non-organ-specific autoantibodies were found in 8 
+(61%) of 13 SMS patients, a frequency comparable to 
+that of patients with other neurological disorders 
+(65%) and those with nonneurological autoimmune 
+disorders (57%), but much higher than in patients with 
+IDDM (18%, p &lt; 0.005) or blood donors (296, p &lt; 
+0.001). In 63% of SMS patients, as well as in 87% of 
+patients with other neurological disorders, only one 
+type of non-organ-specific autoantibody was found. 
+Antimitochondrial antibodies were found in only 1 
+(8%) of 13 patients with SMS and in none of the pa- 
+tients with other neurological disorders. Antinuclear 
+antibodies were found in 38% of all patients with SMS 
+and in 46% of patients with other neurological disor- 
+ders. Anti-smooth-muscle antibodies were found in 
+38% of patients with SMS and in 26% of patients with 
+other neurological disorders. 
+<span class="source-segment role-group_summary" id="src-s0007" data-segment="s0007" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Grimaldi et al: Autoantibodies in Stiff-Man Syndrome 59 </span>
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+<span class="source-segment role-group_summary" id="src-s0008" data-segment="s0008" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Table 2. Clinical Characteristics and Autoantibody Determinations in Stiff-Man Sjlndvame Patients </span>
+Anti-GAD 
+Disease Non-Organ- Anti bodies 
+Patient Age (yr)/ Duration Associated Specific Organ-Specific Western 
+No. Sex (Yr) Diseases Autoantibodies Autoantibodies ICA ICC ITEAA Blot&quot; 
+1 651M 6 
+<span class="source-segment role-group_summary" id="src-s0009" data-segment="s0009" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">2 651F 3 </span>
+<span class="source-segment role-group_summary" id="src-s0010" data-segment="s0010" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">3 54iF 3 </span>
+<span class="source-segment role-group_summary" id="src-s0011" data-segment="s0011" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">4 34iM 2 </span>
+<span class="source-segment role-group_summary" id="src-s0012" data-segment="s0012" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">5 65iM 1 </span>
+6 40lM 1 
+<span class="source-segment role-group_summary" id="src-s0013" data-segment="s0013" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">7 471M 1 </span>
+8 56/M 10 
+9 63lF 6 
+<span class="source-segment role-group_summary" id="src-s0014" data-segment="s0014" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">10 46iF 6 </span>
+11 46iF 10 
+12 35iF 1 
+13 56iF 2 
+Thymoma, 
+my asthenia 
+gravis 
+Colon cancer 
+Breast cancer 
+Hodgkin&#x27;s 
+lymphoma 
+- 
+- 
+- 
+- 
+Graves&#x27; 
+IDDM 
+IDDM 
+disease 
+- 
+- 
+mit, ANA 
+SMA 
+ANA 
+SMA 
+ANA, SMA 
+ANA 
+SMA 
+- 
+- 
+ANA, SMA 
+- 
+- 
+- 
+- - - TGA 
+- - - - 
+- - - - 
+TMA, TGA, PCA - - - 
+TMA, PCA + ++ 
+TMA,TGA,PCA + + + 
+TMA, PCA + ++ 
++ ++ 
+NA 
+1251130 
+1251 130 
+1251130 
+110 
+200 
+220 
+63 
+- 
+- 
+65 
+NA 
+- 
+&quot;Molecular mass (kd) of the proteins recognized by serum samples. 
+GAD = glutamic acid decarboxylase; ICA = islet-cell antibody; ICC = immunocytochemistry; ITEAA = immunotrapped enzymatic activity 
+assay; mit = antimitochondrial antibody; ANA = antinuclear antibody; SMA = smooth-muscle antibody; TGA = thyroglobulin antibody; 
+TMA = thyroid-microsomal antibody; PCA = parietal-cell antibody; IDDM = insulin-dependent diabetes mellitus; NA = not available. 
+OrganSpecifc Autoantibodies 
+Islet-cell autoantibodies were more frequent in SMS 
+patients (38%) compared to those with other neuro- 
+logical disorders (6%) (p &lt; 0.001). As expected, islet- 
+cell autoantibodies were common in IDDM patients 
+(70%, p &lt; 0.05), but were not detected in patients 
+with nonneuroiogical autoimmune disorders or blood 
+donors (p &lt; 0.001). 
+The frequency of thyrogastric antibodies was lower 
+in SMS patients (46%) than in patients with nonneuro- 
+logical autoimmune disorders (65 %), but signlficantly 
+higher than in patients with other neurological disor- 
+ders (1255, p &lt; 0.05) or blood donors (796, p &lt; 
+0.001). Serum samples from 4 of the 6 SMS patients 
+positive for organ-specific autoantibody reacted against 
+antigens from at least two organs, indicating a wide- 
+spread polyendocrine autoreactivity. By contrast, all 
+the 13 organ-specific autoantibody-positive patients 
+with other neurological disorders had autoantibodies 
+against antigens from only one organ (thyroglobulid 
+thyroid-microsomal or parietal-cell autoantibodies). 
+Anti-Glutamic Acid Decarboxylase Antibodies 
+IMMUNOTRAPPING ENZYME ACTIVITY ASSAY. By this 
+method we measured anti-GAD antibodies recogniz- 
+ing the enzyme in a nondenatured form. There was no 
+significant difference in the frequency of these anti- 
+GAD antibodies between SMS patients (3 1 %) and 
+IDDM patients (22%). The frequency in SMS patients 
+was higher than that in patients with other neurological 
+disorders (3%, p &lt; 0.001) or patients with nonneuro- 
+logical autoimmune disorders (p &lt; 0.05) and blood 
+donors (p &lt; 0.001), who never showed such autoreac- 
+tivity. The levels of anti-GAD antibodies, expressed in 
+arbitrary units, were higher in sera from SMS patients 
+than IDDM patients (67.7 -t 55.3 vs 25.4 * 32.9, p 
+&lt; 0.03). However, the subgroup of IDDM patients 
+showing thyrogastric autoantibodies and the highest 
+islet-cell autoantibody levels (&gt; 80 Juvenile Diabetes 
+Foundation unics) had anti-GAD antibody levels simi- 
+lar to those of patients with SMS (66.1 * 55.2 vs 67.7 
+* 55.3). Islet-cell autoantibodies were found in all 
+anti-GAD antibody-positive SMS patients and in 3 of 
+the 4 anti-GAD antibody-positive patients with other 
+<span class="source-segment role-group_summary" id="src-s0015" data-segment="s0015" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">neurological disorders. The only islet-cell autoanti- 
+body-negative, anti-GAD antibody-positive subject 
+was a patient with Parkinson&#x27;s disease. 
+OTHER IMMUNOLOGICAL STUDIES. To further character- 
+ize anti-GAD antibodies, we tested by immunocyto- 
+chemistry, immunoblotting, and immunoprecipitation 
+all available samples from patients with SMS (see indi- 
+vidual techniques) and samples from 2 patients with 
+other neurological disorders ( 1 with multisystem atro- 
+phy and 1 with late-onset cerebellar atrophy) showing 
+anti-GAD antibodies (as detected by immunotrapping 
+60 Annals of Neurology Vol 34 No 1 July 1993 
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</span>
+
+<span class="source-segment role-group_summary" id="src-s0016" data-segment="s0016" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Fig I. lmmunostaining of a 10-w.m rat cerebellar section mang 
+a serum sample from a patient with stiff-man syndrome (Pa- 
+tient l l in Table 2/, diluted l :150. Purkinje cells and axon 
+terminals on molecular layer cells are stained. Cells in the cerebel- 
+lar granular layer do not show any immunoreactivity. This put- 
+tern is compatible with staining of glutanzic acid decarboxylase- 
+containing cellj. ( x 40 b&amp;re 69% reduction.) 
+enzyme activity assay) and islet-cell autoantibodies, and 
+with associated IDDM. 
+By immunocytochemistry, serum samples from 4 of 
+13 SMS patients (all with islet-cell autoantibodies and 
+anti-GAD antibody by immunotrapping enzyme ac- 
+tivity assay) showed immunostaining of GABAergic 
+nerve terminals on rat cerebellar tissue sections [b, 7) 
+(Fig 1, see Table 2). The serum of another islet-cell 
+autoantibodies-positive, anti-GAD antibody-negative 
+SMS patient did not show any immunocytochemical 
+reactivity (see Table 2). Serum samples from 2 patients 
+affected by multisystem atrophy or late-onset cerebel- 
+lar atrophy showed anti-GABAergic nerve terminal 
+autoreactivity. 
+Heterogeneous patterns of reactivity were demon- 
+strated when 11 of 13 SMS serum samples were tested 
+against immunoblots of a crude rat brain homogenate 
+(see Fig 2, Table 2). Sera from patients with SMS were 
+subdivided into three main groups on the basis of the 
+molecular mass of the proteins most intensely recog- 
+nized by their sera: (1) sera with binding to a protein 
+with a molecular mass typical of GAD (-65 kd) (Pa- 
+tients 9 and ll), (2) sera recognizing a protein with a 
+molecular mass of 125/130 kd (3 SMS patients [Pa- 
+tients 2, 3, and 41 with an associated neoplasm and 
+negative for islet-cell or anti-GAD autoantibodies), and 
+(3) sera with weak immunoreactivity against a hetero- 
+geneous group of proteins (Patients 5, 6, and 7) or no 
+reactivity at all (Patients 8, 10, and 12). 
+Serum samples from 3 anti-GAD antibody-positive 
+and 3 anti-GAD antibody-negative SMS patients were 
+tested against the GAD-enriched rat cerebellar homog- 
+enate (see Fig 2, Table 2). By immunoblotting, two of 
+the three anti-GAD antibody-positive SMS serum sam- 
+ples tested (from Patients 9 and 11) recognized a pro- 
+tein with a molecular mass typical of GAD (=65 kd). 
+The third serum sample (from Patient 10) did not rec- 
+ognize any protein by immunoblotting but immuno- 
+precipitated a protein with identical electrophoretic 
+mobility of GAD, suggesting the presence of confor- 
+mational epitopes on the native GAD protein. None 
+of the three serum samples from anti-GAD antibody- 
+negative SMS patients (Patients 5, 6, and 7) showed 
+any reactivity. 
+The serum samples from the patient with late-onset 
+cerebellar atrophy recognized a protein with a molecu- 
+lar mass similar to GAD (-65 kd) by immunoblotting 
+against either total brain homogenate or the GAD- 
+enriched fraction; serum from the patient with 
+multisystem atrophy did not recognize any protein. 
+However, both serum samples were able to immuno- 
+precipitate GAD. 
+Discussion 
+The finding of anti-GAD antibodies in a proportion of 
+SMS patients has suggested an autoimmune-mediated 
+pathogenesis of this rare disorder {5, 6). Accordingly, 
+an autoantibody-mediated attack against GABAergic 
+transmission may impair the cerebellar control of mus- 
+cle tone. However, the presence of circulating anti- 
+GAD antibodies in a large proportion of IDDM pa-</span> 
+<span class="source-segment role-group_summary" id="src-s0017" data-segment="s0017" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">tients without clinical or electrophysiological signs of 
+motor-unit hyperactivity [7) questions the relevance of 
+anti-GAD antibodies in the pathogenesis of SMS. 
+GAD is the key enzyme in the synthesis of GABA, 
+the major inhibitory neurotransmitter in the brain. 
+GAD has also been found in pancreatic p-cells and at 
+lower levels, in the ludneys, liver, adrenal glands, 
+ovary, and testes [lS). Two closely related GAD iso- 
+forms (with molecular masses of 59 and 67 kd) have 
+been identified in the brain and in the pancreas. The 
+two isoforms are encoded by two different genes, have 
+different intracellular distributions, and show different 
+functional properties rib- 191. While the role of 
+GABA in the brain has been established, little is 
+known about the role of GAD and GABA in other 
+tissues. 
+GAD was recently identified as the 64-kd autoanti- 
+gen recognized by sera from IDDM patients [20, 21) 
+and is also a major target of islet-cell autoantibodies 
+171, a highly predictive marker of IDDM 122). Sera 
+positive for islet-cell autoantibodies are classified ac- 
+cording to the selectivity of their islet-cell staining 
+[23]: A first subgroup carries GAD-specific, p-cell- 
+restricted islet-cell autoantibodies, while a second sub- 
+group shows reactivity against antigens, other than 
+GAD, present in all endocrine cells within pancreatic 
+islets. Although only the latter subtype of islet-cell au- 
+toantibodies is predictive of IDDM, an overall concor- 
+dance between anti-GAD antibodies and islet-cell au- 
+Grimaldi et al: Autoantibodies in Stiff-Man Syndrome 61 
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</span>
+
+Fig 2. Immunoblotting and immunoprecipitation studies using 
+representative serum samples from patients with staff-man syn- 
+drome (SMS) (numbering is in accord with Table 2). (A) Immu- 
+n0blot.r of rat brain total homogenate using serum samples from 
+<span class="source-segment role-group_summary" id="src-s0018" data-segment="s0018" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">3 SMS patients (Patients 2, 3, and 4) with associated neo- </span>
+plasms who tested negative for anti-glutamic acid decarboxylase 
+(GADj antibodies or islet-cell antibodies, 1 patient with iso- 
+lated SMS (Patient 7) who tested negative for anti-GAD anti- 
+bodies or islet-cell antibodies, and 2 SMS patients (Patients 10 
+and 11 j with insulin-dependent diabetes mellitus, anti-GAD 
+antibodies, and islet-cell antibodies. The sera from Patients 2. 3. 
+and 4 strongly recognize a protein with a molecular mass of 
+1251130 kd. Sera from Patients 7 and 10 do not recognize any 
+protein; serum from Patient 11 recognizes a protein with a mo- 
+lecular mass similar to GAD (=65 kd. The serum sample from 
+Patient 10 does not recognize any protein by immunoblotting, 
+but tests positive for anti-GAD antibodies by immunotrapping 
+enzymatic activity assay (using a nondenaturated form of GAD 
+as antigen). Serum samples from SMS patients and normal sub- 
+jects were used at 1300 dilution and anti-GAD antiserum, at 
+1 :2.000. (B) lmmunoblots of rat brain GAD-enriched fraction 
+using serum samples from SMS PatientJ 10 and 11. The serum 
+fmm Pdtient 11 recognizes GAD. Similar results were obtained 
+by using total brain homogenate (see A). In A and B. the posi- 
+tive control ( + ) is sheep anti-GAD antiserum; the negatice can- 
+trol( - ) is a pool of serum samples from healthy subjects. (CJ 
+Immunoprecipitation of rat brain proteins with sera from 2 pa- 
+tients with SMS. Serum from Patient I0 (but not Patient 71 
+immunoprec$itated both GAD isoforms. 
+toantibodies has been demonstrated L7, 24). Pancreatic 
+damage leading to IDDM might arise from an immune- 
+mediated attack against GAD. The enzyme has, in 
+fact, been localized onto the membrane of GABA- 
+containing vesicles in the cytoplasm of @-cells {25} and 
+may be transiently expressed during the fusion process 
+at the surface of the @-cell cytoplasmic membrane, 
+which leads to GABA release. It is unknown whether 
+an immune-mediated attack against a brain GAD could 
+account for the occurrence of SMS, since it is not clear 
+whether GAD can also undergo posttranslational mod- 
+hcation and become membrane-bound in the brain 
+Ela. 
+Thus, SMS and IDDM share GAD as a major au- 
+toantigen. However, it is unknown what causes the 
+appearance of one disease over the other, which are 
+the cofactor(s) involved in tissue specificity of these 
+autoantibodies, and why SMS is so much rarer than 
+IDDM. 
+In an attempt to find immunological features differ- 
+entiating autoantibodies seen in IDDM and SMS pa- 
+tients, we evaluated the autoantibody pattern of 13 
+SMS patients with particular emphasis on anti-GAD 
+antibodies. As others have reported L5, 61, we found 
+anti-GAD antibodies only in a subset of patients with 
+clinically diagnosed SMS. In our series, anti-GAD anti- 
+bodies were found in 4 (3 1 %) of 13 patients with SMS. 
+Moreover, similar antibodies were found in 4 patients 
+(3%) with other neurological disorders and no signs of 
+continuous muscle hyperactivity or clinical evidence of 
+SMS, thus confirming that at least in some individuals, 
+the presence of antibodies directed against GAD is not 
+sufficient to cause impairment of muscular activity. 
+<span class="source-segment role-group_summary" id="src-s0019" data-segment="s0019" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">As expected, islet-cell autoantibody reactivity was 
+found in all anti-GAD antibody-positive SMS pa- 
+tients, as well as in 3 of the 4 anti-GAD antibody- 
+positive patients with other neurological disorders. 
+These results are concordant with our previous find- 
+ings and other reports showing that some islet-cell au- 
+toantibodies are indeed directed to GAD (either pan- 
+creatic or cerebellar) {7, 231, irrespective of their 
+association with SMS. 
+Higher levels of anti-GAD antibodies were found in 
+SMS patients, compared to the median level found in 
+IDDM patients. However, the mean anti-GAD anti- 
+body level in SMS patients was very similar to the 
+mean level found in IDDM patients with polyendo- 
+crine serology [7], suggesting that intense anti-GAD 
+62 Annals of Neurology Vol 34 No 1 July 1993 
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</span>
+
+<span class="source-segment role-group_summary" id="src-s0020" data-segment="s0020" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">reactivity is associated with a multiantigenic autoimmu- 
+nity. Whether the similarity in anti-GAD antibody lev- 
+els, between the two subgroups of SMS and IDDM 
+patients, reflects a common pathogenetically meaning- 
+ful event is presently unknown. 
+We found evidence of autoimmune activation in 
+two-thirds of patients with SMS. Support to a specific 
+GAD autoantibody-mediated pathogenesis was ob- 
+tained only in half of these patients (usually female 
+patients with a diffuse polyendocrine autoreactivity). 
+In the remaining half, the latter mechanism could not 
+be advocated: Serum samples from the 4 SMS patients 
+with an associated neoplasm, for example, did not show 
+anti-GAD antibodies. Instead, they strongly recog- 
+nized a brain protein of 1251130 kd. It is tempting to 
+speculate that these patients represent a paraneoplastic 
+subgroup. This 1251130-kd protein, as seen in other 
+paraneoplastic autoimmune syndromes [26f, could be 
+a constitutive component of neuronal cells able to trig- 
+ger a strong autoimmune reaction. Characterization of 
+this protein might lead to a better understanding of the 
+pathogenesis underlying some cases of SMS. 
+We also identified another subgroup of SMS patients 
+(mainly male) without polyendocrine autoreactivity or 
+evidence of anti-GAD antibodies. In the absence of 
+any other clue on the nature of these patients’ illness, 
+we presently consider them as affected by idiopathic 
+SMS. 
+If anti-GAD autoantibodies are not necessarily asso- 
+ciated with SMS, how do we then explain their appear- 
+ance in some but not all SMS patients? These auto- 
+antibodies may represent a mere epiphenomenon 
+unrelated, at least in the majority of SMS patients, to 
+the pathogenesis of the disease. A pathological process 
+against central nervous system structures rich in GAD 
+might release normally sequestered molecules, which 
+might become targets for an autoimmune response. 
+Alternatively, autosensitization against GAD may actu- 
+ally arise at the level of pancreatic @-cells and cross- 
+react with central nervous system cells rich in GAD. 
+This mechanism, although potentially able to cause 
+pathological changes in all exposed individuals, does so 
+in only a subgroup of SMS patients with other predis- 
+posing factor(s); in fact, sporadic juvenile [27) cases of 
+SMS or with autosomal dominant genetic [28], infec- 
+tious (291, or paraneoplastic {7-11, 303 origin have 
+been described. 
+In conclusion, our study indicates that SMS is a het- 
+erogeneous disorder and can be subdivided into three 
+main subgroups: (1) SMS patients (mostly female) who 
+have associated autoimmune diseases (mainly IDDM) 
+and who test positive for islet-cell autoantibodies, anti- 
+GAD antibodies, and organ-specific autoantibodies, 
+and negative for non-organ-specific autoantibodies 
+(autoimmune SMS); (2) SMS patients (mostly male) 
+who have associated neoplasms and frequently have 
+non-organ-specific autoantibodies, but who test nega- 
+tive for islet-cell autoantibodies, anti-GAD antibodies, 
+or organ-specific autoantibodies (paraneoplastic SMS); 
+and (3) SMS patients who have no other associated 
+clinical conditions but who show a high prevalence of 
+non-organ-specific autoantibodies, but no islet-cell au- 
+toantibodies, anti-GAD antibodies, or organ-specific 
+autoantibodies (idiopathic SMS). In the paraneoplastic 
+subgroup of SMS patients, we frequently detected an 
+antibody directed against an unknown 125/ 130-kd</span> 
+<span class="source-segment role-group_summary" id="src-s0021" data-segment="s0021" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">protein, suggesting that central nervous system anti- 
+gens other than GAD may be the target of autoimmu- 
+nity in SMS patients. 
+Our findings indicate that the diagnosis of SMS 
+should remain clinical and that the absence of circulat- 
+ing anti-GAD antibodies does not exclude a diagnosis 
+of SMS. Other central nervous system molecules can 
+be the target of an autoimmune attack in some patients 
+with SMS. The pathogenetic relevance of these autoan- 
+tibodies, as well as that of anti-GAD antibodies, de- 
+serves further scrutiny. Moreover, clinical evidence of 
+continuous motor-unit hyperactivity should alert the 
+clinician to the possible existence of an associated neo- 
+plasm. 
+Addendum 
+After this article was accepted for publication, a study 
+was published reporting on 3 patients with SMS, circu- 
+lating antibodies recognizing a 128-kd synaptic protein 
+and not GAD, and associated breast cancer (Folli F, 
+Solimena M, Cofiell R, et al. N Engl J Med 1993; 
+328:546-55 1). Thus, the total number of patients 
+with paraneoplastic SMS associated with antibodies 
+to a 125-130 kd protein reported so far is 5 (one 
+patient was included in both studies). 
+This work was partially supported by Istituto Superiore di Saniti 
+(ISS, Italy), Associazione Italiana Sclerosi Multipla (AISM), and 
+Telethon-Italia. 
+We would like to thank Dr C. Buttinelli (Roma, Italy), Dr F. Corbat 
+(Berna, Switzerland), Dr 1. Danes (Milano, Italy), Dr P. Ferrari (Mo- 
+dem, Italy), Dr C. Kolb (Basilea, Switzerland), Dr R. Medori (Bolo- 
+gna, Italy), Dr G. Piccolo (Pavia, Italy), and Dr V. Toso (Castelfranco 
+Veneto, Italy) for prvviding patients and samples. We are grateful 
+to Dr E. Bonifacio for critical review of the manuscript and helpful 
+discussion. 
+References 
+1. Moersch FP, Woltman HW. Progressive fluctuating muscular 
+rigidity and spam (“stiff-man” syndrome): report of a case and 
+some observations in 13 other cases. Mayo Clin Proc 1956; 
+3 1:42 1-427 
+2. Gordon EE, Januszko DM, Kaufman L. A critical survey of 
+stiff-man syndrome. Am J Med 1967;42:582-599 
+3. Lorish TR, Thorsteinsson G, Howard FM Jr. Stiff-man syn- 
+drome updated. Mayo Clin Proc 1989;64:629-636 
+4. McEvoy KM. Stiff-man syndrome. Mayo Clin Proc 1991;66: 
+300-304 
+Grimaldi et al: Autoantibodies in Stiff-Man Syndrome 63 
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</span>
+
+<span class="source-segment role-group_summary" id="src-s0022" data-segment="s0022" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">5. Solimena M, Folli F, Denis-Donini S, et al. Autoantibodies to 
+glutamic acid decarboxylase in a patient with stiff-man syn- 
+drome, epilepsy and type-I diabetes. N Engl J Med 1988;318: 
+1012-1020 
+6. Solimena M, Fob F, Aparisi R, et al. Autoantibodies to GABA- 
+ergic neurons and pancreatic p-cells in stiff-man syndrome. N 
+Engl J Med 1990;322:1555-1560 
+7. Martino GV, Tappaz M, Braghi S, et al. Autoantibodies t&amp;&amp; 
+tamic acid decarboxylase detected by an immunotrapping en- 
+zyme activity assay: relation to insulin-dependent diabetes melli- 
+tus and islet cell antibodies. J Aucoimmun 1991;4:915-923 
+8. Solimena M, Piccolo G, Martino G, et al. Autoantibodies di- 
+rected against gabaergic nerve terminals in a patient with idio- 
+pathic late-onset cerebellar ataxia and type IB diabetes mellicus. 
+Clin Neuropathol 1988;7(suppl):2 11 (Abstract) 
+9. Piccolo G, Cosi V. Stiff-man syndrome, dysimmune disorder, 
+and cancer. Ann Neurol 1989;26:105 
+10. Piccolo G, Martino G, Moglia A, et al. Autoimmune myasthenia 
+gravis with thymoma following the spontaneous remission of a 
+stiff-man syndrome. Ital J Neurol Sci 1990;11:177-180 
+11. Ferrari P, Federico iM, Grimaldi LME. Silingardi V. Stiff-man 
+syndrome in a patient with Hodgkin disease. An unusual para- 
+neoplastic syndrome. Haematologica 1990;75:570-572 
+12. Bosi E, Vicari A, Comi G, et al. Association of stiff-man syn- 
+drome and type-l diabetes with islet cells and other autoantibod- 
+ies. Arch Neurol 1988;45:246-247 
+13. Bottazzo GF, Gleichman H. Immunology and diabetes work- 
+shop: report of the first international workshop on standardiza- 
+tion of cytoplasmic islet cell antibodies. Diabetologia 1986;29: 
+14. Lemnli UK. Cleavage and structural proteins during the assem- 
+bly of the head of bacteriophage T4. Nature 1970;227:680-685 
+15. Erdo SL, WolffJR. Gamma-aminobutyric acid outside the mam- 
+malian brain. J Neurochem 1990;54:363-372 
+16. Erlander MG, Tillakaratne NJ, Feldblum S, et al. Two genes 
+encode distinct glutamate decarboxylase. Neuron 1991;7:91- 
+100 
+17. Kaufman DL, Houser CR, Tobin AJ. Two forms of the gamma- 
+aminobutyric acid synthetic enzyme glutamate decarboxylase 
+have distinct intraneuronal distributions and cofactor interac- 
+tion. J Neurochem 1991;56:720-723 
+18. Christgau S, Schierbeck H, Aanstoot HJ, et al. Pancreatic beta 
+cells express two autoancigenic forms of glucamic acid decarbox- 
+125-126 
+ylase, a 65-kDa hydrophilic form and a 64-kDa amphiphilic form 
+which can be both membrane-bound and soluble. J Biol Chem 
+19. Cram DS, Barnett LD, Joseph JL, Harrison LC. Cloning and 
+partial nucleotide sequence of human glutamic acid decarboxyl- 
+ase cDNA from brain and pancreatic islets. Biochem Biophys 
+Res Comrnun 199 I ; 176: 1 239- I244 
+20. Baekkenskov S, Aanstoot HK, Christgau S, et al. Identification 
+of the 64kD antigen in the insulin-dependent diabetes as the 
+GABA-synthesizing enzyme glutamic acid decarboxylase. Na- 
+ture 1990;347:151-156 
+21. Solimena M, De Camilli P. Autoimmunity to glutamic acid de- 
+carboxylase (GAD) in stiff-man syndrome and insulin-depen- 
+dent diabetes mellitus. Trends Neurosci 1991;14:452-457 
+22. Bosi E, Todd I, Pujiol-Borrel R, Bottazzo GF. Mechanisms of 
+autoimmunity: relevance to the pathogenesis of type 1 (insulin- 
+dependent) diabetes mellitus. Diabetes Metab Rev 1987;3: 
+893-923 
+23. Genovese S, Bonifacio E, McNally JM, et al. Distinct cyto- 
+plasmic islet cell antibodies with different risks for type 1 (insu-</span> 
+<span class="source-segment role-group_summary" id="src-s0023" data-segment="s0023" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">lin-dependent) diabetes mellitus. Diabetologia 19552;35:385- 
+388 
+24. Rowley MJ, Mackay IR, Chen Q-Y, et al. Antibodies toglutamic 
+acid decarboxylase discriminate major types of diabetes mellitus. 
+Diabetes 1992;4 1: 548-5 52 
+25. Reetz A, Solimena M, Matteoli M, et al. GABA and pancreatic 
+beta-cells: colocalization of glutamic acid decarboxylase (GAD) 
+and GABA with synaptic-like microvesicles suggests their role 
+in GABA storage and secretion. EMBO J 1991;10:1275- 
+1284 
+26. Furneaux HF, Reich L, Posner JB. Autoantibody synthesis in 
+the central nervous system of patients with paraneoplastic syn- 
+dromes. Neurology 1990;40: 1085- 109 1 
+27. Daras M, Spiro AJ. “Stiff-man syndrome” in an adolescent. Pedi- 
+atrics 1981;6?:725-726 
+28. Sander JE, Layzer RB, Goldsobel AB. Congenital stiff-man syn- 
+drome. Ann Neurol 1980;8:195-197 
+29. Martin R. Meinck HM, Schulte-iMattler W, Mertens HG. Bor- 
+relia burgdorferi myelitis presenting as a partial stiff-man syn- 
+drome. J Neurol 1990;237:51-54 
+30. Bateman DE, Weller RO, Kennedy P. Stiffman syndrome: a 
+rare paraneoplastic disorder? J Neurol Neurosurg Psychiatry 
+1991;266:2 1257-21264 
+1990;33:695-696 
+64 Annals of Neurology Vol 34 No 1 July 1993 
+ 15318249, 1993, 1, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ana.410340111 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</span></div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>-3451</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Heterogeneity of Autoantibodies in SdT-Man Syndrome Luigi M. E. Grimaldi, MD,&quot;? Gianvito Martino, MD,*t Simona Braghi, MD,S Angelo Quattrini, MD,t Roberto Furlan, MD,+t Emanuele...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>3453-5041</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>The etiopathogenesis of SMS is still obscure. Recent studies [S, 61 demonstrated circulating autoantibodies directed against the GABAergic nerve terminals in up to 60% of SMS pa...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5043-8516</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>study and now report the frequency of anti-GAD anti- bodies as well as organ- and non-organ-specific auto- antibodies in 13 patients with SMS and in a group of control subjects,...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>8518-11867</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>and thyroid-microsomal autoantibodies were tested at the IMMUNOTRAPPING ENZYME ACTIVIIY ASSAY. The irnmuno- trapping enzyme activity assay procedure and reference val- ues for t...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>11869-15336</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Table I. Autoantibodies in Patients with Stiff-Man Syndrorne and Control Sub@ Patients PositivelPatients Tested (%) Non-Organ- Specific Thyrogastric Anti-GAD Groups No. of Patie...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>15397-15453</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>4°C with a sheep anti-GAD antiserum (1 : 2,000 in PBS).</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17128-17184</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Grimaldi et al: Autoantibodies in Stiff-Man Syndrome 59</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17547-17645</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Table 2. Clinical Characteristics and Autoantibody Determinations in Stiff-Man Sjlndvame Patients</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17842-17851</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>2 651F 3</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17852-17861</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>3 54iF 3</td></tr><tr><td><a href="#src-s0011">s0011</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17862-17871</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>4 34iM 2</td></tr><tr><td><a href="#src-s0012">s0012</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17872-17881</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>5 65iM 1</td></tr><tr><td><a href="#src-s0013">s0013</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17892-17901</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>7 471M 1</td></tr><tr><td><a href="#src-s0014">s0014</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>17923-17933</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>10 46iF 6</td></tr><tr><td><a href="#src-s0015">s0015</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>21029-22011</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>neurological disorders. The only islet-cell autoanti- body-negative, anti-GAD antibody-positive subject was a patient with Parkinson&#x27;s disease. OTHER IMMUNOLOGICAL STUDIES. To f...</td></tr><tr><td><a href="#src-s0016">s0016</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>22013-25457</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>Fig I. lmmunostaining of a 10-w.m rat cerebellar section mang a serum sample from a patient with stiff-man syndrome (Pa- tient l l in Table 2/, diluted l :150. Purkinje cells an...</td></tr><tr><td><a href="#src-s0017">s0017</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>25459-27404</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>tients without clinical or electrophysiological signs of motor-unit hyperactivity [7) questions the relevance of anti-GAD antibodies in the pathogenesis of SMS. GAD is the key e...</td></tr><tr><td><a href="#src-s0018">s0018</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>27658-27717</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>3 SMS patients (Patients 2, 3, and 4) with associated neo-</td></tr><tr><td><a href="#src-s0019">s0019</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>30876-32044</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>As expected, islet-cell autoantibody reactivity was found in all anti-GAD antibody-positive SMS pa- tients, as well as in 3 of the 4 anti-GAD antibody- positive patients with ot...</td></tr><tr><td><a href="#src-s0020">s0020</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>32046-35506</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>reactivity is associated with a multiantigenic autoimmu- nity. Whether the similarity in anti-GAD antibody lev- els, between the two subgroups of SMS and IDDM patients, reflects...</td></tr><tr><td><a href="#src-s0021">s0021</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>35508-38167</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>protein, suggesting that central nervous system anti- gens other than GAD may be the target of autoimmu- nity in SMS patients. Our findings indicate that the diagnosis of SMS sh...</td></tr><tr><td><a href="#src-s0022">s0022</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>38169-41648</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>5. Solimena M, Folli F, Denis-Donini S, et al. Autoantibodies to glutamic acid decarboxylase in a patient with stiff-man syn- drome, epilepsy and type-I diabetes. N Engl J Med 1...</td></tr><tr><td><a href="#src-s0023">s0023</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>41650-43223</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>lin-dependent) diabetes mellitus. Diabetologia 19552;35:385- 388 24. Rowley MJ, Mackay IR, Chen Q-Y, et al. Antibodies toglutamic acid decarboxylase discriminate major types of...</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\39.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\39.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\39.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\39.validation.json</p></main>
+</body>
+</html>

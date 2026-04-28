@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 62</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 62</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014, s0015</span></div><h2>Source Text</h2><div class="source-text">FEBS Letters 351 (1994) 73-79
+FEBS 14439
+
+Autoimmunity in Stiff-Man Syndrome with breast cancer is targeted
+to the C-terminal region of human amphiphysin,
+a protein similar to the yeast proteins, Rvs167 and Rvs161
+Carol David”, Michele Solimenab, Pietro De Camilli”,*
+of Cell Biology and Howard Hughes Medical Institute, Yale University School of Medicine, Boyer Center for Molecular Medicine,
+295 Congress Avenue, New Haven, CT 06510, USA
+b Department of Internal Medicine, Section of Endocrinology, Yale University School of Medicine, New Haven, CT 06510, USA
+
+“Department
+
+Received 16 June 1994; revised version received 21 July 1994
+
+<span class="source-segment role-patient_specific" id="src-s0001" data-segment="s0001" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Abstract
+Amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with
+breast cancer. We have now cloned human amphiphysin and found the N- and C-terminal domains of the protein to be highly conserved between
+chicken and human. Patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its
+C-terminal region, which contains an SH3 domain. Portions of chicken and human amphiphysin are also homologous to portions of Rvs167 and
+Rvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions.
+Key words: Stiff-Man</span>
+
+<span class="source-segment role-patient_specific" id="src-s0002" data-segment="s0002" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Syndrome;</span>
+
+<span class="source-segment role-patient_specific" id="src-s0003" data-segment="s0003" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Amphiphysin;</span>
+
+<span class="source-segment role-patient_specific" id="src-s0004" data-segment="s0004" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Breast cancer;</span>
+
+<span class="source-segment role-patient_specific" id="src-s0005" data-segment="s0005" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">1. Introduction
+Stiff-Man
+Syndrome (SMS) is a rare neurological disease characterized by rigidity of the body musculature
+with superimposed painful spasms [l&amp;4]. SMS is one of
+the few human diseases for which evidence of an autoimmune process directed against CNS neuronal antigens
+has been found. High titer antibodies directed against
+neuronal autoantigens are found both in the serum and
+in the cerebrospinal fluid of the majority of SMS patients
+t51.
+Two main targets of humoral autoimmunity have been
+identified in two populations of SMS patients which have
+similar neurological characteristics but different associated conditions. In 50-60% of the cases, autoantibodies
+are primarily directed against the GABA-synthesizing
+enzyme glutamic acid decarboxylase (GAD). In these
+patients, insulin-dependent diabetes mellitus and other
+organ-specific autoimmune diseases are frequently present [5-71.
+In five of the more than 100 cases of SMS patients
+whose sera we have tested, autoantibodies are directed
+against another neuronal protein of 128 k Da [8]. This
+protein was recently identified as amphiphysin [9], a synaptic vesicle-associated protein originally cloned from
+chicken brain [lo]. Strikingly, all five patients with am-</span>
+
+<span class="source-segment role-patient_specific" id="src-s0006" data-segment="s0006" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">*Corresponding</span>
+
+<span class="source-segment role-patient_specific" id="src-s0007" data-segment="s0007" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">author. Fax: (1) (203) 787-3364.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0008" data-segment="s0008" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Abbreviations: a.a., amino acid; c Amph, chicken amphiphysin; CNS,
+central nervous system; GAD, glutamic acid decarboxylase; h Amph,
+human amphiphysin; PAGE, polyacrylamide gel electrophoresis; PCR,
+polymerase chain reaction; SMS, Stiff-Man Syndrome.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0009" data-segment="s0009" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Synaptic</span>
+
+<span class="source-segment role-patient_specific" id="src-s0010" data-segment="s0010" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">vesicle; Rvs161;</span>
+
+<span class="source-segment role-patient_specific" id="src-s0011" data-segment="s0011" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Rvs167</span>
+
+<span class="source-segment role-patient_specific" id="src-s0012" data-segment="s0012" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">phiphysin autoimmunity are women with breast cancer.
+In fact, in two of these patients, an infiltrating ductal
+adenocarcinoma of the breast was searched for, and
+found, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)). A remission of the
+neurological symptoms was documented in three of the
+five patients after removal of the cancer and steroid therapy ([8, 9, 1 I] and this study (Dr. M. Myers, Jackson, MI,
+personal communication))
+supporting the hypothesis
+that the condition results from a functional rather than
+structural damage of the CNS. Other cases of SMS associated with cancer have been described [12, 13]. These
+findings raise the possibility that in some cases SMS may
+have an autoimmune paraneoplastic origin. As in the
+case of autoantigens of other autoimmune paraneoplastic diseases of the CNS, as well as of GAD, amphiphysin
+is an intracellular protein and the link between humoral
+autoimmunity directed against the autoantigen and the
+clinical symptoms remains to be explained.
+In other neurological autoimmune paraneoplastic
+conditions, expression of the neuronal autoantigen in the
+tumor was reported [14, 15]. It was proposed that the
+ectopic expression of the brain antigen by cancer cells
+may trigger the autoimmune response [16]. In some
+cases, the autoantigen is thought to play a role in neoplastic growth [17]. As a first step to investigate mechanisms of amphiphysin autoimmunity and a possible role
+of amphiphysin in the biology of human breast cancer,
+we have now cloned human amphiphysin and mapped
+the autoepitopes. By Western blotting, a stereotypic humoral autoimmune response to amphiphysin was detected similarly to what we have previously shown for</span>
+
+<span class="source-segment role-patient_specific" id="src-s0013" data-segment="s0013" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">0014-5793/94/$7. 00 0 1994 Federation of European Biochemical Societies. All rights reserved.
+SSDI
+0014-5793(94)00826-4</span>
+
+<span class="source-segment role-patient_specific" id="src-s0014" data-segment="s0014" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">GAD autoimmunity in SMS [lS]. The region of amphiphysin most highly conserved -between chicken and
+human is also similar to two yeast proteins, Rvs161 [19]
+and Rvs167 [20] which are implicated in the transition
+from exponential cell growth to stationary phase upon
+exposure to nutrient starvation. The similarity of amphiphysin to yeast proteins which participate in stationary phase adaptation suggests the possibility that amphiphysin, or a closely related protein, has a role in the
+biology of breast cancer.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0015" data-segment="s0015" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">2. Materials and methods
+2. 1. Human sera
+A new serum, belonging to a 75-year-old woman (patient I) with
+SMS was referred to us (Dr. S. Songcharden,</span>
+Dr. M. Myers, Jackson,
+MI) to be tested for the presence of anti-neuronal
+antibodies.
+The
+detection of anti-amphiphysin
+autoantibodies
+prompted a search for an
+occult breast cancer. A small ductal adenocarcinoma
+was found and
+surgically removed. Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9]. Control sera were
+from healthy subjects.
+2. 2. DNA manipulations
+Molecular biological procedures were performed according to standard protocols [21]. Synthetic oligonucleotides
+were synthesized (Keck
+Biotechnology
+Resource Laboratory,
+Yale University) in order to amplify via PCR from a ilZAP chicken brain cDNA library (courtesy of
+M. Bartkiewicz
+and R. Baron, Yale University)
+two fragments
+of
+chicken amphiphysin
+[IO] corresponding
+to nucleotides
+75-341 and
+777-1384 (nt75-341, nt777-1384).
+[a.-32P]dATP was incorporated
+into
+purified PCR products via primer-direct
+labeling as described by Bogue
+[22] and used as probes at 2 x106 cpm/ml for Northern blots and IO5
+cpm/ml for library screening under relatively high stringency conditions
+(hybridization
+- 50% formamide,
+6 x SSC, 0. 1% SDS, 2 x Denhardt’s,
+100 mg/ml salmon sperm DNA, 37”C, 20 h; wash ~ 2 x SSC, 0. 05%
+SDS, 45’C).
+1. 5 x IO6 plaques of a /2gtll human cerebellar cDNA library (random- and oligo(dT)-primed;
+Clontech, Palo Alto, CA) were screened
+with nt777-1384.
+Phage cDNA inserts of positive clones were purified
+and sequenced [23]. Sequence data, hydrophilicity,
+and antigenicity
+profiles were compiled and analyzed using Mac Vector (IBI Ltd., Cambridge, UK) and MacDNASIS
+Pro (Hitachi, San Bruno, CA) software.
+BESTFIT [24], BLAST [25] and PlLEUP [26] analyses were programs
+of the Genetics Computer Group (Madison, WI). Secondary structure
+predictions
+were done by the Self Optimized Prediction Method [27].
+2. 3. Preparation offision proteins
+The fragment corresponding
+to nt 89-2377 of clone 22-2 was ligated
+into SmaI-. EcoRI
+sites of pGEX-2T
+vector (Pharmacia,
+Piscataway,
+NJ) to generate a glutathione
+S-transferase
+(GST)/full-length
+human
+amphiphysin
+fusion protein. Clone 22-2 was used as a cDNA template
+in PCR reactions with Vent, DNA polymerase (New England Biolabs,
+Beverly, MA), to obtain the amphiphysin
+fragments encoding amino
+acids (a.a) I-161, 132~291, 262-435, 41
+l-581, and 545-695 (designated
+I-V, see Fig. 4A). SmaI and EcoRI sites were added to 5’ and 3’ ends
+of the fragments respectively to allow unidirectional
+subcloning into the
+polylinker region of pGEX-2T. The sequences of all GST-amphiphysin
+fusion constructs
+were confirmed
+by DNA sequencing.
+The fusion
+proteins were produced in DH5a cells and purified on a glutathione Sepharose 4B column (Pharmacia,
+Piscataway,
+NJ) essentially as described [28]. Constructs
+yielded recombinant
+proteins composed
+of
+GST (-28 k Da) fused to the N-terminus
+of the corresponding
+amphiphysin fragment.
+2. 4. Miscellaneous procedures
+SDS-PAGE of 5-16% gradient gels and Western blotting were performed essentially as described by Laemmli [29] and Towbin [30], respectively.
+
+Western blots with patient
+
+Letter.y 351 (1994)
+
+sera was performed
+
+73 79
+
+as described
+
+[IQ.
+A serum directed against human amphiphysin
+(CD6) was obtained
+by injecting a rabbit with GST-human
+amphiphysin
+fusion protein (I
+mg) which had been purified on a GTH-Sepharose
+column followed by
+preparative
+SDS-PAGE.
+
+3. Results and discussion
+
+In order to clone human amphiphysin, two fragments
+of chicken amphiphysin [lo], nt75-341 and nt777-1384,
+encoding for amino acids (a.a.) 1-81 and 228430, respectively, were generated and tested for reactivity in
+Northern blot before proceeding to screen a Agtll
+human cerebellar cDNA library. As expected, both fragments hybridized very strongly to a band of approximately 4. 5 kb in chicken brain poly(A)’ mRNA. They
+also labeled more weakly a band of similar size when
+tested under high stringency conditions on rat brain
+polyA+ mRNA (data not shown).
+The nt777-1384, corresponding to the central region
+of chicken amphiphysin [lo], was then used as a probe
+to screen 1. 5 x lo6 plaques of a Lgtll human cerebellar
+cDNA library. Eighteen positive clones were isolated,
+four of which (designated 22-2, 24, 27 and 34) were also
+positive when hybridized with the chicken fragment
+nt75-34 1, which encompassed the N-terminal. Sequence
+analysis revealed that clone 22-2 contained an -2. 4 kb
+insert, which had an open reading frame of 2088 nt (nt
+111-2198) encoding a protein of 695 a.a. (Fig. 1, top
+line). The nucleotide sequence encoding the putative protein was 73% identical to the nucleotide sequence of
+chicken amphiphysin. The sequence surrounding the
+first ATG (gcagccatgg), at position 111 of clone 22-2,
+conformed very well to the initiation consensus sequence
+as defined by Kozak [3 13. No polyadenylation signal was
+detected at the 3’ end of the clone (nt2199-2377). However, a stretch of 10 A’s was found (nt2365-2374), suggesting that internal annealing of the oligo(dT) primer
+occurred at this site. Clones 24, 27 and 34 were identical
+in sequence to smaller portions of clone 22-2 except for
+clone 27 which differed by 20 nucleotides in the 5’ noncoding region. Whether this represents a cloning artifact
+or evidence of a transcript alternatively spliced at the 5’
+region, remains to be determined.
+The predicted molecular weight (76. 25 k Da) of the
+protein encoded by clone 22-2 was considerably smaller
+than the apparent molecular weight of rat amphiphysin
+in SDS-PAGE gels which is approximately
+128 k Da
+[8, 9]. However, a similar aberrant electrophoretic mobility was previously reported for chicken amphiphysin
+[lo]. Injection of a GST-human amphiphysin fusion protein in rabbits elicited the production of antibodies which
+reacted very strongly with the 128 k Da antigen recognized by patient sera in brain tissue (Fig. 2). Additionally, the GST-fusion protein had an apparent molecular
+
+74
+
+Letters
+
+351 (1994)
+
+15
+
+73-79
+
+mph
+
+70
+
+c Amph
+
+70
+
+RVS167
+Rvs161
+
+63
+
+. . . . . .. MSW
+
+61
+
+mph
+c Amph
+
+120
+
+RVS167
+
+130
+
+RVS161
+
+118
+
+mph
+&amp;mph
+
+186
+
+120
+
+186
+
+RVS167
+
+200
+
+RVSl61
+
+185
+
+mph
+&amp;mph
+
+LQEELPSLWS
+
+RRVGFYVNTF
+
+IWVSSL! XAKF
+
+HKEIAV. LCH
+
+KLYEVMTKLG
+
+DQHADKAFTI
+
+QZAPS.. DSd
+
+253
+253
+
+Rvs167
+
+253
+
+RVSl61
+
+239
+
+mph
+c Amph
+
+322
+322
+
+RvS167
+
+272
+
+RVSl61
+
+265
+
+mph
+c Amph
+
+VT
+
+HSPMSQTLPW
+
+DL
+
+VT
+
+HSPMSQTLPW
+
+DL
+
+Rvs167
+mph
+&amp;mph
+
+462
+
+Rvs167
+
+341
+
+454
+
+IIP
+
+mph
+c Amph
+
+ES1
+
+Rvsl67
+
+TAAAVG
+
+525
+516
+L GF........
+
+. . . . .
+
+. . .
+
+387
+593
+
+mph
+c Amph
+
+586
+
+Rvs167
+
+393
+
+mph
+&amp;mph
+Rvs167
+
+I$
+RT
+
+663
+650
+459
+
+mph
+c Amph
+Rvs167
+
+Fig. 1. Amino acid sequence alignment of human amphiphysin (h Amph) with chicken amphiphysin (c Amph) and the yeast proteins, Rvs167 and
+Rvs161. Amino acids are shown in single letter code and identity with the human sequence at a given position is boxed. First the sequences of the
+two amphiphysins and of Rvs167 were aligned to each other using the program PILEUP. The sequence of Rvs 161 was then compiled with the other
+three sequences according to its alignment with Rvs 167. The complete cDNA sequence of h Amph (clone 22-2) is available from Gen Bank under
+accession number U076 16.
+
+weight of approximately 160 k Da, of which only about
+28 k Da could be attributed to GST (see figure 4B, panel
+CB, lane H). Finally, when the human and chicken sequences were aligned, the N- and C-termini of the two
+molecules were in precise register (Fig. 1, top two lines).
+In conclusion, the above data indicates that we had isolated a full-length clone of human amphiphysin.
+A comparison of the a.a. sequences of human and
+chicken amphiphysin [lo] revealed a high degree of similarity with the exception of a region of approximately
+180 a.a. in the second half of the molecules (Fig. 1 and
+Fig. 3A domain C). Overall the two proteins are 75%
+identical and 84% similar at the a.a. level. As was previously reported for chicken amphiphysin [lo], the human
+protein is very hydrophilic, has an acidic pI of 4. 4, and
+contains many putative phosphorylation sites for protein
+kinases A and C and for casein kinase II. The first
+
+Fig. 2. The same protein band from rat brain is recognized by a rabbit
+antibody raised against human amphiphysin and by the serum of a
+patient with SMS and breast cancer. A total rat brain homogenate was
+subjected to SDS-PAGE and Western blotting as described in section
+2. Sera used for western blotting are as follows: NHS = serum from
+control human subject, 11500; Pt 2 = serum from patient with SMS and
+breast cancer, 11500; pre-CD6 = pre-immune rabbit serum 1150;
+CD6 = serum from rabbit immunized with human amphiphysin, 1150.
+Molecular weight standards are indicated on the left.
+
+A
+A
+
+B
+
+C
+
+D
+SH3
+
+A
+
+B
+
+C
+
+D
+SH3
+
+A
+
+X
+
+D
+SH3
+
+I
+I
+
+I
+
+I
+
+250
+
+snl
+
+I
+
+700
+
+Fig. 3. (A) Domain diagram of amphiphysins
+and related yeast proteins
+suggested by blocks of a.a. similarity. The borders of the domains were
+based on sequence alignment and are drawn to scale (shown). (B) The
+last 60 a.a. of h Amph was aligned with the SH3 domains of human src
+(hsrc [42]), yeast abpl (yabpl [43]), human GRB2 (hGRB2 [35]), drosophila drk gene product (Drk [44]), human spectrin a chain (hspec [45])
+and Rvs167 [20] using the PILEUP program. N and C represent N- and
+C-terminal SH3 domains where applicable. Numbers to the right of the
+sequence indicate the position of the last a.a. shown in the sequence of
+the protein and a c) indicates a terminal a.a. Dashes indicate a.a. that
+are identical with human amphiphysin
+and periods represent gaps. A
+consensus SH3 sequence was constructed
+whenever the same a.a. was
+conserved in at least four of the sequences listed and an alignment of
+this sequence with amphiphysin
+is shown as was done by Bauer et al,
+[20]. G and P in bold refer to highly conserved residues and * indicates
+G,,, and P,, of GRB2 (see text).
+
+400 a.a. (domains A+B) are 91% identical and the last
+100 a.a. (domain D) are 67% identical.
+Although the C domains are only 40% identical, in this
+region the a.a. profile of chicken and human
+amphiphysin
+is strikingly similar with a predominance
+of
+alanine and glutamate.
+A proline-rich
+region between
+amino acids 263-277 in domain B, which contains putative binding sequences for src-homology
+(SH3) domains
+[32, 33] is also highly conserved. SH3 domains are protien
+modules of about 60 a.a. that are found in many signaling and cytoskeletal proteins [34]. Domain C of chicken
+amphiphysin
+was reported to contain the only hydrophobic stretch (a.a. 478499)
+of the molecule, although
+this stretch does not appear to form a transmembrane
+region [9, 10]. A short a.a. sequence with similar hydrophobic properties is present in domain C of human amphiphysin (a.a. 468480).
+
+73-79
+
+Domain D, present in both human and chicken amphiphysin, comprises the C-terminal
+100 a.a. and is approximately
+30% identical with SH3 domains from a
+variety of proteins in its last 60 a.a.(Fig. 3B). Secondary
+structure analysis of this domain predicted the presence
+ofj?-sheets between a.a. 648-652 and 664-668, in agreement with the known crystal structure of SH3 domains
+[34]. The gaps needed to align the SH3 domain consensus
+with amphiphysin
+are in regions where there is considerable variability
+between SH3 containing
+proteins [34].
+Furthermore,
+the putative SH3 domain of amphiphysin
+includes a glycine (position 684) and a proline (position
+687), (Fig. 3B - in bold) which are conserved in all SH3
+domains listed. In particular, mutations
+of Gzo3 or P,,of
+GRB2 (Fig. 3B, asterisks) result in an inability of GRB2
+to bind other proteins via its C-terminal and N-terminal
+SH3 domains, respectively [28, 35] and correspond to loss
+of function mutants in the GRB2 homologue, sem-5 [36].
+The availability
+of the human amphiphysin
+clone allowed us to start investigating
+mechanisms of autoimmunity to amphiphysin
+in SMS associated with breast cancer. Neurological
+symptoms of SMS patients with either
+GAD or amphiphysin
+autoimmunity
+are similar [8, 9].
+This observation,
+together with the intracellular
+localization of both GAD and amphiphysin,
+suggest that autoantibodies
+are closely related to, but not responsible
+for, the disease. In the case of GAD autoimmunity,
+we
+have shown a common autoreactive
+pattern of SMS autoantibodies.
+In all cases, autoantibodies
+predominantly
+recognize a single epitope in the C-terminal
+region of
+GAD65 [18]. To determine whether the humoral autoimmune response to amphiphysin
+was stereotyped,
+sera
+from all 5 breast cancer patients with SMS as well as
+control sera were tested by western blotting against five
+overlapping
+amphiphysin
+fragments expressed as GSTfusion proteins (Fig. 4A).
+As shown in Fig. 4B, autoantibodies
+from all 5 pa Table 1
+Comparison
+
+of domain
+
+A of amphiphysin
+
+related
+
+proteins
+
+Chicken
+amphiphysin
+l-261
+
+Rvs 167
+l-272
+
+Rvs I61
+l-265
+
+Human
+amphiphysin
+l-261
+
+95. 4 (97. 7)
+
+27. 3 (48. 7)
+
+25. 2 (49. 2)
+
+Chicken
+amphiphysin
+l-261
+
+_
+
+26. 5 (48. 7)
+
+22. 8 (46. 8)
+
+_
+
+26. 9 (51. 9)
+
+Rvs 167
+l-272
+
+Percent identities and similarities (in brackets) of the a.a. sequence of
+domains A (numbers represent the boundaries of each domain A, refer
+to Fig. 3) of the indicated proteins as obtained using the BESTFIT
+program.
+
+C. David et al. IFEBS Letters 351 (1994)
+
+H
+
+1
+1
+
+II
+
+695
+
+161
+
+I
+132
+
+II
+262
+
+291
+435
+
+III
+411
+
+581
+
+IV
+
+5451~~695
+
+B
+H
+
+I
+
+II IIIIV v
+
+66CD6
+
+Fig. 4. Similar pattern of reactivity of patient sera with the C-terminal
+portion of human amphiphysin.
+(A) Schematic diagram of full-length
+human amphiphysin
+(H) and of its fragments (I-V) which were tested
+for reactivity with human sera. Boundaries
+of the fragments are indicated by a.a. numbers. (B) GST-fusion proteins of the constructs shown
+in A were subjected to SDS-PAGE and either Coomassie blue stained
+(CB) or Western blotted as described in section 2. The blots were
+reacted with either sera ofpatients
+with SMS and breast cancer (Pt l-5),
+normal human sera (NHS), or CD6 (rabbit) sera at l/500 as indicated.
+Approximately
+113 of the amount loaded in the gel for panel CB was
+used for the Western blot analysis. These results are representative
+of
+at least 3 separate experiments.
+Molecular weight standards
+are indicated on the left. All fusion proteins (I-V) run between 45 and 66 k Da.
+The 80 k Da band seen in lane II (panel CB) was a protein from the host
+bacteria that was not related to the specific fusion protein, and never
+reacted with the antibodies.
+
+tients were directed primarily, although not exclusively,
+against the amphiphysin C-terminal fragment (fragment V). Autoantibodies from patients 4 and 5 also recognized, but to a lower extent, fragment II. In contrast,
+a rabbit serum (CD6), raised against human amphiphysin, recognized primarily the central fragment III,
+suggesting that the stereotypic pattern of antibody reactivity against the C-terminal fragment is typical of the
+disease and does not simply reflect an unusually high
+antigenicity of this domain. We have previously reported
+that the neurological symptoms of SMS improve after
+removal of the cancer [8]. Interestingly, a similar improvement was noticed for the two patients identified
+after our original report (Dr. H.-M. Meinck, Heidelberg,
+Germany and Dr. M. Myers, Jackson, MI, personal
+communication). This observation strengthens the concept that SMS associated with breast cancer is an autoimmune paraneoplastic disease.
+Since amphiphysin is a synaptic vesicle-associated protein [lo], its relation to a disease involving abnormal
+synaptic function is plausible. On the other hand, the
+connection between amphiphysin and breast cancer has
+been more elusive. A possible clue concerning this connection comes from an interesting homology we have
+identified by searching protein databases for a.a sequences similar to the regions of amphiphysin conserved
+between human and chicken. The conserved N-terminal
+region of amphiphysin has considerable homology to
+Rvs167 [20] and Rvs161 [19], two yeast proteins which
+were cloned by isolating mutants with a reduced viability
+to nutrient starvation (rvs). The alignment of Rvs167
+and Rvs161 with human and chicken amphiphysin (Fig.
+1) suggests a domain model of the four proteins shown
+in Fig. 3A. Domain A is shared by all four proteins and
+in all four has a high a-helix potential. The similarities
+among the various domains A are indicated in Table 1.
+Rvs 16 1 is comprised exclusively of this domain, whereas
+Rvs167 shares an additional region of similarity with
+amphiphysin in domain D. Domain D of Rvs167 was
+previously shown to contain an SH3 domain [20]. Domain X of Rvs167 was defined as a GPA-rich region
+because of its high content in glycine, proline and alanine. While this region is substantially shorter than the
+central region of amphiphysin, it shares some features of
+both domains B and C of human and chicken amphiphysin which are rich in proline and alanine, respectively. These considerations suggest that Rvs167 is the
+yeast homologue of amphiphysin. While amphiphysin
+has been shown to have a very restricted tissue distribution (brain, endocrine tissues and testis)[9, 10], the presence of a homologue in yeast strongly suggests that amphiphysin homologues are present in all cells.
+The phenotype of RVSl67 and RVS161 mutant cells
+is associated with abnormal morphology and alterations
+in the peripheral cytoskeleton. Cells appear to be unable
+
+C. David et al. IFEBS Letters 351 (1994) 73-79
+
+paired link between the mechanisms which control cell
+proliferation and those which allow the cell to undergo
+stationary phase adaptation. Mutations of either one of
+the two genes produce a similar phenotype [19, 20] and
+are suppressed by the same set of genes [37], indicating
+that they act in the same pathway. The function of amphiphysin in the nervous system remains to be elucidated. Amphiphysin was reported to be a synaptic vesicle-associated protein, although it is not enriched in these
+organelles [lo]. The homology of amphiphysin to the two
+Rvs yeast proteins suggests a function of amphiphysin in
+controlling the properties of the membrane associated
+cytoskeleton and offers the possibility of using yeast genetics to further investigate the function of the protein.
+It was proposed that neurological autoimmune paraneoplastic syndrome are triggered by the ectopic expression in the neoplastic tissues of a neuronal protein or a
+protein antigenically related to it, which then becomes an
+autoantigen [16, 38]. The homology of amphiphysin to
+yeast proteins which have been shown to participate in
+the cell adaptation to stationary phase raises the possibility that amphiphysin or some related protein may be
+directly involved in at least some form of breast cancer.
+There is evidence to suggest that proteins of the peripheral cell cytoskeleton may be directly involved in the
+pathogenesis of some forms of cancer [39-41] In the
+breast cancer tissue of SMS patients which have been
+investigated, amphiphysin immunoreactivity was not detected using patient autoantibodies [8]. However, one
+should consider the possibility that the T-cell triggering
+autoepitope might belong to an amphiphysin-related
+molecule which similarly to Rvs161, contains only domain A. This protein would not be recognized by patient
+autoantibodies which we have now shown to be primarily directed against the C-terminus of amphiphysin. We
+note that Nova, another autoantigen of a paraneoplastic
+neurological autoimmune disorder, is a neuronal protein
+expressed in a truncated form (which does not include
+the dominant C-terminal autoepitope for humoral autoimmunity) in the neoplastic tissue [17].
+Acknowledgments: We wish to thank Ronald Dirkx for help in preliminary experiments and Drs. Margaret Butler, Adrian Hayday, Sirkka
+Keranen, Ann-Marie Quinn and Michel Aigle for helpful discussions.
+We also thank Drs. G. Piccolo, M. Austoni, G. Fassetta, D. Bates, N.
+Cartlidge, G. Bottazzo, H.-M. Meinck, S. Songcharden and M. Myers
+for referring to us patient sera. This work was supported in part by the
+NIH Grants A130248, DK43078 and a Mc Knight Research Project
+Award (PDC). and a fellowshin from the Juvenile Diabetes Foundation
+
+References
+[l] Layzer, R. B. (1988) N. Engl J. Med. 318, IO@&amp;1062.
+[2] Lorish, T. R., Thorsteinsson, G and Howard, F. M. (1989) Mayo
+Clin. Proc. 64, 629-636.
+[3] Blum, P. and Jankovic, J. (1991) Mov. Dis. 6, 12-20.
+[4] Mc Evoy, K. M. (1991) Mayo Clin. Proc. 66, 300-304.
+
+C. David et al. IFEBS Letters 351 (1994) 73-79
+[51 Solimena M., Folli, F., Aparisi, A., Pozza, G. and De Camilli, P.
+(1990) N. Engl. J. Med. 322, 1555-1560.
+El Solimena, M., Folli, F., Denis-Domini, S., Comi, G. C., Pozza, G.,
+De Camilli, P. and Vicari, A. M. (1988) N. Engl. J. Med. 318,
+1012-1020.
+[71 Solimena, M. and De Camilli, P. (1993) Nature 366, 15.
+PI Folli, F., Solimena, M., Cofiell, R., Austoni, M., Tallini, G., Fassetta, G., Bates, D., Cartlidge, N., Bottazzo, G. F., Piccolo, G. and
+De Camilli, P. (1993) N. Engl. J. Med. 328, 546-551.
+A De Camilli, P., Thomas, A., Cofiell, R., Solimena, M., Folli, F.,
+Lichte, B., Piccolo, G., Meinck H.-M., Austoni M., Fassetta G.,
+Bottazzo G. F., Bates, D., Cartlidge, N., Solimena, M. and M. W.
+Kilimann. (1993) J. Exp. Med. 178, 2219-2223.
+[lOI Lichte, B., Veh, R. W., Meyer, H., and Kilimann, M. W. (1992)
+EMBO J. 11, 2521-2530.
+[ill Piccolo, G., Cosi, V., Zandrini, C., and Moglia, A. (1988) Ital. J.
+Neural. Sci. 9, 559-566.
+WI Bateman, D. E., Weller, R. O. and Kennedy, P. (1990) J. Neurol.
+53, 695-696.
+u31 Grimaldi, L. M. E., Martino, G., Braghi, S., Quattrini, A., Furlan,
+R., Bosi, E. and Comi, G. (1993) Ann. Neural. 34, 57-64.
+[I41 Posner, J. B. and Furneaux, H. M. (1990) Immunologic Mechanisms in Neurologic and Psychiatric Disease (Waksman, B. H. ed.)
+pp. 187-219, New York, NY.
+u51 Hetzel, D. J., Stanhope, C. R., O’NeiI, B. P. and Lennon, V. A.
+(1990) Mayo Clin Proc. 65, 1558-1563.
+U61 Fumeaux, H. M., Rosenblum, M. K., Dalmau, J., Wong, E.,
+Woodruff, P., Graus, F. and Posner, J. B. (1990) N. Engl. J. Med.
+322, 1844-1851.
+[I71 Buckanovich, R. J., Posner, J. B. and Darnell, R. B. (1993) Neuron
+11, 657-672.
+1181 Butler, M., Solimena, M., Dirkx, R., Hayday, A. and De Camilli,
+P. (1993) J. Exp. Med. 178, 2097-2106.
+P91 Crouzet, M., Urdaci, M., Dulau, L. and Aigle, M. (1991) Yeast
+7, 727-743.
+[201 Bauer, F., Urdaci, M., Aigle, M. and Crouzet, M. (I 993) Mol. Cell.
+Biol. 13, 5070-5084.
+WI Sambrook, J., E. F. Fritsh and Maniatis, T. (1989) Molecular
+Cloning. A Laboratory Manual. Cold Spring Harbor Laboratory.
+Cold Spring Harbor, NY.
+[22] Bogue, C. W., Gross, I., Vasavada, H., Dynia, D. W., Wilson, C. M.
+and Jacobs, H. C. (1994) Am. J. Physiol. 266, L448.
+[23] Sanger, F., Nicklen, S. and Coulson, A. R. (1977) Proc. Natl. Acad.
+Sci. USA 74, 5463-5467.
+1241Smith, T. F., Waterman, M. S. and Burks, C. (1985) Nucleic Acids
+Res. 13, 645-656.
+[25] Altschul, S. F., Gish, W., Miller, W., Myers, E. W. and Lipman,
+D. J. (1990) J. Mol. Biol. 215, 403-410.
+[26] Feng, D. F. and Doolittle, R. F. (1987) J. Mol. Evol. 25, 351360.
+[27] Geourjon, C. and Deleage, G. (1993) CABIOS 9, 87-91.
+[28] Mc Pherson, P., Czemik, A. J., Chilcote, T. J., Onofrio, F., Benfeti,
+F., Greengard, P., Schlessinger, J. and De Camilli, P. (1994) Proc.
+Nat1 Acad. Sci. USA 91, 64866490.
+[29] Laemmh, U. K. (1970) Nature 227, 680-685.
+[30] Towbin, H., Staehelin, T. and Gordon, J. (1979) Proc. Natl. Acad.
+Sci. USA 76, 4350.
+1311Kozak, M. (1991) J. Cell Biol. 115, 887-903.
+[33] Yu, H., Chen, J. K., Feng, S., Dalgarno, D. C., Brauer, A. W. and
+Schreiber, S. L. (1994) Cell 76, 933-945.
+[34] Koyama, S., Yu, H. Dalgarno, D. C., Shin, T. B., Zydowsky, L. D.
+and Schreiber, S. L. (1993) Cell 72, 945-952.
+[35] Lowenstein, E. J., Daly, R. J., Batzer, A. G., Li, W., Margolis, B.,
+Lammers, R., Ullrich, A. E., Skolnik, Y., Bar-Sagi, D. and
+Schlessinger, J. (1992) Cell 70, 43142.
+[36] Clark, S. G., Stern, M. J. and Horvitz, H. R. (1992) Nature 356,
+340-344.
+
+78
+
+Letters 351 (1994)
+
+73-79
+
+[37] Desfarges, L., Durrens P., Juguehn, H., Cassagne, C., Bonneu, M.
+
+and Aigle, M. (1993) Yeast 9, 267-277.
+[38] Thirkill, C. E., Fitzgerald, P., Sergott, R. C., Roth, A. M., Tyler,
+N. K. and Keltner, J. L. (1989) N. Engl. J. Med. 321, 15891594.
+[39] Trofatter, J. A., Mac Co Uin, M. M., Rutter, J. L., Murrell, J. R., Duyao,
+M. P, Parry, D. M., Eldridge, R., Kley, N., Menon, A. G., Pulaski,
+K., Haase, V. H., Ambrose, C. M., Munroe, D., Bove, C., Haines,
+J. L., Martuza, R. L., Mac Donald, M. E., Seizinger, B. R., Short,
+M. P., Buckler, A. J. and Gusella, J. F. (1993) Cell 72, 791-800.
+[40] Rubinfeld, B., Souza, B., Albert, I., Muller, O., Chamberlain,
+S. H., Masiarz, F. R., Munemitsu, S. and Polakis, P. (1993) Science
+262, 1731-1734.
+
+79
+
+[41] Su, L.-K., Vogelstein, B. and Kinzler, K. W. (1993) Science 262,
+17341737.
+1421Tanaka, A., Gibbs, C. P., Arthur, R. R., Anderson, S. K., Kung,
+H.-J. and Fujita, D. J. (1987) Mol. Cell. Biol. 7, 1978-1983.
+[43] Drubin, D. G., Mulholland, J., Zhu, Z. M. and Botstein, D. (1990)
+Nature 343, 288-290.
+[44] Olivier, J. P., Raabe, T., Henkemeyer, M., Dickson, B., Mbamalu,
+G., Margolis, B. Schlessinger, J., Hafen, E. and Pawson, T. (1993)
+Cell 73, 179-191.
+1451 Sahr, K. E., Laurila, P., Kotula, L., Scarpa, A. L., Coupal, E., Leto,
+T. L., Linnebach, A. J., Winkelmann, J. C., Speicher, D. W., Marchesi, V. T., Curtis, P. J. and Forget, B. G. (1990) J. Biol. Chem. 265,
+44344443.</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>638-1361</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Abstract Amphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with breast cancer. We have no...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>1363-1372</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Syndrome;</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>1374-1386</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Amphiphysin;</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>1388-1402</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Breast cancer;</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>1404-2637</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>1. Introduction Stiff-Man Syndrome (SMS) is a rare neurological disease characterized by rigidity of the body musculature with superimposed painful spasms [l&amp;4]. SMS is one of t...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2639-2653</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>*Corresponding</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2655-2687</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>author. Fax: (1) (203) 787-3364.</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2689-2939</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Abbreviations: a.a., amino acid; c Amph, chicken amphiphysin; CNS, central nervous system; GAD, glutamic acid decarboxylase; h Amph, human amphiphysin; PAGE, polyacrylamide gel...</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2941-2949</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Synaptic</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2951-2967</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>vesicle; Rvs161;</td></tr><tr><td><a href="#src-s0011">s0011</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2969-2975</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>Rvs167</td></tr><tr><td><a href="#src-s0012">s0012</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>2977-4752</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>phiphysin autoimmunity are women with breast cancer. In fact, in two of these patients, an infiltrating ductal adenocarcinoma of the breast was searched for, and found, only aft...</td></tr><tr><td><a href="#src-s0013">s0013</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>4754-4873</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>0014-5793/94/$7. 00 0 1994 Federation of European Biochemical Societies. All rights reserved. SSDI 0014-5793(94)00826-4</td></tr><tr><td><a href="#src-s0014">s0014</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>4875-5386</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>GAD autoimmunity in SMS [lS]. The region of amphiphysin most highly conserved -between chicken and human is also similar to two yeast proteins, Rvs161 [19] and Rvs167 [20] which...</td></tr><tr><td><a href="#src-s0015">s0015</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient I</span></td><td>5388-5536</td><td>high</td><td>Deterministic clinical-window selection for single-patient route.</td><td>2. Materials and methods 2. 1. Human sera A new serum, belonging to a 75-year-old woman (patient I) with SMS was referred to us (Dr. S. Songcharden,</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\62.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\62.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\62.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\62.validation.json</p></main>
+</body>
+</html>

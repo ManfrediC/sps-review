@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 58</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 58</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">s0001, s0003</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-kind">patient</span><span class="target-related">s0001, s0004</span></div><h2>Source Text</h2><div class="source-text">ARTHRITIS &amp; RHEUMATISM Volume 37 
+Number 6, June 1994, pp 915-918 
+0 1994, American College of Rheumatology 915 
+TREATMENT OF STIFF-MAN SYNDROME 
+WITH INTRAVENOUS IMMUNE GLOBULIN 
+ELIZABETH W. KARLSON, LEWIS SUDARSKY, ERIC RUDERMAN, SUSAN PIERSON, 
+MARY SCOTT, and SIMON M. HELFGOTT 
+Objective. To evaluate the efficacy of intravenous 
+immune globulin (IVIG) in the treatment of stiff-man 
+syndrome (SMS). 
+<span class="source-segment role-shared" id="src-s0001" data-segment="s0001" data-label="p1 p2 p3 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Methods. An open, unblinded study of 3 patients 
+with active disease andor disease refractory to treat- 
+ment with diazepam andor corticosteroids. 
+Results. All 3 bedridden patients improved sub- 
+stantially shortly after infusion with IVIG and regained 
+function. 
+Conclusion. IVIG may be useful for the treat- 
+ment of SMS. 
+</span>Stiff-man syndrome (SMS) is an autoimmune 
+neurologic disorder characterized by muscular stiff- 
+ness in the trunk and limbs, with superimposed painful 
+spasms (I). Sixty percent of patients have autoanti- 
+bodies directed against glutamic acid decarboxylase 
+(GAD) (2), an enzyme present both in neurons secret- 
+ing yaminobutyric acid (GABA) and in pancreatic 
+beta cells. Organ-specific autoimmune diseases, in 
+particular, insulin-dependent diabetes mellitus and hyper- 
+thyroidism, are often seen in patients with SMS (3). 
+Clinical and pharmacologic evidence suggests 
+that the continuous alpha motor-unit activity seen in 
+SMS is due to impairment of GABA-mediated inhibi- 
+tion of the suprasegmental or spinal inhibitory sys- 
+Presented in part at the American College of Rheumatology 
+Northeast Region Meeting, Boston, MA, May 1993. 
+Elizabeth W. Karlson, MD: Brigham and Women&#x27;s Hospi- 
+tal and Harvard Medical School, Boston, Massachusetts; Lewis 
+Sudarsky, MD: Brigham and Women&#x27;s Hospital and Harvard Med- 
+ical School; Eric Ruderman, MD: Brigham and Women&#x27;s Hospital 
+and Harvard Medical School; Susan Pierson, MD: Braintree Hos- 
+pital, Braintree, Massachusetts; Mary Scott, MD: Braintree Hospi- 
+tal; Simon M. Helfgott, MD: Brigham and Women&#x27;s Hospital and 
+Harvard Medical School. 
+Address reprint requests to Simon M. Helfgott, MD, De- 
+partment of Rheumatology and Immunology, Brigham and Wom- 
+en&#x27;s Hospital, 45 Francis Street, Boston, MA 02115-6100. 
+Submitted for publication August 4, 1993; accepted in 
+revised form November 3, 1993. 
+tems. Drugs which may ameliorate symptoms include 
+diazepam, clonidine, and baclofen (1). Corticosteroids 
+(4) and plasmapheresis (5) have been used with vari- 
+able results. We report herein, the use of high-dose 
+intravenous immune globulin (IVIG) in the treatment 
+of SMS refractory to other therapies (Table 1). 
+CASE REPORTS 
+Patient 1. This patient, a 50-year-old African- 
+American woman, presented with a I-year history of pro- 
+gressive stiffness of her lower extremities and difficulty 
+walking. Previously, there had been transient improvement 
+with a combination of physical therapy and diazepam. 
+Several months earlier, treatment with prednisone, 60 mg/ 
+day, and a course of 5 plasmapheresis treatments had 
+resulted in a gain of 15&quot; of flexion in both hips and the right 
+knee. However, at the time of admission, she had persistent 
+extensor tone of both lower extremities, with virtually no 
+flexion of the hips, and she could not walk. There was 
+hyperextension and spasm of both knees, and the ankles 
+were maintained in constant plantar flexion. She was begun 
+on a regimen of diazepam 5 mg 4 times a day and baclofen 20 
+mg 3 times a day. 
+<span class="source-segment role-patient_specific" id="src-s0002" data-segment="s0002" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">The electromyogram (EMG) showed continuous mo- 
+tor unit activity in the lower extremities and normal findings 
+in the upper extremities. Serum anti-GAD antibodies were 
+detected by immunocytochemical assay. Treatment with 
+diazepam, baclofen, carbamazepine, and valproic acid did 
+not result in any improvement, nor did an intrathecal infu- 
+sion of baclofen. 
+Because of her lack of progress, treatment with IVIG 
+was initiated, at a dosage of 400 mgkg/day for 5 consecutive 
+days. Improvement in bilateral hip and right knee flexion 
+was noted within a few days; IVIG therapy was repeated 
+(400 mglkglday for 3 infusions) on a monthly basis. Follow- 
+ing her third month of WIG therapy, hip flexion increased to 
+70&quot; bilaterally, right knee flexion to 90&quot;, and left knee flexion 
+to 10&quot;. She was able to walk with the use of a walker. The 
+prednisone was gradually discontinued, and daily doses of 
+baclofen and diazepam were reduced. 
+</span>Patient 2. This patient, a 43-year-old African- 
+American woman, presented with a 3-year history of pro- 
+gressive muscle stiffness, with spasms of the legs and lower 
+back. On 3 occasions over a 3-year period, she had been
+
+916 KARLSON ET AL 
+Table 1. Clinical features of 3 patients with stiff-man syndrome 
+(SMS) 
+Functional status 
+Patient/ criteria Previous drug Before After 
+agelsex for SMS* therapies IVIG WIG 
+No. of 
+1/5O/F 8 of 8 Diazepam, Bedridden Ambulates with 
+clonazepam, walker 
+corticosteroids, 
+plasmapheresis, 
+intrathecal 
+baclofen 
+plasmapheresis, walker 
+corticosteroids, 
+clonazepam 
+2/43/F 8 of 8 Diazepam, Bedridden Ambulates with 
+3/69/F 7 of 8 Diazepam Bedridden Ambulates 
+* See Table 2 for diagnostic criteria. 
+independently 
+<span class="source-segment role-patient_specific" id="src-s0003" data-segment="s0003" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">admitted to the psychiatry service of a community hospital 
+for episodes of muscle rigidity that had been diagnosed as 
+hysterical conversion reactions; she had been treated with 
+diazepam. Physical examination revealed a hyperlordotic 
+posture, with severe paraspinous muscle spasm and rigid 
+abdominal and lower extremity muscles. The hips, knees, 
+and ankles could not be flexed. Results of magnetic reso- 
+nance imaging (MRI) of the thoracolumbar spine were nor- 
+mal. An EMG of the lower extremities revealed continuous 
+motor-unit activity. Serum anti-GAD autobodies were posi- 
+tive by immunocytochemical assay. Anti-islet cell antibod- 
+ies were positive at a titer of 1:15,360. 
+The patient was treated with clonazepam 2 mg twice 
+a day, prednisone 80 mglday, and 5 plasmapheresis treat- 
+ments. There was sustained improvement over the next 
+year, but her condition relapsed when the prednisone was 
+stopped. She became bedridden and was admitted to the 
+hospital. 
+Soh-Medrol (Upjohn, Kalamazoo, MI), 1 gm intra- 
+venously, was administered daily for 3 days, along with 12 
+mg of clonazepam daily, but there was no benefit. An 
+additional daily dose of 60 mg prednisone for 4 days did not 
+result in any improvement. WIG (400 mg/kg/day) was given 
+for 5 consecutive days. Following the second dose, the 
+patient noted a dramatic reduction in her painful muscle 
+spasms and less stiffness. Flexibility continued to improve 
+throughout the IVIG therapy. When the patient was dis- 
+charged she was able to flex her knees to 90&quot; and to walk 
+with the aid of a walker. 
+A second cycle of IVIG was administered 6 weeks 
+later, when her stiffness began to return. Clinical improve- 
+ment was noted during the intravenous infusion cycle, and 
+she remained ambulatory. A third cycle of IVIG adminis- 
+tered 5 months later was associated with an improvement in 
+the patient&#x27;s gait and mobility. 
+</span>Patient 3. This patient, a 69-year-old Caucasian 
+woman, was seen because of her recent inability to walk. Six 
+years earlier, a diagnosis of epilepsy had been established. 
+Her seizures were focal and characterized by speech distur- 
+bance and rigidity of the right lower extremity. She was 
+maintained on a regimen of sodium valproate and diazepam. 
+Four months prior to admission, she noted the onset of left 
+lower extremity stiffness and difficulty walking. 
+Physical examination revealed an extended left knee 
+to 180&quot; and extreme plantar flexion of the left ankle and foot. 
+The patient could not walk. Results of MRI of the head and 
+lumbar spine were unremarkable. An EMG of the lower 
+extremities revealed continuous motor-unit activity. Anti- 
+GAD antibodies were negative by immunocytochemical 
+assay. 
+The diazepam dosage was increased to 15 mg/day, 
+with some clinical improvement noted; however, she be- 
+came confused and disoriented as a result of this treatment. 
+IVIG was begun (400 mg/kg/day for 5 days) and following the 
+<span class="source-segment role-patient_specific" id="src-s0004" data-segment="s0004" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">second infusion, the patient noted a marked resolution of left 
+leg stiffness. She regained independent mobility for the next 
+5 weeks. Over the next 3 months, 2 additional courses of 
+WIG therapy were administered after the patient became 
+stiff and unable to walk. Each course resulted in a rapid 
+return to full, independent ambulation. 
+</span>METHODS 
+Immunocytochemistry. Immunorhodamine and 
+immunoperoxidase staining of frozen tissue sections and 
+primary cell cultures was carried out as previously described 
+(2,3). Rat tissues were fixed by transcardiac perfusion. Small 
+fragments of apparently normal human cerebral cortex were 
+fixed by immersion. Patients&#x27; sera were used at dilutions of 
+1:20 to 1 :30 for immunofluorescence and at 1: 150 for immuno- 
+peroxidase. 
+DISCUSSION 
+All 3 patients exhibited clinical and laboratory 
+features of SMS (Table 2). The presence of intense 
+muscle rigidity in the back and lower extremities with 
+rock-hard, board-like muscles is characteristic. Electro- 
+myographic evidence of continuous motor-unit activ- 
+ity, without other abnormalities, is also typical of SMS 
+Table 2. Diagnostic criteria for stiff-man syndrome* 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+Prodrome of stiffness and rigidity in axial muscles 
+Slow progression of stiffness resulting in impairment of 
+ambulation 
+Fixed deformity of the spine, in general, and pronounced 
+lordosis 
+Presence of superimposed episodic spasms precipitated by 
+sudden movement, noise, or emotional upset 
+Normal findings on motor and sensory nerve examinations 
+Normal intellect 
+Continuous motor-unit activity on electromyogram abolished 
+by intravenous diazepam or positive therapeutic response to 
+oral diazepam 
+Presence of anti-glutamic acid decarboxylase antibodies (60% 
+of patients) 
+* Adapted from ref. I. 
+ 15290131, 1994, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/art.1780370621 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+IVIG FOR STIFF-MAN SYNDROME 917 
+(1). Solimena et a1 (2,3) have identified anti-GAD 
+antibodies in the majority of patients. Recently, those 
+authors described autoantibodies to a 128-kd synaptic 
+protein in 3 women with SMS and breast cancer who 
+did not have anti-GAD antibodies (6). Grimaldi et a1 (7) 
+have defined 3 diagnostic subsets of patients. The first 
+group have autoimmune features, including insulin- 
+dependent diabetes mellitus and thyroid disease, as 
+well as the presence of multiple autoantibodies, such 
+as anti-GAD, anti-islet cell, and other organic-specific 
+antibodies. 
+The second group of patients are anti-GAD 
+antibody negative but have autoantibodies to other 
+synaptic proteins, without the presence of organ- 
+specific autoantibodies. These patients have devel- 
+oped malignancies, including breast carcinoma, colon 
+carcinoma, and Hodgkin’s lymphoma. The third group 
+of SMS patients do not display any autoimmune 
+features clinically and are anti-GAD antibody nega- 
+tive. Patients 1 and 2 belong to the first group, and 
+patient 3 to the third group. 
+While SMS is considered to be an autoimmune 
+disorder, the pathophysiology is poorly understood. 
+There is a dominant autoimmune response directed 
+against GAD in a high proportion of patients, with 
+intrathecal production of the autoantibody (2,3). GAD 
+is an intracellular enzyme involved in the synthesis of 
+the neurotransmitter GABA in the central nervous 
+system. GAD is specifically present within GABA 
+neurons, but is not expressed as a cell surface antigen. 
+The rigidity and spasm seen clinically reflect a prepon- 
+derance of excitatory over inhibitory influences on the 
+motor neuron pool. A deficiency of GABA-mediated 
+inhibition at the spinal and/or supraspinal level has 
+been proposed (3). Solimena et al(2) found that serum 
+from affected patients reacts with nerve terminals of 
+cerebellar basket cells in the rat. In human SMS, it is 
+unclear whether symptoms are a direct result of dam- 
+age to GABA-synthetic enzymes or some other neu- 
+ronal target. The rapid response to IVIG in our 3 
+patients suggests that the autoantibodies might have 
+some direct action on GABA release or a blocking 
+effect at an ion exchange channel or synaptic receptor. 
+Intravenous immune globulin has been used in 
+the treatment of such neurologic autoimmune diseases 
+as myasthenia gravis (8,9), multiple sclerosis (lo), 
+Guillain-Barre syndrome (1 l), demyelinating poly- 
+neuropathy (12), and polymyositis (13). Given the 
+refractory nature of our patients’ clinical conditions, 
+we elected to treat with IVIG. The striking and rapid 
+onset of clinical improvement in our 3 patients may 
+suggest that IVIG is effective via an antiidiotypic 
+antibody mechanism. Antiidiotypic antibodies capable 
+of binding to the idiotypic region of a specific disease- 
+associated autoantibody can be found in IVIG and in 
+the serum of patients recovering from a disease asso- 
+ciated with that autoantibody, but they cannot be 
+found in the serum of healthy subjects (14). Alterna- 
+tively, receptors for the Fc portion of IgG on reticu- 
+loendothelial cells may be blocked by IVIG impairing 
+their ability to function (8). 
+The neurologic improvement in our patients 
+following peripheral administration of IVIG suggests 
+that immune globulin administered intravenously af- 
+fects the production and action of autoantibodies in 
+the intrathecal compartment and central nervous sys- 
+tem. In theory, the blood-brain barrier excludes exog- 
+enously administered IgG, though Sekul et a1 (15) 
+demonstrated that IgG is elevated in the cerebrospinal 
+fluid following peripheral intravenous administration. 
+Due to the nature of the immunocytochemical assay 
+used, we could not quantify a change in the titer of 
+the anti-GAD antibodies before and after treatment 
+with IVIG. 
+The natural course of SMS is one of steady, 
+slow progression of the disease (16). Spontaneous 
+remissions are extremely unusual and would be an 
+unlikely explanation for our patients’ clinical improve- 
+ment. Although a delayed benefit from corticosteroid 
+therapy may occur, both corticosteroid-treated pa- 
+tients had been receiving at least 60 mg prednisone per 
+day for several weeks without benefit prior to treat- 
+ment with IVIG. Prior to initiation of treatment with 
+IVIG, all 3 patients were treated with maximally 
+tolerated doses of diazepam but remained bedridden. 
+Following IVIG therapy the doses of concomitant 
+drugs, including corticosteroids, diazepam, and ba- 
+clofen, could be reduced in all 3 patients. 
+We suggest that further studies are essential to 
+verify our initial observations of clinical benefit with 
+the use of IVIG in SMS. 
+ACKNOWLEDGMENTS 
+The authors wish to thank Pietro DeCamilli, MD 
+(Yale University) for kindly performing the anti-GAD anti- 
+body assay. The expert secretarial assistance of Ms Patricia 
+Sheffield is greatly appreciated. 
+REFERENCES 
+1. Lorish TR, Thorsteinsson G, Howard FM Jr: Stiff-man syn- 
+drome updated. Mayo Clin Proc 64:629-636, 1989 
+ 15290131, 1994, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/art.1780370621 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+918 KARLSON ET AL 
+2. Solimena M, Folli F, Aparisi A, Pozza G, DeCamilli P: 
+Autoantibodies to GABA-ergic neurons and pancreatic beta 
+cells in stiff-man syndrome. N Engl J Med 322:1555-1560, 1990 
+3. Solimena M, Folli F, Denis-Donini S, Comi GC, Pozza G, De 
+Camilli P, Vicari AM: Autoantibodies to glutamic acid decar- 
+boxylase in a patient with stiff-man syndrome, epilepsy, and 
+type I diabetes mellitus. N Engl J Med 318:1012-1020, 1988 
+4. George TM, Burke JM, Sobotka PA, Greenberg HS, Vinik AI: 
+Resolution of stiff-man syndrome with cortisol replacement in a 
+patient with deficiencies of ACTH, growth hormone, and pro- 
+lactin. N Engl J Med 310:1511-1513, 1984 
+5. Vicari AM, Folli F, Pozza G, Comi GC, Comola M, Canal N, 
+Besana C, Bom A, Tresoldi M: Plasmapheresis in the treatment 
+of stiff-man syndrome (letter). N Engl J Med 320:1499, 1989 
+6. Folli F, Solimena M, Cofiell R, Austoni M, Tallini G, Fassetta 
+G, Bates D, Cartlidge N, Bottazzo GF, Piccolo G, DeCamilli P: 
+Autoantibodies to a 128-kd synaptic protein in 3 women with the 
+stiff-man syndrome and breast cancer. N Engl J Med 328546 
+551, 1993 
+7. Grimaldi LME, Martino G, Braghi S, Quattrini A, Furlan R, 
+Bosi E, Comi G: Heterogeneity of autoantibodies in stiff-man 
+syndrome. Ann Neurol 3437-64, 1993 
+8. Dwyer JM: Manipulating the immune system with immune 
+globulin. N Engl J Med 326: 107-1 16, 1992 
+9. Gajdos PH, Outin H, Elkharrat D: High-dose intravenous 
+gammaglobulin for myasthenia gravis. Lancet 1:406407, 1984 
+10. Schuller E, Govaerts A: First results of immunotherapy with 
+immunoglobulin G in 9 multiple sclerosis patients. Eur Neurol 
+22:205-2 12, 1983 
+11. Kleyweg RP, van derMechC FGA, Meulstee J: Treatment of 
+Guillain-BarrC syndrome with high-dose gammaglobulin. Neu- 
+rology 38:1639-1641, 1988 
+12. Vermuelen M, van derMechC FGA, Speelman JD, Weber A, 
+Busch HFM: Plasma and gamma-globulin infusion in chronic 
+inflammatory polyneuropathy. J Neurol Sci 70:3 17-326, 1985 
+13. Roifman CM, Schiffer FM, Wachsmith SE, Murphy G, Gelfand 
+EW: Reversal of chronic polymyositis following intravenous 
+immune sera globulin therapy. JAMA 258513415, 1987 
+14. Dietrich G, Kazatchkine MD: Normal immunoglobulin G (IgG) 
+for therapeutic use (intravenous Ig) contain antiidiotypic spec- 
+ificities against an immunodominant, disease-associated, cross- 
+reactive idiotype of human anti-thyroglobulin autoantibodies. 
+J Clin Invest 85:620-625, 1990 
+15. Sekul EA, Soueidan SA, Cupler EJ, Dalakos MC: Intravenous 
+immunoglobulin (WIG)-associated meningitis: frequency and 
+risk factors in treatment of patients with neuromuscular disease 
+(abstract). Neurology 43:A203, 1993 
+16. Moersch FP, Woltman HW: Progressive fluctuating muscular 
+rigidity and spasm (“stiff-man” syndrome): report of a case and 
+some observations in 13 other cases. Proc StaEMeetings Mayo 
+Clin 31:421427, 1956 
+ 15290131, 1994, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/art.1780370621 by Universitätsbibliothek Zuerich, Wiley Online Library on [26/05/2023]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0004</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>407-734</td><td>high</td><td>The abstract summarizes the open study population and overall response across all 3 patients.</td><td>Methods. An open, unblinded study of 3 patients with active disease andor disease refractory to treat- ment with diazepam andor corticosteroids. Results. All 3 bedridden patient...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>3454-4393</td><td>high</td><td>Patient 1 diagnostic testing, refractory therapies, IVIG dosing, and functional improvement are described.</td><td>The electromyogram (EMG) showed continuous mo- tor unit activity in the lower extremities and normal findings in the upper extremities. Serum anti-GAD antibodies were detected b...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>5151-7048</td><td>high</td><td>Patient 2 clinical history, diagnostic findings, prior therapies, IVIG response, and repeat cycles are described.</td><td>admitted to the psychiatry service of a community hospital for episodes of muscle rigidity that had been diagnosed as hysterical conversion reactions; she had been treated with...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>8091-8432</td><td>high</td><td>Patient 3 had marked improvement after IVIG and regained independent ambulation after repeated courses.</td><td>second infusion, the patient noted a marked resolution of left leg stiffness. She regained independent mobility for the next 5 weeks. Over the next 3 months, 2 additional course...</td></tr></tbody></table><h2>Relocated Spans</h2><table class="segment-table"><thead><tr><th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th></tr></thead><tbody><tr><td>l0002</td><td>b0003</td><td>776-2538</td><td>533-2430</td><td>485f7bed86c4d5a17a0f94127148162f40f6593720222856f9c1f26adb68c49f</td></tr><tr><td>l0004</td><td>b0001</td><td>430-747</td><td>407-734</td><td>9e0d6d4e3e8298be490072ded910b2c239f2cee2341a87e44fd3201e6e81889d</td></tr></tbody></table><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\58.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\58.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\58.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\58.validation.json</p></main>
+</body>
+</html>

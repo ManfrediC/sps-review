@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 80</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 80</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0006, s0011, s0012, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0006, s0007, s0008, s0009, s0011, s0012, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0006, s0007, s0008, s0011, s0012, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0005, s0006, s0007, s0008, s0009, s0010, s0011, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0006, s0007, s0008, s0009, s0011, s0012, s0013, s0014</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014</span></div><h2>Source Text</h2><div class="source-text">J Neurol (1995) 242:134-142 
+© Springer-Verlag 1995 
+H.-M. Meinck 
+K. Ricker 
+R-J. Htilser 
+M. Solimena 
+Stiff man syndrome: 
+neurophysiological findings 
+in eight patients 
+Received: 9 November 1993 
+Accepted: 27 May 1994 
+H.-M. Meinck 
+Department of Neurology, 
+University of Heidelberg, 
+Heidelberg, Germany 
+K. Ricker 
+Department of Neurology, 
+University of Wtirzburg, 
+Wtirzburg, Germany 
+P.-J. HLilser 
+Department of Neurology, 
+University of Ulm, Ulm, Germany 
+M. Solimena 
+Department of Cell Biology, 
+Yale University, New Haven, 
+Connecticut, USA 
+H.-M. Meinck (I~) 
+Department of Clinical Neurophysiology, 
+University of Heidelberg, 
+Im Neuenheimer Feld 400, 
+D-69120 Heidelberg, Germany 
+Abstract The neurophysiological 
+findings in eight patients with the 
+stiff man syndrome (SMS), including 
+four of six tested with autoantibodies 
+against glutamic acid decarboxylase, 
+are presented. Neurophysiological 
+findings did not make it possible to 
+discriminate between patients with 
+and those without autoimmunity 
+against GABAergic neurons. Investi- 
+gation of mono-and polysynaptic re- 
+flexes revealed abnormal results in a 
+variable number of SMS patients, the 
+abnormalities largely corresponding 
+to those seen in spastic paresis. A 
+stereotyped motor response to elec- 
+trical stimulation of peripheral 
+nerves was recorded from the trunk 
+muscles of all patients investigated. 
+This response was termed spasmodic 
+reflex myoclonus and consisted of a 
+sequence of 1-3 synchronous my- 
+oclonic bursts, 60-70 ms after me- 
+dian nerve stimulation, followed by a 
+tonic decrescendo activity over a 
+number of seconds. The recruitment 
+order of muscles along the neuraxis 
+in spasmodic reflex myoclonus sug- 
+gested that the latter was generated 
+in the spinal cord and conveyed via 
+propriospinal tracts. It is thought that 
+spasmodic reflex myoclonus may 
+serve not only as a diagnostic tool, 
+but also as a key to understanding 
+some aspects of the pathophysiology 
+of both spasms and stiffness in SMS. 
+It is speculated that stiffness is a 
+fragment of spasms, both being gen- 
+erated by common neuronal mecha- 
+nisms tentatively ascribed to in- 
+terneurons in the spinal grey matter. 
+Key words Stiff man syndrome 
+Myoclonus - Spasticity • Rigidity 
+Introduction 
+Stiff man syndrome (SMS) is a motor disturbance charac- 
+terized by fluctuating muscular rigidity predominantly of 
+the trunk muscles on which are superimposed painful 
+spontaneous or induced spasms [23]. Rigidity corre- 
+sponds in the electromyogram (EMG) to a tonic firing of 
+motor units [7], and both rigidity and spasms favourably 
+respond to medication with the benzodiazepines [11]. Un- 
+til now, mainly single cases subjected to a variety of elec- 
+trophysiological investigations have been reported and the 
+pathophysiology and the locus of the disturbance has re- 
+mained unclear. The recent discovery of autoantibodies 
+directed against glutamic acid decarboxylase (GAD) in 
+over 50% of patients raised the possibility that autoimmu- 
+nity directed against GABAergic neurons may play a 
+pathogenetic role [25]. Here we present neurophysiologi- 
+cal findings relevant to both diagnosis and pathophysiol- 
+ogy of SMS, obtained from eight patients who were diag- 
+nosed and examined according to identical clinical and 
+methodological standards [22]. This paper extends earlier 
+reports based on observations in one patient (case 1; [18, 
+19]). Some preliminary findings have been published 
+elsewhere [16, 17]. 
+<span class="source-segment role-shared" id="src-s0001" data-segment="s0001" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Patients and methods 
+We report on eight patients, five female and three male, whose 
+clinical data and findings including results of electroencephalogra-</span>
+
+135 
+<span class="source-segment role-shared" id="src-s0002" data-segment="s0002" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">phy (EEG), electromyography (EMG), evoked potential and blink 
+reflex testing as well as magnetic brain stimulation have been re- 
+ported recently; patient numbers in this paper correspond to those 
+in the previous report [22].</span> 
+Neurophysiological investigations comprised EEG-EMG- 
+polygraphy and reflex EMG, both being performed mainly with 
+surface electrodes (5 x 5 mm) longitudinally fixed 1-2 cm apart 
+over the muscle belly. If cross-talk from neighbouring muscles 
+was a problem, concentric needle electrodes were placed intramus- 
+cularly at sites not evoking pain. Back-averaging of the EEG 
+locked to spontaneous jerks or spasms did not yield acceptable re- 
+suits owing to prominent artefacts in the EEG. Reflex EMG in- 
+cluded investigations of T, H, long loop, and tibialis anterior flexor 
+reflexes, T reflexes were elicited by tapping the tendon with a 
+hammer equipped with a microswitch. T and H reflexes were 
+elicited in the triceps surae muscle by 1-ms square wave shocks 
+delivered to the tibial nerve in the popliteal fossa at 10-s intervals. 
+H reflexes were used to investigate H/M ratio, post-reflex silent 
+period, vibration-induced reflex inhibition, and low-frequency re- 
+flex depression. H reflex data were compared with those obtained 
+from 15 healthy age-matched subjects. 
+The H/M ratio was calculated by dividing the maximum H re- 
+flex by the maximum M wave amplitudes, and ranged in the con- 
+trol group between 0.1 and 0.7. The silent period was elicited by a 
+shock just suprathreshold for motor fibres applied to the tibial 
+nerve in the popliteal fossa during sustained moderate inuervation 
+(10-20% of maximum effort) of the triceps surae muscle; it ranged 
+between 82 and 178 ms in the normal controls. The vibratory inhi- 
+bition of the H reflex [5] was investigated by repeatedly eliciting 
+series of 15 H reflexes each, and applying a sustained vibration 
+(100 Hz; 1 mm) to the Achilles tendon between the 5th and 1 lth 
+reflexes of each series. At least two trials were performed, and the 
+mean amplitude of the H reflexes during vibration was expressed 
+as the percentage of the mean amplitude before vibration. In the 
+control group, the vibratory inhibition ranged between 26% and 
+64%. Low-frequency depression [13] was investigated by eliciting 
+series of 10 H reflexes, each separated by at least 40 s, at succes- 
+sively shorter stimulus intervals (10, 2, 1, 0.2, and 0.1 s). The mean 
+amplitude of the last three reflexes of each series was expressed as 
+a percentage of amplitude of the first reflex. 
+Long loop reflexes [6] were elicited in the abductor pollicis 
+brevis muscle by repetitive (2/s) stimulation of the median and su- 
+perfical radial nerves at the wrist during sustained moderate inner- 
+ration. The surface EMG was full-wave rectified, and 256 reflex 
+responses were summated. Results were compared with those ob- 
+tained from 52 healthy controls. The flexor reflex of the resting 
+tibialis anterior muscle [20, 21] was evoked by trains of five rec- 
+tangular 0.1-ms pulses separated by 5 ms each, delivered to the 
+medial plantar nerve at intervals of 10, 5, 2, 1, and 0.5 s. Eight con- 
+secutive reflex responses were summated after full-wave rectifica- 
+tion. Normal values were obtained from 41 healthy subjects. 
+Three methodological problems might be mentioned: 
+1. Patients were seen in several institutions, and the majority of 
+data were recorded on-line. 
+2. Investigations could not be performed in all patients under 
+drug-free conditions. This problem will be discussed in some 
+detail below. 
+3. Some investigations could not be performed extensively as they 
+caused considerable discomfort to patients. 
+Results 
+EMG analysis of stiffness and spasms 
+<span class="source-segment role-shared" id="src-s0003" data-segment="s0003" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Routine EEG, evoked potential testing, and magnetic 
+brain stimulation yielded unremarkable results; however, 
+needle EMG disclosed a steady low-frequency firing of 
+normal motor unit potentials, particularly in the trunk 
+muscles of all patients [22]. Tonic motor unit firing occa- 
+sionally increased for seconds or even minutes to a dense 
+pattern clinically corresponding to a spontaneous spasm</span> 
+o, 2&#x27; 4, 
+,P,L;,2 ,&quot;dJ&quot;&#x27;-&quot;~&#x27;&quot;&#x27;&quot;&#x27;&quot; .... .~_.~ ............. ,. 
+.....- ;-~-: -l[~|~l,~-]q, ~ ~]r~&#x27;rlll-r~l~,,~F~Rt &quot;-&#x27;~ ............... . . 
+AT 11 .~&#x27;~iNNtk .... Z ...... ,, .... . .......... 
+........ ~&#x27;IlT~I~IIm&quot;JT ~&#x27;rr -,r~ I ~&quot; r 1 ....... 
+~~ &quot; t r l -&#x27;1 I ~) * &#x27; &#x27; 
+I 
+,.,- . ,,,,,., ,., ,,,,, -.,,, 
+is 
+F 
+[ 
+ms 
+r 
+/ 
+rVAL I 
+7 &quot; 
+............ , L,.._,.. a~ .~L .Jk , .... &#x27;- .... -.-- .... 
+.......... &quot; .... lr If -r 
+IPL4 I ~. JL ~ ........ .. ........... 
+rDEL I 25OjJV _..L .............. 
+, ....... , 5i:30 ms 
+Fig.1 EMG record of spontaneous spasm and myoclonic attacks 
+in patients 6 (top panel), 3 (middle panel), and 5 (bottom panel). 
+Recordings were made with needle (patients 6, 3) or surface elec- 
+trodes (patient 5) from the following muscles (abbreviations in 
+parentheses): erector spinae at L2, T10, L4 (PL2, PTIO, PL4), rec- 
+tus abdominis at Tll, T10 (AT11, ATIO), vastus lateralis (VL), 
+gastrocnemius-soleus (GS), adductors (ADD), vastus lateralis 
+(VAL), gastrocnemius medial head (GCM), and deltoid (DEL) on 
+the right (r) and left (l) sides. Vertical calibration bars in the bot- 
+tom panel are 250 ~.V. Figures above records in the top panel give 
+approximate time from the onset of spasm (in minutes)
+
+136 
+Fig. 2 Spasmodic reflex my- 
+oclonus recorded from the 
+right (r) and left (1) paraspinal 
+(P) and abdominal (A) muscles 
+at various segmental levels in 
+six patients induced by median 
+nerve stimulation at the wrist. 
+Stimulation with either single 
+shocks (left column) or short 
+impulse trains (right column) 
+at 0 ms. All recordings were 
+made with concentric needle 
+electrodes. In order to demon- 
+strate exact reproducibility, 
+two (patients 4 and 6) or three 
+(patients 1, 3, 7, 8) single 
+sweeps were superimposed be- 
+fore (patients 1, 4) or after rec- 
+tification (patients 3, 6-8). 
+Horizontal calibration is vari- 
+able in the left panels, but 
+identical for the right ones. 
+Vertical calibrations (0.2 mV) 
+apply for all sweeps within one 
+panel 
+r PT 11 
+Patient 1 Patient 6 
+rPL 1 
+I AT10 
+i ii ..... 
+I rPL1 ~ ._ 
+, AT,4 L+ &quot;- 
+I II1111 I s I I 
+0 5()Oms I PL 1 -,~-,.. .... • 
+Pat lent 3 I 
+r ATIQ 
+r ATIO i I AT10 ~&quot; I | 
+, AT10,-~~ ~ Patient 8 
+r PT10~ ~&#x27;4~-~I&#x27;t~ ,~ • PL 1 
+I PT10 . . .~ -,~.w- _ -~-__-~ . 
+; &#x27; 2()0 m, I PL 
+Pat lent 4 
+r PT 9~~~~~. ~ar n r ATIO~ 
+&#x27;AT&#x27;  v I ATIO 
+[&#x27; ! 1 ! i&quot; • 
+0 200mm 0 200 ms 
+(Fig. 1, top panel). EMG spasms were highly variable with 
+respect to their localization, duration, and intensity. In two 
+patients, jerky and violent spontaneous spasmodic attacks, 
+clinically identical to those repeatedly seen before, oc- 
+curred during an EMG examination. <span class="source-segment role-patient_specific" id="src-s0004" data-segment="s0004" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">In patient 3, the EMG 
+disclosed short bursts at irregular intervals, synchronous 
+in the abdominal and paraspinal muscles, with a frequency 
+gradually increasing from l-2/s to 8-10/s, and with a 
+rapid decay after about 1 rain (Fig. 1, middle panel).</span> <span class="source-segment role-patient_specific" id="src-s0005" data-segment="s0005" data-label="p5 patient_specific" style="--seg-bg:#FFF0C7;--seg-border:#E69F00;--seg-text:#513900;">In pa- 
+tient 5, a series of 38 consecutive spasms was recorded, 
+each initiated with 1-6 short burst discharges at intervals 
+between 76 and 122 ms followed by a tonic decrescendo 
+activity for up to 3 s. Bursts most often started from the 
+right (16/38) and left (10/38) gastrocnemius muscles and 
+successively spread into the neighbouring leg muscles on 
+both sides, and to the shoulder muscles in 12 of 38 records, 
+the deltoid burst being delayed to the corresponding burst 
+in the lumbar paraspinal muscles by 19-51 ms (mean: 
+31.7 ms; Fig. 1, bottom panel).</span> 
+<span class="source-segment role-shared" id="src-s0006" data-segment="s0006" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">In all patients, acoustic and a wide variety of so- 
+matosensory, but not visual, stimuli increased tonic mo- 
+tor unit firing and eventually provoked spasms, often 
+with a jerky onset. The receptive field for a given re- 
+sponse largely depended on the stimulus strength, but 
+principally covered the whole body. Spasms in one mus- 
+cle were also provoked by voluntary activation in an- 
+other one. Such &quot;overflow&quot; spasms (see [10]) were eas- 
+ily precipitated by activation of neighbouring muscles, 
+but also occurred with forcible innervation of remote 
+muscles clinically not involved, or even with a cough. In 
+general, induced spasmodic activity had a more jerky on- 
+set and a shorter duration than spontaneous spasms. 
+Moreover, there was some association between the stim- 
+ulus strength and the characteristics of the responses. 
+With increasing stimulus strength, EMG responses be- 
+came more and more jerky, starting with synchronized 
+myoclonic bursts and terminating in a tonic decrescendo 
+activity.</span>
+
+137 
+Fig.3 Successive activation of 
+various muscles along the neu- 
+raxis in spasmodic reflex my- 
+oclonus evoked by median 
+(A-C) and tibial nerve (D) 
+stimulation. Specimen record- 
+ings obtained from patients 1 
+(A), 7 (B), and 8 (C, D) are 
+displayed. Records were made 
+with needle electrodes from the 
+following muscles (abbrevia- 
+tions in parentheses) on either 
+the right (r) or the left (1) side: 
+sternocleidomastoid (STC), 
+deltoid (DELL erector spinae 
+(P) and rectus abdominis (A) at 
+various segmental levels, and 
+quadriceps (Q). Each panel 
+shows three superimposed 
+sweeps, rectified in B, C, and 
+D. Onset and duration of the 
+stimulus train are indicated by 
+a vertical line and by a bar on 
+the time scale, respectively. 
+Horizontal and vertical calibra- 
+tions in D also apply for C 
+A I STC ~.~ 
+I DEL -- 
+I PL4 
+I AT11 --~ 
+IQ ..... 
+o 
+tN 1 
+i 
+-_,___, 
+l~ms 
+rQ __ 
+r PC7 ~a__c.___&#x27;e~_~ 
+I 
+0 lOOms 
+C r PL2.,~ 
+I PL2 ~ 
+rQ ,..e, ~ 
+D 
+r PL2-- 
+I PL2~ 
+rQ - 
+IQ ,-.. 
+1(10 ms 
+<span class="source-segment role-shared" id="src-s0007" data-segment="s0007" data-label="p1 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Electrical nerve stimulation was most effective in pro- 
+voking jerky spasms with a characteristic EMG pattern: 
+1-3 highly synchronized bursts occurred at latencies 
+around 70, 120, and 170 ms and terminated in a waning 
+desynchronized activity over 0.5-3 s. Polygraphic record- 
+ings from the ventral and dorsal trunk muscles on both 
+sides (Fig. 2) revealed almost symmetrical and simultane- 
+ous activation of the bilateral antagonists in all seven pa- 
+tients investigated (patients 1, 3-8), and in patients 1 and 
+3-7 also in the arm and neck muscles. Because of their 
+clinical and EMG characteristics these responses were 
+termed &quot;spasmodic reflex myoclonus&quot;.</span> Motor responses 
+with the EMG features of spasmodic reflex myoclonus 
+were never seen in normal subjects or in patients with a 
+variety of other motor disorders associated with increased 
+muscle tone or myoclonic jerks, or both, such as (number 
+of patients in parentheses) cervical spondylotic myelopathy 
+with severe spasticity (n = 15), reticular reflex myoclonus 
+(n = 4), Lance-Adams syndrome (n = 1), Creutzfeldt-Jakob 
+disease (n = 3), or psychogenic generalized reflex jerks (n = 
+3). In three of eight patients with prominent parkinsonian 
+rigidity, however, small amplitude burst responses with 
+comparable latencies were seen. <span class="source-segment role-shared" id="src-s0008" data-segment="s0008" data-label="p1 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Spasmodic reflex my_ 
+oclonus was attenuated by oral benzodiazepines in pa- 
+tients 1, and 4-7, and completely suppressed in patients 3 
+and 8.</span> 
+<span class="source-segment role-shared" id="src-s0009" data-segment="s0009" data-label="p1 p3 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">In order to analyse further the pathway(s) mediating 
+spasmodic reflex myoclonus, axial muscles were simul- 
+taneously recorded from different levels along the neu- 
+raxis. Median nerve stimulation exerted motor responses 
+with shortest latencies in the cervical paraspinal muscles 
+(52-81 ms) followed by a concomitant activation of the 
+cranial and lumbosacral muscles (Figs. 3A, 4A, 5B) in 
+patients 1, 3 and 5. In patients 6 and 7, the thoracic 
+paraspinal muscles were the first to respond (46-68 ms) 
+followed by the lumbar and cervical paraspinal, and the 
+cranial, muscles at successively longer intervals (Figs, 3 
+B, 4 A). In a second task, latencies of the motor responses 
+evoked by median and tibial nerve stimulation were com- 
+pared. In the case of a spinal myoclonus, conduction dis- 
+tances from both stimulus sites to the lumbosacral target 
+muscles are about equal, but considerably differ in the 
+case of a supraspinal pathway. In patient 8, whose speci-</span> 
+men recordings are shown in Fig. 3 C and D, the conduc- 
+<span class="source-segment role-shared" id="src-s0010" data-segment="s0010" data-label="p1 p5 p6 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">tion distances were as follows: inion - spinous process 
+C7, 14 cm; wrist - spinous process C7, 74 cm; spinous 
+processes C 7 -T 10, 34 cm; ankle- spinous process T10, 
+115 cm. 
+Thus in the case of a presumed spinal reflex myoclonus, 
+the conduction distances for median or tibial nerve stimu- 
+lation were 108 or 115 cm, respectively. In the case of a 
+presumed mediation via the brain stem, the corresponding 
+distances were 136 and 211 cm, respectively. In patients 
+1, 5, 6, and 8, EMG responses in the thoracolumbar 
+paraspinal muscles had similar latencies with both median 
+and tibial nerve stimulation (Figs. 3 C, D, 4B). Moreover,</span>
+
+138 
+MASh- 3 
+5TC n - &quot;7 
+C7 n-9 
+L4 n- 9 
+s&#x27;rc n- 5 
+C6 n-10 
+L4 n-J0 
+MA$n - 3 
+STC n- 6 
+C4 n- 8 
+L ] n-10 
+STC n- 6 
+C7 n- 8 
+T8 n-8 
+L4 n- 8 
+STC n - 7 
+C? n&#x27;18 
+T8 n-16 
+L5 n-18 
+A 5o 
+l , .L 
+J~ 
+m 
+lO0 
+on~t latency [ms] 
+Fig.4 Distribution of onset latencies of spasmodic reflex my- 
+oclonus in muscles along the neuraxis evoked by stimulation of the 
+median (A) and median versus tibial nerves (B). Mean values are 
+indicated by open triangles for median, or by solid rectangles for 
+tibial nerve stimulation, respectively. A variable number of reflex 
+responses was recorded from the following muscles (abbreviations 
+in parentheses): masseter (MAS), sternocleidomastoid (STC), 
+paraspinals at various segmental levels (C4...L2), and quadriceps 
+(Q) 
+delayed responses were seen in the cephalad muscles of 
+patients 1 and 5, but no effects were seen in the same 
+muscles of the other patients. 
+Spasmodic reflex myoclonus strongly depended on the 
+stimulus strength and repetition rate. With repeated stim- 
+ulation, EMG responses rapidly habituated and eventually 
+completely disappeared (Fig.5A). Moreover, spasms 
+evoked by either somatosensory or acoustic stimuli, and 
+spontaneous and induced spasms mutually habituated. 
+Factors augmenting habituation were fast repetition and 
+low intensity of a stimulus, and treatment with the benzo- 
+diazepines [18]. Therefore, only approximate figures can 
+be given. Stable EMG responses to median nerve stimula- 
+tion with supramaximal single pulses or short pulse trains 
+(5 pulses at 5-ms intervals) were seen at intervals between 
+n-7 
+STC n-5 
+n -10 C? n-8 
+n -14 
+L4 n=8 
+n-6 STC 
+It-8 C4 n-6 
+n -I0 
+LI n-6 
+n-5 T8 n-4 
+n-5 Q hI4 
+n-30 
+L2 n- 14 
+n-30 Q n- 10 
+m 
+m 
+r t 
+I 
+N 
+t&quot; 
+,L 
+B 5o ioo 
+onset latency [ms] 
+20 and 40 s (Fig, 5 A), the corresponding figures for bin- 
+aural 100 dB clicks being 2 to more than 5 min. Increas- 
+ing the stimulus strength not only enhanced the evoked 
+motor responses or overran habituation, but also elicited 
+new short- and long-latency reflex components in an in- 
+creasing number of muscles (Fig.5B). Such complex 
+changes of the EMG responses were a frequent finding, It 
+must be stressed therefore that the present characteriza- 
+tion of spasmodic reflex myoclonus, as far as it relies on 
+electrical stimulation, was performed with impulses or 
+impulse trains of just tolerable strength and with simulta- 
+neous recordings. 
+<span class="source-segment role-shared" id="src-s0011" data-segment="s0011" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Reflex investigations 
+As reflex mechanisms seemed to play an important role in 
+the pathogenesis of spasms, a variety of segmental, multi- 
+segmental, and long loop reflexes was investigated. H and 
+T reflex investigations yielded normal silent periods after 
+the knee jerk in all patients, and after the triceps surae H 
+reflex in patients 1-4 and 6-8 (not tested in patient 5). A 
+more detailed investigation of the triceps surae H reflex 
+(Fig. 6) revealed patients 2 and 8 to have the highest H/M</span>
+
+139 
+Int. 20s 
+• i 
+100 ms 
+Fig. 5 Sensitivity of spasmodic reflex myoclonus to repetition rate 
+(A) and strength (B) of median nerve stimulation. A Rectified sin- 
+gle sweep recordings from the T 10 paraspinal muscles of patient 3, 
+the spasmodic reflex myoclonus being elicited by four consecutive 
+single median nerve shocks (from top to bottom) at 20-s (upper 
+panel) and 5-s (lower panel) intervals, respectively. Note the partic- 
+ular sensitivity of the first reflex component to habituation. B Rec- 
+tified single sweep recordings of spasmodic reflex myoclonus in 
+the sternocleidomastoid (STC), deltoid (DEL), L3 paraspinal (PL3), 
+and lateral vastus (VAL) muscles in patient 1, consecutively elicited 
+at 30-s intervals, with increasing stimulus strength (from bottom to 
+top: 10, 15, 20, 25, 30, 40, 50 mA). Note that the early reflex com- 
+ponent (60-80 ms) has a higher threshold than the later ones 
+IO0 
+E &lt; 
+x 5C 
+-r- 
+wt)ra~ory mhib~tlon ~/.) E,511~,):6415~ I Bf61 ~ ~4 
+0.1 0.2 1 &#x27;2 
+Stimulus Interval (s) 
+7 
+10 
+Fig. 6 Survey of findings obtained with triceps surae H reflex test- 
+ing in five patients, The graph shows the findings for low-fre- 
+quency depression, the shaded area covering the normal range. The 
+inset at the bottom gives the figures for H/M ratio and vibratory in- 
+hibition in the same patients and normal controls, respectively 
+ratios associated with both abnormally poor vibratory in- 
+hibition and low-frequency depression of the H reflex. In 
+patients 1, 3, and 4, in contrast, the same tests yielded nor- 
+mal results. 
+B 
+6 &quot; 16o r~ 
+<span class="source-segment role-shared" id="src-s0012" data-segment="s0012" data-label="p1 p2 p3 p4 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">The tibialis anterior flexor reflex was normal only in 
+patient 8, but uniformly abnormal in patients 1-3, 6 and 7, 
+with desynchronization of the reflex pattern, loss of the 
+inhibitory reflex component normally present between 
+100 and 150 ms, and a considerable delay of the reflex 
+onset at low stimulus repetition rates (Fig. 7 A). Moreover, 
+if - at a fixed moderate stimulus strength - the stimulus 
+intervals were successively shortened from 10 to 0.5 s, the 
+delayed onset latency successively normalized (Fig. 7 A, 
+B); this does not occur in normal subjects [20, 21]. Long 
+loop reflexes in the abductor pollicis brevis muscle were 
+normal in patients 2 and 6-8, but were replaced in patients 
+1, 3 and 4 by a large short-latency (27-32 ms) and low- 
+threshold response (Fig. 8). The latter was also evoked by 
+superficial radial (Fig. 8 A) and digital nerve stimulation, 
+and was also recorded from other muscles of the stimu- 
+lated arm and, in patient 1, in the corresponding contralat- 
+eral muscles delayed by 6-9 ms.</span> 
+<span class="source-segment role-shared" id="src-s0013" data-segment="s0013" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Discussion 
+Our investigation of eight patients with SMS revealed ab- 
+normalities of segmental and suprasegmental reflex trans- 
+mission seemingly related to the pathophysiology of spas- 
+tic motor disturbances. Although clinical or electrophysi- 
+ological signs normally associated with spasticity were 
+absent in our patients, except for hyper-reflexia of the 
+legs, some pathophysiological relationship might be de- 
+rived from the therapeutic efficacy of antispastic drugs 
+such as baclofen, tizanidine, or the benzodiazepines [7, 
+11, 18, 22]. High H/M ratios in the triceps surae muscle 
+associated with abnormally poor development of both 
+low-frequency depression and vibration-induced inhibi- 
+tion of the corresponding H reflex were seen in two of 
+five patients (Fig. 6). Poor low-frequency depression as 
+well as reduced vibratory inhibition have been described</span> 
+previously in spastic limbs [5, 13]. In contrast to low-fre- 
+quency depression, the neural mechanisms of which are 
+not yet fully understood, the H reflex attenuation to vibra- 
+tion is ascribed to GABAergic presynaptic inhibition [5].
+
+140 
+Fig. 7 A, B Tibialis anterior 
+flexor reflex evoked by medial 
+plantar nerve stimulation with 
+constant stimulus strength and 
+successively shorter stimulus 
+intervals. A Specimen record- 
+ings from patient 7, each 
+recording representing eight 
+rectified and summated re- 
+flexes, consecutively elicited at 
+the stimulus intervals given on 
+the left. Onset and duration of 
+the stimulus train are marked 
+by the vertical line and by a 
+bar on the time scale. B De- 
+pendence of the flexor reflex 
+latencies on the stimulus inter- 
+val in six patients. The hori- 
+zontal dashed line marks the 
+upper normal limit (mean + 3 
+SD in 41 normal controls) 
+A 
+.5 s 
+I 
+&#x27; &#x27; &#x27; 2C&#x27;~q ms vv 0 
+Ti me 
+200 
+150 
+g- 
+-J 1OO 
+5O 
+B j/ =.1 02 
+=.3 u6 O7 
+tl 
+_ ~~~...~- U ÷ 3 S D 
+7z/ -- 
+s 6s Stimulus interval 
+Fig.8 Long loop reflexes in 
+the abductor pollicis brevis 
+muscle evoked by superficial 
+radial (A) and median nerve 
+stimulation (B) at the wrist 
+with increasing stimulus 
+strength. The latter is ex- 
+pressed in multiples of the 
+detection (Ts), or of the motor 
+threshold (Tin), respectively. 
+All records were obtained from 
+patient 1 
+A 
+1.2~ 
+1.3~. 
+1.6~?V 
+B 
+8 x~~v. ~ 
+O lOOms 
+An impairment of GABAergic neurons has recently been 
+postulated for SMS [25], and low GABA levels were re- 
+ported in the cerebrospinal fluid of four patients [28]. 
+Among our patients, abnormal monosynaptic reflex mech- 
+anisms occurred irrespective of autoimmunity against 
+GABAergic neurons. However, as vibratory inhibition 
+was reported to be abnormal in two other patients [12, 15], 
+this test might provide important clues in future neurophys- 
+iological analysis of SMS if applied more systematically. 
+Long loop reflexes to the hand muscles in patients 1, 
+3, and 4 provided evidence not only of exaggerated seg- 
+mental reflex mechanisms (corresponding to clinical 
+symptoms in the arms of patients 1 and 4), but also of dis- 
+turbed transcortical reflex mediation [6]. As median nerve 
+evoked cortical potentials proved normal, this might be 
+ascribed to the central relays of the reflex loop or to the 
+corticospinal tract, which contrasts a lack of pyramidal 
+symptoms and normal corticomuscular latencies [22]. 
+Flexor reflexes in the tibialis anterior muscle were dis- 
+tinctly abnormal in a high proportion of patients (Fig. 7), 
+irrespective of their immunological status or drug treat- 
+ment. Both the alteration of the reflex pattern as well as its 
+abnormal temporal facilitation closely correspond to ab- 
+normalities seen in spastic legs. This finding presumably 
+in both spasticity and SMS is due to impaired control of 
+segmental mechanisms [20]. It is noteworthy that the ab- 
+normal temporal facilitation of the flexor reflex contrasts 
+with the profound habituation of spasmodic reflex my- 
+oclonus (Fig. 5 A). This suggests that these two types of 
+cutaneomuscular reflexes are generated in different neu- 
+ronal networks. 
+Our polymyographic analysis was based on the obser- 
+vation that tonic firing of motor units in SMS is distinctly 
+susceptible to external influences which, if sufficiently 
+brisk or intense, cause generalized tonic or jerky spasms 
+[7]. The latter are termed here spasmodic reflex myo- 
+clonus as: 
+1. Their onset is jerky and violent, i.e. myoclonic, con- 
+sisting of a series of 1-3 synchronized, large, and rapid 
+EMG bursts. 
+2. Their end is gradually waning, i.e. spasmodic, with a 
+tonic decrescendo EMG activity. 
+3. In a given patient, their EMG pattern is stereotypically 
+evoked with onset latencies around 60-80 ms, i.e. it is 
+a reflex (Fig. 2). 
+The EMG pattern of spasmodic reflex myoclonus corre- 
+sponds to the one recorded from the leg muscles in patient 
+5 during a series of violent spontaneous jerky spasms (Fig. 
+1, bottom recording), which suggests that both spontaneous 
+spasms and spasmodic reflex myoclonus are of a similar 
+nature, at least in this case. As compared with other types 
+of stimulus-sensitive jerking (Table 1), characteristic EMG 
+features of spasmodic reflex myoclonus such as long dura- 
+tion, rapid habituation, and bilaterality rule out transcorti- 
+cal reflex myoclonus [8, 24]. The former characteristics as 
+well as tight input-output coupling with respect to latency, 
+shape and amplitude of the responses are not compatible 
+with reticular reflex myoclonus [8, 9]; the latter feature
+
+141 
+Table 1 Neurophysiological characteristics of various types of stimulus-sensitive jerking (LLR long loop reflex) 
+Pattern and Duration Habitu- Order of muscle EEG and evoked 
+distribution of bursts ation recruitment potentials 
+Spasmodic reflex General; &gt; 500 ins Promi- Up and down from Normal 
+myoclonus proximal &gt; distal; nent spinal cord entry 
+Propriospinal 
+myoclonus 
+[3, 4] 
+Hyperekplexia 
+[2, 14, 27] 
+Reticular reflex 
+myoclonus 
+[8, 9, 27] 
+Cortical reflex 
+myoclonus 
+[8, 24, 27] 
+Psychogenic 
+stimulus-sensitive 
+Jerks [26] 
+extensor 
+predominance 
+General; 
+axial; 
+flexor preponderance 
+General; 
+proximal &gt; distal; 
+flexor predominance 
+General; 
+proximal &gt; distal; 
+flexor predominance 
+Focal/multifocal; 
+distal &gt; proximal 
+40-1400 ms 
+20400 ms 
+20-50 ms 
+20-50 ms 
+No Up and down from 
+spinal cord entry 
+Normal 
+No Up and down from Epileptic EEG and giant SEP 
+eleventh nerve possible 
+No Up and down from 
+eleventh nerve 
+No Down from fifth or 
+seventh nerve 
+General; Variable Yes Variable 
+inconsistent response 
+Epileptic EEG; giant SEP; 
+generalized EEG spike or sharp 
+wave associated with EMG burst 
+Epileptic EEG; 
+giant SEP; enhanced LLR; 
+EEG spike preceding EMG burst 
+Normal 
+also excludes psychogenic jerks mimicking myoclonus 
+[26]. Both cortical and reticular reflex myoclonus as well 
+as some of the hyperekplexias are associated with EEG 
+and evoked potential abnormalities, suggesting enhanced 
+cortical excitability [2, 8, 9, 14, 24, 27]. Some clinical re- 
+semblance with exaggerated startle responses (e.g. in fa- 
+milial hyperekplexia) does indeed exist. However, muscle 
+recruitment in both physiological startle and hyperek- 
+plexia is down from the fifth and seventh cranial motor 
+nuclei to the spinal cord [2]. In spasmodic reflex my- 
+oclonus, the polymyographic recordings (Figs. 3-5) sug- 
+gest a slow spread of the EMG responses from muscles of 
+spinal cord segments C6/7 concomitantly up to the brain 
+stem and down to the lumbosacral motor nuclei. A simple 
+explanation for this concomitant spread in both directions, 
+and on both sides, along the neuraxis is that the excitatory 
+volley is conveyed within a bilateral longitudinal spinal 
+cord system. A particular form of myoclonic jerking pre- 
+dominantly of the axial muscles was recently suggested to 
+arise in propriospinal systems [3, 4]. Indeed, proprio- 
+spinal myoclonus in spinal cord diseases and spasmodic 
+reflex myoclonus in SMS share several features, such as 
+long duration, jerky components, and slow bi-directional 
+spread on both sides. Propriospinal myoclonus, however, 
+seems to have a strong flexor dominance and a poor stim- 
+ulus sensitivity, both features contrasting with the spas- 
+modic reflex myoclonus seen in SMS. 
+Median nerve stimulation in two cases led to responses 
+with the shortest latencies not in the cervical but in the 
+mid-thoracic paraspinal muscles (Figs. 3 B, 4 A). This may 
+indicate that in these patients the brunt of abnormal ex- 
+citability is located in the latter segments of the spinal 
+cord, and one might speculate as to whether the median 
+nerve volley at this site is relayed to the ascending and de- 
+scending fibre tracts. However, it more likely shows that 
+the onset latency of spasmodic reflex myoclonus strongly 
+depends on the gain of synaptic transmission, which is 
+presumably highest in the spinal cord segments most se- 
+verely afflicted, but may considerably differ at various 
+levels of the neuraxis. Such a differential gain in the reflex 
+transmission to different spinal cord or brain stem motor 
+nuclei would inevitably invalidate any calculation of prop- 
+agation velocities of the excitatory volley in the spinal 
+cord. Nevertheless, this does not principally invalidate 
+this technique [9], as the results are fairly consistent be- 
+tween individual patients (Fig.4A) and are, moreover, 
+compatible with a second type of testing which compares 
+the overall conduction times with median and tibial nerve 
+stimulation to a gi~ien motor nucleus (Figs. 3 C, D, 4B). 
+<span class="source-segment role-shared" id="src-s0014" data-segment="s0014" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">An important feature of spasmodic reflex myoclonus is 
+its regular appearance in the lower trunk muscles of all 
+patients tested, and its absence in other diseases with mus- 
+cular hypertonia or myoclonic jerks, or both, as well as in 
+normal subjects. As we are not aware of any observation 
+of this particular type of reflex myoclonus in other motor 
+disorders, it may be considered characteristic of SMS and 
+thus serve as an electrophysiological marker, allowing one, 
+for example, to differentiate spasmodic reflex myoclonus 
+in SMS from psychogenic jerks [26]. Obviously, this marker 
+is independent of the presence or absence of GAD auto- 
+antibodies [25], but its electrophyisological appearance 
+may be influence by drug treatment.</span> 
+With regard to the variety of mechanisms triggering 
+spasms and spasmodic reflex myoclonus from a wide re- 
+ceptive field, one might speculate as to whether stiffness, 
+spasms and spasmodic reflex myoclonus are generated by
+
+142 
+common neural mechanisms, the differential manifesta- 
+tions of motor excitability being patterned by the shape, 
+intensity and duration of the afferent signals. Stiffness 
+might in fact be considered a fragment of spasmodic re- 
+flex myoclonus elicited by asynchronous afferent im- 
+pulses from, for example, skin or muscle receptors. Some 
+general characteristics of such common neuronal mecha- 
+nisms are that they are subject to a rapid and mutual ha- 
+bituation, and that they apparently receive convergence 
+form a wide variety of supraspinal and spinal sources, sug- 
+gesting important integrative functions. Among the for- 
+mer, low-threshold muscle afferents, which are strongly 
+controlled by the GABAergic presynaptic inhibition (see 
+[5]) were not as particularly effective in evoking motor 
+hyperactivity (Fig. 5 B) as might be expected in the pres- 
+ence of autoimmunity against GABAergic neurons [25]. In 
+fact, electrical stimulation of the median or tibial nerves 
+often evoked H reflexes in the corresponding muscles 
+without concomitant spasms or myoclonic jerks; the latter 
+were, however, evoked with increasing stimuli to the 
+same nerves or to their cutaneous branches. According to 
+clinical and microscopical evidence previously discussed 
+[22], the spinal grey matter and the adjacent propriospinal 
+tracts may be regarded as the prime candidates for the lo- 
+cus of the disturbance, the neurons in the spinal grey mat- 
+ter having indeed prominent integrative functions [1]. 
+Acknowledgements We thank Prof. W.-D. Heig and Dr. B. 
+Szelies-Stock, Cologne, who kindly allowed us to study and report 
+on their patient; Prof. P. De Camilli, MD, New Haven, Connecti- 
+cut, for helpful discussion; and Mr. U. Windfuhr and Dr. R. Win- 
+ter, Heidelberg, for excellent help with the computer facilities. 
+This work was supported in part by a grant from NIMH (MH 
+45191.O 11 A) and postdoctoral fellowship from MDA (M. S .). 
+References 
+1. Baldissera F, Hultborn H, Illert M 
+(1981) Integration in the spinal cord. 
+In: Brookhart JM, Mountcastle VB, 
+Brooks VB, Geiger SR (eds) Hand- 
+book of physiology, section 1, vol II. 
+American Physiological Society, 
+Bethesda, pp 509-595 
+2. Brown P, Rothwell JC, Thompson PD, 
+Britton TC, Day BL, Marsden CD 
+(1991) The hyperekplexias and their 
+relationship to the normal startle reflex. 
+Brain 114:1903-1928 
+3. Brown P, Thompson PD, Rothwell JC, 
+Day BL, Marsden CD (1991) Axial 
+myoclonus of propriospinal origin. 
+Brain 114:197-214 
+4. Chokroverty S, Walters A, Zimmerman 
+T, Picone M (1992) Propriospinal my- 
+oclonus: a neurophysiologic analysis. 
+Neurology 42:1591-1595 
+5. Delwaide PJ (1973) Human monosy- 
+naptic reflexes and presynaptic inhibi- 
+tion. In: Desmedt JE (ed) New devel- 
+opments in electromyography and clin- 
+ical neurophysiology, vol 3. Karger, 
+Basel, pp 508-522 
+6. Deuschl G, Lticking CH (1990) Physi- 
+ology and clinical applications of hand 
+muscle reflexes. In: Rossini PM, Mau- 
+guiere F (eds) New trends and advanced 
+techniques in clinical neurophysiology. 
+Elsevier, Amsterdam, pp 84-101 
+7. Gordon EE, Januszko DM, Kaufman L 
+(1966) A critical survey of stiff-man 
+syndrome. Am J Med 42 : 582-599 
+8. Hallett M (1985) Myoclonus: relation 
+to epilepsy. Epilepsia [Suppl] 126: 
+$567-$577 
+9. Hallett M, Chadwick D, Adam J, 
+Marsden CD (1977) Reticular reflex 
+myoclonus: a physiological type of hu- 
+man post-hypoxic myoclonus. J Neurol 
+Neurosurg Psychiatry 40 : 253-264 
+10.Hallett M, Chadwick D, Marsden CD 
+(1977) Ballistic movement overflow 
+myoclonus. A form of essential my- 
+oclonus. Brain 100:299-312 
+l 1. Howard FM (1963) A new and effec- 
+tive drug in the treatment of stiff-man 
+syndrome: preliminary report. Mayo 
+Clin Proc 38 : 203-212 
+12.Isaacs H (1971) Stiff man syndrome in 
+a black girl. J Neurol Neuosurg Psychi- 
+atry 42 : 988-994 
+13. Ishikawa K, Ott K, Porter RW, Stuart 
+D (1966) Low frequency depression of 
+the H wave in normal and spinal man. 
+Exp Neurol 15 : 140-156 
+14. Markand ON, Garg BP, Weaver DD 
+(1984) Familial startle disease (hyper- 
+ekplexia): electrophysiologic studies. 
+Arch Neurol 41:71-74 
+15. Martinelli P, Pazzaglia P, Montagna P, 
+Coccagna G, Rizzuto N, Simonati S, 
+Lugaresi E (1978) Stiff-man syndrome 
+associated with nocturnal myoclonus 
+and epilepsy. J Neurol Neurosurg Psy- 
+chiatry 41:458-462 
+16. Meinck H-M (1991) Das Stiff-man- 
+Syndrom: eine Immunopathie? Nerven- 
+arzt 62 : 762-765 
+lT.Meinck H-M (1991) Spasmodic poly- 
+modal reflex myoclonus: characteristic 
+for the stiff man syndrome. Z EEG- 
+EMG 21 : 131 
+18.Meinck H-M, Conrad B (1986) Neu- 
+ropharmacological investigations in the 
+stiff man syndrome. J Neurol 233 : 
+340-347 
+19. Meinck H-M, Ricker K, Conrad B 
+(1984) The stiff-man syndrome: new 
+pathophysiological aspects from abnor- 
+mal exteroceptive reflexes and the re- 
+sponse to clomipramine, clonidine, and 
+tizanidine. J Neurol Neurosurg Psychi- 
+atry 47 : 280-287 
+20. Meinck HM, Benecke R, Conrad B 
+(1985) Cutaneo-muscular control 
+mechanisms in health and disease: pos- 
+sible implications on spasticity. In: 
+Struppler A, Weindl A (eds) Elec- 
+tromyography and evoked potentials. 
+Springer, Berlin, pp 75-83 
+21. Meinck HM, Kfister S, Benecke R, 
+Conrad B (1985) The flexor reflex-in- 
+fluence of stimulus parameters on the 
+reflex response. Electroencephalogr 
+Clin Neurophysiol 61:287-298 
+22. Meinck HM, Ricker K, Htilser PJ, 
+Schmid E, Peiffer J, Solimena M 
+(1994) Stiff man syndrome: clinical 
+and laboratory findings in 8 patients. 
+J Neurol 241 : 157-166 
+23. Moersch FP, Woltman HW (1956) 
+Progressive fluctuating muscular rigid- 
+ity and spasm (&quot;stiff-man&quot; syndrome): 
+report of a case and some observations 
+in 13 other cases. Mayo Clin Proc 31 : 
+421-427 
+24. Obeso JA, Rothwell JC, Marsden CD 
+(1985) The spectrum of cortical my- 
+oclonus. Brain 108 : 193-224 
+25. Solimena M, De Camilli P (1991) Au- 
+toimmunity to glutamic acid decar- 
+boxylase (GAD) in stiff man syndrome 
+and insulin-dependent diabetes melli- 
+tus. Trends Neurosci 14 : 452-457 
+26. Thompson PD, Colebatch JG, Brown 
+P, Rothwell JC, Day BL, Obeso JA, 
+Marsden CD (1992) Voluntary stimu- 
+lus-sensitive jerks and jumps mimick- 
+ing myoclonus or pathological startle 
+syndromes. Mov Disord 7 : 257-262 
+27. Wilkins DE, Hallett M, Wess MM 
+(1986) Audiogenic startle reflex of 
+man and its relationship to startle syn- 
+dromes. Brain 109 : 561-573 
+28.Williams AC, Nutt JG, Hare T (1988) 
+Autoimmunity in stiff man syndrome. 
+Lancet II : 222</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>3503-3657</td><td>high</td><td>The paper reports neurophysiological findings in eight SMS patients and states patient numbering corresponds to prior...</td><td>Patients and methods We report on eight patients, five female and three male, whose clinical data and findings including results of electroencephalogra-</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>3664-3891</td><td>high</td><td>The paper reports neurophysiological findings in eight SMS patients and states patient numbering corresponds to prior...</td><td>phy (EEG), electromyography (EMG), evoked potential and blink reflex testing as well as magnetic brain stimulation have been re- ported recently; patient numbers in this paper c...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0002</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>7403-7801</td><td>high</td><td>Routine testing and needle EMG findings applied to all patients.</td><td>Routine EEG, evoked potential testing, and magnetic brain stimulation yielded unremarkable results; however, needle EMG disclosed a steady low-frequency firing of normal motor u...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>10458-10709</td><td>high</td><td>Patient 3 had spontaneous spasmodic attacks recorded during EMG examination with described burst pattern.</td><td>In patient 3, the EMG disclosed short bursts at irregular intervals, synchronous in the abdominal and paraspinal muscles, with a frequency gradually increasing from l-2/s to 8-1...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0004</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span></td><td>10710-11274</td><td>high</td><td>Patient 5 had a series of 38 spasms recorded with initiation, spread, and delays described.</td><td>In pa- tient 5, a series of 38 consecutive spasms was recorded, each initiated with 1-6 short burst discharges at intervals between 76 and 122 ms followed by a tonic decrescendo...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0005</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>11276-12290</td><td>high</td><td>Stimulus sensitivity and provoked spasms are described for all patients.</td><td>In all patients, acoustic and a wide variety of so- matosensory, but not visual, stimuli increased tonic mo- tor unit firing and eventually provoked spasms, often with a jerky o...</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0006</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>13296-13963</td><td>high</td><td>Spasmodic reflex myoclonus was recorded in all seven investigated patients, explicitly patients 1 and 3-8.</td><td>Electrical nerve stimulation was most effective in pro- voking jerky spasms with a characteristic EMG pattern: 1-3 highly synchronized bursts occurred at latencies around 70, 12...</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0007</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>14602-14745</td><td>high</td><td>Benzodiazepine effects on spasmodic reflex myoclonus are reported for patients 1, 3, 4-8.</td><td>Spasmodic reflex my_ oclonus was attenuated by oral benzodiazepines in pa- tients 1, and 4-7, and completely suppressed in patients 3 and 8.</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0008</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>14747-15721</td><td>high</td><td>Pathway analysis gives patient-specific latency patterns after median/tibial nerve stimulation.</td><td>In order to analyse further the pathway(s) mediating spasmodic reflex myoclonus, axial muscles were simul- taneously recorded from different levels along the neu- raxis. Median...</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0009</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>15780-16419</td><td>high</td><td>Median and tibial nerve stimulation produced similar thoracolumbar latencies in patients 1, 5, 6, and 8.</td><td>tion distances were as follows: inion - spinous process C7, 14 cm; wrist - spinous process C7, 74 cm; spinous processes C 7 -T 10, 34 cm; ankle- spinous process T10, 115 cm. Thu...</td></tr><tr><td><a href="#src-s0011">s0011</a></td><td>l0010</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18854-19355</td><td>high</td><td>Reflex investigation findings are summarized across patients, including normal silent periods and H-reflex abnormalit...</td><td>Reflex investigations As reflex mechanisms seemed to play an important role in the pathogenesis of spasms, a variety of segmental, multi- segmental, and long loop reflexes was i...</td></tr><tr><td><a href="#src-s0012">s0012</a></td><td>l0011</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>20938-21971</td><td>high</td><td>Tibialis anterior flexor reflex and long loop reflex findings are reported by patient number.</td><td>The tibialis anterior flexor reflex was normal only in patient 8, but uniformly abnormal in patients 1-3, 6 and 7, with desynchronization of the reflex pattern, loss of the inhi...</td></tr><tr><td><a href="#src-s0013">s0013</a></td><td>l0012</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>21973-22847</td><td>high</td><td>Discussion summarizes abnormalities and lack of spasticity signs in the eight patients.</td><td>Discussion Our investigation of eight patients with SMS revealed ab- normalities of segmental and suprasegmental reflex trans- mission seemingly related to the pathophysiology o...</td></tr><tr><td><a href="#src-s0014">s0014</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>31517-32257</td><td>high</td><td>The paper concludes that spasmodic reflex myoclonus regularly appeared in lower trunk muscles of all tested patients...</td><td>An important feature of spasmodic reflex myoclonus is its regular appearance in the lower trunk muscles of all patients tested, and its absence in other diseases with mus- cular...</td></tr></tbody></table><h2>Relocated Spans</h2><table class="segment-table"><thead><tr><th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th></tr></thead><tbody><tr><td>l0001</td><td>b0002</td><td>20-175</td><td>21-175</td><td>49c678db9a1e9fc97bb092baf088d50dc1037b7cf726bf69b723ec2a861583e6</td></tr><tr><td>l0001</td><td>b0003</td><td>4-189</td><td>5-232</td><td>af505918937a10f901dbefb511dbe30ea405303567dc10b5c6585d33080be961</td></tr><tr><td>l0002</td><td>b0004</td><td>396-762</td><td>300-698</td><td>d04a41f2190ee1305fd78a6a37d1b8992225cd0b646c8bb259dbb619d40bc3a3</td></tr><tr><td>l0003</td><td>b0005</td><td>1755-2083</td><td>1417-1668</td><td>8c50171f62f82e639ef3042433f02acec441d9f6ff0a2b56398acd6a52b24fa4</td></tr><tr><td>l0004</td><td>b0005</td><td>2084-2595</td><td>1669-2233</td><td>7f4d4aea3e02d63001ada0ec946b7a4ffa7cf242bb2ef967a1d1f423a16a8824</td></tr><tr><td>l0005</td><td>b0005</td><td>2597-3249</td><td>2235-3249</td><td>38c56d97a9f82bc8e8f5fa7f94ee5f3d33c8c9bb79a4493e27c8dd523f701093</td></tr><tr><td>l0006</td><td>b0006</td><td>1551-2170</td><td>1004-1671</td><td>6f74a2f52cf64f0f365c43bfd9ad233dea1d9dc3e7876d2af778bd842130ba7b</td></tr><tr><td>l0007</td><td>b0006</td><td>2551-2701</td><td>2310-2453</td><td>3782d0e487b88ebf8ed34bf9b497d654c4194d5fc866adedf1455a71ce4afbaa</td></tr><tr><td>l0008</td><td>b0006</td><td>2703-3486</td><td>2455-3429</td><td>0345b75896cc69edc0556eb8e78d83dfb2433aefd2b55d33cd997e2b25d33f49</td></tr><tr><td>l0010</td><td>b0008</td><td>2247-2934</td><td>2433-2934</td><td>478ee5022d22478e223dab51972c75b0ef4c81a735fc31f25e754d1f6513de00</td></tr><tr><td>l0011</td><td>b0009</td><td>1298-2468</td><td>1581-2614</td><td>b31f704ed88e94d3a3bc60c892969162820633a2fe5106208d4b5f30a6ff5b4b</td></tr><tr><td>l0012</td><td>b0009</td><td>2470-3490</td><td>2616-3490</td><td>076e3672a3c027ecb5ef8f1f77897330782cff25f3883a44ed93650e522605fc</td></tr><tr><td>l0013</td><td>b0014</td><td>658-1341</td><td>593-1333</td><td>31a239d202b2d886e247bfe0b9cfbfbcaccb20ed6a9defe16a306262ab4b15f0</td></tr></tbody></table><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\80.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\80.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\80.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\80.validation.json</p></main>
+</body>
+</html>

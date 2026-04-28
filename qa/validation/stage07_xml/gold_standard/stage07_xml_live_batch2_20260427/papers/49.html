@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 49</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 49</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002</span></div><h2>Source Text</h2><div class="source-text">1027
+Caution in use of interferon for male infertility
+SiR-Treatment of idiopathic male infertility is difficult and
+the number of new drugs is increasing. No workers have
+shown in double-blind trials improved sperm count or
+motility in placebo-treated controls. We were surprised by
+Yamamoto and Miyake’s (Aug 27, p 614) report of
+successful use of interferon alfa for male infertility. They
+gave this drug at the daily dose of 3 MU, 5 days per week to
+3 patients with severe oligozoospermia and 1 with
+azoospermia, and recorded substantial improvements in
+sperm density and motility after two months’ treatment.
+This treatment was so successful that 2 patients’ wives
+became pregnant. Yamamoto and Miyake classified these
+patients as having idiopathic infertility, reporting in all cases
+normal follicle-stimulating hormone (FSH), luteinising
+hormone, and testosterone plasma concentrations. The
+normal plasma FSH in these patients suggests that the
+spermatogenetic process proceeds at least to spermatid level
+in order to maintain the inhibitory feed-back on this
+gonadotropin.
+We have recorded spontaneous improvement of seminal
+indices in 8 men presenting with important idiopathic
+oligozoospermia and normal plasma FSH.’ Assessment of
+testicular cytology by fine-needle aspiration done at the time
+of diagnosis showed normal maturation germ line on both
+testes. It has been postulated that in these cases some
+injurious effects of, for example, drugs or systemic acute
+illness could have induced transient spermatogenic cells
+damage, and that cytological analysis may have identified the
+tubular improvement before semen count has been restored.
+If these factors applied to Yamamoto and Miyake’s patients
+the improvement was not attributable to interferon.
+Moreover, normal plasma FSH concentrations associated
+with azoospermia or oligozoospermia are also seen in
+patients showing testicular cytological pictures of complete
+or partial spermatid arrest.’,2
+If such patients are given interferon, the drug could
+stimulate late maturative phases of spermatogenesis. This
+hypothesis is dangerous without evidence from experimental
+studies and double-blind therapeutical trials. A simple
+incidental observation does not justify use of this expensive
+drug in the treatment of idiopathic male infertility (50% of
+male infertility).
+Carlo Foresta, Marco Rossato
+University of Padova, Institute of Internal Medicine, 35128 Padova, Italy
+1 Foresta C, Varotto A. Assessment of testicular cytology by fine needle
+aspiration as a diagnostic parameter in the evaluation of the
+oligospermic subject. Fertil Steril 1992; 58: 1028.
+2 Foresta C, Varotto A, Scandellari C. Assessment of testicular cytology
+by fine needle aspiration as a diagnostic parameter in the evaluation of
+the azoospermic subject. Fertil Steril 1992; 57: 858.
+Vitamin D receptor gene polymorphism and
+bone mineral density in healthy Japanese
+women
+SIR-Morrison et all have reported that polymorphisms of
+the vitamin D receptor (VDR) gene account for 75% of the
+primary genetic factor for bone mineral density (BMD). We
+have done similar investigations in 102 healthy, unrelated,
+Japanese women, aged 23-68, whose BMD had been
+measured.
+BMD (from second to fourth lumbar verterbrae) was
+measured for the first time in 1992 on all 102 women. We
+used dual energy X-ray absorptiometry (Hologic QDR-
+*p=00040, tp=0.0023 (ANOVA).
+Table: Association between VDR genotype and BMD
+1000/W). 85 women had the measurement repeated about a
+year later. BMD was calculated as a Z score (average value
+0, SD 1) for the age groups under 40, 40-49, 50-59, and 60
+or over, with adjustment for age. The rate of decline of
+BMD was calculated by subtracting the 1993 value from the
+1992 one and dividing by the BMD in 1992.
+If we call alleles whose polymerase chain reaction products
+can be cut with the restriction enzyme BsmI b and those
+whose products cannot be cut with BsmI as B, the genotypes
+were bb in 56 (women), Bb in 39, and BB in 7. The
+genotype frequency was thus 74-0% for band 26-0% for B.
+This group obeyed the Hardy-Weinberg law. The allele
+frequencies among European whites’ were 55% for allele b
+and 45% for B, indicating a clear racial difference.
+Z score values increased in the order BB, Bb, and bb
+(table). As in Morrison’s data allele b was associated with the
+higher BMD in Japanese women. The BMD decrement rate
+increased in the order bb, Bb, and BB, indicating that VDR
+gene polymorphism is associated with the BMD decrement
+rate too.
+The above trends were more apparent in premenopausal
+women (47) than in postmenopausal women (55). The
+menopause may have a greater impact on BMD than the
+VDR genotype. We do not know how the VDR gene
+polymorphism affects BMD but our study shows that this
+polymorphism affects BMD regardless of race.
+Because the collagen gene is thought to be one of the
+genes affecting BMD2 we also studied the association
+between collagen type I gene polymorphism and BMD.
+There was no evidence of any association (unpublished).
+Z Yamagata, T Miyamura, S lijima, A Asaka, M Sasaki, J Kato,
+K Koizumi
+Health Care Centre, Yamanashi University, Kofu 400, Japan; and
+Departments of Health Sciences, Gynaecology and Obstetrics, and Radiology,
+Yamanashi Medical University
+1 Morrison NA, Qi JC, Tokita A, et al. Prediction of bone density from
+vitamin D receptor alleles. Nature 1994; 367: 284-87.
+2 Spotila LD, Constantinou CD, Serada L, et al. Mutation in a gene for
+type I procollagen (COL1A2) in a woman with postmenopausal
+osteoporosis; evidence for phenotypic and genotypic overlap with mild
+osteogenesis imperfecta. Proc Natl Acad Sci USA 88: 5423-27.
+<span class="source-segment role-group_summary" id="src-s0001" data-segment="s0001" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Genetics of susceptibility and resistance to
+insulin-dependent diabetes in stiff-man
+syndrome
+SiR-Stiff-man syndrome (SMS) is a rare disorder of the
+central nervous system characterised by muscle rigidity and
+spasms. Autoantibodies against glutamic acid decarboxylase
+(GAD) are found in 60% of patients,’ suggesting an
+autoimmune pathogenesis. SMS is often associated with
+other autoimmune diseases including insulin-dependent
+diabetes mellitus (IDDM). Since GAD is an autoantigen
+both in SMS and IDDM, the two diseases may correlate
+with different immune responses to GAD that are at least in
+part genetically determined.
+We have HLA typed 18 SMS patients’ and found that, as
+in IDDM, SMS was associated with the allele DQB1*0201.</span>
+
+1028
+<span class="source-segment role-group_summary" id="src-s0002" data-segment="s0002" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Other DQB1 alleles rarely found in IDDM (*0602 and
+sequence-related *06 alleles) were found in 10 SMS patients
+at the frequency observed in controls. 5 of 8 SMS patients
+lacking a *06 allele had diabetes by contrast with 2 of 10
+patients with a *06 allele, suggesting that *06 might be
+associated with a reduced prevalence of diabetes in SMS. To
+test this hypothesis we followed up our SMS patients for the
+possible development of diabetes.
+Since our 1993 report3 additional SMS patients now have
+diabetes. All 3 patients had DQB1*0201 and 2 lacked *06
+alleles. Diabetes has thus now developed in 7 of 8 SMS
+patients lacking a *06 allele and in 3 of 10 with a *06 allele
+(p=002). 10 of 13 SMS patients with 1*0201 have diabetes
+versus 3 of 10 of those with a *06 allele (p=003).
+Moreover, we have recently found that first-degree
+relatives of IDDM patients with *0602 and SMS-like GAD
+autoantibodies are at very low risk of diabetes.4 Perhaps an
+SMS-like-anti-GAD response is associated with different
+rates of progression to overt diabetes depending on the HLA
+genetic background. Diabetes may develop very slowly or
+not at all in individuals with a subset of anti-GAD
+autoantibodies and IDDM-protective DQB1 alleles. We
+suggest that DQB1*0602 (and other sequence-related *06
+alleles) confers protection from diabetes in patients with
+SMS and relatives of patients with IDDM despite anti-GAD
+autoantibodies. By contrast, among SMS patients, 1*0201 is
+associated with high risk of diabetes, especially when
+protective *06 alleles are absent.</span>
+Alberto Pugliese, Roberto Gianani, George S Eisenbarth,
+Pietro De Camilli, Michele Solimena
+Diabetes Research Institute, University of Miami Medical School, Miami, FL 33136,
+USA; Barbara Davis Center for Childhood Diabetes, Denver; Department of Cell
+Biology, Howard Hughes Medical Institute Research Laboratories, Yale University
+School of Medicine, New Haven; and Department of Internal Medicine, Yale
+University School of Medicine
+1 Solimena M, Folli F, Aparisi R, Pozza G, DeCamilli P. Autoantibodies
+to GABA-ergic neurons and pancreatic beta cells in stiff-man
+syndrome. N Engl J Med 1990; 322: 1555-60.
+2 Butler MH, Solimena M, Dirkx R, Hayday A, De Camilli P.
+Identification of a dominant epitope of glutamic acid decarboxylase
+(GAD 65) recognized by autoantibodies in stiff-man syndrome. J Exp
+Med 1993; 178: 2097-106.
+3 Pugliese A, Solimena M, Awdeh ZL, et al. Association of
+HLA-DQB1*0201 with stiff-man syndrome. J Clin Endocrinol Metab
+1993; 77: 1550-53.
+4 Gianani R, Pugliese A, Bonne-Weir S, et al. Prognostically significant
+heterogeneity of cytoplasmic islet cell antibodies in relatives of patients
+with type I diabetes. Diabetes 1992; 41: 347-53.
+Colitis associated with non-steroidal anti-
+inflammatory drugs
+SIR-The dangers of upper gastrointestinal side-effects of
+non-steroidal anti-inflammatory drugs (NSAIDs) are well
+known,’ but the capacity of these agents to injure colonic
+mucosa (ie, NSAID-associated colitis2) remains
+unrecognised by many gastroenterologists. A recent editorial
+on the aetiology of colitis made no specific reference. 
+3
+Between March, 1991, and June, 1994, we saw 60 new
+cases of proctitis, proctocolitis, and colitis and in 23 (38%)
+colitis had developed while the patient was taking an
+NSAID. This came to light as a result of exhaustive drug
+histories. We included a thorough inquiry into analgesic
+usage by listing names of possible NSAID. We also asked
+about over-the-counter consumption. None of the 23
+patients had pre-existing inflammatory bowel disease that
+could have been exacerbated by NSAID ingestion.
+All patients presented with diarrhoea, with or without
+blood loss per rectum, and all had negative stool cultures.
+The diagnosis was established by colonoscopy within 7 days
+of presentation. The use of the colonoscope rather than a
+rigid sigmoidoscope is of particular relevance since NSAID-
+associated colitis frequently spares the rectum. The mean
+age of patients with NSAID-associated colitis was 53, with a
+range of 23-79.
+A wide variety of NSAIDs were implicated but diclofenac
+(12 cases) and mefenamic acid (5 cases) were the
+commonest. The NSAID had usually been taken orally but
+colitis was seen after rectal and intramuscular administration
+and could occur within a few days of therapy.
+Endoscopic appearances varied from a mild patchy non-
+ulcerative colitis with areas of punctate erythema and
+mucosal oedema to a picture indistinguishable from
+fulminating ulcerative colitis. Histological findings were non-
+specific, though ulceration and crypt abscesses were
+frequent. Granuloma formation was not seen.
+NSAID-associated colitis was frequently mild and rapidly
+improved on withdrawal of the drug and a 4-8 week course
+of oral sulphasalazine or mesalazine (5-aminosalicylic acid).
+More severe cases received systemic and topical steroids,
+and 1 patient required colectomy for a fulminating colitis
+and toxic megacolon after intramuscular diclofenac. On the
+whole, however, a patient with NSAID colitis will have a
+very good chance of full recovery. So far there have been no
+spontaneous relapses among the 23 patients; 1 had a
+recurrence of colitis after inadvertent re-exposure to an
+NSAID.
+NSAID-associated colitis seems to be an under-recognised
+but common form of colonic disease. We suggest taking a
+thorough drug history in every new case of colitis. Once
+NSAID-associated colitis is recognised a reassuring
+prognosis can be given to the patient. Long-term prophylaxis
+with sulphasalazine or mesalazine seems unnecessary. The
+psychological benefits for patients of knowing they do not
+have a chronic disease with the likelihood of relapse and the
+possible long-term risk of cancer are obvious. The cost
+saving in the avoidance of regular follow-up and life-long
+drug taking could be considerable.
+Michael Gleeson, Duncan Ramsay, Stuart Hutchinson,
+David Spencer, Gregory Monteith
+Departments of Gastroenterology and Histopathology, General Hospital, Jersey,
+Channel Islands JE2 3QS
+1 Somerville K, Faulkner G, Langman M. Non-steroidal
+anti-inflammatary drugs and bleeding peptic ulcer. Lancet 1986; i:
+462-66.
+2 Gibson GR, Whitacre EB, Ricotti CA. Colitis induced by non-
+steroidal anti-inflammatory drugs: report of four cases and review of
+the literature. Arch Intern Med 1992; 152: 625-32.
+3 Ferguson A. Ulcerative colitis and Crohn’s disease: important
+and disabling disease, still underresearched. BMJ 1994; 309:
+355.
+4 Kaufmann HJ, Taubin HL. Non-steroidal anti-inflammatory drugs
+activate quiescent inflammatory bowel disease. Ann Intern Med 1987;
+107: 513-16.
+Nosocomial HIV-1 transmission and primary
+prevention in Romania
+SiR-Blank and colleagues (Aug 20, p 512) report the
+possibility of patient-to-patient transmission of HIV during
+medical care in a paediatric unit. The HIV epidemic among
+Romanian children has already been attributed to
+nosocomial transmission.&quot; Since previous reports involved
+cross-sectional studies, we started a seroepidemiologic
+survey in 1992 in northeast Romania to establish the
+prevalence and incidence of HIV infection in life-care
+institutions for orphans and abandoned children. In 1992,</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>5641-6372</td><td>high</td><td>The source describes an HLA-typed cohort of 18 stiff-man syndrome patients and associations with GAD autoantibodies,...</td><td>Genetics of susceptibility and resistance to insulin-dependent diabetes in stiff-man syndrome SiR-Stiff-man syndrome (SMS) is a rare disorder of the central nervous system chara...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>6379-7920</td><td>high</td><td>The source describes an HLA-typed cohort of 18 stiff-man syndrome patients and associations with GAD autoantibodies,...</td><td>Other DQB1 alleles rarely found in IDDM (*0602 and sequence-related *06 alleles) were found in 10 SMS patients at the frequency observed in controls. 5 of 8 SMS patients lacking...</td></tr></tbody></table><h2>Relocated Spans</h2><table class="segment-table"><thead><tr><th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th></tr></thead><tbody><tr><td>l0001</td><td>b0002</td><td>2530-2883</td><td>2152-2883</td><td>4b8f5a5c35aefe07a2a048888a494671aca7114c737c797b6e490897698f54fa</td></tr><tr><td>l0001</td><td>b0003</td><td>5-1435</td><td>5-1546</td><td>b3b5a05752db01696b3b89ce38b6e47dc58907028deb1198750d0aa3e61888f6</td></tr></tbody></table><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\49.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\49.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\49.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\49.validation.json</p></main>
+</body>
+</html>

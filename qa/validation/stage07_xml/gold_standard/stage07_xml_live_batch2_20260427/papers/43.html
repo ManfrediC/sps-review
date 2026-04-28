@@ -1,0 +1,1370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 43</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 43</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>ambiguous_table_row_mapping:s0002</li><li>ambiguous_table_row_mapping:s0003</li><li>ambiguous_table_row_mapping:s0006</li><li>ambiguous_table_row_mapping:s0009</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0007, s0008, s0009, s0010</span></div><h2>Source Text</h2><div class="source-text">Higher Autoantibody Levels and Recognition of a
+Linear NH2-terminal Epitope in the Autoantigen
+GAD65, Distinguish Stiff-Man Syndrome
+
+from Insulin-dependent Diabetes Mellitus
+
+By John Kim,” Mark Namchuk,* Teodorica Bugawan,? Qin Fu,”
+Marc Jaffe,” Yuguang Shi,” Henk-Jan Aanstoot,”
+
+Christoph W. Turck,$ Henry Erlich,t Vanda Lennon, |l
+and Steinunn Baekkeskov*
+
+From the *Departments of Medicine and Microbiology/Immunology, Hormone Research
+Institute, University of California San Francisco, San Francisco California 94143; the
+Department of Human Genetics, Roche Molecular Systems, Alameda, California 94501; the
+SHoward Hughes Medical Institute, and Department of Medicine, University of California San
+Francisco, San Francisco, California; 94143; and the (Departments of Neurology, Immunology,
+and Laboratory Medicine/Pathology, Mayo Clinic Medical School, Rochester, Minnesota 55905
+
+Summary
+
+The smaller form of the GABA-synthesizing enzyme glutamic acid decarboxylase (GAD65) is
+a major autoantigen in two human diseases that affect its principal sites of expression. Thus,
+destruction of pancreatic β cells, which results in insulin-dependent diabetes mellitus (IDDM),
+and impairment of GABA-ergic synaptic transmission in Stiff-Man syndrome (SMS) are both
+characterized by circulating autoantibodies to GAD65. Anti-GAD65 autoantibodies in IDDM are
+predominantly directed to conformational epitopes. Here we report the characterization of humoral
+autoimmune responses to GAD65 in 35 SMS patients, of whom 13 (37%) also had IDDM. All
+SMS patients immunoprecipitated native GAD65 and the main titers were orders of magnitude
+higher than in IDDM patients. Furthermore, in contrast to the situation in IDDM, autoantibodies
+in 35 of 35 (100%) of SMS patients recognized denatured GAD65 on Western blots. Two major
+patterns of epitope specificity were identified on Western blots. The first pattern, detected in
+25 of 35 SMS patients (71%), of whom 11 had IDDM (44%), was predominantly reactive with
+a linear NH2-terminal epitope residing in the first eight amino acids of GAD65. Nine of nine
+individuals who were HLA-haplotyped in this group carried an IDDM susceptibility haplotype
+and HLA-DR3, DQw2 was particularly abundant. The second pattern, detected in 10 of 35
+patients (29%) of whom two had IDDM (20%), included reactivity with the NH2-terminal
+epitope plus strong reactivity with one or more additional epitope(s) residing COOH-terminal
+to amino acid 101. The second epitope pattern may represent epitope spreading in the GAD65
+molecule, but may also include some cases of epitope recognition associated with IDDM resistant
+HLA-haplotypes. The principal NH2-terminal linear epitope in GAD65 distinguishes the
+reactivity of SMS and IDDM autoantibodies and may be a determinant of pathogenicity for
+GABA-ergic neurons. The greater magnitude and distinct specificity of the humoral response
+to GAD65 in SMS may reflect a biased involvement of the T helper cell type 2 (Th2) subset
+of CD4* T cells and antibody responses, whereas IDDM is likely mediated by the Th1 subset
+of CD4* T cells and cytotoxic T cell responses.
+
+he synthesizing enzyme for the inhibitory neurotransmitter GABA, glutamic acid decarboxylase (GAD), is
+encoded by two nonallelic genes, GAD65 and GAD67 (1),
+which share a similar exon-intron structure and are probably
+
+1 Abbreviations used in this paper: AET, aminoethylisothiouranium bromide;
+DTT, dithiothreitol; F/M, female/male; GAD, glutamic acid decarboxylase;
+
+derived from a common ancestral gene (2). These two GAD
+proteins share extensive homology except in their first 95 amino
+
+HMAP, Hepes/NaOH/Mg Cl2, AET, PLP; ICA, islet cell cytoplasmic
+antibodies; IDDM, insulin-dependent diabetes mellitus; JDF; Juvenile
+Diabetes Foundation; PLP, pyridoxal 5&#x27;phosphate; PVDF, polyvinylidene
+difluoride; SMS, Stiff-Man syndrome; TBS, tris-buffered saline.
+
+595 J. Exp. Med. © The Rockefeller University Press » 0022-1007/94/08/0595/12 $2. 00
+Volume 180 August 1994 595-606
+
+acids (1). Both are synthesized as hydrophilic soluble molecules (3), but only GAD65, which is found in neurons and
+pancreatic ( cells, undergoes posttranslational lipid modification in the NH2-terminal domain to become targeted and
+anchored to the membrane of synaptic-like microvesicles,
+which store and secrete GABA (3-5).
+
+Autoantibodies to GAD65 are detected in 80% of individuals who develop insulin-dependent diabetes mellitus
+(IDDM) (6, 7). Autoantibodies to GAD67 are detected in
+only a small fraction of IDDM patients, and seem to represent anti-GAD65 autoantibodies that crossreact with the
+larger isoform (8, 9). T lymphocytes are implicated as the
+effectors of 8 cell destruction (10). GAD65 has been identified as the primary T cell autoantigen in the nonobese diabetic mouse model of IDDM, and induction of tolerance to
+GAD65 in young mice prevents the disease (11, 12).
+
+Autoantibodies to GAD65 are also found in a rare neurological disorder called Stiff-Man syndrome (SMS) (13). Stiffness
+of axial muscles and superimposed painful spasms are characteristic of this disorder and are alleviated by benzodiazepines,
+a finding that is consistent with the hypothesis that SMS
+represents an impairment of GABA-ergic neurotransmission
+in the central nervous system (14). SMS is characterized by
+a 30-40% coincidence with IDDM. Conversely, however,
+SMS is diagnosed in &lt;1/10* IDDM patients and in &lt;1/10°
+individuals in the general population. If GAD is a primary
+autoantigen in both SMS and IDDM, the question is why
+the diseases do not always coincide. At least three possibilities can be suggested. First, neurons and 8 cells may express
+forms of GAD that differ antigenically. Second, the accessibility of GAD to the immune system may differ in the two
+tissues because neurons, but not § cells, are protected by the
+blood brain barrier. Third, the humoral and/or cellular immune responses to GAD65 may differ in the two diseases.
+The demonstration that 8 cell and neuronal forms of GAD
+are identical with regard to antigenicity and sequence (3, 15-17)
+seems to exclude the first possibility, although minor differences in posttranslational modification have not been ruled
+out. The two tissues clearly do differ in their vulnerability
+to immune system interactions. In addition to their sequestration behind the blood brain barrier, neurons do not express MHC class I antigens (18). In contrast, 6 cells are readily
+accessible to circulating immunological effectors and express
+MHC class I antigens (19) that can target them for killing
+by cytotoxic T lymphocytes (20, 21). These differences can
+explain why SMS is a rare disease in individuals afflicted with
+IDDM, but not why only 30-40% of SMS patients develop
+diabetes. To explain the low penetrance of IDDM in SMS,
+we hypothesize that the immune mechanisms in SMS and
+IDDM reflect distinct recognition of GAD.
+
+To assess possible differences in recognition of GAD, we
+have begun to characterize the target epitopes of the humoral
+autoimmune response in the two diseases. The predominant
+epitopes for GAD65 autoantibodies associated with IDDM
+are conformational and localized to the COOH-terminal and
+middle regions of the GAD65 molecule (22). In rare cases
+where IDDM autoantibodies recognize the denatured
+GAD65 molecule on Western blots, the epitope has been
+
+596
+
+localized to the COOH-terminal domain and may represent
+the phenomenon of restricted epitope spreading (22, 23). We
+and others have shown that GAD autoantibodies in SMS react
+with the denatured antigen on Western blots (7, 13, 24) suggesting that the humoral autoimmune response to GAD65
+differs in IDDM and SMS. In the present study we have characterized an epitope that clearly distinguishes SMS autoantibodies from those of IDDM.
+
+Materials and Methods
+
+Antisera. <span class="source-segment role-group_summary" id="src-s0001" data-segment="s0001" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Sera were obtained with informed consent from 33
+SMS patients identified at the Mayo Clinic (Rochester, MN) during
+the period of 1989-1992, and from two patients who attended the
+University of California, San Francisco (UCSF) Neurology Clinic
+during the period of 1991-1993. The patients were diagnosed using
+uniform standardized criteria developed at the Mayo Clinic and
+adapted at UCSF (14).</span> The age, sex, age at onset of SMS, and the
+coexistence with other autoimmune disorders, including IDDM,
+are shown in Table 1. Control human sera included: (a) Sera from
+11 newly diagnosed IDDM patients. This group included a serum
+(no. 675, “IDDM serum 2” in this study, female aged 11 years)
+that is used as a standard for quantitative analyses of GAD65 autoantibodies by several laboratories (9, 25, 26) and has an arbitrary
+value of 10 in our GAD65 antibody assay (26). The remaining sera
+in this group were from 10 individuals selected for having the highest
+GAD65 antibody reactivity amongst 143 newly diagnosed IDDM
+patients collected from the USA and Scandinavia (Table 2). (6) Sera
+from 10 healthy controls (female/male [F/M] = 3: 7; mean age +
+SD = 29. 8 + 4. 1; range 22-34). (c) Sera from 10 patients diagnosed at UCSF with polyendocrine autoimmune disorder but not
+SMS (F/M = 9: 1; mean age + SD = 45. 7 + 19. 5; range 31-75).
+Each autoimmune disorder coexisting in the SMS patients was represented in at least one of these control patients. Eight of the polyendocrine control patients had IDDM (duration 0-31 yr; mean
++ SD 12. 6 + 12. 1) and six of those were GAD65 antibody positive (Table 2).
+
+Rabbit antisera 1267 and 1701 were raised against a 19-amino
+acid peptide derived from the COOH terminus of rat GAD67
+Both sera react equally well with rat and human GADs; and
+GAD67 (3, 27). Rabbit antiserum 2001 was raised against a peptide corresponding to residues 83-93 of human GAD65. The
+mouse monoclonal antibody GAD6 (28) is specific for GAD65 (3,
+27) and was kindly donated by Dr. D. Gottlieb (Washington University, St. Louis, MO). The mouse hybridoma GAD1 (29) was obtained from the American Type Culture Collection (Rockville, MD).
+
+Immunoprecipitation Analyses. GAD65 autoantibodies were analyzed by a quantitative immunoprecipitation assay using [°°S]methionine labeled rat GAD65 transiently expressed in COS-7 cells
+as described in detail elsewhere (26). Human sera were analyzed
+at dilutions of 1: 10, 1: 100, 1: 1000, 1: 10, 000, and 1: 100, 000, and
+resulting immune complexes were isolated on protein A-Sepharose
+(Pharmacia LKB, Piscataway, NJ) and analyzed by SDS-PAGE.
+Seropositivity was scored on the basis of a visible GAD65 signal
+obtained by analyses using a model 425 Phosphor-Imager (Molecular Dynamics, Inc., Sunnyvale, CA). Thus, each immunoprecipitate was quantitated by phosphorimaging with IDDM serum 2
+(no. 675) serving as a positive standard. GAD65 antibody values
+were calculated using the formula: 10 x [(value for the GAD65
+immunoprecipitate band in an unknown serum subtracted by value
+for background area of identical size)/(value for IDDM serum 2
+subtracted by value for background area of identical size)]. This
+
+NH?-terminal Linear GAD65 Epitope in Stiff-Man Syndrome
+
+Table 1. GAD65 Antibodies and ICA in 35 SMS Patients
+
+SMS Age at Other auto Patient serum SMS age IDDM/age antibodies/ GAD65 Ab
+No. Sex sampling at onset at onset ICA disorders IMP titer
+JDF units
+1* F 45 34 not 8, 620 yes 5, 260
+2 F 48 43 no$ 819 yes 495
+3 F 40 36 nos 3, 940 yes 10, 150
+4 F 41 39 no 8, 620 yes 13, 310
+5 F 51 48 49 819 yes 2, 920
+6 F 35 34 348 8, 620 yes 5, 440
+7 F 34 26 nos 1, 610 N/A 7, 040
+8 M 40 27 no 1, 800 yes 930
+9 M 40 36 no &gt;10, 000 N/A 16, 620
+10 M 64 56 nos 171 N/A 578
+11 F 34 29 no 1, 800 yes 3, 460
+12 F 43 40 no 8, 620 yes 11, 140
+13 M 57 &lt;47 no 1, 087 yes 1, 166
+14 F 38 34 338 554 yes 1, 260
+15 F 59 50 57 2, 660 yes 2, 870
+16* F 44 42 no 7, 570 yes 3, 380
+17 F 36 32 16 253 yes 444
+18 F 39 37 35 3, 940 N/A 2, 920
+19 F 54 44 nos 345 yes 4, 100
+20° M 36 35 no &gt;20, 000 N/A 65, 700
+21 M 63 59 63 1, 800 yes 1, 654
+22 F 65 64 558 374 yes 1, 551
+23 F 56 &lt;52 Pre-DM &gt;10, 000 yes 10, 660
+52
+24 M 68 61 Pre-DM Neg. yes 44
+60
+25 F 39 39 No 1, 210 yes 3, 450
+26 M 49 47 Pre-DM 115 None 173
+49
+27 F 50 N/A no 3, 110 yes 6, 090
+28 F 40 39 no 2, 370 N/A 2, 600
+29 M 50 47 no 2, 370 N/A 1, 338
+30 F 50 39 39 &gt;10, 000 yes 9, 720
+31 M 70 67 70 5, 110 yes 1, 564
+32* F 47 43 no &gt;10, 000 yes 20, 280
+33 F 45 37 no &gt;10, 000 yes 9, 500
+34* F 50 46 no &gt;10, 000 N/A 1, 561
+35 F 60 48 no 5, 110 N/A 752
+
+* African Americans, the remaining patients are caucasian.
+
++ Father had NIDDM.
+
+S IDDM in first degree relative(s). N/A, information not available.
+IMP, immunoprecipitation.
+
+597 Kim et al.
+
+<span class="source-segment role-group_summary" id="src-s0002" data-segment="s0002" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Table 2. Summary of GAD65 Antibody Titers in SMS, IDDM, and Polyendocrine Autoimmune Disorder (PE) Patients
+Sex Age Age GAD65s Ab IMP titer GAD,; Ab IMP titer
+n F/M mean + SD range median range
+SMS 35 25/10 48 + 10. 1 34-70 2920 44-65, 700
+IDDM 10” 2/8 4. 6 + 5. 0 0. 9-15 20. 3 14. 7-36. 6
+PE 6+ 5/1 48 + 19 11-75 8. 2 1. 3-15. 9</span>
+
+* Selected for having the highest GAD65 antibody titer amongst 143 newly diagnosed IDDM patients, 115 (80%) of whom were positive for GAD65 Ab
+with a median titer of 1. 7.
+t From a group of 10 PE patients, 6 of whom were GAD¢s5Ab positive.
+
+IMP, immunoprecipitation.
+
+assay was used in the first GAD antibody workshop (Orlando, FL,
+April 1993) and yielded 100% sensitivity and 100% specificity.
+
+Expression Systems and Protein Synthesis. The generation of
+recombinant baculoviruses harboring either rat GAD65 (4), human
+GAD65, or human GAD67 (22) was described earlier. A recombinant baculovirus for expressing an NH;-terminal deletion mutant of rat GAD65 lacking the first 101 amino acids was generated
+by first making a 2-kb deletion mutant by oligonucleotide-directed
+mutagenesis (5), cloning this mutant into the EcoRI site of
+p Bluescript (Stratagene, La Jolla, CA), from which it was released
+by Smal and NotI digestions, and finally inserting the mutant CDNA
+into the Smal and Notl sites of the baculovirus expression vector
+pVL1393 (Invitrogen, San Diego, CA). A clone containing the sense
+orientation for the A1-101 mutant of rat GAD65 was used in a calcium phosphate cotransfection with wild-type Autographa californica nuclear polyhedrosis virus. Recombinant viruses were isolated
+as described (30). Recombinant proteins were expressed from the
+baculovirus constructs in Sf9 cells. Generation of NH2-terminal
+deletions of a rat GAD65 mutant in which cysteines at positions
+30 and 45 have been substituted with alanines, and insertion of
+the mutants into the COS-cell expression vector pSV-SPORT
+(GIBCO BRL, Gaithersburg, MD) were described earlier (5). Deletion mutants lacking the first NH2-terminal 8 (A1-8), 15 (A115), and 23 (A1-23) amino acids of rat GAD65, respectively, were
+produced by transient transfection of COS-7 cells using lipofectamine (GIBCO BRL).
+
+For Western blot analyses, Sf9 or COS-7 cells expressing
+GAD65, GAD67, or NH2-terminal deletion mutants of GAD65
+were washed twice in cell harvest buffer (10 mM Hepes/NaOH,
+pH 7. 4, 150 mM Na Cl, 10 mM benzamidine/HCl, 0. 1 mM PMSF),
+and lysed in HMAP buffer (10 mM Hepes/NaOH, pH 7. 4, 1 mM
+Mg Ch, 1 mM aminoethylisothiouranium bromide hydrobromide
+[AET], 0. 2 mM pyridoxal 5&#x27;phosphate [PLP]) containing 1% Triton
+X-114, and 0. 1 mM PMSF at 4°C. After centrifugation at 264, 000
+g, 4°C, for 30 min, the supernatant was collected and prepared
+for SDS-PAGE by boiling for 3 min in SDS sample buffer at a final
+concentration of 8 mM Tris/HCl, 15% sucrose, 2% SDS, 5%
+8-mercaptoethanol, and 0. 006% bromophenol blue.
+
+A 58-kD tryptic fragment containing the COOH terminus was
+generated from rat or human GAD65 produced in Sf9 cells. Approximately 60 x 10° Sf9 cells were harvested 72 h after infection with the appropriate baculovirus. The cell pellet was extracted
+in 4 ml of HMAP buffer supplemented with 1% Triton X-114 and
+0. 1 mM PMSF for 1 h on ice. The lysate was diluted with 21. 6
+ml of HEMAP (HMAP supplemented with 1 mM EGTA) and
+treated with 5. 4 ml of N-tosyl-1-phenylalanine-chloromethylketone
+(TPCK)-treated trypsin (2 mg/ml; Sigma Chemical Co., St. Louis,
+
+598
+
+MO) for 20 min at 0°C. The reaction was quenched by adding
+400 pl of 100 mM PMSF and 6. 8 ml 5x SDS-sample buffer. This
+material was used for Western blot analysis.
+
+The approximate location of the tryptic cleavage site was estimated based on the relative molecular weight of the fragment obtained by SDS-PAGE, followed by sequencing of the NHz terminus of the isolated peptide. Approximately 300 x 10° Sf9 cells
+infected for production of human GAD65 were harvested and suspended in HMAP buffer containing 1% Triton X-114 and 0. 1 mM
+PMSF, and incubated for 1 h on ice. The cells were then
+homogenized using a Tissumizer homogenizer (Tekmar Co., Cincinnati, OH) for 30 s on ice. The cell lysate was centrifuged at
+100, 000 g and the supernatant was applied to a phenyl-Sepharose
+CL4B column (Pharmacia LKB) preequilibrated in buffer A (50
+mM potassium phosphate, pH 7. 0, 10 mM dithiothreitol [DTT],
+1 mM AET, 0. 2 mM PLP) containing 2 M ammonium sulfate,
+then washed with 5 column volumes of buffer A containing 2M
+ammonium sulfate. The protein was eluted using buffer A and a
+gradient with initially 0% Triton X-100 and 1. 5 M ammonium
+sulfate, and finally 2% Triton X-100 and 0 mM ammonium sulfate. Fractions containing GAD activity were pooled and subjected
+to immunoafhnity chromatography using the GAD1 monoclonal
+antibody as described (27) except that the gel matrix was washed
+sequentially with 10 volumes of buffer B (10 mM Hepes/NaOH,
+pH 7. 4, 10 mM DTT, 1 mM AET, 0. 2 mM PLP), 10 volumes of
+buffer B with 0. 5 M Na Cl and 10 valumes of buffer B before elution of GAD65 in 1-ml aliquots of buffer A at pH 11 and neutralized in 100 yl 1M potassium phosphate pH 6. 5, 0. 2 mM PLP. Protein concentrations were determined using Coomassie Plus protein
+reagent (Pierce, Rockford, IL), using BSA as a standard. Purified
+human GAD65 (81 g/ml, 100 pl) was treated with 5 pl of 0. 2
+mg/ml TPCK-treated trypsin (1 wg in 5 pl) for 1h at O°C. The
+reaction was quenched by adding 10 yl of 100 mM PMSF and
+freezing at —20°C. The sample (13 pmol of the 58-kD protein)
+was subjected to preparative SDS-PAGE and blotted to Pro Blott
+polyvinylidene difluoride (PVDF) membrane (Applied Biosystems,
+Inc., Foster City, CA). A slice of PVDF paper containing the 58
+kD fragment was used for gas phase sequencing using a gas phase
+sequencer (model 470A; Applied Biosystems, Inc.). The phenylthiohydantoin (PTH)-derivatives were identified by reverse-phase HPLC
+using an on-line PTH analyzer (model 120A; Applied Biosystems,
+Inc.). Electrophoresis, blotting, and sequencing were carried out
+at the Biomedical Resource Center, UCSF. The results were consistent with the generation of two fragments by cleavage at either
+position 69 (lys) or 70 (arg).
+
+Western Blot Analyses. To compare serum IgG specificities for
+GAD¢;, GAD65, the 58-kD fragment of GAD65, and deletion muNHz-terminal Linear GAD65 Epitope in Stiff-Man Syndrome
+
+tants of GAD65, it was essential to load equal amounts of each protein on the gel. A preparation of full-length rat or human GAD65
+was chosen as an arbitrary standard and titrated on Western blots.
+Each protein preparation was titrated and calibrated against this
+standard to obtain an identical signal on Western blots immunostained with rabbit 1267 antiserum, which is equally reactive with
+both GADs; and GAD65 (27). Finally, the concentrations of
+different proteins which consistently gave a signal equivalent to
+that of the GAD65 standard were tested several times on the same
+blots, to ensure equivalent signal intensities. Equal amounts of fulllength GAD, GAD65, 58-kD trypsin fragment of GAD65, or deletions mutants of GAD65 were then subjected to SDS-PAGE,
+blotted to Immobilon PVDF transfer membrane (Millipore Corp.,
+Bedford, MA) and analyzed for binding of human IgG and animal
+antiserum IgG after dilution of sera as described earlier (27). In
+some experiments, human sera were preabsorbed using a homogenate of noninfected Sf9 cells as indicated. Sf9 cells were homogenized
+in HMAP buffer (10’ cells/ml) using a Tissumizer homogenizer
+(Tekmar Co.) for 1 min on ice. The homogenate was centrifuged
+at 264, 000 g. Sera were incubated with 0. 2 vol of Sf9 cell supernatant for 16 h at 4°C, diluted, and used for immunostaining of
+Western blots (27).
+
+Synthesis of Peptides for Blocking Studies. Peptides of 20 residues,
+spanning amino acids 1-119 of the human GAD65 molecule (17),
+and each overlapping the next sequence by 9 amino acids, were
+synthesized by a multiple peptide synthesizer (Advanced Chemtech, Louisville, KY), using fluorenylmethoxycarbony] (FMOC)-
+protected amino acids and amino acid resins (Bachem California,
+‘Torrance, CA). Side chain deprotection and cleavage from the resin
+were performed with trifluoroacetic acid/anisole/dimethylsulfide
+(9: 0. 5: 0. 5 vol/vol), and the peptides were extracted with ether. Peptide identity was confirmed by protein sequence analysis with a
+Protein Sequencer (Applied Biosystems, Inc.). For blocking studies,
+the peptides were solubilized in TBS/Tween-20 buffer (20 mM
+Tris/HC], pH 7. 4, 150 mM Na Cl, and 0. 1% Tween-20) to a concentration of 0. 5 mg/ml. All peptides, except no. 8, dissolved readily
+in this buffer. Because peptide 8 (residues 78-97) was only partially
+soluble, it was used as a saturated solution which effectively blocked
+the binding of rabbit antiserum 2001 (reactive with residues 83-93
+in human GAD).
+
+Dot Blot Analyses. Human GAD65 was extracted from Sf9 cells
+and isolated to 295% purity by immunoaffinity chromatography
+as described previously (27). Purified GAD65 at a concentration of
+55 g/ml in 100 mM potassium phosphate, 0. 2 mM PLP, 1 mM
+AET, 0. 1% SDS, was boiled for 3 min before spotting (0. 2 ug)
+on Immobilon PVDF transfer membrane (Millipore Corp.) using
+a BRL Hybri Dot Manifold (GIBCO BRL). The PVDF membrane
+was blocked with TBS/Tween-20 buffer containing 3% milk protein for 1 h at room temperature. The membranes were incubated
+with sera (diluted in TBS/Tween-20 buffer containing 2% BSA)
+for 1. 5 h at room temperature; after three washes of 5 min in
+TBS/Tween-20, they were incubated with alkaline phosphataseconjugated goat anti~human IgG (Zymed Laboratories, Inc., South
+San Francisco, CA) or anti-rabbit IgG (Zymed Laboratories, Inc.)
+at a dilution of 1: 500 in 3% milk/TBS/Tween-20 buffer for 1 h
+at room temperature. After two washes of 5 min in TBS/Tween20 and one in TBS buffer, the blots were developed by incubation
+for 3 min in 0. 4 mM 5-bromo-4-chloro-3-indolyl phosphate and
+0. 4 mM nitro blue tetrazolium in 150 mM Tris-HCl, pH 9. 5, 100
+mM Na Cl, and 5 mM Mg Ch.
+
+Human sera (SMS, IDDM, polyendocrine, and normal sera) were
+diluted 1: 100, 1: 200, and 1: 500 in TBS/Tween-20 buffer, 2% BSA.
+Rabbit antisera 1701 and 2001 were diluted in the same buffer,
+
+599 Kim et al.
+
+1: 200, 000 and 1: 2, 000, respectively. For peptide blocking experiments, diluted sera were incubated overnight at 4°C with either
+a mixture of peptides (0. 3 ug/l each), an individual peptide (0. 3
+ug/pl), human GAD65 (5. 5 pg/ml), or no additive, before incubation with dot blots of purified human GAD67
+
+Analyses of Islet Cell Cytoplasmic Antibodies (ICA). ICAs were
+analyzed by indirect immunofluorescence using frozen sections of
+human pancreas from blood group O-positive donors of cadaveric
+kidneys (31). Serum samples were titrated and end point titers were
+defined as the highest dilution of detectable ICA-staining. Positive
+samples were expressed in Juvenile Diabetes Foundation (JDF) units
+by comparing their end point dilution to a standard calibration curve
+using the international JDF reference serum provided by the Immunology of Diabetes Workshops. This assay has performed in
+category A in the ICA proficiency program conducted under the
+auspices of the Immunology of Diabetes Workshops (32).
+
+HLA-typing. DRB1, DQB1, and DQA1 typing was performed
+with a PCR dot blot technique as described (33, 34).
+
+Results
+
+<span class="source-segment role-group_summary" id="src-s0003" data-segment="s0003" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">SMS Sera Contain Higher Levels of Immunoprecipitating
+GAD65 Autoantibodies than IDDM Sera. Sera from 35 SMS
+patients were analyzed for GAD65 autoantibodies by immunoprecipitation of [*°S]methionine-labeled Triton X-114 detergent phase extracts of COS-7 cells expressing rat GAD65
+(Table 1). Anti-GAD67 IgG titers, quantified in serially
+diluted sera by phosphorimager analyses, were orders of magnitude higher in SMS sera (Tables 1 and 2) than in IDDM
+sera and sera from patients with polyendocrine autoimmune
+disorder (Table 2). Thus, the GAD65 binding capacity of
+SMS IgG is orders of magnitude higher than that of IDDM
+IgG. Titers of ICA in the SMS patients were also higher (Table
+1, median titer 2660 JDF units) than in 327 ICA-positive
+newly onset IDDM sera analyzed by the same assay (median
+titer 110 JDF units) (31). The correlation coefficient between
+ICA and GAD65 autoantibody titers in the 35 SMS patients
+was 0. 77.</span>
+
+<span class="source-segment role-group_specific" id="src-s0004" data-segment="s0004" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">SMS Epitopes Recognized in Denatured GAD65, Are Absent
+in GAD67, and Distinct from IDDM Epitopes. The 35 SMS
+sera were analyzed by immunoblotting for reactivity with
+equal amounts of denatured GAD65 and GAD67. Additional
+sera were tested from 11 IDDM patients, 10 healthy individuals, and 10 patients with polyendocrine autoimmune disorder without SMS. No serum IgG bound to human or rat
+GADe7 on Western blots (Fig. 1 A, lanes 3, 5, 7, 9, 11).
+IgG in all SMS sera reacted specifically with GAD65 (Fig. 1
+A, lanes 4, 6, 8), but no reactivity was found in the sera from
+patients with IDDM (Fig. 2, lanes 22 and 25), polyendocrine autoimmunity (Fig. 1, lane 10), or healthy control subjects (Fig. 1, lane 12; Fig. 2, lanes 28 and 31) at the same
+dilution. To analyze whether the lack of reactivity of IDDM
+sera with GAD65 on Western blots was due to low titers
+rather than differences in epitope recognition, the IDDM sera
+used in this study were also analyzed at lower dilutions to
+obtain a final GAD65 antibody titer of 4 and compared with
+SMS sera analyzed at the same titer. To avoid nonspecific
+binding of Sf9 cell proteins at high IgG concentrations, the
+sera were preabsorbed with noninfected Sf9 cell lysates. At</span>
+
+<span class="source-segment role-group_specific" id="src-s0005" data-segment="s0005" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">the low dilutions, IDDM sera still failed to react with denatured GAD65 on Western blots (Fig. 1 B). The results demonstrate that SMS autoantibodies are directed at epitope(s)
+in the GAD65 molecule that are resistant to denaturation by
+SDS and are therefore likely to be continuous. Reactivity with
+these GAD65-specific epitope(s) qualitatively distinguishes
+SMS autoantibodies from anti-GADg¢s autoantibodies found
+in IDDM and polyendocrine autoimmune disorder in the absence of SMS.</span>
+
+SMS Autoantibodies Recognize Epitopes in the NHzterminal
+Region of Denatured GAD65. Since GAD65 differs most
+significantly from GAD67 in the first 95 amino acids, we
+speculated that this region might harbor GAD65-specific
+SMS epitopes recognized by immunoblotting. To address this
+possibility, all sera were analyzed in parallel for reactivity with
+equal amounts of full-length rat GAD65, a 58-kD tryptic
+fragment of rat GAD65 lacking the first 69 or 70 amino
+acids, and a 55-kD deletion mutant lacking the first 101 amino
+
+1267 SMS1 SMS7 SMS18 PE2 NHS1
+GAD67
+GAD gs B= ae -- Sis
+
+12 34 #5 6 78 9 10 1112
+
+1267 SMS 22 IDDM 1
+
+B
+
+Figure 1. SMS sera recognize GAD65 but not GAD67 on Western blots
+and this reactivity distinguishes SMS from IDDM and polyendocrine autoimmunity in the absence of SMS. (A) Lysates of Sf9 cells expressing
+human GAD67 (lanes 1, 3, 5, 7, 9, 11) or GAD65 (lanes 2, 4, 6, 8, 10,
+12) produced from a baculovirus expression system were subjected to SDSPAGE, blotted to a PVDF membrane, and immunostained using the human
+sera indicated (PE, polyendocrine patient serum; NHS, normal human
+serum) at dilutions of 1: 500 and the rabbit anti-GAD antiserum 1267 at
+dilution 1: 100, 000. (B) Lysates of Sf9 cells expressing human GADsg7 (lanes
+1, 3, 5) or GAD65 (lanes 2, 4, 6) immunostained with SMS and IDDM
+sera preabsorbed to a Sf9-cell lysate and diluted (SMS22, final dilution 1: 388;
+IDDM1, final dilution 1: 9) to obtain a titer of approximately 4 for GAD65
+antibodies. Immunostaining with the 1267 antiserum (dilution 1: 20, 000)
+is shown in lanes 1 and 2.
+
+Table 3. Distribution of SMS-Patients According to
+Patterns of Epitope Recognition in Denatured GAD65
+
+Recognition of epitopes
+
+Linear NH2- Epitope
+NH.- terminal in a SMSterminal epitope A101 patients
+Pattern epitope predominant mutant no.
+IA yes yes no 1, 2, 5, 8, 17,
+22, 27, 28, 31
+IB yes yes weak 7, 10, 11, 13
+14, 15, 16, 19
+21, 23, 24, 25
+26, 29, 30, 35
+i yes no strong 3, 4, 6, 9, 12,
+18, 20, 32, 33,
+
+34
+
+<span class="source-segment role-group_specific" id="src-s0006" data-segment="s0006" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">acids of rat GAD65 (GAD¢sA1-101) (Fig. 2 and Table 3).
+Among the SMS sera, two major patterns of reactivity were
+observed. The majority (25 of 35, or 71%) of SMS sera exhibited pattern I, in which reactivity with full-length
+GAD65 was much stronger than with both the 58- and 55kD fragments. This serological pattern suggests that the
+NH&gt;-terminal 69 or 70 amino acids in rat GAD65 harbor a
+major linear epitope(s) (Fig. 2, lanes 4-15, and Table 3).
+Among the pattern I sera, IgG in 9 (pattern IA) reacted
+strongly with the full-length GAD65 protein, but did not
+recognize the 58- and 55-kD fragments, demonstrating that
+the recognition of denatured rat GAD65 was limited to the
+first 69 or 70 amino acids (Fig. 2, lanes 4-9). IgG in the
+remaining 16 SMS sera of the pattern I group (pattern IB)
+reacted strongly with the full-length protein, and were significantly less reactive with the 58- and 55-kD fragments.
+This result again suggested IgG that recognized a major
+epitope in the first 69 or 70 amino acids but, in addition,
+minor epitope(s) further downstream in GAD65 (Fig. 2,
+lanes 10-15, and Table 3). Thus for 71% of the SMS sera
+(pattern IA and B), the major epitope recognized in denatured rat GAD65 resides in the first 69 or 70 amino acids.
+Pattern II reactivity, found in 10 of 35 SMS sera (29%, pattern IT), was distinctly different in that reactivity with both
+the 58-kD tryptic fragment and the 55-kD deletion mutant
+was only minimally less than reactivity with the full-length
+protein (Fig. 2, lanes 16-21, and Table 3). Thus 29% of
+the SMS patients had autoantibodies that recognized an additional major epitope(s) further downstream in the denatured GAD65 molecule. In sum, residues 1-69 or 1-70 in rat
+GAD65 contribute to a linear epitope(s) that is recognized
+by IgG in serum of all SMS patients, and residues COOH
+terminal to amino acid 101 in rat GAD65 contribute to a
+second antigenic region that is recognized by IgG in only
+some SMS patients.</span>
+
+600 NHb-terminal Linear GAD65 Epitope in Stiff-Man Syndrome
+
+1267 SMS 1 _SMS 2 SMS 21 __SMS 30_
+es gS gS 8S 8s
+x x XN v NOON NON \ ra ,
+voy yy yy ~pf © » SF v
+o of oF 9% 9 9 oF OF o OF OF OF OF OF OF 9% O°
+§ €§ F§ FFF FFF FFF FFF FE
+eee _ -- - _ --
+=
+- ——
+1 2 3 5 6 7 8 9 10 11 «#12 13 14 15, 6 17 #18
+Pattern 1A ~~ Patten IBS
+S) © ‘ © , ©
+“ A « AS
+NOON N N NON N XN
+poe 2» » £ voy voy
+og” oF of o® oF 9° &amp; 9 9” Bi 9” Gy
+GFF FFF FFF FF EF
+22 23 24 23 2% 27 2 2 ) a “A
+SMS 1 — Pattern IA
+Peptide 1 Peptide 2 hu GAD65 No Block
+
+1 2 3 4 5 6 7 8
+
+SMS 11 — Pattern IB
+Peptide 2. hu GAD65
+
+| |
+
+Peptide 1 No block
+
+9 10 11. «12 13 14 15 16
+
+SMS 12 — Pattern Il
+Peptide 2 hu GAD67 No block!
+
+IPeptide 1
+17 18 19 20 21 22
+
+1701
+Peptide 1 Peptide 2 hu GAD,g, Peptide 170 No block |
+
+23 24
+
+[
+
+25 26 27 «28 29 30 31 32
+
+IDDM 6 NHS 5
+INo block! &#x27;No block!
+
+33 34
+
+35 36 37 = 38
+
+Figure 3. An NH7-terminal peptide of GAD65 specifically blocks the
+binding of SMS sera. Human GAD65 purified from a baculovirus expression system was spotted on a PVDF membrane and incubated with SMS
+sera (all at 1: 500 dilution) or serum 1701 (raised to peptide 170, corresponding to 19 COOH-terminal amino acids in GAD, at a dilution of
+
+601 Kim et al.
+
+_ SMS 12 7
+
+Pattern Il
+
+SMS 1 8
+
+$ 3
+
+x e
+
+N
+Vv
+
+yy
+
+2&quot; 9
+
+9
+GF
+
+fe)
+
+Figure 2. SMS sera show two patterns of reactivity
+with 58- and 55-kD COOH-terminal fragments of
+rat GAD65. Full-length GAD65, a 58-kD tryptic fragment of rat GAD65, and a 55-kD NHp-terminal deletion mutant of rat GAD65 lacking amino acids
+1-101, were subjected to SDS-PAGE, blotted to PVDF
+membrane, and immunostained using the sera at the
+following dilutions: SMS 1, 12, 18, 30 at 1: 500, SMS
+2, 21 at 1: 200, and IDDM and NHS at 1: 500. SMS
+sera 1, 2, 21, and 30 (pattern I) recognize a major epitope NHz-terminal to amino acid 69/70, whereas
+SMS sera 12 and 18 (pattern II) also recognize a strong
+epitope COOH-terminal to amino acid 101. Among
+pattern I sera, two subpatterns are observed. In pattern IA, the sera only recognize the full-length protein. In pattern IB, the sera recognize a weaker epitope COOH-terminal to amino acid 101.
+
+19 2 21,
+
+The Principal NHrterminal Epitope Resides in the First Eight
+Amino Acids. To further localize the SMS epitope(s) in the
+NHz-terminal region, we synthesized ten peptides, each 20
+amino acids long, spanning residues 1-119 in the GAD65
+molecule and overlapping each other by 9 amino acids. We
+tested the ability of the peptides to block the dot blot reactivity of SMS IgG with denatured GAD65. The first series
+of experiments tested three mixtures of peptides, peptides
+1-3 (spanning residues 1~42), peptides 3-6 (residues 34-75),
+and peptides 7-10 (residues 67-119). The mixture of peptides 1-3 completely blocked the reactivity of pattern IA sera,
+significantly blocked pattern IB reactivity, and partially blocked
+pattern II reactivity. These results are consistent with recognition of an epitope in the first 42 amino acids by both pattern I and pattern II sera. The mixture of peptides 4-6 did
+not affect the binding of SMS IgG to denatured GAD65 (not
+shown). The mixture of peptides 7-10 partially blocked the
+reactivities of both pattern I and pattern II sera. We next
+analyzed the ability of individual peptides 1, 2, 3, 7, 8, 9,
+and 10 to block the binding of SMS IgG to denatured
+GAD65. These experiments revealed that only peptide 1 of
+the 1-3 mixture inhibited the binding of SMS IgG to human
+GAD65 (see Fig. 3), suggesting that the first 11 residues of
+the NHz terminus of GAD; contribute to an SMS epitope.
+This blocking was specific, because peptide 1 did not block
+
+1: 200, 000) that had been incubated overnight with or without the indicated peptides or human GAD65. Peptide 1 completely blocks the reactivity of serum 1 (pattern IA), significantly inhibits the reactivity of serum
+11 (pattern IB), partially inhibits the reactivity of serum 12 (pattern II),
+but fails to inhibit serum 1701. Peptide 2 does not inhibit binding of any
+of the sera and peptide 170 only inhibits binding of the serum 1701, which
+was raised against it.
+
+1267 SMS 1 SMS 22 __ SMS 7 SMS 30 SMS 9 SMS 12 Figure 4. SMS sera recognize an epitope lof . ——— — / f &amp;? y ~ % / — © 7 ‘ w/ . . . .
+% © » © ® NX » © ® » ¥ ® © cated in the first eight NH»-terminal amino
+vu 7 ov 79° . v v v - vv vu acids. Full-length rat GADe and short delei io 2 io 5 eo Pa 2 x 9 W&amp; © % 2 % 6 o Pa) Yo . ; z a
+9g oF OF =O OF oF oF OF OO OD OF OF DF OF DY oO QF oF of tion mutants lacking 5 an amino acids,
+SF SF FFF FFF FFF FFF FFF FFE respectively, were subjected to SDS-PAGE,
+blotted to PVDF membranes, and immuno-
++ - _ stained with SMS sera at the following dilutions: SMS 1, 7, 9, 12, 30 at 1: 500 and SMS
+22 at 1: 120. All the sera show identical signal
+or lack of signal with the 1-8 and 1-15 deletion mutants suggesting that they react equally
+12 3 4 5 6 7 8 9, 10 11 12 1314 15 ,, 16 17 18 «919 2 at, well with both mutants and that the NH2rene an Jt Jt J terminal epitope resides in the first eight
+
+Pattern IA Pattern IB Pattern Il
+
+the binding of rabbit IgG raised against either a COOHterminal peptide (serum 1701, Fig. 3, panels 25/26) or a peptide encompassing residues 83-93 in the NH2-terminal region (serum 2001, not shown). Each of these antisera were
+blocked by the peptide against which they were raised (Fig.
+3, panels 31/32 and results not shown). Only peptide 7, in
+the mixture 7-10, caused any block of the reactivity of SMS
+sera. However, blocking by peptide 7 was not specific because it also inhibited the reactivity of several rabbit antisera
+raised against irrelevant peptides (not shown). The reason
+for nonspecific inhibition by peptide 7 of IgG binding to
+GADsgs on dot blots is unclear. This activity was not found
+with peptides 6 and 8, which together account for all but
+two of the amino acids in peptide 7. Thus, among the NH2terminal peptides spanning the first 119 amino acids, only
+peptide 1 specifically blocked the pattern I reactivity of SMS
+Ig Gs and partly inhibited the reactivity of pattern II SMS
+Ig Gs. This result is consistent with a major linear NH2terminal SMS epitope residing in the first 11 amino acids of
+GADs;.
+
+<span class="source-segment role-group_specific" id="src-s0007" data-segment="s0007" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">To further analyze the reactivity of SMS IgG with the
+NH&gt;-terminal region of GAD65, deletion mutants lacking
+the first 8 and 15 amino acids of rat GAD65, respectively,
+were analyzed by immunoblotting for interaction with SMS
+IgG (Fig. 4). These experiments demonstrated that pattern
+I sera reacted either very weakly (pattern IB) or not at all
+(pattern IA) with both the A1-8 and A1-15 deletion mutants (Fig. 4, lanes 4-15). In contrast, pattern II sera recognized both deletion mutants (Fig. 4, lanes 16-21). All of the
+SMS sera either failed to react with both of the short deletion mutants or showed equal reactivity to both of them (Fig.
+4), indicating that the NH2-terminal linear epitope recognized by SMS sera resides in amino acids 1-8 and that amino
+acids 9~15 do not contribute to this or other SMS epitopes.</span>
+
+<span class="source-segment role-group_specific" id="src-s0008" data-segment="s0008" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">The results of the peptide blocking experiments and analyses of deletion mutants localize the NH2-terminal epitope
+recognized by SMS sera to the first 8 amino acids.</span>
+
+HLA-DRB1*0301, DQB1*0201 Is the Predominant Haplotype among Patients of Pattern I Seropositivity. Many autoimmune diseases, including IDDM, are strongly associated with
+certain MHC class II haplotypes. Thus 295% of IDDM patients carry the HLA-DRB1*0301, DQB1*0201 (DR3,
+DQw2) and/or DRB1*0401, DQB1*0302 (DR4, DQ8) sus602
+
+residues, whereas residues 9-15 do not contribute to the epitope.
+
+<span class="source-segment role-group_specific" id="src-s0009" data-segment="s0009" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">ceptibility haplotypes (35). To assess whether SMS and IDDM
+have similar HLA-association, we obtained lymphocytes from
+12 of the SMS patients, 9 with serological pattern I and 3
+with serological pattern II. (Table 4, and Lennon, V., S. Baekkeskov, T. Bugawan, and H. Erlich, manuscript in preparation). 9 of the 12 SMS patients carried the IDDM associated
+allele DQw2 (DQB1*0201), 8 on the DR3 (DRB1*0301)
+and one on the DR7 (DRB1*0701) haplotype. Amongst the
+DQwz? positive patients, 8 (4 of whom were homozygous)
+had serological pattern I reactivity and one had pattern II
+reactivity. The only non-DQ2 positive patient with pattern
+I was positive for the IDDM associated haplotype DR4, DQ8
+(Table 4). Thus all nine patients with serological pattern I
+but only one of the three patients of pattern II carried an
+IDDM associated haplotype (Table 4). One of the pattern
+II patients carried the DRB1*1501, DQB1*0603 (DR2,
+DQwé6) haplotype, which is protective for IDDM (36). The
+DR3, DQw2 IDDM-associated haplotype is particularly
+abundant, whereas the DR4, DQw8 IDDM-associated haplotype is rare in the pattern I SMS patients (Lennon V., S. Baekkeskov, T. Bugawan, and H. Erlich, manuscript in preparation).</span>
+
+Table 4. DR and DQ Haplotypes of SMS Patients
+
+SMS GAD65 Ab
+patient Western blot
+no. DRBi DQBi pattern
+1 0701, 1302 0201, 0604 I
+
+2 0301, 0301 0201, 0201 I
+
+3 1601, 1401 0502, 0503 II
+
+4 1501, 1301 0603, 0602/03 I]
+
+6 0301, 0901 0201, 0303 Il
+
+7 0301, 0401 0201, 0301/02 it
+
+8 0404, 1103 0302, 0301 I
+
+11 0301, 0301 0201, 0201 I
+
+14 0301, 0401 0201, 0302 I
+
+15 0301, 0400 0201, 0301 I
+
+19 0301, 0301 0201, 0201 I
+30 0301, 0301 0201, 0201 I
+
+NHp-terminal Linear GAD65 Epitope in Stiff-Man Syndrome
+
+r~ Hydrophobic modifications
+and membrane anchoring
+
+Froteolytic Conformational epitopes
+P IDDM and SMS
+1 r 1
+| Es GA 1, .
+Lea epitope Linear epitope
+SMS IDDM
+
+Figure 5. Schematic drawing of the GAD65 molecule showing location of humoral epitope areas, membrane anchoring regions, and proteolytic hot spot.
+
+Discussion
+
+Linear Epitopes in GAD65. We have identified a linear
+NH&gt;-terminal epitope in the autoantigen glutamic acid
+decarboxylase, GAD6¢s, that is specifically recognized by autoantibodies in serum of patients with SMS (Fig. 5). This
+epitope is not recognized by anti-GAD65 autoantibodies that
+are associated with 6 cell destruction and development of
+insulin-dependent diabetes in the absence of SMS (Fig. 5).
+Hence specificity for the linear NH2-terminal epitope distinguishes IgG autoantibodies of SMS patients from those of
+IDDM patients. Antibodies of this specificity may be important for the prediction and diagnosis of SMS.
+
+A recent Western blot study of SMS antibody reactivity
+with GAD65 used bacterially expressed recombinant fragments of rat GAD65 coupled to a maltose binding protein
+(24). A fragment containing residues 475-585 of rat GAD65
+was recognized much more strongly than full-length GAD65,
+but the reactivity was abolished by deleting either residues
+475-483 or residues 582-585. Based on these results, the
+authors concluded that the major SMS epitope recognized
+on Western blots is not linear but rather conformational and
+generated by refolding of the denatured amino acid 475-585
+fragment on nitrocellulose. To explain why a partial fragment was more reactive than wild-type rat GAD65, the
+authors suggested that the conformational epitope in residues
+475-585 is partly cryptic in the native molecule (24). Consistent with our results, Butler et al. (24), also reported that
+SMS antibodies recognize rat GAD65 fragments containing
+amino acids 1-95 or 1-195 on Western blots, albeit more
+weakly than the 475-585 fragment.
+
+The pattern II specificity defined in our study clearly
+identifies a major epitope(s) COOH-terminal to residue 101
+in denatured rat GAD65 on Western blots, which may represent the nonlinear epitope described by Butler et al. (24).
+However pattern II reactivity only accounted for 29% of the
+SMS sera analyzed in our study. The remaining 71% of SMS
+sera had a reactivity that was consistent with recognition of
+a dominant NH?-terminal linear epitope but not a major
+epitope further downstream in denatured rat GAD65 on
+
+603 Kim et al.
+
+Western blots. The difference between our results and those
+of Butler et al. (24) is not readily explained. Several possibilities can be suggested. First, we have analyzed all SMS patients at the Mayo Clinic and UCSF over the last 5 yr. The
+study by Butler et al. (24) used sera from 30 patients which
+were selected from a cohort of 72 SMS patients by unknown
+criteria; the selection procedure may have favored pattern II
+sera. Second, their immunoblotting protocol may enhance
+renaturation of the amino acid 475-585 epitope on Western
+blots. A third possibility is that the coupling of the 475-585
+fragment to a maltose binding protein enhances its refolding
+
+on nitrocellulose.
+In addition to linear epitopes associated with SMS and
+
+IDDM respectively (Fig. 5), Ujihara et al. (36) have identified
+a third linear epitope in residues 421-442 in the GAD65 protein. This epitope is recognized by IgG in a rare group of
+IDDM relatives that develop high titers of GAD65 autoantibodies yet carry the HLA-DRB1&quot;1501, DQB1*0603 (DR2,
+DQwé6) haplotype which is protective for diabetes. Interestingly, one of the three SMS patients of pattern II who was
+HLA-haplotyped carried this haplotype. We speculate that
+additional pattern II patients, amongst whom IDDM was
+rare (20%) compared with pattern I patients (44%), may
+carry alleles that are protective for IDDM and that pattern
+II may in some cases include recognition of the epitope described by Ujihara et al. (36). In comparison, none of the
+9 pattern I patients who were HLA-haplotyped were DR2,
+DQwé6 positive. Rather they all carried one or two IDDM
+susceptibility alleles and the DR3, DQw2 allele was particularly abundant (7/9).
+
+The NH?-terminal linear epitope identified in our study
+is identical in rat and human GAD65, which overall share
+295% sequence homology (17). Although it has been
+reported that SMS sera recognize rat and human GAD6¢s
+equally well (24), our preliminary results suggest that the
+downstream epitope(s) may differ between the rat and human
+autoantigen. Thus a 58-kD tryptic fragment of the human
+protein is recognized more strongly on Western blots by some
+pattern IB and pattern II sera than its rat counterpart. Generation of mutants of the human protein and expression in cellular expression systems will be important for characterizing
+the SMS epitope(s) contained in the 58-kD tryptic fragment.
+
+SMS Sera Have an Increased GAD Epitope Recognition Compared with IDDM Sera. Anti-GAD65 autoantibodies differ
+significantly in SMS and IDDM patients with regard to titers
+measured by immunoprecipitation. Titers of autoantibodies
+associated with SMS are orders of magnitude higher than
+in IDDM sera. Thus SMS is characterized by a much stronger
+humoral autoimmune response to GAD65 than is IDDM.
+
+Is the strong antibody response to GAD65 in SMS a result of (a) an increased humoral epitope repertoire in this disease compared with IDDM; (5) an enhanced immune response
+to certain epitopes, or (c) a combination of both? Since no
+monoclonal autoantibodies are yet available from SMS patients, this question is difhcult to address directly. However,
+considerable indirect evidence suggests that the humoral response in SMS sera is more broad than in IDDM. By immunoprecipitation assay, both SMS and IDDM sera recognize
+
+an NHo-terminal deletion mutant of GAD65 lacking the first
+244 amino acids (22, and Shi, Y., and S. Baekkeskov, unpublished results). This suggests that Ig Gs in SMS and IDDM
+sera recognize conformational epitopes in the COOH-terminal
+half of the molecule. In addition, SMS autoantibodies
+specifically recognize the linear NH2-terminal epitope identified in this study. Finally, the incidence of GAD67 autoantibodies in IDDM patients is only 10-20% (8, 9), whereas
+sera of SMS patients generally immunoprecipitate native
+GAD67 (24, 37) albeit less efficiently than GAD65 (24). On
+Western blots, SMS sera react specifically with GAD65 and
+do not recognize GAD¢7. In sum, the humoral autoimmune
+response in SMS seems to include conformational epitopes
+(detected by immunoprecipitation) as well as linear epitope(s)
+(recognized in Western blots) that are not recognized by
+IDDM sera. It is likely that the stronger antibody responses
+associated with SMS reflect both a broader repertoire of epitopes than is characteristic of IDDM as well as higher affinity
+for shared epitopes.
+
+The Linear NHr-terminal Epitope Is Upstream from the Membrane Anchoring Domain and a Proteolytic Hot Spot. We have
+localized the vesicle targeting and membrane anchoring sequences in GAD65 to the second exon of the molecule (5)
+that spans amino acids 25-41 (2). GAD65 has a proteolytic
+hot spot around residues 69-75 encoded by the third exon
+(Fig. 5). GAD65 can be released spontaneously from islet cell
+membranes as a 57-58 kD hydrophilic soluble fragment in
+a time-dependent manner (4). The kinetics of this reaction
+are consistent with an enzymatic cleavage in islet cells (4).
+We speculate that this enzymatic activity may also reside in
+neurons and perhaps result in enhanced exposure of the
+NHz-terminal SMS epitope in a 7-8-kD fragment that remains membrane associated after cleavage.
+
+<span class="source-segment role-group_summary" id="src-s0010" data-segment="s0010" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">All SMS Patients Are Positive for Antibodies to GAD65. In
+a study of 32 SMS patients from seven different countries,
+which only found GAD autoantibodies in 20 patients (63%),
+it was suggested that SMS patients can be divided into two
+groups based on whether they have GAD autoantibodies or
+not (13). Most of the patients analyzed in our study were
+diagnosed at the Mayo Clinic in Rochester, where the disease was discovered and first described by Moersch and
+Woltman (38). Two patients were diagnosed at UCSF using
+clinical diagnostic criteria similar to those of the Mayo Clinic
+(14). All 35 patients were positive for GAD65 autoantibodies
+both in immunoprecipitation and Western blot assays. Our
+results suggest that a diagnosis of SMS using standardized
+clinical criteria identifies a uniform group of patients with
+strong humoral autoimmunity to GAD65. A SMS-like disorder associated with breast carcinoma was, however, recently
+described in four patients who were seronegative for antiGAD65s antibodies but positive for autoantibodies to a second
+synaptic vesicle protein, amphiphysin (39). Thus anti-GAD65
+autoantibodies may only be a universal characteristic of SMS
+in the absence of a paraneoplasia.</span>
+
+Role of B Cells and GAD65 Autoantibodies in IDDM and
+SMS. In spontaneous rodent models of IDDM, disease can
+
+be transferred by T cells but not B cells (10) and immunoelectronmicroscopic studies suggest that 6 cell destruction
+is mediated by cytotoxic T cells (40). The primary Th responses to GAD65 in the nonobese diabetic mouse are of the
+Th1 subset (12), which is consistent with induction of cytotoxic T cell responses. Although autoantibodies to GAD65
+have not been implicated as effectors of 6 cell destruction,
+it is conceivable that B cells, expressing GAD65-specific IgG
+on the surface, play an important role in antigen presentation in IDDM. Activated B cells are particularly efficient
+presenters of low abundance antigens by virtue of antigen
+capture by their surface immunoglobulins (41) and may well
+be the principal antigen presenting cells that can maintain
+chronic autoimmunity to a rare antigen like GAD65 over the
+several years of progressive 6 cell destruction. The antibody
+binding to an antigen can influence its processing in endosomal
+compartments, and consequently the presentation of epitopes
+to T cells. Thus, antibody binding can suppress some epitopes while boosting others (42). The identification of humoral autoimmune epitopes in the GAD65 molecule which
+are associated with either IDDM susceptibility (22) or protection (36) may provide an example of how specificity of
+autoantibodies can influence autoimmune T cell responses
+resulting in either 6 cell destruction and disease, or absence
+of disease.
+
+Do autoantibodies to GAD65 have a pathogenic role in
+SMS? Although the strong humoral autoimmune GAD65
+responses in SMS may suggest a more direct role of autoantibodies in impairment of GABA-ergic neurons than in destruction of 6 cells, the pathogenicity of SMS antibodies remains to be shown. It is noteworthy that in the absence of
+MHC class I expression (18) autoimmune effector mechanisms directed at neurons would be limited to antibody responses. Furthermore, an involvement of a Th2 subset of
+CD4* cells and strong antibody responses to GAD65 in the
+pathogenicity of SMS, in contrast to a requirement for a Thi
+subset and cytotoxic T cell responses for 8 cell destruction,
+is consistent with the dichotomy of the two diseases. Thus
+SMS without IDDM would ensue in the absence of Th1 helper
+cell and cytotoxic T cell responses to GAD65.
+
+An autoantibody-mediated impairment of GABA-ergic
+neurons would, however, require antigen exposure at the cell
+surface. Although there is some evidence to suggest that GAD
+can appear on the surface of neurons (43), the mechanisms
+of such exposure are unclear. GAD65 is believed to anchor
+at the cytosolic face of synaptic vesicle membranes and surface expression during exocytosis of GABA would require
+a membrane translocation step. The identification of amphiphysin as a target of autoantibodies in a paraneoplastic
+SMS-like syndrome (39) does suggest that a localization of
+a protein to the cytosolic face of synaptic vesicle membranes
+can predispose it for autoantigenicity and that such proteins
+may reach the cell surface by an as yet unknown mechanism.
+Alternatively, SMS autoantibodies may not be involved in
+pathogenicity but rather be only a marker of disease.
+
+604 NH,-terminal Linear GAD65 Epitope in Stiff-Man Syndrome
+
+We are grateful to Dr. K. M. Mc Evoy and colleagues in the Mayo Clinic’s Movement Disorder Clinic
+for their cooperation in identifying SMS patients; Dr. R. Layzer (Department of Neurology) and K. Fye
+(Department of Medicine) from the University of California, San Francisco, for providing SMS patient
+material and for valuable discussions; and Dr. A. Tobin (University of California, Los Angeles) and Dr.
+D. Gottlieb (Washington University, St. Louis, MO) for donation of research materials.
+
+This study was supported by grants from the National Institutes of Health (NIH) (DK-41822-01 and
+CA-37343). M. Jaffe was supported by a NIH training grant in endocrinology; Y. Shi was supported
+by a Juvenile Diabetes Foundation fellowship; and H. J. Aanstoot by the Ter Meulen Foundation and
+by an Albert Renold Fellowship of the European Association for Study of Diabetes.
+
+Address correspondence to Dr. Steinunn Baekkeskov, Hormone Research Institute, 513 Parnassus Ave.,
+Rm. HSW 1090, University of California San Francisco, San Francisco, CA 94143-0543.
+
+Received for publication 3 February 1994 and in revised form 6 May 1994.
+
+References
+
+1.
+
+5.
+
+Erlander, M. G., N. J. Tillakaratne, S. Feldblum, N. Patel, and
+AJ. Tobin. 1991. Two genes encode distinct glutamate decarboxylases. Neuron. 7: 91.
+
+. Bu, D. E, and A. J. Tobin. 1994, The exon-intron organization
+
+of the genes encoding two human glutamate decarboxylases
+(GAD65 and GADg:) suggests that they derive from a
+common ancestral GAD. Genetics. In press.
+
+. Christgau, S., H. Schierbeck, H.-J. Aanstoot, L. Aagaard, K.
+
+Begley, H. Kofod, K. Hejnaes, and S. Baekkeskov. 1991. Pancreatic beta cells express two autoantigenic forms of glutamic
+acid decarboxylase, a 65-k Da hydrophilic form and a 64-k Da
+amphiphilic form which can be both membrane-bound and
+soluble. J. Biol. Chem. 266: 21257.
+
+. Christgau, S., H.-J. Aanstoot, H. Schierbeck, K. Begley, S.
+
+Tullin, K. Hejnaes, and S. Baekkeskov. 1992. Membrane anchoring of the autoantigen GAD65 to microvesicles in pancreatic B-cells by palmitoylation in the NH2-terminal domain.
+J. Cell Biol. 118: 309.
+
+Shi, Y., B. Veit, and S. Baekkeskov. 1994. Amino acid residues
+24-31 but not palmitoylation of cysteines 30 and 45 are required for membrane anchoring of glutamic acid decarboxylase, GAD65. J. Cell Biol. 124: 927.
+
+. Baekkeskov, S., M. Landin, J. K. Kristensen, S. Srikanta, G. J.
+
+Bruining, T. Mandrup-Poulsen, C. de Beaufort, |S Soeldner,
+G. Eisenbarth, F. Lindgren, G. Sundquist, and A. Lernmark.
+1987. Antibodies to a 64, 000 M, human islet cell antigen precede the clinical onset of insulin-dependent diabetes. J. Clin.
+Invest. 79: 926.
+
+. Baekkeskov, S., H.-J. Aanstoot, S. Christgau, A. Reetz, M.
+
+Solimena, M. Cascalho, F. Folli, and H. Richter-Olesen. 1990.
+Identification of the 64K autoantigen in insulin-dependent diabetes as the GABA-synthesizing enzyme glutamic acid decarboxylase. Nature (Lond.). 347: 151.
+
+. Velloso, L. A., O. Kampe, A. Hallberg, L. Christmanson, C.
+
+Betscholtz, and F. A. Karlsson. 1993. Demonstration of GAD65 as the main immunogenic isoform of glutamate decarboxylase in type 1 diabetes and determination of autoantibodies using
+a radioligand produced by eukaryotic expression. J. Clin. Invest. 91: 2084.
+
+. Hagopian, W. A., B, Michelsen, A. E. Karlsen, F. Larsen, A.
+
+Moody, C. E. Grubin, R. Rowe, J. Petersen, R. Mc Evoy, and
+A. Lernmark. 1993. Autoantibodies in IDDM _ primarily
+tecognize the 65, 000-M, rather than the 67, 000-M, isoform
+
+605
+
+Kim et al.
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+of glutamic acid decarboxylase. Diabetes. 42: 631.
+
+Cooke, A. 1990. An overview on possible mechanisms of destruction of the insulin-producing beta cell. Curr. Top. Micro.
+Immunol. 164: 125.
+
+Tisch, R., X.-D. Yang, S. M. Singer, R. S. Liblau, L. Fugger,
+and H. O. Mc Devitt. 1993. Immune response to glutamic acid
+decarboxylase correlates with insulitis in non-obese diabetic
+mice. Nature (Lond.). 366: 72.
+
+Kaufman, D. L., M. Clare-Salzler, J. Tian, T. Forsthuber, G. S. P.
+Ting, P. Robinson, M. A. Atkinson, E. E. Sercarz, A. J. Tobin,
+and PV, Lehmann. 1993. Spontaneous loss of T cell tolerance
+to glutamic acid decarboxylase in murine insulin-dependent
+diabetes. Nature (Lond.). 366: 69.
+
+Solimena, M., FE Folli, R. Aparisi, G. Pozza, and P. De Camilli.
+1990. Autoantibodies to GABA-ergic neurons and pancreatic
+B cells in stiff-man syndrome. N. Engl. J. Med. 322: 1555.
+Lorish, T. R. 1989. Stiff-man syndrome updated. Mayo Clin.
+Proc. 64: 629.
+
+Karlsen, A. E., W. A. Hagopian, J. S. Petersen, E. Boel, T. Dyrberg, C. E. Grubin, B. K. Michelsen, O. D. Madsen, and A.
+Lernmark. 1992. Recombinant glutamic acid decarboxylase
+(representing the single isoform expressed in human islets) detects IDDM-associated 64, 000-M, autoantibodies. Diabetes.
+41: 1355.
+
+Michelsen, B. K., J. S. Petersen, J. S. Boel, A. Moldrup, T. Dyrberg, and O. D. Madsen. 1991. Cloning, characterization, and
+autoimmune recognition of rat islet glutamic acid decarboxylase in insulin-dependent diabetes mellitus. Proc. Natl. Acad.
+Sci. USA. 88: 8754.
+
+Bu, D. F., M. G. Erlander, B. C. Hitz, N. J. K. Tillakaratne, D. L.
+Kaufman, C. B. Wagner-Mc Pherson, G. A. Evans, and A. J.
+Tobin. 1992. Two human glutamate decarboxylases, 65-k Da
+GAD and 67-k Da GAD, are each encoded by a single gene.
+Proc. Natl. Acad. Sci. USA. 89: 2115.
+
+Wong, G. HW., P. F. Bartlett, I. Clark-Lewis, F. Battye, and
+JW. Schrader. 1984. Inducible expression of H-2 and Ia antigens on brain cells. Nature (Lond.). 310: 688.
+
+Baekkeskov, S., T. Kanatsuna, L. Klareskog, D. A. Nielsen, P. A.
+Peterson, A. H. Rubenstein, D. F. Steiner, and A. Lernmark.
+1981. Expression of major histocompatibility antigens on pancreatic islet cells. Proc. Natl. Acad. Sci. USA. 78: 6456.
+Oldstone, M. B., M. Nerenberg, P. Southern, J. Price, and H.
+Lewicki. 1991. Virus infection triggers insulin-dependent dia-
+
+21.
+
+22.
+
+23.
+
+24.
+
+25.
+
+26.
+
+27.
+
+28.
+
+29,
+
+30.
+
+betes mellitus in a transgenic model: role of anti-self (virus)
+immune response. Cell. 65: 319.
+
+Ohashi, P. S., S$. Oehen, K. Buerki, H. Pircher, CT. Ohashi,
+B. Odermatt, B. Malissen, R. M. Zinkernagel, and H. Hengartner. 1991. Ablation of “tolerance” and induction of diabetes by virus infection in viral antigen transgenic mice. Cell.
+65: 305.
+
+Richter, W., Y. Shi, and S. Baekkeskov. 1993. Autoreactive
+epitopes in glutamic acid decarboxylase defined by diabetesassociated human monoclonal antibodies. Proc. Natl. Acad. Sci.
+USA. 90: 2832.
+
+Mauch, L., C. C. Abney, H. Berg, W. A. Scherbaum, B. Liedvogel, and W. Northemann. 1993. Characterization of a linear
+epitope within the human pancreatic 64-k Da glutamic acid
+decarboxylase and its autoimmune recognition by sera from
+insulin-dependent diabetes mellitus patients. Eur. J. Biochem.
+212: 597.
+
+Butler, M. H., M. Solimena, R. Dirkx, Jr., A. Hayday, and
+P. De Camilli. 1993. Identification of a dominant epitope of
+glutamic acid decarboxylase (GAD-65) recognized by autoantibodies in stiff-man syndrome. J. Exp Med. 178: 2097.
+Christie, M., M. Landin-Olsson, G. Sundkvist, G. Dahlquist,
+A. Lernmark, and S$. Baekkeskov. 1988. Antibodies to a M,-
+64000 islet cell protein in Swedish children with newly diagnosed Type 1 (insulin-dependent) diabetes. Diabetologia. 31: 597.
+Aanstoot, H.-J., E. Sigurdsson, Y. Shi, S. Christgau, D.
+Grobbee, G. J. Bruining, J. L. Molenaar, A. Hofman, and S.
+Baekkeskov. 1994. Value of antibodies to GAD65 combined
+with islet cell cytoplasmic antibodies for predicting type 1 (insulin dependent) diabetes mellitus in a childhood population.
+Diabetologia. In press.
+
+Kim, J., W. Richter, H.-J. Aanstoot, Y. Shi, Q. Fu, R. Rajotte,
+G. Warnock, and S. Baekkeskov. 1993. Differential expression
+of GAD65 and GAD, in human, rat, and mouse pancreatic
+islets. Diabetes. 42: 1799.
+
+Chang, Y. C., and D. I. Gottlieb. 1988. Characterization of the
+proteins purified with monoclonal antibodies to glutamic acid
+decarboxylase. J. Neurosci, 8: 2123.
+
+Gottlieb, D. I., ¥. C. Chang, and J. E. Schwob. 1986. Monoclonal antibodies to glutamic acid decarboxylase. Proc. Natl.
+Acad. Sci. USA. 83: 8808.
+
+Summers, M. D., and G. E. Smith. 1987. A manual of methods
+for baculovirus vectors and insect cell culture procedures. Tex.
+Agric. Exp. Stn. Bull. 1555: 1.
+
+606
+
+31.
+
+32.
+
+33.
+
+34,
+
+35,
+
+36.
+
+37.
+
+38.
+
+39.
+
+41.
+
+42,
+
+Landin-Olsson, M., F. A. Karlsson, A. Lernmark, G. Sundkvist, and the Diabetes Incidence Study in Sweden Group. 1992.
+Islet cell and thyrogastric antibodies in 633 consecutive 15to 34-yr-old patients in the diabetes incidence study in Sweden.
+Diabetes. 41: 1022.
+
+Greenbaum, C. J., J. P. Palmer, S. Nagataki, Y. Yamaguchi, J. L.
+Molenaar, W. A. M. Van Beers, N. K. Maclaren, and A. Lernmark and Participating Laboratories. 1991. Improved specificity
+of ICA assays in the Fourth International Immunology of Diabetes Serum Exchange Workshop. Diabetes. 41: 1570.
+Erlich, H. A., T. Bugawan, A. Begovich, S. Scharf, R. Griffith,
+R. Higuchi, and P. S. Walsh. 1991. HLA-DR, DQ, and DP
+typing using PCR amplification and immobilized probes. Eur.
+J. Immunogenet. 18: 33.
+
+Bugawan, T., and H. A. Erlich. 1991. Rapid typing of HLADQB1 DNA polymorphism using nonradioactive oligonucleotide probes and amplified DNA. Immunogenetics. 33: 163.
+Erlich, H. A. 1990. HLA class II polymorphism and genetic
+susceptibility to insulin-dependent diabetes mellitus. Curr. Top.
+in Microbiol. Immunol. 164: 41.
+
+Ujihara, N., D. Daw, R. Gianani, Y. Liping, and A. C. Powers.
+1993. Identification of distinct GAD autoantibody subtypes
+and a GAD protein epitope. Autoimmunity. 15(Suppl.): 68.
+Richter, W., S. Seissler, W. Northemann, S. Wolfahrt, H.-M.
+Meinck, and W. A. Scherbaum. 1993. Cytoplasmic islet cell
+antibodies recognize distinct islet antigens in IDDM but not
+in stiff man syndrome. Diabetes. 41: 1642.
+
+Moersch, F. P., and W. H. Woltman. 1956. Progressive and fluctuating muscular rigidity and spasm (stiff-man syndrome): report of a case and some observation in 13 other cases. Mayo
+Clin. Proc. 31: 421.
+
+De Camilli, P., A. Thomas, R. Cofiell, F. Folli, B. Lichte, G.
+Piccolo, H.-M. Meinck, M. Austoni, G. Fassetta, G. Bottazzo,
+et al. 1993. The synaptic vesicle-associated protein amphiphysin
+is the 138-kD autoantigen of stiff-man syndrome with breast
+cancer. J. Exp, Med. 178: 2219.
+
+. Nagata, M., and J.-W. Yoon. 1992. Studies on autoimmunity
+
+for T cell-mediated @-cell destruction. Diabetes. 41: 998.
+Lanzavecchia, A. 1987. Antigen uptake and accumulation in
+antigen-specific B cells. Immunol. Rev. 99: 39.
+
+Watts, C., and A. Lanzavecchia. 1993. Suppressive effect of
+antibody on processing of T cell epitopes. J. Exp Med. 178: 1459.
+
+. Docherty, M. 1991. Novel neuronal neurotransmitter-specific
+
+cell-surface molecules. Biochem. Soc. Trans. 19: 87.
+
+NH&gt;-terminal Linear GAD65 Epitope in Stiff-Man Syndrome</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>7804-8197</td><td>high</td><td>Study sample and diagnostic criteria for the SMS/SPSD group.</td><td>Sera were obtained with informed consent from 33 SMS patients identified at the Mayo Clinic (Rochester, MN) during the period of 1989-1992, and from two patients who attended th...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0002</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>12531-12861</td><td>high</td><td>Summary demographics and antibody titers for SMS group.</td><td>Table 2. Summary of GAD65 Antibody Titers in SMS, IDDM, and Polyendocrine Autoimmune Disorder (PE) Patients Sex Age Age GAD65s Ab IMP titer GAD,; Ab IMP titer n F/M mean + SD ra...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0003</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>23958-24887</td><td>high</td><td>GAD65 immunoprecipitation titers and ICA correlation in SMS patients.</td><td>SMS Sera Contain Higher Levels of Immunoprecipitating GAD65 Autoantibodies than IDDM Sera. Sera from 35 SMS patients were analyzed for GAD65 autoantibodies by immunoprecipitatio...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0004</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>24889-26107</td><td>high</td><td>Western blot reactivity distinguishing SMS sera from controls.</td><td>SMS Epitopes Recognized in Denatured GAD65, Are Absent in GAD67, and Distinct from IDDM Epitopes. The 35 SMS sera were analyzed by immunoblotting for reactivity with equal amoun...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0005</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26109-26593</td><td>high</td><td>Conclusion that SMS autoantibodies recognize denaturation-resistant GAD65 epitopes distinct from IDDM/PE.</td><td>the low dilutions, IDDM sera still failed to react with denatured GAD65 on Western blots (Fig. 1 B). The results demonstrate that SMS autoantibodies are directed at epitope(s) i...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0006</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>28590-30560</td><td>high</td><td>Distribution of epitope-recognition patterns among SMS patients.</td><td>acids of rat GAD65 (GAD¢sA1-101) (Fig. 2 and Table 3). Among the SMS sera, two major patterns of reactivity were observed. The majority (25 of 35, or 71%) of SMS sera exhibited...</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0007</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>36745-37563</td><td>high</td><td>Localization of the NH2-terminal epitope recognized by SMS sera.</td><td>To further analyze the reactivity of SMS IgG with the NH&gt;-terminal region of GAD65, deletion mutants lacking the first 8 and 15 amino acids of rat GAD65, respectively, were anal...</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0007</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>37565-37730</td><td>high</td><td>Localization of the NH2-terminal epitope recognized by SMS sera.</td><td>The results of the peptide blocking experiments and analyses of deletion mutants localize the NH2-terminal epitope recognized by SMS sera to the first 8 amino acids.</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0008</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>38122-39328</td><td>high</td><td>HLA haplotypes associated with epitope-recognition patterns in typed SMS patients.</td><td>ceptibility haplotypes (35). To assess whether SMS and IDDM have similar HLA-association, we obtained lymphocytes from 12 of the SMS patients, 9 with serological pattern I and 3...</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0009</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>47490-48697</td><td>high</td><td>All SMS patients in this study were GAD65 antibody positive; standardized criteria noted.</td><td>All SMS Patients Are Positive for Antibodies to GAD65. In a study of 32 SMS patients from seven different countries, which only found GAD autoantibodies in 20 patients (63%), it...</td></tr></tbody></table><h2>Relocated Spans</h2><table class="segment-table"><thead><tr><th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th></tr></thead><tbody><tr><td>l0001</td><td>b0020</td><td>11-453</td><td>10-403</td><td>209860d5d9a11c6925be77c5113ad67f435a5e3508401ce9627cb90d488aca66</td></tr></tbody></table><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\43.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\43.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\43.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\43.validation.json</p></main>
+</body>
+</html>

@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 65</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 65</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: failed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>offset_text_mismatch:l0001:b0002:451:611</li><li>ambiguous_table_row_mapping:s0002</li><li>ambiguous_table_row_mapping:s0003</li><li>ambiguous_table_row_mapping:s0004</li><li>ambiguous_table_row_mapping:s0006</li><li>ambiguous_table_row_mapping:s0010</li><li>ambiguous_table_row_mapping:s0014</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0005, s0006, s0007, s0008, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0005, s0006, s0009, s0010, s0011, s0012, s0013, s0014, s0015, s0016, s0017, s0018, s0019, s0020, s0021, s0022, s0023, s0024, s0025, s0026, s0027</span></div><h2>Source Text</h2><div class="source-text">J Neurol (1994) 241 : 157-166 
+© Springer-Verlag 1994 
+H.-M. Meinck 
+K. Ricker 
+R-J. Hfilser 
+E. Schmid 
+J. Peiffer 
+M. Solimena 
+Stiff man syndrome: 
+clinical and laboratory findings 
+in eight patients 
+Received: 25 February 1993 
+Received in revised form: 21 June 1993 
+Accepted: 30 June 1993 
+H.-M. Meinck (N~) 
+Abteilung far Klinische Neurophysiologie, 
+Universitgt Heidelberg, 
+Im Neuenheimer Feld 400, 
+D-69120 Heidelberg, Germany 
+K. Ricker 
+Abteilung far Neurologie, 
+Universitgt Warzburg, Warzburg, 
+Germany 
+P.-J. Htilser 
+Abteilnng far Neurologie, 
+Universit~it Ulm, Ulm, Germany 
+E. Schmid 
+Abteilung far Neurologie, 
+Bfirgerhospital, Stuttgart, Germany 
+J. Peiffer 
+Hirnforschungsinstitut, 
+Universit~it Tt~bingen, Tabingen, Germany 
+M. Solimena 
+Department of Cell Biology, 
+Yale University, New Haven, Coimecticut, 
+USA 
+Abstract The clinical, biochemical, 
+neuroimaging and neurophysiologi- 
+cal findings of eight patients with 
+stiff man syndroms (SMS) [four of 
+six being tested with autoantibodies 
+against glutamic acid decarboxylase 
+(GAD)] are presented. In two pa- 
+tients (one GAD-positive, one GAD- 
+negative), transient oculomotor dis- 
+turbances suggested progressive en- 
+cephalomyelitis with rigidity and 
+myoclonus (PERM) as differential 
+diagnosis. The catalogue of charac- 
+teristic clinical symptoms of SMS is 
+extended by three new symptoms: 
+(1) an aura-like feeling reported by 
+five patients to precede spontaneous 
+spasmodic attacks; (2) a stereotyped 
+motor pattern seen in seven patients 
+during spasmodic jerks, consisting of 
+brief opisthotonos, stiffening of the 
+slightly abducted legs and inversion 
+of the plantar-flexed feet; (3) a 
+paroxysmal fear when crossing a free 
+space unaided, or even thinking of it. 
+Clinical findings did not enable us to 
+discriminate between patients tested 
+GAD-positive or GAD-negative. 
+Cerebrospinal fluid contained ele- 
+vated immunoglobulin levels or cell 
+counts, or both, in the majority of 
+patients. Autopsy of one patient re- 
+vealed scattered lymphocyte cuffs 
+around leptomeningeal, intracerebral 
+and particularly intraspinal vessels, 
+suggesting a mild inflammatory 
+process. Whether SMS and PERM 
+are closely related is discussed; they 
+are possibly both manifestations of a 
+spectrum of encephalomyelopathies 
+having autoimmunity against 
+GABAergic neurons in common. 
+Key words Stiff man syndrome 
+Progressive encephalomyelitis 
+Spasms • Muscle tone • Glutamic 
+acid decarboxylase 
+Introduction 
+Stiff man syndrome (SMS) is a motor disturbance charac- 
+terized by muscular rigidity and superimposed spasms 
+[33]. Rigidity fluctuates between being almost absent and 
+extreme and predominantly affects the trunk and proxi- 
+mum limb muscles, but it may occasionally extend to the 
+face, hands and feet [13]. Spasms occur spontaneously, 
+but are elicited by a variety of internal or external events 
+such as touch, noise and fright, and may be violent 
+enough to fracture bones and to bend inserted pins [6, 13]. 
+The dramatic bizarrerie of these main symptoms contrasts 
+with the lack of neurological signs: central or peripheral 
+weakness, pyramidal tract signs, ataxia, oculomotor dis- 
+turbances, sensory impariment, or neuropsychological 
+deficits are, in fact, considered suggestive of other diag- 
+noses [13, 21].
+
+158 
+From its first description [33], SMS has been a curios- 
+ity in neurology, both its locus and aetiology remaining 
+enigmatic. A major problem is that most studies reported 
+on single cases, many of them with &quot;plus&quot; symptoms, 
+with a wide variety of paraclinical investigations. Here we 
+present the clinical, biochemical, microscopical and neu- 
+rophysiological findings from eight cases followed be- 
+tween 4 and 28 years. Some preliminary findings have 
+been published previously elsewhere [26-30]. 
+Patients and methods 
+We report on eight patients, five female and three male, whose per- 
+sonal and clinical data are summarized in Table 1. Patients 1 and 3 
+have been reported previously [28-31]. 
+Routine neurophysiological investigations included electroen- 
+cephalography (EEG), electromyo-neurography (EMG, ENG), 
+evoked potential testing (EP), and magnetic brain stimulation. The 
+results of polymyographic and reflex-EMG investigations will be 
+reported in detail in a subsequent paper. 
+Serum and cerebrospinal fluid (CSF) samples were tested at 
+1 : 20 and 1 : 2 dilutions, respectively, for the presence of autoanti- 
+bodies directed against glutamic acid decarboxylase (GAD) and 
+GABAergic terminals using an immunoperoxidase staining proce- 
+dure described previously [44]. Western blots of total homogenate 
+proteins of rat brain (10 pg) were incubated with serum or CSF 
+samples at 1:250 and 1:50 dilution, respectively. Bound human 
+immunoglobulins were detected using rabbit anti-human IgG 
+(Organon) followed by 125I-protein A (Amersham) and autoradiog- 
+raphy. 
+Results 
+The clinical picture 
+<span class="source-segment role-shared" id="src-s0001" data-segment="s0001" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">In all patients, severe muscular stiffness and spontaneous 
+as well as reflex-like induced violent spasms were the 
+prominent features. Stiffness was the initial symptom of 
+the disease in six patients, and was experienced by them 
+(and often misdiagnosed by their physicians) as recurrent 
+cramping, lumbago, or rheumatic aching. It was confined 
+to the lower trunk and leg muscles in four patients and ex- 
+tended to the neck and shoulder muscles in the others. 
+Stiffness was superimposed in all patients by both 
+spontaneous and induced spasms and jerks of variable in- 
+tensity, duration and character, often experienced as 
+throes, as a violent pull, or as a heavy blunt punch. 
+Spasms and jerks had a tendency to recur spontaneous, 
+occasionally for hours, at variable intervals. Spontaneous- 
+ly spasms ranged from slow contractions of one muscle to 
+violent whole-body jerks with a brisk onset and a succes- 
+sive lessening over a period of seconds. In all but patient 
+3, generalized spasms showed a fairly stereotyped motor 
+pattern with opisthotonos, stiffening of the slightly ab- 
+ducted legs, and inversion of the extended feet, most often 
+with only minor joint excursions probably due to co-con- 
+traction of antagonists. The arms, if involved, were ad- 
+ducted, stiffened and pronated. In patient 3, the same mo- 
+tor pattern evolved out of a series of brief and synchro- 
+nous jerks of the dorsal and ventral lower trunk muscles, 
+gradually increasing in frequency until a tonic attitude 
+was reached, which abruptly decayed.</span> 
+Similar jerks and spasms were regularly evoked by 
+acoustic and various somatosensory stimuli to almost all 
+parts of the body including the face, i.e. regardless of 
+whether or not the body parts were afflicted by the dis- 
+ease. In general, there was a good stimulus-response rela- 
+<span class="source-segment role-shared" id="src-s0002" data-segment="s0002" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">tionship: the more abrupt and intense the stimulus, the 
+more consistent, jerky and long-lasting was the response. 
+Spasms and jerks were also evoked by negative (but not 
+positive) emotions such as anger or fright as well as by 
+brisk self-paced movements of the arms and hands, or 
+even a cough - most specifically, however, by attempting 
+to sit up or to bend forward. However, after both induced or 
+spontaneous spasms and jerks there was a state of unre- 
+sponsiveness to any kind of provocation lasting some 30 s. 
+Spontaneous spasms in five patients were precipitated 
+by a particular feeling of the imminent attack for seconds 
+or even hours (patient 3), associated in patients 3, 4 and 6 
+with increasing fear and restlesness. Severe spontaneous 
+spasms often occurred accompanied by intense fear and 
+vegetatitve crises. Profuse sweating, tachycardia, arterial 
+hypertension, widening of the pupils, or tachypnoea, or a 
+combination, were seen in seven patients. 
+The summary of clinical findings (Table 1) shows that 
+axial stiffness and spasms were associated almost regu- 
+larly with exaggerated deep tendon reflexes, gait distur- 
+bance and a history of unexplained falls without loss of 
+consciousness, leading in six patients to severe bruises, 
+dislocations, or even fractures. All patients were tem- 
+porarily misdiagnosed as hysterical, apparently because of 
+three factors: (1) lessening of stiffness and spasms with 
+distraction; (2) discrepancy between dramatic symptoms 
+and lack of neurological signs; (3) paroxysmal fear (six 
+patients) typically associated with crossing a square or a 
+corridor unaided. Even considering this particular situa- 
+tion was enough to evoke intense fear and consecutive 
+spasms and falls. This was occasionally misunderstood as 
+agoraphobic anxiety neurosis. However, fear was dimin- 
+ished instantaneously when the patient used a crutch or 
+had the support of an assistant.</span> 
+<span class="source-segment role-shared" id="src-s0003" data-segment="s0003" data-label="p5 p6 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Patients (5 and 6) did not meet rigid diagnostic criteria 
+for SMS ([13[; Table l). In both, the disease began acutely</span>
+
+159 
+<span class="source-segment role-shared" id="src-s0004" data-segment="s0004" data-label="p5 p6 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">with nystagmus or oculomotor disturbances and vertgio. 
+After 3 weeks or 4 years, respectively, spasms or jerks fol- 
+lowed and preceded the development of intense rigidity. 
+Both patients had transient paraesthesia and both endured 
+the most severe stiffness and the longest-lasting spas- 
+modic attacks leading to inward dislocation of their ankle 
+joints. The condition of patient 5 stabilized after 6 months 
+of progression. Patient 6 had three subactue bouts, each 
+with dramatic intensification of both stiffness and spasms, 
+and with slow recovery. However, her additional symp- 
+toms remained stable, and no new symptoms were noted 
+on follow-up. Both patients may be considered as having 
+progressive encephalomyelitis with rigidity and my- 
+oclonus (PERM) because of their accessory symptoms, 
+although the latter were mainly transitory.</span> 
+<span class="source-segment role-shared" id="src-s0005" data-segment="s0005" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Symptoms developed insidiously in six cases, with 
+slow progression over months (two cases) or even years 
+(four cases) followed by up to 23 years (patient 1) with 
+virtually no progression (six cases). Patients 2 and 6 had 
+superimposed phases of deterioration, each resulting in 
+some permanent worsening. Three patients died, two of 
+them from SMS. At age 48, patient 2 suffered respiratory 
+arrest during a spasmodic attack, and died 5 days later 
+presumably from septic shock. Patient 4 died aged 32 
+years, a few days after acute cardiac failure during benzo- 
+diazepine withdrawal. Patient 5 died aged 60 years from 
+lung metastases of mesopharyngeal cancer diagnosed 1.5 
+years after the onset of SMS.</span> 
+<span class="source-segment role-shared" id="src-s0006" data-segment="s0006" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Neuroimaging 
+Magnetic resonance imaging (MRI) of the brain disclosed 
+multiple small signal enhancements in the subcortical 
+white matter of the cerebral hemispheres in patient 1, and 
+thick caps on the frontal horns in patients 3 [29], neither 
+enhancing with paramagnetic constrast media and stable 
+during a 6-year follow-up. MRI showed moderate atrophy 
+of the cerebellar and frontal cerebral cortex in patient 5, 
+but was normal in patients 4 and 6-8. In patient 2 neither 
+MRI nor cranial computed tomography were available; 
+however, full-length myelography was normal. MRI of 
+the spinal cord was normal in patients 1 and 3-8, although 
+cervical stenosis was seen in patients 1 and 7, associated 
+in the latter with congenital block vertebrae C3-C5 and 
+enlarged cauda equina.</span> 
+<span class="source-segment role-patient_specific" id="src-s0007" data-segment="s0007" data-label="p4 patient_specific" style="--seg-bg:#F6E2EE;--seg-border:#CC79A7;--seg-text:#4D1735;">Anatomical investigations 
+Muscle (patients 1 and 4) and rectum biopsies (patient 4) 
+showed normal tissues. Post-mortem examination of pa- 
+tient 4, who died with signs of dissociated brain death, re- 
+vealed recent coagulation necrosis of the liver and kid- 
+neys, superficial erosions within the gastrointestinal tract, 
+dilatation of the heart and alveolar oedema of the lung. 
+The brain and spinal cord showed macroscopical signs of 
+intravital brain death. Slices (5 ~tm) fiom paraffin-embed- 
+ded blocks of the frontal, parietal, occipital and temporal 
+cortex, as well as hippocampus, basal ganglia, pons, 
+medulla oblongata and seven levels of the spinal cord, 
+were stained by haematoxylin- and eosin as well as with 
+van Gieson and K1/Jver-Barrera stains. All grey matter re-</span> 
+gions showed severe ischaemic lesions combined with ex- 
+cessive oedematous changes in the subcortical white mat- 
+ter and the inner layer of the cortex, accentuated in the 
+hippocampal area and in the thalamus. In the latter, 
+oedema was accompanied by recent erythrodiapedesis. In 
+the substantia nigra zona compacta, melanin granules in 
+<span class="source-segment role-patient_specific" id="src-s0008" data-segment="s0008" data-label="p4 patient_specific" style="--seg-bg:#F6E2EE;--seg-border:#CC79A7;--seg-text:#4D1735;">glia cells were increased, but not associated with a defi- 
+nite loss of nerve cells. Scattered lymphocyte cuffs around 
+leptomeningeal and intracerebral vessels, accentuated in 
+the spinal cord, suggested a moderate inflammatory 
+process (Fig. 1) which appeared older than the recent is- 
+chaemic lesions. In the spinal cord, the anterior horn cells 
+showed shrunkened perikarya and hyperchromatic nuclei, 
+or the pattern of ischaemic nerve cell lesions with 
+eosinophilic cytoplasm. The latter pattern was dominant 
+in Clarke&#x27;s columns. Within the anterior and lateral horn 
+columns the number of nerve cells appeared moderately 
+reduced. Mildly increased density of astrocytic nuclei 
+suggested an old glia reaction without recent proliferative 
+cell forms. The myelinated tracts and the cerebral white 
+matter were free from demyelination.</span> A sole fresh oede- 
+matous sponginess was observed in the posterior subpial 
+parts of the spinal cord. 
+Biochemical investigations 
+Routine blood, serum and urine examinations including 
+vitamin Bl2 levels, Schilling tests and broad endocrino- 
+logical testing repeatedly yielded unremarkable results in 
+all patients except for patient 5, in whom abnormal elec- 
+trophoresis (IgM gammopathy) was known for at least 5 
+years prior to the onset of his neurological symptoms. Al- 
+though fasting blood sugar was normal in all patients, oral 
+glucose tolerance had been abnormal in patients and 1 and
+
+160 
+<span class="source-segment role-shared" id="src-s0009" data-segment="s0009" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">3 since 1979 and 1980, respectively, and was borderline in </span>
+patients 6 and 7. Insulin-dependent diabetes mellitus be- 
+came manifest in patient 3 in 1988. 
+Serological investigations for viral or bacterial agents 
+(including tropical infections in patient 4) were repeatedly 
+negative. The tetanus antitoxin level in patient 4 was in the 
+protective range. A wide variety of serological markers for 
+autoimmune diseases were negative in all cases except for 
+patient 5, whose Westergren sedimentation rates were be- 
+tween 73 and 97 mm in 1 h, and C-reactive protein was 
+positive. Indirect immunofluorescence of human Ig (G) 
+binding to rat spinal cord slices with both plasma and CSF 
+of patient 5 yielded merely diffuse staining. By immuno- 
+cytochemistry on rat brain frozen sections autoantibodies 
+directed against GABAergic neurons were detected in 
+both serum and CSF samples from patients 3 and 6-8. By 
+immunoblot on total homogenates of rat brain both serum 
+and CSF samples of patients 3 and 6-8 recognized a band 
+with the same electrophoretic mobility of GAD. This 
+band was neither recognized by, nor were autoantibodies 
+against GABAergic neurons detected in, either the serum 
+or the CSF samples from patients 1 and 5 (Table 1). 
+<span class="source-segment role-shared" id="src-s0010" data-segment="s0010" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">CSF findings are shown in Table 2. Of a total of 32 
+spinal taps, all were normal with respect to their albumin 
+and total protein content, 6 (from four patients) showed 
+some mild lymphocytosis, 10 (from five patients) were in- 
+dicative of de novo synthesis of IgG, but only 6 were neg- 
+ative for oligoclonal banding. On repeated taps, however, 
+not only the cell count, but also both IgG concentration 
+and oligoclonal banding, independently fluctuated in one 
+and the same patient.</span> 
+Fig. 1 Postmortem microscopic findings in patient 4 comprising 
+loss of neurons in segments of the inferior olive (a), perivascular 
+lymphocyte cuffs in the spinal cord (b), and in the leptomeninges 
+(c) 
+<span class="source-segment role-shared" id="src-s0011" data-segment="s0011" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Neurophysiological findings 
+Routine EEG showed no alterations prior to or during 
+spontaneous generalized spasms. Motor and sensory ENG 
+as well as cortical and brain-stem EP were compatible 
+with mild polyneuropathy in patients 3, 5 and 6, but were 
+otherwise normal. Magnetic brain stimulation yielded 
+normal latencies to the hand and leg muscles in five pa- 
+tients investigated. The blink reflex was normal in four 
+patients, but was abnormally enhanced in patient 1 [30], 
+and suggested bilateral medullary or pontine disturbances, 
+respectively, in patients 3 and 5. Routine EMG was com- 
+patible with mild polyneuropathy in patient 5, but normal 
+in all other patients.</span> However, all patients had a steady 
+low-frequency firing of normal motor units, most intense 
+in the trunk and proximal limb muscles, fluctuating with 
+respect to its intensity and localization, and abruptly in-
+
+161 
+<span class="source-segment role-shared" id="src-s0012" data-segment="s0012" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Table 1 Data and clinical findings in eight patients with stiff man syndrome (SMS) (GAD Glutamic acid decarboxylase, + present, </span>
+- absent, ? unknown.) Symptoms and signs not observed in any patient are not included 
+Findings Patients 
+<span class="source-segment role-shared" id="src-s0013" data-segment="s0013" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">1 2 3 4 5 6 7 8 </span>
+Gender ? $ 9 d d ~ 9 d 
+Year of birth 1926 1937 1930 1955 1929 1922 1936 1955 
+Onset of symptoms 1963 1979 1976 1982 1987 1982 1984 1988 
+Death - 1983 - 1987 1991 - - - 
+GAD autoantibodies - ? + ? - + + + 
+Stiff trunk and legs + + + + + + + + 
+Stiff neck and shoulder + + - + + - - - 
+Spontaneous spasms and jerks + + + + + + + + 
+Spontaneous spasms preceded by aura + - + + + + - - 
+Reflex spasms and jerks + + + + + + + + 
+Gait disturbance + + + + + + + + 
+Deep tendon reflexes exaggerated + + + + + + + + 
+Unexplained falls + + + - + + + - 
+Paroxysmal fear + + + + - + + - 
+Vegetative crises + + + + + + + - 
+Hyperlordosis + + - + + + + + 
+Bladder disturbances (transient) _ +a _ _ + +8 _ _ 
+Paraesthesiae (transient) .... + + - - 
+Facial muscle involvement _ +b ...... 
+Dysphagia/dysarthria .... +c +d _ _ 
+Vertigo (transient) .... + + - - 
+Nystagmus (transient) .... + - - - 
+Oculomotor disturbances (transient) ..... + - - 
+Action tremor ..... +a _ _ 
+Chorea (mild) ..... +e _ _ 
+Misdiagnosis of hysteria + + + + + + + + 
+a During abdominal Spasm only 
+b Shortly before death 
+c Transient 
+Table 2 CerebrospinaI fluid 
+(CSF) data in eight patients 
+with SMS. (TP Total proteins, 
+Alb albumin, IgG immuno- 
+globin G, OCB oligoclonal 
+banding, GAD-AB antibodies 
+directed against glutamic 
+acid decarboxylase, f female, 
+m male, n normal, h high, 
++ positive, - negative; nd not 
+done) 
+a Probably drug-induced 
+e First noted at age 67 years 
+Patients No. of Cells/ TP Alb IgG OCB GAD-AB 
+taps mm 3 
+<span class="source-segment role-shared" id="src-s0014" data-segment="s0014" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">1. 5 0-3 n n h + - </span>
+<span class="source-segment role-shared" id="src-s0015" data-segment="s0015" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">2. 2 0- 1 n n n nd nd </span>
+<span class="source-segment role-shared" id="src-s0016" data-segment="s0016" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">3. 6 1- 6 n n n/h -/+ + </span>
+4. 4 3-21 n n n + nd 
+<span class="source-segment role-shared" id="src-s0017" data-segment="s0017" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">5. 4 1- 6 n n rdh +/- - </span>
+<span class="source-segment role-shared" id="src-s0018" data-segment="s0018" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">6. 5 1-2 n n n + + </span>
+<span class="source-segment role-shared" id="src-s0019" data-segment="s0019" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">7. 4 2- 4 n n n/h + + </span>
+8. 2 1- 3 n n n -/+ + 
+creasing with somatosensory or acoustic stimulation (Fig. 
+2). It disappared in natural and drug-induced sleep; there- 
+fore the effects of peripheral nerve or nerve root blocks 
+were not investigated except in patient 1 [31]. 
+Neuropharmacological investigations were extensively 
+performed only in patient 1 [28]. However, diazepam (10 
+mg i.v. or i.m.) also reduced sustained motor unit firing in 
+patients 2-8. In contrast, 10-12 mg clomipramine i.v. 
+clearly increased the motor unit firing and clinical symp- 
+toms in patients 1 and 3 (not performed in the other pa- 
+tients). Clonidine in acute testing (0.150 mg i.v.) clearly 
+improved both muscle tone and motor unit firing in pa- 
+tient 1, but was ineffective in patients 4 and 5. I.v. placebo 
+injections slightly reduced muscle tone and motor unit fir- 
+ing in cases 2 and 3, but did not influence these parame- 
+ters in cases 1 and 4-8.
+
+162 
+VL 
+PB 
+TA mM 
+GS 
+1touch lcold spray 
+t electrical stimulation t ,10 s 
+Fig.2 EMG activity recorded from the vastus lateralis (VL), pos- 
+terior biceps (PB), tibilalis anterior (TA) and gastrocnemius (GS) 
+muscles with needle electrodes during application of various stim- 
+uli to the ipsilateral foot 
+four cases, whereas three patients did not respond. How- 
+ever, these alpha stimulating agents were not tolerated 
+over long periods. Valproic acid was less effective than 
+baclofen. 
+<span class="source-segment role-shared" id="src-s0020" data-segment="s0020" data-label="p2 p3 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Immunosuppressive treatment with eight (patients 2, 5) 
+or five plasmaphereses (patients 7, 8) repeatedly led to 
+good improvement for about 5 months in patient 7, minor 
+improvement or even stabilization in patients 2 and 5, but 
+had no effect in patient 8. In patients 3 and 6, only three 
+plasmaphereses could be completed due to technical prob- 
+lems; these patients experienced no improvement.</span> Corti- 
+costeroids were given in the early stages of the disease to 
+patients 2 and 5; both improved but suffered a severe re- 
+lapse after discontinuation. In patients 1, 3, 4 and 6, corti- 
+costeroids given for 4-8 weeks had no effect. 
+<span class="source-segment role-shared" id="src-s0021" data-segment="s0021" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Therapy 
+A wide variety of drugs was tried for symptomatic treat- 
+ment, among which the benzodiazepines proved most ef- 
+fective. Table 3 shows, however, that the functional capa- 
+bilities were good or satisfactory in only five patients, but 
+were poor in three patients. Patient 2 was the only one 
+who, at the summit of her disease, did not sufficiently re- 
+spond even to 200 mg/day of oral diazepam. Moreover, 
+therapy with benzodiazepines was accompanied by seri- 
+ous side-effects. After 2 years of clonazepam medication, 
+patient 4 was considered clonazepam-addicted; he as well 
+as patient 1 suffered grand mal seizures, and patient 3 
+delirium, after reduction of the benzodiazepine dosage. In 
+patients 5, 6 and 7, the beneficial effects of the benzodi- 
+azepines on stiffness and spasms were limited because of 
+sedation, double vision, dysarthria, or ataxia. In fact, this 
+led to cessation of benzodiazpine treatment in patients 5 
+and 6, and eventually to implantation of a pump device 
+for intrathecal baclofen administration. The latter sup- 
+pressed stiffness, spasms and jerks in both patients at ini- 
+tial dosages of 220-240 gg/day. In patient 5, a dosage of 
+400 gg/day was still effective 4 years later until his death 
+from cancer, allowing him to move independently in his 
+wheelchair and to stand and walk short distances with a 
+little help. This contrasted with patient 6, in whom the in- 
+trathecal baclofen had to be successively increased within 
+the following 14 months up to the maximum tolerable 
+dosage of 1440 gg/day. In no case was oral baclofen ef- 
+fective alone, even in doses up to 150 mg/day. In two pa- 
+tients it was successfully prescribed as a co-medication to 
+benzodiazepines. However, six patients showed no further 
+improvement with this combination. Clonidine and tizani- 
+dine were about equally effective as benzodiazepines in</span> 
+Discussion 
+The clinical diagnosis 
+The diagnosis of SMS essentially relies on clinical find- 
+ings complemented by characteristic, though unspecific, 
+signs such as fixed lordosis, steady firing of normal motor 
+units on EMG, and favourable response of both stiffness 
+and spasms to the benzodiazepines [13, 21]. The differen- 
+tial diagnosis comprises a wide variety of diseases having 
+in common stiff muscles or spasms, or both. Besides atyp- 
+ical manifestations of, for example, polyneuropathy [38], 
+myelitis [14], spondylotic myelopathy [39], or spinal tu- 
+mours [49], some rare neuromuscular or central motor 
+disturbances have to be taken into account: circumscribed 
+or generalized muscle fibrosis [37], neuromyotonia [16], 
+progressive cramping disease [41], startle disease [2], 
+tetanus or strychnine poisoning, axial dystonia and PERM 
+[51]. Particularly the last-mentioned disease shares some 
+characteristic features with SMS, but is often associated 
+with some of the signs listed among its exclusion criteria, 
+and it typically follows a progressive course until death. 
+The recent discovery of autoantibodies againgst GAD 
+in about 60% of patients clinically diagnosed as having 
+SMS [44] has distinctly improved the diagnostic accuracy. 
+Our investigation of eight patients with SMS, four of six 
+tested with GAD autoantibodies, revealed four new clini- 
+cal features: 
+1. Spasmodic jerks, whether spontaneous or induced, 
+show a chracteristic motor pattern with opisthotonos, stiff- 
+ening of the legs or arms, or both, and inversion of the 
+plantarflexed feet. This motor pattern is stereotyped, with 
+a jerky onset and spasmodic lessening. However, the
+
+163 
+movement itself is limited, apparently by co-contraction 
+of antagonists. Spasmodic jerks are easily attenuated or 
+even abolished by benzodiazepine treatment. 
+2. Spontaneous spasmodic jerks may be preceded by a 
+particular feeling that an attack is imminent. As fear is 
+known to induce spasmodic attacks [13, 33], such attacks 
+might in fact be provoked by the fear of them. However, 
+no fear was evident in patients 1 and 5 when expecting an 
+attack, and the time-course and manifestation of this par- 
+ticular feeling in a given patient were so uniform that 
+some relationship to epileptic aura might be considered. 
+3. Intense paroxysmal fear is almost specifically asso- 
+ciated with crossing a free space unaided, or even think- 
+ing of it. This symptom must not be misunderstood as 
+common agoraphobia as it may disappear instantaneously 
+with minimum support. 
+4. The symptoms of patients tested positive or negative 
+for GAD autoantibodies, respectively, do not differ. More- 
+over autoimmunity does not discriminate between SMS 
+and SMS &quot;plus&quot; cases. 
+Two of our patients died unexpectedly, apparently in 
+the course of vegetative crises. This demonstrates that 
+such crises may be life-threatening [12] and underlines 
+both the necessity for adequate symptomatic therapy and 
+the hazards of provocation tests with, for example, 
+clomipramine [48] or reserpine [28]. Acute autonomic 
+failure has been suggested to cause sudden death in SMS, 
+and has recently been suggested to result from autoim- 
+mune-mediated hypothalamic disinhibition [32]. How- 
+ever, we are not aware of any vegetative crisis without se- 
+vere spontaneous spasms. This suggests that either the 
+former are triggered by the latter or both are triggered by 
+a common - hitherto unknown - mechanism. 
+Site of the disturbance 
+Neuroimaging abnormalities with variable appearance 
+were found in only three of seven patients. White matter 
+changes like those in patient 3 may occasionally be seen 
+in normal subjects of similar age [11]. In patient 1, they 
+might be considered as the remnants of a disorder of the 
+white matter of unknown aetiology. 
+Microscopical changes in the brain and spinal cord in 
+patient 4, although obscured by changes due to dissoci- 
+ated brain death, were suggestive of an inflammatory 
+process. Indeed, this patient had had mildly elevated CSF 
+cell counts on some occasions (Table 2). Perivascular 
+lymphocyte cuffs and loss of neurons are prominent mi- 
+croscopic features of PERM, but have been reported with 
+a more scattered distribution in the brains and spinal cords 
+of autopsied cases with SMS, too [32, 43]. 
+So far, anatomical and neuroimaging studies have 
+failed to provide evidence in favour of a cricumscribed le- 
+sion or for a certain agent causing SMS. However, clues 
+as to the tentative locus of the disturbance might be de- 
+rived by analogy from cases with intense segmental rigid- 
+ity and spasms or jerks in the corresponding muscles due 
+to tumours of the spinal cord [36, 40, 43, 49], or spinal 
+vascular lesions [8, 10]. In such cases, the most obvious 
+microscopical finding was a distinct loss of small neurons 
+(i.e. interneurons) in the respective spinal cord segments, 
+accentuated in the inner parts of the anterior horns. This 
+lesion pattern closely resembles the one reported for 
+PERM and clinically related cases [5, 15, 18, 20, 50, 51], 
+including one case with SMS [35]. The brunt of micro- 
+scopical changes was found in the spinal cord, particu- 
+larly in the ventromedial parts of its nuclear columns, 
+sometimes associated with presumably secondary degen- 
+eration of ascending tracts. In those autopsied cases, stiff- 
+ness and spasms of jerks were the initial and most promi- 
+nent clinical findings. This suggests that stiffness and 
+spasms in SMS may also be of spinal origin, generated 
+within the spinal grey matter. The particular involvement 
+of axial muscles might reflect the location of their motor 
+nuclei in the medial parts of the ventral horns, i.e. that re- 
+gion which, on microscopical examination of clinically 
+related cases, often showed the most severe loss of neu- 
+rons and gliosis. 
+Biochemical aspects 
+The CSF has been postulated as normal in SMS [51]. 
+However, Moersch and Woltman [33] reported a positive 
+Nonne test in their patient 1, suspicious of intrathecal de 
+novo IgG synthesis ([42, 47]; see also [22, 23, 45]). In our 
+series, inconsistent CSF abnormalities were found (Table 
+2) varying from normal to suggestive of some mild in- 
+flammation, even in one and the same patient on repeated 
+examinations. Autoantibodies directed against GAD, the 
+enzyme synthesizing GABA, were found in both serum 
+and CSF in four of six patients tested, a finding that fits 
+well with recently published data [44]. This high propor- 
+tion raises the possibility that autoimmunity directed 
+against GABAergic neurons may cause SMS [44]. More- 
+over, increased intrathecal IgG synthesis (patient 1) as 
+well as both the presence of benign gammopathy and dis- 
+closure of mesopharyngeal cancer (patient 5) suggest au- 
+toimmune processes also in patients tested negative for
+
+164 
+Table 3 Drugs and dosages for symptomatic treatment and thera- 
+peutic outcome, p.o., Oral; i.t., intrathecal 
+Patients Drugs and dosage per day Status at last contact 
+<span class="source-segment role-shared" id="src-s0022" data-segment="s0022" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">1. Diazepam 40 mg p.o. Independent </span>
+Clonazepam 8 mg p.o. 
+<span class="source-segment role-shared" id="src-s0023" data-segment="s0023" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">2. Diazepam 50 mg p.o. Needs help </span>
+Tizanidine 8 mg p.o. 
+Valproate 1800 mg p.o. 
+<span class="source-segment role-shared" id="src-s0024" data-segment="s0024" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">3. Clonazepam 12 mg p.o. Independent/ </span>
+Metaclazepam 15 mg p.o. needs help 
+Amitriptyline 50 mg p.o. 
+4. Clonazepam 12 mg p.o. Independent 
+Tetrazepam 100 mg p.o. 
+Chlormezanone 600 mg p.o. 
+<span class="source-segment role-shared" id="src-s0025" data-segment="s0025" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">5. Baclofen 400 gg i.t. Needs help/ </span>
+wheelchair 
+<span class="source-segment role-shared" id="src-s0026" data-segment="s0026" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">6. Baclofen 1440 gg i.t. Wheelchair/ </span>
+Diazepam 20 mg p.o. bedridden 
+<span class="source-segment role-shared" id="src-s0027" data-segment="s0027" data-label="p1 p2 p3 p4 p5 p6 p7 p8 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">7. Clonazepam 4 mg p.o. Needs help/ </span>
+Baclofen 30 mg p.o. wheelchair 
+8. Clonazepam 2 mg p.o. Independent 
+Table 4 Unusual symptoms and signs reported in patients diag- 
+nosed as having SMS 
+References 
+Involvement of faciobulbar muscles 3, 13 
+Involvement of distal muscles 13, 17 
+Oculomotor disturbances 32 
+Positive Babinski sign, at least occasionally 7, 23, 24 
+Tremor 1 
+Cerebellar signs 19, 25 
+Micturition blockage 35 
+Generalized epilepsy 23, 33, 46 
+EEG abnormalities and giant SEP 19 
+Dementia 9 
+Brain atrophy on CT or MRI 19, 22 
+Fibrillation potentials on EMG 7 
+Sensory disturbances 7, 33 
+GAD autoantibodies. So far, only one of our patients has 
+insulin-dependent diabetes mellitus (patient 3). Oral glu- 
+cose tolerance is normal (patient 8) or borderline (patients 
+6, 7) in the remaining patients positive for, but pathologi- 
+cal in patient 1 who is negative for GAD autoantibodies. 
+Detection for autoantibodies against GAD seems to 
+open up new perspectives for both the diagnosis and un- 
+derstanding of SMS. Their heigh incidence as well as 
+their high titres make them a potent diagnostic marker 
+[46], irrespective of further clarification whether GAD au- 
+toantibodies are a cause or a consequence of SMS [44]. At 
+first sight autoimmunity directed against GABAergic neu- 
+rons would explain the clinical symptoms of SMS with 
+alluring plausibility as a manifestation of neuronal disin- 
+hibition. However, GABA is probably the most wide- 
+spread inhibitory transmitter within the central nervous 
+system, and dense accumulations of GABAergic neurons 
+or synapses, respectively, are found in many structures 
+such as the neocortex, the cerebeallar cortex, the basal 
+ganglia, or the hypothalamus [34]. An immunopathy di- 
+rected against such ubiquitous neurons should lead to 
+more physical signs than just stiffness and spasms. Possi- 
+bly a differential susceptibility of certain subgroups of 
+GABAergic neurons to immune-mediated disturbances, 
+e.g. by expression of GAD isoforms (see [44]), might ac- 
+count for some of these discrepancies. Another specula- 
+tive explanation could be that the confusing variety of 
+SMS &quot;plus&quot; cases (Table 4) might reflect wide distribu- 
+tion of target neurons subjected to the postulated autoim- 
+mune attack. It is noteworthy that two patients with GAD 
+autoantibodies and the clinical or microscopical (or both) 
+features of PERM - or SMS &quot;plus&quot; - have been published 
+recently [4, 32 (case 2)], corresponding to our patient 6. 
+The identification of autoantibodies directed against 
+GABAergic neurons in both PERM and SMS, but so far 
+not in other neurological diseases [44], supports the sug- 
+gestion that PERM and SMS are closely related [18]. 
+SMS possibly represents a benign and oligosymptomatic 
+manifestation of a spectrum of encephalo-myelopathies 
+having autoimmunity against GABAergic neurons in 
+common. 
+Acknowledgments We thank Prof.W.-D.HeiB and Dr.B.Sze- 
+lies-Stock, Cologne, who kindly allowed us to study and report on 
+their patient, and Dr.P.De Camilli, New Haven, for helpful dis- 
+cussion. We further thank Dr. F. Folli, Milan for suggestions con- 
+ceming the endocrinological investigations. This work was par- 
+tially supported by a grant from NIMH (MH 45191.011A) and 
+postdoctoral fellowships from MDA (M.S.).
+
+165 
+References 
+1. Alves Diniz M, Cunha L, Goncalves F, 
+Oliveira C (1986) Deux cas de syn- 
+drome de l&#x27;homme raide avec treble- 
+ment. Rev Neurol (Paris) 142 : 918-920 
+2. Andermann F, Keene DL, Andermann 
+E, Quesney LF (1980) Startle disease 
+or hyperekplexia. Brain 103 : 985-997 
+3. Bowler D (1960) The &quot;stiff man syn- 
+drome&quot; in a boy. Arch Dis Child 35 : 
+289-292 
+4. Burn DJ, Ball J, Lees AJ, Behan PO, 
+Morgan-Hughes JA (1991) A case of 
+progressive encephalomyelitis with 
+rigidity and positive antiglutamic de- 
+carboxylase antibodies. J Neurol Neu- 
+rosurg Psychiatry 54 : 449-451 
+5. Campbell AMG, Garland H (1956) 
+Subacute myoclonic spinal neuronitis. 
+J Neurol Nem&#x27;osurg Psychiatry 19 : 
+268-274 
+6. Cohen L (1966) Stiff-man syndrome. 
+JAMA 195 : 222-224 
+7. Correlate J, Erro MG, Kosac S, Masci 
+M, Liguori NF, Sica REP (1988) An 
+electrophysiological investigation of 
+the &quot;stiff-man&quot; syndrome. EMG Clin 
+Neurophysiol 28 : 215-221 
+8. Davis SM, Murray NMF, Diengdoh 
+JV, Galea-Debono A, Kocen RS 
+(1981) Stimulus-sensitive spinal my- 
+oclonus. J Neurol Neurosurg Psychia- 
+try 44 : 884-888 
+9. Drake ME (1983) Stiff-man syndrome 
+and dementia. Am J Med 74: 
+1085-1087 
+10. Gelfan S, Tarlov 1M (1963) Altered 
+neuron population in L7 segment of 
+dogs with experimental hind-limb 
+rigidity. Am J Physiol 205:606-616 
+11. Gerard G, Weisberg LA (1986) MRI 
+periventricular lesions in adults. Neu- 
+rology 36:998-1001 
+12. Goetz CG, Klawans HL (1983) On the 
+mechanism of sudden death in Moer- 
+sch-Woltman syndrome. Neurology 
+33 : 930-932 
+13. Gordon EE, Januszko DM, Kaufman L 
+(1966) A critical survey of stiff-man 
+syndrome. Am J Med 42:582-599 
+14. Heitmann R (1968) Das Stiff-Man- 
+Syndrom. Fortschr Neurol Psychiatr 
+36: 82-89 
+15. Howell DA, Lees A J, Toghill PJ 
+(1979) Spinal internuncial neurones in 
+progressive encephalomyelitis with 
+rigidity. J Neurol Neurosurg Psychiatry 
+42 : 773-785 
+16. Isaacs H (1961) A syndrome of contin- 
+uous muscle fibre activity. J Neurol 
+Neurosurg Psychiatry 24: 319-325 
+17. Isaacs H (1971) Stiff man syndrome in 
+a black girl. J Neurol Neurosurg Psy- 
+chiatry 42 : 988-994 
+18. Kasperek S, Zebrowski S (1971) Stiff- 
+man syndrome and encephalomyelitis. 
+Arch Neurol 24 : 22-30 
+19. Leigh PN, Rothwell JC, Traub M, 
+Marsden CD (t980) A patient with re- 
+flex myoclonus and muscle rigidity. J 
+Neurol Neurosurg Psychiatry 43 : 1125 
+20. Lhermitte F, Chain F, Escourolle R, 
+Chedru F, Guilleminault C, et al. 
+(1973) Un nouveau cas de contracture 
+tetaniforme distinct du stiff man syn- 
+drome. Rev Neurol (Paris) 128 : 3-21 
+21. Lorish TR, Thorsteinsshon G, Howard 
+FH (1989) Stiff-man syndrome up- 
+dated. Mayo Clin Proc 64:629-636 
+22. Maida E, Reisner T, Summer K, San- 
+dor-Eggerth H (1980) Stiff-man syn- 
+drome with abnormalities in CSF and 
+computerized tomography findings. 
+Arch Neurol 37 : 182-183 
+23. Mamoli B, Heiss W-D, Maida E, Po- 
+dreka I (1977) Electrophysiological 
+studies on the &quot;stiff-man&quot; syndrome. J 
+Neurol 217:111-121 
+24. Martinelli P, Pazzaglia P, Montagna P, 
+Coccagna G, Rizzuto N, et al (1978) 
+Stiff-man syndrome associated with 
+nocturnal myoclonus and epilepsy. J 
+Neurol Neurosurg Psychiatry 4I : 
+458-462 
+25. McEvoy KM, Ahlskog JE (1991) Anti- 
+body-positive stiff-man syndrome re- 
+sponding to immunosuppression. Neu- 
+rology 41 [Suppl 1]: 173 
+26. Meinck H-M (1991) Das Stiff-man- 
+Syndrom: eine Immunopathie? Ner- 
+venarzt 62: 762-765 
+27. Meinck H-M (!991) Spasmodic poly- 
+modal reflex myoclonus: characteristic 
+for the stiff man syndrome. Z EEG- 
+EMG 21 : 131 
+28. Meinck H-M, Conrad B (1986) Neu- 
+ropharmacological investigations in the 
+stiffman syndrome. J Neurol 233 : 
+340-347 
+29. Meinck H-M, Ricker K (1987) Long- 
+standing &quot;stiff-man&quot; syndrome: a par- 
+ticular form of disseminated inflamma- 
+tory CNS disease? J Neurol Neurosurg 
+Psychiatry 50:1556-1557 
+30. Meinck H-M, Ricker K, Conrad B 
+(1984) The stiff-man syndrome: new 
+pathophysiologicaI aspects from abnor- 
+mal exteroceptive reflexes and the re- 
+sponse to clomipramine, clonidine, and 
+tizanidine. J Neurol Neurosurg Psychi- 
+atry 47 : 280-287 
+31. Mertens HG, Ricker K (1968) Uber- 
+erregbarkeit der gamma-Motoneurone 
+beim &quot;Stiff-man&#x27;-Syndrom. Klin 
+Wochenschr 46 : 33-42 
+32. Mitsumoto H, Schwartzman MJ, Estes 
+ML, Chou SM, LaFranchise EF, et al 
+(1991) Sudden death and paroxysmal 
+autonomic dysfunction in stiff-man 
+syndrome. J Neurol 238 : 91-96 
+33. Moersch FP, Woltman HW (1956) 
+Progressive fluctuating muscular rigid- 
+ity and spasm (&quot;stiff-man&quot; syndrome): 
+report of a case and some observations 
+in 13 other cases. Mayo Clin Proc 31 : 
+421-427 
+34. Mugnaini E, Oertel WH (1985) An at- 
+las on the distribution of GABAergic 
+neurons and terminals in the rat CNS 
+as revealed by GAD immunohisto- 
+chemistry. In: Bj6rklund A, H6kfelt T 
+(eds) Handbook of chemical neu- 
+roanatomy, vol 4, pm-t 1. Elsevier, Am- 
+sterdam, pp 436-608 
+35. Nakamura N, Fujiya S, Yahara O, Fu- 
+jioka Y, Kawakami Y (1986) Stiff-man 
+syndrome with spinal cord lesion. Clin 
+Neuropathol 5 : 40-46 
+36. Penry JK, Hoefnagel D, Noort S van 
+den, Denny-Brown D (1960) Muscle 
+spasms and abnormal postures result- 
+ing from damage to interneurons in 
+spinal cord. Arch Neurol 3 : 500-512 
+37. Ricker K, Seitz D, Trostdorf E (1970) 
+Myositis fibrosa generalisata and 
+&quot;stiff-man&quot; syndrome. Eur Neurol 3 : 
+13-27 
+38. Ricker K, Mertens HG, Paa] G (1971) 
+Polyneuropathy and stiff-man syn- 
+drome. Eur Neurol 5 : 11-24 
+39. Rowland LP (1985) Cramps, spasms 
+and muscle stiffness. Rev Neurol 
+(Paris) 14 l: 261-273 
+40. Rushworth G, Lishman GA, Trevor 
+Hughes J, Oppenheimer DR (1961) In- 
+tense rigidity of the arms due to isola- 
+tion of mononeurones by a spinal tu- 
+rnout. J Neurol Neurosurg Psychiatry 
+24:132-142 
+41. Satoyoshi E (1976) A syndrome of 
+progressive muscle spasm, alopecia 
+and diarrhea. Neurology 28:458-471 
+42. Scheid KF, Scheid L, Schneidt W 
+(1948) Studien zur pathologischen 
+Physiologie des Liquor cerebrospinalis. 
+V. Arch Psychiatr Nervenkr 179: 
+337-370 
+43. Sikes ZS (1959) Stiff-man syndrome 
+(analysis and case report with spinal 
+cord autopsy). Dis Nerv Syst 20: 
+254-258 
+44. Solimena M, De Camilli P (1991) Au- 
+toimmunity to glutamic acid decar- 
+boxylase (GAD) in stiff man syndrome 
+and insulin-dependent diabetes melli- 
+tus. Trends Neurosci 14:452-457 
+45. Solimena M, Folli F, Denis-Donini S, 
+Comi GC, Pozza G, et al (1988) Au- 
+toantibodies to glutamic acid decar- 
+boxylase in a patient with stiff-man 
+syndrome, epilespy, and type I diabetes 
+mellitus. N Engl J Med 318: 
+1012-1020
+
+166 
+46. Solimena M, Folli F, Aparisi R, Pozza 
+G, De Camilli P (1990) Autoantibodies 
+to GABA-ergic neurons and pancreatic 
+beta cells in stiff-man syndrome. N 
+Engl J Med 322:1555-1560 
+47. Steger J (1953) Elektrophoretische Un- 
+tersuchungen des Liquors. Dtsch Z 
+Nervenheilkd 171 : 1-19 
+48. St6hr M, Heckl R (1977) Das Stiff- 
+man-Syndrom. Arch Psychiatr Ner- 
+venkr 223 : 171-180 
+49.Tarlov IM (1967) Rigidity in man due 
+to spinal interneuron loss. Arch Neurol 
+16:536-543 
+50. Watanabe K, Shimizu T, Mannen T, 
+Toyokura Y, Nagashima K (1984) An 
+autopsy case with unusual muscle 
+rigidity resembling the stiff man syn- 
+drome. Rhinsho Shinkeigaku 24: 
+839-847 
+51. Whiteley AM, Swash M, Urich H 
+(1976) Progressive encephalomyelitis 
+with rigidity. Its relation to &quot;subacute 
+myoclonic spinal neuronitis&quot; and to the 
+&quot;stiff man syndrome&quot;. Brain 99 : 27-42</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0002</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>4933-6477</td><td>high</td><td>Clinical features are described as present in all patients or all but one patient.</td><td>In all patients, severe muscular stiffness and spontaneous as well as reflex-like induced violent spasms were the prominent features. Stiffness was the initial symptom of the di...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0003</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>6764-8693</td><td>high</td><td>The segment summarizes stimulus-evoked spasms, aura-like symptoms, fear, falls, and misdiagnosis across multiple pati...</td><td>tionship: the more abrupt and intense the stimulus, the more consistent, jerky and long-lasting was the response. Spasms and jerks were also evoked by negative (but not positive...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0004</td><td>shared</td><td><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span></td><td>8695-8813</td><td>high</td><td>Patients 5 and 6 are explicitly discussed as SMS plus/PERM-like cases with oculomotor/vertigo onset and severe attacks.</td><td>Patients (5 and 6) did not meet rigid diagnostic criteria for SMS ([13[; Table l). In both, the disease began acutely</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0004</td><td>shared</td><td><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span></td><td>8820-9667</td><td>high</td><td>Patients 5 and 6 are explicitly discussed as SMS plus/PERM-like cases with oculomotor/vertigo onset and severe attacks.</td><td>with nystagmus or oculomotor disturbances and vertgio. After 3 weeks or 4 years, respectively, spasms or jerks fol- lowed and preceded the development of intense rigidity. Both...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0005</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>9669-10378</td><td>high</td><td>The disease course and deaths are summarized across the eight-patient series, with individual death details for patie...</td><td>Symptoms developed insidiously in six cases, with slow progression over months (two cases) or even years (four cases) followed by up to 23 years (patient 1) with virtually no pr...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0006</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>10380-11165</td><td>high</td><td>Neuroimaging findings are given for named patients across the series.</td><td>Neuroimaging Magnetic resonance imaging (MRI) of the brain disclosed multiple small signal enhancements in the subcortical white matter of the cerebral hemispheres in patient 1,...</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0007</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span></td><td>11167-11953</td><td>high</td><td>Anatomical and post-mortem findings are explicitly attributed to patient 4.</td><td>Anatomical investigations Muscle (patients 1 and 4) and rectum biopsies (patient 4) showed normal tissues. Post-mortem examination of pa- tient 4, who died with signs of dissoci...</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0008</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span></td><td>12296-13139</td><td>high</td><td>Continuation of patient 4 autopsy findings describing lymphocyte cuffs, spinal cord changes, and absence of demyelina...</td><td>glia cells were increased, but not associated with a defi- nite loss of nerve cells. Scattered lymphocyte cuffs around leptomeningeal and intracerebral vessels, accentuated in t...</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0009</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>13744-13803</td><td>high</td><td>Biochemical and serological findings are summarized across all or multiple patients, including GAD antibody status.</td><td>3 since 1979 and 1980, respectively, and was borderline in</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0010</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>14991-15477</td><td>high</td><td>CSF findings are summarized for the series and Table 2 provides patient-specific CSF rows.</td><td>CSF findings are shown in Table 2. Of a total of 32 spinal taps, all were normal with respect to their albumin and total protein content, 6 (from four patients) showed some mild...</td></tr><tr><td><a href="#src-s0011">s0011</a></td><td>l0011</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>15684-16362</td><td>high</td><td>Neurophysiology findings are summarized across all patients and selected individual patients.</td><td>Neurophysiological findings Routine EEG showed no alterations prior to or during spontaneous generalized spasms. Motor and sensory ENG as well as cortical and brain-stem EP were...</td></tr><tr><td><a href="#src-s0012">s0012</a></td><td>l0012</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>16581-16709</td><td>high</td><td>Table 1 gives demographic, antibody, symptom, and sign data for patients 1 through 8.</td><td>Table 1 Data and clinical findings in eight patients with stiff man syndrome (SMS) (GAD Glutamic acid decarboxylase, + present,</td></tr><tr><td><a href="#src-s0013">s0013</a></td><td>l0012</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>16816-16832</td><td>high</td><td>Table 1 gives demographic, antibody, symptom, and sign data for patients 1 through 8.</td><td>1 2 3 4 5 6 7 8</td></tr><tr><td><a href="#src-s0014">s0014</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18337-18356</td><td>high</td><td>Table 2 provides CSF data for patients 1 through 8.</td><td>1. 5 0-3 n n h + -</td></tr><tr><td><a href="#src-s0015">s0015</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18357-18379</td><td>high</td><td>Table 2 provides CSF data for patients 1 through 8.</td><td>2. 2 0- 1 n n n nd nd</td></tr><tr><td><a href="#src-s0016">s0016</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18380-18404</td><td>high</td><td>Table 2 provides CSF data for patients 1 through 8.</td><td>3. 6 1- 6 n n n/h -/+ +</td></tr><tr><td><a href="#src-s0017">s0017</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18427-18451</td><td>high</td><td>Table 2 provides CSF data for patients 1 through 8.</td><td>5. 4 1- 6 n n rdh +/- -</td></tr><tr><td><a href="#src-s0018">s0018</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18452-18471</td><td>high</td><td>Table 2 provides CSF data for patients 1 through 8.</td><td>6. 5 1-2 n n n + +</td></tr><tr><td><a href="#src-s0019">s0019</a></td><td>l0013</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>18472-18494</td><td>high</td><td>Table 2 provides CSF data for patients 1 through 8.</td><td>7. 4 2- 4 n n n/h + +</td></tr><tr><td><a href="#src-s0020">s0020</a></td><td>l0015</td><td>shared</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>19912-20310</td><td>high</td><td>Immunosuppressive treatment outcomes are described for named patients.</td><td>Immunosuppressive treatment with eight (patients 2, 5) or five plasmaphereses (patients 7, 8) repeatedly led to good improvement for about 5 months in patient 7, minor improveme...</td></tr><tr><td><a href="#src-s0021">s0021</a></td><td>l0014</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>20550-22430</td><td>high</td><td>Drug response, plasmapheresis, corticosteroids, and treatment outcomes are described across the patients.</td><td>Therapy A wide variety of drugs was tried for symptomatic treat- ment, among which the benzodiazepines proved most ef- fective. Table 3 shows, however, that the functional capa-...</td></tr><tr><td><a href="#src-s0022">s0022</a></td><td>l0016</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>29442-29477</td><td>high</td><td>Table 3 lists symptomatic treatments and last-contact status for patients 1 through 8.</td><td>1. Diazepam 40 mg p.o. Independent</td></tr><tr><td><a href="#src-s0023">s0023</a></td><td>l0016</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>29500-29534</td><td>high</td><td>Table 3 lists symptomatic treatments and last-contact status for patients 1 through 8.</td><td>2. Diazepam 50 mg p.o. Needs help</td></tr><tr><td><a href="#src-s0024">s0024</a></td><td>l0016</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>29581-29619</td><td>high</td><td>Table 3 lists symptomatic treatments and last-contact status for patients 1 through 8.</td><td>3. Clonazepam 12 mg p.o. Independent/</td></tr><tr><td><a href="#src-s0025">s0025</a></td><td>l0016</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>29771-29807</td><td>high</td><td>Table 3 lists symptomatic treatments and last-contact status for patients 1 through 8.</td><td>5. Baclofen 400 gg i.t. Needs help/</td></tr><tr><td><a href="#src-s0026">s0026</a></td><td>l0016</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>29820-29857</td><td>high</td><td>Table 3 lists symptomatic treatments and last-contact status for patients 1 through 8.</td><td>6. Baclofen 1440 gg i.t. Wheelchair/</td></tr><tr><td><a href="#src-s0027">s0027</a></td><td>l0016</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>29889-29925</td><td>high</td><td>Table 3 lists symptomatic treatments and last-contact status for patients 1 through 8.</td><td>7. Clonazepam 4 mg p.o. Needs help/</td></tr></tbody></table><h2>Relocated Spans</h2><table class="segment-table"><thead><tr><th>Group</th><th>Block</th><th>Requested Offsets</th><th>Relocated Offsets</th><th>Selected Text SHA256</th></tr></thead><tbody><tr><td>l0002</td><td>b0002</td><td>1325-3139</td><td>1619-3163</td><td>2221f0144be15b40a2b10f3a48dd3b37fdc904cc13f792bdc1e81aaf9f9975f1</td></tr><tr><td>l0003</td><td>b0003</td><td>-1841</td><td>-1929</td><td>d4e8b036fd03ab139001751681272b54aebc15aac754bd1ac1439f7b860213de</td></tr><tr><td>l0004</td><td>b0003</td><td>1842-2049</td><td>1931-2049</td><td>b55b6e2a3abc26c99bdb0e65e969a1ff3859a8df9079649b2cff5bf590ec8837</td></tr><tr><td>l0004</td><td>b0004</td><td>5-908</td><td>5-852</td><td>f352654d4c3851dd9b4c23accd6ea6436ccbba9902c0905168f79d243ec3e100</td></tr><tr><td>l0005</td><td>b0004</td><td>910-1810</td><td>854-1563</td><td>ccffde0aeeb644d31ad7851342792e8b91a1f7203be730882a8580b72ad43591</td></tr><tr><td>l0006</td><td>b0004</td><td>1812-2720</td><td>1565-2350</td><td>fff6b0bfc8ef3e793834aeb4fc0d02f37ba4f9190c8d5d8e045f0a9d4651b201</td></tr><tr><td>l0007</td><td>b0004</td><td>2722-3479</td><td>2352-3138</td><td>feaaac149a63fbee686da969687dd3b8d1261ffe20152e29db733bfc7997c67d</td></tr><tr><td>l0008</td><td>b0005</td><td>-858</td><td>-843</td><td>dbdf9c589f382b84ff8609e0eab0a58c62b8e69c264bfff61e62703c04740802</td></tr><tr><td>l0009</td><td>b0006</td><td>5-1471</td><td>5-1250</td><td>68312d1ff24aeabc8c0804479fb972471d2fc9b930ba8d97f78a037929f46ae3</td></tr><tr><td>l0010</td><td>b0006</td><td>1473-1984</td><td>1252-1738</td><td>0e78079e99c173186fe071369ceaaa715cba41f3cb6c8a908fc550fb7e5adc3c</td></tr><tr><td>l0011</td><td>b0006</td><td>2147-2835</td><td>1945-2623</td><td>320b9dab7bb2824bf3c694723fe7df27fb7175f4bcba44f442d34445df9f3990</td></tr><tr><td>l0012</td><td>b0007</td><td>-1800</td><td>-1283</td><td>a6595333804989e10076f432b66a854b50a80cfde8075670865c7ca4dc84c6ba</td></tr><tr><td>l0013</td><td>b0007</td><td>1878-2385</td><td>1353-1940</td><td>677a564599c0b97e5ce739935e1d5e9f2cadcb3aca7eb2c44dbada8ac7b0b262</td></tr><tr><td>l0014</td><td>b0008</td><td>708-2673</td><td>1131-3011</td><td>c9ac03cb3925411d815ac58357ee1246dc0a10d09dfeddac5893af7383005c90</td></tr><tr><td>l0015</td><td>b0008</td><td>361-706</td><td>493-891</td><td>52753a7d87e5548c3f700e22bb3642c7030e329bc483bb8e6af074075083dc2e</td></tr><tr><td>l0016</td><td>b0012</td><td>-879</td><td>-725</td><td>efc495759265381d7cebc2e99af6a08578e3baf4f7abce6475738ddd905ba44f</td></tr></tbody></table><h2>Rejected Proposals</h2><table class="segment-table rejected-table"><thead><tr><th>Rejected</th><th>Group</th><th>Role</th><th>Targets</th><th>Block</th><th>Requested Offsets</th><th>Requested Source Offsets</th><th>Reason</th><th>Selected Text</th></tr></thead><tbody><tr><td>r0001</td><td>l0001</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-chip" style="--chip-border:#CC79A7;--chip-bg:#F6E2EE;--chip-text:#4D1735;"><span class="target-chip-id">p4</span>Patient 4</span><span class="target-chip" style="--chip-border:#E69F00;--chip-bg:#FFF0C7;--chip-text:#513900;"><span class="target-chip-id">p5</span>Patient 5</span><span class="target-chip" style="--chip-border:#56B4E9;--chip-bg:#E1F3FB;--chip-text:#12445E;"><span class="target-chip-id">p6</span>Patient 6</span><span class="target-chip" style="--chip-border:#7A3E9D;--chip-bg:#EEE4F4;--chip-text:#321345;"><span class="target-chip-id">p7</span>Patient 7</span><span class="target-chip" style="--chip-border:#6C6C6C;--chip-bg:#ECECEC;--chip-text:#242424;"><span class="target-chip-id">p8</span>Patient 8</span></td><td>b0002</td><td>451-611</td><td>3765-3925</td><td>offset_text_mismatch:l0001:b0002:451:611</td><td>We report on eight patients, five female and three male, whose per- sonal and clinical data are summarized in Table 1. Patients 1 and 3 have been reported previously [28-31].</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\65.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\65.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\65.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\65.validation.json</p></main>
+</body>
+</html>
