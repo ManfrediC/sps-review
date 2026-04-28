@@ -1,0 +1,23 @@
+{
+  "schema_version": "stage07_provider_pricing_v1",
+  "version": "2026-04-stage07-estimates",
+  "currency": "USD",
+  "unit": "per_1m_tokens",
+  "models": {
+    "openai:gpt-5.5": {
+      "input": 5.0,
+      "cached_input": 5.0,
+      "output": 30.0
+    },
+    "deepseek:deepseek-v4-flash": {
+      "input": 0.14,
+      "cached_input": 0.0028,
+      "output": 0.28
+    },
+    "deepseek:deepseek-v4-pro": {
+      "input": 0.435,
+      "cached_input": 0.003625,
+      "output": 0.87
+    }
+  }
+}

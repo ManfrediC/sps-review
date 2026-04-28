@@ -1,0 +1,4 @@
+paper_id,precision,recall,f1,predicted_chars,gold_chars,overlap_chars,missing_targets,extra_targets,contamination_flags,ready_for_langextract,manual_review_reasons,target_inventory_exact,role_attribution_errors,xml_roundtrip_status,json_validation_status,false_ready,false_not_ready,matrix_config_name
+10,0.966796,0.920480,0.943070,9758,10249,9434,,,,false,mixed_shared_patient_specific_segment:l0007,true,,passed,passed,false,false,O1_gpt55_medium_25k
+30,0.346723,0.729772,0.470097,12174,5784,4221,,,,true,,true,,passed,passed,true,false,O1_gpt55_medium_25k
+34,0.270310,0.092658,0.138009,1354,3950,366,,,,false,offset_text_mismatch:l0002:b0003:534:2550|offset_text_mismatch:l0003:b0003:2551:2993|offset_text_mismatch:l0006:b0005:843:1135|offset_text_mismatch:l0008:b0005:1895:2226|offset_text_mismatch:l0009:b0005:2365:2835,true,,passed,failed,false,true,O1_gpt55_medium_25k

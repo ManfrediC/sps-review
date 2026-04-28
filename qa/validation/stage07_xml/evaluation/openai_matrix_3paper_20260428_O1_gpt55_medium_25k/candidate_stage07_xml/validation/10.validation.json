@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "roundtrip_status": "passed",
+  "errors": [],
+  "warnings": [
+    "relocated_span:l0002:b0004:0:1605->0:1606",
+    "relocated_span:l0003:b0005:28:709->28:710",
+    "relocated_span:l0004:b0005:709:3440->710:3440",
+    "mixed_shared_patient_specific_segment:l0007"
+  ],
+  "manual_review_reasons": [
+    "mixed_shared_patient_specific_segment:l0007"
+  ],
+  "span_adjustments": [
+    {
+      "logical_segment_id": "l0002",
+      "source_block_id": "b0004",
+      "requested_offsets": {
+        "start": 0,
+        "end": 1605
+      },
+      "relocated_offsets": {
+        "start": 0,
+        "end": 1606
+      },
+      "selected_text_sha256": "9dda452ee19566be759934fadad65dce5fc2b2fdee29f30e50240b7602115eff"
+    },
+    {
+      "logical_segment_id": "l0003",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 28,
+        "end": 709
+      },
+      "relocated_offsets": {
+        "start": 28,
+        "end": 710
+      },
+      "selected_text_sha256": "377a521672c63c0213634ae8e60737b4853be20fca0cc8e2054fd7de07368bde"
+    },
+    {
+      "logical_segment_id": "l0004",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 709,
+        "end": 3440
+      },
+      "relocated_offsets": {
+        "start": 710,
+        "end": 3440
+      },
+      "selected_text_sha256": "9bdd9a112b06ced32be3eadc64f91f7ef12855afd4e257dae6165eb5beac316d"
+    }
+  ],
+  "rejected_spans": []
+}

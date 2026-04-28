@@ -1,0 +1,232 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "30::p2",
+  "paper_id": "30",
+  "target_id": "p2",
+  "target_kind": "patient",
+  "target_label": "Patient 2",
+  "ready_for_langextract": true,
+  "input_text": "Patient 2\nA 76-year-old woman began to have contractures and weakness\nof the arms in 1985. She was found to have fixed rigidity of the\nshoulders; contractures of the arms, wrists, and fingers; and absent\narm reflexes in 1987. Electromyography revealed continuous motorunit activity at rest. No oligoclonal bands of IgG were detected in\nthe cerebrospinal fluid. The patient also had a breast mass, which\n\nproved to be a poorly differentiated ductal adenocarcinoma.\n\nbreast cancer was excised, and the patient was treated with tamoxifen, diazepam, and baclofen. Her condition deteriorated slowly,\nwith increasing rigidity of the arms, trunk, and eventually legs, and\n\nshe died two years after surgery for a myocardial infarction. No\nautopsy was performed. Autoantibodies against the 128-kd antigen\nwere detected in the only serum sample tested, which was obtained\na few weeks after surgery in 1987.\n\nIn none of the patients could it be established whether the breast\ncancer antedated the neurologic symptoms. In all three patients,\ntests of serum for organ-specific autoantibodies (islet-cell antibodies, gastric parietal-cell antibodies, thyroglobulin antibodies, and\nthyroid microsomal [peroxidase] antibodies) other than antineuronal antibodies were negative.\n\nThe serum samples from the three patients and the\ncerebrospinal fluid samples from Patients | and 3 recognized the same protein doublet of approximately\n128 kd when tested by Western blotting on monodi-\n\nmensional gels (Fig. 2) and bidimensional gels (not\n\nshown) of extracts of human cerebral cortex and rat\nbrain. None of the samples reacted with the glutamic\nacid decarboxylase band. Conversely, serum samples\nfrom other patients with the stiff-man syndrome, including those who had glutamic acid decarboxylase\nautoantibodies, did not react with the 128-kd antigen\n(Fig. 2A, lane 4). The 128-kd antigen was not recognized by any of the other control serum samples (Fig.\n\n2A, lanes 5 and 6).\n\nWe detected a humoral autoimmune response\nagainst a neuronal protein of 128 kd in three women\nwith the stiff-man syndrome and breast cancer. The\n128-kd antigen was concentrated at synapses and had\na highly restricted distribution outside the nervous\nsystem.\n\nNone of the serum samples from the three patients\ncontained glutamic acid decarboxylase antibodies.\n\nEach of the three patients had some clinical features\nthat are not typical of classic stiff-man syndrome, including localization of the stiffness to the proximal\nmusculature of the limbs and the absence of fixed\ntrunk rigidity (in Patients 1 and 2), and a remission of\nthe neurologic symptoms after steroid therapy (in Patients | and 3).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0002",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4592,
+        "end": 4994
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 402
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0002",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4996,
+        "end": 5055
+      },
+      "compiled_offsets": {
+        "start": 404,
+        "end": 463
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0007",
+      "logical_segment_id": "l0002",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6172,
+        "end": 6371
+      },
+      "compiled_offsets": {
+        "start": 465,
+        "end": 664
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0008",
+      "logical_segment_id": "l0002",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6373,
+        "end": 6603
+      },
+      "compiled_offsets": {
+        "start": 666,
+        "end": 896
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0015",
+      "logical_segment_id": "l0004",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 8019,
+        "end": 8381
+      },
+      "compiled_offsets": {
+        "start": 898,
+        "end": 1260
+      }
+    },
+    {
+      "block_id": "tb0006",
+      "segment_id": "s0016",
+      "logical_segment_id": "l0005",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 11955,
+        "end": 12157
+      },
+      "compiled_offsets": {
+        "start": 1262,
+        "end": 1464
+      }
+    },
+    {
+      "block_id": "tb0007",
+      "segment_id": "s0017",
+      "logical_segment_id": "l0005",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 12159,
+        "end": 12210
+      },
+      "compiled_offsets": {
+        "start": 1466,
+        "end": 1517
+      }
+    },
+    {
+      "block_id": "tb0008",
+      "segment_id": "s0018",
+      "logical_segment_id": "l0005",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 12212,
+        "end": 12627
+      },
+      "compiled_offsets": {
+        "start": 1519,
+        "end": 1934
+      }
+    },
+    {
+      "block_id": "tb0009",
+      "segment_id": "s0019",
+      "logical_segment_id": "l0005",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 12629,
+        "end": 12648
+      },
+      "compiled_offsets": {
+        "start": 1936,
+        "end": 1955
+      }
+    },
+    {
+      "block_id": "tb0010",
+      "segment_id": "s0021",
+      "logical_segment_id": "l0007",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 18672,
+        "end": 18929
+      },
+      "compiled_offsets": {
+        "start": 1957,
+        "end": 2214
+      }
+    },
+    {
+      "block_id": "tb0011",
+      "segment_id": "s0022",
+      "logical_segment_id": "l0007",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 18931,
+        "end": 19030
+      },
+      "compiled_offsets": {
+        "start": 2216,
+        "end": 2315
+      }
+    },
+    {
+      "block_id": "tb0012",
+      "segment_id": "s0023",
+      "logical_segment_id": "l0008",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1",
+        "p3"
+      ],
+      "source_offsets": {
+        "start": 22066,
+        "end": 22403
+      },
+      "compiled_offsets": {
+        "start": 2317,
+        "end": 2654
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

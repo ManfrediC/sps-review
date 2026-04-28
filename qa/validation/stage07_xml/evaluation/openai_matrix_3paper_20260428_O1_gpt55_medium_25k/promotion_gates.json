@@ -1,0 +1,20 @@
+{
+  "schema_version": "stage07_promotion_gates_v1",
+  "profile_name": "precision_first_dev",
+  "description": "Default precision-first promotion gates for Stage 07 XML benchmarking. These gates are deliberately conservative: contamination and false-ready outputs block promotion before cost or latency are considered.",
+  "thresholds": {
+    "min_n_papers": 1,
+    "max_contaminated_papers": 0,
+    "max_false_ready_papers": 0,
+    "max_ready_target_inventory_error_papers": 0,
+    "max_role_error_papers": 0,
+    "max_xml_roundtrip_failures": 0,
+    "max_json_validation_failures": 0,
+    "min_micro_precision": 0.99,
+    "min_micro_recall": 0.95
+  },
+  "warning_thresholds": {
+    "max_false_not_ready_papers": 0,
+    "max_manual_review_paper_fraction": 0.5
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "status": "failed",
+  "roundtrip_status": "passed",
+  "errors": [
+    "offset_text_mismatch:l0002:b0003:534:2550",
+    "offset_text_mismatch:l0003:b0003:2551:2993",
+    "offset_text_mismatch:l0006:b0005:843:1135",
+    "offset_text_mismatch:l0008:b0005:1895:2226",
+    "offset_text_mismatch:l0009:b0005:2365:2835"
+  ],
+  "warnings": [
+    "relocated_span:l0004:b0005:274:463->276:466",
+    "relocated_span:l0005:b0005:464:659->467:663",
+    "relocated_span:l0007:b0005:1215:1421->1222:1428",
+    "route_override:group_to_individual_case_split:source_labelled_patients"
+  ],
+  "manual_review_reasons": [],
+  "span_adjustments": [
+    {
+      "logical_segment_id": "l0004",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 274,
+        "end": 463
+      },
+      "relocated_offsets": {
+        "start": 276,
+        "end": 466
+      },
+      "selected_text_sha256": "f615ea7e8dec19f750e4741875d049b56b943cf86dec978e0bd0ca40672cbca5"
+    },
+    {
+      "logical_segment_id": "l0005",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 464,
+        "end": 659
+      },
+      "relocated_offsets": {
+        "start": 467,
+        "end": 663
+      },
+      "selected_text_sha256": "8783c53502142b8959f370f189fd1035feb97ae548afb3d488f6e9b7f7007c5a"
+    },
+    {
+      "logical_segment_id": "l0007",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 1215,
+        "end": 1421
+      },
+      "relocated_offsets": {
+        "start": 1222,
+        "end": 1428
+      },
+      "selected_text_sha256": "8b81bafa1e45e03a89fc1c8b87d4639ee82a4036b003cbfd4f7557786c8d6cb0"
+    }
+  ],
+  "rejected_spans": [
+    {
+      "rejected_segment_id": "r0001",
+      "logical_segment_id": "l0002",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "confidence": "high",
+      "evidence": "Neurologic examination, laboratory/CSF findings, VEP, EMG, and plasma exchange outcome for Patient Be.",
+      "source_block_id": "b0003",
+      "requested_offsets": {
+        "start": 534,
+        "end": 2550
+      },
+      "source_offsets": {
+        "start": 5358,
+        "end": 7374
+      },
+      "selected_text": "the patient was admitted to the Cornell-New \nYork Hospital Clinical Research Center. Neurologic \nexamination revealed normal mental status, cranial \nnerves, and upper extremities. Examination of the legs \nrevealed muscular hypertrophy and marked bilateral \nmuscular hypertonia throughout the range of passive \nmovement at the hips, knees, and ankles. Stimulus-\ninduced muscle spasms threw both legs into rigid, \nimmovable extension for periods lasting up to 3 minutes. \nThere was mild weakness of right ankle dorsiflexion and \nknee flexion. Deep tendon reflexes were hyperactive, but \nno abnormal reflex or sensory abnormalities were found. \nCBC, electrolytes, including glucose, sedimentation rate, \nCK, hepatitis serologies, BIZ, folate, serum protein elec-\ntrophoresis, growth hormone, ACTH, prolactin, cerulo-\nplasmin, acetylcholine receptor antibody, HTLV-I titer \nand 24-hour urine methylmalonic acid, methoxyhydroxy-\nphenylglycol, vanillylmandelic acid, homovanillic acid, \ncatecholamines, creatinine, and protein were all normal. \nCSF had a protein of 49 mg/dl, glucose of 75 mg/dl, one \nWBC, a negative cytology, and no oligoclonal bands. \nVisual evoked potentials (VEPs) performed when the \npatient was not taking benzodiazepines were abnormal \nbilaterally (figure 1). Forty-eight hours after reinstitut-\ning the patient’s diazepam, the PlOO was normal (figure \n1). The results suggested an asymptomatic deficit in \nvisual processing; its reversal with diazepam suggested \nthat it involved GABAergic pathways. \nEMG prior to re-starting diazepam revealed continu-\nous muscle activity. Appropriate pharmacologic manipu-\nlations of the motor system (see Methods) resulted in \nexpected loss of muscle activity in all instances except \nwith saline infusion, which resulted in no change. \nDespite increasing doses of Valium (80 mg/d), the patient \nwas readmitted to NYH in April 1991 with a gradual \nworsening in motor stiffness. A course of five plasma \nexchanges resulted in no significant change in symptoms.",
+      "selected_text_sha256": "af862cb0245b3d51a3e87366429d398ad518c6b2b445d129b051301f2f08ad82",
+      "reason": "offset_text_mismatch:l0002:b0003:534:2550"
+    },
+    {
+      "rejected_segment_id": "r0002",
+      "logical_segment_id": "l0003",
+      "targets": [
+        "p2"
+      ],
+      "role": "patient_specific",
+      "confidence": "high",
+      "evidence": "Clinical summary for Patient Rm.",
+      "source_block_id": "b0003",
+      "requested_offsets": {
+        "start": 2551,
+        "end": 2993
+      },
+      "source_offsets": {
+        "start": 7375,
+        "end": 7817
+      },
+      "selected_text": "Patient Rm. A published abstractlo provides a full clini-\ncal description of the second SMS patient, Rm. Briefly, \nthe patient is a 65-year-old man with a 4-year history of \nsevere stiffness, limitation of motion, and muscular \nhypertrophy in his neck, trunk, and proximal extremi-\nties. EMG revealed continuous motor activity at rest in \nthe neck and shoulder muscles. The patient had mild \nclinical improvement after taking benzodiazepines.",
+      "selected_text_sha256": "f64ab9c5396cce594fe308cd2b92d7fa91ce2bd4524344b6cea784de5525c2f9",
+      "reason": "offset_text_mismatch:l0003:b0003:2551:2993"
+    },
+    {
+      "rejected_segment_id": "r0003",
+      "logical_segment_id": "l0006",
+      "targets": [
+        "p1",
+        "p2"
+      ],
+      "role": "shared",
+      "confidence": "high",
+      "evidence": "GAD-64 reactivity was not detectable with Be or Rm antisera, with a stated caveat.",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 843,
+        "end": 1135
+      },
+      "source_offsets": {
+        "start": 10922,
+        "end": 11214
+      },
+      "selected_text": "Reactivity with GAD-64 \nwas not detectable with Be or Rm antisera even at \nlonger exposures; however, because the SMS-64 \nreacts so faintly with GAD-64 in these crude rat \ncortical extracts, the possibility of a low-titer anti-\nbody against rat GAD-64 in SMS-80 antisera can-\nnot be excluded.",
+      "selected_text_sha256": "5efc38606467f096a5289dc0b181d1ca711c774b0c2927c6771d2374ba85595f",
+      "reason": "offset_text_mismatch:l0006:b0005:843:1135"
+    },
+    {
+      "rejected_segment_id": "r0004",
+      "logical_segment_id": "l0008",
+      "targets": [
+        "p1",
+        "p2"
+      ],
+      "role": "shared",
+      "confidence": "high",
+      "evidence": "Both SMS-80 antisera depleted GAD enzyme activity and immunoprecipitated assayable enzyme activity.",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 1895,
+        "end": 2226
+      },
+      "source_offsets": {
+        "start": 11974,
+        "end": 12305
+      },
+      "selected_text": "Both SMS-80 and \nSMS-64 antisera, however, depleted enzyme activi-\nty completely and with equal efficiency from the \nsupernatant (figure 4). The immunoprecipitate \nobtained with both SMS antisera contained equiva-\nlent amounts of assayable enzyme activity, \nalthough recovery was not quantitative at high \nantibody concentrations.",
+      "selected_text_sha256": "da19561079d730515dd2abe218aa91477d35fa61f6e432fb536ce5bb358df6be",
+      "reason": "offset_text_mismatch:l0008:b0005:1895:2226"
+    },
+    {
+      "rejected_segment_id": "r0005",
+      "logical_segment_id": "l0009",
+      "targets": [
+        "p1",
+        "p2"
+      ],
+      "role": "shared",
+      "confidence": "high",
+      "evidence": "Serum from both Patient Be and Patient Rm showed interneuronal staining pattern characteristic of SMS/anti-GAD staining.",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 2365,
+        "end": 2835
+      },
+      "source_offsets": {
+        "start": 12444,
+        "end": 12914
+      },
+      "selected_text": "Serum from both patients Be and Rm reacted with \nwhat appeared to be an interneuronal antigen, giv-\ning a granular staining pattern in the gray matter \nsurrounding neurons (data not shown); this pattern \nis characteristic of that seen with SMS antiserum \nor purified anti-GAD antib~dies.'~J* This staining \npattern has been interpreted to reflect the presence \nof GAD in synaptic terminals.l* No staining was \nseen in serial sections blotted with NHS (data not \nshown).",
+      "selected_text_sha256": "beeb70bc5e20229889f4d5d71557704d2f238b5b682a801f7285097f44eb837c",
+      "reason": "offset_text_mismatch:l0009:b0005:2365:2835"
+    }
+  ]
+}

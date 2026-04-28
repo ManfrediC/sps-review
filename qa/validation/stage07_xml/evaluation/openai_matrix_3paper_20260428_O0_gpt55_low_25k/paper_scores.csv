@@ -1,0 +1,4 @@
+paper_id,precision,recall,f1,predicted_chars,gold_chars,overlap_chars,missing_targets,extra_targets,contamination_flags,ready_for_langextract,manual_review_reasons,target_inventory_exact,role_attribution_errors,xml_roundtrip_status,json_validation_status,false_ready,false_not_ready,matrix_config_name
+10,0.803091,0.765636,0.783916,9771,10249,7847,,,,true,,true,,passed,passed,true,false,O0_gpt55_low_25k
+30,0.402230,0.729772,0.518614,10494,5784,4221,,,,true,,true,,passed,passed,true,false,O0_gpt55_low_25k
+34,0.344821,0.851139,0.490803,9750,3950,3362,,,,true,,true,,passed,passed,false,false,O0_gpt55_low_25k

@@ -1867,3 +1867,190 @@ Refactored proceedings trimming and proceedings QC around explicit header-patter
   - Stage-07 XML review-pack tests passed.
   - Ruff passed on the new review-pack code.
 - No paid model/API calls were run during this implementation.
+
+## 2026-04-28
+
+### Stage-07 XML optimisation, benchmarking, and reviewer loop
+
+- Evaluated the Stage-07 XML optimisation plan and implemented the first precision-first optimisation pass around measurement, telemetry, and low-risk safety fixes rather than a large source-representation rewrite.
+- Added the contained benchmark package under `src/pipelines/stage07_benchmarking/`, keeping all non-canonical evaluation outputs under `qa/validation/stage07_xml/evaluation/{run_id}`.
+- Added automatic scoring against reviewed Stage-07 gold annotations:
+  - per-paper micro precision, recall, and F1
+  - per-target source-character precision, recall, and F1
+  - target inventory exactness
+  - missing and extra targets
+  - role attribution mismatches
+  - contamination flags
+  - XML roundtrip and JSON validation status
+  - readiness calibration, including false-ready and false-not-ready counts
+- Added API telemetry support for live Stage-07 calls:
+  - provider, model, endpoint, matrix configuration, and architecture variant
+  - reasoning effort and output token cap
+  - strict schema mode and prompt/schema hashes
+  - request timestamps, latency, response status, and truncation reason
+  - input, output, reasoning, and cache token accounting where available
+  - estimated cost using a local versioned pricing table
+  - validation status and manual-review reasons after parsing
+  - trace paths without secrets or API keys
+- Added the default optimisation matrix definitions for:
+  - current deterministic/baseline heuristic candidates
+  - OpenAI `gpt-5.5` medium/high/high-64k style configurations
+  - DeepSeek benchmark-only placeholders
+  - future source-unit architecture variants
+- Added import-triggered DOCX rescoring so reviewed DOCX feedback can be imported into reviewed annotations, regenerated gold XML/JSON, and automatically rescored against candidate Stage-07 outputs.
+- Added the operator guide at `doc/stage07_xml_benchmark_operator_guide.md`, covering:
+  - running saved and live matrix candidates
+  - generating DOCX review packs
+  - editing and importing DOCX feedback
+  - metric, telemetry, and artefact locations
+  - promotion-gate interpretation
+- Added promotion gates:
+  - default policy in `src/pipelines/stage07_benchmarking/promotion_gates.json`
+  - `gate_results.csv` in every benchmark run
+  - hard failure on any contamination, false-ready output, validation failure, role error, or insufficient precision/recall
+  - warning status for review-burden signals such as false-not-ready papers
+- Investigated the 10-paper reviewed gold set:
+  - reviewed IDs: `10`, `11`, `17`, `19`, `22`, `23`, `25`, `29`, `30`, `34`
+  - initial saved-output benchmark had perfect character overlap but failed promotion because contamination guardrails flagged papers `10`, `29`, `30`, and `34`
+- Audited the flagged excerpts manually:
+  - real risks: paper `10` mixed patient-specific details in a shared segment; paper `30` abstract `Methods/Results` text assigned as shared patient evidence
+  - false-positive guardrails: ordinary case text containing `method of ...`, `(see Methods)`, external numbering such as `Patient 2 in their report`, and comparison text such as `similar to that of patient 1`
+- Refined the benchmark contamination rules so false-positive method mentions and external/comparison patient labels no longer block promotion, while real section headings and mixed current-paper patient labels remain flagged.
+- Added `contamination_audit.csv` to every benchmark run. It records one row per contamination flag with:
+  - matrix configuration
+  - paper ID
+  - flag type
+  - target IDs
+  - logical and physical segment IDs
+  - role
+  - source offsets
+  - exact flagged excerpt
+- Hardened Stage-07 target-view construction:
+  - abstract or section-heading `Methods.`/`References`-style text is demoted to `unknown` + `uncertain`
+  - shared segments that explicitly mix multiple current-paper patient labels are demoted to `uncertain`
+  - audit-only segments remain visible in XML/segment payloads but are excluded from LangExtract target views
+  - demotions add manual-review reasons and prevent false readiness
+- Reran the 10 reviewed gold papers through the patched Stage-07 path:
+  - contamination dropped to zero
+  - promotion gates passed for the recompiled reviewed-gold candidate
+  - papers `10` and `30` are now correctly held for manual review rather than treated as ready target views
+- Identified an unevaluated DOCX review batch:
+  - original round: `qa/validation/stage07_xml/docx_review/stage07_xml_live_batch2_20260427`
+  - papers: `39`, `43`, `49`, `58`, `62`, `65`, `71`, `80`, `89`, `92`
+  - status: DOCX files existed, but there were no imported `reviewed_annotations` or regenerated gold outputs
+- Regenerated that 10-paper DOCX review pack with the current code as:
+  - `qa/validation/stage07_xml/docx_review/stage07_xml_live_batch2_regenerated_20260428`
+
+### Commits
+
+- `bcad5e0` `Add Stage 07 benchmark telemetry foundations`
+- `514eb61` `Add DOCX review benchmark rescoring`
+- `bf093f5` `Document Stage 07 benchmark operator workflow`
+- `fb1df56` `Add Stage 07 benchmark promotion gates`
+- `889c795` `Refine Stage 07 contamination guardrails`
+- `e6a6704` `Add Stage 07 contamination audit and safety routing`
+- `0e6f74b` `Regenerate Stage 07 DOCX batch 2 review pack`
+
+### Verification
+
+- Ran the focused Stage-07 test slice repeatedly while adding benchmark and safety features:
+  - `python -m pytest tests\test_run_stage07_smoke.py tests\test_stage07_review_workflow.py tests\test_stage07_xml.py tests\test_stage07_xml_docx_review.py tests\test_stage07_xml_gold_regression.py tests\test_stage07_xml_review.py tests\test_stage07_xml_openai_client.py tests\test_stage07_benchmarking.py`
+- Final focused result before the OpenAI matrix run:
+  - `53 passed`
+- Ran no-paid benchmark smokes for:
+  - saved current Stage-07 outputs against the 10 reviewed gold papers
+  - recompiled reviewed-gold annotations through the patched Stage-07 path
+  - the regenerated DOCX review pack
+- No DeepSeek calls were run. The DeepSeek key was not read.
+
+### Three-paper paid OpenAI matrix smoke
+
+- Ran a staged paid OpenAI matrix on reviewed gold papers `10`, `30`, and `34`.
+- Rationale for paper choice:
+  - `10`: mixed shared patient-specific discussion and two-patient split
+  - `30`: abstract Methods/Results block plus three-patient split
+  - `34`: OCR-interrupted patient text and source-labelled patient names
+- All candidate Stage-07 outputs and benchmark summaries were kept under `qa/validation/stage07_xml/evaluation/`.
+- Raw OpenAI request/response traces were written under `results/stage07_xml_runs/`; API keys were not written to traces.
+
+#### `O0_gpt55_low_25k`
+
+- Run directory:
+  - `qa/validation/stage07_xml/evaluation/openai_matrix_3paper_20260428_O0_gpt55_low_25k`
+- Completed all three papers.
+- Gate result:
+  - `fail`
+- Metrics:
+  - micro precision `0.514076`
+  - micro recall `0.772156`
+  - micro F1 `0.617225`
+  - contaminated papers `0`
+  - false-ready papers `2` (`10`, `30`)
+- Telemetry:
+  - estimated cost `$0.49571`
+  - latency `138810` ms
+  - input tokens `39430`
+  - output tokens `9952`
+  - reasoning tokens `2221`
+- Interpretation:
+  - Low effort was fast and cheap, but far too permissive. It marked unsafe or overbroad outputs ready for `10` and `30` and failed the precision/recall gates.
+
+#### `O1_gpt55_medium_25k`
+
+- Run directory:
+  - `qa/validation/stage07_xml/evaluation/openai_matrix_3paper_20260428_O1_gpt55_medium_25k`
+- Completed all three papers.
+- Gate result:
+  - `fail`
+- Metrics:
+  - micro precision `0.602121`
+  - micro recall `0.701646`
+  - micro F1 `0.648085`
+  - contaminated papers `0`
+  - false-ready papers `1` (`30`)
+  - false-not-ready papers `1` (`34`)
+  - JSON validation failures `1` (`34`)
+- Telemetry:
+  - estimated cost `$1.36457`
+  - latency `560090` ms
+  - input tokens `39430`
+  - output tokens `38914`
+  - reasoning tokens `31592`
+- Interpretation:
+  - Medium effort was much slower and more expensive than low effort. It improved paper `10`, but still over-selected paper `30` and produced offset validation failures for paper `34`.
+
+#### `O2_gpt55_high_40k_partial`
+
+- Intended run:
+  - `O2_gpt55_high_40k` on the same three papers
+- Outcome:
+  - completed raw responses for papers `10` and `30`
+  - timed out while waiting for paper `34`
+  - no final Stage-07 telemetry CSV was written because the runner did not reach its final write step
+- Preserved partial benchmark directory:
+  - `qa/validation/stage07_xml/evaluation/openai_matrix_3paper_20260428_O2_gpt55_high_40k_partial`
+- Partial gate result:
+  - `fail`
+- Partial metrics for papers `10` and `30` only:
+  - micro precision `0.708597`
+  - micro recall `0.859041`
+  - micro F1 `0.776600`
+  - contaminated papers `0`
+  - false-ready papers `0`
+- Raw completed-call token/cost estimates from response metadata:
+  - paper `10`: input `12888`, output `17216`, reasoning `13984`, estimated cost about `$0.580920`
+  - paper `30`: input `16965`, output `18007`, reasoning `15970`, estimated cost about `$0.625035`
+- Interpretation:
+  - High effort improved overlap on the two completed papers but remained far below promotion thresholds and was operationally too slow for paper `34`. The planned larger 64k/high-or-xhigh run was not launched because this staged run already showed that higher effort alone is not the bottleneck.
+
+#### Matrix readout
+
+- None of the live OpenAI block-offset configurations met promotion gates.
+- No completed candidate produced contamination flags after the new safety demotions, which suggests the safety gate is doing useful post-processing.
+- Main remaining failure modes:
+  - over-selection of broad text, especially paper `30`
+  - offset validation fragility, especially paper `34`
+  - readiness calibration failures, especially low effort false-ready outputs
+- Practical conclusion:
+  - Tuning effort/token settings alone is unlikely to reach human-review quality.
+  - The next architecture experiment should be the planned source-unit `unit_id` selection path, where the model selects deterministic paragraph/sentence/table-row units and Python compiles offsets.

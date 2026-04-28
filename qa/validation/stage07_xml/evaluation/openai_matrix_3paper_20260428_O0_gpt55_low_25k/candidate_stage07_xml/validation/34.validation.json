@@ -1,0 +1,152 @@
+{
+  "status": "passed",
+  "roundtrip_status": "passed",
+  "errors": [],
+  "warnings": [
+    "relocated_span:l0001:b0001:2750:3456->2964:3456",
+    "relocated_span:l0001:b0002:0:426->0:409",
+    "relocated_span:l0001:b0003:528:2518->537:2568",
+    "relocated_span:l0002:b0003:2518:2892->2569:3014",
+    "relocated_span:l0003:b0001:236:1061->184:1147",
+    "relocated_span:l0003:b0005:1294:2060->1222:2048",
+    "relocated_span:l0003:b0005:2380:2925->2339:2851",
+    "relocated_span:l0003:b0006:634:1161->508:1166",
+    "relocated_span:l0004:b0007:2562:2824->2414:2717",
+    "relocated_span:l0005:b0007:2428:2561->2261:2413",
+    "route_override:group_to_individual_case_split:source_labelled_patients"
+  ],
+  "manual_review_reasons": [],
+  "span_adjustments": [
+    {
+      "logical_segment_id": "l0001",
+      "source_block_id": "b0001",
+      "requested_offsets": {
+        "start": 2750,
+        "end": 3456
+      },
+      "relocated_offsets": {
+        "start": 2964,
+        "end": 3456
+      },
+      "selected_text_sha256": "c472d8bebfb82e9f9572336c578eed4b5f0296437fe6a292fe68d9febbc00253"
+    },
+    {
+      "logical_segment_id": "l0001",
+      "source_block_id": "b0002",
+      "requested_offsets": {
+        "start": 0,
+        "end": 426
+      },
+      "relocated_offsets": {
+        "start": 0,
+        "end": 409
+      },
+      "selected_text_sha256": "4f13f68e063b84e135b55e6bf8a8f6d8808e9daa42bc814779ee1d736303f23d"
+    },
+    {
+      "logical_segment_id": "l0001",
+      "source_block_id": "b0003",
+      "requested_offsets": {
+        "start": 528,
+        "end": 2518
+      },
+      "relocated_offsets": {
+        "start": 537,
+        "end": 2568
+      },
+      "selected_text_sha256": "e25d8413a61c218fee413cc0100995829f551f38401cb4d5d35a3be57984a356"
+    },
+    {
+      "logical_segment_id": "l0002",
+      "source_block_id": "b0003",
+      "requested_offsets": {
+        "start": 2518,
+        "end": 2892
+      },
+      "relocated_offsets": {
+        "start": 2569,
+        "end": 3014
+      },
+      "selected_text_sha256": "a28a0e3c419f4b9e574989f8d27bb4f83a7fdec98cb9892d7414d06edc245dca"
+    },
+    {
+      "logical_segment_id": "l0003",
+      "source_block_id": "b0001",
+      "requested_offsets": {
+        "start": 236,
+        "end": 1061
+      },
+      "relocated_offsets": {
+        "start": 184,
+        "end": 1147
+      },
+      "selected_text_sha256": "04e259b30c1eaad502a6b6bd84a65012cb98a58ce1d61824705352d696829203"
+    },
+    {
+      "logical_segment_id": "l0003",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 1294,
+        "end": 2060
+      },
+      "relocated_offsets": {
+        "start": 1222,
+        "end": 2048
+      },
+      "selected_text_sha256": "8cf55b66dbc03dff561dcb4ee730b6b400337d8fd544bc191d2e829a42ed627d"
+    },
+    {
+      "logical_segment_id": "l0003",
+      "source_block_id": "b0005",
+      "requested_offsets": {
+        "start": 2380,
+        "end": 2925
+      },
+      "relocated_offsets": {
+        "start": 2339,
+        "end": 2851
+      },
+      "selected_text_sha256": "351efa40f00adc2edfccb036899228382576c5ac82d1a39a7a53e986cf65990d"
+    },
+    {
+      "logical_segment_id": "l0003",
+      "source_block_id": "b0006",
+      "requested_offsets": {
+        "start": 634,
+        "end": 1161
+      },
+      "relocated_offsets": {
+        "start": 508,
+        "end": 1166
+      },
+      "selected_text_sha256": "251ce1a4f8556df5c0408838e060f5c34d6c6f49571b09d7ae94612b54e1915a"
+    },
+    {
+      "logical_segment_id": "l0004",
+      "source_block_id": "b0007",
+      "requested_offsets": {
+        "start": 2562,
+        "end": 2824
+      },
+      "relocated_offsets": {
+        "start": 2414,
+        "end": 2717
+      },
+      "selected_text_sha256": "6652bf3a8e1e7b57ddc29b168d92530fb3fad1f5c7b7105911ae430fc13d2d85"
+    },
+    {
+      "logical_segment_id": "l0005",
+      "source_block_id": "b0007",
+      "requested_offsets": {
+        "start": 2428,
+        "end": 2561
+      },
+      "relocated_offsets": {
+        "start": 2261,
+        "end": 2413
+      },
+      "selected_text_sha256": "65c3d10b1fcd60c1b57f473c5d9419b7b544d10ea3fd5e565285ad7c11d8e9ae"
+    }
+  ],
+  "rejected_spans": []
+}

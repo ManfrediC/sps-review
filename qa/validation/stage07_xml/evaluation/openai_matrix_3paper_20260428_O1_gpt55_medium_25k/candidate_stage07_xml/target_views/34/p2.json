@@ -1,0 +1,74 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "34::p2",
+  "paper_id": "34",
+  "target_id": "p2",
+  "target_kind": "patient",
+  "target_label": "Patient Rm",
+  "ready_for_langextract": false,
+  "input_text": "Both antisera reacted with a major protein species \nof Mr 80 kD, as well as with several minor smaller \nmolecular weight bands similar to those seen with \nhuman neuronal extracts (figure 2).\n\nIn addition, \nRm antiserum reacted with a larger antigen of Mr \n120 kD (figure 3); this antigen was not identified \nwith Rm antisera in human Purkinje neuron \nextracts nor with Be/SMS-80 antisera.\n\nThus the two different SMS sera react with a major \nantigen of 80 kD present in human and rat brain \nthat is not recognized by SMS-64 antisera. By all \nmeasures, SMS-80 and SMS-64 antisera appear \ndistinct.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0004",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1"
+      ],
+      "source_offsets": {
+        "start": 10355,
+        "end": 10545
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 190
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0005",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10546,
+        "end": 10742
+      },
+      "compiled_offsets": {
+        "start": 192,
+        "end": 388
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0007",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1"
+      ],
+      "source_offsets": {
+        "start": 11301,
+        "end": 11507
+      },
+      "compiled_offsets": {
+        "start": 390,
+        "end": 596
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "offset_text_mismatch:l0002:b0003:534:2550",
+      "offset_text_mismatch:l0003:b0003:2551:2993",
+      "offset_text_mismatch:l0006:b0005:843:1135",
+      "offset_text_mismatch:l0008:b0005:1895:2226",
+      "offset_text_mismatch:l0009:b0005:2365:2835"
+    ]
+  }
+}

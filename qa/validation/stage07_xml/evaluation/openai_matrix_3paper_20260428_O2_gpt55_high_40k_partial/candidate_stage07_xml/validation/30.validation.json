@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "roundtrip_status": "passed",
+  "errors": [],
+  "warnings": [
+    "relocated_span:l0006:b0079:456:582->455:581"
+  ],
+  "manual_review_reasons": [],
+  "span_adjustments": [
+    {
+      "logical_segment_id": "l0006",
+      "source_block_id": "b0079",
+      "requested_offsets": {
+        "start": 456,
+        "end": 582
+      },
+      "relocated_offsets": {
+        "start": 455,
+        "end": 581
+      },
+      "selected_text_sha256": "24b3921606c8340f5a1721fe6dc70dd25c76bd17c45a4184a492f106498fd991"
+    }
+  ],
+  "rejected_spans": []
+}

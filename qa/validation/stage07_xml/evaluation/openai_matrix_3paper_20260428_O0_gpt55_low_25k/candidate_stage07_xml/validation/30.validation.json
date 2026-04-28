@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "roundtrip_status": "passed",
+  "errors": [],
+  "warnings": [
+    "relocated_span:l0006:b0055:507:1134->548:1134",
+    "relocated_span:l0008:b0109:96:560->79:560"
+  ],
+  "manual_review_reasons": [],
+  "span_adjustments": [
+    {
+      "logical_segment_id": "l0006",
+      "source_block_id": "b0055",
+      "requested_offsets": {
+        "start": 507,
+        "end": 1134
+      },
+      "relocated_offsets": {
+        "start": 548,
+        "end": 1134
+      },
+      "selected_text_sha256": "314c9dc63a9e79e319ab2371901c14d06bcdca434d65c3d92cf2004c717aab16"
+    },
+    {
+      "logical_segment_id": "l0008",
+      "source_block_id": "b0109",
+      "requested_offsets": {
+        "start": 96,
+        "end": 560
+      },
+      "relocated_offsets": {
+        "start": 79,
+        "end": 560
+      },
+      "selected_text_sha256": "6b588347420ecc1c41af8ea18f6cefc24c06d84e2b9b6c4028216fc49d92393c"
+    }
+  ],
+  "rejected_spans": []
+}

@@ -1,0 +1,75 @@
+{
+  "paper_id": "10",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\10.json",
+    "source_text_sha256": "2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335",
+    "prepared_source_sha256": "10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc",
+    "prepared_source_character_count": 37007,
+    "source_filename": "10_blum1991.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "case_series",
+    "resolved_langextract_mode": "individual_case_split"
+  },
+  "stage06_prior": {
+    "final_count": 2,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "stage07_span_metadata",
+    "annotation_model": "gpt-5.5",
+    "annotated_text_path": "qa\\validation\\stage07_xml\\evaluation\\openai_matrix_3paper_20260428_O1_gpt55_medium_25k\\candidate_stage07_xml\\annotated_text\\10.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_count_prior"
+    },
+    {
+      "id": "p2",
+      "kind": "patient",
+      "label": "Patient 2",
+      "source": "stage06_count_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "qa\\validation\\stage07_xml\\evaluation\\openai_matrix_3paper_20260428_O1_gpt55_medium_25k\\candidate_stage07_xml\\segments\\10.segments.json",
+    "n_segments": 7
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "qa\\validation\\stage07_xml\\evaluation\\openai_matrix_3paper_20260428_O1_gpt55_medium_25k\\candidate_stage07_xml\\target_views\\10\\p1.json",
+      "ready_for_langextract": false
+    },
+    {
+      "target_id": "p2",
+      "target_kind": "patient",
+      "target_label": "Patient 2",
+      "target_view_path": "qa\\validation\\stage07_xml\\evaluation\\openai_matrix_3paper_20260428_O1_gpt55_medium_25k\\candidate_stage07_xml\\target_views\\10\\p2.json",
+      "ready_for_langextract": false
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "mixed_shared_patient_specific_segment:l0007"
+    ]
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "openai_matrix_3paper_20260428_O1_gpt55_medium_25k",
+    "generated_at_utc": "2026-04-28T17:22:28.683713+00:00"
+  }
+}

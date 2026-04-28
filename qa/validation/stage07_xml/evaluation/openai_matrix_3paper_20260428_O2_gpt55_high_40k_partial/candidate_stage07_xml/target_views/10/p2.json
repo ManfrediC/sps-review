@@ -1,0 +1,104 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "10::p2",
+  "paper_id": "10",
+  "target_id": "p2",
+  "target_kind": "patient",
+  "target_label": "Patient 2",
+  "ready_for_langextract": false,
+  "input_text": "PATIENT 2 \nA 53-year-old black man was referred for evalu- \nation of a 2?h-year history of progressive stiffness of \nthe lower extremities. His initial symptom was in- \nvoluntary upward curling of the toes of both feet. \nStiffness subsequently developed in the remaining \nmuscles of his legs. At the same time, he began to \nhave chronic neck and low-back pain. One year be- \nfore admission, the patient also began to have pain- \nful spasms of his legs superimposed on his stiffness, \nusually provoked by passive stretching. His wife \nnoted that his spasms ceased and his stiffness re- \nsolved somewhat during sleep. He began to require \nassistance arising from bed and walking. There was \nno history of diabetes, trauma, seizures, myoclo- \nnus, weakness, or sensory symptoms. The patient \nhad been treated unsuccessfully with nonsteroidal \nantiinflammatory medications, sodium dantrolene, \ncarbamazepine, trihexyphenidyl, and carbidopa/ \nlevodopa (Sinemet). Treatment with phenytoin af- \nforded him mild relief. Low-dose diazepam moder- \nately improved his stiffness and he was able to walk \nwithout assistance. One of the patient’s sisters has \nIDDM; otherwise, the family history was unre- \nmarkable. \nGeneral physical and neurological examination \nresults were normal except for the motor system. \nTone and strength were normal in the arms, but \ntone was markedly increased in all muscle groups of \nthe legs, with dystonic posturing of both feet man- \nifesting as extension of the metatarsal-phalangeal \njoints and flexion of the distal interphalangeal \njoints. Strength of the legs was difficult to assess \nbecause of rigidity. Deep tendon reflexes were nor- \nmal throughout and plantar reflexes were silent. \nThe patient walked stiffly and turned with great dif- \nficulty. \nThe following laboratory test results were nor- \nmal: electrolytes, BUN, creatinine, glucose, uric \nacid, calcium, phosphorus, total protein, albumin, \nserum electrophoresis, liver enzymes, folate, vita- \nmin B 12, hemoglobin, hematocrit, mean corpuscular \nvolume, platelet count, urinalysis, erythrocyte sed- \nimentation rate, rapid plasma reagin, antinuclear \nantibody, and rheumatoid factor. A 5-h glucose tol- \nerance test also showed normal results. A complete \nmyelogram revealed mild lumbar and cervical \nspondylosis without stenosis of the canal. Radio- \ngraphs of the chest and spine, electrocardiogram, \nelectroencephalogram, and somatosensory evoked \npotentials were all unremarkable. Muscle biopsy \nwas similar to that of patient \n1. MR imaging of the \nbrain and spinal cord were normal. EMG revealed \nthe presence of continuous spontaneous motor unit \npotentials in the muscles of the legs, which was \nabolished by spinal epidural block. As the block\n\nbegan to wear off, the patient was able to move his \nlegs nearly normally. CSF glucose, protein, and cell \ncount were unremarkable and there were no oligo- \nclonal bands. CSF IgG/albumin ratio was normal. \nAutoantibodies to GAD were detected in both se- \nrum and CSF by the method of Solimena et al. (4). \nIn addition, gastric parietal cell, pancreatic islet \ncell, microsomal, and thyroglobulin autoantibodies \nwere all present in the patient’s serum. This patient \nwas reported as case 20 in the second report of \nSolimena et al. (5). The human lymphocyte antigen \n(HLA) phenotype of the patient was A3,24; \nB14(w6),w57(w4); DRw6,7(DQw1 ,w3; DRw52,53). \nAt the time of admission, diazepam therapy was \nwithdrawn slowly to determine the baseline muscle \nstiffness of the patient. After a few days, he became \nmarkedly stiffer (videotape segment 1). The patient \nthen began supplemental treatment with 100 mg of \nprednisone per day for 1 week and then 100 and 20 \nmg on an alternate-day basis. Within 10 days of \nstarting prednisone, the patient began to notice a \nmarked decrease of his stiffness (videotape segment \n2). He was able to decrease the dose of diazepam \nfrom 40 to 20 mg per day. A year later, his dose of \nprednisone has been decreased to 40 mg every other \nday, but he still requires 20 mg of diazepam daily for \nresidual stiffness. \n\n\nDISCUSSION \nOur two patients demonstrate the typical findings \nof SPS as described by Moersch and Woltman (1). \nBoth fulfill the diagnostic criteria of Gordon et al. \n(2). In addition to spasm and progressive stiffness of \n\n\naxial musculature, each patient had characteristic \nEMG findings of continuous motor unit activity. \nThe stiffness as well as the EMG findings improved \nafter spinal anesthesia. \n\n\nOur two patients similarly had \nmarkedly reduced stiffness with improvement in \ntheir functioning and substantial reductions in their \ndiazepam requirements. Residual contractures re- \nsulting from the prolonged muscle rigidity remain, \nhowever, and impair the function of both of our \npatients.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0003",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 9502,
+        "end": 12244
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2742
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0003",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 12246,
+        "end": 13596
+      },
+      "compiled_offsets": {
+        "start": 2744,
+        "end": 4094
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0004",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1"
+      ],
+      "source_offsets": {
+        "start": 13596,
+        "end": 13819
+      },
+      "compiled_offsets": {
+        "start": 4096,
+        "end": 4319
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0007",
+      "logical_segment_id": "l0004",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1"
+      ],
+      "source_offsets": {
+        "start": 13886,
+        "end": 14065
+      },
+      "compiled_offsets": {
+        "start": 4321,
+        "end": 4500
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0009",
+      "logical_segment_id": "l0006",
+      "relation_to_target": "shared",
+      "role": "shared",
+      "shared_with": [
+        "p1"
+      ],
+      "source_offsets": {
+        "start": 29542,
+        "end": 29837
+      },
+      "compiled_offsets": {
+        "start": 4502,
+        "end": 4797
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "mixed_shared_patient_specific_segment:l0005"
+    ]
+  }
+}
