@@ -135,6 +135,8 @@ Important files are:
 - `paper_scores.csv`: one row per paper/configuration.
 - `target_scores.csv`: per-target character precision, recall, and F1.
 - `pareto_summary.csv`: accuracy, contamination, review burden, cost, and latency by configuration.
+- `promotion_gates.json`: the gate policy copied into the run for provenance.
+- `gate_results.csv`: pass/fail/review gate results by configuration.
 - `api_telemetry.csv` and `api_telemetry.jsonl`: one row per live API call, if supplied.
 - `pricing_table.json`: local versioned pricing assumptions for cost estimates.
 - `summary.json` and `summary.md`: compact run-level summary.
@@ -164,6 +166,12 @@ calibration for that paper is incomplete.
 
 ## 6. Promotion Gates
 
+The default policy is:
+
+```text
+src/pipelines/stage07_benchmarking/promotion_gates.json
+```
+
 Interpret promotion gates in this order:
 
 1. Contamination must be zero. Any cross-patient, cross-target, reference,
@@ -179,6 +187,12 @@ Interpret promotion gates in this order:
 High F1 is not sufficient on its own. A configuration with perfect overlap but
 one contamination flag remains a failed candidate until the source of the flag
 is understood and fixed.
+
+`gate_results.csv` uses three statuses:
+
+- `pass`: all hard gates pass and no warning thresholds are crossed.
+- `review`: hard gates pass, but a warning threshold needs human judgement.
+- `fail`: at least one hard gate failed.
 
 ## 7. Tidy Workflow
 

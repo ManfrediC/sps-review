@@ -23,6 +23,7 @@ from stage07_benchmarking.manifest import (
     RUN_CONFIG_SCHEMA_VERSION,
     benchmark_paths,
     load_model_matrix,
+    load_promotion_gates,
     now_run_id,
     write_benchmark_artifacts,
 )
@@ -103,6 +104,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="Optional JSON model/config matrix to record with the run.",
+    )
+    parser.add_argument(
+        "--promotion-gates",
+        type=Path,
+        default=None,
+        help="Optional promotion-gate JSON. Defaults to the packaged precision-first gates.",
     )
     parser.add_argument(
         "--matrix-config-name",
@@ -406,6 +413,7 @@ def main() -> None:
         for paper_id in paper_ids
     ]
     telemetry_rows = load_telemetry_rows(args.api_telemetry_path)
+    promotion_gates = load_promotion_gates(args.promotion_gates)
     summary = summarise_paper_scores(paper_scores)
     summary["estimated_cost_usd"] = sum(float(row.get("estimated_cost_usd") or 0.0) for row in telemetry_rows)
     summary["latency_ms"] = sum(int(float(row.get("latency_ms") or 0.0)) for row in telemetry_rows)
@@ -423,6 +431,8 @@ def main() -> None:
         "max_block_chars": args.max_block_chars,
         "matrix_config_name": args.matrix_config_name,
         "model_matrix": load_model_matrix(args.model_matrix),
+        "promotion_gates_path": str(args.promotion_gates or ""),
+        "promotion_gate_profile": str(promotion_gates.get("profile_name") or ""),
         # This runner is intentionally offline. Future live benchmarks should
         # make paid execution explicit in a separate command path.
         "paid_api_calls": False,
@@ -434,6 +444,7 @@ def main() -> None:
         paper_scores=paper_scores,
         summary=summary,
         telemetry_rows=telemetry_rows,
+        promotion_gates=promotion_gates,
     )
     print(f"Wrote Stage 07 benchmark artefacts to {paths.run_dir}")
 

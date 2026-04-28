@@ -18,6 +18,7 @@ from stage07_benchmarking.manifest import (  # noqa: E402
     load_model_matrix,
     write_benchmark_artifacts,
 )
+from stage07_benchmarking.promotion import evaluate_gate_results, load_promotion_gates  # noqa: E402
 from stage07_benchmarking.telemetry import load_telemetry_rows, telemetry_row  # noqa: E402
 
 
@@ -155,9 +156,41 @@ class TestStage07Benchmarking(unittest.TestCase):
             self.assertTrue(paths.telemetry_csv_path.exists())
             self.assertTrue(paths.telemetry_jsonl_path.exists())
             self.assertTrue(paths.pareto_summary_csv_path.exists())
+            self.assertTrue(paths.promotion_gates_path.exists())
+            self.assertTrue(paths.gate_results_csv_path.exists())
             self.assertTrue(paths.pricing_table_path.exists())
             self.assertIn("Micro precision", paths.summary_md_path.read_text(encoding="utf-8"))
             self.assertEqual(load_telemetry_rows(paths.telemetry_jsonl_path)[0]["provider"], "openai")
+            self.assertIn("promotion_status", paths.gate_results_csv_path.read_text(encoding="utf-8"))
+
+    def test_promotion_gates_fail_contamination_before_score_thresholds(self) -> None:
+        gates = load_promotion_gates()
+        gate_results = evaluate_gate_results(
+            [
+                {
+                    "paper_id": "9001",
+                    "matrix_config_name": "candidate_a",
+                    "micro": {
+                        "precision": 1.0,
+                        "recall": 1.0,
+                        "f1": 1.0,
+                        "predicted_chars": 10,
+                        "gold_chars": 10,
+                        "overlap_chars": 10,
+                    },
+                    "target_inventory_exact": True,
+                    "contamination_flags": ["unsafe_section_text:s0001"],
+                    "role_attribution_errors": [],
+                    "readiness_calibration": {"false_ready": False, "false_not_ready": False},
+                    "xml_roundtrip_status": "passed",
+                    "json_validation_status": "passed",
+                }
+            ],
+            gates,
+        )
+
+        self.assertEqual(gate_results[0]["promotion_status"], "fail")
+        self.assertIn("contaminated_papers:1>0", gate_results[0]["failed_gates"])
 
     def test_load_model_matrix_normalises_configs(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:

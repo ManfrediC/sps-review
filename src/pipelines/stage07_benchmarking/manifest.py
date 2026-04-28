@@ -15,6 +15,12 @@ from pathlib import Path
 from typing import Any
 
 from .matrix import MODEL_MATRIX_SCHEMA_VERSION, load_model_matrix
+from .promotion import (
+    DEFAULT_PROMOTION_GATES_PATH,
+    evaluate_gate_results,
+    load_promotion_gates,
+    write_gate_results_csv,
+)
 from .telemetry import (
     DEFAULT_PRICING_TABLE,
     TELEMETRY_FIELDNAMES,
@@ -40,6 +46,8 @@ class BenchmarkPaths:
     summary_json_path: Path
     summary_md_path: Path
     pareto_summary_csv_path: Path
+    promotion_gates_path: Path
+    gate_results_csv_path: Path
     telemetry_csv_path: Path
     telemetry_jsonl_path: Path
     pricing_table_path: Path
@@ -64,6 +72,8 @@ def benchmark_paths(evaluation_root: Path, run_id: str) -> BenchmarkPaths:
         summary_json_path=run_dir / "summary.json",
         summary_md_path=run_dir / "summary.md",
         pareto_summary_csv_path=run_dir / "pareto_summary.csv",
+        promotion_gates_path=run_dir / "promotion_gates.json",
+        gate_results_csv_path=run_dir / "gate_results.csv",
         telemetry_csv_path=run_dir / "api_telemetry.csv",
         telemetry_jsonl_path=run_dir / "api_telemetry.jsonl",
         pricing_table_path=run_dir / "pricing_table.json",
@@ -245,11 +255,14 @@ def write_benchmark_artifacts(
     summary: dict[str, Any],
     telemetry_rows: list[dict[str, str]] | None = None,
     pricing_table: dict[str, Any] | None = None,
+    promotion_gates: dict[str, Any] | None = None,
 ) -> None:
     """Write all benchmark artefacts into the run directory."""
 
     ensure_benchmark_paths(paths)
     telemetry_payload = telemetry_rows or []
+    promotion_payload = promotion_gates or load_promotion_gates(DEFAULT_PROMOTION_GATES_PATH)
+    gate_results = evaluate_gate_results(paper_scores, promotion_payload)
     write_json(paths.config_path, run_config)
     write_jsonl(paths.paper_scores_path, paper_scores)
     write_paper_scores_csv(paths.summary_csv_path, paper_scores)
@@ -257,6 +270,8 @@ def write_benchmark_artifacts(
     write_telemetry_csv(paths.telemetry_csv_path, telemetry_payload)
     write_telemetry_jsonl(paths.telemetry_jsonl_path, telemetry_payload)
     write_pareto_summary_csv(paths.pareto_summary_csv_path, paper_scores, telemetry_payload)
+    write_json(paths.promotion_gates_path, promotion_payload)
+    write_gate_results_csv(paths.gate_results_csv_path, gate_results)
     write_json(paths.pricing_table_path, pricing_table or DEFAULT_PRICING_TABLE)
     write_json(paths.summary_json_path, summary)
     paths.summary_md_path.write_text(summary_markdown(summary), encoding="utf-8")
@@ -271,6 +286,7 @@ __all__ = [
     "benchmark_paths",
     "ensure_benchmark_paths",
     "load_model_matrix",
+    "load_promotion_gates",
     "now_run_id",
     "write_benchmark_artifacts",
 ]
