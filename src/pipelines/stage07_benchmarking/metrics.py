@@ -14,8 +14,16 @@ import re
 
 
 IGNORED_ROLES = {"background", "uncertain"}
-EXTRACTION_UNSAFE_SECTION_RE = re.compile(
-    r"\b(references?|bibliography|materials?\s+and\s+methods?|methods?|acknowledg(?:e)?ments?)\b",
+UNSAFE_SECTION_HEADING_RE = re.compile(
+    r"^\s*(?:abstract\s*)?(?:references?|bibliography|materials?\s+and\s+methods?|methods?|acknowledg(?:e)?ments?)(?:\s*[:.\-]\s+|\s*$)",
+    re.IGNORECASE,
+)
+EXTERNAL_REPORT_LABEL_CONTEXT_RE = re.compile(
+    r"^\W*in\s+(?:their|his|her|the|this|that)\s+reports?\b",
+    re.IGNORECASE,
+)
+COMPARISON_LABEL_CONTEXT_RE = re.compile(
+    r"(?:similar\s+to(?:\s+that\s+of)?|same\s+as|compared\s+(?:with|to)|unlike|as\s+in|that\s+of)\s*$",
     re.IGNORECASE,
 )
 
@@ -126,6 +134,40 @@ def entity_labels(segments_payload: dict[str, Any]) -> dict[str, str]:
     return labels
 
 
+def looks_like_unsafe_section_text(text: str) -> bool:
+    """Return true when text appears to be an extraction-unsafe section.
+
+    The gate is meant to catch actual section leakage, such as abstract
+    "Methods." blocks or reference headings. It should not fire on case-report
+    prose that merely cites a laboratory method or says "see Methods".
+    """
+
+    compact_text = str(text or "").strip()
+    return bool(UNSAFE_SECTION_HEADING_RE.search(compact_text))
+
+
+def label_mentions_other_current_target(text: str, label: str) -> bool:
+    """Return true when a target label looks like a current-paper patient leak.
+
+    Numbering can be reused across papers. Phrases such as "Patient 2 in their
+    report" identify the numbering in a cited report, not the current paper's
+    Patient 2, so they are ignored by this guardrail.
+    """
+
+    if len(label.strip()) < 4:
+        return False
+    label_pattern = r"(?<!\w)" + r"\s+".join(re.escape(part) for part in label.strip().split()) + r"(?!\w)"
+    for match in re.finditer(label_pattern, text, flags=re.IGNORECASE):
+        preceding_context = text[max(0, match.start() - 64) : match.start()]
+        following_context = text[match.end() : match.end() + 64]
+        if COMPARISON_LABEL_CONTEXT_RE.search(preceding_context):
+            continue
+        if EXTERNAL_REPORT_LABEL_CONTEXT_RE.search(following_context):
+            continue
+        return True
+    return False
+
+
 def validation_value(payload: dict[str, Any], key: str) -> str:
     validation = payload.get("validation") or {}
     return str(validation.get(key) or "")
@@ -198,14 +240,13 @@ def contamination_flags(
             if target_id and target_id != "unknown" and gold_target_ids and target_id not in gold_target_ids:
                 flags.append(f"extra_target_segment:{target_id}:{segment_id}")
         text = str(segment.get("text") or "")
-        if role not in IGNORED_ROLES and EXTRACTION_UNSAFE_SECTION_RE.search(text):
+        if role not in IGNORED_ROLES and looks_like_unsafe_section_text(text):
             flags.append(f"unsafe_section_text:{segment_id}")
         for target_id in sorted(target for target in targets if target in gold_target_ids):
             for other_target, other_label in labels.items():
                 if other_target == target_id:
                     continue
-                label = other_label.strip()
-                if label and len(label) >= 4 and label.casefold() in text.casefold():
+                if label_mentions_other_current_target(text, other_label):
                     flags.append(f"cross_target_label_leak:{target_id}:{other_target}:{segment_id}")
     return sorted(set(flags))
 

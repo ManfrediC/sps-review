@@ -107,6 +107,137 @@ class TestStage07Benchmarking(unittest.TestCase):
         self.assertIn("role_mismatch:p1:p0001:patient_specific:shared", score["role_attribution_errors"])
         self.assertTrue(score["readiness_calibration"]["false_ready"])
 
+    def test_contamination_ignores_method_mentions_in_case_text(self) -> None:
+        gold_payload = {
+            "paper_id": "9003",
+            "entities": [{"id": "p1"}],
+            "segments": [segment("g0001", ["p1"], 0, 10)],
+        }
+        predicted_payload = {
+            "paper_id": "9003",
+            "entities": [{"id": "p1"}],
+            "segments": [
+                {
+                    **segment("p0001", ["p1"], 0, 10),
+                    "text": "Autoantibodies were detected by the method of Solimena et al. (4).",
+                },
+                {
+                    **segment("p0002", ["p1"], 20, 30),
+                    "text": "Appropriate manipulation of the motor system (see Methods) reduced activity.",
+                },
+            ],
+        }
+
+        score = metrics.score_segments_payloads(
+            gold_payload=gold_payload,
+            predicted_payload=predicted_payload,
+        )
+
+        self.assertNotIn("unsafe_section_text:p0001", score["contamination_flags"])
+        self.assertNotIn("unsafe_section_text:p0002", score["contamination_flags"])
+
+    def test_contamination_flags_actual_methods_heading(self) -> None:
+        gold_payload = {
+            "paper_id": "9004",
+            "entities": [{"id": "p1"}, {"id": "p2"}],
+            "segments": [segment("g0001", ["p1"], 0, 10), segment("g0002", ["p2"], 20, 30)],
+        }
+        predicted_payload = {
+            "paper_id": "9004",
+            "entities": [{"id": "p1"}, {"id": "p2"}],
+            "segments": [
+                {
+                    **segment("p0001", ["p1", "p2"], 0, 30, role="shared"),
+                    "text": "Methods. We studied two women with stiff-person syndrome by immunocytochemistry.",
+                }
+            ],
+        }
+
+        score = metrics.score_segments_payloads(
+            gold_payload=gold_payload,
+            predicted_payload=predicted_payload,
+        )
+
+        self.assertIn("unsafe_section_text:p0001", score["contamination_flags"])
+
+    def test_cross_target_label_guard_ignores_external_report_numbering(self) -> None:
+        gold_payload = {
+            "paper_id": "9005",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [segment("g0001", ["p1"], 0, 10), segment("g0002", ["p2"], 20, 30)],
+        }
+        predicted_payload = {
+            "paper_id": "9005",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [
+                {
+                    **segment("p0001", ["p1"], 0, 10),
+                    "text": "Patient 1 had been described previously by Piccolo et al. (Patient 2 in their report).",
+                }
+            ],
+        }
+
+        score = metrics.score_segments_payloads(
+            gold_payload=gold_payload,
+            predicted_payload=predicted_payload,
+        )
+
+        self.assertFalse(
+            any(flag.startswith("cross_target_label_leak") for flag in score["contamination_flags"]),
+            score["contamination_flags"],
+        )
+
+    def test_cross_target_label_guard_ignores_comparison_context(self) -> None:
+        gold_payload = {
+            "paper_id": "9006",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [segment("g0001", ["p1"], 0, 10), segment("g0002", ["p2"], 20, 30)],
+        }
+        predicted_payload = {
+            "paper_id": "9006",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [
+                {
+                    **segment("p0001", ["p2"], 20, 30),
+                    "text": "Muscle biopsy was similar to that of patient 1.",
+                }
+            ],
+        }
+
+        score = metrics.score_segments_payloads(
+            gold_payload=gold_payload,
+            predicted_payload=predicted_payload,
+        )
+
+        self.assertFalse(
+            any(flag.startswith("cross_target_label_leak") for flag in score["contamination_flags"]),
+            score["contamination_flags"],
+        )
+
+    def test_cross_target_label_guard_keeps_current_shared_patient_mix(self) -> None:
+        gold_payload = {
+            "paper_id": "9007",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [segment("g0001", ["p1"], 0, 10), segment("g0002", ["p2"], 20, 30)],
+        }
+        predicted_payload = {
+            "paper_id": "9007",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [
+                {
+                    **segment("p0001", ["p1", "p2"], 0, 30, role="shared"),
+                    "text": "Patient 1 had vitiligo; patient 2 had serum autoantibodies.",
+                }
+            ],
+        }
+
+        score = metrics.score_segments_payloads(
+            gold_payload=gold_payload,
+            predicted_payload=predicted_payload,
+        )
+
+        self.assertIn("cross_target_label_leak:p1:p2:p0001", score["contamination_flags"])
+
     def test_writes_contained_benchmark_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             paths = benchmark_paths(Path(tmp_dir), "run1")
