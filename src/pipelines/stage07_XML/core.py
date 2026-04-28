@@ -1023,13 +1023,19 @@ def deterministic_annotation_for_route(
         role = "group_summary"
     else:
         return {"segments": []}
+    # Group-route pass-through preserves source material for review, but it is
+    # deliberately not considered LangExtract-ready. A whole-paper group view can
+    # include methods, generic disease context, or non-SPSD comparator material.
     return {
+        "annotation_mode": "deterministic_group_pass_through",
+        "validation_warnings": ["deterministic_group_pass_through_requires_review"],
+        "manual_review_reasons": ["deterministic_group_pass_through_requires_review"],
         "segments": [
             {
                 "targets": [target.target_id],
                 "role": role,
                 "confidence": "high",
-                "evidence": "Deterministic pass-through for attribution-safe route.",
+                "evidence": "Deterministic group pass-through retained for review, not direct LangExtract readiness.",
                 "spans": [
                     {
                         "block_id": block.block_id,
@@ -1449,14 +1455,42 @@ def relevant_segments_for_target(
     target: Target,
     segments: list[PhysicalSegment],
 ) -> list[PhysicalSegment]:
+    """Return segments that may be compiled into a target-specific view.
+
+    Validation keeps uncertain and background segments in the annotated source
+    for auditability, but target views are downstream extraction inputs. For
+    precision-first Stage 07 behaviour, they must contain only attributable
+    patient/group evidence.
+    """
+
     selected: list[PhysicalSegment] = []
     for segment in segments:
         if target.target_id not in segment.targets:
             continue
-        if "unknown" in segment.targets or segment.role == "uncertain":
+        if "unknown" in segment.targets or segment.role in {"uncertain", "background"}:
             continue
         selected.append(segment)
     return sorted(selected, key=lambda item: (item.source_start, item.source_end))
+
+
+def contamination_review_reasons(
+    targets: list[Target],
+    segments: list[PhysicalSegment],
+) -> list[str]:
+    """Flag background text that was still assigned to a declared target.
+
+    Background is allowed as an annotation role because it helps reviewers see
+    what the model classified as non-evidence. If it is targeted to a patient or
+    group, the paper needs manual review even though the segment is excluded from
+    target-view compilation.
+    """
+
+    known_target_ids = {target.target_id for target in targets}
+    reasons: list[str] = []
+    for segment in segments:
+        if segment.role == "background" and known_target_ids.intersection(segment.targets):
+            reasons.append(f"targeted_background_segment:{segment.logical_segment_id}")
+    return sorted(set(reasons))
 
 
 def relation_to_target(target: Target, segment: PhysicalSegment) -> str:
@@ -1880,6 +1914,10 @@ def process_paper(
         validation_report.add_review_reason(reason)
     for reason in annotation_payload.get("manual_review_reasons") or []:
         validation_report.add_review_reason(str(reason))
+    # Add contamination checks after payload validation so every accepted
+    # physical segment has stable logical IDs for reviewer-facing reasons.
+    for reason in contamination_review_reasons(targets, segments):
+        validation_report.add_review_reason(reason)
 
     annotated_text = insert_xml_tags(prepared_source.source_text, segments)
     validate_roundtrip(prepared_source.source_text, annotated_text, validation_report)

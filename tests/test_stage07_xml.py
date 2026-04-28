@@ -257,6 +257,54 @@ class TestStage07XmlCore(unittest.TestCase):
         self.assertIn("missing_target_evidence:p1", result.registry_row["manual_review_reasons"])
         self.assertIn("missing_target_evidence:p2", result.registry_row["manual_review_reasons"])
 
+    def test_targeted_background_segment_is_review_only(self) -> None:
+        source_path = self.write_text_json(
+            "9020",
+            "Stiff-person syndrome is a generic disease background.\n\nCase details were unavailable.",
+        )
+        prepared = core.prepare_source(paper_id="9020", source_path=source_path)
+        block = prepared.blocks[0]
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["p1"],
+                    "role": "background",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": block.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(block.text),
+                            "selected_text": block.text,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        result = core.process_paper(
+            paper_id="9020",
+            source_row={
+                "preferred_langextract_mode": "individual",
+                "langextract_eligible": "true",
+            },
+            manual_row={},
+            stage06_row={
+                "preferred_text_json_path": str(source_path),
+                "likely_sps_case_count": "1",
+                "count_confidence": "high",
+            },
+            paths=self.output_paths,
+            manifest_run_id="test_stage07_xml",
+            annotation_model="gpt-5.5",
+            annotation_payload=annotation,
+        )
+
+        self.assertEqual(result.registry_row["ready_for_langextract"], "false")
+        self.assertEqual(result.target_view_payloads["p1"]["input_text"], "")
+        self.assertIn("targeted_background_segment:l0001", result.registry_row["manual_review_reasons"])
+        self.assertIn("missing_target_evidence:p1", result.registry_row["manual_review_reasons"])
+
     def test_single_patient_source_without_clear_window_requires_review(self) -> None:
         source_path = self.write_text_json(
             "9005",
@@ -557,6 +605,8 @@ class TestStage07XmlCore(unittest.TestCase):
 
         self.assertEqual(result.registry_row["route_mode"], "group")
         self.assertEqual(result.target_view_payloads["g1"]["target_label"], "SPSD group")
+        self.assertEqual(result.registry_row["ready_for_langextract"], "false")
+        self.assertIn("deterministic_group_pass_through_requires_review", result.registry_row["manual_review_reasons"])
 
     def test_reviewed_annotation_compiles_source_anchors(self) -> None:
         source_path = self.write_text_json(

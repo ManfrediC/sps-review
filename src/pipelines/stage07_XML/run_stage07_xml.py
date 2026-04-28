@@ -1,3 +1,12 @@
+"""Command-line entry point for Stage 07 XML target-view generation.
+
+The runner wires together canonical registries, reviewed/mock annotations,
+optional live model annotation, and output writing. Policy decisions that matter
+for reproducibility live here: paid API calls are opt-in, reviewed annotations
+take precedence over model output, and generated artefacts are written through
+the core Stage 07 output helpers.
+"""
+
 from __future__ import annotations
 
 import argparse
@@ -36,7 +45,11 @@ from stage07_XML.core import (
     write_process_result,
     write_registry,
 )
-from stage07_XML.openai_client import annotate_with_openai
+from stage07_XML.openai_client import (
+    DEFAULT_OPENAI_MAX_OUTPUT_TOKENS,
+    DEFAULT_OPENAI_REASONING_EFFORT,
+    annotate_with_openai,
+)
 from _source_routing import resolve_source_row
 
 
@@ -113,6 +126,23 @@ def parse_args() -> argparse.Namespace:
         help="OpenAI model used when live annotation is needed.",
     )
     parser.add_argument(
+        "--reasoning-effort",
+        default=DEFAULT_OPENAI_REASONING_EFFORT,
+        choices=["none", "minimal", "low", "medium", "high", "xhigh"],
+        help="OpenAI reasoning effort for live annotation calls.",
+    )
+    parser.add_argument(
+        "--max-output-tokens",
+        type=int,
+        default=DEFAULT_OPENAI_MAX_OUTPUT_TOKENS,
+        help="Maximum OpenAI output token budget, including reasoning tokens.",
+    )
+    parser.add_argument(
+        "--relaxed-json-schema",
+        action="store_true",
+        help="Use non-strict JSON schema output for compatibility experiments.",
+    )
+    parser.add_argument(
         "--openai-api-key",
         default="",
         help="Explicit OpenAI API key for live GPT-5.5 annotation.",
@@ -142,6 +172,8 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_mock_annotation(mock_dir: Path | None, paper_id: str) -> dict[str, Any] | None:
+    """Load a raw mocked model response for a paper, when supplied."""
+
     if mock_dir is None:
         return None
     path = mock_dir / f"{paper_id}.json"
@@ -156,6 +188,13 @@ def load_reviewed_annotation(
     paper_id: str,
     prepared_source: Any,
 ) -> dict[str, Any] | None:
+    """Load reviewer-approved anchors and compile them to span metadata.
+
+    Reviewed annotations use text anchors rather than block offsets so that a
+    human can edit them safely. The core compiler resolves those anchors against
+    the prepared source before normal Stage 07 validation runs.
+    """
+
     if reviewed_dir is None:
         return None
     path = reviewed_dir / f"{paper_id}.json"
@@ -169,6 +208,8 @@ def load_reviewed_annotation(
 
 
 def resolve_api_key(explicit_key: str) -> str:
+    """Resolve the OpenAI key only when the caller has allowed paid execution."""
+
     if explicit_key.strip():
         return explicit_key.strip()
     env_path = REPO_ROOT / "env" / "openai_api_key.env"
@@ -182,6 +223,8 @@ def resolve_api_key(explicit_key: str) -> str:
 
 
 def refresh_artifact_registry(skip_refresh: bool) -> None:
+    """Refresh cross-stage provenance after canonical Stage 07 outputs change."""
+
     if skip_refresh:
         return
     subprocess.run(
@@ -212,6 +255,9 @@ def main() -> None:
     if not candidate_ids:
         raise SystemExit("No Stage 07 XML candidate papers matched the current filters.")
 
+    # Live annotation is the only path that needs a secret. Reviewed and mocked
+    # runs remain fully offline, which keeps validation and benchmarking cheap
+    # and reproducible.
     api_key = ""
     if args.mock_annotation_dir is None and args.allow_paid_run:
         api_key = resolve_api_key(args.openai_api_key)
@@ -245,6 +291,9 @@ def main() -> None:
         if annotation_payload is None:
             annotation_payload = load_mock_annotation(args.mock_annotation_dir, paper_id)
         if annotation_payload is None and args.mock_annotation_dir is None and args.allow_paid_run:
+            # Reconstruct the route and target inventory before calling the
+            # model. This mirrors process_paper so the model sees only the
+            # targets that Stage 07 is prepared to validate.
             resolved = resolve_source_row(
                 paper_id=paper_id,
                 heuristic_row=source_row,
@@ -265,6 +314,8 @@ def main() -> None:
             if route_decision.manual_review_reasons:
                 annotation_payload = None
             elif route == "individual":
+                # Confident single-patient papers stay deterministic. The model
+                # is used only when the clinical window could not be isolated.
                 deterministic_payload = deterministic_annotation_for_route(
                     prepared_source=prepared_source,
                     targets=targets,
@@ -277,14 +328,22 @@ def main() -> None:
                         model=args.annotation_model,
                         api_key=api_key,
                         trace_dir=trace_dir,
+                        max_output_tokens=args.max_output_tokens,
+                        reasoning_effort=args.reasoning_effort,
+                        strict_json_schema=not args.relaxed_json_schema,
                     )
             elif route in {"individual_case_split", "group"}:
+                # Multi-target and group papers are the attribution-heavy cases
+                # where deterministic pass-through is too risky.
                 annotation_payload = annotate_with_openai(
                     prepared_source=prepared_source,
                     targets=targets,
                     model=args.annotation_model,
                     api_key=api_key,
                     trace_dir=trace_dir,
+                    max_output_tokens=args.max_output_tokens,
+                    reasoning_effort=args.reasoning_effort,
+                    strict_json_schema=not args.relaxed_json_schema,
                 )
 
         result = process_paper(
