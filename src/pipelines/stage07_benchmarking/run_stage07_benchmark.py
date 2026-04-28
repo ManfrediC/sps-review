@@ -162,6 +162,54 @@ def load_annotation_payload(path: Path, prepared_source: core.PreparedSource) ->
     return payload
 
 
+def reviewed_annotation_to_segments_payload(payload: dict[str, Any], paper_id: str) -> dict[str, Any]:
+    """Build a scoreable segments payload from reviewed source-offset selections."""
+
+    segments: list[dict[str, Any]] = []
+    segment_index = 1
+    for logical_index, segment in enumerate(payload.get("segments") or [], start=1):
+        targets = [str(target) for target in segment.get("targets") or []]
+        role = str(segment.get("role") or "")
+        confidence = str(segment.get("confidence") or "reviewed")
+        evidence = str(segment.get("evidence") or "reviewed_annotation")
+        for selection in segment.get("selections") or []:
+            try:
+                start = int(selection.get("source_start"))
+                end = int(selection.get("source_end"))
+            except (TypeError, ValueError):
+                continue
+            if start >= end:
+                continue
+            segments.append(
+                {
+                    "segment_id": f"s{segment_index:04d}",
+                    "logical_segment_id": str(segment.get("review_segment_id") or f"l{logical_index:04d}"),
+                    "targets": targets,
+                    "role": role,
+                    "text": str(selection.get("text") or ""),
+                    "source_offsets": {"start": start, "end": end},
+                    "source_block_id": "",
+                    "confidence": confidence,
+                    "evidence": evidence,
+                }
+            )
+            segment_index += 1
+    return {
+        "paper_id": paper_id,
+        "entities": [
+            {
+                "id": str(target.get("id") or ""),
+                "kind": str(target.get("kind") or ""),
+                "label": str(target.get("label") or ""),
+                "source": str(target.get("evidence") or "reviewed_annotation"),
+            }
+            for target in payload.get("targets") or []
+        ],
+        "segments": segments,
+        "validation": {"status": "passed", "roundtrip_status": "not_run"},
+    }
+
+
 def load_stage07_segments(root: Path, paper_id: str) -> dict[str, Any]:
     path = core.output_paths(root).segments_dir / f"{paper_id}.segments.json"
     if not path.exists():
@@ -230,39 +278,57 @@ def benchmark_paper(
 ) -> dict[str, Any]:
     """Score one paper by compiling gold and candidate annotations side by side."""
 
-    prior = core.parse_stage06_prior(stage06_rows.get(paper_id, {}))
-    source_path = core.resolve_source_json_path(
-        paper_id=paper_id,
-        source_row=source_rows.get(paper_id, {}),
-        stage06_prior=prior,
+    prepared_source: core.PreparedSource | None = None
+    source_error: Exception | None = None
+    try:
+        prior = core.parse_stage06_prior(stage06_rows.get(paper_id, {}))
+        source_path = core.resolve_source_json_path(
+            paper_id=paper_id,
+            source_row=source_rows.get(paper_id, {}),
+            stage06_prior=prior,
+        )
+        prepared_source = core.prepare_source(
+            paper_id=paper_id,
+            source_path=source_path,
+            max_block_chars=max_block_chars,
+        )
+    except FileNotFoundError as exc:
+        source_error = exc
+    reviewed_gold_payload = json.loads((reviewed_gold_dir / f"{paper_id}.json").read_text(encoding="utf-8"))
+    gold_annotation = (
+        load_annotation_payload(reviewed_gold_dir / f"{paper_id}.json", prepared_source)
+        if prepared_source is not None
+        else reviewed_gold_payload
     )
-    prepared_source = core.prepare_source(
-        paper_id=paper_id,
-        source_path=source_path,
-        max_block_chars=max_block_chars,
-    )
-    gold_annotation = load_annotation_payload(reviewed_gold_dir / f"{paper_id}.json", prepared_source)
     candidate_annotation = None
     if candidate_annotation_dir is not None:
+        if prepared_source is None:
+            raise source_error or FileNotFoundError(f"Cannot compile candidate annotation for {paper_id}")
         candidate_path = candidate_annotation_dir / f"{paper_id}.json"
         if candidate_path.exists():
             candidate_annotation = load_annotation_payload(candidate_path, prepared_source)
     if gold_stage07_root is None:
-        gold_result = process_with_annotation(
-            paper_id=paper_id,
-            annotation_payload=gold_annotation,
-            output_root=output_root,
-            source_rows=source_rows,
-            manual_rows=manual_rows,
-            stage06_rows=stage06_rows,
-            max_block_chars=max_block_chars,
-        )
-        gold_payload = gold_result.segments_payload
-        gold_registry_row = gold_result.registry_row
+        if prepared_source is None:
+            gold_payload = reviewed_annotation_to_segments_payload(reviewed_gold_payload, paper_id)
+            gold_registry_row = {"ready_for_langextract": "true"}
+        else:
+            gold_result = process_with_annotation(
+                paper_id=paper_id,
+                annotation_payload=gold_annotation,
+                output_root=output_root,
+                source_rows=source_rows,
+                manual_rows=manual_rows,
+                stage06_rows=stage06_rows,
+                max_block_chars=max_block_chars,
+            )
+            gold_payload = gold_result.segments_payload
+            gold_registry_row = gold_result.registry_row
     else:
         gold_payload = load_stage07_segments(gold_stage07_root, paper_id)
         gold_registry_row = gold_registry_rows.get(paper_id, {})
     if candidate_stage07_root is None:
+        if prepared_source is None:
+            raise source_error or FileNotFoundError(f"Cannot compile deterministic candidate for {paper_id}")
         # Gold and candidate runs share the same scratch root. Filenames may overlap,
         # but the benchmark keeps the returned in-memory payloads and writes only the
         # final score artefacts for comparison.

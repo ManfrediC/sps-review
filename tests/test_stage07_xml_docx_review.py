@@ -244,6 +244,27 @@ class TestStage07XmlDocxReview(unittest.TestCase):
         self.assertEqual(shared["selections"][0]["text"], "Both patients improved.")
         self.assertIn("source_start", shared["selections"][0])
 
+    def test_import_docx_review_can_rescore_candidate_outputs(self) -> None:
+        self.build_two_patient_fixture()
+        self.build_docx_pack()
+        evaluation_root = self.tmp_path / "evaluation"
+
+        result = docx_review.import_docx_review_round(
+            round_dir=self.review_root / "round_01",
+            force=True,
+            regenerate_gold=False,
+            rescore_candidate_stage07_root=self.stage07_root,
+            rescore_candidate_registry_path=self.registry_path,
+            rescore_evaluation_root=evaluation_root,
+            rescore_run_id="round_01_rescore",
+            rescore_matrix_config_name="H0",
+        )
+
+        self.assertEqual(result["passed_count"], "1")
+        self.assertTrue((evaluation_root / "round_01_rescore" / "summary.json").exists())
+        self.assertTrue((evaluation_root / "round_01_rescore" / "paper_scores.csv").exists())
+        self.assertIn("round_01_rescore", result["benchmark_run_dir"])
+
     def test_import_rejects_docx_source_text_edits(self) -> None:
         self.build_two_patient_fixture()
         self.build_docx_pack()

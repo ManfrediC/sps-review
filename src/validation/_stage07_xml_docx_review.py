@@ -19,6 +19,7 @@ from src.validation import _stage07_xml_review as review
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DOCX_REVIEW_ROOT = REPO_ROOT / "qa" / "validation" / "stage07_xml" / "docx_review"
+DEFAULT_EVALUATION_ROOT = REPO_ROOT / "qa" / "validation" / "stage07_xml" / "evaluation"
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 R_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
@@ -983,6 +984,12 @@ def import_docx_review_round(
     paper_ids: set[str] | None = None,
     force: bool = False,
     regenerate_gold: bool = True,
+    rescore_candidate_stage07_root: Path | None = None,
+    rescore_candidate_registry_path: Path | None = None,
+    rescore_evaluation_root: Path | None = None,
+    rescore_run_id: str = "",
+    rescore_matrix_config_name: str = "",
+    rescore_api_telemetry_path: Path | None = None,
 ) -> dict[str, str]:
     papers_dir = round_dir / "papers"
     reviewed_annotations_dir = round_dir / "reviewed_annotations"
@@ -1005,6 +1012,18 @@ def import_docx_review_round(
     passed_ids = [str(report["paper_id"]) for report in reports if report.get("status") == "passed"]
     if regenerate_gold and passed_ids:
         regenerate_gold_outputs(round_dir=round_dir, paper_ids=passed_ids, reviewed_annotations_dir=reviewed_annotations_dir)
+    benchmark_summary: dict[str, str] = {}
+    if rescore_candidate_stage07_root is not None and passed_ids:
+        benchmark_summary = rescore_imported_docx_round(
+            round_dir=round_dir,
+            paper_ids=passed_ids,
+            candidate_stage07_root=rescore_candidate_stage07_root,
+            candidate_registry_path=rescore_candidate_registry_path,
+            evaluation_root=rescore_evaluation_root or DEFAULT_EVALUATION_ROOT,
+            run_id=rescore_run_id or f"{round_dir.name}_rescore",
+            matrix_config_name=rescore_matrix_config_name,
+            api_telemetry_path=rescore_api_telemetry_path,
+        )
     summary_path = round_dir / "import_summary.json"
     summary = {
         "round_dir": display_path(round_dir),
@@ -1014,10 +1033,51 @@ def import_docx_review_round(
         "reviewed_annotations_dir": display_path(reviewed_annotations_dir),
         "import_reports_dir": display_path(import_reports_dir),
         "gold_stage07_root": display_path(round_dir / "gold_stage07_xml"),
+        "benchmark_run_dir": benchmark_summary.get("benchmark_run_dir", ""),
+        "benchmark_summary_path": benchmark_summary.get("benchmark_summary_path", ""),
         "summary_path": display_path(summary_path),
     }
     write_json(summary_path, summary)
     return {key: str(value) for key, value in summary.items()}
+
+
+def rescore_imported_docx_round(
+    *,
+    round_dir: Path,
+    paper_ids: list[str],
+    candidate_stage07_root: Path,
+    candidate_registry_path: Path | None,
+    evaluation_root: Path,
+    run_id: str,
+    matrix_config_name: str,
+    api_telemetry_path: Path | None,
+) -> dict[str, str]:
+    command = [
+        sys.executable,
+        str(REPO_ROOT / "src" / "pipelines" / "stage07_benchmarking" / "run_stage07_benchmark.py"),
+        "--docx-round-dir",
+        str(round_dir),
+        "--candidate-stage07-root",
+        str(candidate_stage07_root),
+        "--evaluation-root",
+        str(evaluation_root),
+        "--run-id",
+        run_id,
+    ]
+    if candidate_registry_path is not None:
+        command.extend(["--candidate-registry-path", str(candidate_registry_path)])
+    if matrix_config_name:
+        command.extend(["--matrix-config-name", matrix_config_name])
+    if api_telemetry_path is not None:
+        command.extend(["--api-telemetry-path", str(api_telemetry_path)])
+    for paper_id in paper_ids:
+        command.extend(["--paper-id", paper_id])
+    subprocess.run(command, cwd=str(REPO_ROOT), check=True)
+    benchmark_run_dir = evaluation_root / run_id
+    return {
+        "benchmark_run_dir": display_path(benchmark_run_dir),
+        "benchmark_summary_path": display_path(benchmark_run_dir / "summary.json"),
+    }
 
 
 def regenerate_gold_outputs(*, round_dir: Path, paper_ids: list[str], reviewed_annotations_dir: Path) -> None:
