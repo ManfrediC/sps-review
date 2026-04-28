@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 25</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 25</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: failed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>offset_text_mismatch:l0003:b0010:1084:2217</li><li>offset_text_mismatch:l0004:b0014:2255:3381</li><li>offset_text_mismatch:l0006:b0019:968:2045</li><li>offset_text_mismatch:l0007:b0021:964:1420</li><li>offset_text_mismatch:l0010:b0029:0:794</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002, s0003, s0004, s0005</span></div><h2>Source Text</h2><div class="source-text">Identification of a Dominant Epitope of Glutamic
+Acid Decarboxylase (GAD-65) Recognized by
+Autoantibodies in Stiff Man Syndrome
+
+By Margaret Husta Butler,* Michele Solimena,* Ronald Dirkx, Jr.,*
+Adrian Haydayj and Pietro De Camilli*
+From the &#x27;Department of Cell Biology and Houxtrd Hughes Medical Institute, Boyer Center for
+Molecular Medicine, Yale University School of Medicine, New Haven, Connecticut 06510; and
+the $Department of Biology, Yale University, New Haven, Connecticut 06511
+
+Summary
+
+<span class="source-segment role-group_summary" id="src-s0001" data-segment="s0001" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Glutamic acid decarboxylase (GAD) is the enzyme that synthesizes the neurotransmitter y-aminobutyric acid (GABA) in neurons and in pancreatic (3 cells. It is a major target of autoimmunity
+in Stiff Man syndrome (SMS), a rare neurological disease, and in insulin-dependent diabetes mellitus.
+The two GAD isoforms, GAD-65 and GAD-67, are the products of two different genes. GAD67 and GAD-65 are very similar to each other in amino acid sequence and differ substantially
+only at their NH2-terminal region . We have investigated the reactivity of autoantibodies of 30
+Stiff Man syndrome patients to GAD. All patient sera contained antibodies that recognize strongly
+GAD-65, but also GAD-67, when tested by immunoprecipitation on brain extracts and by
+immunoprecipitation or immunocytochemistry on cells transfected with either the GAD-65 or
+the GAD-67 gene. When tested by Western blotting, all patient sera selectively recognized GAD-65.
+Western blot analysis of deletion mutants of GAD-65 demonstrated that autoantibodies are directed
+predominantly against two regions of the GAD-65 molecule . All SMS sera strongly recognized
+a fragment contained between amino acid 475 and the COOH terminus (amino acid 585). Within
+this region, amino acids 475-484 and 571-585 were required for reactivity. The requirement
+of these two discontinuous segments implies that the epitope is influenced by conformation.
+This reactivity is similar to that displayed by the monoclonal antibody GAD 6, suggesting the
+presence of a single immunodominant epitope (SMS-E1) in this region of GAD-65 . In addition,
+most SMS sera recognized at least one epitope (SMS-E2) in the NH2-terminal domain of
+GAD-65 (amino acids 1-95) . The demonstration in SMS patients of a strikingly homogeneous
+humoral autoimmune response against GAD and the identification of dominant autoreactive
+target regions may help to elucidate the molecular mechanisms of GAD processing and presentation
+involved in GAD autoimmunity. Moreover, the reactivity reported here of GAD autoantibodies
+in SMS partially differs from the reactivity of GAD autoantibodies in insulin-dependent diabetes
+mellitus, suggesting a link between the pattern ofhumoral autoimmunity and the clinical condition .</span>
+
+T
+
+he enzyme glutamic acid decarboxylase (GAD)&#x27; catalyzes the conversion of L-glutamic acid to y-aminobutyric
+acid (GABA), a major inhibitory neurotransmitter (1) . GAD
+is expressed in GABA-secreting neurons and in pancreatic a
+cells (2, 3), which may also secrete GABA as a paracrine signal
+molecule (4-6) . In addition, GAD is expressed in the testis
+and in the epithelium of the fallopian tube (7, 8). GAD has
+been identified as a dominant autoantigen in two human diseases, Stiff-Man syndrome (SMS) (9, 10, 11) and insulindependent diabetes mellitus (IDDM) (12). SMS is a rare neu&#x27; Abbreviations used in this paper. CHO, Chinese hamster ovary ; GABA,
+
+,y-aminobutyric acid; GAD, glutamic acid decarboxylase; IDDM, insulindependent diabetes ; Pt, patients ; SMS, Stiff Man syndrome ; SMS-El, Stiff
+Man syndrome epitope 1 .
+2097
+
+<span class="source-segment role-background" id="src-s0002" data-segment="s0002" data-label="g1 background" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">rological condition characterized by progressive rigidity of
+the body musculature with superimposed painful spasms. It
+is thought to result from an impairment of GABA-ergic inhibitory inputs to a-motor neurons (13-15) . Autoantibodies
+directed against GAD (GAD-Abs) were detected in 72 of 119
+SMS patients we studied. A frequent occurrence of IDDM
+was observed in the GAD-Abs-positive SMS patients (10),
+an observation that led to the identification of the 64-kD
+antigen of IDDM as GAD (12). IDDM results from an autoimmune destruction of pancreatic /3 cells (16). GAD-Abs
+are present in the large majority of IDDM patients at the
+time of the diagnosis and are also present in a large fraction
+of prediabetic patients (17, 18) .
+GAD exists as two isoforms of 67 and 65 kD, respectively,
+commonly referred to as GAD-67 and GAD-65 . The two</span>
+
+J . Exp. Med. ® The kockefeller University Press - 0022-1007/93/12/2097/10 $2 . 00
+Volume 178 December 1993 2097-2106
+
+proteins are the products of two different genes that have
+been cloned and sequenced from several species (19-25) . Both
+proteins are expressed in the brain while their expression in
+/3 cells varies among species (26, 27). GAD-67 and GAD-65
+are highly conserved in evolution (97% identity between rat
+and human GAD-67 ; 96% identity between rat and human
+GAD-65) and are very similar to each other. They differ substantially only in the first 95 NHa-terminal amino acids
+(-23% identity, -61% similarity), which are responsible
+for the different subcellular localization of the two molecules
+(28, 29). Over the remaining part of the molecule, which
+contains the catalytic portion of the enzyme, they are -73%
+identical and -95% similar.
+Both autoantibodies of IDDM patients and of SMS patients were found to immunoprecipitate GAD-65 from pancreatic or brain extracts prepared in nondenaturing conditions (12). However important differences were observed
+between GAD-Abs in SMS and IDDM patients. In SMS,
+GAD-Abs have a much higher titer than in IDDM. In addition, GAD-Abs of most SMS patients react with GAD in
+Western blots, while GAD-Abs of the majority of IDDM
+patients do not (12). Elucidating the autoreactive epitopes
+of GAD-Abs in the two conditions represents a first step towards the elucidation of molecular mechanisms of GAD autoimmunity and may be useful for the design of optimal diagnostic assays for the two diseases .
+In this study we have investigated the properties ofGADAbs in a large group of SMS patients. An analysis was performed on 30 of the 72 GAD-Abs positive SMS sera of our
+case-load, all of which were GAD reactive in Western blots.
+All sera contained antibodies that independently recognized
+both GAD-65 and GAD-67 by immunoprecipitation . However, in Western blots all sera only reacted with GAD-65 .
+This reactivity was accounted for primarily by antibodies
+directed against two regions of the GAD-65 molecule. One
+(SMS-Epitope-1 [SMS-El]), encompassing the 000Hterminal 110 amino acids represents the dominant autoantigenic region . The other (SMS-E2) corresponds to the NHZtermina195 amino acids, i.e., the region where GAD-65 differs
+substantially from GAD-67 .
+Materials and Methods
+
+Purification of Rat Brain GAD GAD was purified from rat brain
+using a GAD 6 affinity column as previously described (31) with
+some modifications . Approximately 100 g of rat brains (Pel-Freeze
+Biologicals, Rogers, AZ) were homogenized in 600 ml of 10-mM
+potassium phosphate buffer, pH 7. 5, 0. 2-mM EDTA, 1-mM
+2-aminoethylisothiouronium bromide (AET), 0. 2-mM pyridoxal
+5-phosphate (PLP), pepstatin, aprotinin, leupeptin, antipain (each
+at 4 l Ag/ml ; Sigma Chemical Co., St. Louis, MO), and 0. 4 /AM
+PMSF (buffer A) using an SDT Tissumizer (Tekmar Co., Cincinnati, OH) at maximum speed and clarified by centrifugation at
+130, 000g for 1 h at 4°C. The supernatant was loaded on an affinity
+column prepared by conjugating the antibody GAD 6 to Affi-gel
+10 (Bio-Rad Laboratories, Richmond, CA) . The column was extensively washed with buffer A without EDTA (buffer B), and subsequently with 1. 0 M Na Cl in buffer B. GAD was eluted with
+high pH buffer (50 mM potassium phosphate, 10 mM diethylamine, and 20 mM glutamic acid adjusted to pH 11), neutralized,
+dialyzed against 2 mM Hepes, pH 7. 4, at 4°C, concentrated by
+lyophilization, resuspended in SDS-PAGE sample buffer, and run
+on an 8% polyacrylamide preparative gel . The GAD-65 and GAD67 bands, visualized by Coomassie blue staining, were separately
+excised from the gel and electroeluted with an Elutrap device
+(Schleicher and Schuell, Inc ., Keene, NH) .
+GAD-65 and GAD-67 Fusion Proteins. A full-length rat brain
+GAD-65 cDNA clone was isolated as previously described (29).
+A full-length rat brain GAD-67 cDNA clone was a kind gift of
+Dr. D. Gottlieb (21). cDNAs encoding full-length GAD-67, fulllength GAD-65, as well as GAD-65 fragments were subdoned into
+the bacterial expression vector, pmalc2 (New England Biolabs,
+Beverly, MA), by using synthetic oligonucleotide primers in PCR
+reactions . A specific restriction enzyme site was introduced into
+each primer to facilitate subdoning into the polylinker region of
+pmalc2 . EcoRI and HindIII sites were added, respectively, to 5&#x27;
+and 3&#x27; primers of GAD-65, and Xbal and HindIII sites to 5&#x27; and
+3&#x27; primers ofGAD-67. Stop codons were engineered in the 3&#x27; primers
+for those constructs missing the COON terminus. Constructs
+yielded a recombinant protein composed of the maltose binding
+protein (-42, 000 daltons) fused to the NH2 terminus of GAD or
+GAD fragment . Isopropyl O-D-thiogalactopyranoside (IPTG)induced Escherichia coli expressing the fusion protein were resuspended in SDS-PAGE sample buffer and used for Western blot
+analysis . In these lysates, the fusion protein represented a major
+protein band whose identity was confirmed by Western blotting,
+using an antiserum directed against the maltose binding protein
+(New England Biolabs) . The electrophoretic mobilities of the fusion proteins approximately coincided with the expected mobilities based on the estimated molecular mass. However, because mobility on SDS gels does not correlate absolutely with molecular
+mass, constructs that proved critical in the definition of the epitopes were sequenced. These were H, D, E, F4, F5, and F14.
+SDS-PAGE and Immunoblotting. SDS-PAGE and Western blotting were performed essentially as described by Laemmli (32) and
+by Towbin et al. (33). All protein samples were boiled 3 min in
+SDS-PAGE sample buffer in the presence of 20 mM dithiothreitol
+before loading on gels. Nitrocellulose blots were incubated in
+blocking solution of 20 mM Tris, pH 7 . 5, 150 mM Na Cl, 0 . 1%
+(vol/vol) Tween-20, and 5% (wt/vol) dry milk (TBST/milk) . All
+antibody dilutions, subsequent incubations and washes were performed in TBST/milk at room temperature. Primary antibodies
+to be used for immunoblotting ofbacterial lysates were preadsorbed
+with a Iysate of the host bacteria not expressing the fusion protein .
+Primary antibodies were used at the following final dilutions : GAD
+6, 6799 and patient sera at 1: 500; 7673 at 1: 250; K2 and N65 at
+1: 100. SMS sera and GAD 6 were followed by rabbit anti-human
+
+Antibodies and Synthetic Peptides. Human sera of SMS patients
+were from our collection of 72 SMS sera positive for GAD-Abs
+(9-11). Control human sera were from healthy subjects . Rabbit
+sera 7673 (raised against a peptide corresponding to the sequence
+577-593 of rat GAD-67) and N65 (raised against peptide corresponding to the sequence 4-21 of rat GAD-65) were previously
+described (29). Rabbit serum 9056 was raised against recombinant
+mouse GAD-67 (clone 3b-3; kindly provided by Drs . Z. Katarova
+and G. Szabo, Biological Research Center of the Hungarian
+Academy of Sciences, Szeged, Hungary) (24) . Rabbit serum 9057
+was raised against ratbrain GAD-65 obtainedby affinity purification
+and preparative electrophoresis. Rabbit serum K2 (30) was purchased from Chemicon Intl ., Inc. (Temecula, CA). The following
+antibodies were generous gifts : m Ab GAD 6 (from Dr. D. Gottlieb, Washington University School of Medicine, St. Louis, MO)
+(31) and rabbit serum 6799 (from Drs. Z. Katarova and G. Szabo)
+(24). Synthetic peptides were synthesized at the Yale Protein Chemistry Facility (New Haven, CT).
+2098
+
+or rabbit anti-mouse IgG (1 : 1, 000 dilution), respectively. Bound
+antibodies were detected by tz&#x27;I protein A (105 cpm/ml) . For quantitation of the integrated optical density of individual autoradiographic bands, autoradiograms were scanned using the Bio Image
+program on a Visage 2000 scanner (Millipore Corp ., Bedford, MA) .
+Miscellaneous Procedures. The preparation of Chinese hamster
+ovary (CHO) cells that stably express GAD-65 or GAD-67 was
+previously reported (29). For SDS-PAGE of these cells, SDS-PAGE
+sample buffer was added directly to the incubation flasks . Preparation of Triton X-100 extracts of rat brain and of CHO cells, as
+well as immunoprecipitation from such extracts, were performed
+as described (5, 29) . In some cases, proteins from rat brain were
+denatured by SDS and boiling before being used for immunoprecipitation . The postnuclear supernatant (5) was solubilized in 1%
+SDS or in 1% SDS, 25 mM dithiothreitol, 5 mM iodoacetamide,
+and boiled for 3 min. A fivefold (wt/vol) excess of Triton X-100
+was then added . Subsequently, the final concentration of this nonionic detergent was brought to 1% by dilution with 10 mM Hepes,
+pH 7 . 4, 150 mM Na Cl, and protease inhibitors, and immunoprecipitation was then performed as described (5) . Double-immunofluorescence was performed as described (34) . Protein concentration
+was determined by the BCA reagent (Pierce, Rockford, IL) .
+Results
+GAD-Abs o,f SMS Patients Recognize Selectively GAD-65
+in Western Blots. The reactivity of SMS sera was first tested
+by Western blotting on full-length GAD using both purified
+GAD from rat brain, as well as recombinant rat GAD. We
+had previously shown that SMS sera react similarly with rat
+and human GAD in Western blots (9, 10) . Rat brain GAD
+was purifiedby affinity chromatography using the m Ab GAD
+6 . As previously reported (31), this procedure results in the
+purification of both GAD-65 and GAD-67 (see also Fig . 1).
+To facilitate the analysis of the reactivity of the two isoforms
+the purified material was run on a preparative SDS polyacrylamide gel and the gel regions corresponding to GAD-65 and
+GAD-67 were separately excised and electroeluted. Protein
+staining of electrophoretically-purified GAD-65 and GAD67 is shown in Fig . 1 A . Nitrocellulose strips containing
+samples identical to those shown in Fig. 1 A were immunoblotted with several anti-GAD animal sera (Fig. 1 B) and SMS
+sera (Fig. 1 C) .
+Rabbit serum 7673, which was raised against the 17 000Hterminal amino acids of rat GAD-67, recognized both GAD
+isoforms (Fig . 1 B) . GAD-65 differs from GAD-67 in this
+region by a single amino acid (serine 577 of GAD-67 is replaced
+by a glutamine in GAD-65) . Rabbit sera 6799 and K2, which
+were raised to recombinant GAD-67 from mouse and cat,
+respectively (24, 30), recognized primarily, but not exclusively, GAD-67 (Fig . 1 B) . The m Ab GAD 6 (Fig. 1 B) and
+all 30 SMS sera only reacted with GAD-65 (Fig. 1 C and
+not shown) .
+Identical results were obtained when the same animal antibodies and SMS sera were reacted by Western blotting with
+full-length GAD-65 and GAD-67 expressed as fusion proteins in bacteria (Fig. 2) or independently in CHO cells (not
+shown) .
+GAD-Abs ofSMS Patients Recognize Both GAD-67 and
+GAD-65 by Immunoprecipitation and hmmunocytochemistry. All
+SMS sera immunoprecipitated both GAD-67 and GAD-65
+2099
+Butler et al .
+
+SMS patient sera recognize selectively GAD-65 in Western
+blots of brain GAD . Coomassie blue staining of GAD-65 and GAD-67
+purified by affinity chromatography and preparative electrophoresis from
+brain (A). Western blot of nitrocellulose strips identical to those shown
+in A with rabbit sera 7673, 6799, K2, and m Ab GAD 6 (B) . Western
+blot of strips identical to those shown in A with sera of SMS patients
+(Pt, followed by patient code number) (C) . A slight cross-contamination
+of the two isoforms is not visible by protein staining but is apparent from
+the Western blots shown in B and C.
+Figure 1 .
+
+from Triton X-100 brain extracts prepared in nondenaturing
+conditions (Fig . 3 A) . For comparison, immunoprecipitates
+obtained with several anti-GAD and control animal antibodies
+are shown in Fig. 3 B. These findings confirmed our previous
+
+SMS patient sera recognizes
+selectively recombinant GAD-65 in Western
+blots. Bacterial lysates expressing full-length
+GAD-65 and GAD-67 were reacted by
+Western blotting with rabbit serum 7673,
+a human control serum (HCS), and three sera
+of SMS patients (Pt, followed by patient code
+number) .
+Figure 2 .
+
+<span class="source-segment role-group_specific" id="src-s0003" data-segment="s0003" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Figure 3 . SMS patient sera immunoprecipitate both GAD 65 and GAD
+67 from a brain extract. Triton X-100 extracts of rat brain were immunoprecipitated with sera of SMS patients (Pt followed by patient code numbers)
+(A) and several anti-GAD animal antibodies (B). GAD present in the immunoprecipitates was revealed by immunoblotting with serum 7673, which
+reacts with both GAD isoforms . Rabbit sera N65 and 9057 immunoprecipate selectively GAD-65 ; rabbit sera K2, and 9056 as well as m Ab GAD
+6 immunoprecipitate both GAD isoforms but in different relative ratios .
+RCS, rabbit control serum ; MCA, mouse control ascites . Note the similar
+ratio of GAD-67 to GAD-65 immunoprecipitated by all SMS sera. Pt227
+is a control patient negative for GAD-Abs .</span>
+
+immunoprecipitation results obtained with a small group of
+SMS sera (12) . The discrepancy between the reactivity displayed by SMS sera in Western blots and immunoprecipitations may have at least two explanations . One is that SMS
+sera contain antibodies that recognize both proteins in their
+native state. The other is that SMS sera contain only antibodies directed against GAD-65, but immunoprecipitate
+GAD-67 because the two proteins form heterodimers in the
+brain and in the pancreas . On the other hand, two rabbit
+sera, N65 and 9057, can immunoprecipitate selectively GAD65 (Fig. 3 B) . N65 was raised against a GAD-65-specific sequence (amino acids 4-21), and 9057 was raised against purified
+rat brain GAD-65 . Note that two rabbit sera (9056 and K2)
+raised against GAD-67 immunoprecipitated both isoforms
+but with an higher relative ratio GAD-67/GAD-65 compared
+with SMS sera and to GAD6 .
+Establishing whether autoantibodies recognize GAD-67
+as well as GAD-65 is of considerable interest for the elucidation of mechanisms of autoimmunity. Therefore we addressed
+this question in more detail . SMS sera were tested for their
+capacity to recognize in immunoprecipitation experiments
+GAD-65 or GAD-67 independently expressed by transfection in CHO cells. Fig. 4 shows results of immunoprecipitation performed on Triton X-100 extracts of CHO cells expressing either GAD-65 (GAD-65-CHO cells) or GAD-67
+(GAD-67-CHO cells) with animal and human sera . In each
+gel, the lower band represents immunoglobulin heavy chain.
+The ability of four SMS sera to immunoprecipitate both proteins is shown by the figure. Identical results were obtained
+with all the other SMS sera tested. Therefore, SMS sera do
+recognize both GAD-65 and GAD-67 and their failure to
+react with GAD-67 in Western blots may be due to irreversible loss of GAD 67 epitope(s) by SDS-induced denaturation.
+In fact, SMS sera immunoprecipitated only GAD-65 when
+tested against brain extracts that had been denatured by SDS
+and boiled before immunoprecipitation (not shown) .
+210 0
+
+Figure 4. SMS patient sera immunoprecipitate both GAD-65 and GAD67 from CHO cells independently transfected with the two GAD isoforms . Triton X-100 extracts of cells that stably express either GAD-65
+or GAD-67 were immunoprecipitated with SMS sera and anti-GAD animal antibodies. GAD present in the immunoprecipitates was revealed by
+immunoblotting with rabbit serum 7673, which recognizes both GAD
+isoforms . The GAD bands are indicated by arrowheads. The heavy band
+just below GAD in each panel represents the heavy chain of IgG . Antibody and patients codes are indicated at the top of each lane .
+
+Immunoprecipitates obtained with several animal anti-GAD
+antibodies are shown in Fig. 4 B as controls . Rabbit serum
+9056 immunoprecipitated both GAD-67 and GAD-65 . Similar
+results were obtained with serum K2 (not shown) . However, rabbit sera 9057 and N65 as well as m Ab GAD 6 immunoprecipitated GAD only from GAD-65-CHO cells,
+confirming their specificity for GAD-65 . The capacity of GAD
+6 to immunoprecipitate both GAD isoforms from brain Triton
+X-100 extracts supports the concept that GAD-65/GAD-67
+heterodimers can be precipitated by GAD-65-specific sera .
+When GAD 6 was tested against brain extracts pretreated
+with SDS and boiling, only GAD-65 was immunoprecipitated (not shown) . A possible explanation for the lack of GAD67 in immunoprecipitates produced by sera N65 and 9057
+(Fig . 3 B) is that the epitope(s) recognized by these antibodies
+is (are) hidden in the heterodimer. As discussed below, serum
+9057 reacts selectively with the region of GAD-65 that contains the peptide recognized by N65.
+Immunocytochemistry of formaldehyde-fixed transfected
+CHO cells with the same set of human and animal antibodies
+confirmed immunoprecipitation results. SMS sera stained both
+GAD-67- and GAD-65-CHO cells, and produced the staining
+pattern expected (29) for the two GAD isoforms (Fig. 5),
+i.e ., a diffuse and a particulate pattern respectively. Sera N65
+and 9057 as well as m Ab GAD 6 stained only GAD-65-CHO
+
+Figure 5 . SMS sera stain both GAD 65 and GAD 67 in formaldehyde-fixed transfected CHO cells. GAD-65 and GAD-67 CHO cells, as well as
+wild type CHO cells, were stained by immunofluorescence with the serum of SMS patient 481 and counterstained with m Ab GAD 6 and rabbit serum
+6799 (which recognizes both isoforms) . (Calibration bar, 31 gm) .
+
+cells, while sera 9056 and K2 stained GAD-67 CHO cells
+more intensely than GAD-65-CHO cells (not shown) .
+Identification o,f Two Dominant Autoreactive Regions in GAD65. The property of GAD-Abs to react with GAD-65 in
+Western blots is a characteristic of the large majority of SMS
+sera, but is only seldomly observed in IDDM sera (12, 35,
+36) . It was of interest to identify the GAD-65 autoepitope(s)
+responsible for this reactivity. SMS sera were tested by Western
+blotting against deletion mutants of GAD-65 expressed as
+fusion proteins in bacteria . Initial experiments carried out
+with a few SMS sera on a variety of GAD-65 fragments in
+which progressively longer portions of the NH2-terminal region had been deleted, demonstrated that autoantibodies of
+different patients had similar patterns of reactivity and were
+primarily directed against the COOH-terminal region . Therefore immunoreactivity of the COON-terminal region was
+mapped further.
+Several deletion mutants of GAD-65 were constructed as
+fusion proteins (Figs. 6 D and 7 D, and not shown), and
+lysates containing approximately equal amount of fusion proteins (Figs . 6 A and 7 A) were analyzed by Western blots
+with animal GAD antibodies (Figs . 6 B and 7 B) and with
+all 30 human SMS sera (Figs. 6 C and 7 C, Table 1, and not
+shown) .
+As expected, rabbit serum 7673 directed against the COOH
+terminus of both GAD-67 and GAD-65 labeled all GAD-65
+fragments including the COOH terminus of the protein,
+210 1
+
+Butler et al.
+
+confirming the identity of the constructs (Figs . 6 B and 7
+B) . Deletion of the last four amino acids was sufficient to
+greatly reduce labeling by this serum. All SMS sera reacted
+very strongly with a fragment (fragment F), composed of
+the region between amino acid 445 and the COOH terminus
+(amino acid 585) (Fig. 6 C). Reaction with this fragment
+appeared to be even stronger than with full-length GAD-65,
+as if the NH2-terminal region of the molecule interfered
+with GAD-Ab binding to this GAD-65 region (Fig. 7 C) .
+Progressive deletions of up to 30 amino acids residues from
+the NH2-terminal side of this fragment (fragments F2, F3,
+and F4) did not significantly change its reactivity (Figs . 6
+C and 7 C) . An additional 10-amino acid deletion at the
+NH2 terminus of F4 (amino acids 475-585) to create fragment F5 (amino acids 484-585) drastically reduced immunoreactivity (Figs . 6 C and 7 C). This suggested that the
+epitope lies between amino acids 475 and 484 .
+However, quite unexpectedly, fragment F1 (amino acids
+445-515) resulting from a COOH-terminal deletion of fragment F, was also unreactive (Fig. 6 C). A similar reactivity
+towards fragment F4, but not towards fragments F5 and F1,
+was observed with the m Ab GAD 6 (Figs . 6 B and 7 B).
+Further deletion analysis of the COON-terminal side of fragment F4 (Fig. 7 C) indicated that removal of the last 14 amino
+acids (fragment F12 ; amino acids 475-571) was sufficient to
+abolish reactivity with all SMS sera and with GAD 6 .
+Moreover, deletion of only the last four amino acids (frag-
+
+<span class="source-segment role-group_specific" id="src-s0004" data-segment="s0004" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">The retention of some reactivity towards COOH-terminal-deleted GAD-65 constructs implied the presence of
+some immunoreactivity also in the N142-terminal region of
+GAD-65 . This was confirmed by analyzing the reactivity of
+SMS sera with NH2-terminal GAD-65 fragments (Fig. 7 C
+and Table 1). In all cases intensity of immunoreactivity against
+fragment D (amino acids 1-190) was very similar to immunoreactivity,against fragment H (amino acids 1-95), suggesting that the NH2-terminal autoantigenic region (SMSEpitope 2 = SMS-E2) is contained within amino acids 1-95,
+i .e., the region of diversity between GAD-65 and GAD-67 .
+Rabbit serum N65 (Fig. 7 B), raised against an NH2-terminal GAD-65-specific region (amino acids 4-21), recognized
+selectively, and with equal intensity, fragments D and H . A
+similar selective reactivity with fragments D and H was observed with serum 9057 raised against rat brain GAD-65 (not
+shown) suggesting that this serum as well is primarily directed
+against its N142-terminal 95 amino acids .
+Table 1 summarizes the reactivity of the 30 SMS sera against
+the fragments that define epitopes SMS-El and SMS-E2 as
+determined by scanning of the corresponding autoradiograms.
+The table clearly shows the predominant reactivity against
+SMS-E1 .</span>
+
+Figure 6 . Identification of the COON-terminal GAD epitope in SMS
+sera . Deletion mutants of GAD-65 were constructed as fusion proteins
+and lysates containing approximately equal amounts of fusion proteins were
+analyzed by SDS-PAGE and Western blotting . The boundaries of the fragments are shown schematically in D . Numbers represent amino acid position in GAD-65 . (A) Protein staining of bacterial lysates . Note that the
+fusion proteins appear as major protein bands. (B) and (C) Immunoblots
+of gels identical to those in A . Blots were incubated with serum 7673,
+with m Ab GAD 6 (A), and with several SMS patient sera (C) .
+
+<span class="source-segment role-group_specific" id="src-s0005" data-segment="s0005" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">ment F14, amino acids 475-581) produced a major loss of
+reactivity in the case of 14 SMS sera and GAD 6, as well
+as a complete loss of reactivity in the other 16 SMS sera (see Fig . 7 and Table 1) . Reactivity of fragment F14 was similar
+to that of fragment M (amino acids 190-581), and reactivity
+of fragment F12 was comparable to that of fragment N (amino
+acids 190-571), demonstrating that most of the immunoreactivity present in the COOH-terminal two-thirds of the molecule is attributable to an epitope contained in fragment F4
+(henceforth defined as SMS-Epitope 1 = SMS-E1) . In only
+a few patients a weak immunoreactivity was observed in fragment E (amino acids 190-375) which did not contain SMSEl . In these cases, fragments M and N were slightly more
+immunoreactive than fragments F12 and F14 (i.e., patient 338
+in Fig. 7 C) . The importance of the COOH terminus of
+GAD-65 to the reactivity of SMS sera was emphasized by
+the observation that deletion of the last 14 COOH-terminal
+amino acids from full-length GAD resulted in a dramatic loss
+of reactivity of those sera that reacted exclusively or almost
+exclusively with SMS-E1 (not shown) . In summary, SMS-E1
+is contained within the COON-terminal 110 amino acids of
+GAD-65 and both amino acid segments 475-484 and 571-585
+are crucially required for reactivity.
+2102</span>
+
+Discussion
+In this study we have investigated the antigenic targets of
+GAD-Abs in SMS. A remarkable degree of similarity in the
+immune response of these patients was observed . Antibodies
+recognize both GAD isoforms, but selectively recognize GAD65 after SDS-induced denaturation . Within GAD-65, two
+main autoreactive regions which are located in the COOHterminal and N142-terminal regions, respectively, were identified . The COOH-terminal region contains the main autoreactive epitope (SMS-E1) which is recognized by all SMS
+sera.
+The ability of SMS sera to immunoprecipitate GAD-67
+in addition to GAD-65 from brain extracts prepared in nondenaturing conditions confirms our previous results (12) and
+extends them to a large group of SMS sera. In those previous
+results it could not be discerned whether GAD-67 was
+coprecipitated with GAD-65 simply due to heterodimer formation (as it is probably the case for the m Ab GAD 6 [this
+study]) or due to the presence of antibodies that directly recognize GAD-67 . This study conclusively establishes that both
+proteins are recognized by SMS GAD-Abs.
+The GAD-65 domain, which was recognized in Western
+blots by all SMS sera tested, and which accounted for most
+of the immunoreactivity in nearly all of them, was mapped
+to the COOH-terminal 110 amino acids of GAD-65 (fragment F4), i .e., a region where GAD-65 and GAD-67 are
+similar to each other (75% identical, 81% similar) (20-23) .
+Short deletions at either the NH2-terminal or 000Hterminal region o£ fragment F4 were sufficient to abolish reactivity. Fragment F4 is recognized similarly by the m Ab
+GAD 6 suggesting that GAD 6 and SMS GAD-Abs recognize a single immunodominant epitope (SMS-E1) in this frag
+ment. The observation that COON-terminal deletions of only
+14 amino acids completely abolish reactivity of most SMS
+
+Figure 7 . Reactivity of SMS sera with GAD fragments expressed as fusion proteins. (A) Protein staining of bacterial lysates expressing the constructs
+shown in D . In all lanes the fusion protein is represented by a major band . B and C show Western blots of gels identical to that shown in A labeled
+with animal antibodies (B) and sera of SMS patients (C) as indicated on each gel .
+
+sera, while few of these sera as well as GAD 6 are still partially reactive after COOH-terminal deletions of only four
+amino acids, suggests some heterogeneity in the binding properties of different antibodies to this epitope. The possibility
+that our results may be due to abnormal folding of fragment
+F4 due to its being part of a fusion protein seems unlikely,
+because COOH-terminal deletions had similar effects on F4,
+on GAD constructs that included much longer portions of
+the molecule, and on full-length GAD-65 .
+The requirement of two amino acid segments that are separated by -100 amino acids for the reactivity of fragment F4
+may have at least two explanations. One is that epitope SMSEl is conformational and requires the two amino acid segments to be in close proximity for reactivity with SMS sera.
+The renaturation of such an epitope so that it would be detected by Western blot is consistent with the partial folding
+and renaturation of other proteins after SDS-PAGE and transfer
+to nitrocellulose (37, 38) . Alternatively, the antibodies recognize a short linear epitope within fragment F4, which be2103
+
+Butler et al.
+
+comes cryptic following short deletions from either side of
+the fragment . Possibly, either of the two amino acid stretches
+that are crucially required for the reactivity of fragment F4
+(amino acids 475-484 and 571-585) may be part of the epitope. To test this possibility we examined whether reactivity
+of SMS sera and of the m Ab GAD 6 with the epitope SMSEl was abolished by their preincubation with synthetic peptides . Neither a peptide represented by amino acids 473-486
+of GAD-65, nor the 17-mer peptide used to raise rabbit serum
+7673 (which contains amino acids 571-585 of GAD-65), abolished or reduced the reactivity of SMS sera or GAD 6 on
+immunoblots. As expected, the latter peptide completely abolished reactivity of serum 7673 (not shown) . Lack of inhibition was also observed when similar peptide competition experiments were performed by immunocytochemistry on
+GAD-65-CHO cells and by Western blotting on rat brain,
+i .e., on full-length GAD-65 (our unpublished observations) .
+A second autoantigenic region of GAD-65 was mapped
+to the NHa-terminal portion of the molecule (epitope SMS-
+
+Table 1.
+Patients
+
+Reactivity of SMS-Abs with GAD-65 Fragments
+Fragment H
+
+Fragment D
+
+Fragment E
+
+Fragment C
+
+Fragment F4
+
+Fragment FS
+
+Frag . F14
+
+Frag . F12
+
+Fragment M
+
+Fragment N
+
+MUM
+
+NFUM
+EFUM
+
+Eon=
+
+METM
+The table was constructed by analyzing autoradiograms like those shown in Fig. 7 C. Individual autoradiographic bands corresponding to GAD-65
+fragments and full-length GAD-65 were quantified as described in Materials and Methods . The ratio of the OD of each fragment to the OD of
+full-length GAD-65 was calculated . Each ratio is represented by the filled-in black areas. Thus, the size of the black area directly reflects the reactivity
+of each GAD fragment . Fragment boundaries are shown in Fig. 7 D.
+
+E2), which is quite divergent in amino acid composition from
+GAD-67 (20-23) . Whether SMS-E2 represents the collection of several epitopes remains to be elucidated. In the case
+of most SMS sera, reactivity with this region is much less
+intense than reactivity with SMS-E1 .
+Our study demonstrates some important similarities between the humoral response to GAD in SMS and IDDM.
+In IDDM as well, GAD-Abs are primarily directed against
+GAD-65 (35, 36, 39-41) and predominantly against the region of greatest similarity between GAD-65 and GAD-67
+(12, 36, 42-45). Moreover, the COOH terminus of GAD65, which strongly influences SMS reactivity towards GAD,
+is also critical for reactivity of several IDDM antibodies (36,
+46). In spite of these similarities, GAD-Abs found in SMS
+and IDDM display potentially important differences. GADAbs are present in SMS sera with a much higher titer (12).
+Furthermore, and possibly related to the titer, the majority
+of IDDM sera are nonreactive, or only weakly reactive, in
+Western blots and in immunocytochemistry of fixed brain
+and pancreas (10, 12, 46, 47). Recently, the identification of
+the autoepitopes recognized in GAD-65 by five human m Abs
+derived from lymphocytes of one newly diagnosed diabetic
+patient was reported (36). Three epitopes, which were all
+localized in the middle and COOH-terminal region, were
+identified . Two ofthese epitopes are crucially dependent upon
+distant regions of the molecule, not reactive in Western blots,
+and require either the middle and COOH-terminal domain
+or a middle domain ofGAD-65 . The reactivity of the human
+m Abs that recognize these epitopes appeared to reflect the
+2104
+
+reactivity of several IDDM patients. The third epitope was
+defined as a linear epitope located close to the COOH terminus. A similar GAD-65 COOH-terminal linear epitope
+recognized by a few IDDM sera was also reported by Mouch
+et al. (46) . None of these epitopes appear to coincide with
+the epitope SMS-E1 identified by us.
+These differences are not likely to be accounted for by differences between human (36, 46) and rat (this study) GAD,
+because rat and human GAD react equally well with SMS
+sera (9, 10) and because the COOH-terminal region ofGAD65 (fragment F4) is almost identical in rat and human (97%
+identity and 100% similarity) . From the data shown by
+Richter et al. (36) it cannot be excluded that the 000Hterminal linear epitope might coincide with epitope SMS-E1
+because this epitope is recognized by Western blot, is contained within amino acids 423-585, and is disrupted by
+COOH-terminal deletions . However, only a few IDDM antibodies appear to recognize this epitope.
+Our findings do not exclude the possibility that sera of
+SMS patients might contain autoantibodies similar to those
+present in IDDM in addition to the dominant antibodies investigated in this study. The epitope mapping performed in
+this study was aimed at characterizing the autoantibodies that
+react with GAD even after SDS denaturation, i .e., the antibodies characteristic of SMS.
+The different reactivity of autoantibodies in IDDM and
+SMS is intriguing. Such a difference suggests a possible link
+between epitope specificity of the autoantibodies and clinical
+condition . The difference in humoral autoimmunity towards
+
+GAD in SMS and IDDM may correlate with the fact that
+
+IDDM, when present in SMS patients, has usu4y a late onset
+(reference 11 and our unpublished observations) . It was reported that the epitope specificity of the antibodies that internalize a protein in an antigen-presenting cell may affect
+
+the pattern of proteolysis of the antigen and the nature of
+fragments presented to helper T cells (48) . Whether this
+phenomenon is relevant for the apparent correlation between
+antibody response to GAD and clinical symptoms in human
+patients (SMS and/or IDDM) remains to be determined .
+
+We thank Drs. Janeway and Sherwin for discussion and Terry Nakagawa for discussion and advice.
+This work was supported by a Research Project Award from the Mc Knight Endowment for the Neurosciences and by National Institutes of Health grants R01-AI 30248 (to P. De Camilli) and P01-DK 43078
+(to P. De Camilli and A. Hayday), by fellowships from the Muscular Dystrophy Association and the Juvenile Diabetes Foundation QDF) (to M. Solimena), and by a JDF fellowship to M. H. Butler.
+Address correspondence to Pietro De Camilli, Howard Hughes Medical Institute, Boyer Center for Molecular Medicine, 295 Congress Avenue, New Haven, CT 06510.
+Received for publication 20 May 1993 and in revised _form 11 August 1993.
+References
+
+1 . Erlander, M. G., and A. J . Tobin. 1991 . The structural and functional heterogeneity of glutamic acid decarboxylase: a review.
+Neurocbem. Res. 16 : 215 .
+2. Mugnaini, E., and W. H . Oertel . 1985 . An atlas of the distribution of GABAergic neurons and terminals in the rat CNS
+as revealed by GAD immunohistochemistry. In Handbook of
+Chemical Neuroanatomy, Vol. 4: GABA and Neuropeptides
+in the CNS, Part I. A. Bjorklund and T Hokfelt, editors . Elsevier Science Publishers, BY., Amsterdam. 436-608.
+3 . Vincent, S. R., T Hokfelt, J.-Y. Wu, R. P. Elde, L. M . Morgan,
+andJ. R. Kimmel. 1983 . Immunohistochemical studies of the
+GABA system in the pancreas . Neuroendocrinology . 36 : 197 .
+4. Rorsman, P., P. O. Berggren, K. Bokvist, H. Ericson, H.
+Mohler, C.-G. Ostenson, and P. A . Smith. 1989. Glucoseinhibition of glucagon secretion involves activation of GABAreceptor chloride channels. Nature (Lond.). 341: 233 .
+5 . Reetz, A., M. Solimena, M. Matteoli, F. Folli, K. Takei, and
+P. De Camilli. 1991 . GABA and pancreatic j3-cells: colocalization of glutamic acid decarboxylase (GAD) and GABA with
+synaptic-like microvesicles suggests their role in GABA storage
+and secretion. EMBO (Eur. Mal. Biol. Organ.) J. 10 : 1275.
+6. Thomas-Reetz, A., J. Hell, M. J . During, C. Walch-Solimena,
+R. Jahn, andP. De Camilli. 1993 . A y-aminobutyric acid transporter driven by a proton pump is present in synapticlike
+microvesicles of pancreatic 0-cells. Proc Natl. Acad. Sci. USA.
+90 : 5317.
+7. Erdo, S. L ., F. Joo, and J . R . Wolff. 1990 . Immunohistochemical localization of glutamate decarboxylase in the rat oviduct
+and ovary: further evidence for non-neuronal GABA system .
+Cell Tissue Res. 255: 431.
+8. Persson, H., M. Pelto-Huikko, M. Metsis, O. Soder, S. Brene,
+S. Skog, T. Hokfelt, and E. M . Ritzen . 1990 . Expression of
+the neurotransmitter-synthesizing enzyme glutamic acid decarboxylase in male germ cells. Mol. Cell. Biol. 10 : 4701.
+9. Solimena, M., F. Folli, S. Denis-Donini, G. C . Comi, G. Pozza,
+P. De Camilli, and A. M . Vicari . 1988 . Autoantibodie s to glutamic acid decarboxylase in a patient with Stiff-Man syndrome,
+epilepsy and type I diabetes mellitus . N. Engl. J. Med. 318: 1012 .
+10 . Solimena, M., F. Folli, R. Aparisi, G. Pozza, and P De Camilli.
+1990 . Autoantibodies to GABA-ergic neurons and pancreatic
+(3-cells in Stiff-Man syndrome . N. Engl. J. Med. 322: 1555 .
+2105
+
+Butler et al .
+
+Solimena, M., and P. De Camilli. 1991 . Autoimmunity to glutamic acid decarboxylase (GAD) in Stiff Man syndrome and
+insulin-dependent diabetes mellitus. TINS (Trends Neurosci.).
+14 : 452 .
+Bxkkeskov, S., H. J . Aanstoot, S. Christgau, A. Reetz, M.
+Solimena, M. Cascalho, F. Folli, H. Richter-Olesen, and P.
+De Camilli. 1990 . Identification of the 64 Kd autoantigen in
+insulin-dependent diabetes mellitus as the GABA-synthesizing
+enzyme glutamic acid decarboxylase. Nature (Lond.). 347: 151 .
+Moersch, F. P., and H. W. Woltman. 1956 . Progressive and fluctuating muscular rigidity and spasm (stiff-man syndrome): report of a case and some observation in 13 other cases. Mayo
+Clin . Proc. 31 : 421 .
+14 . Blum, P., andJ. Jankovic . 1991 . Stiff-Person syndrome : an autoimmune disease. Movement Dis. 6: 12.
+15 . Mc Evoy, K. M . 1991 . Stiff-Man syndrome. Mayo Clinic Proc.
+66 : 300 .
+16 . Eisenbarth, G. S . 1986 . Type I diabetes mellitus : a chronic autoimmune disease. N. Engl. J. Med. 314: 1360.
+17 . Baekkeskov, S., M. Landin, J. K . Kristensen, S. Srikanta, G.
+Bruining, T Mandrup-Poulsen, C. de Beaufort, J. Soeldner,
+G. Eisenbarth, F. Lindgren, et al . 1987 . Antibodies to a 64, 000
+Mr, humanislet cell antigen precede the clinical onset of insulindependent diabetes . J. Clin . Invest. 79 : 926 .
+Atkinson, M. A ., N. K. Maclaren, D. W. Scharp, PE . Lacey, and
+W. J . Riley. 1990 . 64, 000 Mr autoantibodies as predictors of
+insulin-dependent diabetes mellitus . Lancet. 335: 1357.
+Kobayashi, Y, D. L . Kaufman, and A. J . Tobin. 1987 . Glutamic
+acid decarboxylase cDNA : nucleotide sequence encoding and
+enzymatically active fusion protein . J. Neurosci. 7: 2768.
+20 . Erlander, M. G ., N . J . K. Tillakaratne, S. Feldblum, N. Patel,
+and A. J . Tobin. 1991 . Two genes encode distinct glutamate
+decarboxylases. Neuron . 7: 91.
+Wyborski, R. J ., R. W. Bond, and D. I . Gottlieb . 1990 . Characterization of a cDNA coding for rat glutamic acid decarboxylase. Mot. Brain Res. 8: 193 .
+22 . Karlsen, A. E ., WA . Hagopian, C. E . Grubin, S. Dube, C. M.
+Disteche, D. A . Adler, H. Barmeier, S. Mathewes, F. J . Grant,
+D. Foster, and A. Lernmark . 1991 . Cloning and primary structure of a human islet isoform of glutamic acid decarboxylase
+from chromosome 10. Proc. Nad. Acad. Sci. USA. 88 : 8337 .
+
+23 . Bu, D.-F., M. G. Erlander, B. C . Hitz, NJ. K. Tillakaratne, D. L .
+Kaufman, C. B. Wagner-Mc Pherson, G. A . Evans, and A. J .
+Tobin. 1992 . Two human glutamine decarboxylases, 65-k Da
+GAD and 67-k Da GAD, are each encoded by a single gene .
+Proc. Natl. Acad. Sci. USA. 89 : 2115.
+24 . Katarova, Z., G. Szabo, E. Mugnaini, and R. J. Greenspan. 1990 .
+Molecular identification of the 62 kD form of glutamic acid
+decarboxylase from the mouse. Eur. J. Neuroscience. 2: 190 .
+25 . Jackson, F. R., L. M . Newby, and S. J . Kulkarni . 1990 . Drosophila GABAergic systems: sequences and expression of glutamic acid decarboxylase. J. Neurochem . 54 : 1068.
+26 . Petersen, J. S ., S. Russel, M. O. Marshall, H. Kofod, K.
+Buschard, N. Cambon, A. E . Karlsen, E. Boel, WA . Hagopian, K. R . Hejnaes, et al . 1993 . Differential expression of glu
+tamic acid decarboxylase in rat and human islets. Diabetes.
+42 : 484-495 .
+27 . Velloso, L. A ., O. Kampe, D. L . Eizirik, A. Hallberg, A. Andersson, and F. A . Karlsson. 1993 . Human autoantibodies react
+with glutamic acid decarboxylase antigen in human and rat
+but not in mouse pancreatic islets. Diabetologia. 36 : 39 .
+28 . Christgau, S., H. J. Aanstoot, H . Schierbeck, K. Begley, S.
+Tullin, K. Hejnaes, and S. Beekkeskov. 1992 . Membrane anchoring of the autoantigen GADbs to microvesicles in pan
+creatic a-cells by palmitoylation in the NH2-terminal domain .
+J. Cell Biol. 118 : 309 .
+29 . Solimena, M., D. Aggujaro, C. Muntzel, R. Dirkx, M. Butler,
+P. De Camilli, and A. Hayday. 1993 . Association of GAD-65,
+but not of GAD-67, with the Golgi complex of transfected
+Chinese hamster ovary cells mediated by the N-terminal region . Proc. Natl. Acad. Sci. USA . 90 : 3073.
+30 . Kaufman, D. L ., C. R . Houser, and A. J. Tobin. 1991 . Two forms
+of the GABA synthetic enzyme glutamate decarboxylase have
+distinct intraneuronal distributions and cofactor interactions .
+J. Neurochem . 56 : 720 .
+31 . Chang, Y.-C., and D. I . Gottleib . 1988 . Characterization of
+the proteins purified with monoclonal antibodies to glutamic
+acid decarboxylase. J. Neurosci. 8: 2123.
+32 . Laemmli, U. K . 1970. Cleavage of structural proteins during
+the assembly of the head of bacteriophage T4 . Nature (Loud.).
+227: 680 .
+33 . Towbin, H., T Staehelin, andJ. Gordon . 1979 . Electrophoretic
+transfer of proteins from polyacrylamide gels to nitrocellulose
+sheets : procedure and some applications . Proc. Nad. Acad. Sci.
+USA . 76 : 4350.
+34 . Cameron, P. L ., T. C . Sudhof, R. Jahn, and P. De Camilli. 1991.
+Colocalization of synaptophysin with transferrin receptors: implications for synaptic vesicle biogenesis . J. Cell Biol. 115: 151 .
+35 . Karlsen, A. E ., W. A . Hagopian, J. S. Petersen, E. Boel, T Dyrberg, C. E . Grubin, B. K . Michelsen, O. D. Madsen, and A.
+Lernmark . 1992 . Recombinant glutamic acid decarboxylase
+(representing the single isoform expressed in human islets) detects IDDM-associated 64, 000-M(r) autoantibodies . Diabetes.
+41 : 1355 .
+36 . Richter, W., Y Shi, and S. Bwkkeskov. 1993 . Autoreactive
+epitopes defined by diabetes-association human monoclonal antibodies are localized in the middle and C-terminal domains
+of the smaller form of glutamate decarboxylase. Proc. Natl. Acad.
+
+2106
+
+Sci. USA . 90: 2832.
+37 . Lapetina, E., and B. Reep. 1987 . Specific binding of [a? ZP]
+GTP to cytosolic and membrane-bound proteins of human
+platelets correlates with the activation of phospholipase C. Proc
+Natl. Acad. Sci . USA . 84 : 2261.
+38 . Goud, B., A. Sahninen, N. C. Walworth, and P. J Novick . 1988 .
+A GTP-binding protein required for secretion rapidly associates
+with secretory vesicles and theplasma membrane in yeast. Cell.
+53 : 753 .
+39 . Richter, W, J. Endl, T. H . Eiermann, M. Brandt, R. Kientsch Engel, C. Thivolet, H. Junger, and WA . Scherbaum. 1992 .
+Human monoclonal islet cell antibodies from a patient with
+insulin-dependent diabetes mellitus reveal glutamate decarboxylase as the target antigen. Proc. Nad. Acad. Sci . USA . 89 : 8467.
+40 . Velloso, L. A ., O. Kampe, A. Hallberg, L. Christmanson, C.
+Betsholtz, and F. A . Karlsson . 1993 . Demonstration of GAD65 as the main immunogenic isoform of glutamate decarboxylase in type 1 diabetes and determination of autoantibodies using
+a radioligand produced by eukaryotic expression . J. Clin . Invest. 91: 2084.
+41 . Hagopian, WA ., A. E . Karlson, A. Gottsater, M. Landin Olsson, C. E . Grubin, G. Sundkvist, J. S. Petersen, E. Boel,
+T Cyrberg, and A. Lernmark . 1993 . Quantitative assay using
+recombinant human islet glutamic acid decarboxylase (GAD65)
+shows that 64K autoantibody positivity at onset predicts diabetes type. J. Clin . Invest. 91 : 368 .
+42 . Kaufman, D. L ., M. G. Erlander, M. Claire-Salzler, M. A. Atkinson, N. K . Maclaren, and A. J . Tobin. 1992 . Autoimmunity
+to two forms of glutamine decarboxylase in insulin-dependent
+diabetes mellitus . J. Clin . Invest. 89 : 283 .
+43 . Christie, M. R ., T. J . Brown, and D. Cassidy. 1992 . Binding
+of antibodies in sera from type 1 (insulin-dependent) diabetic
+patients to glutamate decarboxylase from rat tissues. Evidence
+for antigenic and non-antigenic forms of the enzyme . Diabetologia . 35 : 380.
+44 . Christie, M. R ., G. Vohra, P. Champagne, D. Daneman, and
+T. L . Delovitch . 1990 . Distinct antibody specificities to a 64kD islet cell antigen in type 1 diabetes is revealed by trypsin
+treatment. J. Exp. Med. 172: 789 .
+45 . Christie, M. R ., R. Y. M . Tun, S. S . S . Lo, D. Cassidy, T. J. Brown,
+J. Hollands, M. Shattock, G. F. Bottazzo, and R. D. G. Leslie.
+1992 . Antibodies to GAD and tryptic fragments of islet 64K
+antigen as distinct markers for development of IDDM . Diabetes. 41 : 782 .
+46 . Mauch, L., C. C. Abney, H. Berg, W. A. Scherbaum, B. Liedvogel, and W Northemann . 1993 . Characterization of a linear
+epitope within the human pancreatic 64-k Da glutamic acid
+decarboxylase and its autoimmune recognition by sera from
+insulin-dependent diabetes mellitus patients . Eur. J. Biochem .
+212: 597 .
+47 . Bottazzo, G. F ., and H. Gleichmann . 1986 . Immunology and
+diabetes workshops: report of the first international workshop
+on the standardization of cytoplasmic islet cell antibodies. Diabetologia . 29 : 197 .
+48 . Watts, C., and A. Lanzavecchia . 1993 . Suppressive effect of
+antibody on processing of T cell epitopes . J. ExpL Med. 178: 1459.</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>499-2733</td><td>high</td><td>Summary reports 30 SMS patient sera and main GAD antibody findings.</td><td>Glutamic acid decarboxylase (GAD) is the enzyme that synthesizes the neurotransmitter y-aminobutyric acid (GABA) in neurons and in pancreatic (3 cells. It is a major target of a...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0002</td><td>background</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>3567-4405</td><td>high</td><td>Clinical description of SMS and prior frequency of GAD antibodies in SMS patients.</td><td>rological condition characterized by progressive rigidity of the body musculature with superimposed painful spasms. It is thought to result from an impairment of GABA-ergic inhi...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0005</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>16388-17139</td><td>high</td><td>Figure legend states SMS sera immunoprecipitated both GAD65 and GAD67 from brain extract.</td><td>Figure 3 . SMS patient sera immunoprecipitate both GAD 65 and GAD 67 from a brain extract. Triton X-100 extracts of rat brain were immunoprecipitated with sera of SMS patients (...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0008</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>24602-25869</td><td>high</td><td>Deletion mapping identified SMS-E2 in the NH2-terminal 1-95 amino acids and predominant SMS-E1 reactivity.</td><td>The retention of some reactivity towards COOH-terminal-deleted GAD-65 constructs implied the presence of some immunoreactivity also in the N142-terminal region of GAD-65 . This...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0009</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>26502-27829</td><td>high</td><td>Mapping of SMS-E1 shows required amino acid segments 475-484 and 571-585.</td><td>ment F14, amino acids 475-581) produced a major loss of reactivity in the case of 14 SMS sera and GAD 6, as well as a complete loss of reactivity in the other 16 SMS sera (see F...</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\25.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\25.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\25.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\25.validation.json</p></main>
+</body>
+</html>

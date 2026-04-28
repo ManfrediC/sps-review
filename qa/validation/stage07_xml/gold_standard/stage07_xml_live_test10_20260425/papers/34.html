@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 34</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 34</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: failed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>offset_text_mismatch:l0001:b0001:234:1130</li><li>unknown_target:l0002:p1</li><li>offset_text_mismatch:l0002:b0001:2878:3456</li><li>offset_text_mismatch:l0002:b0002:0:546</li><li>unknown_target:l0003:p1</li><li>offset_text_mismatch:l0003:b0003:0:2793</li><li>unknown_target:l0004:p2</li><li>offset_text_mismatch:l0004:b0003:2795:3448</li><li>unknown_target:l0005:p1</li><li>unknown_target:l0005:p2</li><li>offset_text_mismatch:l0005:b0005:19:1347</li><li>unknown_target:l0006:p1</li><li>unknown_target:l0006:p2</li><li>offset_text_mismatch:l0006:b0005:1349:2433</li><li>unknown_target:l0007:p1</li><li>unknown_target:l0007:p2</li><li>offset_text_mismatch:l0007:b0005:2435:3063</li><li>offset_text_mismatch:l0008:b0005:3065:3489</li><li>offset_text_mismatch:l0008:b0006:0:1010</li><li>offset_text_mismatch:l0009:b0006:1011:1827</li><li>offset_text_mismatch:l0009:b0007:0:890</li><li>offset_text_mismatch:l0010:b0007:892:2062</li><li>unknown_target:l0011:p1</li><li>unknown_target:l0011:p2</li><li>offset_text_mismatch:l0011:b0007:2064:2555</li><li>unknown_target:l0012:p1</li><li>offset_text_mismatch:l0012:b0007:2557:3491</li><li>undeclared_target_without_source_evidence:p1</li><li>undeclared_target_without_source_evidence:p2</li><li>missing_target_evidence:g1</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">No assigned segment</span></div><h2>Source Text</h2><div class="source-text">A novel antineuronal antibody in 
+stiff-man syndrome 
+Robert B. Darnell, MD, PhD; Jonathan Victor, MD, PhD; Michael Rubin, MD, FRCP(C); 
+Paul Clouston, MBBS, FRACP; and Fred Plum, MD 
+Article abstract-Two-thirds of stiff-man syndrome (SMS) patients harbor an autoantibody specific for a 64-kD 
+species of glutamic acid decarboxylase (GAD), the rate-limiting enzyme in GABA synthesis. We assayed SMS antisera 
+from two patients with SMS for the presence of anti-GAD antibodies using Western blot, immunohistochemical, and 
+enzymatic analyses. Both SMS antisera recognized an 80-kD antigen present in human and rat neuronal extracts, and 
+failed to recognize the 64-kD GAD species. Immunohistochemistry demonstrated neuronal binding identical to that 
+reported with anti-GAD antibodies. Both sera depleted GAD activity from brain extracts. Our analysis indicates that 
+these SMS antisera differ from previously reported SMS antisera by recognizing a novel 80-kD antigen, and suggests 
+that they contain antibodies directed against either a species of GAD different in size from the 64-kD enzyme, or a pro- 
+tein that co-immunoprecipitates with GAD. 
+NEUROLOGY 1993;43:114-120 
+In 1956, Moersch and Woltmanl described 14 
+patients as having “stiff-man syndrome” (SMS), the 
+insidious onset of progressive stiffness of the axial 
+musculature accompanied by intermittent painful 
+muscle spasms and precipitated by startle respons- 
+es. The first clue to the pathophysiology of the dis- 
+ease was pharmacologic; typical patients had such 
+a remarkable response to benzodiazepines2 that, 
+without it, the diagnosis was q~estionable.~ Since 
+benzodiazepines are GABAergic agonists, and elec- 
+trophysiologic studies show continuous motor activ- 
+ity suggestive of dysfunction of inhibitory neurons 
+proximal to the anterior horn cell (ie, Ib spinal 
+interneurons or suprasegmental descending 
+inhibitory ne~rons),~-~ it has been suggested that 
+SMS is a disorder of central GABAergic pathways. 
+In 1988, Solimena et a17 described an autoanti- 
+body in an SMS patient that bound to a 64-kD 
+enzyme, glutamic acid decarboxylase (GAD). 
+Because GAD is the rate-limiting enzyme in the 
+production of GABA in neurons, an antibody direct- 
+ed against GAD was consistent with the hypothesis 
+of GABAergic dysfunction in SMS. Anti-GAD anti- 
+bodies, however, have not been detected in all 
+patients with SMS.*s9 Solimena et a1,8 reporting 
+anti-GAD antibodies in 19 patients with SMS, were 
+unable to identify any autoantibodies in 13 clinical- 
+ly similar patients. Furthermore, six of the 19 SMS 
+antisera that did show anti-GAD antibodies by 
+immunohistochemistry failed to detect the 64-kD 
+GAD antigen on Western blot.8 The results suggest 
+that SMS represents a group of disorders, in which 
+only some patients harbor anti-64-kD GAD anti- 
+bodies. We describe two patients with SMS diag- 
+nosed by typical symptoms and EMG findings who 
+displayed a different autoantibody. 
+Case report. Patient Be. A 37-year-old man developed 
+episodic muscle tightness and stiffness of his left leg in 
+June 1987. Examination elsewhere revealed increased 
+tone and deep tendon reflexes in the left leg, without 
+weakness or sensory or sphincter disturbance. 
+Laboratory investigations, including brain and spinal 
+imaging, were unremarkable. An EMG revealed motor 
+units firing repeatedly at rest, but was otherwise unre- 
+markable. Over the next 3 months, episodic left leg stiff- 
+ness increased in frequency and severity. Awkward posi- 
+tion or loud noises precipitated the episodes; between 
+spasms, the leg remained persistently stiff. Baclofen, 80 
+mg/d, produced only minor relief. Diazepam 5 mg PO tid 
+was begun in March 1988 after an acute exacerbation. 
+Dramatic improvement followed, but the right leg gradu- 
+ally became involved and he was referred to New York 
+Hospital (NYH). 
+In July 1989, 1 week after diazepam had been discon- 
+From the Department of Neurology and Neuroscience (Drs. Darnell, Victor, Rubin, Clouston, and Plum), The New York Hospital-Cornell Medical Center, 
+and Memorial Sloan-Kettering Cancer Center (Dr. Darnell), Cornell University Medical College, New York, NY. 
+Supported in part by PHS Research Grant #RR00047 from the General Research Center Branch, Division of Research Facilities and Resources, 
+Bethesda, MD. R.B.D. is supported in part by a Clinical Investigator Development Award from the National Institutes of Health, grant NS01461-01, and 
+J.V. by National Institutes of Health grants EY7977 and EY9314. 
+Received April 1, 1992. Accepted for publication in final form May 13, 1992. 
+Address correspondence and reprint requests to Dr. Robert B. Darnell, Department of Molecular Neuro-Oncology, Rockefeller University, Box 226, 1230 
+York Avenue, New York, NY 10021. 
+114 NEUROLOGY 43 January 1993
+
+Figure 1. Abnormal visual evoked potentials (VEPs) in 
+SMS patient Be normalize with benzodiazepines (BZD). 
+(Top panel) VEPs 1 week after tapered withdrawal of 
+diazepam. PlOO (arrow) latencies are more than 2 SD 
+above normal (123 msec 0s and OD; normal population 
+mean, 109 msec; upper limits of normal [mean + 2 SO], 
+117 msec). (Bottom panel) VEPs 48 hours later, after 
+resumption of diazepam (10 mg PO tid). PSOO latencies 
+(101 msec OS, 107 msec OD) are within the normal 
+range. Scale = 3 pV (vertical), 25 msec (horizontal). 
+tinued, the patient was admitted to the Cornell-New 
+York Hospital Clinical Research Center. Neurologic 
+examination revealed normal mental status, cranial 
+nerves, and upper extremities. Examination of the legs 
+revealed muscular hypertrophy and marked bilateral 
+muscular hypertonia throughout the range of passive 
+movement at the hips, knees, and ankles. Stimulus- 
+induced muscle spasms threw both legs into rigid, 
+immovable extension for periods lasting up to 3 minutes. 
+There was mild weakness of right ankle dorsiflexion and 
+knee flexion. Deep tendon reflexes were hyperactive, but 
+no abnormal reflex or sensory abnormalities were found. 
+CBC, electrolytes, including glucose, sedimentation rate, 
+CK, hepatitis serologies, BIZ, folate, serum protein elec- 
+trophoresis, growth hormone, ACTH, prolactin, cerulo- 
+plasmin, acetylcholine receptor antibody, HTLV-I titer 
+and 24-hour urine methylmalonic acid, methoxyhydroxy- 
+phenylglycol, vanillylmandelic acid, homovanillic acid, 
+catecholamines, creatinine, and protein were all normal. 
+CSF had a protein of 49 mg/dl, glucose of 75 mg/dl, one 
+WBC, a negative cytology, and no oligoclonal bands. 
+Visual evoked potentials (VEPs) performed when the 
+patient was not taking benzodiazepines were abnormal 
+bilaterally (figure 1). Forty-eight hours after reinstitut- 
+ing the patient’s diazepam, the PlOO was normal (figure 
+1). The results suggested an asymptomatic deficit in 
+visual processing; its reversal with diazepam suggested 
+that it involved GABAergic pathways. 
+EMG prior to re-starting diazepam revealed continu- 
+ous muscle activity. Appropriate pharmacologic manipu- 
+lations of the motor system (see Methods) resulted in 
+expected loss of muscle activity in all instances except 
+with saline infusion, which resulted in no change. 
+Despite increasing doses of Valium (80 mg/d), the patient 
+was readmitted to NYH in April 1991 with a gradual 
+worsening in motor stiffness. A course of five plasma 
+exchanges resulted in no significant change in symptoms. 
+Patient Rm. A published abstractlo provides a full clini- 
+cal description of the second SMS patient, Rm. Briefly, 
+the patient is a 65-year-old man with a 4-year history of 
+severe stiffness, limitation of motion, and muscular 
+hypertrophy in his neck, trunk, and proximal extremi- 
+ties. EMG revealed continuous motor activity at rest in 
+the neck and shoulder muscles. The patient had mild 
+clinical improvement after taking benzodiazepines. 
+Methods. Serum and cerebrospinal fluid. Samples of 
+serum and CSF were obtained following informed con- 
+sent. Anti-GAD-64 (SMS-64) antiserum was kindly pro- 
+vided by Dr. Pietro De Camilli (Yale University Medical 
+School); serum from patient Rm was provided by Dr. 
+Mark Gordon (Columbia-Presbyterian Medical Center). 
+Neurophysiology. To specify the patient’s disorder and 
+outline optimal therapy, several studies were performed, 
+all after informed consent had been obtained. Motor and 
+sensory nerve conduction studies in the right arm and 
+leg, repetitive nerve stimulation of the left median- 
+thenar system, blink reflexes, concentric needle EMG, 
+motor unit potential analysis, and WPs were performed 
+using standard techniques. The stimulus for the VEPs 
+shown in figure 1 was a contrast-reversing checkerboard, 
+%-degree checks, 100% contrast, 80 candles/m2 lumi- 
+nance, 1.88-Hz reversal rate, 15-degree field; the record- 
+ing was Cz to Oz, with 1-Hz to 250-Hz filters and 100 
+averages per trace. VEP latencies elicited by %-degree 
+checks showed a similar, though less marked, change. 
+The following pharmacologic manipulations were per- 
+formed with sufficient time between studies for the 
+effects of previous medication to disappear: left femoral 
+nerve block using 3% chloroprocaine; lumbar epidural 
+anesthesia at L2-3 using 3% chloroprocaine resulting in 
+a T-10 level to pin and cold testing; spinal anesthesia 
+using 3% chloroprocaine resulting in a T-4 spinal level to 
+sensation; intravenous injection of saline, performed on 
+three occasions in a blinded fashion with the patient 
+expecting curare or saline; infusion of 3 mg of D-tubocu- 
+rarine; and general anesthesia using sodium thiopental. 
+Immunoblotting. Purkinje cell and cortical neuronal 
+extracts were prepared from human autopsy specimens 
+from neurologically normal individuals, and purified 
+through Ficoll gradients as previously described.” 
+Protein concentrations were determined by Bradford’s 
+assay.12 Equal volumes of loading buffer were added to 
+each lane before denaturation and electrophoresis 
+through 8% SDS-PAGE and electrophoretic transfer to 
+nitrocellulose as desc15bed.l~ Filters were blocked in 5% 
+January 1993 NEUROLOGY 43 115
+
+(data not shown). 
+Because the original analysis7 of autoantibodies 
+in SMS used crude rat cortex extracts for Western 
+blot analysis, we compared reactivity of our SMS- 
+80 antisera with that of SMS-64 antisera in rat cor- 
+tical extracts prepared as described7 (figure 3). 
+Both antisera reacted with a major protein species 
+of Mr 80 kD, as well as with several minor smaller 
+molecular weight bands similar to those seen with 
+human neuronal extracts (figure 2). In addition, 
+Rm antiserum reacted with a larger antigen of Mr 
+120 kD (figure 3); this antigen was not identified 
+with Rm antisera in human Purkinje neuron 
+extracts nor with Be/SMS-80 antisera. Several 
+smaller molecular-weight bands could be detected 
+with Be and Rm antisera in rat cortex; these bands 
+migrated at a distinctly lower molecular weight 
+than GAD-64 (figure 3). Reactivity with GAD-64 
+was not detectable with Be or Rm antisera even at 
+longer exposures; however, because the SMS-64 
+reacts so faintly with GAD-64 in these crude rat 
+cortical extracts, the possibility of a low-titer anti- 
+body against rat GAD-64 in SMS-80 antisera can- 
+not be excluded. There was no reactivity when 
+NHS were blotted against rat cortical extracts. 
+Thus the two different SMS sera react with a major 
+antigen of 80 kD present in human and rat brain 
+that is not recognized by SMS-64 antisera. By all 
+measures, SMS-80 and SMS-64 antisera appear 
+distinct. 
+Identification of anti-GAD antibodies in SMS 
+sera. The ability of sera from the two SMS patients 
+to immunoprecipitate GAD activity was tested as 
+follows. Whole-brain extracts from pig (figure 4) or 
+rat (data not shown) were incubated with antisera, 
+bound antibody was immunoprecipitated, and GAD 
+enzyme activity was assayed in both the super- 
+natant and the pellet. NHS did not precipitate any 
+GAD activity (figure 4); all enzyme activity 
+remained in the supernatant. Both SMS-80 and 
+SMS-64 antisera, however, depleted enzyme activi- 
+ty completely and with equal efficiency from the 
+supernatant (figure 4). The immunoprecipitate 
+obtained with both SMS antisera contained equiva- 
+lent amounts of assayable enzyme activity, 
+although recovery was not quantitative at high 
+antibody concentrations. These results were com- 
+parable to those published by Baekkeskov et a1 
+using SMS-64 antisera.15 
+Immunohistochemistry with SMS antisera. 
+Serum from both patients Be and Rm reacted with 
+what appeared to be an interneuronal antigen, giv- 
+ing a granular staining pattern in the gray matter 
+surrounding neurons (data not shown); this pattern 
+is characteristic of that seen with SMS antiserum 
+or purified anti-GAD antib~dies.&#x27;~J* This staining 
+pattern has been interpreted to reflect the presence 
+of GAD in synaptic terminals.l* No staining was 
+seen in serial sections blotted with NHS (data not 
+shown). 
+Discussion. This study identifies two patients 
+118 NEUROLOGY 43 January 1993 
+50 
+r 
+ms .E 40 
+.C E 
+u 5 30 
+&lt;L 
+a i$ 20 
+&lt;a 
+4 
+4&#x27; 
+10 
+0 
+2.5 10 25 2.5 5 10 25 2.5 5 10 25 
+SHS-80 SMS-64 
+u Antisera (PI) 
+Figure 4. SMS antisera immunoprecipitate GAD enzyme 
+actiuity. Seventy-fiue micrograms of GAD extract of pig 
+brain was incubated for 12 hours with the specified type 
+and amount of antisera, and immunoprecipitated with 
+protein-G Sepharose. Enzyme assays of pellets and 
+supernatants (SN) were performed in a 100-/*1 reaction 
+containing 0.5 WCi *4C-glutamic acid; the %O, 
+produced, a measure of GAD activity, was measured (see 
+Methods). Conditions were established in which a linear 
+yield of %O, was obtained as a function of input enzyme 
+concentration. Similar results were obtained for both 
+SMS-80 antisera, and in several independent 
+experiments. Error bars indicate 2 SD for samples run in 
+triplicate from a single experiment. Both SMS-80 
+antisera and SMS-64 antisera, but not normal human 
+sera, were also able to immunoprecipitate GAD from 
+crude extracts of rat brain, prepared as described in 
+Methods (data not shown). 
+with clinical SMS whose disease differs from pre- 
+viously described SMS by the presence of an auto- 
+antibody that recognizes a distinct 80-kD neu- 
+ronal protein (figures 2 and 3). Although our anal- 
+ysis of anti-GAD antibodies is consistent with pre- 
+vious reports of anti-GAD antibodies in SMS,7,8 it 
+distinguishes these patients as a related but dis- 
+tinct group. The immunoprecipitation of GAD 
+enzyme activity (figure 4) and immunohistochem- 
+istry (data not shown) with SMS-80 antisera pro- 
+vide strong evidence for the presence of anti-GAD 
+antibodies in these antisera, whereas Western 
+blot analysis discriminates them from SMS-64 
+antisera. 
+The findings suggest three possible interpreta- 
+tions. First, the SMS-80 antisera may recognize a 
+variant GAD enzyme that is distinct in size from 
+the prototypic 64-kD enzyme. Although the best- 
+characterized GAD enzyme is a 64-kD protein, sev- 
+eral distinct molecular-weight species have been 
+biochemically characterized or cloned as variant 
+GAD isoen~ymes.l~-~~ In particular, Wu et all4 and 
+Denner et aP reported the purification of an 80-kD 
+protein to homogeneity from rat brain that harbors 
+GAD activity, and Huang et a124 recently reported a 
+distinct cDNA clone thought to encode this protein. 
+Second, the SMS-80 antigen might not itself har-
+
+bor GAD activity, but could be associated with the 
+GAD enzyme as part of a multisubunit complex. 
+Such a protein would be expected to co-localize 
+immunohistochemically and co-precipitate with the 
+native GAD enzyme. We observed multiple 
+immunoreactive bands in human and rat brain, 
+including one of a higher molecular weight than 80 
+kD; whether these represent cross-reacting GAD 
+species, proteolytic fragments, GAD-associated- 
+subunits, or unrelated proteins is uncertain. 
+Finally, SMS-80 antisera might harbor a form of 
+anti-64-kD GAD antibody different from the anti- 
+body present in SMS-64 patients in that it recog- 
+nizes only the native form of the 64-kD GAD 
+enzyme. Such an antibody could potentially detect 
+GAD by immunohistochemical and enzymatic 
+assay but not by Western blots. In this case, an 
+anti-80-kD antibody would be an additional compo- 
+nent of SMS-80 antisera. 
+Our observations may at least partially explain 
+the results of groups who have been unable to 
+detect GAD-64 antibodies in patients with SMSL8s9 
+In the largest published series8 of SMS patients, 
+an autoantibody directed against GAD-64 could be 
+detected in only 19 of 32 SMS patients; in six of 
+these 19 patients, Western blots failed to detect 
+the 64-kD antigen whereas sera detected an anti- 
+gen by immunohistochemistry that localized with 
+GAD. Our study makes a similar observation: two 
+SMS antisera detected an antigen that co-local- 
+izes with GAD in human brain sections but fails 
+to detect a 64-kD antigen; furthermore, we detect- 
+ed a novel 80-kD antigen on Western blot. The 
+results suggest that our Western blot technique, 
+particularly the use of purified human Purkinje or 
+cortical neurons, may provide a more sensitive 
+assay than previously employed to detect SMS- 
+associated antigens. Whether the 80-kD or other 
+variants of the GAD enzyme might be detected if 
+“negative” SMS antisera were probed against 
+more purified antigens remains to be to deter- 
+mined. 
+The interest in detecting novel antineuronal 
+antibodies in SMS extends beyond the characteri- 
+zation of GAD in the brain. Recently, GAD-64 anti- 
+bodies were reported in patients with autoimmune 
+diabetes,I5 in some cases prior to the development 
+of clinical disease.25 The relationship between SMS- 
+80 antisera and autoimmune diabetes is unclear 
+but deserves exploration, since one of our two 
+patientslO was diabetic. 
+One of the two patients has an abnormal visual 
+evoked potential (a delayed P100) that reverted to 
+normal with benzodiazepines (figure 11, consistent 
+with central GABAergic dysfunction. Prior work 
+has established evidence that GABAergic connec- 
+tions, which mediate local circuitry in the occipital 
+(striate) c~rtex,~~-~~ contribute to the PlOO in the 
+cat.30 Indirect evidence of central GABAergic dys- 
+function in SMS has been previously noted from 
+the observation that 10% or more of SMS patients 
+are reported to have epilepsy.1,7,8,31,32 
+Acknowledgments 
+The authors wish to thank Drs. M. Solimena and P. De Camilli 
+for supplying anti-GAD-64 antisera, Dr. M. Gordon for supply- 
+ing us with antisera from patient Rm, Dr. J.Y. Wu for supplying 
+partially purified preparations of GAD, Drs. Jerome Posner and 
+Torsten Wiesel for critical review of the manuscript, the New 
+York Hospital Clinical Research Center for their participation in 
+this work, and Paula Craft for technical assistance. 
+References 
+1. Moersch FP, Woltman HW. Progressive fluctuating muscular 
+rigidity and spasm (stiff-man syndrome): report of a case and 
+some observations in 13 other cases. Mayo Clin Proc 
+2. Howard FM. A new and effective treatment for stiff-man syn- 
+drome: preliminary report. Mayo Clin Proc 1963;38:203-212. 
+3. Olafson RA, Mulder DW, Howard FM. “Stiff-man” syndrome: 
+a review of the literature. Report of three additional cases 
+and discussion of pathophysiology and therapy. Mayo Clin 
+Proc 1964;39:131-144. 
+4. Lorish TR, Thorsteinsson G, Howard FM. Stiff-man syn- 
+drome updated. Mayo Clin Proc 1989;64:629-636. 
+5.Mamoli B, Heiss WD, Maida E, Podreda I. Electro- 
+physiological studies on the “stiff-man” syndrome. J Neurol 
+6.Boiardi A, Crenna P, Bussone G, Negri S, Merati B. 
+Neurological and pharmacological evaluation of a case of 
+stiff-man syndrome. J Neurol 1980;223:127-133. 
+7. Solimena M, Folli F, Denis-Donini S, et al. Autoantibodies to 
+glutamic acid decarboxylase in a patient with stiff-man syn- 
+drome, epilepsy, and type I diabetes mellitus. N Engl J Med 
+1956;31:421-427. 
+1977;217:111-121. 
+.- 
+i988;3i8:ioi2~io20. 
+- 
+8. Solimena M. Folli F. ADarisi R. Pozza G. DeCamilli P. 
+Autoantibodies to GABAergic neurons and pancreatic beta 
+cells in stiff-man syndrome. N Engl J Med 1990;322:1555- 
+1560. 
+9. Gorin F, Baldwin B, Tait R, Pathak R, Seyal M, Mugnaini E. 
+Stiff-man syndrome: a GABAergic autoimmune disorder with 
+autoantigenic heterogeneity. Ann Neurol 1990;28:711-714. 
+10.Gordon MF, Pullman S, McDonald T, Fahn S. Plasma- 
+pheresis in the treatment of stiff-man syndrome [abstract]. 
+Neurology 1991;41(suppl):223. 
+11.Darnell RB, Furneaux HM, Posner JR. Antiserum from a 
+patient with cerebellar degeneration identifies a novel pro- 
+tein in Purkinje cells, cortical neurons, and neuroectodermal 
+tumors. J Neurosci 1991;11:1224-1230. 
+12. Bradford M. A simple method for protein determination. Ann 
+Biochem 1976;72:248. 
+13. Towbin H, Staehelin T, Gordon J. Electrophoretic transfer of 
+proteins from polyacrylamide gels to nitrocellulose sheets: 
+procedure and some applications. Proc Natl Acad Sci USA 
+14. Wu JY, Denner LA, Wei SC, et al. Production and characteri- 
+zation of polyclonal and monoclonal antibodies to rat brain L- 
+glutamate decarboxylase. Brain Res 1986;373:1-14. 
+15.Baekkeskov S, Aanstoot HJ, Christgau S, et al. Identification 
+of the 64K autoantigen in insulin-dependent diabetes as the 
+GABA-synthesizing enzyme glutarnic acid decarboxylase. 
+Nature 1990;347:151-156. 
+16.Hsu S-M, Raine L, Fanger H. Use of avidin-biotin peroxidase 
+complex (ABC) in immunoperoxidase techniques: a compari- 
+son between ABC and unlabeled antibody (PAP) procedures. 
+J Histochem Cytochem 1981;29:577-580. 
+17.Oertel WH, Schmechel DE, Mugnaini E, Tappaz ML, Kopin 
+IJ. Immunocytochemical localization of glutamate decarboxy- 
+lase in rat cerebellum with a new antiserum. Neuroscience 
+18.Mugnaini E, Oertel WH. An atlas of the distribution of 
+GABAergic neurons and terminals in the rat central nervous 
+system as revealed by GAD immunohistochemistry. In: 
+Bjorkland A, Hokfelt T, eds. Handbook of chemical neu- 
+roanatomy, vol 4. GABA and neuropeptides in the central 
+January 1993 NEUROLOGY 43 119 
+1979;76:4350-4354. 
+1981;6:2715-2745.
+
+nervous system, part I. Amsterdam: Elsevier, 1985:436-608. 
+19.Kaufman DL, McGinnis JF, Krieger NR, Tobin AJ. Brain 
+glutamate decarboxylase clones in hgtll: fusion protein pro- 
+duces y-aminobutyric acid. Science 1986;232:1138-1140. 
+20. Spink DC, Porter TG, Wu SJ, Martin DC. Kinetically differ- 
+ent, multiple forms of glutamate decarboxylase in rat brain. 
+Brain Res 1987;421:235-244. 
+21. Chang YC, Gottlieb DI. Characterization of the protein puri- 
+fied with monoclonal antibodies to glutamic acid decarboxy- 
+lase. J Neurosci 1988;8:2123-2130. 
+22.Erlander MG, Tillakaratne NJK, Feldblum S, Pate1 N, Tobin 
+AJ. Two genes encode distinct glutamate decarboxylases. 
+Neuron 1991;7:91-100. 
+23.Denner LA, Wei SC, Lin HS, Lin CT, Wu JY. Brain L-gluta- 
+mate decarboxylase: purification and subunit structure. Proc 
+Natl Acad Sci USA 1987;84:668-672. 
+24.Huang W, Reed-Fourquet L, Wu E, Wu JY. Molecular 
+cloning and amino acid sequence of brain L-glutamate decar- 
+boxylase. Proc Natl Acad Sci USA 1990;87:8491-8495. 
+25.Baekkeskov S, Landin M, Kristensen J, et al. Antibodies to a 
+64,000 M, human islet cell antigen precede the clinical onset 
+of insulin-dependent diabetes. J Clin Invest 1987;79:926-934. 
+26. Iverson LL, Mitchell JF, Srinivasan V. The release of GABA 
+during inhibition in the cat visual cortex. J Physiol (Lond) 
+27.Blakemore C, Rose D. Effects of bicuculline on functions of 
+inhibition in visual cortex. Nature 1974;249:375-377. 
+28. Sillito AM. The effectiveness of bicuculline as an antagonist 
+of GABA and visually evoked inhibition in the cat’s striate 
+cortex. J Physiol (Lond) 1975;250:287-304. 
+29.Nelson SB. Temporal interactions in the cat visual system. 
+111. Pharmacological studies of cortical suppression suggest a 
+presynaptic mechanism. J Neurosci 1991;11:369-380. 
+30.Zemon V, Kaplan E, Ratliff F. Bicuculline enhances a nega- 
+tive component and diminishes a positive component of the 
+visual evoked cortical potential in the cat. Proc Natl Acad Sci 
+31.Martinelli P, Passaglia P, Montagna P, et al. Stiff-man syn- 
+drome associated with nocturnal myoclonus and epilepsy. J 
+Neurol Neurosurg Psychiatry 1978;41:458-462. 
+32.Cohen L. Stiff-man syndrome: two patients treated with 
+diazepam. JAMA 1966;195:222-224. 
+1971;212:519-534. 
+USA 1980;77:7476-7478. 
+Wilson’s disease: 
+Evidence of subgroups derived from 
+clinical findings and brain lesions 
+W. Oder, MD; L. Prayer, MD; G. Grimm, MD, PhD; J. Spatt, MD; P. Ferenci, MD; H. Kollegger, MD; 
+B. Schneider, PhD; A. Gangl, MD; and L. Deecke, MD 
+Article abstract-Using exploratory factor analysis, we prospectively investigated neuropsychiatric symptoms and 
+structural brain lesions of 47 patients with proven Wilson’s disease and identified three subgroups. The first subgroup 
+clinically exhibited bradykinesia, rigidity, cognitive impairment, and an organic mood syndrome and by MRI showed a 
+dilatation of the third ventricle. The second subgroup was characterized by ataxia, tremor, reduced functional capaci- 
+ty, and focal thalamic lesions. The third subgroup showed dyskinesia, dysarthria, an organic personality syndrome, 
+and focal lesions in the putamen and in the pallidum. 
+NEUROLOGY 1993;43:12o-i24 
+Wilson’s disease (WD, hepaticolenticular degenera- 
+tion) is a treatable autosomal recessive disorder 
+leading to an excessive accumulation of copper in 
+the liver, cornea, kidneys, and in the basal ganglia 
+of the brain.lZ2 Other brain structures, such as the 
+thalamus, the cerebellum, and the cerebral white 
+matter, may also be affected. In addition, diffuse 
+and circumscribed brain atrophies frequently occur 
+in patients with WD.3-5 Neurologic and psychiatric 
+abnormalities may result directly from neuronal 
+damage caused by copper deposition, encephalopa- 
+thy secondary to hepatic dysfunction, or both. 
+Consequently, WD is an illness with numerous pos- 
+sible presenting features.6 Besides a classification 
+into neurologic, hepatic, and asymptomatic cases,7 
+there are subgroups among neurologic patients 
+with WD. There are descriptions of different neuro- 
+logic but many reports provide a 
+rather limited number of clinical details and often 
+are without statistical evaluation. 
+In the present study, we attempted to identify 
+neurologic subgroups by correlating the results of a 
+detailed clinical evaluation to the type and the dis- 
+tribution of structural cerebral changes assessed 
+by MRI in a sample of patients with WD. This 
+prospective study is part of an ongoing research 
+From Neurologische Universitatsklinik (Drs. Oder, Spatt, Kollegger, and Deecke), Universitatsklinik fur Radiologie (Dr. Prayer), Universitatsklinik fur 
+Innere Medizin IV (Drs. Grimm, Ferenci, and Gangl), and Institut fur Medizinische Dokumentation and Statistik (Dr. Schneider), University of Vienna, 
+Vienna, Austria. 
+Received February 9, 1992. Accepted for publication in final form May 26, 1992. 
+Address correspondence and reprint requests to Univ. Doz. Dr. Walter Oder, Neurologische Universitatsklinik, Wahringer Gurtel 18-20, A-1090 Wien, 
+Austria. 
+120 NEUROLOGY 43 January 1993
+
+DOI 10.1212/WNL.43.1_Part_1.114
+1993;43;114 Neurology 
+Robert B. Darnell, Jonathan Victor, Michael Rubin, et al. 
+man syndrome−A novel antineuronal antibody in stiff
+This information is current as of January 1, 1993
+Services
+Updated Information &amp;
+ http://n.neurology.org/content/43/1_Part_1/114.full
+including high resolution figures, can be found at:
+Citations
+ http://n.neurology.org/content/43/1_Part_1/114.full##otherarticles
+This article has been cited by 2 HighWire-hosted articles: 
+  
+Permissions &amp; Licensing
+ http://www.neurology.org/about/about_the_journal#permissions
+entirety can be found online at:
+Information about reproducing this article in parts (figures,tables) or in its
+  
+Reprints
+ http://n.neurology.org/subscribers/advertise
+Information about ordering reprints can be found online:
+reserved. Print ISSN: 0028-3878. Online ISSN: 1526-632X.
+is now a weekly with 48 issues per year. Copyright © 1993 by the American Academy of Neurology. All rights 
+® is the official journal of the American Academy of Neurology. Published continuously since 1951, itNeurology
+
+DOI 10.1212/WNL.43.1_Part_1.114
+1993;43;114 Neurology 
+Robert B. Darnell, Jonathan Victor, Michael Rubin, et al. 
+man syndrome−A novel antineuronal antibody in stiff
+This information is current as of January 1, 1993
+Services
+Updated Information &amp;
+ http://n.neurology.org/content/43/1_Part_1/114.full
+including high resolution figures, can be found at:
+Citations
+ http://n.neurology.org/content/43/1_Part_1/114.full##otherarticles
+This article has been cited by 2 HighWire-hosted articles: 
+  
+Permissions &amp; Licensing
+ http://www.neurology.org/about/about_the_journal#permissions
+entirety can be found online at:
+Information about reproducing this article in parts (figures,tables) or in its
+  
+Reprints
+ http://n.neurology.org/subscribers/advertise
+Information about ordering reprints can be found online:
+reserved. Print ISSN: 0028-3878. Online ISSN: 1526-632X.
+is now a weekly with 48 issues per year. Copyright © 1993 by the American Academy of Neurology. All rights 
+® is the official journal of the American Academy of Neurology. Published continuously since 1951, itNeurology</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td colspan="8">No predicted segments were generated for this paper.</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\34.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\34.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\34.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\34.validation.json</p></main>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review Pack stage07_xml_live_test10_20260425</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><h1>Stage 07 XML Review Pack: stage07_xml_live_test10_20260425</h1><p class="meta">Static verification pack for patient/group assignment before LangExtract.</p><div class="status-row"><span class="badge">Papers: 10</span><span class="badge">Review queue: qa\validation\stage07_xml\gold_standard\stage07_xml_live_test10_20260425\review_queue.csv</span><span class="badge">Responses: qa\validation\stage07_xml\gold_standard\stage07_xml_live_test10_20260425\review_responses.csv</span><span class="badge">Gold ledger: qa\validation\stage07_xml\gold_standard\07_xml_assignment_gold_standard.csv</span></div><table class="index-table"><thead><tr><th>Paper</th><th>Title</th><th>Route</th><th>Targets</th><th>Segments</th><th>Manual Review</th><th>Reasons</th></tr></thead><tbody><tr><td><a href="papers/10.html">10</a></td><td></td><td>individual_case_split</td><td>2</td><td>0</td><td>True</td><td>offset_text_mismatch:l0001:b0003:317:3453 | offset_text_mismatch:l0002:b0004:0:1517 | offset_text_mismatch:l0002:b0005:28:823 | offset_text_mismatch:l0003:b0005:825:3452 | offset_text_mismatch:l0003:b0006:0:1278 | offset_text_mismatch:l0004:b0006:1279:1612 | offset_text_mismatch:l0004:b0007:27:678 | offset_text_mismatch:l0005:b0013:748:1210 | missing_target_evidence:p1 | missing_target_evidence:p2</td></tr><tr><td><a href="papers/11.html">11</a></td><td></td><td>group</td><td>1</td><td>3</td><td>False</td><td></td></tr><tr><td><a href="papers/17.html">17</a></td><td></td><td>individual</td><td>1</td><td>4</td><td>False</td><td></td></tr><tr><td><a href="papers/19.html">19</a></td><td></td><td>individual_case_split</td><td>2</td><td>0</td><td>True</td><td>offset_text_mismatch:l0001:b0001:2000:3437 | offset_text_mismatch:l0001:b0002:0:1040 | offset_text_mismatch:l0002:b0002:1041:1978 | offset_text_mismatch:l0002:b0003:0:1650 | offset_text_mismatch:l0003:b0004:1210:2160 | offset_text_mismatch:l0003:b0005:0:684 | missing_target_evidence:p1 | missing_target_evidence:p2</td></tr><tr><td><a href="papers/22.html">22</a></td><td></td><td>group</td><td>1</td><td>1</td><td>True</td><td>offset_text_mismatch:l0002:b0007:0:354</td></tr><tr><td><a href="papers/23.html">23</a></td><td></td><td>individual_case_split</td><td>2</td><td>7</td><td>False</td><td></td></tr><tr><td><a href="papers/25.html">25</a></td><td></td><td>group</td><td>1</td><td>5</td><td>True</td><td>offset_text_mismatch:l0003:b0010:1084:2217 | offset_text_mismatch:l0004:b0014:2255:3381 | offset_text_mismatch:l0006:b0019:968:2045 | offset_text_mismatch:l0007:b0021:964:1420 | offset_text_mismatch:l0010:b0029:0:794</td></tr><tr><td><a href="papers/29.html">29</a></td><td></td><td>individual</td><td>1</td><td>6</td><td>False</td><td></td></tr><tr><td><a href="papers/30.html">30</a></td><td></td><td>individual_case_split</td><td>4</td><td>20</td><td>True</td><td>offset_text_mismatch:l0001:b0014:78:130</td></tr><tr><td><a href="papers/34.html">34</a></td><td></td><td>group</td><td>1</td><td>0</td><td>True</td><td>offset_text_mismatch:l0001:b0001:234:1130 | unknown_target:l0002:p1 | offset_text_mismatch:l0002:b0001:2878:3456 | offset_text_mismatch:l0002:b0002:0:546 | unknown_target:l0003:p1 | offset_text_mismatch:l0003:b0003:0:2793 | unknown_target:l0004:p2 | offset_text_mismatch:l0004:b0003:2795:3448 | unknown_target:l0005:p1 | unknown_target:l0005:p2 | offset_text_mismatch:l0005:b0005:19:1347 | unknown_target:l0006:p1 | unknown_target:l0006:p2 | offset_text_mismatch:l0006:b0005:1349:2433 | unknown_target:l0007:p1 | unknown_target:l0007:p2 | offset_text_mismatch:l0007:b0005:2435:3063 | offset_text_mismatch:l0008:b0005:3065:3489 | offset_text_mismatch:l0008:b0006:0:1010 | offset_text_mismatch:l0009:b0006:1011:1827 | offset_text_mismatch:l0009:b0007:0:890 | offset_text_mismatch:l0010:b0007:892:2062 | unknown_target:l0011:p1 | unknown_target:l0011:p2 | offset_text_mismatch:l0011:b0007:2064:2555 | unknown_target:l0012:p1 | offset_text_mismatch:l0012:b0007:2557:3491 | undeclared_target_without_source_evidence:p1 | undeclared_target_without_source_evidence:p2 | missing_target_evidence:g1</td></tr></tbody></table></main>
+</body>
+</html>

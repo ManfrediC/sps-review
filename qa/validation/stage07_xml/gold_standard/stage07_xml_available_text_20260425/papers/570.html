@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 570</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 570</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001</span></div><h2>Source Text</h2><div class="source-text"><span class="source-segment role-patient_specific" id="src-s0001" data-segment="s0001" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">ISOLATED HYPERTROPHY OF THE TIBIALIS
+ANTERIOR MUSCLE IN THE STIFF LEG
+SYNDROME
+A 63-year-old woman with a medic al history of insulin-
+dependent diabetes mellitus and pernicious anemia
+presented with progressive continous stiffness and superim-
+posed painful spasms in the left leg for 3 years. Her symp-
+toms were often triggered by su dden auditory and tactile
+stimuli or by emotional stress. These symptoms resulted in
+walking difﬁculties and limitations in daily activities.
+Clinical examination showed abnormal posturing of
+the left ankle. It was slightly dorsiﬂexed, and active and
+passive ankle movements were severely limited due to
+associated pain. There was striking isolated hypertrophy
+of the left tibialis anterior muscle. There were no signs
+of truncal rigidity or lumbar hyperlordosis.
+Brain and spinal MRI were normal. EMG showed a typ-
+ical pattern of continuous low-frequency ﬁring of normal
+motor unit potentials indistinguishable from voluntary
+muscle contraction in the tibialis anterior muscle, without
+concomitant antagonist muscle activation, despite attempts
+at muscle relaxation by the patient. Sudden auditory and
+tactile stimuli could not provoke muscle spasms during
+EMG examination. EMG of the abdominal, paraspinal,
+and other limb muscles showed no abnormalities. Because
+stiff leg syndrome was suspect ed, antiglutamic acid decar-
+boxylase (GAD) antibodies were assayed and found to be
+highly increased (&gt;2000 U/ml; normal &lt;5 U/ml). Insulin
+and islet cell antibodies were not measured.
+MRI of the lower limbs conﬁrmed isolated hypertro-
+phy of the tibialis anterior muscle (Fig. 1). Cerebrospi-
+nal ﬂuid (CSF) analysis was normal, and there were no
+oligoclonal bands. Diazepam 5 mg twice daily and
+monthly intravenous immunoglobulin infusions led to
+signiﬁcant clinical improvement. A diagnosis of stiff leg
+syndrome was made.
+To the best of our knowledge, muscle hypertrophy has
+never been described in the stiff person or stiff leg syn-
+drome. Several cases of stiff person syndrome were
+reported with symptoms conﬁned to one (most often dis-
+tal) limb, usually the lower leg.
+1,2 The spasms are sponta-
+neous, reﬂex-induced, or induced by voluntary movement,
+in the absence of truncal rigidity or exaggerated lumbar
+lordosis. In contrast to the typical stiff person syndrome,
+serum/CSF anti-GAD antibodies and oligoclonal bands in
+the CSF are most often absent in the stiff limb syndrome,
+making a deﬁnitive diagnosis sometimes difﬁcult.
+3
+Isolated tibialis anterior muscle hypertrophy in our
+patient seemed to be related to persistent muscle con-
+traction, as has been seen in other muscle disorders
+associated with involuntary muscle contraction (e.g.,
+myotonic syndromes, rippling muscle syndrome, and
+dystonia).
+Giovanni Castelnovo, MD
+Dimitri Renard, MD
+Stephane Bouly, MD
+Pierre Labauge, MD, PhD
+Department of Neurology, CHU Nıˆmes, Hoˆpital Caremeau,
+Nıˆtmes,France</span></div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>-2907</td><td>high</td><td>Deterministic pass-through for attribution-safe route.</td><td>ISOLATED HYPERTROPHY OF THE TIBIALIS ANTERIOR MUSCLE IN THE STIFF LEG SYNDROME A 63-year-old woman with a medic al history of insulin- dependent diabetes mellitus and pernicious...</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\570.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\570.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\570.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\570.validation.json</p></main>
+</body>
+</html>

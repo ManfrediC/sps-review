@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 22</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 22</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: failed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>offset_text_mismatch:l0002:b0007:0:354</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001</span></div><h2>Source Text</h2><div class="source-text">Movement Disorders 
+Vol. 8, No. 4, 1993, pp. 484-488. 
+0 1993 Movement Disorder Society 
+Therapeutic Trial of Milacemide in Patients With 
+Myoclonus and Other Intractable Movement Disorders 
+Mark Forrest Gordon, Roland0 Diaz-Olivo, Ann L. Hunt, and Stanley Fahn 
+Department of Neurology. The Neurological Institute, Columbia-Presbyterian Medical Center, 
+New York, New York, U.S.A. 
+Summary: We performed a therapeutic trial with the glycine precursor, mila- 
+cemide, on 10 patients with intractable movement disorders. Six had myoclo- 
+nus of various etiologies and one each had progressive supranuclear palsy, 
+Filipino X-linked dystonia with parkinsonism, painful legs and moving toes, 
+and stiff-person syndrome. Milacemide was initiated at a dose of 2,400 mg/day, 
+orally, and increased gradually to a maximum of 4,800 mg/day. No clear-cut 
+observable improvement occurred. There were no serious adverse effects. Key 
+Words: Milacemide-Glycine-Myoclonus-Stiff-person syndrome-X-linked 
+dystonia-Progressive supranuclear palsy-Cortical-basal ganglionic degener- 
+ation-Striatonigral degeneration. 
+Myoclonus refers to sudden, brief, shock-like in- 
+voluntary movements caused by active muscle con- 
+tractions (positive myoclonus) or by sudden, brief 
+lapses of tonic contraction in active postural mus- 
+cles (negative myoclonus) (1). Current therapy for 
+myoclonus is often not satisfactory. Treatments 
+may include clonazepam, valproic acid, primidone, 
+and L-5-hydroxytryptophan (L-5-HTP) with carbi- 
+dopa (to prevent peripheral decarboxylation). In ad- 
+dition, piracetam, fluoxetine, clomipramine, dopa- 
+mine or dopamine agonists, opiates (codeine), tri- 
+hexyphenidyl, carbamazepine, and tetrabenazine 
+have occasionally been beneficial. Specific thera- 
+pies for the various types of myoclonus have not 
+been delineated. Epileptic and cortical myoclonus 
+may respond best to anticonvulsants, such as clo- 
+nazepam, valproic acid, and primidone. 
+The brainstem and spinal cord inhibitory neuro- 
+transmitter, glycine, has been implicated in the 
+pathophysiology of myoclonus. Stereotactic infu- 
+sion of the glycine receptor antagonist, strychnine, 
+into the medullary reticular formation induces gen- 
+Address correspondence and reprint requests to Dr. s. Fahn, 
+Neurological Institute, 710 West 168th Street, New York, NY 
+10032-3784, U.S.A. 
+eralized stimulus-sensitive myoclonus in the rat (2). 
+The glycine receptor is involved in urea-induced 
+myoclonus (3). Whole-brain and brainstem glycine 
+levels are decreased in DDT-induced myoclonus in 
+mice and rats (43). Intraventricular glycine sup- 
+presses DDT-induced myoclonus (6). 
+Animal models of myoclonus, implicating glycin- 
+ergic dysfunction led Truong and Fahn (7) to try 
+glycine in patients with myoclonus; however, gly- 
+cine in doses up to 6 g/day was unsuccessful in the 
+treatment of myoclonus. CSF glycine levels did not 
+change during treatment; this finding suggested that 
+this dose did not effectively enter the brain. Animal 
+studies had previously shown that glycine does not 
+easily cross the blood-brain barrier (8,9). 
+Milacemide (2-n-pentylaminoacetamide), rnanu- 
+factured by Searle, is a prodrug of glycine. Milace- 
+mide readily penetrates the blood-brain barrier; in 
+the brain; it is metabolized by monoamine oxi- 
+dase-B (MAO-B) to glycineamide and then to gly- 
+cine (10). In rats, systemic administration of mila- 
+cemide blocks the myoclonus induced by DDT (1 1) 
+as effectively as glycine infused into the ventricles 
+(6). Glycine levels in the brain increase with admin- 
+istration of milacemide, but serine levels do not 
+change. Therefore, increasing brain glycine levels, 
+484
+
+MILACEMIDE IN MYOCLONUS 485 
+either by systemic administration of milacemide or 
+by intraventricular infusion of glycine, may be a 
+mechanism to produce an antimyoclonic effect. It is 
+not clear if milacemide, while preventing myoclo- 
+nus in the DDT model, could also do so via seroto- 
+nin neurotransmission since it inhibits MAO-B ac- 
+tivity (12-14). Milacemide also increases y-ami- 
+nobutyric acid (GABA) concentrations in the 
+substantia nigra (10). 
+Milacemide has an acceptable safety profile in 
+animals (10). In humans, milacemide has been eval- 
+uated for safety in healthy volunteers. Milacemide 
+has been relatively well-tolerated in therapeutic tri- 
+als conducted in patients with epilepsy (15). Ad- 
+verse effects may include vasomotor disorders 
+(flushing), nausea and vomiting, palpitations, and 
+elevations in hepatic transaminases (10). These ab- 
+normalities generally return to normal following 
+cessation of drug or reduction of dosage (10). 
+Since glycine, GABA, and the monoamines are 
+major inhibitory neurotransmitters in the CNS, mi- 
+lacemide may be a potential agent in the therapy of 
+myoclonus and other movement disorders. Brown 
+et al. (16), in an open-label trial of milacemide ti- 
+trated to 2,400 mglday in seven subjects with my- 
+oclonus and three with stiff-person syndrome, 
+found no significant improvement. We report a trial 
+of milacemide in nine patients with intractable 
+movement disorders. 
+METHODS 
+Milacemide was obtained from Searle (Skokie, 
+IL, U.S.A.). The study was approved by the Insti- 
+tutional Review Board, and written informed con- 
+sent was obtained from each subject enrolled. 
+The study had three phases. Phase I was an open- 
+label dose-titration lead-in, beginning at a dosage of 
+800 mg, orally, three times a day, and not exceeding 
+1,600 mg three times a day (4,800 mglday). During 
+Phase I, patients who did not respond or who ex- 
+perienced significant treatment-related adverse 
+events were withdrawn. Phase I1 was a double- 
+blind, randomized design that employed the optimal 
+dose determined in Phase I or a matching placebo at 
+the same dose. Subjects were transferred immedi- 
+ately from Phase I to Phase 11, without gradual 
+withdrawal of drug. Phase 111 was similar to Phase 
+11, without gradual withdrawal of drug. Phase 111 
+was similar to Phase 11, with the blinded treatment 
+reversed. The study was terminated when the max- 
+imal duration of treatment in Phase I11 was attained. 
+Subjects could participate as inpatients or outpa- 
+tients. In Phase I, dose titration occurred over 12 
+days for inpatients and over 21 days for outpatients, 
+followed by 1 week of treatment at the optimal 
+dose. In Phase I1 and Phase 111, inpatients received 
+milacemide or placebo for 1 week and outpatients 
+received milacemide or placebo for 3 weeks. 
+Potential subjects were men or nonpregnant 
+women (either sterile or using adequate contracep- 
+tives) between the ages of 18 and 90 years who suf- 
+fered from myoclonus or another intractable move- 
+ment disorder and who were otherwise in good 
+health. For at least 30 days before enrollment, sub- 
+jects were on a stable regimen of any drugs used to 
+treat their myoclonus or other movement disorder. 
+Patients with serious medical conditions or labora- 
+tory abnormalities, recent histories of alcohol or 
+drug abuse, other concurrent or recent investiga- 
+tional drug studies, known hypersensitivity to mi- 
+lacemide, or previous participation in this study 
+were excluded. 
+Screening was performed within 14 days of en- 
+rollment and included informed consent, medical 
+history, physical and neurologic examination, elec- 
+trocardiogram, laboratory tests (complete blood 
+count, electrolytes, liver functions, urine analysis, 
+and pregnancy test), videotape, and assessment of 
+severity. Global assessment was on a four-point 
+scale: 0, no signs; 1, mild signs, not interfering with 
+activities; 2, moderate signs, interfering with some 
+activities; 3, severe signs, interfering with many ac- 
+tivities; and 4, marked signs, interfering with most 
+activities. Ratings were done by the subjects, family 
+members, and treating physicians. Laboratories 
+tests were repeated during the study and obtained at 
+the end of each phase. 
+Ten subjects were enrolled: six with myoclonus 
+of various etiologies and four others with intracta- 
+ble movement disorders (one each with progressive 
+supranuclear palsy, Filipino x-linked dystonia with 
+parkinsonism, painful legs and moving toes, and 
+stiff-person syndrome; Table 1). 
+CASE REPORTS 
+Case 1 
+A 40-year-old man with rhythmic segmental my- 
+oclonus of the right arm and neck, which began at 
+age 16, has a history of congenital right hemiparesis 
+and hemiatrophy and seizures treated with phenyt- 
+oin, 400 mg/day, and phenobarbital, 200 mg/day. 
+His clinical picture has been described previously 
+(17). 
+Movement Disorders, Vol. 8, No. 4, 1993
+
+486 M. F. GORDON ET AL. 
+TABLE 1. Clinical details of subjects and response to milacemide 
+Case 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+40 
+67 
+35 
+18 
+64 
+71 
+57 
+39 
+68 
+62 
+Sex 
+M 
+F 
+M 
+M 
+F 
+M 
+F 
+M 
+F 
+F 
+Diagnosis 
+Segmental myoclonus 
+Postanoxic myoclonus 
+Rhythmic myoclonus 
+Myoclonus in Ramsay 
+Hunt syndrome 
+Myoclonus in presumed SND 
+Myoclonus in presumed CBGD 
+Top dose 
+(mg/day) 
+4,800 
+4,800 
+3,600 
+4,800 
+4,800 
+4.800 
+PSP 4,800 
+X-linked dystonia 4,800 
+Painful legs and moving toes 3,600 
+Stiff-person syndrome 4,800 
+Effect 
+None 
+None 
+Excess appetite 
+Increased myoclonus 
+None 
+Mild improvement in 
+None 
+None 
+Exacerbation 
+None 
+Phase 
+I only 
+PSP, progressive supranuclear palsy; SND, striatonigral degeneration; CBGD, cortical-basal ganglionic 
+degeneration. 
+Case 2 
+A 67-year-old woman has posthypoxic action my- 
+oclonus that developed following respiratory ob- 
+struction and prolonged coma. Her clinical picture 
+has been described previously (18,19). 
+Case 3 
+A 35-year-old man with essential oscillatory my- 
+oclonus beginning at about age 20 has had partial 
+benefit on clonazepam, 3 mgtday, and baclofen, 60 
+mglday. His clinical picture has been described pre- 
+viously (20). 
+Case 4 
+A 21-year-old man with childhood onset of pro- 
+gressive action myoclonus and ataxia, coupled with 
+a few seizures that are well-controlled, carries a 
+diagnosis of Ramsay Hunt syndrome. His treatment 
+has included clonazepam, 1 mg; valproic acid, 500 
+mg; and acetazolamide, 750 mgtday. 
+Case 5 
+A 64-year-old woman has progressive dystonia, 
+parkinsonism, and myoclonus. Her diagnosis is un- 
+known, but it is presumed to be striatonigral degen- 
+eration. She receives concurrent treatment with 
+clonazepam, 5.5 mg; primidone, 62.5 mg; carba- 
+mazepine, 300 mg; carbidopa, 67.5 mg, and levodo- 
+pa 250 mg; and protriptyline, 30 mg/day. 
+Case 6 
+A 71-year-old man has a 3-year history of pro- 
+gressive tremulousness, stiffness, slowness, and 
+fixed dystonic posturing of his right arm; the trem- 
+ulousness is continual myoclonic jerks. He did not 
+respond to high-dose levodopa. His presumed diag- 
+nosis was cortical-basal ganglionic degeneration, 
+and he takes clonazepam, 1.5 mg/day. 
+Case 7 
+A 57-year-old woman has a few-year history of 
+progressive parkinsonism, retrocollis, and ophthal- 
+moparesis; she is presumed to have progressive su- 
+pranuclear palsy. Her treatment has included aman- 
+tadine, 200 mg; selegiline, 10 mg; and imipramine, 
+150 mglday . 
+Case 8 
+A 39-year-old Filipino man with X-linked dysto- 
+nia-parkinsonism has severe freezing of gait. His 
+treatment has included diazepam, 30 mg; tri- 
+hexyphenidyl, 30 mg; and carbidopa, 75 mg, and 
+levodopa, 300 mglday . 
+Case 9 
+A 68-year-old woman has a 17-year history of 
+painful legs and moving toes. She is troubled by 
+severe pain, which has been refractory to multiple 
+therapies. 
+Case 10 
+A 62-year-old woman with stiff-person syndrome 
+has a 5-year history of progressive stiffness and in- 
+termittent muscle spasms in her lower back and 
+proximal legs, responding partially to valproic acid, 
+1,500 mgtday, and diazepam, 30 mgtday. She also 
+has a history of pernicious anemia, treated with i.m. 
+vitamin B,,, and diabetes mellitus. Antibodies were 
+present in her serum against glutamic acid decar- 
+boxylase, gastric parietal cells, pancreatic islet 
+cells, and microsomal fraction of the thyroid. 
+Movement Disorders, Vul. 8, No. 4, 1993
+
+MILACEMIDE IN MYOCLONUS 487 
+RESULTS 
+<span class="source-segment role-group_summary" id="src-s0001" data-segment="s0001" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">The clinical rating score did not change signifi- 
+cantly in nine patients treated with milacemide. 
+Only one (case 6, with presumed cortical-basal gan- 
+glionic degeneration) had some apparent benefit 
+with less severe myoclonus in the open-label trial. 
+He continued through Phase I1 and Phase I11 with- 
+out clear benefit. 
+</span>Eight of the I0 subjects completed Phase I (the 
+open trial) to a maximum dose of 4,800 mglday. 
+Two patients withdrew from the study due to side 
+effects at 3,600 mglday without any benefit. A pa- 
+tient (case 3) with rhythmic myoclonus experienced 
+excessive appetite. The patient (case 8) with painful 
+legs and moving toes had a transient exacerbation 
+of her condition. Both side effects resolved after 
+discontinuation of milacemide. 
+Full blood counts, electrolytes, and liver function 
+tests did not change significantly. 
+DISCUSSION 
+The 10 subjects in our study did not benefit from 
+milacemide in doses up to 4,800 mg/day. Brown et 
+al. (16), in an open-label trial of milacemide titrated 
+to 2,400 mg/day in seven subjects with myoclonus 
+and three with stiff-man syndrome, also found no 
+significant improvement. 
+The inhibitory neurotransmitter, glycine, was un- 
+successful in the treatment of myoclonus in doses 
+up to 6 g/day (7), possibly due to poor penetration of 
+glycine into the brain from the peripheral circula- 
+tion. However, milacemide, a glycine precursor 
+known to readily cross the blood-brain barrier, did 
+not improve the myoclonus in the six myoclonus 
+patients in this study or in the seven patients pre- 
+viously studied (16). It is possible that the dose of 
+milacemide was too low to sufficiently increase gly- 
+cine levels in the CNS. However, the ineffective- 
+ness of milacemide in these cases of myoclonus 
+may suggest that defective glycinergic neurotrans- 
+mission is not an important factor in myoclonus. 
+Precise mechanisms for the various types of myoc- 
+lonus are not known. Posthypoxic myoclonus may 
+involve serotonergic (21,22) and GABA-ergic (23) 
+neurotransmission, as suggested by reduced CSF 
+levels of 5-hydroxyindoleacetic acid (SHIAA), the 
+major metabolite of serotonin, and of GABA. Post- 
+anoxic myoclonus improves with drugs that en- 
+hance serotonin activity [such as L-~-HTP, the im- 
+mediate synthetic precursor to serotonin; tryp- 
+tophan with a monoamine oxidase inhibitor (22); or 
+fluoxetine, an inhibitor of serotonin reuptake (24)] 
+and also with drugs, such as valproic acid and clo- 
+nazepam, that enhance GABA-ergic inhibitory in- 
+fluence (21,25). 
+Brown et al. (16) postulated that the discrepancy 
+between the effectiveness of glycine and milace- 
+mide in improving DDT-induced myoclonus and 
+their ineffectiveness in treating myoclonus in hu- 
+mans may be due to the fact that animal experi- 
+ments for myoclonus involve manipulation of the 
+reticular formation and thus may not be an appro- 
+priate model for cortical and spinal myoclonus. 
+However, our case 2 is believed to have reticular 
+reflex myoclonus (18), and she failed to improve. 
+Defective glycinergic systems have been impli- 
+cated in some animal models of spinal rigidity 
+(26,27). Schmidt et al. (28) noted that the rigidity in 
+stiff-person syndrome resembles that produced by 
+strychnine poisoning and experimental cord isch- 
+emia, both of which are associated with a loss of 
+normal glycinergic inhibition to motoneurons from 
+spinal interneurons. This observation provoked 
+speculation that abnormalities in glycinergic inhibi- 
+tion by spinal interneurons might play a role in stiff- 
+person syndrome (28). Trials of glycine in stiff- 
+person syndrome (28,29) were not successful, 
+possibly because of the poor penetration of the 
+blood-brain barrier by glycine (7). 
+There is more evidence for an imbalance in the 
+GABA-ergic system in stiff-person syndrome. Med- 
+ications with GABA-ergic properties, such as diaz- 
+epam (30), valproic acid (31), clonazepam (32), and 
+baclofen (33,34), are beneficial in some patients. 
+Antibodies against glutamic acid decarboxylase, the 
+enzyme that synthesizes GABA, are present in the 
+serum and CSF of many stiff-person patients 
+(35,36). 
+We offer two possible explanations for the lack of 
+benefit in subjects treated with milacemide. Milace- 
+mide and its metabolite, glycine, may have no role 
+in the treatment of myoclonus, stiff-person syn- 
+drome, or the other diseases studied, or the dose 
+may have been insufficient to increase glycine lev- 
+els in the brain. 
+Acknowledgment: Supported by a grant from the My- 
+oclonus Research Foundation. 
+REFERENCES 
+1. Fahn S, Marsden CD, Van Woert MH. Definition and clin- 
+ical classification of myoclonus. Adv Neurol 1986;43: 1-5. 
+2. Chung E, Van Woert MH. DDT myoclonus: sites and mech- 
+anism of action. Exp Neurol 1984;85:273-282. 
+3. Chung E, Yocca F, Van Woert MH. Urea-induced myoclo- 
+Movement Disorders, Vol. 8, No. 4, 1993
+
+488 M. F. GORDON ET AL. 
+nus: medullary glycine antagonism as mechanism of action. 
+Life Sci 1985;36:1051-1058. 
+4. Kar PP, Matin MA. Possible role of cerebral amino acids in 
+acute neurotoxic effects of DDT in mice. Eur J Pharmucol 
+1974;25:3&amp;39. 
+5. Truong DD, de Yebenes JG, Pezzoli G, Jackson-Lewis V, 
+Fahn S. Glycine involvement in DDT-induced myoclonus. 
+Mov Disord 1988;3:77-87. 
+6. Truong DD, Pranzatelli MR, Jackson-Lewis V, Fahn S. In- 
+tracerebroventricular glycine blocks myoclonus induced by 
+p,p’-DDT in the rat. Ann Neurol 1986;20: 149. 
+7. Truong DD, Fahn S. Therapeutic trial with glycine in myoc- 
+lonus. Mov Disord 1988;3:222-232. 
+8. Oldendorf W. Brain uptake of radiolabeled amino acids, 
+amines, and hexoses after arterial injection. Am J Physiol 
+9. Christophe J, Kutzner R, Nguyen-Bui ND, Damien C, et al. 
+Conversion of orally administered 2-n-pentylaminoaceta- 
+mide into glycinamide and glycine in the rat brain. Life Sci 
+10. Milacernide (CP 1552 S) investigarionul brochure. Skokie, 
+IL. Searle, 1987, document EC7-87-01-900. 
+11. Truong DD, Pranzatelli M, Jackson LV, Fahn S. DDT- 
+induced myoclonus in rats: effects of therapeutic agents. 
+Neurology 1987;37(suppl 1):377. 
+12. Truong DD, Diamond B, Pezzoli G, Mena MA, Fahn S. 
+Monoamine oxidase inhibitory properties of milacemide in 
+rats. Life Sci 1989;44:1059-1066. 
+13. Truong DD, Galloway MP, Pezzoli G, Jamrozik Z, Fahn S. 
+Milacemide increases 5-hydroxytryptaniine and dopamine 
+levels in rat brain. Possible mechanisms of milacemide an- 
+timyoclonic property in the p,p’-DDT-induced myoclonus. 
+Pharrnacol Biochem Behav 1989;32:993-1001. 
+14. Janssens de Varebeke P, Pauwels G, Buyse C, David- 
+Remacle M, et al. The novel neuropsychotropic agent mila- 
+cemide is a specific enzyme-activated inhibitor of brain 
+monoamine oxidase B. J Neurochem 198933: 1 109-1 116. 
+15. Houtkooper MA, Van Oorschot CA, Rentmeester TW, et al. 
+Double-blind study of milacemide in hospitalized therapy- 
+resistant patients with epilepsy. Epilepsia 1986;27:255-262. 
+16. Brown P, Thompson PD, Rothwell JC, Day BL, Marsden 
+CD. A therapeutic trial of milacemide in myoclonus and the 
+stiff-person syndrome. Mov Disord 1991 ;6:73-75. 
+17. Fahn S, Singh N. Segmental tremor vs. rhythmic myoclo- 
+nus: successful treatment with serotonin precursors. Neu- 
+rology 1980;30:383-384. 
+18. Fahn S. Posthypoxic action myoclonus: review of the liter- 
+ature and report of two new cases with response to valproate 
+and estrogen. Adv Neurol 1979;26:49-84. 
+19. Fahn S. Newer drugs for posthypoxic action myoclonus: 
+197 I ;221: 1629-1 639. 
+1983;33:533-541. 
+observations from a well-studied case. Adv Neurol 1986;43: 
+20. Fahn S, Singh N. An oscillating form of essential myoclo- 
+nus. Neurology 1981;31:80. 
+21. Van Woert MH, Rosenbaum D, Chung E. Biochemistry and 
+therapeutics of posthypoxic myoclonus. Adv Neurol 1986; 
+43: 171-181. 
+22. Chadwick D, Hallett M, Hams R, Jenner P, Reynolds EH, 
+Marsden CD. Clinical, biochemical, and physiological fea- 
+tures distinguishing myoclonus responsive to 5-hydroxy- 
+tryptophan, tryptophan with a monoamine oxidase inhibitor, 
+and clonazepam. Bruin 1977;100:455-487. 
+23. Enna SJ, Ferkany JW, van Woert M, Butler IJ. Measure- 
+ment of GABA in biological fluids: effect of GABA trans- 
+aminase inhibitors. Adv Neurol 1979;23:741-750. 
+24. Van Woert MH, Magnussen I, Rosenbaum D, Chung E. 
+Fluoxetine in the treatment of intention myoclonus. Clin 
+Neuropharmacol 1983;6:49-54. 
+25. Macdonald RL, McLean MJ. Anticonvulsant drugs: mech- 
+anisms of action. Adv Neurol 1986;44:713-736. 
+26. Semba T, Kano M. Cats with local tetanus rigidity. Science 
+1969; 16457 1-572. 
+27. Stern P, Hadzovic S. Effect of glycine on experimental hind- 
+limb rigidity in rats. Lije Sri 1970;9:955-959. 
+28. Schmidt RT, Stahl SM, Spehlmann R. A pharmacologic 
+study of the stiff-man syndrome. Correlation of clinical 
+symptoms with urinary 3-methoxy-4-hydroxy-phenyl glycol 
+excretion. Neurology 1975 ;25 ;622-626. 
+29. Mamoli B, Heiss W-D, Maida E, Podreka I. Electrophysio- 
+logical studies on the “stiff-man” syndrome. J Neurol 1977; 
+217:111-121. 
+30. Howard FM. A new and effective drug in the treatment of 
+stiff-man syndrome: preliminary report. Mayo Clin Proc 
+1963;38:203-212. 
+31. Spehlmann R, Norcross K, Rasmus SC, Schlageter NL. Im- 
+provement of stiff-man syndrome with sodium valproate. 
+Neurology 1981 ;31: 1162-1 163. 
+32. Westblom U. Stiff-man syndrome and clonazepam. JAMA 
+1977;237: 1930. 
+33. Miller F, Korsvik H. Baclofen in the treatment of stiff-man 
+syndrome. Ann Neurol 1981;9:511-512. 
+34. Whelan JL. Baclofen in the treatment of “stiff-man’’ syn- 
+drome. Arch Neurol 1980;37:600-601. 
+35. Solimena M, Folli F, Denis-Donini S, Comi GC, Pozza G, et 
+al. Autoantibodies to glutamic acid decarboxylase in a pa- 
+tient with stiff-man syndrome, epilepsy, and type I diabetes 
+mellitus. N Engl J Med 1988;318:1012-1020. 
+36. Solimena M, Folli F, Aparisi R, Pozza G, De Camilli P. 
+Autoantibodies to GABAergic neurons and pancreatic beta 
+cells in the stiff-man syndrome. N Engl J Med 1990;322: 
+197-199. 
+1555-1560. 
+Movement Disorders, Vol. 8, No. 4, 1993</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>12085-12412</td><td>medium</td><td>Overall trial outcome for all enrolled subjects, including the stiff-person syndrome case.</td><td>The clinical rating score did not change signifi- cantly in nine patients treated with milacemide. Only one (case 6, with presumed cortical-basal gan- glionic degeneration) had...</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\22.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\22.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\22.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\22.validation.json</p></main>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 19</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 19</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: failed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: True</span></div><h2>Validation Warnings</h2><ul class="warning-list"><li>offset_text_mismatch:l0001:b0001:2000:3437</li><li>offset_text_mismatch:l0001:b0002:0:1040</li><li>offset_text_mismatch:l0002:b0002:1041:1978</li><li>offset_text_mismatch:l0002:b0003:0:1650</li><li>offset_text_mismatch:l0003:b0004:1210:2160</li><li>offset_text_mismatch:l0003:b0005:0:684</li><li>missing_target_evidence:p1</li><li>missing_target_evidence:p2</li></ul><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">No assigned segment</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">No assigned segment</span></div><h2>Source Text</h2><div class="source-text">StiffMan Syndrome
+E. ROSS CLIFTON, DO, and S. H. SUBRAMONY, MD, Jackson, Miss
+ABSTRACT: Stiff-man syndrome (SMS) is a rare disorder of the central nervous system
+characterized by painful involuntary stiffening of axial muscles accompanied by spasms.
+These are often precipitated by tactile or emotional stimuli, volitional movement, and
+startling noises. Until recently, little has been known about the pathogenesis of SMS.
+There is evidence now to support the hypothesis that SMS may be an autoimmune
+disease. This is leading to changes in the way this disease is diagnosed and treated. We
+describe two patients with SMS and review the pathogenesis, diagnosis, and treatment.
+STIFF-MAN SYNDROME (SMS) was originally
+described in 1956 by Moersch and Woltman,! who
+observed 14 patients over 32 years. These patients
+had involuntary stiffening of muscles, especially
+axial muscles, and painful muscle spasms. Only
+84 cases of SMS have been reported.? In 1967,
+Gordon et al? reviewed 44 cases in the world liter-
+ature and proposed diagnostic criteria for SMS
+based on clinical and electromyographic findings
+as well as effects of neuromuscular blocking
+agents. Clinical findings’ included the following:
+(1) Symmetrical, progressive, continuous stiffness
+of axial musculature becomes constant in weeks;
+““stone hard’’ and ‘“‘board-like’” are descriptions
+that were given to muscles. (2) Spasms are precipi-
+tated by noise or emotional stimuli. (3) Rigidity
+is abolished in sleepXthough others* have since
+reported that in a series of 13 patients, many had
+only a decrease in muscle activity during sleep).
+(4) As a rule, patients have normal motor and sen-
+sory function except for difficulty in ambulation
+and limitation of range of motion, which exacer-
+bates the condition. (5) Patients generally have
+normal intellect.
+Objective neurophysiologic tests such as elec-
+tromyography (EMG), response to myoneural
+blocking agents, effect of chemical block of
+peripheral motor fibers, and response to general
+anesthesia are also used to help establish the diag-
+nosis of SMS.
+CASE REPORTS
+&quot;Case 1. A 46- -year-old black woman was referred for evalu-
+ation of muscle spasms in the legs, gradually worsening over
+the month before evaluation. She began to have intermittent
+‘‘stiffening’’ in the right leg, with gradual involvement of the’
+From the Department of Neurology, University of Mississippi
+Medical Center, Jackson.
+Reprint requests to E. Ross Clifton, DO, Department of Neurol-
+ogy, University Medical Center, 2500 N State St, Jackson, MS 39216.
+left leg over the next year. Shortly before referral the paraspi-
+nal muscles became involved, and the neck muscles became
+so rigid that she could not move her head. The spasms were
+painful and were exacerbated by loud noises, emotional upset,
+and cool damp weather. She did not notice appreciable change
+during sleep. There was no history of stroke, she had had no
+surgery, was not diabetic, and had no thyroid dysfunction.
+Some years earlier, renal tubular acidosis (idiopathic type) had
+been diagnosed. She had no history of neurologic problems
+or autoimmune disease. She was taking Bicitra (sodium citrate
+and citric acid) and potassium supplements.
+Physical examination showed a pleasant woman in moder-
+ate distress. General physical examination was unremarka-
+ble except for neurologic findings. She was alert and oriented.
+Muscle tone was increased especially in the back and lower
+extremities. Strength could not be adequately assessed because
+of the rigidity. Reflexes were normal and plantar responses
+were flexor. No sensory abnormalities were identified.
+Laboratory studies showed normal values for electrolytes,
+erythrocyte sedimentation rate, liver panel, and ceruloplas-
+min. Creatine phosphokinase value and results of a thyroid
+profile were also normal. Serum protein electrophoresis
+showed a polyclonal gammopathy. Magnetic resonance imag-
+ing (MRI) of the brain and spine was unremarkable. The elec-
+troencephalogram (EEG) revealed no epileptiform activity.
+Electromyography showed continuous motor unit activity
+resembling normal recruitment that the patient could only par-
+tially suppress. Serum was obtained, and glutamic acid decar-
+boxylase (GAD) autoantibodies, assayed by Solimena et al®
+were present. Cerebrospinal fluid was not obtained.
+The patient was treated with baclofen (Lioresal), 120 mg
+per day in divided doses, and diazepam (Valium), 15 mg/day,
+and showed significant improvement over the next 8 months.
+She was able to discontinue the diazepam and decrease the
+baclofen to 10 mg/day. She has returned to work.
+Case 2. A 25-year-old black man was referred because of
+muscle stiffness and painful spasms, especially of the thighs,
+abdomen, and shoulders, which had insidiously developed in
+1987. His motion was limited by these episodes. Gradually,
+the stiffness and spasms became painful and continuous and
+were exacerbated by noises or emotional upset. He believed
+the stiffness was diminished by sleep, but did not completely
+subside. Muscle biopsy in 1988 was unremarkable, and the
+disorder was thought to be ‘‘functional.’’ Eventually, the
+patient sought further medical attention because walking had
+become nearly impossible. His neck was becoming so rigid
+that he could not turn his head. He could not dress himself
+or care for his personal hygiene. There was no medical his-
+Clifton and Subramony © STIFF-MAN SYNDROME 711
+
+tory of diabetes mellitus, thyroid disease, or previous neuro-
+logic illnesses. There was no family history of neurologic or
+autoimmune disorder. The spasms were worse in cold
+weather, and whenever anyone touched him the spasms
+became more painful. Emotional upset also exacerbated the
+spasms.
+Physical examination was unremarkable. Neurologically,
+the patient was alert and oriented and appeared to be of nor-
+mal intellect. He had a pronounced lumbar lordosis. His prox-
+imal muscles were rock hard and somewhat hypertrophied.
+There was no significant weakness, and findings on sensory
+examination were normal. Reflexes were normal and plantar
+reflexes were flexor. His gait was severely limited by the stiff-
+ness of his axial muscles. He could not bend down to put his
+shoes on. He walked with a cane and had a tendency to lose
+his balance. Results of admission laboratory studies were nor-
+mal, except for an elevated creatine phosphokinase (CPK)
+value of 729 U/L. Aldolase was normal. The EEG was
+unremarkable as was the chest x-ray film. Cranial MRI re-
+vealed a congenitally narrow corpus callosum and ischemic
+changes in the right centrum semiovale. Electromyography
+revealed abnormal involuntary continuous motor unit poten-
+tial firing, with normal appearance of individual motor unit
+potential. Cerebrospinal fluid studies showed normal glucose
+and protein values and no cells. A sample of CSF was sent
+to Solimena et al5 for assay; no autoantibodies to GAD were
+found. Tests for parietal (CSF) cell antibodies were also nega-
+tive. Thyroid profile yielded normal findings.
+Treatment was begun with baclofen, 20 mg three times per
+day. He has gradually become more self-sufficient, and
+although he still has significant stiffness, the spasms are less
+painful.
+DISCUSSION
+Pathogenesis and Etvology
+Several possible etiologic mechanisms for SMS
+have been proposed and ultimately rejected.*°
+Psychiatric disease, metabolic disorders,® and
+Renshaw cell dysfunction®!° are such etiologic
+mechanisms that have been explored and rejected.
+Guilleminault et al‘! and Schmidt et al!? postu-
+lated that SMS may be due to an imbalance
+between catecholaminergic and gamma-
+aminobutyric acid (GABA) (ie, GABA-ergic) sys-
+tems. Meinck et al® further supported this GABA-
+ergic catecholaminergic theory. They found that
+the beneficial action of diazepam could be
+explained as being either the result of inhibition
+of central catecholamine neurons or of activation
+of GABA-ergic mechanisms or of both. Miller and
+Korsvik!? and Whelan‘* reported improvement in
+two cases of SMS with administration of baclofen,
+an analog of GABA. Spehlmann et al! added
+sodium valproate to a treatment regimen in one
+case of SMS, with remarkable results. Because
+sodium valproate is thought to augment GABA-
+ergic transmission, more credence was given to
+the GABA-ergic-catecholaminergic theory.
+In 1980 Maida et al&#x27;® suggested that SMS may
+be of inflammatory origin, based on elevation of
+IgG and acute phase reactant levels in one patient.
+Werk et al’? described a patient with SMS and
+thyrotoxicosis. This relationship had been previ-
+ously investigated by Gordon et al,? who con-
+cluded that the two disease processes were not
+related, since the patient still had SMS after he
+was successfully treated for thyrotoxicosis.
+In 1988 Solimena et al&#x27;® described a patient with
+SMS, type I diabetes mellitus and epilepsy. The
+presence of autoantibodies and her HLA pheno-
+type led them to consider SMS as an autoimmune
+disease. They found autoantibodies to GABA-
+ergic neurons in their patient’s CSF and serum.
+Glutamic acid decarboxylase, the enzyme that
+catalyzes the conversion of glutamate to GABA,
+was the principal autoantigen. Solimena et al&gt; fur-
+ther investigated autoimmune relationships in 33
+patients with SMS; in 20 of them, autoantibod-
+ies to GABA-ergic neurons were found to be the
+principal autoantigen. There was also a signifi-
+cant association between SMS and _insulin-
+dependent diabetes mellitus. They concluded that
+GAD autoantibodies are detectable in at least 60%
+of patients with SMS and that autoantibodies
+against GABA-ergic neurons are a useful marker
+in the diagnosis of the disease. They also suggested
+a possible clinical difference between patients with
+SMS who have antibodies to GABA-ergic neu-
+rons and those who do not.
+Treatment
+Until recently, benzodiazepines have been the
+mainstay of treatment of SMS.&#x27;° Other GABA-
+ergic drugs such as baclofen&#x27;* and sodium
+valproate’ have also proved effective in treatment
+of SMS. Plasmapheresis*® and corticosteroids?
+have been reported to be beneficial.
+CONCLUSIONS
+Both cases fulfill the clinical criteria proposed
+to suggest the diagnosis of SMS.** In agreement
+with Lorish and Thoroteinsson,* we did not
+believe that myoneural blockade, general anesthe-
+sia, or peripheral nerve block, as Gordon et al?
+proposed, would add to the diagnostic specificity.
+Gordon et al based this idea on the work of Werk
+et al,!” who showed that succinylcholine abolished
+electromyographic activity at rest and during
+startle-induced spasm. We also concur with Lor-
+ish and Thoroteinsson* that these maneuvers may
+needlessly add to the risk of patient morbidity.
+Both patients had episodes of aching and stiffen-
+ing of the axial musculature that progressed to
+involve the limb and neck muscles. Both patients
+had difficulty moving about, and both had pain-
+ful spasms, especially when startled or emotion-
+ally upset. Neither patient could detect significant
+difference in the stiffness during sleep. Both
+patients had normal intellect and normal findings
+712 July 1992 ¢© SOUTHERN MEDICAL JOURNAL © Vol. 85, No. 7
+
+on neurologic examination except for the limita-
+tions in movement due to the excessive stiffness.
+Both patients had similar electromyographic pat-
+terns demonstrating continuous motor unit poten-
+tials. Both responded favorably to baclofen,
+though the patient in Case 1 had a more signifi-
+cant response. Interestingly, the patient in Case
+2 was thought to be “‘hysterical,’’? and others?!:?2
+have reported similar labeling of their patients.
+Patient 1 had autoantibodies to GABA-ergic neu-
+rons and patient 2 did not. Neither patient had
+thyroid disease, seizures, or diabetes mellitus, and
+neither had a family history of autoimmune
+disease.
+Over the past 2 years, the diagnosis of SMS has
+been supplemented by the determination of anti-
+bodies against GABA-ergic neurons. There has
+also been increasing evidence that SMS may be
+of autoimmune etiology, primarily based on the
+work of Solimena et al.&#x27;® The two patients
+presented here have no currently identified
+autoimmune disease, and one of the two has no
+autoantibodies to GABA-ergic neurons; however,
+both fulfilled the clinical criteria for SMS and both
+had electromyographic findings supportive of the
+diagnosis. There were no significant clinical differ-
+ences between these two patients with regard to
+antibody status, as suggested by Solimena et al.°
+Our first patient had hyperchloremic acidosis
+consistent with renal tubular acidosis (RTA),
+which has been associated with a variety of
+autoimmune diseases, most commonly Sjégren’s
+syndrome, systemic lupus erythematosus (SLE),
+and lupus anticoagulant.?3 Whether RTA itself is
+an autoimmune disease has not been determined,
+but it is known that there is a high prevalence of
+renal tubular acidosis associated with other
+autoimmune diseases. Therefore, more credibil-
+ity is given to the hypothesis that SMS is an
+autoimmune disease. It would also be useful to
+investigate the occurrence of antibodies to GAD
+in patients with Sjégren’s syndrome.
+Acknowledgment. We thank James J. Corbett, MD, for his
+review of the manuscript.
+References
+1. Moersch FP, Woltman HW: Progressive fluctuating muscular
+rigidity and spasm (‘‘stiff-man’’ syndrome): report of a case and
+some observation in 13 other cases. Proc Staff Meet Mayo Clin
+31:421-427, 1956
+10.
+11.
+12.
+13.
+14.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+. Blum P, Jankovic J: Stiff-person syndrome: an autoimmune dis-
+ease. Mov Disord 6:12-20, 1991
+. Gordon EE, Janisyko DU, Kaufman L: A critical survey of stiff-
+man syndrome. Am J Med 42:582-599, 1967
+. Lorish TR, Thoroteinsson G: Stiff-man syndrome updated. Mayo
+Clin Proc 64:629-636, 1989
+. Solimena M, Folli F, Aparisi R, et al: Autoantibodies to GABA-
+ergic neurons and pancreatic beta cells in stiff-man syndrome.
+N Engl J Med 322:1555-1560, 1990
+. Meinck HM, Ricker K, Conrad B: The stiff-man syndrome:
+new pathophysiological aspects from abnormal exteroceptive
+reflexes and the response to clomipramine, clonidine, and tizani-
+dine. / Neurol Neurosurg Psychiatry 47:280-287, 1984
+. Heiligman R, Paulson MJ: The stiffman syndrome: a psychiatric
+disease? Int J Psychiatry Med 7:363-371, 1967
+. Price TL, Alloth EH: The stiff-man syndrome. Br Med J
+1:682-685, 1958
+. Howard F: A new and effective drug in the treatment of stiff-
+man syndrome. Mayo Clin Proc 38:203-212, 1963
+Olafson RA, Mulder DW, Howard FM: Stiff-man syndrome:
+a review of the literature, report of three additional cases and
+discussion of pathophysiology and therapy. Mayo Clin Proc
+39:131-144, 1964
+Guilleminault C, Sigwald J, Castaigne P: Sleep studies and ther-
+apeutic trials of L-dopa in a case of stiff-man syndrome. Eur Neurol
+10:89-96, 1973
+Schmidt RT, Stahl SM, Spehlmann R: A pharmacologic study
+of the stiff-man syndrome. correlation of clinical symptoms with
+urinary 3-methoxy-4-hydroxy-phenyl glycol excretion. Neurol-
+ogy 25:622-626, 1975
+Miller F, Korsvik H: Baclofen in the treatment of stiff-man syn-
+drome. Ann Neurol 9:511-512, 1981
+Whelan JL: Baclofen in treatment of the stiff-man syndrome.
+Arch Neurol 37:600-601, 1980
+. Spehlmann R, Norcross K, Rasmus SC, et al: Improvement of
+stiff-man syndrome with sodium valproate. Neurology
+31:1162-1163, 1981
+Maida E, Reisner T, Summer K, et al: Stiff-man syndrome with
+abnormalities in CSF and computerized tomography findings.
+report of a case. Arch Neurol 37:182-183, 1980
+Werk EE, Sholiton LJ, Monell RJ: The stiff-man syndrome and
+hyperthyroidism. Am J Med 31:647, 1961
+Solimena M, Folli F, Denis-Donini S, et al: Autoantibodies to
+glutamic acid decarboxylase in a patient with stiff man syndrome,
+epilepsy, and type 1 diabetes mellitus. N Engl J Med
+318:1012-1020, 1988
+Howard FM: A new and effective treatment of the stiff-man syn-
+drome: preliminary report. Mayo Clin Proc 38:203-212, 1963
+Vicari AM, Folli F, Pozza A, et al: Plasmapheresis in the treat-
+ment of stiff-man syndrome (Letter). N Engl J Med 320:1499,
+1989
+Asher R: A woman with the stiff-man syndrome. Br Med J 1:265,
+1958
+Trethowan WH, Allsop JL, Turner B: The ‘‘stiff-man’’ syn-
+drome. a report of two further cases. Arch Neurol 3:448-456, 1960
+Olsen ML, Arnett FC, Rosenbaum D, et al: Sjogren’s syndrome
+and other rheumatic disorders presenting to a neurology serv-
+ice. J Auiormmun 2:477-483, 1989
+Clifton and Subramony © STIFF-MAN SYNDROME 713</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td colspan="8">No predicted segments were generated for this paper.</td></tr></tbody></table><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\19.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\19.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\19.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\19.validation.json</p></main>
+</body>
+</html>
