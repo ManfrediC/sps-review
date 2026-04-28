@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 23</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 23</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0008, s0009</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">s0004, s0005, s0006, s0007, s0008, s0009</span></div><h2>Source Text</h2><div class="source-text">sos6. 291-382. 386
+1. Ndon JA. Capnoestophaga canimorsus septicemia caused by a dog bite
+{in hairy ell leukemin patient. J Clin Microbiol 1982; 30: 211. 213.
+
+Stiff-man syndrome treated with intrathecal
+baclofen
+
+Richard D. Penn, MD, and Eugene A. Mangieri, MD
+
+Stiff-man syndrome is a rare, progressive motor disorder caus:
+ing disabling muscle rigidity and spasms, which is often associated with insulin-dependent diabetes mellitus. In patients with
+this syndrome, Solimena et al! documented the presence of
+autoantibodies against glutamic acid decarboxylase (GAD)
+enzyme scleetively concentrated in pancreatic beta cells
+‘CNS neurons secreting the major inhibitory neurotransmitter
+amingbutyric acid (GABA). Although plasmapheresis has been
+tried.? diazepam remains the most effective treatment; it acts on
+the GABA receptors, making: them more sensitive to GABA.*
+Unfortunately, as the disoase progresses, diazepam becomes
+loss effective and severe spasms occur. Baclofen is a direct
+GABA-B agonist that docs not require GABA secretion to aeti-
+‘ate its receptor. Thus, baclofen would logically be a useful medication for treating stff-man syndrome if it could be provided
+‘sufficiently high concentration to the spinal cord receptors. We
+have treated severe spasticity of spinal origin with intrathecal
+baclofen and found that it significantly reduces spasms and
+rigidity when oral medications failed.” We now report similar
+‘success with two patients with stiff man syndrome.
+
+<span class="source-segment role-patient_specific" id="src-s0001" data-segment="s0001" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Patient 1. A 42-year old man reported 7 years of progressive
+rigidity and spasms that began in hix trunk musculature and
+gradually involved both legs and made walking difficult.
+Diazepam had afforded initial relief, but as the disease pro:
+‘gressod, he became disabled and unable to work at his job as a
+machinist. Pain became worse as the intensity and frequency of
+‘spasms increased, He gradually clovated his diazepam dose to
+140 mg/d, without significant improvement. At age 34, he devel-
+‘oped diabetes mellitus and was placed on insulin. His only novrologie abnormalities were demonstrated on motor examination.
+He had increased muscle tone in his axial muscles, with a pronounced lumbar lordosis, Mild sensory stimulation or volitional
+movements would set off sovere spasms in his back and legs.
+His reflexes were normal and Babinski sgn was not present.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0002" data-segment="s0002" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">‘A lumbar puncture was performed and 75 ug baclofen (Ciba-</span>
+
+<span class="source-segment role-patient_specific" id="src-s0003" data-segment="s0003" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">,, Basel, Switzerland) was injected. One hour later, his
+gidity and spasms completely disappeared and ho was able to
+‘walk normally. By 8 hours, the effect was decreasing, and by 24
+hhours he returned to baseline. A programmable drug pump and
+catheter (Synchro Med, Medtronic, Ine., Minneapolis, MN) going
+to the lumbar subarachnoid space was implanted, and hi
+‘spasms wore completely controlled with baclofen 120 ygid. Over
+tho next 2% years, the dose of intrathecal baclofen was gradually
+increased to 1, 200 gid to suppress his spasms; diazepam has
+been reduced to 20 mg/d, but is sill necessary in low dose. Ho
+thas had an episode of moningitis requiring antibiotics and
+replacement of the pump and cathoter system, and twice the
+catheter has dislocated from the subarachnoid space and needed
+replacement. Each time he stopped receiving intrathecal
+‘baclofen his spasms recurred.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0004" data-segment="s0004" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">Patient 2. A 68-year-old woman was diagnosed with stiff:
+‘man xyndrome in 1988. At that time, she had a one-year history
+‘of progressive spasms in her back and legs and difficulty with
+fit and she required a walker. Pain occurred during attacks of
+spasms. On motor examination, she had hyperextension of t
+lumbar spine and sovore spasms at the hips and knees, without
+‘weaknoss, atrophy, or fasciculations, The reflexes were normal
+and a Babinski sign was not prescnt. An extensive work-up was
+normal except for antibodies to GAD in her CSF (by Dr.
+De Curicelli at Yale University). Diazepam was given and helped
+initially, but a year later she was bedridden and having
+markedly inereased pain. Intrathecal preservative-froe methylprednisolone and systemic immunotherapy with azathioprine
+plasmapheresis were tried without significant effect, By
+1992, she had developed ankylosis at her hip, knees, and foet,
+secondary atrophy of her leg muscles, and severe pain due to her</span>
+
+<span class="source-segment role-patient_specific" id="src-s0005" data-segment="s0005" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">2412 NEUROLOGY (3 November 1983</span>
+
+<span class="source-segment role-patient_specific" id="src-s0006" data-segment="s0006" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">spasms. Oral nareoties only provided partial relief, and on
+‘numerous oceasions she was admitted for intravenous nareotics..</span>
+
+<span class="source-segment role-patient_specific" id="src-s0007" data-segment="s0007" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">Intrathecal baclofen was tried, and 75 jg produced excellent
+pain relief, stopping the spasms for 4 hours. A drug pump was then
+Implanted, with a constant infusion of 120 wai ove the lat 9
+months, She has good control af her spasms and pain. She remains
+bedridden because of lower-extremity muscle atrophy and ankylosis.</span>
+
+<span class="source-segment role-shared" id="src-s0008" data-segment="s0008" data-label="p1 p2 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Discussion. Both patients meet the criterion for stiff man
+syndrome outlined by Lorish et al.® Dinzepam was initially
+effective, but as the disease progressed even high doses (&gt;90 and
+&gt;140 mg/d) were inadequate. Since diazepam works by potentiation of the effect of endogenously released GABA on the GABA
+receptor, disease progression may reflect lower GABA availability as GABAergic neurons are lost. Baclofen is a direct agonist of
+GABA-B receptors and does not require endogenous GABA. This
+‘may explain its usefulness in our two patients. Unfortunately,
+the second patient developed severe muscle and skeletal
+‘changes, and these changes have not reversed. Her major prob Jem of painful spasms hax been controlled. The first patient was
+treated earlier in his course and fared better; he continues to do
+well ater 2% years of intrathecal baclofen treatment.</span>
+
+<span class="source-segment role-shared" id="src-s0009" data-segment="s0009" data-label="p1 p2 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Intrathecal baclofen is now approved for the treatment of
+‘spasticity of spinal origin, and is available at many centers. On
+the basis of our experience with these two patients, wo recom-
+‘mend testing patients with stiff man&#x27;s syndrome with a lumbar
+subarachnoid 76-meg baclafon bolus injection when oral diazepam
+is no longer providing adequate symptomatic relief. If successful,
+‘drug pump can be implanted for chronic administration. If our
+‘observations on two patients are confirmed in other patients with
+stiff man syndrome, it will be the first example of direct replace-
+‘ment of a neurotransmitter by intrathecal infusion,</span>
+
+Acknowledgment
+T&#x27;d like to thank Marcelino I. Chavez, MD, for referring his
+patient and helping in his care.
+
+Fram the Department of Neurosurgery (Dr. Penn), Rush: Preshyterian
+Medical Center, Chicago, Iz and the Northport Hospital (Dr. Mangier),
+College of Community Health Sciences, Northport, Al.
+
+Recital March 4, 1988 Accepted for plication in final form Apri 31
+
+Address correspondence and reprint requests fo Dr. Richard D. Penn.
+‘Hush: Presbyterian Medical Center, Department of Neurosurgery, 1725 W.
+Harrison, Suite 755, Chicago, IL 60612.
+
+References
+
+1 Salimena M, Fall ¥, Dent Dini 8. Autoniedis we atm
+id decarboxylase in &amp; pationt with stiff-raan syndremne, yeand
+{ype I dinbetes melhtonN Enel Med 1988; 3181012-1020,
+
+2, Solimena Bf, Felli F, Aparisi R, ot al. Autoantibodies to GABAerxic
+‘peuroes and pancreatic beta celle in atf Fman syndrome. N Engl J Med
+1990; 322- 1586-1560.
+
+3. Brashear HR, Phillips LH Il, Autoantibodies to
+
+‘eaponse to plasmapheresis in tiffsman syndrome. Neurology
+ions sne-592.
+
+4. Young RR, Delwaide PJ. Drug therapy: spasticity (second of two parts)
+IN EinglJ Sted 1981, 904: 96-99,
+
+5. Penn RD, Savoy S, Corcos D, ot al. tntrathecal baclofen for severe
+spinal spasticity. N Engl 4 Med 1989: 320: 1617-1621.
+
+6. Loris TR, Thorsteinsson G, Howard FM. Stiffman syedrome pdat-
+‘ed. Mayo Clin Proc 1989; 64: 629-696..
+
+‘The Clinical Dementia Rating (CDR): Current
+version and scoring rules
+
+John C. Morris, MD
+
+‘The Washington University Clinical Dementia Rating! (CDR) is
+increasingly used in longitudinal studies and clinical trials for
+‘staging the severity of Alzheimer&#x27;s disease (AD). The CDR is
+derived from a semistructured interview with the patient and
+an appropriate informant and rates impairment in each of six
+cognitive categories (Memory, Orientation, Judgment and
+Problom Solving, Community Affairs, Home and Hobbies, and
+Personal Care) on a five-point scale in which none = 0, question-</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>1483-2344</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>Patient 1. A 42-year old man reported 7 years of progressive rigidity and spasms that began in hix trunk musculature and gradually involved both legs and made walking difficult....</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>2346-2404</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>‘A lumbar puncture was performed and 75 ug baclofen (Ciba-</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>2406-3289</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>,, Basel, Switzerland) was injected. One hour later, his gidity and spasms completely disappeared and ho was able to ‘walk normally. By 8 hours, the effect was decreasing, and b...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>3291-4264</td><td>reviewed</td><td>Reviewed Patient 2 case block.</td><td>Patient 2. A 68-year-old woman was diagnosed with stiff: ‘man xyndrome in 1988. At that time, she had a one-year history ‘of progressive spasms in her back and legs and difficul...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>4266-4297</td><td>reviewed</td><td>Reviewed Patient 2 case block.</td><td>2412 NEUROLOGY (3 November 1983</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>4299-4423</td><td>reviewed</td><td>Reviewed Patient 2 case block.</td><td>spasms. Oral nareoties only provided partial relief, and on ‘numerous oceasions she was admitted for intravenous nareotics..</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>4425-4745</td><td>reviewed</td><td>Reviewed Patient 2 case block.</td><td>Intrathecal baclofen was tried, and 75 jg produced excellent pain relief, stopping the spasms for 4 hours. A drug pump was then Implanted, with a constant infusion of 120 wai ov...</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0003</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>4747-5608</td><td>reviewed</td><td>Reviewed shared discussion for both patients.</td><td>Discussion. Both patients meet the criterion for stiff man syndrome outlined by Lorish et al.® Dinzepam was initially effective, but as the disease progressed even high doses (&gt;...</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0003</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>5610-6242</td><td>reviewed</td><td>Reviewed shared discussion for both patients.</td><td>Intrathecal baclofen is now approved for the treatment of ‘spasticity of spinal origin, and is available at many centers. On the basis of our experience with these two patients,...</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\23.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\23.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\23.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\23.validation.json</p></main>
+</body>
+</html>

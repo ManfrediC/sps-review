@@ -1,0 +1,519 @@
+round_id,row_type,paper_id,paper_title,stage07_schema_version,source_text_sha256,prepared_source_sha256,route_mode,annotation_mode,validation_status,roundtrip_status,manual_review_required,manual_review_reasons,segment_id,logical_segment_id,source_block_id,source_start,source_end,predicted_targets,predicted_target_labels,predicted_role,predicted_confidence,predicted_evidence,segment_text,segment_text_sha256,paper_issue_prompt,paper_json_path,segments_json_path,annotated_text_path,validation_json_path,paper_html_path,generated_at_utc,prediction_correct,review_status,reviewed_targets,reviewed_role,paper_level_issue,reviewer_notes,reviewer_id,reviewed_at_utc
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0001,l0003,b0003,3650,3965,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed introductory shared context for both patients.,"We describe here 
+two patients with SPS found to have GAD autoanti- 
+bodies in their sera and CSF, and whose associated 
+autoimmune diseases, other autoantibodies, and re- 
+sponse to corticosteroid drugs provide additional 
+evidence of an autoimmune etiology and a role for 
+immunotherapy in this disabling disease.",6cfd939cd2d19c8b75ecf077afd754f171f2cc92ca8276bf4686a3ec3cc39e93,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0002,l0001,b0003,3967,7043,p1,Patient 1,patient_specific,reviewed,Reviewed Patient 1 case block.,"PATIENT 1 
+A 63-year-old Hispanic woman was referred for 
+evaluation of increased tone in her lower extremi- 
+ties. She had been well until 6 years previously, 
+when she began to experience occasional episodes 
+of sudden, painful stiffening of the left hip and knee, 
+usually provoked by walking. The spasms lasted 
+10-15 s, and then resolved spontaneously. Her 
+symptoms progressed, increasing in severity and 
+frequency, and in June 1988 the patient's left leg 
+became persistently stiff, rendering her unable to 
+walk. At that time, she also had severe, chronic, 
+recurrent back and abdominal pain. By the end of 
+the year, her right leg had also begun to stiffen. The 
+stiffness was much decreased during sleep. There 
+was no history of diabetes, trauma, seizures, myo- 
+clonus, weakness, or sensory difficulties. Her or- 
+thopedist had prescribed multiple medications 
+including propoxyphene napsylate and acetamino- 
+phen (Darvocet), quinine sulfate, phenytoin, so- 
+dium dantrolene, carbamazepine, baclofen, and di- 
+azepam. Only the last two provided at least partial 
+relief of her spasms. Past medical history was sig- 
+nificant only for a cholecystectomy in 1976 and 
+treated pulmonary tuberculosis with documented 
+recovery. She has not used alcohol or tobacco prod- 
+ucts. No one else in her family has had symptoms 
+similar to hers. Both of her sisters died of compli- 
+cations of insulin-dependent diabetes mellitus 
+(IDDM). Review of systems was significant for 
+long-standing vitiligo. 
+Physical examination on admission to our service 
+revealed a small, chronically ill-appearing woman 
+lying in bed. She had vitiligo of the hands, feet, and 
+neck. There was increased tone and tenderness in 
+the muscles of the neck. Her paraspinous muscles 
+were markedly rigid and tender and she had severe 
+kyphoscoliosis. Tone and strength in the arms was 
+normal. However, tone was markedly increased in 
+her legs, with palpable rigidity and tenderness of the 
+muscles. Her feet were held in the equinus position 
+and her knees were hyperextended by her stiffness 
+(videotape segment 1). There were no fascicula- 
+tions. Strength could not be assessed because of the 
+rigidity. Plantar response was silent, and deep ten- 
+don reflexes could not be elicited in the knees or 
+ankles. Functionally, the patient was unable to walk 
+because of the stiffness in her legs and was unable 
+to sit up because of the deformity of her spine. She 
+had an intact intellect and sensorium and there were 
+no other neurologic abnormalities. 
+Results of routine laboratory studies including se- 
+rum electrolytes, blood urea nitrogen (BUN), cre- 
+atinine, glucose, and liver enzymes were normal; 
+creatinine phosphokinase was 256. Lyme titers 
+were negative. Radiographs of the chest and lum- 
+bosacral spine demonstrated arthritic changes only. 
+Esophagogastroduodenoscopy, ultrasound of the 
+abdomen, and computed tomography (CT) of the 
+abdomen all were normal. Lumbar myelogram, CT 
+of the brain, and magnetic resonance (MR) imaging 
+of the lumbosacral spine were also normal. Muscle",87dd223ae450cf2722560579aa0fcdadd54ef15d4a3d3946393ebc4586ef5d82,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0003,l0001,b0004,7045,8790,p1,Patient 1,patient_specific,reviewed,Reviewed Patient 1 case block.,"biopsy revealed mild neurogenic atrophy and type 
+I1 atrophy. A complete myelogram revealed only 
+mild cervical spondylosis with neither stenosis of 
+the canal nor cord compression. Conduction studies 
+of the right posterior tibial nerve were normal at 52 
+m/s, whereas that of the left posterior tibial nerve 
+was slightly slowed at 44 mls. EMG demonstrated 
+continuous spontaneous motor unit activity in all 
+tested muscles of the left leg and in the lumbar and 
+thoracic paraspinous muscles up to the midthoracic 
+level bilaterally. Intermittent, spontaneous motor 
+unit activity also occurred in the right leg and could 
+be provoked by startling or tactile stimulation. 
+There were no fasciculations, fibrillations, or posi- 
+tive sharp waves. 
+Spinal epidural blockade was performed with tet- 
+racaine (Pontocaine) at the T9 level. The patient's 
+pain was relieved, and her rigidity decreased 
+enough to allow 20"" of active flexion in the left knee 
+and 40"" in the right (videotape segment 2). EMG 
+recording demonstrated cessation of the continuous 
+motor activity within 10 min. Routine studies of the 
+CSF taken at the time of the myelogram including 
+glucose, protein, and cell count were all normal and 
+no oligoclonal bands were detected. GAD autoanti- 
+bodies, assayed by Dr. Solimena and Dr. De Camilli 
+(5), were present in both the serum and CSF by 
+light-microscopy immunocytochemistry and West- 
+ern blot. In addition, autoantibodies to islet cells 
+and gastric parietal cells were present in the serum. 
+This patient was reported as case 17 in the second 
+report of Solimena et al. (5). 
+The patient was unable to tolerate diazepam in 
+high doses because of excessive sedation. The com- 
+Movement Disorders, Vol. 6, No. I, 1991",1eaf0d6925e6e8c9b80730e057affb375dd8b836ab2b5b64a993735959e47160,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0004,l0001,b0005,8792,9500,p1,Patient 1,patient_specific,reviewed,Reviewed Patient 1 case block.,"14 P. BLUM AND J. JANKOVIC 
+bination of 50 mg of baclofen and 30 mg of diazepam 
+daily provided only modest relief of symptoms. One 
+hundred milligrams of prednisone per day was 
+added to this regimen. Within 10 days, the patient 
+noted a marked decrease in her stiffness and spasm. 
+One year later, baclofen has been discontinued, di- 
+azepam has been decreased to 15 mg per day, and 
+prednisone is slowly being tapered down from 40 
+mg every other day. The stiffness in her hips, 
+knees, and back is markedly reduced. Residual 
+stiffness holds her ankles in a position of plantar 
+flexion bilaterally. She is now capable of sitting 
+without aid, although she cannot walk because of 
+her ankle contractures.",9a83a0f99171477dc64735b834f180b50079b07b19bc7284a8a974f7a4d2d6e0,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0005,l0002,b0005,9502,12244,p2,Patient 2,patient_specific,reviewed,Reviewed Patient 2 case block.,"PATIENT 2 
+A 53-year-old black man was referred for evalu- 
+ation of a 2?h-year history of progressive stiffness of 
+the lower extremities. His initial symptom was in- 
+voluntary upward curling of the toes of both feet. 
+Stiffness subsequently developed in the remaining 
+muscles of his legs. At the same time, he began to 
+have chronic neck and low-back pain. One year be- 
+fore admission, the patient also began to have pain- 
+ful spasms of his legs superimposed on his stiffness, 
+usually provoked by passive stretching. His wife 
+noted that his spasms ceased and his stiffness re- 
+solved somewhat during sleep. He began to require 
+assistance arising from bed and walking. There was 
+no history of diabetes, trauma, seizures, myoclo- 
+nus, weakness, or sensory symptoms. The patient 
+had been treated unsuccessfully with nonsteroidal 
+antiinflammatory medications, sodium dantrolene, 
+carbamazepine, trihexyphenidyl, and carbidopa/ 
+levodopa (Sinemet). Treatment with phenytoin af- 
+forded him mild relief. Low-dose diazepam moder- 
+ately improved his stiffness and he was able to walk 
+without assistance. One of the patient’s sisters has 
+IDDM; otherwise, the family history was unre- 
+markable. 
+General physical and neurological examination 
+results were normal except for the motor system. 
+Tone and strength were normal in the arms, but 
+tone was markedly increased in all muscle groups of 
+the legs, with dystonic posturing of both feet man- 
+ifesting as extension of the metatarsal-phalangeal 
+joints and flexion of the distal interphalangeal 
+joints. Strength of the legs was difficult to assess 
+because of rigidity. Deep tendon reflexes were nor- 
+mal throughout and plantar reflexes were silent. 
+The patient walked stiffly and turned with great dif- 
+ficulty. 
+The following laboratory test results were nor- 
+mal: electrolytes, BUN, creatinine, glucose, uric 
+acid, calcium, phosphorus, total protein, albumin, 
+serum electrophoresis, liver enzymes, folate, vita- 
+min B 12, hemoglobin, hematocrit, mean corpuscular 
+volume, platelet count, urinalysis, erythrocyte sed- 
+imentation rate, rapid plasma reagin, antinuclear 
+antibody, and rheumatoid factor. A 5-h glucose tol- 
+erance test also showed normal results. A complete 
+myelogram revealed mild lumbar and cervical 
+spondylosis without stenosis of the canal. Radio- 
+graphs of the chest and spine, electrocardiogram, 
+electroencephalogram, and somatosensory evoked 
+potentials were all unremarkable. Muscle biopsy 
+was similar to that of patient 
+1. MR imaging of the 
+brain and spinal cord were normal. EMG revealed 
+the presence of continuous spontaneous motor unit 
+potentials in the muscles of the legs, which was 
+abolished by spinal epidural block. As the block",997be66c1833c76458ef3dbb0fd33bb48feda5675333f7eb994e2f30b2b69196,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0006,l0002,b0006,12246,13594,p2,Patient 2,patient_specific,reviewed,Reviewed Patient 2 case block.,"began to wear off, the patient was able to move his 
+legs nearly normally. CSF glucose, protein, and cell 
+count were unremarkable and there were no oligo- 
+clonal bands. CSF IgG/albumin ratio was normal. 
+Autoantibodies to GAD were detected in both se- 
+rum and CSF by the method of Solimena et al. (4). 
+In addition, gastric parietal cell, pancreatic islet 
+cell, microsomal, and thyroglobulin autoantibodies 
+were all present in the patient’s serum. This patient 
+was reported as case 20 in the second report of 
+Solimena et al. (5). The human lymphocyte antigen 
+(HLA) phenotype of the patient was A3,24; 
+B14(w6),w57(w4); DRw6,7(DQw1 ,w3; DRw52,53). 
+At the time of admission, diazepam therapy was 
+withdrawn slowly to determine the baseline muscle 
+stiffness of the patient. After a few days, he became 
+markedly stiffer (videotape segment 1). The patient 
+then began supplemental treatment with 100 mg of 
+prednisone per day for 1 week and then 100 and 20 
+mg on an alternate-day basis. Within 10 days of 
+starting prednisone, the patient began to notice a 
+marked decrease of his stiffness (videotape segment 
+2). He was able to decrease the dose of diazepam 
+from 40 to 20 mg per day. A year later, his dose of 
+prednisone has been decreased to 40 mg every other 
+day, but he still requires 20 mg of diazepam daily for 
+residual stiffness.",ad551bf35fd4fb66ca3e2ef7569039cc7fde4abf0964997addb95ba25f994334,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0007,l0004,b0006,13708,13817,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed discussion comparing both patients.,"Both fulfill the diagnostic criteria of Gordon et al. 
+(2). In addition to spasm and progressive stiffness of",7447992da14d0c12b10d0bbf99bcc835ce707b9353e5650b28c4ed53c9b8fcc3,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,10,,stage07_xml_v1,2d3e0f8f2841baf52f4d8cd6f238f303acabff5f37a6786af10f5ebe588be335,10eba55c7ccdafdf46d366f6fce8a9bc8aaca8eec979f3272c7821905f3735cc,individual_case_split,reviewed_gold,passed,passed,False,,s0008,l0004,b0007,13886,14311,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed discussion comparing both patients.,"axial musculature, each patient had characteristic 
+EMG findings of continuous motor unit activity. 
+The stiffness as well as the EMG findings improved 
+after spinal anesthesia. 
+In addition, both of our patients exhibited evi- 
+dence of autoimmunity. Patient l had vitiligo and 
+two sisters with IDDM; patient 2 had no recognized 
+clinical autoimmune diseases, but had several se- 
+rum autoantibodies and a sister with IDDM.",bb3abd4cf409a3c64859ce364b2f0a8198ab4d9eb07e6646e655743770c9389f,,data\extraction_json\stage07_xml\papers\10.json,data\extraction_json\stage07_xml\segments\10.segments.json,data\extraction_json\stage07_xml\annotated_text\10.annotated.txt,data\extraction_json\stage07_xml\validation\10.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\10.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,11,,stage07_xml_v1,e8c0a4f828ce649babfd08f03c369babf28a4088d24421e08d60bcbc81d031e4,d76ac7aa459b41502d24b1096a99787e05026c048f80021a8a85087d9f08d3fe,group,reviewed_gold,passed,passed,False,,s0001,l0001,b0002,3487,4099,g1,SPSD group,group_specific,reviewed,Reviewed prose identifying the three SPSD trial patients.,"patients (cases 8, 9, and 10) had slowly progressive axial 
+stiffness, with electrophysiological evidence of continu- 
+ous muscle fibre activity at rest in paraspinal muscles. All 
+three patients had serological evidence of autoimmune 
+disease, one patient had a history of pernicious anaemia, 
+and a second had a history of insulin-dependent diabetes 
+mellitus. Two of the three patients had anti-glutamic acid 
+decarboxylase antibodies in the cerebrospinal fluid. The 
+diagnosis of stiff-person syndrome was made in these 
+three cases. All 10 patients had remained symptomatic 
+despite conventional treatments.",048d9b5c401e33cdf276a02ab4426fa4861436f00e53d92ad31d99129a5feda9,,data\extraction_json\stage07_xml\papers\11.json,data\extraction_json\stage07_xml\segments\11.segments.json,data\extraction_json\stage07_xml\annotated_text\11.annotated.txt,data\extraction_json\stage07_xml\validation\11.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\11.html,2026-04-26T16:19:17.336400+00:00,,,g1,group_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,11,,stage07_xml_v1,e8c0a4f828ce649babfd08f03c369babf28a4088d24421e08d60bcbc81d031e4,d76ac7aa459b41502d24b1096a99787e05026c048f80021a8a85087d9f08d3fe,group,reviewed_gold,passed,passed,False,,s0002,l0002,b0003,4266,4274,g1,SPSD group,group_summary,reviewed,"Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.","8 
+9 
+10",ce846250f56a852ff810164cc11f5b05ddd8ac96c645e5300e60c9f549b99f5f,,data\extraction_json\stage07_xml\papers\11.json,data\extraction_json\stage07_xml\segments\11.segments.json,data\extraction_json\stage07_xml\annotated_text\11.annotated.txt,data\extraction_json\stage07_xml\validation\11.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\11.html,2026-04-26T16:19:17.336400+00:00,,,g1,group_summary,,,,
+stage07_xml_reviewed_gold_20260426,segment,11,,stage07_xml_v1,e8c0a4f828ce649babfd08f03c369babf28a4088d24421e08d60bcbc81d031e4,d76ac7aa459b41502d24b1096a99787e05026c048f80021a8a85087d9f08d3fe,group,reviewed_gold,passed,passed,False,,s0003,l0002,b0003,4443,4513,g1,SPSD group,group_summary,reviewed,"Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.","Stiff-person 
+syndrome 
+Stiff-person 
+syndrome 
+Stiff-person 
+syndrome",8eefbbdecaef460ab10b9a5ffe490aa4f3c5b698a29354d587c3bce96f803453,,data\extraction_json\stage07_xml\papers\11.json,data\extraction_json\stage07_xml\segments\11.segments.json,data\extraction_json\stage07_xml\annotated_text\11.annotated.txt,data\extraction_json\stage07_xml\validation\11.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\11.html,2026-04-26T16:19:17.336400+00:00,,,g1,group_summary,,,,
+stage07_xml_reviewed_gold_20260426,segment,11,,stage07_xml_v1,e8c0a4f828ce649babfd08f03c369babf28a4088d24421e08d60bcbc81d031e4,d76ac7aa459b41502d24b1096a99787e05026c048f80021a8a85087d9f08d3fe,group,reviewed_gold,passed,passed,False,,s0004,l0002,b0003,4557,4574,g1,SPSD group,group_summary,reviewed,"Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.","511F 
+5 IIM 
+45lM",ed4c706770f8659bfe7ca732fe9803dea0511266ae9cb1ae20d3461724364b8f,,data\extraction_json\stage07_xml\papers\11.json,data\extraction_json\stage07_xml\segments\11.segments.json,data\extraction_json\stage07_xml\annotated_text\11.annotated.txt,data\extraction_json\stage07_xml\validation\11.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\11.html,2026-04-26T16:19:17.336400+00:00,,,g1,group_summary,,,,
+stage07_xml_reviewed_gold_20260426,segment,11,,stage07_xml_v1,e8c0a4f828ce649babfd08f03c369babf28a4088d24421e08d60bcbc81d031e4,d76ac7aa459b41502d24b1096a99787e05026c048f80021a8a85087d9f08d3fe,group,reviewed_gold,passed,passed,False,,s0005,l0003,b0004,7725,7857,g1,SPSD group,group_summary,reviewed,Reviewed conclusion about milacemide response in the SPSD group.,"Despite this, milacemide, up to a dosage of 2,400 mg 
+daily, was ineffective in the three patients with the stiff- 
+person syndrome.",90bd0298a643db54b9f3f2379b04561eb171806fa0ce04a946c7cb8c3d1c929e,,data\extraction_json\stage07_xml\papers\11.json,data\extraction_json\stage07_xml\segments\11.segments.json,data\extraction_json\stage07_xml\annotated_text\11.annotated.txt,data\extraction_json\stage07_xml\validation\11.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\11.html,2026-04-26T16:19:17.336400+00:00,,,g1,group_summary,,,,
+stage07_xml_reviewed_gold_20260426,segment,17,,stage07_xml_v1,354d7f19a3216d6dbcfa92f0a6660b29111ed488783c007da59e19fd0fba813c,1f1ae501039a0b5b097414d8714c3fc1a9a2cba6426915d9a1423b1861aac632,individual,reviewed_gold,passed,passed,False,,s0001,l0001,b0003,1387,3030,p1,Patient 1,patient_specific,reviewed,Reviewed clinical case presentation only.,"CasePresentation
+In1983. apreviouslyhealthy
+35-year-oldmanexperiencedin-
+sidiousonsetofmusclespasms
+intheleftcalfandstiffnessinhis
+calfmuscles.Overthenextthree
+years.thesymptomsincreased
+progressively.involvingthemus-
+clesofthearmsandlegs.The
+spasmsandstiffnesswereexac-
+erbatedbysudden.rapidbody
+movementsandemotionalup-
+set.Thefamilyhistorywasno-
+table;hismotherandsisterboth
+hadrheumatoidarthritis.
+On examination.thepatient
+hadhypertrophyandspasmof
+theparaspinalmuscles.hyper-
+lordosis.andmarkedreduction
+inspinalmobility.Inadditionto
+spasmandstiffnessoftheleg
+muscles.therewasboardlike
+rigidityoftheabdomen.Hehad
+hyperreflexiaandfasciculations
+andalimping,guardedgait.Sen-
+soryexaminationwasnormal.
+A workupwasperformedfor
+variousneuromusculardisor-
+ders.includingmyotonicdys-
+trophy.fibromyositis.benign
+crampandfasciculationsyn-
+drome,lipidorglycogenstorage
+disease,McArdle'sdisease.and
+chronicleadpoisoning.Hehad
+beendiagnosedashavingaper-
+sonalitydisorderwithsomatiza-
+tion.Drugssuchasquinine,
+methocarbamol,andphenytoin
+providednosymptomaticrelief.
+Electromyographyrevealed
+persistentmotorunitactivityat
+rest.particularlyofthelower
+limbs.withinabilityofparaspi-
+nalandlimbmusculaturetore-
+lax.Fouryearsaftertheonsetof
+symptoms.whichnowseverely
+impairedhisnormalfunction-
+ing.stiff-mansyndromewasfi-
+nallydiagnosed.
+Treatmentwith50 mg/dayof
+oraldiazepamwasinitiated.
+thengraduallyincreasedto60
+mg/day,Therewasmarkedim-
+provement.withadecreasein
+musclespasmsandstiffness.He
+resumednormalactivities.Oc-
+casionally.however.thespasms
+andstiffnessworsenedbutwere
+relievedbyadditionaldosesof
+diazepam.Thepatientremains
+alert,withnosedation.",7f1a84ffd746f3adf0458c22290c97ec7ed38e8f7cee6bff77798c27d02828c0,,data\extraction_json\stage07_xml\papers\17.json,data\extraction_json\stage07_xml\segments\17.segments.json,data\extraction_json\stage07_xml\annotated_text\17.annotated.txt,data\extraction_json\stage07_xml\validation\17.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\17.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0001,l0001,b0001,2084,3437,p1,Patient 1,patient_specific,reviewed,Reviewed Case 1 block.,"""Case 1. A 46- -year-old black woman was referred for evalu-
+ation of muscle spasms in the legs, gradually worsening over
+the month before evaluation. She began to have intermittent
+‘‘stiffening’’ in the right leg, with gradual involvement of the’
+From the Department of Neurology, University of Mississippi
+Medical Center, Jackson.
+Reprint requests to E. Ross Clifton, DO, Department of Neurol-
+ogy, University Medical Center, 2500 N State St, Jackson, MS 39216.
+left leg over the next year. Shortly before referral the paraspi-
+nal muscles became involved, and the neck muscles became
+so rigid that she could not move her head. The spasms were
+painful and were exacerbated by loud noises, emotional upset,
+and cool damp weather. She did not notice appreciable change
+during sleep. There was no history of stroke, she had had no
+surgery, was not diabetic, and had no thyroid dysfunction.
+Some years earlier, renal tubular acidosis (idiopathic type) had
+been diagnosed. She had no history of neurologic problems
+or autoimmune disease. She was taking Bicitra (sodium citrate
+and citric acid) and potassium supplements.
+Physical examination showed a pleasant woman in moder-
+ate distress. General physical examination was unremarka-
+ble except for neurologic findings. She was alert and oriented.
+Muscle tone was increased especially in the back and lower",a17faaa0ea539084a88c9c1318cde29af77f53ff77332fafe715ab40f1815d7f,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0002,l0001,b0002,3438,4598,p1,Patient 1,patient_specific,reviewed,Reviewed Case 1 block.,"extremities. Strength could not be adequately assessed because
+of the rigidity. Reflexes were normal and plantar responses
+were flexor. No sensory abnormalities were identified.
+Laboratory studies showed normal values for electrolytes,
+erythrocyte sedimentation rate, liver panel, and ceruloplas-
+min. Creatine phosphokinase value and results of a thyroid
+profile were also normal. Serum protein electrophoresis
+showed a polyclonal gammopathy. Magnetic resonance imag-
+ing (MRI) of the brain and spine was unremarkable. The elec-
+troencephalogram (EEG) revealed no epileptiform activity.
+Electromyography showed continuous motor unit activity
+resembling normal recruitment that the patient could only par-
+tially suppress. Serum was obtained, and glutamic acid decar-
+boxylase (GAD) autoantibodies, assayed by Solimena et al®
+were present. Cerebrospinal fluid was not obtained.
+The patient was treated with baclofen (Lioresal), 120 mg
+per day in divided doses, and diazepam (Valium), 15 mg/day,
+and showed significant improvement over the next 8 months.
+She was able to discontinue the diazepam and decrease the
+baclofen to 10 mg/day. She has returned to work.",c3c3c06a9b6665024b093039e5e3e404e3eccfb5eabbc8a6cf2a13a866e1abd3,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0003,l0002,b0002,4599,5416,p2,Patient 2,patient_specific,reviewed,Reviewed Case 2 block.,"Case 2. A 25-year-old black man was referred because of
+muscle stiffness and painful spasms, especially of the thighs,
+abdomen, and shoulders, which had insidiously developed in
+1987. His motion was limited by these episodes. Gradually,
+the stiffness and spasms became painful and continuous and
+were exacerbated by noises or emotional upset. He believed
+the stiffness was diminished by sleep, but did not completely
+subside. Muscle biopsy in 1988 was unremarkable, and the
+disorder was thought to be ‘‘functional.’’ Eventually, the
+patient sought further medical attention because walking had
+become nearly impossible. His neck was becoming so rigid
+that he could not turn his head. He could not dress himself
+or care for his personal hygiene. There was no medical his-
+Clifton and Subramony © STIFF-MAN SYNDROME 711",fea87b2b7dcaa99b8d411465727c36e02db7e8fbd9f26aa7c4db003e6b1caff2,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0004,l0002,b0003,5418,7189,p2,Patient 2,patient_specific,reviewed,Reviewed Case 2 block.,"tory of diabetes mellitus, thyroid disease, or previous neuro-
+logic illnesses. There was no family history of neurologic or
+autoimmune disorder. The spasms were worse in cold
+weather, and whenever anyone touched him the spasms
+became more painful. Emotional upset also exacerbated the
+spasms.
+Physical examination was unremarkable. Neurologically,
+the patient was alert and oriented and appeared to be of nor-
+mal intellect. He had a pronounced lumbar lordosis. His prox-
+imal muscles were rock hard and somewhat hypertrophied.
+There was no significant weakness, and findings on sensory
+examination were normal. Reflexes were normal and plantar
+reflexes were flexor. His gait was severely limited by the stiff-
+ness of his axial muscles. He could not bend down to put his
+shoes on. He walked with a cane and had a tendency to lose
+his balance. Results of admission laboratory studies were nor-
+mal, except for an elevated creatine phosphokinase (CPK)
+value of 729 U/L. Aldolase was normal. The EEG was
+unremarkable as was the chest x-ray film. Cranial MRI re-
+vealed a congenitally narrow corpus callosum and ischemic
+changes in the right centrum semiovale. Electromyography
+revealed abnormal involuntary continuous motor unit poten-
+tial firing, with normal appearance of individual motor unit
+potential. Cerebrospinal fluid studies showed normal glucose
+and protein values and no cells. A sample of CSF was sent
+to Solimena et al5 for assay; no autoantibodies to GAD were
+found. Tests for parietal (CSF) cell antibodies were also nega-
+tive. Thyroid profile yielded normal findings.
+Treatment was begun with baclofen, 20 mg three times per
+day. He has gradually become more self-sufficient, and
+although he still has significant stiffness, the spasms are less
+painful.",9f94201ae8f83eb138c097cbfa9b57aaadd3f97c37889ad1e8de291a367a9d00,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0005,l0003,b0004,10038,11013,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed shared criteria and clinical similarities.,"Both cases fulfill the clinical criteria proposed
+to suggest the diagnosis of SMS.** In agreement
+with Lorish and Thoroteinsson,* we did not
+believe that myoneural blockade, general anesthe-
+sia, or peripheral nerve block, as Gordon et al?
+proposed, would add to the diagnostic specificity.
+Gordon et al based this idea on the work of Werk
+et al,!” who showed that succinylcholine abolished
+electromyographic activity at rest and during
+startle-induced spasm. We also concur with Lor-
+ish and Thoroteinsson* that these maneuvers may
+needlessly add to the risk of patient morbidity.
+Both patients had episodes of aching and stiffen-
+ing of the axial musculature that progressed to
+involve the limb and neck muscles. Both patients
+had difficulty moving about, and both had pain-
+ful spasms, especially when startled or emotion-
+ally upset. Neither patient could detect significant
+difference in the stiffness during sleep. Both
+patients had normal intellect and normal findings",f6f4eb165730cf96f4fbcfe0a8792b643eb3f27c07247bb762e7fa540b011587,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0006,l0003,b0005,11074,11315,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed shared criteria and clinical similarities.,"on neurologic examination except for the limita-
+tions in movement due to the excessive stiffness.
+Both patients had similar electromyographic pat-
+terns demonstrating continuous motor unit poten-
+tials. Both responded favorably to baclofen,",f8c3c27b68eabb8b08f75d3c3d37761b9d20e2e6b0aa2f0150b3b05563ae63f0,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0008,l0004,b0005,11316,11379,p1,Patient 1,patient_specific,reviewed,Reviewed Case 1-specific statements embedded in discussion.,"though the patient in Case 1 had a more signifi-
+cant response.",96410c3528064dfc3aadc90a38066342c0f9510026793a706b5b4a7712d4baff,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0011,l0005,b0005,11380,11517,p2,Patient 2,patient_specific,reviewed,Reviewed Case 2-specific statements embedded in discussion.,"Interestingly, the patient in Case
+2 was thought to be “‘hysterical,’’? and others?!:?2
+have reported similar labeling of their patients.",2183b3ba8e481ed355768981502784eb35e14bf0b18b49af075cd06c2ba39833,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0009,l0004,b0005,11518,11570,p1,Patient 1,patient_specific,reviewed,Reviewed Case 1-specific statements embedded in discussion.,"Patient 1 had autoantibodies to GABA-ergic neu-
+rons",062ec288e73f21bfa11708733fce5c51780550fd1fdadf7a283dd81741d36c27,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0012,l0005,b0005,11571,11593,p2,Patient 2,patient_specific,reviewed,Reviewed Case 2-specific statements embedded in discussion.,and patient 2 did not.,c57207291843013b57172a3135b8a2e142c4b3d40e578b61b945aa89176d7895,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0007,l0003,b0005,11979,12353,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed shared criteria and clinical similarities.,"The two patients
+presented here have no currently identified
+autoimmune disease, and one of the two has no
+autoantibodies to GABA-ergic neurons; however,
+both fulfilled the clinical criteria for SMS and both
+had electromyographic findings supportive of the
+diagnosis. There were no significant clinical differ-
+ences between these two patients with regard to
+antibody status",58105680db05fc7cbbb3472c9f5a9f4195d89b542b004b64c2804901cd6fe1af,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,19,,stage07_xml_v1,8f7f962cd7471cab958603c1b82e3dd47d71479654d830ac36c59a624adfa947,05ebc6a99e681904e25bdb1c7a724843cbd54fdc3cb4e4ffaf30294a284361d7,individual_case_split,reviewed_gold,passed,passed,False,,s0010,l0004,b0005,12388,12478,p1,Patient 1,patient_specific,reviewed,Reviewed Case 1-specific statements embedded in discussion.,"Our first patient had hyperchloremic acidosis
+consistent with renal tubular acidosis (RTA)",64c79062804c096985a8c1ea7d6df2570fb0832b821c5325e131848b42be8be9,,data\extraction_json\stage07_xml\papers\19.json,data\extraction_json\stage07_xml\segments\19.segments.json,data\extraction_json\stage07_xml\annotated_text\19.annotated.txt,data\extraction_json\stage07_xml\validation\19.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\19.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,22,,stage07_xml_v1,80a6d57bd1023427e3aca88308b6fc518925f6dc94889db7db1dcb151743c48a,855d2d851e7d793b6c62893b30e230a23821bd9c9bedf7a4c41245447c3d89ae,individual,reviewed_gold,passed,passed,False,,s0001,l0002,b0005,9106,9133,p1,Patient 1,patient_specific,reviewed,Reviewed Case 10 table fragment.,"Stiff-person syndrome 4,800",ce06c9bd045ea6c6c0441c0ceaa4b6e6b5e769093bb3915825c459ad8554b7bc,,data\extraction_json\stage07_xml\papers\22.json,data\extraction_json\stage07_xml\segments\22.segments.json,data\extraction_json\stage07_xml\annotated_text\22.annotated.txt,data\extraction_json\stage07_xml\validation\22.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\22.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,22,,stage07_xml_v1,80a6d57bd1023427e3aca88308b6fc518925f6dc94889db7db1dcb151743c48a,855d2d851e7d793b6c62893b30e230a23821bd9c9bedf7a4c41245447c3d89ae,individual,reviewed_gold,passed,passed,False,,s0002,l0001,b0005,11483,12004,p1,Patient 1,patient_specific,reviewed,Reviewed Case 10 narrative block.,"Case 10 
+A 62-year-old woman with stiff-person syndrome 
+has a 5-year history of progressive stiffness and in- 
+termittent muscle spasms in her lower back and 
+proximal legs, responding partially to valproic acid, 
+1,500 mgtday, and diazepam, 30 mgtday. She also 
+has a history of pernicious anemia, treated with i.m. 
+vitamin B,,, and diabetes mellitus. Antibodies were 
+present in her serum against glutamic acid decar- 
+boxylase, gastric parietal cells, pancreatic islet 
+cells, and microsomal fraction of the thyroid.",e802ca952cd3358eee8ef86a34c2e2b15079fe636d427a86541db317180c3cef,,data\extraction_json\stage07_xml\papers\22.json,data\extraction_json\stage07_xml\segments\22.segments.json,data\extraction_json\stage07_xml\annotated_text\22.annotated.txt,data\extraction_json\stage07_xml\validation\22.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\22.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0001,l0001,b0005,1483,2344,p1,Patient 1,patient_specific,reviewed,Reviewed Patient 1 case block.,"Patient 1. A 42-year old man reported 7 years of progressive
+rigidity and spasms that began in hix trunk musculature and
+gradually involved both legs and made walking difficult.
+Diazepam had afforded initial relief, but as the disease pro:
+‘gressod, he became disabled and unable to work at his job as a
+machinist. Pain became worse as the intensity and frequency of
+‘spasms increased, He gradually clovated his diazepam dose to
+140 mg/d, without significant improvement. At age 34, he devel-
+‘oped diabetes mellitus and was placed on insulin. His only novrologie abnormalities were demonstrated on motor examination.
+He had increased muscle tone in his axial muscles, with a pronounced lumbar lordosis, Mild sensory stimulation or volitional
+movements would set off sovere spasms in his back and legs.
+His reflexes were normal and Babinski sgn was not present.",b63869ef9ec72d254a6a9f0c985fd571d158651f600e1cb293eafbe049f26a30,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0002,l0001,b0006,2346,2404,p1,Patient 1,patient_specific,reviewed,Reviewed Patient 1 case block.,‘A lumbar puncture was performed and 75 ug baclofen (Ciba-,4538ef5302941f0df1b8cd9d3c3ac3d7ee893c488a07a5fda2a2b62261be670c,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0003,l0001,b0007,2406,3289,p1,Patient 1,patient_specific,reviewed,Reviewed Patient 1 case block.,",, Basel, Switzerland) was injected. One hour later, his
+gidity and spasms completely disappeared and ho was able to
+‘walk normally. By 8 hours, the effect was decreasing, and by 24
+hhours he returned to baseline. A programmable drug pump and
+catheter (Synchro Med, Medtronic, Ine., Minneapolis, MN) going
+to the lumbar subarachnoid space was implanted, and hi
+‘spasms wore completely controlled with baclofen 120 ygid. Over
+tho next 2% years, the dose of intrathecal baclofen was gradually
+increased to 1, 200 gid to suppress his spasms; diazepam has
+been reduced to 20 mg/d, but is sill necessary in low dose. Ho
+thas had an episode of moningitis requiring antibiotics and
+replacement of the pump and cathoter system, and twice the
+catheter has dislocated from the subarachnoid space and needed
+replacement. Each time he stopped receiving intrathecal
+‘baclofen his spasms recurred.",34c19aa7f7b70a71afd2301e644ad38d09cf510488b7d754933a959a860c0690,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p1,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0004,l0002,b0008,3291,4264,p2,Patient 2,patient_specific,reviewed,Reviewed Patient 2 case block.,"Patient 2. A 68-year-old woman was diagnosed with stiff:
+‘man xyndrome in 1988. At that time, she had a one-year history
+‘of progressive spasms in her back and legs and difficulty with
+fit and she required a walker. Pain occurred during attacks of
+spasms. On motor examination, she had hyperextension of t
+lumbar spine and sovore spasms at the hips and knees, without
+‘weaknoss, atrophy, or fasciculations, The reflexes were normal
+and a Babinski sign was not prescnt. An extensive work-up was
+normal except for antibodies to GAD in her CSF (by Dr.
+De Curicelli at Yale University). Diazepam was given and helped
+initially, but a year later she was bedridden and having
+markedly inereased pain. Intrathecal preservative-froe methylprednisolone and systemic immunotherapy with azathioprine
+plasmapheresis were tried without significant effect, By
+1992, she had developed ankylosis at her hip, knees, and foet,
+secondary atrophy of her leg muscles, and severe pain due to her",fd451f9a52207ed03f06d506ad01e904795c495613016f977c96c44f8451dd8d,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0005,l0002,b0009,4266,4297,p2,Patient 2,patient_specific,reviewed,Reviewed Patient 2 case block.,2412 NEUROLOGY (3 November 1983,165bb0351c82f0cfb1ec0eceb0b5109249595b9203829fdbf87cc96b14965fb2,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0006,l0002,b0010,4299,4423,p2,Patient 2,patient_specific,reviewed,Reviewed Patient 2 case block.,"spasms. Oral nareoties only provided partial relief, and on
+‘numerous oceasions she was admitted for intravenous nareotics..",bb16cc2db0717e2c74a3a76c8fb5df0edb53ce0c2c3d055cf232f7dca2a7c780,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0007,l0002,b0011,4425,4745,p2,Patient 2,patient_specific,reviewed,Reviewed Patient 2 case block.,"Intrathecal baclofen was tried, and 75 jg produced excellent
+pain relief, stopping the spasms for 4 hours. A drug pump was then
+Implanted, with a constant infusion of 120 wai ove the lat 9
+months, She has good control af her spasms and pain. She remains
+bedridden because of lower-extremity muscle atrophy and ankylosis.",2e4571c193b2a5a773a82b4f405222dab18bc83d991ea46bc105922eed24b333,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p2,patient_specific,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0008,l0003,b0012,4747,5608,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed shared discussion for both patients.,"Discussion. Both patients meet the criterion for stiff man
+syndrome outlined by Lorish et al.® Dinzepam was initially
+effective, but as the disease progressed even high doses (>90 and
+>140 mg/d) were inadequate. Since diazepam works by potentiation of the effect of endogenously released GABA on the GABA
+receptor, disease progression may reflect lower GABA availability as GABAergic neurons are lost. Baclofen is a direct agonist of
+GABA-B receptors and does not require endogenous GABA. This
+‘may explain its usefulness in our two patients. Unfortunately,
+the second patient developed severe muscle and skeletal
+‘changes, and these changes have not reversed. Her major prob Jem of painful spasms hax been controlled. The first patient was
+treated earlier in his course and fared better; he continues to do
+well ater 2% years of intrathecal baclofen treatment.",b9ab6a59dc343296fa2aedf85ff15fd23326053b0e019d6084cd275143e99642,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,
+stage07_xml_reviewed_gold_20260426,segment,23,,stage07_xml_v1,1b222ae3f2e742c9c96780dbc381dd3aade18a88a1727b7f6d3afb497fa5c51a,4e7de10317c107e01e5b101e6ec05e0c3cafde8b89da6e3b7c25082f5269114d,individual_case_split,reviewed_gold,passed,passed,False,,s0009,l0003,b0013,5610,6242,p1 p2,Patient 1 | Patient 2,shared,reviewed,Reviewed shared discussion for both patients.,"Intrathecal baclofen is now approved for the treatment of
+‘spasticity of spinal origin, and is available at many centers. On
+the basis of our experience with these two patients, wo recom-
+‘mend testing patients with stiff man's syndrome with a lumbar
+subarachnoid 76-meg baclafon bolus injection when oral diazepam
+is no longer providing adequate symptomatic relief. If successful,
+‘drug pump can be implanted for chronic administration. If our
+‘observations on two patients are confirmed in other patients with
+stiff man syndrome, it will be the first example of direct replace-
+‘ment of a neurotransmitter by intrathecal infusion,",edaf64ca936ab02ed5f2ea01992731627ba7b59f6fe2ebe9b1b0314928c97cb0,,data\extraction_json\stage07_xml\papers\23.json,data\extraction_json\stage07_xml\segments\23.segments.json,data\extraction_json\stage07_xml\annotated_text\23.annotated.txt,data\extraction_json\stage07_xml\validation\23.validation.json,qa\validation\stage07_xml\gold_standard\stage07_xml_reviewed_gold_20260426\papers\23.html,2026-04-26T16:19:17.336400+00:00,,,p1 p2,shared,,,,

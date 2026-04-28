@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 11</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 11</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: group</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span><span class="target-kind">group</span><span class="target-related">s0001, s0002, s0003, s0004, s0005</span></div><h2>Source Text</h2><div class="source-text">Movement Disorders 
+Vol. 6, No. 1, 1991, pp. 73-75 
+0 1991 Movement Disorder Society 
+Brief Report 
+A Therapeutic Trial of Milacemide in Myoclonus 
+and the Stiff-Person Syndrome 
+P. Brown, P. D. Thompson, J. C. Rothwell, B. L. Day, and C. D. Marsden 
+MRC Human Movement and Balance Unit, and University Department of Clinical Neurology, Institute of 
+Neurology, London, England 
+Summary: We investigated the therapeutic effects of milacemide in seven patients with 
+myoclonus and three patients with the stiff-person syndrome in an open-label trial. 
+Milacemide was initiated at 800 mg/day and was gradually increased to a maximum 
+dosage of 2,400 mg/day. No significant improvement occurred in the 10 patients. Key 
+Words: Myoclonus-Stiff-person syndrome-Milacemide. 
+Glycine is an inhibitory neurotransmitter in the CNS 
+(1). It causes membrane hyperpolarisation and inhibits 
+neuronal firing (2). Defective glycinergic systems may be 
+important in animal models of spinal rigidity (3,4), and 
+this has led to speculation that abnormalities of glyciner- 
+gic inhibition by spinal interneurones may be important in 
+the stiff-person syndrome (5). 
+Several animal studies have also suggested that defec- 
+tive glycinergic systems may result in myoclonus. Thus, 
+the stereotactic infusion of the glycine receptor antago- 
+nist, strychnine, into the medullary reticular formation 
+induces generalised stimulus-sensitive myoclonus in the 
+rat (6). In urea-induced myoclonus, urea has been shown 
+to displace glycine at its receptor sites in the brainstem 
+(7), and in DDT-induced myoclonus, intraventricular gly- 
+cine is effective in suppressing the myoclonus (8). In Poll 
+Hereford calves with inherited myoclonus, there is a spe- 
+citic and marked deficit in strychnine binding sites in the 
+spinal cord, reflecting a loss of, or defect in, glycine re- 
+ceptors (9). 
+Milacemide is a glycine precursor that penetrates the 
+blood-brain barrier effectively, before being converted 
+into glycinamide and glycine (10). It is reasonably well 
+tolerated (1 1). We report an open-label trial of milacemide 
+in seven patients with myoclonus of various types, and 
+three patients with the stiff-person syndrome. 
+Address correspondence and reprint requests to Prof. C. D. 
+Marsden, University Department of Clinical Neurology, Insti- 
+tute of Neurology, Queen Square, London, WClN 3BG, En- 
+gland. 
+PATIENTS AND METHODS 
+Ten patients were enrolled in the study (Table 1). There 
+were four patients (cases 14) with postanoxic multifocal 
+action myoclonus. The action myoclonus was cortical in 
+origin, and a cortical correlate in the backaveraged elec- 
+troencephalographic activity preceded and was time- 
+locked to the jerks occurring on action. Somatosensory 
+evoked potentials were normal in these four patients, and 
+there was no evidence of stimulus-sensitive myoclonus. 
+One patient (case 5) had myoclonic dystonia. The jerks 
+markedly improved with alcohol. He was the product of a 
+prolonged and difficult labour. There was no relevant 
+family history. There was no electrophysiological evi- 
+dence that the myoclonus in this patient was cortical in 
+origin. One patient (case 6) had propriospinal myoclonus 
+of unknown aetiology, and has been previously reported 
+(12). Another patient (case 7) had axial myoclonus and 
+paroxysmal axial spasms, presumed to be propriospinal 
+in origin, and has also been previously reported (P. 
+Brown et al., unpublished observations). The final three 
+<span class="source-segment role-group_specific" id="src-s0001" data-segment="s0001" data-label="g1 group_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">patients (cases 8, 9, and 10) had slowly progressive axial 
+stiffness, with electrophysiological evidence of continu- 
+ous muscle fibre activity at rest in paraspinal muscles. All 
+three patients had serological evidence of autoimmune 
+disease, one patient had a history of pernicious anaemia, 
+and a second had a history of insulin-dependent diabetes 
+mellitus. Two of the three patients had anti-glutamic acid 
+decarboxylase antibodies in the cerebrospinal fluid. The 
+diagnosis of stiff-person syndrome was made in these 
+three cases. All 10 patients had remained symptomatic 
+despite conventional treatments.</span> The patients gave their 
+73
+
+74 P. BROWN ET AL. 
+TABLE 1. Clinical details of patients, and response to milacemide 
+Case 
+no. Diagnosis Agelsex 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+<span class="source-segment role-group_summary" id="src-s0002" data-segment="s0002" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">8 
+9 
+10</span> 
+Pos tanoxic 
+myoclonus 
+Postanoxic 
+myoclonus 
+Postanoxic 
+myoclonus 
+Postanoxic 
+myoclonus 
+M yoclonic 
+dystonia 
+Propriospinal 
+myoclonus 
+Propriospinal 
+myoclonus 
+<span class="source-segment role-group_summary" id="src-s0003" data-segment="s0003" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Stiff-person 
+syndrome 
+Stiff-person 
+syndrome 
+Stiff-person 
+syndrome</span> 
+68lM 
+50lF 
+19lF 
+191F 
+22lM 
+54lM 
+49lM 
+<span class="source-segment role-group_summary" id="src-s0004" data-segment="s0004" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">511F 
+5 IIM 
+45lM</span> 
+Disease 
+duration 
+(yrs) 
+3 
+3 
+9 
+3 
+I 
+Concurrent treatment 
+(daily dosage) 
+Valproat e 3,000 mg 
+Clonazepam 1 mg 
+Phenobarbitone 300 mg 
+Valproate 800 mg 
+Clonazepam 4 mg 
+Piracetam 16.8 g 
+Valproate 1,000 mg 
+Clonazepam 6 mg 
+Primidone 750 mg 
+Valproate 1,500 mg 
+Clonazepam 6 mg 
+Primidone 500 mg 
+Carbamazepine 300 mg 
+Clonazepam 8 mg 
+Clonazepam 
+Temazepam 
+Diazepam 
+Baclofen 
+Diazepam 
+Baclofen 
+Ketoprofen 
+Diazepam 
+Baclofen 
+Valproate 
+1 mg 
+40 mg 
+10 mg 
+10 mg 
+20 mg 
+80 mg 
+200 mg 
+25 mg 
+50 mg 
+600 mg 
+Change in rating scores 
+Clinical Functional 
+None 
+None 
+None 
+None 
+None 
+None 
+None 
+None 
+None 
+None 
+None 
+None 
+Mild 
+deterioration 
+Mild 
+improvement 
+None 
+None 
+None 
+None 
+None 
+None 
+informed, written consent before their entry into the 
+study. 
+The seventy of the myoclonus was rated using a mod- 
+ification of the clinical rating scale described by Chad- 
+wick et al. (13), and a functional assessment, which rated 
+abnormalities of speech, eating, washing, dressing, and 
+mobility each on a scale of 0-3. In the latter, a score of 0 
+indicated normal performance, and 3 severely impaired 
+performance, needing total assistance. Clinical and func- 
+tional ratings, and a videotape recording of the clinical 
+assessment, were made at the beginning and end of 
+the study. The clinical and functional rating scores on 
+treatment were expressed as percentages of the pre- 
+milacemide treatment scores. A change in score on treat- 
+ment with milacemide of &amp;20% was considered as indi- 
+cating no improvement, 2140% as slight improvement, 
+and &gt;41% as marked improvement. Full blood count, 
+electrolytes, liver function tests, and anticonvulsant lev- 
+els were also monitored at the beginning and end of the 
+study in each patient. 
+Treatment present at the start of the trial was kept un- 
+changed during the study. Milacemide was started at 400 
+mg b.d., and increased by a further 400 mg b.d. every 34 
+days, up to a maximum dosage of 1,200 mg b.d. The final 
+assessment was made after 3-4 days with this dosage, 
+except in case 7, in whom the final assessment was made 
+after 3 days with 400 mg b.d. 
+RESULTS 
+The clinical rating score failed to change significantly in 
+the 10 patients treated with milacemide. In one patient 
+(case 4), there was a mild improvement in the functional 
+assessment score, but in another patient (case 3) this 
+score deteriorated. 
+Milacemide was generally well tolerated, although one 
+case (case 10) complained of drowsiness and constipa- 
+tion, and a second patient, who had epilepsy (case 4), had 
+a generalised seizure during treatment. Full blood count, 
+electrolytes, liver function tests, and anticonvulsant lev- 
+els did not change significantly on treatment. 
+DISCUSSION 
+Experimental evidence in animals implicating glyciner- 
+gic dysfunction in spinal rigidity (3,4) has led to trials of 
+glycine in the stiff-person syndrome (14,15). These trials 
+were unsuccessful, at least partly because of the weak 
+penetration of the blood-brain barrier by glycine (16). 
+Milacemide penetrates the blood-brain barrier well, be- 
+fore being converted into glycinamide and glycine (10). 
+<span class="source-segment role-group_summary" id="src-s0005" data-segment="s0005" data-label="g1 group_summary" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Despite this, milacemide, up to a dosage of 2,400 mg 
+daily, was ineffective in the three patients with the stiff- 
+person syndrome.</span> Most pharmacological and immunolog- 
+ical evidence points to an imbalance between catechol- 
+aminergic and GABAergic systems in this condition (17). 
+Similarly, animal models of myoclonus, implicating gly- 
+cinergic dysfunction (69) in this condition, led Truong 
+and Fahn (16) to investigate the therapeutic effects of 
+glycine in patients with various types of myoclonus. They 
+found no evidence for an antimyoclonic action for glycine 
+in doses up to 6 g per day, and again attributed this to the 
+poor penetration by glycine of the blood-brain barrier. 
+Movement Disorders, Vol. 6, No. 1, 1991
+
+MILACEMIDE IN MYOCLONUS 75 
+However, in the present study, milacemide also had no 
+consistent effect in seven patients with myoclonus. The 
+contrasting effects of milacemide treatment on the func- 
+tional abilities of cases 3 and 4 were of a degree reported 
+in spontaneous fluctuations by both patients. The ineffec- 
+tiveness of milacemide suggests that defective glycinergic 
+transmission may not be an important factor in postan- 
+oxic cortical action myoclonus, myoclonic dystonia, or 
+propriospinal myoclonus. Most studies of postanoxic my- 
+oclonus have implicated abnormalities of serotonergic 
+and GABAergic transmission (13,18). 
+The apparent ineffectiveness of glycine (16) and mila- 
+cemide in treating myoclonus in humans contrasts with 
+the animal evidence that implicates defective glycinergic 
+transmission in experimental myoclonus (6-49, and with 
+the ability of milacemide to improve DDT-induced myoc- 
+lonus (8). However, most of these animal experiments 
+involve manipulations of the reticular formation of the 
+lower brainstem, and as such, may be inappropriate mod- 
+els for cortical and spinal myoclonus. The effectiveness 
+of glycinergic drugs in brainstem reticular reflex myoclo- 
+nus remains untested. 
+Acknowledgment: We thank G. D. Searle Ltd., High 
+Wycombe, England for supplying the milacemide. 
+REFERENCES 
+1. Aprison MH. Glycine as a neurotransmitter. In: Lipton MA, 
+Di Mascio A, Killam KF, eds. Psychopharmacology, a gen- 
+eration of progress. New York: Raven Press, 1978:333-346. 
+2. Blume HW, Pittman QJ, Renaud LP. Sensitivity of identified 
+medial thalamic neurons to GABA, glycine and related 
+amino acids. Influence of bicuculline, picrotoxin and strych- 
+nine on synaptic inhibition. Brain Res 1981;209:145-158. 
+3. Semba T, Kano M. Cats with local tetanus rigidity. Science 
+4. Stem P, HadioviC S. Effect of glycine on experimental hind- 
+1%9;164:571-572. 
+limb rigidity in rats. Life Sci 1970;9:955-959. 
+5. Spehlmann R, Norcross K. Stiff-man syndrome. Clin Neu- 
+ropharmacol 1979;4: 109-121. 
+6. Chung E, Van Woert MH. DDT myoclonus: sites and mech- 
+anism of action. Exp Neurol 1984;85:273-282. 
+7. Chung E, Yocca F, Van Woert MH. Urea-induced myoclo- 
+nus: medullary glycine antagonism as mechanism of action. 
+Life Sci 1985;36:1051-1058. 
+8. Truong DD, De Yebenes JG, Pezzoli G, Jackson-Lewis V, 
+Fahn S. Glycine involvement in DDT-induced myoclonus. 
+Movement Disorders 1987;2:77-87. 
+9. Gundlach AL, Dodd PR, Grabara CSG, et al. Deficit of spi- 
+nal cord glycine/strychnine receptors in inherited myoclonus 
+of Poll Hereford calves. Science 1988;241:1807-1810. 
+10. Christophe J, Kutzner R, Nguyen-Bui ND, Damien C, Chat- 
+elain P, Gillet L. Conversion of orally administered 2- 
+n-pentylaminoacetamide into glycinamide and glycine in the 
+rat brain. Life Sci 1983;33:533-541. 
+11. Houtkooper MA, Oorschot CA, Rentmeester TW, Hop- 
+pener PJ, Onkelinx C. Double blind study of milacemide in 
+hospitalised therapy resistant patients with epilepsy. Epilep- 
+sia 1986;27:255-262. 
+12. Brown P, Thompson PD, Rothwell JC, Day BL, Marsden 
+CD. Axial myoclonus of propriospinal origin. Brain (in 
+press). 
+13. Chadwick D, Hallett M, Harris R, Jenner P, Reynolds EH, 
+Marsden CD. Clinical, biochemical and physiological fea- 
+tures distinguishing myoclonus responsive to 5-hydroxy- 
+tryptophan, tryptophan with a monoamine oxidase inhibitor, 
+and clonazepam. Brain 1977;100:455-487. 
+14. Schmidt RT, Stahl SM, Spehlmann R. A pharmacological 
+study of the stiff-man syndrome. Correlation of clinical 
+symptoms with urinary 3-methoxy-4-hydroxy-phenyl glycol 
+excretion. Neurology 1975;25:622-626. 
+15. Mamoli B, Heiss WD, Maida E, Podreka I. Electrophysio- 
+logical studies on the “stiff-man” syndrome. J Neurol 1977; 
+16. Truong DD, Fahn S. Therapeutic trial with glycine in myoc- 
+lonus. Movement Disorders 1988;3:222-232. 
+17. Lorish TR, Thorsteinsson G, Howard FM. Stiff-man syn- 
+drome updated. Mayo Clin Proc 1989;64:629-636. 
+18. Van Woert MH, Rosenbaum D, Chung E. Biochemistry and 
+therapeutics of posthypoxic myoclonus. Myoclonus. New 
+York: Raven Press, 1986: 171-181. (Advances in neurology; 
+vol43). 
+217:lll-121. 
+Movement Disorders, Vol. 6, No. I, 1991</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>group_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>3487-4099</td><td>reviewed</td><td>Reviewed prose identifying the three SPSD trial patients.</td><td>patients (cases 8, 9, and 10) had slowly progressive axial stiffness, with electrophysiological evidence of continu- ous muscle fibre activity at rest in paraspinal muscles. All...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0002</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>4266-4274</td><td>reviewed</td><td>Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.</td><td>8 9 10</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0002</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>4443-4513</td><td>reviewed</td><td>Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.</td><td>Stiff-person syndrome Stiff-person syndrome Stiff-person syndrome</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0002</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>4557-4574</td><td>reviewed</td><td>Reviewed table fragments restricted to cases 8, 9, and 10 where OCR row structure is source-recognisable.</td><td>511F 5 IIM 45lM</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0003</td><td>group_summary</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">g1</span>SPSD group</span></td><td>7725-7857</td><td>reviewed</td><td>Reviewed conclusion about milacemide response in the SPSD group.</td><td>Despite this, milacemide, up to a dosage of 2,400 mg daily, was ineffective in the three patients with the stiff- person syndrome.</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\11.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\11.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\11.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\11.validation.json</p></main>
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 10</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 10</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0007, s0008</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">s0001, s0005, s0006, s0007, s0008</span></div><h2>Source Text</h2><div class="source-text">Movement Disorders 
+Vol. 6, No. 1, 1991, pp. 12-20 
+0 1991 Movement Disorder Society 
+Stiff-Person Syndrome: An Autoimmune Disease 
+Philip Blum and Joseph Jankovic 
+Department of Neurology, Baylor College of Medicine, Houston, Texas, U.S.A. 
+Summary: Stiff-person syndrome (SPS) is characterized by progressive, usu- 
+ally symmetric rigidity of the axial muscles with superimposed painful spasms 
+precipitated by tactile stimuli, passive stretch, volitional movement of affected 
+or unaffected muscles, startling noises, and emotional stimuli. Electromyog- 
+raphy demonstrates continuous normal motor unit potentials in the affected 
+muscles. Both the rigidity and the spasms are relieved by sleep, general anes- 
+thesia, myoneural blockade, peripheral nerve blockade, and partially by diaz- 
+epam. Evidence for an autoimmune etiology of SPS includes its association 
+with other autoimmune diseases and autoantibodies and the presence of anti- 
+bodies against glutamic acid decarboxylase (GAD) in the cerebrospinal fluid 
+(CSF) of many affected patients. We describe two patients with this syndrome 
+who had GAD antibodies in both CSF and serum. Partial relief of the symp- 
+toms in these patients by corticosteroid therapy provides additional evidence 
+of an autoimmune etiology of SPS and of the role of immunotherapy in its 
+treatment. Key Words: Stiff-person syndrome-Autoimmune diseases-corti- 
+costeroid drugs. 
+Stiff-man syndrome was first described by 
+Moersch and Woltman (1) in a series of 14 cases in 
+1956. The world’s literature was critically reviewed 
+and diagnostic criteria were proposed by Gordon et 
+al. (2) in 1967. Because the disease affects both men 
+and women, we prefer the term “stiff-person’’ syn- 
+drome (SPS). Patients with SPS have progressive, 
+usually symmetric.rigidity of the axial muscles, and 
+painful spasms that may fluctuate in intensity. 
+Spasms may be precipitated by tactile stimuli, pas- 
+sive stretch, volitional movement of affected or un- 
+affected muscles, startling noises, and emotional 
+stimuli. There is often tenderness and palpable ri- 
+gidity of the axial and proximal limb musculature. 
+Deep tendon reflexes are occasionally increased, 
+but may be decreased. Electromyography (EMG) 
+demonstrates continuous normal motor unit poten- 
+A videotape segment accompanies this article. 
+Address correspondence and reprint requests to Dr. J. Jan- 
+kovic, Baylor College of Medicine, 6550 Fannin no. 1801, Hous- 
+ton, TX 77030, U.S.A. 
+tials in the affected muscles despite the patient’s 
+attempts to relax. Both the rigidity and the spasms 
+are at least partially relieved by sleep, general an- 
+esthesia, myoneural blockade, peripheral nerve 
+blockade, and usually, diazepam. The improvement 
+in the cardinal symptoms is accompanied by cessa- 
+tion of the continuous motor unit potentials. Cranial 
+nerve involvement, respiratory compromise, and 
+deforming skeletal sequelae 
+are common. Myoclo- 
+nus, seizures, and psychiatric illnesses have also 
+been reported in some patients. 
+Treatment of SPS has changed little since Howard 
+(3) introduced diazepam as the drug of choice in 
+1963. However, in 1988 Solimena et al. (4) provided 
+the first solid evidence of an autoimmune mecha- 
+nism of the disease and introduced hope for new 
+effective therapies. These investigators demon- 
+strated the presence of autoantibodies against glu- 
+tamic acid decarboxylase (GAD) in both the serum 
+and the cerebrospinal fluid (CSF) of their patient 
+with the syndrome. In their follow-up report, Soli- 
+mena et al. (5) observed GAD autoantibodies in 20
+
+STIFF-PERSON SYNDROME 13 
+of 33 patients with the syndrome. <span class="source-segment role-shared" id="src-s0001" data-segment="s0001" data-label="p1 p2 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">We describe here 
+two patients with SPS found to have GAD autoanti- 
+bodies in their sera and CSF, and whose associated 
+autoimmune diseases, other autoantibodies, and re- 
+sponse to corticosteroid drugs provide additional 
+evidence of an autoimmune etiology and a role for 
+immunotherapy in this disabling disease.</span> 
+<span class="source-segment role-patient_specific" id="src-s0002" data-segment="s0002" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">PATIENT 1 
+A 63-year-old Hispanic woman was referred for 
+evaluation of increased tone in her lower extremi- 
+ties. She had been well until 6 years previously, 
+when she began to experience occasional episodes 
+of sudden, painful stiffening of the left hip and knee, 
+usually provoked by walking. The spasms lasted 
+10-15 s, and then resolved spontaneously. Her 
+symptoms progressed, increasing in severity and 
+frequency, and in June 1988 the patient&#x27;s left leg 
+became persistently stiff, rendering her unable to 
+walk. At that time, she also had severe, chronic, 
+recurrent back and abdominal pain. By the end of 
+the year, her right leg had also begun to stiffen. The 
+stiffness was much decreased during sleep. There 
+was no history of diabetes, trauma, seizures, myo- 
+clonus, weakness, or sensory difficulties. Her or- 
+thopedist had prescribed multiple medications 
+including propoxyphene napsylate and acetamino- 
+phen (Darvocet), quinine sulfate, phenytoin, so- 
+dium dantrolene, carbamazepine, baclofen, and di- 
+azepam. Only the last two provided at least partial 
+relief of her spasms. Past medical history was sig- 
+nificant only for a cholecystectomy in 1976 and 
+treated pulmonary tuberculosis with documented 
+recovery. She has not used alcohol or tobacco prod- 
+ucts. No one else in her family has had symptoms 
+similar to hers. Both of her sisters died of compli- 
+cations of insulin-dependent diabetes mellitus 
+(IDDM). Review of systems was significant for 
+long-standing vitiligo. 
+Physical examination on admission to our service 
+revealed a small, chronically ill-appearing woman 
+lying in bed. She had vitiligo of the hands, feet, and 
+neck. There was increased tone and tenderness in 
+the muscles of the neck. Her paraspinous muscles 
+were markedly rigid and tender and she had severe 
+kyphoscoliosis. Tone and strength in the arms was 
+normal. However, tone was markedly increased in 
+her legs, with palpable rigidity and tenderness of the 
+muscles. Her feet were held in the equinus position 
+and her knees were hyperextended by her stiffness 
+(videotape segment 1). There were no fascicula- 
+tions. Strength could not be assessed because of the 
+rigidity. Plantar response was silent, and deep ten- 
+don reflexes could not be elicited in the knees or 
+ankles. Functionally, the patient was unable to walk 
+because of the stiffness in her legs and was unable 
+to sit up because of the deformity of her spine. She 
+had an intact intellect and sensorium and there were 
+no other neurologic abnormalities. 
+Results of routine laboratory studies including se- 
+rum electrolytes, blood urea nitrogen (BUN), cre- 
+atinine, glucose, and liver enzymes were normal; 
+creatinine phosphokinase was 256. Lyme titers 
+were negative. Radiographs of the chest and lum- 
+bosacral spine demonstrated arthritic changes only. 
+Esophagogastroduodenoscopy, ultrasound of the 
+abdomen, and computed tomography (CT) of the 
+abdomen all were normal. Lumbar myelogram, CT 
+of the brain, and magnetic resonance (MR) imaging 
+of the lumbosacral spine were also normal. Muscle</span> 
+<span class="source-segment role-patient_specific" id="src-s0003" data-segment="s0003" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">biopsy revealed mild neurogenic atrophy and type 
+I1 atrophy. A complete myelogram revealed only 
+mild cervical spondylosis with neither stenosis of 
+the canal nor cord compression. Conduction studies 
+of the right posterior tibial nerve were normal at 52 
+m/s, whereas that of the left posterior tibial nerve 
+was slightly slowed at 44 mls. EMG demonstrated 
+continuous spontaneous motor unit activity in all 
+tested muscles of the left leg and in the lumbar and 
+thoracic paraspinous muscles up to the midthoracic 
+level bilaterally. Intermittent, spontaneous motor 
+unit activity also occurred in the right leg and could 
+be provoked by startling or tactile stimulation. 
+There were no fasciculations, fibrillations, or posi- 
+tive sharp waves. 
+Spinal epidural blockade was performed with tet- 
+racaine (Pontocaine) at the T9 level. The patient&#x27;s 
+pain was relieved, and her rigidity decreased 
+enough to allow 20&quot; of active flexion in the left knee 
+and 40&quot; in the right (videotape segment 2). EMG 
+recording demonstrated cessation of the continuous 
+motor activity within 10 min. Routine studies of the 
+CSF taken at the time of the myelogram including 
+glucose, protein, and cell count were all normal and 
+no oligoclonal bands were detected. GAD autoanti- 
+bodies, assayed by Dr. Solimena and Dr. De Camilli 
+(5), were present in both the serum and CSF by 
+light-microscopy immunocytochemistry and West- 
+ern blot. In addition, autoantibodies to islet cells 
+and gastric parietal cells were present in the serum. 
+This patient was reported as case 17 in the second 
+report of Solimena et al. (5). 
+The patient was unable to tolerate diazepam in 
+high doses because of excessive sedation. The com- 
+Movement Disorders, Vol. 6, No. I, 1991</span>
+
+<span class="source-segment role-patient_specific" id="src-s0004" data-segment="s0004" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">14 P. BLUM AND J. JANKOVIC 
+bination of 50 mg of baclofen and 30 mg of diazepam 
+daily provided only modest relief of symptoms. One 
+hundred milligrams of prednisone per day was 
+added to this regimen. Within 10 days, the patient 
+noted a marked decrease in her stiffness and spasm. 
+One year later, baclofen has been discontinued, di- 
+azepam has been decreased to 15 mg per day, and 
+prednisone is slowly being tapered down from 40 
+mg every other day. The stiffness in her hips, 
+knees, and back is markedly reduced. Residual 
+stiffness holds her ankles in a position of plantar 
+flexion bilaterally. She is now capable of sitting 
+without aid, although she cannot walk because of 
+her ankle contractures.</span> 
+<span class="source-segment role-patient_specific" id="src-s0005" data-segment="s0005" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">PATIENT 2 
+A 53-year-old black man was referred for evalu- 
+ation of a 2?h-year history of progressive stiffness of 
+the lower extremities. His initial symptom was in- 
+voluntary upward curling of the toes of both feet. 
+Stiffness subsequently developed in the remaining 
+muscles of his legs. At the same time, he began to 
+have chronic neck and low-back pain. One year be- 
+fore admission, the patient also began to have pain- 
+ful spasms of his legs superimposed on his stiffness, 
+usually provoked by passive stretching. His wife 
+noted that his spasms ceased and his stiffness re- 
+solved somewhat during sleep. He began to require 
+assistance arising from bed and walking. There was 
+no history of diabetes, trauma, seizures, myoclo- 
+nus, weakness, or sensory symptoms. The patient 
+had been treated unsuccessfully with nonsteroidal 
+antiinflammatory medications, sodium dantrolene, 
+carbamazepine, trihexyphenidyl, and carbidopa/ 
+levodopa (Sinemet). Treatment with phenytoin af- 
+forded him mild relief. Low-dose diazepam moder- 
+ately improved his stiffness and he was able to walk 
+without assistance. One of the patient’s sisters has 
+IDDM; otherwise, the family history was unre- 
+markable. 
+General physical and neurological examination 
+results were normal except for the motor system. 
+Tone and strength were normal in the arms, but 
+tone was markedly increased in all muscle groups of 
+the legs, with dystonic posturing of both feet man- 
+ifesting as extension of the metatarsal-phalangeal 
+joints and flexion of the distal interphalangeal 
+joints. Strength of the legs was difficult to assess 
+because of rigidity. Deep tendon reflexes were nor- 
+mal throughout and plantar reflexes were silent. 
+The patient walked stiffly and turned with great dif- 
+ficulty. 
+The following laboratory test results were nor- 
+mal: electrolytes, BUN, creatinine, glucose, uric 
+acid, calcium, phosphorus, total protein, albumin, 
+serum electrophoresis, liver enzymes, folate, vita- 
+min B 12, hemoglobin, hematocrit, mean corpuscular 
+volume, platelet count, urinalysis, erythrocyte sed- 
+imentation rate, rapid plasma reagin, antinuclear 
+antibody, and rheumatoid factor. A 5-h glucose tol- 
+erance test also showed normal results. A complete 
+myelogram revealed mild lumbar and cervical 
+spondylosis without stenosis of the canal. Radio- 
+graphs of the chest and spine, electrocardiogram, 
+electroencephalogram, and somatosensory evoked 
+potentials were all unremarkable. Muscle biopsy 
+was similar to that of patient 
+1. MR imaging of the 
+brain and spinal cord were normal. EMG revealed 
+the presence of continuous spontaneous motor unit 
+potentials in the muscles of the legs, which was 
+abolished by spinal epidural block. As the block</span> 
+<span class="source-segment role-patient_specific" id="src-s0006" data-segment="s0006" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">began to wear off, the patient was able to move his 
+legs nearly normally. CSF glucose, protein, and cell 
+count were unremarkable and there were no oligo- 
+clonal bands. CSF IgG/albumin ratio was normal. 
+Autoantibodies to GAD were detected in both se- 
+rum and CSF by the method of Solimena et al. (4). 
+In addition, gastric parietal cell, pancreatic islet 
+cell, microsomal, and thyroglobulin autoantibodies 
+were all present in the patient’s serum. This patient 
+was reported as case 20 in the second report of 
+Solimena et al. (5). The human lymphocyte antigen 
+(HLA) phenotype of the patient was A3,24; 
+B14(w6),w57(w4); DRw6,7(DQw1 ,w3; DRw52,53). 
+At the time of admission, diazepam therapy was 
+withdrawn slowly to determine the baseline muscle 
+stiffness of the patient. After a few days, he became 
+markedly stiffer (videotape segment 1). The patient 
+then began supplemental treatment with 100 mg of 
+prednisone per day for 1 week and then 100 and 20 
+mg on an alternate-day basis. Within 10 days of 
+starting prednisone, the patient began to notice a 
+marked decrease of his stiffness (videotape segment 
+2). He was able to decrease the dose of diazepam 
+from 40 to 20 mg per day. A year later, his dose of 
+prednisone has been decreased to 40 mg every other 
+day, but he still requires 20 mg of diazepam daily for 
+residual stiffness.</span> 
+DISCUSSION 
+Our two patients demonstrate the typical findings 
+of SPS as described by Moersch and Woltman (1). 
+<span class="source-segment role-shared" id="src-s0007" data-segment="s0007" data-label="p1 p2 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Both fulfill the diagnostic criteria of Gordon et al. 
+(2). In addition to spasm and progressive stiffness of</span> 
+Movement Disorders, Vol. 6, No. I, 1991
+
+STIFF-PERSON SYNDROME 15 
+<span class="source-segment role-shared" id="src-s0008" data-segment="s0008" data-label="p1 p2 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">axial musculature, each patient had characteristic 
+EMG findings of continuous motor unit activity. 
+The stiffness as well as the EMG findings improved 
+after spinal anesthesia. 
+In addition, both of our patients exhibited evi- 
+dence of autoimmunity. Patient l had vitiligo and 
+two sisters with IDDM; patient 2 had no recognized 
+clinical autoimmune diseases, but had several se- 
+rum autoantibodies and a sister with IDDM.</span> GAD 
+TABLE 1. Summary of reported cases of stiff-person 
+autoantibodies were present in the CSF and serum 
+of both patients. The coexistence of other autoim- 
+mune diseases and autoantibodies with SPS has 
+been previously recognized by other investigators 
+(Tables 1 and 2) (2,4,6-33). 
+Early attempts to elucidate the etiology of SPS 
+focused on establishing the pathoanatomy of the 
+disease. The rarity, variable diagnostic criteria, and 
+sublethal nature of the illness have contributed to 
+syndrome: demographics and associated features 
+First author1 Case Age/(race)sex/age 
+ref./yr no. of onset Associated features 
+Gordon (2), 1967 
+Cohen (6), 1966 
+Young (7), 1966 
+Ricker (8), 1968 
+Sulway (9), 1970 
+Hall (lo), 1971 
+Shah (ll), 1971 
+Cobb (12), 1974 
+Mamoli (13), 1977 
+Westblom (14), 1977 
+Martinelli (15), 1978 
+Isaacs (16), 1979 
+Boiardi (17), 1980 
+Maida (18), 1980 
+Whelan (19), 1980 
+Daras (20), 1981 
+Miller (21), 1981 
+Spehlmann (22), 1981 
+George (23), 1984 
+Meinck (24), 1984 
+Nakamura (23, 1986 
+Correale (26), 1988 
+Piccolo (27), 1988 
+Solimena (4), 1988; 
+Vicari (28), 1989 
+Williams (29), 1988 
+Harding (30), 1989 
+Lorish (31), 1989 
+Piccolo (32), 1989 
+Phillips (33), 1990 
+Patient 1 (present 
+Patient 2 (present 
+report) 
+report) 
+1-34 
+35 
+36 
+37 
+38 
+39 
+40 
+41 
+42 
+43 
+44 
+45 
+46 
+47 
+48 
+49 
+50 
+51 
+52 
+53 
+54 
+55 
+56 
+57 
+58 
+59 
+60 
+61 
+62 
+63 
+64 
+65 
+66 
+67 
+68 
+69-80 
+81 
+82 
+83 
+84 
+7-70 (87% 
+adults)/70% M 
+361WFl33 
+57lFl56 
+37lMl35 
+40lFl37 
+69lMl68 
+53lMl50 
+61lBMl5 1 
+24lF122 
+59lMl28 
+58lFl56 
+%IF148 
+62lMl52 
+8lBFl6 
+42lMl41 
+Not reported 
+36lMl33 
+16lMl15 
+68lBFl60 
+57lMl55 
+42lFl39 
+40lFl37 
+54lMl5 
+1 
+40lMl38 
+66lMl63 
+65lF16514 mos 
+55lFl5516 mos 
+49lFl39 
+50lMl46 
+45lMl40 
+60lMl54 
+32-61 
+Av. 47 (46% F)IAv. 39 
+36lFl30 
+63lHFl57 
+5 3lB MI50 
+1 with thyrotoxicosis; 4 with DM; 1 developed 
+Family history of DM 
+Pernicious anemia; ? Hashimoto’s thyroiditis 
+? Hashimoto’s thyroiditis 
+Complete esophageal obstruction 
+Onset after trauma to back; NIDDM 
+Anxiety, depression 
+?DM 
+DM 
+Chronic bronchitis, emphysema, nocturnal 
+IDDM after onset of symptoms 
+myoclonus, grand-ma1 seizures 
+Symptoms began after surgery; he and sibling both 
+have IDDM 
+Disorientation with spasms 
+Pregnancy-induced adrenocorticotropic hormone, 
+growth hormone, and prolactin deficiencies 
+Colon ACA found 2 yrs after SPS 
+Breast ACA found 2 yrs after SPS 
+Generalized seizures, IDDM 
+IDDM with ICA, hypothyroidism, vitiligo 
+IDDM with ICA 
+IDDM, pernicious anemia, vitiligo 
+IDDM, hypothyroidism 
+Pernicious anemia, IDDM 
+8 with DM, 1 with hyperthyroidism 
+Spontaneous remission followed by myasthenia 
+Vitiligo 
+Vitiligo; 
+2 sisters with IDDM 
+Sister with IDDM 
+gravis with thymoma 
+~~ 
+Av, average: DM, diabetes mellitus, type not reported; IDDM, insulin-dependent diabetes mellitus; NIDDM, non-insulin-dependent 
+diabetes mellitus; ACA, adenocarcinoma; ICA, islet cell antibodies; SPS, stiff-person syndrome. 
+Movement Disorders, Vol. 6. No. 1, 1991
+
+16 P. BLUM AND J. JANKOVlC 
+TABLE 2. Summary of reported cases of stiff-person syndrome: relevant laboratory, treatment, and response 
+First author/ 
+ref./yr 
+Gordon (2), 1967 
+Cohen (6), 1966 
+Young (7), 1966 
+Ricker (8), 1968 
+Sulway (9), 1970 
+Hall (lo), 1971 
+Shah (ll), 1971 
+Cobb (12), 1974 
+Mamoli (13), 1977 
+Case 
+no. 
+1-34 
+35 
+36 
+37 
+38 
+39 
+40 
+41 
+42 
+43 
+44 
+Laboratory relevant 
+to etiology Treatment 
+33% had reducing substances in their 5 of these patients were tried on 
+Diazepam 60 mg q.d. 
+Mephenesin (Myanesin) 
+Pallidotomy 
+Mephenesin 
+Diazepam 40 mg q.d. 
+Diazepam 60 mg q.d. 
+Diphenylh ydantoin 
+Diazepam 60 mg q.d. 
+Diazepam 20 mg q.d. 
+Diazepam 
+180 mg q.d. 
+Mephenesin 4 g q.d. 
+Baclofen 60 mg q.d. 
+Diazepam 20 mg q.d. 
+Levodopa 500 mg 
+5-H ydroxytryptophan 
+Glycine 16 g q.h. x 4 h 
+Biperiden lactate 5 mg i.v. 
+Magnesium laevulinate 120 mg i.v. 
+urine diazepam 
+Westblom (141, 1977 45 
+Martinelli (15), 1978 46 Rheumatoid factor negative 
+Isaacs (16), 1979 47 VMA, ME, NME, HVA normal; 
+elevated MHPG 
+Boiardi (17), 1980 48 
+Maida (18), 1980 49 
+Whelan (19), 1980 50 
+Daras (20), 1981 51 
+Miller (21). 1981 52 
+Spehlmann (22), 1981 53 
+Clonazepam 10 mg 
+Dipropylacetate 1,800 mg 
+Baclofen 30 mg 
+Levodopa 500 mg 
+5-Hydroxytryptophan 
+Diazepam 30 mg q.d. 
+Clonazepam 
+6 mg q.d. 
+Clonazepam 1 mg i.v. 
+Diazepam 10 mg i.v. 
+Carbamazepine 800 mg 
+Sodium dipropylacetate 
+1,000 mg baclofen, 10 mg q.d. 
+Glycine 15 g 
+Diphenylhydantoin 300 mg q.d. 
+Diazepam 60 mg q.d. 
+Diazepam plus clonazepam 2 mg q.d. 
+Carbamazepine 800 mg q.d. 
+Diphenylhydantoin 300 mg q.d. 
+Dantrolene sodium 75 mg q.d. 
+Tryptophan 800 mg q.d. 
+Baclofen 75 mg q.d. 
+y-hydroxybutyric acid 
+Diazepam 50 mg 
+Diazepam 30 mg q.d. 
+Baclofen 45 mg q.d. 
+Cyclobenzaprine 30 mg q.d. 
+Diazepam 100 mg q.d. 
+Diazepam 60 mg q.d. 
+Baclofen 90 mg q.d. 
+Diazepam 60 mg q.d. 
+Sodium dantrolene 600 mg q.d. 
+Clonazepam 6 mg q.d. 
+Diazepam plus baclofen 60 mg q.d. 
+1.5 g 
+George (23), 1984 
+Meinck (24), 1984 
+Nakamura (25), 1986 
+54 
+55 
+56 
+Sodium valproate 2 
+g q.d. 
+Hydrocortisone 20 mg q.d. 
+Diazepam 40 mg and clonazepam 8 mg 
+Tizanidine 6 mg q.d. 
+L-Dopa 
+Diazepam 20 mg q.d. 
+Degeneration and 
+loss of medial motor 
+nuclei of anterior horn cells 
+Response 
+E 
+E 
+M 
+TE 
+S 
+E 
+E 
+N 
+E 
+E 
+E 
+N 
+N 
+E 
+N 
+N 
+N 
+TE 
+TE 
+M 
+M 
+S 
+N 
+N 
+E 
+E 
+E 
+E 
+N 
+N 
+TS 
+N 
+N 
+E 
+N 
+N 
+N 
+N 
+N 
+M 
+M 
+E 
+S 
+E 
+N 
+E 
+M 
+E 
+E 
+S 
+E 
+E 
+E 
+C 
+M 
+E 
+W 
+M 
+Movement Disorders, Vol. 6, No. 1, 1991
+
+STIFF-PERSON SYNDROME 17 
+TABLE 2-(Continued) 
+First author1 
+ref./yr 
+~ 
+Case 
+no. Laboratory relevant to etiology Treatment Response 
+Correale (26), 1988 
+Piccolo (27), 1988 
+Solimena (4), 1988; 
+Vicari (28), 1989 
+Williams (291, 1988 
+Harding (30), 1989 
+Lorish (31), 1989 
+Piccolo (32), 1989 
+Phillips (33), 1990 
+Patient 1 (present 
+Patient 2 (present 
+report 
+report) 
+57 
+58 
+59 
+60 
+61 
+62 
+63 
+64 
+65 
+66 
+67 
+68 
+69-80 
+81 
+82 
+83 
+84 
+Elevated ESR and serum y-globulin; 
+circulating immune complexes; slight 
+lymphocytic CSF pleocytosis, CSF 
+GADa 
+(-). 
+Elevated ESR; right temporoparietal 
+hypodensity on CT; oligoclonal 
+bands in CSF; CSF GADa (- ) 
+HLA A: 1128, B8144, CwSIx, DR 314; 
+serum ICA, GPCA, TMA, TA. 
+oligoclonal bands in CSF; GADa in 
+CSF 
+HLA B44; decreased CSF GABA 
+HLA B44; decreased CSF GABA 
+HLA B44; normal CSF GABA 
+HLA B44; decreased CSF GABA 
+HLA B44 (-); CSF GABA decreased 
+Serum ICA, GPCA; HLA A3/32 B:7/8, 
+Cw7, DR314, DQw213, DRW52153; 
+oligoclonal bands in CSF; GADa in 
+serum and CSF 
+Serum ICA, GPCA; HLA A:213, 
+B40162, Cw314, DR3l4, DQw213, 
+DRW52153; oligoclonal bands in 
+CSF; GADa in serum and CSF 
+CSF GADa (-) 
+GADa in CSF 
+GADa in serum and CSF 
+Serum ICA, GPCA, TMA, TA; GADa 
+in serum and CSF 
+Diazepam 30 mg q.d. 
+Diazepam 20 mg q.d. 
+Diazepam 100 mg q.d., 
+Prednisone 100 mg q.d., 
+tapering alternate-day regimen 
+Diazepam 100 mg q.d., 
+carbamazepine, 
+prednisone 100 mg q.d., 
+tapering alternate-day regimen 
+Diazepam 50 mg q.d., 
+plasmapheresis 5x in 10 days, 
+prednisone 1 mg/kg 
+Diazepam 15 mg and baclofen 60 mg 
+q.d. 
+Plasmapheresis 5x in 5 days, 
+prednisolone 80 mg, azathioprine 2.5 
+mglkg q.d. 
+baclofen 50 mg, diazepam 25 mg, 
+sodium valproate 600 mg q.d. 
+Plasmapheresis 5 x in 5 days, 
+Diazepam av. 50 mg q.d 
+Plasmapheresis 
+M 
+M 
+S 
+C 
+S 
+N 
+C 
+M 
+E 
+C 
+M 
+N 
+N 
+M 
+E 
+E 
+~~ ~ 
+N, none; S, slight; M, moderate; E, excellent; C, complete remission; T, transient; W, worse; q.d., per day; q.h., per hour; VMA, 
+vanillylmandelic acid; ME, metanephrine; NME, normetanephrine; HVA, hornovanillic acid; ESR, erythrocyte sedimentation rate; 
+CSF, cerebrospinal fluid; GADa, glutamic acid decarboxylase antibodies; ICA, islet cell antibodies; GPCA, gastric parietal cell anti- 
+bodies; TMA, thyroid microsomal antibodies; TA, thyroglobulin antibodies; MHPG, 3-methoxy-4-hydroxy-phenylglycol; HLA, human 
+lymphocyte antigen. All pharmaceutical agents were administered orally unless otherwise noted. Doses were included when reported. 
+the scarcity of autopsy material and the conflicting 
+pathologic descriptions (15,25,34,35). The abolition 
+of symptoms and of the characteristic EMG find- 
+ings by peripheral nerve and motor endplate block- 
+ing agents, sleep, and general and spinal anesthesia 
+provide evidence for a CNS origin of the syndrome. 
+Gordon et al. (2) suggested overactivity of the y 
+motor neuron system or underactivity of their su- 
+prasegmental inhibitory influences as the cause of 
+the excessive discharges in the M motor neuron 
+pool. Subsequent electrophysiologic and pharmaco- 
+logic studies have provided evidence implicating 
+dysfunction of GABAergic neurons in the y motor 
+neuron system as the mechanism of the continuous 
+muscle activity (13,17,26,36). Clinical improvement 
+with diazepam, which is known to potentiate 
+GABAergic transmission (13), also suggests in- 
+volvement of the CNS in the pathophysiology of the 
+syndrome. 
+More recent investigation of the pathogenesis of 
+SPS has been directed toward understanding the 
+cause of the presumed y motor system dysfunction. 
+In their first report of a patient with SPS, epilepsy, 
+type I diabetes, and elevated IgG/albumin ratio in 
+the CSF, Solimena et al. (4) recovered antibody di- 
+rected against GABAergic neurons. This antibody, 
+recovered from the serum and CSF, demonstrated 
+immunoreactivity by light-microscopy immunocy- 
+tochemistry in 
+a pattern identical to the cellular and 
+subcellular distributions of GAD in rat and human 
+brain and rat pancreatic islet cells. In addition, this 
+antibody was found to recognize essentially one 
+Movement Disorders, Vol. 6, No. I. 1991
+
+18 P. BLUM AND J. JANKOVIC 
+band comigrating with GAD on Western blot (4). In 
+their subsequent study, they found these GAD au- 
+toantibodies in 20 of 33 patients with SPS and again 
+noted close association with a variety of other au- 
+toimmune diseases, particularly IDDM (5). Because 
+GAD is primarily an intracellular antigen, autoanti- 
+bodies directed against this enzyme may represent a 
+phenomenon secondary to the immunologic de- 
+struction of GABAergic neurons. These observa- 
+tions strongly support an autoimmune hypothesis 
+for SPS. 
+An autoimmune mechanism of disease was first 
+proposed for SPS by Young (7) in 1966, because, in 
+addition to motor complaints, his patient had per- 
+nicious anemia and possible Hashimoto’s thyroid- 
+itis. Autoimmune diseases often coexist in patients. 
+For example, the occurrence of pernicious anemia 
+is substantially increased in patients with idiopathic 
+adrenal insufficiency, Grave’s disease, and vitiligo 
+(37). Similarly, a striking number of autoimmune 
+diseases occur in patients with SPS (Table 1). Of the 
+84 patients who fulfill Gordon’s criteria (2) for SPS, 
+15, or 18%, had clinical evidence of one or more 
+autoimmune diseases. Three had pernicious ane- 
+mia, four had vitiligo, and one patient developed 
+myasthenia gravis after a spontaneous remission of 
+stiff-person symptoms. Four of the 84 had hypothy- 
+roidism and 2 had hyperthyroidism; both of these 
+diseases may be autoimmune in origin. In addition, 
+two patients were thought to have Hashimoto’s thy- 
+roiditis. Our patient 1 had vitiligo as well as two 
+sisters with IDDM. Patient 2 also had a sister with 
+IDDM. Autoantibodies are also commonly found in 
+the sera of patients with SPS (Table 2). In the sec- 
+ond report of Solimena et al. (9, 19 of 20 patients 
+with SPS and GAD autoantibody present in CSF or 
+serum also had at least one other type of autoanti- 
+body. Of those who did not have GAD antibody, 4 
+of 12 had at least one other serum autoantibody 
+present. Both patients described in this report had 
+serum autoantibodies directed against islet cells and 
+gastric parietal cells. Patient 2 also had microsomal 
+and thyroglobulin antibodies. The remarkable num- 
+ber of autoantibodies and autoimmune diseases in 
+affected patients again suggests that SPS has an au- 
+toimmune etiology. 
+The relationship of SPS and diabetes mellitus de- 
+serves special attention. The current hypothesis 
+about the pathogenesis of IDDM is that an abnor- 
+mal immune response to an unknown stimulus, pos- 
+sibly a virus, is responsible for the development of 
+IDDM in genetically predisposed individuals. 
+Ninety-five percent of white patients with IDDM 
+have HLA DR4 and/or DR3, suggesting that the 
+disease is mediated by regulatory or structural vari- 
+ation of HLA molecules (38). Review of the litera- 
+ture reveals that 7 of the 84 (8%) patients were re- 
+ported to have IDDM, a frequency more than 30 times 
+that of the general population (0.25%) (39). Thirteen 
+additional patients were reported to have DM but 
+the type was not reported. Another two patients had 
+islet cell antibodies (ICA) without clinical evidence 
+of DM. In one study, patients with ICA who had 
+relatives with IDDM had a 100% probability of de- 
+veloping IDDM within 5 years (38). Thus, the cal- 
+culated 30-fold increase in the frequency of IDDM 
+in patients with SPS is a conservative estimate. 
+The relationship between IDDM and SPS may 
+not be coincidental. The peculiar configurations of 
+HLA-determined immunoregulatory molecules im- 
+plicated in the pathogenesis of IDDM (39) may rep- 
+resent the altered immune system via which autoim- 
+munity to GABAergic cells in the CNS develops. 
+The demonstration of HLA phenotypes common to 
+both diseases supports this hypothesis. HLA DR3 
+and DR4, the alleles most commonly associated 
+with IDDM in whites, were present in all three pa- 
+tients with SPS in whom this antigen was typed, 
+including one who did not have IDDM (Table 2). In 
+addition, four of five patients of Williams et al. (29) 
+had HLA B44, which is in linkage dysequilibrium 
+with DR4 (40). Typing of HLA-DR was not done in 
+these patients. Our patient 2 had neither HLA DR3 
+nor DR4. However, this patient is black and the 
+HLA phenotypes responsible for susceptibility to 
+IDDM in populations other than whites are not well 
+established (38). Nevertheless, specific HLA types 
+may represent the etiologic link between IDDM and 
+SPS . 
+Improvement of SPS symptoms with immuno- 
+therapy provides additional strong support for the 
+autoimmune hypothesis of the disease as well as 
+hope for curative treatment. Plasmapheresis has 
+had a variable effect. Vicari et al. (28) reported 
+striking improvement in their patient after 10 days 
+of every-other-day plasma exchange. Harding et al. 
+(30) reported one patient who had no improvement 
+after 5 days of plasma exchange and another who 
+failed to improve after combined treatment with 
+plasmapheresis, azathioprine, and prednisone. She 
+and her colleagues point out, however, that because 
+GAD autoantibody synthesis seems to occur in- 
+trathecally, exchange of plasma would theoretically 
+not be expected to benefit these patients. 
+Movement Disorders, Vol. 6, No. I, 1991
+
+STIFF-PERSON SYNDROME 19 
+Corticosteroid immunotherapy has been more 
+successful. Piccolo (28) has reported two cases in 
+which patients responded dramatically within 10 
+days of steroid treatment. One patient treated with 
+prednisone 100 mg/day achieved a complete remis- 
+sion. The second also responded to prednisone 100 
+mg/day, but has had some residual contractures of 
+affected muscles. Our two patients similarly had 
+markedly reduced stiffness with improvement in 
+their functioning and substantial reductions in their 
+diazepam requirements. Residual contractures re- 
+sulting from the prolonged muscle rigidity remain, 
+however, and impair the function of both of our 
+patients. Early intervention might be expected to 
+produce more complete relief. 
+In summary, two new cases of SPS are presented 
+and the features of the disease are documented by 
+videotape. Furthermore, we documented a marked 
+decrease in stiffness and spasms in both patients 
+after administration of corticosteroid drugs. They 
+represent two of only four similarly treated patients 
+with functional improvement after steroid therapy. 
+The effectiveness of immunotherapy in these pa- 
+tients adds to a growing body of evidence to support 
+an autoimmune etiology of SPS. 
+Acknowledgment: The authors thank Dr. Solimena and 
+Dr. De Camilli for assaying GAD antibodies in both pa- 
+tients, Dr. Lawrence Davis for referring patient l, and 
+Dr. Gage Van Horn for referring patient 2. We also thank 
+Dr. Marcia Levetown-Blum for her critical discussion 
+and review of this article. 
+LEGENDS TO VIDEOTAPE 
+SEGMENT 1 (patient 1). This segment shows 
+marked stiffness in the legs of the patient, dystonic 
+posturing of her feet, vitiligo of her fingers and toes, 
+and continuous muscle activity in her vastus later- 
+alis . 
+SEGMENT 2 (patient 1). This segment demon- 
+strates reduction of stiffness with improved flexibil- 
+ity 15 min after spinal anesthesia. 
+SEGMENT 1 (patient 2). This segment shows pa- 
+tient with marked axial and leg stiffness. 
+SEGMENT 2 (patient 2). This segment was vid- 
+eotaped 1 month after initiation of prednisone 100 
+mg on alternate days. There is improved gait with 
+reduced stiffness. 
+REFERENCES 
+I. Moersch FP, Woltman HW. Progressive fluctuating muscu- 
+lar rigidity and spasm (stiff-man syndrome): report of a case 
+and some observations in 13 other cases. Mayo Clinic Proc 
+1956;3 1 :42 1427. 
+2. Gordon EE, Januszko DM, Kaufman L. A critical survey of 
+stiff-man syndrome. Am J Med 1967;42:582-599. 
+3. Howard FM. A new and effective treatment for stiff-man 
+syndrome: preliminary report. Mayo Clin Proc 1963;38:203- 
+212. 
+4. Solimena M, Folli F, Denis-Donini S, et al. Autoantibodies 
+to glutamic acid decarboxylase in a patient with stiff-man 
+syndrome, epilepsy, and type I diabetes mellitus. N Engl J 
+Med 1988;318:1012-1020. 
+5. Solimena M, Folli F, Aparisi R, Pozza G, De Camilli P. 
+Autoantibodies to GABAergic neurons and pancreatic beta 
+cells in stiff-man syndrome. N Engl J Med 1990;322:1555- 
+1560. 
+6. Cohen L. Stiff-man syndrome. Two patients treated with 
+diazepam. J Am Med Assoc 1966;195:222-224. 
+7. Young W. The stiff-man syndrome. Br J Clin Pract 1966; 
+20:507-510. 
+8. Ricker K, Mertens HG. EMG phenomena in the “stiff-man’’ 
+syndrome. Electroencephalogr Clin Neurophysiol 1968; 
+25:413. 
+9. Sulway MJ, Baume PE, Davis E. Stiff-man syndrome pre- 
+senting with complete esophageal obstruction. Report of a 
+case. Am J Dig Dis 1970;15:79-84. 
+10. Hall CD, Haworth CC. “Stiff man syndrome” and trauma. 
+Br Med J 1971;3:531. 
+1 1. Shah DM, Rubenstein HM. Stiff-man syndrome. Report of a 
+case. Indiun J Med Sci 1971;25:41-44. 
+12. Cobb J. Stiff-man syndrome: is the lesion at the spinal cord 
+or brain stem level. Proc R Soc Med 1974;67:1065-1066. 
+13. Mamoli B, Heiss WD, Maida E, Podreka I. Electrophysio- 
+logical studies on the “stiff-man’’ syndrome. J Neurol 1977; 
+14. Westblom U. Stiff-man syndrome and clonazepam [Letter]. 
+JAm Med Assoc 1977;237:1930. 
+15. Martinelli P, Pazzaglia P, Montagna P, et al. Stiff-man syn- 
+drome associated with nocturnal myoclonus and epilepsy. J 
+Neurol Neurosurg Psychiatry 1978;41:458462. 
+16. lsaacs H. Stiff man syndrome in a black girl. J Neurol Neu- 
+rosurg Psychiatry 1979;42:988-994. 
+17. Boiardi A, Crenna P, Bussone G, Negri S, Merati B. Neu- 
+rological and pharmacological evaluation of a case of stiff- 
+man syndrome. J Neurol 1980;223:127-133. 
+18. Maida E, Reisner T, Summer K, Sandor-Eggerth H. Stiff- 
+man syndrome with abnormalities in CSF and computerized 
+tomography findings. Report of a case. Arch Neurol 1980; 
+37: 182-183. 
+19. Whelan JL. Baclofen in the treatment of “stiff-man” syn- 
+drome. Arch Neurol 1980;37:600-601. 
+20. Daras M, Spiro AJ. “Stiff-man syndrome” in an adolescent. 
+Pediatrics 1981 ;67:725-726. 
+21. Miller F, Korsvik H. Baclofen in the treatment of stiff-man 
+syndrome. Ann Neurol 1981;9:511-512. 
+22. Spehlmann R, Norcross K, Rasmus SC, Schlageter NL. Im- 
+provement of stiff-man syndrome with sodium valproate. 
+Neurology 198 1 ;3 1 : 1 162-1 163. 
+23. George TM, Burke JM, Sobotka PA, Greenberg HS, Vinik 
+AI. Resolution of stiff-man syndrome with cortisol replace- 
+ment in a patient with deficiencies of ACTH, growth hor- 
+mone, and prolactin. N Engl J Med 1984;310:1511-1513. 
+24. Meinck HM, Ricker K, Conrad B. The stiff-man syndrome: 
+new pathophysiological aspects from abnormal exterocep- 
+tive reflexes and the response to clomipramine, clonidine, 
+and tizanidine. J Neurol Neurosurg Psychiatry 1984;47:280- 
+287. 
+25. Nakamura N, Fujiya S, Yahara 0, Fujioka Y, Kawakami Y. 
+Stiff-man syndrome with spinal cord lesion. Clin Neuro- 
+parhol 1986;5:4046. 
+26. Correale J, Garcia Erro M, Kosac S, Masci M, Fernandez 
+Liguori N, Sica RE. An electrophysiological investigation of 
+217: 111-121. 
+Movement Disorders, Vol. 6, No. 1, 1991
+
+P. BLUM AND J. JANKOVIC 
+the stiff-man syndrome. Electromyogr Clin Neurophysiol 
+27. Piccolo G, Cosi V, Zandrini C, Moglia A. Steroid-responsive 
+and dependent stiff-man syndrome: a clinical and electro- 
+physiological study of two cases. ftal J Neurol Sci 1988;9: 
+28. Vicari AM, Folli F, Pozza G, et al. Plasmapheresis in the 
+treatment of stiff-man syndrome [Letter]. N Engl J Med 
+1989;320: 1499. 
+29. Williams AC, Nutt JG, Hare T. Autoimmunity in stiff man 
+syndrome [Letter]. Lancet 1988;2:222. 
+30. Harding AE, Thompson PD, Kocen RS, Batchelor JR, 
+Davey N, Marsden CD. Plasma exchange and immunosup- 
+pression in the stiff man syndrome [Letter]. Lancer 1989;2: 
+915. 
+31. Lorish TR, Thorssteinson G, Howard FM Jr. Stiff-man syn- 
+drome updated. Mayo Clin Proc 1989;64:629-636. 
+32. Piccolo G, Cosi V. Stiff-man syndrome, dysimmune disor- 
+der, and cancer [Letter]. Ann Neurol 1989;26: 105. 
+33. Phillips LH, Brashear HR, Dreifuss FE, Schmechle D. Se- 
+I988 ;28:2 15-221. 
+559-566. 
+rum autoantibodies in stiff-man syndrome [Abstract]. Neu- 
+rology 1990;40(suppl 1): 118. 
+34. Asher R. A woman with the stiff-man syndrome. Br Med J 
+35. Trethowan WH, Allosop JL, Turner B. The “stiff-man” 
+syndrome. A report of two further cases. Arch Neuroll960; 
+3 :448-456. 
+36. Meinck HM, Conrad B. Neuropharmacological investiga- 
+tions in the stiff-man syndrome. J Neurol1986;233:340-347. 
+37. Beall GN. Immunologic aspects of endocrine diseases. J Am 
+Med Assoc 1987;258:2952-2956. 
+38. Riley WJ. Insulin dependent diabetes mellitus, an autoim- 
+mune disorder? Clinical Immunol Immunopathol 1989; 
+39. Todd JA, Bell JI, McDevitt HO. HLA-DQ beta gene con- 
+tributes to susceptibility and resistance to insulin-dependent 
+diabetes mellitus. Nature 1987;329:599-604. 
+40. Awdeh ZL, Raum D, Yunis EJ, Alper CA. Extended 
+HLNcomplement allele haplotypes: evidence for T/t-like 
+complex in man. Proc Natl Acad Sci USA 1983;80:259-263. 
+1958 ;1:265-266. 
+53 :S92-S98. 
+Movement Disorders, Vol. 6, No. I, 1991</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0003</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>3650-3965</td><td>reviewed</td><td>Reviewed introductory shared context for both patients.</td><td>We describe here two patients with SPS found to have GAD autoanti- bodies in their sera and CSF, and whose associated autoimmune diseases, other autoantibodies, and re- sponse t...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>3967-7043</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>PATIENT 1 A 63-year-old Hispanic woman was referred for evaluation of increased tone in her lower extremi- ties. She had been well until 6 years previously, when she began to ex...</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>7045-8790</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>biopsy revealed mild neurogenic atrophy and type I1 atrophy. A complete myelogram revealed only mild cervical spondylosis with neither stenosis of the canal nor cord compression...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>8792-9500</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>14 P. BLUM AND J. JANKOVIC bination of 50 mg of baclofen and 30 mg of diazepam daily provided only modest relief of symptoms. One hundred milligrams of prednisone per day was ad...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>9502-12244</td><td>reviewed</td><td>Reviewed Patient 2 case block.</td><td>PATIENT 2 A 53-year-old black man was referred for evalu- ation of a 2?h-year history of progressive stiffness of the lower extremities. His initial symptom was in- voluntary up...</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>12246-13594</td><td>reviewed</td><td>Reviewed Patient 2 case block.</td><td>began to wear off, the patient was able to move his legs nearly normally. CSF glucose, protein, and cell count were unremarkable and there were no oligo- clonal bands. CSF IgG/a...</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0004</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>13708-13817</td><td>reviewed</td><td>Reviewed discussion comparing both patients.</td><td>Both fulfill the diagnostic criteria of Gordon et al. (2). In addition to spasm and progressive stiffness of</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0004</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>13886-14311</td><td>reviewed</td><td>Reviewed discussion comparing both patients.</td><td>axial musculature, each patient had characteristic EMG findings of continuous motor unit activity. The stiffness as well as the EMG findings improved after spinal anesthesia. In...</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\10.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\10.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\10.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\10.validation.json</p></main>
+</body>
+</html>

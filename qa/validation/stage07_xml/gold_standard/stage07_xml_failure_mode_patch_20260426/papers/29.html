@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 29</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 29</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0005</span></div><h2>Source Text</h2><div class="source-text">Movement Disorders 
+Vol. 8, No. 3, 1993, pp. 371-373 
+0 1993 Movement Disorder Society 
+Brief Report 
+Significant Improvement of Stiff-Person Syndrome After 
+Paraspinal Injection of Botulinum Toxin A 
+Dave Davis and &quot;&quot;rahman Jabbari 
+Departments of *Physical Medicine and Rehabilitation and fNeurology, Walter Reed Army Medical Center, 
+Washington, DC, and ?Department of Neurology, Uniformed Services University of the Health Sciences, 
+Bethesda, Maryland, U.S.A. 
+<span class="source-segment role-patient_specific" id="src-s0001" data-segment="s0001" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Summary: Following several months of low back pain, a 36-year-old man developed 
+progressive stiffness of the abdominal, low back, and thigh muscles. On examination, 
+these muscles demonstrated marked hypertonia consistent with the clinical diagnosis of 
+stiff-person syndrome. The patient demonstrated increased lumbar lordosis and had 
+focal hyperhidrosis at different sites. Electromyography showed continuous activity of 
+the paraspinal and thigh muscles, and serum and cerebrospinal fluid antibodies to glu- 
+tamic acid decarboxylase (GAD) were markedly elevated. Diazepam and Lioresal of- 
+fered partial pain relief. Paraspinal muscle administration of botulinum toxin A reduced 
+the tone of paraspinal and thigh muscles significantly and resulted in marked improve- 
+ment of ambulation and cessation of pain.</span> Key Words: Stiff-person syndrome- 
+Botulinum toxin A. 
+Stiff-person syndrome is an unusual disorder of neuro- 
+muscular function originally described by Moersch and 
+Woltman in 1956 (1). To date approximately 100 cases 
+have been described in the medical literature (2). Lorish 
+and associates (3) recently proposed the following diag- 
+nostic criteria: (a) progressive stiffness and rigidity of the 
+axial muscles; (b) slow progression of stiffness to include 
+proximal limb musculature; (c) hyperlordosis; (d) super- 
+imposed episodic spasms precipitated by movement, 
+noise, or emotional stress; (e) normal intellect; (f) normal 
+motor and sensory examinations; (g) typical electromyo- 
+gram (EMG) findings; and (h) positive response to ben- 
+zodiazepines. Recently, high levels of antibodies to glu- 
+tamic acid decarboxylase (GAD) have been found in the 
+majority of the patients with stiff-person syndrome. 
+Hyperactivity of the y motor neuron system seems to 
+play an important role in the pathophysiology of this con- 
+dition, resulting from either suprasegmental hyperactivity 
+of the catecholaminergic pathways (4) or a defect in the 
+inhibitory system y aminobutyric acid (GABA)-ergic 
+(5,6). The second hypothesis draws support from the 
+Address correspondence and reprint requests to Dr. Bahman 
+Jabbari, Neurology Service, Walter Reed Army Medical Center, 
+Washington, DC 20307, U.S.A. 
+The statements and assertions in this article are the private 
+views of the authors and should not be construed as the views of 
+the U.S. Army, Department of Defense, or Uniformed Services 
+University of the Health Sciences. 
+finding of autoantibodies to the enzyme GAD in the se- 
+rum and cerebrospinal fluid (CSF) of the patients with 
+stiff-person syndrome (7,8). This enzyme promotes the 
+conversion of L-glutamic acid into GABA, an inhibitory 
+neurotransmitter found in spinal Renshaw cell interneu- 
+rons. 
+Stiff-person syndrome is probably an autoimmune dis- 
+order. It often coexists with autoimmune diseases (2), and 
+affected patients show antibodies to pancreatic GABA, 
+gastric parietal cells and thyroglobulin (9-12), increased 
+levels of CSF immunoglobulins (13), and improvement 
+after plasmapheresis and immunomodulating medications 
+(14-16). Stiff-person-like syndromes have been described 
+in association with encephalomyelitis, paraneoplastic 
+syndromes, and endocrinopathies (17,18). High doses of 
+benzodiazepines (diazepam, 20 mg or more daily) offer 
+symptomatic relief, but such doses often cause undesir- 
+able sedation. 
+We now report a patient with clinical, EMG, and au- 
+toimmune features of stiff-person syndrome in whom in- 
+jection of botulinum toxin type A in the lumbar paraspinal 
+musculature resulted in remarkable relief from pain and 
+stiffness and significant improvement of ambulation. 
+<span class="source-segment role-patient_specific" id="src-s0002" data-segment="s0002" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">CASE REPORT 
+The patient was a 36-year-old right-handed black man 
+who had been in his usual state of good health until 18 
+months earlier when he began having episodic pain and 
+371</span>
+
+<span class="source-segment role-patient_specific" id="src-s0003" data-segment="s0003" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">3 72 D. DAVIS AND B. JABBARI 
+stiffness of his lumbar musculature. He was initially di- 
+agnosed as having degenerative arthritis. and he was 
+treated with nonsteroidal anti-inflammatory medications 
+without relief. His symptoms gradually progressed into 
+marked stiffness of the lower back and abdominal mus- 
+cles as well as the proximal muscles of the lower extrem- 
+ities. More recently, severe episodic spasms had devel- 
+oped, especially in his lumbar area. The spasms were 
+primarily triggered by physical activity. He reported a 
+20-lb weight gain as well as progressive curvature of his 
+lumbar spine over the previous year. The patient had an 
+unremarkable past medical history; however, his family 
+history was pertinent for a sister with both insulin- 
+dependent diabetes and hypothyroidism. A review of sys- 
+tems was notable for hyperhidrosis. 
+Physical examination showed a well-developed man in 
+moderate discomfort. His intellect was normal. Examina- 
+tion of the cranial nerves and cerebellar and sensory sys- 
+tems disclosed no abnormalities. On motor examination 
+he appeared to be muscular, with hypertrophied lumbar, 
+thigh, and calf musculature. No involuntary movements 
+were noted. There was hyperlordosis of the lumbar spine. 
+The tone was markedly increased in all muscles below the 
+rib cage, most notably in the paraspinal and abdominal 
+regions where they felt “wooden” on palpation. In the 
+lower limbs, the proximal muscles were more severely 
+involved. The patient was unable to proceed unassisted 
+from the supine to the standing position due to muscle 
+pain and stiffness. His gait was awkward, hesitant, and 
+antalgic. Deep tendon reflexes were normal and symmet- 
+ric with flexor plantar responses. There was markedly 
+decreased range of motion in the lumbar spine and hip 
+joints. 
+Laboratory studies included a hemogram, electrolytes, 
+liver enzymes, urinalysis, thyroid function panel, coagu- 
+lation studies, glucose tolerance test, ANA, adrenocorti- 
+cotropic hormone (ACTH) stimulation test, and erythro- 
+cyte sedimentation tests; all were normal. CSF analysis 
+demonstrated a protein of 25 mg/dl, glucose of 76 mg/dl, 
+cell count of 2 WBC and no RBC, and a differential of 
+100% mononuclear cells. Tests for HLA-B27, VDRL, hu- 
+man immunodeficiency virus (HIV) and Lyme titer were 
+negative. Pulmonary function tests showed FVC of 3.93 
+L (86%), FEVl of 3.12 L (83%), and a ratio of 79%. 
+Electrocardiogram and electroencephalogram (EEG) 
+were normal. A concurrent EEG and surface EMG using 
+the method of Armon et al. (19) showed continuous motor 
+unit activity in agonist and antagonist thigh muscles, 
+which diminished during stage I sleep and returned with 
+awakening. Needle EMG of the lumbar paraspinal mus- 
+cles showed continuous muscle activity in the awake 
+state. Nerve conduction velocities were normal in both 
+upper and lower extremities. Spine roentgenograms, 
+bone scan, and magnetic resonance imaging of the head 
+and spine were normal except for the finding of increased 
+lumbar lordosis. Biopsy of the right rectus femoris muscle 
+including histochemistry evaluation was normal. The pa- 
+tient serum and CSF were assayed for GAD in the Mayo 
+Clinic using immunoperoxidase staining of baboon’s pan- 
+creas. The end-point dilution for GAD antibody in serum 
+was 11122,000 (normal, &lt;1/120) and in CSF was 11128 
+(normal &lt; 1/2), both very high values. 
+A combination of diazepam and Lioresal, at a dosage of</span> 
+<span class="source-segment role-patient_specific" id="src-s0004" data-segment="s0004" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">15 mg of each daily, produced some symptomatic pain 
+relief. We then injected a total of 560 U of botulinum 
+toxin type A into the lumbar paraspinal muscles over a 
+period of 3 weeks at three different injecting sessions 
+(160, 200, and 200 U). Five sites were injected on each 
+side at the L1-5 paraspinal regions using 16-20 U/site. A 
+week after the last injection, the patient reported almost 
+total relief from exertional pain and complete cessation of 
+spontaneous painful spasms. On examination, he demon- 
+strated markedly decreased tone in paraspinal, abdominal 
+wall, and thigh musculature and ambulated much more 
+comfortably. There was clinical and radiological evidence 
+of improved lumbar lordosis. 
+A repeat EMG showed decreased firing of all muscles. 
+The patient sustained this degree of clinical improvement 
+over a month of follow-up and then moved to Europe. 
+Four months later he reported gradual return of muscle 
+stiffness and painful spasms; at the fifth month be re- 
+quired diazepam in excess of 30 mg daily. He was read- 
+mitted to us 6 months after the last injection of botulinum 
+toxin, following 2 weeks of slow diazepam taper to 10 mg 
+daily. He demonstrated difficult ambulation and com- 
+plained of much pain. Abdominal and lumbar paraspinal 
+muscle tone was markedly increased but less than the 
+first time. We injected a total of 200 U of botulinum toxin 
+in the lumbar paraspinal region (100 U on each side). 
+Within a few days, he reported significant pain relief and 
+showed improvement of ambulation. He was happy with 
+the results and did not wish more injections at this time.</span> 
+DISCUSSION 
+Patients with stiff-person syndrome are treated with 
+multiple systemic medications with varying success. 
+Physical modalities such as heat, ice, massage, and range- 
+of-motion exercises can suppress local spasm and prevent 
+contractures. Gait training and the use of assistance de- 
+vices maintain ambulation in some individuals. Pharma- 
+cologically, benzodiazepines such as diazepam and clo- 
+nazepam (20,21), baclofen (22,23), and valproic acid (24) 
+are effective, probably due to augmentation of GABA- 
+ergic transmission, whereas clonidine may work via inhi- 
+bition of the motor catecholinergic pathways (5). Plasma- 
+pheresis has produced mixed results (14-16). Steroids 
+caused partial relief from pain and discomfort in two fe- 
+male patients (25). 
+Botulinum toxin is now considered the treatment of 
+choice for blepharospasm, hemifacial spasm, spasmodic 
+dysphonia, and torticollis (26). Recently, it has shown 
+promise in treatment of spasticity (27). Botulinum toxin 
+prevents exostosis of acetylcholine from presynaptic ves- 
+icles and thereby chemically denervates the muscle. We 
+used botulinum toxin in our patient because of the effec- 
+tiveness of this agent against dystonic states, spasticity, 
+and hypertonia. A total dose of 560 U (injected into the 
+lumbar paraspinal muscles at three different sessions) re- 
+sulted in cessation of pain, significant improvement of 
+stiffness and function, and a decrease in lumbar lordosis 
+documented by examination and serial spinal radio- 
+graphs. The effect wore off in approximately 4 months. 
+and repeat injection of a smaller dose at 6 months pro- 
+Movement Disorders, Vol. 8, No. 3, 1993
+
+STIFF-PERSON SYNDROME AND BOTULINUM 3 73 
+duced similar results. It should be noted that our initial 
+dose of 560 U exceeds the total dose recommended for 
+dystonia (400450’U for torticollis), and repeated injec- 
+tion of such a dose may produce antibodies to botulinum 
+toxin. 
+<span class="source-segment role-patient_specific" id="src-s0005" data-segment="s0005" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">The decreased tone of uninjected thigh muscles after 
+injection at a paraspinal region was an intriguing finding. 
+This might have resulted from reduced proprioceptive in- 
+put from paraspinal muscle spindles and Ia fibers to the y 
+motor neurons of a shared pool with thigh muscles or 
+from diffusion of the toxin via nerve roots to these shared 
+segments. In rat and cat, radiolabeled botulinum toxin 
+reaches the corresponding half of the spinal cord after 
+injections into one gastrocnemius muscle (28). In addi- 
+tion, intramuscularly injected botulinum toxin reduces re- 
+current inhibition mediated by the Renshaw cells, pre- 
+sumably by an action of the toxin between these cells and 
+alpha motor neurons (29). This observation may have an 
+important clinical implication in that injection of large 
+thigh muscle groups may not be necessary in patients 
+with stiff-person syndrome. 
+In conclusion, lumbar paraspinal administration of bot- 
+ulinum toxin type A resulted in marked functional im- 
+provement of a patient with typical stiff-person syndrome 
+and reduced the need for systemic agents.</span> The role of 
+botulinum toxin type A as a sole agent in the treatment of 
+stiff-person syndrome and the overall prognosis of this 
+syndrome after early administration remain to be inves- 
+tigated. 
+Acknowledgment: We thank Vanda A. Lennon, M.D., Ph.D., 
+at Mayo Clinic Foundation for assaying antibodies to glutamic 
+acid decarboxylase in the serum and CSF of the patient dis- 
+cussed in this article. 
+REFERENCES 
+1. Moersch FP, Woltman HW. Progressive fluctuating muscu- 
+lar rigidity and spasm (“stiff-man” syndrome): report of a 
+case and some observations in 13 other cases. Proc Staff 
+Meet Mayo Clinic 1956;31:421-427. 
+2. McEvoy KM. Stiff-man syndrome. Semin Neurol 1991;ll: 
+3. Lorish TR, Thorsteinsson G, Howard FM Jr. Stiff-man syn- 
+4. Gordon EE, Januszko DM, Kaufman I. A critical survey of 
+197-205. 
+drome updated. Mayo CIin Proc 1989;64:629-636. 
+stfi-rnan svndrome. Am J Med 1967;42:582-599. 
+Meinck HM, Ricker K, Conrad B. The stiff-man syndrome: 
+new pathophysiological aspects from abnormal exterocep- 
+tive reflexes and the response to clomipramine, clonidine, 
+and tizanidine. J Neurol Neurosurg Psychiatr 1984;47:280- 
+287. 
+Schmidt RT, Stahl SM, Spehlmann R. A pharmacologic 
+study of the stiffman syndrome: correlation of clinical symp- 
+toms with urinary 3-methoxy-4-hydroxy-phenol glycol ex- 
+cretion. Neurology 1975;25:622-626. 
+Solimena M, Folli F, Denis-Donini S, et al. Autoantibodies 
+to glutamic acid decarboxylase in a patient with stiffman 
+syndrome, epilepsy, and type 1 diabetes mellitus. N EngI J 
+Med l988;3 18: 10 12-1020. 
+8. 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
+16. 
+17. 
+18. 
+19. 
+20. 
+21. 
+22. 
+23. 
+24. 
+25. 
+26. 
+27. 
+28. 
+29. 
+Solimena M, Folli F, et 
+al. Autoantibodies to gaba-ergic neu- 
+rons and pancreatic beta cells in stiff-man syndrome. N Engl 
+J Med 1990;322: 1555-1560. 
+Solimena M, DeCamilli P. Autoimmunity to glutamic acid 
+decarboxylase (GAD) in stiff-man syndrome and insulin de- 
+pendent diabetes mellitus. Trend Neurosci 1991 ;14:452457. 
+Baekkeskov S, Aanstoot HJ, Christgau S, et al. Identifica- 
+tion of the 64 k autoantigen in insulin dependent diabetes as 
+the GABA synthesizing enzyme glutamic acid decarboxyl- 
+ase. Nature 1990;347:151-156. 
+Karlsen AE, Hagopian WA, Grubin CE, et al. Cloning and 
+primary structure of a human islet isoform of glutamic acid 
+decarboxylase from chromosome 10. Proc Natf Acad Sci 
+USA 1991 ;88:8337-841. 
+Layzer RB. Stiff-man syndrome: an autoimmune disease? N 
+Engl J Med 1988;318:106&amp;1061. 
+Maida E, Reiser T, Summer K, et al. Stiff-man syndrome 
+with abnormalities in CSF and computerized tomography 
+findings. Arch Neurol 1980;37: 182-183. 
+Vicari AM, Folli F, Pozza G, et al. Plasmapheresis in the 
+treatment of stiff-man syndrome. N Engl J Med 1990;320: 
+1499. 
+Brashear HR, Phillips LH 11. Autoantibodies to gabaergic 
+neurons and response to plasmapheresis in stiff-man syn- 
+drome. Neurology 1991;41: 1588-1592. 
+McEvoy KM. Stiff-man syndrome. Mayo Clin Proc 1991;66: 
+300-304. 
+Piccolo G, Cosi V. Stiff-man syndrome, dysimmune disor- 
+der, and cancer. Ann Neurol 1989;26:105. 
+Bateman DE, Weller RO, Kennedy P. Stiffman syndrome: a 
+rare paraneoplastic disorder? J Neurol Neurosurg Psychiatr 
+1990;53:695-696. 
+Armon C, McEvoy KM, Westmoreland BF, McManis PG. 
+Clinical neurophysiologic studies in stiff-man syndrome: use 
+of simultaneous video-electroencephalographic-surface lec- 
+tromyographic recording. Mayo CIin Proc 1990;65:960-967. 
+Howard FM Jr. A new and effective drug in the treatment of 
+the stiff-man syndrome: preliminary report. Mayo Clinic 
+Proc 1963;38:203-2 12. 
+Westbloom U. Stiff-man syndrome and clonazepam. JAMA 
+1977;237: 1930. 
+Whelan JL. Baclofen in treatment of the ‘stiff-man’ syn- 
+drome. Arch Neurol 1980;37:600-601. 
+Miller F, Korsvik H. Baclofen in the treatment of the stiff- 
+man syndrome. Ann Neurol 1981;19:511-512. 
+Spehlmann R, Norcross K, Rasmus SC, et al. Improvement 
+of stiff-man syndrome with sodium valproate. Neurology 
+Jankovic J, Brin MF. Therapeutic uses of botulinum toxin. 
+N Engl J Med 1991;25:1186-1194. 
+Blum P, Jankovic J. Stiff-person syndrome. Mov Disord 
+Snow BJ, Tsui JKC, Bhatt MH, Varelas M, Hashomoto SA, 
+Calne DB. Treatment of spasticity with botulinum toxin. 
+Ann Neurol 1990;28:512-515. 
+Habermann E. 125 I-labeled botulinum neurotoxin from 
+clostridium botulinum A: preparation binding to synapto- 
+somes and ascent to the spinal cord. Naunyn Schmiedebergs 
+Arch Pharmacol 1974;281:47-56. 
+Weigand H, Wellhoner HH. The action of botulinum toxin A 
+neurotoxin on the inhibition by the antidromic stimulation of 
+the lumbar monosynaptic reflex. Naunyn Schmiedebergs 
+Arch Pharmacol 1977;298:235-238. 
+1981 ;3 1 : 1162-1 163. 
+1991;6:12-20. 
+Movement Disorders, Vol. 8, No. 3, 1993</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>466-1281</td><td>reviewed</td><td>Reviewed abstract clinical summary.</td><td>Summary: Following several months of low back pain, a 36-year-old man developed progressive stiffness of the abdominal, low back, and thigh muscles. On examination, these muscle...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>4110-4292</td><td>reviewed</td><td>Reviewed case-report block.</td><td>CASE REPORT The patient was a 36-year-old right-handed black man who had been in his usual state of good health until 18 months earlier when he began having episodic pain and 371</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>4294-7761</td><td>reviewed</td><td>Reviewed case-report block.</td><td>3 72 D. DAVIS AND B. JABBARI stiffness of his lumbar musculature. He was initially di- agnosed as having degenerative arthritis. and he was treated with nonsteroidal anti-inflam...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0002</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>7763-9381</td><td>reviewed</td><td>Reviewed case-report block.</td><td>15 mg of each daily, produced some symptomatic pain relief. We then injected a total of 560 U of botulinum toxin type A into the lumbar paraspinal muscles over a period of 3 wee...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>11332-12435</td><td>reviewed</td><td>Reviewed patient-specific treatment interpretation.</td><td>The decreased tone of uninjected thigh muscles after injection at a paraspinal region was an intriguing finding. This might have resulted from reduced proprioceptive in- put fro...</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\29.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\29.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\29.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\29.validation.json</p></main>
+</body>
+</html>

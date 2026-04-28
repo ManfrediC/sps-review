@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 07 XML Review 30</title>
+<style>
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2 {
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+.meta, .muted {
+  color: #53606f;
+}
+.top-links {
+  margin-bottom: 18px;
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+.badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #ffffff;
+  font-size: 13px;
+}
+.badge.warn {
+  border-color: #d97706;
+  background: #fff7ed;
+  color: #7c2d12;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 4px 2px 0;
+  padding: 2px 7px;
+  border-left: 5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.target-chip-id {
+  font-weight: 700;
+}
+.source-text {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 6px;
+  padding: 18px;
+  overflow-x: auto;
+}
+.source-segment {
+  position: relative;
+  padding: 2px 3px;
+  margin: 0 1px;
+  background: var(--seg-bg);
+  color: var(--seg-text);
+  border-bottom: 3px solid var(--seg-border);
+  border-radius: 3px;
+}
+.source-segment::before {
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--seg-border);
+  color: var(--seg-text);
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-right: 4px;
+}
+.role-shared,
+.role-background {
+  outline: 1px dashed #6b7280;
+}
+.role-uncertain {
+  outline: 1px dotted #475569;
+}
+.segment-table,
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+th {
+  background: #eef2f7;
+}
+.warning-list {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+.rejected-table {
+  border-color: #fecaca;
+}
+.rejected-table th {
+  background: #fff1f2;
+}
+.target-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+.target-kind {
+  color: #53606f;
+  min-width: 70px;
+}
+.target-related {
+  font-size: 13px;
+}
+a {
+  color: #0f5f95;
+}
+
+</style>
+</head>
+<body>
+<main><p class="top-links"><a href="../index.html">Back to index</a></p><h1>Paper 30</h1><p class="meta"></p><div class="status-row"><span class="badge">Route: individual_case_split</span><span class="badge">Validation: passed</span><span class="badge">Round-trip: passed</span><span class="badge warn">Manual review: False</span></div><h2>Targets</h2><div class="target-summary"><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0005, s0006, s0007, s0008, s0009, s0020</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0010, s0011, s0012, s0013, s0020</span></div><div class="target-summary"><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span><span class="target-kind">patient</span><span class="target-related">s0001, s0002, s0003, s0004, s0014, s0015, s0016, s0017, s0018, s0019, s0020</span></div><h2>Source Text</h2><div class="source-text">946
+
+THE NEW ENGLAND JOURNAL OF MEDICINE
+
+Feb. 25, 1993
+
+AUTOANTIBODIES TO A 128-kd SYNAPTIC PROTEIN IN THREE WOMEN WITH THE
+STIFF-MAN SYNDROME AND BREAST CANCER
+
+Franco Fouur, M.D., MIcHELE SoLIMENA, M.D., RoxANNE COoFIELL, B.S., Mario Austoni, M.D.,
+GIOVANNI TALLINI, M.D., GruLIANo FassetTa, M.D., Davin Bates, M.D., NIALL CarTLipGE, M.D.,
+Gian Franco Bottazzo, M.D., Giovanni PiccoLo, M.D., AND PrETRO DE CamILu1, M.D.
+Abstract Background. The stiff-man syndrome is a
+rare disease of the central nervous system characterized
+by progressive rigidity of the body musculature. Autoantibodies directed against glutamic acid decarboxylase are
+
+present in about 60 percent of patients with the syndrome.
+In this group, there is a striking association of the stiff-man
+syndrome with organ-specific autoimmune diseases, primarily insulin-dependent diabetes mellitus.
+
+<span class="source-segment role-shared" id="src-s0001" data-segment="s0001" data-label="p1 p2 p3 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">Methods. We studied three women with the stiff-man
+syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and
+cerebrospinal fluid by immunocytochemical techniques,
+Western blotting, and immunoprecipitation.
+Results. Autoantibodies directed against a 128-kd
+brain protein were found in two of the women with the stiffman syndrome and breast cancer.</span> These results led to a
+search for breast cancer in the third patient with the stiffHE stiff-man syndrome is a rare disorder of the
+central nervous system characterized by fluctuat-
+
+ing but progressive muscle rigidity and spasms.&#x27;?
+
+Sixty percent of the patients with this syndrome
+have autoantibodies directed against glutamic acid
+
+decarboxylase,*® an enzyme present both in neurons
+secreting y-aminobutyric acid and in pancreatic beta
+cells.”®* Glutamic acid decarboxylase autoantibodies
+are also found in patients with insulin-dependent
+
+diabetes mellitus.? Patients with the stiff-man syndrome who have such autoantibodies often have organ-specific autoimmune diseases, in particular insu-
+
+lin-dependent diabetes mellitus.*° The absence of
+
+glutamic acid decarboxylase autoantibodies in 40 percent of the patients with stiff-man syndrome suggests
+that the pathogenesis of the syndrome may be hetero-
+
+geneous.”&#x27;° In a few patients, the stiff-man syndrome
+is associated with cancer.&#x27;&#x27;
+<span class="source-segment role-shared" id="src-s0002" data-segment="s0002" data-label="p1 p2 p3 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">We describe three women with the stiff-man syn-</span>
+
+<span class="source-segment role-shared" id="src-s0003" data-segment="s0003" data-label="p1 p2 p3 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">drome and ductal breast cancer who had autoantibodies directed against a 128-kd neuronal protein that is
+concentrated at synapses. None of the patients had
+glutamic acid decarboxylase antibodies or organ-specific autoimmune diseases.</span>
+
+<span class="source-segment role-shared" id="src-s0004" data-segment="s0004" data-label="p1 p2 p3 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">man syndrome, who also had autoantibodies. A small invasive ductal carcinoma was detected by ultrasonography
+and removed. Serum samples from all three patients were
+negative for autoantibodies directed against glutamic acid
+decarboxylase.</span> Autoantibodies against the 128-kd antigen
+were not detected in control patients with the stiff-man
+syndrome without breast cancer or in patients with cancer
+who did not have the syndrome. Within the nervous system, the 128-kd autoantigen was localized in neurons and
+concentrated at synapses.
+Conclusions. \n a subgroup of patients with the stiffman syndrome, the condition is likely to have an autoimmune paraneoplastic origin. The detection of autoantibodies against the 128-kd antigen in patients with this
+syndrome should be considered an indication to search
+for an occult breast cancer. (N Engl J Med 1993;328:
+546-51.)
+
+Case REPORTS
+<span class="source-segment role-patient_specific" id="src-s0005" data-segment="s0005" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Patient 1</span>
+
+<span class="source-segment role-patient_specific" id="src-s0006" data-segment="s0006" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">Patient | has been described previously by Piccolo et al.!? (Patient 2 in their report). A 54-year-old woman began to have paresthesia, myalgia, and rigidity of both arms in 1985. In March 1986,
+she presented with symmetric stiffness of the upper arm and neck
+muscles that increased markedly on voluntary contraction as well as
+during passive motion. The patient’s cerebrospinal! fluid contained
+IgG, which had an oligoclonal pattern when examined by isoelec-</span>
+
+<span class="source-segment role-patient_specific" id="src-s0007" data-segment="s0007" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">trofocusing.&#x27;® Electromyography revealed continuous motor-unit
+activity at rest. Diazepam therapy was ineffective, but the patient’s
+neurologic symptoms improved when she was treated with predni-</span>
+
+<span class="source-segment role-patient_specific" id="src-s0008" data-segment="s0008" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">sone. In September 1987 an invasive ductal adenocarcinoma of the
+breast was detected and removed, after which tamoxifen was given.
+Treatment with prednisone was discontinued in March 1988, and at
+the most recent follow-up visit the patient was neurologically normal. Autoantibodies against the 128-kd antigen were detected in
+several serum samples obtained between October 1986 and May</span>
+
+<span class="source-segment role-patient_specific" id="src-s0009" data-segment="s0009" data-label="p1 patient_specific" style="--seg-bg:#D9ECF7;--seg-border:#0072B2;--seg-text:#073B4C;">1992 (earlier samples were not available) and in two cerebrospinal
+fluid samples obtained in October 1986 and January 1987.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0010" data-segment="s0010" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">Patient 2
+A 76-year-old woman began to have contractures and weakness
+of the arms in 1985. She was found to have fixed rigidity of the
+shoulders; contractures of the arms, wrists, and fingers; and absent
+arm reflexes in 1987. Electromyography revealed continuous motorunit activity at rest. No oligoclonal bands of IgG were detected in
+the cerebrospinal fluid. The patient also had a breast mass, which</span>
+
+<span class="source-segment role-patient_specific" id="src-s0011" data-segment="s0011" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">proved to be a poorly differentiated ductal adenocarcinoma.</span> The
+From the Departments of Cell Biology (F.F., M.S., P.D.C.) and Pathology
+(G.T.), and Howard Hughes Medical Institute (R.C., P.D.C.), Yale University
+School of Medicine, New Haven, Conn.; Istituto di Semeiotica Medica, Universita di Padova, Padua, Italy (M.A.); Divisione Neurologica, Ospedale di Belluno,
+Belluno, Italy (G.F.); the Department of Neurology, Royal Victoria Infirmary,
+Newcastle upon Tyne, United Kingdom (D.B., N.C.); the Department of
+Immunology, London Hospital Medical College, London (G.F.B.); and Istituto
+* Neurologico Mondino, Universita di Pavia, Pavia, Italy (G.P.). Address reprint
+requests to Dr. De Camilli at Howard Hughes Medical Institute, Department of
+Cell Biology, Boyer Center for Molecular Medicine, 295 Congress Ave., New
+Haven, CT 06510.
+Supported by grants (AI 30248-01, DK 43078-01, and MH 45191-01) from the
+National Institutes of Health, the Klingenstein Foundation, the McKnight Endowment for the Neurosciences (to Dr. De Camilli), the Muscular Dystrophy
+Association (to Dr. Solimena), and a Dottorato di Ricerca, Hospitale Raffaele,
+University of Milan (to Dr. Folli).
+
+<span class="source-segment role-patient_specific" id="src-s0012" data-segment="s0012" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">breast cancer was excised, and the patient was treated with tamoxifen, diazepam, and baclofen. Her condition deteriorated slowly,
+with increasing rigidity of the arms, trunk, and eventually legs, and</span>
+
+<span class="source-segment role-patient_specific" id="src-s0013" data-segment="s0013" data-label="p2 patient_specific" style="--seg-bg:#FCE6D6;--seg-border:#D55E00;--seg-text:#5A2500;">she died two years after surgery for a myocardial infarction. No
+autopsy was performed. Autoantibodies against the 128-kd antigen
+were detected in the only serum sample tested, which was obtained
+a few weeks after surgery in 1987.</span>
+
+<span class="source-segment role-patient_specific" id="src-s0014" data-segment="s0014" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">Patient 3
+A 66-year-old woman began to experience progressive rigidity of
+the legs in 1989, which was partially relieved by bromazepam. Eight
+months later she was admitted to the hospital in opisthotonus, with</span>
+
+<span class="source-segment role-patient_specific" id="src-s0015" data-segment="s0015" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">board-like rigidity of the abdomen. Physical and emotional stimuli
+caused painful muscle spasms. Electromyography revealed continu-</span>
+
+The New England Journal of Medicine
+Downloaded from nejm.org at Universitats- und Zentralbibliothek Zurich on May 26, 2023. For personal use only. No other uses without permission.
+Copyright © 1993 Massachusetts Medical Society. All rights reserved.
+
+Vol. 328 No. 8
+
+STIFF-MAN SYNDROME AND BREAST CANCER — FOLLI ET AL.
+
+<span class="source-segment role-patient_specific" id="src-s0016" data-segment="s0016" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">ous motor-unit activity at rest. A diagnosis of stiff-man syndrome</span>
+
+<span class="source-segment role-patient_specific" id="src-s0017" data-segment="s0017" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">was made according to the criteria of Lorish et al.? Oligoclonal</span>
+
+<span class="source-segment role-patient_specific" id="src-s0018" data-segment="s0018" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">bands of IgG were found in the cerebrospinal fluid. Autoantibodies
+against the 128-kd antigen were detected in both the serum and
+cerebrospinal fluid. This finding prompted a search for an occult
+breast tumor. A micronodular mass was detected in the left breast
+by ultrasonography and was surgically removed. Pathological ex-</span>
+
+<span class="source-segment role-patient_specific" id="src-s0019" data-segment="s0019" data-label="p3 patient_specific" style="--seg-bg:#D8F0E8;--seg-border:#009E73;--seg-text:#063D2E;">amination revealed an invasive ductal carcinoma. The patient was
+treated with tamoxifen, diazepam, and prednisone. She improved
+markedly and became able to walk unassisted. Autoantibodies
+against the 128-kd antigen were detected in multiple serum samples
+obtained in 1990, 1991, and 1992.</span>
+<span class="source-segment role-shared" id="src-s0020" data-segment="s0020" data-label="p1 p2 p3 shared" style="--seg-bg:#fff8dc;--seg-border:#6b7280;--seg-text:#1f2937;">In none of the patients could it be established whether the breast
+cancer antedated the neurologic symptoms. In all three patients,
+tests of serum for organ-specific autoantibodies (islet-cell antibodies, gastric parietal-cell antibodies, thyroglobulin antibodies, and
+thyroid microsomal [peroxidase] antibodies) other than antineuronal antibodies were negative.</span>
+
+METHODS
+In addition to testing serum samples from the 3 patients, we
+tested serum samples from 73 other patients with the stiff-man syndrome who did not have breast cancer (of whom 43 had positive
+
+tests for glutamic acid decarboxylase autoantibodies), 120 patients
+with a variety of other neurologic diseases, 30 patients with a variety of histologically confirmed cancers (ductal breast cancer in 17
+patients, ovarian adenocarcinoma in 4 patients, squamous-cell carcinoma in 3 patients, and neurofibroma, ovarian teratoma, ovarian
+fibrothecoma, embryonal stromal sarcoma, endometrial adenocar-
+
+cinoma, and embryonal carcinoma of the testis in | patient each),
+and 16 normal subjects. The rabbit serum directed against glutamic
+
+acid decarboxylase (serum 7673), rabbit serum directed against
+synapsin I,&#x27;? and rabbit serum directed against synaptophysin&#x27;®
+have been described previously.
+
+Fragments of normal and cancerous breast tissue were obtained
+at operation from Patient 3. We also studied fragments of cerebral
+cortex obtained from the margins of brain tumors excised surgically
+from four patients and 45 abnormal human tissues: 12 ductal breast
+carcinomas, 6 fibrocystic breast tissues, 2 breast fibroadenomas,
+4 ovarian adenocarcinomas, | ovarian fibrothecoma, 2 cystic ovarian teratomas, 2 testicular seminomas, 2 embryonal carcinomas of
+
+the testis, | testicular teratocarcinoma, | endometrial adenocarcinoma, | endometrial stromal sarcoma, 4 adenocarcinomas of the
+colon, 3 squamous-cell carcinomas (head, neck, and lung), 1 undifferentiated large-cell carcinoma of the lung, | mediastinal neurofibroma, 1 pheochromocytoma, and | non-Hodgkin’s lymphoma.
+Indirect immunoperoxidase and immunofluorescence staining of
+
+frozen sections of formaldehyde-fixed rat tissues** or of snap-frozen
+acetone-fixed human tissues!? was performed as previously described.**&#x27;? Serum and cerebrospinal fluid samples were routinely
+tested at dilutions of 1:20 and 1:2, respectively.** A specific signal
+could be detected with dilutions of up to 1:100. For autoantibody
+
+affinity purification, frozen sections of formaldehyde-fixed rat cerebellum or liver were allowed to react with human serum as de-
+
+scribed for immunocytochemical techniques.** Bound autoantibod-
+
+ies eluted with a low-pH buffer were used for Western blotting
+studies. Tissue homogenization, sodium dodecyl sulfate—polyacrylamide-gel electrophoresis, and Western blotting were performed as
+
+previously described.* Human serum was routinely used at a dilution of 1:250. Immunoprecipitation was performed as previously
+
+described.°
+
+RESULTS
+Immunocytochemical Identification of Antineuronal
+Autoantibodies
+
+547
+
+that of the synaptic-vesicle proteins synapsin I!” (compare Panels D, E, and F in Fig. 1 with Panel G)
+
+and synaptophysin&#x27;® (compare Panel J with Panel K),
+suggesting that the autoantigen or autoantigens are
+concentrated at synapses. In addition, there was a
+
+variable degree of diffuse cytoplasmic staining in a
+subpopulation of neuronal perikarya and dendrites
+(Fig. 1B, 1H, and 11). None of the control serum samples, whether obtained from patients with neurologic
+diseases, patients with cancer, or normal subjects,
+stained brain tissue in this way. The serum samples
+from the three patients stained more neurons and synapses than a serum sample from a contro] patient with
+the stiff-man syndrome who had antibodies directed
+against glutamic acid decarboxylase (compare Panel
+B in Fig. | with Panel C). The results were similar in
+studies using human cerebral cortex.
+Western Blotting Studies
+
+The serum samples from the three patients and the
+cerebrospinal fluid samples from Patients | and 3 recognized the same protein doublet of approximately
+128 kd when tested by Western blotting on monodi-
+
+mensional gels (Fig. 2) and bidimensional gels (not
+
+shown) of extracts of human cerebral cortex and rat
+brain. None of the samples reacted with the glutamic
+acid decarboxylase band. Conversely, serum samples
+from other patients with the stiff-man syndrome, including those who had glutamic acid decarboxylase
+autoantibodies, did not react with the 128-kd antigen
+(Fig. 2A, lane 4). The 128-kd antigen was not recognized by any of the other control serum samples (Fig.
+
+2A, lanes 5 and 6).
+To confirm that the 128-kd antigen was responsible
+for the immunoreactivity in brain sections, a serum
+sample from Patient 3 was affinity-purified by absorption to and elution from sections of rat cerebellum and
+then tested by Western blotting. The affinity-purified
+antibodies, like the unpurified serum, selectively labeled the !28-kd antigen. No labeling of the 128-kd
+antigen was seen when the serum was affinity-purified
+with sections of rat liver.
+The Western blot technique involves denaturation
+of the antigen (Fig. 2). To exclude the possibility that
+the serum samples from Patients 1, 2, and 3 reacted with native glutamic acid decarboxylase, they
+were tested in an immunoprecipitation assay with
+Triton X-100-treated extracts of rat brain. The serum samples from each patient precipitated the 128kd antigen but not glutamic acid decarboxylase (Fig.
+3A, lanes 4, 5, and 6). Conversely, control serum
+samples containing glutamic acid decarboxylase autoantibodies precipitated glutamic acid decarboxylase
+but not the 128-kd antigen (Fig. 3B, lanes 2 and
+3). Neither the 128-kd antigen nor glutamic acid de-
+
+Immunocytochemical analysis of serum samples
+
+carboxylase was immunoprecipitated by serum sam-
+
+from all three patients (Fig. 1) and cerebrospinal fluid
+
+ples from the control subjects, including samples from
+
+samples from Patients 1 and 3 (samples from Patient 2
+
+other patients with the stiff-man syndrome that did
+not contain glutamic acid decarboxylase antibodies
+(Fig. 3, lanes 7, 8, and 9).
+The 128-kd antigen was recovered in both particu-
+
+were not available) showed that all stained the gray
+matter of rat brain as detected by light microscopy.
+The distribution of immunoreactivity was similar to
+
+The New England Journal of Medicine
+Downloaded from nejm.org at Universitats- und Zentralbibliothek Zurich on May 26, 2023. For personal use only. No other uses without permission.
+Copyright © 1993 Massachusetts Medical Society. All rights reserved.
+
+548
+
+THE NEW ENGLAND JOURNAL OF MEDICINE
+
+ee
+4 , Sen get
+*
+
+The New England Journal of Medicine
+Downloaded from nejm.org at Universitats- und Zentralbibliothek Zurich on May 26, 2023. For personal use only. No other uses without permission.
+Copyright © 1993 Massachusetts Medical Society. All rights reserved.
+
+Feb. 25, 1993
+
+Vol. 328 No. 8
+
+STIFF-MAN SYNDROME AND BREAST CANCER — FOLLI ET AL.
+
+549
+
+Figure 1. Photomicrographs of Sections of Rat Cerebellum and Brain Stem Stained with Serum Samples (Diluted 1:20) from Patients 1,
+2, and 3 and a Control Patient and with Rabbit Antibodies to Synaptic-Vesicle Proteins.
+
+In Panels A through |, immunoperoxidase staining was used (immunoreactive areas are black), and in Panels J and K, immunofluorescence staining was used (immunoreactive areas are white). In Panel A, a sagittal section of cerebellum stained with serum from Patient 1
+shows staining of all regions containing synapses in the cerebellar cortex and the deep cerebellar nuclei (DCN). The dense staining of the
+molecular layer (ML) and the patchy staining of the granular layer (GL) correspond to the known distribution of synapses in the two
+layers.° In Panel B, cerebellar cortex stained with serum from Patient 3 shows widespread immunoreactivity on synapses. in Panel C,
+cerebellar cortex stained with serum from a patient with the stiff-man syndrome that contained glutamic acid decarboxylase antibodies
+
+shows only a few immunoreactive synapses, corresponding to y-aminobutyric acid—ergic synapses.° These include synapses made by
+
+basket-cell axons around the axon hillocks of Purkinje cells (arrow). In Panels D, E, and F, adjacent sections of cerebellar cortex stained
+with serum samples from Patients 1, 2, and 3, respectively, have identical patterns of immunoreactivity. This pattern is very similar to that
+
+produced by rabbit antibodies directed against a nerve-terminal marker, synapsin 1,’’ as shown in Panel G. In Panels H and |, adjacent
+sections of deep cerebellar nuclei stained with serum samples from Patients 1 and 3, respectively, show localized immunoreactivity in the
+cytoplasm of neuronal perikarya (P) and dendrites as well as in the nerve terminals that form synapses at their surfaces (arrows). Double-
+
+immunofluorescence labeling of a brain-stem section with serum from Patient 3 (Panel J) and antibodies directed against synaptophysin&#x27;® (Panel K), a synaptic-vesicle marker, shows nerve terminals filled with synaptic vesicles (white puncta). The profiles of neuronal
+perikarya and dendrites (arrows) are apparent. The scale bar measures 0.25 mm in Panel A, 25 44m in Panels B and C, 50 um in Panels
+D, E, F, and G, and 25 um in Panels H, |, J, and K.
+
+late and soluble fractions after high-speed centrifugation of a homogenate of rat brain (data not shown).
+Thus, the 128-kd antigen is not an intrinsic membrane
+protein.
+Detection of the 128-kd Antigen in Nonneuronal Normal
+and Cancerous Tissues
+
+Serum from Patient 3 was used to detect the possible presence of the 128-kd antigen outside the brain by
+Western blotting. A band with the same electrophoretic mobility as the large isoform of the 128-kd antigen found in the brain, but less intensely stained, was
+found in extracts of rat testis, ovaries, and adrenal
+gland, but not in liver, kidney, submandibular gland,
+pancreas, lung, skeletal muscle, heart, spleen, or
+mammary gland (data not shown).
+The 128-kd antigen was not detected in either the
+cancerous or the normal breast tissue of Patient 3
+(Fig. 4A, lanes 2 and 3). In addition, the 128-kd antigen was not found in any of the 45 abnormal human
+tissues tested, including the 12 ductal breast carcinomas (Fig. 4B, lanes 5 and 6), except for the 2 cystic
+
+ovarian teratomas (Fig. 4B, lanes 3 and 4),”! which on
+
+histologic examination were found to contain several
+foci of well-differentiated neural tissue. The two pa-
+
+tients from whom these tumors were removed had no
+signs of neurologic dysfunction, and their serum did
+not contain autoantibodies against the 128-kd antigen.
+DISCUSSION
+
+We detected a humoral autoimmune response
+against a neuronal protein of 128 kd in three women
+with the stiff-man syndrome and breast cancer. The
+128-kd antigen was concentrated at synapses and had
+a highly restricted distribution outside the nervous
+system.
+
+None of the serum samples from the three patients
+contained glutamic acid decarboxylase antibodies.
+
+Glutamic acid decarboxylase is the main target of humoral autoimmunity in the majority of patients with
+
+the stiff-man syndrome.*® Our results indicate that
+the 128-kd antigen and glutamic acid decarboxylase*’
+
+have different but partially overlapping distributions
+in the brain and are the only major central nervous
+
+system autoantigens concentrated at synapses. Neither the 128-kd antigen nor glutamic acid decarboxylase”? is expressed selectively in the nervous system,
+but their distribution outside the nervous system is
+highly restricted. This study shows that the 128-kd
+
+antigen, similar to glutamic acid decarboxylase,” is
+
+localized in the cytoplasmic compartment and is not
+an intrinsic membrane protein.
+The presence of autoantibodies against the 128-kd
+antigen in the serum of all three patients and in the
+cerebrospinal fluid of two patients, as well as the presence of oligoclonal IgG bands in the cerebrospinal
+fluid’® of two of the patients, suggests the occurrence
+of an active autoimmune process within the central
+nervous system. Other studies have provided evidence
+of the activation of an autoimmune response within
+the central nervous system of patients with the stiffman syndrome who had serum glutamic acid decar-
+
+boxylase autoantibodies.**
+
+Since both the 128-kd antigen and glutamic acid
+decarboxylase are cytoplasmic antigens, antibodies to
+these proteins are not likely to have a direct pathogenetic role, although such a role cannot be ex-
+
+cluded.”©?’ It is also unlikely that autoantibodies directed against the 128-kd antigen and glutamic acid
+
+decarboxylase represent epiphenomena caused by the
+destruction of nervous tissue, because the same autoantibodies were not found in control patients with
+neurologic disorders, including patients with degener-
+
+ative diseases of the nervous system.‘ A close relation
+
+between autoimmunity to the two proteins and the
+pathogenesis of the neurologic symptoms appears
+likely. The occurrence of each of the two antibodies in
+distinct groups of patients with the stiff-man syndrome who have different associated diseases suggests
+two mechanisms of autoimmunity.
+
+In addition to the three patients described here, five
+
+other patients with the stiff-man syndrome and cancer
+have been described in the literature, but none had
+
+breast cancer.&#x27;!!S Autoantibodies to nervous system
+
+The New England Journal of Medicine
+Downloaded from nejm.org at Universitats- und Zentralbibliothek Zurich on May 26, 2023. For personal use only. No other uses without permission.
+Copyright © 1993 Massachusetts Medical Society. All rights reserved.
+
+550
+
+Feb. 25, 1993
+
+THE NEW ENGLAND JOURNAL OF MEDICINE
+
+components were detected in two of these patients,
+
+but the reactivity of the antibodies differed from that
+
+in our three patients.&#x27;*&#x27;° In a third patient (referred to
+as Patient | in the report by Piccolo et al.!?), no such
+
+128-kd antigen
+
+autoantibodies were found (Solimena M, et al.: un-
+
+published data). Autoantibodies were not sought in
+the remaining two patients.
+Each of the three patients had some clinical features
+that are not typical of classic stiff-man syndrome, including localization of the stiffness to the proximal
+musculature of the limbs and the absence of fixed
+trunk rigidity (in Patients 1 and 2), and a remission of
+the neurologic symptoms after steroid therapy (in Patients | and 3). A similar striking response to glucocorticoid therapy was reported in two of the other five
+patients described previously who had the stiff-man
+
+syndrome and cancer.&#x27;&#x27;*!?
+The syndrome affecting the three patients bears
+some similarity to previously described paraneoplastic disorders of the central nervous system that are
+
+eee
+
+a te Or
+
+eee eS
+
+Figure 3. Immunoprecipitation of Rat-Brain Proteins with Serum
+from Patients with the Stiff-Man Syndrome and a Normal Subject.
+Tissue extracts and immunoprecipitates were separated by sodium dodecyl sulfate—gel electrophoresis. The gel was then cut
+horizontally into two pieces. Samples in Panel A were probed by
+Western blotting with serum from Patient 3, and samples in Panel
+B were probed with a rabbit serum directed against glutamic acid
+
+decarboxylase (GAD). In both panels, lane 1 was loaded with
+Triton X-100—treated extracts of rat brain (75 ug of protein) and
+lanes 2 through 9 were loaded with immunoprecipitates (dissociated by the conditions of electrophoresis) obtained from the reaction of Triton X-100 extracts of rat brain with the following: lanes 2
+and 3, serum from control patients with the stiff-man syndrome
+
+200-
+
+128-kd antigen==
+116.2-
+
+who had GAD antibodies; lane 4, serum from Patient 3; lane 5,
+
+serum from Patient 2; lane 6, serum from Patient 1; lanes 7 and 8,
+serum samples from control patients with the stiff-man syndrome
+who did not have GAD antibodies; and lane 9, serum from a
+normal subject. The band visible in lanes 2 through 9 in Panel B
+represents human IgG used in the immunoprecipitation
+
+97.4-
+
+reactions.
+
+66.2GAD—~
+
+thought to have an autoimmune pathogenesis: paraneoplastic cerebellar degeneration, cancer-associated retinopathy, paraneoplastic sensory neuropathy—
+encephalomyelitis, and paraneoplastic opsoclonus—
+
+myoclonus.”**? In these disorders as well, strong and
+
+45-
+
+highly specific humoral responses directed against
+Figure 2. Western Blots of Brain Homogenates Showing Protein
+Antigens Recognized by Serum and Cerebrospinal Fluid Samples from Patients 1, 2, and 3 and by Serum Samples from
+Control Patients and Normal Subjects.
+The first six lanes were loaded with 20 xg of protein from a homogenate of human cerebral cortex and were labeled with the
+following: lane 1, serum from Patient 1; lane 2, serum from Patient
+2; lane 3, serum from Patient 3; lane 4, serum from a control
+
+patient with the stiff-man syndrome who had glutamic acid decarboxylase (GAD) antibodies; lane 5, serum from a control patient
+with the stiff-man syndrome who did not have GAD antibodies;
+and lane 6, serum from a normal subject. A band with an apparent
+molecular mass of 128 kd was recognized by the serum samples
+from Patients 1, 2, and 3. These samples did not react with the
+
+GAD band, which was recognized by the human serum positive
+for GAD antibodies (lane 4). The band visible in all lanes repre-
+
+sents the heavy chains of IgG present in the blood of the homogenate of human brain that reacted with the rabbit antihuman IgG
+used as a bridge in the Western biot detection assay. Lanes 7 and
+8 were both loaded with 20 yg of protein from a homogenate of a
+rat brain and were labeled with serum and cerebrospinal fluid,
+respectively, from Patient 3.
+
+cytoplasmic or nuclear neuronal antigens are present.
+In some cases, the tumor tissue of patients with paraneoplastic neurologic diseases expressed the autoanti-
+
+gen (or autoantigens), and it has been proposed
+that abnormal expression of the autoantigen (or autoantigens) by the tumor may trigger the autoimmune
+
+response.”*° We did not find evidence of the expression of the 128-kd antigen in the only one of the three
+breast-cancer specimens that we studied. In addition,
+no neurologic symptoms were present in the two patients affected by ovarian teratomas whose tumors
+contained the 128-kd antigen. These results, together
+with the normal expression of the 128-kd antigen in a
+few nonneuronal tissues, rule out the possibility that
+the expression of the antigen outside the blood—brain
+barrier might be a factor, or the only factor, responsible for triggering the autoimmune response.
+In conclusion, our findings identify a distinct paraneoplastic disease: stiff-man syndrome associated with
+
+The New England Journal of Medicine
+Downloaded from nejm.org at Universitats- und Zentralbibliothek Zurich on May 26, 2023. For personal use only. No other uses without permission.
+Copyright © 1993 Massachusetts Medical Society. All rights reserved.
+
+Vol. 328 No. 8
+
+STIFF-MAN SYNDROME AND BREAST CANCER — FOLLI ET AL.
+
+551
+
+Gorin F, Baldwin B, Tait R, Pathak R, Seyal M, Mugnaini E. Stiff-man
+
+syndrome: a GABAergic autoimmune disorder with autoantigenic heterogeneity. Ann Neurol 1990;28:71-4.
+Solimena M, De Camilli P. Autoimmunity to glutamic acid decarboxylase
+(GAD) in Stiff-Man syndrome and insulin-dependent diabetes mellitus.
+
+128-kd antigen Ds
+si
+
+Trends Neurosci 1991;14:452-7.
+
+Oertel WH, Schmechel DE, Mugnaini E, Tappaz ML, Kopin IJ. Immuno-
+
+cytochemical localization of glutamate decarboxylase in rat cerebellum with
+
+128-kd antigen =
+
+10.
+11.
+
+Figure 4. Expression of the 128-kd Antigen in Human and Rat
+Tissues.
+
+Tissue homogenates were separated by sodium dodecy] sulfate—
+gel electrophoresis, and the gel was probed by Western biotting
+with serum from Patient 3. The lanes in Panel A were loaded with
+the following: lane 1, rat brain; lane 2, cancerous breast tissue from Patient 3; lane 3, normal breast tissue from Patient 3;
+lane 4, rat liver; and lane 5, rat kidney. The lanes in Panel B
+were loaded with the following: lane 1, rat brain; lane 2, human brain; lanes 3 and 4, teratomas from two control patients;
+and lanes 5 and 6, ductal breast carcinomas from two control
+patients. Equal amounts of protein were loaded in each lane. The
+
+128-kd antigen was present in brain tissue and in the two terato-
+
+mas, but was not detectable in either normal or cancerous breast
+tissue (including the tumor specimen from Patient 3) or in rat
+tissues. The greater separation of the two isoforms of synapseassociated autoantigen (arrows) in Panel A is due to a different
+acrylamide concentration (6 percent in Panel A and
+10 percent in Panel B).
+
+12.
+
+ent stiff-man syndrome: a clinical and electrophysiological study of two
+cases. Ital J Neurol Sci 1988;9:559-66.
+Piccolo G, Cosi V. Stiff-man syndrome, dysimmune disorder, and cancer.
+Ann Neurol 1989;26:105.
+Bateman DE, Weller RO, Kennedy P. Stiffman syndrome: a rare paraneoplastic disorder? J Neurol Neurosurg Psychiatry 1990;53:695-6.
+Ferrari P, Federico M, Grimaldi LME, Silingardi V. Stiff-man syndrome in
+a patient with Hodgkin’s disease: an unusual paraneoplastic syndrome. Haematologica 1990;75:570-2.
+16.
+
+17.
+
+18.
+
+19.
+
+ductal breast adenocarcinoma and the presence of
+autoantibodies directed against a neuronal protein
+concentrated at synapses. These observations further
+
+support an autoimmune pathogenesis of the stiff-man
+syndrome. They also raise new questions about the
+relation between humoral autoimmunity and neurologic symptoms. The close association of specific autoantibodies with a given paraneoplastic neurologic condition is considered an indication to search for occult
+tumors.*!*? The detection of autoantibodies against
+the 128-kd antigen in patients affected by motor-neuron hyperactivity should lead to a careful search for
+breast cancer.
+We are indebted to Dr. B. Giometto for performing laboratory
+studies on the serum and cerebrospinal fluid of Patient 3 and for
+discussion, to Dr. R. Cameron for helpful advice and discussion, to
+Dr. C.R. Kahn for critical reading of the manuscript, to Dr. R.K.
+Donabedian, Dr. T.S. Ravikumar, S. Distasio, R.N., and J. Hanne,
+R.N., for providing serum samples from patients with cancer, to Dr.
+D. Spencer and Dr. D. McCormick for providing surgical specimens
+of human cerebral cortex, to Dr. J. Rosai for providing other human
+tissues, and to Ms. J. McNally for skillful technical assistance.
+
+a new antiserum. Neuroscience 1981;6:2715-35.
+Erlander MG, Tillakaratne NJK, Feldblum S, Patel N, Tobin AJ. Two genes
+encode distinct glutamate decarboxylases. Neuron 1991;7:91-100.
+Baekkeskov S, Aanstoot H-J, Christgau S, et al. Identification of the 64K
+autoantigen in insulin-dependent diabetes as the GABA-synthesizing enzyme glutamic acid decarboxylase. Nature 1990;347:151-6.
+McEvoy KM. Stiff-man syndrome. Mayo Clin Proc 1991;66:300-4.
+Masson C, Prier S, Benoit C, Henin D, Masson M, Cambier J. Amnésie,
+syndrome de l’homme raide: manifestations révélatrices d’une encéphalomyélite paranéoplastique. Ann Med Interne 1987;138:502-5.
+Piccolo G, Cosi V, Zandrini C, Moglia A. Steroid-responsive and depend-
+
+20.
+
+21.
+22.
+
+Tourtellotte WW, Potvin AR, Fleming JO, et al. Multiple sclerosis: measurement and validation of central nervous system IgG synthesis rate. Neurology 1980;30:240-4.
+De Camilli P, Cameron R, Greengard P. Synapsin | (protein I), a nerve
+
+terminal-specific phosphoprotein. I. Its general distribution in synapses of
+the central and peripheral nervous system demonstrated by immunofluorescence in frozen and plastic sections. J Cell Biol 1983;96:1337-54.
+Navone F, Jahn R, Di Gioia G, Stukenbrok H, Greengard P, De Camilli P.
+Protein p38: an integral membrane protein specific for small vesicles of
+neurons and neuroendocrine cells. J Cell Biol 1986;103:2511-27.
+Scherbaum WA, Mirakian R, Pujol-Borrel R, Dean BM, Bottazzo GF.
+cytoc istry in the study and diagnosis of organ- specific autoimmune diseases. In: Polak JM, Van Noorden S, eds. I
+cytoch try: modern methods and applications. 2nd ed. Bristol, England: John
+Wright, 1986:456-76.
+Palay SL, Chan-Palay V. Cerebellar cortex: cytology and organization. New
+York: Springer-Verlag, 1974.
+Female reproductive system: ovary. In: Rosai J. Ackerman’s surgical pathology. 7th ed. Vol. 2. St. Louis: C.V. Mosby, 1989:1140-2.
+Reetz A, Solimena M, Matteoli M, Folli F, Takei K, De Camilli P. GABA
+and pancreatic B-cells: colocalization of glutamic acid decarboxylase (GAD)
+and GABA with synaptic-like microvesicles suggests their role in GABA
+storage and secretion. EMBO J 1991;10:1275-84.
+
+23.
+
+24.
+
+25.
+
+26.
+27.
+
+Vincent SR, Hokfelt T, Wu J-Y, Elde RP, Morgan LM, Kimmel JR. Immunohistochemical studies of the GABA system in the pancreas. Neuroendocrinology 1983;36:197-204.
+Persson H, Pelto-Huikko M, Metsis M, et al. Expression of the neurotransmitter-synthesizing enzyme glutamic acid decarboxylase in male germ cells.
+Mol Cell Biol 1990;10:4701-11.
+
+Erdo SL, Joo F, Wolff JR. I
+yhistochemical localization of glutamate
+decarboxylase in the rat oviduct and ovary: further evidence for non-neural
+GABA systems. Cell Tissue Res 1989;255:431-4.
+Englehardt JI, Appel SH. IgG reactivity in the spinal cord and motor cortex
+in amyotrophic lateral sclerosis. Arch Neurol 1990;47:1210-6.
+Dalmau J, Furneaux HM, Rosenblum MK, Graus F, Posner JB. Detection
+of the anti-Hu antibody in specific regions of the nervous system and tumor
+from patients with paraneoplastic encephalomyelitis/sensory neuropathy.
+Neurology 1991;41:1757-64.
+
+28.
+
+29.
+
+Greenlee JE, Brashear HR. Antibodies to cerebellar Purkinje cells in patients with paraneoplastic cerebellar degeneration and ovarian carcinoma.
+Ann Neurol 1983;14:609-13.
+Thirkill CE, FitzGerald P, Sergott RC, Roth AM, Tyler NK, Keltner JL.
+
+Cancer-associated retinopathy (CAR syndrome) with antibodies reacting
+with retinal, optic-nerve, and cancer cells. N Engl J Med 1989;321:1589-
+
+REFERENCES
+
+94.
+
+1. Moersch FP, Woltman HW. Progressive fluctuating muscular rigidity and
+spasm (‘“‘stiff-man” syndrome): report of a case and some observations in 13
+other cases. Mayo Clin Proc 1956;31:421-7.
+2. Lorish TR, Thorsteinsson G, Howard FM Jr. Suff-man syndrome updated.
+Mayo Clin Proc 1989;64:629-36.
+
+30.
+
+Furneaux HM, Rosenblum MK, Dalmau J, et al. Selective expression of
+Purkinje-cell antigens in tumor tissue from patients with paraneoplastic cerebellar degeneration. N Eng] J Med 1990;322:1844-51.
+
+GABA-ergic neurons and pancreatic beta cells in stiff-man syndrome.
+
+Posner JB, Furneaux HM. Paraneoplastic syndromes. In: Waksman BH, ed.
+Immunologic mechanisms in neurologic and psychiatric disease. Vol. 68 of
+Research publications: Association for Research in Nervous and Mental
+Disease. New York: Raven Press, 1990:187-219.
+Hetzel DJ, Stanhope CR, O’Neill BP, Lennon VA. Gynecologic cancer in
+patients with subacute cerebellar degeneration predicted by anti-Purkinje
+cell antibodies and limited in metastatic volume. Mayo Clin Proc 1990;65:
+
+N Engl J Med 1990;322:1555-60.
+
+1558-63.
+
+31.
+
+3. SolimenaM, Folli F, Denis-Donini S, et al. Autoantibodies to glutamic acid
+decarboxylase in a patient with stiff-man syndrome, epilepsy, and Type |
+32.
+
+diabetes mellitus. N Engl J Med 1988;318:1012-20.
+4. Solimena M, Folli F, Aparisi A, Pozza G, De Camilli P. Autoantibodies to
+
+The New England Journal of Medicine
+Downloaded from nejm.org at Universitats- und Zentralbibliothek Zurich on May 26, 2023. For personal use only. No other uses without permission.
+Copyright © 1993 Massachusetts Medical Society. All rights reserved.</div><h2>Segments</h2><table class="segment-table"><thead><tr><th>Segment</th><th>Group</th><th>Role</th><th>Targets</th><th>Offsets</th><th>Confidence</th><th>Evidence</th><th>Text</th></tr></thead><tbody><tr><td><a href="#src-s0001">s0001</a></td><td>l0001</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>864-1257</td><td>reviewed</td><td>Reviewed shared abstract methods/results block.</td><td>Methods. We studied three women with the stiff-man syndrome and breast cancer, seeking autoantibodies directed against nervous system antigens in serum and cerebrospinal fluid b...</td></tr><tr><td><a href="#src-s0002">s0002</a></td><td>l0002</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>2248-2295</td><td>reviewed</td><td>Reviewed shared introduction and abstract continuation.</td><td>We describe three women with the stiff-man syn-</td></tr><tr><td><a href="#src-s0003">s0003</a></td><td>l0002</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>2297-2530</td><td>reviewed</td><td>Reviewed shared introduction and abstract continuation.</td><td>drome and ductal breast cancer who had autoantibodies directed against a 128-kd neuronal protein that is concentrated at synapses. None of the patients had glutamic acid decarbo...</td></tr><tr><td><a href="#src-s0004">s0004</a></td><td>l0002</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>2532-2770</td><td>reviewed</td><td>Reviewed shared introduction and abstract continuation.</td><td>man syndrome, who also had autoantibodies. A small invasive ductal carcinoma was detected by ultrasonography and removed. Serum samples from all three patients were negative for...</td></tr><tr><td><a href="#src-s0005">s0005</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>3411-3420</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>Patient 1</td></tr><tr><td><a href="#src-s0006">s0006</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>3422-3881</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>Patient | has been described previously by Piccolo et al.!? (Patient 2 in their report). A 54-year-old woman began to have paresthesia, myalgia, and rigidity of both arms in 198...</td></tr><tr><td><a href="#src-s0007">s0007</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>3883-4078</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>trofocusing.&#x27;® Electromyography revealed continuous motor-unit activity at rest. Diazepam therapy was ineffective, but the patient’s neurologic symptoms improved when she was tr...</td></tr><tr><td><a href="#src-s0008">s0008</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>4080-4465</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>sone. In September 1987 an invasive ductal adenocarcinoma of the breast was detected and removed, after which tamoxifen was given. Treatment with prednisone was discontinued in...</td></tr><tr><td><a href="#src-s0009">s0009</a></td><td>l0003</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span></td><td>4467-4590</td><td>reviewed</td><td>Reviewed Patient 1 case block.</td><td>1992 (earlier samples were not available) and in two cerebrospinal fluid samples obtained in October 1986 and January 1987.</td></tr><tr><td><a href="#src-s0010">s0010</a></td><td>l0004</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>4592-4994</td><td>reviewed</td><td>Reviewed Patient 2 first case block.</td><td>Patient 2 A 76-year-old woman began to have contractures and weakness of the arms in 1985. She was found to have fixed rigidity of the shoulders; contractures of the arms, wrist...</td></tr><tr><td><a href="#src-s0011">s0011</a></td><td>l0004</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>4996-5055</td><td>reviewed</td><td>Reviewed Patient 2 first case block.</td><td>proved to be a poorly differentiated ductal adenocarcinoma.</td></tr><tr><td><a href="#src-s0012">s0012</a></td><td>l0005</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>6172-6371</td><td>reviewed</td><td>Reviewed Patient 2 continuation after page footer.</td><td>breast cancer was excised, and the patient was treated with tamoxifen, diazepam, and baclofen. Her condition deteriorated slowly, with increasing rigidity of the arms, trunk, an...</td></tr><tr><td><a href="#src-s0013">s0013</a></td><td>l0005</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span></td><td>6373-6603</td><td>reviewed</td><td>Reviewed Patient 2 continuation after page footer.</td><td>she died two years after surgery for a myocardial infarction. No autopsy was performed. Autoantibodies against the 128-kd antigen were detected in the only serum sample tested,...</td></tr><tr><td><a href="#src-s0014">s0014</a></td><td>l0006</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>6605-6814</td><td>reviewed</td><td>Reviewed Patient 3 first case block.</td><td>Patient 3 A 66-year-old woman began to experience progressive rigidity of the legs in 1989, which was partially relieved by bromazepam. Eight months later she was admitted to th...</td></tr><tr><td><a href="#src-s0015">s0015</a></td><td>l0006</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>6816-6947</td><td>reviewed</td><td>Reviewed Patient 3 first case block.</td><td>board-like rigidity of the abdomen. Physical and emotional stimuli caused painful muscle spasms. Electromyography revealed continu-</td></tr><tr><td><a href="#src-s0016">s0016</a></td><td>l0007</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>7269-7335</td><td>reviewed</td><td>Reviewed Patient 3 continuation after page break.</td><td>ous motor-unit activity at rest. A diagnosis of stiff-man syndrome</td></tr><tr><td><a href="#src-s0017">s0017</a></td><td>l0007</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>7337-7401</td><td>reviewed</td><td>Reviewed Patient 3 continuation after page break.</td><td>was made according to the criteria of Lorish et al.? Oligoclonal</td></tr><tr><td><a href="#src-s0018">s0018</a></td><td>l0007</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>7403-7728</td><td>reviewed</td><td>Reviewed Patient 3 continuation after page break.</td><td>bands of IgG were found in the cerebrospinal fluid. Autoantibodies against the 128-kd antigen were detected in both the serum and cerebrospinal fluid. This finding prompted a se...</td></tr><tr><td><a href="#src-s0019">s0019</a></td><td>l0007</td><td>patient_specific</td><td><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>7730-8018</td><td>reviewed</td><td>Reviewed Patient 3 continuation after page break.</td><td>amination revealed an invasive ductal carcinoma. The patient was treated with tamoxifen, diazepam, and prednisone. She improved markedly and became able to walk unassisted. Auto...</td></tr><tr><td><a href="#src-s0020">s0020</a></td><td>l0008</td><td>shared</td><td><span class="target-chip" style="--chip-border:#0072B2;--chip-bg:#D9ECF7;--chip-text:#073B4C;"><span class="target-chip-id">p1</span>Patient 1</span><span class="target-chip" style="--chip-border:#D55E00;--chip-bg:#FCE6D6;--chip-text:#5A2500;"><span class="target-chip-id">p2</span>Patient 2</span><span class="target-chip" style="--chip-border:#009E73;--chip-bg:#D8F0E8;--chip-text:#063D2E;"><span class="target-chip-id">p3</span>Patient 3</span></td><td>8019-8381</td><td>reviewed</td><td>Reviewed shared patient-level discussion.</td><td>In none of the patients could it be established whether the breast cancer antedated the neurologic symptoms. In all three patients, tests of serum for organ-specific autoantibod...</td></tr></tbody></table><h2>Relocated Spans</h2><p class="muted">No span relocations were applied.</p><h2>Rejected Proposals</h2><p class="muted">No rejected span proposals.</p><h2>Artefacts</h2><p class="meta">Paper JSON: data\extraction_json\stage07_xml\papers\30.json<br>Segments JSON: data\extraction_json\stage07_xml\segments\30.segments.json<br>Annotated text: data\extraction_json\stage07_xml\annotated_text\30.annotated.txt<br>Validation JSON: data\extraction_json\stage07_xml\validation\30.validation.json</p></main>
+</body>
+</html>
