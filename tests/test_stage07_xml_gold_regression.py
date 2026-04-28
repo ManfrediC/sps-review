@@ -72,10 +72,15 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
 
     def test_reviewed_gold_batch_matches_feedback(self) -> None:
         paper10 = self.run_reviewed("10")
-        self.assert_ready(paper10, {"p1", "p2"}, "individual_case_split")
+        self.assertEqual(paper10.registry_row["route_mode"], "individual_case_split")
+        self.assertEqual(set(paper10.target_view_payloads), {"p1", "p2"})
+        self.assertEqual(paper10.registry_row["ready_for_langextract"], "false")
+        self.assertIn("mixed_shared_patient_specific_segment:l0004", paper10.registry_row["manual_review_reasons"])
+        self.assertEqual(paper10.validation_payload["roundtrip_status"], "passed")
+        self.assertEqual(paper10.validation_payload["status"], "passed")
         self.assertIn("A 63-year-old Hispanic woman", paper10.target_view_payloads["p1"]["input_text"])
         self.assertIn("A 53-year-old black man", paper10.target_view_payloads["p2"]["input_text"])
-        self.assertIn("Both fulfill the diagnostic criteria", paper10.target_view_payloads["p1"]["input_text"])
+        self.assertNotIn("Both fulfill the diagnostic criteria", paper10.target_view_payloads["p1"]["input_text"])
         self.assertNotIn("TABLE 1", paper10.target_view_payloads["p1"]["input_text"])
 
         paper11 = self.run_reviewed("11")
@@ -125,7 +130,12 @@ class TestStage07XmlGoldRegression(unittest.TestCase):
         self.assertNotIn("REFERENCES", paper29.target_view_payloads["p1"]["input_text"])
 
         paper30 = self.run_reviewed("30")
-        self.assert_ready(paper30, {"p1", "p2", "p3"}, "individual_case_split")
+        self.assertEqual(paper30.registry_row["route_mode"], "individual_case_split")
+        self.assertEqual(set(paper30.target_view_payloads), {"p1", "p2", "p3"})
+        self.assertEqual(paper30.registry_row["ready_for_langextract"], "false")
+        self.assertIn("audit_only_unsafe_section_segment:l0001", paper30.registry_row["manual_review_reasons"])
+        self.assertEqual(paper30.validation_payload["roundtrip_status"], "passed")
+        self.assertEqual(paper30.validation_payload["status"], "passed")
         self.assertEqual(paper30.target_view_payloads["p1"]["target_label"], "Patient 1")
         self.assertEqual(paper30.target_view_payloads["p2"]["target_label"], "Patient 2")
         self.assertEqual(paper30.target_view_payloads["p3"]["target_label"], "Patient 3")

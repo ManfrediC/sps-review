@@ -80,6 +80,8 @@ class TestStage07Benchmarking(unittest.TestCase):
         self.assertIn("targeted_background_segment:s0003", score["contamination_flags"])
         self.assertIn("extra_target_segment:p3:s0002", score["contamination_flags"])
         self.assertIn("unsafe_section_text:s0004", score["contamination_flags"])
+        self.assertTrue(score["contamination_details"])
+        self.assertIn("References", {detail["text_excerpt"] for detail in score["contamination_details"]})
         self.assertAlmostEqual(score["micro"]["precision"], 5 / 25)
         self.assertAlmostEqual(score["micro"]["recall"], 5 / 20)
         self.assertEqual(score["xml_roundtrip_status"], "passed")
@@ -238,6 +240,30 @@ class TestStage07Benchmarking(unittest.TestCase):
 
         self.assertIn("cross_target_label_leak:p1:p2:p0001", score["contamination_flags"])
 
+    def test_uncertain_segments_do_not_count_as_target_view_contamination(self) -> None:
+        gold_payload = {
+            "paper_id": "9008",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [segment("g0001", ["p1"], 0, 10), segment("g0002", ["p2"], 20, 30)],
+        }
+        predicted_payload = {
+            "paper_id": "9008",
+            "entities": [{"id": "p1", "label": "Patient 1"}, {"id": "p2", "label": "Patient 2"}],
+            "segments": [
+                {
+                    **segment("p0001", ["p1", "p2"], 0, 30, role="uncertain"),
+                    "text": "Patient 1 had vitiligo; patient 2 had serum autoantibodies.",
+                }
+            ],
+        }
+
+        score = metrics.score_segments_payloads(
+            gold_payload=gold_payload,
+            predicted_payload=predicted_payload,
+        )
+
+        self.assertEqual(score["contamination_flags"], [])
+
     def test_writes_contained_benchmark_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             paths = benchmark_paths(Path(tmp_dir), "run1")
@@ -287,12 +313,14 @@ class TestStage07Benchmarking(unittest.TestCase):
             self.assertTrue(paths.telemetry_csv_path.exists())
             self.assertTrue(paths.telemetry_jsonl_path.exists())
             self.assertTrue(paths.pareto_summary_csv_path.exists())
+            self.assertTrue(paths.contamination_audit_csv_path.exists())
             self.assertTrue(paths.promotion_gates_path.exists())
             self.assertTrue(paths.gate_results_csv_path.exists())
             self.assertTrue(paths.pricing_table_path.exists())
             self.assertIn("Micro precision", paths.summary_md_path.read_text(encoding="utf-8"))
             self.assertEqual(load_telemetry_rows(paths.telemetry_jsonl_path)[0]["provider"], "openai")
             self.assertIn("promotion_status", paths.gate_results_csv_path.read_text(encoding="utf-8"))
+            self.assertIn("text_excerpt", paths.contamination_audit_csv_path.read_text(encoding="utf-8"))
 
     def test_promotion_gates_fail_contamination_before_score_thresholds(self) -> None:
         gates = load_promotion_gates()

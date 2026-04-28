@@ -46,6 +46,7 @@ class BenchmarkPaths:
     summary_json_path: Path
     summary_md_path: Path
     pareto_summary_csv_path: Path
+    contamination_audit_csv_path: Path
     promotion_gates_path: Path
     gate_results_csv_path: Path
     telemetry_csv_path: Path
@@ -72,6 +73,7 @@ def benchmark_paths(evaluation_root: Path, run_id: str) -> BenchmarkPaths:
         summary_json_path=run_dir / "summary.json",
         summary_md_path=run_dir / "summary.md",
         pareto_summary_csv_path=run_dir / "pareto_summary.csv",
+        contamination_audit_csv_path=run_dir / "contamination_audit.csv",
         promotion_gates_path=run_dir / "promotion_gates.json",
         gate_results_csv_path=run_dir / "gate_results.csv",
         telemetry_csv_path=run_dir / "api_telemetry.csv",
@@ -231,6 +233,48 @@ def write_pareto_summary_csv(path: Path, paper_scores: list[dict[str, Any]], tel
             )
 
 
+def write_contamination_audit_csv(path: Path, paper_scores: list[dict[str, Any]]) -> None:
+    """Write exact contamination excerpts for reviewer triage."""
+
+    fieldnames = [
+        "matrix_config_name",
+        "paper_id",
+        "flag",
+        "flag_type",
+        "target_id",
+        "other_target_id",
+        "logical_segment_id",
+        "physical_segment_ids",
+        "role",
+        "targets",
+        "source_start",
+        "source_end",
+        "text_excerpt",
+    ]
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for score in paper_scores:
+            for detail in score.get("contamination_details") or []:
+                writer.writerow(
+                    {
+                        "matrix_config_name": score.get("matrix_config_name", ""),
+                        "paper_id": score.get("paper_id", ""),
+                        "flag": detail.get("flag", ""),
+                        "flag_type": detail.get("flag_type", ""),
+                        "target_id": detail.get("target_id", ""),
+                        "other_target_id": detail.get("other_target_id", ""),
+                        "logical_segment_id": detail.get("logical_segment_id", ""),
+                        "physical_segment_ids": "|".join(detail.get("physical_segment_ids") or []),
+                        "role": detail.get("role", ""),
+                        "targets": "|".join(detail.get("targets") or []),
+                        "source_start": detail.get("source_start", ""),
+                        "source_end": detail.get("source_end", ""),
+                        "text_excerpt": detail.get("text_excerpt", ""),
+                    }
+                )
+
+
 def summary_markdown(summary: dict[str, Any]) -> str:
     """Render a small human-readable benchmark summary."""
 
@@ -270,6 +314,7 @@ def write_benchmark_artifacts(
     write_telemetry_csv(paths.telemetry_csv_path, telemetry_payload)
     write_telemetry_jsonl(paths.telemetry_jsonl_path, telemetry_payload)
     write_pareto_summary_csv(paths.pareto_summary_csv_path, paper_scores, telemetry_payload)
+    write_contamination_audit_csv(paths.contamination_audit_csv_path, paper_scores)
     write_json(paths.promotion_gates_path, promotion_payload)
     write_gate_results_csv(paths.gate_results_csv_path, gate_results)
     write_json(paths.pricing_table_path, pricing_table or DEFAULT_PRICING_TABLE)

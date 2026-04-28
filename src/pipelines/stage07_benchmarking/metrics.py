@@ -173,6 +173,70 @@ def validation_value(payload: dict[str, Any], key: str) -> str:
     return str(validation.get(key) or "")
 
 
+def logical_segment_id(segment: dict[str, Any]) -> str:
+    return str(segment.get("logical_segment_id") or segment.get("segment_id") or "").strip()
+
+
+def parse_optional_int(value: Any) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def logical_segment_groups(segments_payload: dict[str, Any]) -> list[dict[str, Any]]:
+    """Group physical spans so contamination audits show complete excerpts.
+
+    Stage 07 can split one logical annotation into several physical spans when
+    the evidence crosses OCR page or paragraph boundaries. The flag is attached
+    to the logical segment because that is what a reviewer thinks in, but the
+    audit row keeps the physical segment IDs for traceability.
+    """
+
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for segment in segments_payload.get("segments") or []:
+        grouped.setdefault(logical_segment_id(segment), []).append(segment)
+
+    groups: list[dict[str, Any]] = []
+    for group_id, segments in grouped.items():
+        ordered = sorted(
+            segments,
+            key=lambda segment: parse_optional_int((segment.get("source_offsets") or {}).get("start")) or 0,
+        )
+        targets = sorted(
+            {
+                str(target_id or "").strip()
+                for segment in ordered
+                for target_id in segment.get("targets") or []
+                if str(target_id or "").strip()
+            }
+        )
+        roles = sorted({str(segment.get("role") or "").strip() for segment in ordered if str(segment.get("role") or "").strip()})
+        starts = [
+            value
+            for value in (parse_optional_int((segment.get("source_offsets") or {}).get("start")) for segment in ordered)
+            if value is not None
+        ]
+        ends = [
+            value
+            for value in (parse_optional_int((segment.get("source_offsets") or {}).get("end")) for segment in ordered)
+            if value is not None
+        ]
+        groups.append(
+            {
+                "logical_segment_id": group_id,
+                "physical_segment_ids": [str(segment.get("segment_id") or "") for segment in ordered],
+                "targets": targets,
+                "role": roles[0] if len(roles) == 1 else "|".join(roles),
+                "roles": roles,
+                "source_start": min(starts) if starts else "",
+                "source_end": max(ends) if ends else "",
+                "text": "\n\n".join(str(segment.get("text") or "") for segment in ordered),
+            }
+        )
+    return sorted(groups, key=lambda group: (int(group["source_start"]) if group["source_start"] != "" else -1, group["logical_segment_id"]))
+
+
 def target_segment_roles(segments_payload: dict[str, Any]) -> dict[str, list[tuple[Interval, str, str]]]:
     roles: dict[str, list[tuple[Interval, str, str]]] = {}
     for segment in segments_payload.get("segments") or []:
@@ -228,27 +292,98 @@ def contamination_flags(
 ) -> list[str]:
     """Return precision-first flags that are not captured by interval F1 alone."""
 
+    return sorted(
+        {
+            detail["flag"]
+            for detail in contamination_details(
+                predicted_payload=predicted_payload,
+                gold_target_ids=gold_target_ids,
+                gold_labels=gold_labels,
+            )
+        }
+    )
+
+
+def contamination_details(
+    *,
+    predicted_payload: dict[str, Any],
+    gold_target_ids: set[str],
+    gold_labels: dict[str, str] | None = None,
+) -> list[dict[str, Any]]:
+    """Return reviewer-facing contamination details with source excerpts."""
+
     labels = gold_labels or {}
-    flags: list[str] = []
-    for segment in predicted_payload.get("segments") or []:
-        segment_id = str(segment.get("logical_segment_id") or segment.get("segment_id") or "").strip()
-        role = str(segment.get("role") or "").strip()
-        targets = {str(item or "").strip() for item in segment.get("targets") or []}
+    details: list[dict[str, Any]] = []
+    for group in logical_segment_groups(predicted_payload):
+        segment_id = str(group.get("logical_segment_id") or "").strip()
+        role = str(group.get("role") or "").strip()
+        targets = {str(item or "").strip() for item in group.get("targets") or []}
+        base_detail = {
+            "logical_segment_id": segment_id,
+            "physical_segment_ids": list(group.get("physical_segment_ids") or []),
+            "role": role,
+            "targets": sorted(targets),
+            "source_start": group.get("source_start", ""),
+            "source_end": group.get("source_end", ""),
+            "text_excerpt": " ".join(str(group.get("text") or "").split()),
+        }
         if role == "background" and targets.intersection(gold_target_ids):
-            flags.append(f"targeted_background_segment:{segment_id}")
-        for target_id in sorted(targets):
-            if target_id and target_id != "unknown" and gold_target_ids and target_id not in gold_target_ids:
-                flags.append(f"extra_target_segment:{target_id}:{segment_id}")
-        text = str(segment.get("text") or "")
+            details.append(
+                {
+                    **base_detail,
+                    "flag": f"targeted_background_segment:{segment_id}",
+                    "flag_type": "targeted_background_segment",
+                    "target_id": "|".join(sorted(targets.intersection(gold_target_ids))),
+                    "other_target_id": "",
+                }
+            )
+        text = str(group.get("text") or "")
+        if role not in IGNORED_ROLES:
+            for target_id in sorted(targets):
+                if target_id and target_id != "unknown" and gold_target_ids and target_id not in gold_target_ids:
+                    details.append(
+                        {
+                            **base_detail,
+                            "flag": f"extra_target_segment:{target_id}:{segment_id}",
+                            "flag_type": "extra_target_segment",
+                            "target_id": target_id,
+                            "other_target_id": "",
+                        }
+                    )
         if role not in IGNORED_ROLES and looks_like_unsafe_section_text(text):
-            flags.append(f"unsafe_section_text:{segment_id}")
-        for target_id in sorted(target for target in targets if target in gold_target_ids):
-            for other_target, other_label in labels.items():
-                if other_target == target_id:
-                    continue
-                if label_mentions_other_current_target(text, other_label):
-                    flags.append(f"cross_target_label_leak:{target_id}:{other_target}:{segment_id}")
-    return sorted(set(flags))
+            details.append(
+                {
+                    **base_detail,
+                    "flag": f"unsafe_section_text:{segment_id}",
+                    "flag_type": "unsafe_section_text",
+                    "target_id": "|".join(sorted(targets.intersection(gold_target_ids))),
+                    "other_target_id": "",
+                }
+            )
+        if role not in IGNORED_ROLES:
+            for target_id in sorted(target for target in targets if target in gold_target_ids):
+                for other_target, other_label in labels.items():
+                    if other_target == target_id:
+                        continue
+                    if label_mentions_other_current_target(text, other_label):
+                        details.append(
+                            {
+                                **base_detail,
+                                "flag": f"cross_target_label_leak:{target_id}:{other_target}:{segment_id}",
+                                "flag_type": "cross_target_label_leak",
+                                "target_id": target_id,
+                                "other_target_id": other_target,
+                            }
+                        )
+    return sorted(
+        details,
+        key=lambda detail: (
+            str(detail.get("flag_type") or ""),
+            str(detail.get("target_id") or ""),
+            str(detail.get("other_target_id") or ""),
+            str(detail.get("logical_segment_id") or ""),
+        ),
+    )
 
 
 def role_attribution_errors(gold_payload: dict[str, Any], predicted_payload: dict[str, Any]) -> list[str]:
@@ -333,11 +468,12 @@ def score_segments_payloads(
     missing_targets = sorted(gold_ids - predicted_ids)
     extra_targets = sorted(predicted_ids - gold_ids)
     role_errors = role_attribution_errors(gold_payload, predicted_payload)
-    contamination = contamination_flags(
+    contamination_detail_rows = contamination_details(
         predicted_payload=predicted_payload,
         gold_target_ids=gold_ids,
         gold_labels=entity_labels(gold_payload),
     )
+    contamination = sorted({detail["flag"] for detail in contamination_detail_rows})
     calibration = readiness_calibration(
         registry_row=registry_row,
         gold_registry_row=gold_registry_row,
@@ -363,6 +499,7 @@ def score_segments_payloads(
         "extra_targets": extra_targets,
         "role_attribution_errors": role_errors,
         "contamination_flags": contamination,
+        "contamination_details": contamination_detail_rows,
         "xml_roundtrip_status": validation_value(predicted_payload, "roundtrip_status"),
         "json_validation_status": validation_value(predicted_payload, "status"),
         "ready_for_langextract": (registry_row or {}).get("ready_for_langextract", ""),

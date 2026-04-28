@@ -35,6 +35,10 @@ ALLOWED_ROLES = {
     "uncertain",
     "background",
 }
+AUDIT_ONLY_SECTION_HEADING_RE = re.compile(
+    r"^\s*(?:abstract\s*)?(?:references?|bibliography|materials?\s+and\s+methods?|methods?|acknowledg(?:e)?ments?)(?:\s*[:.\-]\s+|\s*$)",
+    re.IGNORECASE,
+)
 
 
 REGISTRY_FIELDNAMES = [
@@ -1298,6 +1302,116 @@ def validate_annotation_payload(
     return physical_segments, report
 
 
+def audit_only_section_text(text: str) -> bool:
+    """Return true for section text that should not feed target views."""
+
+    return bool(AUDIT_ONLY_SECTION_HEADING_RE.search(str(text or "").strip()))
+
+
+def tolerant_label_pattern(label: str) -> str:
+    """Build a patient-label regex that tolerates common OCR digit confusions."""
+
+    parts: list[str] = []
+    for token in str(label or "").strip().split():
+        if token == "1":
+            parts.append(r"[1Il|]")
+        elif token == "0":
+            parts.append(r"[0O]")
+        else:
+            parts.append(re.escape(token))
+    return r"(?<!\w)" + r"\s+".join(parts) + r"(?!\w)"
+
+
+def text_mentions_target_label(text: str, label: str) -> bool:
+    label_text = str(label or "").strip()
+    if len(label_text) < 4:
+        return False
+    return bool(re.search(tolerant_label_pattern(label_text), text, flags=re.IGNORECASE))
+
+
+def logical_segment_bundles(segments: list[PhysicalSegment]) -> dict[str, list[PhysicalSegment]]:
+    bundles: dict[str, list[PhysicalSegment]] = {}
+    for segment in segments:
+        bundles.setdefault(segment.logical_segment_id, []).append(segment)
+    return bundles
+
+
+def apply_precision_safety_demotions(
+    *,
+    targets: list[Target],
+    segments: list[PhysicalSegment],
+    report: ValidationReport,
+) -> list[PhysicalSegment]:
+    """Demote segments that are useful for audit but unsafe for extraction.
+
+    Stage 07 keeps the XML audit trail intact, but target views are downstream
+    extraction inputs. If a segment is abstract Methods/Results text or a shared
+    segment that mixes explicit patient labels, it should be visible to a human
+    reviewer without being treated as ready per-target evidence.
+    """
+
+    targets_by_id = {target.target_id: target for target in targets}
+    demotions: dict[str, tuple[str, str, list[str]]] = {}
+    for logical_id, bundled_segments in logical_segment_bundles(segments).items():
+        text = "\n\n".join(segment.text for segment in sorted(bundled_segments, key=lambda item: item.source_start))
+        bundled_targets = sorted({target_id for segment in bundled_segments for target_id in segment.targets})
+        bundled_roles = {segment.role for segment in bundled_segments}
+        if audit_only_section_text(text):
+            demotions[logical_id] = (
+                "unknown",
+                "uncertain",
+                [f"audit_only_unsafe_section_segment:{logical_id}"],
+            )
+            continue
+        patient_targets = [
+            targets_by_id[target_id]
+            for target_id in bundled_targets
+            if target_id in targets_by_id and targets_by_id[target_id].target_kind == "patient"
+        ]
+        mentioned_patient_targets = [
+            target
+            for target in patient_targets
+            if text_mentions_target_label(text, target.label)
+        ]
+        if "shared" in bundled_roles and len(bundled_targets) > 1 and len(mentioned_patient_targets) >= 2:
+            demotions[logical_id] = (
+                "retain",
+                "uncertain",
+                [f"mixed_shared_patient_specific_segment:{logical_id}"],
+            )
+
+    if not demotions:
+        return segments
+
+    for _, _, reasons in demotions.values():
+        for reason in reasons:
+            report.add_warning(reason)
+            report.add_review_reason(reason)
+
+    adjusted: list[PhysicalSegment] = []
+    for segment in segments:
+        demotion = demotions.get(segment.logical_segment_id)
+        if demotion is None:
+            adjusted.append(segment)
+            continue
+        target_mode, role, _reasons = demotion
+        adjusted.append(
+            PhysicalSegment(
+                segment_id=segment.segment_id,
+                logical_segment_id=segment.logical_segment_id,
+                targets=["unknown"] if target_mode == "unknown" else segment.targets,
+                role=role,
+                text=segment.text,
+                source_start=segment.source_start,
+                source_end=segment.source_end,
+                block_id=segment.block_id,
+                confidence=segment.confidence,
+                evidence=segment.evidence,
+            )
+        )
+    return adjusted
+
+
 def parse_int(value: Any) -> int | None:
     try:
         return int(value)
@@ -1914,6 +2028,11 @@ def process_paper(
         validation_report.add_review_reason(reason)
     for reason in annotation_payload.get("manual_review_reasons") or []:
         validation_report.add_review_reason(str(reason))
+    segments = apply_precision_safety_demotions(
+        targets=targets,
+        segments=segments,
+        report=validation_report,
+    )
     # Add contamination checks after payload validation so every accepted
     # physical segment has stable logical IDs for reviewer-facing reasons.
     for reason in contamination_review_reasons(targets, segments):

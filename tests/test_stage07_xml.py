@@ -305,6 +305,100 @@ class TestStage07XmlCore(unittest.TestCase):
         self.assertIn("targeted_background_segment:l0001", result.registry_row["manual_review_reasons"])
         self.assertIn("missing_target_evidence:p1", result.registry_row["manual_review_reasons"])
 
+    def test_abstract_methods_segment_is_audit_only(self) -> None:
+        text = "Methods. We studied two women with stiff-person syndrome by immunocytochemistry."
+        source_path = self.write_text_json("9021", text)
+        prepared = core.prepare_source(paper_id="9021", source_path=source_path)
+        block = prepared.blocks[0]
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["p1", "p2"],
+                    "role": "shared",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": block.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(block.text),
+                            "selected_text": block.text,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        result = core.process_paper(
+            paper_id="9021",
+            source_row={
+                "preferred_langextract_mode": "individual_case_split",
+                "langextract_eligible": "true",
+            },
+            manual_row={},
+            stage06_row={
+                "preferred_text_json_path": str(source_path),
+                "likely_sps_case_count": "2",
+                "count_confidence": "high",
+            },
+            paths=self.output_paths,
+            manifest_run_id="test_stage07_xml",
+            annotation_model="gpt-5.5",
+            annotation_payload=annotation,
+        )
+
+        self.assertEqual(result.segments_payload["segments"][0]["role"], "uncertain")
+        self.assertEqual(result.segments_payload["segments"][0]["targets"], ["unknown"])
+        self.assertEqual(result.target_view_payloads["p1"]["input_text"], "")
+        self.assertIn("audit_only_unsafe_section_segment:l0001", result.registry_row["manual_review_reasons"])
+        self.assertEqual(result.registry_row["ready_for_langextract"], "false")
+
+    def test_mixed_shared_patient_labels_are_audit_only(self) -> None:
+        text = "Patient 1 had vitiligo; patient 2 had serum autoantibodies."
+        source_path = self.write_text_json("9022", text)
+        prepared = core.prepare_source(paper_id="9022", source_path=source_path)
+        block = prepared.blocks[0]
+        annotation = {
+            "segments": [
+                {
+                    "targets": ["p1", "p2"],
+                    "role": "shared",
+                    "confidence": "high",
+                    "spans": [
+                        {
+                            "block_id": block.block_id,
+                            "start_offset": 0,
+                            "end_offset": len(block.text),
+                            "selected_text": block.text,
+                        }
+                    ],
+                }
+            ]
+        }
+
+        result = core.process_paper(
+            paper_id="9022",
+            source_row={
+                "preferred_langextract_mode": "individual_case_split",
+                "langextract_eligible": "true",
+            },
+            manual_row={},
+            stage06_row={
+                "preferred_text_json_path": str(source_path),
+                "likely_sps_case_count": "2",
+                "count_confidence": "high",
+            },
+            paths=self.output_paths,
+            manifest_run_id="test_stage07_xml",
+            annotation_model="gpt-5.5",
+            annotation_payload=annotation,
+        )
+
+        self.assertEqual(result.segments_payload["segments"][0]["role"], "uncertain")
+        self.assertEqual(result.segments_payload["segments"][0]["targets"], ["p1", "p2"])
+        self.assertEqual(result.target_view_payloads["p1"]["input_text"], "")
+        self.assertIn("mixed_shared_patient_specific_segment:l0001", result.registry_row["manual_review_reasons"])
+        self.assertEqual(result.registry_row["ready_for_langextract"], "false")
+
     def test_single_patient_source_without_clear_window_requires_review(self) -> None:
         source_path = self.write_text_json(
             "9005",

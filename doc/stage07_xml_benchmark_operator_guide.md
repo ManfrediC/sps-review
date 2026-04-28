@@ -135,6 +135,7 @@ Important files are:
 - `paper_scores.csv`: one row per paper/configuration.
 - `target_scores.csv`: per-target character precision, recall, and F1.
 - `pareto_summary.csv`: accuracy, contamination, review burden, cost, and latency by configuration.
+- `contamination_audit.csv`: one row per contamination flag with the exact flagged excerpt.
 - `promotion_gates.json`: the gate policy copied into the run for provenance.
 - `gate_results.csv`: pass/fail/review gate results by configuration.
 - `api_telemetry.csv` and `api_telemetry.jsonl`: one row per live API call, if supplied.
