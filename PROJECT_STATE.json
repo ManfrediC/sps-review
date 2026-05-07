@@ -1,0 +1,25 @@
+{
+  "project": "sps-review",
+  "current_stage": "stage07",
+  "active_worktree": "C:/Projects/sps-review",
+  "default_runner": "windows-powershell",
+  "python_runner": ".venv/Scripts/python.exe",
+  "latest_batch": {
+    "id": "20260419T225240Z_stage07_smoke",
+    "path": "qa/validation/stage07_smoke/20260419T225240Z_stage07_smoke",
+    "status": "tracked_smoke_output"
+  },
+  "last_known_good_commit": "f0e3c85",
+  "last_validation": {
+    "date": "",
+    "commands": [],
+    "result": "not_run"
+  },
+  "next_action": "Classify the six untracked stage07 smoke folders as keep, supersede, or discard before the next stage07 commit.",
+  "blocked_on": [],
+  "do_not_revisit": [
+    "Stage06 is already merged unless a stage07 regression points back to it."
+  ],
+  "dirty_tree_note": "Current dirty state is untracked stage07 smoke output folders only.",
+  "commit_policy": "Small coherent commits after smoke validation."
+}
