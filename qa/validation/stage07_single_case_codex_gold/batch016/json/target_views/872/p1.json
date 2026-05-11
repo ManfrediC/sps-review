@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "872::p1",
+  "paper_id": "872",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "872::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 48-year-old woman with an 8-month history of painful\nbilateral thoracic and lumbar paravertebral muscles spasms.\nThese spasms lasted from 10 to 30 seconds and were accom-\npanied by severe pain that gradually disappeared over another\n30 seconds. Contractions occurred spontaneously but were\nalso elicited by anxiety and startle reactions. Symptoms\noccurred throughout the day and occasionally during sleep.\nIn-between periods of exacerbation, she felt ﬂuctuating dis-\ncomfort and rigidity in the cervical, thoracic and lumbar axial\nmuscles, including scapular girdle, leading to an almost per-\nsistent upright posture. During the previous 2 months, mild\nnonpainful facial spasms were noticed.\nPast medical history was positive for depression, refractory to\na 3-month trial of amytriptyline 75 mg qd and to current treat-\nment with venlafaxine 150 mg qd. Family history was negative.\nOn examination, cranial nerves were normal except for\nincreased startle responses after nose or facial tapping. Muscles\nwere normotrophic and tone was normal in the limbs but mod-\nerately increased in the axial muscles. Strength was normal\nand deep tendon reﬂexes were brisk and symmetric. Cutaneous\nabdominal reﬂexes were decreased, plantars were ﬂexor. Sen-\nsation was normal. Cerebellar signs were absent. Posture in the\nupright position showed the signs described above. Gait was\nslow with noticeable axial stiffness.\nRoutine laboratory exams included normal leucocytes count,\nwith mild Coombs-positive anemia (Hb 10.3 g/dL) and throm-\nbocitopenia (120,000/ml); normal fasting plasma glucose, he-\nmoglobin A1C, creatinine, electrolytes, TSH and CK levels;\nerythrocyte sedimentation rate was 79 mm/h; negative syphilis,\nhepatitis B/C and HIV serologies; plasma anti-GAD levels\nwere 12.6 U/mL (radioimmunoassay; normal 0–1 U/mL). Cer-\nebral spinal ﬂuid analysis was normal with no oligoclonal\nbands. Cranial and spinal cord MRI were unremarkable. Elec-\ntromyography with nerve conduction studies revealed continu-\nous activity of the lumbar paraspinal muscles.\n\nScreening for breast, lung, and ovarian malignancy was\nnegative. She denied treatment during the 2 weeks period\nrequired for investigation. During this interval, she developed\nphotosensitive rash on the forehead and upper extremities,\nmetacarpo-phalangeal arthritis, fatigue, and brief episodes of\nconfusion that interfered with job performance as a nurse.\nThe patient was referred for assessment with a rheumatolo-\ngist who requested additional inﬂammatory parameters: posi-\ntive antidouble-stranded-DNA , anti-nuclear, anti-RP, anti-Scl-\n70 antibodies and IgM isotype of anticardiolipin antibodies\ntiters; negative rheumatoid factor and mildly decreased C3\nand C4 complement levels. A skin biopsy showed lympho-\ncytic perivascular dermal inﬁltrates. Taken together, these\nﬁndings led to the diagnosis of SLE.\n4\nTreatment was initiated with oral prednisone (60 mg/day),\nhydroxychloroquine 400 mg/day, diazepam (up to 30 mg/day,\nmaximum tolerated dose), and baclofen (20mg tid). This\nintervention brought signiﬁcant improvement of mental sta-\ntus, dermatologic and joint symptoms, but only mild reduc-\ntion in axial contractures. Intravenous immunoglobulin (1\nmg/kg) for 2 consecutive days brought partial but signiﬁcant\nrelief of contractures.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 94749,
+        "end": 96795
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2046
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 97395,
+        "end": 98639
+      },
+      "compiled_offsets": {
+        "start": 2048,
+        "end": 3292
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

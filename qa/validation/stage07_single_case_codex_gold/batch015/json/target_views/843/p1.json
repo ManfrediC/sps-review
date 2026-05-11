@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "843::p1",
+  "paper_id": "843",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "843::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 51-year-old Caucasian woman was admitted to the depart-\nment of\n neurology for gait disturbance. She had a thyroidectomy\nﬁve  years ago. At the time of surgery, no neurological evalua-\ntion was performed. She was treated for diabetes mellitus for six\nmonths. Symptoms of stasiphobia (fear to stand erect) and baso-\nphobia (morbid fear of standing or walking) started after a serious\nfall two years earlier. Later, she progressively developed rigidity,\nenlargement of the base of support and episodic painful spasms\nof her legs, resulting in considerable difﬁculty  in standing up and\nwalking. Initial evaluation, made in another institution 18 months\nearlier, consisted in lumbar puncture, spinal cord and brain mag-\nnetic resonance imaging, dopamine transporter SPECT imaging and\nelectroneuromyography (EMG). All investigations were unremark-\nable. Nevertheless, the walking disorder and the falls got worse.\nOn admission, she was almost unable to walk without aid. Fur-\nthermore, she presented a stiff “robotic”  gait, proximal paraparesia,\nleg rigidity, bilateral extensor plantar response and hyperreﬂexia\nof lower limbs. Routine biological testing, thyroid function tests,\nantinuclear antibody and rheumatoid factor were normal as well\nas serologic testing for Lyme disease, syphilis, HIV and viral hep-\natitis B and C. Glycosylated haemoglobin (HbA1c) level was 8.3%.\nAutoimmune laboratory tests revealed elevated serum antibodies\n(Abs) level to glutamic acid decarboxylase 65 kD isoform (GAD65)\n(> 171 U/mL; normal < 23 ; enzyme linked immunosorbent assay\n(Elisa) test). The EMG recordings revealed continuous motor unit\nactivity in the medial gastrocnemius and vastus medialis as well as\nin the paraspinal muscles. Cerebrospinal ﬂuid  (CSF) examination\nrevealed unmatched oligoclonal bands and the presence of GAD65-\nAb and GAD 67 kD isoform (GAD67) Ab (90 U/mL and 66 U/mL\nrespectively; normal < 5.0 ; Elisa test) with intrathecal synthesis of\nAb-speciﬁc  IgG (index 9.9, based on formula from Saiz et al. [1]). The\nparaneoplastic Ab panel was negative in serum. There was no sign\nof neoplasm on positron emission tomography imaging. A diagnosis\nof SPS was made on this basis.\nGiven the uncontrolled diabetes, the patient was referred to\nthe department of endocrinology and diabetes. At that time, she\nwas treated with oral anti-diabetic drugs (metformin 700 mg three\ntimes/day and gliclazide 60 mg/day). She had remained obese for\nyears with a body mass index of 32 kg/m2 but had lost 21 kg during\nthe last two years. A HbA1c level of 6.2% ﬁfteen  months earlier\nwas the ﬁrst  evidence of prediabetes. On admission, homeostatic\n\nmodel assessment (HOMA) demonstrated insulin deﬁciency  with\na beta cell function at 27.6% of normal and an insulin resistance\nvalue of 1.27. The auto-Ab to protein tyrosine phosphatase-related\nislet antigen 2 (IA-2) and the anti-islet cell Ab were strongly\npositive, respectively at 12.7 UI/mL (normal < 1.4 ) and 1/3200\n(normal < 1/12). The anti-insulin auto-Abs were negative. A diag-\nnosis of latent autoimmune diabetes of the adult (LADA) associated\nwith an autoimmune SPS was made. The current treatment was\ndiscontinued and replaced by a basal-prandial insulin therapy\nregimen. Patient past history revealed a thyroidectomy that was\nperformed after a third relapse of GD. Hyperthyroidism started\nﬁfteen  years ago. At that time, thyroid stimulating immunoglob-\nulin (TSI) was positive. Our assessment showed that autoimmune\nAbs including TSI, anti-gastric parietal cell, anti-intrinsic factor,\nanti-21-hydroxylase, anti-transglutaminase, and anti-gliadin\nAbs were all negative. Only the anti-thyroid peroxidase (TPO)\nand anti-thyroglobulin Abs were strongly positive at 45.2 UI/mL\n(normal < 5.6 ) and 21.1 UI/mL (normal < 4.1 ), respectively. Adrenal\nfunction was normal.\nSix months later, HbA1c level was 6.5% and thyroid function\ntests were normal on 175 /H9262g L-thyroxin daily. In the meantime, the\npatient started oral diazepam and intravenous immunoglobulin\ntherapy (2 g/kg, every six weeks), which signiﬁcantly  improved\nher mobility.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 788,
+        "end": 3439
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2651
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3440,
+        "end": 4889
+      },
+      "compiled_offsets": {
+        "start": 2653,
+        "end": 4102
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

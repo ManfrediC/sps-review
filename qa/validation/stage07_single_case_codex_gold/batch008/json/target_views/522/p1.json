@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "522::p1",
+  "paper_id": "522",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "522::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE REPORT\nA 41-year-old woman had a history of Hashimoto thyroiditis\nwith secondary hypothyroidism, diabetes mellitus type I, pernicious\nanemia because of chronic atrophic gastritis, perioral vitiligo, and\nextrinsic asthma.\nThe patient had symptoms that had evolved over 2 years,\nconsisting of lumbar pain and axial rigidity that hindered pelvic\nwaist movement with an associated lumbar hyperlordosis and typical rigid gait of the proximal lower limbs similar to a tin soldier. At\ntimes, she suffered muscle spasms in the lower lumbar area triggered\nby unexpected acoustic and somesthetic stimuli. The neurologic\nexamination of cortical functions, cranial nerves, strength, myotatic\nreflexes, cutaneous plantar reflexes, and sensitivity showed no alterations.\nResults of systematic blood tests of electrolytes, renal function, liver enzymes, creatine kinase, tumor markers, anti-Hu antibodies, K⫹ antichannel antibodies, and antiamphiphysin were normal. Antinuclear antibodies were positive with a dotted pattern at\n1/320; anti-SSA, SSB, RNP, Jo-1, SCL-70, and anti-DNA were\nnormal. Parietal anticell antibodies were positive. Antiglutamate\ndecarboxylase antibodies were positive at 72. 23 UI/mL (normal\n⬍1 UI/mL). Brain and spinal cord magnetic resonance imaging,\nmammogram and thorax-abdominal CAT scand had no relevant\nalterations.\nNerve conductions were within normal limits. EMG showed\ncontinuous activity of motor units at lumbar paravertebral muscles\nand iliopsoas. There was an absence of denervation. Repetitive\ncomplex discharges were present in the form of doublets and triplets\nat the anterior tibial muscle and tensor of fascia lata (Figs. 1, 2).\nStudy with surface electrodes reveled continuous muscular activity\nin paravertebral muscles, abdominals, and the anterior side of the\nthigh that did not disappear when relaxed and that increased considerably when experiencing unexpected acoustic stimuli. We delivered an intravenous infusion of 2 mg midazolam to control the\ncontinuous activity of the left iliac muscle and confirmed that the\nactivity completely disappeared after 5 minutes. A dose of up to 300\n\nFIGURE 1. Upper, PUM with late component. Lower, Doublet in the main potential and satellite at the tensor fascia\nlata.\nmg Phenytoin per day was not associated with an improvement in\nthe doublets. Exteroceptive reflexes with right plantar stimulation\nand recorded in vastus medialis and tibialis anterior of 2 sides, right\nbiceps femoris, and gastrocnemius lateralis were excessively enhanced with short transmission times. The latencies of the responses\nwere 130 and 70 milliseconds in the vastus medialis and tibialis\nanterior on the right side, and 130 and 160 milliseconds on the left\nside upon stimulation of the right leg. H wave showed an H/M ratio,\nsilent period, and recovery curve that were normal. Hyperventilation\nand ischemia of the leg were not associated with changes in the\ndoublets.\nWe initiated treatment with baclofen in progressive doses up\nto 25 mg every 8 hours and clonazepam up to 0. 5 mg every 8 hours\nwith clinical improvement of pain, stiffness and muscle spasms, and\ngait. The EMG was repeated with the patient under this treatment,\nand showed the disappearance of continuous muscle activity as well\nas doublets and triplets. Coinciding with the death of her mother, the\npatient presented an anxiety-depression syndrome accompanied by\nincreased axial rigidity and reappearance of more intense muscle\nspasms. The EMG again showed doublets in the paravertebral\nlumbar and psoas iliac. She responded to oral administration of 10\nmg diazepam several times, until, after a few weeks, she returned to\nher baseline state.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3923,
+        "end": 6046
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2123
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6146,
+        "end": 7688
+      },
+      "compiled_offsets": {
+        "start": 2125,
+        "end": 3667
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "421::p1",
+  "paper_id": "421",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "421::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE REPORT\n\nA 58-year-old man (height 1.70m; weight 67 kg) with \nSPS was scheduled for resection of a thymoma. The \ndiagnosis of SPS was based on clinical presentation. \nHis symptoms began one month ago with ineffective \ntongue movement, and sometimes dysphagia. The \nstiffness and episodic spasm of  limbs (left leg, right \narm, and then right leg) occurred subsequently, \nespecially when there was sound and other stimulus, \nwhich usually made the patient tumble and not to \nwalk. Physical exami nation revealed extreme \nhypertonia of the lower extrem ities, with intercurrent \nand painful spasms. The laboratory examinations \nwere normal except vitamin B\n12 deficiency. The \nspecific antibodies associated with SPS were not \nexamined because thes e analyses could not be \nperformed in the laboratory at that time. CT scan of \nthe chest showed a thymic mass in the anterior \nmediastinum, possibly a th ymoma. The symptoms \nwere alleviated with the treatment of diazepam 5 mg \nb.i.d, baclofen 10 mg t.i.d, vitamine B\n12 500 µg t.i.d, \nvitamine B 1 10 mg t.i.d, and folic acid 5 mg t.i.d. \nThymectomy was suggested since the patient was \nconsidered to be a paraneoplastic SPS case.\n\nNo premedication was given to the patient. \nElectrocardiogram, intra-arterial blood pressure, and \nSpO2 were monitored in the operating room. \nAnesthesia was induced wi th midazolam (2 mg), \npropofol (40 mg), and remi fentanil (target-controlled \ninfusion at plasma level of 6 ng/ml). After \nadministration of rocuronium (0.6 mg/kg), \nendotracheal intubation was performed. Anesthesia \nwas maintained with intravenous remifentanil \n(target-controlled infusion at plasma level of 4 ng/ml) \ntogether with inhalational isoflurane (0.2% －0.4%), \nnitrous oxide (66%) and oxygen. Neuromuscular \nmonitoring showed that, after intubating dose of \nrocuronium, the onset time (from injection until T\n4/T1 \ndecreased to 25%) was 48 seconds, the 25% \nrecovery time (from injection until T 4/T1 recovered to \n25%) was 51 minutes, and the 100% recovery time \n(from injection until T\n4/T1 recovered to 100%) was 65 \nminutes. Muscle relaxation was then maintained with \nintermittent intravenous injection of rocuronium   \n(10 mg －20 mg) to a total dose of 90 mg. The \nhemodynamic parameters were stable during the \nwhole procedure. Neuromuscular monitoring \nshowed that the T\n4/T1 ratio had recovered to 100% \nat the end of operation. The patient waked up quickly \nafter cessation of anesthesia and could raise his \nhead and grasp forcefully. He was extubated and \ntransferred to the surgical intensive care unit. He \nreturned to the general ward on the following day. \nThe pathological examinat ion of the thymic mass \nconfirmed the diagnosis of thymoma.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 654,
+        "end": 665
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 11
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 669,
+        "end": 1838
+      },
+      "compiled_offsets": {
+        "start": 13,
+        "end": 1182
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1843,
+        "end": 3382
+      },
+      "compiled_offsets": {
+        "start": 1184,
+        "end": 2723
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

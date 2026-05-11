@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11988::p1",
+  "paper_id": "11988",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11988::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "3.1. Case presentation \nA 46-year-old man presented in June 2017 with 2 weeks of right \nfacial numbness and episodic facial muscle spasms after a preceding \nupper respiratory tract infection. The episodic spasms progressed to \ninvolve the masticatory muscles resulting in trismus. A week later, the \nfacial numbness had spread to the left side with additional vertical \nbinocular diplopia and left arm stimulus-sensitive myoclonus. Neuro -\nlogic examination was otherwise normal. The cerebrospinal fluid (CSF) \ncontained 4 lymphocytes/mL, and other data were normal. Brain mag -\nnetic resonance imaging (MRI) scan was normal. Blink reflexes showed \nexcessive facial muscle activities on the right when elicited by sub -\nmaximal electrical stimulation on either side of the supraorbital branch \nof trigeminal nerve and a synkinesis of orbicularis oculi and oris. \nTherapeutic trial with empirical antibiotic (ampicillin, doxycycline) and \nantiviral agents (acyclovir) did not show any response. Anti-Yo, -Hu, -Ri, \n-amphiphsyin, -CV2, -Ma2/Ta, -Recoverin, -SOX1, -Titin, -Zic4, -GAD65, \nand – Tr (DNER) antibodies were negative, and extensive investigation \nwith whole-body positron emission tomography – computed tomography \n(PET-CT) scan ruled out an occult neoplasm. Due to the worsening of \ndiplopia and facial contractions despite 3 days of hydrocortisone 100 mg \ntwice daily, he received 5 days of 1 g/d of intravenous methylprednis -\nolone (IvMP) until vertical diplopia and left arm myoclonus disappeared \nafter 5 days. He was discharged under the diagnosis of post-infectious \nbrainstem encephalitis and did not receive further immunotherapy. \nHowever, 2 weeks later, he developed much more severe symptoms \nwith complete horizontal ophthalmoplegia and persistent contractions \nof the bilateral masseter muscles. Though his consciousness remained \nclear with no limb involved, he developed agitation and laryngeal spasm \nresulting difficulty in swallowing and further apnea, for which he was \nintubated. Repeated brain MRI scan and CSF were still negative. Because \nthe symptoms seemed to suggest dysfunction and/or hyperexcitability \nconfined to the brainstem, a diagnosis of PERM was made. We gave 5 \ndays of 1 g/d IvMP followed by 5 sessions of plasmapheresis (PP), which \nwere immediately boosted with 500 mg/d IvMP in the last 3 sessions. \nAfter we gave 0.4 g/kg intravenous immunoglobulin (IVIg) for 5 days, \nthe symptoms slowly disappeared, and he was extubated 3 weeks later \nand discharged. Fig. 1 showed the clinical and treatment course details \nand evaluated clinical measures using mRS score. Upon discharge, he \nreceived azathioprine 60 mg/d and oral prednisolone 60 mg every other \nday. At follow-up 6 months later, he was free of myoclonus and spasm\n\nwith a sequela of only slight limitation of gaze to the left, which also \ndisappeared slowly over 6 months. His oral azathioprine was maintained \nfor 2 years while prednisolone tapered by 10 mg every 2 months until \nreaching 20 mg and 5 mg every 3 months until cessation. He remained \nsymptom free without relapse to current report dated after 3 years from \nsymptom onset. \nThe patient ’ s sera and CSF, which were collected right before \nreceiving plasmapheresis, tested positive for GlyR-Ab in the Autoim -\nmune Neurology Diagnostic Laboratory, University of Oxford ( Supple -\nmentary Data 1 ) 3 months after the symptom onset.\n\nWe report a case with idiopathic GlyR-Ab-positive PERM, who, after \nwithin 1 month of disease recognition and thereafter applied aggressive \nimmunotherapies, had a complete resolution of symptoms after 1 year \nduring 1 year off treatment, and no relapse within 3 years of follow-up.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5541,
+        "end": 8314
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2773
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8316,
+        "end": 8945
+      },
+      "compiled_offsets": {
+        "start": 2775,
+        "end": 3404
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 16639,
+        "end": 16921
+      },
+      "compiled_offsets": {
+        "start": 3406,
+        "end": 3688
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

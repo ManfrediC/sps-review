@@ -1,0 +1,60 @@
+{
+  "paper_id": "637",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\637.json",
+    "source_text_sha256": "67b6481e4b44f511feca736789b7c2292724ba33e373ce4101ff0fbd34715d36",
+    "prepared_source_sha256": "36604eafbb83cd04373d298dad44dcdb30f5dd3265e3466f7ea7c8ae98d10a8a",
+    "prepared_source_character_count": 17557,
+    "source_filename": "637_Gouider-Khouja Progressive encephalomyelitis w.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\637.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\637.segments.json",
+    "n_segments": 18
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\637\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch012",
+    "generated_at_utc": "2026-05-02T00:27:46.355872+00:00"
+  }
+}

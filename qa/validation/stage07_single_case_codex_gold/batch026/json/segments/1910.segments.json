@@ -1,0 +1,81 @@
+{
+  "paper_id": "1910",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1910.json",
+    "source_text_sha256": "90373cfb81bac78f27d814c36e03692f21fd393f8c447e893b34e31b0c9254a6",
+    "prepared_source_sha256": "0aa1a4097a1b65551553b14ed21d1bf30f6093adcb571bfbfe143cd0d97fff88",
+    "prepared_source_character_count": 2510
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 170
+      },
+      "page_index": 0,
+      "text": "Spastic Dysarthria as a presenting sign of Stiff Person Syndrome \n(P3.434) \nSamuel Giles, Amanda Persaud, Michael Pulley, Natalya Shneyder \nFirst published April 9, 2018,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 174,
+        "end": 2510
+      },
+      "page_index": 0,
+      "text": "Abstract \nObjective: Not applicable \nBackground: Stiff person syndrome (SPS) is caused by antibodies to glutamic acid \ndecarboxylase (GAD), causing excitability, decreasing neuronal inhibition. Alterations in GABA \nproduction cause stiffness and muscle spasms. Classically, the primary deficit in SPS is axial \nmuscle rigidity and paroxysmal muscle spasms, causing severely impaired gait. We report a case \nof SPS that presented with stroke like symptoms with acute onset spastic dysarthria. \nDesign/Methods: A literature review was done for all reported cases of SPS via Pubmed. Search \nterms were “spastic dysarthria”, “glutamic acid decarboxylase antibody”, “stroke symptoms”, and \n“stiff person syndrome”. Only English language publications were included if the diagnosis of \nSPS presented with stroke like symptoms. \nResults: 56 year old right handed female with hypertension and vitiligo, presented with \ndysarthria and right upper motor neuron facial weakness. Stroke work up was negative. She had \nleft leg spasticity, mild left hamstring and quadriceps weakness, and hyperreflexia in the lower \nextremities. Work up for motor neuron disease and myelopathy were unremarkable. Further \nhistory revealed multiple falls with left leg weakness and stiffness. Later, she developed right \nupper extremity stiffness. CSF was positive for 7 oligoclonal bands and GAD antibody was \nhighly positive (1651 nmol/L, normal <0.02 nmol/L). The patient was started on IVIg treatment \nwith improvement of spasticity, with intermittent spastic dysarthria. \nConclusions: Stiff person syndrome can present with acute spastic dysarthria mimicking stroke. \nWork-up for acute stroke is appropriate however, careful history may reveal more chronic \nsymptoms, leading to a very different diagnosis and treatment. It is of benefit to recognize that \none autoimmune disorder often leads to another. In one retrospective study, patients with high \ntiters of GAD antibodies did not present with classic SPS symptoms, and were at greater risk for \nhaving a paraneoplastic syndrome, despite paraneoplastic SPS often being antibody negative. Our \nmalignancy work up was negative. \nStudy Supported by: \nDisclosure: Dr. Giles has nothing to disclose. Dr. Persaud has nothing to disclose. Dr. Pulley has \nnothing to disclose. Dr. Shneyder has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: 56 year old right handed female with hypertension and vitiligo, presented with \ndysarthria and right upper motor neuron facial weakness. Stroke work up was negative. She had \nleft leg spasticity, mild left hamstring and quadriceps weakness, and hyperreflexia in the lower \nextremities. Work up for motor neuron disease and myelopathy were unremarkable. Further \nhistory revealed multiple falls with left leg weakness and stiffness. Later, she developed right \nupper extremity stiffness. CSF was positive for 7 oligoclonal bands and GAD antibody was \nhighly positive (1651 nmol/L, normal <0.02 nmol/L). The patient was started on IVIg treatment \nwith improvement of spasticity, with intermittent spastic dysarthria. \nConclusions: Stiff person syndrome can present with acute spastic dysarthria mimicking stroke. \nWork-up for acute stroke is appropriate however, careful history may reveal more chronic \nsymptoms, leading to a very different diagnosis and treatment. It is of benefit to recognize that \none autoimmune disorder often leads to another.",
+      "source_offsets": {
+        "start": 996,
+        "end": 2053
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Our \nmalignancy work up was negative.",
+      "source_offsets": {
+        "start": 2292,
+        "end": 2329
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

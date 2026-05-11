@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "69::p1",
+  "paper_id": "69",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "69::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "REPORT OF A CASE\nA 54-year-old woman presented in 1986\nwith a 17-year history of intermittent,\npainless extensor spasms of both legs.\nInsulin-dependent diabetes began in\n1968 and she was treated with a combi¬\nnation of isophane insulin suspension\n(NPH insulin) and regular human insu¬\nlin. Multinodular goiter with intermit¬\ntent hyperthyroidism had been diag¬\nnosed and the patient was treated with\nradioactive iodine 131 in 1982. Exami¬\nnation in 1986 disclosed anxiety, left leg\nstiffness, exaggerated lumbar lordosis,\nand a hesitant gait. Brain magnetic reso¬\nnance imaging, cervical myelography,\ncerebrospinal fluid (CSF) examination,\nand thyroid function test results were\nnormal. She was placed on a regimen of\n\ndiazepam for management of\nanxiety with gradual improvement\nin gait over several weeks. She re¬\nmained relatively asymptomatic\nuntil 1990 when identical symp¬\ntoms reappeared. Anxiety was\nagain prominent, and she was\ntreated with buspirone hydrochlo-\nride; this was followed by in¬\ncreased symptoms. In 1991, inter¬\nmittent spasms of the legs, lower\npart of the trunk, and left shoul¬\nder appeared that were once again\nattributed to anxiety. Spasms were\nprecipitated by movements of the\nlegs in bed and attempts to walk,\nresulting in frequent sudden falls.\nAt the time of hospital admis¬\nsion, she was extremely anxious and\nunwilling to leave her bed because\nof fear of precipitating spasms. Ex¬\ntensor spasms and tremor appeared\nin both legs with any attempt to arise\nfrom bed and following rectal ex¬\namination. Painful spasms lasted for\n30 to 60 seconds and were associ¬\nated with fear and anxiety. There was\nlumbar hyperlordosis with marked\nhypertrophy of the paralumbar\nmuscles. While the patient was in a\nsupine position, rigidity was absent\nbut the hyperlordotic posture per¬\nsisted. There was no muscle weak¬\nness or atrophy. Sensation was nor¬\nmal. Electromyography showed\ncontinuous firing of motor units in\nparalumbar muscles with the pa¬\ntient at rest. Thyroid function stud¬\nies indicated hyperthyroidism, in¬\ncluding the following values:\ntriiodothyronine, 3.6 nmol/L (234\nng/dL) (reference range, 1.5 to 2.9\nnmol/L [100 to 190 ng/dL]); thy-\nroxine, 216 nmol/L (reference range,\n58 to 148 nmol/L); thyrotropin, 0.08\nmU/L (reference range, 0.15 to 3.2\nmU/L); and free thyroxine, 9 pmol/L\n(reference range, 9 to 23 pmol/L).\nThyroid isotope scan showed evi¬\ndence for toxic multinodular goi¬\nter. Islet cell antibody levels were el¬\nevated at 1:640 JDF units, thyroid\nmicrosomal antibody levels were el¬\nevated at 1:1600, and antibody titer\nagainst glutamic acid decarboxy¬\nlase (GAD) was strongly positive.\nThyroglobulin and antiparietal cell\nantibodies were absent. HLA typ¬\ning was as follows: DR3;\nDQA1*0501; DQB1*0201; and\nDRB1*0301 homozygous. She was\ntreated with diazepam, 20 mg daily,\nwith prompt reduction in the fre¬\nquency of spasms and an increased\nability to stand and ambulate nor¬\nmally. Hyperthyroidism was treated\nwith radioactive iodine 131. Dur¬\ning follow-up over the next 24\nmonths increased doses of diaz¬\nepam to 60 mg daily have contin¬\nued to suppress muscle spasm.\nAlthough the clinical picture pre¬\nsented by this patient is typical of\nSMS, she was symptomatic for 22\nyears before a correct diagnosis was\nmade. The anxiety-related exacer¬\nbations, axial muscular rigidity, lum¬\nbar hyperlordosis, painful muscle\nspasms precipitated by attempts to\nwalk, electromyographic pattern of\ncontinuous involuntary firing of mo¬\ntor units at rest, and prompt re¬\nsponse to treatment with diazepam\nall fulfilled the clinical criteria for di¬\nagnosis of this disorder.3\"6 The\npresence of hyperthyroidism, dia¬\nbetes mellitus, elevated islet cell\nantibodies, thyroid microsomal\nantibodies, and antibodies against\nGAD provided additional convinc¬\ning laboratory evidence for the di¬\nagnosis of SMS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2206,
+        "end": 2923
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 717
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3175,
+        "end": 6298
+      },
+      "compiled_offsets": {
+        "start": 719,
+        "end": 3842
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "paper_id": "2384",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\2384.json",
+    "source_text_sha256": "eabf2a3b06db1c568cc6fee171f22b6c97aad541525e6313f2193e65c847ca6a",
+    "prepared_source_sha256": "b6d5c2cce9e9cd71711bd5647da72c89aaed1b4582e6667ee9c90f47e6096105",
+    "prepared_source_character_count": 7004,
+    "source_filename": "2384_Shanthanna-2010-Stiff man syndrome and anaesth.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\2384.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\2384.segments.json",
+    "n_segments": 4
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\2384\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch028",
+    "generated_at_utc": "2026-05-02T08:47:44.373864+00:00"
+  }
+}

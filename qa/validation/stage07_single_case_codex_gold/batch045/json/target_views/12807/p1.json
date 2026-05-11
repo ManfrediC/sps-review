@@ -1,0 +1,133 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12807::p1",
+  "paper_id": "12807",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12807::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report: 48-year-old man with metastatic atypical lung\ncarcinoid presented with progressive bilateral lower extremity\nstiffness, and painful spasms.\n\nExamination showed bilateral\nlower extremity weakness, increased tone and hyperre ﬂexia in\nthe upper and lower extremities.\n\nMRI of the brain showed\nextensive white matter T2 hyperintensity without abnormal dif-\nfusion restriction or contrast enhancement.\n\nMRI of the Cervi-\ncal, Thoracic and Lumbar spine showed T2 hyperintensity in\nthe dorsal column of the spinal cord.\n\nCerebrospinal ﬂuid (CSF)\nanalysis showed 72 nucleated cells and protein\n109 mg/dl.\n\nParaneoplastic panel was positive for anti-\nAmphiphysin antibodies 1:30,720 dilution in serum and 1:\n256 dilutions in CSF.\n\nHe was diagnosed with paraneoplastic\nSPS and received 5 sessions of plasma exchange (PLEX) with\nsigniﬁcant improvement of symptoms.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 770735,
+        "end": 770887
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 152
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 770888,
+        "end": 771011
+      },
+      "compiled_offsets": {
+        "start": 154,
+        "end": 277
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 771012,
+        "end": 771142
+      },
+      "compiled_offsets": {
+        "start": 279,
+        "end": 409
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 771143,
+        "end": 771257
+      },
+      "compiled_offsets": {
+        "start": 411,
+        "end": 525
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 771258,
+        "end": 771340
+      },
+      "compiled_offsets": {
+        "start": 527,
+        "end": 609
+      }
+    },
+    {
+      "block_id": "tb0006",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 771341,
+        "end": 771463
+      },
+      "compiled_offsets": {
+        "start": 611,
+        "end": 733
+      }
+    },
+    {
+      "block_id": "tb0007",
+      "segment_id": "s0007",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 771464,
+        "end": 771595
+      },
+      "compiled_offsets": {
+        "start": 735,
+        "end": 866
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "paper_id": "12537",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\12537.json",
+    "source_text_sha256": "67ec1b532434664ba13f5525c171b933198541b0b9f5118aa32b27f321929693",
+    "prepared_source_sha256": "7309aac05a0cca9aedae36fc651260e02ef5376dd3849aa740a33a6c6f7e678d",
+    "prepared_source_character_count": 3009
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2690
+      },
+      "page_index": 0,
+      "text": "005 \nCaesarean section under spinal anaesthesia for a patient \nwith stiff person syndrome \nA. Forbes and V. Skelton \nKings College Hospital, London \nStiff person syndrome (SPS) is a rare disorder characterised by involuntary activation of the \nmotor unit leading to episodic severe muscle spasms and stiffness classically affecting axial and \nproximal lower-limb musculature. Spasms may be triggered by various stimuli including pain. \nProlonged muscle weakness has been described after volatile anaesthesia and muscle relaxant \nadministration in people with SPS [1]. \nDescription \nA 39-year-old woman with SPS presented for caesarean section at 39+1 weeks gestation. The \ndiagnosis of SPS had been made 18 years previously following episodes of spasms leading to \nconvulsions. Investigations excluded epilepsy, but she was found to have anti-glutamic acid \ndecarboxylase antibodies. Spasms were managed with diazepam 2 mg as required. She was \nconcerned that labour might precipitate spasms, so had elected for caesarean delivery. Consent \nfor spinal anaesthesia was obtained and the possibility of prolonged ventilation in the unlikely \nevent of general anaesthesia discussed. In theatre, intravenous (IV) access was secured and \nstandard monitoring applied. After skin infiltration with 1% lidocaine, 2.3 ml of 0.5% hyperbaric \nbupivacaine and 300 µg of diamorphine were injected intrathecally through a 25 g pencil point \nneedle. Bilateral sensory block to T4 was achieved. The block was adequate throughout surgery \nand the baby was delivered uneventfully. IV paracetamol and per rectal diclofenac were given \nand regular oral analgesia was prescribed for the postoperative period. Ongoing management \nwas discussed with a consultant neurologist and a breastfeeding pharmacist. Diazepam and its \nactive metabolites pass into breast milk, causing sedation in the neonate, therefore baclofen was \nprescribed for spasms as required. Baclofen can also pass into breast milk but in sufficiently low \namounts for it to be safe in breastfeeding; however, it can reduce milk supply. \nDiscussion \nPain can trigger spasms in patients with SPS, hence the decision to avoid labour, and ensure \ngood postoperative pain relief. Symptomatic spasms may improve during pregnancy, but worsen \nagain after delivery, so a plan for management needs to be in place [2]. As prolonged hypotonia \nand poor respiratory effort has been reported after general anaesthesia, spinal anaesthesia was \npreferred. There are previous reports of epidural analgesia and anaesthesia in parturients, but not \nspinal anaesthesia [2]. Our case gives evidence that spinal anaesthesia can be safely used for \ncaesarean delivery."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 2692,
+        "end": 3009
+      },
+      "page_index": 1,
+      "text": "References \n1. Sidransky MA, Tran NV, Kaye AD. Anaesthesia considerations in stiff person \nsyndrome. Middle East Journal of Anaesthesiology 2013; 22: 217–21. \n2. Esch ME, Newsome SD. Improvement of stiff-person syndrome symptoms in \npregnancy. Neurology Neuroimmunology and neuroinflammation 2020; 7: e684. \nApprovals"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 39-year-old woman with SPS presented for caesarean section at 39+1 weeks gestation. The \ndiagnosis of SPS had been made 18 years previously following episodes of spasms leading to \nconvulsions. Investigations excluded epilepsy, but she was found to have anti-glutamic acid \ndecarboxylase antibodies. Spasms were managed with diazepam 2 mg as required. She was \nconcerned that labour might precipitate spasms, so had elected for caesarean delivery. Consent \nfor spinal anaesthesia was obtained and the possibility of prolonged ventilation in the unlikely \nevent of general anaesthesia discussed. In theatre, intravenous (IV) access was secured and \nstandard monitoring applied. After skin infiltration with 1% lidocaine, 2.3 ml of 0.5% hyperbaric \nbupivacaine and 300 µg of diamorphine were injected intrathecally through a 25 g pencil point \nneedle. Bilateral sensory block to T4 was achieved. The block was adequate throughout surgery \nand the baby was delivered uneventfully. IV paracetamol and per rectal diclofenac were given \nand regular oral analgesia was prescribed for the postoperative period. Ongoing management \nwas discussed with a consultant neurologist and a breastfeeding pharmacist. Diazepam and its \nactive metabolites pass into breast milk, causing sedation in the neonate, therefore baclofen was \nprescribed for spasms as required. Baclofen can also pass into breast milk but in sufficiently low \namounts for it to be safe in breastfeeding; however, it can reduce milk supply.",
+      "source_offsets": {
+        "start": 582,
+        "end": 2079
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

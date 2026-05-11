@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1135::p1",
+  "paper_id": "1135",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1135::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 64-year-old Filipino man presented with a one-month history\nof progressive left thigh rigidity and involuntary muscle contraction\nobserved during knee extension, ankle plantar ﬂexion and inversion.\nVolitional movement and noise aggravated the condition, and\nprolonged episodes of spasms were associated with pain. This\naffected ambulation and eventually necessitating the use of crutches.\nThere was increased tone of the rectus femoris, vastus lateralis\nand vastus medialis muscles of the left leg. All affected muscles were\nhard on palpation. Marked rigidity was more prominent when\npatient is observed during ambulation. Neurologic examination was\nunremarkable. Deep tendon re ﬂexes were normal.\nElectromyographic and nerve conduction studies (EMG NCV)\nstudies showed sustained interference patterns consisting of normal\nmotor unit action potentials which is consistent with Stiff Person\nSyndrome. Anti-glutamic acid antibody (anti-GAD Ab) determination\nwas negative. Oral benzodiazepine and baclofen afforded relief of\nspasms and stiffness and resulted in improvement of functional status.\nSPS is an important diagnosis to consider in patients presenting\nwith muscle stiffness, spasms and cramps. It may present as a\nparaneoplastic condition usually associated with lung and breast\ncancer and may indicate the presence of autoimmune disease.\nThis condition causes signi ﬁcant morbidity and mortality. When\nproperly diagnosed, most cases respond to appropriate treatment resulting\nto improvement of symptoms. Further investigation for the presence of\nparaneoplastic conditions especially in seropositive cases is highly\nrecommended.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1149,
+        "end": 2785
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1636
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

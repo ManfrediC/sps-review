@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12600::p1",
+  "paper_id": "12600",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12600::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Description: 70 year old woman presents with gradually \nprogressive stiffness and spasms involving both extremities and trunk \nwith difficulty in walking since past 2 years. She was provisionally \ndiagnosed with SPS after classical EMG findings (with IV Diazepam \ntest) and ruled out all other differential diagnoses after thorough \ninvestigations and clinical examination. Anti-GAD antibody was \nnegative in this case. Paraneoplastic cause was suspected. \nNeuropsychiatry referral was sought in view of persistent crying \nspells and disturbed sleep.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1297,
+        "end": 1852
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 555
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

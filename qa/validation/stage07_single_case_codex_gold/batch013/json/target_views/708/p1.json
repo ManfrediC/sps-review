@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "708::p1",
+  "paper_id": "708",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "708::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 74-year-old woman presented with widespread parasthesiae and\nepisodic vertigo. She then developed spasm and stiffness of her left arm,\n\nright leg, neck and jaw muscles with associated diplopia. During the\nadmission a malignant breast lump was discovered and left mastectomy\nperformed. Histologic investigation of mammary tissue revealed a grade\n3 invasive ductal carcinoma with metastatic invasion of 1 of the 17\naxillary lymph nodes.\nContrast-enhanced MRI of brain and spine were considered unre-\nmarkable for age.\nCerebrospinalﬂuid analysis demonstrated a lymphocytic pleocytosis\n(8 cells/mm\n3) and raised protein concentration (0.66 g/L). Serum was\npositive for anti-amphiphysin antibodies but negative for anti-GAD\nantibodies. Serologic testing for infective and other autoimmune and\nvasculitic diseases was negative.\nDespite the commencement of intravenous (IV) methylpredniso-\nlone, continued deterioration was noted with increased muscle stiff-\nness, slow saccadic eye movements and development of confusion.\n\nMethylprednisolone therapy was replaced by diazepam and IV im-\nmunoglobulin, which resulted in temporary improvement in muscle\nstiffness and spasms. However, two months later the limb stiffness\nworsened. At this stage there was no clinical response to immuno-\nglobulin or intrathecal baclofen and chemotherapy with cyclophos-\nphamide, methotrexate and 5- ﬂuorouracil did not produce signiﬁcant\nimprovement. Plasmaphoresis was subsequently considered but was\nnot feasible because of cardiovascular and respiratory instability. The\npatient continued to deteriorate and she developed severe stridor and\ntype two respiratory failure largely due to chest wall restriction. Her\ncondition progressed until death from respiratory failure 7 months\nafter disease onset, after the decision was taken to withdraw active\ntreatment. She underwent full autopsy examination.\n3. Results\n3.1. Neuropathology\nThe brain and spinal cord were examined. The brain fresh weight\nwas 1266 g. There was mild ventriculomegaly noted; the macroscopic\nexamination was otherwise unremarkable.\nMicroscopic examination revealed prominent perivascular and\nparenchymal lymphocytic and microglial in ﬁltration of grey matter,\npredominantly affecting the spinal cord and medulla symmetrically,\nwith lesser involvement of the amygdala (Fig. 1A, B), pons, hippocam-\npus, and basal ganglia. The neocortex (including primary motor cortex),\nthalamus and cerebellum were uninvolved. There were associated and\nvariable neuronal loss, microglial nodules, and gliosis. Brain white\nmatter tracts were generally uninvolved, however moderate white\nmatter loss and macrophage in ﬁltration were seen in the spinal cord,\nincluding the anterior and lateral corticospinal tracts.\nImmunohistochemistry showed that the inﬂammatory inﬁltrate was\na mix of activated CD68 positive microglia, CD20 positive B-cells and\nCD3 positive T-cells. The lymphocytes' cuf ﬁng vessels were predomi-\nnantly B cells ( Fig. 1C) with lesser numbers of CD4+ T cells ( Fig. 1D)\nand CD8 + T cells ( Fig. 1 E). In ﬁltrating cells in the grey matter were\npredominantly CD8 + T-cells and CD68 + microglia. Areas showing\nneuronophagia had a preponderance of CD8 + T-cells ( Fig. 1 F, G),\nwith these cells intimately juxtaposed against damaged neurons.\nIn the brainstem and spinal cord, both motor and sensory neuro-\nnal regions were severely involved, including the dorsal and ventral\nhorns of the spinal cord, inferior olives, hypoglossal nuclei ( Fig. 1 F,\nG), vestibular nuclei, and dorsal motor nuclei of the vagus. All these\nregions showed varying combinations of neuronal loss, neuronophagia,\nparenchymal and perivascular inﬁltrates of lymphocytes and microglia,\nand gliosis. In the hippocampus, there was patchy neuronal dropout\nin the CA2/CA3 region associated with in ﬂammatory neuronophagia\nand gliosis.\nFig. 1. Histopathology of the temporal lobe (A–E) and brainstem lesions. (A) Haematoxylin and eosin (H&E) stained section of the amygdala reveals perivascular and intraparenchymal\ninﬁltrates of mononuclear inﬂammatory cells. The boxed area is shown at higher magniﬁcation in (B), where neuronophagia is evident, mediated by lymphocytes and some microglia.\n(C, D, E) shows the perivascular in ﬂammatory in ﬁltrate to contain a predominance of CD20 + B cells, with a lesser number of CD4 + and CD8 + T cells. (F) Neuronophagia in the\n\nhypoglossal nucleus, which is in part mediated by numerous CD8+ T cells (G; arrows indicate degenerating neuronal nuclei). Magniﬁcation: 200× (A), 630× (B, F, G), 400× (C, D, E).\n\nThere was no evidence of residual or metastatic breast carcinoma or\nother malignancy.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3295,
+        "end": 3443
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 148
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3444,
+        "end": 4323
+      },
+      "compiled_offsets": {
+        "start": 150,
+        "end": 1029
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4736,
+        "end": 8098
+      },
+      "compiled_offsets": {
+        "start": 1031,
+        "end": 4393
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8099,
+        "end": 8277
+      },
+      "compiled_offsets": {
+        "start": 4395,
+        "end": 4573
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8359,
+        "end": 8444
+      },
+      "compiled_offsets": {
+        "start": 4575,
+        "end": 4660
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "13027::p1",
+  "paper_id": "13027",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "13027::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": false,
+  "input_text": "Abstract\nStiff-man syndrome (SMS) is a rare autoimmune disorder of the central nervous system associated with autoantibodies to glutamate\ndecarboxylase (GAD). We isolated five brain-reactive human monoclonal antibodies, with reactivity distinct from GAD, from peripheral\nblood of a patient newly diagnosed with SMS. Two antibodies reacted with both Purkinje cells and ependymal cells, and precipitated an 80-\nkDa protein from rat neuronal primary cultures, which was also recognized by 12% (3/25) of SMS sera and 13% (2/15) of SMS cerebrospinal\nfluid (CSF) samples. The corresponding antigen was identified as 17 h-hydroxysteroid dehydrogenase type 4 and may represent a possible\nnovel target of autoimmunity in SMS.\nD 2002 Elsevier Science B.V . All rights reserved.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 665,
+        "end": 1432
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 767
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ]
+  }
+}

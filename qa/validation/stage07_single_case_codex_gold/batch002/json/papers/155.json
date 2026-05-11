@@ -1,0 +1,60 @@
+{
+  "paper_id": "155",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\155.json",
+    "source_text_sha256": "5f83e28c834da23ad35f1f8cc6352e19c336c27e533da81c0378c00fbfefbf70",
+    "prepared_source_sha256": "0fc42e1d66277fb18863851a6819afa152cdb07080df84e18681a26bc7232f32",
+    "prepared_source_character_count": 27348,
+    "source_filename": "155_Hummel-1998-Humoral and cellular immune parame.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\155.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\155.segments.json",
+    "n_segments": 14
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\155\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch002",
+    "generated_at_utc": "2026-05-01T22:52:28.668888+00:00"
+  }
+}

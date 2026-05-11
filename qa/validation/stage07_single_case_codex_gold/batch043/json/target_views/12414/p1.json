@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12414::p1",
+  "paper_id": "12414",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12414::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Here,we report the case of a 69\nyear old woman with clinical,elec-\ntrophysiological and laboratory\nfindings consistent with a stiff limb\nsyndrome of the right leg.Glutamic\nacid decarboxylase antibodies\n(GAD-Ab) levels were elevated in\nserum and cerebrospinal fluid\n(CSF).Both stiffness and spasms\nresponded to intravenous and oral\ndiazepam.In addition,we also\nsummarized the published reports\nto date of stiff limb cases.\nThe 69 year old woman had a\nfive year history of progressive\nstiffness and rigidity involving her\nright leg.Initially she noted diffi-\nculty in walking due to slowing of\nthe movements of the right leg on\nuneven surfaces.Climbing stairs\nbecame impossible in due course.\nThe right ankle was also affected,\nleading to the foot being held in an\nabnormally plantar flexed and in-\nverted posture.Walking was only\npossible on the ball of the right\nfoot.She developed intermittent\nand painful spasms to sudden au-\nditory or tactile stimuli as well as\nto emotional upset.Furthermore,\nshe experienced action-induced\nspasms during walking that led to\nprogressive gait instability.The\nstiffness deteriorated for the first 3\nyears but then stabilized.Two years\nafter onset of the symptoms the pa-\ntient underwent a spinal disc ope-\nration at the L4/5 level that did not\naffect the progression of the stiff-\nness.Her past medical and family\nhistory were unremarkable,as was\na review of systems.\nOn neurological examination\nthere was abnormal posturing of\nthe distal right leg.The right foot\nwas plantar flexed and inverted\nwith hyperextension of the toes.\nFurthermore the right knee was\nheld fixed in extension.She had a\nwide based gait with a shortened\nstride length and circumduction of\nthe right leg.Onset of the stance\nphase was performed with the\nright forefoot.Standing on her\nright heel was not possible.Tendon\nreflexes were symmetrically nor-\nmal and the plantar responses were\nflexor.\nThe rest of the neurological ex-\namination was unremarkable with\nno clinical evidence of extrapyra-\nmidal or brain-stem dysfunction.\nNo sensory abnormalities,motor\ndeficits,or cognitive deficits were\nobserved.\nLaboratory findings:The routine\nlaboratory tests showed normal\nhematological and biochemical\nfindings,normal blood glucose lev-\nels,HbA1c,protein electrophoresis,\ntreponemal serology,vitamin B12\nand folic acid levels.The immuno-\nlogical profile showed elevated\nserum levels for GAD-Ab (204.400\nmU/ml;normal values<70\nmU/ml),whereas tests for anti-am-\nphiphysin-,anti-islet cell-,thyroid\nmicrosomal-,thyreoglobulin,TSH-\nreceptor-,gastric parietal cell-,\nsmooth muscle cell-,acetylcholin-\n\nreceptor-,anti-nuclear- (ANA,\nANCA),anti-Hu-,Yo-,Ri-autoanti-\nbodies were negative.\nGAD-Ab could be qualitatively\ndetected in the CSF.Protein,im-\nmunoglobulin level,cell count in-\ncluding histology and microbiolog-\nical study were within normal\nranges.No oligoclonal bands were\ndetected in the CSF.\nElectrophysiology:The needle\nEMG performed in the M.vastus\nlateralis,M.tibialis anterior and is-\nchiocrural muscles showed contin-\nuous motor unit activity (CMUA)\nin the affected limb.Synchronized\npotentials were absent.There were\nno signs of neuromyotonia or dys-\ntonia.Myography of the paraverte-\nbral muscles from the spinal levels\nT12 to L2 revealed normal find-\nings.Motor and sensory nerve con-\nduction velocities were normal.\nCentral and peripheral motor con-\nduction times (MEPs) in all limbs,\nas well as limb somato-sensory\nevoked potentials (SSEPs) were\nwithin the normal range.EEG\nshowed no abnormal findings.MRI\nof the brain and the entire spinal\ncord was normal.\nThe patient was treated with\nclonazepam (5mg over 6 days;\np.o.) and intravenous cortisone\n(prednisolone,1.000mg over 5\ndays) which had no effect on the\nstiffness.A sustained effect was ob-\nserved after intravenous and oral\napplication of diazepam (5mg/d)\nwith a marked improvement of\nmobility and partial relief of the\nspasms.\nThe described gait disorder as-\nsociated with stiffness of the right\nleg and painful spasm to sudden\nauditory or tactile stimuli is consis-\ntent with a stiff limb syndrome [3,\n4,8]",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 879,
+        "end": 3477
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2598
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3478,
+        "end": 4960
+      },
+      "compiled_offsets": {
+        "start": 2600,
+        "end": 4082
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "763::p1",
+  "paper_id": "763",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "763::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case presentation\nA 55-year-old Sri Lankan female presented with pro -\ngressive difficulty in walking superimposed with muscle \nspasms since 2002. She had first noted intermittent stiff -\nness in her right lower limb which lasted about 5–10 min \nat a time but gradually, over months, increased in fre -\nquency and duration to be persistent. She then noted \nthe stiffness spreading to involve her left lower limb \nmaking ambulation increasingly difficult. From about \n2009, the muscles of her trunk and lower limbs would\n\ngo into severe painful spasms in response to unexpected \nnoise, startle or emotional upset. These spasms initially \noccurred about 1–2/month and lasted about 30–60 min \nbut over time increased in both frequency and duration. \nThese episodes were associated with drenching sweats \nand fear. She has had several falls and injuries due to sud\n-\nden muscle spasms. She also reported generalised anxiety \nsince the onset of the illness in 2002 and specific pho\n-\nbias to open spaces, walking unaided and being among a \ncrowd of people. She had felt depressed at times which \nshe attributed to the disabling nature of the illness which \nhad curtailed her independence. In 2007, she was diag\n-\nnosed with diabetes mellitus, which required insulin to \nachieve normal glycaemic control. In 2014, she was found \nto be biochemically hypothyroid and commenced on thy\n-\nroxine replacement. She has had 3 repeated magnetic \nresonance imaging (MRI) of the brain and spinal cord \nsince 2002, all of which were reported as normal. After \nextensive investigation she had been given a presumptive \ndiagnosis of ‘non-compressive myelopathy’ of unknown \naetiology and treated with diazepam and baclofen. How\n-\never, her condition continued to deteriorate with time.\nOn examination in 2015 she had hyperlordosis of \nthe lumbar spine (Fig.  1) due to rigid contraction of \nher thoracolumbar paraspinal muscles associated with \nstony-hard, board-like rigidity of her anterior abdominal \nmuscles, markedly increased tone in both lower limbs, \nand more on the left with the left ankle being in a plan\n-\ntarflexed posture. Clonus was absent. Muscle power was \n5/5 on the right and 4+/5 on the left. Knee jerks were \nbrisk, ankle jerks were normal and the plantar responses \nwere flexor. The sensory examination was normal. Her \ndistribution of stiffness index was 3/6 (number of stiff  \nareas, range 0–6) and heightened sensitivity index was \n7/7 (number of stimuli that induce muscle spasms, range \n0–7) while the modified Rankin score (mRS, range 0–6) \nwas 4. Examination of her upper limbs and cranial nerves \nwere normal. General and other system examinations \nwere normal. Her blood pressure was 130/80 mmHg.\nRoutine haematological and biochemical investigations \nincluding blood counts, inflammatory markers, liver \nfunction and renal function tests were normal. Blood \nglucose was maintained within normal limits with sub\n-\ncutaneous insulin. Her thyroid stimulating hormone level \nhad been over 100  miU/ml before commencement of \nthyroxine. Anti-thyroglobulin antibodies were 102.16 IU/\nml (normal 0.00–4.11). Anti-thyroid peroxidase antibod\n-\nies were 1076 IU/ml (normal 0.5–5.6). Antinuclear anti -\nbodies and rheumatoid factor were normal. Anti-GAD \nantibodies were 15,500  IU/ml (normal <5). Electromyo\n-\ngraphy (EMG) of abdominal and paraspinal muscles \nshowed continuous motor unit activity (CMUA) at rest. \nNerve conduction studies were normal.\nShe was treated with intravenous immunoglobulin \n(IVIg) 0.4  g/kg/d for 5  days and commenced on lev\n-\netiracetam 250  mg BD later increased to 500  mg BD, \nmycophenolate mofetil 250  mg BD later increased to \n500  mg BD and increasing doses of diazepam, baclofen \nand tizanidine. Humulin insulin and thyroxine were \ntitrated to achieve normoglycemia and normal TSH lev\n-\nels. Medical treatment was combined with physiotherapy. \nHer distribution of stiffness index reduced to 1/6 after\n\n1  month and the heightened sensitivity index reduced \nto 1/7 after 3 months while the mRS improved to 3 after \n3  months and has remained that at 1  year follow up. \nAdditionally, her susceptibility to excessive startle and \nanxiety resolved with treatment, but she continued to \nhave agoraphobia and phobia to open spaces, albeit to a \nlesser degree. She had a second course of IVIg, 6 months \nafter the initial treatment and has remained clinically sta\n-\nble on immunosuppressive and symptomatic medication.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3786,
+        "end": 4305
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 519
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4626,
+        "end": 8045
+      },
+      "compiled_offsets": {
+        "start": 521,
+        "end": 3940
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8047,
+        "end": 8557
+      },
+      "compiled_offsets": {
+        "start": 3942,
+        "end": 4452
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

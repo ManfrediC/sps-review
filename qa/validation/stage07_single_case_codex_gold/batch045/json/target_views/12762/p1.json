@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12762::p1",
+  "paper_id": "12762",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12762::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "118836\nThe use of combined therapy with CFPE and IVIG in a patient with\nrefractory standard therapy for stiff person syndrome\nVasilii Tkachenko a, Julia Makaruk b, Daniil Degterev a, Anna Nikitina a,\nKseniya Smolentseva c, Marianna Ginzberg d, aMoscow Clinical\nScientiﬁc Center Named after LOGINOV, Neurology, Moscow, Russian\nFederation, bFirst Moscow State Medical University (MSMU, of ﬁcially I.\nM. Sechenov First Moscow State Medical University, informally Moscow\nMedical Academy or Sechenov University, Neurology, Moscow, Russian\nFederation, cState Budgetary Institution of Healthcare of the City of\nMoscow \"Moscow City Center for the Rehabilitation of Patients with\nSpinal Injury and the Consequences of Cerebral Palsy of the Moscow City\nHealth Department\", Neurology, Moscow, Russian Federation, dResearch\nCenter of Neurology, Neurology, Moscow, Russian Federation\nBackground and aims\nPatient, female 56 years old. The disease debuted in 2015, 1\nmonth after radioiodine therapy for thyrotoxicosis, episodes of\nstiffness and pain in the muscles of the back. Since March 2018, the\npatient noted an increase in the stiffness of the axial muscles, fear of\nwalking, and began to use a cane. In May 2018, constant muscular\nactivity in EMG in paraspinal muscles, proximal muscles of the\nthighs, an increase of anti-GAD antibodies to 46 U/ml, diagnosed\nStiff-person syndrome..\nAbstracts / Journal of the Neurological Sciences 429 (2021) 118056 27\n\nMethods\nTreatment started with IVIG in the initial dose of 2 g/kg, followed\nby maintenance courses of 1 g/kg with an injection interval of 4 – 5\nweeks, and symptomatic therapy with benzodiazepine at the\nmaximum tolerated dose. After the ﬁrst course of IVIG, effect was\nnoted for 3 weeks. Subsequently, the effect of the introduction\npersisted for up to 2 weeks, and was accompanied by traumatic falls.\nThe patient refused glucocorticosteroid therapy.\nResults\nSince August 2019, before each IVIG course, did cascade ﬁltration\nplasma exchanges, 2 – 4 sessions in which 2700 ml of plasma were\nprocessed, 300 – 500 ml of plasma were taken. This therapy\nsigniﬁcantly reduced the severity of rigidity, but did not affect the\nfrequency of falls. The effect lasted for 4 –5 weeks.\nConclusions\nIn patients who have been unresponsive to ﬁrst-line therapies\nIVIG and plasmapheresis can be used in combination. According to\nthe results of all the courses carried out, during the observation\nperiod, we were able to achieve an increase in the duration of the\nperiod of regression of symptoms up to 4 – 5 weeks.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4624,
+        "end": 6068
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1444
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6070,
+        "end": 7167
+      },
+      "compiled_offsets": {
+        "start": 1446,
+        "end": 2543
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

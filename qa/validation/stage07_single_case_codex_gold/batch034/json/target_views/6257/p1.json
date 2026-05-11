@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6257::p1",
+  "paper_id": "6257",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6257::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Stiff Person Syndrome (SPS): A Pediatric Case Report \nN.S. Shah .1 , A. Hahn 2, B. Banwell 1. 1Toronto, Canada; 2London, \nCanada \nIntroduction: SPS is a rare disorder characterized by fluctuating muscle \nrigidity and spasms. Most patients present in adulthood. We report a case \nwith onset at 8 years, review of reported pediatric cases, and discuss \nvarious therapeutic modalities. \nClinical evulation: A previously healthy, athletic 8 year old girl had onset \nof severe episodes of pain in lower back and legs. Recurrent, episodic mus- \ncle stiffness precipitated by loud noise and tactile stimulation lasting 3 to \n5 minutes, occurred multiple times per day. Examination during episodes \nrevealed muscle stiffness with extreme pain with hyperreflexia. Reduced \nlumbar extension and subjective stiffness in lower paraspinal muscles \nwithout myotonia was evident between attacks. MRI head, CSF stud- \nies, evoked potentials, and electromyography (performed when asymp- \ntomatic) were normal. Serum studies performed by the Mayo Clinic \ndemonstrated GAD-65 (glutamic acid decarboxylase) antibody titres of \n0.13(normal = 0.02). Serum glucose and thyroid function were normal. \nTreatment: High dose corticosteroids significantly improved muscle \nspasms during attacks. The frequency of attacks was markedly reduced \nwith monthly IVIg infusions and muscle stiffness has improved on main- \ntenance regime of Tizanidine and Gabapentin. \nDiscussion: SPS is presumed to have an autoimmune pathogenesis, based \non presence of GAD autoantibodies and association with other autoim- \nmune or paraneoplastic disorders. SPS is extremely rare in the pediatric \npopulation. The 8 cases described in the literature will be reviewed. The \nmanagement of the present case highlights the need for multisymptomatic \ntherapy.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 245,
+        "end": 2049
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1804
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

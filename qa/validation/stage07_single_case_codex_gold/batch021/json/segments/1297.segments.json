@@ -1,0 +1,65 @@
+{
+  "paper_id": "1297",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1297.json",
+    "source_text_sha256": "2f7f74aee9fc333597fa58a70ee55813dcba2e7117a9d38dc4b7c91d095abba0",
+    "prepared_source_sha256": "1f07c6264c5d3b49ff468e7e37ed2a1cd3377438dd32de586e40eeeb72dcf073",
+    "prepared_source_character_count": 1304
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 8
+      },
+      "page_index": 0,
+      "text": "Abstract"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 13,
+        "end": 1304
+      },
+      "page_index": 0,
+      "text": "The stiff-person syndrome (SPS) is a rare autoimmune neurologic disorder that affects the \ngamma-aminobutyric acid (GABA) mediated inhibitory network in the central nervous \nsystem with anti-glutamic acid decarboxylase (GAD) antibodies. SPS is characterized by \nmuscle rigidity and painful episodic spasms in axial and lower limb muscles. This case report \ndescribes successful peri-operative management of a 61-year-old female (height, 158 cm; \nweight, 60 kg, ASA-PS 2) with her right upper arm fracture who was scheduled for open \nreduction and internal fixation. This patient had bulbar paralysis, dysphagia and muscle \nrigidity associated with a high titer of anti-GAD auto antibodies (2,800 U x ml(-1)). She was \ndiagnosed as SPS and has been treated with predonisolone (30 mg x day(-1)) and diazepam \n(20 mg x day(-1)) for 1 year. Predonisolone (15 mg) and diazepam (30 mg) was given orally \nbefore induction of general anesthesia with propofol, remifentanil and rocuronium bromide. \nPosture change from supine to beach-chair position led to sudden drop in blood pressure to \n38/25 mmHg, which recovered promptly by injecting intravenous ephedrine hydrochloride \n(28 mg) and hydrocortisone (100 mg). Postanesthetic course was uneventful without \npostoperative neurologic abnormalities."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "describes successful peri-operative management of a 61-year-old female (height, 158 cm; \nweight, 60 kg, ASA-PS 2) with her right upper arm fracture who was scheduled for open \nreduction and internal fixation. This patient had bulbar paralysis, dysphagia and muscle \nrigidity associated with a high titer of anti-GAD auto antibodies (2,800 U x ml(-1)). She was \ndiagnosed as SPS and has been treated with predonisolone (30 mg x day(-1)) and diazepam \n(20 mg x day(-1)) for 1 year. Predonisolone (15 mg) and diazepam (30 mg) was given orally \nbefore induction of general anesthesia with propofol, remifentanil and rocuronium bromide. \nPosture change from supine to beach-chair position led to sudden drop in blood pressure to \n38/25 mmHg, which recovered promptly by injecting intravenous ephedrine hydrochloride \n(28 mg) and hydrocortisone (100 mg). Postanesthetic course was uneventful without \npostoperative neurologic abnormalities.",
+      "source_offsets": {
+        "start": 370,
+        "end": 1304
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

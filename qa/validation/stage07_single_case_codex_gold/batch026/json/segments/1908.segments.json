@@ -1,0 +1,81 @@
+{
+  "paper_id": "1908",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1908.json",
+    "source_text_sha256": "f693e98fd68894aaeb99623776807049c059f2012c99dbfb999a31a7ede9ff06",
+    "prepared_source_sha256": "0ce474f172378ee9ebefa4063fd4557b438fefc29d9b4fda3b60bf04c20118ab",
+    "prepared_source_character_count": 2841
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 224
+      },
+      "page_index": 0,
+      "text": "Multiple antibody positive autoimmune encephalomyelitis; Role of \nimmunosuppression in relapsing disease (P1.160) \nSharmeen Hussaini, Sherif Elwan, Gobind Singh, Laura Simionescu, Robert Beach \nFirst published April 9, 2018,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 228,
+        "end": 2841
+      },
+      "page_index": 0,
+      "text": "Background: Glycine receptor (GlyR) antibodies are detected in the disorder referred to as \nprogressive encephalomyelitis with rigidity and myoclonus (PERM) or stiff person syndrome \nplus. We present a case of GlyR antibody associated PERM where patient additionally tested \npositive for CSF anti-NMDA receptor (NMDAR) antibody. Relapsing course of disease was \nseen. \nDesign/Methods: NA \nResults: A previously healthy 70-year-old female on long-term levothyroxine therapy for \nhypothyroidism presented with two weeks of jerking in legs with stiffness, facial spasm, \ndysphagia, and dysarthria. Electroencephalographic findings of disorganized background \nindicating encephalopathy without epileptiform activity were seen. CSF testing showed \nlymphocytic pleocytosis with increased protein and NMDAR antibodies. GlyR antibodies were \npresent in serum and CSF. CSF investigations (anti-glutamic acid decarboxylase antibodies, \namphiphysin antibodies, oligoclonal bands, viral PCR, bacterial panel), MRI brain, and serum \ninvestigations (HIV, hepatitis C, TSH, copper, methylmalonic acid, heavy metals, serum and \nurine protein electrophoresis) were unremarkable. Serum anti-thyroglobulin antibody was \nelevated. Extensive malignancy workup was unremarkable. Patient responded partially to \nplasmapheresis, intravenous immunoglobulin and intravenous methylprednisolone and lower \nextremity jerks disappeared. Diazepam and baclofen helped with muscle stiffness. She was \ndischarged on prednisone which was discontinued due to infection and patient relapsed with leg \nstiffness, limb ataxia, worsening dysarthria, auditory hallucinations, disorientation and agitation. \nOn readmission, she improved with intravenous immunoglobulin and intravenous \nmethylprednisolone. Rituximab was administered and further improvement was seen such that at \ndischarge she was oriented to time, place and person, hallucinations had resolved and there was \nsignificant improvement in axial and limb rigidity. \nConclusions: The rapidly progressive course of autoimmune encephalitides in rare cases of \nmultiple antibody positivity has been described previously. This case highlights favorable \nresponse to aggressive immunotherapy in a patient with predominantly PERM phenotype with \npositive GlyR and NMDA antibodies, in addition to a possible association of disease with other \nautoimmune entities such as autoimmune thyroiditis. \nDisclosure: Dr. Hussaini has nothing to disclose. Dr. Elwan, MBBCh has nothing to disclose. Dr. \nSingh has nothing to disclose. Dr. Simionescu has nothing to disclose. Dr. Beach has nothing to \ndisclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: A previously healthy 70-year-old female on long-term levothyroxine therapy for \nhypothyroidism presented with two weeks of jerking in legs with stiffness, facial spasm, \ndysphagia, and dysarthria. Electroencephalographic findings of disorganized background \nindicating encephalopathy without epileptiform activity were seen. CSF testing showed \nlymphocytic pleocytosis with increased protein and NMDAR antibodies. GlyR antibodies were \npresent in serum and CSF. CSF investigations (anti-glutamic acid decarboxylase antibodies, \namphiphysin antibodies, oligoclonal bands, viral PCR, bacterial panel), MRI brain, and serum \ninvestigations (HIV, hepatitis C, TSH, copper, methylmalonic acid, heavy metals, serum and \nurine protein electrophoresis) were unremarkable. Serum anti-thyroglobulin antibody was \nelevated. Extensive malignancy workup was unremarkable. Patient responded partially to \nplasmapheresis, intravenous immunoglobulin and intravenous methylprednisolone and lower \nextremity jerks disappeared. Diazepam and baclofen helped with muscle stiffness. She was \ndischarged on prednisone which was discontinued due to infection and patient relapsed with leg \nstiffness, limb ataxia, worsening dysarthria, auditory hallucinations, disorientation and agitation. \nOn readmission, she improved with intravenous immunoglobulin and intravenous \nmethylprednisolone. Rituximab was administered and further improvement was seen such that at \ndischarge she was oriented to time, place and person, hallucinations had resolved and there was \nsignificant improvement in axial and limb rigidity.",
+      "source_offsets": {
+        "start": 617,
+        "end": 2214
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "This case highlights favorable \nresponse to aggressive immunotherapy in a patient with predominantly PERM phenotype with \npositive GlyR and NMDA antibodies, in addition to a possible association of disease with other \nautoimmune entities such as autoimmune thyroiditis.",
+      "source_offsets": {
+        "start": 2367,
+        "end": 2636
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

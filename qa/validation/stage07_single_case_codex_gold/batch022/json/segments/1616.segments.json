@@ -1,0 +1,65 @@
+{
+  "paper_id": "1616",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1616.json",
+    "source_text_sha256": "0e8a548a10d1cc0bf9b684eb8bcad407d4dcd8a8a7d8bca76569b244e437036a",
+    "prepared_source_sha256": "03b5713df8b3a1417697b54d01eddd805edee40260591f2c2eb1e06a1f3d4ed2",
+    "prepared_source_character_count": 3201
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 308
+      },
+      "page_index": 0,
+      "text": "Double Hit and Excellent Treatment Response: AMPA and GAD-65 \nReceptor Antibodies in a Young Woman with Stiff Person Plus \nSyndrome Misdiagnosed as Acute Scoliosis and Bipolar Disorder \n(P2.2-035) \nNatalie Witek, Anjali Gera, Jennifer Denike, Christopher Goetz, Meagan Bailey \nFirst published April 16, 2019,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 313,
+        "end": 3201
+      },
+      "page_index": 0,
+      "text": "Abstract \nObjective: Both AMPA and GAD-65 receptor antibodies have been associated with intractable \nepilepsy, but we report co-occurrence of both antibodies in a patient with stiff person syndrome \n(SPS) and epilepsy who responded remarkably with immunotherapy. \nBackground: A 29-year-old woman with history of a single seizure presented to an outside \nhospital with abnormal movements in sleep, progressive muscle stiffness and spasms. Routine \nEEG, MRI brain, and lumbar puncture were performed and were unremarkable. Patient \ndeveloped illusions of grandeur during THE hospitalization and was diagnosed with bipolar \ndisorder and adult-onset scoliosis. Her psychiatric symptoms improved on olanzapine. \nPatient received a second opinion at our institution 4 months later. Her examination was notable \nfor marked stiffness of the neck and lower extremities with lumbar hyperlordosis. She had \nimpaired gait due to limitation range of motion at her knees related to her stiffness. She had \nfrequent muscle spasms. A 96 hour video EEG revealed 30 electrographic seizures arising in the \nright parietal region. Serum GAD-65 R antibody returned elevated at >3100 nmol/L (reference \nrange normal <0.02) and AMPA R antibody was also reported as positive (reference range \nnegative) on serum Mayo Autoimmune Encephalopathy panel. Lumbar puncture revealed \nelevated GAD-65 ab at 80.6 nmol/L (reference range ≤ 0.02 nmol/L) on the Mayo serum \nautoimmune encephalopathy panel and >5 oligoclonal bands, but was otherwise was \nunremarkable. She underwent malignancy workup including US breast, mammogram, CT of the \nchest, abdomen and pelvis, and pelvic ultrasound that were negative for malignancy. \nDesign/Methods: N/A \nResults: She was treated with 2 gm/kg IVIG, diazepam, and lamotrigine with resolution of \nmuscle spasms, improvement of stiffness, but she suffered from fatigue. She received rituximab \n500 mg IV × 2 doses and had near complete resolution of symptoms. \nConclusions: Intractable epilepsy and SPS can co-occur in the context of SPS-plus and be treated \nwith marked improvements with immunotherapies. \nDisclosure: Dr. Witek has nothing to disclose. Dr. Gera has nothing to disclose. Dr. Denike has \nnothing to disclose. Dr. Goetz has received personal compensation for consulting, serving on a \nscientific advisory board, speaking, or other activities with Boston Scientific, International \nParkinson and Movement Disorder Society, Cray-Huber Attorneys, University of Pittsburgh and \nRush University Medical Center. Dr. Goetz has received royalty, license fees, or contractual \nrights payments from Elsevier Publishers, Oxford University Press, and Wolters Kluwer. Dr. \nGoetz has received research support from NIH, Michael J. Fox Foundation, Parkinson’s Disease \nFoundation and International Parkinson and Movement Disorder Society (IPMDS). Dr. Bailey \nhas nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Background: A 29-year-old woman with history of a single seizure presented to an outside \nhospital with abnormal movements in sleep, progressive muscle stiffness and spasms. Routine \nEEG, MRI brain, and lumbar puncture were performed and were unremarkable. Patient \ndeveloped illusions of grandeur during THE hospitalization and was diagnosed with bipolar \ndisorder and adult-onset scoliosis. Her psychiatric symptoms improved on olanzapine. \nPatient received a second opinion at our institution 4 months later. Her examination was notable \nfor marked stiffness of the neck and lower extremities with lumbar hyperlordosis. She had \nimpaired gait due to limitation range of motion at her knees related to her stiffness. She had \nfrequent muscle spasms. A 96 hour video EEG revealed 30 electrographic seizures arising in the \nright parietal region. Serum GAD-65 R antibody returned elevated at >3100 nmol/L (reference \nrange normal <0.02) and AMPA R antibody was also reported as positive (reference range \nnegative) on serum Mayo Autoimmune Encephalopathy panel. Lumbar puncture revealed \nelevated GAD-65 ab at 80.6 nmol/L (reference range ≤ 0.02 nmol/L) on the Mayo serum \nautoimmune encephalopathy panel and >5 oligoclonal bands, but was otherwise was \nunremarkable. She underwent malignancy workup including US breast, mammogram, CT of the \nchest, abdomen and pelvis, and pelvic ultrasound that were negative for malignancy. \nDesign/Methods: N/A \nResults: She was treated with 2 gm/kg IVIG, diazepam, and lamotrigine with resolution of \nmuscle spasms, improvement of stiffness, but she suffered from fatigue. She received rituximab \n500 mg IV × 2 doses and had near complete resolution of symptoms. \nConclusions: Intractable epilepsy and SPS can co-occur in the context of SPS-plus and be treated \nwith marked improvements with immunotherapies.",
+      "source_offsets": {
+        "start": 577,
+        "end": 2423
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

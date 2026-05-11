@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1665::p1",
+  "paper_id": "1665",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1665::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A case is presented of a seventeen-year-old male who was diagnosed with \nstiff person syndrome after one year of symptom onset. Prior to this diagnosis, multiple \nspecialists did extensive testing and focused on symptomatic treatment without determining the \nunderlying etiology. Numerous medical tests were performed including a CK that was mildly \nelevated, an MRI of the brain and spine that were noncontributory, and a positive ANA. Various \nmedications including baclofen and cyclobenzaprine were minimally effective. On initial \npresentation to neurology, the patient was dependent upon a walker for mobility, had such \nextreme stiffness that he had lost the ability to sit upright and was debilitated by painful muscle \nspasms. On examination, he exhibited rigidity of the abdomen and lower extremities, which \nappeared to be contracting at rest. Diagnosis was made via EMG of the anterior tibialis, which \nshowed continuous motor unit action potentials while at rest, indistinguishable from voluntary \nactivity. Benzodiazepines and IVIG were initiated. The patient had such a dramatic response to \ntreatment that he was walking independently within one day of treatment. Glutamic Acid \nDecarboxylase antibody levels resulted as greater than 250 IU/mL. The patient continues to \nrequire interval IVIG treatments to prevent symptom recurrence.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 819,
+        "end": 2168
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1349
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

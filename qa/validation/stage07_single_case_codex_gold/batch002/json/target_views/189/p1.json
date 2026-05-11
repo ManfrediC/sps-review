@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "189::p1",
+  "paper_id": "189",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "189::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 40 years old man with normal family and personal his-\ntory developed a low grade fever associated with a feeling\nof tightness of the anteridg abdominal muscles. The fever\nsubsided after a few days but the stiffness of the muscles\npersisted and over the following days also involved the\nthoracolumbar paraspinal muscles. The stiffness was con-\ntinuous but exertion and stress would cause painful spasms\nof the same muscle groups. Routine blood and urine tests\nand imaging studies of the abdomen were normal. The per-\nsistent rigidity of the abdominal muscles with a prior\nhistory of fever raised the possibility of an underlying peri-\ntonitis. Hospitalization and parenteral antibiotics did not\nrelieve the symptoms. The possibility of tetanus was also\nconsidered but thought unlikely in view of the atypical pro-\ngression of illness.\nSymptoms gradually progressed over the next few weeks\nand the patient was referred to our hospital for further in-\nvestigations. On examination, there was marked hypertonia\nin the anterior abdominal and thoracolumbar paraspinal\nmuscles with an exaggerated lumbar lordosis with scoliosis\nwhich persisted at rest. Forward flexion was markedly re-\nstricted. Neurological examination was otherwise normal.\nVital parameters and the other systems were also normal.\nElectromyography studies did not show any changes of a\nprimary muscle disease but there were spontaneous normal\nmotor unit potentials over the abdominal and paraspinal\nmuscles even at rest which decreased after intravenous ad-\nministration of diazepam. The silent period and nerve\nconduction studies were normal. Blood investigations, espe-\ncially blood sugar and serum electrolytes were also within\nnormal limits. Serum and cerebrospinal fluid (CSF) were\n\nsent to London for autoantibody studies. Glutamic acid de-\ncarboxylase (GAD) antibodies were strongly positive in\nboth serum and CSF and islet cell antibodies were present\nin serum at high titres (> 80 Juvenile Diabetes Foundation\nUnits - normal < 10). The patient was started on diazepam\nand baclofen, the doses of which were progressively in-\ncreased to 30 and 60 mg per day respectively. With this,\nthere was a significant decrease in the muscle rigidity and\nspasm, the lumbar lordosis decreased and the scoliosis dis-\nappeared.\nThe above patient had most of the classical features of\nthe stiff-man syndrome: onset in middle age; stiffness in-\nitially involving the trunk muscles with persistence of\nrigidity even at rest; superimposed painful spasms precipi-\ntated by stress and exertion; hyperlordosis of lumbar spine\n\nwith restricted forward flexion; gradual progression over\nmonths; otherwise normal neurological examination with\nnormal higher functions, motor power, sensations and re-\nflexes; characteristic EMG changes of continuous normal\nmotor unit activity at rest in affected muscles with no signs\nof denervation or primary muscle disease and normal nerve\nconduction studies. The presence of GAD and islet - cell\nantibodies in our patient supports the hypothesis of an\nautoimmune basis for the pathogenesis of the syndrome.”\nMany affected patients develop diabetes mellitus and other\nautoimmune disorders but these were not found in our pa-\ntient.\nExtrapyramidal syndromes like torsion dystonias, pro-\ngressive encephalomyelitis, spinal cord lesions, localized\ntetanus, Issac’s syndrome and myotonia can closely mimic\nthe stiff - man syndrome.'* These and other local patholo-\ngies like peritonitis can be differentiated by the classical\nfeatures of the disease together with electrophysiological\nstudies but a high index of suspicion is also required in the\nearly stages.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3078,
+        "end": 4828
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1750
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5191,
+        "end": 6013
+      },
+      "compiled_offsets": {
+        "start": 1752,
+        "end": 2574
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6014,
+        "end": 7076
+      },
+      "compiled_offsets": {
+        "start": 2576,
+        "end": 3638
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

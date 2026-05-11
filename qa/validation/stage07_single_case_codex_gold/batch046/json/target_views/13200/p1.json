@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "13200::p1",
+  "paper_id": "13200",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "13200::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "VIDEO NEUROIMAGE\nProprioceptive Stimuli as a New Type of Trigger for\nEpilepsy in Stiﬀ Person Syndrome\nPaula Panos Basterra, MD, Florentino Nombela, MD, PhD, Pablo Iriarte, MD, Celia Romero Del Rincon, MD,\nJaime Alonso Maroto, MD, and Sonia Quintas, MD\nNeurology® 2022;99:711-712. doi:10.1212/WNL.0000000000201196\nCorrespondence\nDr. Basterra\npanospaula@gmail.com\nA healthy 74-year-old woman was diagnosed with Stiﬀ-Person (SP) syndrome (encephalopathy\nand sti ﬀ leg) with amphiphysin autoantibodies and T1N1M0 breast cancer (HER2+, PR −,\nER−). She received immunotherapy (2 high-dose steroid cycles and 7 plasmapheresis sessions),\nfollowed by right mastectomy, axillary chain lymphadenectomy, and adjuvant chemotherapy\n(letrozole, trastuzumab, and cyclophosphamide), with poor clinical response (Eastern Co-\noperative Oncology Group 4). After discharge, she presented to the emergency department\nwith seizures induced by knee ﬂexion of the sti ﬀ leg (Video 1). EEG showed epileptic seizures\ninitiating in the left temporal lobe (Figure). Reduced presynaptic GABAergic inhibition could\nbe the underlying mechanism of the core signs of amphiphysin-SP, which might explain the\npresence of epilepsy in these patients.\n1 However, no re ﬂex proprioceptive seizures had been\npreviously reported in SP.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 0,
+        "end": 1293
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1293
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

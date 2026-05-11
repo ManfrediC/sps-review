@@ -1,0 +1,117 @@
+{
+  "paper_id": "8088",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\8088.json",
+    "source_text_sha256": "4fe434239d330ca86641a07acf9db15976a03d86fe3b0a4f2c19968204092bd1",
+    "prepared_source_sha256": "0ade2af2e7625e5a6a6140b24d7c68d807f070fe4e2bd969b870dbcd27b7d8a9",
+    "prepared_source_character_count": 17397
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 3444
+      },
+      "page_index": 0,
+      "text": "S90 Poster presentations: Poster session 7. Movement disorders 2\nphotographs selected from the International affective picture system.\nEach photograph was presented for 2s and was interposed by a black\nscreen. Extracellular neuronal activity and electrooculography were\nrecorded during the task. Neuronal recordings were manually assigned to\nparticular subcortical structures according to their speciﬁc ﬁring pattern.\nAction potentials of individual neurons were identiﬁed using WaveClus, an\nunsupervised spike detection and sorting tool. The relationship between\nthe activity of individual neurons and the EM was assessed by correlation\nanalysis.\nResults: Out of the 119 detected neurons, 81 were located in the STN, 19\nin the SNr and 19 in the GPi. EM-related neurons were found in all three\nnuclei: 14 (17%) in the STN, 2 (11%) in the SNr and 5 (26%) in the GPi\n(P < 0.05). Two different categories of EM-related neurons were identiﬁed,\nas their ﬁring rate correlated with EM amplitude either positively or\nnegatively.\nConclusions: Our results suggested that each of the explored structures\nSTN, SNr and GPi contain relatively high ratios of neurons involved in the\nexecution and/or control of eye movements.\nSupported by grants GA ˇCR 309/09/1145, ˇCVUT SGS.SGS10/279/OHK3/\n3T/13 and project MˇSM 0021620849.\nP7.3\nMechanisms underlying abnormalities in the membrane properties\nof simulated demyelinating neuropathies and neuronopathies\nD.I. Stephanova\n1, M. Daskalova1\n1Institute of Biophysics and Biomedical Engineering, Bulgarian Academy\nof Sciences, Soﬁa, Bulgaria\nIntroduction: Recently, the multiple nerve excitability properties have\nbeen measured in healthy subjects and patients with Charcot-Marie-\nTooth disease type 1A (CMT1A), chronic inﬂammatory demyelinating\npolyneuropathy (CIDP), Guillain\nBarr´ e syndrome (GBS), multifocal motor\nneuropathy (MMN) and amyotrophic lateral sclerosis (ALS) using a\nnoninvasive threshold tracking technique.\nObjective: To reveal the mechanisms underling abnormalities in the\nmembrane properties obtained in simulated by us demyelinating\nneuropathies (CMT1A, CIDP , GBS, MMN) and neuronophathies (ALS), the\npresent study compares these abnormalities. The current kinetics deﬁning\nthe abnormalities in the propagating and accommodative processes are\nalso compared for the simulated neuropathies.\nMethods: The membrane properties are calculated in simulated cases\n(1) of internodal, paranodal and simultaneously of paranodal internodal\ndemyelinations, each of them systematic or focal and (2) of three\nprogressively greater degrees of ion channel dysfunction of human\nmotor nerve ﬁbres. Our double cable model is used to calculate\nthe membrane properties such as potentials (action, electrotonic,\nextracellular), strength-duration time constants, rheobases and recovery\ncycles. The model and its software are given.\nResults: The comparison between the calculated and experimentally\nrecorded membrane properties shows that the mild systematic demyeli-\nnations are speciﬁc indicators for hereditary and chronic demyelinating\nneuropathies (CMT1A, CIDP) and the severe focal demyelinations are\nspeciﬁc indicators for acquired demyelinating neuropathies (GBS, MMN).\nThe axonal channel dysfunctions simulated are speciﬁc indicators for\nmotor neuron diseases such as ALS.\nConclusions: The membrane properties in the demyelinating neu-\nropathies are quite different from those in the neuronopathies, because"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 3445,
+        "end": 6924
+      },
+      "page_index": 0,
+      "text": "of the different ﬁbre electrogenesis. The abnormalities obtained can be\nused as speciﬁc indicators for the discussed diseases.\nP7.4\nEffect of the myelin sheath aqueous layers on the membrane\nproperties of simulated demyelinating neuropathies\nD.I. Stephanova\n1, S.M. Krustev2, N. Negrev2, M. Daskalova1\n1Institute of Biophysics and Biomedical Engineering, Bulgarian Academy\nof Sciences, Soﬁa, Bulgaria, 2Medical University , Varna, Bulgaria\nIntroduction: Studies of native myelin by X-ray and neutron diffraction\nhave demonstrated that the myelin lamellae are not tightly compacted,\nbut separated by cytoplasmic and extracellular spaces, so that up to half\nthe volume fraction of myelin is taken up by water.\nObjective: To expand our studies on the mechanisms underlying clinical\ndecline of the nerve excitability properties in patients with demyelinating\nneuropathies, the effect of the myelin sheath aqueous layers on multiple\nmembrane properties of simulated ﬁbre demyelinations is investigated.\nMethods: Three types of progressively greater systematic demyelina-\ntions [such as internodal systematic demyelinations (ISDs), paranodal\nsystematic demyelinations (PSDs) and paranodal internodal systematic\ndemyelinations (PISDs)] without/with aqueous layers are simulated using\nour previous multi-layered model of human motor nerve ﬁbre. The\ncalculated membrane properties are as follows: potentials (action,\nelectrotonic), strength-duration time constants, rheobases and recovery\ncycles. The model and its software are given.\nResults: The effect of the aqueous layers is different and depends on the\ndemyelinated type. All membrane properties are worsened / improved\nwhen the aqueous layers are taken into account in the ISDs/PSDs,\nrespectively. The effect of the aqueous layers is signiﬁcantly higher/lower\non the accommodative and adaptive processes than on the propagating\nprocesses in the ISDs/PSDs, respectively. The aqueous layers do not\nmodulate the membrane properties in the PISDs.\nConclusions: The multi-layered model used approximates to a higher\ndegree the calculated membrane properties to those in patients\nwith Charcot-Marie-Tooth disease type 1A and chronic inﬂammatory\ndemyelinating polyneuropathy also illustrated in this presentation. The\nstudy provides new and important information on the mechanisms\nunderlying abnormalities in the nerve excitability properties in patients\nwith demyelinating neuropathies.\nP7.5\nPlasticity in primary motor cortex and clinical symptoms have\ndifferent susceptibility to L-DOPA in drug-naive Parkinsonian patients\nS. Meunier\n1, T . Joseph2, B. Vellayudhan2, A. Kishore2\n1CR ICM INSERM U975, Paris, France, 2SCTIMST , T rivandrum, India\nIntroduction: A single dose of L-dopa restores the defective LTP-like\nplasticity in patients with advanced Parkinson’s disease (PD) on chronic\nL-dopa treatment (Ueki et al 2006, Morgante et al 2006). The effect on\nL-DOPA on LTP and LTD-like plasticity in drug-naive PD is not reported\nso far.\nObjectives: To test the effect of a single dose L-DOPA on LTP and LTD-like\nplasticity of motor cortex (M1) in denovo cases of early PD.\nMethods: Intermittent and continuous theta burst stimulation (iTBS/\ncTBS) were used to induce LTP and LTD-like plasticity respectively, in M1\nin 10 healthy volunteers and on 10 patients with early asymmetric denovo\nPD. The tests were done after clinical scoring (UPRD part III) on both sides\nin untreated state and 1 hour after a single dose of L-dopa (100mg) on"
+    },
+    {
+      "block_id": "b0003",
+      "source_offsets": {
+        "start": 6925,
+        "end": 8895
+      },
+      "page_index": 0,
+      "text": "2 separate days. Mean values of MEP were measured immediately after\nTBS and every 10 minutes till 30minutes after both TBS protocols.\nResults: In the untreated state both LTD and LTP-like plasticity were\ndefective in PD patients. Even though patients showed good clinical\nimprovement following a single dose (100mg) of L-dopa on their less\nand the more affected sides, LTP- and LTD-like plasticity did not exhibit\nany changes compared to the untreated state. There were no signiﬁcant\ndifferences in the baseline MEPs or thresholds of excitability of M1 cortex\nof the groups.\nConclusions: LTP/LTD-like plasticity is signiﬁcantly and similarly impaired\nin both M1 cortices of early untreated PD irrespective of the asymmetry\nof the clinical status. Plasticity did not improve after a single dose of\nL-DOPA. A chronic exposure to exogenous L-DOPA might be needed to\ninﬂuence plasticity.\nP7.6\nFollow-up in Stiff Person Syndrome with immunoglobulin treatment\nM.J. Pablo\n1, M. Bestue2, P . Tamargo1, F . Romero1, I. Benavente1\n1Department of Neurophysiology , San Jorge Hospital, Huesca, Spain,\n2Department of Neurology , San Jorge Hospital, Huesca, Spain\nIntroduction: Stiff Person Syndrome is a rare and disabling central\nnervous system disorder , probably under-diagnosed, characterized by\nmuscle stiffness and episodic spasms that involve axial and limb\nmusculature. It is associated with high titers of antibodies against\nglutamic acid decarboxylase (GAD65) and frequently with autoimmune\ndisorders. Rigidity and spasms are symptomatically treated with\nbenzodiazepines, baclofen, tiagabine and levetiracetam. Treatment\nwith intravenous immunoglobulin is well-tolerated and effective. Other\ntherapies such as plasmapheresis and rituximab have been tried, with\ngood responses.\nObjectives: To present the 4-year follow-up of a 62-year-old patient\nclinically and electrophysiologically diagnosed with stiff person syndrome\nwith a good response to IV immunoglobulin treatment."
+    },
+    {
+      "block_id": "b0004",
+      "source_offsets": {
+        "start": 8897,
+        "end": 12394
+      },
+      "page_index": 1,
+      "text": "14th ECCN / 4th ICTMS/DCS S91\nMethods: IV immunoglobulin was administered once a month during the\nﬁrst two years, and every three-four months in the next two years. He\nbecame asymptomatic six months after the beginning of the treatment.\nThe patient was recorded on video before and after the treatment,\nshowing the clinical improvement. Blink reﬂex and EMG studies were\ncarried out in agonist and antagonist muscles, in supine and bipedestation\npositions.\nResults: The ﬁrst two EMG studies showed continuous muscular activity\nand spasms in abdominal and back muscles. The next study showed an\nimprovement, with no involuntary muscular activity . An EMG per year has\nbeen performed for the last two years and the results were within normal\nlimits.\nConclusion: Our patient had a very good response to IV immunoglobulin\ntreatment. Four years after the diagnosis he remains asymptomatic, with\nnormal EMG studies.\nP7.7\nPrefrontal stimulation in T ourette syndrome\nS. Lalli\n1, S. Piacentini 1, O. Gambini 2, A. Franzini 1, G. Messina 1, F . Ferr` e1,\nD. Perani3, A. Albanese 4\n1Fondazione IRCCS-Istituto Neurologico “Carlo Besta”, Milan, Italy,\n2DMCO, Universit` a degli Studi di Milano, Milan, Italy , 3Universit`a Vita e\nSalute San Raffaele, Milan, Italy , 4 Universit`a Cattolica del Sacro Cuore,\nFondazione IRCCS Istituto Neurologico “Carlo Besta”, Milan, Italy\nIntroduction: Pharmacological treatment of T ourette’s syndrome is\nbased mainly on neuroleptics and other agents interacting with the\ndopaminergic system, with major side effects. Recently it has been shown\nthat a slow repetitive magnetic stimulation (rTMS) to supplementary\nmotor area (SMA) resulted in a signiﬁcant clinical improvement.\nObjectives: Aim of this study was to evaluate safety and efﬁcacy of an\ninnovative therapeutic approach, i.e. prefrontal cortical stimulation, in\npatients affected with T ourette Syndrome.\nMethods: Six patients were selected for epidural cortical stimulation\n(5 men, 1 woman, mean age 36.3±8.6). Among them, four patients\nunderwent a bilateral implant of electrodes for epidural cortical\nstimulation in the pre-frontal area. Psychiatric, behavioural and cognitive\nevaluations were performed before surgery and after 1, 3, 6 and\n12 months from surgery . Each subject underwent three resting 18F-\nﬂuorodeoxyglucose PET scans before and 6 and 12 months after surgery .\nResults: No adverse events have been reported by our group of patients.\nAnalysis of the clinical data up to 6 month shows that all patients\nimproved the scores for assessment, in different percentage, after\nsurgery . Hamilton scale for depression (HAM-D 21 items) and Hamilton for\nanxiety (HAM-A) show an improvement both for anxiety and depression\nsymptoms after surgery .\nConclusions: This is the ﬁrst study on the effects of chronic epidural\nprefrontal cortical stimulation (CS) in Gilles de la T ourette. All four\npatients responded well to prefrontal cortical stimulation, although to\ndiffering degrees. The procedure is safe ad effective on motor and\nphonemic tics. Tics did not disappear entirely . After CS, one patient\nrequired no medication. Among the three left patients, drug requirements\nremained stable or slightly reduced. More data on long term follow up\nwill be required before for proposing prefrontal stimulation for treatment\nof pharmacological resistant cases\nP7.8\nPremotor cortical stimulation in primary dystonia\nS. Lalli\n1, S. Piacentini 1, A. Franzini 1, G. Messina 1, F . Ferr` e1, D. Perani 2,\nA. Albanese3"
+    },
+    {
+      "block_id": "b0005",
+      "source_offsets": {
+        "start": 12395,
+        "end": 15887
+      },
+      "page_index": 1,
+      "text": "1Fondazione IRCCS-Istituto Neurologico “Carlo Besta”, Milan, Italy,\n2Universit`a Vita e Salute, Ospedale San Raffaele, Milan, Italy ,\n3Universit`a Cattolica del Sacro Cuore, Fondazione IRCCS Istituto\nNeurologico “Carlo Besta”, Milan, Italy\nIntroduction: Pharmacologic treatments of dystonia have limited efﬁcacy\nand are often unsatisfactory . The current mainstay of treatment is the\nbotulinum toxin which has a number of limitations. There is preliminary\nevidence that motor cortex stimulation, can be efﬁcacious in controlling\nupper limb dystonia. We have recently observed that epidural motor\ncortex stimulation can improve primary ﬁxed dystonia.\nObjectives: Aim of this study is to evaluate the efﬁcacy and safety of the\npremotor and motor cortical stimulation in patients with primary dystonia\nsyndromes.\nMethods: Seven patients affected by focal or segmental dystonia were\nselected for epidural cortical stimulation. T wo patients had primary ﬁxed\ncervical dystonia (FD, ﬁxed dystonia); four had primary mobile cervical\ndystonia (MD, mobile dystonia). One patient had a right upper limb focal\ndystonia. Patients with cervical dystonia received a bilateral implant,\nwhile patient with hand dystonia a monolateral implant. A videotaped\nstructured neurological examination and the following outcome measures\nwere collected: Burke-Fahn-Marsden rating scale, T oronto western\nspasmodic torticollis rating scale. Behavioural and cognitive evaluations\nwere performed before surgery , 6 and 12 months after surgery . Each\nsubject underwent three resting 18F-ﬂuorodeoxyglucose PET scans before\nand 6 and 12 months after surgery .\nResults: No adverse events have been reported by our group of patients.\nIn patients with mobile cervical dystonia there was an improvement of the\nBFMS and TWSTRS, from the pre-surgery evaluation up to the 12 months\nfollow up visit. In patients with ﬁxed cervical dystonia a substantial\ninefﬁcacy of premotor cortical stimulation emerged through the 12-month\nobservation period.\nConclusions: The procedure appears to be safe within the parameter used\nwith these patients. The beneﬁt of the premotor stimulation seems to be\nconsistent and persistent after 12 months of stimulation among patients\nwith mobile dystonia, cervical and hand dystonia. Our , ﬁndings strength\nthe neurophysiological data on the therapeutic effects of premotor rTMS\ngiven the normalization of SICI and RI and provide insight into therapeutic\neffects of premotor stimulation in dystonia in patients affected by mobile\ndystonia.\nP7.9\nSubthalamic activity during a motor inhibition task\nM. Alegre\n1, I. Obeso 2, J. Lopez-Azcarate 3, M. Cruz Rodriguez-Oroz 1,\nL. Wilkinson 2, J. Guridi 1, M. Valencia 3, J. Artieda 1, M. Jahanshahi 2,\nJ.A. Obeso 1\n1CIMA and Clinica Universidad de Navarra, Pamplona, Spain, 2Institute\nof Neurology , UCL, London, United Kingdom, 3CIMA, Pamplona, Spain\nIntroduction: Several fMRI studies have suggested that the subthalamic\nnucleus (STN) may play a role in response inhibition. Deep brain\nstimulation of the STN, a common treatment in advanced stages of\nParkinson’s disease, gives the opportunity to record directly local ﬁeld\npotential (LFP) activity from this nucleus in the immediate postoperative\nperiod.\nObjectives: Our aim was to study the changes in activity of the STN\nrelated to the inhibition of a motor response.\nMethods: We studied the LFP of the STN during a stop/go task recording\nthrough the stimulators implanted in 8 PD patients, in both “off” and"
+    },
+    {
+      "block_id": "b0006",
+      "source_offsets": {
+        "start": 15888,
+        "end": 17397
+      },
+      "page_index": 1,
+      "text": "“on” motor states. The task consisted of a warning signal, followed after\n0.5 s by a right or left arrow (50% each) that indicated the patient to\npress one speciﬁc key . A red X appeared in a 50% of the trials shortly\nafter the go signal, indicating the subject to inhibit his response. The\ninterval between the go signal (arrow) and the stop signal (red X) was\nadjusted after each trial in order to make the subject succeed a 50% of\nthe times. The signal (recorded continuously) was segmented usign the\ndifferent types of stimuli (go signal, stop signal) and the response (key\npress), and analyzed by means of time-frequency transforms.\nResults: A beta power decrease was observed after the go signal in all\ncases. The decrease, however , was smaller and shorter when the patient\nsuccessfully inhibited the response than when there was no stop signal,\nor when the patient was unable to inhibit the response. The sucesful\ninhibition of the response was also accompanied by a gamma decrease in\nSTN activity , while there was an increase in this band when a response\n(adequate or inadequate) was given. There was an increase in theta\npower in all cases, but the increase was highest when the subject was\nunable to supress the response (when there was a response despite the\npresence of a stop signal).\nConclusions: The inhibition of a motor response is accompanied by a\ndecrease in gamma activity in the STN. On the other hand, the inability\nto supress the response is associated to an increase in theta power ."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "P7.6\nFollow-up in Stiff Person Syndrome with immunoglobulin treatment\nM.J. Pablo\n1, M. Bestue2, P . Tamargo1, F . Romero1, I. Benavente1\n1Department of Neurophysiology , San Jorge Hospital, Huesca, Spain,\n2Department of Neurology , San Jorge Hospital, Huesca, Spain\nIntroduction: Stiff Person Syndrome is a rare and disabling central\nnervous system disorder , probably under-diagnosed, characterized by\nmuscle stiffness and episodic spasms that involve axial and limb\nmusculature. It is associated with high titers of antibodies against\nglutamic acid decarboxylase (GAD65) and frequently with autoimmune\ndisorders. Rigidity and spasms are symptomatically treated with\nbenzodiazepines, baclofen, tiagabine and levetiracetam. Treatment\nwith intravenous immunoglobulin is well-tolerated and effective. Other\ntherapies such as plasmapheresis and rituximab have been tried, with\ngood responses.\nObjectives: To present the 4-year follow-up of a 62-year-old patient\nclinically and electrophysiologically diagnosed with stiff person syndrome\nwith a good response to IV immunoglobulin treatment.",
+      "source_offsets": {
+        "start": 7809,
+        "end": 8895
+      },
+      "source_block_id": "b0003",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "14th ECCN / 4th ICTMS/DCS S91\nMethods: IV immunoglobulin was administered once a month during the\nﬁrst two years, and every three-four months in the next two years. He\nbecame asymptomatic six months after the beginning of the treatment.\nThe patient was recorded on video before and after the treatment,\nshowing the clinical improvement. Blink reﬂex and EMG studies were\ncarried out in agonist and antagonist muscles, in supine and bipedestation\npositions.\nResults: The ﬁrst two EMG studies showed continuous muscular activity\nand spasms in abdominal and back muscles. The next study showed an\nimprovement, with no involuntary muscular activity . An EMG per year has\nbeen performed for the last two years and the results were within normal\nlimits.\nConclusion: Our patient had a very good response to IV immunoglobulin\ntreatment. Four years after the diagnosis he remains asymptomatic, with\nnormal EMG studies.",
+      "source_offsets": {
+        "start": 8897,
+        "end": 9805
+      },
+      "source_block_id": "b0004",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

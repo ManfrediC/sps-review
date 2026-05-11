@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1721::p1",
+  "paper_id": "1721",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1721::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We present a case of Stiff Person Syndrome in a 38-year old\nFilipina presenting with two years ’ history of progressive axial and\nperipheral muscle rigidity. There were associated painful spasms\ntriggered by startling visual, auditory and tactile stimuli. Physical\nexamination showed rigidity of the neck, back, abdomen, arms and\nlegs. The rest of the neurologic examination was unremarkable.\nBlood examinations showed diabetes mellitus and elevated anti-\nglutamic acid decarboxylase titers (1,708 IU/mL, cut-off N5 IU/mL).\nSurface electromyography demonstrated continuous involuntary\nactivation of the lumbar paraspinals, rectus abdominis and ster-\nnocleidomastoids (Figure 1). There was no myotonia, neuromyotonia\nor denervation changes.\nImaging of the brain and spine was normal. Electroencephalo-\ngram did not show any epileptiform discharges. Screening for\nmalignancies was unremarkable. There was short-term reduction in\nstiffness with clonazepam (2 mg/tab 1 tab thrice daily), but titration\nwas limited by dose-dependent somnolence. Intravenous immuno-\nglobulin (2 g/kg over 5 days) provided further reduction in stiffness\nand improved quality of life for as long as three months after\ninfusion. No adverse events were encountered.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5376,
+        "end": 6614
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1238
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

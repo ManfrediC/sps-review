@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "629::p1",
+  "paper_id": "629",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "629::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Anaesthesia for Stiff–Person\nSyndrome\nStiff–Person Syndrome (formally Stiff\nMan Syndrome) is a rare neurological\ncondition characterised by muscle rigid-\nity and spasm. It is thought to be\nimmunological in origin [1] and is\nassociated with the production of anti-\nbodies against glutamic acid decarboxy-\nlase, the rate-limiting enzyme for the\nsynthesis of gamma-aminobutyric acid\n(GABA). Loss of inhibition from higher\ncentres causes over-activity of the\ngamma motor neurone system and\nsubsequent progressive muscle rigidity.\nWe describe anaesthesia in a man with\nStiff–Person Syndrome who presented\nwith respiratory failure secondary to left\nlung collapse.\nA 60-year-old man presented to the\nAccident and Emergency department\nwith respiratory deterioration following\ntreatment for a chest infection. He had a\n4-year history of stiffness and spasms and\na diagnosis of Stiff–Person Syndrome\nhad previously been made. His efforts at\nventilation were severely impaired by\nrigidity of his thoracic and abdominal\nmuscles.\nIn the Accident and Emergency\ndepartment, his oxygen saturation on\nroom air was recorded as 86%. His\narterial blood gases on high ﬂow oxygen\nwith a reservoir bag indicated a respir-\natory acidosis (pH 7.29, P\nO2 7.2, PCO2\n8.1, HCO3 28.7, BE 1.0). A chest X-ray\nshowed a ‘white out’ of his left hemi-\nthorax and mediastinal shift. A diagnosis\nof respiratory failure secondary to left\nlung collapse as a consequence of aspir-\nation or secretion retention was made\nand he was admitted to the Intensive\nCare Unit.\nInitial attempts at management with\nnon-invasive ventilation (CPAP of 6\ncmH\n2O) were unsuccessful and his\narterial blood gases worsened ( PO2 7.0,\nPCO2 10.2). A decision was made to\nstart invasive ventilation. At this point,\nno information was available regarding\nwhich drugs were safe in this condition.\nAnaesthesia was induced with mida-\nzolam 1 mg and propofol 30 mg.\nAtracurium 50 mg produced good\nintubating conditions (Cormack and\nLehane grade 2 laryngoscopy) and\nrelaxation of axial and limb stiffness.\nFollowing induction he was cardiovas-\ncularly unstable requiring ephedrine\n30 mg, metaraminol 5 mg and a subse-\nquent norepinephrine infusion to main-\ntain an adequate blood pressure.\n\nAnaesthesia was maintained with fent-\nanyl (100 lg.h)1) and midazolam\n(3 mg.h)1). He was ventilated using\nBIPAP (P1: 20, P2: 5 ratio 1 : 1, rate 12\nbreaths.min)1) and his arterial blood\ngases improved markedly (FiO2 of 0.45:\npH 7.38, PO2 17.3, PCO2 6.1, HCO 3\n26.7, BE 1.4, Sp O2 98%).\nFibreoptic bronchoscopy was per-\nformed and copious amounts of puru-\nlent sputum aspirated. Co-amoxiclav\n1.2 g q.d.s and ﬂuconazole 200 mg\nb.d. were commenced following\ngrowth of yeasts and coliforms from\nlavage ﬂuid. The patient’s respiratory\nfunction gradually improved and he was\nextubated and discharged to a high\ndependency unit 72 h after intubation.\nA second deterioration, 4 days after\nhis initial presentation, prompted a\nsecond period of ventilation. This time\nanaesthesia was induced using alfentanil\nand propofol. Atracurium provided\nmuscle relaxation and intubation was\nuneventful. He was subsequently\nweaned from the ventilator once again\nand eventually discharged to the ward.\n\nIn our case, the patient remained\nsedated to facilitate ventilation and\nstiffness returned once the initial dose\nof muscle relaxant had worn off.\nDespite poor pre-induction posture due\nto extreme rigidity, we obtained good\nintubating conditions on two occasions\nusing atracurium for paralysis. We\nfound no complication with the use of\na non-depolarizing muscle relaxant in\nthis case.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 0,
+        "end": 2220
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2220
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2222,
+        "end": 3199
+      },
+      "compiled_offsets": {
+        "start": 2222,
+        "end": 3199
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4003,
+        "end": 4386
+      },
+      "compiled_offsets": {
+        "start": 3201,
+        "end": 3584
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1105::p1",
+  "paper_id": "1105",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1105::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 20 years old African American woman recently had a posterior spinal fusion \nfor her progressive scoliosis which began approximately 3 years after the initial onset of a \nprolonged history of stiffness in her back, gait difficulty, episodic painful back and lower \nextremities spasm which started at the age of 10. The spasms worsened following the surgery \nwith minimal response despite large doses of baclofen, tizanidine, diazepam, and \ngabapentin.(Video) RESULTS: Serum anti GAD65 antibody was markedly elevated (5615 \nnmol/L). Negative result for amphiphysin antibody. She had normal thyroid function and no \nevidence of diabetes. The prolonged spasms resolved after the second treatment of monthly \nintravenous immunoglobulin infusion. Prednisone and dantrolene were also added. On follow up \n3 months later, she still had occasional brief myoclonic jerks and remained wheel chair bound \ndue to stiff back and hip despite a good postoperative alignment of the \nspine. CONCLUSIONS: In children and young adults with spinal column deformities including \nhyperlordosis or new scoliosis, the diagnosis of SPS should be considered since early treatment \nmay help reduce long term complications, disability and improve the quality of life.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 934,
+        "end": 2174
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1240
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

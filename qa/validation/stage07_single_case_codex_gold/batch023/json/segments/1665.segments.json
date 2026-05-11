@@ -1,0 +1,65 @@
+{
+  "paper_id": "1665",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1665.json",
+    "source_text_sha256": "f4e33111607e2d71beedb9bc264ec61b65c993fff3fd34d2ee8531c5b65cd73c",
+    "prepared_source_sha256": "58e48a7a8c1d727c96cad49388faf4235af7d1f69d7daa96ff993254f57bd4ce",
+    "prepared_source_character_count": 2218
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 160
+      },
+      "page_index": 0,
+      "text": "Stiff Person Syndrome: An Elusive Diagnosis in a Pediatric Patient \n(P5.6-068) \nGabriela Tuttrup, Daniella Miller, Maria Weimer \nFirst published April 16, 2019,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 165,
+        "end": 2218
+      },
+      "page_index": 0,
+      "text": " Info & Disclosures \nAbstract \nObjective: NA \nBackground: Stiff person syndrome is a very rare disorder characterized by axial muscle \nrigidity, progressive stiffness mainly of the lower extremities and spontaneous, painful spasms of \nthe abdomen, spinal or leg muscles. It is normally reported as being more common in women and \naffecting adults in their 4th or 5th decade of life. It is very rarely reported in the pediatric literature. \nPrompt diagnosis of this disease is of great importance due to progressive disability and pain \nthese patients experience and most importantly due to the robust response of this disease to \nappropriate treatment. A case is presented of a seventeen-year-old male who was diagnosed with \nstiff person syndrome after one year of symptom onset. Prior to this diagnosis, multiple \nspecialists did extensive testing and focused on symptomatic treatment without determining the \nunderlying etiology. Numerous medical tests were performed including a CK that was mildly \nelevated, an MRI of the brain and spine that were noncontributory, and a positive ANA. Various \nmedications including baclofen and cyclobenzaprine were minimally effective. On initial \npresentation to neurology, the patient was dependent upon a walker for mobility, had such \nextreme stiffness that he had lost the ability to sit upright and was debilitated by painful muscle \nspasms. On examination, he exhibited rigidity of the abdomen and lower extremities, which \nappeared to be contracting at rest. Diagnosis was made via EMG of the anterior tibialis, which \nshowed continuous motor unit action potentials while at rest, indistinguishable from voluntary \nactivity. Benzodiazepines and IVIG were initiated. The patient had such a dramatic response to \ntreatment that he was walking independently within one day of treatment. Glutamic Acid \nDecarboxylase antibody levels resulted as greater than 250 IU/mL. The patient continues to \nrequire interval IVIG treatments to prevent symptom recurrence. \nDesign/Methods: NA \nResults: NA \nConclusions: NA"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A case is presented of a seventeen-year-old male who was diagnosed with \nstiff person syndrome after one year of symptom onset. Prior to this diagnosis, multiple \nspecialists did extensive testing and focused on symptomatic treatment without determining the \nunderlying etiology. Numerous medical tests were performed including a CK that was mildly \nelevated, an MRI of the brain and spine that were noncontributory, and a positive ANA. Various \nmedications including baclofen and cyclobenzaprine were minimally effective. On initial \npresentation to neurology, the patient was dependent upon a walker for mobility, had such \nextreme stiffness that he had lost the ability to sit upright and was debilitated by painful muscle \nspasms. On examination, he exhibited rigidity of the abdomen and lower extremities, which \nappeared to be contracting at rest. Diagnosis was made via EMG of the anterior tibialis, which \nshowed continuous motor unit action potentials while at rest, indistinguishable from voluntary \nactivity. Benzodiazepines and IVIG were initiated. The patient had such a dramatic response to \ntreatment that he was walking independently within one day of treatment. Glutamic Acid \nDecarboxylase antibody levels resulted as greater than 250 IU/mL. The patient continues to \nrequire interval IVIG treatments to prevent symptom recurrence.",
+      "source_offsets": {
+        "start": 819,
+        "end": 2168
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

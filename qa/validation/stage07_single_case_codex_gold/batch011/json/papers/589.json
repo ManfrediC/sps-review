@@ -1,0 +1,68 @@
+{
+  "paper_id": "589",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\589.json",
+    "source_text_sha256": "48b17a9a6b5ac3d355014fbdefc4ce938e2294e256d34acee069f9e687a4eed6",
+    "prepared_source_sha256": "ca2e10e2ac8570eed73efe02a05fe6edb44b13be7ad5b0869ef9de9f511126dd",
+    "prepared_source_character_count": 32340,
+    "source_filename": "589_Iizuka et al. - 2012 - Glycine receptor antibodies are detected in progre.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "lab_heavy_clinical_or_translational",
+    "resolved_source_subtype": "group_or_frequency_focused_lab_clinical_study",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\589.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\589.segments.json",
+    "n_segments": 21
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\589\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch011",
+    "generated_at_utc": "2026-05-02T00:23:10.821767+00:00"
+  },
+  "stage06_divergence": {
+    "diverged": true,
+    "dimensions": [
+      "target_inventory",
+      "route_mode"
+    ],
+    "reason": "Stage 07 declared source-backed targets beyond the Stage 06 route prior."
+  }
+}

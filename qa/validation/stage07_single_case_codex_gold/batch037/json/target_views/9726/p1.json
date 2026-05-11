@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "9726::p1",
+  "paper_id": "9726",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "9726::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Presentation\nA 41-year-old right-handed African-American woman pre-\nsented with gradual onset of stiffness and painful spasms\naffecting her right lower extremity. The stiffness was per-\nsistent and progressive. The spasms were precipitated by\nsudden noise, anxiety, or fear. Her gait was impaired as a\nresult of the stiffness and spasms and she subsequently\nsuffered from falls. After several weeks she developed simi-\nlar symptoms in the left lower extremity and her axial\nmusculature, with significant stiffness of her lower back.\nShe had to give up driving as a result of her symptoms and\nwas unable to continue her job, which involved standing\nfor long hours at a time. There were no other neurologic\nsymptoms. No other significant personal or family medical\nhistory was obtained.\nOn examination the patient had no abnormalities of\nhigher mental functions, speech, or cranial nerves. Motor\nexamination revealed normal strength in all extremities\nwithout wasting, myotonia, myokymia, or fasciculations.\nAbdominal, and particularly lumbar paraspinal, muscles\nwere prominent and hard with stone-like consistency on\npalpation. Muscle stretch reflexes were normal and plantar\nresponses were flexor. Sensory and cerebellar examinations\nwere normal. The general physical examination was nor-\nmal except for exaggerated lordosis of lumbar spine and\nstone-like consistency of lumbar paraspinal muscles on pal-\npation (Fig. 1).\n\nWhat Is the Diagnosis in the\nPresented Case?\nOur patient had slowly progressive muscle stiffness with\nsuperimposed stimulus-induced muscle spasms. The per-\ntinent clinical finding was the rock-like hardness of ab-\ndominal and paraspinal muscles on palpation, and exag-\ngerated lumbar lordosis.\nSerum islet-cell cytoplasmic antibodies were elevated.\nEMG revealed continuous motor unit activity in the ab-\nsence of volitional contraction of muscles. The administra-\ntion of diazepam abolished this activity. There was no\nmyokymia or myotonia.\nThus, the history, clinical presentation, laboratory, and\nEMG findings were consistent with a diagnosis of SPS.\n\nClinical Course of the Presented\nCase\nThe patient had a CT scan of her chest that revealed a\nhypertrophic thymus. The thymus was removed surgically\nwithout improvement in her symptoms. Acetylcholine re-\nceptor antibody titers were not elevated. She was subse-\nquently treated with diazepam and baclofen with relief of\nrigidity and spasms. She continues to have lumbar lordosis\nand stiffness, but is ambulating without support and is\ncurrently also on tizanidine which is helping control her\nsymptoms. When her symptoms worsen so as to interfere\nwith her activities of daily living, she receives IVIG treat-\nments that help control the spasms.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 568,
+        "end": 1994
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1426
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 31260,
+        "end": 31912
+      },
+      "compiled_offsets": {
+        "start": 1428,
+        "end": 2080
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 39631,
+        "end": 40273
+      },
+      "compiled_offsets": {
+        "start": 2082,
+        "end": 2724
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

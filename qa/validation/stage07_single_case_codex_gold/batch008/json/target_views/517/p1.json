@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "517::p1",
+  "paper_id": "517",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "517::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We present a case of a 29-year-old black woman who pre-\nsented with progressive rigidity of the lower extremities that\nhad occurred over the course of a year. She was previously diag-\nnosed with hysterical paralysis of the lower extremities. Her\nrigidity worsened during several months of observation, eventu-\nally encompassing her trunk, neck and upper extremities. Tests\nmeasuring creatine kinase, toxins, and heavy metals yielded neg-\native results. Physical exam revealed 1+ reﬂexes throughout, and\ngross rigidity with slight lordosis. Bladder and bowel functions\nwere normal. Results of multiple imaging studies of the brain and\nlower spine were negative. A psychiatric consultation concluded\nthat there was little evidence supporting a functional origin for her\nsymptoms.\nAt this point, a reevaluation of her symptoms led to a suspected\ncase of SPS. A test measuring GAD antibodies was elevated at\n62 U/ml (normal: <1). The diagnosis was conﬁrmed by neurology\nconsult. The patient began treatment with baclofen, diazepam and\nbi-annual IVIg therapy. Over several months, the patient showed\nmarked improvement.\nThe rarity of SPS contributes to its common misdiagnosis as a func-\ntional disorder.\n\nFor this reason, SPS is an important diagnostic\nconsideration for a patient thought to have hysterical paralysis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1871,
+        "end": 3070
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1199
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3205,
+        "end": 3318
+      },
+      "compiled_offsets": {
+        "start": 1201,
+        "end": 1314
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

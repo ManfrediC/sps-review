@@ -1,0 +1,60 @@
+{
+  "paper_id": "5808",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5808.json",
+    "source_text_sha256": "f78ef1b0048e507f7beb4016e466ca0fedfaa289a0379d41a6213a247db5785e",
+    "prepared_source_sha256": "984b5ccbb16cdc892707a51b0929b0dc20bc4329bc6a7e5dcb3d4cdfc4f86415",
+    "prepared_source_character_count": 8804,
+    "source_filename": "5808_BaclofenPoster-Finalversion.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "conference_abstract",
+    "resolved_source_subtype": "single_case_conference_abstract",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\5808.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\5808.segments.json",
+    "n_segments": 1
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\5808\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch033",
+    "generated_at_utc": "2026-05-02T09:45:40.098248+00:00"
+  }
+}

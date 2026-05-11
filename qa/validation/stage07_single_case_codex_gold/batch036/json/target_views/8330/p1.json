@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8330::p1",
+  "paper_id": "8330",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8330::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "W e describe the case of a 72 year old woman who presented with\nsequential cranial nerve palsies preceded by irritation, pain and a\nvesicular rash in the sensory distributions of the affected\nnerves. She had signs and symptoms suggestive of aphagia and\n\nRamsey–Hunt syndrome. Further vesicular eruptions roughly\nobeying dermatomal boundaries on the limbs and trunk were\nobserved. She was initially thought to have disseminated VZV/\nHZV infection and was commenced on IV aciclovir.\nInvestigations seeking evidence for viral particles in skin lesions\nand CSF , and for evidence of immunosuppression or malignancy ,\nwere all negative.\nBetween days 35 and 40 she developed hypertension, seizures,\na left facial nerve palsy and encephalopathy . This was compli-\ncated by a pneumonia requiring invasive ventilation on intensive\ncare. She developed an itchy maculopapular rash with vesicula-\ntion of all four limbs. On day 66 she developed truncal and limb\nrigidity , which became extreme over two weeks, and was asso-\nciated with pyramidal weakness. The rash was biopsied demon-\nstrating a leucocytoclastic vasculitis. At the nadir of her illness\nshe was encephalopathic, tracheostomy– and NG feeding–\ndependent, quadriparetic and bedbound due to severe rigidity\n(leading rapidly to Achilles tendon contractures). She was found\nto be glycine receptor (GlyR) antibody positive, without anti-\nbodies against amphiphysin or GAD65. She was initially treated\nwith a combination of corticosteroids and intravenous immuno-\nglobulin (IVIG), resulting in resolution of her cranial nerve\npalsies, and a reduction in her rigidity and rash. Imaging using\nCT , PET , USS and mammography was undertaken to exclude\nmalignancy–associated antibody production. MRI imaging of the\nbrain and spinal cord was essentially normal. CSF analysis\ndemonstrated only the presence of intrathecal IgG synthesis. Her\ntreatment and rehabilitation continues.\nThis case adds to the small number of reports in the literature\nof a Stiff Person Syndrome (SPS) plus syndrome considered to be\ncaused by antibodies directed against the extracellular GlyR\ntarget on the synaptic neuronal surface.\n12 Our case demonstrates\nfurther clinical variability within this unusual disorder. The GlyR\nis expressed in skin, and the presence of zoster– like dermato-\nlogical lesions may provide a clinical clue as to the underlying\naetiology in similar cases. Many of the features seen in this case\nhave been previously described, however in this case the features\nemerged sequentially with rigidity , the cardinal feature of this\ngroup of diseases, emerging last.\nThe clinical manifestations of the cases of GlyR antibody asso-\nciated SPS plus disease described, closely resemble the clinical\nmanifestations of genetic mutations of GlyR subunits and asso-\nciated proteins, and of poisoning with the GlyR antagonist\nstrychnine. This adds to the evidence that these antibodies play a\ndirect role in the pathogenesis of disease, and that the use of\nimmunosuppressive treatment is justiﬁ ed. Indeed our patient has\nmade a substantial recovery with aggressive immunotherapy .\nT o date no associated malignancy has been associated with\nGlyR antibody–mediated SPS plus disease, and our case supports\nthese ﬁndings.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 252,
+        "end": 504
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 252
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 777,
+        "end": 3771
+      },
+      "compiled_offsets": {
+        "start": 254,
+        "end": 3248
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

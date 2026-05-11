@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "9182::p1",
+  "paper_id": "9182",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "9182::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Syndrome de « l’homme raide » traité par immunoglobulines intraveineuses\nMaladie neurologique rare, le syndrome de « l’>homme\nraide » a été décrit pour la premiére fois par Moersch et\nWoltman (1956). Il se caractérise par une contracture progressive, insidieuse, symétrique et fluctuante des muscles\nstriés du tronc, de l’abdomen, de la racine des membres.\nDes exacerbations paroxystiques sont habituelles. Elles\nsont spontanées ou provoquées par des stimuli divers. Une\nmaladie auto-immune, en particulier un diabéte, y est souvent associée. La présence d’anticorps anti-glutamate\ndécarboxylase (GAD) et l’enregistrement d’une activité\nélectromyographique continue confirment le diagnostic.\nLe traitement fait appel aux benzodiazépines, au bacloféne, & l’acide valproique, plus rarement aux échanges\nplasmatiques ou aux corticoides. Nous rapportons I’ observation d’un syndrome de « I’homme raide » qui a pu étre\nefficacement traité par immunoglobulines intraveineuses\n(ig IV).\nCas 02/96. Un homme de 48 ans, aide soignant, diabétique insulinodépendant depuis 1984, consulta en 1991\npour une raideur axiale et proximale permanente aggravée\npar des spasmes intermittents. Le reste de 1’examen neurologique était normal. Le scanner X cérébral, l’IRM\nmédullaire et l’examen du LCR étaient normaux. L’enregistrement E. M. G. montrait une activité musculaire continue de potentiels d’unité motrice renforcée par les stimulations cutanées et électriques. Le dosage sérique des\nanticorps anti-GAD était positif 4 2, 18 unités (seuil de\npositivité fixé 4 0, 11 unités) (INSERM U197, LYON). II\nn’y a pas eu de dosage dans le LCR. Le patient fut amélioré par un traitement associant Diazépam (50 mg/jour)\net Valproate de Sodium (1000 mg/jour). L’amélioration\nétait cependant incompléte et entrainait une sédation\ngénante. En raison de l’importance du handicap — lié surtout a la sévérité de certaines contractures paroxystiques\nlimitant les déplacements du patient — une modification\ndu traitement fut envisagée. Un traitement par Ig IV fut\nréalisé en février 1996 a la posologie de 400 mg/kg/jour\npendant 5 jours. En quelques jours, |’état du patient s’améliora avec atténuation de |’hypertonie et disparition des\nexacerbations paroxystiques. Le traitement par Diazépam\nput étre réduit 4 30 mg/jour. En mars 1996 le patient pouvait 4 nouveau courir. Dix-huit mois aprés le début du\ntraitement par Ig IV, l’amélioration clinique persistait, les\ncontractures n’étaient pas réapparues. Cependant, l’enregistrement électromyographique trouvait toujours une\nactivité continue dans les muscles paravertébraux, mais\navec atténuation des renforcements paroxystiques.\nLes signes cliniques et paracliniques de cette observation permettent de retenir le diagnostic de syndrome de\n«homme raide » (critéres de Lorish et al, 1989) confirmé par la forte positivité des anticorps anti-GAD et\naspect de l’enregistrement électromyographique. Deux\npoints particuliers nous paraissent intéressants a relever.\nD’une part, l’efficacité des Ig IV a été rapide et remarquable. Dans les semaines qui ont suivi le traitement le\npatient a pu reprendre une activité satisfaisante. La raideur\na nettement régressé et surtout les paroxysmes invalidants\nont disparu. Cette amélioration fut également constatée en\nélectromyographie. Certes un effet placebo ne peut pas\né€tre exclu mais apparait peu probable. Notre observation\n\nrejoint celles d’autres auteurs (Amato et al., 1994 ; Barker\net Marsden, 1997) qui avaient également rapporté des\naméliorations suite 4 un traitement par Ig IV dans quelques cas isolés, alors que d’autres thérapeutiques avaient\nété sans effet. D’autre part, le caractére prolongé de l’amélioration a été un second élément notable. Le patient a\nbénéficié d’une seule cure d’Ig IV. Dix-huit mois plus\ntard, il persiste un gain fonctionnel avec toujours disparition des phénoménes de contractures paroxystiques.\nEn conclusion, méme s’il ne s’agit que d’un cas isolé,\ncette observation a le mérite de rappeler que les Ig IV\nconstituent une alternative thérapeutique intéressante dans\nle syndrome de « l’homme raide ».",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 74,
+        "end": 3460
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3386
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3461,
+        "end": 4174
+      },
+      "compiled_offsets": {
+        "start": 3388,
+        "end": 4101
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

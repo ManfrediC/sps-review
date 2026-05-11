@@ -1,0 +1,81 @@
+{
+  "paper_id": "8330",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\8330.json",
+    "source_text_sha256": "ee8b522e32fd7e272415886d4deb32e4648d083d890e69922b6dabd8133ae1b8",
+    "prepared_source_sha256": "c27770ea7b5b30697766eeabce28506e217dbd6033687562ac1a6c53993d2989",
+    "prepared_source_character_count": 4145
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 775
+      },
+      "page_index": 0,
+      "text": "040 RASH DECISIONS –DERMATOLOGICAL MANIFESTATIONS\nPRECEDING A PROGRESSIVE NEUROLOGICAL\nSYNDROME\nGary Doherty, Angela Vincent, Amanda Cox. Addenbrooke’s Hospital, Cambridge;\nWeatherall Institute of Molecular Medicine, Oxford\n10.1136/jnnp-2013-306573.40\nW e describe the case of a 72 year old woman who presented with\nsequential cranial nerve palsies preceded by irritation, pain and a\nvesicular rash in the sensory distributions of the affected\nnerves. She had signs and symptoms suggestive of aphagia and\nJ Neurol Neurosurg Psychiatry 2013;84:e2 17 of 95\nABN Abstracts\nLIBRARY. Protected by copyright.\n on May 9, 2023 at UNIVERSITY OF CALGARYhttp://jnnp.bmj.com/ J Neurol Neurosurg Psychiatry: first published as 10.1136/jnnp-2013-306573.40 on 9 October 2013. Downloaded from"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 777,
+        "end": 4145
+      },
+      "page_index": 1,
+      "text": "Ramsey–Hunt syndrome. Further vesicular eruptions roughly\nobeying dermatomal boundaries on the limbs and trunk were\nobserved. She was initially thought to have disseminated VZV/\nHZV infection and was commenced on IV aciclovir.\nInvestigations seeking evidence for viral particles in skin lesions\nand CSF , and for evidence of immunosuppression or malignancy ,\nwere all negative.\nBetween days 35 and 40 she developed hypertension, seizures,\na left facial nerve palsy and encephalopathy . This was compli-\ncated by a pneumonia requiring invasive ventilation on intensive\ncare. She developed an itchy maculopapular rash with vesicula-\ntion of all four limbs. On day 66 she developed truncal and limb\nrigidity , which became extreme over two weeks, and was asso-\nciated with pyramidal weakness. The rash was biopsied demon-\nstrating a leucocytoclastic vasculitis. At the nadir of her illness\nshe was encephalopathic, tracheostomy– and NG feeding–\ndependent, quadriparetic and bedbound due to severe rigidity\n(leading rapidly to Achilles tendon contractures). She was found\nto be glycine receptor (GlyR) antibody positive, without anti-\nbodies against amphiphysin or GAD65. She was initially treated\nwith a combination of corticosteroids and intravenous immuno-\nglobulin (IVIG), resulting in resolution of her cranial nerve\npalsies, and a reduction in her rigidity and rash. Imaging using\nCT , PET , USS and mammography was undertaken to exclude\nmalignancy–associated antibody production. MRI imaging of the\nbrain and spinal cord was essentially normal. CSF analysis\ndemonstrated only the presence of intrathecal IgG synthesis. Her\ntreatment and rehabilitation continues.\nThis case adds to the small number of reports in the literature\nof a Stiff Person Syndrome (SPS) plus syndrome considered to be\ncaused by antibodies directed against the extracellular GlyR\ntarget on the synaptic neuronal surface.\n12 Our case demonstrates\nfurther clinical variability within this unusual disorder. The GlyR\nis expressed in skin, and the presence of zoster– like dermato-\nlogical lesions may provide a clinical clue as to the underlying\naetiology in similar cases. Many of the features seen in this case\nhave been previously described, however in this case the features\nemerged sequentially with rigidity , the cardinal feature of this\ngroup of diseases, emerging last.\nThe clinical manifestations of the cases of GlyR antibody asso-\nciated SPS plus disease described, closely resemble the clinical\nmanifestations of genetic mutations of GlyR subunits and asso-\nciated proteins, and of poisoning with the GlyR antagonist\nstrychnine. This adds to the evidence that these antibodies play a\ndirect role in the pathogenesis of disease, and that the use of\nimmunosuppressive treatment is justiﬁ ed. Indeed our patient has\nmade a substantial recovery with aggressive immunotherapy .\nT o date no associated malignancy has been associated with\nGlyR antibody–mediated SPS plus disease, and our case supports\nthese ﬁndings.\nREFERENCES\n1 Mas, et al . JNNP 2011;82(12):1399–401\n2 Hutchinson, et al . Neurology 2008 (75):1291 –2.\n18 of 95 J Neurol Neurosurg Psychiatry 2013;84:e2\nABN Abstracts\nLIBRARY. Protected by copyright.\n on May 9, 2023 at UNIVERSITY OF CALGARYhttp://jnnp.bmj.com/ J Neurol Neurosurg Psychiatry: first published as 10.1136/jnnp-2013-306573.40 on 9 October 2013. Downloaded from"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "W e describe the case of a 72 year old woman who presented with\nsequential cranial nerve palsies preceded by irritation, pain and a\nvesicular rash in the sensory distributions of the affected\nnerves. She had signs and symptoms suggestive of aphagia and",
+      "source_offsets": {
+        "start": 252,
+        "end": 504
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Ramsey–Hunt syndrome. Further vesicular eruptions roughly\nobeying dermatomal boundaries on the limbs and trunk were\nobserved. She was initially thought to have disseminated VZV/\nHZV infection and was commenced on IV aciclovir.\nInvestigations seeking evidence for viral particles in skin lesions\nand CSF , and for evidence of immunosuppression or malignancy ,\nwere all negative.\nBetween days 35 and 40 she developed hypertension, seizures,\na left facial nerve palsy and encephalopathy . This was compli-\ncated by a pneumonia requiring invasive ventilation on intensive\ncare. She developed an itchy maculopapular rash with vesicula-\ntion of all four limbs. On day 66 she developed truncal and limb\nrigidity , which became extreme over two weeks, and was asso-\nciated with pyramidal weakness. The rash was biopsied demon-\nstrating a leucocytoclastic vasculitis. At the nadir of her illness\nshe was encephalopathic, tracheostomy– and NG feeding–\ndependent, quadriparetic and bedbound due to severe rigidity\n(leading rapidly to Achilles tendon contractures). She was found\nto be glycine receptor (GlyR) antibody positive, without anti-\nbodies against amphiphysin or GAD65. She was initially treated\nwith a combination of corticosteroids and intravenous immuno-\nglobulin (IVIG), resulting in resolution of her cranial nerve\npalsies, and a reduction in her rigidity and rash. Imaging using\nCT , PET , USS and mammography was undertaken to exclude\nmalignancy–associated antibody production. MRI imaging of the\nbrain and spinal cord was essentially normal. CSF analysis\ndemonstrated only the presence of intrathecal IgG synthesis. Her\ntreatment and rehabilitation continues.\nThis case adds to the small number of reports in the literature\nof a Stiff Person Syndrome (SPS) plus syndrome considered to be\ncaused by antibodies directed against the extracellular GlyR\ntarget on the synaptic neuronal surface.\n12 Our case demonstrates\nfurther clinical variability within this unusual disorder. The GlyR\nis expressed in skin, and the presence of zoster– like dermato-\nlogical lesions may provide a clinical clue as to the underlying\naetiology in similar cases. Many of the features seen in this case\nhave been previously described, however in this case the features\nemerged sequentially with rigidity , the cardinal feature of this\ngroup of diseases, emerging last.\nThe clinical manifestations of the cases of GlyR antibody asso-\nciated SPS plus disease described, closely resemble the clinical\nmanifestations of genetic mutations of GlyR subunits and asso-\nciated proteins, and of poisoning with the GlyR antagonist\nstrychnine. This adds to the evidence that these antibodies play a\ndirect role in the pathogenesis of disease, and that the use of\nimmunosuppressive treatment is justiﬁ ed. Indeed our patient has\nmade a substantial recovery with aggressive immunotherapy .\nT o date no associated malignancy has been associated with\nGlyR antibody–mediated SPS plus disease, and our case supports\nthese ﬁndings.",
+      "source_offsets": {
+        "start": 777,
+        "end": 3771
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

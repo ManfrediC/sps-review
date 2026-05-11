@@ -1,0 +1,65 @@
+{
+  "paper_id": "1106",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1106.json",
+    "source_text_sha256": "3411aa73555ec12c34e2936d25eef387b21007588e3b2de9d65ec52976126175",
+    "prepared_source_sha256": "ed733bb88cf65ed879ad7bb4fb9b67d49f0d7cc5e080f5fb843ebe1629c8ab54",
+    "prepared_source_character_count": 2513
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 166
+      },
+      "page_index": 0,
+      "text": "Rhabdomyolysis in Stiff Person Syndrome: Case Report. (P2.078) \nSuhas Gangadhara, Shreyas Gangadhara, Chetan Gandhy, Derrick Robertson \nFirst published April 8, 2015,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 171,
+        "end": 2513
+      },
+      "page_index": 0,
+      "text": " Info & Disclosures \nAbstract \nOBJECTIVE:Rhabdomyolysis has been described in the paraneoplastic variant, but to our \nknowledge no case has been reported involving the autoimmune variant. BACKGROUND:Stiff \nPerson Syndrome (SPS) is a rare neurologic disorder characterized by waxing and waning \nmuscular rigidity, stiffness and spasms. Three subtypes have been described: paraneoplastic, \nautoimmune and idiopathic. Rhabdomyolysis is a clinical syndrome caused by an injury to \nskeletal muscle and involves the release of intracellular contents into the plasma. It leads to a \nwide spectrum of severity of illness from asymptomatic increases in serum muscle enzymes to \npotential life-threatening disease from the muscle enzyme elevations, electrolyte disturbances, \nand acute kidney injury. DESIGN/METHODS:A 50-year-old man with recurrent episodes of \nsevere limb and back spasms was diagnosed with SPS by positive serum anti-glutamic acid \ndecarboxylase (GAD) antibodies. RESULTS:He was hospitalized on two separate occasions for \nuncontrollable limb and back spasms and associated generalized weakness with creatinine \nphosphokinase (CPK) elevations of 55,000 and 22,000 U/L, respectively. He also was noted to be \nin acute renal failure during both admissions with elevations of his serum creatinine. Laboratory \ntests were otherwise unremarkable. The acute renal failure resolved during both admissions with \nsupportive management only including aggressive rehydration with intravenous fluids as well as \nthe use of various skeletal muscle relaxants. CONCLUSIONS: The pathophysiology of \nautoimmune-SPS (a-SPS) is thought to be due to inhibition of GAD by anti-GAD antibodies. \nInhibition of GAD results in functional inhibition of gamma-aminobutyric acid (GABA) which in \nturn causes muscles to become continuously stimulated by the motor neurons leading clinically to \nthe muscle spasms. Rhabdomyolysis, diagnosed by significant elevation in CPK, can be seen in a-\nSPS. Rhabdomyolysis has the potential to be fatal and early diagnosis is essential and should be \nconsidered in patients who have SPS and are experiencing an exacerbation of their neurologic \nsymptoms. \nDisclosure: Dr. Gangadhara has nothing to disclose. Dr. Gangadhara has nothing to disclose. Dr. \nGandhy has nothing to disclose. Dr. Robertson has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "DESIGN/METHODS:A 50-year-old man with recurrent episodes of \nsevere limb and back spasms was diagnosed with SPS by positive serum anti-glutamic acid \ndecarboxylase (GAD) antibodies. RESULTS:He was hospitalized on two separate occasions for \nuncontrollable limb and back spasms and associated generalized weakness with creatinine \nphosphokinase (CPK) elevations of 55,000 and 22,000 U/L, respectively. He also was noted to be \nin acute renal failure during both admissions with elevations of his serum creatinine. Laboratory \ntests were otherwise unremarkable. The acute renal failure resolved during both admissions with \nsupportive management only including aggressive rehydration with intravenous fluids as well as \nthe use of various skeletal muscle relaxants. CONCLUSIONS: The pathophysiology of \nautoimmune-SPS (a-SPS) is thought to be due to inhibition of GAD by anti-GAD antibodies. \nInhibition of GAD results in functional inhibition of gamma-aminobutyric acid (GABA) which in \nturn causes muscles to become continuously stimulated by the motor neurons leading clinically to \nthe muscle spasms. Rhabdomyolysis, diagnosed by significant elevation in CPK, can be seen in a-\nSPS. Rhabdomyolysis has the potential to be fatal and early diagnosis is essential and should be \nconsidered in patients who have SPS and are experiencing an exacerbation of their neurologic \nsymptoms.",
+      "source_offsets": {
+        "start": 963,
+        "end": 2344
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

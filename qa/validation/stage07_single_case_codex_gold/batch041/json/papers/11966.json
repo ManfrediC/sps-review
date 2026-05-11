@@ -1,0 +1,70 @@
+{
+  "paper_id": "11966",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\11966.json",
+    "source_text_sha256": "2a85bcb90fdf80a5d0fa8e0d014cc1ea87458997ef9100fc654f1fb12b5e8887",
+    "prepared_source_sha256": "7e9e35ff942319e1624a4e95829c31214320c2c1bc67a93ca8eb02f27e252768",
+    "prepared_source_character_count": 35244,
+    "source_filename": "11966_Pondrelli-2022-Pilomotor seizures in autoimmun.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "case_series_or_multi_case",
+    "resolved_source_subtype": "small_case_series",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "manual_review_override",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_deferred_multi_case_source",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\11966.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\11966.segments.json",
+    "n_segments": 7
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\11966\\p1.json",
+      "ready_for_langextract": false
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ]
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch041",
+    "generated_at_utc": "2026-05-02T14:33:10.859003+00:00"
+  },
+  "stage06_divergence": {
+    "diverged": true,
+    "dimensions": [
+      "target_inventory",
+      "route_mode"
+    ],
+    "reason": "Stage 07 declared source-backed targets beyond the Stage 06 route prior."
+  }
+}

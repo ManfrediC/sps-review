@@ -1,0 +1,60 @@
+{
+  "paper_id": "2646",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\2646.json",
+    "source_text_sha256": "174ca6cd5e7ba980794559af5222dff62cb0beb032f007ff1832f25ac01ec33d",
+    "prepared_source_sha256": "0bfd4e733ab65625a5e1d7070bd2f38c7262eb9be2fe6307566645a06de5f8d4",
+    "prepared_source_character_count": 19733,
+    "source_filename": "2646_Yilmaz et al. - 2019 - Anti-glutamate Dehydrogenase Antibody Positive Cer.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\2646.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\2646.segments.json",
+    "n_segments": 9
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\2646\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch029",
+    "generated_at_utc": "2026-05-02T09:02:07.548879+00:00"
+  }
+}

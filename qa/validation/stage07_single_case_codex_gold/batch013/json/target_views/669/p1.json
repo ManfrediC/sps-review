@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "669::p1",
+  "paper_id": "669",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "669::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nStiff man syndrome is a rare disease characterized by painful chronic spasms in the muscle and skeletal system. This syndrome is an au-\ntoimmune neurologic disorder which is associated with thymoma. We treated a 32-year-old male patient with a type C thymoma (based on\nthe World Health Organization classification) who had stiff man syndrome. The patient underwent an extended thymectomy which brought\nabout alleviation of his symptoms.\n\nCase Report\nA 32-year-old male was admitted to our hospital in February\n2009 with symptoms of continuous muscle stiffness and painful\nmuscle spasms, which began as tightness in the lower limbs and\ndeteriorated into muscle stiffness of the trunk and upper limbs five\nmonths after the onset. He had no history of diabetes, injuries,\nor epilepsy. A laboratory examination and tumor markers also\nrevealed nothing abnormal. No abnormality was noticed using\nthoracic and cervical spinal magnetic resonance imaging (MRI).\nA computed tomography (CT) of the chest was conducted, which\nrevealed an anterior mediastinal tumor that was considered to be\na thymoma (Figure 1). It was proposed that his symptoms may\nhave been caused by a paraneoplastic neurologic syndrome as-\nsociated with a thymoma. A laboratory measurement of the anti-\nGAD antibody in serum was 230 (normal range, < 1.5). High titer\nof anti-GAD antibody and mediastinal mass can lead to diagnosis\nof SMS. Despite of taking baclofen and diazepam, his symptoms\nof having continuous muscle stiffness and painful muscle spasms\nwere continued. The patient, using opium as a pain killer, gradu-\n\nally became addicted to opium. We performed a median sternoto-\nmy and extended thymectomy with segmental resection of the left\nupper lobe of the lung and a partial pericardectomy. A histology\nexamination revealed the type C thymoma (thymic carcinoma),\npoorly differentiated thymic carcinoma according to the World\n\nHealth Organization (WHO) classification’ with invasion of the\nlung and the pericardium. The postoperative course was unevent-\nful and the patient was able to recover muscle strength enabling\nhim to maintain a standing or sitting position. Ten days after the\noperation he was discharged from the hospital and was referred\nto an oncologist. In a six- month follow —up the patient was in a\ngood condition.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 202,
+        "end": 647
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 445
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1625,
+        "end": 2769
+      },
+      "compiled_offsets": {
+        "start": 447,
+        "end": 1591
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3130,
+        "end": 3443
+      },
+      "compiled_offsets": {
+        "start": 1593,
+        "end": 1906
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3444,
+        "end": 3847
+      },
+      "compiled_offsets": {
+        "start": 1908,
+        "end": 2311
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

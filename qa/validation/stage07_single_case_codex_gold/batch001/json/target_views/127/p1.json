@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "127::p1",
+  "paper_id": "127",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "127::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report \nA 14-month-old girl born of nonconsanguineous union experienced \nsudden episodes of breath-holding, accompanied by spasms of the trunk \nand limb muscles, leading to cyanosis and loss of consciousness. The \nchild was normal at birth, and neither the mother nor the pediatrician had \nnoticed any stiffness. The episodes had onset at 3 months of age, \nbecoming more frequent with time, and were precipitated by crying, \nobstinacy, injury, and respiratory infection and were markedly reduced in \nsleep. For several months, her neck movements had been restricted, and \nshe had manifested dysphagia for several months. The child achieved \nhead control at 5 months and had sat at 9 months, but at 14 months of age, \nshe was not walking. There was no family history of similar illness. She \nhad received all appropriate immunizations. \nThe child was 70 cm tall, weighed 7.5 kg, and had a head circumfer- \nence of 42 cm, a short neck, and a partial cleft lip. Facies were not \ndysmorphic, and there were no bony or joint abnormalities. Risus \nsardonicus, blepharospasm, mild trismus, and restriction of neck move- \nments were apparent. Stridor, with pooling of secretions, was present, \nprobably due to coughing difficulty secondary to chest wall tightness. \nPosterior pharyngeal examination led to life-threatening respiratory \nmuscle spasms. The child's posture showed slight flexion of the neck and \nupper trunk with extension and pronation of upper limbs. All muscles \nmanifested sustained contractions, especially the chest, abdomen, and \nshoulder girdle. The appearance was that of an \"infant Hercules.\" When \nshe walked at 2 years of age, her gait was slow and waddling. No muscle \nweakness was noted. The rest of the neurologic system was normal, \nincluding deep tendon reflexes, \nRoutine hematologic and biochemical investigations were normal, \nexcept for moderate anemia. Specifically, fasting and postprandial blood\n\nglucose levels were normal. Serum creatine kinase (CK) level assessed \nelsewhere was 263 IU/L (normal 6 to 60 IU/L), and an electromyogram \n(EMG) had shown \"myotonic discharges\" and full recruitment of \nnormal motor units. A limited repeat EMG study we performed demon- \nstrated complex repetitive discharges and continuous normal motor unit \nactivity. Because they produced life-threatening spasm, procaine block \nand other tests could not be performed. A provisional diagnosis of SS \nwas made. \nIn the following year, the girl was admitted to the hospital twice for \nincreasing spasms with stridor, precipitated by respiratory infections. Her \nhospital course was complicated by pneumonia, chronic hypercarbia, and \nthree episodes of respiratory arrest with bradycardia, requiring bag and \nmask ventilation or emergency tracheal intubation. Hypertension was \nobserved during the first hospital stay, but subsequently resolved with \ntreatment. She failed to respond to carbamazepine and intravenous \nphenytoin, but responded dramatically to high-dose diazepam and ba- \nclofen. During her second hospital stay, the child developed mild \nrhabdomyolysis after a cardiorespiratory arrest. Valproate and steroids \nadded to her treatment regimen led to sustained improvement. During \n4-year follow-up in the outpatient department, the child's spasms have\n\nPresent Case \n1 yr, 2 mo \nF \n÷ \n+ \n+ \n+ \n÷ \n+ \nEmotional disturbance. \ninfection, sensory \nstimulation \nFluctuating \nRelieves stiffness, spasms \nAbsent \n+ \n+ \nNormal \n+ \nCarbamazepine, \nphenytoin \nHigh-dose DZP, baclofen, \nvalproate, steroids \nGood \nresolved, although mild stiffness of the lower leg/abdominal/chest/girdle \nmuscles with restriction of neck movements have persisted and the \nstiffness increases with exercise or sleep deprivation. A repeat EMG \nperformed recently demonstrated no continuous motor unit activity, \nalthough respiratory muscle spasms could still be provoked by the \nprocedure. The child was maintained on high-dose diazepam, baclofen, \nand valproate until 1 year ago. At present, she receives no medications. \nShe is fully ambulant and attends normal school.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1567,
+        "end": 3497
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1930
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3499,
+        "end": 4848
+      },
+      "compiled_offsets": {
+        "start": 1932,
+        "end": 3281
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6298,
+        "end": 7087
+      },
+      "compiled_offsets": {
+        "start": 3283,
+        "end": 4072
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

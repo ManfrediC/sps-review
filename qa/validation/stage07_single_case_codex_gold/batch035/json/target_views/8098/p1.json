@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8098::p1",
+  "paper_id": "8098",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8098::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Poster 408\nSevere Spasticity in a Patient With Stiff Person\nSyndrome: A Case Report.\nReekesh Patel, MD (Tufts Medical Center, Boston, MA,\nUnited States); Maturin Finch, MD, Akbar Khan, DO,\nKareen A. Velez, MD.\nDisclosures: R. Patel, none.\nPatients or Programs: A 59-year-old woman with a 10-year\nhistory of stiff person syndrome (SPS).\nProgram Description: The patient presented to an inpatient\nrehabilitation facility with pain, tremors, spasticity, stiffness, and\njerking and/or myoclonic movements that hindered ambulation.\nShe had greater left lower extremity spasticity when compared with\nthe right. Hence, she was started on a comprehensive, multidisci-\nplinary movement disorder rehabilitation program.\nSetting: Inpatient rehabilitation facility.\nResults: Patient’s dystonic and myoclonic symptoms improved\nwith levetiracetam. She was treated with diazepam and baclofen for\nspasticity management, without signiﬁcant results. The patient was\nunable to tolerate physical activity secondary to worsening pain and\nspasticity. Tizanidine was implemented, which led to gradual spas-\nticity reduction that allowed rehabilitation program reimplementa-\ntion. As a result, the patient’s lower extremity strength and range of\nmotion improved signiﬁcantly, which allowed her to ambulate with\na walker upon discharge.\nDiscussion: SPS is a rare neurologic disorder with features of an\nautoimmune disease characterized by muscle rigidity that waxes\nand wanes with concurrent spasms and a heightened sensitivity to\nstimuli such as noise, touch, and emotional distress, which can set\noff muscle spasms. Patients with SPS produce glutamic acid decar-\nboxylase antibodies that affect GABA-mediated inhibition from the\ncentral nervous system. If glutamic acid decarboxylase function is\n\ninhibited signiﬁcantly, then GABA available for these functions is\ndecreased, and muscles become continuously stimulated by motor\nneurons. Based on the described pathophysiology, baclofen and\nbenzodiazepines are considered ﬁrst-line pharmacologic treatment\nfor SPS. We believe that physical activity without adequate spastic-\nity management exacerbated the patient’s symptoms, which makes\nrehabilitation efforts challenging. Fortunately, tizanidine provided\nadequate symptomatic relief that permitted physical and occupa-\ntional therapy focused on range of motion preservation, strengthen-\ning, and voluntary movement control.\nConclusions: The rehabilitation treatment program for individ-\nuals with SPS should begin with symptom reduction via education\nand pharmacotherapy. This should be followed by a carefully de-\nveloped exercise program that improves overall function and qual-\nity of life.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1724,
+        "end": 3496
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1772
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3497,
+        "end": 4393
+      },
+      "compiled_offsets": {
+        "start": 1774,
+        "end": 2670
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

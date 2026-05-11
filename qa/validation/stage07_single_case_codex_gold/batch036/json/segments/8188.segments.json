@@ -1,0 +1,65 @@
+{
+  "paper_id": "8188",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\8188.json",
+    "source_text_sha256": "eb59d68d3753fd42fa0d88a22a9466f290c22ffc96527cfba206eb29244d3e9e",
+    "prepared_source_sha256": "2253730ed96bd46255f9a37707e050d68b4417400e321cb9d61610bd44db6789",
+    "prepared_source_character_count": 2598
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 262
+      },
+      "page_index": 0,
+      "text": "Relapsing Anti-Glycine Receptor Antibody Mediated Encephalitis \nwith Rigidity and Myoclonus (P01.235) \nJennifer Williams, Karen O'Connell, Sean Connolly, Angela Vincent, Christopher \nMcGuigan, Michael Hutchinson, Sean O'Riordan \nFirst published February 8, 2016,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 267,
+        "end": 2598
+      },
+      "page_index": 0,
+      "text": " Info & Disclosures \nAbstract \nObjective: To describe a clinical case of PERM ( Progressive encephalomyelitis with rigidity and \nmyoclonus) caused by anti-glycine receptor antibodies. \nBackground Progressive encephalomyelitis with rigidity and myoclonus (PERM) is a rare \ndisorder presenting subacutely with rigidity, muscle spasms, brainstem signs and hyperekplexia. \nHyperekplexia results from disruption of the normal inhibitory glycinergic pathways concentrated \nin the caudal pons. We report a case of relapsing PERM secondary to anti-glycine receptor \nantibody. \nDesign/Methods: A 65 year old man presented in 2001 with a two week history of severe \nhyperekplexia, rigidity of spine and lower limbs, bilateral ptosis, and horizontal gaze palsies. \nInvestigations revealed CSF lymphocytic pleocytosis and simultaneous concentric needle EMG \nwas consistent with a diagnosis of PERM. Anti-glycine receptor antibodies were identified when \npatient sera were tested for binding to human embryonic kidney cells transfected with EGFP-\ntagged glycine receptor α1 subunit. The patient's serum bound strongly to the GlyR-EGFP \nexpressing cells. A diagnosis of anti-glycine receptor mediated PERM was made. The patient \nresponded to initial intense immunosuppression and remained stable for many years with no \nfurther immunomodulation. \nResults: Ten years after initial presentation he presented again with a two month history of \nworsening ptosis, complex ophthalmoplegia, recurrent hyperekplexia, and limb rigidity. There \nwas no evidence of intercurrent sepsis or underlying malignancy. High titres of anti-glycine \nreceptor antibodies were again identified in serum and CSF. The recurrent symptoms improved \nquickly with immunomodulation. \nConclusions: Relapsing PERM due to anti-glycine receptor antibodies ten years after initial \npresentation is a rare and interesting clinical scenario. Rather than a monophasic illness, the \ndisease course has been relapsing and remitting requiring combined aggressive \nimmunosuppressive treatment. This raises several interesting clinical issues including the use of \nserial antibody testing to predict clinical relapse and of long term, low-grade immunosuppression \nin relapse prevention. \nDisclosure: Dr. Williams has nothing to disclose. Dr. O'Connell has nothing to disclose. Dr. \nConno"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Objective: To describe a clinical case of PERM ( Progressive encephalomyelitis with rigidity and \nmyoclonus) caused by anti-glycine receptor antibodies. \nBackground Progressive encephalomyelitis with rigidity and myoclonus (PERM) is a rare \ndisorder presenting subacutely with rigidity, muscle spasms, brainstem signs and hyperekplexia. \nHyperekplexia results from disruption of the normal inhibitory glycinergic pathways concentrated \nin the caudal pons. We report a case of relapsing PERM secondary to anti-glycine receptor \nantibody. \nDesign/Methods: A 65 year old man presented in 2001 with a two week history of severe \nhyperekplexia, rigidity of spine and lower limbs, bilateral ptosis, and horizontal gaze palsies. \nInvestigations revealed CSF lymphocytic pleocytosis and simultaneous concentric needle EMG \nwas consistent with a diagnosis of PERM. Anti-glycine receptor antibodies were identified when \npatient sera were tested for binding to human embryonic kidney cells transfected with EGFP-\ntagged glycine receptor α1 subunit. The patient's serum bound strongly to the GlyR-EGFP \nexpressing cells. A diagnosis of anti-glycine receptor mediated PERM was made. The patient \nresponded to initial intense immunosuppression and remained stable for many years with no \nfurther immunomodulation. \nResults: Ten years after initial presentation he presented again with a two month history of \nworsening ptosis, complex ophthalmoplegia, recurrent hyperekplexia, and limb rigidity. There \nwas no evidence of intercurrent sepsis or underlying malignancy. High titres of anti-glycine \nreceptor antibodies were again identified in serum and CSF. The recurrent symptoms improved \nquickly with immunomodulation. \nConclusions: Relapsing PERM due to anti-glycine receptor antibodies ten years after initial \npresentation is a rare and interesting clinical scenario. Rather than a monophasic illness, the \ndisease course has been relapsing and remitting requiring combined aggressive \nimmunosuppressive treatment. This raises several interesting clinical issues including the use of \nserial antibody testing to predict clinical relapse and of long term, low-grade immunosuppression \nin relapse prevention.",
+      "source_offsets": {
+        "start": 299,
+        "end": 2497
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

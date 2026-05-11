@@ -1,0 +1,60 @@
+{
+  "paper_id": "3279",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\3279.json",
+    "source_text_sha256": "71682cbd6efe21db4a65710b035392040dee6caa3d3f61203c9748923b49a6f3",
+    "prepared_source_sha256": "0d7a9011abdeb187c728a8268fdfed5c91d4877b6f5248c7b54ab13f23c1d2a1",
+    "prepared_source_character_count": 13543,
+    "source_filename": "3279_Ferrari-1990-Stiff-man syndrome in a patient w.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\3279.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\3279.segments.json",
+    "n_segments": 4
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\3279\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch030",
+    "generated_at_utc": "2026-05-02T09:13:59.127046+00:00"
+  }
+}

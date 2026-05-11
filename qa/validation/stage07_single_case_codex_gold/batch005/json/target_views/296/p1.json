@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "296::p1",
+  "paper_id": "296",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "296::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 55-year-old woman with a history of IDDM, hyper-\ntension, hypothyroidism, and gastroesophageal reﬂux dis-\nease presented with a 4-week course of lower back muscle\nspasms, diplopia, and gait difﬁculties. On examination she\nhad downbeating nystagmus of moderate amplitude and\nfrequency in primary gaze. An alternating inferior rectus\nskew deviation was evident with a right hypertropia in\nright lateral gaze and a left hypertropia in left lateral gaze.\nShe also had minimally increased tone in all extremities\nand signiﬁcant dysmetria and appendicular ataxia on the\nleft. Cerbrospinal ﬂuid examination showed a white blood\ncell count of 6 cells/ml and a minimally elevated protein\nvalue of 61 mg/dl. Studies for known paraneoplastic\nantibodies (including Anti-Yo, Hu, Ma1, Ma2, Ri, CV2/\nCRMP5) were negative. GAD antibodies were detected in\nboth the serum and CSF using immunohistochemistry and\nradioimmunoanalysis (Figure 1). Brain magnetic resonance\nimaging was normal with no Arnold-Chiari malformation\nobserved. Brain ﬂuoro-deoxyglucose positron emission to-\nmography was also unremarkable. Computed tomography\nscans of the chest, abdomen, and pelvis were normal.\nThe patient was treated with diazepam and intravenous\nmethylprednisolone (1 g/day for 5 days), which resulted in\nimprovement in her muscle spasm but no change in her\nother symptoms. Subsequently, she received intravenous\nimmunoglobulin (IVIg, 0.4 gm/kg/day) for 5 days, and a\nFIGURE 1. Section of brain tissue reacted with the cerebrospinal ﬂuid of the patient (dilution 1:20). Typical glutamic-acid decarboxylase\nreactivity is demonstrated, predominantly in the axon hillock of the Purkinje cells (thin arrows) and synaptic-enriched regions of the\ngranular cell layer area (thick arrow) and molecular layer. Slide mildly counterstained with hematoxylin;/H11547200 (inset /H11547400).\nBRIEF REPORTSVOL. 140,N O. 1 143\n\nsigniﬁcant reduction in nystagmus, and a reduction in\ndysmetria were noted.\nThe neuro-opthalmic ﬁndings in our patient are most\nlikely due to cerebellar dysfunction and the effect of GAD\nantibodies on GABAergic transmission.\n4 Lesions within the\nposterior midline of the cerebellum may produce downbeat-\ning nystagmus.\n5 We know of no other studies that fully\ndescribe the neuro-opthalmic consequences of GAD antibod-\nies. As demonstrated by this case, patients with GAD\nantibodies may have elements of both Stiff-person syndrome\n(muscle rigidity and spasms) and prominent cerebellar dys-\nfunction. Treatment with diazepam may rapidly improve Stiff-\nperson symptoms, whereas IVIg may allow for improvement in\ncerebellar dysfunction, including downbeat nystagmus.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4142,
+        "end": 6027
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1885
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6029,
+        "end": 6791
+      },
+      "compiled_offsets": {
+        "start": 1887,
+        "end": 2649
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

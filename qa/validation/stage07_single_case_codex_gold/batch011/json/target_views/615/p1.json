@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "615::p1",
+  "paper_id": "615",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "615::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "In January 1998 a 85-year-\nold woman complained of sustained involuntary muscle contractions\nleading to permanent stiffness of both thighs and the right arm.\nSymptoms were amplified by emotional upset or when startled, and\ndisappeared during sleep. Gait was greatly impaired. Since 1977 she\nwas suffering from recurrent bilateral uveitis. In spring 1998 Hashi-\nmoto’s thyroiditis was diagnosed. In July 1998 a ductal carcinoma of\nthe breast was treated surgically followed by antihormonal therapy\n(tamoxifen). Examination revealed pupillary irregularities due to the\nuveitis. There were neither oculomotor abnormalities nor nystag-\nmus. There was increased muscle tone in the right arm and in the\nlower extremities. Palpation of the hamstrings and quadriceps mus-\ncles revealed permanent cocontraction with inability to relax. Elec-\ntromyographic examination revealed continuous motor activity in\nthe hamstring and quadriceps muscles with normal motor unit\npotentials. Electrical stimulation of the median nerve provoked\nmarked and sustained contractions of both quadriceps. Serum was\npositive for antithyroglobulin and antimicrosomal antibodies com-\npatible with Hashimoto’s thyroiditis. M2-type antimitochondrial\nand anti-21-ß-hydroxylase antibodies were present with no signs of\nbiliary cirrhosis or adrenal insufficiency, even after ACTH stimula-\ntion. Anti-islet antibodies were markedly elevated (1/640) as deter-\nmined by immunohistochemistry, as were anti-glutamic acid decar-\nboxylase (GAD) antibodies (250,060 mGAD U/ml, normal !70)\ndetermined by radioimmunoassay. CSF contained elevated IgG lev-\nels with oligoclonal bands and was positive for anti-GAD antibodies,\nas determined qualitatively by immunocytochemistry. It is notewor-\nthy that despite elevated anti-GAD antibody titers no diabetes melli-\ntus was present. Fasting glucose and HbA\n1c values were normal and\noral glucose tolerance test was negative. Antiamphiphysin autoanti-\nbodies were negative, as were anti-Hu, anti-Yo and anti-Ri anti-\nbodies. MRI imaging of the whole neuraxis was unremarkable.\nBaclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff-\nness. Diazepam was not tolerated. Plasmapheresis and IVIG treat-\nment were only of short-lived benefit. High-dose steroid therapy\n(methylprednisone 500mg i.v. per day for 5 days) brought substan-\ntial improvement allowing the patient to walk freely without support.\nTreatment was continued successfully with low-dose prednisone\norally (0.4mg/kg every other day) and the patient remained symp-\ntom free since. Improvement of SPS patients treated with diazepam\n[5], baclofen or vigabatrin suggested altered GABA-mediated inhibi-\ntion as a pathophysiological mechanism for this condition. The asso-\nciation of SPS with pernicious anemia, thyroiditis, adrenal insuffi-\nciency, ovarian failure, myasthenia gravis, hypoparathyroidism, ad-\nrenalitis, vitiligo and diabetes mellitus hinted at an autoimmune\nbasis for the disease in some patients. These two hypotheses were\nmerged with the report of antibodies to GAD in both serum and CSF\nof a patient with SPS and diabetes mellitus [3]. Subsequently these\nantibodies were demonstrated in 70% of patients with SPS [6], and\n\nimprovement of symptoms was observed with regimens including\ncorticosteroids, plasmapheresis and IVIG [7]. Paraneoplastic SPS\nwas first described in 1993, identifying antiamphiphysin antibodies\nin 3 patients with SPS and breast cancer [4]. Recently 2 patients were\nreported with SPS, breast cancer and anti-GAD antibodies [8, 9],\nwhere the SPS was attributed to a paraneoplastic origin. In our\npatient the SPS appears to be unrelated to the cancer. First, the\npatient’s symptoms continued to worsen after removal of the neo-\nplasm, without signs of cancer progression. Second, the patient\nimproved markedly on immunomodulatory treatment and is doing\nwell ever since. Third, prior to the development of breast cancer the\npatient presented multiple autoantibodies, some of which leading to\novert endocrinopathy. These arguments, in the absence of antiam-\nphiphysin antibodies, considered specific for paraneoplastic neuro-\nlogical disorders [10], favor a nonparaneoplastic origin for the neuro-\nlogical symptoms, despite incidental cooccurrence of breast cancer, a\ncommon malignancy in elderly women. However, there remains the\ntheoretical possibility of a paraneoplastic origin to our patient’s SPS,\nwhich should be considered, if GAD expression by the tumor was to\nbe demonstrated. The peculiar association found here, as well as in 1\nother case [8], and the fact that GAD has never been shown to be\nexpressed in breast cancer cells, should encourage further studies to\nclarify this issue.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 916,
+        "end": 4124
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3208
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4125,
+        "end": 5614
+      },
+      "compiled_offsets": {
+        "start": 3210,
+        "end": 4699
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

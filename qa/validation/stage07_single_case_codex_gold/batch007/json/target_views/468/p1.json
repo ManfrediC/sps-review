@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "468::p1",
+  "paper_id": "468",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "468::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nObjective: We report a case of a 58-year-old man suffering from stiff-person syndrome and recurrent peripheral\nvertigo.\nMethod: A case report and a review of the recent literature on stiff-person syndrome are presented.\nResults: The patient presented with recurrent episodes of vertigo with a pure peripheral pattern and with\nconcomitant episodes of burning muscle pain, muscle twitching, weight gain and fatigue, worsening with\ntension or stress that also occurred in periods without vertigo. Cochlear examinations only showed\npresbyacusis-like hearing loss. The diagnosis of stiff-person syndrome was made with electromyographic\nexamination and from ﬁndings in the blood and cerebrospinal ﬂuid of high titres of anti-glutamic acid\ndecarboxylase (GAD67) autoantibodies. In a two-year follow-up period, therapy for stiff-person syndrome\nabolished episodes of both stiffness and vertigo.\nConclusion: As far as we know, no other clinical case of acute vestibular damage with a possible correlation\nwith anti-glutamic acid decarboxylase antibodies has been described. Peripheral vertigo possibly related to a\nlack of gamma aminobutyric acid underlines a possible role of gamma aminobutyric acid as a neurotransmitter\nin the peripheral vestibular system.\n\nCase report\nWe report a case of a 58-year-old man suffering from recur-\nrent vertigo (three episodes in one year) lasting from hours\nto one day, and described as rotational with intense nausea\nand vomiting but without cochlear symptoms. He also\ndescribed episodes of discomfort and stiffness in his\nentire back worsening with tension or stress that also\noccurred in periods without vertigo. During vertiginous\ncrises, bedside examination showed signs of acute\nperipheral vestibular loss (third degree horizontal nystag-\nmus, positive head-thrust and harmonic pattern of\nvestibulo – spinal reﬂexes). A Dix – Hallpike bithermal\n\ncaloric vestibular test performed 10 days after recovery\nfrom spontaneous nystagmus showed impaired vestibulo-\noculomotor reﬂexes for a 58 per cent right unilateral weak-\nness. Video-oculographic registration was performed\nusing an Interacoustics VO25 (Interacoustics As, Assen,\nDenmark) module with simultaneous binocular registration.\nA geotropic positional nystagmus was present in supine pos-\nition with head turned on left position. Pursuit showed sym-\nmetrical moderate gain reduction (78 per cent and 75 per cent\nin the left and right cycle for a 0.5 Hz stimulation, +208\namplitude); saccades were normal for latency, velocity and\naccuracy. The patient had a symmetrical hearing loss on\nacute frequencies from 3 kHz with transiently evoked otoa-\ncoustic emissions compatible with presbyacusis. No ﬂuctuat-\ning hearing loss temporally related to vertigo has been\nreferred to by the patient. Nuclear magnetic resonance and\nangio-RNM of the central nervous system were normal.\nBlood tests were normal, in particular, glycaemic rate,\nglucose tolerance test and screening for autoantibodies.\nBlood coagulation showed a normal pattern.\nShortly after the last acute vertiginous episode, he\ndeveloped increasing symptoms of burning muscle pain,\nmuscle twitching, weight gain and fatigue. On this\noccasion, blood tests showed only high titres of anti-\nglutamic acid decarboxylase (GAD 67) autoantibodies\n(130 u/ml). Anti-GAD 67 autoantibodies were also found\nin cerebrospinal ﬂuid (39 000 u /ml). The cerebrospinal\nﬂuid to serum albumin ratio was normal, indicating an\nintact blood–brain barrier. Electrocardiogram ﬁndings\nwere normal. Anti-amphiphysin autoantibodies were nega-\ntive. Diagnosis of stiff-person syndrome was made based\non electromyographic ﬁndings of persistent motor unit\nactivity.\nTherapy based on methylprednisolone and benzo-\ndiazepines (Lorazepam 5 mg /day) drastically reduced\nmuscular symptoms and abolished vertiginous episodes in\na two-year follow up. Audiometric examinations and\notoacoustic emissions did not show variation after\ntherapy (Figure 1).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 225,
+        "end": 1484
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1259
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3743,
+        "end": 4368
+      },
+      "compiled_offsets": {
+        "start": 1261,
+        "end": 1886
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4777,
+        "end": 6851
+      },
+      "compiled_offsets": {
+        "start": 1888,
+        "end": 3962
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

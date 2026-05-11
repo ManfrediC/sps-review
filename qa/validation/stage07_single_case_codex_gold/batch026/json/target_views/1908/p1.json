@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1908::p1",
+  "paper_id": "1908",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1908::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: A previously healthy 70-year-old female on long-term levothyroxine therapy for \nhypothyroidism presented with two weeks of jerking in legs with stiffness, facial spasm, \ndysphagia, and dysarthria. Electroencephalographic findings of disorganized background \nindicating encephalopathy without epileptiform activity were seen. CSF testing showed \nlymphocytic pleocytosis with increased protein and NMDAR antibodies. GlyR antibodies were \npresent in serum and CSF. CSF investigations (anti-glutamic acid decarboxylase antibodies, \namphiphysin antibodies, oligoclonal bands, viral PCR, bacterial panel), MRI brain, and serum \ninvestigations (HIV, hepatitis C, TSH, copper, methylmalonic acid, heavy metals, serum and \nurine protein electrophoresis) were unremarkable. Serum anti-thyroglobulin antibody was \nelevated. Extensive malignancy workup was unremarkable. Patient responded partially to \nplasmapheresis, intravenous immunoglobulin and intravenous methylprednisolone and lower \nextremity jerks disappeared. Diazepam and baclofen helped with muscle stiffness. She was \ndischarged on prednisone which was discontinued due to infection and patient relapsed with leg \nstiffness, limb ataxia, worsening dysarthria, auditory hallucinations, disorientation and agitation. \nOn readmission, she improved with intravenous immunoglobulin and intravenous \nmethylprednisolone. Rituximab was administered and further improvement was seen such that at \ndischarge she was oriented to time, place and person, hallucinations had resolved and there was \nsignificant improvement in axial and limb rigidity.\n\nThis case highlights favorable \nresponse to aggressive immunotherapy in a patient with predominantly PERM phenotype with \npositive GlyR and NMDA antibodies, in addition to a possible association of disease with other \nautoimmune entities such as autoimmune thyroiditis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 617,
+        "end": 2214
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1597
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2367,
+        "end": 2636
+      },
+      "compiled_offsets": {
+        "start": 1599,
+        "end": 1868
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

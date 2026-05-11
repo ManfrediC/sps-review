@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5992::p1",
+  "paper_id": "5992",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5992::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "P380\nTreatment resistant jerky stiff person syndrome\nT. P. Harrower, R. Barker, J. Baron, A. Coles (Cambridge, United\nKingdom)\nBackground: Stiff Person Syndrome (SPS) is a well recognized autoim-\nmune mediated condition with an association with antibodies to glutamic\nacid decarboxylase (GAD). Less well deﬁned is the condition of Jerky SPS,\nan atypical form of SPS.\nMethods: Here we present a case of a 28 male who initially presented\nwith neck and back pain, and generalised stiffness associated with jerks in\nhis neck. Over the next few months the jerky muscle activity spread to\ninvolve his shoulder girdle (see video). Clinical examination conﬁrmed the\npresence of regular spasms resembling myoclonic jerks in the shoulder\ngirdle region with generalised stiffness but no other general or neurological\ndeﬁcits.\nResults: Besides the presence of an elevated anti-GAD titre initially 12\nrising to 105 (normal range less than 10 ng/ml) tests have been normal\nincluding neuroimaging, somatosensory evoked responses. But electro-\nmyography demonstrated episodes of spontaneous motor activity. General\ninvestigations (including tumour markers, whole body CT and FDG-PET\nscanning) have failed to demonstrate an occult malignancy. Immunomodu-\nlatory therapy including, steroids, plasma exchange, intravenous immuno-\nglobulin and rituximab (monoclonal antibody directed against B cells) has\nreduced the anti-GAD antibody titre to within normal limits (3.6 ng/ml) but\nhas failed to produce any clinical beneﬁt beyond a mild response to high\ndoses of benzodiazepines during 36 months of follow-up.\nConclusions: We therefore demonstrate a case of Jerky SPS reafﬁrming\nthe presence of an atypical SPS phenotype in the absence of a malignancy\nwhich has failed to clinically respond to immunotherapy despite a sero-\nlogical response.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 821,
+        "end": 2642
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1821
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

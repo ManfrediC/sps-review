@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "760::p1",
+  "paper_id": "760",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "760::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract Stiff Person Syndrome (SPS), typiﬁed  by rigidity in muscles of the torso and extrem-\nities\n and painful episodic spasms, is a rare autoimmune-based neurological disease. Here we\npresent\n the successful endotracheal intubation and application of TIV A without muscle relaxants\non\n an SPS patient.\nA\n 46 years old male patient was operated with ASA-II physical status because of lumber\nvertebral\n compression fracture. After induction of anesthesia using lidocaine, propofol and\nremifentanil\n tracheal intubation\n was completed easily without neuromuscular blockage. Anes-\nthesia was maintained with propofol, remifentanil and O2/air mixture. After a problem-free\nintraoperative\n period the patient was extubated and seven days later was discharged walking\nwith aid.\nThough\n the mechanism is not clear neuromuscular blockers and volatile anesthetics may cause\nprolonged\n hypotonia in patients with SPS. We think the TIV A technique, a general anesthetic\npractice which does not require\n neuromuscular blockage, is suitable for these patients.\n\nCase report\nA 46-year-old male patient was diagnosed with SPS 7\nyears\n previously . T reatment with diazepam (15 mg day− 1),\nbaclofen\n (30 mg day− 1) and prednisolone (20 mg day− 1)\nreduced\n symptoms but for the previous two months the\npatient\n complained of increased painful spasms especially\nin\n the lower extremities. The patient could walk with help,\nbut\n a thoracolumbar CT scan was done to investigate an\nincrease\n in a two-year lower back pain complaint. The scan\nrevealed\n a compression fracture at lumbar 2 --- 5 level and an\noperation\n was planned. The patient’s history only included\nhypertension.\n Physical examination revealed increased tone\nin\n the lower extremities. On consultation with an internal\nexpert\n preoperative 20 mg prednisolone (single dose) im was\nadvised.\n Extra medication used included bisoprolol, lanso-\nprazole, tramadol, calcium and vitamin D supplements. With\nthese\n ﬁndings  the patient was accepted as ASA risk group\nII.\nOther\n than these medications, premedication was not\ngiven.\n Coincident with standard monitoring invasive blood\npressure\n measurements were taken. Induction of anesthesia\nwas\n done with midazolam 0.1 mg kg− 1, lidocaine 1.5 mg kg− 1,\npropofol\n 2 mg kg− 1 and remifentanil 2 mcg kg− 1. Without\nusing\n a neuromuscular blocker endotracheal intubation was\neasily achieved and the lungs were ventilated with an O2/air\nmix.\n Central venous and bladder catheters were emplaced.\nAnesthesia\n was maintained by 60- - -100 mcg kg− 1 min− 1 propo-\nfol\n and 0.1- - -0.8 mcg kg− 1 min− 1 remifentanil infusion. Intra-\noperative\n hemodynamics\n remained stable, bolus anesthetics\n\nwere not required and the patient was given 2 units\nof\n packed\n red blood cells for bleeding. Postoperative\nanalgesia\n was\n intravenous 75 mg tramadol and 25 mg\ndexketoprofen. At the\n end of the operation after a\nproblem-free extubation\n the patient was transferred to\nthe surgical intensive care unit. With no follow-up prob-\nlems the patient\n was moved to the wards the following\nday and\n 7 days later was discharged walking with aid\nagain.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 728,
+        "end": 1778
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1050
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4779,
+        "end": 6401
+      },
+      "compiled_offsets": {
+        "start": 1052,
+        "end": 2674
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6402,
+        "end": 6844
+      },
+      "compiled_offsets": {
+        "start": 2676,
+        "end": 3118
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

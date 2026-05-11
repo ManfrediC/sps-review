@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5803::p1",
+  "paper_id": "5803",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5803::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 38 year-old women was \ntransferred from an outside hospital for further diagnostic evaluation and treatment of acute \nonset “myoclonus.” Her history was remarkable for a several year decline in functional status \ndue to intermittent back spasms causing pain and limited mobility. She returned to the other \nhospital after experiencing worsening spasms and wound breakdown from a total abdominal \nhysterectomy performed one week earlier for dysfunctional uterine bleeding. She had a \nwound infection and small bowel obstruction necessitating exploratory laparotomy with \nbowel resection. Her back spasms progressively worsened post-operatively leading to painful \nepisodes of tachycardia, intermittent fevers, and severe “myoclonic jerks.” She was later \nintubated and placed on a propofol infusion for concerns of status epilepticus. Differential \ndiagnosis and treatment included neuroleptic malignant syndrome, serotonin syndrome, and \ntetanus. Before transfer, the patient continued to have episodes requiring escalating doses of \nsedation ultimately leading to neuromuscular junction blockade to treat worsening \nrhabdomyolysis. Upon arrival the patient’s neurologic examination off paralysis and sedation \nwas remarkable for following commands, intact cranial nerves, spontaneous movement of her \nupper extremities (UE), but bilateral lower extremity (LE) rigidity with forced plantar \nflexion. Tactile or auditory stimulation elicited episodes of reactive tachycardia, fever, \nsweating, and hyperextension of her LE with normal UE tone. Initial work-up revealed only \nrhabdomyolysis with associated acute kidney injury. MRI of the neuroaxis was \nunremarkable, continuous EEG did not show evidence of seizure activity, and EMG showed \nslow continuous firing in the absence of muscle activation. The patient’s clinical presentation \nwas consistent with SPS. Progressive antispasticity medications were added for symptomatic \ncontrol while immunomodulatory therapy for disease control was instituted. Her CSF \nglutamic acid decarboxylase 65 antibody concentration was 124 nmol/L (nl < 0.02 nmol/L) \nconfirming our clinical diagnosis of SPS. After tracheostomy and PEG placement, the patient \nwas discharged to acute rehabilitation. She continues to follow-up at our facility for therapy \nand is currently independently ambulatory on oral therapy. SPS necessitating ICU admission \nis a rare event with limited descriptions in the literature.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 485,
+        "end": 2930
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2445
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

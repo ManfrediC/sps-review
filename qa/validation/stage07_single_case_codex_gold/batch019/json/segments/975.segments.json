@@ -1,0 +1,402 @@
+{
+  "paper_id": "975",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\975.json",
+    "source_text_sha256": "76ac94082a2bcd0c241d2d7e340eefe32d89ed992ae1ed3c5ba00278ce283db8",
+    "prepared_source_sha256": "ee3fa32d7b71ec4f2257a1e1b53cc4be16bff8553b08c87bcfd10f59021e1108",
+    "prepared_source_character_count": 52273
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 3493
+      },
+      "page_index": 0,
+      "text": "Li et al. BMC Neurosci           (2020) 21:13  \nhttps://doi.org/10.1186/s12868-020-00561-9\nRESEARCH ARTICLE\nIntravenous methylprednisolone \nor immunoglobulin for anti-glutamic acid \ndecarboxylase 65 antibody autoimmune \nencephalitis: which is better?\nTao‑Ran Li1,2, Yu‑Di Zhang1,3, Qun Wang1, Xiao‑Qiu Shao1, Zhi‑Mei Li1 and Rui‑Juan Lv1* \nAbstract \nBackground: Patients positive for anti‑glutamic acid decarboxylase 65 (GAD65) antibodies have attracted increas‑\ning attention. Their clinical manifestations are highly heterogeneous and can be comorbid with tumors. Currently, \nthere is no consensus on the therapeutic regimen for anti‑GAD65‑associated neurological diseases due to the clinical \ncomplexity, rarity and sporadic distribution. We reported six anti‑GAD65 autoimmune encephalitis (AE) patients who \nreceived intravenous methylprednisolone (IVMP) or immunoglobulin (IVIG) or both. Then, we evaluated the therapeu‑\ntic effect of both by summarizing results in previous anti‑GAD65 AE patients from 70 published references.\nResults: Our six patients all achieved clinical improvements in the short term. Unfortunately, there was no significant \ndifference between IVMP and IVIG in terms of therapeutic response according to the previous references, and the \neffectiveness of IVMP and IVIG was 45.56% and 36.71%, respectively. We further divided the patients into different \nsubgroups according to their prominent clinical manifestations. The response rates of IVMP and IVIG were 42.65% and \n32.69%, respectively, in epilepsy patients; 60.00% and 77.78%, respectively, in patients with stiff‑person syndrome; and \n28.57% and 55.56%, respectively, in cerebellar ataxia patients. Among 29 anti‑GAD65 AE patients with tumors, the \nresponse rates of IVMP and IVIG were 29.41% and 42.11%, respectively. There was no significant difference in effective‑\nness between the two regimens among the different subgroups.\nConclusion: Except for stiff‑person syndrome, we found that this kind of AE generally has a poor response to IVMP \nor IVIG. Larger prospective studies enrolling large numbers of patients are required to identify the optimal therapeutic \nstrategy in the future.\nKeywords: Glutamic acid decarboxylase 65, Autoimmune encephalitis, Methylprednisolone, Immunoglobulin\n© The Author(s) 2020. This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, \nadaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and \nthe source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material \nin this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material \nis not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the \npermitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creat iveco \nmmons .org/licen ses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creat iveco mmons .org/publi cdoma in/\nzero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.\nBackground\nGlutamic acid decarboxylase 65 (GAD65), an intracellu -\nlar antigen that is highly expressed in pancreatic β-cells"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 3495,
+        "end": 4440
+      },
+      "page_index": 0,
+      "text": "and the presynaptic terminal of inhibitory neurons, is \nbecoming increasingly important both clinically and \nexperimentally [1–4]. Patients with high serum and cer\n-\nebrospinal fluid (CSF) titers of anti-GAD65 antibodies \n(Abs) have been proven to be clinically heterogeneous, \nincluding those with stiff-person syndrome (SPS), cer\n-\nebellar ataxia (CA), limbic encephalitis (LE), nonlimbic \nautoimmune encephalitis (AE), autonomic neuropathy \nand other multifarious neurological disorders [5, 6]. Fur\n-\nthermore, tumors have been identified in several cases, \nOpen Access\nBMC Neuroscience\n*Correspondence:  lvruijuan1981@126.com\n1 Department of Neurology, Beijing Tiantan Hospital, Capital Medical \nUniversity; China National Clinical Research Center for Neurological \nDiseases, 119 South Fourth Ring West Road, Fengtai District, \nBeijing 100070, People’s Republic of China\nFull list of author information is available at the end of the article"
+    },
+    {
+      "block_id": "b0003",
+      "source_offsets": {
+        "start": 4442,
+        "end": 7928
+      },
+      "page_index": 1,
+      "text": "Page 2 of 11Li et al. BMC Neurosci           (2020) 21:13 \nindicating that anti-GAD65 Abs are associated with \nparaneoplastic neurological syndrome [7]. Even more \nperplexing, anti-GAD65 Abs are frequently comorbid \nwith one or more systemic autoimmune diseases and \nother Abs [5, 8, 9]. Because of the clinical heterogeneity, \ntogether with highly variable complexity, low prevalence \nand sporadic distribution, performing large-scale clini\n-\ncal trials are challenging. Therefore, there is currently \nno global consensus on the therapeutic regimen, mainly \nincluding corticosteroids, immunoglobulin, plasma \nexchange and other immunosuppressant drugs; all of the \navailable experience is based on case reports. However, \nmanagement may vary widely among different medical \ncenters, even when opposing recommendations are made \n[9–11].\nIn this study, we retrospectively analyzed the clinical \ncharacteristics of six anti-GAD65 AE patients in our ter\n-\ntiary epilepsy center who presented with different clinical \ninjury sites and severity. To date, no study has indicated \nwhich treatment is better for anti-GAD65 AE patients \nwhen comparing intravenous methylprednisolone \n(IVMP) and intravenous immunoglobulin (IVIG). Thus, \nwe analyzed the chosen treatments for all anti-GAD65 \nAE patients by searching PubMed, and we compared the \nefficacy of IVMP with that of IVIG. The purpose of the \nstudy is to raise the awareness of this disease and guide \nclinical therapies.\nPatients and Methods\nSix subjects from Beijing Tiantan Hospital gave written \ninformed consent for participation and written consent \nto permit the publication of clinical details. The study \nwas approved by the Medical Ethics Committee of Bei\n-\njing Tiantan Hospital, Capital Medical University, and \nwas carried out in accordance with the Declaration of \nHelsinki.\nWe conducted a search on PubMed for articles up \nto April 2019 and used the title/abstract search terms \n“encephalitis” and “GAD” or “glutamic acid decarboxy\n-\nlase” . A total of 133 references were retrieved. The criteria \nfor enrollment were as follows: patients with anti-GAD65 \nAbs received a therapy of IVMP or IVIG or a combina\n-\ntion of both, and we were able to obtain the response \nto the treatment. We were not particularly concerned \nabout whether patients used antiepileptic drugs (AEDs) \nbecause the effect of AEDs was very limited [12, 13]. \nIVMP or IVIG meant that the patients received high-\ndose methylprednisolone or immunoglobulin pulse ther\n-\napy, respectively, but the duration was variable, often by \nmore than 5 days. Reference screening was conducted by \ntwo experienced neurological doctors, Tao-Ran Li and \nRui-Juan Lv. Forty-nine articles, including 38 case (series) \nreports and 11 research articles, were included on the \nbasis of their relevance to the inclusion criteria. In addi\n-\ntion, a back-search of reference lists from retrieved pub -\nlications was also conducted to identify other potentially \nrelevant articles. As a result, 21 other articles, including \n13 case (series) reports and 8 research articles, were also \nincluded.\nWe eliminated many references for the following rea\n-\nsons. First, we excluded studies for which it was difficult \nto assess the efficacy of methylprednisolone, immuno\n-\nglobulin or a combination of methylprednisolone and \nimmunoglobulin because patients received immunosup\n-\npressive therapy in addition to IVMP or IVIG meanwhile, \nsuch as plasma exchange [14–16], immunoadsorption"
+    },
+    {
+      "block_id": "b0004",
+      "source_offsets": {
+        "start": 7930,
+        "end": 10049
+      },
+      "page_index": 1,
+      "text": "[17], azathioprine [18], rituximab [19], mycophenolate \nmofetil [20] or others [21]. Second, we excluded stud\n-\nies for which we could not obtain the patients’ response \nto IVMP or IVIG or their combination because of the \nambiguous descriptions or the inaccessible follow-up \ninformation in the original literature [22–27]. Third, we \nexcluded studies for which the different clinical manifes\n-\ntations of patients responded inconsistently to treatment; \nfor example, in patient D in the literature [28], seizure \nfrequency did not respond to IVMP , while CA improved. \nFourth, we excluded studies for which patients took pred\n-\nnisone or dexamethasone only orally [19, 29–33]. Fifth, \nwe excluded those patients with concurrent Rasmussen \nencephalitis [34, 35].\nThe 70 references included in the statistics are listed in \nAdditional file  1. We marked the references containing \npatients who presented with seizures, SPS or CA and ref\n-\nerences containing patients who had coexisting tumors \nor received combination therapy.\nStatistical analysis\nWe counted the number of patients who responded to \nIVMP or IVIG or a combination of both in the literature. \nAt the same time, we also counted the number of patients \nwho did not respond to IVMP , IVIG or a combination of \nboth. The clinical treatment for anti-GAD65 AE patients \nwas diverse and complex, and most patients underwent \na variety of treatment options. In many cases, patients \nchanged into the second treatment plan since the first \nwas ineffective or because of illness relapse; therefore, the \nsame patient was likely to be assigned two statistical data \npoints. For example, if one patient made no response to \nIVMP while responding to IVIG, we counted once that \nIVIG was effective and counted once that IVMP was inef\n-\nfective. If one patient responded to combination therapy \n(not including that there was a time interval between \nIVMP and IVIG), we counted that combination therapy \nwas effective once instead of calculating once separately \nthat both IVMP and IVIG were effective. If one patient \nwas unresponsive to combination therapy, we counted"
+    },
+    {
+      "block_id": "b0005",
+      "source_offsets": {
+        "start": 10051,
+        "end": 10109
+      },
+      "page_index": 2,
+      "text": "Page 3 of 11\nLi et al. BMC Neurosci           (2020) 21:13"
+    },
+    {
+      "block_id": "b0006",
+      "source_offsets": {
+        "start": 10113,
+        "end": 13609
+      },
+      "page_index": 2,
+      "text": "once separately that both IVMP and IVIG were ineffec -\ntive. We completely followed the information obtained in \nthe literature and objectively collected data according to \nthe original authors’ standpoints.\nStatistical analyses were performed with SPSS 22.0 \nsoftware (SPSS, Chicago, IL, USA). Differences were \nevaluated by the Chi squared test or Fisher’s exact test. \nP < 0.05 was considered to be statistically significant.\nResults\nPatients from our center\nSix illustrative anti-GAD65 AE cases from our center are \ncomparatively described in Table  1, and we include two \ntypical examples for a detailed description below owing \nto spatial confinement. The six patients were all right-\nhanded and were born at term to nonconsanguineous \nChinese parents, with no abnormal antenatal or postna\n-\ntal issues of note, and reached developmental milestones \nappropriately. Except for patients 2, 5 and 6, their past \nmedical histories were unremarkable, and their family \nhistories of seizures or neurological and immune disor\n-\nders were also not special except that of patient 2. They \nall presented seizures as the initial symptom; however, \ntheir intracranial lesions and subsequent clinical mani\n-\nfestations were different as follows: patient 1 was charac -\nterized as having typical LE, patient 2 had obvious brain \natrophy and features of multiple different clinical syn\n-\ndromes due to a long-term disease course, the remaining \nfour patients mainly presented with medial temporal lobe \ninjury in imaging (except patient 3), and all patients were \ncharacterized as having drug-resistant epilepsy (patient 4 \nalso had SPS). The average time from onset to immuno\n-\ntherapy for the six patients was approximately 3 months, \n18  years, 20  months, 19  years, 10  years and 5  years, \nrespectively. They received different treatment regimens, \nall showing various degrees of improvement in the short \nterm.\nPatient 1: typical LE\nA 35-year-old female reported sudden onset of noctur -\nnal generalized tonic–clonic seizures (GTCSs) 3 months \nago; these GTCSs lasted approximately 1 min, with 5 epi\n-\nsodes in total. In addition, she also had an inexplicable \nsense of fear, several times per day. She received adequate \ndoses of levetiracetam, and the effect was not obvious. \nDuring the past 2  months, she experienced 3–4 con\n-\nscious nauseous sensations per week. Initial neurologi -\ncal examination revealed only a decrease in calculation \ncapacity. The Montreal Cognitive Assessment (MoCA) \nscore was 22 (primary school degree) on a scale ranging \nfrom 0 to 30. Routine examinations of blood and CSF \nwere normal. Comprehensive onconeural and neuronal \nsurface Abs screening in the serum and CSF, detected by \nthe cell-based transfection immunofluorescence assay \nmethod, showed only positive anti-GAD65 Abs. Brain \nmagnetic resonance imaging (MRI) showed abnormal \nsignals of the right medial temporal lobe (Fig.  1a). The \nlong-term video electroencephalogram (EEG) showed \nsignificant frequent sharp waves, slow waves and sharp-\nslow complex waves in the right frontal and temporal \nregions during the interictal phase (Fig.  2). During the \nictal phase, we found that the EEG rhythmic changes first \nappeared in the right central, parietal, posterior tempo\n-\nral and midline regions, accompanied by clinical seizures \napproximately 1 s later, manifested as a nauseous feeling \nand oropharyngeal automatism with impaired aware\n-\nness, and the seizures lasted approximately 50 s (Fig.  3)."
+    },
+    {
+      "block_id": "b0007",
+      "source_offsets": {
+        "start": 13611,
+        "end": 15706
+      },
+      "page_index": 2,
+      "text": "The frequency of the above episodes was 2–3 times/day. \nTherefore, the patient was diagnosed with anti-GAD65 \nLE, and a 5-day course of IVMP , 500  mg/day, was initi\n-\nated and gradually reduced. Subsequently, she took \nprednisone (1  mg/kg/day) and levetiracetam (750  mg/\nq12h) for maintenance therapy. The clinical improve\n-\nment was remarkable. Four months later, she received a \n5-day course of IVIG, 400  mg/kg/day, for consolidation \ntherapy. Currently, she takes only levetiracetam and feels \nnauseous occasionally.\nPatient 2: SPS, CA and intractable epilepsy\nThe patient is a 35-year-old male. His mother had suf -\nfered hyperthyroidism. He was also diagnosed with \nhyperthyroidism at 15  years old and developed noctur\n-\nnal GTCSs 2  years later. These attacks lasted 4–5  min \nwith a frequency of twice per month. At 24  years of \nage, he gradually developed barylalia and gait instabil\n-\nity, and these symptoms progressively deteriorated. The \nsecond form of seizure occurred at 25  years of age and \nmanifested as right-side deflection of the mouth, eyeball \nand head in an unconscious state, accompanied by oro\n-\npharyngeal automatism and groping action. The seizure \nlasted 2–3 min and also occurred at night, with 1–2 sei\n-\nzures/year. Three years later, the frequency of the second \ntype increased to once per week. He was diagnosed with \nlate-onset type one diabetes at the age of 31, and blood \nsugar was well controlled. Three years ago, he under\n-\nwent an excision of the epileptogenic focus in the left \nfrontal lobe due to intractable epilepsy. After the opera\n-\ntion, he received adequate doses of levetiracetam, clon -\nazepam and carbamazepine, and although the first type \nof seizure disappeared, no improvement was achieved in \nthe second type. Two months ago, the patient appeared \nto have a third form of seizure, which was character\n-\nized as a sudden trance and interruption of actions, last -\ning 2–20 min, with a frequency of one per day. In recent \ndays, he suffered paroxysmal muscle stiffness and limb \nrigidity, accompanied by soreness of the lumbar muscles"
+    },
+    {
+      "block_id": "b0008",
+      "source_offsets": {
+        "start": 15708,
+        "end": 19050
+      },
+      "page_index": 3,
+      "text": "Page 4 of 11Li et al. BMC Neurosci           (2020) 21:13 \nTable 1 Clinical characteristics of six GAD65 positive-AE patients from our center\nGAD65 glutamic acid decarboxylase 65, AE autoimmune encephalitis, F female, M male, SPS simple partial seizures, CPS complex partial seizures, sGTCS secondary generalized tonic–clonic seizures, MoCA montreal \ncognitive assessment, CI cognitive impairment, SPS* stiff person syndrome, CA cerebellar ataxia, NBC neurobehavioral changes, AEDs antiepileptic drugs, LEV levetiracetam, CBZ carbamazepine, CZP clonazepam, OXC \noxcarbazepine, MRI magnetic resonance imaging, L left, R right, B bilateral, (M)TL (medial) temporal lobe, Amy amygdala, Hipp hippocampus, FL frontal lobe, 18F-FDG-PET/CT 18-fluoro-deoxyglucose-positron emission \ntomography/computed tomography, Tha thalamus, LADA late-onset type one diabetic, MG myasthenia gravis, abs antibodies, ANA antinuclear antibodies, TPA thyroid peroxidase antibody, TGA  thyroglobulin antibody, \nCSF cerebrospinal fluid, IVMP intravenous methylprednisolone, IVIG intravenous immunoglobulin, MF mycophenolate mofetil, NA not available\nPatient 1 Patient 2 Patient 3 Patient 4 Patient 5 Patient 6\nAge/gender 35/F 35/M 29/F 49/F 27/F 33/F\nPast history Unremarkable Excision of epileptogenic \nfocus in 2015\nUnremarkable Unremarkable Excision of thymoma in \n2013\nL Thyroidectomy\nFamily history Unremarkable Hyperthyroidism of his \nmother\nUnremarkable Unremarkable Unremarkable Unremarkable\nSymptom onset 2018/08 2000/? 2016/06 2000/? 2009/? 2014/?\nInitial symptoms Seizure Seizure Seizure Seizure Seizure Seizure\nSeizure types SPS; CPS; sGTCS sGTCS; CPS SPS CPS; sGTCS CPS; sGTCS CPS\nCognition/MoCA Impaired/22 Impaired/22 Impaired/NA Impaired/19 Impaired/23 Impaired/23\nOther Symptoms CI CI,  SPS*, CA, NBC CI CI,  SPS* CI CI\nAEDs LEV, 1000 mg/day LEV, 1000 mg/day; CBZ, \n600 mg/day; CZP , 1 mg/\nday\nCBZ, 500 mg/day CZP , 4 mg/q8h; CBZ, \n400 mg/qd\nOXC, 300 mg/q12h; LEV, \n250 mg/q12h\nLEV, 625 mg/q12h; discon‑\ntinuation by herself later\nSeizure Frequency at the \ntime of Immunotherapy\nCPS, 2–3/day; sGTCS, 1–2/\nmonth\nsGTCS, zero; CPS, 1/day SPS, 2–6/week CPS, 2–4/week; sGTCS, \n1–2/month\nCPS, 1–2/day; sGTCS, 1–2/\nyear\nCPS, 2–13/day\nMRI lesions R MTL, Amy, Hipp Atrophy of L MTL, Hipp \nand B cerebellum\nB FL B MTL B Hipp L Hipp and Amy\n18F‑FDG‑PET/CT Hypometabolism of R TL NA Hypometabolism of R Tha, \nL Hipp and TL\nHypometabolism of L TL Hypometabolism of L TL Hypometabolism of L TL\nOthers Thymus residue No Thymus residue No Thymoma No\nImmunotherapy 2018/11 2018/11 2018/02 2019/03 2019/07 2019/04\nComorbidities No Hyperthyroidism, LADA No No MG; hyperthyroidism No\nSerum examination show‑\ning positive Abs\nNo ANA, anti‑mitochondrial \nM2 subtype abs, anti‑\nRo‑52 abs, TPA, TGA, anti‑\ncardiolipin abs\nTPA, TGA No TPA No\nAnti‑GAD65 Abs, serum 1:10 positive 1:100 positive NA, positive 1:320 positive 1:100 positive 1:100 positive\nAnti‑GAD65 Abs, CSF 1:100 positive 1:100 positive NA, positive 1:320 positive 1:320 positive 1:100 positive\nImmunotherapy IVMP and prednisone \ntapered; IVIG\nIVIG twice, and MF IVIG and prednisone \ntapered\nIVMP and IVIG, medrol \ntapered\nIVMP and IVIG, prednisone \ntapered\nIVMP and IVIG, prednisone \ntapered\nOutcome (2019.07) CPS, 2–3/month CPS, 3–4/month NA no more seizures;  SPS\n* \nimproved\nno more CPS and sGTCS CPS, 1–2/day"
+    },
+    {
+      "block_id": "b0009",
+      "source_offsets": {
+        "start": 19052,
+        "end": 19110
+      },
+      "page_index": 4,
+      "text": "Page 5 of 11\nLi et al. BMC Neurosci           (2020) 21:13"
+    },
+    {
+      "block_id": "b0010",
+      "source_offsets": {
+        "start": 19114,
+        "end": 20863
+      },
+      "page_index": 4,
+      "text": "and difficulty in lying flat; these symptoms were prone to \noccur when stimulated by environmental factors. In addi-\ntion, he occasionally developed palpitations, sweats and \nbreathing difficulties and became irritable and depressed.\nOn neurological examination, he exhibited bilateral \nexophthalmos, dysarthria and left blepharospasm. The \nmuscular tension and tendon reflex of the four limbs \nwere decreased. He could not stand still and complete \nthe finger-nose tests. The MoCA score was 22 (under\n-\ngraduate degree). Routine blood examinations suggested \nthat he had multiple kinds of autoimmune Abs simul -\ntaneously (seen in Table  1). Routine CSF analysis was \nnormal. The onconeural and neuronal surface Abs test \nshowed positive anti-GAD65 Abs in both serum and \nCSF. The brain MRI indicated postoperative changes and \nencephalatrophy (Fig.  1b–d). Electromyography showed \ncontinuous release of motor unit action potentials of the \nparaspinal muscles and rectus abdominis in a quiet state, \nwhich were obviously inhibited after intravenous diaze\n-\npam, supporting the diagnosis of SPS.\nFig. 1 Axial magnetic resonance imaging (MRI) findings of patient 1 and patient 2 in fluid‑attenuated inversion recovery (FLAIR) sequence. a \nPatient 1, a 35‑year‑old Chinese female, was diagnosed with typical limbic encephalitis, and MRI showed increased FLAIR signals of the right medial \ntemporal lobe, including the amygdala and hippocampus. b–d Patient 2, a 35‑year‑old male, was characterized by stiff‑person syndrome, cerebellar \nataxia and intractable epilepsy. MRI indicated postoperative changes in the left frontal lobe, volume reduction in the left temporal lobe and \nhippocampus, and encephalatrophy, especially in the bilateral cerebellum"
+    },
+    {
+      "block_id": "b0011",
+      "source_offsets": {
+        "start": 20865,
+        "end": 23457
+      },
+      "page_index": 5,
+      "text": "Page 6 of 11Li et al. BMC Neurosci           (2020) 21:13 \nA 5-day course of IVIG, 400 mg/kg/day, was initiated; \nsubsequently, he took mycophenolate mofetil (gradu -\nally increased to 1500 mg/q12h), levetiracetam (250 mg/\nq12h), clonazepam (1  mg/q12h) and carbamazepine \n(200  mg/q12h) for long-term maintenance therapy. The \nabove symptoms improved significantly. One month \nlater, he received another 5-day course of IVIG for con\n-\nsolidation therapy. Three months later, the SPS had \nalmost disappeared, the ataxia improved, he could walk \nby himself, and the number of seizures was reduced by \nmore than 50%.\nPatients from previous literatures\nSeventy references were identified, and the included \npatients were all diagnosed with anti-GAD65 AE. In \nTable 2, we present the gathered data of all patients with \ndifferent clinical manifestations and found that the effec\n-\ntiveness of IVMP was 45.56% (41/90) and that of IVIG \nwas 36.71% (29/79). There was no statistically signifi\n-\ncant difference between IVMP and IVIG. In addition, 35 \npatients received IVMP and IVIG combination therapy, \nbut only 42.86% (15/35) experienced an improvement in \ntheir clinical symptoms.\nWe further divided patients according to their typi\n-\ncal clinical manifestations. In Table  3, we present data \non the patients who manifested seizures, 42.65% (29/68) \nof whom were responsive to IVMP and 32.69% (17/52) \nresponded to IVIG (in comparison with Table  2, in \nTable 3, we added an extra patient, whose seizures were \nnot improved with IVMP , while IVMP was beneficial for \nCA) [28]. Among patients with SPS, 60.00% (3/5) ben\n-\nefited from IVMP , and 77.78% (7/9) gained ameliora -\ntion from IVIG. In patients with CA, the effectiveness \nof IVMP and IVIG was 28.57% (2/7) and 55.56% (5/9), \nrespectively (in Table  3, an extra patient was added in \ncomparison with Table  2 [28]). In these above patients \nfrom different subgroups, there was no difference in \ntherapeutic effect between the two kinds of treatment. \nFurthermore, in these AE patients who manifested sei\n-\nzures or CA, the effectiveness of combination therapy \nwas 44.83% (13/29) and 25.00% (1/4), respectively. In our \nanalysis, only one SPS patient received combination ther\n-\napy but acquired no benefits [7].\nAs shown in Table  3 and Additional file  2: Table  S1, \nof the 29 anti-GAD65 AE patients with tumors, 16 \n(55.17%) were male, and the median age was 61.8  years \nFig. 2 Interictal phase electroencephalogram of patient 1. There were frequent sharp waves and slow waves in the right temporal regions in the \ninterictal phase"
+    },
+    {
+      "block_id": "b0012",
+      "source_offsets": {
+        "start": 23459,
+        "end": 23517
+      },
+      "page_index": 6,
+      "text": "Page 7 of 11\nLi et al. BMC Neurosci           (2020) 21:13"
+    },
+    {
+      "block_id": "b0013",
+      "source_offsets": {
+        "start": 23521,
+        "end": 25394
+      },
+      "page_index": 6,
+      "text": "(IQR: 55.0–73.0  years). It should be pointed out that a \n5-year-old girl was diagnosed with AE 13  months after \nhematopoietic stem cell transplantation (because of \npineoblastoma); thus, the tumor and the AE may not \nhave been directly related [36]. The median age of the \nremaining 28 patients increased to 63.9  years (IQR: \n57.0–73.0  years), much higher than the median age of \n48 years for the 106 anti-GAD65 patients without tumors \nFig. 3 Ictal phase electroencephalogram of patient 1. One clinical seizure was detected, which presented as a nauseous feeling and oropharyngeal \nautomatism with impaired awareness, and the seizure lasted approximately 50 s second before sudden movement interruption of the patient, EEG \nshowed widespread low voltage in the right leads, followed by rapid rhythmic changes with low amplitude in the right middle‑posterior temporal \nregion initially, and spreading to the right middle temporal region 2 s later. The amplitude increased and the frequency decreased gradually and \nthen spread to adjacent leads, accompanied by electromyogram interference and motion artifacts\nTable 2 IVMP and  IVIG effectiveness of  total patients \nin the previous 70 references\nDifferences were evaluated by Chi square test\nIVMP intravenous methylprednisolone, IVIG intravenous immunoglobulin\nEffective number Ineffective number p\nIVMP 41 49\nIVIG 29 50 0.244\nTable 3 IVMP and IVIG effectiveness of patients with different clinical manifestations in the previous 70 references\nDifferences were evaluated by Chi square test or Fisher’s exact test*\nEN effective numbers, IEN ineffective numbers, IVMP intravenous methylprednisolone, IVIG intravenous immunoglobulin\nPatients with seizures Patients with SPS Patients with CA Patients with tumors\nEN IEN p EN IEN p EN IEN p EN IEN p\nIVMP 29 39 3 2 2 5 5 12\nIVIG 17 35 0.266 7 2 0.580* 5 4 0.358* 8 11 0.429"
+    },
+    {
+      "block_id": "b0014",
+      "source_offsets": {
+        "start": 25396,
+        "end": 28877
+      },
+      "page_index": 7,
+      "text": "Page 8 of 11Li et al. BMC Neurosci           (2020) 21:13 \nin a previous study [7]. The most common symptom was \nSPS (11/29, 37.93%), followed by LE and nonlimbic AE \n(8/29 and 4/29, respectively). Among these patients, the \ntherapeutic effect was dismal, with 29.41% and 42.11% \nimprovement rates in symptoms for IVMP and IVIG, \nrespectively, and no significant difference was found. \nMoreover, the combination therapy was effective for \nonly 20.00% (2/10) of patients. In addition, 21 patients \n(72.41%) had oncological treatment (surgery, chemother\n-\napy, and radiotherapy alone or combined). Other clinical \ndata are listed in Additional file 2: Table S1.\nIt should be mentioned that we cannot compare the \nefficiency of combination therapy with monotherapy \nbecause of their statistical overlaps.\nDiscussion\nScreening for anti-GAD65 Abs has been widely reported \namong type 1 diabetic patients. However, increased \nawareness of neurologists in considering patients with \nanti-GAD65 Abs remains challenging. Among adult epi\n-\nlepsy patients with unknown etiology, three recent stud -\nies found that 1.7% (7/416) [37], 16.1% (18/112) [38], and \n21.7% (5/23) of patients were positive for serum anti-\nGAD65 Abs [39]. The anti-GAD65-Ab positive rate was \n17.0% (9/53) in LE patients [40]. Hence, the incidence of \nanti-GAD65 diseases may be seriously underestimated in \npractice. Here, we have described the clinical informa\n-\ntion of six anti-GAD65 AE patients in our cohort, five \nof whom were diagnosed after years of repeated medi\n-\ncal consultations. Therefore, it should be noted that the \ntime from symptom onset to immunotherapy was gen\n-\nerally very long due to the lack of awareness, and some \npatients, including one of ours, even underwent brain \ntissue resection for drug-resistant epilepsy, which usually \nled to unsatisfactory outcomes [11, 41, 42].\nCurrently, there is no consensus on the treatment of \nanti-GAD65 AE. However, we believe that anti-GAD65 \nAbs are unique compared with other onconeural Abs. \nPatients with neurological syndromes associated with \nanti-GAD65 Abs are not typically considered at very \nhigh risk for cancer [7], and their prognosis seems to be \nvery different from that of other traditional onconeu\n-\nral Abs [6, 25]. Jones et  al. proved that the detection of \nanti-GAD65 Abs in adult autoimmune CA patients may \npredict relatively better immunotherapy response and \nneurological outcomes, similar to those of patients sero\n-\npositive for neuronal surface Abs [6]. In contrast, the \nbeneficial effects of immunotherapy on seizure frequency \nand cognition can be acquired only in paraneoplastic Ab-\npositive LE patients but not obviously in anti-GAD65 LE \npatients [25]. Furthermore, according to considerable \nresearch efforts devoted to the comparison of AE patients \nwith anti-GAD65 Abs and those with anti-voltage gated \npotassium channel Abs, researchers have verified that the \nformer tend to be seriously resistant to AEDs and immu\n-\nnotherapy, resulting in a chronic situation [12, 40, 43].\nGagnon et al. compiled an excellent review of 31 arti -\ncles, describing the detailed treatment regimens of \npatients [8]. In contrast, our study considered only the \nresponse of patients to IVMP or IVIG due to the com\n-\nplexity of clinical treatments, and we attempted to \nanalyze the effectiveness of the chosen treatments for \npatients from 70 previous articles. In patients who \nreceived IVMP , the effective rate was 45.56% (41/90),"
+    },
+    {
+      "block_id": "b0015",
+      "source_offsets": {
+        "start": 28879,
+        "end": 31198
+      },
+      "page_index": 7,
+      "text": "which was slightly higher than that of 36.71% (29/79) for \npatients who received IVIG. In the study of Gagnon et al. \n[8], the favorable outcome rates were 46.15% (6/13) for \nIVMP and 50.00% (2/4) for IVIG, and the effective rate \nfor IVMP was similar to ours; however, the number of \npatients in our study was much more than that in their \nstudy because we searched more comprehensive refer\n-\nences and included more patients. In patients with sei -\nzures, the response rates of IVMP and IVIG were 42.65% \n(29/68) and 32.69% (17/52), respectively, which were \nsimilar when counting all patients. Although we cannot \nrecommend which method is more effective because \nno significant difference between IVMP and IVIG was \nfound, importantly, it is very difficult for these patients to \nbecome seizure free from only AEDs [12, 13], and immu\n-\nnotherapy is currently still indispensable. In patients with \nSPS or CA, IVIG seemed to have a slightly better thera\n-\npeutic effect than IVMP (77.78% vs. 60.00%; 55.56% vs. \n28.57%). Consistent with our results, in a randomized, \ndouble-blinded, placebo-controlled crossover trial in \nanti-GAD65-Ab-positive SPS patients, IVIG resulted in \nsignificant improvements in objective stiffness param\n-\neters and activities of daily living [44], and corticosteroids \nor other therapies may be very disappointing [45]. How\n-\never, as for CA, a study of 118 CA patients (including 41 \nanti-GAD65-Ab-positive cases) drew a different conclu\n-\nsion from ours, suggesting that corticosteroids may be \nthe best regimen [6]. Considering the small sample size \nand the heterogeneity of subjects, further research is \nneeded. Theoretically, combined therapy should be bet\n-\nter than monotherapy, but the effective rate was disap -\npointing in our research, with only 15/35 (42.86%) in all \npatients and 13/29 (44.83%), 0/1 (0%), and 1/4 (25.00%) \nin epilepsy, SPS and CA patients, respectively. A similar \nconclusion was obtained in the study of Gagnon et  al. \nwhere steroids plus IVIG or plasma exchange had benefi\n-\ncial effects on only 6/18 (33.33%) anti-GAD65 LE patients \n[8]. One important reason contributing to the results is \nthat patients who received combined immunotherapy \nwere usually in serious conditions. Although we cannot \nmake comparisons with monotherapy due to statistical"
+    },
+    {
+      "block_id": "b0016",
+      "source_offsets": {
+        "start": 31200,
+        "end": 31258
+      },
+      "page_index": 8,
+      "text": "Page 9 of 11\nLi et al. BMC Neurosci           (2020) 21:13"
+    },
+    {
+      "block_id": "b0017",
+      "source_offsets": {
+        "start": 31262,
+        "end": 34716
+      },
+      "page_index": 8,
+      "text": "overlaps, the method is still highly recommendable and \nvery promising.\nIn our study, we also observed 29 anti-GAD65 AE \npatients who had coexisting tumors; in general, their \nreactions to immunotherapy were unsatisfactory. Ten of \nthem received combined treatment of IVMP and IVIG, \nbut only two benefited. Among the remaining 19 patients, \nthe effectiveness of IVMP and IVIG was 55.56% (5/9) \nand 72.73% (8/11), respectively (one patient received \nIVMP and IVIG successively, not in combination); how\n-\never, when calculated together, the improvement rates of \nIVMP and IVIG slumped to 29.41% (5/17) and 42.11% \n(8/19), respectively. Interestingly, a good outcome may \nbe predicted for patients who had coexisting thymoma; \nonly one out of 8 did not respond to immunotherapy, but \nthe symptoms could be relieved by benzodiazepines or \nbaclofen [46]. In contrast, only two out of 11 lung cancer \npatients acquired temporary improvement with immu\n-\nnotherapy, and one died in a short period of time [47]. \nThe results are consistent with a previous observation, \nwhich found that 46.67% (7/15) of anti-GAD65-asso\n-\nciated paraneoplastic neurological syndrome patients \nacquired clinical improvement or stability under various \nimmunotherapy treatments, and amelioration occurred \nin only 4 thymic tumor patients, while only 1/6 of lung \ncancer patients was stable, and the rest were all dete\n-\nriorated [7]. In addition to the older age compared with \ntumor-negative anti-GAD65 AE patients, which probably \nled to poor prognosis, tumor treatment is also a factor \nthat needs to be considered. Among patients undergo\n-\ning active treatment of primary tumors, 13/21 (61.90%) \ngained benefits from immunotherapy, while no patients \nimproved if the tumor was not managed. Considering the \nadverse influences of particular tumor types, old age and \npassive tumor treatment on prognosis, the underlying \ntumors should be screened in some conditions early [7], \nand elaborate studies involving various factors are criti\n-\ncally needed to guide future therapy.\nThere was no denying that some anti-GAD65 patients \ncompletely recovered without immunotherapy; how -\never, they were reported just in scattered case reports \n[12, 19, 23, 48, 49]. We firmly believe that this AE was \ncharacterized as a form of chronic, non-remitting dis\n-\norder in most cases, which was consistent with the \nstandpoint from other researchers [8 , 11, 40]. Several \nmedical centers also tried to summarize their own \ntreatment experiences and expected to offer the best \ntreatment plan, but all ended in failure [9 , 11, 28, 40, \n48]. Seven anti-GAD65 LE patients received monthly \nhigh-intensity immunotherapy, with a median total \nmethylprednisolone equivalent dose up to 18  g, but \nnone became seizure free [40]. Malter et al. retrospec\n-\ntively analyzed the complex treatment regimens of \n13 anti-GAD65 epilepsy patients and found that the \nseizure and cognitive response to immunotherapies \nwere poor, with the most frequently achieved seizure \nresponse (≥  50% reduction) occurring in only 45% \nof patients under intensive corticosteroid treatment \n(median 19 g methylprednisolone equivalent) [11]. Pit\n-\ntock et al. found that the benefits from a trial of immu -\nnotherapies in 27 patients with anti-GAD65 Abs were \ntemporary [9 ]. Identical conclusions were obtained \nin 12 other patients [28, 48], making the routine use of \nimmunotherapy debatable. Nevertheless, anti-GAD65-"
+    },
+    {
+      "block_id": "b0018",
+      "source_offsets": {
+        "start": 34717,
+        "end": 36915
+      },
+      "page_index": 8,
+      "text": "associated SPS is likely to be an exception because \nmore than 70% of patients can obtain relief from IVIG, \nand notably, the abovementioned clinical trial further \nclarifies the validity of IVIG [44].\nOur study also had some limitations. First, the retro\n-\nspective analysis of the literature had the following inher-\nent limitations: the diverse vocabularies could have led to \na certain degree of misinterpretation; the description of \nclinical features, investigations, and outcomes also dif\n-\nfered from one article to another. Second, we abandoned \nsome related literature because we could not obtain \nthe prognosis after immunotherapy, leading to statisti\n-\ncal bias. Third, different hospitals had their own experi -\nence in choosing IVMP , IVIG or others, and the absence \nof IVMP or IVIG therapy did not mean that the patient \nwas insensitive to it. Fourth, we excluded many patients \nwho received combination therapy (IVMP/IVIG and oth\n-\ners) because we could not judge which drug had an effect. \nFifth, there was a certain ineluctable subjectivity in our \njudgment of reactivity to therapy. Sixth, there were sig\n-\nnificant differences in the follow-up time of patients, and \nwe focused only on whether the clinical symptoms were \nimproved after immunotherapy, leading to the inability \nto judge the effective time of IVIG and IVMP treatment. \nAlthough many patients were initially sensitive to immu\n-\nnotherapy, they will relapse inevitably after a period of \ntime [13, 24, 36, 41, 48, 50–54], which we considered may \nbe a short-term outcome. Considering the shortcomings \nof our research and limitations in this field, therapeutic \nstrategies cannot be reasonably recommended currently \nexcept IVIG for anti-GAD65-associated SPS, and long-\nterm immunotherapy may be the best option.\nConclusions\nHere, we reported six anti-GAD65 AE patients and found \nthat they all achieved clinical improvements in a short \nperiod of time after immunotherapy. However, by sum\n-\nmarizing the therapeutic effects of previous patients, we \nhave confirmed that this AE usually has a poor response \nto IVMP or IVIG, except anti-GAD65-associated SPS. \nLarger prospective studies enrolling large numbers of"
+    },
+    {
+      "block_id": "b0019",
+      "source_offsets": {
+        "start": 36917,
+        "end": 40406
+      },
+      "page_index": 9,
+      "text": "Page 10 of 11Li et al. BMC Neurosci           (2020) 21:13 \npatients are required to identify the optimal therapeutic \nstrategy.\nSupplementary information\nSupplementary information accompanies this paper at https ://doi.\norg/10.1186/s1286 8‑020‑00561 ‑9.\n Additional file 1. References included in the statistics. We conducted \na search on PubMed for articles up to April 2019 and finally included 70 \nreferences. The article type, clinical characteristics of each patient, and \nwhether the patient received combined therapy are noted. \nAdditional file 2: Tabe S1. Clinical data of 29 patients who had coexist‑\ning tumors in previous references. The clinical information, concomitant \ntumor, tumor therapy and response to immunotherapy of each patient \nare listed.\nAbbreviations\nGAD65: Glutamic acid decarboxylase 65; Abs: Antibodies; CSF: Cerebrospinal \nfluid; SPS: Stiff‑person syndrome; CA: Cerebellar ataxia; LE: Limbic encephalitis; \nAE: Autoimmune encephalitis; IVMP: Intravenous methylprednisolone; IVIG: \nIntravenous immunoglobulin; AEDs: Antiepileptic drugs; GTCSs: Generalized \ntonic–clonic seizures; MoCA: Montreal Cognitive Assessment; MRI: Magnetic \nresonance imaging; EEG: Electroencephalogram.\nAcknowledgements\nNot applicable.\nAuthors’ contributions\nRJL, YDZ, QW, XQS and ZML provided the clinical data. TRL and RJL acquired \nthe literature data. TRL drafted the manuscript. RJL critically revised the \nmanuscript for important intellectual content. All authors read and approved \nthe final manuscript.\nFunding\nThis work was supported by grants from the Application Research of Capital \nClinical Characteristics (No. Z181100001718082), the Beijing Dongcheng \nDistrict Outstanding Talent Funding Project (No. 2019DCT‑M‑18), the National \nNatural Science Foundation of China (No. 81301119), the Beijing Municipal \nAdministration of Hospitals’ Youth Programme (No. QML20160504), the China \nAssociation Against Epilepsy‑UCB Research Fund (No. CAAE‑ UCB2016008) \nand the Natural Science Foundation of Capital Medical University (No. \nPYZ2017055). The funding bodies had no influence on the design of the study, \ncollection, analysis, and interpretation of data or writing of the manuscript.\n Availability of data and materials\nThe datasets supporting the conclusions of this article are available when \ncontacting authors.\nEthics approval and consent to participate\nThe study was approved by the Medical Ethics Committee of Beijing Tiantan \nHospital, Capital Medical University, and was carried out in accordance with \nthe Declaration of Helsinki. We confirm that we have read the Journal’s \nposition on issues involved in ethical publication and affirm that this report \nis consistent with those guidelines. All participants gave written informed \nconsent to participate.\nConsent for publication\nAll participants provided written consent for publication for the publication of \nclinical details.\nCompeting interests\nOn behalf of all authors, the corresponding author confirms no conflict of \ninterest.\nAuthor details\n1 Department of Neurology, Beijing Tiantan Hospital, Capital Medical Univer‑\nsity; China National Clinical Research Center for Neurological Diseases, 119 \nSouth Fourth Ring West Road, Fengtai District, Beijing 100070, People’s Repub‑\nlic of China. 2 Department of Neurology, Xuanwu Hospital of Capital Medical \nUniversity, 45 Chang Chun Road, Xicheng District, Beijing 100053, People’s \nRepublic of China. 3 Department of Neurology, the Second Hospital of Hebei"
+    },
+    {
+      "block_id": "b0020",
+      "source_offsets": {
+        "start": 40408,
+        "end": 43906
+      },
+      "page_index": 9,
+      "text": "Medical University, Hebei Medical University, 215 Heping West Road, Xinhua \nDistrict, Shijiazhuang 050000, People’s Republic of China. \nReceived: 4 October 2019   Accepted: 21 March 2020\nReferences\n 1. Daif A, Lukas RV, Issa NP , Javed A, VanHaerents S, Reder AT, Tao JX, Warnke \nP , Rose S, Towle VL, et al. Antiglutamic acid decarboxylase 65 (GAD65) \nantibody‑associated epilepsy. Epilepsy Behav. 2018;80:331–6.\n 2. Dubey D, Pittock SJ, Kelly CR, McKeon A, Lopez‑Chiriboga AS, Lennon VA, \nGadoth A, Smith CY, Bryant SC, Klein CJ, et al. Autoimmune encephalitis \nepidemiology and a comparison to infectious encephalitis. Ann Neurol. \n2018;83(1):166–77.\n 3. Hackert JK, Müller L, Rohde M, Bien CG, Köhling R, Kirschstein T. Anti‑\nGAD65 containing cerebrospinal fluid does not alter GABAergic transmis‑\nsion. Front Cell Neurosci. 2016;10:130.\n 4. Gresa‑Arribas N, Ariño H, Martínez‑Hernández E, Petit‑Pedrol M, Sabater \nL, Saiz A, Dalmau J, Graus F. Antibodies to inhibitory synaptic proteins in \nneurological syndromes associated with glutamic acid decarboxylase \nautoimmunity. PLoS ONE. 2015;10(3):e0121364.\n 5. McKeon A, Tracy JA. GAD65 neurological autoimmunity. Muscle Nerve. \n2017;56(1):15–27.\n 6. Jones AL, Flanagan EP , Pittock SJ, Mandrekar JN, Eggers SD, Ahlskog JE, \nMcKeon A. Responses to and outcomes of treatment of autoimmune \ncerebellar ataxia in adults. JAMA Neurol. 2015;72(11):1304–12.\n 7. Ariño H, Höftberger R, Gresa‑Arribas N, Martínez‑Hernández E, Armangue \nT, Kruer MC, Arpa J, Domingo J, Rojc B, Bataller L, et al. Paraneoplastic \nneurological syndromes and glutamic acid decarboxylase antibodies. \nJAMA Neurol. 2015;72(8):874–81.\n 8. Gagnon MM, Savard M. Limbic encephalitis associated with GAD65 \nantibodies: brief review of the relevant literature. Can J Neurol Sci. \n2016;43(4):486–93.\n 9. Pittock SJ, Yoshikawa H, Ahlskog JE, Tisch SH, Benarroch EE, Kryzer TJ, \nLennon VA. Glutamic acid decarboxylase autoimmunity with brain‑\nstem, extrapyramidal, and spinal cord dysfunction. Mayo Clin Proc. \n2006;81(9):1207–14.\n 10. Korff CM, Parvex P , Cimasoni L, Wilhelm‑Bals A, Hampe CS, Schwitzgebel \nVM, Michel M, Siegrist CA, Lalive PH, Seeck M. Encephalitis associated \nwith glutamic acid decarboxylase autoantibodies in a child: a treatable \ncondition. Arch Neurol. 2011;68(8):1065–8.\n 11. Malter MP , Frisch C, Zeitler H, Surges R, Urbach H, Helmstaedter C, Elger \nCE, Bien CG. Treatment of immune‑mediated temporal lobe epilepsy \nwith GAD antibodies. Seizure. 2015;30:57–63.\n 12. Feyissa AM, López Chiriboga AS, Britton JW. Antiepileptic drug therapy in \npatients with autoimmune epilepsy. Neurol Neuroimmunol Neuroin‑\nflamm. 2017;4(4):e353.\n 13. Farooqi MS, Lai Y, Lancaster E, Schmitt SE, Sachais BS. Therapeutic plasma \nexchange and immunosuppressive therapy in a patient with anti‑GAD \nantibody‑related epilepsy: quantification of the antibody response. J Clin \nApher. 2015;30(1):8–14.\n 14. Olson JA, Olson DM, Sandborg C, Alexander S, Buckingham B. Type 1 \ndiabetes mellitus and epilepsia partialis continua in a 6‑year‑old boy with \nelevated anti‑GAD65 antibodies. Pediatrics. 2002;109(3):E50.\n 15. Sinnreich M, Assal F, Hefft S, Magistris MR, Chizzolini C, Landis T, Burkhard \nPR. Anti‑GAD antibodies and breast cancer in a patient with stiff‑person \nsyndrome: a puzzling association. Eur Neurol. 2001;46(1):51–2.\n 16. Liu B, Zhou Y, Meng L, Skinner H. A survival case of super‑refractory status \nepilepticus due to glutamic acid decarboxylase antibodies‑associated"
+    },
+    {
+      "block_id": "b0021",
+      "source_offsets": {
+        "start": 43908,
+        "end": 44282
+      },
+      "page_index": 9,
+      "text": "limbic encephalitis. Cureus. 2018;10(8):e3125.\n 17. Hagiwara H, Enomoto‑Nakatani S, Sakai K, Ugawa Y, Kusunoki S, Kanaz‑\nawa I. Stiff‑person syndrome associated with invasive thymoma: a case \nreport. J Neurol Sci. 2001;193(1):59–62.\n 18. Sharma CM, Pandey RK, Kumawat BL, Khandelwal D, Gandhi P . A unique \ncombination of autoimmune limbic encephalitis, type 1 diabetes, and"
+    },
+    {
+      "block_id": "b0022",
+      "source_offsets": {
+        "start": 44284,
+        "end": 44343
+      },
+      "page_index": 10,
+      "text": "Page 11 of 11\nLi et al. BMC Neurosci           (2020) 21:13"
+    },
+    {
+      "block_id": "b0023",
+      "source_offsets": {
+        "start": 44347,
+        "end": 47817
+      },
+      "page_index": 10,
+      "text": "Stiff person syndrome associated with GAD‑65 antibody. Ann Indian \nAcad Neurol. 2016;19(1):146–9.\n 19. Petit‑Pedrol M, Armangue T, Peng X, Bataller L, Cellucci T, Davis R, \nMcCracken L, Martinez‑Hernandez E, Mason WP , Kruer MC, et al. \nEncephalitis with refractory seizures, status epilepticus, and antibodies \nto the GABAA receptor: a case series, characterisation of the antigen, and \nanalysis of the effects of antibodies. Lancet Neurol. 2014;13(3):276–86.\n 20. Quek AM, Britton JW, McKeon A, So E, Lennon VA, Shin C, Klein C, \nWatson RE, Kotsenas AL, Lagerlund TD, et al. Autoimmune epilepsy: \nclinical characteristics and response to immunotherapy. Arch Neurol. \n2012;69(5):582–93.\n 21. Rakocevic G, Hussain A. Stiff person syndrome improvement with \nchemotherapy in a patient with cutaneous T cell lymphoma. Muscle \nNerve. 2013;47(6):938–9.\n 22. Ances BM, Vitaliani R, Taylor RA, Liebeskind DS, Voloschin A, Houghton DJ, \nGaletta SL, Dichter M, Alavi A, Rosenfeld MR, et al. Treatment‑responsive \nlimbic encephalitis identified by neuropil antibodies: MRI and PET cor‑\nrelates. Brain. 2005;128(Pt 8):1764–77.\n 23. Haberlandt E, Bast T, Ebner A, Holthausen H, Kluger G, Kravljanac R, Kröll‑\nSeger J, Kurlemann G, Makowski C, Rostasy K, et al. Limbic encephalitis in \nchildren and adolescents. Arch Dis Child. 2011;96(2):186–91.\n 24. Kojima G, Inaba M, Bruno MK. PET‑positive extralimbic presentation \nof anti‑glutamic acid decarboxylase antibody‑associated encephalitis. \nEpileptic Disord. 2014;16(3):358–61.\n 25. Hansen N, Widman G, Witt JA, Wagner J, Becker AJ, Elger CE, Helmstaed‑\nter C. Seizure control and cognitive improvement via immunotherapy in \nlate onset epilepsy patients with paraneoplastic versus GAD65 autoanti‑\nbody‑associated limbic encephalitis. Epilepsy Behav. 2016;65:18–24.\n 26. Ben Achour N, Ben Younes T, Rebai I, Ben Ahmed M, Kraoua I, Ben Youssef‑\nTurki I. Severe dysautonomia as a main feature of anti‑GAD encephalitis: \nreport of a paediatric case and literature review. Eur J Paediatr Neurol. \n2018;22(3):548–51.\n 27. Finelli PF. Autoimmune limbic encephalitis with GAD antibodies. Neuro‑\nhospitalist. 2011;1(4):178–81.\n 28. Lilleker JB, Biswas V, Mohanraj R. Glutamic acid decarboxylase (GAD) anti‑\nbodies in epilepsy: diagnostic yield and therapeutic implications. Seizure. \n2014;23(8):598–602.\n 29. Akaishi T, Jin K, Kato K, Itabashi H, Misu T, Tateyama M, Iwasaki M, Aoki M, \nNakasato N. Clinical characteristics of four patients with temporal lobe \nepilepsy associated with elevated anti‑GAD antibodies. Rinsho Shinkei‑\ngaku. 2015;55(11):804–9.\n 30. Specchio N, Fusco L, Claps D, Vigevano F. Epileptic encephalopathy in \nchildren possibly related to immune‑mediated pathogenesis. Brain Dev. \n2010;32(1):51–6.\n 31. Knudsen A, Bredholt G, Storstein A, Oltedal L, Davanger S, Krossnes B, \nHonnorat J, Vedeler CA. Antibodies to CRMP3‑4 associated with limbic \nencephalitis and thymoma. Clin Exp Immunol. 2007;149(1):16–22.\n 32. Silverman IE. Paraneoplastic stiff limb syndrome. J Neurol Neurosurg \nPsychiatry. 1999;67(1):126–7.\n 33. Agarwal PA, Ichaporia NR. Glutamic acid decarboxylase antibody‑positive \nparaneoplastic stiff limb syndrome associated with carcinoma of the \nbreast. Neurol India. 2010;58(3):449–51.\n 34. Ganor Y, Goldberg‑Stern H, Amrom D, Lerman‑Sagie T, Teichberg VI, Pelled \nD, Futerman AH, Zeev BB, Freilinger M, Verheulpen D, et al. Autoimmune \nepilepsy: some epilepsy patients harbor autoantibodies to glutamate"
+    },
+    {
+      "block_id": "b0024",
+      "source_offsets": {
+        "start": 47819,
+        "end": 51314
+      },
+      "page_index": 10,
+      "text": "receptors and dsDNA on both sides of the blood‑brain barrier, which may \nkill neurons and decrease in brain fluids after hemispherotomy. Clin Dev \nImmunol. 2004;11(3–4):241–52.\n 35. Ganor Y, Freilinger M, Dulac O, Levite M. Monozygotic twins discordant \nfor epilepsy differ in the levels of potentially pathogenic autoantibodies \nand cytokines. Autoimmunity. 2005;38(2):139–50.\n 36. Nagai K, Maekawa T, Terashima H, Kubota M, Ishiguro A. Severe anti‑GAD \nantibody‑associated encephalitis after stem cell transplantation. Brain \nDev. 2019;41(3):301–4.\n 37. Brenner T, Sills GJ, Hart Y, Howell S, Waters P , Brodie MJ, Vincent A, Lang B. \nPrevalence of neurologic autoantibodies in cohorts of patients with new \nand established epilepsy. Epilepsia. 2013;54(6):1028–35.\n 38. Dubey D, Alqallaf A, Hays R, Freeman M, Chen K, Ding K, Agostini M, \nVernino S. Neurological autoantibody prevalence in epilepsy of unknown \netiology. JAMA Neurol. 2017;74(4):397–402.\n 39. Falip M, Carreño M, Miró J, Saiz A, Villanueva V, Quílez A, Molins A, Barceló \nI, Sierra A, Graus F. Prevalence and immunological spectrum of temporal \nlobe epilepsy with glutamic acid decarboxylase antibodies. Eur J Neurol. \n2012;19(6):827–33.\n 40. Malter MP , Helmstaedter C, Urbach H, Vincent A, Bien CG. Antibodies to \nglutamic acid decarboxylase define a form of limbic encephalitis. Ann \nNeurol. 2010;67(4):470–8.\n 41. Hansen N, Ernst L, Rüber T, Widman G, Becker AJ, Elger CE, Helmstaedter \nC. Pre‑ and long‑term postoperative courses of hippocampus‑associated \nmemory impairment in epilepsy patients with antibody‑associated limbic \nencephalitis and selective amygdalohippocampectomy. Epilepsy Behav. \n2018;79:93–9.\n 42. Bonello M, Larner AJ, Marson AG. Profound amnesia after temporal lobec‑\ntomy: an autoimmune process resembling patient hm. Case Rep Neurol. \n2014;6(3):251–5.\n 43. Frisch C, Malter MP , Elger CE, Helmstaedter C. Neuropsychological course \nof voltage‑gated potassium channel and glutamic acid decarboxylase \nantibody related limbic encephalitis. Eur J Neurol. 2013;20(9):1297–304.\n 44. Dalakas MC, Fujii M, Li M, Lutfi B, Kyhos J, McElroy B. High‑dose intra‑\nvenous immune globulin for stiff‑person syndrome. N Engl J Med. \n2001;345(26):1870–6.\n 45. Alexopoulos H, Dalakas MC. Immunology of stiff person syndrome and \nother GAD‑associated neurological disorders. Expert Rev Clin Immunol. \n2013;9(11):1043–53.\n 46. Thomas S, Critchley P , Lawden M, Farooq S, Thomas A, Proudlock FA, \nConstantinescu CS, Gottlob I. Stiff person syndrome with eye move‑\nment abnormality, myasthenia gravis, and thymoma. J Neurol Neurosurg \nPsychiatry. 2005;76(1):141–2.\n 47. Spitz M, Ferraz HB, Barsottini OG, Gabbai AA. Progressive encephalomyeli‑\ntis with rigidity: a paraneoplastic presentation of oat cell carcinoma of the \nlung. Case report. Arq Neuropsiquiatr. 2004;62(2B):547–9.\n 48. Mäkelä KM, Hietaharju A, Brander A, Peltola J. Clinical management of \nepilepsy with glutamic acid decarboxylase antibody positivity: the inter‑\nplay between immunotherapy and anti‑epileptic drugs. Front Neurol. \n2018;9:579.\n 49. Graus F, Saiz A, Lai M, Bruna J, López F, Sabater L, Blanco Y, Rey MJ, Ribalta \nT, Dalmau J. Neuronal surface antigen antibodies in limbic encephalitis: \nclinical‑immunologic associations. Neurology. 2008;71(12):930–6.\n 50. Akman CI, Patterson MC, Rubinstein A, Herzog R. Limbic encephalitis \nassociated with anti‑GAD antibody and common variable immune \ndeficiency. Dev Med Child Neurol. 2009;51(7):563–7."
+    },
+    {
+      "block_id": "b0025",
+      "source_offsets": {
+        "start": 51316,
+        "end": 52273
+      },
+      "page_index": 10,
+      "text": "51. Grilo E, Pinto J, Caetano JS, Pereira H, Cardoso P , Cardoso R, Dinis I, Pereira \nC, Fineza I, Mirante A. Type 1 diabetes and GAD65 limbic encepha‑\nlitis: a case report of a 10‑year‑old girl. J Pediatr Endocrinol Metab. \n2016;29(8):985–90.\n 52. García García ME, Castrillo SM, Morales IG, Di Capua Sacoto D, Dolado \nAM. Acute amnesia and seizures in a young female. Epileptic Disord. \n2013;15(4):455–60.\n 53. Georgieva Z, Parton M. Cerebellar ataxia and epilepsy with anti‑GAD \nantibodies: treatment with IVIG and plasmapheresis. BMJ Case Rep. \n2014;2014:2013202314.\n 54. Markakis I, Alexopoulos H, Poulopoulou C, Akrivou S, Papathanasiou A, \nKatsiva V, Lyrakos G, Gekas G, Dalakas MC. Immunotherapy‑responsive \nlimbic encephalitis with antibodies to glutamic acid decarboxylase. J \nNeurol Sci. 2014;343(1–2):192–4.\nPublisher’s Note\nSpringer Nature remains neutral with regard to jurisdictional claims in pub‑\nlished maps and institutional affiliations."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 35-year-old female reported sudden onset of noctur -\nnal generalized tonic–clonic seizures (GTCSs) 3 months \nago; these GTCSs lasted approximately 1 min, with 5 epi\n-\nsodes in total. In addition, she also had an inexplicable \nsense of fear, several times per day. She received adequate \ndoses of levetiracetam, and the effect was not obvious. \nDuring the past 2  months, she experienced 3–4 con\n-\nscious nauseous sensations per week. Initial neurologi -\ncal examination revealed only a decrease in calculation \ncapacity. The Montreal Cognitive Assessment (MoCA) \nscore was 22 (primary school degree) on a scale ranging \nfrom 0 to 30. Routine examinations of blood and CSF \nwere normal. Comprehensive onconeural and neuronal \nsurface Abs screening in the serum and CSF, detected by \nthe cell-based transfection immunofluorescence assay \nmethod, showed only positive anti-GAD65 Abs. Brain \nmagnetic resonance imaging (MRI) showed abnormal \nsignals of the right medial temporal lobe (Fig.  1a). The \nlong-term video electroencephalogram (EEG) showed \nsignificant frequent sharp waves, slow waves and sharp-\nslow complex waves in the right frontal and temporal \nregions during the interictal phase (Fig.  2). During the \nictal phase, we found that the EEG rhythmic changes first \nappeared in the right central, parietal, posterior tempo\n-\nral and midline regions, accompanied by clinical seizures \napproximately 1 s later, manifested as a nauseous feeling \nand oropharyngeal automatism with impaired aware\n-\nness, and the seizures lasted approximately 50 s (Fig.  3).",
+      "source_offsets": {
+        "start": 12044,
+        "end": 13609
+      },
+      "source_block_id": "b0006",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "The frequency of the above episodes was 2–3 times/day. \nTherefore, the patient was diagnosed with anti-GAD65 \nLE, and a 5-day course of IVMP , 500  mg/day, was initi\n-\nated and gradually reduced. Subsequently, she took \nprednisone (1  mg/kg/day) and levetiracetam (750  mg/\nq12h) for maintenance therapy. The clinical improve\n-\nment was remarkable. Four months later, she received a \n5-day course of IVIG, 400  mg/kg/day, for consolidation \ntherapy. Currently, she takes only levetiracetam and feels \nnauseous occasionally.\nPatient 2: SPS, CA and intractable epilepsy\nThe patient is a 35-year-old male. His mother had suf -\nfered hyperthyroidism. He was also diagnosed with \nhyperthyroidism at 15  years old and developed noctur\n-\nnal GTCSs 2  years later. These attacks lasted 4–5  min \nwith a frequency of twice per month. At 24  years of \nage, he gradually developed barylalia and gait instabil\n-\nity, and these symptoms progressively deteriorated. The \nsecond form of seizure occurred at 25  years of age and \nmanifested as right-side deflection of the mouth, eyeball \nand head in an unconscious state, accompanied by oro\n-\npharyngeal automatism and groping action. The seizure \nlasted 2–3 min and also occurred at night, with 1–2 sei\n-\nzures/year. Three years later, the frequency of the second \ntype increased to once per week. He was diagnosed with \nlate-onset type one diabetes at the age of 31, and blood \nsugar was well controlled. Three years ago, he under\n-\nwent an excision of the epileptogenic focus in the left \nfrontal lobe due to intractable epilepsy. After the opera\n-\ntion, he received adequate doses of levetiracetam, clon -\nazepam and carbamazepine, and although the first type \nof seizure disappeared, no improvement was achieved in \nthe second type. Two months ago, the patient appeared \nto have a third form of seizure, which was character\n-\nized as a sudden trance and interruption of actions, last -\ning 2–20 min, with a frequency of one per day. In recent \ndays, he suffered paroxysmal muscle stiffness and limb \nrigidity, accompanied by soreness of the lumbar muscles",
+      "source_offsets": {
+        "start": 13611,
+        "end": 15706
+      },
+      "source_block_id": "b0007",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Page 4 of 11Li et al. BMC Neurosci           (2020) 21:13 \nTable 1 Clinical characteristics of six GAD65 positive-AE patients from our center\nGAD65 glutamic acid decarboxylase 65, AE autoimmune encephalitis, F female, M male, SPS simple partial seizures, CPS complex partial seizures, sGTCS secondary generalized tonic–clonic seizures, MoCA montreal \ncognitive assessment, CI cognitive impairment, SPS* stiff person syndrome, CA cerebellar ataxia, NBC neurobehavioral changes, AEDs antiepileptic drugs, LEV levetiracetam, CBZ carbamazepine, CZP clonazepam, OXC \noxcarbazepine, MRI magnetic resonance imaging, L left, R right, B bilateral, (M)TL (medial) temporal lobe, Amy amygdala, Hipp hippocampus, FL frontal lobe, 18F-FDG-PET/CT 18-fluoro-deoxyglucose-positron emission \ntomography/computed tomography, Tha thalamus, LADA late-onset type one diabetic, MG myasthenia gravis, abs antibodies, ANA antinuclear antibodies, TPA thyroid peroxidase antibody, TGA  thyroglobulin antibody, \nCSF cerebrospinal fluid, IVMP intravenous methylprednisolone, IVIG intravenous immunoglobulin, MF mycophenolate mofetil, NA not available\nPatient 1 Patient 2 Patient 3 Patient 4 Patient 5 Patient 6\nAge/gender 35/F 35/M 29/F 49/F 27/F 33/F\nPast history Unremarkable Excision of epileptogenic \nfocus in 2015\nUnremarkable Unremarkable Excision of thymoma in \n2013\nL Thyroidectomy\nFamily history Unremarkable Hyperthyroidism of his \nmother\nUnremarkable Unremarkable Unremarkable Unremarkable\nSymptom onset 2018/08 2000/? 2016/06 2000/? 2009/? 2014/?\nInitial symptoms Seizure Seizure Seizure Seizure Seizure Seizure\nSeizure types SPS; CPS; sGTCS sGTCS; CPS SPS CPS; sGTCS CPS; sGTCS CPS\nCognition/MoCA Impaired/22 Impaired/22 Impaired/NA Impaired/19 Impaired/23 Impaired/23\nOther Symptoms CI CI,  SPS*, CA, NBC CI CI,  SPS* CI CI\nAEDs LEV, 1000 mg/day LEV, 1000 mg/day; CBZ, \n600 mg/day; CZP , 1 mg/\nday\nCBZ, 500 mg/day CZP , 4 mg/q8h; CBZ, \n400 mg/qd\nOXC, 300 mg/q12h; LEV, \n250 mg/q12h\nLEV, 625 mg/q12h; discon‑\ntinuation by herself later\nSeizure Frequency at the \ntime of Immunotherapy\nCPS, 2–3/day; sGTCS, 1–2/\nmonth\nsGTCS, zero; CPS, 1/day SPS, 2–6/week CPS, 2–4/week; sGTCS, \n1–2/month\nCPS, 1–2/day; sGTCS, 1–2/\nyear\nCPS, 2–13/day\nMRI lesions R MTL, Amy, Hipp Atrophy of L MTL, Hipp \nand B cerebellum\nB FL B MTL B Hipp L Hipp and Amy\n18F‑FDG‑PET/CT Hypometabolism of R TL NA Hypometabolism of R Tha, \nL Hipp and TL\nHypometabolism of L TL Hypometabolism of L TL Hypometabolism of L TL\nOthers Thymus residue No Thymus residue No Thymoma No\nImmunotherapy 2018/11 2018/11 2018/02 2019/03 2019/07 2019/04\nComorbidities No Hyperthyroidism, LADA No No MG; hyperthyroidism No\nSerum examination show‑\ning positive Abs\nNo ANA, anti‑mitochondrial \nM2 subtype abs, anti‑\nRo‑52 abs, TPA, TGA, anti‑\ncardiolipin abs\nTPA, TGA No TPA No\nAnti‑GAD65 Abs, serum 1:10 positive 1:100 positive NA, positive 1:320 positive 1:100 positive 1:100 positive\nAnti‑GAD65 Abs, CSF 1:100 positive 1:100 positive NA, positive 1:320 positive 1:320 positive 1:100 positive\nImmunotherapy IVMP and prednisone \ntapered; IVIG\nIVIG twice, and MF IVIG and prednisone \ntapered\nIVMP and IVIG, medrol \ntapered\nIVMP and IVIG, prednisone \ntapered\nIVMP and IVIG, prednisone \ntapered\nOutcome (2019.07) CPS, 2–3/month CPS, 3–4/month NA no more seizures;  SPS\n* \nimproved\nno more CPS and sGTCS CPS, 1–2/day",
+      "source_offsets": {
+        "start": 15708,
+        "end": 19050
+      },
+      "source_block_id": "b0008",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Page 5 of 11\nLi et al. BMC Neurosci           (2020) 21:13",
+      "source_offsets": {
+        "start": 19052,
+        "end": 19110
+      },
+      "source_block_id": "b0009",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "and difficulty in lying flat; these symptoms were prone to \noccur when stimulated by environmental factors. In addi-\ntion, he occasionally developed palpitations, sweats and \nbreathing difficulties and became irritable and depressed.\nOn neurological examination, he exhibited bilateral \nexophthalmos, dysarthria and left blepharospasm. The \nmuscular tension and tendon reflex of the four limbs \nwere decreased. He could not stand still and complete \nthe finger-nose tests. The MoCA score was 22 (under\n-\ngraduate degree). Routine blood examinations suggested \nthat he had multiple kinds of autoimmune Abs simul -\ntaneously (seen in Table  1). Routine CSF analysis was \nnormal. The onconeural and neuronal surface Abs test \nshowed positive anti-GAD65 Abs in both serum and \nCSF. The brain MRI indicated postoperative changes and \nencephalatrophy (Fig.  1b–d). Electromyography showed \ncontinuous release of motor unit action potentials of the \nparaspinal muscles and rectus abdominis in a quiet state, \nwhich were obviously inhibited after intravenous diaze\n-\npam, supporting the diagnosis of SPS.\nFig. 1 Axial magnetic resonance imaging (MRI) findings of patient 1 and patient 2 in fluid‑attenuated inversion recovery (FLAIR) sequence. a \nPatient 1, a 35‑year‑old Chinese female, was diagnosed with typical limbic encephalitis, and MRI showed increased FLAIR signals of the right medial \ntemporal lobe, including the amygdala and hippocampus. b–d Patient 2, a 35‑year‑old male, was characterized by stiff‑person syndrome, cerebellar \nataxia and intractable epilepsy. MRI indicated postoperative changes in the left frontal lobe, volume reduction in the left temporal lobe and \nhippocampus, and encephalatrophy, especially in the bilateral cerebellum",
+      "source_offsets": {
+        "start": 19114,
+        "end": 20863
+      },
+      "source_block_id": "b0010",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Page 6 of 11Li et al. BMC Neurosci           (2020) 21:13 \nA 5-day course of IVIG, 400 mg/kg/day, was initiated; \nsubsequently, he took mycophenolate mofetil (gradu -\nally increased to 1500 mg/q12h), levetiracetam (250 mg/\nq12h), clonazepam (1  mg/q12h) and carbamazepine \n(200  mg/q12h) for long-term maintenance therapy. The \nabove symptoms improved significantly. One month \nlater, he received another 5-day course of IVIG for con\n-\nsolidation therapy. Three months later, the SPS had \nalmost disappeared, the ataxia improved, he could walk \nby himself, and the number of seizures was reduced by \nmore than 50%.\nPatients from previous literatures\nSeventy references were identified, and the included \npatients were all diagnosed with anti-GAD65 AE. In \nTable 2, we present the gathered data of all patients with \ndifferent clinical manifestations and found that the effec\n-\ntiveness of IVMP was 45.56% (41/90) and that of IVIG \nwas 36.71% (29/79). There was no statistically signifi\n-\ncant difference between IVMP and IVIG. In addition, 35 \npatients received IVMP and IVIG combination therapy, \nbut only 42.86% (15/35) experienced an improvement in \ntheir clinical symptoms.\nWe further divided patients according to their typi\n-\ncal clinical manifestations. In Table  3, we present data \non the patients who manifested seizures, 42.65% (29/68) \nof whom were responsive to IVMP and 32.69% (17/52) \nresponded to IVIG (in comparison with Table  2, in \nTable 3, we added an extra patient, whose seizures were \nnot improved with IVMP , while IVMP was beneficial for \nCA) [28]. Among patients with SPS, 60.00% (3/5) ben\n-\nefited from IVMP , and 77.78% (7/9) gained ameliora -\ntion from IVIG. In patients with CA, the effectiveness \nof IVMP and IVIG was 28.57% (2/7) and 55.56% (5/9), \nrespectively (in Table  3, an extra patient was added in \ncomparison with Table  2 [28]). In these above patients \nfrom different subgroups, there was no difference in \ntherapeutic effect between the two kinds of treatment. \nFurthermore, in these AE patients who manifested sei\n-\nzures or CA, the effectiveness of combination therapy \nwas 44.83% (13/29) and 25.00% (1/4), respectively. In our \nanalysis, only one SPS patient received combination ther\n-\napy but acquired no benefits [7].\nAs shown in Table  3 and Additional file  2: Table  S1, \nof the 29 anti-GAD65 AE patients with tumors, 16 \n(55.17%) were male, and the median age was 61.8  years \nFig. 2 Interictal phase electroencephalogram of patient 1. There were frequent sharp waves and slow waves in the right temporal regions in the \ninterictal phase",
+      "source_offsets": {
+        "start": 20865,
+        "end": 23457
+      },
+      "source_block_id": "b0011",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0007",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Page 7 of 11\nLi et al. BMC Neurosci           (2020) 21:13",
+      "source_offsets": {
+        "start": 23459,
+        "end": 23517
+      },
+      "source_block_id": "b0012",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0008",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "(IQR: 55.0–73.0  years). It should be pointed out that a \n5-year-old girl was diagnosed with AE 13  months after \nhematopoietic stem cell transplantation (because of \npineoblastoma); thus, the tumor and the AE may not \nhave been directly related [36]. The median age of the \nremaining 28 patients increased to 63.9  years (IQR: \n57.0–73.0  years), much higher than the median age of \n48 years for the 106 anti-GAD65 patients without tumors \nFig. 3 Ictal phase electroencephalogram of patient 1. One clinical seizure was detected, which presented as a nauseous feeling and oropharyngeal \nautomatism with impaired awareness, and the seizure lasted approximately 50 s second before sudden movement interruption of the patient, EEG \nshowed widespread low voltage in the right leads, followed by rapid rhythmic changes with low amplitude in the right middle‑posterior temporal \nregion initially, and spreading to the right middle temporal region 2 s later. The amplitude increased and the frequency decreased gradually and \nthen spread to adjacent leads, accompanied by electromyogram interference and motion artifacts\nTable 2 IVMP and  IVIG effectiveness of  total patients \nin the previous 70 references\nDifferences were evaluated by Chi square test\nIVMP intravenous methylprednisolone, IVIG intravenous immunoglobulin\nEffective number Ineffective number p\nIVMP 41 49\nIVIG 29 50 0.244\nTable 3 IVMP and IVIG effectiveness of patients with different clinical manifestations in the previous 70 references\nDifferences were evaluated by Chi square test or Fisher’s exact test*\nEN effective numbers, IEN ineffective numbers, IVMP intravenous methylprednisolone, IVIG intravenous immunoglobulin\nPatients with seizures Patients with SPS Patients with CA Patients with tumors\nEN IEN p EN IEN p EN IEN p EN IEN p\nIVMP 29 39 3 2 2 5 5 12\nIVIG 17 35 0.266 7 2 0.580* 5 4 0.358* 8 11 0.429",
+      "source_offsets": {
+        "start": 23521,
+        "end": 25394
+      },
+      "source_block_id": "b0013",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0009",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Page 8 of 11Li et al. BMC Neurosci           (2020) 21:13 \nin a previous study [7]. The most common symptom was \nSPS (11/29, 37.93%), followed by LE and nonlimbic AE \n(8/29 and 4/29, respectively). Among these patients, the \ntherapeutic effect was dismal, with 29.41% and 42.11% \nimprovement rates in symptoms for IVMP and IVIG, \nrespectively, and no significant difference was found. \nMoreover, the combination therapy was effective for \nonly 20.00% (2/10) of patients. In addition, 21 patients \n(72.41%) had oncological treatment (surgery, chemother\n-\napy, and radiotherapy alone or combined). Other clinical \ndata are listed in Additional file 2: Table S1.\nIt should be mentioned that we cannot compare the \nefficiency of combination therapy with monotherapy \nbecause of their statistical overlaps.",
+      "source_offsets": {
+        "start": 25396,
+        "end": 26197
+      },
+      "source_block_id": "b0014",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

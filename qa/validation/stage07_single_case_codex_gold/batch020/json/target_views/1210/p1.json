@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1210::p1",
+  "paper_id": "1210",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1210::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 64-year-old man with a 30 years history of diabetes \nmellitus presented with severe back pain and leg spasms \nof 5 months duration. On examination, he was diaphoretic \nand tachycardic. There was persistent lumbar hyperlordosis \nin the supine position with lumbar paraspinal muscle \nhypertonia. Periodic bilateral leg spasms and anterior \nabdominal muscle jerks (10/min) were observed [Video \n1 in online version]. Limb muscle tone was increased, \nand reflexes were normal. Computed tomography \nscan of the LS spine done 3 days earlier (at an outside \nhospital) was normal [Figure 1]. He was started on \noral diazepam (30 mg/day) and baclofen (20 mg/day). \nA repeat magnetic resonance imaging (MRI) of the spine \nand brain (short tau inversion recovery sequences) showed \nhigh signal suggestive of muscle edema in the iliopsoas \nmuscles [Figure 2]. Creatinine phosphokinase levels were \nelevated [16,000 U/l], and urine was positive for myoglobin. \nHe was hydrated with intravenous (IV) ﬂ uids and started \non continuous diazepam IV infusion (up to 1–2 mg/h). \nNevertheless, the jerks persisted and he developed \nexhaustion and respiratory depression, requiring intubation \nand mechanical ventilation [Figure 1]. A differential \ndiagnosis of tetanus, rabies, poisoning, and SMS with status \nspastics were considered. Vecuronium was used at a dose of \n1–2 mg/h to quell the spasms. IV immunoglobulin (IVIG) \nwas then administered at a dose of 2 g/kg over 5 days. He \nreceived approximately 160 mg of vecuronium over 5 days \nafter which it was gradually discontinued. He required a \ncontinuous diazepam infusion of 0.1–0.4 mg/h for 3 weeks, \n30 mg oral diazepam/day, and Gabapentin 900 mg/day \nto control his spasms. Renal functions remained stable. At \n4 weeks, serum anti-GAD 65 antibody titers were positive \nat >1000 /ml (Neuroimmunology Laboratory, Oxford, \nUK), substantiating the diagnosis of “jerking SMS.” He \nwas gradually weaned off the ventilator after 3 weeks \nand he was transitioned to 20 mg of diazepam PO. At \nfollow-up 6 months later, he was totally asymptomatic \nand off medications.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3827,
+        "end": 5941
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2114
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

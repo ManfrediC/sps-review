@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "552::p1",
+  "paper_id": "552",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "552::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 49-year-old male presented with progressively \nworsening muscle rigidity and spasms of his upper and \nlower extremities of 6 months’ duration. He experienced \nconstant hip pain and frequent falls, necessitating the \nuse of a walker. Past medical history was significant for \nprevious hospitalization for diabetic ketoacidosis and \nhumeral fracture sustained from a fall. Physical exami-\nnation revealed generalized rigidity in both upper and \nlower extremities. Motor and sensory functions were \nintact. Findings from a cranial nerve examination were \nnormal. Gait was hobbled, and the patient could only \ntake stiff, rigid steps with a walker. He had normal \nreflexes with negative Hoffmann and Babinski signs. \nLaboratory analysis revealed anemia with hemoglobin \nof 10 g/dL and  a  mean corpuscular volume of 88. Serum \nvitamin B 12  was low at 72 pg/mL. Antibody to intrinsic \nfactor was positive, consistent with a diagnosis of perni-\ncious anemia. Findings from computerized tomographies \nof the head, chest, and abdomen were normal. Anti– glu-\ntamic acid decarboxylase  65 antibody was elevated at \n609 nmol/L. Electromyography showed continuous \nmotor unit activity in agonist and antagonist muscles.\nHe was diagnosed with SPS, and treatment was initi-\nated with 10 mg twice daily oral diazepam, oral baclofen \nat 10 mg thrice daily, and intravenous immunoglobulin \nat 2 g/kg for 2 days. He also received vitamin B 12  ther -\napy. The patient did well, with gradual improvement in \nfunctional status and diminished pain in his lower \nextremities. He has required repeated intravenous infu-\nsions of immunoglobulin over the years, and his clinical \ncourse has remained stable.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1086,
+        "end": 2771
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1685
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

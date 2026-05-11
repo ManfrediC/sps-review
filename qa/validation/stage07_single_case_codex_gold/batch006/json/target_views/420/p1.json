@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "420::p1",
+  "paper_id": "420",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "420::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract We describe the successful anesthetic management of a patient with stiff-person syndrome\n(SPS) undergoing a right inguinal hernia repair, using a somatic paravertebral block supplemented\nwith conscious sedation. We also present the implications of general anesthesia in patients with SPS.\nThe use of regional anesthetic techniques in patients with SPS has the advantage of avoiding exposure\nto muscle relaxants. The use of general anesthesia in patients with SPS carries the risk of postoperative\nhypotonia due to enhancement of c-aminobutyric acid action on synaptic transmission by drugs that\nhave a c-aminobutyric acid agonistic action.\nD 2006 Elsevier Inc. All rights reserved.\n\nCase report\nA 65-year-old man was scheduled for elective repair of a\nlarge right indirect inguinal hernia. His past medical history\nincluded diabetes mellitus, hypertension, depression, and\nSPS. Past surgical history was remarkable for an uneventful\n\nrepair of a left inguinal hernia in 1965 and placement of an\nintrathecal baclofen pump 9 months before this presentation.\nHis laboratory workup detected the presence of anti-\nbodies to GAD enzyme and elevated levels of IgA and\nthyroglobulin antibodies. Electromyogram findings ruled\nout evidence of diffuse motor axon loss disorder. However,\nthere was nonspecific abnormal activation of the motor unit,\nand failure of relaxation of the proximal muscle group of\nboth lower extremities and the right upper extremity. These\nfindings suggested a central disorder of the motor control\nunit. Current medications included insulin, enalapril, gaba-\npentin, esomeprazole, venlafaxine, and baclofen through an\nintrathecal pump. The patient was also receiving intrave-\nnous immunoglobulins every 2 weeks to neutralize circu-\nlating antibodies and downregulate the pro-inflammatory\ncytokines [2]. He received his last dose 4 days before the\nscheduled surgery date.\nAfter discussing the risks and benefits of the different\nanesthetic techniques, a right somatic paravertebral block at\nT12 and L1 was selected. On arrival to the operating room,\nstandard ASA monitors were applied. The block was\nperformed in the sitting position using 5 mL of 0.5%\nbupivacaine at each level. Supplemental sedation with\nintravenous midazolam 1 mg, fentanyl 50 lg, and a\npropofol infusion at 25 to 35 lg/kg per minute was\nadministered. Oxygen was supplied at 2 L/min via a nasal\ncannula. Vital signs were stable throughout his surgery and\nin the postoperative period. The patient reported improve-\nment of his spasticity symptoms during the procedure and\nfor 1 hour into the postoperative period. In the Post\nAnesthesia Care Unit, he complained of nausea, which\nwas treated with 4 mg of intravenous ondansetron.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 358,
+        "end": 1048
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 690
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2076,
+        "end": 2325
+      },
+      "compiled_offsets": {
+        "start": 692,
+        "end": 941
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2841,
+        "end": 4619
+      },
+      "compiled_offsets": {
+        "start": 943,
+        "end": 2721
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

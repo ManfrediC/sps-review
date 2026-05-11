@@ -1,0 +1,137 @@
+{
+  "paper_id": "6641",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\6641.json",
+    "source_text_sha256": "f4fecc29ea476e2b179e321850e93247d5775443e0527265b3df7ca6cace6787",
+    "prepared_source_sha256": "12a2e17fabdd2e130572a605a2edd28501906cd2106e55d467feab6efb2238b8",
+    "prepared_source_character_count": 2189
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 13
+      },
+      "page_index": 0,
+      "text": "ABN Abstracts"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 15,
+        "end": 18
+      },
+      "page_index": 0,
+      "text": "031"
+    },
+    {
+      "block_id": "b0003",
+      "source_offsets": {
+        "start": 20,
+        "end": 216
+      },
+      "page_index": 0,
+      "text": "GLYCINE RECEPTOR ANTIBODY MEDIATED PROGRESSIVE\nENCEPHALOMYELITIS WITH RIGIDITY AND MYOCLONUS\n(PERM) PRESENTING WITH RESPIRATORY COMPROMISE\nIN A 40-YEAR-OLD MALE\ndoi: 10. 1136/jnnp-2012-304200a. 31"
+    },
+    {
+      "block_id": "b0004",
+      "source_offsets": {
+        "start": 218,
+        "end": 221
+      },
+      "page_index": 0,
+      "text": "1–5"
+    },
+    {
+      "block_id": "b0005",
+      "source_offsets": {
+        "start": 223,
+        "end": 226
+      },
+      "page_index": 0,
+      "text": "1–5"
+    },
+    {
+      "block_id": "b0006",
+      "source_offsets": {
+        "start": 228,
+        "end": 231
+      },
+      "page_index": 0,
+      "text": "1–5"
+    },
+    {
+      "block_id": "b0007",
+      "source_offsets": {
+        "start": 233,
+        "end": 547
+      },
+      "page_index": 0,
+      "text": "M Wickremaratchi,* RM Chalmers, W Stern, 1–5R Howard,\nMR Woodhall, 1–5A Vincent. 1Hurstwood Park Neurological Centre; 2Nuffield\nDepartment of Clinical Neurosciences, John Radcliffe Hospital, Oxford; 3The National\nHospital for Neurology and Neurosurgery; 4Western Sussex Hospitals NHS Trust;\n5\nWorthing Hospital\n1–5"
+    },
+    {
+      "block_id": "b0008",
+      "source_offsets": {
+        "start": 549,
+        "end": 2124
+      },
+      "page_index": 0,
+      "text": "A 40-year-old man was intubated after presenting with respiratory\ncompromise. After tracheostomy, he was found to have an ophthalmoplegia, severe limb rigidity, stimulus sensitive myoclonus,\nand autonomic dysfunction. A history of prodromal illness with\nlow mood, hallucinations and limb myoclonus preceded admission\nby a week. He remained ventilator dependent with marginal\nneurological improvement after 2 months before a diagnosis was\nmade. Treatment with intravenous immunoglobulins was commenced. Neuroaxis MRI and whole body Computer Tomography\nwas unremarkable. Cerebrospinal fluid analysis showed 10 lymphocytes, with normal protein and glucose, and negative oligoclonal bands. Antibodies against voltage gated potassium channels,\nglutamic acid decarboxylase, N-methyl-D-aspartic acid receptors,\nthyroid peroxidase, basal ganglia, and GQ1B were negative, as\nwere vasculitic screen, tumour markers, antineuronal antibodies,\nHIV and syphilis serolgy. Anti-glycine receptor antibodies were\nstrongly positive. A diagnosis of Progressive Encephalomyelitis\nwith Rigidity and Myoclonus was made. The antibody is thought\nto be disease mediating. Although the clinical syndrome of\nencephalomyelitis with rigidity was described as early as 1976,\nthe association with anti glycine receptor antibody was first\nreported in 2008. A brief review of the literature will be described.\nThe spectrum of diagnosable and treatable antibody mediated\nneurological syndromes is expanding. It is vital to keep up to date\nand recognise these conditions early to reduce morbidity and\nmortality."
+    },
+    {
+      "block_id": "b0009",
+      "source_offsets": {
+        "start": 2126,
+        "end": 2128
+      },
+      "page_index": 0,
+      "text": "A8"
+    },
+    {
+      "block_id": "b0010",
+      "source_offsets": {
+        "start": 2130,
+        "end": 2189
+      },
+      "page_index": 0,
+      "text": "J Neurol Neurosurg Psychiatry December 2012 Vol 88 Suppl S2"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 40-year-old man was intubated after presenting with respiratory\ncompromise. After tracheostomy, he was found to have an ophthalmoplegia, severe limb rigidity, stimulus sensitive myoclonus,\nand autonomic dysfunction. A history of prodromal illness with\nlow mood, hallucinations and limb myoclonus preceded admission\nby a week. He remained ventilator dependent with marginal\nneurological improvement after 2 months before a diagnosis was\nmade. Treatment with intravenous immunoglobulins was commenced. Neuroaxis MRI and whole body Computer Tomography\nwas unremarkable. Cerebrospinal fluid analysis showed 10 lymphocytes, with normal protein and glucose, and negative oligoclonal bands. Antibodies against voltage gated potassium channels,\nglutamic acid decarboxylase, N-methyl-D-aspartic acid receptors,\nthyroid peroxidase, basal ganglia, and GQ1B were negative, as\nwere vasculitic screen, tumour markers, antineuronal antibodies,\nHIV and syphilis serolgy. Anti-glycine receptor antibodies were\nstrongly positive. A diagnosis of Progressive Encephalomyelitis\nwith Rigidity and Myoclonus was made. The antibody is thought\nto be disease mediating. Although the clinical syndrome of\nencephalomyelitis with rigidity was described as early as 1976,\nthe association with anti glycine receptor antibody was first\nreported in 2008. A brief review of the literature will be described.\nThe spectrum of diagnosable and treatable antibody mediated\nneurological syndromes is expanding. It is vital to keep up to date\nand recognise these conditions early to reduce morbidity and\nmortality.",
+      "source_offsets": {
+        "start": 549,
+        "end": 2124
+      },
+      "source_block_id": "b0008",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

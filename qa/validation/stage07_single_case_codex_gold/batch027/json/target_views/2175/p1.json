@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2175::p1",
+  "paper_id": "2175",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2175::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 60-year-old female presented to the\nneurology services with paraspinal muscle\nrigidity, muscle spasms and new onset\nscoliosis. Previous history included symp-\ntomatic Hashimoto /C213s thyroiditis.\nAlthough initial thyroid stimulating hor-\nmone was elevated and free thyroxine\nreduced, these remained stable with\nthyroxine replacement.\nAt 62 years, she developed an ataxic\ngait with dysmetria and deteriorating\nmobility. Overtime oscillopsia developed\nimpaired reading and writing. By\n65 years she was wheelchair bound. Type\n1 diabetes mellitus was diagnosed fol-\nlowing presentation with diabetic\nketoacidosis. Other complaints included\nlower limb myoclonic jerks and\npost-prandial abdominal cramps with\ndyspepsia.\nNeurological examination at presenta-\ntion revealed paraspinal rigidity and\nscoliosis with exaggerated lumbar\nlordosis. Muscle power was normal with-\nout fatigue. Reﬂexes were pathologically\nbrisk with extensor plantar responses.\nSubsequent examinations revealed scan-\nning dysarthria, dysmetria and intention\ntremor. Opsoclonus was prominent at rest\nand in all directions of gaze.\nAntiglutamic acid decarboxylase\n(GAD) antibody was positive with a titre\nof 87 U/ml (range 0–1 U/ml). Antinuclear\nantibody was positive with a speckled\npattern (titre: 1/640). Antipancreatic islet\ncell, anti-adrenal cortex, antitissue\ntransglutaminase and anti-endomysial\nantibodies were positive. Antithyroid\nperoxidase antibody was positive (titre:\n>1000 U/ml). Duodenal biopsy demon-\nstrated villous atrophy. Cortisol levels,\npre- and post-synacthen were normal on\nrepeated sampling. Adrenocorticotrophic\nhormone levels were normal.\nCerebrospinal ﬂuid (CSF) analysis\ndemonstrated an elevated protein of\n0.77 g/l (range 0.15–0.45 g/l), white cells\nof 6/cmm (range 0–5/cmm) and normal\nglucose. CSF oligoclonal bands were\nabsent. MRI of brain and spine and CT of\nthorax, abdomen and pelvis were normal.\nMuscle rigidity/spasms were well\ncontrolled with benzodiazepines. Coeliac\ndisease was treated by a gluten free diet.\nSpeciﬁc immune treatment including\noral steroids, intravenous (IV) methyl-\nprednisolone, methotrexate, azathioprine,\nmycophenolate mofetil, IV immunoglob-\nulin, inﬂiximab (six infusions) and plasma\nexchange were ineﬀective. Six cycles of the\nB cell depleting antibody rituximab were\nadministered (dose: 375 mg/m\n2). B cell\ndepletion was conﬁrmed by a CD19 count\n\nof 0.001 · 109/l. Subsequently cerebellar\nsymptoms improved restoring ability to\neat using a fork and knife. Dysarthria also\nimproved, as did mobility and she was\nable to walk using cross bars. Endo-\ncrinopathies were unaﬀected by immune-\nmodulation.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1083,
+        "end": 3463
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2380
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3464,
+        "end": 3714
+      },
+      "compiled_offsets": {
+        "start": 2382,
+        "end": 2632
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

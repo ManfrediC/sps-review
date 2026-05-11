@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "13804::p1",
+  "paper_id": "13804",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "13804::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 59-year-old patient with GlyR antibody-\npositive SPSD was treated with immunotherapy\nincluding IVIG, plasma exchange (PLEX),\nRituximab, and Mycophenolate Mofetil but\ncontinued to have neurological disability.\nDespite an initial response to PLEX with\nimproved stiffness, muscle spasms,\ndysautonomia, and mobility, this improvement\nwas not sustained. The patient continued to\nprogress over two years despite\nSUBMIT A LETTER FOR THIS ARTICLE\n\n12/25/23, 9:50 PMSuccessful Autologous Hematopoietic Stem Cell Transplant in a Cas… with a positive Glycine Receptor antibody (P4-5.019) | Neurology\nPage 3 of 6https://www.neurology.org/doi/10.1212/WNL.0000000000202784\nimmunotherapy, leading to the decision for\naHSCT. Nine months after aHSCT, he showed\nsigniJcant clinical amelioration. Comparison of\npre- to 21 weeks post-aHSCT Jndings included a\n25-foot walk time reduction from 28.4 seconds\nto 15 seconds and a stiffness index reduction\nfrom 4/6 to 2/6. The patient also had improved\ngait, phonation, and reduced pain.\nConclusions:\nWe report a case of symptomatic improvement,\nevidenced by reduced walk time and stiffness\nindex, after aHSCT in an anti-GlyR positive SPSD\npatient. Nine months after the transplant the\npatient had further improved symptoms,\nindicating aHSCT as a beneJcial therapy for this\npatient and potentially others with similar\npresentations.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2479,
+        "end": 2919
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 440
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2921,
+        "end": 3838
+      },
+      "compiled_offsets": {
+        "start": 442,
+        "end": 1359
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

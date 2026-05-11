@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "452::p1",
+  "paper_id": "452",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "452::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract: Stiff person syndrome (SPS) is an unusual cause\nof muscle rigidity and spasms. It is believed to have an\nautoimmune pathogenesis and is associated with autoanti-\nbodies to glutamic acid decarboxylase (GAD). Paraneoplas-\ntic SPS (PSPS) has been described mainly in relation to\nbreast cancer and is associated with antibodies to am-\nphiphysin. Few reports of PSPS document the ﬁnding of\nGAD autoantibodies. We present the ﬁrst reported case of\nanti-GAD positive PSPS in a 53-year-old male with occult\nrenal carcinoma. Clinical beneﬁt was marked following\nnephrectomy and intravenous immunoglobulin treatment.\nRenal carcinoma should be considered in patients with SPS.\n© 2007 Movement Disorder Society\n\nCASE REPORT\nA 53-year-old man with a history of Type 2 diabetes\nand autoimmune hypothyroidism presented with an 11-\nmonth history of pain and spasm in his left leg. He was\notherwise well. He ﬁrst noticed symptoms of minor\ncramping in the left buttock after long car journeys. Over\nmonths he developed episodes of shooting pain in his left\nleg, which were followed by stiffening and involuntary\ndorsiﬂexion of the left great toe, spreading to involve\nanterior and posterior thigh muscles and lasting for 15\nminutes. Spasms of the limb became more frequent and\nwere precipitated by movement, startle, and light touch.\nThe associated pain was severe and could last more than\n1 hr requiring opiate analgesia from his primary care\nphysician. Benzodiazepines and baclofen did not signif-\nicantly improve his symptoms.\nExamination revealed a stiff, swollen, abnormally pos-\ntured left lower limb. His left foot was ﬁxed in plantar-\nﬂexion at the ankle, and his leg was hyper-extended and\npartially adducted at the hip. He could achieve only\nminimal ﬂexion of his left knee. His gait was slow and\npainful with circumduction of his left leg and plantar-\nﬂexion of the foot. Examination of both upper limbs and\nright lower limb was normal, including deep tendon\nreﬂexes. Plantars were ﬂexor bilaterally. Reﬂexes could\nnot be elicited in the stiff left leg but were seen to spread\nto the right side. There was no involvement of axial\nmuscles of the thorax or abdomen. Sensory examination\nwas normal and there were no trophic changes in the\nlimb. A clinical diagnosis of SLS was made.\nEMG studies demonstrated CMUA at rest in antago-\nnist muscle groups in the left leg (Fig. 1). Spinal mag-\nnetic resonance imaging was normal. Serum autoanti-\nbodies to GAD were positive at a titer of 5,682 U/mL\n(normal reference 0 –1 U/mL). Antibodies to amphiphy-\nsin were negative. Abdominal ultrasound was performed\nto investigate swelling of the left lower limb. This re-\nvealed a right-sided renal mass conﬁrmed to be a renal\ncell carcinoma at nephrectomy. Post operatively the pa-\ntient improved with diazepam 10 mg BD, baclofen 30\nmg TDS, and intensive physiotherapy. Because of resid-\nual focal stiffness 1 month after surgery, he was also\ntreated with intravenous immunoglobulin (IVIG) 2 g/kg\ndivided over 5 days. IVIG was repeated monthly for 6\nmonths and was associated with signiﬁcant improvement\nin leg stiffness, spasms, and pain. At 4-years follow up\nhe is pain-free on baclofen and diazepam alone and can\njog short distances and ride a bicycle.\n\nOur patient showed an initial improvement follow-\ning tumor resection, which leads us to suggest that the\nsyndrome was paraneoplastic and not idiopathic auto-\nimmune SPS. Further improvement in function and\nstiffness was observed over 6 months of IVIG therapy.\nThe sustained improvement achieved over 4 years\nwithout maintenance immunotherapy also implies a\nparaneoplastic etiology.\nWe conclude that renal cell carcinoma should be con-\nsidered in the differential diagnosis of SPS and that IVIG\ntherapy may be an effective immunologic monotherapy\nin these cases. Autoantibodies to GAD may be a marker\nfor paraneoplastic disease.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2170,
+        "end": 2878
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 708
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4245,
+        "end": 6778
+      },
+      "compiled_offsets": {
+        "start": 710,
+        "end": 3243
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10208,
+        "end": 10836
+      },
+      "compiled_offsets": {
+        "start": 3245,
+        "end": 3873
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

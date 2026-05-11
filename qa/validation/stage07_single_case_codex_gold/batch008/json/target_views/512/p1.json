@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "512::p1",
+  "paper_id": "512",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "512::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 41-year-old man presented to the accident and emergency\ndepartment following a fall and a 4-week history of progressive\nlower back stiffness and bilateral leg weakness. He also reported a\n3-month history of polyuria, polydipsia, weight loss and fatigue.\nPast medical history consisted of biopsy proven CD and dermati-\ntis herpetiformis, both well controlled with a gluten-free diet and\ndapsone. On examination, vitals were stable, and a rash consistent\n\nwith dermatitis herpetiformis was present on the trunk and exten-\nsor surfaces of arms and legs. Neurological examination was limited\nby the painful muscular spasms leading to generalised muscle stiff-\nness that was exacerbated by movement. When the spasms were\n\nmost intense, the posture was hyperlordotic and there was proxi-\nmal muscle stiffness in the upper and lower limbs, manifested by\nhyperextension. Reﬂexes, including plantar responses, and sensa-\ntion were normal. There was no alteration in mental status and\nbreathing was not reported by the patient to be affected.\nPlasma glucose was 36.4 mmol/l, pH 7.44, bicarbonate\n24.4 mmol/l (normal range 18–24), serum ketonaemia with\n/H9252-hydroxybutyrate of 3.4 mmol/l and HbA1c (DCCT aligned) was\n8.0% at presentation. Antibodies to glutamic acid decarboxylase\n(anti-GAD) antibodies were sent for analysis in the immunology\nlaboratory in the John Radcliffe Hospital in Oxford, United King-\ndom (performed on July 2005) and returned positive, at a titre of\n105 U/ml. The cut-off for this assay is <1 U/ml, with positive results\nbeing from 1 to 300 U/ml.\nThe patient was commenced on a basal bolus insulin replace-\nment regime of novorapid and levemir to treat his hyperglycaemia.\nThyroid function tests revealed a pattern consistent with subclinical\nhypothyroidism with a free thyroxine of 9.6 pmol/l (normal range\n8–21) and a thyroid stimulating hormone of 5.46 mIU/l (normal\nrange 0.5–4.2). Anti thyroid peroxidase antibodies were positive at\n105 U/ml (normal range 0–50).\nNeurological investigations including serum B\n12, MRI scans of\nthe brain and spinal cord were normal, with no evidence of a\ndemyelinating disorder or a space occupying lesion. CSF analy-\n\nsis was acellular with a normal protein concentration (46 mg/dl;\nnormal range 15–45 mg/dl) but anti-GAD antibodies were strongly\npositive at 61 U/ml.\nA clinical diagnosis of SPS was made and the patient was com-\nmenced on a diazepam infusion, followed by plasmapheresis, and\nlater intravenous immunoglobulin (IV Ig) to good clinical effect.\nTumour markers including synaptophysin, a CT scan of the\nthorax, abdomen and pelvis were performed to exclude a parane-\noplastic phenomenon and all were normal. Following 48 h of IV Ig,\nserum anti-GAD antibodies fell to 4 U/ml.\nHLA typing revealed our patient to be HLA-DR/H92521 0301/0305 and\nHLA-DQ/H92521 02 positive.\nThe patient is currently treated with diazepam and baclofen for\nhis painful muscular spasms, and mycophenylate as an immuno-\nmodulatory agent. His symptoms have improved greatly and he has\nbeen able to return to work.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2625,
+        "end": 3091
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 466
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3177,
+        "end": 3438
+      },
+      "compiled_offsets": {
+        "start": 468,
+        "end": 729
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3439,
+        "end": 4893
+      },
+      "compiled_offsets": {
+        "start": 731,
+        "end": 2185
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5090,
+        "end": 5969
+      },
+      "compiled_offsets": {
+        "start": 2187,
+        "end": 3066
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

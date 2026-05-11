@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6641::p1",
+  "paper_id": "6641",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6641::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 40-year-old man was intubated after presenting with respiratory\ncompromise. After tracheostomy, he was found to have an ophthalmoplegia, severe limb rigidity, stimulus sensitive myoclonus,\nand autonomic dysfunction. A history of prodromal illness with\nlow mood, hallucinations and limb myoclonus preceded admission\nby a week. He remained ventilator dependent with marginal\nneurological improvement after 2 months before a diagnosis was\nmade. Treatment with intravenous immunoglobulins was commenced. Neuroaxis MRI and whole body Computer Tomography\nwas unremarkable. Cerebrospinal fluid analysis showed 10 lymphocytes, with normal protein and glucose, and negative oligoclonal bands. Antibodies against voltage gated potassium channels,\nglutamic acid decarboxylase, N-methyl-D-aspartic acid receptors,\nthyroid peroxidase, basal ganglia, and GQ1B were negative, as\nwere vasculitic screen, tumour markers, antineuronal antibodies,\nHIV and syphilis serolgy. Anti-glycine receptor antibodies were\nstrongly positive. A diagnosis of Progressive Encephalomyelitis\nwith Rigidity and Myoclonus was made. The antibody is thought\nto be disease mediating. Although the clinical syndrome of\nencephalomyelitis with rigidity was described as early as 1976,\nthe association with anti glycine receptor antibody was first\nreported in 2008. A brief review of the literature will be described.\nThe spectrum of diagnosable and treatable antibody mediated\nneurological syndromes is expanding. It is vital to keep up to date\nand recognise these conditions early to reduce morbidity and\nmortality.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 549,
+        "end": 2124
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1575
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

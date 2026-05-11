@@ -1,0 +1,81 @@
+{
+  "paper_id": "1017",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1017.json",
+    "source_text_sha256": "f08b8636ade0a12180dcd7d4a9b730f5994e40f53269b05b7effb7693f5447c7",
+    "prepared_source_sha256": "0bc9e71743f9d2b57f4554af30fe1f74f831424e993b46dca79aa15732754737",
+    "prepared_source_character_count": 3350
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 3246
+      },
+      "page_index": 0,
+      "text": "Therapeutic Plasma Exchange in a Patient with \nParaneoplastic Variant of Stiff-Person Syndrome \nE Madrigal1, R Fisher2, M T Friedman1. 1Department of Pathology, Blood Bank and \nTransfusion Services, Mount Sinai Health System, St. Luke's, Roosevelt, and Beth \nIsrael Hospitals, Icahn School of Medicine at Mount Sinai, New York, NY, United \nStates; 2Department of Hematology/Oncology, Mount Sinai Roosevelt, New York, \nNY, United States \nBackground/Case Studies: Stiff-person syndrome is an uncommon disorder that \npresents with progressive muscle stiffness and spasms leading to limited patient \nambulation. Most patients are positive for anti-glutamic acid decarboxylase \nantibodies, and their presence or absence subdivides the syndrome into three \nvariants: 1) autoimmune, 2) paraneoplastic, and 3) idiopathic. We present a 75-y-old \nfemale patient with sudden onset of subacute gait impairment and myoclonus. A \nserum/cerebral spinal fluid paraneoplastic panel was positive for amphiphysin [CSF \n1:256 titer, serum 1:15360 titer/western blot (+)], a nonintrinsic membrane protein \nconcentrated in nerve terminals, and she was subsequently diagnosed with invasive \nductal carcinoma. Study Design/Methods: Our patient was treated with first-line \nimmunosuppressive therapy Solu-Medrol 1 g × 5 doses, without improvement. \nUnresponsiveness prompted an intravenous immune globulin regimen of 0.4 g/kg/d \nfor 5 d, which also did not yield the expected results. Apheresis has been described \nas a treatment option in patients with life-threatening respiratory decline, but, in our \ncase, the lack of clinical improvement with previous therapies warranted the use of \nthis modality. Results/Findings: Therapeutic plasma exchange (TPE) was \nperformed by using a COBE (now GAMBRO) Spectra apheresis system (GAMBRO \nBCT, Inc., Lakewood, CO). Peripheral venous catheters were used for access and \nreturn. The patient underwent seven exchanges in the course of 2 wk, for a total 1.0 \nplasma volume exchange at 100% fluid balance with 2.5 L of 5% albumin as \nreplacement fluid. Conclusion: All seven sessions were completed without any \nmajor adverse events. The only side effects described were brief episodes of cold \nintolerance and drowsiness secondary to antihistamine use, both of which became \nmilder as the sessions progressed. TPE is usually a well-tolerated procedure, and \nthe reported adverse event frequency is below 5%. Since last being treated, the \npatient had received Rituxan 375 mg/m2 weekly for 5 wk, and she since reports \nimprovement with respect to muscle spasms and body pain, changes that have \nallowed her to tolerate a lower dose of Baclofen (30 mg daily, down from 45 mg). Her \n“stiff” and unsteady gait has improved when using a walker, and she is able to \nambulate with more ease and without any falls. Although it is unclear how much of \nthe clinical improvement can be attributed to the TPE sessions, that may be a \nvaluable treatment modality in patients with stiff-person syndrome who are \nunresponsive to first-line therapies. \nDisclosure of Commercial Conflict of Interest \nR. Fisher: Nothing to disclose; M. T. Friedman: Nothing to disclose; E. Madrigal: \nNothing to disclose \nDisclosure of Grants Conflict of Interest"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 3248,
+        "end": 3350
+      },
+      "page_index": 1,
+      "text": "R. Fisher: Nothing to disclose; M. T. Friedman: Nothing to disclose; E. Madrigal: \nNothing to disclose"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "We present a 75-y-old \nfemale patient with sudden onset of subacute gait impairment and myoclonus. A \nserum/cerebral spinal fluid paraneoplastic panel was positive for amphiphysin [CSF \n1:256 titer, serum 1:15360 titer/western blot (+)], a nonintrinsic membrane protein \nconcentrated in nerve terminals, and she was subsequently diagnosed with invasive \nductal carcinoma.",
+      "source_offsets": {
+        "start": 814,
+        "end": 1185
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Study Design/Methods: Our patient was treated with first-line \nimmunosuppressive therapy Solu-Medrol 1 g × 5 doses, without improvement. \nUnresponsiveness prompted an intravenous immune globulin regimen of 0.4 g/kg/d \nfor 5 d, which also did not yield the expected results. Apheresis has been described \nas a treatment option in patients with life-threatening respiratory decline, but, in our \ncase, the lack of clinical improvement with previous therapies warranted the use of \nthis modality. Results/Findings: Therapeutic plasma exchange (TPE) was \nperformed by using a COBE (now GAMBRO) Spectra apheresis system (GAMBRO \nBCT, Inc., Lakewood, CO). Peripheral venous catheters were used for access and \nreturn. The patient underwent seven exchanges in the course of 2 wk, for a total 1.0 \nplasma volume exchange at 100% fluid balance with 2.5 L of 5% albumin as \nreplacement fluid. Conclusion: All seven sessions were completed without any \nmajor adverse events. The only side effects described were brief episodes of cold \nintolerance and drowsiness secondary to antihistamine use, both of which became \nmilder as the sessions progressed. TPE is usually a well-tolerated procedure, and \nthe reported adverse event frequency is below 5%. Since last being treated, the \npatient had received Rituxan 375 mg/m2 weekly for 5 wk, and she since reports \nimprovement with respect to muscle spasms and body pain, changes that have \nallowed her to tolerate a lower dose of Baclofen (30 mg daily, down from 45 mg). Her \n“stiff” and unsteady gait has improved when using a walker, and she is able to \nambulate with more ease and without any falls. Although it is unclear how much of \nthe clinical improvement can be attributed to the TPE sessions, that may be a \nvaluable treatment modality in patients with stiff-person syndrome who are \nunresponsive to first-line therapies.",
+      "source_offsets": {
+        "start": 1186,
+        "end": 3052
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

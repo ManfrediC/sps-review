@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1453::p1",
+  "paper_id": "1453",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1453::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: Ms. S presented to our emergency\ndepartment with progressive bilateral leg pain and tightness for the\npast year. She was having worsening rigidity with resulting contrac-\ntures, and started requiring a wheelchair for mobility. As she had\nfallen multiple times at home, she was admitted for further workup.\nPM&R was consulted for evaluation of her leg stiffness. On examina-\ntion, there was notable rigidity and co-contraction in her bilateral\nlower extremities along with ﬂexion contractures of her knees and\nankles. She also had marked toe clawing. However, there was no axial\ninvolvement or startle response, despite multiple attempts to illicit\nthese signs. MRI of the neuroaxis was unremarkable, except for an\n\namorphous, nonspeciﬁc, non-enhancing T2 cord signal abnormality at\nthe cervical medullary junction. A movement lab study was suggestive\nof a CNS hyperexcitability disorder. An EMG did not show evidence for\na peripheral cause for her symptoms, though it did suggest some\nfunctional overlay. An extensive lab workup was performed, including\nCSF studies, and was remarkable for high titers of GAD65 antibody in\nboth the blood and the CSF. She was started on diazepam 5mg TID and\na course of IVIG with rapid improvement in her symptoms.\nSetting: Tertiary care hospital.\nResults: At 2 weeks follow-up, her pain and rigidity is much more\ntolerable, and she can ambulate without a gait aid.\nDiscussion: Cases of stiff person syndrome without axial involvement\nhave been described, but this is the ﬁrst reported case, to our\nknowledge, of stiff person syndrome (or stiff limb syndrome), without\nthe characteristic hyperekplexia.\nConclusions: Stiff person syndrome can be present even without the\nexpected hyperekplexia and axial rigidity. Benzodiazepines can be\nbeneﬁcial in these cases.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2718,
+        "end": 3457
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 739
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3458,
+        "end": 4537
+      },
+      "compiled_offsets": {
+        "start": 741,
+        "end": 1820
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

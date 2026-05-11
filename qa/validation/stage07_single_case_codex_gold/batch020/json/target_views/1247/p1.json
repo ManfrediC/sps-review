@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1247::p1",
+  "paper_id": "1247",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1247::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: Patient is a 53-year-old man with waxing\nand waning symptoms of low back pain and leg cramps. Patient noted\nlocalized and symmetric stiffness in his quadriceps, hamstrings, and\nadductors bilaterally. Tightness is associated with pain and decreased\nrange of motion (ROM). This resulted in impaired ambulation, trans-\nfers, and balance with frequent associated falls. Physical exam noted\nbilateral spasticity rated at 2/4 on Modiﬁed Ashworth Scale in bilateral\nhip ﬂexors, adductors, and knee extensors; 4/4 in hamstrings. After\nextensive workup for stated symptoms, patient was found to have\nelevated anti-GAD antibodies ( >250 in 2009) and was diagnosed with\nSPS. Patient was initially treated with IVIG and went into remission for\nseveral years. In 2012, aforementioned symptoms returned. He sub-\nsequently received a course of PLEX and Rituximab x2. Since 2012,\npatient has been receiving IVIG 1mg/kg divided over 2 days every 4\nweeks. In addition to monthly IVIG, patient has tried warm baths,\nheating pads, TENS unit, corticosteroids, and chiropractor care over\nseveral years without any relief in stiffness. His medication manage-\nment includes baclofen, diazepam, and gabapentin without signiﬁcant\nrelief in pain nor rigidity.\nSetting: Tertiary Care Hospital.\nResults: After bilateral treatment with botulinum toxin injections to\nthe long head of biceps femoris, adductor magnus, and rectus femoris\npatient noted signiﬁcant pain relief, decreased stiffness, and\nimproved ROM. He subsequently endorsed fewer falls, increased dis-\ntance for ambulation, and improved balance and gait mechanics.\n\nConclusions: Use of botulinum toxin in refractory symptoms for SPS\ncan improve overall function with improved pain control, gait me-\nchanics, and balance.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1575,
+        "end": 3198
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1623
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3668,
+        "end": 3822
+      },
+      "compiled_offsets": {
+        "start": 1625,
+        "end": 1779
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

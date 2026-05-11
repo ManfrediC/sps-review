@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1762::p1",
+  "paper_id": "1762",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1762::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "In this report we present a clinical case of trismus. The patient in question showed symptoms \nof trismus for 3 days, rapidly leading to respiratory insufficiency. Afterwards she developed \nmyoclonus and progressive encephalopathy. Neurological workup showed no relevant abnor-\nmalities. A CT of the abdomen revealed a mass in the lower abdomen, which turned out to be \nan ovarian teratoma. Progressive encephalopathy with rigidity and myoclonus (PERM) was di-\nagnosed clinically. Treatment with corticosteroids, benzodiazepines, and levetiracetam did not \nameliorate the patient’s condition. Only after the introduction of plasmapheresis was there a \nspectacular improvement in her clinical state. In this case we could not detect associated anti-\nbodies. The most likely cause of PERM is paraneoplastic disease secondary to ovarian teratoma. \nThis type of tumor has been associated with multiple paraneoplastic neurological conditions, \nbut this is the first case associated with PERM. To date there is only one publication on trismus \nas a sole presenting sign, with a quite similar disease course.  © 2019 The Author(s) \n Published by S. Karger AG, Basel\n\nCase Presentation  \nA 73-year-old woman presents to the emergency department, showing symptoms of tris-\nmus leading to sudden respiratory distress and an episode of cyanosis. Anamnestic symptoms \nof trismus had shown up 3 days before hospitalization. Initially there had been no subjective \nsigns of respiratory failure. The patient has no relevant history. Her chronic medication con-\nsisted of macrogol, escitalopram, mometasone, indapamide, and lorazepam. There was no no-\ntion of any use of antipsychotic or antiemetic agents. The patient’s vaccination history was \nunknown. She did not recall any vaccination in the past 10 years. There was no history of al-\ncohol, nicotine, or drug abuse. The patient was socially active and a recreative gardener. \nOn arrival of the medical team, there was no safe airway. After a Mayo tube had been \nplaced, oxygen saturation stabilized rapidly. Neurological examination reveals trismus and \nmild rigidity of the neck muscles. The patient was alert. Her mo tor function, sensibility, and \nreflexes were normal. General physical examination did not reveal any abnormalities, except \nfor small wounds in the oral mucosa due to an ill-fitting dental prosthesis. Also, the lab tests \nas well as brain and neck CT were all normal. CSV analysis showed normal biochemistry and \ncultures remained sterile. \nTreatment for tetanus was started, including antibodies, vaccinations, and metronidazole. \nDuring the initial 12 h of hospitalization the patient’s condition remained stable with persis-\ntent trismus (mouth opening limited to a few millimeters). Twenty-four hours after hospital-\nization, the patient has a sudden respiratory collapse with a hypoxic cardiac arrest of 2 min. \nAfter sedation had been stopped, the initial evaluation showed persistent trismus with need \nof ventilation. Further clinical evaluation, however, was unchanged compared with her gen-\neral condition before cardiac arrest. In the following days there was a deterioration with the \ndevelopment of non-stimulus-induced myoclonus in all limbs. EEG did not show an epileptic \ncorrelate but revealed slowed background waves. The patient’s consciousness declined pro-\ngressively. The medical therapy was switched to diazepam and levetiracetam. \nThe patient was clinically diagnosed with PERM. She was started on a high dose of methyl-\nprednisolone. Further workup revealed a mass in the lower abdomen. Resection showed an \novarian teratoma. Paraneoplastic and autoimmune antibodies (including anti -GAD, anti -\nNMDA, anti-Ri, anti-GlyR, and anti-amphiphysin) remained negative; DPPX antibodies were \nnot tested due to logistic reasons. MRI of the brain showed age-related atrophy. There was no \nevidence of hypoxic damage. \nBecause of lack of improvement on methylprednisolone, she was started on plasmapher-\nesis (five sessions). This led to an obvious neurological improvement of conscience: the pa-\ntient was able to follow instructions and to answer questions correctly in a nonverbal way.\n\nThe myoclonic movements disappeared completely. Rigidity was less pronounc ed and re-\nmained only in the legs. Trismus was less pronounced and there was no longer any need for\n\nbreathing assistance. During the days following this improvement there were multiple com-\nplications with medical-toxic bone marrow suppression, spontaneous retroperitoneal bleed-\ning, sepsis, and spontaneous intestinal perforations. Due to those complications, further plas-\nmaphereses were no longer possible. The patient died of multi organ failure. No autopsy was \nperformed.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 984,
+        "end": 2142
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1158
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2980,
+        "end": 5983
+      },
+      "compiled_offsets": {
+        "start": 1160,
+        "end": 4163
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5985,
+        "end": 6160
+      },
+      "compiled_offsets": {
+        "start": 4165,
+        "end": 4340
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6561,
+        "end": 6940
+      },
+      "compiled_offsets": {
+        "start": 4342,
+        "end": 4721
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

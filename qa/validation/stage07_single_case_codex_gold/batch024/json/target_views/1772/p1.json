@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1772::p1",
+  "paper_id": "1772",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1772::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "2 | CASE REPORT\nA 61-year-old right-handed woman with seropositive SPS, \ndiabetes mellitus (DM), epilepsy, and hypothyroidism.\nHer SPS symptoms started in 2011 with frequent \nfalls, truncal stiffness, and muscle spasms. She had an an-\nti-GAD-Ab titer of 800 nmol/L (normal <0.02 nmol/L), with \nnormal spine MRI, electromyogram, nerve conduction study, \nand muscle biopsy. She did well on symptomatic treatment \n(gabapentin and diazepam).\nHer seizures started in 2014 when her husband witnessed \nepisodes of unresponsiveness and automatisms. Most of \nher seizures would occur at a weekly basis while singing \nor listening to choral music at church, triggering a religious \nemotion. According to her husband, she would stop singing, \nstare and exhibit mouth and hand automatisms lasting for \nfew minutes, followed by a period of confusion lasting for \n2-3 minutes. The patient had no recollection of the events. \nOccasionally, she would experience spontaneous seizures, \nwhich were not triggered by music. She was admitted to the \nEpilepsy Monitoring Unit, and she had four seizures arising \nfrom the left TL characterized by apnea followed by loss of \nawareness and automatisms (Figure 1.). All happened while \nlistening to music or singing along. The epilepsy autoim-\nmune panel in serum showed an elevated anti-GAD-Ab titer\n\nof 1280 nmol/L. Brain MRI was normal except for a minimal \nasymmetry of the temporal horns, right larger than left. She \nwas treated with up-titrating dose of levetiracetam. Her sei-\nzures were fairly controlled (one automotor seizure every two \nmonths) but she was not seizure free.\nIn 2018, she was diagnosed with insulin-dependent DM. \nShe was then started on intravenous immunoglobulin pulses, \nwith improvement of the symptoms related to SPS, glycemic \nvalues, and seizure frequency.\n\nWe describe an association between MRS and SPS related to \nanti-GAD-Ab, which has not been previously reported. This \ncase shows MRS as a distinctive epilepsy type that may be \nfound in patients with SPS and anti-GAD-Ab, helping in the \nearly identification of these patients.\n\nEpileptic seizures should be suspected in patients with SPS \nand new onset paroxysmal episodes. Autoimmune workup \nwith anti-GAD-Ab determination should be performed in \npatients with MRS. Immunotherapy should be considered in \nepileptic patients with anti-GAD-Ab when they do not fully \nrespond to AEDs.\n\nPresent \ncase\n1 61y, Female, \nright-handed\nOnset: 58y\nApnea,\nautomotor seizure\nWeekly Listening and singing \nreligious music\nEmotional \ncomponent\nYes Left TL Normal Stiff-person \nsyndrome\nHypothyroidism\nDM\n1280 nmol/L None Levetiracetam Every 2 mo IVIG",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 895,
+        "end": 2219
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1324
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3853,
+        "end": 4341
+      },
+      "compiled_offsets": {
+        "start": 1326,
+        "end": 1814
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4357,
+        "end": 4633
+      },
+      "compiled_offsets": {
+        "start": 1816,
+        "end": 2092
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7163,
+        "end": 7467
+      },
+      "compiled_offsets": {
+        "start": 2094,
+        "end": 2398
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8789,
+        "end": 9041
+      },
+      "compiled_offsets": {
+        "start": 2400,
+        "end": 2652
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

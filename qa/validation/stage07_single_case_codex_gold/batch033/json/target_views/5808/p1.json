@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5808::p1",
+  "paper_id": "5808",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5808::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Patient Case\nHPI : A 54-year old female presented with high fevers and mental status changes attributed to urosepsis.\nPMH :  SPS (anti-GAD 65 Ab+) diagnosed 2004, ITB pump placed 2004, rhabdomyolysis and baclofen pump failure \n(kinked tubing) 7/2009\nSH : Resides in SNF , full assist with all ADLs, power wheelchair , Hoyer lift for transfers\nHome medications : clonazepam 1mg po q8hr alternated with diazepam 1mg po q8hr , ITB 899mcg/day\nHospital Day 2\n• Despite appropriate antibiotics, patient remained febrile (105-107°F) and developed tachycardia, autonomic instability, \nincreasing episodes of severe spasticity and rigidity, and an elevated CPK\n• Symptoms now recognized as acute baclofen withdrawal\n• High-dose oral baclofen and IV diazepam started\nHospital Day 3\n• Intubation and mechanical ventilation now necessary to maintain patent airway and allow for high-dose sedation \nneeded to control rigidity and severe spastic episodes\n• High-dose midazolam and propofol infusions, in addition to oral baclofen and IV diazepam, now required\nHospital Day 5-10\n• Imaging, interrogation, and open surgery of the pump system revealed system failure due to catheter-pump \ndisconnection \n• Catheter and implanted pump replaced and ITB therapy restarted\nHospital Day 11-79\n•  ITB titrated in increasing, step-wise fashion to achieve symptom control\n• She required high-dose infusions of midazolam, fentanyl, and propofol as well as high-dose oral baclofen, tizanidine, \ndantrolene, and cyproheptadine for symptom control and to allow for adequate ventilation while ITB dose titrated\n• Weaning of intravenous and oral agents complicated by frequent episodes of acute stiffening, spasms, and autonomic \ninstability, requiring additional sedative rescue doses\n• Autonomic instability required intermittent use of pressors and transcutaneous pacing\n• Recovery complicated by episodes of urosepsis, bacteremia, and pneumonia\nHospital Day 80\n• Discharged to L T AC with antispasmodic regimen consisting of ITB 1200mcg/day, baclofen 30mg po q4hr , diazepam \n5mg po q6hr , tizanidine 4mg po q6hr , and cyproheptadine 4mg po q6hr",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 197,
+        "end": 2315
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2118
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

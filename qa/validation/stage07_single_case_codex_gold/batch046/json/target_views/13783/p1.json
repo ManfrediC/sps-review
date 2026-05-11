@@ -1,0 +1,39 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "13783::p1",
+  "paper_id": "13783",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "13783::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": false,
+  "input_text": "Table 6 Stiff-person syndrome\nPatient number Age/sex Antibodies Cancer Clinical presentation PET MRI\n1 55/female Anti-GAD None Cerebellar degeneration, muscle spasms, type I diabetes – cerebellar stiff-person syndrome Normal Baseline, baseline + 1 month, and baseline + 3months: unremarkable",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 29380,
+        "end": 29671
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 291
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ]
+  }
+}

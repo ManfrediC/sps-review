@@ -1,0 +1,65 @@
+{
+  "paper_id": "5884",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5884.json",
+    "source_text_sha256": "f8a7bc6c269bfaa353a8eccb78ad2971a2c0f822b4dee57b48e36d711c0b5744",
+    "prepared_source_sha256": "1f67311b234520407d727d9e7ff9e2f5de8cc062adc962fe66d4310e1edcdf70",
+    "prepared_source_character_count": 3206
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 3181
+      },
+      "page_index": 0,
+      "text": "D48 CRITICAL CARE CASE REPORTS: NEUROCRITICAL CARE, SEDATION, AND DELIRIUM  / Thematic Poster Session\nUnable to Relax: A Case of Stiff Person Syndrome\nW. Ning\n1\n, S. Iantorno\n1\n, C. Zhong\n2\n, S. Li\n3\n; \n1\nInternal Medicine, LAC+USC Medical Center, Los\nAngeles, CA, United States, \n2\nNeurology, LAC+USC Medical Center, Los Angeles, CA, United\nStates, \n3\nPulmonary and Critical Care, LAC+USC Medical Center, Los Angeles, CA, United\nStates.\nIntroduction\n Stiff Person Syndrome (SPS) is an extremely rare and debilitating nervous system\ndisease that is presented with whole body stiffness, rigidity and spasms. This disease has an\nestimated incidence of one case per million per year and therefore, not much information has\nbeen written about this potentially devastating disease in which early diagnosis may be crucial to\nprevent potential permanent and morbid consequences. \nCase Summary\n A 49 year old male with\nhistory of recently diagnosed panic attacks and recurrent rhabdomyolysis presents after a panic\nattack at home leading to cardiac arrest with return of spontaneous circulation. Labs were\nsignificant for an elevated potassium to 9.1 mmol/L and creatinine kinase of up to 220,000 U/L.\nThe patient was intubated for airway protection and admitted to intensive care unit (ICU) for\nfurther treatment. While in the ICU, patient underwent hypothermia protocol for preservation of\nneurological function and continuous renal replacement therapy for rhabdomyolysis. Further\nmedical history was obtained from the family that was notable for the history of developing a\nshooting pain and muscle spasms in his left leg 1.5 years ago that caused him to have difficulty\nwalking, leading him to fall down a flight of stairs and causing injury in his thoracic spine that\nrequired surgical stabilization. After the surgery, family noted the patient to have hour long panic\nattacks with muscle stiffness and spasms throughout his body, particularly in his core muscles.\nThe patient had seen a multitude of neurologists and was provided negative lab results and\nimaging, without a specific diagnosis. Given the abnormal quality of the patient’s presentation, an\nanti-GAD 65 was sent that returned elevated. The patient was diagnosed with Stiff Person\nSyndrome and subsequently treated with diazepam. \nDiscussion\n The proposed pathogenesis of\nSPS is caused by the blockade of the inhibitory enzymes of the central nervous system, leading\nto over-activation of the nervous system and causing the clinical presentation of uncontrollable\nmuscle stiffness and rigidity. Glutamic acid decarboxylase (GAD) is the enzyme responsible for\nmaintenance of neural inhibitory pathways and antibodies against the enzyme is responsible for\ndecline in level of gamma amino butyric acid (GABA), causing a loss in inhibitory mechanism for\nthe nervous system. Treatment include diazepam to assist in symptom management; however,\nother treatments have been proposed such as steroids, plasmapheresis and intravenous\nimmunoglobulins but not much data has been gathered given the rarity of the disease.\nThis abstract is funded by: None\nAm J Respir Crit Care Med 2020;201:A6976\nInternet address: www.atsjournals.org"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 3184,
+        "end": 3206
+      },
+      "page_index": 0,
+      "text": "Online Abstracts Issue"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 49 year old male with\nhistory of recently diagnosed panic attacks and recurrent rhabdomyolysis presents after a panic\nattack at home leading to cardiac arrest with return of spontaneous circulation. Labs were\nsignificant for an elevated potassium to 9.1 mmol/L and creatinine kinase of up to 220,000 U/L.\nThe patient was intubated for airway protection and admitted to intensive care unit (ICU) for\nfurther treatment. While in the ICU, patient underwent hypothermia protocol for preservation of\nneurological function and continuous renal replacement therapy for rhabdomyolysis. Further\nmedical history was obtained from the family that was notable for the history of developing a\nshooting pain and muscle spasms in his left leg 1.5 years ago that caused him to have difficulty\nwalking, leading him to fall down a flight of stairs and causing injury in his thoracic spine that\nrequired surgical stabilization. After the surgery, family noted the patient to have hour long panic\nattacks with muscle stiffness and spasms throughout his body, particularly in his core muscles.\nThe patient had seen a multitude of neurologists and was provided negative lab results and\nimaging, without a specific diagnosis. Given the abnormal quality of the patient’s presentation, an\nanti-GAD 65 was sent that returned elevated. The patient was diagnosed with Stiff Person\nSyndrome and subsequently treated with diazepam.",
+      "source_offsets": {
+        "start": 887,
+        "end": 2290
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

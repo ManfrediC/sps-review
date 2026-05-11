@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1861::p1",
+  "paper_id": "1861",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1861::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We describe the case of a 64 -year-old \nwoman with stiff person syndrome and positivity for acetylcholine receptor ganglionic neu-\nronal antibodies, which can also be seen in muscular hyperexcitability conditions, as well as \nother paraneoplastic syndromes. The relevance of this report is the possible direct elevation of \nthis antibody due to a direct immunological cause. Acetylcholine receptor ganglionic neuronal \nantibodies have been reported with autoimmune autonomic neuropathy and paraneoplastic \nsyndromes linked to lung cancer and myastheniform syndromes, as well as in some muscular \nhyperexcitability states, but not in stiff person syndrome.  © 2020 The Author(s) \n Published by S. Karger AG, Basel\n\nCase Report  \nA 64 -year-old woman, without a relevant family history, reported having had rigidity \nwhile walking 4 years before her consultation, involuntary tongue movements, biting of the \noral mucosa, as well as a “jumping” sensation of her abdomen. \nShe was evaluated by a movement disorder specialist. A diagnosis of tardive dyskinesia \nwas done, and she was started on tetrabenazine 25 mg t.i.d. without any improvement, quit-\nting after 1 year of treatment. \nTwo and a half years before, her walking became more difficult, the abdomen was stiff, it \njumped and arched, she reported hardness in the muscles of the neck, face and trunk, and a \nwalking pattern “like a robot.” She consulted another specialist in movement disorders, who \nrequested multiple studies: the glutamic acid decarboxylase 65 (GAD65) Ab were 2.5 (<0.02), \nthe rest of the Ab being negative. \nShe consulted with us for the first time  in 2017, complaining of jerky movements, with \nstiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff \nabdomen, postural tremor, trunk and limb action, as well as “robotic gait.” \nWe requested an electromyography that revealed the presence of intermittent contrac-\ntions of the phasic type at rest, at a frequency of 6 Hz in virtually all the evaluated muscles. No \nco-contraction of agonists and antagonists was detected. There was a slight decrease in motor \nunit recruitment and reflex hyperexcitability of spinal motoneurons, especially in lower limbs \nand brainstem (blink). \nBased on the complete clinical presentation and complementary studies, the diagnosis of \nstiff person syndrome (SPS) was considered. She was started on diazepam 10 mg t.i.d . and \nbaclofen 20 mg t.i.d., without improvement in the following 2 weeks; after that we initiated \nclonazepam 2 mg b.i.d., also without any clinical improvement. Knowing that rigidity had not \nimproved within a 2-year time lapse, we decided to give her intravenous immunoglobulin 0.4 \ng/kg for 5 days, a 5 -day treatment with plasmapheresis and 2 sessions of rituximab and cy-\nclophosphamide, 500 mg/each in a 4-day frame, with partial improvement, mostly on her gait. \nA full-body positron emission tomography was performed in 2019, which showed a small \nright mammary zone which was biopsied, resulting in a benign lesion. \nNew immunological and paraneoplastic laboratories requested concluded positivity for \nAChRGN Ab 0.06 (<0.02) and GAD65 Ab 9 (<5), with the rest being negative, emphasizing an-\ntineuronal nuclear Ab (ANNA)-1, ANNA-2, ANNA-3, antiglial nuclear Ab (AGNA)-1, Purkinje \ncell Ab (PCA)-1, PCA-2, PCA-Tr, amphiphysin Ab, CRMP-5-IgG, striational muscle Ab, P/Q type \ncalcium channel, N-type calcium channel, Ach receptor Ab, and neuronal K+ channel Ab.\n\nUntil now, we have ruled out paraneoplastic causes in our patient. We have centered our \nfocus just on the immunological ones, mentioning N-methyl-D-aspartate receptor in encepha-\nlitis with early psychiatric and cognitive features, leucine-rich glioma-inactivated 1 with brief \ndystonic movements, contactin-associated protein-like 2 that are juxtaparanodal protein Ab, \nwith multiple neuromyotonic choreic, ataxic, and myoclonic movements , aquaporin-4 and\n\nmyelin oligodendrocyte glycoprotein with the optic neuromyelitis spectrum, and IgLON5 -\n\nOur patient’s AChRGN Ab was positive, us ually detected in about 50% of patients with \nautoimmune autonomic neuropathy [1, 2], but it can also be seen in about 5–10% of patients \nwith lung cancer, Lambert-Eaton myastheniform syndrome, myasthenia gravis, and thymo-\nma [1]. \nIt is considered that AChRGN Ab could be physiologically detected in muscular hyperex-\ncitability like in some neuromyotonias, cramp -fasciculations and acquired rippling muscle \nsyndrome [1].  \nAs far as we are aware of, AChRGN Ab have not been reported in SPS. We hypothesize that \nthese antibodies might be elevated due to a direct immunological cause. However, it could also \noccur because of a hyperexcitability state caused by severe stiffness due to the patient’s own \ncondition.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1315,
+        "end": 2027
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 712
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2648,
+        "end": 5425
+      },
+      "compiled_offsets": {
+        "start": 714,
+        "end": 3491
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5637,
+        "end": 6095
+      },
+      "compiled_offsets": {
+        "start": 3493,
+        "end": 3951
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6097,
+        "end": 6184
+      },
+      "compiled_offsets": {
+        "start": 3953,
+        "end": 4040
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6715,
+        "end": 7475
+      },
+      "compiled_offsets": {
+        "start": 4042,
+        "end": 4802
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

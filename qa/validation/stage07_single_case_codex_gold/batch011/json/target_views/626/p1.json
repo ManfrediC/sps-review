@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "626::p1",
+  "paper_id": "626",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "626::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report. Three years ago, we reported a 53-year old woman\nwith atypical SPS who presented with stiffness predominantly of\nher right upper limb and trunk.\n6 This case was unusual for MRI\nfindings of an intramedullary hyperintense lesion corresponding\nto the site of the clinical symptoms. The neurologic symptoms of\nthe patient improved strikingly after initial treatment with IV\nmethylprednisolone and cyclophosphamide. After 3 years of im-\nmunosuppressive treatment, she showed no clinical signs of SPS\nwhile taking methylprednisolone 6 mg/day by mouth.\nDespite the initial presence of amphiphysin-autoantibodies in\n\nthe serum and CSF of the patient, we failed to detect a malig-\nnancy. We therefore concluded that the patient’s SPS was not\nparaneoplastic, particularly because amphiphysin-autoantibodies\nwere negative after immunosuppressive treatment. However,\nmore than 5 years after SPS onset, clinical and radiologic (mam-\nmography, ultrasound, MRI) observation of a nonpalpable, small\nnodule (1.5 /H110031.5 cm) in the right breast has led us to reconsider\nthis conclusion.\nMRI-guided biopsy of the nodule revealed no malignancy at 3.5\nyears after onset of SPS. Yet, 1.5 years after that, the patient first\nreported discomfort in her right breast, although no changes in\nsize or morphology suggesting malignancy could be detected by\nimaging. Open surgery, however, unveiled an infiltrating ductal\ncarcinoma of the breast (size: 1.7 /H110031.2 /H110031 cm), which was\nclassified as moderately differentiated (G2; pT1c according to\nUICC TNM classification). The tissue showed a strong expression\nof amphiphysin at a molecular weight of 108 kD, as detected by\nWestern blot.\n5 All of the 18 resected axillary lymph nodes were\ntumor free and there was no evidence of metastatic spread. The\npatient was therefore treated with tamoxifen and focal\nradiotherapy.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2841,
+        "end": 3461
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 620
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3462,
+        "end": 4704
+      },
+      "compiled_offsets": {
+        "start": 622,
+        "end": 1864
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

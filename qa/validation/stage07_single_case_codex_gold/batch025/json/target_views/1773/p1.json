@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1773::p1",
+  "paper_id": "1773",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1773::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We report the case of a \nstiff limb syndrome associated to anti-NMDAR antibodies. The patient, a \nFrench 44-year male, with no antecedents presents with a 2-month history \nof painful spasms in his both legs resulting in a difficulty of walking and \nmultiple falls. The diagnosis was supported by a stiff limb syndrome clinical \npattern, a clinical response to treatment with benzodiazepines and baclofen \nand by the absence of other neurological finding that could have sug -\ngested an alternative diagnosis. RESULTS: Anti NMDA-R antibodies were \nidentified in blood and CSF samples using both immunofluorescence and \ncell-based assay. Any other intracellular and surface antibodies were nega -\ntives, GAD-ab included. Oncological evaluation was negative. The patient \ndidn’t present encephalopathy signs and neuropsychological evaluation was \nnormal. The patient received immunotherapy with one cure of intravenous \nimmunoglobulins after an only partial improvement with symptomatic \ntreatment. CONCLUSION: This is the first case report of an association \nbetween the anti NMDA-R and stiff limb syndrome. Further investigations \nare needed to provide a better understanding of the pathophysiology of stiff \nperson spectrum disorders.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 11361,
+        "end": 12595
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1234
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

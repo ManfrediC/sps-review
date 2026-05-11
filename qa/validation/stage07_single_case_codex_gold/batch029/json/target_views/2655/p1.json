@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2655::p1",
+  "paper_id": "2655",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2655::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 38-year-old female with anxiety, depression, and \nGrave’s disease presented with several months of diﬀuse \n mus\ncle pain and spasms. She had previously been diagnosed \nwith hyperthyroid myopathy as well as rhabdomyolysis. \nRepeat CK level in the clinic was normal, as was MRI of the \nbrain and cervical spine, EMG/nerve conduction study, \n aldol\nase, autoimmune panel, and muscle biopsy. Notably, \nanti-GAD antibodies were negative in the serum at that time. \nOne year later, she returned with a progressive worsening of \nher symptoms, including impaired ambulation, diﬃculties \nwith activities of daily living, and hospitalizations to manage\n\npain. Repeat serum anti-GAD-65 antibodies were 69\n IU/mL \n( normal <5 IU/mL). EMG re vealed continuous motor activity \nin several muscles of the neck and thoracic paraspinal \n mus\ncles, where she reported signiﬁcant pain and tightness. \nHer symptoms were not suﬃciently controlled on a combi-\nnation of diazepam 7.5\n mg thr\nee times a day, baclofen 30 mg \nt\nhree times a day, Percocet 10–325  mg fo\nur times per day, \ntizanidine 4  mg thr\nee times a day, IVIG 400  mg/kg ev\nery \n4 wee\nks, and physical therapy. Her initial Botox treatment \nconsisted of 25 units Botox in the right as well as le/f_t trape-\nzius, and 25 units in the right and le/f_t sternocleidomastoid \nmuscle. /T_hree months later she had a second treatment in \nwhich those dosages were exactly doubled (50 units in the \nright and le/f_t trapezius and 50 units in the le/f_t and right ster-\nnocleidomastoid muscles). Again, three months a/f_terwards \nshe received 50 units in the right and le/f_t trapezius and \n ster\nnocleidomastoid muscles as well as 20 units in the right \nas well as le/f_t thoracic paraspinals as she noted pain and \nspasms in that region. 6 months later she received 40 units in \nthe right and le/f_t trapezius, 40 units in the right and le/f_t leva-\ntor \n sca\npulae, and 30 units in the right and le/f_t semispinalis \ncapitis muscles. /T_he Botox dosages were adjusted each treat-\nment to target the most painful regions at that time. A/f_ter the \naddition of Botox injections, the patient reported an improve-\nment in pain, decreased muscle spasms, an improvement in \nher quality of life, although she was not able to decrease her \nhome medications. She denied adverse eﬀects from the Botox \ntreatments.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7556,
+        "end": 8200
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 644
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8202,
+        "end": 9897
+      },
+      "compiled_offsets": {
+        "start": 646,
+        "end": 2341
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

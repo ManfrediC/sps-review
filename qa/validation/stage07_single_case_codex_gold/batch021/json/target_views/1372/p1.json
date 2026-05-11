@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1372::p1",
+  "paper_id": "1372",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1372::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE REPORT\nWe present a case of a 42 years old woman, ad-\nmitted in the Neurology Department for painful \nneck stiffness, aggravated by emotions and stress \nrelieved during sleep, accompanied by sweating, \ngait impairment and muscular weakness. The onset \nwas insidious about one month prior presentation \nwith relative rapid progression. The general exami-\nnation showed an overweight patient with a body \nmass index of 29,1 kg/sqm. There were no other \nabnormal clinical features in the general examina-\ntion (BP – 140/80 mmHg; HR-80 bpm, sinus \nrhythm). The neurological examination at admis-\n\nsion showed a continuous paravertebral and latero-\ncervical muscle contracture, brisk tendon re ﬂ exes, \nplantar ﬂ exion, reduced segmental strength with \nlower limbs predominance and muscular rigidity. \nNo sensorial, sensitive or coordination impairments \nwere found. The laboratory ﬁ ndings showed a se-\nrum glucose of 76mg/dl, glycated hemoglobin \n(HbA1c) = 5,3%, normal oral glucose tolerance \ntest. Serum vitamin B12 = 236 pg/ml, ESR= 34 \nmm/h, ﬁ brinogen = 367,5 mg/dl, ASLO < 200, PCR \n< 6, RF < 8, C\n3 complement = 174 mg/dl, absent \nANA antibodies, creatine kinase = 25U/L, LDH= \n124U/l and normal complete blood count. Further \ntest included negative anti-GAD and anti-Borrelia \nantibodies. Ovarian cancer antigen CA 125, breast \ncancer antigen CA 15-3 and VDRL were also nega-\ntive. Lumbar tap revealed oligoclonal bands with a \nslight increase in IgG component. Endocrine mark-\ners (TSH, FT4, anti-thyroid peroxidase antibodies) \nwere found within normal ranges. Head and spine \nMRI (native and contrast) showed no brain and \nmedullar changes. Needle EMG in repose deter-\nmined a continuous tetaniform activity, very sharp \non sternocleidomastoid muscle, more attenuated on \ntrapezius muscle, with failure of relaxation (Fig-\nures 1, 2). No SPECT, PET, amphiphysin antibod-\nies were performed due to unavailability at that \nmoment.\nWe diagnosed the case with SPS and initiated \nthe treatment with methylprednisolone 1 g daily, 7 \ndays, oral baclofen 6 x 25 mg daily, diazepam 2 mg \ndaily, carbamazepine 400 mg/day, sertraline 50 mg/ \nday, tiapride 100 mg/2ml daily, potassium\n supple-\nments, B1 and B6 vitamins with no considerable \nimprovement of symptoms. L-DOPA test, to ex-\nclude other dystonias related with parkinsonian \nsyndrome, aggravated the initial symptoms and \nwas withdrawn. After four months from the ﬁ rst ad-\nmission, the patient returns with painful cervico-\ndorsal contracture and lower limb contracture and \nperforms two sessions of plasma exchange (patient \nrefuses the next sessions). After plasma exchange \nthe patient’s evolution is slightly improved, con-\ntinuing the treatment with Baclofen 150 mg/day \nand carbamazepin 400 mg/day, but still requires \ndaily personal assistance. The screening for breast, \ngenital, pulmonary and other abdominal cancers \nwas negative. We also found no clues for autoim-\nmune disorders. EMG ruled out other conditions \nsuch as primary lateral sclerosis, Isaac’s neuromyo-\ntonia, paramyotonia. Normal imagistic ﬁ ndings \nruled out different types of myelopathies, spinal \nFIGURE 1. Continuous electrical activity of tetaniform type, very sharp on SCM muscle, more attenuated on trapezius \nmuscle, caused by failure on relaxation (in repose)\n\ntrauma sequelae. Other differential diagnosis in-\ncluded parkinsonian syndromes, dystonias, neuro-\nleptic malignant syndrome and psychogenic condi-\ntion, all excluded on clinical and paraclinical \nﬁ ndings.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2854,
+        "end": 3450
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 596
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3512,
+        "end": 6221
+      },
+      "compiled_offsets": {
+        "start": 598,
+        "end": 3307
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6282,
+        "end": 6488
+      },
+      "compiled_offsets": {
+        "start": 3309,
+        "end": 3515
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

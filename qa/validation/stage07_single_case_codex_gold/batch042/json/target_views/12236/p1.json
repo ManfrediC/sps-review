@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12236::p1",
+  "paper_id": "12236",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12236::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "2 | CASE PRESENTATION\nA 43- year- old married male farmer, with a known case \nof diabetes, presented to our emergency department with \na 1- year history of pain over bilateral lower limbs, hip, \nand low back with muscle spasms and startling type of \nmovement of bilateral lower limbs for the last 4 days. He \ninitially noted difficulties with walking, and standing and \ncould not bear weight. He had also experienced on- and- off\n\nneck tightness and jerky limb movements for the same \nduration. There were worsening jerks with touch and \nmovement, but not with auditory stimulus. There was no \nhistory of fever, headache, vomiting, trauma, loss of con-\nsciousness, trouble swallowing, weakness, or difficulty in \nbalance, speech, or vision. The patient denied any loss of \nsensation, autonomic dysfunction, or changes in bowel or \nbladder habits. He did not give a history of surgery, medi-\ncine, vaccination, or exposure to toxins and heavy metals. \nThe patient consumes a non- veg diet and does not smoke \nor consume alcohol. There is no family history of similar \ncomplaints or any known neurological disease.\nOn admission, his general condition was fair and his \nGlasgow Coma Score (GCS) was 15/15. He was well- \noriented to time, place, and person; vital signs were sta-\nble and within normal limits. There was no pallor, icterus, \nlymphadenopathy, edema, cyanosis, or clubbing. On neu-\nrological examination, his higher mental functions, cra-\nnial nerves, sensation, and coordination were normal. \nThere were no meningeal signs elicited. Motor examina-\ntion showed normal muscle bulk, reflexes, and power \n(5/5) in both upper and lower limbs while the tone was \nincreased in bilateral upper and lower limbs. The patient \nhad muscle jerks involving all the limbs, predominantly \nthe lower limbs. These symptoms were repetitive, with a \nfrequency of one episode in 2– 3 s. The spasms were pain-\nful, and the patient scored nine out of 10 in the visual an-\nalog score. The rest of the systemic examination findings \nwere normal.\nHis hematological profile showed a total count of \n7700/mm3, hemoglobin of 11.9  gm/dL, and platelets of \n160,000/mm3. His serum urea and creatinine levels were \n9.5 mmol/L and 89 mmol/L, respectively, sodium was \n139 mEq/L, and potassium was 4.3  mEq/L. His thyroid \nfunction test was normal; Triiodothyronine (T3) level was \n3.06 ng/dL, Thyroxine (T4) level 1.84 ng/dL, and Thyroxine \nStimulating Hormone (TSH) level 1.93 mU/L. The sero -\nlogical studies for Anti- Nuclear Antibodies (ANA) and \nHuman Leukocyte Antigen (HLA- B27) were negative.\nHis HbA1c level was raised to 11.4%. His urine was \npositive for acetone. A needle Electromyogram (EMG) \nrevealed spontaneous persistent motor discharges in the \nright tibialis anterior and soleus muscles. After ruling out \nthe differentials, we suspected a possible common link \nbetween insulin- dependent diabetes mellitus and neuro -\nlogical disease, possibly SPS. A test of GAD- 65 (Glutamic \nAcid Decarboxylase- 65) Immunoglobulin G via serum \nenzyme immunoassay showed GAD autoantibodies to be \nhigh in our patient with the value of more than 2000 IU/\nmL (Reference: <10 IU/mL).\nHence, the presence of muscle spasms and limb pain, \npositive GAD autoantibodies, positive therapeutic re -\nsponse to oral diazepam, and findings of EMG while \nsimultaneously ruling out other differentials pointed to -\nward the diagnosis of SPS with uncontrolled diabetes \nmellitus.\nDuring the hospital stay, the patient was treated with \nDiazepam, Metformin, Teneligliptin, Diltiazem, and \nLantus insulin. The patient showed signs of improvement \nin his reduction of jerk episodes and stiffness. The symp -\ntoms responded very well to 10  mg of diazepam given \ntwice a day and were comfortable with minimal stiffness \nand occasional jerks on the fifth day of admission. His \nfasting and postprandial sugar levels were improved on\n\nthe seventh day of admission. The patient was discharged \non the seventh day on 5 mg of diazepam twice a day with \nadvice to follow- up and to continue supportive care and \nphysiotherapy. On his follow- up at 3 months, the patient \nwas asymptomatic and the dose of diazepam was reduced \nto 2.5 mg twice a day and antidiabetic medications were \ncontinued as previous.\n\nOur patient was on oral anti-  diabetic medica-\ntion, long- acting insulin, and comparatively low dose of \ndiazepam; and was symptom- free on follow- up.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1247,
+        "end": 1676
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 429
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3418,
+        "end": 6881
+      },
+      "compiled_offsets": {
+        "start": 431,
+        "end": 3894
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6883,
+        "end": 7249
+      },
+      "compiled_offsets": {
+        "start": 3896,
+        "end": 4262
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 13510,
+        "end": 13663
+      },
+      "compiled_offsets": {
+        "start": 4264,
+        "end": 4417
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

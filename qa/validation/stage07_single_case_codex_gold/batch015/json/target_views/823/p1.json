@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "823::p1",
+  "paper_id": "823",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "823::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nStiff person syndrome (SPS) is a rare neuroimmunological disorder characterized by progressive muscular rigidity and spasms\nthat affect axial and limb muscles. There have been a few reports that patients with SPS had evidences of polymyositis. There\nhave been no clear explanations about the characteristics of polymyositis in SPS. We report the case of a 36-year-old woman with\nSPS in association with nonspeciﬁc focal myositis secondary to sustained muscle contraction. She presented with stiffness and pain\nin her extremities, and diazepam and baclofen were ineffective. With immunotherapy, her serum creatinine kinase levels\nreduced; however, her clinical symptoms progressively worsened.\nLevel of Evidence: V\n\nCase Presentation\nA 36-year-old woman presented with a 1-year history\nof progressive rigidity and pain in her proximal upper\nand lower limbs. There was no travel history and family\nhistory of illness demonstrat ing similar complaints. Her\nmedical history revealed idiopathic chronic kidney\ndisease diagnosed 3 years ago and depression for 15\nyears. Her kidney function was closely monitored\nbecause the renal-replacement therapy would be\nimminent. She took antidepressants (an unknown an-\ntidepressant for 10 years and venlafaxine for the\nrecent 5 years). Initially, she experienced ﬂuctuating\nrigidity and pain in her le ft upper arm. The muscular\nsymptoms gradually progressed over 1 year and spread\nto her axial muscles in addition to her upper and lower\nlimbs.\nFindings of the physical examination revealed\nnormal deep tendon reﬂexes and absence of motor and\nsensory impairment. Generalized rigidity and spasms\nwere noted in the proximal upper and lower extrem-\nities. Sustained contraction of the trapezius, biceps,\ntriceps, quadriceps, and hamstring muscles during rest\nwas prominent (Figure 1 A ) .O np a l p a t i o n ,t h em u s c l e s\nfelt like rocks, particular ly in the biceps and triceps.\nLaboratory results revealed e levated creatinine kinase\n\n(CK; 828 U/L [normal 32-211]) levels. Furthermore,\nlactate dehydrogenase (832 U/L [normal 264-463]),\nparathyroid hormone (363.5 pg/mL [normal 10-57]),\nand creatinine (2.63 mg/dL [normal 0.7-1.3]) levels\nwere elevated. The nephrologist interpreted that hyper-\nparathyroidism was due to chronic kidney disease. Results\nfor autoantibody tests, including antiglutamic acid\ndecarboxylase antibody (0.23 U/mL), rheumatoid factor,\nantithyroglobulin, and antinuclear antibody levels, were\nall negative.\nElectromyography (EMG) revealed continuous motor\nunit activity in the agonist and antagonist muscles (ie,\nthe biceps etriceps, rectus femoris ehamstring, and\nabdominaliselumbar paraspinalis) despite attempts by\nthe patient to relax the muscles (Figure 2 ). There was\nno evidence of ﬁbrillation potentials or positive sharp\nwaves on EMG during the intermittent silent period.\nMagnetic resonance imaging (MRI) of the brain was\nnormal. On T2-weighted MRI of the limb, there was\nbilaterally increased signal intensity in the biceps, tri-\nceps, rectus femoris, semitendinosus, and biceps fem-\noris muscles (Figure 3 A and 3B). Positron emission\ntomography showed increased\n18F-ﬂudeoxyglucose up-\ntake within the same muscles and did not reveal evi-\ndence of malignancy (Figure 3 C). Based on the clinical\nfeatures and conﬁrmation of continuous motor unit\nactivity of the agonist and antagonist muscles by EMG,\nSPS was presumptively diagnosed. Oral diazepam and\nbaclofen appeared ineffective.\nHowever, elevated CK level and signal change in the\nb i c e p sa n dr e c t u sf e m o r i sm u s c l e so nM R Iw e r en o t\nfully explained by the diagnosis of SPS. Thus, muscle\nbiopsy of the right rectus femoris was performed. Pa-\nthology revealed markedly increased ﬁber size varia-\ntion (20-100 mm), necrotic and regenerating ﬁbers,\ninternal nuclei, and inﬂammatory cell inﬁltration,\nwhich are pathologic signs of inﬂammatory myopathy\n(Figure 3 D).\nThe patient had been admitted 4 times over the last 4\nyears due to episodic difﬁculty in walking and worsening\nof muscular pain. Since administration of oral diazepam\nand steroid exhibited no effect, we attempted to\nadminister intravenous immunoglobulin (IVIG). At the\ntime of every admission, serum CK levels were elevated\nto a maximum of 1138.0 U/L. After IVIG therapy, CK\nlevels were mostly normalized, and her muscle rigidity\nand pain were transiently improved. Despite serial IVIG\ntreatment, her stiffness, hypertrophy, and limb and\naxial musculature pain gradually worsened over a 4-year\nperiod ( Figure 1 B and 1C). Furthermore, several\nrepeated EMGs still revealed continuous motor unit ac-\ntivity in the agonist and antagonist muscles.\nFigure 1. Inspection of the left arm. (A) The patient’s left biceps and triceps during the ﬁrst visit. (B) Hypertrophic change in the biceps and triceps\nat 1 year after diagnosis. (C) Hypertrophic changes over 4 years after initial diagnosis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 195,
+        "end": 917
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 722
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2168,
+        "end": 3427
+      },
+      "compiled_offsets": {
+        "start": 724,
+        "end": 1983
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3618,
+        "end": 6541
+      },
+      "compiled_offsets": {
+        "start": 1985,
+        "end": 4908
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "paper_id": "629",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text_proceedings_ready\\629.json",
+    "source_text_sha256": "3e74f37f611182c1bbcbb927a70cb0c3da84d04c7f46fc14d0c980032795a116",
+    "prepared_source_sha256": "b293db75a8f30f4792af364da7b4ce4fe3effad0a322e2012a7ddf50ca527ae9",
+    "prepared_source_character_count": 4494
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2220
+      },
+      "page_index": 14,
+      "text": "Anaesthesia for Stiff–Person\nSyndrome\nStiff–Person Syndrome (formally Stiff\nMan Syndrome) is a rare neurological\ncondition characterised by muscle rigid-\nity and spasm. It is thought to be\nimmunological in origin [1] and is\nassociated with the production of anti-\nbodies against glutamic acid decarboxy-\nlase, the rate-limiting enzyme for the\nsynthesis of gamma-aminobutyric acid\n(GABA). Loss of inhibition from higher\ncentres causes over-activity of the\ngamma motor neurone system and\nsubsequent progressive muscle rigidity.\nWe describe anaesthesia in a man with\nStiff–Person Syndrome who presented\nwith respiratory failure secondary to left\nlung collapse.\nA 60-year-old man presented to the\nAccident and Emergency department\nwith respiratory deterioration following\ntreatment for a chest infection. He had a\n4-year history of stiffness and spasms and\na diagnosis of Stiff–Person Syndrome\nhad previously been made. His efforts at\nventilation were severely impaired by\nrigidity of his thoracic and abdominal\nmuscles.\nIn the Accident and Emergency\ndepartment, his oxygen saturation on\nroom air was recorded as 86%. His\narterial blood gases on high ﬂow oxygen\nwith a reservoir bag indicated a respir-\natory acidosis (pH 7.29, P\nO2 7.2, PCO2\n8.1, HCO3 28.7, BE 1.0). A chest X-ray\nshowed a ‘white out’ of his left hemi-\nthorax and mediastinal shift. A diagnosis\nof respiratory failure secondary to left\nlung collapse as a consequence of aspir-\nation or secretion retention was made\nand he was admitted to the Intensive\nCare Unit.\nInitial attempts at management with\nnon-invasive ventilation (CPAP of 6\ncmH\n2O) were unsuccessful and his\narterial blood gases worsened ( PO2 7.0,\nPCO2 10.2). A decision was made to\nstart invasive ventilation. At this point,\nno information was available regarding\nwhich drugs were safe in this condition.\nAnaesthesia was induced with mida-\nzolam 1 mg and propofol 30 mg.\nAtracurium 50 mg produced good\nintubating conditions (Cormack and\nLehane grade 2 laryngoscopy) and\nrelaxation of axial and limb stiffness.\nFollowing induction he was cardiovas-\ncularly unstable requiring ephedrine\n30 mg, metaraminol 5 mg and a subse-\nquent norepinephrine infusion to main-\ntain an adequate blood pressure."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 2222,
+        "end": 4494
+      },
+      "page_index": 15,
+      "text": "Anaesthesia was maintained with fent-\nanyl (100 lg.h)1) and midazolam\n(3 mg.h)1). He was ventilated using\nBIPAP (P1: 20, P2: 5 ratio 1 : 1, rate 12\nbreaths.min)1) and his arterial blood\ngases improved markedly (FiO2 of 0.45:\npH 7.38, PO2 17.3, PCO2 6.1, HCO 3\n26.7, BE 1.4, Sp O2 98%).\nFibreoptic bronchoscopy was per-\nformed and copious amounts of puru-\nlent sputum aspirated. Co-amoxiclav\n1.2 g q.d.s and ﬂuconazole 200 mg\nb.d. were commenced following\ngrowth of yeasts and coliforms from\nlavage ﬂuid. The patient’s respiratory\nfunction gradually improved and he was\nextubated and discharged to a high\ndependency unit 72 h after intubation.\nA second deterioration, 4 days after\nhis initial presentation, prompted a\nsecond period of ventilation. This time\nanaesthesia was induced using alfentanil\nand propofol. Atracurium provided\nmuscle relaxation and intubation was\nuneventful. He was subsequently\nweaned from the ventilator once again\nand eventually discharged to the ward.\nCase reports in the neurology litera-\nture mention that patients with Stiff–\nPerson Syndrome have received anaes-\nthesia for surgical procedures [2] and\nperiods of ventilation for respiratory\nfailure [3, 4] but no details of anaesthetic\nmanagement are reported.\nJohnson and Millar [5] report a case\nof hypotonia requiring overnight\nventilation after anaesthesia for repair\nof an intrathecal baclofen pump in\n46-year-old woman with Stiff–Person\nSyndrome. Anaesthesia in this case was\ninduced with intravenous sufentanil\n10 lg, thiopental 375 mg and vecuro-\nnium 8 mg. The mechanism of the\nresulting hypotonia was unclear,\nalthough a subsequent return to thea-\ntre for revision of the baclofen pump\nwas reported as uneventful. They\nrecommendedavoidanceorjudicioususe\nof non-depolarizing muscle relaxants.\nIn our case, the patient remained\nsedated to facilitate ventilation and\nstiffness returned once the initial dose\nof muscle relaxant had worn off.\nDespite poor pre-induction posture due\nto extreme rigidity, we obtained good\nintubating conditions on two occasions\nusing atracurium for paralysis. We\nfound no complication with the use of\na non-depolarizing muscle relaxant in\nthis case.\nN. Haslam\nK. Price\nNewcastle General Hospital,\nNewcastle upon Tyne NE4 6BE, UK\nE-mail: jahaslam@lineone.net"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Anaesthesia for Stiff–Person\nSyndrome\nStiff–Person Syndrome (formally Stiff\nMan Syndrome) is a rare neurological\ncondition characterised by muscle rigid-\nity and spasm. It is thought to be\nimmunological in origin [1] and is\nassociated with the production of anti-\nbodies against glutamic acid decarboxy-\nlase, the rate-limiting enzyme for the\nsynthesis of gamma-aminobutyric acid\n(GABA). Loss of inhibition from higher\ncentres causes over-activity of the\ngamma motor neurone system and\nsubsequent progressive muscle rigidity.\nWe describe anaesthesia in a man with\nStiff–Person Syndrome who presented\nwith respiratory failure secondary to left\nlung collapse.\nA 60-year-old man presented to the\nAccident and Emergency department\nwith respiratory deterioration following\ntreatment for a chest infection. He had a\n4-year history of stiffness and spasms and\na diagnosis of Stiff–Person Syndrome\nhad previously been made. His efforts at\nventilation were severely impaired by\nrigidity of his thoracic and abdominal\nmuscles.\nIn the Accident and Emergency\ndepartment, his oxygen saturation on\nroom air was recorded as 86%. His\narterial blood gases on high ﬂow oxygen\nwith a reservoir bag indicated a respir-\natory acidosis (pH 7.29, P\nO2 7.2, PCO2\n8.1, HCO3 28.7, BE 1.0). A chest X-ray\nshowed a ‘white out’ of his left hemi-\nthorax and mediastinal shift. A diagnosis\nof respiratory failure secondary to left\nlung collapse as a consequence of aspir-\nation or secretion retention was made\nand he was admitted to the Intensive\nCare Unit.\nInitial attempts at management with\nnon-invasive ventilation (CPAP of 6\ncmH\n2O) were unsuccessful and his\narterial blood gases worsened ( PO2 7.0,\nPCO2 10.2). A decision was made to\nstart invasive ventilation. At this point,\nno information was available regarding\nwhich drugs were safe in this condition.\nAnaesthesia was induced with mida-\nzolam 1 mg and propofol 30 mg.\nAtracurium 50 mg produced good\nintubating conditions (Cormack and\nLehane grade 2 laryngoscopy) and\nrelaxation of axial and limb stiffness.\nFollowing induction he was cardiovas-\ncularly unstable requiring ephedrine\n30 mg, metaraminol 5 mg and a subse-\nquent norepinephrine infusion to main-\ntain an adequate blood pressure.",
+      "source_offsets": {
+        "start": 0,
+        "end": 2220
+      },
+      "source_block_id": "b0001",
+      "confidence": "review_required",
+      "evidence": "Full prepared source retained for Stage 07 single-case batch inspection."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Anaesthesia was maintained with fent-\nanyl (100 lg.h)1) and midazolam\n(3 mg.h)1). He was ventilated using\nBIPAP (P1: 20, P2: 5 ratio 1 : 1, rate 12\nbreaths.min)1) and his arterial blood\ngases improved markedly (FiO2 of 0.45:\npH 7.38, PO2 17.3, PCO2 6.1, HCO 3\n26.7, BE 1.4, Sp O2 98%).\nFibreoptic bronchoscopy was per-\nformed and copious amounts of puru-\nlent sputum aspirated. Co-amoxiclav\n1.2 g q.d.s and ﬂuconazole 200 mg\nb.d. were commenced following\ngrowth of yeasts and coliforms from\nlavage ﬂuid. The patient’s respiratory\nfunction gradually improved and he was\nextubated and discharged to a high\ndependency unit 72 h after intubation.\nA second deterioration, 4 days after\nhis initial presentation, prompted a\nsecond period of ventilation. This time\nanaesthesia was induced using alfentanil\nand propofol. Atracurium provided\nmuscle relaxation and intubation was\nuneventful. He was subsequently\nweaned from the ventilator once again\nand eventually discharged to the ward.",
+      "source_offsets": {
+        "start": 2222,
+        "end": 3199
+      },
+      "source_block_id": "b0002",
+      "confidence": "review_required",
+      "evidence": "Full prepared source retained for Stage 07 single-case batch inspection."
+    },
+    {
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "In our case, the patient remained\nsedated to facilitate ventilation and\nstiffness returned once the initial dose\nof muscle relaxant had worn off.\nDespite poor pre-induction posture due\nto extreme rigidity, we obtained good\nintubating conditions on two occasions\nusing atracurium for paralysis. We\nfound no complication with the use of\na non-depolarizing muscle relaxant in\nthis case.",
+      "source_offsets": {
+        "start": 4003,
+        "end": 4386
+      },
+      "source_block_id": "b0002",
+      "confidence": "review_required",
+      "evidence": "Full prepared source retained for Stage 07 single-case batch inspection."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [
+      "single_case_passthrough_requires_inspection"
+    ],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

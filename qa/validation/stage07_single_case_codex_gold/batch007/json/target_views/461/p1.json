@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "461::p1",
+  "paper_id": "461",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "461::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nStress fractures of the tarsal navicular bone typically present\nin a running athlete who has gradually increasing pain in the\ndorsal midfoot with occasional radiation of pain down the\nmedial arch. However, the pain does not typically cause muscle\nspam of the entire limb that severely impairs ambulation. We\n\ndescribe a 52-year-old woman with a navicular stress fracture\nthat presented with a stiff limb syndrome (SLS). There has been\none case report of acute torticollis associated with rib stress\nfractures1 but there have been no reports of fractures presenting\nwith stiff limbs or any other movement disorder.\nA 52-year-old woman with a past medical history signiﬁcant\nfor breast cancer status post double mastectomy, radiation, and\nchemotherapy 5 years prior was referred to the movement\ndisorders clinic by her orthopedist for right foot pain and\ncramping of her entire right leg. One month prior to admission,\nthe patient noticed that her big toe on the right side was “stuck\nup.” She then noted that her whole foot would hyperextend.\nThis was followed by severe spasms in the foot and leg forcing\nher to crawl on her hands and knees instead of walking. Shewas\nprescribed diazepam, up to 40 mg per day, which signiﬁcantly\nrelieved her symptoms.\nHer physical examination was signiﬁcant for spontaneous\nand continuous extension of the right big toe and an exagger-\nated arch of the right foot at rest and with action. The right\nankle was plantar ﬂexed and stiff as was the right gastrocne-\nmius. No other abnormal movements were noted. There was no\npoint tenderness to palpation. She could not place the heel of\nher foot on the ground with ambulation due to continued\nplantar ﬂexion of the foot. Her deep tendon reﬂexes were 2 /H11001\nand symmetric. The left toe was ﬂexor and the right toe was\nspontaneously upgoing. No paraspinal or axial contractions\nwere palpated.\nA comprehensive metabolic panel, complete blood count,\nand creatine kinase were normal. An MRI of the brain with and\nwithout gadolinium and electromyography and nerve conduc-\ntion studies were normal, although exteroceptor reﬂexes were\nnot tested. Paraneoplastic panel, including antiamphiphysin,\nantiglutamic acid decarboxylase, and antivoltage gated sodium\nchannel antibodies were negative. An MRI of the right lower\nextremity was obtained and showed a nondisplaced intraartic-\nular fracture of the medial aspect of the navicular bone with\ndiffuse edema. The patient was placed in a walking cast and\ndischarged with analgesics and orthopedic follow-up.\nOur patient’s history, clinical examination ﬁndings, and re-\nsponse to benzodiazepines were all very suggestive of SLS.\n“SLS” is a variant of “stiff person syndrome” (SPS), a disorder\ncharacterized by progressive muscular rigidity and spasm. It is\ntypically symmetric and most prominent in axial and proximal\nlimb muscles. When the symptoms are restricted to a limb\n(usually the leg) it is referred to as SLS, although often this\nprogresses to involve the axial musculature as well.\n2 The ab-\nsence of continuous motor unit activity when relaxed and\nabnormal cutaneomuscular reﬂexes argues against the diagno-\nsis of SLS and should prompt the search for another cause.\n2 In\nour patient, imaging of her foot demonstrated the navicular\nfracture. Recent studies have shown that navicular fractures\nmake up 14 –35% of all stress fractures.\n3,4 Vague symptom-\natology and elusive radiographic localization typically lead to a\ndelay in diagnosis averaging 4 months from initial symptom\nonset.\n5 To date, there has only been one case report of stress\nfractures of the ﬁrst rib in a child presenting as torticollis. 1\nThere have been no prior reports of stress fractures present-\ning as limb dystonia, SLS, or any other movement disorder.\n\nThis patient demonstrates an extremely unusual presentation\nof a stress fracture—as a movement disorder. The diagnosis\nwas initially missed by an orthopedic foot specialist and\nshows an unusual cross between orthopedic medicine and\nneurology.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2124,
+        "end": 2443
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 319
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2826,
+        "end": 6276
+      },
+      "compiled_offsets": {
+        "start": 321,
+        "end": 3771
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6277,
+        "end": 6519
+      },
+      "compiled_offsets": {
+        "start": 3773,
+        "end": 4015
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

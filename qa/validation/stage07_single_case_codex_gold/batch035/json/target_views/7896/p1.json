@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "7896::p1",
+  "paper_id": "7896",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "7896::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 69-year-old woman came in for consultation\nwith an 18-month history of back pain,\nstiffness and progressive difficulty at walking.\nShe had developed asymmetrical rigidity in her\nlegs, with the left one being worse, from falls.\nIn one of these falls she broke her left\nhumerus. That limb remains useless, painful\nand rigid. She had progressive difficulty in\nturning over in bed and in getting up. In\nstressful situations and when trying to move,\nshe had painful spasms in the left leg starting\ndistally with toe and ankle extension, and\nprogressing to knee and hip flexion while\nraising the leg from the bed. She became\nprogressively bedridden. Her medical history\nwas notable for diabetes mellitus (controlled\nwith acarbose) and hypertension (controlled\nwithout drugs). A neurological examination\nshowed stiffness and limitation in the range of\nactive and passive movements in the left leg,\nleft arm and, less pronouncedly, in the right\nleg. Also, there was slowing of finger, hand and\n\narm movements in the left hand. She found it\ndifficult to raise her left leg, which sometimes\ndeveloped into painful spasms. She had\ndecreased facial expression, cogwheel rigidity\nin both superior extremities and stony lumbar\nrigidity. Plantar reflexes were flexor and deep\ntendon reflexes were symmetrically brisk. She\nneeded help to sit down and was afraid to walk\neven with aid. On the other hand, her mental\nstatus, speech and cranial nerves were normal.\nThe results of blood tests, including anti-\nnuclear antibody, endomysial, gliadin, trans-\nglutaminase, mitochondrial, smooth muscle,\nparietal, anti-LKM1 (autoimmune hepatitis),\nthyroid peroxidase and thyroglobulin, were\nnegative. Levels of folic acid, vitamin B\n12, T4,\nthyroid-stimulating hormone, rheumatoid fac-\ntor, C-reactive protein, anti-streptolysin O,\nimmunoglobulins and complement were nor-\nmal. Serum anti-GAD level was 14 000 U/ml\n(radioimmunoassay). Also, the patient tested\nnegative for anti-Yo, anti-Hu, anti-Ri and\nantiampiphysin. Serum anti-GAD increased to\n60 400 U/ml (N ,1 U/ml).\nThe patient rejected lumbar puncture. Nerve\nconduction was normal and electromyography\nshowed normal motor unit potentials, an\ninability to relax any of the muscles tested,\nand continuous motor unit activity.\nCervical and lumbar MRI was normal.\nCerebral MRI showed bright hyperintense\nchanges on fluid-attenuated inversion recovery\n(FLAIR) and T2 in both striatal regions (more\nintense in the right striatum corresponding to\n\nthe more symptomatic left side), and a lesion\nin the left middle cerebellar peduncle on T2,\nthe only one enhancing with gadolinium\n(fig 1). Treatment was started with L-dopa\nwithout improvement. The patient improved\nafter diazepam (25 mg/day) and a 5-day course\nof intravenous immunoglobulin (0.4 mg/kg/\nday). Spasms and pain disappeared, and she\nwas able to walk without aid after discharge\n(12 days in hospital). After 6 months, MRI was\nsimilar, and on follow-up her gait was slow but\nindependent. Spasms, rigidity and pain on the\nlegs disappeared. Rigidity and limitation to\nabduct the left shoulder and to extend the left\nelbow persisted, and hence another 5-day\ncourse of intravenous immunoglobulin was\ninfused. After 2 weeks, she reported improve-\nment in walking and less rigidity on the left\nshoulder.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5930,
+        "end": 6929
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 999
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6930,
+        "end": 8414
+      },
+      "compiled_offsets": {
+        "start": 1001,
+        "end": 2485
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8759,
+        "end": 9568
+      },
+      "compiled_offsets": {
+        "start": 2487,
+        "end": 3296
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

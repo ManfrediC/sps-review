@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5212::p1",
+  "paper_id": "5212",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5212::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Stiff-Man Syndrome with GAD-Like \nImmunoreactivity: Response of a Patient to \nPlasmapheresis and Immunosuppression \nH.R. Brashear and Lawrence H. Phillips 11, Charlottesville, VA \nObjective. To study immunological, clinical and electrophysio- \nlogical responses to treatment of stiff-man syndrome. \nBackground. Some patients with a diagnosis of stiff-man syn- \ndrome have circulating autoantibodies with GAD-like \nimmunoreactivity (GAD-LIR). We report our second patient with \nstiff-man syndrome, high titers of serum GAD-LIR and typical \nEMG findings who responded to treatment. \nMethods. Indirect immunofluorescence assays, clinical \nassessments, and exteroceptive reflex measurements were car- \nried out before, during and after plasmapheresis and immuno- \nsuppression with corticosteroids. \nResults. Plasmapheresis and immunosuppression resulted in \ndecreased titers of GAD-LIR, marked improvement in rigidity \nand spasms, and reduced amplitude of exteroceptive reflexes. \nAlthough clinical and electrophysiological improvement persist- \ned on steroids, antibody titers returned to previous levels. \nUnlike our previously reported patient (Neurology \n1992;41:1588), this woman had detectable antibody in the CSF \nand developed seizures in late life. \nConclusions. These results further support the use of serum \nGAD-LIR and exteroceptive reflexes as markers for stiff-man \nsyndrome. Our findings also suggest that serum GAD-LIR may \nidentify a subset of patients responsive to treatment, that corti- \ncosteroids may be efficacious even with increasing titers, and \nthat CSF GAD-LIR is a risk factor for seizures.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4399,
+        "end": 6015
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1616
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "9477::p1",
+  "paper_id": "9477",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "9477::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Successfultreatmentofstiffman syn-\ndromewithintravenousimmunoglobu-\nlin\nStiffmansyndromeisarareconditionchar-\nacterisedbya progressivestiffnessofthe\nparaspinalandlowerlimbmusculaturewith\nintermittentpainfulspasmsoftenprecipi-\ntatedbystartleresponses.'Itisassociated\nwithotherautoimmuneconditionsandanti-\nbodiesto glutamicaciddecarboxylase\n(GAD)andotherorganspecificandnon-\norganspecificautoantibodies.'Themainstay\noftreatmentiswithbenzodiazepinesand\nbaclofenandattemptstotreatpatientswith\nsteroidsorplasmapharesishavebeenunder-\ntakenwithmixedresults.2Ourpatient\nrespondedtointravenousimmunoglobulin\n(IVIg).\nA 43yearoldman developedlowback\npainsixyearsbeforeadmission.He then\nstartedtofall,initiallywithextremeexer-\ntion,duetosuddenunexpectedstiffnessof\nthelegs.Thisbecameprogressivelyworse\novera12monthperiodsuchthatitstarted\ntobeapparentonwalking.A diagnosisof\nagoraphobiawasmadeanddiazepamtreat-\nmentresultedindramaticimprovement.His\nsymptomscontinuedandhethenstartedto\nexperiencejerkingofthelegswhenrelaxing\naswellasanexaggeratedstartleresponse,\nwhichon occasionscausedhimtocollapse\ntotheground.Fouryearsintotheillnesshe\ndevelopedinsulindependentdiabetesmelli-\ntus.Hismotherhadthyrotoxicosis,his\nmaternalgrandmotherhaddiabetesmelli-\ntus,andanunclehadperniciousanaemia.\nOnexaminationhewalkedwithastiffgait\npunctuatedbyexcessivestartleresponses\ncausinghimtofallforwardtothegroundon\nsomeoccasions.Hehadalumbarhyperlor-\ndosiswithpronouncedparaspinal,abdomi-\nnal,andlowerlimbrigidity,normalpower\nandcoordinationinhislowerlimbs,brisk\nlowerlimbreflexes,and flexorplantar\nresponses.Sensoryexaminationwasunre-\nmarkable,apartfromtheexcessivestartle\nresponsetosensorystimuli.\nHe hadanormalfullbloodcount,ery-\nthrocytesedimentationrate,andbiochemi-\ncalprofilewithaglycosylatedhaemoglobin\nof6-5%.Hisautoantibodyscreenwasnega-\ntiveapartfromaweaklypositiveantiparietal\ncellantibodyandapositiveserumanti-GAD\nantibodyatatitreof1:500.AnalysisofCSF\nand brainMRI were normal.Neuro-\n\nphysiologicalexaminationshowedcontinu-\nousmotorunitactivityinhisparaspinaland\nlowerlimbmuscleswithexaggeratedextero-\nceptivereflexes.Nerveconductionstudywas\nnormal.\nHis symptomswere improvedbut\nnotcontrolledby baclofen(60mg/day),\ndiazepam(15mg/day),and buspirone\n(15mg/day).He wasgiventhreecourses\nof intravenousimmunoglobulin(Alpha-\nglobulin;04g/kg/dayforfivedays)abouta\nmonthapartandhisprogresswasassessed\nonatimedwalkingtaskofftreatmentduring\ntheweekhereceivedIVIg.\nThe initialbenefitfromtheIVIgwas\nsmall,butthefirstsymptomaticimprove-\nmentreportedbythepatientwasareduc-\ntioninthestartleresponseandassociated\nfalls.Subsequentlyhiswalkingimproved\nbothsubjectivelyandobjectively.Sixweeks\nafterhisfinalcourseofIVIgtherehadbeen\nareductioninhiswalkingtasktimefrom29\nto20seconds(normalsubjectonsametask;\n15seconds)andonEMG therewasnoevi-\ndenceofcontinuousmotorunitactivityoff\ntreatment.Thisimprovementinhiscondi-\ntionhasoccurredeventhoughhisbenzodi-\nazepineandbaclofendoseswerereducedby\nathirdafterhisfinalcourseofIVIg.\nThe significantresponsetoIVIgisin\nagreementwithearlierstudies,inwhichsix\npatientsintotalhavereceivedbetweenone\nandthreecoursesofIVIg.41Interestingly\nsome of thepatientsin thesestudies\nrespondedtoIVIghavingonlyhadapartial\nor no responsetosteroidtreatmentor\nplasmaexchange.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4996,
+        "end": 6960
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1964
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6961,
+        "end": 8249
+      },
+      "compiled_offsets": {
+        "start": 1966,
+        "end": 3254
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "paper_id": "1618",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1618.json",
+    "source_text_sha256": "39e9244f48be906e8ad433ec5b8f1ff99fb4d2e9fa24f35bb55ad18a35d24938",
+    "prepared_source_sha256": "2bcc7f60e7796fd5f08fdf1d50c2dd11c62b7c2b4c72c7e24d74bfed440ece02",
+    "prepared_source_character_count": 2733
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 167
+      },
+      "page_index": 0,
+      "text": "Bortezomib for the Treatment of Refractory Stiff Person Spectrum \nDisorder (P2.2-037) \nKhalil Husari, Lauren Tardo, Benjamin Greenberg \nFirst published April 16, 2019,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 172,
+        "end": 2733
+      },
+      "page_index": 0,
+      "text": " Info & Disclosures \nAbstract \nObjective: To report the novel use of bortezomib in refractory stiff person spectrum disorder and \ndiscuss the efficacy, treatment protocol and side effects. \nBackground: Stiff Person Syndrome is a disorder characterized by fluctuating muscle rigidity \nalong with spontaneous and stimulus-induced painful spasms. Stiff Person Spectrum Disorder \n(SPSD) is a term used to describe patients with atypical features of SPS. Treatment can be \ndivided into medications that enhance GABA-related activity and immunotherapy. Various \nimmunotherapies have been tried in the past with little data from randomized control trials. \nBortezomib is a proteasome inhibitor that is used in the treatment of multiple myeloma and was \nused recently in the treatment of refractory NMDA-R encephalitis. Bortezomib decreases both \nshort-lived and long-lived plasma cells which leads to decreased production of circulating \nantibodies. Possible side effects include neutropenia, anemia, neuropathy, GI upset, LFT \nderangements, and hypotension. \nDesign/Methods: Review of medical records and literature \nResults: We report a 58-year-old woman with SPSD with elevated anti-glutamic acid \ndecarboxylase antibody titers in both serum and CSF. Over the course a decade-long disease, the \npatient suffered from significant disability with axial spasms, stimulus induced spasms and \nrecurrent episodes of vertigo. She failed multiple immunotherapies including plasmapheresis, \nIVIG, mycophenolate mofetil and rituximab. Given the refractory nature, we chose to use \nbortezomib as an off-label therapy. Our patient received 5 cycles of subcutaneous bortezomib on \ndays 1, 4, 8, and 11 per cycle followed by a 10-day treatment-free interval. CBC, BMP and LFTs \nwere followed. She developed mild neutropenia after cycle 3 requiring 2-week delay of cycle 4. \nAfter treatment completion, she reported improvement with more ability to ambulate and less use \nof anti-spasmodics. \nConclusions: Bortezomib seems to be safe in patients with stiff person spectrum disorder and is a \npromising therapeutic option for those refractory to other immunotherapies. \nDisclosure: Dr. Husari has nothing to disclose. Dr. Tardo has nothing to disclose. Dr. Greenberg \nhas received personal compensation for consulting, serving on a scientific advisory board, \nspeaking, or other activities with Novartis, Alexion, EMD Serono. Dr. Greenberg has received \nresearch support from Chugai, Medimmune, Genentech, MedDay, PCORI, NIH, NMSS and \nGuthy Jackson Charitable Foundation for NMO."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: We report a 58-year-old woman with SPSD with elevated anti-glutamic acid \ndecarboxylase antibody titers in both serum and CSF. Over the course a decade-long disease, the \npatient suffered from significant disability with axial spasms, stimulus induced spasms and \nrecurrent episodes of vertigo. She failed multiple immunotherapies including plasmapheresis, \nIVIG, mycophenolate mofetil and rituximab. Given the refractory nature, we chose to use \nbortezomib as an off-label therapy. Our patient received 5 cycles of subcutaneous bortezomib on \ndays 1, 4, 8, and 11 per cycle followed by a 10-day treatment-free interval. CBC, BMP and LFTs \nwere followed. She developed mild neutropenia after cycle 3 requiring 2-week delay of cycle 4. \nAfter treatment completion, she reported improvement with more ability to ambulate and less use \nof anti-spasmodics.",
+      "source_offsets": {
+        "start": 1284,
+        "end": 2145
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

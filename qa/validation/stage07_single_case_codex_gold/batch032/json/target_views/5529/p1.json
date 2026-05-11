@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5529::p1",
+  "paper_id": "5529",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5529::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "PO5.115\nA Videography Documented Case Report:\nAntibody-Negative Stiff-Person Syndrome Joanna S.\nFong, Derk Krieger, Cleveland, OH\nOBJECTIVE: Our aim is to further characterize antibody-negative Stiff-\nPerson Syndrome and to demonstrate its responsiveness to plasmapheresis.\nBACKGROUND: Stiff-Person Syndrome (SPS) is a rare neurologic disor-\nder of which only 150 cases have been reported in the past twenty-five\nyears. It is well recognized as an autoimmune disease directed against\nsynaptic antigens which causes progressive rigidity and muscle spasms.\nMultiple antigens have been identified, including the GABA-synthesizing\nenzyme glutamic acid decarboxylase (GAD), and others such as amphiphy-\nsin and gephyrin. DESIGN/METHODS: We report the case of a 37 year-\nold Caucasian man with a history of rheumatoid arthritis under treatment\nwith anti-tumor necrosis factor agents, who presented with a six-year his-\ntory of progressive muscle spasms and rigidity. RESULTS: Clinical presen-\ntation was most consistent with SPS, however, laboratory testing for anti-\nGAD, anti-amphiphysin, CRMP-5 western blot, and VGKC antibody tests\nwere negative. The patient displayed a dramatic clinical response to plas-\nmapheresis (5 treatments over 2 weeks), which was documented by videog-\nraphy. CONCLUSIONS/RELEVANCE: This strongly suggests that SPS\nis an antibody-mediated disease for which all pathogenetic antibodies are\nyet to be described. Although ancillary tests such as antibody testing and\nEMG are useful, the diagnosis can largely be made based on clinical pre-\nsentation and response to therapy.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8589,
+        "end": 10184
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1595
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

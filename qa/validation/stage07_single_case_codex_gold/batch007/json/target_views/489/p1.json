@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "489::p1",
+  "paper_id": "489",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "489::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report. A 45-year-old former fighter pilot\npresented with an 18-month history of stiffness\nand gait problems that began with several falls\nbackwards while training for a marathon. Six\nmonths later, she noted stiffness of the left arm\nand leg. She reported painful back and limb\nspasms when startled by touch. Her history was\nnotable for pernicious anemia.\nExamination (video) including head thrust re-\nvealed a supranuclear vertical gaze palsy and vertical\ngreater than horizontal saccade hypometria with pro-\nlonged saccade latency. Vertical pursuits were sac-\ncadic, but horizontal pursuits were normal.\nConvergence was impaired. She had a mildly masked\nfacies, asymmetrically increased axial and limb tone,\nbradykinetic gait and limb movements, and no arm\nswing while walking. The remainder of the examina-\ntion was unremarkable.\nBrain and spinal cord MRI scans showed mild corti-\ncal atrophy. EMG showed continuous motor activity at\nrest, normal 3-Hz repetitive stimulation, and a mild\nsensory neuropathy. CT of the chest, abdomen, and\npelvis were normal. An extensive evaluation including\nparaneoplastic, amphiphysin, antigliadin, and intrinsic\nfactor antibodies, rheumatologic markers, hemoglobin\nA1c, and fasting glucose were normal. Serum\nantiGAD-Abs were abnormally elevated at 71.6 U/mL\n(/H110211.45 U/mL). During the course of the next year, se-\nrum antiGAD-Abs were measured several times and\nwere markedly elevated on all occasions. CSF analysis\nwas acellular with protein of 48 mg/dL (/H1102145 mg/dL),\nand antiGAD-Abs were absent.\nVideonystagmography (Synapsys Ulmer VNG C4-\n12.2, image frequency 30/s) initially revealed normal\nsaccade latencies to horizontal and vertical targets,\nlengthening with repetition to exceed 7 s. Saccades were\nhypometric, and slowed after 180 s of horizontal testing\n(figure, A) and 370 s of vertical testing (figure, B). Hor-\nizontal pursuit at 0.3 Hz showed range restriction with\nnormal gains, fatiguing to cessation after 30 s (figure,\nC). Fatigue also became evident after 40 s of normal\ngain during optokinetic and vestibuloocular reflex test-\ning, with loss of further responses. Caloric and head\nthrust responses were preserved and no pathologic nys-\ntagmus was seen.\nTreatment with monthly IV immunoglobulin\n(IVIg) was initiated and the patient experienced\nprompt improvement of her bradykinesia and rigid-\nity. The patient chose to participate in a placebo-\ncontrolled SPS treatment trial at another institution,\nand during this time her symptoms progressed signif-\nicantly. She became wheelchair bound due to pro-\nfound rigidity and bradykinesia. She developed\nsevere horizontal and vertical supranuclear gaze oph-\nthalmoparesis, dysphagia, incontinence, and a vio-\nlent head, trunk, and arm tremor over the following\n12 months. After resumption of monthly IVIg treat-\nment for 4 months, there was significant improve-\nment in ophthalmoparesis, tremor, and ability to\n\nambulate, but extremity stiffness remained.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 530,
+        "end": 3458
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2928
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3459,
+        "end": 3502
+      },
+      "compiled_offsets": {
+        "start": 2930,
+        "end": 2973
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

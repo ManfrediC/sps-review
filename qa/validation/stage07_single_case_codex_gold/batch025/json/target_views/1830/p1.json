@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1830::p1",
+  "paper_id": "1830",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1830::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: A\n 33-year-old woman, diagnosed with\ncerebellar ataxia at 23 years old, subsequently diagnosed with Stiff-\nman Syndrome at 30 years old. On examination, patient was dysarthric\n\nwith otherwise intact cranial nerves. Motor strength was normal with\nbrisk reﬂexes throughout. Hoffman and Babinski signs were negative\nbilaterally. She had ﬁnger-to-nose dysmetria, and positive Romberg.\nGait showed imbalance and lateral sway during tandem walking. Pa-\ntient resides with boyfriend who assists with housekeeping. She is in-\ndependent with dressing, eating, and transfers.\nS87Abstracts / PM R 10 (2018) S1-S128\n\nSetting: University Hospital\nResults: Her deﬁcits from a rehabilitation perspective include dysar-\nthria, stiff lower extremities, and ataxic gait. Her ambulation and\nfunctionality have improved with physical therapy and monthly IVIG\ninfusions. She sees speech therapy for dysarthria and dysphonia, and\nwas referred to seating clinic for a suitable motorized ambulatory\ndevice.\nDiscussion: Stiff-man syndrome is a rare central nervous system dis-\norder characterized by progressive muscle stiffness and spasms. Rarely,\npatients later develop cerebellar ataxia. Literature shows that auto-\nantibodies to glutamic acid decarboxylase (GAD) are implicated in both\nconditions and typically present in high serum titers prior to clinical\nsymptoms. Interestingly, our patient not only developed ataxia prior to\nstiffness, but initially had low anti-GAD titers despite already having\nsymptoms, thus raising suspicion for a genetic component to her ataxia.\nHowever, this was ruled out and titers subsequently increased.\nConclusions: This presentation highlights a rare combination of\nGrave’s Disease, Stiff-man Syndrome, and cerebellar ataxia presenting\nprior to anti-GAD titers. Our patient is followed by physiatry,\nneurology, and is undergoing physical and speech therapy. She faces\ndifﬁculty performing ADLs, maintaining an exhaustive appointment\nlist, not to mention the burden placed on her signiﬁcant other, which\ntakes an emotional and social toll on a young patient. This case em-\nphasizes how critical a multidisciplinary approach is for a unique\ncombination of co-morbidities, making rehabilitation of this patient\nthat much more difﬁcult.\nLevel of Evidence: Level V",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6747,
+        "end": 6948
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 201
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6949,
+        "end": 7375
+      },
+      "compiled_offsets": {
+        "start": 203,
+        "end": 629
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7377,
+        "end": 9045
+      },
+      "compiled_offsets": {
+        "start": 631,
+        "end": 2299
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

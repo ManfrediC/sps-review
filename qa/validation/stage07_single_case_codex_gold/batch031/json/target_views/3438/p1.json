@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "3438::p1",
+  "paper_id": "3438",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "3438::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report \nA 66-year-old man presented with a two -year history of progressive stiffness and painful intermittent spasms of \nhis right lower limb that started distally, and gradually involved the proximal muscles and the lumbosacral \nparaspinal muscles one year later. His stiffness continued without daily fluctuation and the painful spasms were \nmainly precipitated by volitional movements and tactile stimuli of his right leg. This gradually affected his gait and \nhe became unable to walk  without assistance. His left lower limb was not affected. He had had insulin -dependent \ndiabetes mellitus for the previous nine years. \nClinical examination revealed prominent stiffness of all muscles of the right leg and the lumbosacral paraspinal \nmuscles. The left leg tone was normal. Tendon reflexes  were normal and plantar responses were on a downward \ntrend. No sensory deficit was detected apart from loss of vibration sense at ankle bilaterally. He could walk with \nsome assistance, but his movements were i nterrupted by painful spasms in the affected muscles. His higher mental \nfunctions, cranial nerves and upper limbs were entirely normal on examination.  \nMRI of the head and spinal cord were unremarkable. Oligoclonal IgG bands were detected in serum and CSF. \nAn assay based on immunoprecipitation of 125I-recombinant GAD was used to measure anti-GAD antibodies.10 High \ntiters of anti -GAD antibodies were detected in the serum and CSF (Figure 1). In addition, the patient had positive \npancreatic islet cell and gastr ic parietal cell antibodies. EMG showed continuous motor unit activity that reduced \nmarkedly when the patient fell asleep during the test. The patient was put on 15 mg of diazepam and 60 mg of \nbaclofen daily, resulting in an improvement in the spasms and, to a lesser extent, in the rigidity, but the patient was\n\nstill unable to walk unassisted. However, the main improvement was achieved after vigabatrin 2000 mg daily was \nadded to the above medication. Eight months after initiation of vigabatrin, the patient is relatively well and is able to \nwalk independently.\n\nOur patient did not have seizures and \nhis EEG was normal, despite high titers of anti-GAD antibodies in serum and CSF. \nThe association of SMS with oth er autoimmune diseases such as IDDM, hypothyroidism, vitiligo and \npernicious anemia and the detection of organ -specific antibodies is well documented. IDDM is the most common, \nbeing present in one- to two-thirds of patients. Our patient had evidence of aut oimmunity manifested with late onset \nIDDM and positive pancreatic islet cell and gastric parietal cell antibodies. In addition, he had oligoclonal IgG bands \nin blood and CSF which were previously reported. 1,2 The concept that SMS may be caused by an autoim mune \nmechanism prompted the use of immunotherapy such as steroids, plasmapheresis and intravenous immunoglobulin, \nwith varying results and improvement in stiffness and spasms. 5-7,9 Symptoms of SMS are improved by drugs that \nenhance neurotransmission mediated by GABA, such as diazepam, baclofen and sodium valproate, but the course of \nthe disease is not altered. The remarkable improvement in the condition of our patient on vigabatrin was previously \nreported in another two patients. 8,11 Vigabatrin enhances GABA transmission by preventing its breakdown through a \nselective and irreversible inhibition of GABA transaminase, which is the enzyme converting GABA to glutamate \nand succinic semialdehyde.\n\nFigure 1. Titration of the stiff-man syndrome patient serum and comparison with CSF. \nThe control CSF is negative.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1586,
+        "end": 3435
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1849
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3437,
+        "end": 3691
+      },
+      "compiled_offsets": {
+        "start": 1851,
+        "end": 2105
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5900,
+        "end": 7282
+      },
+      "compiled_offsets": {
+        "start": 2107,
+        "end": 3489
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7286,
+        "end": 7400
+      },
+      "compiled_offsets": {
+        "start": 3491,
+        "end": 3605
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1291::p1",
+  "paper_id": "1291",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1291::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nAntibodies to GAD-65 have been implicated in the pathogenesis of type 1 diabetes , limbic encephalitis and Stiff person syndrome, however \nthese diseases rarely occur concurrently. We intend to present a rare case of 35 year old female who was recently diagnosed as having type \n1 diabetes presented with 1½ month history of recurrent seizures, subacute onset gait ataxia,  dysathria, psychiatric disturbance and cognitive \ndecline. No tumor was found on imaging and the classic paraneoplastic panel was negative. Cerebrospinal fluid and blood was positive for \nGAD-65 antibodies.Patient showed significant improvement with immunomodulatory  therapy. Association of GAD-65 antibodies has been found\n\nwith various disorders including type 1 diabetes, limbic encephalitis, Stiff person syndrome,cerebellar ataxia and palatal myoclonus.This case \npresents with unique combination of type 1 diabetes, Stiff person syndrome and limbic encephalitis associated with GAD-65 antibodies that is \nresponsive to immunotherapy. It also highlights the emerging concept of autoimmunity in the causation of various disorders and there associations.\n\nCase Report\nA case of 30-year-old, right-handed female who was recently \ndiagnosed diabetic 3 months back presented with 1.5 month \nhistory of recurrent episodes of GTCS; cognitive decline in the \nform of decreased memory; behavioral changes in the form \nof apathy; and brief episodes of disorientation with ataxia, \ndiplopia, slurring of speech, generalized rigidity, and spasm \nof limbs. Higher mental functions testing revealed cognitive \ndecline in the form of loss of immediate and recent memory \nand cerebellar dysarthria. Cranial nerve examination showed \nslowing of saccades and broken pursuit and rest was normal. \nMotor system examination revealed generalized rigidity, power \nwas 5/5 in all four limbs, deep tendon reflexes were normal, \nand plantars were bilaterally flexor. Sensory examination was \nnormal and there were positive cerebellar signs on both sides \nwith ataxic gait.\nFasting, postprandial, and random blood sugar were found to \nbe raised on several occasions. Magnetic resonance imaging \n(MRI) was suggestive of hyperintensities in bilateral medial \ntemporal lobes [Figure 1] and electroencephalogram (EEG) \ndone was showing slowing of background. Lumber puncture \ndone was suggestive of normal cells, sugar, protein, and \npolymerase chain reaction (PCR) for herpes simplex virus \n(HSV) was negative. Contrast computed tomography (CT; \nthorax + abdomen) and mammography were normal and \nserological studies for various tumor markers were negative. \nEvaluation of typical antibodies (Hu, CV2/CRMP-5, Ma2, and \nantiamphiphysin) present in paraneoplastic panel was also \nfound to be negative. Autoantibody markers in cerebrospinal \nfluid (CSF) and serum showed presence of GAD-65 antibody, \nbut evaluation of NMDA receptor antibodies and VGKC \nantibody (CASPR2 and LGI1) was negative. Method used for \nautoantibody testing was indirect immunofluorescence test. \nElectromyography showed continuous motor unit activity in \nagonist and antagonist muscles.\nIn view of above clinical syndrome and investigational findings,\n\npossibility of autoimmune LE with type 1 diabetes and SPS \nwas considered. Patient was managed with intravenous \nimmunoglobulin at total dose of 2 g/kg over 5 days, insulin, \nbaclofen 10 mg, antiepileptics (levitracetam and clobazem), \nand other supportive medications. Patient was discharged \non azathioprine (1.5 mg/kg/day) and rest treatment. At \n3-month follow-up, patient showed significant improvement \nin cognitive status, rigidity, cerebellar signs and symptoms, \nand also requirement of insulin has been decreased. No fresh \nepisode of seizure occurred during this period.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2663,
+        "end": 3370
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 707
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3373,
+        "end": 3805
+      },
+      "compiled_offsets": {
+        "start": 709,
+        "end": 1141
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5612,
+        "end": 7652
+      },
+      "compiled_offsets": {
+        "start": 1143,
+        "end": 3183
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7654,
+        "end": 8235
+      },
+      "compiled_offsets": {
+        "start": 3185,
+        "end": 3766
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "10691::p1",
+  "paper_id": "10691",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "10691::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "593P\nVigabatrin Improves Rigidity in Stiff-Person\nSyndrome (SPS)\nRocco Liguori, R. Medori, and L. Marchello, Bologna, Italy; L.\nGrimaldi, Milan, Italy; E. Lugaresi and P. Montagna,\nBologna, Italy\n\nObjectiue. To study the efficacy of vigabatrin on muscle stiffness in SPS (Moersch-Woltmann syndrome).\nBackground. Vigabatrin irreversibly i n h i b i t s gammaaminobutyric acid (GABA) transaminase and is mostly used for\ncomplex partial seizures. SPS is characterized by progressive\nrigidity and painful muscle spasms due to loss of GABAergic\ninhibition on alpha motorneurons. Autoantibodies against glutamic acid decarboxylase (GAD) may be found.\nDesign. A woman presented with SPS confirmed by EMG\nstudies and high t i t e r of autoantibodies against GAD. The\npatient was bedridden and unable to walk even with high doses\nof diazepam (60 mg/d) and baclofen (125 mg/d). To this treatment, we added vigabatrin 3 grid in two doses.\nResults. Vigabatrin 3 gr/d resulted i n marked improvement\nof rigidity in the legs and reduction of muscle spasms. Within 10\ndays, the patient could flex hips and knees and walk with assistance. However, withdrawal of diazepam resulted in reappearance of muscle spasms. The patient was thus continued on vigabatrin 3 gr/d and diazepam 30 mg/d and has remained well during 8 mos of follow-up.\nConclusions. Vigabatrin decreases rigidity of SPS and allows\nlower doses of diazepam to control muscle spasms.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 0,
+        "end": 195
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 195
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 197,
+        "end": 1430
+      },
+      "compiled_offsets": {
+        "start": 197,
+        "end": 1430
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

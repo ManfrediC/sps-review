@@ -1,0 +1,56 @@
+{
+  "paper_id": "5831",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5831.json",
+    "source_text_sha256": "ce2c375aeeb022e77299f1c32b4e20a3aec5f7670011c5f9ef2073ac2a4779b9",
+    "prepared_source_sha256": "cdfbe5db8c8eabeb52e4c003eae24aac9423165b6bfdb92d643279d134741ee5",
+    "prepared_source_character_count": 2979
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2979
+      },
+      "page_index": 0,
+      "text": "A Rare Case of Amphiphysin-associated Stiff Person Syndrome in \na Male Patient with Breast Cancer (1162) \nLoulwah Mukharesh, Scott Newsome \nFirst published April 14, 2020, \nObjective: To describe a male patient with amphiphysin-associated Stiff-Person Syndrome(SPS) \nsecondary to underlying breast cancer. \nBackground: SPS is a rare neuroimmunological disorder that has varying clinical presentations \nand can be associated with different autoantibodies. Amphiphysin antibodies are most often \nassociated with paraneoplastic-related SPS. \nDesign/Methods: Case-report \nResults: A 53-year-old man developed progressive upper-torso and arm stiffness/rigidity and gait \ninstability. Subsequently, he developed foot spasms along with anxiety/agoraphobia and was \ndiagnosed with psychogenic dystonia. Despite cognitive-behavioral-therapy, he experienced more \nsymptoms over the ensuing year(leg stiffness requiring a cane and arm spasms) and predictable \ntriggers for his symptoms(stress, loud noises, cold, and open spaces). \nTwo-years after symptom onset, he was diagnosed with SPS based on a work-up that identified \npositive-serum (1:7680) and CSF (1:64) amphiphysin-antibodies. Initial malignancy work-up was \nunremarkable including mammogram and whole-body PET CT-scan. Over the following year, he \nwas treated with a variety of immune-therapies including IVIG, PLEX, and cyclophosphamide. \nHis gait improved but stiffness and spasms worsened. Repeat malignancy work-up \n(approximately three-years out from initial symptom-onset) identified left-sided gynecomastia \nsecondary to a retro-areolar nodule. Core-diagnostic biopsy revealed grade-2 invasive ductal \ncarcinoma. These results prompted a left-sided modified radical-mastectomy followed by \nadjuvant chemotherapy and radiation-therapy. Three-months after completing his cancer \ntreatment, repeat amphiphysin-antibody testing was negative, although, neurophysiological-\nstudies still demonstrated signs of SPS. Three-months out from his cancer treatment, he has \nexperienced significant improvement in most of his symptoms and is able to walk unsupported; \nmodified-Rankin Scale improved from grade-4 to grade-2 and his 25-foot timed walk went from \n8.6 to 4.9 seconds without-assistance. \nConclusions: We present a rare case of paraneoplastic-related SPS in a man with breast cancer. \nUpper greater than lower torso/body presentations can occur in SPS particularly with \namphiphysin-related-SPS. This case also highlights the importance of vigilant cancer-screening \neven if initial investigations are negative, especially in the setting of positive-amphiphysin \nantibody. \nDisclosure: Dr. Mukharesh has nothing to disclose. Dr. Newsome has received personal \ncompensation for consulting, serving on a scientific advisory board, speaking, or other activities \nwith Biogen, Celgene, EMD Serono, Genentech, medDay Pharmaceuticals, and Gerson Lehrman \nGroup.. Dr. Newsome has received research support from Biogen, Genentech."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: A 53-year-old man developed progressive upper-torso and arm stiffness/rigidity and gait \ninstability. Subsequently, he developed foot spasms along with anxiety/agoraphobia and was \ndiagnosed with psychogenic dystonia. Despite cognitive-behavioral-therapy, he experienced more \nsymptoms over the ensuing year(leg stiffness requiring a cane and arm spasms) and predictable \ntriggers for his symptoms(stress, loud noises, cold, and open spaces). \nTwo-years after symptom onset, he was diagnosed with SPS based on a work-up that identified \npositive-serum (1:7680) and CSF (1:64) amphiphysin-antibodies. Initial malignancy work-up was \nunremarkable including mammogram and whole-body PET CT-scan. Over the following year, he \nwas treated with a variety of immune-therapies including IVIG, PLEX, and cyclophosphamide. \nHis gait improved but stiffness and spasms worsened. Repeat malignancy work-up \n(approximately three-years out from initial symptom-onset) identified left-sided gynecomastia \nsecondary to a retro-areolar nodule. Core-diagnostic biopsy revealed grade-2 invasive ductal \ncarcinoma. These results prompted a left-sided modified radical-mastectomy followed by \nadjuvant chemotherapy and radiation-therapy. Three-months after completing his cancer \ntreatment, repeat amphiphysin-antibody testing was negative, although, neurophysiological-\nstudies still demonstrated signs of SPS. Three-months out from his cancer treatment, he has \nexperienced significant improvement in most of his symptoms and is able to walk unsupported; \nmodified-Rankin Scale improved from grade-4 to grade-2 and his 25-foot timed walk went from \n8.6 to 4.9 seconds without-assistance. \nConclusions: We present a rare case of paraneoplastic-related SPS in a man with breast cancer. \nUpper greater than lower torso/body presentations can occur in SPS particularly with \namphiphysin-related-SPS. This case also highlights the importance of vigilant cancer-screening \neven if initial investigations are negative, especially in the setting of positive-amphiphysin \nantibody.",
+      "source_offsets": {
+        "start": 568,
+        "end": 2629
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

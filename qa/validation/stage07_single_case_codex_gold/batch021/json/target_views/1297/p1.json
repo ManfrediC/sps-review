@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1297::p1",
+  "paper_id": "1297",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1297::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "describes successful peri-operative management of a 61-year-old female (height, 158 cm; \nweight, 60 kg, ASA-PS 2) with her right upper arm fracture who was scheduled for open \nreduction and internal fixation. This patient had bulbar paralysis, dysphagia and muscle \nrigidity associated with a high titer of anti-GAD auto antibodies (2,800 U x ml(-1)). She was \ndiagnosed as SPS and has been treated with predonisolone (30 mg x day(-1)) and diazepam \n(20 mg x day(-1)) for 1 year. Predonisolone (15 mg) and diazepam (30 mg) was given orally \nbefore induction of general anesthesia with propofol, remifentanil and rocuronium bromide. \nPosture change from supine to beach-chair position led to sudden drop in blood pressure to \n38/25 mmHg, which recovered promptly by injecting intravenous ephedrine hydrochloride \n(28 mg) and hydrocortisone (100 mg). Postanesthetic course was uneventful without \npostoperative neurologic abnormalities.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 370,
+        "end": 1304
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 934
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

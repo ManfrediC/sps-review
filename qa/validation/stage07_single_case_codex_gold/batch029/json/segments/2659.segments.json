@@ -1,0 +1,194 @@
+{
+  "paper_id": "2659",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\2659.json",
+    "source_text_sha256": "b5c38f710b4691b719f2e35b9641fe596d5f5243739cd6dc8f90693200a1d72c",
+    "prepared_source_sha256": "e616454dfd97c8cd8d685312c20ed76c8a853fc52944b228e87cf397bbdf70e7",
+    "prepared_source_character_count": 17137
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 525
+      },
+      "page_index": 0,
+      "text": "Received\n 11/05/2019 \nReview began\n 11/07/2019 \nReview ended\n 11/17/2019 \nPublished\n 11/20/2019\n© Copyright \n2019\nSanchez et al. This is an open access\narticle distributed under the terms of the\nCreative Commons Attribution License\nCC-BY 3.0., which permits unrestricted\nuse, distribution, and reproduction in any\nmedium, provided the original author and\nsource are credited.\nImproving Ambulation and Minimizing Disability\nwith Therapeutic Plasma Exchange in a Stiff-\nperson Syndrome Patient with Recurrent Falls\nKyle Sanchez"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 529,
+        "end": 542
+      },
+      "page_index": 0,
+      "text": ", \nAqsa Ullah"
+    },
+    {
+      "block_id": "b0003",
+      "source_offsets": {
+        "start": 546,
+        "end": 568
+      },
+      "page_index": 0,
+      "text": ", \nAlexandria R. Waler"
+    },
+    {
+      "block_id": "b0004",
+      "source_offsets": {
+        "start": 572,
+        "end": 3983
+      },
+      "page_index": 0,
+      "text": ", \nYassar Chakfe \n1.\n Medicine, University of Central Florida College of Medicine, Orlando, USA \n2.\n Neurology, University of Central\nFlorida/Osceola Regional Medical Center, Orlando, USA\nCorresponding author: \nKyle Sanchez, \nkylesanchez@knights.ucf.edu\nAbstract\nStiff-person syndrome (SPS) is a rare, autoimmune, neuromuscular disorder that manifests with axial and\nproximal muscle stiffness, rigidity, and painful muscle spasms, often causing progressive disability due to\nlimited movement. First-line therapies comprise symptomatic management with \nγ\n-aminobutyric acid-\nmodulating drugs such as benzodiazepines and baclofen. Patients resistant to these treatments are often\ngiven intravenous immunoglobulin (IVIg). Severe disease refractory to first-line therapy and IVIg may be\ntreated with therapeutic plasma exchange (TPE) or immunomodulatory agents such as rituximab. Current\nevidence derived from case reports and case series has shown that roughly half of SPS patients treated with\nTPE report benefits. Here, we report the case of a 68-year-old man with a 20-year history of severe SPS and\nrecurrent falls who was admitted to the emergency department for a traumatic hip fracture. He had\nsignificant rigidity in the axial and extremity muscles with persistent spasms of the quadriceps femoris\nmuscle. Postoperatively, he was unable to participate in physical therapy (PT) due to these symptoms. He\npreviously failed treatment with diazepam, baclofen, and monthly IVIg. Under our care, he underwent seven\nTPE treatments. By the end of treatment, he reported significant improvement in mobility with a resolution\nof muscle spasms and was able to be discharged to inpatient rehabilitation. This suggests that TPE may offer\nan effective, safe treatment modality for patients with severe refractory SPS that may significantly improve\nmobility and disability associated with the disease.\nCategories:\n Neurology\nKeywords:\n stiff person syndrome, stiff man syndrome, therapeutic plasma exchange\nIntroduction\nStiff-person syndrome (SPS), previously known as stiff-man syndrome, is a rare neuromuscular disorder\ncharacterized by muscle stiffness, rigidity, and painful spasms involving the axial and proximal limb muscles\n[1]\n. The disease is likely caused by the autoimmune blockade of glutamic acid decarboxylase (GAD), an\nenzyme that catalyzes the synthesis of inhibitory neurotransmitter \nγ\n-aminobutyric acid (GABA). There is an\nelevated level of anti-GAD antibodies in the serum of ~65% of patients with SPS \n[2]\n and the disease is\nassociated with autoimmune conditions such as type 1 diabetes mellitus, thyroiditis, and pernicious anemia\n[3]\n. A decline in the central nervous system (CNS) levels of GABA leads to a loss of neural inhibition of\nskeletal muscles, resulting in excessive, unintentional muscle contractions. The three subtypes of SPS\ninclude classic SPS, partial SPS, and paraneoplastic SPS, with classic SPS being the most commonly\nencountered variant \n[1]\n.\nPatients with classic SPS generally have progressive muscle rigidity and stiffness that begin in the axial\nmuscles, especially the lumbar paraspinal muscles, and evolve over time to involve the proximal limb\nmuscles of both upper and lower extremities \n[4]\n. The persistent muscle contractions are described as having\na “board-like” quality and often cause an elevation of serum creatine kinase (CK) \n[5]\n. As truncal flexibility"
+    },
+    {
+      "block_id": "b0005",
+      "source_offsets": {
+        "start": 3984,
+        "end": 5405
+      },
+      "page_index": 0,
+      "text": "declines, patients commonly develop a wide-based gait and difficulty with ambulation. Classic SPS also\nmanifests with painful episodic muscle spasms elicited by physical or emotional stress and other patient-\nspecific triggers \n[2]\n.\nMost patients with classic SPS have symptomatic improvement with GABA-modulating medications such as\ndiazepam and baclofen \n[5]\n. There is inconsistent data on the management of severe SPS resistant to\nconventional drug therapies. Patients with high anti-GAD antibody levels and symptoms refractory to these\ndrugs are often given trials of intravenous immune globulin (IVIg) to neutralize the serum anti-GAD\nantibodies \n[6-7]\n. Therapeutic plasma exchange (TPE) \n[8-13]\n, physical therapy (PT) \n[4,14]\n, rituximab \n[15-16]\n,\ncognitive behavioral therapy \n[17]\n, levetiracetam \n[18]\n, valproate \n[19]\n, and other agents have been used in a\nsmall number of cases. There is current research interest in the efficacy and safety of using TPE over IVIg for\nsevere SPS. Although clinical improvement in up to 56% of patients who received TPE has been shown \n[8]\n, it\nis still reserved to treat only those cases proven to be resistant. The efficacy of TPE as a treatment for\nrefractory SPS has not been extensively investigated, and many studies reporting its benefits have been\nbased on patients with concurrent type 1 diabetes mellitus \n[10,13,20]\n or exclusively autoantibody-positive\n1\n2\n1\n2"
+    },
+    {
+      "block_id": "b0006",
+      "source_offsets": {
+        "start": 5409,
+        "end": 5432
+      },
+      "page_index": 0,
+      "text": "Open Access Case\nReport"
+    },
+    {
+      "block_id": "b0007",
+      "source_offsets": {
+        "start": 5435,
+        "end": 5727
+      },
+      "page_index": 0,
+      "text": "DOI:\n 10.7759/cureus.6209\nHow to cite this article\nSanchez K, Ullah A, Waler A R, et al. (November 20, 2019) Improving Ambulation and Minimizing Disability with Therapeutic Plasma Exchange in a\nStiff-person Syndrome Patient with Recurrent Falls. Cureus 11(11): e6209. \nDOI 10.7759/cureus.6209"
+    },
+    {
+      "block_id": "b0008",
+      "source_offsets": {
+        "start": 5729,
+        "end": 8698
+      },
+      "page_index": 1,
+      "text": "patients \n[12]\n. We report a case of severe SPS unresponsive to first-line medical therapies and IVIg that\nessentially resolved with the administration of TPE.\nCase Presentation\nA 68-year-old man presented to the emergency department (ED) with severe right thigh pain and left leg\nspasms after having suffered a ground-level fall onto his right side. On physical exam, he was\nhemodynamically stable, with minor skin abrasions on his right elbow and both lower extremities. The\npelvic X-ray showed a displaced comminuted right intertrochanteric fracture (Figure \n1\n). His right lower\nextremity was placed in a Hare traction splint, and he underwent an open reduction and intramedullary\ngamma nail fixation of the right femur. He was given baclofen (10 mg twice daily) and diazepam (10 mg\ntwice daily) for his left leg spasms postoperatively.\nFIGURE\n 1: Pelvic X-ray of the displaced comminuted right\nintertrochanteric fracture (arrow)\nWith regards to his past medical history, he reported a 20-year history of stiff-person syndrome (SPS) with\nfrequent muscle spasms and recurrent falls. He stated his doctors have been unable to adequately control\nhis symptoms of SPS despite multiple therapies. On initial diagnosis, he was started on baclofen and\ndiazepam with no significant relief of his spasms. He then underwent IVIg treatments three days per month\nfor one year, followed by diazepam as maintenance therapy. He reported a mild improvement in symptoms\nwith IVIg infusions but they did not sufficiently improve his ambulation or minimize his risk of fall. He\ncontinued to have falls, especially during physical activities such as playing tennis; one of which caused a\nsubdural hematoma that required a left craniotomy. He remarked that he was once a high-functioning,\nactive individual but has since been limited by his condition. \nOn postoperative day one, he reported that his right thigh pain was declining, but he continued to have\npainful left leg spasms that worsened with movement. On physical exam, he displayed significant gait\ninstability, decreased functional mobility, hypertonicity of his bilateral upper extremities, and prominent\nmuscle spasms of his left quadriceps femoris muscle. His neurological examination was otherwise within\nnormal limits. The patient’s pain from the fracture continued to improve over the second and third\npostoperative days.\nDespite adequate recovery from the surgery, the patient continued to have marked hypertonicity of his\nupper extremities and painful muscle spasms of his left leg that prevented him from participating in PT.\nAnti-GAD antibody levels were remarkably elevated at a value >250 IU/mL (0.0 - 5.0 IU/mL) that was too high\nto be quantified by the laboratory. Creatine kinase (CK) levels were elevated at 469 U/L (35 - 232 U/L).\nDue to his nonresponsiveness to conventional therapy and the high severity of disease, a series of seven\n2019 Sanchez et al. Cureus 11(11): e6209. DOI 10.7759/cureus.6209\n2\n of \n4"
+    },
+    {
+      "block_id": "b0009",
+      "source_offsets": {
+        "start": 8700,
+        "end": 12194
+      },
+      "page_index": 2,
+      "text": "treatments of TPE over 14 days were initiated. While discussing the treatment plan with the patient, he\nexpressed little hope in TPE improving his condition, as he had found minimal relief after multiple trials of\nmedications, including the year-long trial of IVIg therapy.\nOver the two-week course of TPE, his functional status and symptoms of SPS significantly improved.\nAlthough his hyperreflexia remained stable at 3+, his muscle spasms and hypertonicity progressively\nimproved after each treatment of TPE to the point that he had normal range of motion in all extremities.\nWhile receiving TPE, he was able to tolerate three hours of PT sessions daily for up to five days per week,\nwhereas he had zero rehabilitation potential before TPE was initiated. He made significant functional gains\nusing adaptive equipment, corrected his gait, and was eventually able to ambulate without assistance. He\nfelt his symptoms were adequately controlled for the first time since his diagnosis and reported having no\nsymptoms by hospital day five. Shortly after his TPE therapy was complete, he was deemed to be in a stable\ncondition and discharged to inpatient rehabilitation.\nDiscussion\nSPS is a rare disorder characterized by episodic muscle pain, stiffness, and spasms \n[1]\n and is likely caused by\nautoantibodies to GAD with resulting disinhibition of muscle contraction \n[2]\n. Gait abnormalities, difficulty\nwith ambulation, and recurrent falls are also common in patients with SPS, and laboratory studies often\nreveal elevated CK levels and high anti-GAD antibody titers \n[2]\n. First-line therapy for SPS is outpatient\ntreatment with benzodiazepines and/or baclofen. The management of severe SPS resistant to conventional\ndrug therapies, as in this patient, is unclear. Trials of IVIg are often given to patients who do not respond to\nthese medications \n[6]\n, especially those with high anti-GAD antibody levels \n[9]\n. However, many patients may\nnot adequately respond to IVIg treatment, which may be due to the development of IVIG resistance, among\nother factors. A number of studies have documented a positive response in these patients to TPE \n[5,8-10]\nand PT sessions \n[4,14]\n.\nIn this patient with symptoms of severe uncontrolled SPS, a high anti-GAD antibody level above 250 IU/mL,\nand no clinical response to GABA-modulating agents, alternative treatment with IVIg was likely the next\nbest step in management. However, this patient’s symptoms were refractory to one year of IVIg treatment\nand continued to cause life-threatening problems. On two separate occasions, his recurrent falls caused a\nsubdural hematoma and a displaced comminuted intertrochanteric hip fracture. Thus, finding an alternative\ntreatment for his SPS was crucial, despite a lack of extensive evidence on the efficacy of many alternative\ntreatments. After seven treatments of TPE given over 14 days, augmented by daily PT sessions up to five\ntimes per week, the patient saw a dramatic improvement in both his symptoms of SPS and functional status.\nHis muscle spasms and hypertonicity were significantly reduced from baseline. He was able to correct his\nabnormal gait, gain functional mobility and ambulate without assistance. Also of note is that unlike most\nreported cases of SPS treated with TPE \n[10,13,20]\n, this patient did not have a history of type 1 diabetes\nmellitus or other autoimmune conditions.\nConclusions\nThis case suggests that TPE may offer an effective, safe treatment modality for patients with severe"
+    },
+    {
+      "block_id": "b0010",
+      "source_offsets": {
+        "start": 12195,
+        "end": 14067
+      },
+      "page_index": 2,
+      "text": "refractory SPS that may significantly improve mobility and minimize disability associated with the disease.\nThis adds to the growing body of evidence that TPE should be offered without delay to patients who fail first-\nline therapy and/or IVIg.\nAdditional Information\nDisclosures\nHuman subjects:\n Consent was obtained by all participants in this study. \nConflicts of interest:\n In\ncompliance with the ICMJE uniform disclosure form, all authors declare the following: \nPayment/services\ninfo:\n All authors have declared that no financial support was received from any organization for the\nsubmitted work. \nFinancial relationships:\n All authors have declared that they have no financial\nrelationships at present or within the previous three years with any organizations that might have an\ninterest in the submitted work. \nOther relationships:\n All authors have declared that there are no other\nrelationships or activities that could appear to have influenced the submitted work.\nReferences\n1\n. \nHelfgott SM: \nStiff-man syndrome: from the bedside to the bench\n. Arthritis Rheum. 1999, 42:1312-1320.\n10.1002/1529-0131(199907)42:7<1312::AID-ANR2>3.0.CO;2-W\n2\n. \nThompson PD: \nThe stiff-man syndrome and related disorders\n. Parkinsonism Relat Disord. 2001, 8:147-153.\n10.1016/S1353-8020(01)00029-3\n3\n. \nBadzek S, Miletic V, Prejac J, et al.: \nParaneoplastic stiff person syndrome associated with colon cancer\nmisdiagnosed as idiopathic Parkinson's disease worsened after capecitabine therapy\n. World J Surg Oncol.\n2013, 11:224. \n10.1186/1477-7819-11-224\n4\n. \nVaiyapuri A, Kashyap P, Kashyap N, Muthusamy H, Unnikrishnan R, Alqahtani M: \nIs stiff person syndrome\nbenefited by physical therapy intervention? Summary of case reports\n. Biomed Res Int. 2019, 2019:5613680.\nhttps://doi.org/10.1155/2019/5613680\n2019 Sanchez et al. Cureus 11(11): e6209. DOI 10.7759/cureus.6209\n3\n of \n4"
+    },
+    {
+      "block_id": "b0011",
+      "source_offsets": {
+        "start": 14069,
+        "end": 17137
+      },
+      "page_index": 3,
+      "text": "5\n. \nSarva H, Deik A, Ullah A, Severt WL: \nClinical spectrum of stiff person syndrome: a review of recent reports\n.\nTremor Other Hyperkinet. 2016, 6:340. \nhttps://doi.org/10.7916/D85M65GD\n6\n. \nKarlson EW, Sudarsky L, Ruderman E, Pierson S, Scott M, Helfgott SM: \nTreatment of stiff-man syndrome\nwith intravenous immune globulin\n. Arthritis Rheum. 1994, 37:915-918. \n10.1002/art.1780370621\n7\n. \nDalakas M, Fujii M, Li M, Lutfi B, Kyhos J, McElroy B: \nHigh-dose intravenous immune globulin for stiff-\nperson syndrome\n. N Engl J Med. 2001, 345:1870-1876. \n10.1056/NEJMoa01167\n8\n. \nPagano MB, Murinson BB, Tobian AA, King KE: \nEfficacy of therapeutic plasma exchange for treatment of\nstiff-person syndrome\n. 2014, 54:1851-1856. \n10.1111/trf.12573\n9\n. \nBhatti AB, Gazali ZA: \nRecent advances and review on treatment of stiff person syndrome in adults and\npediatric patients\n. Cureus. 2015, 7:427. \n10.7759/cureus.427\n10\n. \nHao W, Davis C, Hirsch IB, Eng LJ Daniels T, Walsh D, Lernmark W: \nPlasmapheresis and\nimmunosuppression in stiff-man syndrome with type 1 diabetes: a 2-year study\n. J Neurol. 1999, 246:731-\n735. \n10.1007/s004150050443\n11\n. \nAlbahra S, Yates SG, Joseph D, De Simone N, Burner JD, Sarode R: \nRole of plasma exchange in stiff person\nsyndrome\n. Transfus Apher Sci. 2019, 58:310-312. \n10.1016/j.transci.2019.03.015\n12\n. \nShariatmadar S, Noto TA: \nPlasma exchange in stiff-man syndrome\n. Ther Apher. 2001, 5:64-67.\n10.1046/j.1526-0968.2001.005001064.x\n13\n. \nSolimena M, Folli F, Denis-Donini S, Comi GC, Pozza G, De Camilli P, Vicari AM: \nAutoantibodies to\nglutamic acid decarboxylase in a patient with stiff-man syndrome, epilepsy, and type I diabetes mellitus\n. N\nEngl J Med. 1988, 318:1012-1020. \n10.1056/NEJM198804213181602\n14\n. \nPotter K: \nPhysical therapy during in-patient rehabilitation for a patient with stiff-person syndrome\n. J Neurol\nPhys Ther. 2006, 30:28-38. \n10.1097/01.npt.0000282147.18446.b8\n15\n. \nQureshi A, Hennessy M: \nStiff person syndrome complicated by respiratory failure: successful treatment with\nrituximab\n. J Neurol. 2012, 259:180-181. \n10.1007/s00415-011-6123-9\n16\n. \nBaker MR, Das M, Isaacs J, Fawcett PR, Bates D: \nTreatment of stiff person syndrome with rituximab\n. J Neurol\nNeurosurg Psychiatry. 2005, 76:999-1001. \n10.1136/jnnp.2004.051144\n17\n. \nMorris LL, Dysch L, Salkovskis PM, Giffin N: \nReducing excess stiffness in stiff person syndrome using CBT: a\ncase study\n. NeuroRehabilitation. 2014, 35:627-631. \n10.3233/nre-141147\n18\n. \nSechi G, Barrocu M, Piluzza MG, Cocco GA, Deiana GA, Sau GF: \nLevetiracetam in stiff-person syndrome\n. J\nNeurol. 2008, 255:1721-1725. \n10.1007/s00415-008-0007-7\n19\n. \nSpehlmann R, Norcross K, Rasmus SC, Schlageter NL: \nImprovement of stiff-man syndrome with sodium\nvalproate\n. Neurology. 1981, 31:1162-1163. \n10.1212/wnl.31.9.1162\n20\n. \nPagano M, Murinson B, Tobian A, King K: \nEfficacy of therapeutic plasma exchange for treatment of stiff\n‐\nperson syndrome\n. Transfusion. 2014, 54:1851-1856. \n10.1111/trf.12573\n2019 Sanchez et al. Cureus 11(11): e6209. DOI 10.7759/cureus.6209\n4\n of \n4"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Case Presentation\nA 68-year-old man presented to the emergency department (ED) with severe right thigh pain and left leg\nspasms after having suffered a ground-level fall onto his right side. On physical exam, he was\nhemodynamically stable, with minor skin abrasions on his right elbow and both lower extremities. The\npelvic X-ray showed a displaced comminuted right intertrochanteric fracture (Figure \n1\n). His right lower\nextremity was placed in a Hare traction splint, and he underwent an open reduction and intramedullary\ngamma nail fixation of the right femur. He was given baclofen (10 mg twice daily) and diazepam (10 mg\ntwice daily) for his left leg spasms postoperatively.\nFIGURE\n 1: Pelvic X-ray of the displaced comminuted right\nintertrochanteric fracture (arrow)\nWith regards to his past medical history, he reported a 20-year history of stiff-person syndrome (SPS) with\nfrequent muscle spasms and recurrent falls. He stated his doctors have been unable to adequately control\nhis symptoms of SPS despite multiple therapies. On initial diagnosis, he was started on baclofen and\ndiazepam with no significant relief of his spasms. He then underwent IVIg treatments three days per month\nfor one year, followed by diazepam as maintenance therapy. He reported a mild improvement in symptoms\nwith IVIg infusions but they did not sufficiently improve his ambulation or minimize his risk of fall. He\ncontinued to have falls, especially during physical activities such as playing tennis; one of which caused a\nsubdural hematoma that required a left craniotomy. He remarked that he was once a high-functioning,\nactive individual but has since been limited by his condition. \nOn postoperative day one, he reported that his right thigh pain was declining, but he continued to have\npainful left leg spasms that worsened with movement. On physical exam, he displayed significant gait\ninstability, decreased functional mobility, hypertonicity of his bilateral upper extremities, and prominent\nmuscle spasms of his left quadriceps femoris muscle. His neurological examination was otherwise within\nnormal limits. The patient’s pain from the fracture continued to improve over the second and third\npostoperative days.\nDespite adequate recovery from the surgery, the patient continued to have marked hypertonicity of his\nupper extremities and painful muscle spasms of his left leg that prevented him from participating in PT.\nAnti-GAD antibody levels were remarkably elevated at a value >250 IU/mL (0.0 - 5.0 IU/mL) that was too high\nto be quantified by the laboratory. Creatine kinase (CK) levels were elevated at 469 U/L (35 - 232 U/L).\nDue to his nonresponsiveness to conventional therapy and the high severity of disease, a series of seven",
+      "source_offsets": {
+        "start": 5889,
+        "end": 8623
+      },
+      "source_block_id": "b0008",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "treatments of TPE over 14 days were initiated. While discussing the treatment plan with the patient, he\nexpressed little hope in TPE improving his condition, as he had found minimal relief after multiple trials of\nmedications, including the year-long trial of IVIg therapy.\nOver the two-week course of TPE, his functional status and symptoms of SPS significantly improved.\nAlthough his hyperreflexia remained stable at 3+, his muscle spasms and hypertonicity progressively\nimproved after each treatment of TPE to the point that he had normal range of motion in all extremities.\nWhile receiving TPE, he was able to tolerate three hours of PT sessions daily for up to five days per week,\nwhereas he had zero rehabilitation potential before TPE was initiated. He made significant functional gains\nusing adaptive equipment, corrected his gait, and was eventually able to ambulate without assistance. He\nfelt his symptoms were adequately controlled for the first time since his diagnosis and reported having no\nsymptoms by hospital day five. Shortly after his TPE therapy was complete, he was deemed to be in a stable\ncondition and discharged to inpatient rehabilitation.",
+      "source_offsets": {
+        "start": 8700,
+        "end": 9866
+      },
+      "source_block_id": "b0009",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "In this patient with symptoms of severe uncontrolled SPS, a high anti-GAD antibody level above 250 IU/mL,\nand no clinical response to GABA-modulating agents, alternative treatment with IVIg was likely the next\nbest step in management. However, this patient’s symptoms were refractory to one year of IVIg treatment\nand continued to cause life-threatening problems. On two separate occasions, his recurrent falls caused a\nsubdural hematoma and a displaced comminuted intertrochanteric hip fracture. Thus, finding an alternative\ntreatment for his SPS was crucial, despite a lack of extensive evidence on the efficacy of many alternative\ntreatments. After seven treatments of TPE given over 14 days, augmented by daily PT sessions up to five\ntimes per week, the patient saw a dramatic improvement in both his symptoms of SPS and functional status.\nHis muscle spasms and hypertonicity were significantly reduced from baseline. He was able to correct his\nabnormal gait, gain functional mobility and ambulate without assistance. Also of note is that unlike most\nreported cases of SPS treated with TPE \n[10,13,20]\n, this patient did not have a history of type 1 diabetes\nmellitus or other autoimmune conditions.\nConclusions\nThis case suggests that TPE may offer an effective, safe treatment modality for patients with severe",
+      "source_offsets": {
+        "start": 10878,
+        "end": 12194
+      },
+      "source_block_id": "b0009",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "refractory SPS that may significantly improve mobility and minimize disability associated with the disease.\nThis adds to the growing body of evidence that TPE should be offered without delay to patients who fail first-\nline therapy and/or IVIg.",
+      "source_offsets": {
+        "start": 12195,
+        "end": 12439
+      },
+      "source_block_id": "b0010",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

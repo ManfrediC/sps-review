@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1479::p1",
+  "paper_id": "1479",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1479::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case presentation \nA 52-year-old woman referred to our clinic with the complaint of gait disturbance an d \nrigidity and muscle spasm of lower limbs since last year. Her muscle stiffness began from \nthe distal lower extremity and progressed to proximal and ultimately became so severe that \nshe had difficulty walking and climbing stairs and eventually became wheelchair bound. \nShe said that it seemed stress and fatigue worsened her symptoms.\n\nCaspian J Intern Med 2017; 8(4):329-331  \n330                                                                                                                                                                Razmeh S, et al  \nThe patient had experienced various tests in the different \nclinics including rheumatology, orthopedy, and psychiatry \nwith varied diagnos is and finally diagnosed of conversion \nand started taking antidepressants. Her medical history was \nsignificant for Hashimoto’s thyroiditis and hypertension. Her \nfamily history and review of systems were noncontributory. \nHer medications included sertraline 50mg, levothyroxine \n25mcg, atenolol 100  mg once a day and pregabalin 75 twice \ndaily.  \nOn physical examination, there was no malaise, fever, \nlymphadenopathy and organomegaly.  In the neurological \nexamination of the lower limbs, movement in all direction \nwas limited and rigidity in distal and prox imal muscles was \ndetected. Deep tendon reflexes were normal in the upper and \nlower extremities and plantar response was bilateral flexor.  \nIn laboratory examinations, including creatine kinase, \ncomplete blood count, erythrocyte sedimentation rate, and C - \nreactive protein and rheumatoid factor level were normal. \nThe thyroid function tests, antithyroglobulin and thyroid -\nstimulating hormone receptor antibody also w ere normal. \nHer anti -TPOAb level  was 75 IU (normal value: 0 –34 IU). \nSerum anti -GAD level was 72(n ormal value < 1) and the \npatient’s tumor markers and paraneoplastic tests were \nnormal.  \nIn e lectromyography (EMG)  continuous motor unit \ndischarge and simultaneous co -contraction were observed in \nlower extremities. Bilateral mammography, abdominopelvic \nand chest CT for occult cancer was normal . IVIG was \nadministered (100gr, 2gr/kg/5 days) for  the patient with \nsignificant improvement observed from the admission period \nand 2 months later in the follow-up visit.\n\nIn conclusion, it is \nessential that in any patient with bizarre gait disorder and \nsuspicious to conversion disorder, SPS should be considered \nto prevent delay in diagnosi s and long -term neurologic \ndisability.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3173,
+        "end": 3616
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 443
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3618,
+        "end": 5549
+      },
+      "compiled_offsets": {
+        "start": 445,
+        "end": 2376
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8052,
+        "end": 8266
+      },
+      "compiled_offsets": {
+        "start": 2378,
+        "end": 2592
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

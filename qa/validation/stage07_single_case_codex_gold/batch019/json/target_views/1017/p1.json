@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1017::p1",
+  "paper_id": "1017",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1017::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We present a 75-y-old \nfemale patient with sudden onset of subacute gait impairment and myoclonus. A \nserum/cerebral spinal fluid paraneoplastic panel was positive for amphiphysin [CSF \n1:256 titer, serum 1:15360 titer/western blot (+)], a nonintrinsic membrane protein \nconcentrated in nerve terminals, and she was subsequently diagnosed with invasive \nductal carcinoma.\n\nStudy Design/Methods: Our patient was treated with first-line \nimmunosuppressive therapy Solu-Medrol 1 g × 5 doses, without improvement. \nUnresponsiveness prompted an intravenous immune globulin regimen of 0.4 g/kg/d \nfor 5 d, which also did not yield the expected results. Apheresis has been described \nas a treatment option in patients with life-threatening respiratory decline, but, in our \ncase, the lack of clinical improvement with previous therapies warranted the use of \nthis modality. Results/Findings: Therapeutic plasma exchange (TPE) was \nperformed by using a COBE (now GAMBRO) Spectra apheresis system (GAMBRO \nBCT, Inc., Lakewood, CO). Peripheral venous catheters were used for access and \nreturn. The patient underwent seven exchanges in the course of 2 wk, for a total 1.0 \nplasma volume exchange at 100% fluid balance with 2.5 L of 5% albumin as \nreplacement fluid. Conclusion: All seven sessions were completed without any \nmajor adverse events. The only side effects described were brief episodes of cold \nintolerance and drowsiness secondary to antihistamine use, both of which became \nmilder as the sessions progressed. TPE is usually a well-tolerated procedure, and \nthe reported adverse event frequency is below 5%. Since last being treated, the \npatient had received Rituxan 375 mg/m2 weekly for 5 wk, and she since reports \nimprovement with respect to muscle spasms and body pain, changes that have \nallowed her to tolerate a lower dose of Baclofen (30 mg daily, down from 45 mg). Her \n“stiff” and unsteady gait has improved when using a walker, and she is able to \nambulate with more ease and without any falls. Although it is unclear how much of \nthe clinical improvement can be attributed to the TPE sessions, that may be a \nvaluable treatment modality in patients with stiff-person syndrome who are \nunresponsive to first-line therapies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 814,
+        "end": 1185
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 371
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1186,
+        "end": 3052
+      },
+      "compiled_offsets": {
+        "start": 373,
+        "end": 2239
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

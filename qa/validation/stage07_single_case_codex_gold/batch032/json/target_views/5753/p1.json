@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5753::p1",
+  "paper_id": "5753",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5753::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Objective \nTo report a rare case of a patient presenting with unilateral symptoms whose work-up revealed \npartial stiff person syndrome (SPS). \nDesign/Methods \nOur patient is a 62 year old female with no prior medical problem who presented to the \nhospital with right arm and leg weakness as well as a body locked sensation where she felt \nmuscle stiffening and could not move.  She also described random, large amplitude involuntary \nmovements either in her right arm or right leg. No symptoms in her left side.  She was admitted \nfor suspected stroke in November 2018 and had extensive workup including MRI brain with \ncontrast which did not show any area of enhancement nor acute DWI. No cause for her \nsymptoms was found, and after discharge continued to have worsened right sided ataxia \nand hyperreflexia and increased muscle tone.  Further work-up ensued, and it was not until April \n2019 that she was found to have an elevated GAD (>250 IU/mL) and HbA1C 6.3 with positive \nislet cell antibody.  Lumbar puncture results showed positive GAD65 Ab Assay (3.09 nmol/L) \nand the presence of oligoclonal bands. \nResults \nThe patient was diagnosed with partial SPS, and was trialed on baclofen and then diazepam but \ndid not tolerate these.  She was subsequently started on intravenous immunoglobulin treatment, \nalmost one year after the onset of her symptoms. \nConclusionsPartial SPS a subtype noted in only 10 to 15 % of patients, and classification gives \nimportant diagnostic and prognostic information.  Recognition of classic SPS vs variants is \nimportant because appropriate therapy like IVIg improves symptoms in most patients and should \nbe initiated without delay",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 410,
+        "end": 2084
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1674
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

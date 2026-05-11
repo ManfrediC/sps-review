@@ -1,0 +1,72 @@
+{
+  "paper_id": "1971",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1971.json",
+    "source_text_sha256": "e8a18b0c828efb914b2e9abd0ec803cc26997d35f98c3d27c6ef828bba8b9e3f",
+    "prepared_source_sha256": "9982937b6110bbc237f956a88b245880f48ab5c8a4d68bac71c2a4db49e5db5f",
+    "prepared_source_character_count": 2739
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2739
+      },
+      "page_index": 0,
+      "text": "“Rigid” lower back pain: a case of stiff \nperson syndrome \nAurore V, Stephane G \nSwiss medical weekly, 2020, 150(SUPPL 245), 3S | added to CENTRAL: 31 January 2021 | \n2021 Issue 01 \nSourced from: \nEmbase \nAbstract \nCase description: A 61‐year‐old woman known for Hashimoto thyroidi‐tis was referred to our \nRheumatology department for non‐specific low back pain (LBP). Truncal rigidity, \nprogressive scoliosis, severe hyper‐lordosis persisting during trunk flexion, and episodic \nmuscle spasms elic‐ited by physical or emotional stress were keystone symptoms and signs. \nBesides, an electromyogram had shown constant lumbar paraspinal muscular activity. This \npresentation suggests the diagnosis of Stiff Per‐son Syndrome (SPS), a rare auto‐immune \ndisease linked to anti‐glu‐tamic acid decarboxylase antibodies (anti‐GAD). High‐level of \nanti‐GAD confirmed the diagnosis and a favourable evolution was noted with diaz‐epam 3x2 \nmg/j. Physiopathology and diagnosis: Anti‐GAD are marker of SPS, but are also present in a \nfew other neurological diseases. Physiopathology hy‐pothesis suggests modulation of the \nneurotransmitter GABA enhancing spinal motor neurons hyperexcitability and unintentional \nco‐contractions of agonist and antagonist muscles. Association with auto‐immune disor‐ders \nis known. Variants can present as stiff limb, or paraneoplasic syn‐dromes. Differential \ndiagnosis includes non‐specific LBP, spondyloar‐thropathy and extrapyramidal diseases. No \ndefinite consensus on diag‐nostic criteria has been defined; a combination of clinical \npresentation (axial/limbs muscular rigidity, spasms), electromyogram (co‐contraction of \nagonist and antagonist muscles), positive anti‐GAD and test treatment with diazepam \ncontributes to diagnosis. Treatment and prognosis: LBP and disability due to limited \nmovement cause gait difficulties and falls. A recently published series reported a poor \nprognosis, as 80% lost the ability to walk independently on an 8 years follow up. Diazepam is \nthe first line empirical treatment along with physiotherapy. Other agonist (eg. baclofen) or \nantiepileptic drugs are also proposed. In case of resistance to symptomatic therapies, immune \nmodulating treatments are recommended. IVIG has the best evidence with a small positive \nrandomized controlled trial. A few case series of Rituximab and plasma exchange reported \nrather disappointing results. Conclusion: SPS is a rare and challenging diagnosis in patient \npresent‐ing with chronic LBP. Classic red flags fail to provide clinical clues to the diagnosis, \nhowever recurrent spasm elicited by stress and hyperlordosis should alert rheumatologists. \nRecognition of this disease is of paramount importance to guide treatment approach."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Case description: A 61‐year‐old woman known for Hashimoto thyroidi‐tis was referred to our \nRheumatology department for non‐specific low back pain (LBP). Truncal rigidity, \nprogressive scoliosis, severe hyper‐lordosis persisting during trunk flexion, and episodic \nmuscle spasms elic‐ited by physical or emotional stress were keystone symptoms and signs. \nBesides, an electromyogram had shown constant lumbar paraspinal muscular activity. This \npresentation suggests the diagnosis of Stiff Per‐son Syndrome (SPS), a rare auto‐immune \ndisease linked to anti‐glu‐tamic acid decarboxylase antibodies (anti‐GAD). High‐level of \nanti‐GAD confirmed the diagnosis and a favourable evolution was noted with diaz‐epam 3x2 \nmg/j.",
+      "source_offsets": {
+        "start": 215,
+        "end": 934
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Conclusion: SPS is a rare and challenging diagnosis in patient \npresent‐ing with chronic LBP. Classic red flags fail to provide clinical clues to the diagnosis, \nhowever recurrent spasm elicited by stress and hyperlordosis should alert rheumatologists. \nRecognition of this disease is of paramount importance to guide treatment approach.",
+      "source_offsets": {
+        "start": 2402,
+        "end": 2739
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8211::p1",
+  "paper_id": "8211",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8211::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Description: The patient began having difﬁculty ambulat-\ning 4 months prior to admission. A neurologist initiated an outpa-\ntient workup. Her difﬁculty with ambulation progressed until she\nwas seen in the emergency department. The workup consisted of a\nlumbar puncture (LP) and MRI of the brain and spine. Imaging was\nnegative; however, some of the LP results were pending upon\ndischarge. She then began experiencing /H11033back stiffness/H11033and further\ngait unsteadiness until she could not ambulate independently. She\nsaw another neurologist who sent her to the emergency department\nfor further workup. The original LP results were positive for anti-\nGAD 65 antibodies which were suggestive of Stiff Person Syndrome.\nShe was prescribed diazepam, which provided symptomatic im-\nprovement. She was also given 5 days of intravenous immunoglob-\nulin (IVIG) prior to transfer to acute rehabilitation.\nProgram Description: A 25-year-old woman with Stiff Person\nSyndrome.\nSetting: Inpatient acute rehabilitation hospital.\nResults or Clinical Course: After treatment in acute care, the\npatient could ambulate short distances with a rolling walker. Following\nacute rehabilitation, she was modiﬁed independent with community\ndistance ambulation, transfers, and activities of daily living.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3469,
+        "end": 4757
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1288
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

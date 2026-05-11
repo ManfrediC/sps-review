@@ -1,0 +1,56 @@
+{
+  "paper_id": "6101",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\6101.json",
+    "source_text_sha256": "1ac6d16d7a717862c02b16ed796312f474f0f3e2e1b199af4764e0f5570456fe",
+    "prepared_source_sha256": "a8721a8cbba796f8366c83b1065ca680595da04defa050a87f37afe56e216a57",
+    "prepared_source_character_count": 3144
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 3144
+      },
+      "page_index": 0,
+      "text": "37\nSTIFF AS A BOARD: DIAGNOSIS AND INTRAVENOUS IMMUNOGLOBULIN\nTHERAPY IN A TEENAGER WITH STIFF-PERSON SYNDROME. Nicole\nJohnson, Brenda Banwell, Rayfel Schneider, Susanne Benseler, Christina Boros, Earl\nSilverman (The Hospital for Sick Children, Toronto, Ontario)\nPurpose: To describe the diagnostic process and the therapeutic approach in a pediatric\ncase of Stiff-person syndrome.\nMethods: A prospective observational study of a 15-year-old teenager with Stiff-per-\nson syndrome was performed. Clinical assessments, Oxford Muscle Scale and func-\ntional status were performed. Laboratory tests included muscle enzymes, electrolytes,\nrenal function tests, inflammatory markers and autoantibody tests [ANA, dsDNA,\nANCA, RF, TSH and anti-glutamic acid decarboxylase (GAD)]. Diagnostic investi-\ngations performed included joint x-rays, a myositis protocol MRI, electromyogram\n(EMG) and nerve conduction studies. Clinical outcome was assessed after 3 months\nof therapy.\nResults: History- A previously healthy 15 year-old-teenager presented with a 3 year\nhistory of moderate joint pain and stiffness of his back and extremities. More recent-\nly, there was a rapid progression of his symptoms, leading to a 6 week absence from\nschool and extracurricular activities. There was no response to NSAIDs or steroid\ntherapy.\nExamination- Musculoskeletal examination revealed multiple contractures of large\nand small joints with no evidence of arthritis. All joints had decreased passive and\nactive range of movement limited by pain and lead-pipe rigidity. Diffuse soft tissue\ntenderness was elucidated. There was no evidence of enthesitis or tendonitis. Muscle\nspasms were precipitated by tactile stimulation. A mild intention tremor was present.\nHe had a fixed hyperlordosis.\nInvestigations- Blood work was normal including autoantibody testing. All imaging\nstudies and nerve conduction testing were unremarkable. EMG demonstrated contin-\nuous muscle activity at rest and during muscle relaxation. There was simultancous\nactivity of agonist and antagonist muscles.\nDiagnosis: Stiff-person syndrome.\nTreatment: IV-Immunoglobulin (IVIG) treatment of 2g/kg monthly for 2months and\noral carbamazepine provided a significant reduction in the severity of joint pain and\nstiffness at the three month review. There was a significant reduction in the number of\nfalling episodes and a return to full-time school.\nConclusion: Stiff-person syndrome is a rare disorder characterized by progressive\naxial rigidity with super-imposed muscle spasms leading to difficulty ambulating. It\nhas been postulated that the disorder is autoimmune with 65% positivity for anti-GAD\nantibodies. The proposed diagnostic criteria include clinical features of fixed hyper-\nlordosis, superimposed episodic muscle spasms and a normal neurological examina-\ntion with EMG findings of continuous motor unit activity at rest. This patient had clin-\nical and investigative features to support the diagnosis of Stiff-person syndrome and a\ngood therapeutic response to IVIG. This case highlights the need to consider less com-\nmon diagnoses for debilitating joint complaints in pediatric patients."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: History- A previously healthy 15 year-old-teenager presented with a 3 year\nhistory of moderate joint pain and stiffness of his back and extremities. More recent-\nly, there was a rapid progression of his symptoms, leading to a 6 week absence from\nschool and extracurricular activities. There was no response to NSAIDs or steroid\ntherapy.\nExamination- Musculoskeletal examination revealed multiple contractures of large\nand small joints with no evidence of arthritis. All joints had decreased passive and\nactive range of movement limited by pain and lead-pipe rigidity. Diffuse soft tissue\ntenderness was elucidated. There was no evidence of enthesitis or tendonitis. Muscle\nspasms were precipitated by tactile stimulation. A mild intention tremor was present.\nHe had a fixed hyperlordosis.\nInvestigations- Blood work was normal including autoantibody testing. All imaging\nstudies and nerve conduction testing were unremarkable. EMG demonstrated contin-\nuous muscle activity at rest and during muscle relaxation. There was simultancous\nactivity of agonist and antagonist muscles.\nDiagnosis: Stiff-person syndrome.\nTreatment: IV-Immunoglobulin (IVIG) treatment of 2g/kg monthly for 2months and\noral carbamazepine provided a significant reduction in the severity of joint pain and\nstiffness at the three month review. There was a significant reduction in the number of\nfalling episodes and a return to full-time school.\nConclusion: Stiff-person syndrome is a rare disorder characterized by progressive\naxial rigidity with super-imposed muscle spasms leading to difficulty ambulating. It\nhas been postulated that the disorder is autoimmune with 65% positivity for anti-GAD\nantibodies. The proposed diagnostic criteria include clinical features of fixed hyper-\nlordosis, superimposed episodic muscle spasms and a normal neurological examina-\ntion with EMG findings of continuous motor unit activity at rest. This patient had clin-\nical and investigative features to support the diagnosis of Stiff-person syndrome and a\ngood therapeutic response to IVIG. This case highlights the need to consider less com-\nmon diagnoses for debilitating joint complaints in pediatric patients.",
+      "source_offsets": {
+        "start": 965,
+        "end": 3144
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

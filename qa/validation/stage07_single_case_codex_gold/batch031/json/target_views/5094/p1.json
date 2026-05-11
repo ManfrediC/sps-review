@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5094::p1",
+  "paper_id": "5094",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5094::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Stiff-man syndrome (SMS) developed in a 60-year-old\nwoman. Treatment with diazepam controlled her painful\nspasms initially. Two and one-half years after the onset of\nSMS, she developed new spells of paroxysmal leg jerking\nand apnea. A spell was recorded with simultaneous video and\npolygraphic techniques that revealed simultaneous firing of\nmotor unit potentials in several muscles (paraspinals, internal\nhamstring, and abdominal muscles). Apnea was associated\nwith arterial oxygen desaturation. An increase in the dose of\ndiazepam decreased the number and severity of these latter\nepisodes. Seventeen months later, the patient began to taper\nthe diazepam. Shortly thereafter, she suffered a cardiorespira-\ntory arrest and subsequently died. Autopsy showed small\nchronic inflammatory foci in the pancreas (some associated\nwith islets) and findings of diffuse encephalomyelitis charac-\nterized by perivascular cuffing in the spinal cord, brainstem,\nthalamus, hippocampus, and amygdala, and a dense mononu-\nclear infiltrate in the anterior horns of the lumbar and cervical\ncord with relative preservation of axons and myelin. Cell\ntyping showed this infiltrate to be polyclonal and reactive.\nThere have been rare cases of SMS associated with encepha-\nlomyelitis reported previously. We conclude that our patient\nis an example of coexistence of these 2 conditions.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 265,
+        "end": 1627
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1362
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

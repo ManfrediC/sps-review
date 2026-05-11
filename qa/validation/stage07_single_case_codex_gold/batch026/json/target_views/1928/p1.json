@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1928::p1",
+  "paper_id": "1928",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1928::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Methods 39 years old worker, purified water seller, 2 years in\nservice, with 20 Kg weight lifting. He begins with lumbar\npain that doesn ’t respond to regular treatment; continues with\ndecreased movement due to muscle rigidity , beginning with\nthe upper extremities, moving forward to the pelvic limbs,\nwith myoclonus and chorea, relating the symptoms to physical\nactivity or stress that persists at rest. Physical examination: a\nslow and assisted walked was observed. Hypertonic lower\nlimbs; presented myoclonus. Abolished reflections, strength\nand sensibility preserved. Myoclonus presented during exami-\nnation with stiffness lower limbs, following walk tests. He\ncontinued without responding to treatment. Diazepam medica-\ntion is added so he could fall asleep. He remains bedridden,\nperforming only needed movements, with pain aggravation\nwhile presenting spasms.\nResults Electromyography compatible with cervical and lumbar\nradiculopathy . Magnetic resonance without alterations. No\nAnti GAD test taken, considering only normal clinical descrip-\ntion, laboratory data and consultancy results for diagnosis of\nthe patient was stablished as stiff person syndrome with myo-\nclonus version, determining incapacity due to a low compati-\nbility with his job.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 933,
+        "end": 2191
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1258
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

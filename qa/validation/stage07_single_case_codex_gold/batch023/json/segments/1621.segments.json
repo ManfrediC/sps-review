@@ -1,0 +1,81 @@
+{
+  "paper_id": "1621",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1621.json",
+    "source_text_sha256": "92b6689d92961cdb09b2fa874b6c252f57eeb48bc4376aa57574c7dab4889ea1",
+    "prepared_source_sha256": "ec70668c0b837c5efc5ae9f939b51446b378cce1eb4b9124f38677a4e66d7116",
+    "prepared_source_character_count": 2746
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2583
+      },
+      "page_index": 0,
+      "text": "A Rare Case of Non-Neoplastic Anti-GAD \nPositive Cerebellar Ataxia and Progressive \nEncephalomyelitis with Rigidity and \nMyoclonus (PERM), Responsive to IVIG \nTherapy (P2.2-044) \nNoushin Jazebi, Shashika Rodrigo, Diaa Hamouda, Ahmad Shawagfeh \nFirst published April 16, 2019, \nAbstract \nObjective: We present a case of a 65-year-old male who initially presented with cerebellar ataxia \nand myoclonus, and rapidly progressed to rigidity and progressive Encephalomyelopathy, with \npositive anti-glutamic acid decarboxylase (GAD) antibodies. Patient responded to Intravenous \nImmunoglobulin (IVIG) therapy. Patient ultimately recovered in terms of mentation, rigidity and \nmyoclonus. \nBackground: Progressive Encephalomyelitis with Rigidity and Myoclonus (PERM) is a rare \nsubset of Stiff Person Syndrome (SPS), and presents with rigidity, spasms and muscle stiffness. \nPERM is a chronic disease strongly associated with anti-GAD antibodies and characterized by \nrelapses and remissions. PERM is diagnosed clinically and has been treated with both IVIG and \nplasmapheresis. \nDesign/Methods: n/a \nResults: A 65-year-old African American male with medical history of hypertension, atrial \nfibrillation, status post two kidney transplants (on Tacrolimus), and anoxic brain injury in 2017 \nwith minimal neurology sequel, who presented with two weeks of poor balance and cerebellar \nataxia. Within one week of admission patient developed rapidly progressive alteration in level of \nconsciousness, multifocal myoclonic jerks, increased muscle tone and rigidity. \nPatient remained encephalopathic with severe axial and peduncular stiffness, despite receiving a \ncourse of Plasmapheresis. At day 13 after receiving the first course of IVIG, patient showed \nmarked improvement in mental status, stiffness, and rigidity. He improved even further with \nrepeat infusions. The serum anti-GAD65 antibody was consistently elevated (titer: greater than \n250 IU/mL). The rest of CSF and serum tests were negative. Three brain MRIs were \nunremarkable. Complete work ups excluded the presence of malignancy \nConclusions: We present a case of anti-GAD antibodies positive Progressive Encephalomyelitis \nwith Rigidity and Myoclonus (PERM), who initially presented with cerebellar ataxia, and rapidly \nprogressed to myoclonus and severe stiffness with encephalopathy. Unique features of this case \ninclude initial presentation of cerebellar ataxia, immunosuppressed status due to tacrolimus, \nconsistent elevated anti-GAD antibody titers, non-neoplastic and return to baseline following \nIVIG administration."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 2585,
+        "end": 2746
+      },
+      "page_index": 1,
+      "text": "Disclosure: Dr. Jazebi has nothing to disclose. Dr. Rodrigo has nothing to disclose. Dr. Hamouda \nhas nothing to disclose. Dr. Shawagfeh has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Objective: We present a case of a 65-year-old male who initially presented with cerebellar ataxia \nand myoclonus, and rapidly progressed to rigidity and progressive Encephalomyelopathy, with \npositive anti-glutamic acid decarboxylase (GAD) antibodies. Patient responded to Intravenous \nImmunoglobulin (IVIG) therapy. Patient ultimately recovered in terms of mentation, rigidity and \nmyoclonus.",
+      "source_offsets": {
+        "start": 287,
+        "end": 680
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: A 65-year-old African American male with medical history of hypertension, atrial \nfibrillation, status post two kidney transplants (on Tacrolimus), and anoxic brain injury in 2017 \nwith minimal neurology sequel, who presented with two weeks of poor balance and cerebellar \nataxia. Within one week of admission patient developed rapidly progressive alteration in level of \nconsciousness, multifocal myoclonic jerks, increased muscle tone and rigidity. \nPatient remained encephalopathic with severe axial and peduncular stiffness, despite receiving a \ncourse of Plasmapheresis. At day 13 after receiving the first course of IVIG, patient showed \nmarked improvement in mental status, stiffness, and rigidity. He improved even further with \nrepeat infusions. The serum anti-GAD65 antibody was consistently elevated (titer: greater than \n250 IU/mL). The rest of CSF and serum tests were negative. Three brain MRIs were \nunremarkable. Complete work ups excluded the presence of malignancy \nConclusions: We present a case of anti-GAD antibodies positive Progressive Encephalomyelitis \nwith Rigidity and Myoclonus (PERM), who initially presented with cerebellar ataxia, and rapidly \nprogressed to myoclonus and severe stiffness with encephalopathy. Unique features of this case \ninclude initial presentation of cerebellar ataxia, immunosuppressed status due to tacrolimus, \nconsistent elevated anti-GAD antibody titers, non-neoplastic and return to baseline following \nIVIG administration.",
+      "source_offsets": {
+        "start": 1093,
+        "end": 2583
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

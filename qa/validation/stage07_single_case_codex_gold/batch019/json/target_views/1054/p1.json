@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1054::p1",
+  "paper_id": "1054",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1054::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "S he was a 50-year-old woman with a three-\nyear history of progressive painful muscular rigidi ty and spasms which were most severe in \nlumbar and abdominal muscles leading to significant  hyperlordosis (Figure 1). She also had a \n10-year history of breast cancer, successfully trea ted. Laboratory work-up was unremarkable. \nThe ENMG disclosed spontaneous and continuous activ ity of normal motor units in lumbar \nmuscles (Figure 2). Anti-GAD was positive and there  was no sign of breast cancer recurrence \nbased on a normal PET-CT scan. Initial symptomatic treatment with diazepam 30 mg/day and \nbaclofen 40 mg/day, brought mild improvement. The clinical picture improved after use of IV \nimmunoglobulin (IVIg) 0.4 g/kg/day for 5 days, foll owed by single monthly doses. Along 4 \nyears of follow up, the patient had periods of sust ained relief and followed by periods of \nsevere spasms, generally triggered by anxiety. Rece ntly, her symptoms became refractory to \nIVIg as well as high doses of tizanidine and botulinun toxin. A trial of levetiracetam up to 500 \nmg twice a day brought remarkable improvement.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4982,
+        "end": 6095
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1113
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

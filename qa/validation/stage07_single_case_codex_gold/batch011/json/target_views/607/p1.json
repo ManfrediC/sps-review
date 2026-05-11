@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "607::p1",
+  "paper_id": "607",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "607::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We report the case of a 40-year-old woman who pre-\nsented with a 9-year history of progressive left leg stiff-\nness. Initially she had difﬁculty walking at higher speeds,\nand gradually developed marked rigidity in her right leg\nand held it extended at the knee. Painful knee-extension\nspasms were superimposed on submaximal extension\nstiffness with emotional stimuli. Repeated magnetic reso-\nnance imaging of the entire spinal cord and the brain\nwere normal. Routine laboratory tests were unremark-\nable, apart from mildly elevated glucose levels. Immuno-\nlogical parameters were also negative. Four years after\nthe onset of symptoms she was tested for anti-GAD anti-\nbodies and found to be positive, with a value of >500\nU/ml (normal <7 U/ml).\nBased on the clinical picture, the lack of symptom\nspread over the years and the increased anti-GAD\nTable 1. Response to botulinum toxin A treatment in each of the\nthree injection sessions.\nSubjective\nimprovement\nModified\nAshworth\nscale EMG\nBotulinum\ntoxin A\ndose\nPre-injection NA 4 Continuous\nMU activity\nNA\n4 weeks after\nfirst injection\nNo 4 NP 400 U\n4 weeks after\nsecond\ninjection\nNo 3 NP 550 U\n4 weeks after\nthird\ninjection\nYes 1 Normal 900 U\nEMG, electomyogram; MU, motor unit; NA, not applicable; NP, not\nperformed.\nLetters to the Editor MUSCLE & NERVE September 2012 457\n\nantibody level, she was diagnosed with SLS. She was\nstarted on diazepam 10 mg twice per day, but there was\nonly a modest effect on leg rigidity. She refused a dose\nincrease due to concerns about developing tolerance.\nOn neurological examination she had marked knee stiff-\nness (modiﬁed Ashworth scale score\n4 ¼ 4) without other\nabnormalities. On needle EMG recordings from the left\nvastus medialis, continuous motor unit potential activity,\nsometimes fusing into incomplete interference patterns,\nwas observed. Simultaneous recording from the antago-\nnist hamstrings was not performed.\nWe administered a total of 400 U of botulinum toxin\nA (BTX-A; Dysport; 50 U/0.05 ml) at 3 injection sites:\nvastus lateralis 150 U; vastus medialis 150 U; and rectus\nfemoris 100 U. This rather low dose was chosen to pre-\nvent knee joint instability. Clinical testing 3 weeks later\nrevealed no improvement. At a second session 4 months\nlater, we increased the dose to 550 U (vastus lateralis 200\nU, vastus medialis 200 U, and rectus femoris 150 U),\nwhich resulted in moderate improvement in rigidity that\nwas notable on physical examination. At the next session\n(4 months after the second session) we further increased\nthe dose to 900 U (vastus lateralis 350 U, vastus medialis\n350 U, and rectus femoris 200 U). This led to a dramatic\nimprovement in rigidity (Table 1) and gait, which was\nassociated with relief from painful extension spasms.\nThe clinical improvement reached a maximum 5\nweeks post-injection. Apart from slight extension weakness\nof the left leg that was evident only when she tried to\njump, the patient did not report any side effects. Marked\nimprovement lasted 2.5 months, and symptoms returned\nto the pre-injection level 3 months later. Treatment was\nthen repeated with the same dose (900 U) injected in the\nsame muscles, resulting in a similar marked improvement.\nWidely used symptomatic therapies for SPS include\ndiazepam and baclofen, whereas immunomodulatory treat-\nment consists mainly of intravenous immunoglobulin. Cor-\nticosteroids or plasmapheresis, and recently rituximab, can\nbe equally effective in some cases.\n1,5 BTX-A is rarely used\nin SPS, although positive clinical effects have been seen.6,7\nLiguori et al.7 followed 2 patients for 2 years and reported\nsustained BTX-A beneﬁt on repeated injections and a tend-\nency for increased improvement duration (up to 7\nmonths) after each session.\nTherapeutic data on SLS are scarce due to the rarity of\nthe syndrome. Treatments reported so far include diaz-\nepam, clonazepam, baclofen, immunoglobulins, cortico-\nsteroids, plasmapheresis, cyclophosphamide, and gaba-\npentin, with varied efﬁcacy.\n8–12 Injection of 900 U BTX-A\n(Dysport) in the affected quadriceps muscle resulted in a\nmarked functional improvement with negligible side\neffects in our patient, who had a 9-year history of typical\nSLS. Due to its focal nature, SLS may be more suitable for\ntreatment with intramuscular botulinum toxin injections\nthan SPS. It should be noted, however, that anti–GAD-\nantibody-positive SLS is an autoimmune disorder and\nbelongs to the clinical spectrum of SPS. BTX-A is not\nexpected to prevent progression into SPS, and therefore\ntolerable immunological therapies (such as immunoglo-\nbulins) should be tested for long-term treatment.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4631,
+        "end": 5953
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1322
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5955,
+        "end": 9246
+      },
+      "compiled_offsets": {
+        "start": 1324,
+        "end": 4615
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

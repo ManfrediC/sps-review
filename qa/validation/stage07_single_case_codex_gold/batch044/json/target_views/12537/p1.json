@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12537::p1",
+  "paper_id": "12537",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12537::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 39-year-old woman with SPS presented for caesarean section at 39+1 weeks gestation. The \ndiagnosis of SPS had been made 18 years previously following episodes of spasms leading to \nconvulsions. Investigations excluded epilepsy, but she was found to have anti-glutamic acid \ndecarboxylase antibodies. Spasms were managed with diazepam 2 mg as required. She was \nconcerned that labour might precipitate spasms, so had elected for caesarean delivery. Consent \nfor spinal anaesthesia was obtained and the possibility of prolonged ventilation in the unlikely \nevent of general anaesthesia discussed. In theatre, intravenous (IV) access was secured and \nstandard monitoring applied. After skin infiltration with 1% lidocaine, 2.3 ml of 0.5% hyperbaric \nbupivacaine and 300 µg of diamorphine were injected intrathecally through a 25 g pencil point \nneedle. Bilateral sensory block to T4 was achieved. The block was adequate throughout surgery \nand the baby was delivered uneventfully. IV paracetamol and per rectal diclofenac were given \nand regular oral analgesia was prescribed for the postoperative period. Ongoing management \nwas discussed with a consultant neurologist and a breastfeeding pharmacist. Diazepam and its \nactive metabolites pass into breast milk, causing sedation in the neonate, therefore baclofen was \nprescribed for spasms as required. Baclofen can also pass into breast milk but in sufficiently low \namounts for it to be safe in breastfeeding; however, it can reduce milk supply.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 582,
+        "end": 2079
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1497
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

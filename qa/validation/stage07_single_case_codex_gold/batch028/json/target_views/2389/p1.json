@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2389::p1",
+  "paper_id": "2389",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2389::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "The patient is a 12-year-old right-handed Hispanic boy who presented for evaluation of painful \naxial muscle contractions and exaggerated startle response . \nHis first symptom, stiffness of the righ t leg during ambulation, occurred at age 5. At age 7, he had a \ngeneralized seizure lasting 5 min  with unresponsiveness and jerking movements of all extremities, \nbut without tongue biting, bowel or bladder incontinence. He was controlled on levetiracetam u ntil \nage 11. At that time, he developed episodes of nightly awakening with a prodrome of anxiety and \ntachycardia typically followed by up to 20 min  of painful hyperlordotic posturing. Occasional episodes \nlasted for up to 2 h. Frequency of episodes gradually  worsened from once to several times a day. \nStartle response to auditory and tactile stimuli triggered many of the episodes. In order to prevent \nfalls, the patient became wheelchair bound. There is no family history of similar disorder, but there is \nconsanguinity (the patient’s paternal grandmother and g randfather are second cousins).  \nOn examination, the patient manifested sustained right ankle clonus, markedly contracted \nthoracolumbar paraspinal muscles, hyperlordotic posture, and classic ‘board -like’ abdomen. Tactile or \nauditory stimulation triggered episodes with right lower extremity sustained myoclonus, diaphoresis, \npainful exacerbation of the hyperlordosis with thoracolumbar axial and abdominal muscle co -\ncontraction, and rocking movements which were li kely a response to the axial contraction.  \nMagnetic resonance imaging of the brain and video electroencephalography studies were normal. \nAnti-GAD antibody was positive at 4 ,405 nmol/l, but there were no detectable anti -amphiphysin \nantibodies. Muscle biopsy was normal. There was mild improvement with diazepam or clonazepam \nand monthly intravenous immunoglobulin treatment (IV Ig) [4]. Baclofen and gabapentin did not \nimprove his symptoms. A course of rituximab,  a monoclonal antibody which binds to B -lymphocyte \nCD surface antigens, consisting of two 500 mg/m2 treatments spaced 14 days apart, markedly \nreduced the frequency and severity of axial contractions, diminished startle response, and abolished \nsustained ankle clonus. Most importantly, his gait markedly impr oved and he is now able to ambulate \nwith minimal assistance, partly because of residual phobia of falling (for online suppl. video , see \nwww.karger.com/doi/10.1159/000339446 ). Post-treatment anti-GAD antibody levels were not \navailable.\n\nThis childhood case demonstrates the classic features of SPS and the remarkable \nclinical improvement with rituximab (table 1; online suppl. video). Thus, rituximab \nshould be added to other treatments of SPS such as IV Ig, plasmaph eresis, \ncyclophosphamide, and mycophenolate. Other antispasmodic treatments reported to be \neffective in patients with SPS include tizanidine, piracetam, phenobarbital, and local \nbotulinum toxin injections [5].",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2750,
+        "end": 5272
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2522
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5722,
+        "end": 6167
+      },
+      "compiled_offsets": {
+        "start": 2524,
+        "end": 2969
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

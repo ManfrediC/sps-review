@@ -1,0 +1,117 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12117::p1",
+  "paper_id": "12117",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12117::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CLINICAL CASE REPORT\nA 68-year-old patient was admitted to the Admission Room \nof the Military Medical Academy Memorial Teaching Hos-\npital of the Medical University of Lodz due to deteriorat -\ned mobility and pain in the lumbar region and both lower\n\nlimbs, more pronounced on the left side. The patient re -\nported a fall with no head injury about 10 days before ad -\nmission. He previously used little support to move around \nhouse (Rankin score of 3). Due to the above-mentioned \nsymptoms he had several admissions to emergency rooms/\nhospital emergency departments in different hospitals and \nunderwend extensive diagnosis (Tab. 1).\nFull verbal and logical contact with the patient was pos -\nsible during physical examination. No meningeal symp -\ntoms were found. No abnormalities were detected in the \ncranial nerves. The muscle strength in the upper limbs was \nnormal with symmetrical deep reflexes (R = L). There was \nclearly increased muscle tension in the lower limbs, which \nwas difficult to break. Attempts at passive movement of \nthe lower limbs were accompanied by severe pain. Spasms \nand movements corresponding to myoclonus, more pro -\nnounced in the left lower limb and incresing upon touch, \nwere observed. According to the physicien, the mus -\ncle strength of the lower extremities was reduced (4/5),  \nespecially on the left side and with absent deep reflexes.\n\nThere were no pathological symptoms or dissociated sen -\nsory loss. The patient negated sphincter dysfunction. Addi-\ntionally, attention was paid to the deformation of both feet \nin the form of a hollow foot and hammer toes.\nDiagnostic tests performed in the emergency room did not \nallow to link the reported abnormalities with the patient’s \nneurological status (Tab. 2). Therefore, he was admitted to \nthe ward for extended diagnosis. When performing a retro-\nspective analysis, it is worth noting that spinal radiography  \nof the LS segment in the emergency room in the patient \nplaced in a supine position showed significant hyperlordosis.\nDifferential diagnosis and magneti resonance imaging  \nof the LS and Th segments were performed during hospi -\ntal stay, confirmig pathological lesions previously observed \nin computed tomography (CT). However, the reported \nsymptoms remaianed unexplained. In electroneurography \n(ENG), axonal-demyelinating polyneuropathy, present in \nboth motor and sensory fibers, dominated. Electromyog -\nraphy (EMG) showed motor unit discharges in the thigh \nmuscles at rest. General CSF analysis showed no albumino-\ncytologic dissociation. It was only after obtaining serum \nfindings with a very high levels of anti-GAD65 antibod -\nies in the absence of anti-amphiphysin antibodies (Tab. 3), \nthat correct diagnosis and treatment implementation were \npossible. The screening for cancer was initiated. Abdomi -\nnal and pelvic CT, as well as bone scintigraphy were per -\nformed. Whole-body positron emission tomography (PET) \nwas ordered, but was not performed due to the lack of in -\ndications (National Health Fund criteria). Before obtaining \nże\n\nthe anti-GAD65 antibody test results, the patient had been \ntreated with non-steroidal anti-inflammatory drugs (ke -\ntoprofen), steroids (dexamethasone) and opioids (trama -\ndol), but without satisfactory symptom relief (bedridden \npatient requiring care and assistance in all activities; modi-\nfied Rankin score of 5). After the inclusion of baclofen and \ndiazepam, satisfactory symptom reduction was achieved, \nenabling the patient to be discharged from the hospital \nand followed on an outpatient basis. After a few months,  \nthe patient gradually discontinued diazepam due to advrse \neffects he had attributed to the drug. He has now resumed \nhis pre-hospitalisation activities (modified Rankin score  \nof 3) – moving around the house with a little help. He was \nultimately diagnosed with stiff man syndrome overlapping \nwith diabetic polyneuropathy.\n\nHaving been informed about possible treatment options to \nmodulate the immune system, our patient refused to receive \nsuch treatment. He agreed for symptomatic treatment and \ndiagnostic screening for cancer.\n\nWe achieved significant symptom reduction in our patient \nwith low daily doses of diazepam and baclofen.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7137,
+        "end": 7387
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 250
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10574,
+        "end": 11703
+      },
+      "compiled_offsets": {
+        "start": 252,
+        "end": 1381
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 16684,
+        "end": 18364
+      },
+      "compiled_offsets": {
+        "start": 1383,
+        "end": 3063
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 23358,
+        "end": 24212
+      },
+      "compiled_offsets": {
+        "start": 3065,
+        "end": 3919
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 30538,
+        "end": 30745
+      },
+      "compiled_offsets": {
+        "start": 3921,
+        "end": 4128
+      }
+    },
+    {
+      "block_id": "tb0006",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 36730,
+        "end": 36834
+      },
+      "compiled_offsets": {
+        "start": 4130,
+        "end": 4234
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

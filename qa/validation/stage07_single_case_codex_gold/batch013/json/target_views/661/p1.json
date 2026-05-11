@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "661::p1",
+  "paper_id": "661",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "661::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nHyperekplexia manifests as generalized stiﬀness and an excessive startle reﬂex to stimuli. It starts in the neonatal period and is\ntransmitted in many cases via autosomal dominant inheritance. The etiology is an abnormality of the glycinergic neurotransmission\nsystem that is involved in inhibitory neurotransmission. Aberrations of ﬁve genes related to this neurotransmission system have been\nidentiﬁed. The patient was a 14-year-old girl with mild mental retardation. None of her family members had a neuromuscular dis-\nease. An excessive startle reﬂex and generalized stiﬀness were noted immediately after birth and she was diagnosed with epilepsy\nbecause epileptic discharges were observed. However, the disease was resistant to various antiepileptic drugs and the startle\nresponses persisted. GLRB gene mutations (R50X/Q216fsx222) were identiﬁed, after which the patient was diagnosed with hyper-\nekplexia. The startle reﬂex improved when clonazepam treatment was initiated. When patients have a persistent startle reﬂex, it is\nnecessary to consider hyperekplexia, even if epileptic discharges are observed. Only four cases with GLRB mutations, including the\npresent patient, have been reported. To make a deﬁnite diagnosis of hyperekplexia, it may be useful to screen for genes that are\ninvolved in the glycinergic neurotransmission system.\n\n2. Case report\nA girl was born at 40 weeks of gestation with a birth\nweight of 3190 g. No abnormalities such as asphyxia\nwere noted in the perinatal period. She did not have\numbilical hernia or hip joint dislocations. There was\nno familial history that was suggestive of startle\nresponses. A history of epilepsy, and neurological or\nmental disorder, was also absent. Hypertonia appeared\nimmediately after birth and generalized stiﬀness accom-\npanied by cyanosis was noted. Blood test, imaging, and\nEEG results were normal. Retroﬂexion of the neck in\nresponse to hitting the philtrum with a ﬁnger, namely,\nthe nose-tapping test, was noted. However, hyperekplex-\nia was not diagnosed at this point. Instead, the patient\nwas diagnosed with epilepsy. Antiepileptics, such as phe-\nnobarbital, phenytoin, and zonisamide, were adminis-\ntered but the startle responses did not improve.\nDuring her infancy, the patient could not land on her\nhands when she fell down and, consequently, she injured\nherself repeatedly. Her developmental milestones, such\nas head control, sitting, crawling, and gait were normal\nin early infancy. While, at 4 years and 4 months of age,\nher developmental quotient scores, assessed by the\nEnjoji scale of infant analytical development, for\nmovement, speech, and interpersonal skills/language\ncomprehension were 81, 69, and 50, respectively, which\nindicated a mild delay. However, the patient had no\nproblems in terms of normal living activities and was\nin a regular class after entering school. Repeated blood\ntests and brain MRIs during the course of the child’s life\ndid not detect any abnormalities. At 12 years of age, an\nEEG performed during intermission revealed a localized\nspike and waves in the left occipital region ( Fig. 1 ). The\npatient never had any seizures apart from the startle\nresponse.\nGenetic analysis for hyperekplexia was sought and\napproved by the ethical committee in the Shimane\nUniversity School of Medicine.\nAfter obtaining written consent from the parents,\nDNA was extracted from the peripheral blood of the\npatient and genes involved in the glycinergic neurotrans-\nmission system were analyzed by PCR and direct\nsequencing. Aberrations in the GLRA1 or SLC6A5\ngenes were not observed but a compound heterozygote\nmutation was detected in the GLRB gene ( Fig. 2 ). In\none allele, there was a nonsense mutation, where TGA\nsubstituted the arginine-encoding CGA codon at posi-\ntion 50. In the other allele, four bases, including three\nbases encoding glutamine at position 216, were deleted,\nthus causing a frame-shift. A similar frame-shift was\nnoted in one allele of her mother but her father did\nnot have any mutations in the GLRB gene. The patient\nand her family underwent genetic counseling by the\nmedical doctor certiﬁed as a clinical geneticist, both\nbefore and after the genetic analysis.\nAt 14 years of age, the patient still fell down when\ngeneral rigidity was induced. She was startled by the\nsound of a closing shoji (a sliding paper door), or\n\nsneezed by herself. Occasionally, these falls resulted in\ninjuries that would require sutures. After the GLRB\nmutation was identiﬁed and hyperekplexia was diag-\nnosed, the antiepileptics were withdrawn and CZP\nadministration was initiated. This resolved the startle\nresponses.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 421,
+        "end": 1776
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1355
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4402,
+        "end": 7399
+      },
+      "compiled_offsets": {
+        "start": 1357,
+        "end": 4354
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7400,
+        "end": 7676
+      },
+      "compiled_offsets": {
+        "start": 4356,
+        "end": 4632
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

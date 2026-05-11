@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "588::p1",
+  "paper_id": "588",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "588::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nWe report a patient with SPS and anti-GAD antibodies who\nshowed a sustained beneﬁcial response to pregabalin. Written informed\nconsent for the video was obtained.\nA 71-year-old woman was admitted to our neurology division\ncomplaining of marked stiffness of trunk and lower limb muscles\nwith sudden painful spasms, started eight months before. She suffered\n\nof autoimmune thyroiditis treated withL-thyroxine (50μg/day).\nShe was unable to walk and she could not lean on her right leg\n(Appendix A, video, segment A). Neurological examination revealed\nmarked stiffness of trunk and right lower limb muscles, associated\nto frequent spontaneous and action-induced painful spasms. Lower\nlimb deep tendon reﬂexes were brisk and there were bilateral extensor\nplantar responses. Polygraphic electromyographic (EMG) evaluation\nfrom paraspinal and leg muscles disclosed continuous motor unit\nactivity at rest with interference muscular pattern ( Fig. 1 A). Central\nmotor conduction time (CMCT) was recorded by the abductor pollicis\nbrevis (APB) and abductor hallucis (AH) muscles by means of\ntranscranial magnetic stimulation (TMS). CMCT, calculated with\n\nt h eF - w a v em e t h o d[3], was normal in both the upper (right\nAPB = 6.3 ms; left APB = 5.4 ms) and the lower limbs (right\nAH = 16.1 ms; left AH = 15.2 ms). Cortical silent period (CSP) duration,\nobtained with TMS, was recorded from the right APB at ~ 15% of\nmaximum voluntary contraction by stimulating at an intensity of\n130% of the resting motor threshold. CSP duration was 20 ms, as\nmeasured from the MEP onset to the initial return of EMG activity\n(Fig. 1 A). Serum anti-GAD-65 antibodies were signi ﬁcantly increased\n(47 nmol/l, reference values b1). Paraneoplastic anti-amphiphisine\nantibodies were absent. Thyroid stimulating hormone and anti-\nthyreoperoxidasis antibodies titer were elevated. Routine cerebrospinal\nﬂuid analysis was normal and included testing of total protein, albumin,\nimmunoglobulins, glucose, lactate, cell count, cytological staining, and\ninvestigation of infectious diseases. Brain magnetic resonance imaging\n(MRI) was normal; spinal cord MRI showed lumbar disk protrusions\nwithout spinal cord compression. Diagnosis of autoimmune SPS was\nmade based on clinical, electrophysiological and immunological\nﬁndings. Diazepam was effective for muscle stiffness but it was\nwithdrawn for excessive sedation. In order to relieve the intense\nlumbar pain, she was prescribed pregabalin (75 mg, twice a day). The\nday after, rigidity and painful spasms dramatically improved and she\ncould walk without assistance (Appendix A, video, segment B); the\nclinical beneﬁt was paralleled by a signi ﬁcant decrease of continuous\nmotor unit activity at the EMG. A trial with tramadol and indomethacin\nreduced pain but neither improved gait, involuntary spasms and stiffness,\nnor modulated continuous motor unit activity. Before discharge, we\nincreased pregabalin up to 300 mg/day. At 3 months follow-up, she\nstill reported the improvement on rigidity and spasms; gait and\nosteotendinous re ﬂexes were normal and there were bilateral ﬂexor\nplantar responses. EMG activity at rest almost disappeared and CSP\nduration increased up to 60 ms ( Fig. 1 B). She did not complain of\nany side effect, speci ﬁcally dizziness or sedation.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3130,
+        "end": 3497
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 367
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3498,
+        "end": 4283
+      },
+      "compiled_offsets": {
+        "start": 369,
+        "end": 1154
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5076,
+        "end": 7216
+      },
+      "compiled_offsets": {
+        "start": 1156,
+        "end": 3296
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

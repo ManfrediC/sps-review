@@ -1,0 +1,65 @@
+{
+  "paper_id": "12660",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\12660.json",
+    "source_text_sha256": "56cfafd89bf6c454939a7b8c768cbd380aee66c540b2771857b26bef667cf067",
+    "prepared_source_sha256": "3ff1122f147e204fb53a9967479554d01ccb219a0da85de418f0d4ee5f6b1204",
+    "prepared_source_character_count": 2849
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 1122
+      },
+      "page_index": 0,
+      "text": "Epilepsia Partialis Continua & Stiff Person \nSyndrome Occurring Together in a Child \nwith Anti-GAD Antibody Positivity (2643) \nAditi Varma-Doyle, Julio Vega, Katherine Wojcicki, Maria Weimer, \nand Daniella MillerAUTHORS INFO & AFFILIATIONS \nApril 13, 2021 issue \n96 (15_supplement) \nhttps://doi.org/10.1212/WNL.96.15_supplement.2643 \n  \no Abstract \no Publication History \n  \no Information & Authors \no Metrics & Citations \no View Options \no References \no Media \no Tables \no Share \nAbstract \nObjective: \nCase-Report \nBackground: \nAnti-GAD-positive neurological syndromes occur from antibodies \nblocking glutamic-acid-decarboxylase-65 enzyme receptors, preventing \nglutamatergic conversion to GABA, further increasing glutamate \nneurotransmission. Stiff-person syndrome (SPS), limbic encephalitis, \nepilepsy, cerebellar ataxias, retinal and ocular/extraocular abnormalities, \nand Miller-Fisher syndrome are associated with anti-GAD-antibody \npositivity. There are three previously reported cases of Epilepsia Partialis \nContinua (EPC) in association with anti-GAD-antibody encephalitis, two \nof which occurred in children."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 1124,
+        "end": 2849
+      },
+      "page_index": 1,
+      "text": "Design/Methods: \nAn 11-year-old boy with history of tonic-clonic seizures presented with \ngradual onset of truncal stiffness, episodic painful muscle spasms, right \nupper extremity rigidity, and continual focal jerking of right third and \nfourth digits at frequency of 4–10 Hz, persisting during sleep. On exam, \npatient had attention & memory deficits, nystagmus on left lateral gaze, \nlumbar hyperlordosis, abdominal and paraspinal muscle stiffness and slow \ngait with short steps and decreased arm swing. MRI brain/total spine with \n& without contrast was normal. EEG showed posterior slowing and right \ntemporal spikes. Serology demonstrated mildly elevated creatine kinase \n(361U/L), speckled ANA (1:320) and normal Hba1c. CSF revealed 11 \nWBC with 80% lymphocytes, normal protein and glucose levels, and 15 \noligoclonal bands with kappa free light chain predominance (0.63). \nInfectious work-up was negative. Serum and CSF GAD65-antibody levels \nwere elevated at 1708 nmol/L and 290 nmol/L, respectively. \nResults: \nClonazepam and IVIG, in addition to anti-epileptic medications, led to \nrapid reduction of SPS symptoms and resolving EPC symptoms. \nConclusions: \nWe report a child with high serum and CSF anti-GAD antibody positivity \nresulting in widespread neurological manifestations including EPC and \nSPS, however without radiological abnormalities. EPC and SPS occurring \ntogether in a child with anti-GAD-ab positivity has not been reported \nbefore, and it can be extremely disabling. Recognition of these clinical \nmanifestations early may aid in detection of an underlying antibody-\nassociated syndrome. EPC is often drug-resistant to anti-epileptic \nmedications, and immunotherapy is an option in these cases."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "An 11-year-old boy with history of tonic-clonic seizures presented with \ngradual onset of truncal stiffness, episodic painful muscle spasms, right \nupper extremity rigidity, and continual focal jerking of right third and \nfourth digits at frequency of 4–10 Hz, persisting during sleep. On exam, \npatient had attention & memory deficits, nystagmus on left lateral gaze, \nlumbar hyperlordosis, abdominal and paraspinal muscle stiffness and slow \ngait with short steps and decreased arm swing. MRI brain/total spine with \n& without contrast was normal. EEG showed posterior slowing and right \ntemporal spikes. Serology demonstrated mildly elevated creatine kinase \n(361U/L), speckled ANA (1:320) and normal Hba1c. CSF revealed 11 \nWBC with 80% lymphocytes, normal protein and glucose levels, and 15 \noligoclonal bands with kappa free light chain predominance (0.63). \nInfectious work-up was negative. Serum and CSF GAD65-antibody levels \nwere elevated at 1708 nmol/L and 290 nmol/L, respectively. \nResults: \nClonazepam and IVIG, in addition to anti-epileptic medications, led to \nrapid reduction of SPS symptoms and resolving EPC symptoms. \nConclusions: \nWe report a child with high serum and CSF anti-GAD antibody positivity \nresulting in widespread neurological manifestations including EPC and \nSPS, however without radiological abnormalities. EPC and SPS occurring \ntogether in a child with anti-GAD-ab positivity has not been reported \nbefore, and it can be extremely disabling. Recognition of these clinical \nmanifestations early may aid in detection of an underlying antibody-\nassociated syndrome. EPC is often drug-resistant to anti-epileptic \nmedications, and immunotherapy is an option in these cases.",
+      "source_offsets": {
+        "start": 1141,
+        "end": 2849
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

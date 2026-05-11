@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1327::p1",
+  "paper_id": "1327",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1327::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nAn 8‑year‑old male child born to nonconsanguineous \nparents came to us, with a 2 months history of progressively \nincreasing jerky movements of body and limbs. This began \non right leg, as sudden flexor spasms of the foot while \nwalking, which led to frequent falling. In 2 weeks’ time, it \nincreased in frequency and spread to right thigh muscles \nas flexion contractions of the hip. By 1½ months, trunk \nmuscles and upper limbs were also affected. Extensor \nspasms predominated in trunk muscles which resulted in \nfrequent prolonged arching back of the body. Due to these \nmyoclonic contractions he could not sit or handle things. \nSpasms were painful, present during rest, increased by \nactivity, touch, loud sound, and disappeared in sleep. His \nsensorium was normal. He had no difficulty in chewing \nor swallowing food. No bowel or bladder retention or \nincontinence. No sensory involvement. He developed \noliguria and high colored urine in the last 1‑week. No \nhistory of any serotoninergic or antidopaminergic drug \nintake and no difficulty in opening mouth.\nDuring examination, he had very frequent, violent \nmyoclonic jerks of trunk and limbs. Due to severe lordosis \nhe could not lie supine. He was in agonizing pain during \nthe spasms and had visible severe wasting. Pulse rate \n83/min, blood pressure 130/76 mmHg, respiratory rate \n18/min, and had mild pedal edema. There were multiple \npressure sores on areas where there was frequent rubbing \nof the skin. Higher mental functions and cranial nerves \nwere within normal limits. Muscle tone was increased \nand passive movements were difficult.\nSuperficial reflexes were normal including flexor plantar. \nDeep tendon reflexes were brisk. All sensations were \nnormally appreciated. No cerebellar signs. Skull and \nspine were normal. Fundus examination revealed \nno abnormality. We made a provisional diagnosis of \nsubacute encephalomyelitis and myoglobin mediated \nacute tubular necrosis with differential diagnosis of SPS \nand progressive myoclonic epilepsy.\n\nHis blood counts, serum calcium, thyroid function, blood \nsugar, glucose tolerance test, and tuberculosis screening, \nwere within normal limits. Magnetic resonance imaging \nbrain, spine, and electroencephalography (EEG) also were \nnormal. Investigation results, which were abnormal, are \ngiven in the Table 1. X‑ray chest, ultrasound sonography \nabdomen did not reveal lymphadenopathy or other \nneoplastic lesions. All investigations were sent in the \nfirst 2 days of admission based on the initial differential \ndiagnosis.\nHe was treated with alkalinization and potassium \nlowering agents. Renal function started improving from \nnext day. Methylprednisolone intravenous (IV) was given \nfor 5 days along with clonazepam and valproate. Since \nthere was no improvement, IV immunoglobulin (IVIG) \nwas given for 5 days. There was no change in myoclonus. \nBy then, the result of CSF autoantibody GAD65 came \nas positive. Hence, he was started on IV rituximab \n375 mgm/m2/week. After the second dose of rituximab, \nmyoclonus decreased significantly, he started sitting \ncomfortably and began walking with little support in \nthe next 7 days.\nHis renal function completely returned to normal. A total \nof 4 doses of rituximab was given at weekly intervals. He \nwas discharged on oral tapering dose of prednisolone, \nclonazepam, and sodium valproate. He was doing well \nat 1‑month follow‑up visit. His muscle spasms had \ncompletely subsided.\n\nTable 1: Investigations results SPS\nInvestigation Result\nCSF\nCells 02 lymph/cumm\nProtein 16 mgm %\nSugar 95 mgm %\nNMDA antibody Negative\nGAD 65 antibody ELISA 116.1 IU/ml (normal 0.05)\nVirology Negative for entero, herpes, west \nnile and Japanese B viruses\nRFT\nUrea 177 mgm %\nCreatinine 3.9 mgm %\nSerum potassium 6.9 meq/L\nSerum sodium 129 meq/L\nUrine myoglobin Positive\nSerum CPK 14680\nLFT\nBilirubin T/D 1.2/0.5 mgm%\nAST 4240 IU/L\nALT 120 IU/L\nAP 142 IU/L\nSerum protein/albumin 5.8/3.9 Gm%\nPT/INR 13 sec/1.2\nSPS: Stiff-person syndrome, NMDA: N-methyl D-aspartate, GAD: Glutamic acid \ndecarboxylase, RFT: Renal function test, LFT: Liver function test, ALT: Alanine \ntransaminase, AST: Aspartate aminotransferase, PT: Prothrombin time, \nINR: International normalized ratio, CPK: Creatine phosphokinase",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 972,
+        "end": 3003
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2031
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4039,
+        "end": 5471
+      },
+      "compiled_offsets": {
+        "start": 2033,
+        "end": 3465
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8010,
+        "end": 8809
+      },
+      "compiled_offsets": {
+        "start": 3467,
+        "end": 4266
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

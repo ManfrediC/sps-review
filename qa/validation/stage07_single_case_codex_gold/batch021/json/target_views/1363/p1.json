@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1363::p1",
+  "paper_id": "1363",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1363::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "2. Case report\nA 67-year-old woman with a 7-year history of type 2 diabetes\nmellitus had episodic lower limb and axial stiffness within the past\n10 years. Muscle contractions were provoked by anxiety and un-\nexpected loud voices. Her symptoms were relieved when she\ncalmed down and rested. Muscle spasms caused frequent falls that\nresulted in broken teeth and a broken left arm. The cramping did\nnot occur during sleep. No prodromal event preceded the episodes.\nNone of her family members had similar symptoms.\nThe patient also visited a psychiatric clinic and was diagnosed as\nhaving anxiety. Anxiolytics were prescribed, but the unexpected\nstiffness continued to occur periodically over the 10 years. Her\nusual social life was adversely affected because of her fear of falling\ndown.\nUpon admission, there was no evidence that her pyramidal\ntracts, extrapyramidal tracts, or mental abilities were affected. She\ndid have a wide-based gait (Video 1). In addition, she had deformed\nfeet ( Fig. 1 ) without muscle atrophy. The foot deformities were\nasymmetric with a spontaneous up-pointing left big toe.\nSupplementary data related to this article can be found at http://\ndx.doi.org/10.1016/j.ijge.2013.03.004.\nBrain magnetic resonance imaging (MRI) and nerve conduction\nstudies revealed no speci ﬁc ﬁndings. Electromyography of the pa-\ntient’s bilateral lower extremities showed continuous muscle ac-\ntivity, especially in the tibialis anterior muscles bilaterally.\nBlood tests showed abnormally elevated titers of antimicrosomal\n(1:1600) and antithyroglobulin (1:1600) antibodies, and the patient’s\nserum antiglutamic acid decarboxylase (anti-GAD) level was 7513\nU/mL. Thyroid function tests, antinuclear antibody, insulin anti-\nbodies, thyroid-stimulating hormone receptor antibodies, and tumor\nmarkers including carcinoembryonic antigen (CEA), carbohydrate\nantigen 19-9 (CA19-9), CA-125, and alpha-fetoprotein were within\nnormal limits. Stiff-person syndrome (SPS) was suspected (Box), and\ndiazepam 1 mg three times a day was prescribed. A dramatic\nresponse in terms of reduction in muscle stiffness was reported by\nthe patient: after beginning diazepam therapy, she was able walk\n\noutdoors without unexpected muscle cramps. However, her wide-\nbased gait (Video 2) and foot deformities remained ( Fig. 2).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1295,
+        "end": 3476
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2181
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3477,
+        "end": 3600
+      },
+      "compiled_offsets": {
+        "start": 2183,
+        "end": 2306
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

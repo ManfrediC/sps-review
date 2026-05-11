@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1867::p1",
+  "paper_id": "1867",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1867::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 35-year-old woman with massive painful rigidity and superim -\nposed spasms in the extremities was admitted to our hospital (Osaka \nMedical College, Osaka, Japan). Her right axillary lymph nodes were \nas swollen as a tip of a thumb. The biopsy assay from a right axillary \nlymph node showed a ductal metastatic carcinoma. Furthermore, \nimmunohistochemistry clearly showed the expression of estrogen \nreceptor and progesterone receptor in the cancer cells (Figure 1). \nCuriously, no origin was detected in her breast by imaging analysis, in-\ncluding mammography, ultrasonography, computed tomography and \npositron emission tomography–computed tomography. Therefore, \nwe considered that she suffered from occult breast cancer.\nInterestingly, further assessment of immunohistochemis -\ntry showed the massive expression of amphiphysin in the cancer \n(Figure 1). Furthermore, only anti-amphiphysin autoantibodies were \npresent at a high titer in the patient’s serum on the Mayo Clinic para -\nneoplastic autoantibodies test, and Hu, Ri, ANNA-3, Ma2, PCA-1, \nPCA-2, PCA-Tr, CRMP-5, amphiphysin, PQ/- and N-type VGCC, \nVGKC, nicotinic acetylcholine receptors, and GAD65 screening.\n1 \nFurthermore, electromyography showed continuous co-contraction \nof flexors and extensors in the extremities. Therefore, we diagnosed \nthe patient as anti-amphiphysin autoantibodies-positive paraneoplas-\ntic stiff-person syndrome (PSP) associated with occult breast cancer.\nThe patient did not respond to either high-dose intravenous immu-\nnoglobulins or simple plasma exchange therapy, but did respond rap -\nidly to intravenous high-dose methyl-prednisolone (1 g/day × 3 days) \ntherapy, similar to a previous report.\n2 T h e r e f o r e ,  w e  f o l l o w e d  w i t h  \noral prednisolone treatment, starting at 50 mg/bodyweight (1 mg/\nkg-bodyweight), and tapered it slowly. The rigidity and spasms \npromptly went into remission. After that, the patient was transferred \nto another hospital to receive radiation therapy for the cancer.\n\nAs far as we know, this is the first case where amphiphysin \nexpression was detected in a metastatic lesion, which was obtained \nfrom occult breast cancer with PSP. The present case showed that \nhigh expression of amphiphysin in the metastatic lesion still caused \nthe development of PSP, though the origin of the brest cancer had \nalready disappeared, and steroid therapy was very effective for the \nmanagement of the stiffness. These results showed that the autoan -\ntigen in the metastatic lesion was targeted by the immune system. \nTherefore, we believe that the evaluation of autoantigen expression in \na metastatic lesion might help with the diagnosis and treatment when \nclinicians are faced with paraneoplastic syndromes with occult cancer, \nbecause cancer of unknown origin is not rare in the case of paraneo -\nplastic syndromes.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 767,
+        "end": 2780
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2013
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4044,
+        "end": 4882
+      },
+      "compiled_offsets": {
+        "start": 2015,
+        "end": 2853
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "paper_id": "5748",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5748.json",
+    "source_text_sha256": "56faf6b391b19e2f261c432709933278c38ed79f9631022003d5572e0feb68f5",
+    "prepared_source_sha256": "c23de0bc8c72c834484117e0816a5e1420edb03d30f7fabf8912fcc9fc2e4bd2",
+    "prepared_source_character_count": 2274
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 154
+      },
+      "page_index": 0,
+      "text": "Comorbid Idiopathic Parkinson's Disease and Stiff Person \nSyndrome: A Case Report (P4.322) \nMatthew Lustig, Shaena Blevins \nFirst published April 4, 2016,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 159,
+        "end": 2274
+      },
+      "page_index": 0,
+      "text": " Info & Disclosures \nAbstract \nObjective: To report a rare case of comorbid Idiopathic Parkinson's Disease (IPD) and Stiff \nPerson Syndrome (SPS). Background: Although IPD and SPS may have similar clinical \npresentations, the much higher prevalence of IPD makes SPS less likely to be suspected. \nManagement options are different enough for IPD and SPS that failure to respond to treatment for \nIPD may increase suspicion of SPS (and vice versa). This is a case of a patient whose diagnosis \nwas changed from IPD to SPS, and then back-and-forth many times (from many different \nneurologists) until, ultimately, the diagnoses of comorbid IPD and SPS were made. Case: A 67-\nyear-old Caucasian male presented 7 years ago with gradual onset bilateral lower extremity \nmuscle spasms and rigidity. He initially responded to a trial of carbidopa/levodopa, and the \ndiagnosis of IPD was made. However, his symptoms gradually returned, with temporary relief \nprovided by dopamine agonists and benztropine. His incomplete response to dopamine, his lack \nof upper extremity involvement, and his absence of tremor or freezing raised the possibility of \nSPS. An SPS panel revealed strongly positive anti-GAD antibody titers (>250:1); however, a \nparaneoplastic antibody panel and neoplastic screening exam were negative. He had minimal \nresponse to IVIG, but plasma exchange resulted in drastic improvement. With time, however, he \nstopped responding to plasma exchange. Diazepam and an intrathecal baclofen trial were \nbeneficial, but less beneficial than resuming dopamine agonists and carbidopa/levodopa. A \nDaTscan was positive, and bilateral GPi deep brain stimulators were implanted in order to \nmanage the rigidity associated with both IPD and SPS. Current management continues to \nimprove rigidity and painful leg spasms; however, he is now wheelchair-bound due to extreme \nfreezing and postural instability. Conclusion: Although SPS should be in the differential for IPD \n(and vice versa), their comorbidity should not be discounted. \nDisclosure: Dr. Lustig has nothing to disclose. Dr. Blevins has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Case: A 67-\nyear-old Caucasian male presented 7 years ago with gradual onset bilateral lower extremity \nmuscle spasms and rigidity. He initially responded to a trial of carbidopa/levodopa, and the \ndiagnosis of IPD was made. However, his symptoms gradually returned, with temporary relief \nprovided by dopamine agonists and benztropine. His incomplete response to dopamine, his lack \nof upper extremity involvement, and his absence of tremor or freezing raised the possibility of \nSPS. An SPS panel revealed strongly positive anti-GAD antibody titers (>250:1); however, a \nparaneoplastic antibody panel and neoplastic screening exam were negative. He had minimal \nresponse to IVIG, but plasma exchange resulted in drastic improvement. With time, however, he \nstopped responding to plasma exchange. Diazepam and an intrathecal baclofen trial were \nbeneficial, but less beneficial than resuming dopamine agonists and carbidopa/levodopa. A \nDaTscan was positive, and bilateral GPi deep brain stimulators were implanted in order to \nmanage the rigidity associated with both IPD and SPS. Current management continues to \nimprove rigidity and painful leg spasms; however, he is now wheelchair-bound due to extreme \nfreezing and postural instability. Conclusion: Although SPS should be in the differential for IPD \n(and vice versa), their comorbidity should not be discounted.",
+      "source_offsets": {
+        "start": 819,
+        "end": 2188
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

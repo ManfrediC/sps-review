@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "113::p1",
+  "paper_id": "113",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "113::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case 1. The patient is a 34-year-old woman who has had symp­\ntoms consistent with SMS for more than 12 years but was diag­\nnosed only recently (approximately 1 year ago) with it. The pa­\ntient was treated with plasmapheresis and cyclophosphamide. \nShe had two courses of plasmapheresis with symptomatic relief \nof her muscle spasms for approximately 2 months. Each course \nconsisted of approximately six exchanges. The patient was re­\nferred from the neurology outpatient unit because of her GI com­\nplaints. Her main complaint was constipation. She had some up­\nper GI symptoms that included nausea, early satiety, and mild \nreflux symptoms. In addition, she had pharyngeal dysphagia, an \nintermittent hold-up of food in the pharynx. Abdominal films\n\nshowed no evidence of bowel dilation. The results of an anorectal \nmotility study were normal-negative for sphincteric function. A \ngastric-emptying study using an isotope-labeled solid meal \n(chicken liver and beef stew) showed delayed gastric emptying. \nThe time it took to empty 50% of the meal (T%) was 221 minutes. \nThe percentage of solids retained at 120 minutes was 76% (normal \nvalues for T % and percent of retention at 2 hours are respectively, \n<150 minutes and <70%). An upper GI endoscopy and esopha­\ngeal motility study were not performed because of her painful \nmuscle spasms secondary to SMS. Organic lesions, which can \ncause delayed gastric emptying, were excluded by barium studies. \nShe had hypothyroidism that was controlled with hormone re­\nplacement. \nThe patient began therapy with a prokinetic agent (10 mg cisa­\npride four times a day). In addition, 1 oz magnesium citrate daily \nwas given to ease constipation. The patient was followed up for \napproximately 1 year. During the follow-up period, she continued \nto take cisapride 10 mg four times a day to increase motility \nthroughout the gut and metoclopramide for nausea. The patient \ncontinued to have some degree of breakthrough nausea and vom­\niting approximately once or twice a week. Overall her weight was \nstable. \nJanuary 1997 Volume 313 Number 1\n\nFigure 1. Esophageal motility tracing with the top four leads \nspaced 5 cm apart in the body of the esophagus, one lead in the \nlower esophageal sphincter and the lowest lead is in the stomach. \nAll are constantly perfused by a pneumohydraulic system. Three \nwet swallows are represented and indicate both peristaltic and \nnonperistaltic contractions are occurring. The amplitude of the \ncontractions is lower in the proximal two leads. The pressure \nin the lower esophageal sphincter was <10 mm Hg and hence \ndecreased with normal swallow-induced relaxations.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2706,
+        "end": 3456
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 750
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3458,
+        "end": 4791
+      },
+      "compiled_offsets": {
+        "start": 752,
+        "end": 2085
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4793,
+        "end": 5353
+      },
+      "compiled_offsets": {
+        "start": 2087,
+        "end": 2647
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

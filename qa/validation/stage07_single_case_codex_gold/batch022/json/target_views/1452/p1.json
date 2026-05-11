@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1452::p1",
+  "paper_id": "1452",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1452::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: A 44-year-old man with a past medical\nhistory of agoraphobia, depression, migraines, and hypertension who\npresented with low back and hip pain, and impaired ambulation sec-\nondary to “legs locking up,” requiring the use of an assistive device.\nInitially, he developed pressure like sensations in his lumbar spine,\nlater being diagnosed with Guillain-Barre ´ syndrome (GBS) after\ndeveloping bilateral foot drop and muscular atrophy. GBS treatment\nprovided minimal improvement. Ten years later, a “sporting injury”\ncascaded this current progressive symptomatology. Physical and mas-\nsage therapy provided only a 30% improvement. Further investigation\nraised suspicion for stiff person syndrome and anti-glutamic acid\ndecarboxylase (GAD) antibody was tested, revealing antibody levels\n>5,000 units/mL. The patient then received three 40mg/day intra-\nvenous immunoglobin (IVIG) treatments in addition to Baclofen, with\nminimal generalized improvement. An additional 3 days of IVIG then\nprovided signiﬁcant functional improvement, particularly with ambu-\nlation. Follow-up anti-GAD antibody levels revealed a 66% decline. A\nthird round of IVIG treatment was planned in conjunction with physical\ntherapy and Baclofen to continue this improvement.\nSetting: Neurology clinic.\nResults: Decreasing levels of anti-GAD antibodies in a patient with\nstiff person syndrome lead to marked functional improvements.\n\nResults: The patient was transferred to an acute rehabilitation fa-\ncility where he participated in a comprehensive rehabilitation pro-\ngram. At the time of discharge, he remained total assistance with all\nmobility, but was able to achieve moderate assistance with eating and\ngrooming. He also required total assistance for dressing, bathing and\ntransfers. His oropharyngeal dysphagia improved such that he was able\nto safely swallow pureed solids and nectar thickened liquids at the\ntime of discharge. Aside from signiﬁcant dysarthria, his cognition\nremained intact and without aphasia. Following acute rehabilitation,\nthe patient was transferred to sub-acute rehabilitation care to\ncontinue his rehabilitative course.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 424,
+        "end": 1847
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1423
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3777,
+        "end": 4496
+      },
+      "compiled_offsets": {
+        "start": 1425,
+        "end": 2144
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

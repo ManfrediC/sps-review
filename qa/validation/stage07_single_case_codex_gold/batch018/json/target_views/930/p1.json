@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "930::p1",
+  "paper_id": "930",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "930::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nBackground Stiff-person syndrome (SPS) is a rare disorder\ncharacterized by progressive muscle stiffness, rigidity, and\nspasms involving the axial muscles. Acute respiratory\ndistress has rarely been reported in this condition.\nMethods We report a case of a 49-year-old woman with\nautoimmune SPS diagnosed during an episode of acute\nrespiratory failure secondary to repetitive episodes of\napnea, requiring intensive care.\nResults Acute respiratory failure manifesting with apneic\nepisodes is a life-threatening and unpredictable complica-\ntion of SPS. Its pathophysiology is not well known. The\ntwo suggested mechanisms are as follows: (1) apnea due to\nmuscle rigidity and paroxysmal muscle spasms, and (2)\nparoxysmal autonomic hyperactivity. Sudden and unex-\npected deaths have been reported in SPS, and all described\ncases have been associated with apnea. Thus, the onset of\napnea during SPS should be considered a criterion of high\nseverity and should lead to intensive care unit (ICU)\nadmission for continuous monitoring. In patients with\nsevere disease who are unresponsive to symptomatic\ntreatment with benzodiazepines and baclofen, or in patients\nwith life-threatening complications, early immunotherapy\nby intravenous immunoglobulins should be considered.\nConclusion Onset of apneas during SPS should be con-\nsidered as a signal of possible progression toward acute\nrespiratory failure and sudden death, and should lead to\nICU admission for continuous monitoring. Early\nimmunotherapy should be started in such situations,\nincluding intravenous immunoglobulins as the ﬁrst-line\ntreatment.\n\nCase Presentation\nA 49-year-old woman was admitted to our intensive care\nunit (ICU) from the emergency room because of hypox-\nemic acute respiratory failure secondary to repetitive\nepisodes of apnea concomitant to spasms of her axial\nmuscles. She had a history of type 1 diabetes mellitus,\nobesity, hyperthyroidism, and pernicious anemia. On\nquestioning, the patient had been experiencing gradual\nonset of stiffness, rigidity, and pain in her axial muscles for\n9 years, eventually leading to the inability to assume a\nsitting posture. She also reported episodic muscle spasms\nof the limbs that were triggered by sound stimulation. The\npersistent nature of her symptoms led to pronounced\nlumbar lordosis. Functional consequences were pro-\nnounced with repeated falls, fractures, and loss of\nautonomy. During the past 6 months, she developed more\nfrequent self-limiting acute episodes of dyspnea with cya-\nnosis, lasting between 5 and 45 min, associated with\nhypertonic stiffness of axial muscles.\nClinical examination during hypertonic crisis showed\nlow-grade fever, tachycardia, arterial hypertension, profuse\nsweating, agitation, apnea, cyanosis, and an oxygen satu-\nration level as low as 60 %. Neurologic examination was\nnormal between hypertonic crises; and there was no sign of\nencephalitis, myoclonus, or ataxia. Auscultation and chest\nx-ray revealed no sign of aspiration pneumonia. Laboratory\ntests revealed neutrophilic leukocytosis with normal C-re-\nactive protein, elevated serum creatine phosphokinase less\nthan double the standard, and normal renal and hepatic\nfunctions.\nBecause oxygen saturation failed to return to normal\nbetween spasm episodes, she underwent orotracheal intu-\nbation and mechanical ventilation. Diagnosis of SPS was\nsuggested on clinical presentation and conﬁrmed by an\nelectromyographic study revealing continuous motor-unit\nactivity and the presence of high titer of circulating anti-\nGAD antibodies ( >1500 U/mL, N < 1 U/mL), with anti-\nGAD65 (79 U, N < 5) speciﬁcity. Cranial magnetic res-\nonance imaging, electroencephalography, and analysis of\ncerebrospinal ﬂuid were normal. She was immunized\nagainst tetanus.\nSymptomatic treatment was initiated with benzodi-\nazepine (midazolam 10 mg/h continuous intravenous\ninfusion) and baclofen. Despite adequate sedation, man-\nagement of airway pressures was difﬁcult due to persistent\nepisodes of axial muscle stiffness and required the use of\nneuromuscular blocking agents. The patient was not,\nhowever, hypoxemic and was ventilated in assist-control\nmode with an inspired oxygen fraction of 30 %. Symp-\ntomatic treatment was intensiﬁed with a high dose of\ndiazepam (10 mg/h continuous infusion), and intravenous\nimmunoglobulins (IVIG) (2 g/kg over 5 days) were started\n3 days after admission. Following IVIG therapy, we\nobserved a rapid clinical improvement with the disap-\npearance of muscle stiffness and apnea, allowing the\n\nreduction of diazepam doses. The patient was weaned off\nfrom mechanical ventilation at 10 days after ICU admis-\nsion. There was no hemodynamic or renal failure during\nthe ICU stay. IVIG treatment continued every 6 weeks\nwith persistent clinical improvement. Five months after\nICU discharge, the patient relapsed without apnea but with\nsevere functional impairment, and immunotherapy was\nintensiﬁed to include rituximab.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 282,
+        "end": 1884
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1602
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4227,
+        "end": 7136
+      },
+      "compiled_offsets": {
+        "start": 1604,
+        "end": 4513
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7137,
+        "end": 7556
+      },
+      "compiled_offsets": {
+        "start": 4515,
+        "end": 4934
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

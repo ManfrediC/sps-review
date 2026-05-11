@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6423::p1",
+  "paper_id": "6423",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6423::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Summary\nA 30-year-old healthy man presents after a fall with diffuse weakness and pain and recent onset left eye ptosis in the set-\nting of three weeks of progressive bilateral leg weakness, gait instability, and difﬁculty washing his hair due to upper\nextremity weakness. He had also developed stiffness in his neck and shoulders and uncontrollable muscle spasms. Exam\nwas notable for ptosis, fatiguing weakness in extremities, increased tone, hyperreﬂexia with clonus, and spastic gait. A\nmediastinal mass was found on chest CT (Fig. 1), and biopsy conﬁrmed an invasive thymoma with positive nodes.\nSerum testing was positive for antibodies to acetylcholine receptors as well as glutamic acid decarboxylase.\nDiagnosis: Myasthenia Gravis-Stiff Person Syndrome (MG-SPS) in the setting of metastatic thymoma",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 381,
+        "end": 1192
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 811
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

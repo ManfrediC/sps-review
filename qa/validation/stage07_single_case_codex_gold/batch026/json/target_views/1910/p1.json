@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1910::p1",
+  "paper_id": "1910",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1910::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: 56 year old right handed female with hypertension and vitiligo, presented with \ndysarthria and right upper motor neuron facial weakness. Stroke work up was negative. She had \nleft leg spasticity, mild left hamstring and quadriceps weakness, and hyperreflexia in the lower \nextremities. Work up for motor neuron disease and myelopathy were unremarkable. Further \nhistory revealed multiple falls with left leg weakness and stiffness. Later, she developed right \nupper extremity stiffness. CSF was positive for 7 oligoclonal bands and GAD antibody was \nhighly positive (1651 nmol/L, normal <0.02 nmol/L). The patient was started on IVIg treatment \nwith improvement of spasticity, with intermittent spastic dysarthria. \nConclusions: Stiff person syndrome can present with acute spastic dysarthria mimicking stroke. \nWork-up for acute stroke is appropriate however, careful history may reveal more chronic \nsymptoms, leading to a very different diagnosis and treatment. It is of benefit to recognize that \none autoimmune disorder often leads to another.\n\nOur \nmalignancy work up was negative.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 996,
+        "end": 2053
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1057
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2292,
+        "end": 2329
+      },
+      "compiled_offsets": {
+        "start": 1059,
+        "end": 1096
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

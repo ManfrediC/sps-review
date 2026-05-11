@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "690::p1",
+  "paper_id": "690",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "690::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case presentation\nA 55-year-old woman was examined by a neurologist in\nMarch 2011 because of subacute onset truncal and lower\nlimb stiffness, bradykinesia, and gait difficulties. Her past\nmedical history included arterial hypertension, hysterec-\ntomy with bilateral adnexectomy due to cervical cancer\nin 1999, consequent osteoporosis, and thyroidectomy\ndue to Hürthle cell adenoma in 2007. In September 2007\nshe was hospitalized because of lacunar ischemic stroke\nin pons with mild gait ataxia as a sequel. There was no\nprior history of parkinsonism, carbon monoxide poison-\ning, CNS infection, neuroleptic and toxin exposure. Rou-\ntine laboratory tests, CBC, ESR, CRP , liver function tests,\nelectrolyte panel, coagulation profile, triiodothyronine,\nthyroxine, and thyroid-stimulating hormone were within\nnormal limits. 123I-ioflupane (DaTSCAN) imaging was\nalso performed, and showed no signs of nigrostriatal\ndopaminergic abnormalities. However, the diagnosis of\niPD was made. Rasagiline and levodopa were initiated\nbut failed to provide beneficial effect. On the contrary,\nher symptoms worsened gradually. Six months later, sig-\nmoid colon cancer was discovered as an underlying cause\nof newly discovered iron deficiency anemia. Left hemi-\ncolectomy was performed in September 2012. Pathological\nreview revealed colon adenocarcinoma, pT3N0M0, with\nintermediate differentiation and microperforations as ad-\nverse features, and adjuvant chemotherapy with cape-\ncitabine was started in September 2012. Aggravation of\nstiffness, rigidity, and general mobility was observed after\nthe first cycle, and capecitabine was discontinued. The pa-\ntient was referred to a Movement Disorders Centre for a\nsecond opinion. Examination revealed stiffness and rigidity\nof the truncal and proximal lower limb muscles and pro-\nnounced lumbar hyperlordosis. Her gait was stiff-legged\nand wide-based, but deductible only with the assistance of\nanother person. No signs of upper limb bradykinesia were\nfound. At the time, the patient was practically wheelchair-\nbound. High suspicion of paraneoplastic SPS was made\nand levodopa was slowly discontinued, while a dose of\n10 mg diazepam BID was initiated. In addition, analysis of\nserum anti-GAD antibody and onconeural antibodies (Hu,\nRi, Yo, Amphiphysin) was made, but was negative, and\nlevels of vitamin B12 and folic acid were within the normal\nrange. Therapy modificatio n resulted in significant im-\nprovement of patient ’s symptoms and daily functioning.\n\nAs recommended by her oncologist,\nadjuvant chemotherapy was continued for 6 months\ntotal with simplified biweekly infusional 5-fluorouracil\nplus leucovorin (sLV5FU2) according to recent NCCN\nguidelines, without further neurological deterioration [8].",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4508,
+        "end": 6996
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2488
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7073,
+        "end": 7323
+      },
+      "compiled_offsets": {
+        "start": 2490,
+        "end": 2740
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

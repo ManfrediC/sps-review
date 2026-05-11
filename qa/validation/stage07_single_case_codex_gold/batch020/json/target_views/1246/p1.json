@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1246::p1",
+  "paper_id": "1246",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1246::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: The patient presented after months of\nprogressive gait instability and low back pain that was initially\nattributed to SI joint pathology and lumbar radiculopathy. He then\ndeveloped dysarthria, dysphagia, vision impairment and vertigo. On\nhospital admission, his exam was notable for truncal rigidity, mixed\nspastic and ataxic dysarthria, left sided ataxia, and ataxic gait. There\nwas no associated weakness or sensory loss. Further work up revealed\nan elevated glutamic acid decarboxylase (GAD) antibody level\nconsistent with GAD-Ab Cerebellar Ataxia and painful spasms associ-\nated with Stiff Person Syndrome (SPS). The patient was treated with\nIVIG, diazepam, and baclofen with noted improvement. He was then\nadmitted to the inpatient rehabilitation unit and participated in a\ncomprehensive therapy program. Over a 2-week period his rehabili-\ntation became progressively limited by worsening trunk stiffness, limb\nspasticity, pain, ataxia, and dysarthria. The patient’s progressive\nfunctional decline required transfer for further neurological inter-\nvention and plasmapheresis.\nSetting: Acute inpatient rehabilitation in an academic tertiary care\nhospital.\nResults: Despite 2 weeks of comprehensive rehabilitation the patient\nwas unable to make functional gains (Functional Independence Mea-\nsure of 21 on admission and 20 on discharge). He had worsening\nsymptom severity, increasing discomfort, decreased participation in\ntherapies, and required transfer from the rehab unit.\nDiscussion: SPS is a rare neurological condition with variable\nresponse to modern treatments. The variant of SPS with GAD-Ab\nCerebellar Ataxia is even more unusual, and creates additional\nchallenges for successful rehabilitation. To our knowledge, this is the\nﬁrst reported case that evaluates this SPS variant in the acute\nrehabilitation setting.\nConclusions: The\n presence of GAD-Ab cerebellar ataxia further com-\n\nplicates the acute rehabilitation potential of a patient with SPS.\n\nAdditional study is required to better understand the optimal time and\nrole of rehabilitation in care of these individuals.\nLevel of Evidence: Level V",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5058,
+        "end": 6979
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1921
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6980,
+        "end": 7046
+      },
+      "compiled_offsets": {
+        "start": 1923,
+        "end": 1989
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7089,
+        "end": 7239
+      },
+      "compiled_offsets": {
+        "start": 1991,
+        "end": 2141
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

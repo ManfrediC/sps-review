@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12697::p1",
+  "paper_id": "12697",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12697::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case: A 49-year-old female with a history of Stiff Person Syndrome [on\nbiweekly Intravenous Immunoglobulin G (IVIG)], seizure disorder, type 1 diabetes mellitus, vitiligo,\npernicious anemia, history of chronic deep vein thrombosis, and sickle cell trait presented in the\ncontext of being obtunded and was intubated for respiratory failure. Vitals were notable for\ntachycardia of 129, afebrile, tachypnea of 36, and blood pressure of 143/80. Physical exam\nrevealed depigmented patches all over the body, coarse breath sounds bilaterally with rales\npredominantly over right lung fields. Initial labs were notable for arterial pH 6.83, pCO2 39, pO2 190\nmmHg, potassium 5.7 mmol/L, sodium 129 mmol/L, bicarbonate < 10 mmol, creatinine 1.32 mg/dL,\nglucose 1,119 mg/dL, calcium 10.9 mg/dL, hyperproteinemia 9.6 gm/dL, lactic acid 8.2 mmol/L,\nand leukocytosis 25,000 k/uL. Urinalysis was positive for glucosuria and ketones. The patient was\nmanaged for Diabetic Ketoacidosis (DKA) with subsequent resolution in 2 days. Over the course of\nhospitalization, chest imaging demonstrated the worsening of bilateral airspace opacities with the\nprogression of bilateral alveolar opacities, interlobular septal thickening, and ground-glass\nattenuation throughout the lungs without intraluminal defects. The patient was maintained on low\ntidal volume and high PEEP volume control settings with a target plateau pressure of < 30 cm of\nwater in the setting of ARDS. The patient was treated with methylprednisolone 40 mg IV q12 hr. On\ndays 10-14, the patient remained hemodynamically stable and was eventually extubated\nsuccessfully. Discussion: The patient was initially managed for DKA, however, given the rapidly\nworsening respiratory failure, pulmonary evaluation became critical. Histology confirmed patterns of\ndiffuse alveolar damage. Interstitial lung diseases are challenging to diagnose with overlapping\npresentations. They should be suspected in patients presenting with fulminant ARDS without a\nhistory of underlying lung disease. Many case reports suggest managing interstitial pneumonia with\nglucocorticoids and immunosuppression including rituximab. Our patient responded very well to\nglucocorticoids and IVIG and was subsequently liberated from the ventilator after 14 days.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1068,
+        "end": 3338
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2270
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

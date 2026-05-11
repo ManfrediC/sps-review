@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "647::p1",
+  "paper_id": "647",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "647::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE REPORT\nA 42 year old man with a 28 year history of insulin dependent\ndiabetes mellitus (IDDM) and a two year history of\nprogressive pain and stiffness affecting his lower back and\nabdomen was seen in the rheumatology clinic. He also had\npainful, intermittent muscle spasms. His functional ability\nhad signiﬁcantly decreased and he complained of extreme\ndifﬁculties in performing tasks requiring back ﬂexion. Bladder\nand bowel function was normal. Blood sugars were controlled\nwith insulin and he had no diabetic complications.\nOn examination, he had a marked lumbar lordosis, a\nprominent thoracic kyphosis, and a protuberant abdomen (ﬁg\n1). There was pronounced paraspinal and abdominal wall\nmuscle rigidity. Neurological examination was otherwise nor-\nmal. Blood tests showed a mildly raised haemoglobin A\nIc (7.4)\nand plain radiography of the spine conﬁrmed the clinical\nﬁndings. The EMG was classical for SMS and showed\nsustained motor unit activity in agonist and antagonist axial\nand limb muscles, despite the patient’s attempts at relaxation.\nThe diagnosis was supported by the detection of antibodies\nagainst glutamic acid decarboxylase (GAD) in his serum. His\ncondition only mildly improved with baclofen 80 mg/day, and\ndiazepam has now been introduced.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 15100,
+        "end": 16366
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1266
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

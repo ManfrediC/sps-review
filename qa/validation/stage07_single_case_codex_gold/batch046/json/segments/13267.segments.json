@@ -1,0 +1,65 @@
+{
+  "paper_id": "13267",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\13267.json",
+    "source_text_sha256": "646b77ef14c72eb09efc1dde8685c88bef410c603241d6ec909570245099a07c",
+    "prepared_source_sha256": "dce7ecd3a85aa8326d549a781d23dcb1bc43ce622a697d91c8c2e11ed7dc2fe7",
+    "prepared_source_character_count": 2680
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 1179
+      },
+      "page_index": 0,
+      "text": "A Case of Progressive Encephalomyelitis \nwith Rigidity and Myoclonus (PERM \nsyndrome) in a Patient with Myasthenia \nGravis (1375) \nXing Dai, Jonathan Sarezky, and Kara StavrosAUTHORS INFO & AFFILIATIONS \nApril 13, 2021 issue \n96 (15_supplement) \nhttps://doi.org/10.1212/WNL.96.15_supplement.1375 \n  \no Abstract \no Publication History \n  \no Information & Authors \no Metrics & Citations \no View Options \no References \no Media \no Tables \no Share \nAbstract \nObjective: \nTo report a rare autoimmune neurologic disorder in a patient with \nMyasthenia Gravis (MG), successfully treated with Rituximab. \nBackground: \nProgressive Encephalomyelitis with Rigidity and Myoclonus (PERM) is a \nrare disorder on the Stiff Person Syndrome (SPS) spectrum and is \nassociated with anti-glutamic acid decarboxylase (GAD) and anti-glycine \nantibodies. In addition to the characteristic SPS symptoms of limb stiffness \nand progressive gait difficulty, PERM includes brainstem signs, autonomic \ndysfunction, and encephalopathy. The time course of PERM is rapidly \nprogressive over weeks. SPS and PERM have been described in \nassociation with other autoimmune disorders and with underlying \nmalignancy."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 1181,
+        "end": 2680
+      },
+      "page_index": 1,
+      "text": "Design/Methods: \nCase report. \nResults: \nA 58-year-old woman with baseline quadriplegia from a spinal cord injury \ninitially presented with acute-onset bilateral internuclear ophthalmoplegia. \nAcetylcholine receptor antibodies were positive, and she was diagnosed \nwith MG and started on pyridostigmine. Within a year of her MG \ndiagnosis, she presented with episodes of unresponsiveness, whole body \nstiffening, hyperreligiosity, and impaired attention. Within a week, she \nprogressed to severe encephalopathy. She had signs of autonomic \ndysfunction including intermittent fever with negative infectious workup, \ntachypnea, and hypertension. Malignancy workup was negative, including \nno evidence of thymoma. Lumbar puncture showed mild pleocytosis and \nelevated protein, concerning for autoimmune encephalitis, An autoimmune \nencephalitis panel revealed elevated anti-GAD antibodies. Her overall \nclinical picture was consistent with PERM, and she was treated with 5 \ndays of IVIg and IV methylprednisolone without improvement. \nSubsequent treatment with 4 weeks of rituximab resulted in mental status \nimprovement and gradual return to neurologic baseline within six months. \nConclusions: \nThis case describes a patient with MG presenting clinically with PERM, \nfound to have positive anti-GAD antibodies and symptom resolution with \nrituximab. For prompt diagnosis and treatment of this life-threatening \ndisorder, it is important recognize PERM in patients with existing \nautoimmune disorders."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 58-year-old woman with baseline quadriplegia from a spinal cord injury \ninitially presented with acute-onset bilateral internuclear ophthalmoplegia. \nAcetylcholine receptor antibodies were positive, and she was diagnosed \nwith MG and started on pyridostigmine. Within a year of her MG \ndiagnosis, she presented with episodes of unresponsiveness, whole body \nstiffening, hyperreligiosity, and impaired attention. Within a week, she \nprogressed to severe encephalopathy. She had signs of autonomic \ndysfunction including intermittent fever with negative infectious workup, \ntachypnea, and hypertension. Malignancy workup was negative, including \nno evidence of thymoma. Lumbar puncture showed mild pleocytosis and \nelevated protein, concerning for autoimmune encephalitis, An autoimmune \nencephalitis panel revealed elevated anti-GAD antibodies. Her overall \nclinical picture was consistent with PERM, and she was treated with 5 \ndays of IVIg and IV methylprednisolone without improvement. \nSubsequent treatment with 4 weeks of rituximab resulted in mental status \nimprovement and gradual return to neurologic baseline within six months. \nConclusions: \nThis case describes a patient with MG presenting clinically with PERM, \nfound to have positive anti-GAD antibodies and symptom resolution with \nrituximab. For prompt diagnosis and treatment of this life-threatening \ndisorder, it is important recognize PERM in patients with existing \nautoimmune disorders.",
+      "source_offsets": {
+        "start": 1222,
+        "end": 2680
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

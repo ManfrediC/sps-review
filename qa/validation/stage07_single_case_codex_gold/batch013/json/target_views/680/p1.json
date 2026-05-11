@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "680::p1",
+  "paper_id": "680",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "680::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE PRESENTATION\nA 39-year-old Filipino man, a lifetime non-smoker,\npresented to the emergency department at St Paul ’s\nHospital in V ancouver, British Columbia with a\nlocked left jaw and spasm of his left masseter muscle.\nHe was completely well until 5 days prior to presenta-\ntion when he noticed dif ﬁculty swallowing food and\ncould only open his mouth to about 3 cm. At the time\nof admission, he was unable to open his mouth\nbeyond 1 cm and the patient was experiencing pain\nand spasm over both sides of the jaw . His last tetanus\nvaccine had been 3 years earlier. The remainder of his\nneurological examination was unremarkable. He\n\nreceived a course of metronidazole, baclofen, benztro-\npine and Botox injection directly to the masseter\nmuscle, which slightly improved his symptoms.\nHe returned to the hospital 2 days later with\nsymptoms of increased jaw pain with closure.\nDysarthria and right-sided facial weakness were also\nnoted. His medications were switched to trihexy-\nphenidyl and levodopa which slightly improved his\nsymptoms. However, his swallowing deteriorated\nand a feeding tube had to be inserted. He also began\nexperiencing spasms of his right leg which limited\nhis ability to ambulate on his own. Fasciculations\nand myoclonic jerks were present in the right leg.\nHis symptoms improved transiently following treat-\nment with dantrolene.\nINVESTIGATIONS\nMagnetic resonance imaging (MRI) of the head\nshowed numerous small foci of high T2 ﬂuid attenu-\nation inversion recovery in the subcortical, deep and\nperiventricular white matter of the cerebral hemi-\nspheres bilaterally ( ﬁgure 1). MRI of spine did not\ndemonstrate any signi ﬁcant abnormalities. Nerve\nconduction studies were normal. However, electro-\nmyography investigation demonstrated a typical\npattern of continuous ﬁring of normal appearing\nmotor units in agonist and antagonist muscle groups\nin the right leg at rest. A thoracic computed tomog-\nraphy (CT) scan demonstrated a 19 mm right hilar\nlesion ( ﬁgure 2). Bronchoscopy with endobronchial\nultrasound revealed the lesion, which was proven to\nbe small cell lung cancer on biopsy ( ﬁgure 3).\nSerological evaluation of the patient ’s plasma\nrevealed antibodies against glycine receptors.\nAntibodies against anti- Y o, anti-Hu, anti-Ri, anti-\namphiphysin, anti-Ma2/T a anti-CRMP5, anti-GAD\nand NMDA receptors were all negative.\nTREATMENT\nThe patient was treated for small cell lung cancer\nwith chemotherapy , local chest radiation and\nprophylactic cranial irradiation. He was also treated\n\nwith IVIg infusions and clonazepam. His symptoms completely\nresolved after treatment. A repeat CT scan and positron emis-\nsion tomography (PET) scan of his body demonstrated no\nfurther abnormalities.\nOUTCOME AND FOLLOW-UP\nT wo months after completing treatment he presented to the\nemergency department with bilateral ptosis (and binocular hori-\nzontal diplopia and decreased visual acuity), jaw spasm, torticol-\nlis and involuntary tongue biting. Repeat imaging showed no\nevidence of cancer recurrence. MRI scan of his head and whole\nbody positive emission tomography (PET) scan did not reveal\nany signs of tumour recurrence. He was re-initiated on IVIg but\nwithout any clinical response. The patient was then treated with\nintravenous methlyprednisolone 500 mg daily for 5 days (fol-\nlowed by oral prednisone 50 mg daily) and 5 days of plasma\nexchange with only minor and transient improvement in symp-\ntoms. He continued to experience blurred vision (owing to\nsixth cranial nerve palsy), dysarthria (from jaw spasms) and\nmuscle cramps in his right calf. A trial of therapy with rituximab\nthen led to a dramatic and sustained clinical response.\n\nOur patient ’s dramatic\nclinical improvement after therapy with rituximab highlights its\npotential efﬁcacy for PNS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2850,
+        "end": 3486
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 636
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3487,
+        "end": 5369
+      },
+      "compiled_offsets": {
+        "start": 638,
+        "end": 2520
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5530,
+        "end": 6674
+      },
+      "compiled_offsets": {
+        "start": 2522,
+        "end": 3666
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8511,
+        "end": 8626
+      },
+      "compiled_offsets": {
+        "start": 3668,
+        "end": 3783
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

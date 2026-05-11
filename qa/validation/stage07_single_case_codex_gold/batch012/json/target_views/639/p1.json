@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "639::p1",
+  "paper_id": "639",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "639::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 36-year-old woman with severe pain arrived at the hospital to\nchange her intrathecal pump (ITP) medication from cyclobenzaprine (a skeletal muscle relaxant closely related to tricyclic antidepressants) with morphine to cyclobenzaprine with hydromorphone. She reported inadequate pain relief with increasing spells\nof nausea, vomiting, and constipation believed to be secondary\nto morphine. Her current treatment included oxycodone 30–35\nmg/day, lansoprazole 30 mg/day, amitriptyline 75 mg/day, odan\n\nsetron 24 mg/day, diazepam 15 mg/day, and ITP with cyclobenzaprine 2000 U/mL and morphine 6 mg/mL. Four months into\ntreatment with cyclobenzaprine, she experienced more frequent\nepisodes of stiffness and spasms spreading to her hands, face,\nand mouth and forcing her to take a 4-month leave of absence\nfrom her supervisory position.\nDuring her hospitalization, a psychiatric consultation was\nrequested by the anesthesia-pain management team for assistance with her depression, anxiety, and inadequate pain control. Notes from the neurology service described the patient’s\nanger and her frequent demands on the staff. The patient continually verbalized frustration at the way her pain was being\nmanaged but was resistant to any psychiatric intervention.\nHaving tried everything else, she wanted a definitive answer\nas to whether she would be a candidate for intravenous immunoglobulin treatment to improve relief.\nThe patient’s history revealed 3 years of chronic back\nspasms and abdominal pain aggravated by standing, walking,\nand other activities of daily life. The cascade of symptoms\nwould begin with her ‘‘back going out and pulling [her] down.’’\nAdditionally, the patient remarked that ‘‘pain moved up and\ndown [her] spine to the left hip.’’ Despite increasing doses of\nbenzodiazepines, stiffness in her lower extremities became so\nsevere that she could not walk and needed a cane or even a\nwheelchair intermittently over the past 18 months. She had seen\nmultiple physicians during the 3-year period, including a chiropractor, an otolaryngologist, a neurosurgeon, and several neurologists. Two years earlier, she underwent a lumbar laminectomy\nwithout much relief. Her current neurologist of 2 years had diagnosed SMS and tried to support her with regularly scheduled\nappointments. However, she frequently called both the neurologist and the anesthesia pain specialist with increasing demands\nand eventually acknowledged that she admitted herself under\nthe guise of a referral from another doctor.\nOn examination, her speech was soft and childlike, her\naffect restricted, and her mood depressed. Tearfully, she admitted fears that her doctors would not want to take care of her.\nThe patient described early morning awakening, decreased appetite with a 10-lb weight loss over 6 months, anhedonia, and\nfeelings of hopelessness. In addition, she reported frequent\n\ncrying episodes, anxious feelings in her stomach, and muscle\ntightness in her back and legs. She also described feeling ‘‘out\nof control’’ with heart palpitations, rapid breathing, and a\nsense of doom with any new physical discomfort. Even the\npatient wondered if depression and anxiety exacerbated physical pain and body spasms associated with her SMS. Further\nhistory revealed that the patient met criteria for major depression, generalized anxiety, and panic disorder. She denied any\npersonal or family history of alcohol, marijuana, or street drug\nabuse now or in the past.\nThe psychiatric team recommended starting the patient on\nmirtazapine for depression and gabapentin for pain relief, generalized anxiety, and panic attacks. Biofeedback and relaxation\ntraining were also recommended to encourage the patient’s\nparticipation in reducing her anxiety and pain.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1688,
+        "end": 2200
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 512
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2238,
+        "end": 4603
+      },
+      "compiled_offsets": {
+        "start": 514,
+        "end": 2879
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5023,
+        "end": 5889
+      },
+      "compiled_offsets": {
+        "start": 2881,
+        "end": 3747
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

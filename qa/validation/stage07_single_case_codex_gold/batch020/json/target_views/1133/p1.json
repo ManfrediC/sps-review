@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1133::p1",
+  "paper_id": "1133",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1133::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report: The case of a female patient of 20 years, with clinical\npicture of one and a half axial hypertension and left-sided, marked\nlumbar lordosis and very painful muscle spasms axial paroxysmal is\nreported; progressive course. Additional tests are performed: oligo-\n\nclonal bands with pattern 2 and anti-GAD positive serum; occult\ntumor (total body PET normal) is discarded. Diagnosis of stiff-\nperson syndrome autoimmune done. Management starts with\nbenzodiazepines, baclofen and immunoglobulin for 4 cycles (2 g/\n\nkg every 2 months); without obtaining a sustained clinical\nresponse to axial muscle spasms and the lumbar lordosis. It\nwas decided to apply botulinum toxin type A (Dysport) 500 U\ndistributed in lumbar, thoracic and cervical paraspinal muscula-\nture; evidencing the ﬁfth day a resolution of muscle spasms and\nimprovement in lumbar lordosis (pre-90° and post-76° angle),\nachieving improvement in the patient's pain, posture and obtaining an\nindependent way.\nConclusion: The use of botulinum toxin can be a good\ntherapeutic option for the management of pain and muscle\nspasms that do not respond to other treatments for people with\nstiff-person syndrome. The use of botulinum toxin is a thera-\npeutic alternative to i mprove posture of these patients associat-\ned hyperlordosis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3209,
+        "end": 3481
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 272
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3482,
+        "end": 3729
+      },
+      "compiled_offsets": {
+        "start": 274,
+        "end": 521
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4428,
+        "end": 5203
+      },
+      "compiled_offsets": {
+        "start": 523,
+        "end": 1298
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

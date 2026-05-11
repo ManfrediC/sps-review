@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "464::p1",
+  "paper_id": "464",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "464::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 76-year-old man, weighing 32 kg and 157 cm in height, \nwas scheduled for thymectomy. He was diagnosed with \nSPS based on his symptoms. One year previously, the \nsymptoms had begun as muscle stiffness and painful \nspasms in his lower extremities. Laboratory ﬁ  ndings \nshowed that the plasma anti-GAD antibody level was \n7000 to 9000 times higher than the normal limits. \nBecause he had been blind for many years, he was very \nsensitive to sound. When even a small sound made him \nnervous, he would panic and exhibit the aforementioned \nsymptoms. He had been treated with baclofen 30 mg, \ndiazepam 5 mg, and clonazepam 1 mg daily. In the \ncourse of his examination, computed tomography \ndetected an invasive thymoma, and removal was \nregarded as potentially therapeutic for SPS. No electro-\nlyte abnormalities were seen preoperatively. For the \noperation, we planned general anesthesia in combina-\ntion with epidural anesthesia.\nBaclofen, diazepam, and clonazepam were given to \nthe patient as usual in the morning on the day of the \nsurgery. No other premedication was prescribed. In the \noperating room, bispectral index (BIS) monitoring \n(model A-2000; Aspect Medical Systems, Newton, \nMA-USA) was used in addition to standard American \nSociety of Anesthiologists (ASA) monitors. An epidu-\nral catheter was placed at the Th 5/6 interspace prior \nto the induction of general anesthesia. To monitor the \ndepth of neuromuscular blockade, skin electrodes were \nattached to his wrist before inducing anesthesia. TOF-\nGUARD (Organon Teknika, Turnhout, Belgium) was \nused to record the contraction of the adductor pollicis\n\nmuscle to train-of-four (TOF) supramaximal stimula-\ntion (2 Hz) of the ulnar nerve every 20 s. Anesthesia \nwas induced with fentanyl (50 µg) and propofol (70 mg) \nadministered intravenously. In addition, a short-acting \nsedative and analgesic available in Japan were chosen. \nNo neuromuscular blocking drug was given. No body \nmovement was observed when his trachea was intu-\nbated. His lungs were ventilated mechanically through-\nout the operation. Anesthesia was maintained with \nsevoﬂ urane (0.5%–1.7%) and oxygen/air, and supple-\nmental fentanyl (25 µg, twice) was administered as \nneeded. About 20 min before skin incision, an initial \ndose of 5 ml of 0.25% ropivacaine was given into the \nepidural space, and 0.25% ropivacaine was adminis-\ntered continuously at a rate of 5 ml·h\n−1. The sevoﬂ urane \nconcentration was adjusted to keep the BIS below 60. \nThe TOF ratio remained above 90% throughout the \nanesthesia. His heart rate and blood pressure were \nstable, and his bladder temperature ranged from 35.9°C \nto 36.3°C. End-tidal carbon dioxide (CO\n2) was main-\ntained at 33 to 40 mmHg throughout the anesthesia. \nThe operation proceeded uneventfully. Soon after dis-\ncontinuation of the anesthesia, he awoke fully and the \nBIS returned to 95. His trachea was extubated smoothly. \nTotal anesthetic time was 210 min. He did not feel pain \non emergence from the anesthesia. Ropivacaine \n(0.25%) was administered through the epidural cathe-\nter for 48 h postoperatively, at a rate of 5 ml·h\n−1, a nd \npostoperative pain was well controlled. There was no \nneurological disturbance, such as rigidity and spasm, \nand no unexpected event was seen in the postoperative \ncourse.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 590,
+        "end": 2221
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1631
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4055,
+        "end": 5732
+      },
+      "compiled_offsets": {
+        "start": 1633,
+        "end": 3310
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

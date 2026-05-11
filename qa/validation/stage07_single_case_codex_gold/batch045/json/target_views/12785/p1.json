@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12785::p1",
+  "paper_id": "12785",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12785::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE REPORT\nA 31-year-old man was in good health until 1984, when\nhe noted the enlargement of the right cervical lymphnodes.\nThe patient was then hospitalized and a diagnosis of HD,\nmixed cellularity sub-type, was made. The staging procedures stated that it was stage IJI A with cervical, hilar and\n\nmediastinal, para-aortic, celiac and retrocaval node involvement. Laparotomy with splenectomy was not performed because of the positive findings of the bipedal lymphangiography. The bone marrow biopsy revealed no HD involvement, so that the disease was classified in clinical stage III\nA. Two cycles of MOPP chemotherapy followed by subtotal nodal irradiation (40 Gy) were administered to the patient, and a complete remission (CR) was achieved. The\npatient was in CR for 18 months. In November, 1987, the\npatient suffered painful cramps and stiffness of the left\nfoot. In the following days the stiffness extended to both\nlegs and then to the lower back, accompanied by episodes\nof painful spasms. His physician administered gangliosides,\nwithout any improvement in the stiffness. The stiffness worsened with acute urine retention and severe constipation.\nThe patient was then admitted to our division. At neurological examination the tone and consistency of muscles\nwere considerably increased in both legs and in the left arm.\n\nFacial, neck and trunk muscles had normal tone and consistency. No muscular atrophy or weakness were present.\nThe deep tendon reflexes were brisk, but symmetrical. Deep\n‘and superficial sensations were normal. The cranial nerves\nwere spared. No cerebellar or extrapyramidal signs were\nnoted. The patient was unable to stand for the severe\nspasticity; sensory stimuli aggravated the stiffness and provoked painful spasms. Bladder and bowel dysfunction were\nalso present. CSF examination exhibited normal parameters.\nVisual and somatosensory evoked potentials, electroencephalography (EEG), computed tomography (CT) scan,\nmagnetic resonance imaging (MRI), and myelography gave\nnormal pictures. Concentric-needle electromyography (EMG)\nshowed continuous motor activity in the left tibialis anterior\nmuscle. A sural nerve biopsy showed endoneural and\nperivascular accumulation of lymphocytes; there was a\nreduction in the number of myelinated fibers of all sizes,\nespecially at the periphery of the fascicles. The picture was\ncompatible with a subclinical inflammatory demyelinating\nperipheral neuropathy.\nA search for serum autoantibody activity against cerebellar structures containing glutamic acid decarboxylase\n(GAD) *, using immunohistochemistry of fixed rat brain\ntissue sections, showed a mild reactivity, likely directed\nagainst glial fibrillary acidic protein (GFAP) (Figure 1).\nThe laboratory study showed: ESR 85, hemoglobin 11. 9\ng/dl, WBC 5. 9x10°/1, LDH 269 UI/L (normal values\n<320 UI/L), serum iron 31 yg/dl, and serum copper 222\npg/dl. Other standard tests were normal.\nThe diagnosis of SMS was suggested and diazepam (30\n\nStiff-man syndrome in Hodgkin’s disease 571\nFig. 1. - Rat cerebellum. Marked reactivity (PAP) in terminal cones\nof Purkinje cells, granular cell axons, and terminal synapses obtained with patient’s serum (1: 150) (A), and sheep polyclonal antiGAD serum (1: 2000) (B).\nmg/die) and baclofen (10 mg t.i.d.) therapy was administered, resulting in decreased stiffness and lower frequency of painful spasms. The chest X-ray film and CT\nscan of the abdomen displayed no abnormalities; however,\nthe bone marrow biopsy exhibited the presence of HD. A\ntreatment alternating 3 MOPP with 3 ABVD cycles was\nplanned. One month later, at the end of the first cycle,\nhe had regained the full control of bladder and bowel function. Stiffness and spasms progressively disappeared over\nthe following months.\nThe MOPP/ABVD chemotherapy regimen resulted in\na second CR from HD. The patient was readmitted in June,\n1989 for further evaluation. At that time, on physical examination he had full range motion of his arms, no lymph\nnode enlargement and normal laboratory tests, including\nESR, hemoglobin, LDH, iron, copper, and WBC counts.\nAn EMG showed a slow peripheral motor conduction velocity for the left lower limb and limited signs of chronic\ndenervation in the lower limb muscles, without any activity at rest. This picture was compatible with an axonal neuropathy, secondary to the treatment with vincristine he underwent several months before. Reactivity to GFAP was\nnot found on a serum sample obtained at that time.\nIn December, 1989 the patient was readmitted to our\ndivision for persistent cough. The chest X-ray film showed\na marked enlargement of mediastinal nodes; furthermore,\nCT scan of the abdomen showed marked enlargement of\nall retroperitoneal nodes. A thoracotomic biopsy of the\nmediastinal mass showed the presence of HD.\nNo signs of stiffness were present, and autoantibodies\nto GFAP were not detectable in the patient’s serum at that\ntime. A chemotherapeutic program with the MOPP/ABV/\nCAD hybrid protocol is in progress, with a satisfactory objective response after the first cycle.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1769,
+        "end": 2067
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 298
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2420,
+        "end": 3449
+      },
+      "compiled_offsets": {
+        "start": 300,
+        "end": 1329
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3450,
+        "end": 5085
+      },
+      "compiled_offsets": {
+        "start": 1331,
+        "end": 2966
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5087,
+        "end": 7173
+      },
+      "compiled_offsets": {
+        "start": 2968,
+        "end": 5054
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

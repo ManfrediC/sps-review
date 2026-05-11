@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "231::p1",
+  "paper_id": "231",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "231::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 62-yr-old woman (height, 1.70 m; weight, 61 kg) was\nscheduled for resection of a colon carcinoma. Her medical\nhistory revealed hypothyroidism, vitamin B12 deficiency,\nand SPS. This syndrome started with low back pain, which\nrendered her unable to walk. She was experiencing stiffness,\ninvoluntary jerks, and painful cramps. Neurological exami-\nnation revealed extreme hypertonia of the body and proxi-\nmal legs, with intercurrent, painful spasms. Reflexes were\nsymmetrical without Babinski signs. Laboratory findings\nshowed positive glutamic acid decarboxylase (GAD) and\nnegative amphiphysin antibodies. The patient was success-\nfully treated with baclofen and diazepam. Subsequently,\nprednisone as immunosuppressive therapy was started. The\nstiffness diminished, and the patient was able to walk un-\naided. The neurological examination was unremarkable, ex-\ncept for a slight stiffness in the legs. Her medication at\nadmission was prednisone 20 mg once a day, baclophen 12.5\nmg twice a day (daily dose /H1100525 mg), diazepam 7.5 mg twice\na day (daily dose /H1100515 mg), levothyroxine 25\n/H9262g once a day,\nand vitamin B12 injections. Her medical history included\nurological and gynecological surgery under general anesthe-\nsia before she experienced SPS.\nNo premedication was given. Anesthesia was induced\nwith propofol (2.5 mg/kg) and sufentanil (0.25\n/H9262g/kg). Af-\nter the administration of atracurium (0.6 mg/kg), the trachea\nwas intubated, and anesthesia was continued with isoflu-\nrane (0.6 –1.0 vol%) and oxygen/air for the duration of the\nprocedure. Cefuroxime 1500 mg, clindamycin 600 mg, and\ndexamethasone 10 mg were administered IV. In the follow-\ning 2 h, additional atracurium (35 mg), sufentanil (10\n/H9262g),\nand morphine (8 mg) were administered. At the end of the\nprocedure, which was uneventful, neuromuscular monitor-\ning showed four strong twitches. Although the patient was\nresponsive, she could not open her eyes, grasp with either\nhand, or generate tidal volumes beyond 200 mL. Neostig-\nmine 2 mg (0.03 mg/kg) and glycopyrrolate 0.2 mg did not\nalter the clinical signs of muscle weakness.\nThe patient was sedated with propofol 5 mg · kg\n/H110021 ·h /H110021\nand further mechanically ventilated in the recovery room.\nAfter 1 h, the sedation was stopped and mechanical venti-\nlation was terminated. At that time, baclofen 12.5 mg was\nadministered into the gastric tube. Two hours later she was\nin a good clinical condition, and her trachea was extubated.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 820,
+        "end": 3315
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2495
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5884::p1",
+  "paper_id": "5884",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5884::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 49 year old male with\nhistory of recently diagnosed panic attacks and recurrent rhabdomyolysis presents after a panic\nattack at home leading to cardiac arrest with return of spontaneous circulation. Labs were\nsignificant for an elevated potassium to 9.1 mmol/L and creatinine kinase of up to 220,000 U/L.\nThe patient was intubated for airway protection and admitted to intensive care unit (ICU) for\nfurther treatment. While in the ICU, patient underwent hypothermia protocol for preservation of\nneurological function and continuous renal replacement therapy for rhabdomyolysis. Further\nmedical history was obtained from the family that was notable for the history of developing a\nshooting pain and muscle spasms in his left leg 1.5 years ago that caused him to have difficulty\nwalking, leading him to fall down a flight of stairs and causing injury in his thoracic spine that\nrequired surgical stabilization. After the surgery, family noted the patient to have hour long panic\nattacks with muscle stiffness and spasms throughout his body, particularly in his core muscles.\nThe patient had seen a multitude of neurologists and was provided negative lab results and\nimaging, without a specific diagnosis. Given the abnormal quality of the patient’s presentation, an\nanti-GAD 65 was sent that returned elevated. The patient was diagnosed with Stiff Person\nSyndrome and subsequently treated with diazepam.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 887,
+        "end": 2290
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1403
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

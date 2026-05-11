@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2610::p1",
+  "paper_id": "2610",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2610::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A30-year-oldHaitianfemalewithapastmedicalhistory\nof anxiety disorder and baseline tachycardia presented with\nrecurrent panic attacks. The patient reported anxiety, palpi-\ntations,musclestiffness,andpainfulspasmswhichstartedin\nthe pelvis and radiated to bilateral lower extremities. Within\na two-year period, she had multiple admissions for similar\nepisodes of rigidity and difficulty in walking resulting in\na diagnosis of anxiety. However, her first symptoms were\nreported six years previously. Prior to admission, she was\nempiricallytreatedwithdiazepamandbeta-blockersforSPS,\nwhilelabtestswerepending.\n\nOn examination, vital signs were stable. Neurological\nexamrevealeddystoniaandtremorswhichweremostappar-\nent in bilateral lower extremities. Spasms were noted in all\nfour limbs, as well as increased deep tendon reflexes: 3+\nhyperreflexia in biceps, triceps, brachioradialis, and patellar\nand Achilles tendons. Cardiac and respiratory exams were\nunremarkable.\nDuringprevioushospitaladmissions,EEGdidnotdetect\nictal activity. Brain and cervical spine MRIs were unremark-\nable. Tests measuring creatinine kinase, aldolase, toxicology,\n\nTable1:DiagnosticcriteriaforgeneralizedanxietydisordercomparedtoDalakascriteriaforSPS.\nGeneralizedanxietydisordercriteria[1] DalakascriteriaforSPS[4]\n(1)Excessiveanxietyandworry ,occurringmoredaysthannotfor at least 6 months.\n(1)Stiffnessintheaxialmuscles,particularly\nabdominalandthoracolumbarparaspinal\nmuscles,leadingtoafixeddeformity:\nhyperlordosis.\n(2)Superimposedpainfulspasms precipitatedby\nunexpectednoises,emotionalstress,or tactile\nstimuli.\n(3)Confirmationbyelectromyography(EMG).\n(4)Absence of neurological or cognitive\nimpairmentthatcouldexplainthestiffness.\n(5)Positive serology: GADoramphiphysin\nautoantibodies.\n(6)Responsetodiazepam.\n(2)Theindividualfindsit difficult to control the worry.\n(3)Theanxietyandworryareassociatedwith threeor moreofthe following:\n(a)Restlessnessand feelingkeyed up or on edge\n(b)Beingeasilyfatigued\n(c)Difficultyconcentratingormindgoingblank\n(d)Irritability\n(e)Muscletension\n(f)Sleepdisturbances\n(4)Symptomscausesignificantdistressorimpairmentinsocial,occupational,orother\nareas of functioning.\n(5)Symptoms are not attributable to the physiological effects of a substance or another\nmedical condition.\n(6)Symptomsarenotexplainedbyanothermentaldisorder .\n(1) Table adapted from DSM-V criteria for generalized anxiety disorder [5]. (2) Table adapted from Dalakas criteria for SPS [6].Note. Text in italic represents\nsymptoms/signsforthepatient,meetingcriteriaforbothGADandSPS.\nandthyroidfunctionwerewithinnormalranges.Thepatient’s\nGAD antibodies were significantly elevated showing a level\nabove250(normal:0–5)units/mL.\nThepatientwasinitiallytreatedwithintravenoussteroids\na n dd i a z e p a mf o l l o w e db yI V I Gf o r3d a y sa n dfi n a l l y\nimproved with 5 cycles of plasmapheresis. The patient was\ndischarged after 6 weeks with maintenance therapy of oral\nbaclofenanddiazepam.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2894,
+        "end": 3497
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 603
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3498,
+        "end": 4028
+      },
+      "compiled_offsets": {
+        "start": 605,
+        "end": 1135
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4190,
+        "end": 6016
+      },
+      "compiled_offsets": {
+        "start": 1137,
+        "end": 2963
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1662::p1",
+  "paper_id": "1662",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1662::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We report a case of severe PERM with anti-GlyR Ab, which \nwas successfully treated with high- dose corticosteroids (CS), plasma \nexchanges (PE) and rituximab (RTX). \nResults. A 68- year-old male presented with sudden- onset nocturnal \nright ear pain, worsened by any mouth movement. He was unable to eat, \nbut drank sufficiently over the next few days. He came to the emergency \nroom (ER) on day 5 of symptom onset. The ENT specialists diagnosed \na right temporo- mandibular joint (TMJ) dislocation. After unsuccessful \nattempts to relocate the jaw, tizanidine was prescribed. The patient also \ncomplained of constipation and difficult micturition. Within a week he de-\nveloped vertigo and binocular vertical diplopia. Cerebral imaging showed \na microvascular leukoencephalopathy. He was started on Aspirin, but  \nreturned on day 9 to the ER with an acute confusional state. Upon hos-\npitalization, his condition worsened, with development of hyperthermia, \ngeneralized stiffness and jerky movements, requiring intubation, seda-\ntion and admission to the intensive care unit  (ICU). He received vasop-\nressor support for severe autonomic dysfunction. Routine lab work and \nEEG were unremarkable. Cerebrospinal fluid (CSF) showed lymphocytic \npleocytosis. Anti -GlyR Ab were detected in both serum and CSF. A \nwhole-body PET-CT was normal. The patient was treated with five PE\n\nand five methylprednisolone 1 g pulses, followed by slow CS tapering \nand two RTX 1 g infusions. Myoclonus and autonomic dysfunction sub-\nsided over 1- month period. The patient underwent tracheostomy and \nwas transferred to the neurological ward after a 38-day ICU stay. Further \ncourse was characterized by slow but steady reduction of rigidity. \nConclusions. PERM in this case started with unilateral TMJ dislocation, \nfollowed by diplopia. Within ten days, the patient developed the full-blown \nneurological picture. The identification of anti-GlyR Ab was crucial for the \ndiagnosis. Immunosuppression led to slow but progressive improve-\nment.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 206821,
+        "end": 208196
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1375
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 208198,
+        "end": 208846
+      },
+      "compiled_offsets": {
+        "start": 1377,
+        "end": 2025
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

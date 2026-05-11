@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2843::p1",
+  "paper_id": "2843",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2843::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "2. Case presentation\nA 69-year-old man was admitted to our hospital with a 2-year\nhistory of progressive stiffness in the neck, bilateral shoulders,\nand chest muscles, and a more-than-a-year history of dyspnea\n\naccompanied by mandibular involuntary movement. All symp-\n\ntoms disappeared after falling asleep. The patient was a\nvegetarian and had good health in the past. The family ’s medical\nhistory was unremarkable.\nPhysical examination on admission showed clear conscious-\nness, ﬂuent language, dyspnea, no obvious positive pathological\nreﬂex, and no ataxia. No obvious abnormalities were found in\nthe cranial nerve, sensory, and motor examinations. Mandibular\ninvoluntary movement and increased muscle tone in both upper\nlimbs were noted. Bilateral upper limb tendon re ﬂexes were not\nelicited. He had stiffness in both proximal arms, the neck, the\nbilateral shoulders, and the chest muscles.\nArterial blood gas analysis showed PCO\n2 50mm Hg (normal\nrange: 35 –48 mm Hg) and PO 2 75mm Hg (normal range: 83 –\n108 mm Hg). Initial laboratory studies, including routine blood\ntest, routine coagulation, routine urine test, glycosylated\nhemoglobin, renal function, liver function, in ﬂammatory\nmarkers (erythrocyte sedimentation rate, C-reactive protein,\nantinuclear antibodies, cytoplasmic antineutrophil cytoplasmic\nantibodies, and perinuclear antineutrophil cytoplasmic anti-\nbodies), and tumor markers, were all normal or negative except\nfor increased homocysteine (32.5 mmol/L; normal range, 0 –20 m\nmol/L) and decreased vitamin B12 levels (59 pg/mL; normal\nrange, 133 –675 pg/mL). Serum and cerebrospinal ﬂuid anti-\nbodies according to the IIFT method in Beijing Hester Medical\nLaboratory (including anti-Hu IgG, anti-Ri IgG, anti-Amphi-\nphysin IgG, anti-Tr IgG, anti- glutamic acid decarboxylase\n(GAD) IgG, anti-Yo IgG, anti-CV2 IgG, anti-ANNA-3 IgG, anti-\nPCA-2 IgG, and anti-Ma2 IgG) were all negative. Serum and\ncerebrospinal ﬂuid antibodies according to the BLOT method in\nBeijing Hester Medical Laboratory (including anti-PNMA2\n[Ma2/Ta] IgG, anti-Yo IgG, anti-CV2 IgG, anti-Hu IgG, anti-\nRi IgG, anti-Amphiphysin IgG)were all negative except for the\nanti-Amphiphysin IgG in serum, which was positive. Electroen-\ncephalography showed no epileptiform activity. Heart color\ndoppler ultrasound, electrocardiogram, and brain and spinal\nmagnetic resonance imaging were normal. Electromyography\n(EMG) showed continuous motor activity in the biceps and\ndeltoid muscles when the patient was relaxed. Continuous motor\nactivity disappeared after intravenous injection of diazepam (5\nmg). At the same time, the symptoms of dyspnea and muscle\nstiffness signi ﬁcantly improved. Considering that amphiphysin\nantibodies-associated SPS is a recognized paraneoplastic syn-\ndrome, abdominal color doppler ultrasound and lung computed\ntomography (CT) were performed, but the results revealed no\napparent abnormality. We suggested for the patient to undergo a\nwhole body positron emission tomography-computed tomogra-\nphy; due to economic reasons, the patient refused.\nProgressive muscle stiffness, positive anti-amphiphysin anti-\nbodies, continuous motor activity in EMG, and effective\nadministration of benzodiazepines all supported the diagnosis of\nSPS. We administered clonazepam (1 mg/d) and baclofen (5 mg, 3\ntimes a day) orally, and corticosteroid IV (methylprednisolone 80\nmg/d, 7 days) followed by prednisone orally (60 mg/d, reduced by 5\nmg weekly until discontinued). No antitumor therapy was\nadministered to the patient due to the absence of tumor evidence.\nMuscle stiffness and dyspnea were obviously relieved. Unfortu-\nnately, the patient ’s involuntary movement of the mandible\npersisted throughout the treatment process. One year after\n\ndischarge from the hospital, no obvious abnormality was found\nin the lung and abdominal CT of the patient. His symptoms of\nmuscle stiffness, dyspnea, and mandibular involuntary movement\nwere still present, being almost similar to the clinical manifestations\nat admission. At present (approximately 1 year follow-up), the\npatient takes clonazepam (1 mg/d) and baclofen (5 mg, 3 times a\nday) orally and the follow-up is continued.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3240,
+        "end": 3449
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 209
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3450,
+        "end": 3507
+      },
+      "compiled_offsets": {
+        "start": 211,
+        "end": 268
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5113,
+        "end": 8585
+      },
+      "compiled_offsets": {
+        "start": 270,
+        "end": 3742
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8586,
+        "end": 9014
+      },
+      "compiled_offsets": {
+        "start": 3744,
+        "end": 4172
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

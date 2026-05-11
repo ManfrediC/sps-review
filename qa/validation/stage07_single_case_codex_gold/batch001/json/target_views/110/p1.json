@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "110::p1",
+  "paper_id": "110",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "110::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 29-year-old woman complained of attacks of painful \nmuscle stiffness mostly provoked by emotional stress or \nunexpected events. Thoracic and lumbar paraspinal, ab- \ndominal, and proximal left leg muscles were involved. Dur- \ning the attacks, which lasted for up to 2 min, the patient \nwas unable to walk. Between attacks, there was fluctuating \nrigidity of the involved muscles. An insulin-dependent dia- \nbetes mellitus had been diagnosed 15 years before. On \nneurological examination, she fulfilled the criteria' for the \ndiagnosis of SMS. Magnetic resonance imaging of the skull \nwas normal. Cerebrospinal fluid was normal, but in 1991 \nthere had been oligoclonal banding. Immunological stud- \nies showed high titers of autoantibodies against pancreatic \nislet cells. Anti-glutamic acid decarboxylase (GAD) antibod- \nies were positive. Motor and sensory nerve conduction, \nneedle electromyography of limb muscles, visual evoked \npotentials, and blink reflex were normal. \nSpasmodic reflex myoclonus, as recently described in \n8 other cases of SMS,' was found only in lumbar and tho- \nracic, and habituating excessive acoustic startle reflex' only \nin the lumbar paraspinal muscles. \nUpon TMS central motor conduction time (CMCT) \nwas normal to the hypothenar and anterior tibial muscles. \nAdditionally, in the anterior tibial muscles there were late \nresponses (LRs) upon cortical (latency 69-70 ms) and lum- \nbar (latency 82-85 ms) stimulation (Fig. la). The ampli- \ntude of the LR in the affected left leg was higher compared \nto the unaffected right leg. The LRs were independent of \nan attack of stiffness and did not habituate. The LRs were \nseen by different examiners on different days. Treatment \nb) \nright M \nTib ant \nleft M \nTib ant \nv \n-T-- \n7 \n%Mant \nright M \nTib ant \n20 ms/Div \nFIGURE 1. Results of magnetic stimulation (a) before and (b) after \ntreatment with diazepam. Each trace shows the superposition of \nfive responses, the upper two traces after contralateral cortical \nstimulation, the lowertwotracesafter ipsilateral lumbar stimulation \n(recordings from the anterior tibial muscles). Note the abnormal \nlate response to the cortical stimulus in the affected left leg (arrow). \nwith diazepam abolished the LRs (Fig. lb), but did not \ncompletely remove the symptoms of' the patient. \nIn normal subjects the compound rnuscle actiori poten- \ntial elicited by TMS is followed by a silent period that \nterminates at least 80 ms after the stimulus.' Hence, the \nLRs upon cortical stimulation were clearly abnormal. The \namplitude of the LRs corresponded with the symptoms: \nthe response was much higher in the clinically affected left \nleg compared to the right leg, and the LRs disappeared \nunder treatment with diazepam. From this we conclude \nthat the LRs are symptomatic of SMS. Other pathological \nfindings in SMS are spasmodic reflex myoclonus,' probably \ngenerated in the spinal cord, and excessive acoustic startle \nrefle~,~ which are habituating, as in our patient where they\n\nwere present only in paraspinal muscles. In contrast, the \nLRs showed no habituation and were recorded from a leg \nmuscle. Thus, they are a different phenomenon most likely \ngenerated at a different site. If both the LRs upon cortical \n926 Letters to the Editor MUSCLE & NERVE July 1996\n\nand the LRs upon lumbar stimulation are caused by the \nsame generator, the 13-16 ms difference of the respective \nlatencies suggests that the site of this generator might be \nrostra1 of the spinal cord.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 464,
+        "end": 3469
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3005
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3471,
+        "end": 3757
+      },
+      "compiled_offsets": {
+        "start": 3007,
+        "end": 3293
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3759,
+        "end": 3961
+      },
+      "compiled_offsets": {
+        "start": 3295,
+        "end": 3497
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

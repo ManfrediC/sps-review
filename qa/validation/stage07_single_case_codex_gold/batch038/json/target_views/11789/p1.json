@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11789::p1",
+  "paper_id": "11789",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11789::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "INTRODUCTION: A 27-year-old female with developmental \ndelay initially presented to the ED after a fall with several \nweeks of muscle weakness/stiffness, allodynia and visual \nchanges. CT scan revealed an anterior mediastinal mass \nmeasuring 5.2 x 7 .3 x 2.1 cm concerning for a thymoma. \nImaging did not note compression of her tracheobronchial \ntree or any vasculature. Paraneoplastic workup revealed anti-\nAch receptor antibodies consistent with myasthenia gravis \n(MG) as well as anti-GAD antibodies concerning for Stiff \nPerson Syndrome (SPS). Prior to thymectomy she received \nfive sessions of plasmapheresis, however, she did not require \nsteroids or pyridostigmine. Additionally, for her SPS she was\n\ntreated with diazepam, baclofen, gabapentin.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2748,
+        "end": 3455
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 707
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3457,
+        "end": 3501
+      },
+      "compiled_offsets": {
+        "start": 709,
+        "end": 753
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

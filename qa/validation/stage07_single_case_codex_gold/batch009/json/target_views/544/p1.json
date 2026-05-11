@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "544::p1",
+  "paper_id": "544",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "544::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 55-year-old lady presented with a two-month history of stiffness of right leg and\npainful spasms of right foot. She initially noticed an ache in the foot, followed by\ndifficulty in walking due to stiffness in the leg. It was followed two weeks later by\ninvoluntary abnormal posturing of the right foot and toes. A month later, she\nexperienced intermittent, painful spasms of the leg during which her foot would be\nplantar flexed and inverted for several minutes, making it impossible for her to stand\nor walk. Frequent spasms disturbed her sleep. She had lost five kilograms of weight in\nthe last six months. Past medical history was unremarkable. Family history was\nremarkable for esophageal carcinoma in her mother and breast carcinoma in her\n\nmaternal grandmother.\nOn examination, the right foot was held in a position of plantar flexion at the ankle,\nwith overriding and flexion of the toes [Figure 1]. Active and passive ankle\nmovements were tight and restricted, severely limiting dorsiflexion, further plantar\nflexion, inversion or eversion. Spontaneous intermittent, superimposed, painful spasms\ninvolving knee extension, ankle flexion, and foot inversion were present and these\nspasms were also stimulus sensitive to tactile, auditory or emotional stimulation. The\nright lower limb was rigid. Power in all limbs was normal. Deep tendon reflexes and\nsensory examination were normal. Her gait was affected by her inability to bear weight\non her right foot. General examination showed a well-defined, mobile, hard, 2 ΄ 2 ΄ 2\ncm lump in the outer quadrant of the right breast, with palpable axillary lymph nodes.\nOn electrophysiological studies, motor and sensory nerve conduction was normal.\nElectromyography (EMG) showed continuous motor unit activity (CMUA) at rest,\ndespite attempted relaxation, in the right hamstrings, tibialis anterior and\ngastrocnemius muscles. Motor unit morphology was normal, and interference pattern\nshowed grouped discharges during spasms. Magnetic resonance imaging of the spine\nand brain, and electroencephalogram were normal. Serum creatine phosphokinase\n(CPK) was elevated, 3024 U/L (N <200 IU/L). Anti GAD antibodies were present\n(13.13 U/ml, N: <1.050 U/ml). Anti-128-kd antigen (amphiphysin) antibodies could\nnot be tested. Other autoantibodies (against thyroid microsomal, β-pancreatic, gastric\nparietal cells) were absent. Cerebrospinal fluid (CSF) examination was normal and\nnegative for oligoclonal bands.\nShe underwent wide local excision of the breast mass with sentinel node biopsy.\nHistopathology revealed infiltrating ductal carcinoma with metastases in apical,\naxillary and interpectoral nodes. She received intensive chemotherapy for the breast\ncancer. Although she was offered intravenous immunoglobulin and plasma exchange,\nshe refused both options. She was treated with baclofen 30 mg/day, diazepam 60\nmg/day and prednisolone 60 mg/day. Gradual improvement was seen over several\nweeks, and by three months, pain and spasms had reduced substantially, and she could\nstand and bear weight on the right foot. [Figure 2] shows the distinctly improved foot\nposture at 3 months of treatment. Attempts at tapering steroid dosage failed as she had\nrelapse of pain and spasms. At one-year follow-up, she continues to be able to bear\nweight on her right foot with minimal pain and is on baclofen 20 mg/day, diazepam 10\nmg/day and prednisolone 10 mg/day.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3710,
+        "end": 4456
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 746
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4629,
+        "end": 7281
+      },
+      "compiled_offsets": {
+        "start": 748,
+        "end": 3400
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

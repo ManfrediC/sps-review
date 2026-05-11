@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5748::p1",
+  "paper_id": "5748",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5748::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case: A 67-\nyear-old Caucasian male presented 7 years ago with gradual onset bilateral lower extremity \nmuscle spasms and rigidity. He initially responded to a trial of carbidopa/levodopa, and the \ndiagnosis of IPD was made. However, his symptoms gradually returned, with temporary relief \nprovided by dopamine agonists and benztropine. His incomplete response to dopamine, his lack \nof upper extremity involvement, and his absence of tremor or freezing raised the possibility of \nSPS. An SPS panel revealed strongly positive anti-GAD antibody titers (>250:1); however, a \nparaneoplastic antibody panel and neoplastic screening exam were negative. He had minimal \nresponse to IVIG, but plasma exchange resulted in drastic improvement. With time, however, he \nstopped responding to plasma exchange. Diazepam and an intrathecal baclofen trial were \nbeneficial, but less beneficial than resuming dopamine agonists and carbidopa/levodopa. A \nDaTscan was positive, and bilateral GPi deep brain stimulators were implanted in order to \nmanage the rigidity associated with both IPD and SPS. Current management continues to \nimprove rigidity and painful leg spasms; however, he is now wheelchair-bound due to extreme \nfreezing and postural instability. Conclusion: Although SPS should be in the differential for IPD \n(and vice versa), their comorbidity should not be discounted.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 819,
+        "end": 2188
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1369
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

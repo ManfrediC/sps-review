@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "115::p1",
+  "paper_id": "115",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "115::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report. A 22-year-old woman was referred for further \nevaluation of her epilepsy. She had been well until 1989, when she \npresented acutely to her local hospital with fever, confusion and \ndrowsiness. Soon after admission she developed complex partial \nseizures. Neurological examination revealed bilateral extensor \nplantar responses, but was otherwise unremarkable. Brain CT \nand CSF examination were normal. EEG showed left-sided fronto- \ntemporal epileptiform activity. She was treated with carbamaz- \nepine and intravenous acyclovir. Within two weeks the fever, con- \nfusion, and drowsiness had resolved, but she was left with \nfrequent complex partial seizures. \nThe seizures were characterized by a gustatory hallucination \nfollowed by loss of awareness with lip smacking and automatic \nmovements of the right hand. Neurological examination was nor- \nmal. MRI of the brain demonstrated atrophy and increased T,- \nsignal in the left hippocampus, and interictal EEG showed left \nanterior temporal spikes. Carbamazepine, clobazam and sodium \nvalproate failed to control the seizures, and, in June 1994, vigaba- \ntrin 2 g/d was added to carbamazepine. There was a transient \nreduction in seizures, but they then returned to their usual fre- \nquency of 6 to 8 per week. \nIn January 1995, the vigabatrin was discontinued and lam- \notrigine introduced. Two months later, she noticed increasing \nback stiffness and occasional spasms affecting the trunk and legs \nwithout any stimulus sensitivity. The lamotrigine was discontin- \nued in July 1995, but the stiffness and spasms persisted. In Sep- \ntember 1995, she was admitted for investigation. Further ques- \ntioning at this time revealed that a mild degree of back stiffness \nhad been present for three to four years prior to the recent deteri- \noration. On admission she was receiving only carbamazepine. Ex- \namination showed a marked hyperlordosis of the lumbar spine \nand rigidity of the abdominal muscles. Cranial nerve examination \nwas normal. Tone was increased in the legs, and the tendon re- \nflexes were brisk in the arms and legs. The abdominal reflexes \nwere preserved, the right plantar response was flexor and the left \nextensor. Sensory examination was normal. EMG showed contin- \nuous motor unit activity in the axial musculature, and exterocep- \ntive reflexes, elicited from the posterior tibia1 nerve at the ankle, \nwere abnormally pronounced. MRI of the spine was normal, and \nCSF examination was normal except for the presence of oligo- \nclonal IgG bands, which were not present in serum. Anti-glutamic \nacid decarboxylase (GAD) antibodies were strongly positive in se- \nrum. Thyroid microsomal (1/100) and gastric parietal cell antibod- \nies were also positive. Plasma glucose, thyroid function and serum \nB,, were normal. \nClonazepam was added and the dose gradually increased to 4 \nmg/d. There was a slight reduction in the number of spasms, but \nthe axial stiffness and the hyperlordosis of the lumbar spine per- \nsisted. She was unable to tolerate higher doses of clonazepam \nbecause of drowsiness, and in December 1995, vigabatrin was \nre-started at a dose of 0.5 g/d and increased to 2 g/d. When re- \nviewed in January 1996, the spasms had ceased and there was\n\nalmost complete resolution of the axial stiffness and the hyper- \nlordosis of the lumbar spine. The dose of clonazepam was subse- \nquently reduced to 2.5 mg/d without exacerbation of the symp- \ntoms. When reviewed four months later, she was receiving \nvigabatrin 2 g/d, slow-release carbamazepine 600 mg/d, and clon- \nazepam 2.5 mg/d. Examination revealed minimal deformity of the \nlumbar spine, and tone in the legs was normal. The tendon re- \nflexes remained brisk throughout, but both plantar responses \nwere flexor. The seizures were continuing, however, unchanged.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6550,
+        "end": 9793
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3243
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 9795,
+        "end": 10364
+      },
+      "compiled_offsets": {
+        "start": 3245,
+        "end": 3814
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

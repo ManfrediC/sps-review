@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "789::p1",
+  "paper_id": "789",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "789::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 60-year-old man complained of excessive daytime sleepiness\n(Epworth sleepiness scale, 18/24) and nonrestorative sleep. His\nspouse reported breathing pauses but no snoring.\nA diagnosis of classic stiff person syndrome had been made\nby corroborating his clinical presentation (stiffness in trunk\nand in lumbar and abdominal muscles, hyperlordosis) with\nelectromyographic ﬁndings, which included continuous motor\n\nactivity and positive antibodies against glutamic acid decarboxylase\n(GAD) (2,339 cpm; normal value , 180 cpm). His disease was\ntreated by intravenous immunoglobulin infusions. Comorbidities\nincluded type 1 diabetes mellitus, epilepsy, Hashimoto thyroiditis,\nand hypertension. His body mass index was 29 kg/m\n2. There were\nno signs of heart failure on physical examination.\nVentilatory polygraphy recorded respiratory events in a\nperiodic breathing pattern (Figure 1). Summary statistics\ndemonstrated an apnea –hypopnea index (AHI) of 83/h, a\npredominance of central apneas (245 central apneas, 133\nobstructive apneas, and 41 mixed apneas), and a mean oxygen\nsaturation as measured by pulse oximetry (Sp\nO2) of 90%; he spent\n42% of the sleep time with Sp O2 less than 90%. Lung function\ntesting was remarkable for a restrictive ventilatory de ﬁcit\n(VC = 72% predicted; FEV 1 = 77% predicted; total pulmonary\ncapacity = 67% predicted). Measurement of blood gas tensions\nshowed a respiratory alkalosis and mild hypoxemia (pH = 7.48;\nPaCO2 = 35 mm Hg; Pa O2 = 77 mm Hg).\nTransthoracic echocardiography revealed a normal left\nventricular ejection fraction of 69%. The ventilatory response to\ncarbon dioxide measured by the rebreathing technique was elevated\n(F\nIO2 =9 5 % ; FICO2 = 5%; resting _VE = 14.2 L/min; end-tidal [partial]\ncarbon dioxide pressure [P ETCO2] = 33.5 mm Hg; _VE/PETCO2 =\n7.5 L/min/mm Hg) (Figure 2). A brain magnetic resonance imaging\nstudy showed no abnormality, particularly in the brainstem.\nAdaptive servo-ventilation (AutoSetCS2; Resmed, St. Priest,\nFrance) was introduced (pressure support, 3 –10 cm H\n2O;\nexpiratory positive airway pressure, 5 cm H 2O) allowing\ncorrection of AHI (to AHI = 4) and hypoxemia (mean Sp O2 = 94%;\ntime spent with Sp O2 , 90%, 0%). He quickly achieved optimal\nadherence to the servo-ventilation device (7.5 h/night), and his\nEpworth sleepiness scale scores were signi ﬁcantly improved\n(ranging 1 –8 at his follow-up visits).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3052,
+        "end": 3475
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 423
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3476,
+        "end": 5453
+      },
+      "compiled_offsets": {
+        "start": 425,
+        "end": 2402
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

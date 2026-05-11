@@ -1,0 +1,83 @@
+{
+  "paper_id": "10691",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\10691.json",
+    "source_text_sha256": "3c08b2f311a32fa77189603c7129b0f332ffd13849b43a0eac9792d6b24e1b78",
+    "prepared_source_sha256": "0a98db6a56fa165b9b73d34ecac59d5cfec603894cf1ffc4fd25b9d406819682",
+    "prepared_source_character_count": 1430
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 195
+      },
+      "page_index": 265,
+      "text": "593P\nVigabatrin Improves Rigidity in Stiff-Person\nSyndrome (SPS)\nRocco Liguori, R. Medori, and L. Marchello, Bologna, Italy; L.\nGrimaldi, Milan, Italy; E. Lugaresi and P. Montagna,\nBologna, Italy"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 197,
+        "end": 1430
+      },
+      "page_index": 265,
+      "text": "Objectiue. To study the efficacy of vigabatrin on muscle stiffness in SPS (Moersch-Woltmann syndrome).\nBackground. Vigabatrin irreversibly i n h i b i t s gammaaminobutyric acid (GABA) transaminase and is mostly used for\ncomplex partial seizures. SPS is characterized by progressive\nrigidity and painful muscle spasms due to loss of GABAergic\ninhibition on alpha motorneurons. Autoantibodies against glutamic acid decarboxylase (GAD) may be found.\nDesign. A woman presented with SPS confirmed by EMG\nstudies and high t i t e r of autoantibodies against GAD. The\npatient was bedridden and unable to walk even with high doses\nof diazepam (60 mg/d) and baclofen (125 mg/d). To this treatment, we added vigabatrin 3 grid in two doses.\nResults. Vigabatrin 3 gr/d resulted i n marked improvement\nof rigidity in the legs and reduction of muscle spasms. Within 10\ndays, the patient could flex hips and knees and walk with assistance. However, withdrawal of diazepam resulted in reappearance of muscle spasms. The patient was thus continued on vigabatrin 3 gr/d and diazepam 30 mg/d and has remained well during 8 mos of follow-up.\nConclusions. Vigabatrin decreases rigidity of SPS and allows\nlower doses of diazepam to control muscle spasms."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "593P\nVigabatrin Improves Rigidity in Stiff-Person\nSyndrome (SPS)\nRocco Liguori, R. Medori, and L. Marchello, Bologna, Italy; L.\nGrimaldi, Milan, Italy; E. Lugaresi and P. Montagna,\nBologna, Italy",
+      "source_offsets": {
+        "start": 0,
+        "end": 195
+      },
+      "source_block_id": "b0001",
+      "confidence": "review_required",
+      "evidence": "Full prepared source retained for Stage 07 single-case batch inspection."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Objectiue. To study the efficacy of vigabatrin on muscle stiffness in SPS (Moersch-Woltmann syndrome).\nBackground. Vigabatrin irreversibly i n h i b i t s gammaaminobutyric acid (GABA) transaminase and is mostly used for\ncomplex partial seizures. SPS is characterized by progressive\nrigidity and painful muscle spasms due to loss of GABAergic\ninhibition on alpha motorneurons. Autoantibodies against glutamic acid decarboxylase (GAD) may be found.\nDesign. A woman presented with SPS confirmed by EMG\nstudies and high t i t e r of autoantibodies against GAD. The\npatient was bedridden and unable to walk even with high doses\nof diazepam (60 mg/d) and baclofen (125 mg/d). To this treatment, we added vigabatrin 3 grid in two doses.\nResults. Vigabatrin 3 gr/d resulted i n marked improvement\nof rigidity in the legs and reduction of muscle spasms. Within 10\ndays, the patient could flex hips and knees and walk with assistance. However, withdrawal of diazepam resulted in reappearance of muscle spasms. The patient was thus continued on vigabatrin 3 gr/d and diazepam 30 mg/d and has remained well during 8 mos of follow-up.\nConclusions. Vigabatrin decreases rigidity of SPS and allows\nlower doses of diazepam to control muscle spasms.",
+      "source_offsets": {
+        "start": 197,
+        "end": 1430
+      },
+      "source_block_id": "b0002",
+      "confidence": "review_required",
+      "evidence": "Full prepared source retained for Stage 07 single-case batch inspection."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [
+      "single_case_passthrough_requires_inspection"
+    ],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

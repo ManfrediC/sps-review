@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12567::p1",
+  "paper_id": "12567",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12567::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We report a 57 yo woman who initially presented in 2015 with intermittent proximal RLE stiffness and pain that progressed\nto become constant and bilateral. Her gait and posture were affected with bent forward posture. She then developed full\nbody spasms that were associated with severe pain, triggered by stress, startle, or certain movements. Brain and full spine\nMRI were normal, with positive glycine receptor antibodies. The patient received IVIG with partial improvement in\nsymptoms in 2018 and rituximab was added in 2019, but she remained impaired, requiring a standing rollator to ambulate.\nShe developed bilateral blurry vision with floaters in 2020. Vitrectomy found ocular lymphoma and brain MRI showed\nenhancement typical for lymphoma. She achieved complete remission with high dose methotrexate, rituximab and\nconsolidative transplant and her SPS symptoms markedly improved during methotrexate monotherapy to the point of\nambulating without assistive devices and remained stable six months after transplant.\n\nResults:\nN/A\nConclusions:\nMethotrexate may have activity in refractory SPS, and transplant may achieve durable responses and is under current study.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1268,
+        "end": 2289
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1021
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2291,
+        "end": 2439
+      },
+      "compiled_offsets": {
+        "start": 1023,
+        "end": 1171
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

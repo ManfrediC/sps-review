@@ -1,0 +1,56 @@
+{
+  "paper_id": "1105",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1105.json",
+    "source_text_sha256": "0843ff9e6dd9beb41ced859c1ee63059965b8bb5cbd64512b0cc26215dcdbba2",
+    "prepared_source_sha256": "9a9552b16230519bdbc8a36e49f487b570003e6d644d14946cf6801f8287eeea",
+    "prepared_source_character_count": 2373
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2373
+      },
+      "page_index": 0,
+      "text": "Scoliosis in Childhood-Onset Stiff Person Syndrome (P2.073) \nTanaporn Rasameesoraj, Bashar Katirji, Michael Devereaux \nFirst published April 8, 2015, \n  \n Info & Disclosures \nAbstract \nOBJECTIVE: We report a case of diagnostically delayed childhood onset Stiff Person \nSyndrome(SPS) associated with new onset, progressive scoliosis leading to a surgical correction \nprior to established diagnosis of SPS. BACKGROUND: Childhood onset SPS is rare, under \nrecognized and at times misdiagnosed as a psychogenic disorder characterized by stiffness, \nrigidity and superimposed spasm of axial and lower extremity musculatures. It is aggravated by \nsudden movement, tactile stimulation, noise or emotional stress. Lumbar hyperlordosis is \ncommonly reported. Scoliosis is unrecognized complication of SPS resulting from a prolonged \nand imbalanced increase in the paraspinal muscles tone. DESIGN/METHODS: Case report and \nreview literature. A 20 years old African American woman recently had a posterior spinal fusion \nfor her progressive scoliosis which began approximately 3 years after the initial onset of a \nprolonged history of stiffness in her back, gait difficulty, episodic painful back and lower \nextremities spasm which started at the age of 10. The spasms worsened following the surgery \nwith minimal response despite large doses of baclofen, tizanidine, diazepam, and \ngabapentin.(Video) RESULTS: Serum anti GAD65 antibody was markedly elevated (5615 \nnmol/L). Negative result for amphiphysin antibody. She had normal thyroid function and no \nevidence of diabetes. The prolonged spasms resolved after the second treatment of monthly \nintravenous immunoglobulin infusion. Prednisone and dantrolene were also added. On follow up \n3 months later, she still had occasional brief myoclonic jerks and remained wheel chair bound \ndue to stiff back and hip despite a good postoperative alignment of the \nspine. CONCLUSIONS: In children and young adults with spinal column deformities including \nhyperlordosis or new scoliosis, the diagnosis of SPS should be considered since early treatment \nmay help reduce long term complications, disability and improve the quality of life. Study \nSupported by: none \nDisclosure: Dr. Rasameesoraj has nothing to disclose. Dr. Katirji has nothing to disclose. Dr. \nDevereaux has received personal compensation for activities with Digitrace."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 20 years old African American woman recently had a posterior spinal fusion \nfor her progressive scoliosis which began approximately 3 years after the initial onset of a \nprolonged history of stiffness in her back, gait difficulty, episodic painful back and lower \nextremities spasm which started at the age of 10. The spasms worsened following the surgery \nwith minimal response despite large doses of baclofen, tizanidine, diazepam, and \ngabapentin.(Video) RESULTS: Serum anti GAD65 antibody was markedly elevated (5615 \nnmol/L). Negative result for amphiphysin antibody. She had normal thyroid function and no \nevidence of diabetes. The prolonged spasms resolved after the second treatment of monthly \nintravenous immunoglobulin infusion. Prednisone and dantrolene were also added. On follow up \n3 months later, she still had occasional brief myoclonic jerks and remained wheel chair bound \ndue to stiff back and hip despite a good postoperative alignment of the \nspine. CONCLUSIONS: In children and young adults with spinal column deformities including \nhyperlordosis or new scoliosis, the diagnosis of SPS should be considered since early treatment \nmay help reduce long term complications, disability and improve the quality of life.",
+      "source_offsets": {
+        "start": 934,
+        "end": 2174
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

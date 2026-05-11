@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1610::p1",
+  "paper_id": "1610",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1610::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "In 2003, a 57-year-old man presented with body spasms, leg stiffness, and\ndysphagia. Initial work up demonstrated elevated serum antiGAD65\nantibodies, CSF pleocytosis (11 WBCs;87% monocytes) and an\nunremarkable MRI of neuraxis, body CT, and electrophysiological studies.\nHe improved with pulse steroids. Diagnosis of SPS was made and was put\non Mycophenolate (MMF) and monthly IVIG with complete improvement.\nIn 2009, he developed impaired proprioception/vibration/sharp\nsensation(non-length dependent pattern), gait dysfunction, and diffuse\nhyporeflexia. Nerve conduction studies revealed absent sensory potentials\nin multiple nerves but normal motor potentials. He had positive anti-\nABSTRACT DETAILS\n\n6/29/23, 12:31 AM Abstract Details\nhttps://www.aan.com/MSA/Public/Events/AbstractDetails/40753 2/3\nHu(1:7080) and anti-amphiphysin antibodies(1:15360). Ati-GAD65 antibody\nwas negative. Body PET was negative. MMF was increased, which lead to\ngait improvement .\nIn 2011, anti-Hu and anti-amphiphysin remained highly elevated. FDG-PET\nwas again negative in 2014. On recent exam, he had severe\npinprick/touch/vibration/proprioceptive loss in all extremities(upper>lower),\nvibratory sensory level at C3, hyporeflexia, and gait ataxia. MRI\ndemonstrated a non-enhancing longitudinally extensive T2-hyperintese\nlesion(C2-T1) in the dorsal columns.\nConclusions\nChronic anti-Hu-mediated SSN is associated with dorsal root changes,\nresembling vitamin B12 deficiency.  This is likely caused by secondary\ndegeneration following an initial immune-mediated injury to the dorsal root\nneurons. This correlates with prior autopsy studies in patients with anti-Hu\nautoimmunity. Because this process is time-dependent, it’s rarely seen on\nimaging as most patients with anti-Hu autoimmunity die from associated\ntumors. In our case, cancer was not found. Anti-Hu autoimmunity should be\nconsidered in the differential diagnosis of longitudinally extensive dorsal\ncord myelopathies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 713,
+        "end": 1415
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 702
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1417,
+        "end": 2675
+      },
+      "compiled_offsets": {
+        "start": 704,
+        "end": 1962
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

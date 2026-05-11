@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12700::p1",
+  "paper_id": "12700",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12700::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 60-year-old previously healthy left-handed man presented to clinic with 6 months\nof progressive slowness and stiﬀness on the left side. He described loss of dexterity in\nthe left hand and feeling of “heaviness” in the left leg. On examination, he exhibited\nmild bradyphrenia and hypophonia, moderate left arm and leg bradykinesia and\nrigidity, and left leg hesitations and reduced left-arm swing on walking (Video 1).\nPrevious month, he had undergone MRIs of the brain and cervical spine with and\nwithout gadolinium that were unremarkable. Initial serum testing including complete\nblood count, comprehensive metabolic panel, thyroid-stimulating hormone, cerulo-\nplasmin, and vitamin B12 levels were all unremarkable. The di ﬀerential diagnosis at\npresentation included the spectrum of parkinsonian disorders with Parkinson disease\nbeing the most likely given his age group and asymmetric parkinsonism. He was di-\nagnosed with suspected Parkinson disease, and levodopa therapy was initiated because\nhe felt that his symptoms were functionally limiting.\nAt follow-up visit 6 months later, the patient reported lack of response to levodopa\nand new sense of disequilibrium, speech changes, and back stiﬀness. His examination\ncontinued to demonstrate left hemiparkinsonism, but he had over 6 months developed an\nataxic dysarthria, dysmetria of the left arm and leg, truncal sti ﬀness and instability, and a broad-\nbased ataxic gait on examination (Video 2). In addition, there was new lordosis of the lower\nback with hypertrophic lumbar paraspinal muscles. There was no myoclonus or hyperekplexia.\nThe subacute development of a cerebellar ataxia prompted additional diagnostic testing. Serum\nvitamin E level was normal, and celiac antibodies were negative. Serum glutamic acid\ndecarboxylase-65 (GAD65) antibody was >250 IU/mL (enzyme-linked immunosorbent assay,\nref <5 IU/mL), which raised suspicion for GAD65 antibody-associated neurologic disease. The\npatient was admitted for expedited evaluation where CSF analysis con ﬁrmed an elevated\nGAD65 antibody titer at 56.8 nmol/L (radioimmunoassay, ref<0.02 nmol/L) and positive\noligoclonal bands. CSF otherwise had 1 leukocyte/mL, 7 erythrocytes/mL, glucose 56 mg/dL,\nprotein 25 mg/dL, negative infectious probes, and a negative Mayo paraneoplastic antibody\npanel. CT scan of the chest, abdomen, and pelvis with contrast and testicular ultrasound did not\nreveal an underlying gross malignancy. Of note, the patient did not have history or serum\nevidence of endocrinopathies or autoimmune disease.\nThe patient was initiated on immunotherapy for a CNS GAD65 antibody-associated neurologic\ndisease with IV immunoglobulins (IVIGs). He initially experienced mild improvement in gait\nataxia and subsequently achieved stabilization without further deterioration after 6 months of\nmonthly IVIG therapy; future plan is to continue maintenance IVIG at longer intervals of every\n6 weeks. Oral diazepam helped with muscle spasms.\nRush University Medical Center, Department of Neurological Sciences, Section of Parkinson ’s Disease and Movement Disorders, Chicago, IL.\n\nFunding information and disclosures are provided at the end of the article. Full disclosure form information provided by the authors is available wit h the full text of this article at\nNeurology.org/cp.\nMORE ONLINE\nVideos\nPRACTICAL IMPLICATIONS\nIn the correct context, GAD65\nantibody-associated neurologic\ndisease should be included in\nthe differential diagnosis for par-\nkinsonism, even hemiparkinson-\nism, especially in the setting of an\nacute-to-subacute presentation\nand the emergence of more pro-\ntotypic features such as appen-\ndicular and truncal muscle\nstiffness and cerebellar ataxia.\nPrompt recognition of the condi-\ntion is critical because early im-\nmunotherapy may confer a\nbetter prognosis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 340,
+        "end": 3440
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3100
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3441,
+        "end": 4145
+      },
+      "compiled_offsets": {
+        "start": 3102,
+        "end": 3806
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

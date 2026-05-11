@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8181::p1",
+  "paper_id": "8181",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8181::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "1.313\nSTIFF PERSON SYNDROME ASSOCIATED WITH AUTOIMMUNE\nTHYROIDITIS AND SARCOIDOSIS OF INTRATHORACIC LYMPH\nNODES: CASE REPORT\nZ.A. Zalyalova\n1,2, D.M. Khasanova1,2. 1Department of Neurology\nand Rehabilitation, Kazan State Medical University,2Republican\nConsultative Diagnostical Centre of Movement Disorders and\nBotulinitherapy, Kazan, Russia\nWe represent case report of stiff person syndrome (SPS) with\neyes’ movement disorders and cerebellar symptoms in patient\nwith veriﬁed autoimmune thyroiditis and conﬁrmed sarcoidosis\nof intrathoracic lymph nodes.\nThe patient P., 50, suffers from signiﬁcant strain, muscle stiffness,\nespecially in the back, abdomen and pelvic girdle that complicated\ngait. Vertical ocular misalignment, limited abduction of the\n\nleft eye, rotatory nystagmus. Hyperlordosis in lumbar spine.\nSigniﬁcantbilateralbrisktendonreﬂexes.Finger-nosetestcannotbe\nperformed because of stiffness. Intramuscular electromyography:\nStormy activity of motor unit potentials with signiﬁcant overtone at\nthe background is registered. Glutamate decarboxylase antibodies =\n196U/l, immunoglobulinG=1 6 . 6 8g/l.\nFrom 2004 the diagnosis of autoimmune thyroiditis conﬁrmed by\npuncture biopsy. In 2005 the diagnosis of SPS was made out, and\nshe received diazepam, clonazepam, baclofen, tizanidine, which\ngave no relief. In 2008 patient took a course of plasma exchange\nwithout apparent result, then course of immunoglobulins, which\nsigniﬁcantly worsening the condition. In 2009 – gasping without\nphysical exercise, severe pain in the chest. X-ray, then pucture\nbiopsy elicited sarcoidisis of intrathoracic lymph nodes. The course\nof steroid therapy was performed with good recovery.\nIn 2010 botulinotherapy was performed and its effectiveness\nwas high. After injections the patient marked substantially\nimprovement: walks by herself. There are no data in medical\nliterature showing SPS with systemic pathology of cell-immune\nanswer, i.e. sarcoidosis. Botulinotherapy may be one of the variants\nof symptomatic treatment of patients with SPS that can raise the\nquality of life of such patients.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2734,
+        "end": 3485
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 751
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3486,
+        "end": 4824
+      },
+      "compiled_offsets": {
+        "start": 753,
+        "end": 2091
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

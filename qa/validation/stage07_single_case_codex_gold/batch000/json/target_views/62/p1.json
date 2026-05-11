@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "62::p1",
+  "paper_id": "62",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient I",
+  "unit_id": "62::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A new serum, belonging to a 75-year-old woman (patient I) with\nSMS was referred to us (Dr. S. Songcharden,\nDr. M. Myers, Jackson,\nMI) to be tested for the presence of anti-neuronal\nantibodies.\nThe\ndetection of anti-amphiphysin\nautoantibodies\nprompted a search for an\noccult breast cancer. A small ductal adenocarcinoma\nwas found and\nsurgically removed.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5430,
+        "end": 5782
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 352
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

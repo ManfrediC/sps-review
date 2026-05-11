@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "256::p1",
+  "paper_id": "256",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "256::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Patient history. A woman aged 31\nyears with an uneventful family and medical history developed a\nslowly progressive stiffness and rigidity in axial muscles 10 years\nearlier. She had painful muscle spasms triggered by tactile and\nemotional stimuli, partial complex seizures, and paroxysmal auto-\nnomic dysfunction with tachycardia, hyperidrosis, and itch at-\ntacks. Clinical examination showed hyperlordosis of the lumbar\nspine. The muscular tone was markedly increased in the paraspi-\nnal region and proximally in the lower limbs. Spontaneous and\ntouch-sensitive flexor spasms of the arms and legs were present.\nDeep tendon reflexes were normal and symmetric with flexor\nplantar responses. An EMG showed continuous electric activity at\nrest in the thoracoabdominal muscles. SPS was then diagnosed,\nand diazepam treatment was started (50 mg/d) with temporary\nresponse. Subsequent progression of the disease to the lower limbs\nhampered the gait. After a good response to baclofen treatment,\nshe became pregnant. All drugs were discontinued with a subse-\nquent clinical deterioration.\nAt the 20th week of pregnancy, a sample of amnion and blood\nfrom the funiculus was taken, and anti-GAD65 was detected in\nthe amniotic fluid and fetal and maternal serum. At the 39th\nweek, the newborn was delivered by cesarean section. Clinical and\nneurologic examinations of the newborn were normal. A week\nafter delivery, drugs were successfully started again. Two years\nlater, the patient entered her second pregnancy, and treatment\nwas discontinued. Although she worsened, she delivered a second\nhealthy newborn at the 40th week.\n\nHigh titer of anti-GAD65 was evident in the two infants until\nage 24 months (table), but no signs of SPS or other anti-GAD-\nrelated diseases were detected at 6- and 8-year follow-up\nevaluations.\n\nResults. The profile of anti-GAD65 in the mother and\ntwo newborns is summarized in the table. Sera from 86\nblood donors were negative in all assays.\n\nTable Anti-GAD65 titers before and after pregnancy\nEvaluation\nMother\nanti-GAD65\ntiter\nFirstborn\nanti-GAD65\ntiter\nSecondborn\nanti-GAD65\ntiter\nBefore pregnancy /H110221:100,000\nAt first delivery /H110221:100,000\nAt second delivery /H110221:100,000\nAt birth /H110221:100,000/H110221:100,000\n3 mo after birth /H110221:100,000/H110221:100,000\n6 mo after birth /H110221:100,000/H110221:100,000\n12 mo after birth /H110221:100,000/H110221:100,000\n18 mo after birth 1:10,000 1:10,000\n24 mo after birth 1:100 1:100\nAt 30 mo 1:1 (/H110213 U)* 1:1 (/H110213 U)*\n* Normal value /H110051:1 (/H110213 U).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1868,
+        "end": 3482
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1614
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3483,
+        "end": 3677
+      },
+      "compiled_offsets": {
+        "start": 1616,
+        "end": 1810
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3849,
+        "end": 3997
+      },
+      "compiled_offsets": {
+        "start": 1812,
+        "end": 1960
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 9912,
+        "end": 10501
+      },
+      "compiled_offsets": {
+        "start": 1962,
+        "end": 2551
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5371::p1",
+  "paper_id": "5371",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5371::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "POS.120\nThe Stiff Person Syndrome: A Single Case\nReport of Almost Complete Recovery 12\nWeeks following Immunomodulatory\nTherapy with IVIG and Plasmapheresis\nCatherine M. Dalton, Eetuan Lim, Janice Redmond, Dublin,\nIreland\nOBJECTIVE: To institute an immunomodulatory treatment\nthat would arrest the respiratory spasms and reverse the stiffness\nin a 36 year old lady with a four year history of progressive\nstiffness who was diagnosed as having stiff person syndrome.\nBACKGROUND: Stiff person syndrome is characterised by\nstiffness, rigidity and spasm, due to impairment of inhibitory\npathways enhanced by GABA (gamma-aminobutyric acid) due to\nan autoantibody against the CNS enzyme GAD (glutamic acid\ndecarboxylase). The patient was well until the birth of her baby\nwhen she started complaining of stiffness, cramps, spasms, re-\nstricted eye movement, dystonic posturing, hypertonicity, clonus,\nhyper-reflexia and bilateral extensor plantar response. MRI brain\n\nand cord were normal. Serum anti-GAD antibody was positive\nconsistent with stiff person syndrome. Over the previous six\nmonths she had rapidly disimproved and required wheelchair,\nPEG tube, tracheostomy, and bladder catheterisation.\nDESIGN/METHODS: Five plasma exchanges with a total vol-\nume exchanged of 12,353 ml were given over 6 days. Intravenous\nImmunoglobulin was given at a dose of 0.4 g/kg/day for five days.\nRESULTS: Initially there was no response to either plasma\nexchange or intravenous immunoglobulin. Twelve weeks later,\nshe demonstrated a marked improvement. She is now walking\nunaided and completely independent in her activities of daily\nliving.\nCONCLUSIONS: Stiff person syndrome is a rare, generally\nprogressive neurological disorder with impairment of descending\ninhibitory pathways mediated by the inhibitory neurotransmitter\nGABA due to anti-GAD antibodies. Delayed recovery 12-16 weeks\nfollowing IVIG and plasmapheresis is extremely rare. Trial of\nIVIG and plasmapheresis is worth considering in patients with\nstiff person syndrome whose disease is life threatening.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5940,
+        "end": 6899
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 959
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6900,
+        "end": 7990
+      },
+      "compiled_offsets": {
+        "start": 961,
+        "end": 2051
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

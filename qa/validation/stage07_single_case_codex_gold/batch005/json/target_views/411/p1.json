@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "411::p1",
+  "paper_id": "411",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "411::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 30-yr-old woman with long-standing, severe SPS presented for\ninsertion of a neurostimulator device for neurogenic bladder. Discus-\nsion with the patient revealed that she had experienced “seizure-like”\nactivity and progressive rigidity during three previous surgeries, once\nwith general anesthesia and twice with monitored anesthesia care\n(MAC). For all three surgeries, as with the current surgery, she had\ncontinued her routine treatment for SPS, consisting of 15 mg oral\ndiazepam and 20 mg oral baclofen every 6 h, including the morning of\nsurgery. She was also taking intravenous immunoglobulin (IVIg) every\n5 weeks. Her last dose of IVIg was given approximately 3.5 weeks\nbefore this surgery.\nThere was a high suspicion that the seizure-like activity reported by\nthe patient was an acute exacerbation of SPS. After further discussion\nwith the patient, MAC was planned. Sedation was started in the\npreoperative area with 4 mg midazolam and 50\n/H9262g fentanyl by intra-\nvenous injection. The patient was then brought to the operating room,\nmonitors were applied, supplemental oxygen was administered, and\nthe patient was positioned prone while still alert and cooperative. Over\nthe next 30 min, she was given additional 8 mg midazolam and 50 mg\ndiphenhydramine in divided doses. Further sedation was accomplished\nwith a propofol infusion at 30\n/H9262g·k g /H110021 · min/H110021, which was weaned\nover the subsequent 25 min after the start of the procedure. Through-\nout the surgery, the patient was sedated but cooperative, oriented, and\nable to respond to commands: a Ramsay Sedation Score of 2–3.\n4 The\nsurgery (60 min) was uneventful until the very end. As the surgeons\nwere making the ﬁnal adjustments to the neurostimulator, the patient\nbecame anxious, then unresponsive, and experienced muscle spasms\ninitially involving the face, which progressed to the neck and upper\nextremities. She concomitantly developed a transient mild tachycardia\n(approximately 80 beats/min to approximately 105 beats/min) as well\nas hyperemia and hyperthermia isolated to the face and neck. Sponta-\nneous ventilation was maintained throughout, with no major hemody-\nnamic instability (arterial oxygen saturation 100%, /H11001end-tidal carbon\ndioxide by capnograph, blood pressure approximately 130/80 mmHg).\nBased on her history, we suspected an exacerbation of SPS. The patient\nwas turned supine, and 5 mg midazolam and 100 mg sodium thiopental\nwere administered intravenously, with improvement of the tachycar-\ndia and transient resolution (5 min) of the facial and upper extremity\n\nspasms. The patient then progressively developed rigidity of her trunk\nand extremities. The spasms and rigidity continued postoperatively,\nand a lorazepam infusion was started in the postanesthesia care unit.\nNeurology became involved and conﬁrmed by electroencephalogra-\nphy that the patient did not experience a seizure, but had in fact\nexperienced an acute exacerbation of SPS. After several hours of the\nlorazepam infusion, the spasms subsided, but there was persistent\nrigidity of her entire body. The next morning, she was transferred to\nthe intensive care unit, where she was given a course of IVIg (2 g/kg)\nover 4 days, with complete resolution of symptoms on the fourth day.\nShe experienced no sequelae from the event and was discharged on\nthe ﬁfth postoperative day on her routine regimen of diazepam, ba-\nclofen, and IVIg.\nThree months later, after a fall, the patient was scheduled for a\nreplacement of her malfunctioning neurostimulator during MAC. In an\nattempt to prevent an SPS exacerbation during the subsequent surgery,\nshe was admitted to the hospital 4 days before surgery for a preoper-\native course of IVIg. As with the previous surgery, we used 18 mg\nmidazolam and 400\n/H9262g fentanyl in divided doses as well as a propofol\ninfusion. The patient remained sedated but cooperative, oriented, and\nable to respond to commands: a Ramsay Sedation Score of 2–3.\n4 Except\nfor mild rigidity of her ﬁngers and feet, the surgery was uneventful. She\nremained in the hospital overnight for an additional dose of IVIg and\nobservation. The next day, she was discharged to her home after\ncomplete resolution of the rigidity.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 880,
+        "end": 3466
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2586
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3467,
+        "end": 5099
+      },
+      "compiled_offsets": {
+        "start": 2588,
+        "end": 4220
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

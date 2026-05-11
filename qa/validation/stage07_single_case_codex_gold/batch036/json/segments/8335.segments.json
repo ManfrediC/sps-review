@@ -1,0 +1,60 @@
+{
+  "paper_id": "8335",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text_trimmed\\8335.json",
+    "source_text_sha256": "b561d66b8941425b3c4eb308dc40e395db1af108a42ea3be9d5987f8ed58cdf7",
+    "prepared_source_sha256": "220c3cbf55e79f3e2ca917db771de79544cf962efc47db9f8e6711d2411ad9cd",
+    "prepared_source_character_count": 1236
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 1236
+      },
+      "page_index": 32,
+      "text": "A case series of central and\nperipheral nervous system\ninvolvement in paraneoplastic\nsyndromes\nS. Richelli , E. Greco, GM. Fabrizi,\nT. Cavallaro, S. Monaco and\nS. Ferrari\nDepartment of Neurological,\nNeuropsychological, Morphological\nand Movement Sciences, University\nof Verona, Verona, Italy\nIntroduction: Paraneoplastic syn-\ndromes are remote effect of cancer\ninvolving central and peripheral\nnervous system. The pathogenetic\nmechanism of tissue damage consists\nin immune attack mediated by cir -\nculating antibodies recognizing both\nneoplastic antigens and nervous tis-\nsue epitopes. Material and methods:\nWe reviewed the clinical and labora-\ntory data of definite paraneoplastic\nsyndrome studied in our department\nduring the period 2002 – 2011. De-\ntection of onconeuronal antibodies\nwas obtained by western blot analy-\nsis (recognizing anti-Hu, Yo, Ri,\nCV2, Ma1, Ma2, amphiphysin), and\nconfirmed by indirect immunocyto-\nchemistry. Results: We identified 68\npatients with definite diagnosis of\nparaneoplastic syndrome. 29 cases\ndeveloped a neuropathy, 21 cases\npresented cerebellar degeneration,\n2 cases limbic encephalitis, 2 cases\ncognitive impairment, and 1 case\nstiff person syndrome, brainstem\nencephalitis and choreic syndrome."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A case series of central and\nperipheral nervous system\ninvolvement in paraneoplastic\nsyndromes\nS. Richelli , E. Greco, GM. Fabrizi,\nT. Cavallaro, S. Monaco and\nS. Ferrari\nDepartment of Neurological,\nNeuropsychological, Morphological\nand Movement Sciences, University\nof Verona, Verona, Italy\nIntroduction: Paraneoplastic syn-\ndromes are remote effect of cancer\ninvolving central and peripheral\nnervous system. The pathogenetic\nmechanism of tissue damage consists\nin immune attack mediated by cir -\nculating antibodies recognizing both\nneoplastic antigens and nervous tis-\nsue epitopes. Material and methods:\nWe reviewed the clinical and labora-\ntory data of definite paraneoplastic\nsyndrome studied in our department\nduring the period 2002 – 2011. De-\ntection of onconeuronal antibodies\nwas obtained by western blot analy-\nsis (recognizing anti-Hu, Yo, Ri,\nCV2, Ma1, Ma2, amphiphysin), and\nconfirmed by indirect immunocyto-\nchemistry. Results: We identified 68\npatients with definite diagnosis of\nparaneoplastic syndrome. 29 cases\ndeveloped a neuropathy, 21 cases\npresented cerebellar degeneration,\n2 cases limbic encephalitis, 2 cases\ncognitive impairment, and 1 case\nstiff person syndrome, brainstem\nencephalitis and choreic syndrome.",
+      "source_offsets": {
+        "start": 0,
+        "end": 1236
+      },
+      "source_block_id": "b0001",
+      "confidence": "review_required",
+      "evidence": "Source appears to contain multiple patient histories and is deferred from the Stage 07 single-case workflow."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [
+      "single_case_passthrough_requires_inspection"
+    ],
+    "manual_review_reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

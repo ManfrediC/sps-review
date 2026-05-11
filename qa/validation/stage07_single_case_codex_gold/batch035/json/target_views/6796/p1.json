@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6796::p1",
+  "paper_id": "6796",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6796::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Objective: To investigate structure of muscle and cytoskeleton\nproteins titin and nebulin in stiff person syndrome (SPS).\nBackground: A 49-year-old lady with stiffness and tension of\naxial muscles developed vertical diplopia, dysarthrophonia, ataxia.\nBrain MRI was normal. Global electromyography (EMG) showed\nincreased bioelectrical activity in axial muscles. Increase of anti-\nbodies against glutamic acid decarboxylase was found. SPS was\ndiagnosed.\nDesign and methods:Biopsy from erector spinae muscle was ana-\nlyzed using morphological and immuno-histochemical techniques;\ntitin, nebulin were investigated by gel-electrophoresis.\nResults: Structure of the muscle tissue was normal. Analysis of\nmyosin heavy chains showed predominance of type I fibres. We\nwere first to investigate titin and nebulin in SPS: twofold decrease\nwas found.\nConclusions: Sustained increase of muscle activity leads to\ndestruction of titin and nebulin that result in impairment of sup-\nporting/elastic properties of muscle sarcomere cytoskeleton, and to\nreorganization of muscle tissue with slow fatigue resistant fibres\npredominance.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 54123,
+        "end": 55237
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1114
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

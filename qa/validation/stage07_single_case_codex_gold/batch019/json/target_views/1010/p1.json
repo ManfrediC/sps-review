@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1010::p1",
+  "paper_id": "1010",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1010::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Description: A 32-year-old woman, recently diagnosed\nwith stiff person syndrome and postural orthostatic tachycardia\nsyndrome (POTS), presented with progressive upper and lower\nlimb weakness and spasticity within a 5-year period. Physical\nexamination ﬁndings were signiﬁcant for increased tone in the\nupper and lower limbs and dystonia, suggestive of a mixed\nmovement disorder with spontaneously occurring painful muscle\nspasms.\nSetting: Inpatient Rehabilitation Unit at an Academic Medical\nCenter.\nResults or Clinical Course: During her rehabilitation stay, the\npatient underwent diagnostic workup that included testing for\nanti- glutamic acid decarboxylase (GAD) antibody, which was\nnegative, thus making the case for stiff person syndrome based on\nclinical examination. She received carbamazepine 200 mg twice\nper day, which managed her painful contractions, and oral\nbaclofen for spasticity control. An intrathecal baclofen pump\n\nplaced later in her rehabilitation stay signi ﬁcantly improved her\nspasticity and her ability to achieve functional goals in\nrehabilitation.\nDiscussion: Stiff person syndrome is a rare neurological\ndisorder characterized by rigidity in the symmetrical paraspinal\nand abdominal muscles, increased lordosis, a “tin soldier ” gait\npattern, and episodic spasms, which occur in response to\nenvironmental stimuli. Diagnostic testing includes electro-\ndiagnostic studies and laboratory testing for glutamic acid\ndecarboxylase (GAD) antibodies, which is seronegative in 40% of\nthe population. Baclofen (a gamma-aminobutyric acid (a GABAb\nagonist) acts to restore the balance of excitatory and inhibitory\ninput to reduce muscle hyperactivity and spasticity. Intrathecal\nbaclofen pumps deliver baclofen directly to the intrathecal space\nand may be used to manage spasticity when oral therapy has\nproven inadequate.\nConclusions: This case highlights the use of an intrathecal\nbaclofen pump for management of spasticity in a patient with\nclinical ﬁndings of stiff person syndrome.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2560,
+        "end": 3497
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 937
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3498,
+        "end": 4566
+      },
+      "compiled_offsets": {
+        "start": 939,
+        "end": 2007
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

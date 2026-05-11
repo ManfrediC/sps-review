@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "445::p1",
+  "paper_id": "445",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "445::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "ABSTRACT Purpose: T o describe a case of anterior scleritis in a patient with\nstiff-person syndrome. Methods: Case report. Results: A 55-year-old woman with\nstable stiff-person syndrome and off immunomodulatory therapy developed\nunilateral anterior scleritis, which resolved over three weeks with systemic non-\nsteroidal anti-inﬂammatory therapy. Conclusions: The authors are unaware of\nreports regarding the association of scleritis with stiff-person syndrome.\n\nCASE REPORT\nA 55-year-old Caucasian woman with no signiﬁcant past medical history\nother than for stable stiff-person syndrome complained of left eye pain and\n\nredness of one-week duration. Past ocular history in-\ncluded pseudophakia. Visual acuity was 20/20 in both\neyes. Pupils were equally reactive to light, without\na relative afferent pupillary defect. Intraocular pres-\nsure was 16 mmHg in each eye. Extraocular motions\nwere full. Anterior segment examination was remark-\nable for tenderness to palpation and deep episcle-\nral injection superiorly in the left eye (Fig. 1). The\nrest of the ocular examination was normal. A diag-\nnosis of anterior scleritis was made and the patient\nwas started on ibuprofen (600 mg 3 times a day).\nFIGURE 1 (A, B) Anterior segment photograph of the left eye showing superior anterior scleritis.\nThe patient was followed over the following weeks.\nThe scleritis had resolved by the three-week follow-up\nvisit.\nLaboratory evaluation to rule out a systemic cause\nwas performed and included normal complete blood\ncount, metabolic panel, syphilis testing, rheumatoid\nfactor, anti-neutrophil cytoplasmic antibody, HLA-B27,\nand erythrocyte sedimentation rate. Chest radiography\nwas also within normal limits. Of note, patient had pre-\nviously received systemic steroid and IVIg therapy for\nsequelae of SPS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1160,
+        "end": 1621
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 461
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3065,
+        "end": 3222
+      },
+      "compiled_offsets": {
+        "start": 463,
+        "end": 620
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3474,
+        "end": 4651
+      },
+      "compiled_offsets": {
+        "start": 622,
+        "end": 1799
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

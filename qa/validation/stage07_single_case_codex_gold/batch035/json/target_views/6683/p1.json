@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6683::p1",
+  "paper_id": "6683",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6683::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 57-year-old Caucasian woman developed diffuse ery-\nthematous subcutaneous induration at 40 years of age.\nShe was found to have peripheral blood lymphocytosis,\nand subsequent skin biopsy conﬁrmed T-cell lymphoma.\nPan–computed tomography (CT) scans and other com-\nprehensive malignancy work-ups were negative. Skin lym-\nphoma was treated with high-dose oral steroids and later\nin combination with hydroxychloroquine for the next 6\nyears. In addition to skin lesions (Fig. 1), she had persis-\ntent fatigue with low-grade fever, malaise, and weight\nloss. At 44 years of age, she developed episodes of pain-\nful back and abdominal muscle spasms resulting in trip-\nping episodes and the need for a cane. Worsening of\ntruncal muscle stiffness and disabling spasms correlated\nwith skin tumor ﬂare-ups. The patient also began to ex-\nhibit an exaggerated startle response to unexpected au-\nditory and tactile stimuli. She was found to have elevated\nanti–glutamic acid decarboxylase 65-kDa isoform (anti-\nGAD65) antibody (6.4 U/ml, normal /C201.0 U/ml),\nwhereas amphiphysin antibody and a comprehensive\nparaneoplastic panel were negative.\nSymptomatic therapy with baclofen and diazepam\nwas initiated with some improvement of stiffness. In\naddition, she was treated with plasma exchange and\npulse intravenous dexamethasone on 4 separate occa-\nsions for autoimmune stiff person syndrome (SPS), with\nmarginal improvement. For exacerbation of skin lym-\nphoma, the patient then received a course of monthly\ncyclophosphamide infusions followed by a standing dose\nof tacrolimus, with remarkable improvement of skin\nlesions as well as SPS symptoms for several months there-\nafter. After 2 years of being only on symptomatic ther-\napy, she developed steady deterioration of gait, and\nyearly rituximab treatment was administered for the next\n3 years. She had signiﬁcant improvement that allowed\nher to ambulate without assistance. Thirteen years later,\na standard dose of alemtuzumab was administered once\nfor lymphoma relapse with the most robust improve-\nment of both cutaneous lymphoma and SPS symptoms.\nDuring the past 4 years and without further\nchemotherapy, the patient has been walking unaided\nwithout tripping. A repeat GAD antibody titer was 4.6\nU/ml.\nIn SPS associated with tumor, either cryptogenic or\nparaneoplastic, cross-reactive binding of serum antibod-\nies with malignant cells expressing neuronal antigens,\nsuch as GAD and amphiphysin, may be responsible for\ntriggering the autoimmune response.\n1,2 Although the\ncomplex autoimmune processes involved in these\npatients are not fully understood, cancer-speciﬁc thera-\npies in addition to immunomodulating agents may syn-\nergistically beneﬁt both conditions. Recognition of the\nneurological syndrome and associated autoantibodies\nshould prompt and direct diagnostic work-up for malig-\nnancy. Although SPS in our patient may or may have\nnot been a paraneoplastic manifestation of her cancer,\nearly and continuous treatment of lymphoma with che-\nmotherapeutic agents resulted in marked resolution of\nher neurological symptoms. Use of B-cell–depleting\ntherapies in SPS and other humoral immunity-related\nneurological disorders, such as myasthenia gravis and\nIgM neuropathies, should be considered in refractory\npatients who do not respond to standard symptomatic\nand immune therapies.\n3–7 T-cell–depleting therapies\n\nhave a potential to confer more robust and long-lasting\nmodulation of immune processes in SPS, but the safety\nand efﬁcacy in GAD-associated neurological disorders\nnot associated with malignancy needs to be studied\nprospectively.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 118,
+        "end": 3477
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3359
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3478,
+        "end": 3706
+      },
+      "compiled_offsets": {
+        "start": 3361,
+        "end": 3589
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

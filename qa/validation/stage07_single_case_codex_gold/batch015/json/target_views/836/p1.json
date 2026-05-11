@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "836::p1",
+  "paper_id": "836",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "836::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE REPORT\nA 53-year male with height of 158 cm and weight of\n65 kg, known case of SPS, was admitted to hospital with\nthe complaint of shortening of right leg for 4 months and\nwas planned for total hip replacement by orthopedic\nteam. Actually, he was admitted in the hospital with the\ndiagnosis of community acquired pneumonia 6 months\nago. During that stay, he sustained the right femoral\nintertrochanteric fracture, which he noticed after the\ndischarge from hospital as shortening of right limb at\nhome. Patient then waited for some time as he was\nrecovering from pneumonia and then consulted the\northopedic surgeon. Past surgical history was not\nsignificant.\nHe was diagnosed as a case of SPS by the neurology\nteam about 5 years ago from the current admission. He\nhad significant lower limb muscle spasm with history of\nmultiple falls. He had to take help from family members\nto carry out routine activities and was unable to perform\nfine motor skills. He developed muscle contractures over\nthe period of 2 to 3 years, which greatly impaired his\nmobility. He was functional class III. Patient was treated\nwith Intravenous immunoglobulins but no remarkable\nimprovement was noted. Currently, in this admission, he\nwas on oral medications baclofen, tizanidine, clonazepam\nand gabapentin.\nPhysical examination of the patient revealed spasticity of\nlower limb along with the involvement of spinal muscles.\nMotor strength was fine in all four limbs along with\nreflexes. Electromyography (EMG) and electroencephalo-\n\ngraphy were done and were normal. GAD6 autoanti-\nbodies levels were high. Mallampati grade of airway\nexamination was II with normal thyromental distance.\nLaboratory data was within normal limits. Echocardio-\ngraphy (ECG) was done which showed normal ejection\nfraction with grade I left ventricular dysfunction.\nA very detailed discussion was carried out by the\nanesthesia, orthopedics and neurology team. After\nthorough evaluation and workup, details were discussed\nwith the patient and spinal anesthesia was planned for\nthe procedure. General anesthesia was avoided as\npatient was already on muscle relaxants, so general\nanesthesia could have potentiated their effects in the\nform of delayed recovery. Standard monitoring was\napplied before performing the spinal anesthesia.\nMidazolam and ketamine was used to sedate the\npatient, so the left lateral position can be made for the\nprocedure. The most difficult part was to position the\npatient for spinal anesthesia. Due to the involvement of\nthe back muscles, it was very hard to make the right\nlateral position of the patient. After standard precautions,\n25G cutting needle was introduced at the level of L3 and\nL4 after the local infiltration of the skin with 2% lidocaine.\nAfter 3 attempts, free flow of cerebrospinal fluid (CSF)\nwas achieved and 10mg hyperbaric bupivacaine and\n25 µg fentanyl was injected in the CSF. It took about\n45 minutes to position the patient and perform the spinal\nanesthesia. He remained hemodynamically stable after\nthe spinal anesthesia. We also started the propofol\ninfusion for the sedation of the patient. Midway during\nthe procedure, orthopedic team had a bit difficulty in\nreducing the femur head. The smallest possible size of\nthe femur head was tried but unsuccessful. To facilitate\nthe surgeons, we switched off the propofol sedation and\nstarted inhalational agent sevoflurane through face\nmask. Surgery team was then able to reduce the femur\nhead. After reduction of femur head, we again started\npropofol infusion. Patient remained vitally stable\nthroughout the procedure. Intraoperative blood loss was\naround 550ml and urine output remained around\n0.5ml/kg/hour. After the procedure, patient was shifted to\nrecovery room. Postoperative pain was managed by\nmultimodal analgesia involving patient controlled\nintravenous analgesia (PCIA) tramadol, paracetamol\nand ketorolac. Patient was mobilised the very next day\nand was discharged on 5th postoperative day.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1871,
+        "end": 3383
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1512
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4540,
+        "end": 6988
+      },
+      "compiled_offsets": {
+        "start": 1514,
+        "end": 3962
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

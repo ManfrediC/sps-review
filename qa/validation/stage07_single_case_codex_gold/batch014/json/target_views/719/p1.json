@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "719::p1",
+  "paper_id": "719",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "719::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "An 81-year-old woman with a growing recurrent mass on\nthe left thoracic wall was referred to our department. She\nwas experiencing slightly impaired ambulation caused\nby SPS and suffering dyspnea from progressive anemia,\nand she required frequent transfusions.\nThirteen years earlier, the patient had symptoms of\nmuscle spasms of the axial and bilateral upper and lower\nextremities, lumbago resulting from deformities of the\ntrunk caused by the spasm, and general asthenia.\nComputed tomography (CT) of the chest led to a diag-\nnosis of thymoma, and an extended thymectomy was\nperformed. The patient had no history of diabetes, epi-\nlepsy, or other neurologic diseases. However, the ﬁrst day\nafter the operation, she experienced severe pain in her\nbilateral legs and trunk on slight physical contact and\ncramping pain even in the absence of physical contact.\nHer condition deteriorated to the point at which she was\nunable to walk or maintain a sitting position unaided. The\nneurologist in our hospital examined her, and clinical\nlaboratory tests revealed an elevated level of anti –gluta-\nmic acid decarboxylase (GAD) antibody; however, the\npatient was not diabetic. SPS was diagnosed, and gluco-\ncorticoids were administered. The patient then recovered\ngradually and was discharged from the hospital when she\nregained ambulatory function. She was followed up\nregularly by the neurologist.\nIn relation to the current admission, 13 years after thy-\nmectomy, CT of the chest revealed a recurrent chest wall\nmass, which had been slowly enlarging for 6 months\n(Fig 1 ). At this point, the patient presented with slightly\nprogressive breathlessness and ambulatory disturbance,\nnecessitating the use of a wheelchair. She had no other\nsymptoms of SPS, for example, bilateral severe pain due to\nleg stiffness. Therefore, SPS was considered to be almost\ncompletely controlled with steroid administration (pred-\nnisolone, 10 mg/day).\nSubsequently, the patient had progressive and re-\nfractory anemia, requiring frequent transfusion with\nconcentrated red blood cells before the second operation.\nHer anemia was normocytic and normochromic, with a\nreduced percentage of reticulocytes. In addition, bone\nmarrow aspiration revealed erythroid aplasia and a\nnormal level of myelocytes. Her levels of serum iron,\nantiacetylcholine receptor antibody, antinuclear antibody,\nand immunoglobulin M against parvovirus B19 were all\nwithin normal limits, although the percentage of re-\nticulocytes was decreased. At this stage, pure red blood\ncell aplasia, in addition to SPS, was diagnosed.\nWe decided to resect the tumor to control these para-\nneoplastic disorders. Preoperatively, we reduced the dose\nof steroid (prednisolone) to 5 mg every 2 days. Resection\nof the mass was achieved by the strategy of simultaneous\nchest wall resection and wedge partial resection of the left\nupper lung lobe, with the patient under general anes-\nthesia combined with epidural anesthesia. The tumor was\nstrongly ﬁxed to the chest wall and the adjacent lung. We\nrecognized that the tumor was invasive. However, adhe-\nsion of the other visceral pleura to the chest wall and\n\nmediastinum was small, so the operative procedure was\nachieved by video-assisted thoracotomy.\nPostoperatively, the patient recovered and was dis-\ncharged from the hospital with no major morbidity 2 weeks\nafter the operation. Her progressive anemia had substan-\ntially improved. She needed transfusion only a few times\nfor 6 months after the second operation, whereas she had\npreviously needed transfusion once or twice a week for 6\nmonths before the second operation. She was able to walk\nwell using a stick 3 months after the operation.\nOn the basis of histologic examination, the tumor was\nclassiﬁed as type B1 thymoma, predominantly a lympho-\ncytic tumor, according to the World Health Organization\ncriteria. The completely resected tumor had involved the\nlung and parietal pleura. A two-color ﬂow cytometric ex-\namination revealed that 84.9% of all lymphocytes were\nCD4þ and CD8 þ, the typical phenotype of cortical thy-\nmocytes. After the second operation, the level of anti-GAD\nantibody in serum decreased to 13,000 U/mL (preopera-\ntive level, 19,000 U/mL; normal range, <1.5 U/mL).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3898,
+        "end": 7030
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3132
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7031,
+        "end": 8119
+      },
+      "compiled_offsets": {
+        "start": 3134,
+        "end": 4222
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

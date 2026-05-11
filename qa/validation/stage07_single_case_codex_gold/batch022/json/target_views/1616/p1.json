@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1616::p1",
+  "paper_id": "1616",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1616::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Background: A 29-year-old woman with history of a single seizure presented to an outside \nhospital with abnormal movements in sleep, progressive muscle stiffness and spasms. Routine \nEEG, MRI brain, and lumbar puncture were performed and were unremarkable. Patient \ndeveloped illusions of grandeur during THE hospitalization and was diagnosed with bipolar \ndisorder and adult-onset scoliosis. Her psychiatric symptoms improved on olanzapine. \nPatient received a second opinion at our institution 4 months later. Her examination was notable \nfor marked stiffness of the neck and lower extremities with lumbar hyperlordosis. She had \nimpaired gait due to limitation range of motion at her knees related to her stiffness. She had \nfrequent muscle spasms. A 96 hour video EEG revealed 30 electrographic seizures arising in the \nright parietal region. Serum GAD-65 R antibody returned elevated at >3100 nmol/L (reference \nrange normal <0.02) and AMPA R antibody was also reported as positive (reference range \nnegative) on serum Mayo Autoimmune Encephalopathy panel. Lumbar puncture revealed \nelevated GAD-65 ab at 80.6 nmol/L (reference range ≤ 0.02 nmol/L) on the Mayo serum \nautoimmune encephalopathy panel and >5 oligoclonal bands, but was otherwise was \nunremarkable. She underwent malignancy workup including US breast, mammogram, CT of the \nchest, abdomen and pelvis, and pelvic ultrasound that were negative for malignancy. \nDesign/Methods: N/A \nResults: She was treated with 2 gm/kg IVIG, diazepam, and lamotrigine with resolution of \nmuscle spasms, improvement of stiffness, but she suffered from fatigue. She received rituximab \n500 mg IV × 2 doses and had near complete resolution of symptoms. \nConclusions: Intractable epilepsy and SPS can co-occur in the context of SPS-plus and be treated \nwith marked improvements with immunotherapies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 577,
+        "end": 2423
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1846
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "paper_id": "5371",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5371.json",
+    "source_text_sha256": "b1e145840f2fc72333a02ff958982183cc6dc193478a1fafc88938c1260ff1c4",
+    "prepared_source_sha256": "23819565f6000031810c7a3e2e1bcfb9b260fa9c87d8027b9392c8cbda9a0cbf",
+    "prepared_source_character_count": 8029,
+    "source_filename": "5371_Dalton-2000-The stiff person syndrome A single case report of almost complete recovery 12 weeks following immunomodulatory.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "conference_abstract",
+    "resolved_source_subtype": "single_case_conference_abstract",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\5371.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\5371.segments.json",
+    "n_segments": 2
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\5371\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch032",
+    "generated_at_utc": "2026-05-02T09:32:37.305737+00:00"
+  }
+}

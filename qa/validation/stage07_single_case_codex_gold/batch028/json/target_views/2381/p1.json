@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2381::p1",
+  "paper_id": "2381",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2381::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case presentation\nA 49-year-old man from a North African origin and\nwith a Moroccan nationality presented with a 2-year his-\ntory of progressive stiffness and painful spasms of his\nboth legs, with recent worsening of his condition over\nthe last few weeks resulting in a considerable difficulty\nof standing up and walking. There was no past history\nof diabetes, or other auto-immune diseases. The family\nhistory was unremarkable. On admission, the lower\nlimbs were rigid with a flexum of the hips and knees,\nmovements were severely limited and painful, and\nstrength could not be assessed because of rigidity and\nspasms. A slightly increased tone was noted in his upper\nlimbs, with normal muscula r strength and without any\nmovement limitation. No paraspinal or axial contrac-\ntions were palpated. Sensor y examination was normal\nexcept for reduced vibration sense in both lower extre-\nmities. Deep tendon reflexes were normal in upper\nlimbs. Patellar and Achilles jerks could be elicited mark-\nedly. Plantar response was flexor bilaterally. Functionally\nthe patient was unable to walk because of the rigidity in\nhis both legs. He had an intact intellect and there were\nno other neurologic abnormalities.\nResults of routine laboratory tests including full blood\ncount (FBC), serum electrolytes, blood urea nitrogen,\n\ncreatinine, glucose and liver enzymes were normal. The\nerythrocyte sedimentation rate (ESR) and C-reactive\nprotein (CRP) values were normal. Chest X-rays and\nabdominal ultrasonography revealed no abnormalities.\nMagnetic resonance imaging of the whole neuraxis and\nEEG were also normal. Cerebrospinal fluid examination\nwas unremarkable, there were no atypical cells found on\ncytopathological analysis. Electromyography of the lower\nlimbs revealed no abnormalit ies. Serologic testing for\n\nHIV, syphilis, viral hepatitis B and C was negative. Anti-\nmitochondrial antibodies and anti-cytoplasm antibodies\nwere found in the serum, while antinuclear antibodies\n(ANA) and anti- DNA screening and auto-antibodies to\nglutamic acid decarboxylase (GAD) were within normal\nlimits. Anti-amphiphysin antibodies test wasn ’t carried\nout. With the high suspicion that the clinical case could\nbe a SLS, oral diazepam was administered in high doses\n(25 mg/day) after which we observed a dramatic remis-\nsion of the clinical state with marked reduction of the\nhypertonus and the patient could walk with little aid.\nThe administration of 30 mg of baclofen daily provided\nrelief of symptoms.\nDiscussion\nOur patient ’s symptoms had an insidious onset and\nchronic progressive course. The stiffness and painful\nspasms were quite confined to the lower limbs, the axial\nmuscles being spared. Spasms induced by movement or\nother stimuli were an important cause of disability.\nBrainstem and pyramidal sings were absent and muscle\nstrength seemed to be normal except when interrupted\nby spasms or hampered by severe rigidity. Extensive\ndiagnostic work-up including imaging of the whole\nneuraxis and search for evidence of an infectious, malig-\nnant, or inflammatory cause did not reveal another\netiology. Other potential causes of similar symptoms\nsuch as neuromyotonia were also ruled out by neuroi-\nmaging and electrophysiological studies. Even if Immu-\nnocytochemistry studies failed to demonstrate anti-GAD\nauto-antibodies, our patient ’s history, clinical examina-\ntion findings, and response to benzodiazepines were all\nvery suggestive of SLS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2142,
+        "end": 3455
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1313
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3456,
+        "end": 3942
+      },
+      "compiled_offsets": {
+        "start": 1315,
+        "end": 1801
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4515,
+        "end": 6148
+      },
+      "compiled_offsets": {
+        "start": 1803,
+        "end": 3436
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

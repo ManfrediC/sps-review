@@ -1,0 +1,117 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "13049::p1",
+  "paper_id": "13049",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "13049::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Presentation\nA 46-year-old woman with an insignificant previous medical history developed a gradual\nvisual acuity loss in her left eye (OS) accompanied by photosensitivity . Her family history was\n\nBrain Sci. 2023, 13, 1361 7 of 12\nunremarkable for any neurological or ophthalmologic disorder. Her daughter was diagnosed\nwith Hashimoto’s thyroiditis. She underwent an extensive ophthalmological examination.\nElectroretinography and genetic testing supported a diagnosis of cone–rod dystrophy , which\nconfirmed retinopathy but failed to unveil a specific underlying mechanism.\nAfter a course of 6 months, she developed a gradual retinopathy in the right eye (OD).\nAn extensive ophthalmological evaluation was again unable to identify an underlying\ncause. Two years later, at the age of 49, she experienced a gradual rigidity in her right leg\nthat caused her gait to become unstable, resulting in occasional falls. More speciﬁcally, the\npatient reported that her last fall happened when she was accidentally pushed by a child\non the street and lost her balance due to the stiffness of her right leg. She was examined by\na neurologist. The neurological examination revealed a visual acuity of 20/400 in OD and\nOS, an increased tonus on the right leg, and increased tendon reﬂexes on the same side.\nHer cognitive function was not affected. Her coordination was intact, and her ﬁne motor\nmovement in all other extremities was normal. Her eye movements were unaffected. The\nrest of the neurological examination was unremarkable. Imaging studies of the brain and\nspine were normal. The dopamine transporter scan was normal. Nerve conduction studies\nwere normal, while EMG revealed the spontaneous, continuous contraction of both agonist\nand antagonist muscles in the right leg. The diagnosis remained inconclusive.\nAfter two more years, she was reevaluated by a neurologist due to the now disabling\nrigidity of her right leg. Thorough immunological testing was conducted. Systemic autoim-\nmunity antibodies were negative. Antibodies against GAD were highly positive, with a\ntiter of 1,031,423 IU/mL. Anti-GAD antibody titers were measured with an ELISA assay\n(Euroimmun) set up at the Neuroimmunology Unit, University of Athens, as described [47].\nA diagnosis of SLS was made, and the patient was admitted to our department for further\nassessment. Ophthalmologist re-evaluation disclosed a visual acuity of 20/400 in both eyes.\nOptical Coherence Tomography (OCT) showed atrophy in the ellipsoid zone and the entire\nposterior pole (Figure 1). A visual ﬁeld plot examination revealed severely affected visual\nﬁelds in both eyes (Figure 2A).\n\nFigure 1. Optical Coherence Tomography (OCT) Optical Coherence Tomography of both eyes be-\nfore IVIg treatment. The OCT exam remained the same after IVIg treatment. \nFigure 1. Optical Coherence Tomography (OCT) Optical Coherence Tomography of both eyes\nbefore IVIg treatment. The OCT exam remained the same after IVIg treatment.\n\nBrain Sci. 2023, 13, 1361 8 of 12\n1\n\nFigure 2. Visual ﬁeld plot. Visual ﬁeld plot exam of both eyes before ((A), top) and after ((B), bottom)\nIVIg treatment. A signiﬁcant improvement was obvious.\nAs suggested previously, a high titer of serum anti-GAD positivity prompted the fur-\nther evaluation of a potential GAD-related neurological syndrome [11]. More importantly,\nwhen a serum titer measured using ELISA exceeded a value of 10,000 IU/mL, this was\nindicative of a neurological autoimmune syndrome relating to GAD antibodies [11,34]. An\nintrathecal investigation is not exclusively needed in such a case; however, we deemed it\nrelevant to repeat an examination of serum GAD antibodies along with cerebrospinal ﬂuid\nanti-GAD evaluation. Our goal was to further support the diagnosis of a neurological syn-\ndrome owing to GAD antibodies by proving the intrathecal synthesis of antibodies using\nthe proposed GAD ab index [35]. The serum anti-GAD antibody titer was 210,801 IU/mL,\nand the cerebrospinal ﬂuid (CSF) anti-GAD antibody titer was 14,762 IU/mL with a CSF\nGAD Index [11] of 11.8 (>1). The CSF IgG Index was 0.5, while CSF oligoclonal bands were\npositive for the T2 type. On the front of AIR, we sought to investigate whether the patient\ntested positive for antibodies previously shown to be present in AIR patients. Recoverin\nantibodies, previously described in patients with paraneoplastic retinopathy or AIR [44],\nwere negative.\n\nBrain Sci. 2023, 13, 1361 9 of 12\nThe patient was initially treated with baclofen at a dose of up to 50 mg per day in three\ndivided doses, gabapentin at 300 mg three times daily and diazepam at 5 mg once daily.\nShe showed a mild improvement in the rigidity of her right leg and the accompanying\npain. She was subsequently treated with monthly infusions of IVIg with a dose of 2 gr/kg\ndivided into ﬁve daily doses of 0.4 gr/kg. After 6 months of treatment, the patient reported\nan improvement in their optical perception, and visual acuity was tested at 20/200 in\nboth eyes. An improvement was evident in the visual ﬁelds plot (representing functional\nimprovement), as shown in Figure 2B. The rigidity of her right leg also showed a mild\nimprovement. The OCT test was repeated, showing no signiﬁcant anatomic improvements.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 24666,
+        "end": 24867
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 201
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 24869,
+        "end": 27302
+      },
+      "compiled_offsets": {
+        "start": 203,
+        "end": 2636
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 27355,
+        "end": 27683
+      },
+      "compiled_offsets": {
+        "start": 2638,
+        "end": 2966
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 27685,
+        "end": 27720
+      },
+      "compiled_offsets": {
+        "start": 2968,
+        "end": 3003
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 27726,
+        "end": 29129
+      },
+      "compiled_offsets": {
+        "start": 3005,
+        "end": 4408
+      }
+    },
+    {
+      "block_id": "tb0006",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 29131,
+        "end": 29952
+      },
+      "compiled_offsets": {
+        "start": 4410,
+        "end": 5231
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "paper_id": "1913",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1913.json",
+    "source_text_sha256": "b52217af2a214d7f3f93ebf804fccebcea4366bf8afef956a5a05c4c95966970",
+    "prepared_source_sha256": "988067652e5f4f58ad3da49ed474794c7802e5fa919d392d24a12b3be7da75da",
+    "prepared_source_character_count": 2451
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2451
+      },
+      "page_index": 0,
+      "text": "Improvement of Stiff Person Syndrome Symptoms During \nPregnancy (P5.414) \nMegan Esch, Scott Newsome \nFirst published April 9, 2018, \n  \n Info & Disclosures \nAbstract \nObjective: To describe a patient with stiff person syndrome (SPS) whose symptoms and \ndisability improved during pregnancy. \nBackground: SPS is a rare neuroimmunological condition characterized by severe, debilitating \nspasms of axial and limb muscles. Antibodies against glutamic acid decarboxylase (GAD65-Ab) \nare found in up to 80% of patients with classic SPS. SPS likely involves both humoral and \ncellular immunity. The effect of estrogens on immunomodulation has been described in several \nautoimmune conditions. However, little is known regarding associations of estrogen and \npregnancy in SPS. \nDesign/Methods: Case \nResults: A 23-year-old G1P0 woman presented for evaluation of severe, intermittent spasms and \nstiff gait triggered by startle, bright lights, and temperature extremes. Prior to pregnancy, she was \nhospitalized for encephalopathy and intractable spasms. Serum GAD65-Ab obtained during \nhospitalization was positive at 1017 U/mL. One year later, spasms were controlled with 90 mg \ndiazepam and 80 mg baclofen daily. Subsequently, she became pregnant and was able to wean \nantispasmodics given improvement in spasms and ambulation. Repeat serum GAD65-Ab was \n>256,000 U/mL. Throughout pregnancy, the patient reduced antispasmodics to 20 mg baclofen \nand 10 mg diazepam daily. She reported continued improvement in her SPS symptoms. \nConclusions: We present a case of anti-GAD65-associated SPS in a woman who \nsymptomatically improved with pregnancy. Four reports of pregnancy in patients with SPS are \nfound in the literature. Of four patients, two were able to wean antispasmodics after the first \ntrimester. The remaining two included one patient who required resuming diazepam after \ndiscontinuation in the first trimester; another was diagnosed with limb-variant SPS in the third \ntrimester. \nIn normal pregnancy, rises in estradiol shift cytokine production by increasing anti-inflammatory \nTh2 and Th17 cells. A Th2 shift may contribute to improvement of autoimmune diseases \nmediated by cellular immunity. Further investigations are required to determine the role of \ncellular immunity in SPS and the response to pregnancy in this population. \nStudy Supported by: N/A \nDisclosure: Dr. Esch has nothing to disclose. Dr. Newsome has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: A 23-year-old G1P0 woman presented for evaluation of severe, intermittent spasms and \nstiff gait triggered by startle, bright lights, and temperature extremes. Prior to pregnancy, she was \nhospitalized for encephalopathy and intractable spasms. Serum GAD65-Ab obtained during \nhospitalization was positive at 1017 U/mL. One year later, spasms were controlled with 90 mg \ndiazepam and 80 mg baclofen daily. Subsequently, she became pregnant and was able to wean \nantispasmodics given improvement in spasms and ambulation. Repeat serum GAD65-Ab was \n>256,000 U/mL. Throughout pregnancy, the patient reduced antispasmodics to 20 mg baclofen \nand 10 mg diazepam daily. She reported continued improvement in her SPS symptoms.",
+      "source_offsets": {
+        "start": 795,
+        "end": 1524
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Conclusions: We present a case of anti-GAD65-associated SPS in a woman who \nsymptomatically improved with pregnancy.",
+      "source_offsets": {
+        "start": 1526,
+        "end": 1642
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "13267::p1",
+  "paper_id": "13267",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "13267::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 58-year-old woman with baseline quadriplegia from a spinal cord injury \ninitially presented with acute-onset bilateral internuclear ophthalmoplegia. \nAcetylcholine receptor antibodies were positive, and she was diagnosed \nwith MG and started on pyridostigmine. Within a year of her MG \ndiagnosis, she presented with episodes of unresponsiveness, whole body \nstiffening, hyperreligiosity, and impaired attention. Within a week, she \nprogressed to severe encephalopathy. She had signs of autonomic \ndysfunction including intermittent fever with negative infectious workup, \ntachypnea, and hypertension. Malignancy workup was negative, including \nno evidence of thymoma. Lumbar puncture showed mild pleocytosis and \nelevated protein, concerning for autoimmune encephalitis, An autoimmune \nencephalitis panel revealed elevated anti-GAD antibodies. Her overall \nclinical picture was consistent with PERM, and she was treated with 5 \ndays of IVIg and IV methylprednisolone without improvement. \nSubsequent treatment with 4 weeks of rituximab resulted in mental status \nimprovement and gradual return to neurologic baseline within six months. \nConclusions: \nThis case describes a patient with MG presenting clinically with PERM, \nfound to have positive anti-GAD antibodies and symptom resolution with \nrituximab. For prompt diagnosis and treatment of this life-threatening \ndisorder, it is important recognize PERM in patients with existing \nautoimmune disorders.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1222,
+        "end": 2680
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1458
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

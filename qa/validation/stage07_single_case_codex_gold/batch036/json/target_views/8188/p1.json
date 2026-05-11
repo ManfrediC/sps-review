@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8188::p1",
+  "paper_id": "8188",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8188::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Objective: To describe a clinical case of PERM ( Progressive encephalomyelitis with rigidity and \nmyoclonus) caused by anti-glycine receptor antibodies. \nBackground Progressive encephalomyelitis with rigidity and myoclonus (PERM) is a rare \ndisorder presenting subacutely with rigidity, muscle spasms, brainstem signs and hyperekplexia. \nHyperekplexia results from disruption of the normal inhibitory glycinergic pathways concentrated \nin the caudal pons. We report a case of relapsing PERM secondary to anti-glycine receptor \nantibody. \nDesign/Methods: A 65 year old man presented in 2001 with a two week history of severe \nhyperekplexia, rigidity of spine and lower limbs, bilateral ptosis, and horizontal gaze palsies. \nInvestigations revealed CSF lymphocytic pleocytosis and simultaneous concentric needle EMG \nwas consistent with a diagnosis of PERM. Anti-glycine receptor antibodies were identified when \npatient sera were tested for binding to human embryonic kidney cells transfected with EGFP-\ntagged glycine receptor α1 subunit. The patient's serum bound strongly to the GlyR-EGFP \nexpressing cells. A diagnosis of anti-glycine receptor mediated PERM was made. The patient \nresponded to initial intense immunosuppression and remained stable for many years with no \nfurther immunomodulation. \nResults: Ten years after initial presentation he presented again with a two month history of \nworsening ptosis, complex ophthalmoplegia, recurrent hyperekplexia, and limb rigidity. There \nwas no evidence of intercurrent sepsis or underlying malignancy. High titres of anti-glycine \nreceptor antibodies were again identified in serum and CSF. The recurrent symptoms improved \nquickly with immunomodulation. \nConclusions: Relapsing PERM due to anti-glycine receptor antibodies ten years after initial \npresentation is a rare and interesting clinical scenario. Rather than a monophasic illness, the \ndisease course has been relapsing and remitting requiring combined aggressive \nimmunosuppressive treatment. This raises several interesting clinical issues including the use of \nserial antibody testing to predict clinical relapse and of long term, low-grade immunosuppression \nin relapse prevention.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 299,
+        "end": 2497
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2198
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5321::p1",
+  "paper_id": "5321",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5321::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Mo-352\nRehabilitation and orthopedic management of Stiff Person\nsyndrome\nA.C. Clairmont, K.E. Lindberg, N. Goldstein (Columbus, Ohio)\nObjective: We report the case of a 71-year-old female with\nincreasing persistent painful muscle spasm in her left followed by\nright lower limb. She presented with a several month history of ach-\ning and stiffness about her knees, attributed to osteoarthritis. She\nthen deteriorated rapidly, became unable to walk, and was admitted\nto hospital. Serum studies positive for anti-amphiphysin antibodies\nand electrodiagnostic studies showing continuous motor unit activity\nsupported the diagnosis of Stiff Person Syndrome and suggested\nmalignancy. She was treated with IVIG and plasmapharesis. Imaging\nstudies found malignancy of the breast. Treatment was right mastec-\ntomy and chemotherapy for invasive ductal carcinoma. During inpa-\ntient rehabilitation, she hobbled with a walker, secondary to stiffness,\nspasm, decreased range of motion of the left knee and severe stiff-\nness and orthopedic deformity of her left ankle and foot. Physical\ntherapy modalities including serial casting were utilized. Pharmaco-\nlogical management of her spastic dystonia included Tizanidine 24\nmg/day, Baclofen 80mg/day, Gabapentin 1600 mg/day and ultimately\ntransition to intrathecal baclofen (ITB) pump, which was side-effect\nlimited to 800 lg/day. She improved with ITB therapy but continued\n\nto have severe plantar ﬂexion spastic dystonia, inversion of forefoot\nand hyperﬂexion of the toes. Six % phenol-mediated Tibial and Pero-\nneal neurolysis and Botulinum toxin type A injections of 1000 units\nof to left leg muscles were performed. Spastic dystonia resolved but\nsevere contracture remained. Orthopedic surgical specialists were\nconsulted and offered opinions including left below knee amputation.\nWe recommended splitting the tibialis anterior tendon with transplant\nto the lateral dorsal foot, tibialis posterior and ﬂexor digitorum lon-\ngus tenotomy, and tendo-achilles lengthening. These recommenda-\ntions were implemented. Intense physical therapy followed surgery.\nWithin 2 months, she was ambulating unlimited distances with a\nwheeled walker, today walks independently, and is completely\nassimilated into the community. Maintenance therapy: ITB at\n\n800 micrograms/day, no oral anti-spasticity medication or neurotoxin\ninjections.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5558,
+        "end": 6966
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1408
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6967,
+        "end": 7833
+      },
+      "compiled_offsets": {
+        "start": 1410,
+        "end": 2276
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8252,
+        "end": 8332
+      },
+      "compiled_offsets": {
+        "start": 2278,
+        "end": 2358
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

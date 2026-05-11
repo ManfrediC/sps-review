@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "193::p1",
+  "paper_id": "193",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "193::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 60-year-old Brazilian woman had been well until 4 years\nago when she noticed difficulty in walking and had sustained\nfrequent falls related to startle reactions. One year later she\nbegan to have episodes of painful spasms in the left leg asso-\nciated with intense sweating. These episodes became frequent\nand for 2 years she had persistent rigidity in the left leg and was\n\nrestricted to a wheelchair. She had no significant medical\nhistory.\nOn examination she showed severe rigidity in the left lower\nlimb which prevented its passive and active flexion. The left leg\nhad a fixed posture of extension and the foot was plantar-flexed\nand internally rotated. Her deep tendon reflexes were brisk and\nthe plantar responses were flexor. The rest of the neurologic\nexamination was unremarkable.\nMagnetic resonance imaging studies of the brain and of the\nlumbosacral, thoracic, and cervical spinal cord were normal.\nCerebrospinal fluid with protein electrophoresis was also nor-\nmal. She was submitted to an extensive work-up seeking neo-\nplasm, which was normal. She had no diabetes mellitus.\nSensory and motor conduction were normal in the lower\nlimbs. Concentric needle electromyography showed signs sug-\ngestive of chronic and recent denervation in the tibialis anterior,\nmedial gastrocnemius, and extensor digitorum brevis muscles\nof the right leg. On the left leg, homologous muscles showed\ncontinuous motor unit activity at rest and abnormally seg-\nmented electromyographic activity during spasms. Lumbar\nparaspinal muscles showed continuous bilateral motor unit ac-\ntivity despite all attempts at relaxation. Serum anti-GAD anti-\nbodies were present (161.0 U/mL, with normal values below\n1.0 U/mL). No other auto-antibodies were tested.\nShe was treated with 400 mg/kg intravenous human immu-\nnoglobulin per day for 5 consecutive days. Three days after the\nend of the medication she began to feel less rigidity in her left\nleg and, within 1 week, she was able to walk and her left leg\nexhibited full flexion. Two months after the treatment, she felt\na progressive return of the rigidity and was submitted to an-\nother session of intravenous human immunoglobulin. The sec-\nond treatment was also successful and she remains well at\n6-month follow up.\n\nOur patient has the clinical and the electromyographic find-\nings of stiff-limb syndrome. 4,5 The absence of spasm in para-\nvertebral muscles and abnormally segmented electromyo-\ngraphic activity during spasms in the left leg muscles were the\ndifferences between true stiff-man syndrome (or stiff-trunk\nsyndrome), although these muscles showed continuous motor\nunit activity.\nBarker et al.,\n2 in an extensive review, pointed out that stiff-\nlimb is distinguished from true stiff-man syndrome by the typi-\ncal absence of anti-GAD antibodies and lack of association\nwith autoimmune disease. Furthermore, true stiff-man syn-\ndrome usually responds well to immune therapy, but this has\nnot been studied to any extent in stiff-limb syndrome.\n5–10 Re-\ncently, Saiz et al. 4 documented a similar good response with\nintravenous immunoglobulin in their first patient.\nThe dramatic response to immunoglobulin in our patient sug-\ngests that stiff-limb syndrome, as well as true stiff-man syn-\ndrome, can respond to immunotherapy, although Barker et al.\n2\nnoted that many patients have a “relapsing and remitting\ncourse.” It may be speculated that the presence of anti-GAD\nantibodies is determinant for a good response to immunoglob-\nulin in stiff-limb patients.\nLegends to the Videotape\nSegment 1: Severe stiffness in the left leg before treatment.\nThe leg had a fixed posture of extension and the foot was flexed\nand internally rotated. She is restricted to a wheelchair.\nSegment 2: Dramatic improvement of the stiffness after 1\nmonth of treatment with intravenous immunoglobulin. The pa-\n\ntient is able to make a full flexion of the left leg and walk with\nno assistance.\nSegment 3: Persistent improvement of walking after 9\nmonths.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 131113,
+        "end": 131499
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 386
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 132281,
+        "end": 134155
+      },
+      "compiled_offsets": {
+        "start": 388,
+        "end": 2262
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 134167,
+        "end": 135745
+      },
+      "compiled_offsets": {
+        "start": 2264,
+        "end": 3842
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 135746,
+        "end": 135888
+      },
+      "compiled_offsets": {
+        "start": 3844,
+        "end": 3986
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

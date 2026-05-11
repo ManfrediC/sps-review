@@ -1,0 +1,56 @@
+{
+  "paper_id": "1931",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1931.json",
+    "source_text_sha256": "f4f541ad8cde999df7772a665dd1c57c94d14bf05798b3ce49b34196b93c207e",
+    "prepared_source_sha256": "26a62383ff4dcd00f5bbc873b2d478b77a15dd7a21a7ba5bdd1bdfab2f07685f",
+    "prepared_source_character_count": 2812
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2812
+      },
+      "page_index": 0,
+      "text": "“Stiff Young Woman”: Case report \nM. Sousa, R. Varela, D. Carneiro, C. Januário, A. Morgadinho (Coimbra, Portugal) \nMeeting: 2018 International Congress \nABSTRACT NUMBER: 733 \nKeywords: Dystonia: Clinical features, Stiff-person syndrome \nObjective: To describe a rare presentation of a young-onset Stiff Person Syndrome \npatient. \nBackground: The Stiff-Person syndrome (SPS) is classically characterized by \nprogressive stiffness with muscle spasms, involving the axial and limb muscles, and \nexaggerated startle responses (Hyperekplexia). The phenotypic spectrum is broad \nand can be expressed as classical SPS, Stiff limb syndrome, and other variants that \ncombine additional neurological symptoms (Stiff person plus), or even as \nProgressive encephalomyelitis with rigidity and myoclonus (PERM). The diagnosis of \nthis disease in clinical practice is difficult, and may sometimes mimic other disorders. \nMethods: Case-report. \nResults: A 27-year-old young woman develops intermittent paroxysmal distal \nmuscle contractions of the left lower limb (LLL), initially during exercise, but latter \npresent also at rest. About 6 months’ latter the lower limb dystonic postures started \nto be more frequent and characterized by left foot inversion, with progressive gait \nlimitation. At this time, the patient starts to experience anxiety and depressive \nsymptomatology and begins escitalopram 20 mg. About 1 month later, she suffered \na subacute rapid worsening of the dystonic postures, becoming fixed, more painful \nand with complete loss of gait. After initiation of benzodiazepines and trihexyphenidyl \nin progressive titration and SSRI suspension, there was a progressive improvement \nof the dystonic symptomatology. From the remaining personal history, it was relevant \nfor the presence of type 1 Diabetes Mellitus, insulin-treated. A therapeutic trial with \nlevodopa/carbidopa (until 400 mg/day) was performed without benefit. Brain MRI did \nnot reveal any structural abnormalities. Brain PET-BetaCIT was unremarkable. \nGenetic NGS panel for dystonia (58 genes) was negative. About 2 months later the \npatient develops hyperreactivity to auditory and tactile stimuli and myoclonus of the \nright hand. The Serum anti-glutamic acid decarboxylase (GAD65) was positive and \nsubsequently confirmed its presence in CSF. EMG was also compatible with SPS. \nConclusions: This case report describes a rare presentation of SPS, at the \nbeginning resembling a dystonic syndrome with focal onset of the left lower limb, \nwith subsequent generalization. The presence of a rapid progression, the presence \nof startle response, the disproportion between the amount of pain and the degree of \nthe dystonic posturing and the striking hypersensitivity to the SSRIs, are all red flags \nthat make us rethink the initial diagnosis."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Results: A 27-year-old young woman develops intermittent paroxysmal distal \nmuscle contractions of the left lower limb (LLL), initially during exercise, but latter \npresent also at rest. About 6 months’ latter the lower limb dystonic postures started \nto be more frequent and characterized by left foot inversion, with progressive gait \nlimitation. At this time, the patient starts to experience anxiety and depressive \nsymptomatology and begins escitalopram 20 mg. About 1 month later, she suffered \na subacute rapid worsening of the dystonic postures, becoming fixed, more painful \nand with complete loss of gait. After initiation of benzodiazepines and trihexyphenidyl \nin progressive titration and SSRI suspension, there was a progressive improvement \nof the dystonic symptomatology. From the remaining personal history, it was relevant \nfor the presence of type 1 Diabetes Mellitus, insulin-treated. A therapeutic trial with \nlevodopa/carbidopa (until 400 mg/day) was performed without benefit. Brain MRI did \nnot reveal any structural abnormalities. Brain PET-BetaCIT was unremarkable. \nGenetic NGS panel for dystonia (58 genes) was negative. About 2 months later the \npatient develops hyperreactivity to auditory and tactile stimuli and myoclonus of the \nright hand. The Serum anti-glutamic acid decarboxylase (GAD65) was positive and \nsubsequently confirmed its presence in CSF. EMG was also compatible with SPS. \nConclusions: This case report describes a rare presentation of SPS, at the \nbeginning resembling a dystonic syndrome with focal onset of the left lower limb, \nwith subsequent generalization. The presence of a rapid progression, the presence \nof startle response, the disproportion between the amount of pain and the degree of \nthe dystonic posturing and the striking hypersensitivity to the SSRIs, are all red flags \nthat make us rethink the initial diagnosis.",
+      "source_offsets": {
+        "start": 930,
+        "end": 2812
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

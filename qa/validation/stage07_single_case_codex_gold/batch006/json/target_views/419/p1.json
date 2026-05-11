@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "419::p1",
+  "paper_id": "419",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "419::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 46-year-old woman complained of lower back pain,\nprogressive tightness, and painful spasm of muscles of both\nlegs and abdomen for the last 3 years. On examination, she\nhad profound lumbar lordosis, extreme painful stiffness of\nthe abdominal wall, increased muscle tone in the left leg,\nbrisk deep tendon reflexes, bilateral Trömner and Hoffmann\nsigns, and flexor plantar responses. Cerebellar function\nexamination disclosed mild right-sided limb dysmetria and\ndysdiadochokinesis. The gait was slow, wide-based, and\nunsteady. Needle electromyography revealed continuous\nmotor unit activity of rectus abdominis and paraspinal\nmuscles at rest, which was completely abolished after\n10 mg of intravenous diazepam. A shortened silent period\nwas recorded from all four extremities after transcranial\nmagnetic stimulation. A meticulous laboratory work-up\ndisclosed pernicious anemia, family history of IDDM, and\nthe presence of HLA alleles DQB1 0201 and DRB1 0301.\nSerum titer of GAD-Abs was markedly increased (81,858 U/\nml; normal <1000). The various forms of hereditary cerebel-\nlar ataxia were ruled out by the appropriate molecular\ngenetic tests. Anti-Yo and anti-Hu antibodies were negative\nand brain MRI was normal. During 1 year of follow-up and\nprior to the present recording of ocular movements, there\nwas a modest benefit from intravenous immunoglobulins\nand a much more significant benefit from daily oral\ndiazepam. However, a progressive impairment of eye move-\nments was documented. Initially, the range of voluntary eye\nmovements was full in all directions, but horizontal and\nvertical saccades were slow. It also seemed that smooth\npursuit and vestibulo-ocular reflexes were normal. On a\nfollow-up visit 6 months later, she complained of positional\nvertigo, and on examination, downbeating nystagmus was\npresent when she was lying down; this was most prominent\non left gaze.\n4.2. Eye movement recordings and data analysis\nThe experimental paradigms and data collection were done\nusing Labview (National Instrument), and analysis of the\ndata was performed using Matlab. Horizontal and vertical\ngaze of the right eye and head rotations were measured\nusing the magnetic search coil technique ( Robinson, 1963 )\nwith 6-ft field coils (CNC Engineering, Seattle, WA) using a\nscleral search coil embedded in a silastic ring (Skalar, Delft,\nNetherlands). The eye movement recordings were monocu-\nlar because clinically all eye movements appeared to be\nconjugate, and there was no clinical complaint of diplopia.\nThe coils were pre-calibrated using a protractor device. The\ncoil was placed on the eye after application of two drops of\nlocal anesthetic (benoxinate HCl 0.4%). Coil signals were\nfiltered (bandwidth 0 –200 Hz) prior to digitization at 500 Hz\nsampling rate, with 12-bit resolution. The visual stimulus\nwas a red laser spot (1.5 mm diameter) rear-projected onto\na semitranslucent screen situated 1.1 m in front of the\nsubject. The position of the laser spot was determined by\nan X –Y galvanometer. The subject sat in front of the screen\nin a dark room and was given time to adjust to the dark.\nHer head was immobilized with a head restraint device\nattached to the chair. Smooth pursuit eye movements were\ntested by having the subject track a target moving at 10°/s\nfrom eccentric (between 7.5 and 15°) positions to the origin.\nSaccades were tested by having the target step right, left,\n\nup, or down along one of the principal axes between 5 and\n15°. VOR was measured by rotating the chair in a sinusoidal\nmanner back and forth at approximately 0.4 Hz. In addition,\nthe response to head thrusts was measured by asking the\npatient to fixate her gaze on the laser spot target, while her\nhead was held from behind by one of the investigators who\nexecuted sudden, rapid, unpredictable angular head rota-\ntions to both sides.\nDirect current electro-oculgraphic (EOG) recording was\nperformed to measure positional downbeating nystagmus\nand vestibular response to standard caloric stimulation. The\nEOG was utilized for these two tests because the coil system is\nnot set up for use with a supine subject.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 17387,
+        "end": 20786
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 3399
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 20787,
+        "end": 21495
+      },
+      "compiled_offsets": {
+        "start": 3401,
+        "end": 4109
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

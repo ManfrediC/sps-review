@@ -1,0 +1,56 @@
+{
+  "paper_id": "1340",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1340.json",
+    "source_text_sha256": "186df57edd5f363b85af34a85689925c0d21f935027ceaaf83314b631278573d",
+    "prepared_source_sha256": "591f154b9dbd7087a3ad0208b124938f6a42bdb7832df3b3455ed0fb27655cdd",
+    "prepared_source_character_count": 2401
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2401
+      },
+      "page_index": 0,
+      "text": "Seronegative progressive encephalomyelitis \nwith rigidity and myoclonus (PERM) \n(P6.185) \nEhtesham Khalid, Dagoberto Estevez-Ordonez, Patrick Lavin \nFirst published April 17, 2017, \nAbstract \nObjective: Tactile startle is an uncommon manifestation that localizes to the brainstem. It occurs \nin pediatric epileptic patients predominantly, but can occur in adults with brainstem disease such \nas infection, inflammation, and neurodegeneration. Our patient presented with multiple cranial \nneuropathies and an exaggerated tactile startle response. \nBackground: N/A \nDesign/Methods: A 75-year-old man with a remote history of carcinoid lung cancer, and renal \ncell carcinoma, presented with progressive dysphagia, dysarthria and alternating facial weakness \nfor about 2 weeks. He noticed abnormal tongue sensation and dysarthria. A video swallowing \nstudy demonstrated oropharyngeal dysphagia. He had progressive fatigue, left facial dysesthesia, \nand frequent brisk startle responses to facial stimulation. He had no fever or weight loss. He \ndeveloped episodes of tachypnea with oxygen desaturation, episodes of tachycardia-bradycardia, \nthen a cardiac arrest responding to CPR. Subsequently, he developed ophthalmoplegia, pyramidal \nextremity weakness, transient hyponatremia responding to fluid restriction, and then stiffness in \nhis lower limbs. Contrasted brain MRI, LP with cytology and flow cytometry, paraneoplastic \npanel, and HIV testing were negative. Sedimentation rate 78, C-reactive protein 23.3, and serum \nprotein electrophoresis detected monoclonal bands IgG Lambda type. PET scan demonstrated \nfocal mediastinal lymph nodes uptake. Bronchoscopy with biopsy confirmed small cell lung \ncarcinoma. He received IVIG and high-dose steroids with no response. He began chemotherapy \nwith a plan for radiation of the abnormal mediastinal glands. \nResults: N/A \nConclusions: The spectrum of paraneoplastic disorders, particularly affecting the nervous \nsystem, is expanding rapidly with the discovery of new antibodies. Because the sensitivity of \nparaneoplastic antibody testing is low (sensitivity 34%, specificity 86%) neurologists must be \naware of, and be vigilant for, such syndromes that often require total body imaging to uncover the \noffending neoplasm. \nDisclosure: Dr. Khalid has nothing to disclose. Dr. Estevez-Ordonez has nothing to disclose. Dr. \nLavin has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Design/Methods: A 75-year-old man with a remote history of carcinoid lung cancer, and renal \ncell carcinoma, presented with progressive dysphagia, dysarthria and alternating facial weakness \nfor about 2 weeks. He noticed abnormal tongue sensation and dysarthria. A video swallowing \nstudy demonstrated oropharyngeal dysphagia. He had progressive fatigue, left facial dysesthesia, \nand frequent brisk startle responses to facial stimulation. He had no fever or weight loss. He \ndeveloped episodes of tachypnea with oxygen desaturation, episodes of tachycardia-bradycardia, \nthen a cardiac arrest responding to CPR. Subsequently, he developed ophthalmoplegia, pyramidal \nextremity weakness, transient hyponatremia responding to fluid restriction, and then stiffness in \nhis lower limbs. Contrasted brain MRI, LP with cytology and flow cytometry, paraneoplastic \npanel, and HIV testing were negative. Sedimentation rate 78, C-reactive protein 23.3, and serum \nprotein electrophoresis detected monoclonal bands IgG Lambda type. PET scan demonstrated \nfocal mediastinal lymph nodes uptake. Bronchoscopy with biopsy confirmed small cell lung \ncarcinoma. He received IVIG and high-dose steroids with no response. He began chemotherapy \nwith a plan for radiation of the abnormal mediastinal glands. \nResults: N/A \nConclusions: The spectrum of paraneoplastic disorders, particularly affecting the nervous \nsystem, is expanding rapidly with the discovery of new antibodies. Because the sensitivity of \nparaneoplastic antibody testing is low (sensitivity 34%, specificity 86%) neurologists must be \naware of, and be vigilant for, such syndromes that often require total body imaging to uncover the \noffending neoplasm.",
+      "source_offsets": {
+        "start": 564,
+        "end": 2271
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

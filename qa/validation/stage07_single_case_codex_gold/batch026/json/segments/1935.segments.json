@@ -1,0 +1,65 @@
+{
+  "paper_id": "1935",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1935.json",
+    "source_text_sha256": "5748b941b49730395610553361af6eec966b6ed481de07bda82925dabc2b9b03",
+    "prepared_source_sha256": "62cc765cfecde9df496f7c2d685850b89b5ac7d751083e9abc397d095ef30f95",
+    "prepared_source_character_count": 2474
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 194
+      },
+      "page_index": 0,
+      "text": "Stiff Limb Syndrome: A Rare Variant of Stiff Person’s Syndrome \n(4487) \nBenjamin Lin, Keithan Sivakumar, Hussam Yacoub, Jay Varrato, Alison Walsh, Alissa \nRomano \nFirst published April 14, 2020,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 198,
+        "end": 2474
+      },
+      "page_index": 0,
+      "text": "Abstract \nObjective: Stiff-person syndrome (SPS) is a spectrum of rare autoimmune neurological disorders \nwith a manifestation of muscle rigidity and episodic muscle spasms. Stiff limb syndrome (SLS) is \na rare variant of SPS that is more localized. These disorders are typically acquired, progressive, \nfluctuating, and commonly occur in young women aged 30–50 years. In this report, we present an \natypical case of an elderly woman who presented with bilateral leg muscle rigidity and ultimately \ndiagnosed with SLS. \nBackground: A 79-year-old woman presented with progressive bilateral leg weakness and \ncramps for three days resulting in multiple falls. On physical examination she was found to have \nhyperreflexia, increased gastrocnemius tone, as well as spasticity and plantarflexion in both legs. \nDiagnostic work-up including imaging of the neuraxis and complete infectious and malignancy \nwork-up was unremarkable. Titers of antibodies to glutamic acid decarboxylase (GAD) were \nelevated at 124,000 U/mL (normal 0–5 U/mL). The patient was diagnosed with SLS and \nsubsequently started on a benzodiazepine with significant improvement in her symptoms. \nDesign/Methods: NA \nResults: SLS is an emerging entity that is considered a focal form of SPS in which the symptoms \nare confined to a distal limb, usually the legs. Our review of the literature revealed that the SPS-\nrelated spectrum disorders such as SLS has not been reported in the elderly. SPS and its variants \nare suspected to be related to autoantibodies to the GAD enzyme, although the pathophysiology \nremains poorly understood. SLS may potentially be a distinct entity from SPS with several \noverlapping clinical features and diagnostic findings. \nConclusions: Our case report describes a patient who presented with focal neurological \nsymptoms and eventually diagnosed with SLS, confirmed by autoimmune work-up. We advise \nclinicians to be aware of this rare entity and pursue the appropriate work-up when the clinical \nsuspicion is high, including the elderly population. \nDisclosure: Dr. Lin has nothing to disclose. Dr. Sivakumar has nothing to disclose. Dr. Yacoub \nhas nothing to disclose. Dr. Varrato has nothing to disclose. Dr. Walsh has nothing to disclose. \nDr. Romano has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Background: A 79-year-old woman presented with progressive bilateral leg weakness and \ncramps for three days resulting in multiple falls. On physical examination she was found to have \nhyperreflexia, increased gastrocnemius tone, as well as spasticity and plantarflexion in both legs. \nDiagnostic work-up including imaging of the neuraxis and complete infectious and malignancy \nwork-up was unremarkable. Titers of antibodies to glutamic acid decarboxylase (GAD) were \nelevated at 124,000 U/mL (normal 0–5 U/mL). The patient was diagnosed with SLS and \nsubsequently started on a benzodiazepine with significant improvement in her symptoms. \nDesign/Methods: NA \nResults: SLS is an emerging entity that is considered a focal form of SPS in which the symptoms \nare confined to a distal limb, usually the legs. Our review of the literature revealed that the SPS-\nrelated spectrum disorders such as SLS has not been reported in the elderly. SPS and its variants \nare suspected to be related to autoantibodies to the GAD enzyme, although the pathophysiology \nremains poorly understood. SLS may potentially be a distinct entity from SPS with several \noverlapping clinical features and diagnostic findings. \nConclusions: Our case report describes a patient who presented with focal neurological \nsymptoms and eventually diagnosed with SLS, confirmed by autoimmune work-up. We advise \nclinicians to be aware of this rare entity and pursue the appropriate work-up when the clinical \nsuspicion is high, including the elderly population.",
+      "source_offsets": {
+        "start": 718,
+        "end": 2243
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

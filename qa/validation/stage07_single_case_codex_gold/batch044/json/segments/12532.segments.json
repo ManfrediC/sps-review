@@ -1,0 +1,65 @@
+{
+  "paper_id": "12532",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\12532.json",
+    "source_text_sha256": "d2057077293ded8fb3df0a8d44da21dcf0de31d9197531b09d7bf347d5bda20f",
+    "prepared_source_sha256": "c89efa42273f9a6b1b3e6161bc610bcf0be0cc62607f8f7aa58f625e5fdb50ee",
+    "prepared_source_character_count": 2345
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2320
+      },
+      "page_index": 0,
+      "text": "A32 CASES IN AUTOIMMUNITY, AUTOINFLAMMATION, AND INFECTION  / Thematic Poster Session  / Sunday, May 21/09:00\nAM-04:15 PM\n / \nWalter E. Washington Convention Center, Area A, Hall C (Lower Level)\nStanding Still: A Case of Stiff-person Syndrome and Common Variable\nImmunodeficiency\nS. Escobar\n1\n, V. Khazar\n1\n, A. Szema\n2\n; \n1\nThree Village Allergy and Asthma, PLLC, South Setauket,\nNY, United States, \n2\nDonald and Barbara Zucker School of Medicine, Uniondale, NY, United States.\nCorresponding author's email: threevillageallergyandasthma@gmail.com\nStiff-person syndrome (SPS) is a rare disorder marked by progressive muscle stiffness, rigidity,\nspasms, resulting in severely impaired ambulation. Common variable immunodeficiency (CVID) is\nan uncommon illness characterized by impaired B-cell differentiation and defective immunoglobulin\nproduction. We present a 54-year-old caucasian man with a history of SPS and CVID. Other\npertinent medical history includes COPD with a 20-pack-year history of tobacco smoking,\noccupational exposure to epoxy and fumes, and sleep apnea. He reported dyspnea when lying\ndown sleeping and at rest. The patient reported difficulty sleeping, walking around his block, and\nlifting objects, including his newborn child, due to muscle stiffness. He had decreased\nimmunoglobulin levels in his blood and has had recurrent respiratory infections, sinusitis, and\npneumonia. On physical examination, he had coarse breath sounds, finger clubbing, and an oxygen\nsaturation of 90%. Pulmonary function testing, with spirometry and impulse oscillometry,\ndemonstrated a moderate obstructive ventilatory defect, airways hyperresponsiveness, and distal\nairways narrowing. Our patient has been treated with high doses of IgG concurrently with rituximab\nfor the past 2 years, resulting in decreasing muscle stiffness. However, the patient recently reported\nincreased dyspnea and has continued using supplemental oxygen following a motor vehicle\naccident, which required spinal surgery. We have initiated a subcutaneous IgG infusion 10%\n(Human) with rHuPH20 to maintain consistent levels. This case highlights obstacles and unique\nsolutions necessitated by patients with multiple rare conditions.\nThis abstract is funded by: None\nAm J Respir Crit Care Med 2023;207:A1338\nInternet address: www.atsjournals.org"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 2323,
+        "end": 2345
+      },
+      "page_index": 0,
+      "text": "Online Abstracts Issue"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "We present a 54-year-old caucasian man with a history of SPS and CVID. Other\npertinent medical history includes COPD with a 20-pack-year history of tobacco smoking,\noccupational exposure to epoxy and fumes, and sleep apnea. He reported dyspnea when lying\ndown sleeping and at rest. The patient reported difficulty sleeping, walking around his block, and\nlifting objects, including his newborn child, due to muscle stiffness. He had decreased\nimmunoglobulin levels in his blood and has had recurrent respiratory infections, sinusitis, and\npneumonia. On physical examination, he had coarse breath sounds, finger clubbing, and an oxygen\nsaturation of 90%. Pulmonary function testing, with spirometry and impulse oscillometry,\ndemonstrated a moderate obstructive ventilatory defect, airways hyperresponsiveness, and distal\nairways narrowing. Our patient has been treated with high doses of IgG concurrently with rituximab\nfor the past 2 years, resulting in decreasing muscle stiffness. However, the patient recently reported\nincreased dyspnea and has continued using supplemental oxygen following a motor vehicle\naccident, which required spinal surgery. We have initiated a subcutaneous IgG infusion 10%\n(Human) with rHuPH20 to maintain consistent levels. This case highlights obstacles and unique\nsolutions necessitated by patients with multiple rare conditions.",
+      "source_offsets": {
+        "start": 849,
+        "end": 2208
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

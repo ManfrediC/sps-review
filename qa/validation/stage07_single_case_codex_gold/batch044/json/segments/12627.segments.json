@@ -1,0 +1,65 @@
+{
+  "paper_id": "12627",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\12627.json",
+    "source_text_sha256": "783d6974c1404d941c67c92debd5e6f2a12ce1bcdaa3d1164d79f8a72eddfb58",
+    "prepared_source_sha256": "ee9ddae1565464d8af5f750d7cc93fb33bc8b28d38ff3c34264095eac70cb5a5",
+    "prepared_source_character_count": 2630
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 929
+      },
+      "page_index": 0,
+      "text": "Coexistence of neuromyelitis optica and \nstiff person syndrome in a single patient: a \ncase report (P2.2-032) \nAmanda Thuringer and Yasir JassamAUTHORS INFO & AFFILIATIONS \nApril 9, 2019 issue \n92 (15_supplement) \nhttps://doi.org/10.1212/WNL.92.15_supplement.P2.2-032 \n  \no Abstract \no Publication History \n  \no Information & Authors \no Metrics & Citations \no View Options \no References \no Media \no Tables \no Share \nAbstract \nObjective: \nTo report a case of seropositive neuromyelitis optica (NMO) and \ncoexistent glutamic acid decarboxylase (GAD) associated stiff person \nsyndrome (SPS). \nBackground: \nEpidemiological studies highlight potential shared pathophysiology, \nenvironmental and genetic risk factors for autoimmune disease. \nPolyautoimmunity is defined as the presence of more than one \nautoimmune disease in a particular patient and can be found in up to 30% \nof those with autoimmune diseases. \nDesign/Methods: \nNA"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 931,
+        "end": 2630
+      },
+      "page_index": 1,
+      "text": "Results: \nA 47-year old Caucasian female with pernicious anemia presented with \nprogressive, episodic muscle spasms and low back pain, exacerbated by \nphysical activity and emotional stress with normal neuroimaging. A serum \nglutamic acid decarboxylase (GAD) antibody was positive at greater than \n250 IU/mL (normal <5 IU/mL). She was diagnosed with stiff person \nsyndrome. One and one half years later, developed ascending numbness to \nthe umbilicus with asymmetric leg weakness, left greater than right, over 2 \nweeks. She was treated with a course of IV methylprednisolone. Her \nfollow up neurologic exam revealed Ashworth grade 1 spasticity in lower \nextremities, symmetric hyperreflexia with positive Hoffman’s sign \nbilaterally, and decreased pinprick sensation in left lower extremity. \nNeuroimaging showed a T2 hyperintense expansile cord lesion from C2–\nC4 and T1–T9 with patchy post-contrast enhancement. MRI brain was \nunremarkable. CSF testing at the time of transverse myelitis revealed \nlymphocyte-predominant pleocytosis with normal glucose, protein, IgG \nindex and oligoclonal bands. Serum aquaporin-4 (AQP-4) IgG antibody by \ncell-based assay was positive with titer 1:10,000. ANA was positive at \n1:640. Extensive infectious, autoimmune, and malignancy screening was \nunremarkable. She was treated with rituximab with stabilization of NMO \nand resolution of SPS symptoms. Her follow up MRIs showed resolution \nof contrast enhancement. \nConclusions: \nThis is the first case report to our knowledge of a patient with AQP-4 and \nGAD antibody positivity and related clinical syndromes. Recognition of \ncomplex presentations to guide appropriate evaluation and management is \nessential."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 47-year old Caucasian female with pernicious anemia presented with \nprogressive, episodic muscle spasms and low back pain, exacerbated by \nphysical activity and emotional stress with normal neuroimaging. A serum \nglutamic acid decarboxylase (GAD) antibody was positive at greater than \n250 IU/mL (normal <5 IU/mL). She was diagnosed with stiff person \nsyndrome. One and one half years later, developed ascending numbness to \nthe umbilicus with asymmetric leg weakness, left greater than right, over 2 \nweeks. She was treated with a course of IV methylprednisolone. Her \nfollow up neurologic exam revealed Ashworth grade 1 spasticity in lower \nextremities, symmetric hyperreflexia with positive Hoffman’s sign \nbilaterally, and decreased pinprick sensation in left lower extremity. \nNeuroimaging showed a T2 hyperintense expansile cord lesion from C2–\nC4 and T1–T9 with patchy post-contrast enhancement. MRI brain was \nunremarkable. CSF testing at the time of transverse myelitis revealed \nlymphocyte-predominant pleocytosis with normal glucose, protein, IgG \nindex and oligoclonal bands. Serum aquaporin-4 (AQP-4) IgG antibody by \ncell-based assay was positive with titer 1:10,000. ANA was positive at \n1:640. Extensive infectious, autoimmune, and malignancy screening was \nunremarkable. She was treated with rituximab with stabilization of NMO \nand resolution of SPS symptoms. Her follow up MRIs showed resolution \nof contrast enhancement. \nConclusions: \nThis is the first case report to our knowledge of a patient with AQP-4 and \nGAD antibody positivity and related clinical syndromes. Recognition of \ncomplex presentations to guide appropriate evaluation and management is \nessential.",
+      "source_offsets": {
+        "start": 941,
+        "end": 2630
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

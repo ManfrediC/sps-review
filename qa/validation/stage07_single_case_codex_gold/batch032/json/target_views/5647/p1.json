@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5647::p1",
+  "paper_id": "5647",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5647::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "followed the clinical course of a previously healthy 44-year-\nold Caucasian woman for 6 months. She presented with sub-\n\nacute onset of double vision and leg spasm for 4 weeks until\nshe was unable to move her eyes or walk. Ophthalmological\nexamination revealed complete ophthalmoplegia but normal\nvisual acuity and optic disc. Neurological examination dem-\nonstrated severe spasticity and hyperreflexia in her legs, spar-\ning her arms. She could not walk because of pain and stiff-\nness. The rest of her examination was unremarkable. Her\nworkup revealed a mediastinal mass and a markedly elevated\nanti-glutamic acid decarboxylase (anti-GAD) antibody titer.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 297,
+        "end": 416
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 119
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 418,
+        "end": 953
+      },
+      "compiled_offsets": {
+        "start": 121,
+        "end": 656
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

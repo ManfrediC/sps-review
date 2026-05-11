@@ -1,0 +1,133 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "850::p1",
+  "paper_id": "850",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "850::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE-REPORT\nA 35-year-old woman was referred to our outpatient\nclinic for a two-year history of low back pain that\nstarted insidiously, initially with a mechanical time\npattern. The pain worsened gradually until it became\ncontinuous, with no exacerbation during coughing.\n\nShe also reported a gradual deepening of her lumbar\nspine curvature that tilted her sacrum to an increasingly\nhorizontal position. Her family confirmed this change.\nHer medical history was unremarkable. During the two\nyears since the onset of her pain, she had blood tests,\nwhich disclosed no evidence of inflammation or metabolic disease. Plain radiographs and a magnetic resonance imaging scan of the lumbar spine showed\nincreased lordosis with facet joint impingement. Analgesics, nonsteroidal antiinflammatory agents, physical\ntherapy, and immobilization in a plaster cast had failed\nto relieve the pain.\nLumbar hyperlordosis was the most striking physical\nfinding at presentation to our clinic. The L3-wall distance was 12 cm and the T6-wall distance 6 cm, indicating that the thoracic spine was stooped forward.\nPassive hyperextension of the lumbar spine replicated\nthe severe pain described by the patient, whereas\ndecreasing the lumbar curvature alleviated the pain.\nThe only abnormal neurological findings were rigidity\nof the paraspinal, abdominal, and proximal right lower\n\nStiff-person syndrome\n\n219\n\nFigure 1. Needle electromyogram of the paraspinal muscles at T2/T4, T8/T9, L2/L3, and L4/L5. The trace shows nearly continuous motor unit\nfiring with small motor unit potentials, of which few are polyphasic.\n\nlimb muscles. All the deep tendon reflexes at all four\nlimbs were brisk, although there was no diffusion.\nOther physical findings were normal. An electrophysiological study showed normal conduction velocities in\nthe common peroneal nerve (51. 7 m/s), median nerve\n(70 m/s), sural nerve (49. 6 m/s), and radial nerve\n(60. 7 m/s). Needle detection in the paraspinal muscles\nat T2/T4, T8/T9, L2/L3, and L4/L5 showed nearly\ncontinuous motor unit firing; the motor unit potentials\nwere small, and few were polyphasic (figure 1). Potentials related to volitional contraction were superimposed on this background. Needle detection at the\ndeltoid and tibialis anterior muscle was normal.\nFindings were normal from standard laboratory tests\nincluding serum electrolytes, muscle enzymes, liver\nfunction tests, thyroid hormones, acute-phase reactants, and glucose. Examination of the cerebrospinal\nfluid was normal. The titer of antibody to glutamic acid\ndecarboxylase (GAD) determined by radioimmunoassay was elevated to 1. 35 (normal, < 0. 11). Tests were\nnegative for anti-tissue antibodies (smooth muscle,\nmitochondria, LKM1, cytosol, and parietal cells). Also\nnegative were tests for anti-thyroid, anti-DNA, and\nanti-ENA antibodies. A second MRI scan was normal.\nStiff-person syndrome was diagnosed based on the\nfollowing arguments: axial rigidity, increased lumbar\nlordosis, normal motor and sensory function, normal\ncognitive function, continuous paraspinal muscle activity at rest, and a positive titer of anti-GAD antibodies.\nOral diazepam was started but induced vertigo and\ndrowsiness that were unacceptable to the patient. A\nday-hospital program of physical therapy was undertaken; it involved stretching of all posterior muscle\n\nplanes, postural awareness exercises to decrease the\nlumbar lordosis, and analgesic pool therapy with water\njets to induce muscle relaxation. After one month, the\npatient was pain-free and the lumbar curvature was\nsubstantially decreased, with an L3-wall distance of\n8 cm and a T6-wall distance of 4 cm. A home exercise\nprogram conducted under the supervision of a physical\ntherapist was started. Findings one year later showed\nthat the therapeutic benefits were sustained, with good\ncontrol of the pain, an L3-wall distance of 9 cm and a\nT6-wall distance of 2 cm.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1896,
+        "end": 2167
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 271
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2262,
+        "end": 3345
+      },
+      "compiled_offsets": {
+        "start": 273,
+        "end": 1356
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3347,
+        "end": 3368
+      },
+      "compiled_offsets": {
+        "start": 1358,
+        "end": 1379
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3370,
+        "end": 3373
+      },
+      "compiled_offsets": {
+        "start": 1381,
+        "end": 1384
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3375,
+        "end": 3582
+      },
+      "compiled_offsets": {
+        "start": 1386,
+        "end": 1593
+      }
+    },
+    {
+      "block_id": "tb0006",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3584,
+        "end": 5313
+      },
+      "compiled_offsets": {
+        "start": 1595,
+        "end": 3324
+      }
+    },
+    {
+      "block_id": "tb0007",
+      "segment_id": "s0007",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5315,
+        "end": 5879
+      },
+      "compiled_offsets": {
+        "start": 3326,
+        "end": 3890
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

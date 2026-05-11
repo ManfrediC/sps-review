@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12412::p1",
+  "paper_id": "12412",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12412::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Neurological examination revealed in-\ncreased muscle tone in the left leg but was \notherwise normal. Thyrotropin was slight-\nly elevated. Other routine blood analyses, \ncerebrospinal fluid examination and mag-\nnetic resonance imaging of the brain and \nspinal cord were normal. Electromyogra-\nphy showed continuous and simultaneous \nmotor unit firing in agonistic and antago-\nnistic muscles. A diagnosis of SLS/SPS was \nconfirmed by elevated antibodies against \nthe 65-kD isoform of glutamic acid decar-\nboxylase (GAD65) in serum (1,164 units, \nnormal  ! 100), and presence of anti-\nGAD65 antibodies in cerebrospinal fluid. \n  Both rigidity and spasms responded to \nt r e a t m e n t  w i t h  1 2  m g  d i a z e p a m  d a i l y .\nShe became able to walk without aid, but \npronounced sedation prohibited car driv-\ning. Gabapentin was therefore introduced \nat 400 mg 3 times daily after 2 months and \nwas immediately followed by further\nsymptom relief and allowed reduction of \ndiazepam to 5–7 mg daily. The condition \nremained stable for another half year.\nGabapentin was then increased to 2,400 \nmg per day over a period of 1 week, with \nfurther improvement of rigidity and \nspasms. The condition has remained stable \non this treatment for 7 years. She has not\n\nThe patient is a 39-year-old previously \nhealthy female, who developed stiffness \nand painful muscle cramps in the legs at \nthe age of 30 years. After 2 months she was \nnot able to walk without aid and used a \nwheelchair. The stiffness was less pro-\nnounced in the right leg and did not affect \nthe trunk, arms, neck or face. Emotional \nand physical stress, as well as exposure to \nheat or cold, triggered painful muscle \ncramps.\n\nrecognized sedation or other overt side ef-\nfects, and intravenous immunoglobulins \nhave not been needed. The patient is able to \ngo cross-country skiing and walk 5 km \nwithout aid, drive a car and work in an of-\nfice. Fear for relapse makes her reluctant to \nalter the medication. She has developed hy-\npothyroidism, but not diabetes mellitus.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 311,
+        "end": 1573
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1262
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2306,
+        "end": 2735
+      },
+      "compiled_offsets": {
+        "start": 1264,
+        "end": 1693
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3112,
+        "end": 3456
+      },
+      "compiled_offsets": {
+        "start": 1695,
+        "end": 2039
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

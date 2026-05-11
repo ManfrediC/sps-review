@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "261::p1",
+  "paper_id": "261",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "261::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nThis 41-year-old woman was diagnosed with SLS at the\nNational Hospital for Neurology and Neurosurgery in 1994 by\nProfessor Marsden after a 4-year history of falls and lower limb\nmuscle spasms. She eventually developed opisthotonos and\nsevere falls with injuries as a result of stimulus-induced\nspasms. The patient noted that loud noises could precipitate\nspasm of the legs and that the rigidity and spasm became worse\non standing or attempting to walk; her symptoms improved\nwith alcohol and diazepam. There was no bladder or bowel\ndisturbance, and the family history was unremarkable. When\nshe was referred to us in 2002, examination revealed increased\ntone in the legs with brisk reﬂexes and bilateral ﬂexor plantar\nresponses; sensation was not affected, and examination of the\ncranial nerves and upper limbs was normal.\nInvestigations performed at the time of diagnosis included a\nfull autoimmune screen which was negative; her anti-glutamic\nacid decarboxylase (GAD) antibody level was normal. The test\nwas immunohistochemical, using IgG and IgM antibodies di-\nrected against rat cerebellum. Antibodies against isolated hu-\nman Purkinje cells, cerebral cortex neurones, and central ner-\nvous system (CNS) white matter were also negative.\n\nExamination of the cerebrospinal ﬂuid revealed oligoclonal\nbands. A magnetic resonance imaging scan and nerve conduc-\ntion studies were normal. Electromyography revealed persistent\nmotor unit ﬁring in tibialis anterior and vastus, but not in the\nparaspinal muscles, consistent with a diagnosis of stiff-limb\nsyndrome.\nShe was initially treated with baclofen and diazepam, which\nprevented further opisthotonus and most of her falls. A course\nof intravenous methylprednisolone gave little beneﬁt. The pos-\nsibility of intrathecal baclofen was considered at this time, but\nbecause the patient remained relatively well, she was kept on\noral medication, remained clinically stable, and was able to\nhold down a busy job. She would use a wheelchair at work but,\nwhen at home, was able to move around the house using the\nsupport of rails and furniture. She was able to control most of\nthe spasms with high doses of baclofen and diazepam (100 mg\nand 60 mg per day, respectively).\nShe became pregnant in 2002. The pregnancy itself was\nunremarkable; both maternal and foetal parameters remained\nwithin normal limits. One of our main concerns was the risk of\nside effects of both baclofen and diazepam on the foetus.\nHowever, the patient managed to reduce the dose of baclofen to\n25 mg and diazepam to 15 mg per day. She was able to reduce\nher medication doses from the second trimester onward, as she\nfound that her symptoms were improving signiﬁcantly and her\nspasms, especially those in her legs, occurring less frequently.\nThe birth itself was complicated by foetal distress, which\nrequired assisted forceps delivery. Although the patient had an\nepidural for analgesia, she developed a generalised spasm in\nresponse to the pain of the episiotomy. The baby remained well\nwith no features of sedation or withdrawal ﬁts, did not require\nany benzodiazepines and did not become drowsy, despite being\nbreast fed.\nAfter parturition, she deteriorated with increasing stiffness of\nthe legs and stimulation-induced leg spasms. As a result, she\nincreased the baclofen to 100 mg daily and the diazepam to 35\nmg daily over 2 months, which improved the symptoms pro-\ngressively, and the noise induced spasms that were particularly\ntroublesome became less frequent. She remains optimistic that\nshe can cope with her child, managing to nurse her on her lap\nwhile using the wheelchair. She is keen to have another baby,\ndespite the limitations of her condition.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 134098,
+        "end": 135350
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1252
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 136138,
+        "end": 138574
+      },
+      "compiled_offsets": {
+        "start": 1254,
+        "end": 3690
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "736::p1",
+  "paper_id": "736",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "736::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A \n64-year-old woman, A.L., was ad -\nmitted to the oncology unit for \nneoadjuvant chemotherapy for a \nnew diagnosis of breast cancer. On admis-\nsion, the patient was alert and oriented. \nShe was mildly obese and ambulated with \na walker. She reported normal bowel and \nbladder function and described a “pain \nand stiffness” in her left leg. \nHer past medical history included fre -\nquent falls at home, which she attributed \nto joint disease. Magnetic resonance im -\naging showed spinal stenosis and lumbar \nspine disease. Two months prior to the \ncurrent hospitalization, A.L. had a breast \nbiopsy for a right breast mass. Histopathol-\nogy revealed invasive ductal carcinoma \nand ductal carcinoma in situ. Estrogen \nand progesterone receptors were positive, \nHER2-neu receptors were negative, and \n2 of 10 axillary lymph nodes were posi -\ntive, which conﬁrmed stage III disease. \nNeoadjuvant treatment was ordered with \nfour cycles of doxorubicin, cyclophos -\nphamide, and docetaxel every 21 days. \nBecause of limited mobility, A.L. received \nher treatments as an inpatient on the on-\ncology unit.\nAfter two cycles, A.L. reported in -\ncreased pain and stiffness in her legs and \nback and spent most of her time in bed. \nShe had lumbar spinal decompression \nsurgery with little improvement in her \nsymptoms. On her third cycle, she report-\ned spasms in her knees when she ﬂexed \nher ankles or inverted her toes. The \nspasms increased when she was anxious \nand with certain noises (e.g., IV pump \nbeeping, doors opening and closing). \nShe received opioid analgesics for pain \nand baclofen for leg spasms. Differential \ndiagnoses included hyper-excitability \nneuromuscular disorders and dystonia, in \naddition to spinal degenerative arthritis. \nAfter completing chemotherapy, A.L. \nwent to a rehabilitation facility and was \nthen readmitted to the hospital for a right \nbreast mastectomy. After a brief stay on \nthe postsurgical unit, she transferred \nto the oncology unit. Her neurologic \nstate progressively declined, and she\n\ncontinually screamed in pain. Her leg \nspasms increased 10-fold with sudden \nnoises even at low-volume intensities, \nand she developed contractures in both \nlegs (see Figure 1). She was unable to \nfocus or hold a short conversation. She \nhad to be prompted to swallow food and \nmedications, and she lost 30 pounds. \nSerum and cerebrospinal fluid (CSF) \nanti-amphiphysin antibody testing was \nordered; the results were positive. She \nwas diagnosed with paraneoplastic stiff \nperson syndrome (SPS).\n\nCase Report\nA.L. received ﬁve immunoglobulin in -\nfusions followed by a ﬁve-day trial of IV \nsteroids. She had ﬁve plasma exchanges \nwithout any improvement in symptoms. \nA.L. then started four weekly infusions \nof rituximab. Two weeks after beginning \nrituximab, A.L. showed marked improve-\nment in her mental status and her ability\n\nto focus. She had no recall of the events of \nthe past six weeks. Her pain and spasms \nwere controlled, and she could ﬂex her \nright foot slightly. A.L. still could not \nwalk. She received botulinum toxin injec-\ntions in her legs with no improvement in \nsymptoms. She subsequently had surgery \nfor bilateral release of the Achilles tendon \nand was transferred to a rehabilitation fa-\ncility. With casts and leg braces in place, \nA.L. learned to walk again. After one year \nof continuous inpatient care at either \na hospital or rehabilitation facility, she \nmoved back home and continues physi -\ncal and occupational therapy. Although \nshe has many functional limitations, she \nis able to participate in activities of daily \nliving. A.L. remains in remission from her \nbreast cancer diagnosis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1445,
+        "end": 3470
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2025
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3472,
+        "end": 3968
+      },
+      "compiled_offsets": {
+        "start": 2027,
+        "end": 2523
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 9134,
+        "end": 9467
+      },
+      "compiled_offsets": {
+        "start": 2525,
+        "end": 2858
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10757,
+        "end": 11549
+      },
+      "compiled_offsets": {
+        "start": 2860,
+        "end": 3652
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

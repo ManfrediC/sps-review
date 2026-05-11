@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12138::p1",
+  "paper_id": "12138",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12138::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 65-year-old man with no previous medical history was admit-\nted to our hospital 7 days after the onset of mild respiratory\nsymptoms along with progressive dysphagia and psychomotor\nagitation (Fig. 1). On admission, nasopharyngeal swab test was\npositive for SARS-CoV-2. Routine laboratory exams showed\nmild neutrophilic leucocytosis with raised in ﬂammatory markers\n(c reactive protein 6.44 mg/dl, n.v. <0.50; interleukin\n6 83.4 pg/ml, n.v. <6.4). Chest high-resolution computed\ntomography revealed mild bilateral ground-glass opacities,\nsuspected of COVID-19 pneumonia. The patient rapidly\ndeveloped acute dyspnoea with respiratory failure requiring non-\ninvasive ventilation. On the second day of admission, neurologi-\ncal examination revealed diffuse pyramidal signs and multiple\ncranial nerves involvement with bilateral ophthalmoparesis and\nleft facial cranial nerve de ﬁcit. Three days after admission, the\npatient was admitted to the intensive care unit and placed on\ninvasive mechanical ventilation due to worsening of respiratory\nfunction and occurrence of dysautonomic storms with hyperten-\nsion and tachycardia. Over the following days, the patient\ndeveloped severe muscle stiffness associated with spontaneous\nand stimulus-induced multifocal myoclonus ( Video 1).\nGiven the clinical picture, a diagnostic work-up for differen-\ntial diagnosis of complex brainstem syndromes was started. Cere-\nbrospinal ﬂuid (CSF) analysis revealed mild pleocytosis\n(leukocytes 95/mmc, n.v. <5; neutrophils 95.8%), with slightly\nelevated protein levels (60 mg/dl, n.v. <50) and oligoclonal\nbands type 2. CSF microbiological analyses were negative. 1.5 T\ngadolinium-enhancement brain magnetic resonance imaging\n(MRI) was unremarkable at 2 and 4 weeks after symptoms onset.\nElectroencephalogram (EEG) with polygraphy excluded a\ncortical origin of myoclonus. Neurophysiological studies docu-\nmented a continuous motor unit activity at rest, unresponsive to\nlow-dose benzodiazepines. Nineteen days after admission\nnasopharyngeal swab for SARS-CoV-2 was negative; laboratory\ninvestigations, including infectious and autoimmune panels, were\nnegative. Antibody testing with cell-based assay panel revealed\nhigh-titer Glycine receptor (GlyR) antibodies in both serum\n(titer 1:3200) and CSF (titer 1:640); other onconeural and cell-\nsurface antibodies (NMDAR, CASPR2, AMPAR, GABAAR,\nGABABR, LGI1, DPPX, Amphiphysin, CV2, MA2, Ri, Yo,\nHu, Recoverine, SOX1, Titine, Zic4, GAD65, Tr) were\nnegative in both serum and CSF. Diagnostic work-up for\nmalignancy with total-body computed tomography (CT) scan\nwas unremarkable. The patient was diagnosed with progressive\nencephalomyelitis with rigidity and myoclonus (PERM) and\ntreated with intravenous immunoglobulins 0.4 g/kg daily for\n5 days. No bene ﬁcial clinical response was observed, therefore\n\nhigh-dose corticosteroids (1 g/day intravenous\n\nmethylprednisolone) for 5 days followed by four sessions of\nplasma exchange were administered without ef ﬁcacy. Fourteen\nweeks after symptoms onset, anti-glyR antibodies were still posi-\ntive at high titer in the serum (1:1600) and 3 T gadolinium-\nenhancement brain magnetic resonance imaging was\nunremarkable. Rituximab (375 mg/m 2 per week for 4 weeks)\nwas started with a slight clinical bene ﬁt. Unfortunately, the\npatient died of septic shock 9 weeks later.\n\nIn conclusion, PERM is a rare disease that should be considered\nin differential diagnosis of brainstem syndromes. To our knowledge,\nno PERM cases with the detection of glycine receptor antibodies\nhas been previously reported during SARS-CoV-2 infection.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 657,
+        "end": 3494
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2837
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3495,
+        "end": 3541
+      },
+      "compiled_offsets": {
+        "start": 2839,
+        "end": 2885
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4908,
+        "end": 5369
+      },
+      "compiled_offsets": {
+        "start": 2887,
+        "end": 3348
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8959,
+        "end": 9212
+      },
+      "compiled_offsets": {
+        "start": 3350,
+        "end": 3603
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

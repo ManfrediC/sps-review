@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1628::p1",
+  "paper_id": "1628",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1628::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A previously healthy 44-year-old right handed woman presented with progressive dysarthria and \nleft sided stiffness. She had a history of low back pain. She noticed smaller handwriting, motion \nsickness, double vision when looked to the left and moving globally slower. Denied cognitive or \nmood changes. On examination she had normal higher cortical function, had a slow rate of speech \nwith impaired lingual and guttural phonemes. Extraocular movements showed full pursuits and \nsaccades. Optokinetic response and ocular pursuits were slowed in vertical and horizontal \ndirections. Her left arm and left leg were rigid. Finger and toe tapping were slow on the left. \nMotor strength was full. There was no tremor or ataxia. She was hyperreflexic throughout. Gait \nwas slow and stride length was reduced on the left leg. Her left arm did not swing and adopted a \ndystonic elbow flexion posture. Pull test was normal (Video). Levodopa trial showed no benefit. \nSerologic testing resulted positive for GAD65.\n\nConclusions: Age, unilateral rigidity and motoric slowness suggested a young-onset Parkinson’s \ndisease with dystonic features. An atypical parkinsonian disorder such as CBS was also \nconsidered given the profound dystonic posturing and asymmetry. Our case highlights the value \nof keeping SPS on the differential diagnosis of asymmetric rigid syndromes. While classically the \ndisease presents with lumbar bilateral leg rigidity and stiffness, asymmetric limb onset mimicking \nCBS has been previously described [Balint, et al]. In patients with a possibly akinetic rigid \nsyndrome, a prior history of lumbar back pain, hyperreflexia, and slurred speech may be \nindicative of SPS in favor of a primary Parkinsonian disorder and should prompt serological \ntesting for GAD65 antibodies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 407,
+        "end": 1413
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1006
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1448,
+        "end": 2232
+      },
+      "compiled_offsets": {
+        "start": 1008,
+        "end": 1792
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

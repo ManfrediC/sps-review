@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11922::p1",
+  "paper_id": "11922",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11922::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case presentation\nA 54-year-old male presented with disturbance of\nconsciousness, psychiatric symptoms and behavioral change,\ncognitive impairment, seizure and hypotension for 11 days.\nHis family history was unremarkable. Exposure to toxic\nsubstances was denied. The day before his ﬁrst symptom, a\nresection of his right colon was performed in a local hospital,\nand aGCC was diagnosed by the pathologist.\nBrain magnetic resonance imaging (MRI; Figure 1A), routine\ncerebral spinal ﬂuid (CSF) analyses ( Supplementary ﬁle), and\nroutine laboratory tests were unremarkable ( Table 1), except for\nincreased carbohydrate antigen 125 (35.2 U/ml; normal range, <\n24 U/ml) and blood ammonia (53.7 µmol/L; normal range, 9-33\nµmol/L). The anti-amphiphysin antibody tested by\nimmunoblotting (EUROIMMUN, Lübeck, Germany) was\npositive in both CSF and serum. The diagnosis of amphiphysin-\npositive LE associated with aGCC was made. A high dose of\nmethylprednisolone (1000 mg/d for 5 days) was administered,\nfollowed by a tapered course of prednisone. The symptoms of\npsychiatric symptoms and seizures then disappeared one month\nlater, but the patient remained cognitive dysfunction (Mini-\nmental State Examination score = 9).\nUnfortunately, seven mon ths later, the patient was\nreadmitted to the hospital with progressive head and trunk\ntremors, dysarthria and gait i n s t a b i l i t yf o ro v e r1m o n t h .\nNeurological examination revealed head and trunk tremors,\ncognitive dysfunctions, bilateral gaze-evoked nystagmus and\ncerebellar ataxia (Vedio1). CSF analysis remained unchanged.\nBrain MRI showed mild cerebellar atrophy ( Figure 1B ).\nAmphiphysin-IgG was still present in CSF and serum.\nPositron emission tomography with computed tomography\n(PET/CT) scans revealed no tumor metastasis. The patient\nreceived IV cyclophosphamide (200 mg/d) and oral\nmycophenolate mofetil (500 mg/d) therapy. There was no\nimprovement or deterioration of the neurological symptoms 3\nmonths later. The evaluation of PNSs process is summarized\nin Figure 1C .\nTo investigate a possible paraneoplastic origin of\namphiphysin-PNSs in this patient, tissue blocks of the aGCC\nwere examined pathologically. Immunohistochemical staining\nfor CK20, CDX-2, carcinoembryonic antigen (CEA) and\nneuroendocrine markers (synaptophysin and chromogranin)\nwere positive ( Figures 2A –F), which meets the diagnostic\n\npathological diagnostic criteria of Agcc according to the 2019\nWHO.\n2 The expression of Ki67 protein was about 10%. MUC1\nand MUC2 were also positive. Immunohistochemistry revealed\npositive CD3+ T cells, CD8+ T cells and CD20+ B cells in the\ntumor tissue ( Figures 2G –I). However, CK7, CD138+ plasma\ncells, CD68+ macrophages, and IgG were negative in the tissue.\nTumor cells showed reactivity with amphiphysin-Abs\n(Figure 2H ), which indicates that the aGCC might play a role\nin triggering amphiphysin-Ig G autoimmunity. Tissue-based\nindirect immuno ﬂuorescence assay (TBA) of the patient ’s\nserum revealed IgG antibody to Purkinje cells of the monkey\ncerebellum and dentate gyrus glia cells of the monkey\nhippocampus ( Figures 2K , L).\nDiagnostic assessment\nAccording to the clinical manifestations, tumor, positive\nanti-amphiphysin antibody in CSF and serum, and well\nresponse to immunotherapy, aGCC associated amphiphysin-\nIgG autoimmunity was considered in this patient.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4635,
+        "end": 7004
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2369
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7005,
+        "end": 7979
+      },
+      "compiled_offsets": {
+        "start": 2371,
+        "end": 3345
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

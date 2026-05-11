@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "944::p1",
+  "paper_id": "944",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "944::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "ABSTRACT\nThe sti ﬀ person syndrome is a rare neurological disorder, di ﬃcult to diagnose and to treat. Paraneoplastic\npatients usually present amphiphysin antibodies but the association with anti-Ri antibodies is less known. We\npresent a case report of paraneoplastic SPS, small cell carcinoma of the bladder and anti-Ri antibodies.\n\n2. Case report\nA 46-year-old man presented with progressive gait disorder, sec-\nondary to sti ﬀness with pain and spontaneous muscular spasms in his\nlower limbs. The pain subsided but the stiﬀ ness progressively worsened.\nSymptoms increased in open spaces and in nervous situations. He was\nstartled excessively when he heard some unexpected noise. On neuro-\nlogical examination, he had proximal stiﬀ ness in both legs, with im-\npossibility of mobilization due to rigidity which caused that he was\ncompletely unable to walk. Myotatic re ﬂexes were exalted, and he had\nbilateral ﬂexor plantar responses. He was being followed up by\nOncology for a SCCB, stage IV (T3b, N2, M0), diagnosed 15 months\nearlier, and treated with neoadjuvant chemotherapy (methotrexate,\nvinblastine, doxorubicin and cisplatine) and surgery. He had been in\nremission until that moment. At the onset of the neurological symp-\ntoms, lymph node relapse was detected by PET/CT. EMG of lower limbs\nshowed a continuous motor activity pattern ( Fig. 1 ). Anti-neuronal\nantibodies were obtained in serum and cerebrospinal ﬂuid, resulting\n\nanti-Ri positive, anti-GAD, anti-GlyR and antiamphiphysin negative.\nSpine and brain MRI with and without contrast were both unremark-\nable. Because of tumor relapse, second line of chemotherapy (cisplatin\nand etoposide) and local radiotherapy were started until full remission\nwas achieved. Along he was receiving antineoplastic therapy and\ntreatment with muscle relaxants (combining diazepam 5 –25 mg, and\nbaclofen 10– 30 mg, depending on the clinical evolution), he was also\nimproving ambulation and decreasing stiﬀ ness until disappearance. He\nwas diagnosed of paraneoplastic SPS, with SCCB and anti-Ri antibodies.\nTwo years later, the neurological symptoms reappeared rapidly. Several\nweeks later, a local and lymph node relapse was detected, with ex-\ntensive invasion of the urinary tract and secondary obstructive acute\n\nrenal failure. He also presented massive deep vein thrombosis. He was\ntreated with hemodialysis and heparin, but the patient died due to\nsuccessive complications.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 727,
+        "end": 1059
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 332
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2365,
+        "end": 3467
+      },
+      "compiled_offsets": {
+        "start": 334,
+        "end": 1436
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3468,
+        "end": 4293
+      },
+      "compiled_offsets": {
+        "start": 1438,
+        "end": 2263
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4844,
+        "end": 5006
+      },
+      "compiled_offsets": {
+        "start": 2265,
+        "end": 2427
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

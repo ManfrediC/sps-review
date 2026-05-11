@@ -1,0 +1,65 @@
+{
+  "paper_id": "5753",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5753.json",
+    "source_text_sha256": "60216774f80d3602761365d584d8699b43f3958b16c0b64c07e0ea00bcf2893b",
+    "prepared_source_sha256": "9a9f21eb189ad8e498b6e546859084d7e32ab3319eb60a46cef485aa0781d90b",
+    "prepared_source_character_count": 2084
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 110
+      },
+      "page_index": 0,
+      "text": "ABSTRACT DETAILS \nTitlePartial Stiff Person Syndrome as a Stroke Mimic \nPresentations \nP13 - Poster Session 13"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 114,
+        "end": 2084
+      },
+      "page_index": 0,
+      "text": "Background \nSPS is an immune-mediated neurological disorder characterized by rigidity of muscles, \nsuperimposed upon disabling spasms and heightened sensitivity to external stimuli.  SPS is \nsubdivided into several categories, including the classical type and its variants such as partial \nSPS. \nObjective \nTo report a rare case of a patient presenting with unilateral symptoms whose work-up revealed \npartial stiff person syndrome (SPS). \nDesign/Methods \nOur patient is a 62 year old female with no prior medical problem who presented to the \nhospital with right arm and leg weakness as well as a body locked sensation where she felt \nmuscle stiffening and could not move.  She also described random, large amplitude involuntary \nmovements either in her right arm or right leg. No symptoms in her left side.  She was admitted \nfor suspected stroke in November 2018 and had extensive workup including MRI brain with \ncontrast which did not show any area of enhancement nor acute DWI. No cause for her \nsymptoms was found, and after discharge continued to have worsened right sided ataxia \nand hyperreflexia and increased muscle tone.  Further work-up ensued, and it was not until April \n2019 that she was found to have an elevated GAD (>250 IU/mL) and HbA1C 6.3 with positive \nislet cell antibody.  Lumbar puncture results showed positive GAD65 Ab Assay (3.09 nmol/L) \nand the presence of oligoclonal bands. \nResults \nThe patient was diagnosed with partial SPS, and was trialed on baclofen and then diazepam but \ndid not tolerate these.  She was subsequently started on intravenous immunoglobulin treatment, \nalmost one year after the onset of her symptoms. \nConclusionsPartial SPS a subtype noted in only 10 to 15 % of patients, and classification gives \nimportant diagnostic and prognostic information.  Recognition of classic SPS vs variants is \nimportant because appropriate therapy like IVIg improves symptoms in most patients and should \nbe initiated without delay"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Objective \nTo report a rare case of a patient presenting with unilateral symptoms whose work-up revealed \npartial stiff person syndrome (SPS). \nDesign/Methods \nOur patient is a 62 year old female with no prior medical problem who presented to the \nhospital with right arm and leg weakness as well as a body locked sensation where she felt \nmuscle stiffening and could not move.  She also described random, large amplitude involuntary \nmovements either in her right arm or right leg. No symptoms in her left side.  She was admitted \nfor suspected stroke in November 2018 and had extensive workup including MRI brain with \ncontrast which did not show any area of enhancement nor acute DWI. No cause for her \nsymptoms was found, and after discharge continued to have worsened right sided ataxia \nand hyperreflexia and increased muscle tone.  Further work-up ensued, and it was not until April \n2019 that she was found to have an elevated GAD (>250 IU/mL) and HbA1C 6.3 with positive \nislet cell antibody.  Lumbar puncture results showed positive GAD65 Ab Assay (3.09 nmol/L) \nand the presence of oligoclonal bands. \nResults \nThe patient was diagnosed with partial SPS, and was trialed on baclofen and then diazepam but \ndid not tolerate these.  She was subsequently started on intravenous immunoglobulin treatment, \nalmost one year after the onset of her symptoms. \nConclusionsPartial SPS a subtype noted in only 10 to 15 % of patients, and classification gives \nimportant diagnostic and prognostic information.  Recognition of classic SPS vs variants is \nimportant because appropriate therapy like IVIg improves symptoms in most patients and should \nbe initiated without delay",
+      "source_offsets": {
+        "start": 410,
+        "end": 2084
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

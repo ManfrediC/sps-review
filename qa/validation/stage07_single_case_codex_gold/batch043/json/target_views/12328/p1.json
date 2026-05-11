@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12328::p1",
+  "paper_id": "12328",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12328::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Painful spasms during childhood: Stiff-person syndrome \nA. Curado , M. Rosário, C. Gonçalves, D. Silva, I. Conceição, J. Coelho, \nT. Santos, T. Moreno \nHospital de Santa Maria, CHULN, Lisbon, Portugal \nStiff-person syndrome (SPS) is a rare autoimmune neurological disorder \ncharacterized by a progressive axial and proximal limb stiffness and painful \nspasms. Reports of pediatric-onset SPS are scarce. We report and present \nthe videos of a 10-year-old boy, born in Angola, with no relevant personal \nor family background. At seven years of age, he started having involuntary, \npainful, paroxysmal muscle contractions, lasting from a few minutes to half \nan hour, initially only in the legs, and later in the four limbs, masticatory \nmuscles and neck, with progressive worsening and daily frequency. On \nexamination, he presented muscle spasms triggered by sound. He had no \nassociated stiffness or hyperlordosis and no other changes on the neurological \nexamination. EMG ﬁndings were supportive of SPS with simultaneous and \ncontinuous ﬁring of motor units at rest and co-contraction of agonist- \nantagonist muscles. Serology testing for anti-GAD65, anti-amphiphysin and \nanti-glycine antibodies, both in serum and cerebrospinal ﬂuid, were negative. \nPhospho-calcium metabolism and ionic changes, as well as other associated \ndiseases such as diabetes mellitus, thyroiditis or epilepsy, were excluded. \nThe patient was initially treated with diazepam and baclofen but deteriorated \nwith more frequent spasms and spreading to other body parts. After a single\n\ncourse of intravenous immunoglobulin there was marked improvement of \nsymptoms. Currently, he is clinically stable after one year of follow-up, \nwith rare and less severe symptoms, under symptomatic treatment only, with \ncyclobenzaprine and carbamazepine. SPS is a diagnostic challenge given its \nrareness. As in this case, SPS in pediatric age is typically seronegative and \nmay have a presentation with more distal muscle involvement. Treatment \nis based on symptomatic control of spasms and immunomodulation of the \ndisease with intravenous immunoglobulin, although there are no pediatric \nprospective studies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1907,
+        "end": 3466
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1559
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3468,
+        "end": 4081
+      },
+      "compiled_offsets": {
+        "start": 1561,
+        "end": 2174
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

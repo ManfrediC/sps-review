@@ -1,0 +1,58 @@
+{
+  "paper_id": "8194",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text_proceedings_ready\\8194.json",
+    "source_text_sha256": "a666a0478b1b6388677a3285af7abedc9aae73d8e5c1b151c3ae585b8232c9f6",
+    "prepared_source_sha256": "d2a9a925414cad393715c3cb2f54fa884ff9399a5b547c67f01b11ec4a1385a4",
+    "prepared_source_character_count": 1570
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 1570
+      },
+      "page_index": 52,
+      "text": "102. WOBBLY EYES, WOBBLY LEGS\nC. Yap, S. P . Mollan, and A. Sivaguru\nBirmingham Neuro-Ophthalmology Unit, University Hospitals Birmingham NHS Trust, Birmingham, UK\nAIMS: Stiff man syndrome (SMS) is a rare neurological condition, characterised by rigidity and spasm, primarily of\nthe trunk and lower extremities. We report a case of a SMS and review the literature.\nMETHODS: A 42­year ­old male patient presented to the Eye Casualty with acute onset of visual and gait disturbances.\nAt presentation, he was only able to take few steps with two assistants. Examination showed downbeat nystagmus,\nataxia, increased lower limb tone and brisk reflexes. Investigations revealed markedly elevated anti­glutamic acid\ndecarboxylase (GAD) in serum and cerebrospinal fluid (CSF). Several MRI brain and spine and whole body CT\nscans were performed and these showed no abnormalities, except disc prolapsed at L5­S1. Patient had 5 cycles of\nplasmapheresis, physiotherapy and occupational therapy input and muscle relaxants. At subsequent follow­ups, his\ngait and nystagmus improved and at 18­month follow­up, he was able to navigate with only one stick.\nRESULTS: SMS was first described in 1956 by Moresch and Woltman in a case report of 14 patients seen over 27\nyears. It occurs as an idiopathic or paraneoplastic condition, and may be associated with antibodies to GAD or the\n128kD synaptic protein amphiphysin. Treatment focuses on modification of the immune response and enhancement\nof GABAergic activity.\nCONCLUSION: This report summarises a typical presentation of the rare SMS."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "102. WOBBLY EYES, WOBBLY LEGS\nC. Yap, S. P . Mollan, and A. Sivaguru\nBirmingham Neuro-Ophthalmology Unit, University Hospitals Birmingham NHS Trust, Birmingham, UK\nAIMS: Stiff man syndrome (SMS) is a rare neurological condition, characterised by rigidity and spasm, primarily of\nthe trunk and lower extremities. We report a case of a SMS and review the literature.\nMETHODS: A 42­year ­old male patient presented to the Eye Casualty with acute onset of visual and gait disturbances.\nAt presentation, he was only able to take few steps with two assistants. Examination showed downbeat nystagmus,\nataxia, increased lower limb tone and brisk reflexes. Investigations revealed markedly elevated anti­glutamic acid\ndecarboxylase (GAD) in serum and cerebrospinal fluid (CSF). Several MRI brain and spine and whole body CT\nscans were performed and these showed no abnormalities, except disc prolapsed at L5­S1. Patient had 5 cycles of\nplasmapheresis, physiotherapy and occupational therapy input and muscle relaxants. At subsequent follow­ups, his\ngait and nystagmus improved and at 18­month follow­up, he was able to navigate with only one stick.\nRESULTS: SMS was first described in 1956 by Moresch and Woltman in a case report of 14 patients seen over 27\nyears. It occurs as an idiopathic or paraneoplastic condition, and may be associated with antibodies to GAD or the\n128kD synaptic protein amphiphysin. Treatment focuses on modification of the immune response and enhancement\nof GABAergic activity.\nCONCLUSION: This report summarises a typical presentation of the rare SMS.",
+      "source_offsets": {
+        "start": 0,
+        "end": 1570
+      },
+      "source_block_id": "b0001",
+      "confidence": "review_required",
+      "evidence": "Full prepared source retained for Stage 07 single-case batch inspection."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [
+      "single_case_passthrough_requires_inspection"
+    ],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

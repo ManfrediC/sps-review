@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "922::p1",
+  "paper_id": "922",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "922::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract Stiff-person syndrome is a progressive disease of muscle rigidity and spasticity due to a deﬁciency\nin the production ofγ-aminobutyric acid. Because of the rarity of the condition, little is known about effects\nof anesthesia on patients with stiff-person syndrome. This report describes the clinical course for a single\npatient with stiff-person syndrome who received general anesthesia on 3 separate occasions. Her anesthetics\nincluded use of both neuromuscular blockade and volatile agents. Unlike several previous reports regarding\nanesthesia and stiff-person syndrome, the postoperative period for this patient did not require prolonged\nintubation or result in any residual weakness.\n\n2. Case description\nA 45-year-old woman with a medical history signiﬁcant for\nhypertension and hyperlipidemia presented for 3 separate\ngeneral anesthetics within 2 years. She had no known allergies\nand no previous anesthetic complications. The initial case was\nperformed before her diagnosis of SPS. At that time, she was\nundergoing workup for multiple sclerosis, as many of the\npresenting symptoms, including spasticity, are similar to\nsymptoms of SPS. She was taking baclofen, hydrocodone,\nand 2 antihypertensive medications.\nThe ﬁrst procedure was a total thyroidectomy. Patient\nweight at time of total thyroidectomy was 107 kg, with a\nheight of 165 cm. No muscle relaxants were used at induction;\nthe thyroid lesion was causing tracheal displacement, and the\nairway was secured via awake ﬁberoptic bronchoscopy. Be-\nfore the intubation, the patient received airway topicalization\nwith nebulized lidocaine; lidocaine pledgets; and, with visual-\nization of the vocal cords, direct topicalization of the trachea\nwith 4% lidocaine. Her only sedation before induction was\nmidazolam 2 mg. The neural integrity monitor electromyo-\ngram endotracheal tube was used during this case for laryngeal\nnerve monitoring, and therefore, neuromuscular blockade was\nwithheld for the entirety of the case. Anesthesia was main-\ntained with sevo ﬂurane, and she received a total of propofol\n200 mg and fentanyl 350 μg. There were no postoperative an-\nesthesia complications.\nAbout 1 month before her next surgical procedure, the di-\nagnosis of SPS had been established. This was primarily based\non her symptoms, which began with bilateral lower extremity\nstiffness, weakness, and spasticity, which had led to several\nfalls before the patient began using a walker. She also experi-\nenced signi ﬁcant left arm and shoulder stiffness, weakness,\nand decreased range of motion. The patient had a marked ele-\nvated anti –glutamic acid decarboxylase antibody level of\n167.4 (reference range, 0-1.5). During this time, her SPS\nsymptoms were controlled with various medications, includ-\ning diazepam and tizapidine.\nShe underwent a laparoscopic cholecystectomy 6 months\nafter the thyroidectomy. Patient weight at the time of\nlaparoscopic cholecystectomy was 108 kg. Induction for this\nprocedure included succinylcholine (100 mg), and she\nreceived rocuronium 45 mg during the case, which lasted a\ntotal of 147 minutes. Sevo ﬂurane was again used for mainte-\nnance of general anesthesia, along with a total of midazolam\n2 mg, propofol 220 mg, and fentanyl 250μg. Muscle relaxants\nwere dosed, and train-of-4 (TOF) monitoring of the ulnar\nnerve was used ( Table). Neostigmine (4 mg) was given for\nneuromuscular reversal, and she was extubated without any\ncomplications. Following the cholecystectomy, she experi-\nenced signiﬁcant postoperative nausea and vomiting (PONV).\nTwenty months later, the third procedure, a hysterectomy,\nwas performed. Patient weight at time of laparoscopic-assisted\nvaginal hysterectomy was 104 kg. At this time, she was still\ntaking diazepam, but she was also receiving intravenous im-\nmunoglobulin therapy. Again, succinylcholine (130 mg) was\nused for induction, and rocuronium (140 mg) was adminis-\ntered throughout the 209-minute case. Total intravenous anes-\nthesia was used because of the previous PONV occurrence\n\nwith primarily propofol infusion for maintenance, along with\nmidazolam 2 mg and fentanyl 100 μg. Muscle relaxants were\ndosed, and TOF monitoring of the facial nerve was used\n(Table). Neostigmine (4 mg) was administered for residual\nneuromuscular blockade. She experienced no postoperative\nanesthesia complications.\n\nTable Neuromuscular monitoring using peripheral nerve stimulator.\nTime TOF 1\nA. Cholecystectomy\n10:25 4/4 Patient weight: 108 kg\n10:45 4/4 Rocuronium 45 mg\n11:05 4/4 Neostigmine 4 mg\n11:25 4/4 TOF monitoring site: ulnar, left\nB. Hysterectomy\n9:40 0/4 Patient weight: 104 kg\n9:50 0/4 Rocuronium 140 mg\n10:15 post tetanic Neostigmine 4 mg\n10:35 4/4 TOF monitoring site:\n10:45 1/4 facial, left\n11:00 4/4\n11:17 2/4\n11:35 4/4\n1 TOF: Train of Four.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 382,
+        "end": 1078
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 696
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3579,
+        "end": 6894
+      },
+      "compiled_offsets": {
+        "start": 698,
+        "end": 4013
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6895,
+        "end": 7209
+      },
+      "compiled_offsets": {
+        "start": 4015,
+        "end": 4329
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8341,
+        "end": 8783
+      },
+      "compiled_offsets": {
+        "start": 4331,
+        "end": 4773
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

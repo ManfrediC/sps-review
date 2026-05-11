@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1959::p1",
+  "paper_id": "1959",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1959::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "This 41-year-old man with prior history of hepatitis C acutely \ndeveloped dizziness, headache, and vomiting. A diagnosis of peripheral \nvestibular syndrome was made during an emergency evaluation. \nRecrudescence of vertigo, new left facial nerve palsy, and progressive \nrespiratory distress evolved on the next day, requiring admission in the \nintensive care unit (ICU) for endotracheal intubation. Over the next few \ndays, he manifested fixed limbs rigidity, episodes of generalized myoc -\nlonus, bilateral ptosis (prevalent in the right eye), persistent right gaze \ndeviation, dysphagia, drowsiness, nystagmus, and dysautonomic fea -\ntures (neurogenic bladder and hypertension). Routine laboratory in -\nvestigations, including the search for onconeural antibodies with a \ncommercial test (Euroimmun, Lubeck, Germany), electroencephalog -\nraphy, and brain MRI were unremarkable. Lumbar puncture showed \nintrathecal IgG synthesis (IgG-index = 0.8; unique-to-CSF oligoclonal \nIgG bands). Treatment with high-dose steroids was followed by intra -\nvenous immunoglobulin with only respiratory function improvement, \nsufficient to interrupt mechanical ventilation but without motor \nimprovement. He was discharged from ICU after 3 months and trans -\nferred to a rehabilitation center. However, physical therapy was \nhampered due to the persistence of severe rigidity, compounded by \nintermittent axial hypotonia ( Video 1 , online) due to weakness of neck \nflexor muscles. \nSupplementary data to this article can be found online at https://doi. \norg/10.1016/j.parkreldis.2020.11.008 \nThe combination of axial hypotonia, limbs rigidity, and oculomotor \ndysfunction is common in childhood dopa-responsive disorders due to \nselected disruptions in the dopamine metabolism pathways. Therefore, \nafter 4 months of unsuccessful rehabilitation and unresponsiveness to \nGABAergic drugs (baclofen, clonazepam), he was treated with low doses \nof levodopa/benserazide up to 300/75 mg/daily, with marked \nimprovement in rigidity and axial hypotonia within a week ( Video 2 , \nonline). It was at this stage that GlyR antibodies were identified in serum \nand CSF using an in-house live cell-based assay [ 1 ]. A levodopa taper led \nto the reemergence of severe rigidity, promptly corrected when levo -\ndopa was restarted. After 10 months of rehabilitation while on levodopa, \nthe patient achieved symptom resolution except for the presence of mild\n\nneurogenic bladder ( Video 3 , online). He has remained clinically stable \nwith levodopa after 24 months follow-up, despite persistent GlyR anti -\nbodies in serum. A DATscan obtained at this stage was normal (unable to \nobtain previously given his critical condition and inability to tolerate \nsuch procedure). The absence of hepatitis C-associated cancers or \nautoimmune conditions was confirmed at this stage.\n\nTo the best of our knowledge, this is the first case of GlyR antibody- \nassociated PERM manifested by levodopa responsive axial hypotonia \nand oculomotor abnormalities, suggesting an interaction between GlyR \nantibodies and motor control networks. GlyRs have been identified in \nthe striatum, globus pallidus, and substantia nigra (both pars compacta \nand reticulata), showing an increase of dopamine release after glycine \napplication [ 6 ]. As a result, dopamine supply in both the direct and \nindirect pathways could have been reduced in the presence of GlyR \nantibodies, given the disruption of the glycinergic neurotransmission \nmediated by GlyR antibodies [ 7 ]. The exacerbation of rigidity after a few \nhours of levodopa discontinuation with rapid improvement upon reex -\nposure supports the efficacy of this treatment in our patient. Although it \nwas not performed in the acute phase of the disease, our patient ’ s\n\nnegative DATscan favors the notion that the dopa-responsiveness may \nhave been in response to functional abnormalities caused by the anti -\nbodies, rather than from underlying dopaminergic neuronal loss. \nIn conclusion, this case expands the phenotypic spectrum of GlyR \nantibody-associated PERM, including dopa-responsive abnormalities. \nThe exquisite response to levodopa markedly facilitated the rehabilita -\ntion efforts required for maximizing functional recovery.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1010,
+        "end": 3438
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2428
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3440,
+        "end": 3851
+      },
+      "compiled_offsets": {
+        "start": 2430,
+        "end": 2841
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4897,
+        "end": 5821
+      },
+      "compiled_offsets": {
+        "start": 2843,
+        "end": 3767
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6153,
+        "end": 6622
+      },
+      "compiled_offsets": {
+        "start": 3769,
+        "end": 4238
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

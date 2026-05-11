@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6610::p1",
+  "paper_id": "6610",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6610::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "IMMUNE SYSTEM MODULATION IN A PATIENT WITH STIFF-MAN\nSYNDROME AND INSULIN-DEPENDENT DIABETES MELLITUS. DJ Walsh,\nC Davis, I Hirsch, H Wei, and A Lernmark (intr. by J Chu), Departments of\nMedicine and Surgery, University of Washington, Seattle, WA.\nInsulin-dependent diabetes mellitus (IDDM) and stiff-man syndrome (SMS)\nare diseases which are associated with autoimmunity. A characteristic aspect of\nboth IDDM and stiff-man syndrome is the presence of autoantibodies. Specifically,\nautoantibodies against glutamic acid decarboxylase (GAD65) are commonly seen in\nboth IDDM and SMS. Using GAD6S antibody levels as a marker of the disease\nprocess, the effects of plasmapheresis in combination with several immune system\nmodulators (IV IgG, mycophenolic acid, cyclophosphamide) were determined. The\nmodulation therapies were carried out in a 36 year old female patient who has both\nIDDM and SMS. The results support the continued use of plasmapheresis in\npatients with IDDM and SMS. Plasmapheresis transiently decreases antibody titers,\nimproves the clinical symptoms of SMS, and does not effect IDDM status.\nHowever, the independent use of IV IgG, mycophenolic acid, and\ncyclophosphamide were not found to be useful. Although the rebound of antibody\nlevels following plasmapheresis is significant, it is concluded from this study that\nplasmapheresis is a useful treatment for patients who suffer from both IDDM and\nSMS",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10835,
+        "end": 12250
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1415
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

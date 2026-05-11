@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "716::p1",
+  "paper_id": "716",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "716::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE PRESENTATION\nA 58-year-old female patient was admitted to the\nclinic with rigidity in the upper and lower extrem-\nities and abdominal muscles, painful muscle spasms\nand dif ﬁculty walking. According to the medical\nhistory , the patient was being followed up with\nmesothelioma diagnosis, and was on carboplatin\n(AUC 5)+gemcitabine (1000 mg/m\n2) treatment\nonce every 3 weeks. The patient did not have a\nhistory of stroke, Parkinson ’s disease, epilepsy , mul-\ntiple sclerosis, carbon monoxide poisoning, expos-\nure to toxic substances, encephalitis, spinal cord\ninjury , peripheral nerve lesion, diabetes mellitus,\n\nhypertension, trauma or arthritis. Physical examin-\nation showed that the patient ’s body mass index\nwas 22 kg/m\n2. Lumbar lordosis was elevated in the\nposture examination, and the upper extremities\nwere in ﬂexion from the elbow ( ﬁgure 1 ). Gait was\npossible with a bilateral elbow crutch; ﬂexion in\nthe hips and knees was limited during gait, and gait\nwas with small steps and was antalgic. In addition,\nthe rhythmic swinging of the bilateral upper\nextremity was reduced during walking. The joint\nmovement spacing in the bilateral upper and lower\nextremities was open, but was resistant and painful\nat the end of the movement. The motor, sensory\nand deep tendon re ﬂexes were normal. The plantar\nresponse was ﬂexion, and there was no clonus. The\ncranial nerves were intact.\nINVESTIGATIONS\nThe patient ’s previous thorax CT showed linear\ndensities extending to the pleura that were more\nprominent in the lower lobe of the right lung,\nwhich were accompanied by minimal ground glass\ndensities, a thickening in the right pleura, low-\ndensity pleural effusion and bilateral axillary\nFigure 1 The elbows of the patient seem to be in\nﬂexion position.\n\nmillimetric lymph nodes ( ﬁgure 2 A). The histopathological\nevaluation of the biopsy material collected from the pleura was\nreported as ‘epithelial malignant mesothelioma ’ (ﬁgure 2B).\nThe patient ’s whole blood count, erythrocyte sedimentation\nrate, C reactive protein, fasting glucose level, thyroid, liver and\nkidney functions, electrolyte panel, vitamin B\n12, folic acid,\nvitamin D levels, creatine kinase, whole urine examination,\nrheumatoid factor, antinuclear antibody , human leucocyte\nantigen B27 and brucella tube agglutination test results were\nnormal. The urine and blood cultures were negative. In add-\nition, ocular examination, sacroiliac graphy , whole abdominal\nultrasonography , respiratory function test, electrocardiography\nand MRI of the brain and spinal colon were normal ( ﬁgure 3 ).\nCerebrospinal ﬂuid was clear and had normal pressure (120 cm\nH\n2O); protein and glucose levels were normal, and there was\nno oligoclonal band. Electroneuromyography showed synchron-\nous, hyper and involuntary ﬁring of the motor units in agonist\nand antagonist muscles. The patient responded to an unex-\npected auditory stimulant by jumping. A normal interference\npattern was determined during the spasms. The nerve transmis-\nsion rates were normal. There was a normalisation in the EMG\nfollowing the administration of 10 mg of intravenous diazepam.\nIn addition, serum anti-GAD antibodies were positive (140 IU/\nmL, normal range <1.5). However, amphiphysin and gephyrin\nantibodies could not be evaluated due to the limited laboratory\nconditions. Given the existing evaluation and the examination\nﬁndings, the patient ’s symptoms related to the musculoskeletal\nsystem were considered to be associated with SPS that developed\nsecondary to malignant mesothelioma.\nTREATMENT\nThe patient was started on 10 mg of benzodiazepine (2×1),\n10 mg of baclofen (4×1; started with 2×1/2 and increased\ngradually), 0.5 mg/kg/day of methylprednisone (oral) and\n100 mg of tramadol (1×1/day). In addition, the patient was\nstarted on a rehabilitation programme that consisted of exercises\ntowards joint movement spacing in the lumbar area, upper and\nlower extremities, stretching –relaxing and isometric exercises\nand mobilisation training.\nOUTCOME AND FOLLOW-UP\nPainful muscle spasms continued in the control evaluations,\nwhile their severity and frequency decreased. The patient was\nadmitted to the intensive care unit in the third follow-up month\ndue to respiratory failure and overall condition, and was\ndeclared deceased despite all treatments.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2835,
+        "end": 3452
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 617
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3453,
+        "end": 4598
+      },
+      "compiled_offsets": {
+        "start": 619,
+        "end": 1764
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4705,
+        "end": 7239
+      },
+      "compiled_offsets": {
+        "start": 1766,
+        "end": 4300
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

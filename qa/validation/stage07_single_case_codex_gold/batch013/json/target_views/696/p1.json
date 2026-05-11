@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "696::p1",
+  "paper_id": "696",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "696::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nA 34 year old morbidly obese stiff person syndrome (SPS) patient was scheduled for a permanent \ncatheter placement. SPS is a rare neurologic condition with a suspected autoimmune etiology. SPS \nmost common manifestations are progressive, including severe muscle rigidity or stiffness affecting \nthe spine and lower extremities more than other muscle groups. SPS have superimposed episodic \nmuscle spasms that may resemble myotonic-like contractions and are precipitated by unexpected \nnoises, tactile stimuli, or emotional stress. This case report describes a patient with SPS and morbid \nobesity, and his subsequent management perioperatively for a permanent catheter placement under \nmonitored anesthesia care. Careful and methodical management of patients with SPS is strongly \nsuggested given their sensitivity to inhalational anesthetics and neuromuscular blockers.\n\nCase Report\nA 34 years old patient weighing 300 lbs. (136 Kg) \nand 157 cm in height (BMI= 55 kg/m2) was scheduled \nfor a permanent catheter placement. He was diagnosed \nwith SPS based on his symptoms and was relatively \nasymptomatic in regards to his morbid obesity. He \ndenied dyspnea, angina, or any other cardiopulmonary \nmanifestations. Six months prior to the surgery, \nsymptoms presented as muscle stiffness in his back \nand painful spasms in his lower extremities. A plasma \nanti-GAD antibody level was found to be 5,000 times \nhigher than normal limits. The patient reported that \nwhen going through stressful situations, such as losing \nhis job, he would develop symptoms. He was being \ntreated with carisoprodol 250 mg daily, diazepam 10 \nmg BID, gabapentin 600 mg TID, and baclofen 30 mg \ndaily. His symptoms were poorly controlled requiring \nIVIG therapy, one of the newer therapies in treating \nSPS. A monitored anesthesia care (MAC) anesthetic \nwas planned for the procedure.\nCarisoprodol, diazepam, gabapentin, and \nbaclofen were given on the day of surgery. \nElectrolytes were within normal limits, and no other \npremedication was prescribed. Standard American \nSociety of Anesthesiology monitors were used which \nincluded: temperature, blood pressure, heart rate, \nelectrocardiogram, and end tidal CO2 assessment. \nMonitored anesthesia care was started by administering \nto the patient 60 mg of lidocaine, and a propofol \ndrip at 200 mcg/kg/hr. Vital signs all stayed within a \nnormal range, and there was no significant pulmonary \nventilator depression noted. There were no surgical \ncomplications. The patient had mild discomfort \nduring part of the procedure and was given 50 mcg \nof fentanyl in a bolus dose, twice. After completion \nof the procedure, the patient was followed closely in\n\nPost Anesthesia Care Unit for approximately one and a \nhalf hours without any events. His vital signs remained \nstable and then he was transferred back to a regular \nhospital floor and returned to the floor on continuous \npulse oximetry to start IVIG therapy.\n\nIn the case presented, the patient was receiving a \npermanent catheter for treatment of his SPS with IVIG. \nBy utilizing a propofol drip with fentanyl for sedation \nand breakthrough pain, a safe MAC anesthetic was \nprovided without complications and a rapid recovery.\n\nIn the case presented, the patient presented with the \npotential challenge of being morbidly obesity, which \ncan dramatically affect cardiopulmonary status, rate of \ndesaturation, and potentially increase morbidity and \nmortality. However, by using monitored anesthesia \ncare with avoidance of inhalational anesthetics, \nthe patient was able to receive permanent catheter \nplacement without any exacerbation of his SPS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 151,
+        "end": 1030
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 879
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4920,
+        "end": 6728
+      },
+      "compiled_offsets": {
+        "start": 881,
+        "end": 2689
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6730,
+        "end": 6989
+      },
+      "compiled_offsets": {
+        "start": 2691,
+        "end": 2950
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10169,
+        "end": 10436
+      },
+      "compiled_offsets": {
+        "start": 2952,
+        "end": 3219
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10956,
+        "end": 11375
+      },
+      "compiled_offsets": {
+        "start": 3221,
+        "end": 3640
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

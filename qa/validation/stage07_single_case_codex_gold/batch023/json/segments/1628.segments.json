@@ -1,0 +1,81 @@
+{
+  "paper_id": "1628",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1628.json",
+    "source_text_sha256": "c5ddd78cae94d42e60f3b16385950dc058a2ff7a6c9d8d5ac71ae6d145d3f8e8",
+    "prepared_source_sha256": "9615caf1170988229725c2b1eb722b1c45b7c79e7ea69419646bb5378151eef6",
+    "prepared_source_character_count": 2322
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 121
+      },
+      "page_index": 0,
+      "text": "Stiff Person Syndrome as a Mimic of Parkinsonism (P3.8-026) \nMaria Diaz, Jeffrey Ratliff \nFirst published April 16, 2019,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 129,
+        "end": 2322
+      },
+      "page_index": 0,
+      "text": " Info & Disclosures \nAbstract \nObjective: NA \nBackground: Stiff Person Syndrome (SPS) is an uncommon disease. Due to the ability to mimic \ndegenerative, immune-mediated, or neoplastic diseases with motor manifestations, it should \nremain on the differential in many diseases. \nA previously healthy 44-year-old right handed woman presented with progressive dysarthria and \nleft sided stiffness. She had a history of low back pain. She noticed smaller handwriting, motion \nsickness, double vision when looked to the left and moving globally slower. Denied cognitive or \nmood changes. On examination she had normal higher cortical function, had a slow rate of speech \nwith impaired lingual and guttural phonemes. Extraocular movements showed full pursuits and \nsaccades. Optokinetic response and ocular pursuits were slowed in vertical and horizontal \ndirections. Her left arm and left leg were rigid. Finger and toe tapping were slow on the left. \nMotor strength was full. There was no tremor or ataxia. She was hyperreflexic throughout. Gait \nwas slow and stride length was reduced on the left leg. Her left arm did not swing and adopted a \ndystonic elbow flexion posture. Pull test was normal (Video). Levodopa trial showed no benefit. \nSerologic testing resulted positive for GAD65. \nDesign/Methods: NA \nResults: NA \nConclusions: Age, unilateral rigidity and motoric slowness suggested a young-onset Parkinson’s \ndisease with dystonic features. An atypical parkinsonian disorder such as CBS was also \nconsidered given the profound dystonic posturing and asymmetry. Our case highlights the value \nof keeping SPS on the differential diagnosis of asymmetric rigid syndromes. While classically the \ndisease presents with lumbar bilateral leg rigidity and stiffness, asymmetric limb onset mimicking \nCBS has been previously described [Balint, et al]. In patients with a possibly akinetic rigid \nsyndrome, a prior history of lumbar back pain, hyperreflexia, and slurred speech may be \nindicative of SPS in favor of a primary Parkinsonian disorder and should prompt serological \ntesting for GAD65 antibodies. \nDisclosure: Dr. Diaz Rojas has nothing to disclose. Dr. Ratliff has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A previously healthy 44-year-old right handed woman presented with progressive dysarthria and \nleft sided stiffness. She had a history of low back pain. She noticed smaller handwriting, motion \nsickness, double vision when looked to the left and moving globally slower. Denied cognitive or \nmood changes. On examination she had normal higher cortical function, had a slow rate of speech \nwith impaired lingual and guttural phonemes. Extraocular movements showed full pursuits and \nsaccades. Optokinetic response and ocular pursuits were slowed in vertical and horizontal \ndirections. Her left arm and left leg were rigid. Finger and toe tapping were slow on the left. \nMotor strength was full. There was no tremor or ataxia. She was hyperreflexic throughout. Gait \nwas slow and stride length was reduced on the left leg. Her left arm did not swing and adopted a \ndystonic elbow flexion posture. Pull test was normal (Video). Levodopa trial showed no benefit. \nSerologic testing resulted positive for GAD65.",
+      "source_offsets": {
+        "start": 407,
+        "end": 1413
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Conclusions: Age, unilateral rigidity and motoric slowness suggested a young-onset Parkinson’s \ndisease with dystonic features. An atypical parkinsonian disorder such as CBS was also \nconsidered given the profound dystonic posturing and asymmetry. Our case highlights the value \nof keeping SPS on the differential diagnosis of asymmetric rigid syndromes. While classically the \ndisease presents with lumbar bilateral leg rigidity and stiffness, asymmetric limb onset mimicking \nCBS has been previously described [Balint, et al]. In patients with a possibly akinetic rigid \nsyndrome, a prior history of lumbar back pain, hyperreflexia, and slurred speech may be \nindicative of SPS in favor of a primary Parkinsonian disorder and should prompt serological \ntesting for GAD65 antibodies.",
+      "source_offsets": {
+        "start": 1448,
+        "end": 2232
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

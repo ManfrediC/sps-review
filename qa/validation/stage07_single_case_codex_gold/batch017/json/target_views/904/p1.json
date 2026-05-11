@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "904::p1",
+  "paper_id": "904",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "904::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 38-year-old man of North Indian origin presented with a 3-year history of \nprogressive stiffness and painful spasms of his trunk muscles, lower part of back and \nproximal part of both lower limbs, with recent worsening of his condition over the last \nfew weeks resulting in a considerable difficulty in standing up and walking. There \nwas history of diabetes for 5 years which was controlled on insulin. There is no \nhistory of any autoimmune diseases. The family history was unremarkable. On \nadmission, the lower limbs were rigid with a flexion of the hips and knees, \nmovements were severely limited and painful, and strength could not be assessed \nbecause of rigidity and spasms. There was restriction of lateral and forward flexion at \nlumbar spine (Figure 1). Increased tone was noted in limbs. Sensory examination \nwas normal. Deep tendon reflexes were normal in upper limbs and brisk in lower \nlimbs. Plantar response was flexor bilaterally. His gait was robotic due to stiffness of \nlimb muscles. There was exaggerated lumbar lordosis. Results of routine laboratory \ntests including complete blood count (CBC), serum electrolytes, blood urea nitrogen, \nserum creatinine, serum glucose and liver enzymes were normal. The erythrocyte \nsedimentation rate (ESR) and C-reactive protein (CRP) values were normal. Free \nT4, TSH were normal. Chest x-rays and abdominal ultrasonography revealed no \nabnormalities. MRI of lumbo-sacral spine showed exaggerated lumbar lordosis.\n\nEarlier he was diagnosed as a case of ankylosing spondylitis and was given \ninfliximab but he did not respond. In view of exaggerated lumbar lordosis with \nstiffness of limb muscles and muscle spasms which were aggravated by noise, light, \nmovement and pin prick and relieved by sleep, calm environment along with robotic \nposture and type 1 diabetes; diagnosis of Moersch-Woltmann syndrome or stiff \nperson syndrome was kept and he was further evaluated. \nAntibody against glutamic acid decarboxylase was positive (>2000 nmol/L) (normal \n≤0.02 nmol/L). EMG (electromyogram) showed continuous involuntary firing of motor \nunits in lower limb muscles with normal insertional activity and no spontaneous \nactivity in the upper limb muscles. Treatment with oral clonazepam was started after \nwhich there was a dramatic improvement of the clinical features with marked \nreduction of the hypertonus and the patient could walk with little aid. Daily baclofen \n(10 mg thrice daily) provided complete relief of symptoms.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1386,
+        "end": 2863
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1477
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2865,
+        "end": 3877
+      },
+      "compiled_offsets": {
+        "start": 1479,
+        "end": 2491
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

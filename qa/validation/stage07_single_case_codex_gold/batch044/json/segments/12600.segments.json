@@ -1,0 +1,65 @@
+{
+  "paper_id": "12600",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\12600.json",
+    "source_text_sha256": "8b9c8969b7a74d8e8974b8c698695cd38d9e39cb6e4e62fc997c5f9796d229e0",
+    "prepared_source_sha256": "7d846113c9bda71c672dfa29d3ee8d38308f3accd260d9a4ebf15989d41665e7",
+    "prepared_source_character_count": 3053
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 1852
+      },
+      "page_index": 0,
+      "text": "Catatonia or Depression - A Diagnostic Dilemma in Stiff Person \nSyndrome: A rare case report \nDr Dhritiman Das, Dr Harkishan Mamtani, Dr Krishna Prasad \nJunior Resident, MD-2, Department of Psychiatry, NIMHANS, PDF in \nNeuropsychiatry, NIMHANS, Additional Professor, Department of \nPsychiatry, NIMHANS \nIntroduction: Stiff person syndrome(SPS) is an autoimmune \nneurological disorder that presents with severe progressive stiffness \nof axial muscles and severe spasms. Its incidence and prevalence are \naround 1-2 per million population. This condition is diagnosed using \ncriteria, clinical presentation, and classical EMG findings and antibody \ntesting. Anti- GAD antibody inhibits Glutamic Acid Decarboxylase \nwhich synthesizes GABA from glutamate. Deficiency of GABA in CNS is \nsupposed to result in SPS. Anxiety and depression are two most \ncommon psychiatric symptoms reported in SPS. Catatonia and \nConversion Disorder are two most common differential diagnoses \nwith SPS due to similar clinical presentation. Benzodiazepines are the \nfirst line drug used for symptomatic therapy. Intravenous \nImmunoglobulin(IVIG) , corticosteroids and Plasma Exchange(PLEX) \nare modes of immunotherapy to such patients. SSRIs are the first line \nof treatment for anxiety and depression in such patients. \nCase Description: 70 year old woman presents with gradually \nprogressive stiffness and spasms involving both extremities and trunk \nwith difficulty in walking since past 2 years. She was provisionally \ndiagnosed with SPS after classical EMG findings (with IV Diazepam \ntest) and ruled out all other differential diagnoses after thorough \ninvestigations and clinical examination. Anti-GAD antibody was \nnegative in this case. Paraneoplastic cause was suspected. \nNeuropsychiatry referral was sought in view of persistent crying \nspells and disturbed sleep."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 1854,
+        "end": 3053
+      },
+      "page_index": 1,
+      "text": "Discussion: Patient was difficult to be interviewed due to dysarthric \nspeech and continuous crying spells. At initial presentation, catatonia \nwas suspected due to presenting features as per BFCRS scale. But this \ndiagnosis was ruled out after the Lorazepam Challenge test. After \nthorough history taking and MSE, anankastic traits were discovered \nprior to onset of illness and a provisional diagnosis of moderate \ndepression was kept in view of depressed cognitions and passive \ndeath wishes secondary to difficulty in accepting diagnosis and its \nrelated disability. Tab Mirtzapine was initiated upto 15 mg for \ndepression and Tab Quetiapine was initiated at 25 mg HS for sleep \ndisturbances and crying spells secondary to spasms in supine which \nshe tolerated well. She was treated with IVIG,PLEX, IVMP, Diazepam, \ntizanidine and baclofen for stiffness in SPS. \nConclusion: SPS is a rare neurological condition which can mimic \npresentations of catatonia and conversion disorder resulting in \ndiagnostic dilemma. Neurological and psychiatric features interplay \nwith each other in SPS. SPS, anxiety, depression and substance use \ndisorders are all manifestations of underlying GABA dysfunction."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Case Description: 70 year old woman presents with gradually \nprogressive stiffness and spasms involving both extremities and trunk \nwith difficulty in walking since past 2 years. She was provisionally \ndiagnosed with SPS after classical EMG findings (with IV Diazepam \ntest) and ruled out all other differential diagnoses after thorough \ninvestigations and clinical examination. Anti-GAD antibody was \nnegative in this case. Paraneoplastic cause was suspected. \nNeuropsychiatry referral was sought in view of persistent crying \nspells and disturbed sleep.",
+      "source_offsets": {
+        "start": 1297,
+        "end": 1852
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

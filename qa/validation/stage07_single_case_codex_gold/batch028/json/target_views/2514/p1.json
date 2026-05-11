@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2514::p1",
+  "paper_id": "2514",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2514::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 9-year-old female child presented with a history of falls, weight loss, diffuse leg pain, and progressive gait disorder, following 1\nprevious event described as a tonic–clonic seizure. She had increased thyroid volume, brisk symmetric reflexes, abnormal gait, and\npainful spasms of the paraspinal musculature. Thyroid function tests indicated biochemical hyperthyroidism, and thyrotropin\nreceptor antibodies were positive. Her electromyography showed continuous activation of normal motor units of the paraspinal\nand proximal lower extremity muscles. The patient had a diagnosis of Graves’ disease with associated stiff-person syndrome, with\nelevated anti–glutamic acid decarboxylase antibody levels. After intravenous immunoglobulin therapy, her ambulation was\nsubstantially improved and the symptoms of stiff-person syndrome decreased dramatically.\n\nA 9-year-old right-handed white female child, born to noncon-\nsanguineous parents, presented to the emergency department\nwith a history of falls, weight loss, diffuse leg pain, and pro-\ngressive gait disorder. The review of systems revealed frequent\nleg muscle aches and stiffness in the back and legs; she was\nbedridden for 1 week. Her medical history did not disclose any\nearly disease, except for 1 event described as a tonic–clonic\nseizure 1 month before admission. On physical examination,\nthe patient’s weight was 34 kg, height was 158 cm, and her\npulse was 100 beats/minute. She looked malnourished, with\nlegs bent in the bed. She had increased thyroid volume without\npalpable nodules, brisk symmetric reflexes, no weakness, spas-\ntic gait, and obvious painful spasm of the paraspinal muscula-\nture. The rest of her examination was unremarkable. Initial\nthyroid function tests indicated biochemical hyperthyroidism,\nand thyrotropin receptor antibodies were positive (Table 1).\nThyroid ultrasound images revealed markedly increased vas-\ncularity throughout the thyroid gland (referred to as ‘‘thyroid\nstorm’’). The treatment consisted of oral propranolol (40 mg,\n3 times daily) and antithyroid drugs. She had an extensive\nevaluation, including magnetic resonance imaging of the brain\nand spine, which showed typical normal findings. The erythro-\ncyte sedimentation rate (West ergren), C-reactive protein,\nserum protein electrophoresis, and rheumatoid factor were all\nwithin normal limits. She had normal chest X-ray findings. Her\nelectromyography showed con tinuous activation of normal\nmotor units of the paraspinal and proximal lower extremity\nmuscles.\nThe patient had a diagnosis of Graves’ disease with associ-\nated stiff-person syndrome, cons idering the elevated anti–\nglutamic acid decarboxylase antibody level (200 IU/mL; nor-\nmal, /C2010 IU/mL). As stiff-person syndrome is an autoimmune\ndisorder, steroids and intravenous immunoglobulin, either\nalone or in combination, is the first-line immunotherapy.\nShe was treated with oral baclofen (40 mg/d) and clobazam\n(30 mg/d) to reduce the muscle spasms. She also received a\n5-day intravenous course of methylprednisolone at 1 g/d, but\n\nshe had little clinical improvement in her neurological condi-\ntion. The patient received a course of intravenous immunoglo-\nbulin therapy (400 mg/kg daily), which yielded improvement\nin her painful spasms and gait, and she had no further falls. Her\nambulation was substantially improved (as shown on Video 1).\nAt follow-up, her tonic–clonic seizures were well controlled\nwith antiepileptic drugs. Currently, the patient is treated with\nintravenous immunoglobulin therapy monthly and remains\nclinically euthyroid. The results of follow-up thyroid function\ntests were notably improved, with dramatically decreased\nsymptoms of stiff-person syndrome.\n\nIn conclusion, this case highlights that an acute gait distur-\nbance syndrome in children with Graves’ disease should raise\nclinical suspicion of autoimmune diseases and stiff-person syn-\ndrome. Immunotherapy can alleviate symptoms of Graves’\ndisease and improve neurological function in these patients.\n\nTable 1. Results of Thyroid Function Tests.\nDate T3 FT4 TSH TRAb\nAt admission 536 ng/dL 23.4 ng/dL 0.01 mIU/mL 33.3 IU/mL\nAfter 1 week of treatment 265 ng/dL 22.6 ng/dL 0.01 mIU/mL\nReference value 80-200 ng/dL 0.93-1.7 ng/dL 0.27-4.2 mIU/mL <1.22 IU/mL\nAbbreviations: T3, triiodothyronine; T4, thyroxine; FT4, free thyroxine; TSH, thyroid-stimulating hormone; TRAb, thyrotropin receptor antibod ies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 255,
+        "end": 1107
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 852
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1290,
+        "end": 3486
+      },
+      "compiled_offsets": {
+        "start": 854,
+        "end": 3050
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4446,
+        "end": 5093
+      },
+      "compiled_offsets": {
+        "start": 3052,
+        "end": 3699
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8205,
+        "end": 8508
+      },
+      "compiled_offsets": {
+        "start": 3701,
+        "end": 4004
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 9380,
+        "end": 9779
+      },
+      "compiled_offsets": {
+        "start": 4006,
+        "end": 4405
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

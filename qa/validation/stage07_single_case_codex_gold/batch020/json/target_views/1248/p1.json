@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1248::p1",
+  "paper_id": "1248",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1248::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: A 48-year-old woman had initial symp-\ntoms of intermittent sharp lumbar pain radiating down bilateral legs,\nthat was unresponsive to various analgesics. This progressed to\nweakness, spasticity, and immobility. After 3 years, she presented\nwith worsening leg pain, episodic spasms, and frequent falls. On\nphysical examination she had increased tone and reﬂexes of the\nbilateral lower extremities. She was admitted to the hospital because\nof unremitting debilitating pain.\nSetting: Major urban county hospital.\nResults: MRI of the spine and brain were grossly benign. Lack of sig-\nniﬁcant radiographic or laboratory ﬁndings suggested an autoimmune,\nparaneoplastic, myelopathic, or psychiatric etiology. She was given\ntrials of gabapentin, intravenous morphine, and baclofen without any\nsigniﬁcant relief. This lack of response prompted a suspicion of stiff\nperson syndrome (SPS). A trial of diazepam ultimately led to\nimprovement of symptoms and increased mobility. She was found to be\npositive for anti-GAD-65 antibodies, which is speciﬁc for SPS, helping\nto establish the diagnosis.\nDiscussion: SPS is a rare neuromuscular disease characterized by\nbaseline muscular rigidity with superimposed episodes of spasms.\nAxial musculature is affected ﬁrst with extension to the proximal\nlimbs resulting in impaired ambulation. The estimated prevalence is\n1:1,000,000, although this is likely due to underdiagnosis. Average\nages of symptom onset and diagnosis are 35 and 41.2 years, respec-\ntively. Signiﬁcant impairment due to disease progression may be\nprevented with earlier diagnosis. Recognizing the signs and symp-\ntoms, as well as subsequently ordering appropriate laboratory studies\nand neuromuscular analyses can help to solidify this elusive\ndiagnosis.\nConclusions: Currently there is an average delay of 6.2 years between\nsymptom onset and diagnosis of SPS. Education of healthcare providers\nabout rare conditions will help to have disorders such as SPS in the\ndifferential, which will yield more timely diagnosis and treatment, and\nthus better prognosis and quality of life for affected patients.\nLevel of Evidence: Level V",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4087,
+        "end": 6239
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2152
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

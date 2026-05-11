@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "535::p1",
+  "paper_id": "535",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "535::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "W e describe the case of a 45 year-old female patient, who\nover 5 years suffered from painful cramps in the lower and\nupper limbs, she had difﬁculty in walking, showed hyperre-\nﬂexia, and an electromyogram showed continuous muscular\nactivity; she was diagnosed with SPS at the neurology\ndepartment and was referred to our urology service for a\nurodynamic study because the patient showed difﬁculty in\npassing urine, there was a delay in the initiation of micturi-\ntion, a weak urinary stream and the sensation of incomplete\nemptying after micturition. The patient underwent the afore-\nmentioned urodynamic study, which included the following\nremarkable alterations:\n• Flowmetry: Broken and low micturition ﬂow (Qmax,\n6 mL/s) and signiﬁcant post-urinary residues (Fig. 1.1).\n• Bladder-ﬁlling cystomanometry: Bladder capacity was\nsomewhat diminished and showed normal bladder\naccommodation and absence of detrusor waves.\n• Bladder-emptying cystomanometry through surface\nelectromyography: Signiﬁcant delay in the initiation of\nmicturition, low and broken urine ﬂow, and a signiﬁcant\nincrease of detrusor pressure. Apart from these ﬁndings,\nan increased activity of the striated sphincter was also\nobserved , which reached up to 250 micro-volts\n(Fig. 1.2).\nTherefore, this condition comprises a detrusor-sphincter\ndyssynergia caused by an increment in the activity of the\nstriated sphincter muscle. The patient was treated with\nmuscle relaxants, but she left the treatment feeling drowsy,\nso she was treated with corticosteroids and she had the same\nurinary symptoms.\nW e consequently believe that the present urodynamic\nstudy is a useful trial that illustrates the precise urinary\nalterations found in patients afﬂicted with SPS, and shows\n\nthat it is possible to treat this condition with muscle-\nrelaxants.\n\nAF AF AFAF AF\n211 3\nml/s\nQura\nml\nml/s\nuV\ncmH2O\ncmH2O\ncmH2O\nPdet\nQura\nTiempo\nBomba\nPves (1)\nPabd (2)\nuV\nEMG1 4\n11\nPS\n1\nDN\n1\nDF\n11\nURFFLL\n1000\n100\n100\n100\n4\n0\n0\n0\n50\n0\n0\n00:01\n20ml\n00:00 05:00 10:00\n40ml 60ml 80ml 100ml120ml140ml160ml180ml 200ml 220ml 260ml\n2\n3\n200\n0\n1.1\n1.2\n50\n0\nFig. 1 Urodynamic study in which the alterations in\nﬂowmetry and bladder empty cystomanometry can be\nobserved.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1736,
+        "end": 3473
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1737
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3474,
+        "end": 3541
+      },
+      "compiled_offsets": {
+        "start": 1739,
+        "end": 1806
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3734,
+        "end": 4123
+      },
+      "compiled_offsets": {
+        "start": 1808,
+        "end": 2197
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

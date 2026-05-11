@@ -1,0 +1,39 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "7716::p1",
+  "paper_id": "7716",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "7716::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": false,
+  "input_text": "patient, a 25-year-old woman, presented in 2012 with autoimmune epilepsy treated successfully \nwith steroids and low-doses levetiracetam. Her serum immunoreacted strongly to cultured \nhippocampal neurons and brain cerebellum, cortex, hippocampus and striatum. By 2017, she \ndeveloped typical SPS, without DM1. Her anti-GAD titers remained persistently high (2,5–4,6 × \n106 IU/ml) but the immunostaining intensity to hippocampal neurons, cerebellum and striatum \ndiminished. Her father and grandmother have DM1 with very high-GAD titers (1,8 × 106 and 0,7 \n× 106 IU/ml respectively), never observed in DM1 patients alone without neurological \nmanifestations, up to a-5-year follow-up. Their sera did not immunostain hippocampal neurons \nbut bound to cerebellum, similarly to the index case. Preliminary WB data on brain extracts \nshowed the same immunoreactivity pattern, presumably recognizing linear epitopes, in all 3 \npatients. \nConclusions: This is the first family with very high anti-GAD titers in 3 generations. Whereas \nthe index patient presented with autoimmune epilepsy that evolved into SPS without DM1, her \nfamily members had only DM1 and very high anti-GAD antibodies without neurological disease, \neven though their serum recognized neuronal epitopes similar to the index case. Whether patients \nwith very high-GAD titers can develop neurological disease over a longer observational period, \nremains to be determined. \nDisclosure: Dr. Tsiortou has nothing to disclose. Dr. Alexopoulos has nothing to disclose. Dr. \nAkrivou has nothing to disclose. Dr. Barba has nothing to disclose. Dr. KOSMIDIS has nothing \nto disclose. Dr. Dalakas has nothing to disclose.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1050,
+        "end": 2724
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1674
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ]
+  }
+}

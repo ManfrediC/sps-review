@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1106::p1",
+  "paper_id": "1106",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1106::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "DESIGN/METHODS:A 50-year-old man with recurrent episodes of \nsevere limb and back spasms was diagnosed with SPS by positive serum anti-glutamic acid \ndecarboxylase (GAD) antibodies. RESULTS:He was hospitalized on two separate occasions for \nuncontrollable limb and back spasms and associated generalized weakness with creatinine \nphosphokinase (CPK) elevations of 55,000 and 22,000 U/L, respectively. He also was noted to be \nin acute renal failure during both admissions with elevations of his serum creatinine. Laboratory \ntests were otherwise unremarkable. The acute renal failure resolved during both admissions with \nsupportive management only including aggressive rehydration with intravenous fluids as well as \nthe use of various skeletal muscle relaxants. CONCLUSIONS: The pathophysiology of \nautoimmune-SPS (a-SPS) is thought to be due to inhibition of GAD by anti-GAD antibodies. \nInhibition of GAD results in functional inhibition of gamma-aminobutyric acid (GABA) which in \nturn causes muscles to become continuously stimulated by the motor neurons leading clinically to \nthe muscle spasms. Rhabdomyolysis, diagnosed by significant elevation in CPK, can be seen in a-\nSPS. Rhabdomyolysis has the potential to be fatal and early diagnosis is essential and should be \nconsidered in patients who have SPS and are experiencing an exacerbation of their neurologic \nsymptoms.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 963,
+        "end": 2344
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1381
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

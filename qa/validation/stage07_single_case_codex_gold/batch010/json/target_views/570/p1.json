@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "570::p1",
+  "paper_id": "570",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "570::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 63-year-old woman with a medic al history of insulin-\ndependent diabetes mellitus and pernicious anemia\npresented with progressive continous stiffness and superim-\nposed painful spasms in the left leg for 3 years. Her symp-\ntoms were often triggered by su dden auditory and tactile\nstimuli or by emotional stress. These symptoms resulted in\nwalking difﬁculties and limitations in daily activities.\nClinical examination showed abnormal posturing of\nthe left ankle. It was slightly dorsiﬂexed, and active and\npassive ankle movements were severely limited due to\nassociated pain. There was striking isolated hypertrophy\nof the left tibialis anterior muscle. There were no signs\nof truncal rigidity or lumbar hyperlordosis.\nBrain and spinal MRI were normal. EMG showed a typ-\nical pattern of continuous low-frequency ﬁring of normal\nmotor unit potentials indistinguishable from voluntary\nmuscle contraction in the tibialis anterior muscle, without\nconcomitant antagonist muscle activation, despite attempts\nat muscle relaxation by the patient. Sudden auditory and\ntactile stimuli could not provoke muscle spasms during\nEMG examination. EMG of the abdominal, paraspinal,\nand other limb muscles showed no abnormalities. Because\nstiff leg syndrome was suspect ed, antiglutamic acid decar-\nboxylase (GAD) antibodies were assayed and found to be\nhighly increased (>2000 U/ml; normal <5 U/ml). Insulin\nand islet cell antibodies were not measured.\nMRI of the lower limbs conﬁrmed isolated hypertro-\nphy of the tibialis anterior muscle (Fig. 1). Cerebrospi-\nnal ﬂuid (CSF) analysis was normal, and there were no\noligoclonal bands. Diazepam 5 mg twice daily and\nmonthly intravenous immunoglobulin infusions led to\nsigniﬁcant clinical improvement. A diagnosis of stiff leg\nsyndrome was made.\nTo the best of our knowledge, muscle hypertrophy has\nnever been described in the stiff person or stiff leg syn-\ndrome. Several cases of stiff person syndrome were\nreported with symptoms conﬁned to one (most often dis-\ntal) limb, usually the lower leg.\n1,2 The spasms are sponta-\nneous, reﬂex-induced, or induced by voluntary movement,\nin the absence of truncal rigidity or exaggerated lumbar\nlordosis. In contrast to the typical stiff person syndrome,\nserum/CSF anti-GAD antibodies and oligoclonal bands in\nthe CSF are most often absent in the stiff limb syndrome,\nmaking a deﬁnitive diagnosis sometimes difﬁcult.\n3\nIsolated tibialis anterior muscle hypertrophy in our\npatient seemed to be related to persistent muscle con-\ntraction, as has been seen in other muscle disorders\nassociated with involuntary muscle contraction (e.g.,\nmyotonic syndromes, rippling muscle syndrome, and\ndystonia).",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 79,
+        "end": 2750
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2671
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

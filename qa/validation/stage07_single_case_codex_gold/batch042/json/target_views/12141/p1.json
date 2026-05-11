@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12141::p1",
+  "paper_id": "12141",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12141::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We thus describe a case of anti-amphiphysin antibody-positive SPS, which initially manifested\nwith generalized pruritus. After extensive investigations and removing her underlying tumor, she reported\ncomplete recovery of her symptoms.\n\nCase Presentation\nA 64-year-old female patient, a known case of type 2 diabetes mellitus and systemic hypertension,\n\npresented with complaints of right lower limb pain for three months, abnormal posturing of the right foot\nfor two months, and left lower limb pain and posturing of the left foot for two weeks. She initially had pain\nin her right knee associated with muscle cramps over her thigh. She also complained of stiffness in her right\nlower limb. She had difficulty guiding her foot into and removing her footwear probably due to stiffness.\nThere was no history suggestive of proximal or distal muscle weakness. She also had dystonic posturing of\nthe right foot in the form of extension of the great toe and lateral deviation of her other toes. She also\ndeveloped similar complaints over her left lower limb and gradually became bedbound and she was not able\nto bend both knees. Gradually she developed symptoms over her right upper limb in the form of pain over\nher right shoulder.\n\nThere was an associated history of loss of appetite and significant weight loss over the past four months.\nThere was also an antecedent history of generalized pruritus over a period of three months that had resolved\nwith medication.\nOn examination, she had axillary lymphadenopathy and an ill-defined lump in the upper quadrant of her\nright breast. Neurological examination showed that higher mental functions were intact, cranial nerves were\nnormal, and she had stiffness of both lower limbs with preserved deep tendon reflexes, flexor plantar\nresponse, complete limitations of movements at the knee, and limb resembled a log of wood. There was\ndystonic posturing of both feet. There were no sensory signs, no definite weakness, or bowel and bladder\ninvolvement.\nHer symptoms were suggestive of a subacute onset progressive neurological disorder and a pure motor\ndisorder. Her general examination findings were suggestive of probable breast cancer; hence, paraneoplastic\nneurological syndrome secondary to breast cancer was considered and SPS was the likely diagnosis based on\nthe clinical picture. She was evaluated accordingly. Her MRI of the brain and spine were normal. An\nelectromyography (EMG) study was carried out, which showed continuous motor activity with normal\nmorphology, more prominent in the paraspinal muscles (Figure \n1\n), and after administering 2 mg midazolam,\nthe activity decreased significantly and was absent for a brief period (Figure \n2\n). This finding was consistent\nwith a diagnosis of SPS.\nFIGURE\n 1: Initial electromyography study showing continuous motor\nactivity with normal morphology\nFIGURE\n 2: Significant decrease in activity on electromyography after\nadministration of midazolam\nA neuronal antibody profile test was done, which was strongly positive for anti-amphiphysin antibodies. A\nsurgical oncologist’s opinion was taken. A positron emission tomography (PET) CT was done and did not\nshow any distant metastasis, and her TNM (tumor, node, and metastasis) staging was T2N3aM0. She\nunderwent wide local excision with right axillary lymph node dissection and a biopsy suggestive of invasive\nductal carcinoma (human epidermal growth factor receptor 2 (HER2)/neu negative, estrogen receptor (ER)\npositive, and progesterone receptor (PR) positive).\nShe was treated with muscle relaxants like diazepam, tizanidine, and baclofen and given five days of pulse\nsteroids and later three cycles of plasma exchange therapy. She reported significant relief from pain and\nstiffness and is now recovering well and is currently on hormonal therapy with letrozole and maintenance\nsteroids, undergoing neurorehabilitation, and is on follow-up with the neurology and oncology team.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1453,
+        "end": 1687
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 234
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3827,
+        "end": 3942
+      },
+      "compiled_offsets": {
+        "start": 236,
+        "end": 351
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3943,
+        "end": 4816
+      },
+      "compiled_offsets": {
+        "start": 353,
+        "end": 1226
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5151,
+        "end": 7852
+      },
+      "compiled_offsets": {
+        "start": 1228,
+        "end": 3929
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

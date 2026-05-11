@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11954::p1",
+  "paper_id": "11954",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11954::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 26-year-old woman visited our Department of \nNeurology presenting with lower limbs convulsions and \ngait disturbance and complaining of leg pain. She had no \nhistory of autoimmune diseases such as type 1 diabetes \nand Hashimoto’s disease. Baclofen and clonazepam\n\nadministered as symptomatic treatment were highly \neffective. A high level of anti-GAD antibody was \ndetected in the cerebrospinal fluid and blood samples, \nand anti-acetylcholine receptor (AchR) antibody was \nslightly positive on the blood test. Brain–spine magnetic \nresonance imaging (MRI) showed no abnormalities. She \nwas diagnosed with SPS, but she has not developed \nmyasthenia gravis (MG). After the patient was treated \nwith steroid pulse therapy and high-dose immunoglobu-\nlin therapy, these treatments relieved the clinical symp -\ntoms. Chest computed tomography showed anterior \nmediastinal tumor suspected as thymoma ( Fig. 1A ). \nMRI revealed that the mass was adjacent to the pericar -\ndium and lung, but no obvious invasion was detected \n(Fig. 1B  and 1C). Paraneoplastic SPS associated with \nthymoma was suspected, and extended thymectomy was \nperformed.\nMacroscopically, a 4.8-cm clear grayish nodule in the \nright upper pole of the thymus was observed. Although \nthe nodule was covered with a thick fibrous cap, there \nwas a partial invasion into the surrounding thymic fat \n(Fig. 2A; white arrow). Microscopically, unclear bound-\naries of epithelial cells proliferating in the form of a \nsheet were observed and hematoxylin and eosin staining \nshowed invasion of focal lymphocytes (Fig. 2B). Immu-\nnohistochemically, the tumor cells were positive for the \nexpression of AE1/AE3 ( Fig. 2C) and slightly positive \nfor the expressions of CD3 and CD20 ( Fig 2D and E); \ntherefore, Type B3 thymoma (pathological stage II \nMasaoka classification) was diagnosed.\nThe postoperative course was uneventful. Anti-GAD \nantibody titer remained high (titer >2000). Anti-AchR \nantibody was slightly positive on the postoperative \nblood test, but she had no recurrence of neurological \nsymptoms and did not develop MG. No evidence of \nrecurrence of SPS and thymoma has been observed \nover 44 months.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1269,
+        "end": 1545
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 276
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3495,
+        "end": 5398
+      },
+      "compiled_offsets": {
+        "start": 278,
+        "end": 2181
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

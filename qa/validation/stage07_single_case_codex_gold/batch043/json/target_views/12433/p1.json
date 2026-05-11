@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12433::p1",
+  "paper_id": "12433",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12433::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report. A 37-year-old woman noted persistent low back \npain following a minor motor vehicle accident in 1982. Evalua-\n\ntion revealed mild scoliosis and kyphosis without other abnor- \nmalities. Stiffness of gait and low back muscle spasms progres- \nsively worsened, leading to several falls. CT of the head, \nmyelography, and CSF analysis were unremarkable. She was \nfelt to have post-traumatic stress syndrome. The patient was \ntreated with butalbital for pain and diazepam and baclofen for \nmuscle spasms. As symptoms worsened, numerous other med- \nications were tried. Diazepam resulted in the greatest im- \nprovement and was slowly increased to 110 mg daily by 1986. \nIn March 1989, she was taking 120 mg diazepam and 140 mg \nbaclofen per day. She suffered a prolonged episode of severe \nlordotic spasms and was referred to the hospital. \nExamination revealed extensive vitiligo. There was pro- \nnounced rigidity and tenderness of axial muscles, with marked \nlordosis. She could walk with assistance, but the gait was rigid \nand slow. Her movements were often interrupted by painful\n\nspasms of paraspinal and limb girdle muscles. Neck extension \nand rotation were severely limited. Strength, coordination, \nsensation, and deep tendon reflexes were normal, and plantar \nresponses were flexor. Mental status and cranial nerve exami- \nnations were normal. We considered the diagnosis of stiff-man \nsyndrome. EMG studies were normal except for continuous \nmotor unit activity, mainly in the paraspinous muscles. Exag- \ngerated exteroceptive reflex responses were elicited. Both ex- \nteroceptive reflexes and continuous motor unit activity were \nabolished or markedly reduced following intravenous infusion \nof 10 mg diazepam, which did not produce any change in \nmental status. Radiographs of the spine showed marked lum- \nbar lordosis, and MRI was otherwise unremarkable. CSF anal- \nysis was normal (protein, 28 mg/dl; IgG, 1.8 mg/dl; R value, \n0.56; and no oligoclonal bands). Metabolic screening, includ- \ning random and fasting blood glucose levels, was normal. \nA trial of clonidine was initiated on the patient's discharge \nfrom the hospital, but was discontinued when she did not \nimprove. Diazepam was increased to 130 mg daily, with mild \nreduction in spasms and rigidity. Indirect immunofluorescent \nscreening of serum revealed autoantibody reactive with nor- \nmal human cerebellum in a pattern consistent with \nGABAergic terminals. The patient was readmitted to the \nhospital for a trial of plasmapheresis and consideration of \nimmunosuppressive therapy. Serial antibody measurements, \nEMG studies, and plasmapheresis were carried out with her \ninformed consent.\n\nResults. Response to plasmapheresis. The patient tol- \nerated plasma exchange well, without complications. \nSerum titers of GAD-like immunoreactivity fell from \n1:1,280 to 1:80 during plasmapheresis. There was \nmarked incremental improvement in EMG studies at \neach point tested. The areas of evoked exteroceptive \nreflex responses declined dramatically (figure 1). There \nwas more than a fivefold decline in the size of the \nresponse in paraspinal muscles, from 26.2 to 4.98 pVsec, \nby the third plasma exchange (figure 2). Observed clini- \ncal response was equally striking: after two exchanges, \nrigidity had decreased, paraspinal muscles were palpa- \nbly less stiff, and the patient was able to sit up unas- \nsisted. During casual conversation, she turned her head \nto 90\" in either direction. The patient reported mild \nimprovement at this point. During the course of plas- \nmapheresis, her gait became progressively more fluid \nand she was able to walk without spasms. Subjective \nimprovement fluctuated and lagged behind observed\n\nmeasures but did not return to the preadmission state. \nTwo weeks after discharge, she reported improvement \nto nearly normal functioning (a level of 2 on her 10-point \nscale, 1 being normal) and she had reduced diazepam \ndosage by 10 mg.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3358,
+        "end": 3480
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 122
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3482,
+        "end": 4448
+      },
+      "compiled_offsets": {
+        "start": 124,
+        "end": 1090
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5082,
+        "end": 6667
+      },
+      "compiled_offsets": {
+        "start": 1092,
+        "end": 2677
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 10997,
+        "end": 12033
+      },
+      "compiled_offsets": {
+        "start": 2679,
+        "end": 3715
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 12035,
+        "end": 12273
+      },
+      "compiled_offsets": {
+        "start": 3717,
+        "end": 3955
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

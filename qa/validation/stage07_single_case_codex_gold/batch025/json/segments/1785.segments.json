@@ -1,0 +1,56 @@
+{
+  "paper_id": "1785",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1785.json",
+    "source_text_sha256": "8333cdfdf5317feeabdf0f15eaee2ce5b0719959477e2473558a8837a1e74da8",
+    "prepared_source_sha256": "1e9c9efc99f5fc6180be9ab695de9887099cd8e20adbeffc6aee0211cbbace90",
+    "prepared_source_character_count": 2888
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2888
+      },
+      "page_index": 0,
+      "text": "Stiff Limb Syndrome Progressing to Stiff Man \nSyndrome in a non-diabetic man \nT. Ali, D. Ginjupally, Z. Guduru (Lexington, KY, USA) \nObjective: Stiff person syndrome is a rare CNS disorder characterized by fluctuating \nmuscle rigidity of truncal and proximal limb muscles with superimposed painful \nspasms. Involved muscles most often include the paraspinal, abdominal, and \noccasionally proximal leg musculature. Most patients have anti-glutamic acid \ndecarboxylase (GAD) antibodies in serum. \nBackground: We present a case of non-diabetic man with stiff limb syndrome who \nprogressed to stiff person syndrome. \nMethod: A 52-year-old male from the Congo presented with a 2-year history of \nstiffness of the right lower extremity and abdomen. He described progressive \ndifficulty with ambulation, and over time required the use of a walker. He denied any \nassociated pain, sensory disturbance, urinary or bowel symptoms. His family history \nwas unremarkable. There was marked rigidity in both lower extremities, right greater \nthan left. His reflexes were normal, and sensation was intact across all modalities. \nHis gait was broad-based and cautious. His knee was notably rigid without any \ndegree of flexion while ambulating, and his toes remained curled. His abdominal \nmuscles were stiff and prominent. \nResults: Laboratory testing for CBC, CMP, A1c, RPR, HTLVI/II, HIV, Vitamin B12, \nVitamin E, Folate, and Creatine Kinase were all normal. His anti-Glutamic Acid \nDecarboxylase (GAD) antibody however was markedly elevated at greater than \n50,000. HbA1c was in normal range. A CT abdomen and pelvis revealed no \nevidence of neoplastic disease. After initiation of diazepam 15mg/ day, his symptoms \nsignificantly improved and was able to walk without assistance, could flex at the \nknees, and participate in physical therapy. His toes, which were initially curled on the \nright foot had released, except at the great toe. \nConclusion: We present a non-diabetic case of Stiff limb syndrome who progressed \nto stiff person syndrome with a high anti-GAD antibody level. Though the hallmark \ndiagnostic sign remains the presence of hyperlordosis and co-contractures of the \nabdominal wall and thoracic paraspinal muscles, our patient did not present with any \nof these features. There was a significant improvement with benzodiazepine. \nReferences: Dalakas MC, Fujii M, Li M, Lutfi B, Kyhos J, McElroy B. High dose \nintravenous immune globulin for stiff person syndrome. The New England Journal of \nMedicine; 2001; 345 Dalakas MC, Fujii M, Li M, McElroy B. The clinical spectrum of \nanti-GAD antibody -positive patients with stiff person syndrome. Neurology 2000; 55, \n1531-35 Barker RA, Revesz T, Thom A, Marsden CD, Brown P. Review of 23 \npatients affected by the stiff man syndrome: clinical subdivision into stiff trunk (man) \nsyndrome, stiff limb syndrome, and progressive encephalom"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 52-year-old male from the Congo presented with a 2-year history of \nstiffness of the right lower extremity and abdomen. He described progressive \ndifficulty with ambulation, and over time required the use of a walker. He denied any \nassociated pain, sensory disturbance, urinary or bowel symptoms. His family history \nwas unremarkable. There was marked rigidity in both lower extremities, right greater \nthan left. His reflexes were normal, and sensation was intact across all modalities. \nHis gait was broad-based and cautious. His knee was notably rigid without any \ndegree of flexion while ambulating, and his toes remained curled. His abdominal \nmuscles were stiff and prominent. \nResults: Laboratory testing for CBC, CMP, A1c, RPR, HTLVI/II, HIV, Vitamin B12, \nVitamin E, Folate, and Creatine Kinase were all normal. His anti-Glutamic Acid \nDecarboxylase (GAD) antibody however was markedly elevated at greater than \n50,000. HbA1c was in normal range. A CT abdomen and pelvis revealed no \nevidence of neoplastic disease. After initiation of diazepam 15mg/ day, his symptoms \nsignificantly improved and was able to walk without assistance, could flex at the \nknees, and participate in physical therapy. His toes, which were initially curled on the \nright foot had released, except at the great toe. \nConclusion: We present a non-diabetic case of Stiff limb syndrome who progressed \nto stiff person syndrome with a high anti-GAD antibody level. Though the hallmark \ndiagnostic sign remains the presence of hyperlordosis and co-contractures of the \nabdominal wall and thoracic paraspinal muscles, our patient did not present with any \nof these features. There was a significant improvement with benzodiazepine.",
+      "source_offsets": {
+        "start": 621,
+        "end": 2335
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

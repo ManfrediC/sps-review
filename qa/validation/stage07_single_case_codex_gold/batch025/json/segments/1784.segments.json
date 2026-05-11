@@ -1,0 +1,65 @@
+{
+  "paper_id": "1784",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\1784.json",
+    "source_text_sha256": "b4cb2193e90b124209aa85e47730df6c0e3a6fb5a31e83c10bd80f705d416126",
+    "prepared_source_sha256": "1e5a16a3159485e346aeb533d9aca69011aefe5ee7192c83b0da037b4f3f781e",
+    "prepared_source_character_count": 2559
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 2370
+      },
+      "page_index": 0,
+      "text": "Stiff-Person Syndrome and Limbic \nEncephalopathy Associated With GAD-antibody: \nA Case Report \nSL. Li, YM. Yang, HZ. Guan, XH. Wan, HT. Ren (Peking, China) \nMeeting: 2019 International Congress \nABSTRACT NUMBER: 2170 \nKeywords: Stiff-person syndrome \nObjective: To extend spectrum of glutamic acid decarboxylase(GAD) associated \ndisorders by reporting a case \nBackground: GADA associated disorders include a broad and clinically \nheterogeneous group of conditions. Among them, stiff-person syndrome \n(SPS),cerebellar ataxia(CA) and limbic encephalopathy(LE) are common neurologic \npresentation. So far, more and more cases have showed that multiple neurologic \nsyndromes could occur with anti-GADA,which can coexist in a single patient with \ndifferent kinds of combination. \nMethod: A 29-year-old Chinese woman presented with paroxysmal numbness in \nleft-sided limbs, slight memory loss and stiffness in trunk 22 months prior to \nadmission,followed by gait problems and stiffness in left leg in 1 year.Neurological \nexamination showed slight impairment of memory and calculation. Muscle tone \nincreased in left limbs with predominance in left lower limb. Pathological signs were \nnot noted. A stiff,split-step gait and disturbances of initiating left lower limb were \npresent. Accompanied movements in left arm reduced during walking. Cranial nerve \nfunction, muscle strength and sensory examination were normal. No ataxia was \npresent. No specific history was noted. EEG demonstrated spikes in frontal and \ntemporal lobes with T2/T2flair hyperintensities in bilateral hippocampi on brain MR. \nEMG demonstrated continuous motor unit activity in left sacrospinal muscle and left \nrectus abdominis. A  titer of 1:320 GAD65 was identified in both serum and CSF. \nOther antibodies such as NMDA, AMPA1, AMPA2, GABA2,LGI-1 and CASPR-2 was \nnegative.Tumor markers,organic acids,ANA and ENA related autoimmune antibodies \nwere absent.Seizures and motor symptoms relieved after treatment of IVIG and \ncontinuous glucocorticoid. Titer of GAD65 in serum decreased to 1:100 during \nfollow-up. \nResults: We diagnose the patient as GADA associated neurological syndrome \npresenting with limbic encephalitis and stiff-person syndrome, which responded to \nIVIG and glucocorticoid. \nConclusion: LE and SPS associated with anti-GADA could coexist and respond \nto immunomodulatory therapy."
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 2372,
+        "end": 2559
+      },
+      "page_index": 1,
+      "text": "References: 1.Damato,V. et al. Mov Disord, 2018. 33(9): p.1376-1389. 2.Incecik, \nF.et al. Acta Neurol Belg, 2018. 118(3): p. 411-414. 3.Jung, Y.J.et al.J Mov Disord, \n2014. 7(1): p.19-21."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 29-year-old Chinese woman presented with paroxysmal numbness in \nleft-sided limbs, slight memory loss and stiffness in trunk 22 months prior to \nadmission,followed by gait problems and stiffness in left leg in 1 year.Neurological \nexamination showed slight impairment of memory and calculation. Muscle tone \nincreased in left limbs with predominance in left lower limb. Pathological signs were \nnot noted. A stiff,split-step gait and disturbances of initiating left lower limb were \npresent. Accompanied movements in left arm reduced during walking. Cranial nerve \nfunction, muscle strength and sensory examination were normal. No ataxia was \npresent. No specific history was noted. EEG demonstrated spikes in frontal and \ntemporal lobes with T2/T2flair hyperintensities in bilateral hippocampi on brain MR. \nEMG demonstrated continuous motor unit activity in left sacrospinal muscle and left \nrectus abdominis. A  titer of 1:320 GAD65 was identified in both serum and CSF. \nOther antibodies such as NMDA, AMPA1, AMPA2, GABA2,LGI-1 and CASPR-2 was \nnegative.Tumor markers,organic acids,ANA and ENA related autoimmune antibodies \nwere absent.Seizures and motor symptoms relieved after treatment of IVIG and \ncontinuous glucocorticoid. Titer of GAD65 in serum decreased to 1:100 during \nfollow-up. \nResults: We diagnose the patient as GADA associated neurological syndrome \npresenting with limbic encephalitis and stiff-person syndrome, which responded to \nIVIG and glucocorticoid. \nConclusion: LE and SPS associated with anti-GADA could coexist and respond \nto immunomodulatory therapy.",
+      "source_offsets": {
+        "start": 783,
+        "end": 2370
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

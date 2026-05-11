@@ -1,0 +1,60 @@
+{
+  "paper_id": "5321",
+  "stage07_schema_version": "stage07_xml_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\5321.json",
+    "source_text_sha256": "fbb9e7773a3d866cc6a0eb3ac1790a1316f6662dd6a794264041eeb45c80268c",
+    "prepared_source_sha256": "8fccfa492dfa5ab2c2c49bcb64e774ac6dba22def95054bbc7b3a4c0f9160db9",
+    "prepared_source_character_count": 14574,
+    "source_filename": "5321_Clairmont-2009-Rehabilitation and orthopedic management of Stiff Person syndrome.pdf"
+  },
+  "source_route": {
+    "resolved_source_category": "conference_abstract",
+    "resolved_source_subtype": "single_case_conference_abstract",
+    "resolved_langextract_mode": "individual"
+  },
+  "stage06_prior": {
+    "final_count": 1,
+    "count_confidence": "high",
+    "count_basis": "llm_joint_extraction",
+    "manual_review_required": false,
+    "count_risk_band": "standard_count"
+  },
+  "annotation": {
+    "annotation_mode": "single_case_clinical_window",
+    "annotation_model": "none",
+    "annotated_text_path": "data\\extraction_json\\stage07_xml\\annotated_text\\5321.annotated.txt",
+    "roundtrip_status": "passed",
+    "validation_status": "passed"
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "segment_output": {
+    "segments_json_path": "data\\extraction_json\\stage07_xml\\segments\\5321.segments.json",
+    "n_segments": 3
+  },
+  "target_views": [
+    {
+      "target_id": "p1",
+      "target_kind": "patient",
+      "target_label": "Patient 1",
+      "target_view_path": "data\\extraction_json\\stage07_xml\\target_views\\5321\\p1.json",
+      "ready_for_langextract": true
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  },
+  "stage07_method": {
+    "pipeline_entrypoint": "stage07_XML/run_stage07_xml.py",
+    "manifest_run_id": "stage07_single_case_v1_batch032",
+    "generated_at_utc": "2026-05-02T09:32:37.279177+00:00"
+  }
+}

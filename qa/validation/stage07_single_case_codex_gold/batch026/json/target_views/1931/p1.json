@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1931::p1",
+  "paper_id": "1931",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1931::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: A 27-year-old young woman develops intermittent paroxysmal distal \nmuscle contractions of the left lower limb (LLL), initially during exercise, but latter \npresent also at rest. About 6 months’ latter the lower limb dystonic postures started \nto be more frequent and characterized by left foot inversion, with progressive gait \nlimitation. At this time, the patient starts to experience anxiety and depressive \nsymptomatology and begins escitalopram 20 mg. About 1 month later, she suffered \na subacute rapid worsening of the dystonic postures, becoming fixed, more painful \nand with complete loss of gait. After initiation of benzodiazepines and trihexyphenidyl \nin progressive titration and SSRI suspension, there was a progressive improvement \nof the dystonic symptomatology. From the remaining personal history, it was relevant \nfor the presence of type 1 Diabetes Mellitus, insulin-treated. A therapeutic trial with \nlevodopa/carbidopa (until 400 mg/day) was performed without benefit. Brain MRI did \nnot reveal any structural abnormalities. Brain PET-BetaCIT was unremarkable. \nGenetic NGS panel for dystonia (58 genes) was negative. About 2 months later the \npatient develops hyperreactivity to auditory and tactile stimuli and myoclonus of the \nright hand. The Serum anti-glutamic acid decarboxylase (GAD65) was positive and \nsubsequently confirmed its presence in CSF. EMG was also compatible with SPS. \nConclusions: This case report describes a rare presentation of SPS, at the \nbeginning resembling a dystonic syndrome with focal onset of the left lower limb, \nwith subsequent generalization. The presence of a rapid progression, the presence \nof startle response, the disproportion between the amount of pain and the degree of \nthe dystonic posturing and the striking hypersensitivity to the SSRIs, are all red flags \nthat make us rethink the initial diagnosis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 930,
+        "end": 2812
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1882
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

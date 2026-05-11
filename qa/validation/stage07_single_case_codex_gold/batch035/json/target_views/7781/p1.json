@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "7781::p1",
+  "paper_id": "7781",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "7781::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 69-year-old man was given a diagnosis of intestinal follicular lymphoma. At 72 years of age, he had\ndiﬃ culty walking, subsequently followed by the onset of dysphagia and vocal cord paralysis. He\nreceived steroid pulse therapy (1 g/d, 3 days) because of positive anti-lipoprotein receptor-related\nprotein 4 (Lrp4) antibodies and antibiotics because of aspiration pneumonia. Acetylcholine re-\nceptor antibodies, muscle-speciﬁc kinase antibodies, and the results of IV edrophonium testing and\nrepetitive nerve stimulation were normal. Thesefeatures gradually improved, and the Lrp4 anti-\nbodies became negative. Diﬃ culty in swallowing recurred 6 months and 1 year later, and steroid\npulse therapy resolved the swallowing dysfunction. At 74 years of age, the patient noticed hyper-\ntonia and bilateral synchronous myoclonus in the legs. The myoclonus progressed, and supra-\nnuclear type of neurogenic bladder also developed, requiring the placement of a ureteral catheter,\nleading to admission to our hospital. He was w ell-oriented. There was no motor weakness or\nsensorial or cranial nervous impairment. Rigidity was evident in the legs. Deep tendon reﬂexes were\nincreased in the legs with no Babinski sign. Surface EMG showed that both the tibialis anterior and\ngastrocnemius muscles simultaneously and synchronously contracted (video 1), and average du-\nration of 7 EMG bursts was 264.6 ± 14 ms. The myoclonus was easily elicited by other external\nstimuli and responded well to diazepam (10 mg/d). The patient could not stand or walk because of\nthe frequent myoclonus. Somatosensory evoked potentials (SSEPs) were normal with no giant\nSSEP. The results of EMG and EEG were normal. Cranial and spinal MRI were normal. Multiple\nlymphomatous polyps were found on colonoscopy, and intestinal follicular lymphoma was path-\nologically diagnosed. The results of serum laboratory and CSF examinations were normal. Anti-\nGlyR antibodies were positive in serum and CSF on cell-based assay. Antibodies to anti–glutamic\nacid decarboxylase, amphiphysin, gephyrin, Ri, Yo, Hu, CV2, Ma2, recoverin, SOX1, titin, zic4, Tr,\nvoltage-gated potassium channel,voltage-gated calcium channel, and gangliosides were negative. He\nreceived steroid pulse therapy twice (1 g/d, 3 days) and IV immunoglobulin (400 mg/kg/d, 5 days).\nThe myoclonus resolved, and the urinary catheter was withdrawn. He could walk without an\n\nassistant. Two months later, bilateral ptosis a nd diplopia developed. The results of repeated\nexaminations for myasthenia gravis were negative,indicating that these features were derived from\nPREM. He received steroid pulse therapy, and thesymptoms resolved. One year later, subjective\nmild stiﬀness in his legs persisted. Written informed consent was obtained from the patient for these\nroutine clinical examinations, treatments, and publication of the case report.\n\nDiscussion\nCo-contraction in both legs of our patient slowly and simul-\ntaneously developed on the background of no marked\nbrainstem or upper body symptoms. The EMG burst duration\nwas within the period between 150 and 1,000 ms, supporting\nthe spinal segmental myoclonus,\n2 and there was no giant\nSSEP. We believed that the myoclonus in our patient might\nhave a spinal generator. GlyR are predominantly distributed\non the cell surface of postsynaptic neurons in not only the\nbrainstem, but also the spinal cord. GlyR-Abs are pre-\ndominantly immunoglobulin G (IgG)1 or IgG3 subclass\n3 and\nbind to the extracellular domain of GlyR.4 Patient IgG caused\ninternalization on HEK293 cells expressing GlyR. 3 This\nwould be expected to inhibit the GlyR and decrease glyci-\nnergic neurotransmission, resulting in loss of brainstem and\nspinal inhibition. 3 In patients with hereditary hyperekplexia,\ndisynaptic reciprocal inhibition depending on glycinergic\nneurotransmission is observed in the spinal cord. 4 Pathologic\nstudies in patients with PERM have shown perivascular\nlymphocyte cuﬃ ng and inﬁltration as well as neuronal loss in\nthe spinal cord.\n5 GlyR-Abs are paraneoplastic in approxi-\nmately 10% of patients. In our patient, the direct association\nbetween intestinal follicular lymphoma and GlyR-Abs was\nuncertain since there was no apparent progress of intestinal\nfollicular lymphoma when PERM developed. The response to\nimmunotherapies is generally limited,\n4 but myoclonus in our\npatient responded to immunotherapies, as reported pre-\nviously.3 GlyR-Abs cause myoclonus derived from not only\nthe brainstem but also the spine, and the spinal segmental\nmyoclonus can be bilaterally synchronized.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1055,
+        "end": 3462
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2407
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3463,
+        "end": 3930
+      },
+      "compiled_offsets": {
+        "start": 2409,
+        "end": 2876
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4623,
+        "end": 6318
+      },
+      "compiled_offsets": {
+        "start": 2878,
+        "end": 4573
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

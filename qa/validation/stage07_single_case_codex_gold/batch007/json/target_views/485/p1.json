@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "485::p1",
+  "paper_id": "485",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "485::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case presentation\nA 53-year-old woman presented with increased rigidity \nof her legs, particularly after long sitting or standing \ntimes and after exposure to coldness with symptom on-\nset about one year prior to admission. She had a history \nof musicogenic reflex epilepsy for 30 years, treated with \nphenytoine 300 mg daily, and no more than two seizures\n\nper year. Additionally, she was treated for restless legs \nsyndrome with 6 mg ropinirole at night and for hypo-\nthyreoidism with 150 μg levothyroxine per day. Her fam-\nily history was unremarkable. On examination, she had \npronounced muscular rigidity of both legs which in-\ncreased dramatically after sitting or standing for a long \ntime and subsequent to coldness. Her walking distance \nwas reduced and her gait was unstable. Neurological ex-\namination was otherwise normal. Laboratory testing \nrevealed markedly increased serum GAD-Ab (> 300 U/\nl), a decreased vitamin B12 level (106 mg/l), autoanti-\nbodies against parietal cells, decreased TSH (0.24 mU/l) \nand ferritin (12 μg/l) levels and an increased homocys-\nteine level (23.3 μmol/l). Amphiphysin antibodies were \nabsent. EMG showed simultaneous motor unit activity \nin agonist and antagonist lower limb muscles. EEG, so-\nmatosensory and motor evoked potentials, as well as \ncerebral magnetic resonance imaging (MRI) were nor-\nmal (see Fig. 1). MRI of the spine revealed a herniated \nvertebral disc of the cervical segment 6/7 without rele-\nvant spinal cord compression. Diagnosis of SPS was \nmade and a pulse of 500 mg intravenous methylpred-\nnisolone was administered for five days, subsequently \nreduced to an oral methylprednisolone maintenance \ndose of 20 mg daily [9]. In addition, the substitution of \niron and vitamin B12 was initiated. Under immunomod-\nulatory treatment, motor symptoms improved slowly. \nSymptomatic therapy with antispastic drugs or benzo-\ndiazepines was not necessary.\n\nIn conclusion, our FMZ-PET data provide in vivo \nevidence that postsynaptic benzodiazepine receptor \ndysfunction contributes to the reduced GABAergic neu-\nronal inhibition in SPS. From a clinical point of view, a \nreduced availability of GABA receptors in motor-related \nareas might be a major pathophysiological determinant \nof muscular hyperactivity and stiffness in SPS. There-\nfore, FMZ-PET seems to be a suitable tool to investigate \nthe pathogenetic role of cerebral GABA transmitter dys-\nfunction in SPS. \nTable 1  Voxels with reduced FMZ tracer binding\n Brodmann\n Area\nLocalizations\n(Gray matter)\nx-, y-, z-coordinates\n(Talairach)\nz-score\n 4 right precentral gyrus 36, –17, 39 –3.86\n 6 right precentral gyrus 57, 5, 9 –3.67\n 9 right superior frontal gyrus 9, 61, 36 –2.78\n 10“ right medial frontal gyrus 12, 35, –14 –2.81\n 11 right inferior frontal gyrus 13, 35, –16 –2.65\n 19 right middle occipital gyrus 27, –80, 11 –2.45\n 28 right parahippocampal gyrus 20, –10, –21 –2.78\n 31 left cingulate gyrus –9, –22, 40 –3.25\n 40 left supramarginal gyrus –31, –44, 35 –2.95\n 47 right middle frontal gyrus 39, 35, –7 –2.25\n – right caudate head 9, 6, 6 –2.44\n – left caudate head –8, 7, 6 –2.35\n – right cerebellar tonsil 5, –53, –38 –2.26\n – right vermis 7, –85, –18 –2.69\n – left cerebellar tonsil –24, –59, –34 –2.16",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1509,
+        "end": 1865
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 356
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3508,
+        "end": 5064
+      },
+      "compiled_offsets": {
+        "start": 358,
+        "end": 1914
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 12124,
+        "end": 13442
+      },
+      "compiled_offsets": {
+        "start": 1916,
+        "end": 3234
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

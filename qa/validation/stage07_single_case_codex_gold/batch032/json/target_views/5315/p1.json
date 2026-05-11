@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5315::p1",
+  "paper_id": "5315",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5315::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "P778\nStiff-person syndrome presenting with asymmetric axial muscle\nspasms and hypertrophy\nC. Chuang (New York, NY, USA)\nObjective: To describe an atypical presentation of Stiff-person\nsyndrome.\nBackground: Stiff-Person syndrome is a condition of continuous motor\nunit activity which results in symmetric axial and proximal muscle rigidity\nwith superimposed episodic muscle spasms. The symptoms are usually\nresponsive to benzodiazepines and other GABAergic drugs. An asymmet-\n\nric subtype, involving a single limb, has been labelled as Stiff-Limb\nSyndrome. However, asymmetric involvement of axial musculature has\nnever been described in the literature.\nMethods: A Medline literature search of Stiff-person syndrome was\nperformed to review all previously described cases. A detailed history was\nobtained from our patient and clinical examination was documented by\nvideotape. The diagnosis of Stiff-Person syndrome was con ﬁrmed by\nelectromyographic evidence of continuous motor unit activity and clinical\nevidence of improvement with intravenous diazepam during an episodic\nmuscle spasm.\nResults: The patient is a 37 year-old, right-handed woman with a history\nof cervical radiculopathy and carpal tunnel syndrome who presented to the\nemergency room with severe opisthotonic posturing of her neck and upper\nback. She was given 20 mg of intravenous diazepam with resolution of the\nmuscle spasms after one hour. She reported a 20 year history of chronic\nneck and back pain following multiple motor vehicle accidents. However,\nher symptoms worsened ten years ago when she began to have episodic\nmuscle spasms which improved with oral diazepam treatment. Spasms\nwere precipitated by emotional distress, loud noises, noxious smells, touch,\nand movement. Her examination revealed marked hypertrophy of neck,\nthoracic paraspinal, and abdominal muscles only involving her right side.\nFlexion of her trunk was limited to 60 degrees. She also had abnormal\nposturing of her right hand in a clawed position with postural arm exten-\nsion only. Writing was normal. The remainder of her neurological exam-\nination was intact. Anti-GAD antibodies was negative.\nA review of the literature since 1966 did not reveal any previous case of\nasymmetric axial muscle involvement in Stiff-Person syndrome. The only\nasymmetric presentations that have been described were those with focal\nlimb involvement.\nConclusion: This is the ﬁrst case of documented Stiff-Person syndrome\nwith marked asymmetric axial muscle involvement. The pathophysiology\nof this unusual presentation is unclear but may be related to the absence of\nanti-GAD antibodies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7690,
+        "end": 8164
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 474
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8630,
+        "end": 10769
+      },
+      "compiled_offsets": {
+        "start": 476,
+        "end": 2615
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

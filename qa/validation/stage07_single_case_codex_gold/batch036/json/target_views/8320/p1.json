@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8320::p1",
+  "paper_id": "8320",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8320::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Description: A 56-year-old man with past medical history\nsigniﬁcant for multiple spinal surgeries, chronic back pain, hyper-\ntension, and hyperlipidemia who presented with fever, leukocytosis,\nrhabdomyolysis, and progressively increasing muscle spasms. Patient\npresented with creatine kinase level over 24,000, white blood cell\ncount of approximately 20,000, and elevated creatine of 1.65. Patient\nreported that his back and lower extremity spasms started in 2010\nafter back surgery and described the episodes as a tightening of his\nabdominal muscles followed by lower extremity jerking. Patient had\npreviously undergone extensive workup with brain MRI the year\nbefore, with no visible abnormalies observed. Patient underwent\nC-spine MRI which showed multi-level disk protrusion with no\nspinal cord compromise. Patients had also undergone T-spine/L-spine\nMRI which showed no spinal or foraminal compromise with multi-\nlevel laminectomy and fusion. Blood and urine cultures were pan\nnegative for patient since admission. The anti-GAD antibody titer\nordered earlier to admission was found to be markedly elevated at\n>250 (ref range 0-5), consistent with the autoimmune variant of Stiff-\nPerson Syndrome (SPS).\nSetting: Tertiary Care Hospital.\nResults or Clinical Course: Patient was subsequently treated\nwith IVIG. From his initial presentation with rhabdomyolysis, the\npatient’s creatine kinase level and leukocytosis had trended down to\nnormal limits within two to three weeks.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1105,
+        "end": 2587
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1482
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

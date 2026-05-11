@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "554::p1",
+  "paper_id": "554",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "554::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE PRESENTATION\nA 41-year-old female patient presented with a history of\nrigidity to the abdominal wall and paravertebral muscles\nassociated with painful spasms in the lower back region,\nincreased tonus on the shoulder and paravertebral region,\nand an exaggerated lumbar lordosis beginning 7 years prior\nto admission with a progressive course. Three months\nbefore seeking our service, she experienced worsening in\nthe frequency and intensity of the spasms, with severe func-\ntional limitation, inability to get out of bed and having lost\napproximately 20 kg (44 lb) during the period. The patient\nunderwent a thorough investigation for occult neoplasm,\nwhich was negative. SPS was proposed as a possible diag-\nnosis and tests for anti-glutamic acid decarboxylase (GAD)\nantibodies were performed showing a positive result in\nhigh titres. Together with an electromyography showing\ncontinuous motor activity with normal morphology both\non paravertebral and abdominal muscles, the evidences\nallowed us to make the diagnosis of SPS (\nfigure 1–2).\nFigure 1 Eletroneuromyography of the right rectus abdominal muscle before treatment.\n\nThe patient’s response to the symptomatic treatment\nwith intravenous diazepam and application of botulinum\ntoxin type A was moderate requiring high doses of benzo-\ndiazepine; she also did not tolerate our attempts to change\nthe intravenous to oral medication.\n2\nThe case was extensively discussed at our unit and,\nalthough some good results have been reported with the use\nofplasmaexchangeandhyperimmune-globulininfusion,we\ndecided to try rituximab for the treatment of SPS based on\nrecent papers showing evidence of a good and safe response.\nThe treatment was conducted in accordance with the\nDeclaration of Helsinki and all the procedures were carried\nout with the adequate understanding of the subject who read\nand signed an informed consent before we started it.\nINVESTIGATIONS\nHead and chest CT with contrast infusion; thyroid, abdo-\nmen, pelvis and transvaginal ultrasound; upper gastrointes-\ntinal tract endoscopy and colonoscopy were carried out.\nUnfortunately, the F-18-fluorodeoxyglucose positron emis-\nsion tomography was not performed because we do not\nhave access to this exam.\nSPS is also associated with anti-pancreatic islet cell anti-\nbodies and anti-amphiphysin antibodies. The first one is\nassociated with diabetes, which was ruled out in our\npatient, and the second one is associated with paraneoplas-\ntic syndromes. Since the investigation was negative and the\nfinancial resources of our service are limited, we did not\ninvestigate these antibodies.\nThe effect of the treatment has lasted for about 1 year\nand, so far, monotherapy with rituximab seems to be a good\nchoice for the treatment; however it may not be enough for\nmaintaining remission because our patient still needs to use\nbenzodiazepines as symptomatic drugs.\nOUTCOME AND FOLLOW-UP\nTwo days after the infusion of rituximab (dose 375 mg/m 2)\nshe started showing decrease in the muscular tonus and\nrequired a progressively smaller dose of intravenous benzo-\ndiazepine. The second infusion occurred 15 days after the\nfirst one and the next day she tolerated oral diazepam with-\nout spasms. She did not show any side effects to the medi-\ncation and was dismissed 8 days after the second infusion to\noutpatient follow-up.\n\nOur patient was diagnosed based on clinical features,\nneurophysiological exams and serological testing for anti-\nGAD antibodies. Symptomatic treatment is based on\nGABA-enhancing medications, leading to reduction of the\ncontinuous motor activity, but the specific treatment must\nbe targeted to the underlying cause, which is probably\nautoimmune.\n13 –468\nRituximab is a monoclonal antibody targeting the CD20\nantigens on the surface of mature B lymphocytes. After\nbinding to these antigens, it initiates a cascade of biochemi-\ncal events leading to the cell lysis. Its use has been approved\nfor numerous diseases, including rheumatoid arthritis and\nnon-Hodgkin B-cell lymphomas, and it has been tested for\nother diseases, such as neuromyelitis optica, with promis-\ning results. The use of rituximab in the treatment of SPS is a\nrecent approach and good results have been reported.\n1\nAccording to the available literature, a lowering in anti-\nGAD titres is associated with clinical improvement; how-\never, these data were not observed in our case and, even\nthough the patient had clinical improvement, the antibody\ntitres continued rising (\nfigure 3 ). It is possible that anti-\nGAD antibody titre should have no relation to the clinical\npresentation of the disease. This is a preliminary paper\nshowing partial results and, therefore, a long-term follow-\nup is required.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1650,
+        "end": 2778
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1128
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2837,
+        "end": 5037
+      },
+      "compiled_offsets": {
+        "start": 1130,
+        "end": 3330
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6131,
+        "end": 7498
+      },
+      "compiled_offsets": {
+        "start": 3332,
+        "end": 4699
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

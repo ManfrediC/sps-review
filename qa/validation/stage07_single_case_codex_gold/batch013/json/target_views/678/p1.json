@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "678::p1",
+  "paper_id": "678",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "678::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE PRESENTATION\nA 66-year-old man was referred to our neurology\ndepartment with a 4-week history of progressive\nstiffness and painful spasms of both legs, with\nrecent worsening of his condition over the last\n3 days resulting in a considerable dif ﬁculty to rise\nand to walk. There was no history of diabetes or\nother autoimmune diseases, but the patient was\ndiagnosed with chronic lymphocytic leukaemia\n(CLL) approximately 1 year before symptom onset\nwith currently no need for treatment. The family\nhistory was unremarkable.\nOn admission, the lower limbs were rigid with\nﬁxated equinus position of the right foot.\nMovements were severely limited and painful, and\nstrength could not be assessed because of rigidity\nand spontaneous, re ﬂex-induced or action-induced\nspasms. The muscle spasms precipitated by sudden\nauditory or tactile startle as well as by psychological\nfactors. A slightly increased tone was noted in his\nupper limbs, with normal muscular strength and\nwithout any movement limitation. No paraspinal\nor axial contractions were palpated. Sensory exam-\nination was normal except for reduced vibration\nsense in both lower extremities. Deep tendon\nreﬂexes were normal in the upper limbs. Patellar\nand Achilles jerks were markedly exaggerated.\nPlantar response was ﬂexor bilaterally . Functionally ,\nthe patient was unable to walk because of rigidity\nin both of his legs. He had an intact intellect and\nthere were no other psychiatric abnormalities.\nINVESTIGATIONS\nThe results of the routine laboratory tests showed\na mild pancytopenia (leucocytes 37.9×1000/ ml,\nthrombocytes 112×1000/ ml and haemoglobin\n9.6 mg/dl). MRI of the whole neuroaxis and electro-\nencephalography showed no additional ﬁndings.\nElectromyography revealed a persistent motor neuron\nactivity most prominent in the lower extremity\nmuscles which persisted d espite the attempt to relax\n\n(ﬁgure 1). The peripheral nerve conduction velocities and ampli-\ntudes were normal. CSF examination showed a slightly increased\ncell count (10 cells/ ml) and normal protein levels. A monoclonal\npopulation of lymphocytes was excluded in the CSF .\nCorresponding bands were found in CSF and serum. Screening for\nantineuronal antibodiesanti-Hu, anti-Ri, anti- Y o, anti-CV2, antiam-\nphiphysin, anti-Ma2 and anti-GAD antibodies in the patient ’s\nserum by indirect immunoﬂuorescence assay showed no signiﬁcant\nresult. Still, with high suspicion that the clinical case could be SPS\nor a related syndrome, that is, SLS or PERM, we additionally\nscreened the patients’ serum for anti-GlyR antibodies which were\nfound positive, with a titre of 1 : 10 in the serum, but not in the\nCSF ( ﬁgure 2). Owing to the clinically suspected paraneoplastic\norigin of the patients’ symptoms, we furthermore performed a thor-\nacic, abdominal and skeletal CT scan which did not show any oste-\nolysis or extramedullar manifestation of myeloma or any other\nmalignoma.\nTREATMENT\nThe ﬁrst therapeutic approach was aimed at symptom relief\nwith the γ-aminobutyric acid (GABA) agonists baclofen and clo-\nnazepam. The combination of both medications provided a rela-\ntively modest relief of the patients ’ excessive motor unit activity .\nWith regard to the patient ’s underlying disease (ie, CLL) as the\nsuspected origin of the symptoms, we started a therapy with\nrituximab and bendamustine ( ﬁrst day rituximab 350 mg/m²,\nsecond and third day bendamustine 90 mg/m²) which causes a\ndepletion of mature B cells. A second treatment course was\ngiven 12 weeks later. At 2 days after the second course, the\npatient developed a severe autonomic instability ( profuse sweat-\ning, mydriasis, tachycardia, high blood pressure and hyperther-\nmia) followed by a cardiac arrest. He was resuscitated and\nventilated and further treated on our intensive care unit, where\na therapeutic trail with IVIG was started. The patient did not\nshow any improvements neither in stiffness nor in myoclonic\njerks 7 days after the initiation of IVIG treatment.\nOUTCOME AND FOLLOW-UP\nOnly after ﬁve cycles of PE, a signi ﬁcant relief of myoclonic\njerks was achieved. Under continuous therapy with PE every\n3 months and symptomatic treatment with baclofen and clona-\nzepam, the patient was in a stable condition, bed-bounded, but\nwithout severe impairment owing to painful muscle rigidity and\nspasms.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3710,
+        "end": 5578
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1868
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5661,
+        "end": 8096
+      },
+      "compiled_offsets": {
+        "start": 1870,
+        "end": 4305
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

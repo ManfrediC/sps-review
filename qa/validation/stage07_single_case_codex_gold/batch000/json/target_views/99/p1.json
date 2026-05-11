@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "99::p1",
+  "paper_id": "99",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "99::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 42-year-old man with insulin-dependent diabetes\nmellitus for 12 years complained of paroxysmal painful\nmuscle spasms in his left leg. Over the years these spasms\nextended to his other leg, lower back, and finally his\ncomplete trunk. When these spasms appeared almost\ncontinuously during the day, running, cycling, and even\nbending forward became impossible. Clinical examination\nrevealed a lumbar hyperlordosis, and board-like rigidity of\nthe trunk and proximal legs. He walked with a hobbling, stiff-\nlegged gait. Loud noises provoked involuntary contractions\nlasting several minutes. Electromyography showed\ncontinuous motor-unit activity at rest in all affected muscles,\nwhich decreased after diazepam. In serum, autoantibodies\nagainst glutamic acid decarboxylase (GAD) were present.\nThese findings are compatible with SMS.\n1 Diazepam had to\nbe discontinued because of drowsiness and impotence.\nCarbamazepine was ineffective. Soon after we started\nvigabatrin, the patient greatly improved. He was again able to\nrun, cycle, and perform one of his favourite hobbies,\ndancing, even in crowded places. His improved condition has\nnow been stable for 4 years on vigabatrin 3 g daily without\nside-effects.\nSMS is considered to be an autoimmune disease, with\nautoantibodies directed against (gamma-aminobutyric acid)\n(GABA)-ergic neurons, present in 60% of these patients. 2\nThe principal autoantigen is thought to be GAD, 2 which\ncatalyses the conversion of glutamate to GABA, and is found\nin the central nervous system and in pancreatic β-cells. GAD\nantibodies are associated with SMS and also with insulin-\ndependent diabetes mellitus, and may prevent \nGABA production. Since vigabatrin increases GABA\nconcentrations by inhibiting its breakdown, we hypothesised\nthat it may diminish muscle spasms and rigidity in patients\nwith SMS.\nImprovement of spasms and rigidity in SMS have been\nreported after treatment with diazepam, carbamazepine,\nbaclofen, sodium valproate, plasmapheresis, and intravenous\nimmunoglobulin. 3–5 The improvement in our patient’s\nneurological condition, which has lasted for more than 4\nyears, may be caused by treatment with vigabatrin rather\nthan a remission by chance. This observation has to be the\nsubject of further investigation before definitive conclusions\ncan be drawn.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 295,
+        "end": 2596
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2301
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

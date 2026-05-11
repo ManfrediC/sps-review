@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1281::p1",
+  "paper_id": "1281",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1281::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 50-year-old man with recurrent episodes\nof painful back spasms was diagnosed with\nSPS by positive serum test for GAD antibod-\nies. He had no additional past medical histo-\nry. Of note, the patient underwent a malig-\nnancy work-up including CT scanning of his\nchest, abdomen, and pelvis along with age\nappropriate cancer screenings. All malignan-\ncy work-up was negative. Subsequently, he\nwas hospitalized on two separate occasions\nfor uncontrollable painful spasms. He experi-\nenced 3-5 episodes per day, with the spasms\npredominantly involving his paraspinal mus-\ncles, and each episode lasting approximately\n2-5 minutes. During the first admission, his\nlaboratory workup showed creatinine phos-\nphokinase (CPK) elevated up to 55,559 U/L,\ncreatinine elevation up to 4.5 mg/dL denoting\nacute kidney injury, and a marked leukocyto-\nsis to 19.36 × 10\n3/µL. Infectious work-up was\n\nnonrevealing. Six months later during his\nsecond admission, again his laboratory\nworkup showed CPK elevated up to 22,400\nU/L, creatinine elevation up to 2.5 mg/dL, and\na leukocytosis up to 22.93 × 10\n3/µl. Infectious\nwork-up was again investigated and nonre-\nvealing. During both admissions, the acute\nrenal failure and leukocytosis resolved after\nrehydration with intravenous fluids along\nwith the patient receiving courses of intra-\nvenous immunoglobulin and a moderate\nincrease in his antispasmodic medications.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2571,
+        "end": 3462
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 891
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3463,
+        "end": 3977
+      },
+      "compiled_offsets": {
+        "start": 893,
+        "end": 1407
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

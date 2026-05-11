@@ -1,0 +1,1633 @@
+{
+  "paper_id": "62",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\62.json",
+    "source_text_sha256": "7a64b430e452571e4ee1b7361ca74a1053329445d38348bf2c553fe27adc9c98",
+    "prepared_source_sha256": "ef00c4375aba11a01f42572a8c193dcd514d8419d3169b7dce1075d81e9e20d6",
+    "prepared_source_character_count": 30859
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient I",
+      "source": "stage07_route_recovery"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 40
+      },
+      "page_index": 0,
+      "text": "FEBS Letters 351 (1994) 73-79\nFEBS 14439"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 42,
+        "end": 561
+      },
+      "page_index": 0,
+      "text": "Autoimmunity in Stiff-Man Syndrome with breast cancer is targeted\nto the C-terminal region of human amphiphysin,\na protein similar to the yeast proteins, Rvs167 and Rvs161\nCarol David”, Michele Solimenab, Pietro De Camilli”,*\nof Cell Biology and Howard Hughes Medical Institute, Yale University School of Medicine, Boyer Center for Molecular Medicine,\n295 Congress Avenue, New Haven, CT 06510, USA\nb Department of Internal Medicine, Section of Endocrinology, Yale University School of Medicine, New Haven, CT 06510, USA"
+    },
+    {
+      "block_id": "b0003",
+      "source_offsets": {
+        "start": 563,
+        "end": 574
+      },
+      "page_index": 0,
+      "text": "“Department"
+    },
+    {
+      "block_id": "b0004",
+      "source_offsets": {
+        "start": 576,
+        "end": 636
+      },
+      "page_index": 0,
+      "text": "Received 16 June 1994; revised version received 21 July 1994"
+    },
+    {
+      "block_id": "b0005",
+      "source_offsets": {
+        "start": 638,
+        "end": 1361
+      },
+      "page_index": 0,
+      "text": "Abstract\nAmphiphysin, a neuronal protein first identified in chicken synaptic membranes, is the autoantigen of Stiff-Man Syndrome (SMS) associated with\nbreast cancer. We have now cloned human amphiphysin and found the N- and C-terminal domains of the protein to be highly conserved between\nchicken and human. Patient autoantibodies have a distinct pattern of reactivity with amphiphysin, and the dominant autoepitope is located in its\nC-terminal region, which contains an SH3 domain. Portions of chicken and human amphiphysin are also homologous to portions of Rvs167 and\nRvs161, two yeast proteins which are involved in cell entry into stationary phase upon exposure to unfavourable growth conditions.\nKey words: Stiff-Man"
+    },
+    {
+      "block_id": "b0006",
+      "source_offsets": {
+        "start": 1363,
+        "end": 1372
+      },
+      "page_index": 0,
+      "text": "Syndrome;"
+    },
+    {
+      "block_id": "b0007",
+      "source_offsets": {
+        "start": 1374,
+        "end": 1386
+      },
+      "page_index": 0,
+      "text": "Amphiphysin;"
+    },
+    {
+      "block_id": "b0008",
+      "source_offsets": {
+        "start": 1388,
+        "end": 1402
+      },
+      "page_index": 0,
+      "text": "Breast cancer;"
+    },
+    {
+      "block_id": "b0009",
+      "source_offsets": {
+        "start": 1404,
+        "end": 2637
+      },
+      "page_index": 0,
+      "text": "1. Introduction\nStiff-Man\nSyndrome (SMS) is a rare neurological disease characterized by rigidity of the body musculature\nwith superimposed painful spasms [l&4]. SMS is one of\nthe few human diseases for which evidence of an autoimmune process directed against CNS neuronal antigens\nhas been found. High titer antibodies directed against\nneuronal autoantigens are found both in the serum and\nin the cerebrospinal fluid of the majority of SMS patients\nt51.\nTwo main targets of humoral autoimmunity have been\nidentified in two populations of SMS patients which have\nsimilar neurological characteristics but different associated conditions. In 50-60% of the cases, autoantibodies\nare primarily directed against the GABA-synthesizing\nenzyme glutamic acid decarboxylase (GAD). In these\npatients, insulin-dependent diabetes mellitus and other\norgan-specific autoimmune diseases are frequently present [5-71.\nIn five of the more than 100 cases of SMS patients\nwhose sera we have tested, autoantibodies are directed\nagainst another neuronal protein of 128 k Da [8]. This\nprotein was recently identified as amphiphysin [9], a synaptic vesicle-associated protein originally cloned from\nchicken brain [lo]. Strikingly, all five patients with am-"
+    },
+    {
+      "block_id": "b0010",
+      "source_offsets": {
+        "start": 2639,
+        "end": 2653
+      },
+      "page_index": 0,
+      "text": "*Corresponding"
+    },
+    {
+      "block_id": "b0011",
+      "source_offsets": {
+        "start": 2655,
+        "end": 2687
+      },
+      "page_index": 0,
+      "text": "author. Fax: (1) (203) 787-3364."
+    },
+    {
+      "block_id": "b0012",
+      "source_offsets": {
+        "start": 2689,
+        "end": 2939
+      },
+      "page_index": 0,
+      "text": "Abbreviations: a.a., amino acid; c Amph, chicken amphiphysin; CNS,\ncentral nervous system; GAD, glutamic acid decarboxylase; h Amph,\nhuman amphiphysin; PAGE, polyacrylamide gel electrophoresis; PCR,\npolymerase chain reaction; SMS, Stiff-Man Syndrome."
+    },
+    {
+      "block_id": "b0013",
+      "source_offsets": {
+        "start": 2941,
+        "end": 2949
+      },
+      "page_index": 0,
+      "text": "Synaptic"
+    },
+    {
+      "block_id": "b0014",
+      "source_offsets": {
+        "start": 2951,
+        "end": 2967
+      },
+      "page_index": 0,
+      "text": "vesicle; Rvs161;"
+    },
+    {
+      "block_id": "b0015",
+      "source_offsets": {
+        "start": 2969,
+        "end": 2975
+      },
+      "page_index": 0,
+      "text": "Rvs167"
+    },
+    {
+      "block_id": "b0016",
+      "source_offsets": {
+        "start": 2977,
+        "end": 4752
+      },
+      "page_index": 0,
+      "text": "phiphysin autoimmunity are women with breast cancer.\nIn fact, in two of these patients, an infiltrating ductal\nadenocarcinoma of the breast was searched for, and\nfound, only after the identification of the anti-amphiphysin antibodies ([8] and our most recent case (patient 1 of this study - see section 2)). A remission of the\nneurological symptoms was documented in three of the\nfive patients after removal of the cancer and steroid therapy ([8, 9, 1 I] and this study (Dr. M. Myers, Jackson, MI,\npersonal communication))\nsupporting the hypothesis\nthat the condition results from a functional rather than\nstructural damage of the CNS. Other cases of SMS associated with cancer have been described [12, 13]. These\nfindings raise the possibility that in some cases SMS may\nhave an autoimmune paraneoplastic origin. As in the\ncase of autoantigens of other autoimmune paraneoplastic diseases of the CNS, as well as of GAD, amphiphysin\nis an intracellular protein and the link between humoral\nautoimmunity directed against the autoantigen and the\nclinical symptoms remains to be explained.\nIn other neurological autoimmune paraneoplastic\nconditions, expression of the neuronal autoantigen in the\ntumor was reported [14, 15]. It was proposed that the\nectopic expression of the brain antigen by cancer cells\nmay trigger the autoimmune response [16]. In some\ncases, the autoantigen is thought to play a role in neoplastic growth [17]. As a first step to investigate mechanisms of amphiphysin autoimmunity and a possible role\nof amphiphysin in the biology of human breast cancer,\nwe have now cloned human amphiphysin and mapped\nthe autoepitopes. By Western blotting, a stereotypic humoral autoimmune response to amphiphysin was detected similarly to what we have previously shown for"
+    },
+    {
+      "block_id": "b0017",
+      "source_offsets": {
+        "start": 4754,
+        "end": 4873
+      },
+      "page_index": 0,
+      "text": "0014-5793/94/$7. 00 0 1994 Federation of European Biochemical Societies. All rights reserved.\nSSDI\n0014-5793(94)00826-4"
+    },
+    {
+      "block_id": "b0018",
+      "source_offsets": {
+        "start": 4875,
+        "end": 5386
+      },
+      "page_index": 1,
+      "text": "GAD autoimmunity in SMS [lS]. The region of amphiphysin most highly conserved -between chicken and\nhuman is also similar to two yeast proteins, Rvs161 [19]\nand Rvs167 [20] which are implicated in the transition\nfrom exponential cell growth to stationary phase upon\nexposure to nutrient starvation. The similarity of amphiphysin to yeast proteins which participate in stationary phase adaptation suggests the possibility that amphiphysin, or a closely related protein, has a role in the\nbiology of breast cancer."
+    },
+    {
+      "block_id": "b0019",
+      "source_offsets": {
+        "start": 5388,
+        "end": 8593
+      },
+      "page_index": 1,
+      "text": "2. Materials and methods\n2. 1. Human sera\nA new serum, belonging to a 75-year-old woman (patient I) with\nSMS was referred to us (Dr. S. Songcharden,\nDr. M. Myers, Jackson,\nMI) to be tested for the presence of anti-neuronal\nantibodies.\nThe\ndetection of anti-amphiphysin\nautoantibodies\nprompted a search for an\noccult breast cancer. A small ductal adenocarcinoma\nwas found and\nsurgically removed. Sera from four patients with SMS and breast cancer were previously described (patients 2-5) [8, 9]. Control sera were\nfrom healthy subjects.\n2. 2. DNA manipulations\nMolecular biological procedures were performed according to standard protocols [21]. Synthetic oligonucleotides\nwere synthesized (Keck\nBiotechnology\nResource Laboratory,\nYale University) in order to amplify via PCR from a ilZAP chicken brain cDNA library (courtesy of\nM. Bartkiewicz\nand R. Baron, Yale University)\ntwo fragments\nof\nchicken amphiphysin\n[IO] corresponding\nto nucleotides\n75-341 and\n777-1384 (nt75-341, nt777-1384).\n[a.-32P]dATP was incorporated\ninto\npurified PCR products via primer-direct\nlabeling as described by Bogue\n[22] and used as probes at 2 x106 cpm/ml for Northern blots and IO5\ncpm/ml for library screening under relatively high stringency conditions\n(hybridization\n- 50% formamide,\n6 x SSC, 0. 1% SDS, 2 x Denhardt’s,\n100 mg/ml salmon sperm DNA, 37”C, 20 h; wash ~ 2 x SSC, 0. 05%\nSDS, 45’C).\n1. 5 x IO6 plaques of a /2gtll human cerebellar cDNA library (random- and oligo(dT)-primed;\nClontech, Palo Alto, CA) were screened\nwith nt777-1384.\nPhage cDNA inserts of positive clones were purified\nand sequenced [23]. Sequence data, hydrophilicity,\nand antigenicity\nprofiles were compiled and analyzed using Mac Vector (IBI Ltd., Cambridge, UK) and MacDNASIS\nPro (Hitachi, San Bruno, CA) software.\nBESTFIT [24], BLAST [25] and PlLEUP [26] analyses were programs\nof the Genetics Computer Group (Madison, WI). Secondary structure\npredictions\nwere done by the Self Optimized Prediction Method [27].\n2. 3. Preparation offision proteins\nThe fragment corresponding\nto nt 89-2377 of clone 22-2 was ligated\ninto SmaI-. EcoRI\nsites of pGEX-2T\nvector (Pharmacia,\nPiscataway,\nNJ) to generate a glutathione\nS-transferase\n(GST)/full-length\nhuman\namphiphysin\nfusion protein. Clone 22-2 was used as a cDNA template\nin PCR reactions with Vent, DNA polymerase (New England Biolabs,\nBeverly, MA), to obtain the amphiphysin\nfragments encoding amino\nacids (a.a) I-161, 132~291, 262-435, 41\nl-581, and 545-695 (designated\nI-V, see Fig. 4A). SmaI and EcoRI sites were added to 5’ and 3’ ends\nof the fragments respectively to allow unidirectional\nsubcloning into the\npolylinker region of pGEX-2T. The sequences of all GST-amphiphysin\nfusion constructs\nwere confirmed\nby DNA sequencing.\nThe fusion\nproteins were produced in DH5a cells and purified on a glutathione Sepharose 4B column (Pharmacia,\nPiscataway,\nNJ) essentially as described [28]. Constructs\nyielded recombinant\nproteins composed\nof\nGST (-28 k Da) fused to the N-terminus\nof the corresponding\namphiphysin fragment.\n2. 4. Miscellaneous procedures\nSDS-PAGE of 5-16% gradient gels and Western blotting were performed essentially as described by Laemmli [29] and Towbin [30], respectively."
+    },
+    {
+      "block_id": "b0020",
+      "source_offsets": {
+        "start": 8595,
+        "end": 8621
+      },
+      "page_index": 1,
+      "text": "Western blots with patient"
+    },
+    {
+      "block_id": "b0021",
+      "source_offsets": {
+        "start": 8623,
+        "end": 8642
+      },
+      "page_index": 1,
+      "text": "Letter.y 351 (1994)"
+    },
+    {
+      "block_id": "b0022",
+      "source_offsets": {
+        "start": 8644,
+        "end": 8662
+      },
+      "page_index": 1,
+      "text": "sera was performed"
+    },
+    {
+      "block_id": "b0023",
+      "source_offsets": {
+        "start": 8664,
+        "end": 8669
+      },
+      "page_index": 1,
+      "text": "73 79"
+    },
+    {
+      "block_id": "b0024",
+      "source_offsets": {
+        "start": 8671,
+        "end": 8683
+      },
+      "page_index": 1,
+      "text": "as described"
+    },
+    {
+      "block_id": "b0025",
+      "source_offsets": {
+        "start": 8685,
+        "end": 8906
+      },
+      "page_index": 1,
+      "text": "[IQ.\nA serum directed against human amphiphysin\n(CD6) was obtained\nby injecting a rabbit with GST-human\namphiphysin\nfusion protein (I\nmg) which had been purified on a GTH-Sepharose\ncolumn followed by\npreparative\nSDS-PAGE."
+    },
+    {
+      "block_id": "b0026",
+      "source_offsets": {
+        "start": 8908,
+        "end": 8933
+      },
+      "page_index": 1,
+      "text": "3. Results and discussion"
+    },
+    {
+      "block_id": "b0027",
+      "source_offsets": {
+        "start": 8935,
+        "end": 11443
+      },
+      "page_index": 1,
+      "text": "In order to clone human amphiphysin, two fragments\nof chicken amphiphysin [lo], nt75-341 and nt777-1384,\nencoding for amino acids (a.a.) 1-81 and 228430, respectively, were generated and tested for reactivity in\nNorthern blot before proceeding to screen a Agtll\nhuman cerebellar cDNA library. As expected, both fragments hybridized very strongly to a band of approximately 4. 5 kb in chicken brain poly(A)’ mRNA. They\nalso labeled more weakly a band of similar size when\ntested under high stringency conditions on rat brain\npolyA+ mRNA (data not shown).\nThe nt777-1384, corresponding to the central region\nof chicken amphiphysin [lo], was then used as a probe\nto screen 1. 5 x lo6 plaques of a Lgtll human cerebellar\ncDNA library. Eighteen positive clones were isolated,\nfour of which (designated 22-2, 24, 27 and 34) were also\npositive when hybridized with the chicken fragment\nnt75-34 1, which encompassed the N-terminal. Sequence\nanalysis revealed that clone 22-2 contained an -2. 4 kb\ninsert, which had an open reading frame of 2088 nt (nt\n111-2198) encoding a protein of 695 a.a. (Fig. 1, top\nline). The nucleotide sequence encoding the putative protein was 73% identical to the nucleotide sequence of\nchicken amphiphysin. The sequence surrounding the\nfirst ATG (gcagccatgg), at position 111 of clone 22-2,\nconformed very well to the initiation consensus sequence\nas defined by Kozak [3 13. No polyadenylation signal was\ndetected at the 3’ end of the clone (nt2199-2377). However, a stretch of 10 A’s was found (nt2365-2374), suggesting that internal annealing of the oligo(dT) primer\noccurred at this site. Clones 24, 27 and 34 were identical\nin sequence to smaller portions of clone 22-2 except for\nclone 27 which differed by 20 nucleotides in the 5’ noncoding region. Whether this represents a cloning artifact\nor evidence of a transcript alternatively spliced at the 5’\nregion, remains to be determined.\nThe predicted molecular weight (76. 25 k Da) of the\nprotein encoded by clone 22-2 was considerably smaller\nthan the apparent molecular weight of rat amphiphysin\nin SDS-PAGE gels which is approximately\n128 k Da\n[8, 9]. However, a similar aberrant electrophoretic mobility was previously reported for chicken amphiphysin\n[lo]. Injection of a GST-human amphiphysin fusion protein in rabbits elicited the production of antibodies which\nreacted very strongly with the 128 k Da antigen recognized by patient sera in brain tissue (Fig. 2). Additionally, the GST-fusion protein had an apparent molecular"
+    },
+    {
+      "block_id": "b0028",
+      "source_offsets": {
+        "start": 11445,
+        "end": 11447
+      },
+      "page_index": 1,
+      "text": "74"
+    },
+    {
+      "block_id": "b0029",
+      "source_offsets": {
+        "start": 11449,
+        "end": 11456
+      },
+      "page_index": 2,
+      "text": "Letters"
+    },
+    {
+      "block_id": "b0030",
+      "source_offsets": {
+        "start": 11458,
+        "end": 11468
+      },
+      "page_index": 2,
+      "text": "351 (1994)"
+    },
+    {
+      "block_id": "b0031",
+      "source_offsets": {
+        "start": 11470,
+        "end": 11472
+      },
+      "page_index": 2,
+      "text": "15"
+    },
+    {
+      "block_id": "b0032",
+      "source_offsets": {
+        "start": 11474,
+        "end": 11479
+      },
+      "page_index": 2,
+      "text": "73-79"
+    },
+    {
+      "block_id": "b0033",
+      "source_offsets": {
+        "start": 11481,
+        "end": 11484
+      },
+      "page_index": 2,
+      "text": "mph"
+    },
+    {
+      "block_id": "b0034",
+      "source_offsets": {
+        "start": 11486,
+        "end": 11488
+      },
+      "page_index": 2,
+      "text": "70"
+    },
+    {
+      "block_id": "b0035",
+      "source_offsets": {
+        "start": 11490,
+        "end": 11496
+      },
+      "page_index": 2,
+      "text": "c Amph"
+    },
+    {
+      "block_id": "b0036",
+      "source_offsets": {
+        "start": 11498,
+        "end": 11500
+      },
+      "page_index": 2,
+      "text": "70"
+    },
+    {
+      "block_id": "b0037",
+      "source_offsets": {
+        "start": 11502,
+        "end": 11515
+      },
+      "page_index": 2,
+      "text": "RVS167\nRvs161"
+    },
+    {
+      "block_id": "b0038",
+      "source_offsets": {
+        "start": 11517,
+        "end": 11519
+      },
+      "page_index": 2,
+      "text": "63"
+    },
+    {
+      "block_id": "b0039",
+      "source_offsets": {
+        "start": 11521,
+        "end": 11537
+      },
+      "page_index": 2,
+      "text": ". . . . . .. MSW"
+    },
+    {
+      "block_id": "b0040",
+      "source_offsets": {
+        "start": 11539,
+        "end": 11541
+      },
+      "page_index": 2,
+      "text": "61"
+    },
+    {
+      "block_id": "b0041",
+      "source_offsets": {
+        "start": 11543,
+        "end": 11553
+      },
+      "page_index": 2,
+      "text": "mph\nc Amph"
+    },
+    {
+      "block_id": "b0042",
+      "source_offsets": {
+        "start": 11555,
+        "end": 11558
+      },
+      "page_index": 2,
+      "text": "120"
+    },
+    {
+      "block_id": "b0043",
+      "source_offsets": {
+        "start": 11560,
+        "end": 11566
+      },
+      "page_index": 2,
+      "text": "RVS167"
+    },
+    {
+      "block_id": "b0044",
+      "source_offsets": {
+        "start": 11568,
+        "end": 11571
+      },
+      "page_index": 2,
+      "text": "130"
+    },
+    {
+      "block_id": "b0045",
+      "source_offsets": {
+        "start": 11573,
+        "end": 11579
+      },
+      "page_index": 2,
+      "text": "RVS161"
+    },
+    {
+      "block_id": "b0046",
+      "source_offsets": {
+        "start": 11581,
+        "end": 11584
+      },
+      "page_index": 2,
+      "text": "118"
+    },
+    {
+      "block_id": "b0047",
+      "source_offsets": {
+        "start": 11586,
+        "end": 11594
+      },
+      "page_index": 2,
+      "text": "mph\n&mph"
+    },
+    {
+      "block_id": "b0048",
+      "source_offsets": {
+        "start": 11596,
+        "end": 11599
+      },
+      "page_index": 2,
+      "text": "186"
+    },
+    {
+      "block_id": "b0049",
+      "source_offsets": {
+        "start": 11601,
+        "end": 11604
+      },
+      "page_index": 2,
+      "text": "120"
+    },
+    {
+      "block_id": "b0050",
+      "source_offsets": {
+        "start": 11606,
+        "end": 11609
+      },
+      "page_index": 2,
+      "text": "186"
+    },
+    {
+      "block_id": "b0051",
+      "source_offsets": {
+        "start": 11611,
+        "end": 11617
+      },
+      "page_index": 2,
+      "text": "RVS167"
+    },
+    {
+      "block_id": "b0052",
+      "source_offsets": {
+        "start": 11619,
+        "end": 11622
+      },
+      "page_index": 2,
+      "text": "200"
+    },
+    {
+      "block_id": "b0053",
+      "source_offsets": {
+        "start": 11624,
+        "end": 11630
+      },
+      "page_index": 2,
+      "text": "RVSl61"
+    },
+    {
+      "block_id": "b0054",
+      "source_offsets": {
+        "start": 11632,
+        "end": 11635
+      },
+      "page_index": 2,
+      "text": "185"
+    },
+    {
+      "block_id": "b0055",
+      "source_offsets": {
+        "start": 11637,
+        "end": 11645
+      },
+      "page_index": 2,
+      "text": "mph\n&mph"
+    },
+    {
+      "block_id": "b0056",
+      "source_offsets": {
+        "start": 11647,
+        "end": 11657
+      },
+      "page_index": 2,
+      "text": "LQEELPSLWS"
+    },
+    {
+      "block_id": "b0057",
+      "source_offsets": {
+        "start": 11659,
+        "end": 11669
+      },
+      "page_index": 2,
+      "text": "RRVGFYVNTF"
+    },
+    {
+      "block_id": "b0058",
+      "source_offsets": {
+        "start": 11671,
+        "end": 11683
+      },
+      "page_index": 2,
+      "text": "IWVSSL! XAKF"
+    },
+    {
+      "block_id": "b0059",
+      "source_offsets": {
+        "start": 11685,
+        "end": 11696
+      },
+      "page_index": 2,
+      "text": "HKEIAV. LCH"
+    },
+    {
+      "block_id": "b0060",
+      "source_offsets": {
+        "start": 11698,
+        "end": 11708
+      },
+      "page_index": 2,
+      "text": "KLYEVMTKLG"
+    },
+    {
+      "block_id": "b0061",
+      "source_offsets": {
+        "start": 11710,
+        "end": 11720
+      },
+      "page_index": 2,
+      "text": "DQHADKAFTI"
+    },
+    {
+      "block_id": "b0062",
+      "source_offsets": {
+        "start": 11722,
+        "end": 11733
+      },
+      "page_index": 2,
+      "text": "QZAPS.. DSd"
+    },
+    {
+      "block_id": "b0063",
+      "source_offsets": {
+        "start": 11735,
+        "end": 11742
+      },
+      "page_index": 2,
+      "text": "253\n253"
+    },
+    {
+      "block_id": "b0064",
+      "source_offsets": {
+        "start": 11744,
+        "end": 11750
+      },
+      "page_index": 2,
+      "text": "Rvs167"
+    },
+    {
+      "block_id": "b0065",
+      "source_offsets": {
+        "start": 11752,
+        "end": 11755
+      },
+      "page_index": 2,
+      "text": "253"
+    },
+    {
+      "block_id": "b0066",
+      "source_offsets": {
+        "start": 11757,
+        "end": 11763
+      },
+      "page_index": 2,
+      "text": "RVSl61"
+    },
+    {
+      "block_id": "b0067",
+      "source_offsets": {
+        "start": 11765,
+        "end": 11768
+      },
+      "page_index": 2,
+      "text": "239"
+    },
+    {
+      "block_id": "b0068",
+      "source_offsets": {
+        "start": 11770,
+        "end": 11780
+      },
+      "page_index": 2,
+      "text": "mph\nc Amph"
+    },
+    {
+      "block_id": "b0069",
+      "source_offsets": {
+        "start": 11782,
+        "end": 11789
+      },
+      "page_index": 2,
+      "text": "322\n322"
+    },
+    {
+      "block_id": "b0070",
+      "source_offsets": {
+        "start": 11791,
+        "end": 11797
+      },
+      "page_index": 2,
+      "text": "RvS167"
+    },
+    {
+      "block_id": "b0071",
+      "source_offsets": {
+        "start": 11799,
+        "end": 11802
+      },
+      "page_index": 2,
+      "text": "272"
+    },
+    {
+      "block_id": "b0072",
+      "source_offsets": {
+        "start": 11804,
+        "end": 11810
+      },
+      "page_index": 2,
+      "text": "RVSl61"
+    },
+    {
+      "block_id": "b0073",
+      "source_offsets": {
+        "start": 11812,
+        "end": 11815
+      },
+      "page_index": 2,
+      "text": "265"
+    },
+    {
+      "block_id": "b0074",
+      "source_offsets": {
+        "start": 11817,
+        "end": 11827
+      },
+      "page_index": 2,
+      "text": "mph\nc Amph"
+    },
+    {
+      "block_id": "b0075",
+      "source_offsets": {
+        "start": 11829,
+        "end": 11831
+      },
+      "page_index": 2,
+      "text": "VT"
+    },
+    {
+      "block_id": "b0076",
+      "source_offsets": {
+        "start": 11833,
+        "end": 11843
+      },
+      "page_index": 2,
+      "text": "HSPMSQTLPW"
+    },
+    {
+      "block_id": "b0077",
+      "source_offsets": {
+        "start": 11845,
+        "end": 11847
+      },
+      "page_index": 2,
+      "text": "DL"
+    },
+    {
+      "block_id": "b0078",
+      "source_offsets": {
+        "start": 11849,
+        "end": 11851
+      },
+      "page_index": 2,
+      "text": "VT"
+    },
+    {
+      "block_id": "b0079",
+      "source_offsets": {
+        "start": 11853,
+        "end": 11863
+      },
+      "page_index": 2,
+      "text": "HSPMSQTLPW"
+    },
+    {
+      "block_id": "b0080",
+      "source_offsets": {
+        "start": 11865,
+        "end": 11867
+      },
+      "page_index": 2,
+      "text": "DL"
+    },
+    {
+      "block_id": "b0081",
+      "source_offsets": {
+        "start": 11869,
+        "end": 11884
+      },
+      "page_index": 2,
+      "text": "Rvs167\nmph\n&mph"
+    },
+    {
+      "block_id": "b0082",
+      "source_offsets": {
+        "start": 11886,
+        "end": 11889
+      },
+      "page_index": 2,
+      "text": "462"
+    },
+    {
+      "block_id": "b0083",
+      "source_offsets": {
+        "start": 11891,
+        "end": 11897
+      },
+      "page_index": 2,
+      "text": "Rvs167"
+    },
+    {
+      "block_id": "b0084",
+      "source_offsets": {
+        "start": 11899,
+        "end": 11902
+      },
+      "page_index": 2,
+      "text": "341"
+    },
+    {
+      "block_id": "b0085",
+      "source_offsets": {
+        "start": 11904,
+        "end": 11907
+      },
+      "page_index": 2,
+      "text": "454"
+    },
+    {
+      "block_id": "b0086",
+      "source_offsets": {
+        "start": 11909,
+        "end": 11912
+      },
+      "page_index": 2,
+      "text": "IIP"
+    },
+    {
+      "block_id": "b0087",
+      "source_offsets": {
+        "start": 11914,
+        "end": 11924
+      },
+      "page_index": 2,
+      "text": "mph\nc Amph"
+    },
+    {
+      "block_id": "b0088",
+      "source_offsets": {
+        "start": 11926,
+        "end": 11929
+      },
+      "page_index": 2,
+      "text": "ES1"
+    },
+    {
+      "block_id": "b0089",
+      "source_offsets": {
+        "start": 11931,
+        "end": 11937
+      },
+      "page_index": 2,
+      "text": "Rvsl67"
+    },
+    {
+      "block_id": "b0090",
+      "source_offsets": {
+        "start": 11939,
+        "end": 11945
+      },
+      "page_index": 2,
+      "text": "TAAAVG"
+    },
+    {
+      "block_id": "b0091",
+      "source_offsets": {
+        "start": 11947,
+        "end": 11967
+      },
+      "page_index": 2,
+      "text": "525\n516\nL GF........"
+    },
+    {
+      "block_id": "b0092",
+      "source_offsets": {
+        "start": 11969,
+        "end": 11978
+      },
+      "page_index": 2,
+      "text": ". . . . ."
+    },
+    {
+      "block_id": "b0093",
+      "source_offsets": {
+        "start": 11980,
+        "end": 11985
+      },
+      "page_index": 2,
+      "text": ". . ."
+    },
+    {
+      "block_id": "b0094",
+      "source_offsets": {
+        "start": 11987,
+        "end": 11994
+      },
+      "page_index": 2,
+      "text": "387\n593"
+    },
+    {
+      "block_id": "b0095",
+      "source_offsets": {
+        "start": 11996,
+        "end": 12006
+      },
+      "page_index": 2,
+      "text": "mph\nc Amph"
+    },
+    {
+      "block_id": "b0096",
+      "source_offsets": {
+        "start": 12008,
+        "end": 12011
+      },
+      "page_index": 2,
+      "text": "586"
+    },
+    {
+      "block_id": "b0097",
+      "source_offsets": {
+        "start": 12013,
+        "end": 12019
+      },
+      "page_index": 2,
+      "text": "Rvs167"
+    },
+    {
+      "block_id": "b0098",
+      "source_offsets": {
+        "start": 12021,
+        "end": 12024
+      },
+      "page_index": 2,
+      "text": "393"
+    },
+    {
+      "block_id": "b0099",
+      "source_offsets": {
+        "start": 12026,
+        "end": 12041
+      },
+      "page_index": 2,
+      "text": "mph\n&mph\nRvs167"
+    },
+    {
+      "block_id": "b0100",
+      "source_offsets": {
+        "start": 12043,
+        "end": 12048
+      },
+      "page_index": 2,
+      "text": "I$\nRT"
+    },
+    {
+      "block_id": "b0101",
+      "source_offsets": {
+        "start": 12050,
+        "end": 12061
+      },
+      "page_index": 2,
+      "text": "663\n650\n459"
+    },
+    {
+      "block_id": "b0102",
+      "source_offsets": {
+        "start": 12063,
+        "end": 12080
+      },
+      "page_index": 2,
+      "text": "mph\nc Amph\nRvs167"
+    },
+    {
+      "block_id": "b0103",
+      "source_offsets": {
+        "start": 12082,
+        "end": 12671
+      },
+      "page_index": 2,
+      "text": "Fig. 1. Amino acid sequence alignment of human amphiphysin (h Amph) with chicken amphiphysin (c Amph) and the yeast proteins, Rvs167 and\nRvs161. Amino acids are shown in single letter code and identity with the human sequence at a given position is boxed. First the sequences of the\ntwo amphiphysins and of Rvs167 were aligned to each other using the program PILEUP. The sequence of Rvs 161 was then compiled with the other\nthree sequences according to its alignment with Rvs 167. The complete cDNA sequence of h Amph (clone 22-2) is available from Gen Bank under\naccession number U076 16."
+    },
+    {
+      "block_id": "b0104",
+      "source_offsets": {
+        "start": 12673,
+        "end": 13598
+      },
+      "page_index": 2,
+      "text": "weight of approximately 160 k Da, of which only about\n28 k Da could be attributed to GST (see figure 4B, panel\nCB, lane H). Finally, when the human and chicken sequences were aligned, the N- and C-termini of the two\nmolecules were in precise register (Fig. 1, top two lines).\nIn conclusion, the above data indicates that we had isolated a full-length clone of human amphiphysin.\nA comparison of the a.a. sequences of human and\nchicken amphiphysin [lo] revealed a high degree of similarity with the exception of a region of approximately\n180 a.a. in the second half of the molecules (Fig. 1 and\nFig. 3A domain C). Overall the two proteins are 75%\nidentical and 84% similar at the a.a. level. As was previously reported for chicken amphiphysin [lo], the human\nprotein is very hydrophilic, has an acidic pI of 4. 4, and\ncontains many putative phosphorylation sites for protein\nkinases A and C and for casein kinase II. The first"
+    },
+    {
+      "block_id": "b0105",
+      "source_offsets": {
+        "start": 13600,
+        "end": 14186
+      },
+      "page_index": 2,
+      "text": "Fig. 2. The same protein band from rat brain is recognized by a rabbit\nantibody raised against human amphiphysin and by the serum of a\npatient with SMS and breast cancer. A total rat brain homogenate was\nsubjected to SDS-PAGE and Western blotting as described in section\n2. Sera used for western blotting are as follows: NHS = serum from\ncontrol human subject, 11500; Pt 2 = serum from patient with SMS and\nbreast cancer, 11500; pre-CD6 = pre-immune rabbit serum 1150;\nCD6 = serum from rabbit immunized with human amphiphysin, 1150.\nMolecular weight standards are indicated on the left."
+    },
+    {
+      "block_id": "b0106",
+      "source_offsets": {
+        "start": 14188,
+        "end": 14191
+      },
+      "page_index": 3,
+      "text": "A\nA"
+    },
+    {
+      "block_id": "b0107",
+      "source_offsets": {
+        "start": 14193,
+        "end": 14194
+      },
+      "page_index": 3,
+      "text": "B"
+    },
+    {
+      "block_id": "b0108",
+      "source_offsets": {
+        "start": 14196,
+        "end": 14197
+      },
+      "page_index": 3,
+      "text": "C"
+    },
+    {
+      "block_id": "b0109",
+      "source_offsets": {
+        "start": 14199,
+        "end": 14204
+      },
+      "page_index": 3,
+      "text": "D\nSH3"
+    },
+    {
+      "block_id": "b0110",
+      "source_offsets": {
+        "start": 14206,
+        "end": 14207
+      },
+      "page_index": 3,
+      "text": "A"
+    },
+    {
+      "block_id": "b0111",
+      "source_offsets": {
+        "start": 14209,
+        "end": 14210
+      },
+      "page_index": 3,
+      "text": "B"
+    },
+    {
+      "block_id": "b0112",
+      "source_offsets": {
+        "start": 14212,
+        "end": 14213
+      },
+      "page_index": 3,
+      "text": "C"
+    },
+    {
+      "block_id": "b0113",
+      "source_offsets": {
+        "start": 14215,
+        "end": 14220
+      },
+      "page_index": 3,
+      "text": "D\nSH3"
+    },
+    {
+      "block_id": "b0114",
+      "source_offsets": {
+        "start": 14222,
+        "end": 14223
+      },
+      "page_index": 3,
+      "text": "A"
+    },
+    {
+      "block_id": "b0115",
+      "source_offsets": {
+        "start": 14225,
+        "end": 14226
+      },
+      "page_index": 3,
+      "text": "X"
+    },
+    {
+      "block_id": "b0116",
+      "source_offsets": {
+        "start": 14228,
+        "end": 14233
+      },
+      "page_index": 3,
+      "text": "D\nSH3"
+    },
+    {
+      "block_id": "b0117",
+      "source_offsets": {
+        "start": 14235,
+        "end": 14238
+      },
+      "page_index": 3,
+      "text": "I\nI"
+    },
+    {
+      "block_id": "b0118",
+      "source_offsets": {
+        "start": 14240,
+        "end": 14241
+      },
+      "page_index": 3,
+      "text": "I"
+    },
+    {
+      "block_id": "b0119",
+      "source_offsets": {
+        "start": 14243,
+        "end": 14244
+      },
+      "page_index": 3,
+      "text": "I"
+    },
+    {
+      "block_id": "b0120",
+      "source_offsets": {
+        "start": 14246,
+        "end": 14249
+      },
+      "page_index": 3,
+      "text": "250"
+    },
+    {
+      "block_id": "b0121",
+      "source_offsets": {
+        "start": 14251,
+        "end": 14254
+      },
+      "page_index": 3,
+      "text": "snl"
+    },
+    {
+      "block_id": "b0122",
+      "source_offsets": {
+        "start": 14256,
+        "end": 14257
+      },
+      "page_index": 3,
+      "text": "I"
+    },
+    {
+      "block_id": "b0123",
+      "source_offsets": {
+        "start": 14259,
+        "end": 14262
+      },
+      "page_index": 3,
+      "text": "700"
+    },
+    {
+      "block_id": "b0124",
+      "source_offsets": {
+        "start": 14264,
+        "end": 15341
+      },
+      "page_index": 3,
+      "text": "Fig. 3. (A) Domain diagram of amphiphysins\nand related yeast proteins\nsuggested by blocks of a.a. similarity. The borders of the domains were\nbased on sequence alignment and are drawn to scale (shown). (B) The\nlast 60 a.a. of h Amph was aligned with the SH3 domains of human src\n(hsrc [42]), yeast abpl (yabpl [43]), human GRB2 (hGRB2 [35]), drosophila drk gene product (Drk [44]), human spectrin a chain (hspec [45])\nand Rvs167 [20] using the PILEUP program. N and C represent N- and\nC-terminal SH3 domains where applicable. Numbers to the right of the\nsequence indicate the position of the last a.a. shown in the sequence of\nthe protein and a c) indicates a terminal a.a. Dashes indicate a.a. that\nare identical with human amphiphysin\nand periods represent gaps. A\nconsensus SH3 sequence was constructed\nwhenever the same a.a. was\nconserved in at least four of the sequences listed and an alignment of\nthis sequence with amphiphysin\nis shown as was done by Bauer et al,\n[20]. G and P in bold refer to highly conserved residues and * indicates\nG,,, and P,, of GRB2 (see text)."
+    },
+    {
+      "block_id": "b0125",
+      "source_offsets": {
+        "start": 15343,
+        "end": 16211
+      },
+      "page_index": 3,
+      "text": "400 a.a. (domains A+B) are 91% identical and the last\n100 a.a. (domain D) are 67% identical.\nAlthough the C domains are only 40% identical, in this\nregion the a.a. profile of chicken and human\namphiphysin\nis strikingly similar with a predominance\nof\nalanine and glutamate.\nA proline-rich\nregion between\namino acids 263-277 in domain B, which contains putative binding sequences for src-homology\n(SH3) domains\n[32, 33] is also highly conserved. SH3 domains are protien\nmodules of about 60 a.a. that are found in many signaling and cytoskeletal proteins [34]. Domain C of chicken\namphiphysin\nwas reported to contain the only hydrophobic stretch (a.a. 478499)\nof the molecule, although\nthis stretch does not appear to form a transmembrane\nregion [9, 10]. A short a.a. sequence with similar hydrophobic properties is present in domain C of human amphiphysin (a.a. 468480)."
+    },
+    {
+      "block_id": "b0126",
+      "source_offsets": {
+        "start": 16213,
+        "end": 16218
+      },
+      "page_index": 3,
+      "text": "73-79"
+    },
+    {
+      "block_id": "b0127",
+      "source_offsets": {
+        "start": 16220,
+        "end": 18215
+      },
+      "page_index": 3,
+      "text": "Domain D, present in both human and chicken amphiphysin, comprises the C-terminal\n100 a.a. and is approximately\n30% identical with SH3 domains from a\nvariety of proteins in its last 60 a.a.(Fig. 3B). Secondary\nstructure analysis of this domain predicted the presence\nofj?-sheets between a.a. 648-652 and 664-668, in agreement with the known crystal structure of SH3 domains\n[34]. The gaps needed to align the SH3 domain consensus\nwith amphiphysin\nare in regions where there is considerable variability\nbetween SH3 containing\nproteins [34].\nFurthermore,\nthe putative SH3 domain of amphiphysin\nincludes a glycine (position 684) and a proline (position\n687), (Fig. 3B - in bold) which are conserved in all SH3\ndomains listed. In particular, mutations\nof Gzo3 or P,,of\nGRB2 (Fig. 3B, asterisks) result in an inability of GRB2\nto bind other proteins via its C-terminal and N-terminal\nSH3 domains, respectively [28, 35] and correspond to loss\nof function mutants in the GRB2 homologue, sem-5 [36].\nThe availability\nof the human amphiphysin\nclone allowed us to start investigating\nmechanisms of autoimmunity to amphiphysin\nin SMS associated with breast cancer. Neurological\nsymptoms of SMS patients with either\nGAD or amphiphysin\nautoimmunity\nare similar [8, 9].\nThis observation,\ntogether with the intracellular\nlocalization of both GAD and amphiphysin,\nsuggest that autoantibodies\nare closely related to, but not responsible\nfor, the disease. In the case of GAD autoimmunity,\nwe\nhave shown a common autoreactive\npattern of SMS autoantibodies.\nIn all cases, autoantibodies\npredominantly\nrecognize a single epitope in the C-terminal\nregion of\nGAD65 [18]. To determine whether the humoral autoimmune response to amphiphysin\nwas stereotyped,\nsera\nfrom all 5 breast cancer patients with SMS as well as\ncontrol sera were tested by western blotting against five\noverlapping\namphiphysin\nfragments expressed as GSTfusion proteins (Fig. 4A).\nAs shown in Fig. 4B, autoantibodies\nfrom all 5 pa Table 1\nComparison"
+    },
+    {
+      "block_id": "b0128",
+      "source_offsets": {
+        "start": 18217,
+        "end": 18226
+      },
+      "page_index": 3,
+      "text": "of domain"
+    },
+    {
+      "block_id": "b0129",
+      "source_offsets": {
+        "start": 18228,
+        "end": 18244
+      },
+      "page_index": 3,
+      "text": "A of amphiphysin"
+    },
+    {
+      "block_id": "b0130",
+      "source_offsets": {
+        "start": 18246,
+        "end": 18253
+      },
+      "page_index": 3,
+      "text": "related"
+    },
+    {
+      "block_id": "b0131",
+      "source_offsets": {
+        "start": 18255,
+        "end": 18263
+      },
+      "page_index": 3,
+      "text": "proteins"
+    },
+    {
+      "block_id": "b0132",
+      "source_offsets": {
+        "start": 18265,
+        "end": 18290
+      },
+      "page_index": 3,
+      "text": "Chicken\namphiphysin\nl-261"
+    },
+    {
+      "block_id": "b0133",
+      "source_offsets": {
+        "start": 18292,
+        "end": 18305
+      },
+      "page_index": 3,
+      "text": "Rvs 167\nl-272"
+    },
+    {
+      "block_id": "b0134",
+      "source_offsets": {
+        "start": 18307,
+        "end": 18320
+      },
+      "page_index": 3,
+      "text": "Rvs I61\nl-265"
+    },
+    {
+      "block_id": "b0135",
+      "source_offsets": {
+        "start": 18322,
+        "end": 18345
+      },
+      "page_index": 3,
+      "text": "Human\namphiphysin\nl-261"
+    },
+    {
+      "block_id": "b0136",
+      "source_offsets": {
+        "start": 18347,
+        "end": 18360
+      },
+      "page_index": 3,
+      "text": "95. 4 (97. 7)"
+    },
+    {
+      "block_id": "b0137",
+      "source_offsets": {
+        "start": 18362,
+        "end": 18375
+      },
+      "page_index": 3,
+      "text": "27. 3 (48. 7)"
+    },
+    {
+      "block_id": "b0138",
+      "source_offsets": {
+        "start": 18377,
+        "end": 18390
+      },
+      "page_index": 3,
+      "text": "25. 2 (49. 2)"
+    },
+    {
+      "block_id": "b0139",
+      "source_offsets": {
+        "start": 18392,
+        "end": 18417
+      },
+      "page_index": 3,
+      "text": "Chicken\namphiphysin\nl-261"
+    },
+    {
+      "block_id": "b0140",
+      "source_offsets": {
+        "start": 18419,
+        "end": 18420
+      },
+      "page_index": 3,
+      "text": "_"
+    },
+    {
+      "block_id": "b0141",
+      "source_offsets": {
+        "start": 18422,
+        "end": 18435
+      },
+      "page_index": 3,
+      "text": "26. 5 (48. 7)"
+    },
+    {
+      "block_id": "b0142",
+      "source_offsets": {
+        "start": 18437,
+        "end": 18450
+      },
+      "page_index": 3,
+      "text": "22. 8 (46. 8)"
+    },
+    {
+      "block_id": "b0143",
+      "source_offsets": {
+        "start": 18452,
+        "end": 18453
+      },
+      "page_index": 3,
+      "text": "_"
+    },
+    {
+      "block_id": "b0144",
+      "source_offsets": {
+        "start": 18455,
+        "end": 18468
+      },
+      "page_index": 3,
+      "text": "26. 9 (51. 9)"
+    },
+    {
+      "block_id": "b0145",
+      "source_offsets": {
+        "start": 18470,
+        "end": 18483
+      },
+      "page_index": 3,
+      "text": "Rvs 167\nl-272"
+    },
+    {
+      "block_id": "b0146",
+      "source_offsets": {
+        "start": 18485,
+        "end": 18702
+      },
+      "page_index": 3,
+      "text": "Percent identities and similarities (in brackets) of the a.a. sequence of\ndomains A (numbers represent the boundaries of each domain A, refer\nto Fig. 3) of the indicated proteins as obtained using the BESTFIT\nprogram."
+    },
+    {
+      "block_id": "b0147",
+      "source_offsets": {
+        "start": 18704,
+        "end": 18744
+      },
+      "page_index": 3,
+      "text": "C. David et al. IFEBS Letters 351 (1994)"
+    },
+    {
+      "block_id": "b0148",
+      "source_offsets": {
+        "start": 18746,
+        "end": 18747
+      },
+      "page_index": 4,
+      "text": "H"
+    },
+    {
+      "block_id": "b0149",
+      "source_offsets": {
+        "start": 18749,
+        "end": 18752
+      },
+      "page_index": 4,
+      "text": "1\n1"
+    },
+    {
+      "block_id": "b0150",
+      "source_offsets": {
+        "start": 18754,
+        "end": 18756
+      },
+      "page_index": 4,
+      "text": "II"
+    },
+    {
+      "block_id": "b0151",
+      "source_offsets": {
+        "start": 18758,
+        "end": 18761
+      },
+      "page_index": 4,
+      "text": "695"
+    },
+    {
+      "block_id": "b0152",
+      "source_offsets": {
+        "start": 18763,
+        "end": 18766
+      },
+      "page_index": 4,
+      "text": "161"
+    },
+    {
+      "block_id": "b0153",
+      "source_offsets": {
+        "start": 18768,
+        "end": 18773
+      },
+      "page_index": 4,
+      "text": "I\n132"
+    },
+    {
+      "block_id": "b0154",
+      "source_offsets": {
+        "start": 18775,
+        "end": 18781
+      },
+      "page_index": 4,
+      "text": "II\n262"
+    },
+    {
+      "block_id": "b0155",
+      "source_offsets": {
+        "start": 18783,
+        "end": 18790
+      },
+      "page_index": 4,
+      "text": "291\n435"
+    },
+    {
+      "block_id": "b0156",
+      "source_offsets": {
+        "start": 18792,
+        "end": 18799
+      },
+      "page_index": 4,
+      "text": "III\n411"
+    },
+    {
+      "block_id": "b0157",
+      "source_offsets": {
+        "start": 18801,
+        "end": 18804
+      },
+      "page_index": 4,
+      "text": "581"
+    },
+    {
+      "block_id": "b0158",
+      "source_offsets": {
+        "start": 18806,
+        "end": 18808
+      },
+      "page_index": 4,
+      "text": "IV"
+    },
+    {
+      "block_id": "b0159",
+      "source_offsets": {
+        "start": 18810,
+        "end": 18819
+      },
+      "page_index": 4,
+      "text": "5451~~695"
+    },
+    {
+      "block_id": "b0160",
+      "source_offsets": {
+        "start": 18821,
+        "end": 18824
+      },
+      "page_index": 4,
+      "text": "B\nH"
+    },
+    {
+      "block_id": "b0161",
+      "source_offsets": {
+        "start": 18826,
+        "end": 18827
+      },
+      "page_index": 4,
+      "text": "I"
+    },
+    {
+      "block_id": "b0162",
+      "source_offsets": {
+        "start": 18829,
+        "end": 18839
+      },
+      "page_index": 4,
+      "text": "II IIIIV v"
+    },
+    {
+      "block_id": "b0163",
+      "source_offsets": {
+        "start": 18841,
+        "end": 18846
+      },
+      "page_index": 4,
+      "text": "66CD6"
+    },
+    {
+      "block_id": "b0164",
+      "source_offsets": {
+        "start": 18848,
+        "end": 19921
+      },
+      "page_index": 4,
+      "text": "Fig. 4. Similar pattern of reactivity of patient sera with the C-terminal\nportion of human amphiphysin.\n(A) Schematic diagram of full-length\nhuman amphiphysin\n(H) and of its fragments (I-V) which were tested\nfor reactivity with human sera. Boundaries\nof the fragments are indicated by a.a. numbers. (B) GST-fusion proteins of the constructs shown\nin A were subjected to SDS-PAGE and either Coomassie blue stained\n(CB) or Western blotted as described in section 2. The blots were\nreacted with either sera ofpatients\nwith SMS and breast cancer (Pt l-5),\nnormal human sera (NHS), or CD6 (rabbit) sera at l/500 as indicated.\nApproximately\n113 of the amount loaded in the gel for panel CB was\nused for the Western blot analysis. These results are representative\nof\nat least 3 separate experiments.\nMolecular weight standards\nare indicated on the left. All fusion proteins (I-V) run between 45 and 66 k Da.\nThe 80 k Da band seen in lane II (panel CB) was a protein from the host\nbacteria that was not related to the specific fusion protein, and never\nreacted with the antibodies."
+    },
+    {
+      "block_id": "b0165",
+      "source_offsets": {
+        "start": 19923,
+        "end": 22858
+      },
+      "page_index": 4,
+      "text": "tients were directed primarily, although not exclusively,\nagainst the amphiphysin C-terminal fragment (fragment V). Autoantibodies from patients 4 and 5 also recognized, but to a lower extent, fragment II. In contrast,\na rabbit serum (CD6), raised against human amphiphysin, recognized primarily the central fragment III,\nsuggesting that the stereotypic pattern of antibody reactivity against the C-terminal fragment is typical of the\ndisease and does not simply reflect an unusually high\nantigenicity of this domain. We have previously reported\nthat the neurological symptoms of SMS improve after\nremoval of the cancer [8]. Interestingly, a similar improvement was noticed for the two patients identified\nafter our original report (Dr. H.-M. Meinck, Heidelberg,\nGermany and Dr. M. Myers, Jackson, MI, personal\ncommunication). This observation strengthens the concept that SMS associated with breast cancer is an autoimmune paraneoplastic disease.\nSince amphiphysin is a synaptic vesicle-associated protein [lo], its relation to a disease involving abnormal\nsynaptic function is plausible. On the other hand, the\nconnection between amphiphysin and breast cancer has\nbeen more elusive. A possible clue concerning this connection comes from an interesting homology we have\nidentified by searching protein databases for a.a sequences similar to the regions of amphiphysin conserved\nbetween human and chicken. The conserved N-terminal\nregion of amphiphysin has considerable homology to\nRvs167 [20] and Rvs161 [19], two yeast proteins which\nwere cloned by isolating mutants with a reduced viability\nto nutrient starvation (rvs). The alignment of Rvs167\nand Rvs161 with human and chicken amphiphysin (Fig.\n1) suggests a domain model of the four proteins shown\nin Fig. 3A. Domain A is shared by all four proteins and\nin all four has a high a-helix potential. The similarities\namong the various domains A are indicated in Table 1.\nRvs 16 1 is comprised exclusively of this domain, whereas\nRvs167 shares an additional region of similarity with\namphiphysin in domain D. Domain D of Rvs167 was\npreviously shown to contain an SH3 domain [20]. Domain X of Rvs167 was defined as a GPA-rich region\nbecause of its high content in glycine, proline and alanine. While this region is substantially shorter than the\ncentral region of amphiphysin, it shares some features of\nboth domains B and C of human and chicken amphiphysin which are rich in proline and alanine, respectively. These considerations suggest that Rvs167 is the\nyeast homologue of amphiphysin. While amphiphysin\nhas been shown to have a very restricted tissue distribution (brain, endocrine tissues and testis)[9, 10], the presence of a homologue in yeast strongly suggests that amphiphysin homologues are present in all cells.\nThe phenotype of RVSl67 and RVS161 mutant cells\nis associated with abnormal morphology and alterations\nin the peripheral cytoskeleton. Cells appear to be unable"
+    },
+    {
+      "block_id": "b0166",
+      "source_offsets": {
+        "start": 22860,
+        "end": 22906
+      },
+      "page_index": 4,
+      "text": "C. David et al. IFEBS Letters 351 (1994) 73-79"
+    },
+    {
+      "block_id": "b0167",
+      "source_offsets": {
+        "start": 22908,
+        "end": 25625
+      },
+      "page_index": 5,
+      "text": "paired link between the mechanisms which control cell\nproliferation and those which allow the cell to undergo\nstationary phase adaptation. Mutations of either one of\nthe two genes produce a similar phenotype [19, 20] and\nare suppressed by the same set of genes [37], indicating\nthat they act in the same pathway. The function of amphiphysin in the nervous system remains to be elucidated. Amphiphysin was reported to be a synaptic vesicle-associated protein, although it is not enriched in these\norganelles [lo]. The homology of amphiphysin to the two\nRvs yeast proteins suggests a function of amphiphysin in\ncontrolling the properties of the membrane associated\ncytoskeleton and offers the possibility of using yeast genetics to further investigate the function of the protein.\nIt was proposed that neurological autoimmune paraneoplastic syndrome are triggered by the ectopic expression in the neoplastic tissues of a neuronal protein or a\nprotein antigenically related to it, which then becomes an\nautoantigen [16, 38]. The homology of amphiphysin to\nyeast proteins which have been shown to participate in\nthe cell adaptation to stationary phase raises the possibility that amphiphysin or some related protein may be\ndirectly involved in at least some form of breast cancer.\nThere is evidence to suggest that proteins of the peripheral cell cytoskeleton may be directly involved in the\npathogenesis of some forms of cancer [39-41] In the\nbreast cancer tissue of SMS patients which have been\ninvestigated, amphiphysin immunoreactivity was not detected using patient autoantibodies [8]. However, one\nshould consider the possibility that the T-cell triggering\nautoepitope might belong to an amphiphysin-related\nmolecule which similarly to Rvs161, contains only domain A. This protein would not be recognized by patient\nautoantibodies which we have now shown to be primarily directed against the C-terminus of amphiphysin. We\nnote that Nova, another autoantigen of a paraneoplastic\nneurological autoimmune disorder, is a neuronal protein\nexpressed in a truncated form (which does not include\nthe dominant C-terminal autoepitope for humoral autoimmunity) in the neoplastic tissue [17].\nAcknowledgments: We wish to thank Ronald Dirkx for help in preliminary experiments and Drs. Margaret Butler, Adrian Hayday, Sirkka\nKeranen, Ann-Marie Quinn and Michel Aigle for helpful discussions.\nWe also thank Drs. G. Piccolo, M. Austoni, G. Fassetta, D. Bates, N.\nCartlidge, G. Bottazzo, H.-M. Meinck, S. Songcharden and M. Myers\nfor referring to us patient sera. This work was supported in part by the\nNIH Grants A130248, DK43078 and a Mc Knight Research Project\nAward (PDC). and a fellowshin from the Juvenile Diabetes Foundation"
+    },
+    {
+      "block_id": "b0168",
+      "source_offsets": {
+        "start": 25627,
+        "end": 25897
+      },
+      "page_index": 5,
+      "text": "References\n[l] Layzer, R. B. (1988) N. Engl J. Med. 318, IO@&1062.\n[2] Lorish, T. R., Thorsteinsson, G and Howard, F. M. (1989) Mayo\nClin. Proc. 64, 629-636.\n[3] Blum, P. and Jankovic, J. (1991) Mov. Dis. 6, 12-20.\n[4] Mc Evoy, K. M. (1991) Mayo Clin. Proc. 66, 300-304."
+    },
+    {
+      "block_id": "b0169",
+      "source_offsets": {
+        "start": 25899,
+        "end": 29398
+      },
+      "page_index": 5,
+      "text": "C. David et al. IFEBS Letters 351 (1994) 73-79\n[51 Solimena M., Folli, F., Aparisi, A., Pozza, G. and De Camilli, P.\n(1990) N. Engl. J. Med. 322, 1555-1560.\nEl Solimena, M., Folli, F., Denis-Domini, S., Comi, G. C., Pozza, G.,\nDe Camilli, P. and Vicari, A. M. (1988) N. Engl. J. Med. 318,\n1012-1020.\n[71 Solimena, M. and De Camilli, P. (1993) Nature 366, 15.\nPI Folli, F., Solimena, M., Cofiell, R., Austoni, M., Tallini, G., Fassetta, G., Bates, D., Cartlidge, N., Bottazzo, G. F., Piccolo, G. and\nDe Camilli, P. (1993) N. Engl. J. Med. 328, 546-551.\nA De Camilli, P., Thomas, A., Cofiell, R., Solimena, M., Folli, F.,\nLichte, B., Piccolo, G., Meinck H.-M., Austoni M., Fassetta G.,\nBottazzo G. F., Bates, D., Cartlidge, N., Solimena, M. and M. W.\nKilimann. (1993) J. Exp. Med. 178, 2219-2223.\n[lOI Lichte, B., Veh, R. W., Meyer, H., and Kilimann, M. W. (1992)\nEMBO J. 11, 2521-2530.\n[ill Piccolo, G., Cosi, V., Zandrini, C., and Moglia, A. (1988) Ital. J.\nNeural. Sci. 9, 559-566.\nWI Bateman, D. E., Weller, R. O. and Kennedy, P. (1990) J. Neurol.\n53, 695-696.\nu31 Grimaldi, L. M. E., Martino, G., Braghi, S., Quattrini, A., Furlan,\nR., Bosi, E. and Comi, G. (1993) Ann. Neural. 34, 57-64.\n[I41 Posner, J. B. and Furneaux, H. M. (1990) Immunologic Mechanisms in Neurologic and Psychiatric Disease (Waksman, B. H. ed.)\npp. 187-219, New York, NY.\nu51 Hetzel, D. J., Stanhope, C. R., O’NeiI, B. P. and Lennon, V. A.\n(1990) Mayo Clin Proc. 65, 1558-1563.\nU61 Fumeaux, H. M., Rosenblum, M. K., Dalmau, J., Wong, E.,\nWoodruff, P., Graus, F. and Posner, J. B. (1990) N. Engl. J. Med.\n322, 1844-1851.\n[I71 Buckanovich, R. J., Posner, J. B. and Darnell, R. B. (1993) Neuron\n11, 657-672.\n1181 Butler, M., Solimena, M., Dirkx, R., Hayday, A. and De Camilli,\nP. (1993) J. Exp. Med. 178, 2097-2106.\nP91 Crouzet, M., Urdaci, M., Dulau, L. and Aigle, M. (1991) Yeast\n7, 727-743.\n[201 Bauer, F., Urdaci, M., Aigle, M. and Crouzet, M. (I 993) Mol. Cell.\nBiol. 13, 5070-5084.\nWI Sambrook, J., E. F. Fritsh and Maniatis, T. (1989) Molecular\nCloning. A Laboratory Manual. Cold Spring Harbor Laboratory.\nCold Spring Harbor, NY.\n[22] Bogue, C. W., Gross, I., Vasavada, H., Dynia, D. W., Wilson, C. M.\nand Jacobs, H. C. (1994) Am. J. Physiol. 266, L448.\n[23] Sanger, F., Nicklen, S. and Coulson, A. R. (1977) Proc. Natl. Acad.\nSci. USA 74, 5463-5467.\n1241Smith, T. F., Waterman, M. S. and Burks, C. (1985) Nucleic Acids\nRes. 13, 645-656.\n[25] Altschul, S. F., Gish, W., Miller, W., Myers, E. W. and Lipman,\nD. J. (1990) J. Mol. Biol. 215, 403-410.\n[26] Feng, D. F. and Doolittle, R. F. (1987) J. Mol. Evol. 25, 351360.\n[27] Geourjon, C. and Deleage, G. (1993) CABIOS 9, 87-91.\n[28] Mc Pherson, P., Czemik, A. J., Chilcote, T. J., Onofrio, F., Benfeti,\nF., Greengard, P., Schlessinger, J. and De Camilli, P. (1994) Proc.\nNat1 Acad. Sci. USA 91, 64866490.\n[29] Laemmh, U. K. (1970) Nature 227, 680-685.\n[30] Towbin, H., Staehelin, T. and Gordon, J. (1979) Proc. Natl. Acad.\nSci. USA 76, 4350.\n1311Kozak, M. (1991) J. Cell Biol. 115, 887-903.\n[33] Yu, H., Chen, J. K., Feng, S., Dalgarno, D. C., Brauer, A. W. and\nSchreiber, S. L. (1994) Cell 76, 933-945.\n[34] Koyama, S., Yu, H. Dalgarno, D. C., Shin, T. B., Zydowsky, L. D.\nand Schreiber, S. L. (1993) Cell 72, 945-952.\n[35] Lowenstein, E. J., Daly, R. J., Batzer, A. G., Li, W., Margolis, B.,\nLammers, R., Ullrich, A. E., Skolnik, Y., Bar-Sagi, D. and\nSchlessinger, J. (1992) Cell 70, 43142.\n[36] Clark, S. G., Stern, M. J. and Horvitz, H. R. (1992) Nature 356,\n340-344."
+    },
+    {
+      "block_id": "b0170",
+      "source_offsets": {
+        "start": 29400,
+        "end": 29402
+      },
+      "page_index": 5,
+      "text": "78"
+    },
+    {
+      "block_id": "b0171",
+      "source_offsets": {
+        "start": 29404,
+        "end": 29422
+      },
+      "page_index": 6,
+      "text": "Letters 351 (1994)"
+    },
+    {
+      "block_id": "b0172",
+      "source_offsets": {
+        "start": 29424,
+        "end": 29429
+      },
+      "page_index": 6,
+      "text": "73-79"
+    },
+    {
+      "block_id": "b0173",
+      "source_offsets": {
+        "start": 29431,
+        "end": 29500
+      },
+      "page_index": 6,
+      "text": "[37] Desfarges, L., Durrens P., Juguehn, H., Cassagne, C., Bonneu, M."
+    },
+    {
+      "block_id": "b0174",
+      "source_offsets": {
+        "start": 29502,
+        "end": 30174
+      },
+      "page_index": 6,
+      "text": "and Aigle, M. (1993) Yeast 9, 267-277.\n[38] Thirkill, C. E., Fitzgerald, P., Sergott, R. C., Roth, A. M., Tyler,\nN. K. and Keltner, J. L. (1989) N. Engl. J. Med. 321, 15891594.\n[39] Trofatter, J. A., Mac Co Uin, M. M., Rutter, J. L., Murrell, J. R., Duyao,\nM. P, Parry, D. M., Eldridge, R., Kley, N., Menon, A. G., Pulaski,\nK., Haase, V. H., Ambrose, C. M., Munroe, D., Bove, C., Haines,\nJ. L., Martuza, R. L., Mac Donald, M. E., Seizinger, B. R., Short,\nM. P., Buckler, A. J. and Gusella, J. F. (1993) Cell 72, 791-800.\n[40] Rubinfeld, B., Souza, B., Albert, I., Muller, O., Chamberlain,\nS. H., Masiarz, F. R., Munemitsu, S. and Polakis, P. (1993) Science\n262, 1731-1734."
+    },
+    {
+      "block_id": "b0175",
+      "source_offsets": {
+        "start": 30176,
+        "end": 30178
+      },
+      "page_index": 6,
+      "text": "79"
+    },
+    {
+      "block_id": "b0176",
+      "source_offsets": {
+        "start": 30180,
+        "end": 30859
+      },
+      "page_index": 6,
+      "text": "[41] Su, L.-K., Vogelstein, B. and Kinzler, K. W. (1993) Science 262,\n17341737.\n1421Tanaka, A., Gibbs, C. P., Arthur, R. R., Anderson, S. K., Kung,\nH.-J. and Fujita, D. J. (1987) Mol. Cell. Biol. 7, 1978-1983.\n[43] Drubin, D. G., Mulholland, J., Zhu, Z. M. and Botstein, D. (1990)\nNature 343, 288-290.\n[44] Olivier, J. P., Raabe, T., Henkemeyer, M., Dickson, B., Mbamalu,\nG., Margolis, B. Schlessinger, J., Hafen, E. and Pawson, T. (1993)\nCell 73, 179-191.\n1451 Sahr, K. E., Laurila, P., Kotula, L., Scarpa, A. L., Coupal, E., Leto,\nT. L., Linnebach, A. J., Winkelmann, J. C., Speicher, D. W., Marchesi, V. T., Curtis, P. J. and Forget, B. G. (1990) J. Biol. Chem. 265,\n44344443."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A new serum, belonging to a 75-year-old woman (patient I) with\nSMS was referred to us (Dr. S. Songcharden,\nDr. M. Myers, Jackson,\nMI) to be tested for the presence of anti-neuronal\nantibodies.\nThe\ndetection of anti-amphiphysin\nautoantibodies\nprompted a search for an\noccult breast cancer. A small ductal adenocarcinoma\nwas found and\nsurgically removed.",
+      "source_offsets": {
+        "start": 5430,
+        "end": 5782
+      },
+      "source_block_id": "b0019",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [
+      "route_override:group_to_individual:embedded_single_spsd_case"
+    ],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

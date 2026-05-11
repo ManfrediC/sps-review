@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "10695::p1",
+  "paper_id": "10695",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "10695::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 46-yr-old female presented to the operating room for repair of an intrathecal baclofen pump. Her\ndiagnosis of SPS was based on clinical presentation and the presence of an autoantibody against the\ncentral nervous system enzyme glutamic acid decarboxylase (GAD). The syndrome began as muscle\nstiffness in her lower extremities and insidiously progressed to a state of constant stiffness resulting in\npermanent contractures of her lower extremities and moderate rigidity of her upper extremities. The\npatient's facial, cervical, and extraocular muscles were spared. When startled by a loud noise, the\npatient experienced a painful brisk spasm resulting in opisthotonic posturing. These acute\nexacerbations were treated with a 50-mg dose of diazepam administered intramuscular. Other\npharmacologic therapies included intrathecal baclofen and 100 mg of diazepam orally per day. Past\nsurgical history was significant for a 2-day history of prolonged postoperative weakness after the\nbaclofen pump was inserted, and an overdose of baclofen was suggested as the cause. A review of the\nprevious anesthetic record revealed that propofol and succinylcholine followed by desflurane was used\nfor induction of anesthesia, tracheal intubation, and maintenance of anesthesia, respectively.\nAnesthesia was induced with sufentanil 10 micro gram, thiopental 375 mg (5.8 mg/kg), and\nvecuronium 8 mg (0.12 mg/kg) administered intravenously (IV). It was inferred from the slow and\ninadequate induction of anesthesia that the IV catheter had infiltrated subcutaneously although visual\ninspection was equivocal. A facial nerve train-of-four twitch monitor indicated an absence of all four\ntwitches 10 min after induction of anesthesia. Inhalation anesthesia via a mask with isoflurane allowed\nfor an otherwise unremarkable tracheal intubation while another IV catheter was placed. Anesthesia\nwas maintained with isoflurane and nitrous oxide for the duration of the procedure. Additional doses\nof muscle relaxant were not administered, and the patient regained all four twitches 60 min after the\ninitial dose of vecuronium. Baclofen was not given intraoperatively due to the patient's previous\nexperience with postoperative weakness. At the end of surgery, with all four twitches present, the\nneuromuscular block was antagonized with neostigmine 0.07 mg/kg and glycopyrrolate 0.02 mg/kg.\nOur preextubation clinical assessment revealed that she was responsive but weak--unable to lift her\nhead for 5 s, raise an extremity, or grasp with either hand.\nUpon arrival to the recovery room, the tracheally intubated patient had a respiratory rate of 12\nbreaths/min with a tidal volume of 300 mL and a normal arterial blood gas analysis. She would\nrespond to yes and no questions by nodding her head. Due to her rare neuromuscular disorder, her\n\nneurologist was consulted for assistance with evaluation. His clinical examination, in addition to\nrevealing muscle weakness in the presence of a vigorous response to ulnar nerve stimulation, also\nrevealed a state of hypotonia unusual for this particular patient. The leg at the knee could be flexed 10-\n15 degrees beyond its normally contractured state. The issue of subcutaneous infiltration of the\nthiopental was discussed, and barbiturate levels were drawn. The thiopental level 6 h after induction\nwas reported as 10 micro gram/mL.\nThe patient was transferred from the recovery room to the neurointensive care unit and her lungs were\nmechanically ventilated overnight. The next morning the patient's trachea was extubated. On\n\npostoperative Day 2, her strength had returned to baseline and the diazepam and baclofen were\nresumed.\nFive months after surgery, the patient was again scheduled for repair of the baclofen pump. Induction\nof anesthesia was accomplished with 36 mg (0.55 mg/kg) of midazolam and halothane. The trachea\nwas intubated without the use of a muscle relaxant, and neuromuscular block was avoided during the\nprocedure. Anesthesia was maintained with isoflurane and nitrous oxide. At the time of extubation the\npatient responded appropriately to commands and did not display excessive rigidity or weakness.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1484,
+        "end": 4310
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2826
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4311,
+        "end": 5041
+      },
+      "compiled_offsets": {
+        "start": 2828,
+        "end": 3558
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5043,
+        "end": 5639
+      },
+      "compiled_offsets": {
+        "start": 3560,
+        "end": 4156
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12465::p1",
+  "paper_id": "12465",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12465::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 43 year old man developed low back\npain six years before admission. He then\nstarted to fall, initially with extreme exertion, due to sudden unexpected stiffness of\nthe legs. This became progressively worse\nover a 12 month period such that it started\nto be apparent on walking. A diagnosis of\nagoraphobia was made and diazepam treatment resulted in dramatic improvement. His\nsymptoms continued and he then started to\n\nexperience jerking of the legs when relaxing\nas well as an exaggerated startle response,\nwhich on occasions caused him to collapse\nto the ground. Four years into the illness he\n\ndeveloped insulin dependent diabetes mellitus. His mother had thyrotoxicosis, his\nmaternal grandmother had diabetes mellitus, and an uncle had pernicious anaemia.\nOn examination he walked with a stiff gait\npunctuated by excessive startle responses\ncausing him to fall forward to the ground on\nsome occasions. He had a lumbar hyperlordosis with pronounced paraspinal, abdominal, and lower limb rigidity, normal power\nand coordination in his lower limbs, brisk\nlower limb reflexes, and flexor plantar\nresponses. Sensory examination was unremarkable, apart from the excessive startle\nresponse to sensory stimuli.\nHe had a normal full blood count, erythrocyte sedimentation rate, and biochemical profile with a glycosylated haemoglobin\nof 6-5 %. His autoantibody screen was negative apart from a weakly positive antiparietal\ncell antibody and a positive serum anti-GAD\nantibody at a titre of 1: 500. Analysis of CSF\nand brain MRI were normal. Neurophysiological examination showed continuous motor unit activity in his paraspinal and\nlower limb muscles with exaggerated exteroceptive reflexes. Nerve conduction study was\nnormal.\nHis symptoms were improved but\nnot controlled by baclofen (60 mg/day),\ndiazepam (15 mg/day), and buspirone\n(15 mg/day). He was given three courses\nof intravenous immunoglobulin (Alphaglobulin; 0 4 g/kg/day for five days) about a\nmonth apart and his progress was assessed\non a timed walking task off treatment during\nthe week he received IVIg.\nThe initial benefit from the IVIg was\nsmall, but the first symptomatic improvement reported by the patient was a reduction in the startle response and associated\nfalls. Subsequently his walking improved\nboth subjectively and objectively. Six weeks\nafter his final course of IVIg there had been\na reduction in his walking task time from 29\nto 20 seconds (normal subject on same task;\n15 seconds) and on EMG there was no evidence of continuous motor unit activity off\ntreatment. This improvement in his condition has occurred even though his benzodiazepine and baclofen doses were reduced by\na third after his final course of IVIg.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6302,
+        "end": 6719
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 417
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6721,
+        "end": 6897
+      },
+      "compiled_offsets": {
+        "start": 419,
+        "end": 595
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6899,
+        "end": 8996
+      },
+      "compiled_offsets": {
+        "start": 597,
+        "end": 2694
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

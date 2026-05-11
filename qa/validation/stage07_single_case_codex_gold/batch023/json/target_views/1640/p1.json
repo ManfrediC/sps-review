@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1640::p1",
+  "paper_id": "1640",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1640::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "42-year-old man initially presented at age 38 with progressive vertigo, leg stiffness,\ndysarthria, diplopia, and ataxia. Lumbar puncture revealed 1 red blood cell and 9\nnucleated cells (96% lymphocytes) with normal protein and glucose. Anti –glutamic\nacid decarboxylase (GAD) antibody testing was strongly positive at 1,050\nnmol/mL (November 2009 by immunoprecipitation assay, Mayo Clinic, reference range\n(RR) # 0.02 nmol/mL). MRI brain was unremarkable. He was diagnosed with stiff person\nsyndrome (SPS), autoimmune cerebellar ataxia (CA), type 1 diabetes mellitus (DM1), and\nHashimoto thyroiditis. He was treated with high-dose methylprednisolone for 3 days, IV\nimmunoglobulin (IVIg) 2 g/kg divided over 2 days, and monthly IVIg for 3 months, with\npersistently high anti-GAD antibody level after treatment (1,070 nmol/mL in February 2010).\nDespite treatment, his symptoms worsened. He received 4 plasmapheresis treatments and 5\ninfusions of rituximab over 15 months. His diplopia and dysmetria improved after the first few\ntreatments of rituximab. His gait began responding after the third rituximab treatment, and he\nno longer needed a cane by his fifth treatment. His anti-GAD levels initially fluctuated but then\nsteadily decreased to 300 –400 nmol/mL by August 2010 (see figure 1). After therapy he\ncontinued to have dysarthria, nystagmus, dysmetric saccades, increased tone, dysmetria, and\nstiff posture, although he was able to walk unassisted. He was lost to follow-up for 3 years,\nwith no maintenance immunotherapy during that time.\nThree years later he presented with labile mood and multiple 1–2 minute episodes of drooling,\nstaring, and difficulty speaking . He continued to display examination findings consistent with\nSPS and CA. MRI showed increased signal in the mesial temporal structures and insular cortex\n(figure 2). Video-EEG monitoring revealed freque nt electroclinical seizures originating in the\nright hemisphere. Lumbar puncture was normal. Anti-GAD antibodies in serum and CSF were\n148.3 U/mL (radioimmunoassay, Labcorp, RR 0.0–1 . 5U / m L )a n d1 0 . 0n m o l / L( i m m u n o p r e -\ncipitation assay, Mayo Clinic, RR # 0.02 nmol/L), respectively. Serum and CSF paraneoplastic\n\npanel including voltage-gated potassium channel antibodies was negative. He was treated with\ndivalproex sodium, phenytoin, and levetira cetam, and his seizures stopped. He received 5\nsessions of plasmapheresis over 10 days concurrently with high-dose methylprednisolone for 5\ndoses for a diagnosis of limbic encephalitis (LE). His cognitive and physical function returned to\nbaseline, and 3 weeks later his serum anti-GAD titer was 138.2 U/mL. He was discharged with\nplans for outpatient rituximab therapy. He d eferred formal neuropsychological testing.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 190,
+        "end": 2398
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2208
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2995,
+        "end": 3549
+      },
+      "compiled_offsets": {
+        "start": 2210,
+        "end": 2764
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

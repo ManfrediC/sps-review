@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1918::p1",
+  "paper_id": "1918",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1918::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: The results demonstrated that episodes of spontaneous\nonset of spasm of the low trunk and legs lasted about seconds to\nminutes. Stimuli with nose tip tapping, would elicit vigorous jerks\nwith dissemination of long lasting muscle spasm of the neck, paraspinal muscle, rectus abdominalis muscle, to quadriceps and hamstring muscles in a descending spreading pattern. The unique\nelectrophysiological manifestations illustrate the characteristic feature of spasmodic reflex myoclonus. The surface EMG recording also\nshowed the phenomena of habituation, in which a trend of amplitude decrescendo from the first toward the third EMG responses\nwere observed during consecutive auditory stimulus. The serum\nlevels of anti-glutamic acid decarboxylase 65 antibodies was 164 IU.\nConclusion: The unique EMG pattern can help identify SPS. The\nclinical features of spasmodic reflex myoclonus are similar to hyperekplexia. However, there are some differences between the two phenomena. Unlike hyperekplexia, the spasmodic reflex myoclonus can\nbe habituated after repetitive stimulation in the SPS patient.\nFurthermore, the initial myoclonic bursts of spasmodic reflex myoclonus were not present in hyperekplexia and the EMG burst duration was much shorter of the hyperekplexia as compared with that\nof spasmodic reflex myoclonus. These neurophysiological features\ndiscern spasmodic reflex myoclonus from hyperekplexia and are\nhelpful in making diagnosis of SPS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7262,
+        "end": 8717
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1455
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

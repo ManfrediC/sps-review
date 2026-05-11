@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1621::p1",
+  "paper_id": "1621",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1621::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Objective: We present a case of a 65-year-old male who initially presented with cerebellar ataxia \nand myoclonus, and rapidly progressed to rigidity and progressive Encephalomyelopathy, with \npositive anti-glutamic acid decarboxylase (GAD) antibodies. Patient responded to Intravenous \nImmunoglobulin (IVIG) therapy. Patient ultimately recovered in terms of mentation, rigidity and \nmyoclonus.\n\nResults: A 65-year-old African American male with medical history of hypertension, atrial \nfibrillation, status post two kidney transplants (on Tacrolimus), and anoxic brain injury in 2017 \nwith minimal neurology sequel, who presented with two weeks of poor balance and cerebellar \nataxia. Within one week of admission patient developed rapidly progressive alteration in level of \nconsciousness, multifocal myoclonic jerks, increased muscle tone and rigidity. \nPatient remained encephalopathic with severe axial and peduncular stiffness, despite receiving a \ncourse of Plasmapheresis. At day 13 after receiving the first course of IVIG, patient showed \nmarked improvement in mental status, stiffness, and rigidity. He improved even further with \nrepeat infusions. The serum anti-GAD65 antibody was consistently elevated (titer: greater than \n250 IU/mL). The rest of CSF and serum tests were negative. Three brain MRIs were \nunremarkable. Complete work ups excluded the presence of malignancy \nConclusions: We present a case of anti-GAD antibodies positive Progressive Encephalomyelitis \nwith Rigidity and Myoclonus (PERM), who initially presented with cerebellar ataxia, and rapidly \nprogressed to myoclonus and severe stiffness with encephalopathy. Unique features of this case \ninclude initial presentation of cerebellar ataxia, immunosuppressed status due to tacrolimus, \nconsistent elevated anti-GAD antibody titers, non-neoplastic and return to baseline following \nIVIG administration.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 287,
+        "end": 680
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 393
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1093,
+        "end": 2583
+      },
+      "compiled_offsets": {
+        "start": 395,
+        "end": 1885
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

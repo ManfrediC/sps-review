@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1935::p1",
+  "paper_id": "1935",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1935::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Background: A 79-year-old woman presented with progressive bilateral leg weakness and \ncramps for three days resulting in multiple falls. On physical examination she was found to have \nhyperreflexia, increased gastrocnemius tone, as well as spasticity and plantarflexion in both legs. \nDiagnostic work-up including imaging of the neuraxis and complete infectious and malignancy \nwork-up was unremarkable. Titers of antibodies to glutamic acid decarboxylase (GAD) were \nelevated at 124,000 U/mL (normal 0–5 U/mL). The patient was diagnosed with SLS and \nsubsequently started on a benzodiazepine with significant improvement in her symptoms. \nDesign/Methods: NA \nResults: SLS is an emerging entity that is considered a focal form of SPS in which the symptoms \nare confined to a distal limb, usually the legs. Our review of the literature revealed that the SPS-\nrelated spectrum disorders such as SLS has not been reported in the elderly. SPS and its variants \nare suspected to be related to autoantibodies to the GAD enzyme, although the pathophysiology \nremains poorly understood. SLS may potentially be a distinct entity from SPS with several \noverlapping clinical features and diagnostic findings. \nConclusions: Our case report describes a patient who presented with focal neurological \nsymptoms and eventually diagnosed with SLS, confirmed by autoimmune work-up. We advise \nclinicians to be aware of this rare entity and pursue the appropriate work-up when the clinical \nsuspicion is high, including the elderly population.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 718,
+        "end": 2243
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1525
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

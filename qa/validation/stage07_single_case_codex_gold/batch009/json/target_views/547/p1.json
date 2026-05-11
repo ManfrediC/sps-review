@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "547::p1",
+  "paper_id": "547",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "547::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 51-year old woman presented a \nnine months history of progressive stiff -\nness of the axial and leg muscles and pain-\nful spasms, which were elicited by various \nstimuli, particularly emotional conditions. \nThe spasms destabilized her gait, leading to \nfalls. The stiffness in her lower extremities \nbecame so severe that she could not walk.\n\nIn addition, she reported that she had ma-\njor concerns about several aspects of her \nlife. She also had trembling, restless sleep, \nmuscle tension and difficulties in concen-\ntrating. There was no prior history of psy-\nchiatric disease, diabetes mellitus, or oth-\ner significant illness. Neurological exam -\nination showed marked stiffness of lum -\nbar paraspinal muscles with an exagger -\nated lumbar lordosis. Muscle tone was in-\ncreased in the lower limbs, tendon reflex-\nes were brisk and plantar responses were \nflexor. She had an exaggerated startle re -\nsponse which resulted in painful extensor\n\nArq Neuropsiquiatr 2010;68(4)\n660\nStiff-Person syndrome × anxiety\nCerqueira et al.\nspasms. The remainder of examination was unremark -\nable. Electromyography (EMG) of lower limbs revealed \ncontinuous motor unit activity at rest. Peripheral nerve \nconduction was normal. Serum anti-glutamic acid decar-\nboxylase autoantibodies (antiGAD-Abs) were abnormally \nelevated at 44 U/mL (normal values are below 1 U/L). An \nextensive evaluation including breast examination, chest \nX-ray, abdominal and pelvic ultrasonography, rheumato-\nlogic markers, anti-thyroid antibodies and fasting glucose \nwere normal. A diagnosis of SPS was made, and the pa -\ntient was treated with diazepam up to 90 mg per day. Ad-\nditionally, the patient received one course of IV immuno-\nglobulins (IVIG; 0.4 g/kg body wt/day for 5 days) and lo-\ncal botulinum toxin. The treatment reduced the severity \nof her symptoms. During her hospitalization, the anxiety \nsymptoms became so evident that a psychiatry consulta-\ntion was requested, and the diagnosis of generalized anx-\niety disorder was established according to DSM-IV. \nOne year after her SPS diagnosis, the muscle tone of \nlower extremities was still increased. Various anti-spas -\nticity agents were tried, including baclofen and local bot-\nulinum toxin. Only diazepam was well tolerated and pro-\nvided a subjective beneficial effect. The dose of diazepam \nwas gradually increased up to 120 mg per day. However, at \ntimes, despite the treatment with high doses of diazepam, \nher anxiety symptoms became worse, resulting in a pro-\nfound negative effect on her life. Treatment with parox -\netine 20 mg QD was started, and during the follow up pe-\nriod, she presented partial remission in excessive anxiety, \nrestlessness and sleep disturbance. The neurological symp-\ntoms showed stabilization. The patient authorized the \npublication of this case report by signing a consent form.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3137,
+        "end": 3480
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 343
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3482,
+        "end": 4085
+      },
+      "compiled_offsets": {
+        "start": 345,
+        "end": 948
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4087,
+        "end": 5992
+      },
+      "compiled_offsets": {
+        "start": 950,
+        "end": 2855
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8088::p1",
+  "paper_id": "8088",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8088::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "P7.6\nFollow-up in Stiff Person Syndrome with immunoglobulin treatment\nM.J. Pablo\n1, M. Bestue2, P . Tamargo1, F . Romero1, I. Benavente1\n1Department of Neurophysiology , San Jorge Hospital, Huesca, Spain,\n2Department of Neurology , San Jorge Hospital, Huesca, Spain\nIntroduction: Stiff Person Syndrome is a rare and disabling central\nnervous system disorder , probably under-diagnosed, characterized by\nmuscle stiffness and episodic spasms that involve axial and limb\nmusculature. It is associated with high titers of antibodies against\nglutamic acid decarboxylase (GAD65) and frequently with autoimmune\ndisorders. Rigidity and spasms are symptomatically treated with\nbenzodiazepines, baclofen, tiagabine and levetiracetam. Treatment\nwith intravenous immunoglobulin is well-tolerated and effective. Other\ntherapies such as plasmapheresis and rituximab have been tried, with\ngood responses.\nObjectives: To present the 4-year follow-up of a 62-year-old patient\nclinically and electrophysiologically diagnosed with stiff person syndrome\nwith a good response to IV immunoglobulin treatment.\n\n14th ECCN / 4th ICTMS/DCS S91\nMethods: IV immunoglobulin was administered once a month during the\nﬁrst two years, and every three-four months in the next two years. He\nbecame asymptomatic six months after the beginning of the treatment.\nThe patient was recorded on video before and after the treatment,\nshowing the clinical improvement. Blink reﬂex and EMG studies were\ncarried out in agonist and antagonist muscles, in supine and bipedestation\npositions.\nResults: The ﬁrst two EMG studies showed continuous muscular activity\nand spasms in abdominal and back muscles. The next study showed an\nimprovement, with no involuntary muscular activity . An EMG per year has\nbeen performed for the last two years and the results were within normal\nlimits.\nConclusion: Our patient had a very good response to IV immunoglobulin\ntreatment. Four years after the diagnosis he remains asymptomatic, with\nnormal EMG studies.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7809,
+        "end": 8895
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1086
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8897,
+        "end": 9805
+      },
+      "compiled_offsets": {
+        "start": 1088,
+        "end": 1996
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

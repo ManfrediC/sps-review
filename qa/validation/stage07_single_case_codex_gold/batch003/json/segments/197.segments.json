@@ -1,0 +1,538 @@
+{
+  "paper_id": "197",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\197.json",
+    "source_text_sha256": "de714cee857f2789af25e394ac9bbf389375fe92c2882ad41d7b3fb671d0cfc7",
+    "prepared_source_sha256": "40b8d05ac34b0671466f848f31b63c060cd603b20cf499a16c629e4d136a80ff",
+    "prepared_source_character_count": 31437
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 66
+      },
+      "page_index": 0,
+      "text": "Neuron, Vol. 26, 307–312, May, 2000, Copyright 2000 by Cell Press"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 68,
+        "end": 751
+      },
+      "page_index": 0,
+      "text": "Autoimmunity to Gephyrin\nin Stiff-Man Syndrome\nMargaret Husta Butler,1,2 Akito Hayashi,6\nNorio Ohkoshi,6 Carmen Villmann,5\nCord-Michael Becker,5 Guoping Feng,4\nPietro De Camilli,1,2,7 and Michele Solimena2,3,7\n1\nHoward Hughes Medical Institute\n2\nDepartment of Cell Biology\n3\nDepartment of Internal Medicine\nYale University School of Medicine\nNew Haven, Connecticut 06510\n4\nDepartment of Anatomy and Neurobiology\nWashington University School of Medicine\nSt. Louis, Missouri 63110\n5\nInstitute for Biochemistry\nUniversity of Erlangen-Nuremberg\nErlangen D-91054\nGermany\n6\nDepartment of Neurology\nInstitute of Clinical Medicine\nUniversity of Tsukuba\n1-1-1 Tennoudai\nTsukuba 305-8575\nJapan"
+    },
+    {
+      "block_id": "b0003",
+      "source_offsets": {
+        "start": 753,
+        "end": 2095
+      },
+      "page_index": 0,
+      "text": "Summary\nStiff-Man syndrome (SMS) is a rare disease of the\ncentral nervous system (CNS) characterized by chronic\nrigidity, spasms, and autoimmunity directed against\nsynaptic antigens, most often the GABA-synthesizing\nenzyme glutamic acid decarboxylase (GAD). In a subset of cases, SMS has an autoimmune paraneoplastic\norigin. We report here the identification of high-titer\nautoantibodies directed against gephyrin in a patient\nwith clinical features of SMS and mediastinal cancer.\nGephyrin is a cytosolic protein selectively concentrated at the postsynaptic membrane of inhibitory synapses, where it is associated with GABAA and glycine\nreceptors. Our findings provide new evidence for a close\nlink between autoimmunity directed against components of inhibitory synapses and neurological conditions characterized by chronic rigidity and spasms.\nIntroduction\nParaneoplastic neurological syndromes include a variety of disorders of the peripheral (PNS) or the central\n(CNS) nervous system that occur in association with\ncancer but are not the result of metastasis or tumor\ncompression (Dalmau and Posner, 1999; Darnell, 1999).\nThere is increasing evidence that many of these disorders, including paraneoplastic Stiff-Man syndrome (SMS),\nare associated with autoimmunity against neuronal antigens. The prevalent hypothesis is that cancer tissues"
+    },
+    {
+      "block_id": "b0004",
+      "source_offsets": {
+        "start": 2097,
+        "end": 2225
+      },
+      "page_index": 0,
+      "text": "7\nTo whom correspondence should be addressed (e-mail: pietro.\ndecamilli@yale.edu [P. D. C.], michele.solimena@yale.edu [M. S.])."
+    },
+    {
+      "block_id": "b0005",
+      "source_offsets": {
+        "start": 2227,
+        "end": 2237
+      },
+      "page_index": 0,
+      "text": "Case Study"
+    },
+    {
+      "block_id": "b0006",
+      "source_offsets": {
+        "start": 2239,
+        "end": 5438
+      },
+      "page_index": 0,
+      "text": "may express neuronal antigens and that in some patients, an immune response directed against these antigens spreads to the nervous system, thus inducing neurological symptoms (Anderson et al., 1987).\nSMS (also known as Stiff-Person syndrome) is an acquired rare disorder of the CNS characterized by rigidity\nand spasms of the body musculature (Moersch and\nWoltman, 1956; Lorish et al., 1989; Blum and Jankovic,\n1991; Stayer and Meinck, 1998). The disease resembles\na chronic form of tetanus and affects mostly women.\nClinical and pharmacological evidence suggests that\nSMS results from an impairment of inhibitory pathways\nthat control the activity of motoneurons in the brainstem\nand spinal cord (Meinck et al., 1984; Floeter et al., 1998).\nElectromyography shows a persistent motoneuron activity that is indistinguishable from voluntary muscle activity, except that the patients are not able to relax. Most\npatients respond to high doses of drugs that enhance\nthe action of GABA, such as benzodiazepines, baclofen,\nor sodium valproate. These treatments, however, do\nnot affect the slowly progressive course of the disease.\nPatients are eventually bedridden, and respiratory failure or sudden death may occur (Mitsumoto et al., 1991).\nIn the majority of cases, an autoimmune pathogenesis\nappears likely (Solimena and De Camilli, 1991).\nMore than 60% of patients with SMS have high titer\nautoantibodies directed against glutamic acid decarboxylase (GAD) (Solimena et al., 1988, 1990), the cytosolic enzyme that synthesizes the inhibitory neurotransmitter GABA in the nerve endings of GABA-secreting\nneurons (Erlander and Tobin, 1991). This finding supports the hypothesis that SMS results from an impairment of GABAergic transmission. Patients positive for\nanti-GAD autoantibodies represent an autoimmunityprone population, as they frequently suffer from other\norgan-specific autoimmune diseases, most frequently\ntype I diabetes (Solimena et al., 1990, 1995). Notably,\npancreatic ␤ cells, the targets of autoimmunity in type\nI diabetes, are among the few cell types outside the\nCNS expressing detectable levels of GAD (Reetz et al.,\n1991). Furthermore, anti-GAD autoantibodies are found\nin the majority of pre- and newly diagnosed diabetic\nsubjects, albeit with lower titer than in patients with SMS\n(Baekkeskov et al., 1990; Solimena and De Camilli, 1991;\nVerge et al., 1998).\nIn ⵑ5% of patients, SMS is associated with cancer,\ngenerally breast cancer, and these patients typically are\npositive for autoantibodies directed against amphiphysin I (De Camilli et al., 1993; Folli et al., 1993; Floyd\net al., 1998). Amphiphysin I is a cytosolic presynaptic\nprotein that is widely distributed at synapses, including\ninhibitory synapses (Lichte et al., 1992; David et al., 1996;\nWigge and McMahon, 1998; Takei et al., 1999). This\nprotein is present at only very low concentration in other\ntissues but is often overexpressed in breast cancer cells\n(Floyd et al., 1998). Strikingly, removal of the cancer\nand immunotherapy are accompanied by a significant\nimprovement of the neurological symptoms (Folli et al.,\n1993; David et al., 1994), suggesting that in these patients, SMS has a paraneoplastic origin."
+    },
+    {
+      "block_id": "b0007",
+      "source_offsets": {
+        "start": 5440,
+        "end": 5450
+      },
+      "page_index": 1,
+      "text": "Neuron\n308"
+    },
+    {
+      "block_id": "b0008",
+      "source_offsets": {
+        "start": 5452,
+        "end": 6046
+      },
+      "page_index": 1,
+      "text": "Figure 1. Autoantibodies of SMS Patient 861\nReact with Inhibitory Synapses of the CNS\nConfocal microscopy of motoneurons in sections of the rat brainstem labeled with the\nserum (top left panel) or the CSF (bottom left\npanel) of SMS patient 861. Sections were\ndouble immunostained with a mouse antisynaptobrevin II antibody (bottom middle\npanel)—a marker of a subpopulation of presynaptic terminals—or a mouse monoclonal\nanti-gephyrin antibody (top middle panel).\nThe antigen recognized by the patient’s autoantibodies is enriched in a subpopulation of\nsynapses on the soma of large motoneurons."
+    },
+    {
+      "block_id": "b0009",
+      "source_offsets": {
+        "start": 6048,
+        "end": 6411
+      },
+      "page_index": 1,
+      "text": "We report here the case of a patient with clinical features of SMS, mediastinic cancer and autoantibodies\nagainst gephyrin.\nResults\nClinical Findings\nA 58-year-old male (patient 861 of our caseload) was\nadmitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia\ndue to muscle stiffness and spasms. There was no past"
+    },
+    {
+      "block_id": "b0010",
+      "source_offsets": {
+        "start": 6413,
+        "end": 7229
+      },
+      "page_index": 1,
+      "text": "Figure 2. Autoantibodies of SMS Patient 861 Recognize Gephyrin\nin Rodent Tissues\n(A) Postnuclear supernatant of rat brain homogenates immunoblotted with either the serum 861 or a control human serum. Serum 861\nreacts with a ⵑ97 kDa protein doublet.\n(B) Immunoprecipitation from Triton X-100 extracts of rat brain postnuclear supernatants with either serum 861 (lane 2) or a control\nhuman serum (lane 3) followed by Western blotting with an antigephyrin antibody. An aliquot of the starting material for immunoprecipitation was loaded in lane 1. Serum 861, but not the control serum,\nimmunoprecipitates gephyrin. An asterisk indicates an unrelated\nprotein.\n(C) Western blotting on total spinal cord homogenates from heterozygous (⫹/⫺) or homozygous (⫺/⫺) gephyrin null mice with an antigephyrin antibody or serum 861."
+    },
+    {
+      "block_id": "b0011",
+      "source_offsets": {
+        "start": 7231,
+        "end": 9470
+      },
+      "page_index": 1,
+      "text": "history of illness, including diabetes mellitus, and the\nfamily history was unremarkable. On neurological examination, there was muscle stiffness of the neck, trunk,\nshoulders, and legs. Muscle cramps that disappeared\nduring sleep were present on the left half of the face\nand in both legs. Stiffness of the tongue muscles was\nassociated with slow movements of the tongue, as well\nas dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination. Ocular movements were normal,\nand opsoclonus was absent. Spasms occurred spontaneously or were precipitated by active and passive\nmovements, acoustic stimulation, or touch. Presence of\nthe spasms prevented the examination of jaw jerk and\ndeep tendon reflexes in the legs. A reflex myoclonus\nassociated with tonic spasms in the leg was elicited by\ncutaneous stimulation of the foot. Likewise, a startle\nresponse, such as head retraction reflex, was triggered\nby cutaneous stimulation of the face. Sensory functions\nwere normal. Electromyography showed a low-firing frequency of normal units at rest. Renshaw’s recurrent\ninhibition could not be estimated because the ratio between the H and the M waves (Kimura, 1989) was very\nlow on his soleus. Brain, cervical, and lumbar MRIs were\nalso normal. Routine laboratory investigations were normal, with the exception of the presence of anti-nuclear\nantibody (speckled type, 1:160) and of the tumor marker\nNCC-ST 439 (28.9 U/ml; normal range, ⬍4.5 U/ml). No\nabnormalities in cell count, protein, or IgG levels were\nfound in the cerebrospinal fluid (CSF). Gallium scintigraphy and chest CT revealed a mass in the mediastinum,\nwhile additional investigations were negative for the\npresence of metastasis elsewhere. Oral diazepam was\ninitiated before surgery (20 mg/day). Both the stiffness\nand spasms lessened markedly, and the patient was\nable to walk and speak smoothly. After the removal of\nthe mediastinal cancer, his symptoms further improved,\nand the patient was discharged. Histological investigation of the mediastinal tumor demonstrated an undifferentiated carcinoma of undetermined origin. A detailed\nclinical report of this patient has been reported elsewhere (Harada et al., 1999)."
+    },
+    {
+      "block_id": "b0012",
+      "source_offsets": {
+        "start": 9472,
+        "end": 9486
+      },
+      "page_index": 2,
+      "text": "Case Study\n309"
+    },
+    {
+      "block_id": "b0013",
+      "source_offsets": {
+        "start": 9488,
+        "end": 9572
+      },
+      "page_index": 2,
+      "text": "Figure 5. Mixed GABA/Glycine Synapses as the Putative Targets\nof Autoimmunity in SMS"
+    },
+    {
+      "block_id": "b0014",
+      "source_offsets": {
+        "start": 9574,
+        "end": 9945
+      },
+      "page_index": 2,
+      "text": "Figure 3. Autoantibodies of SMS Patient 861 Recognize Human\nGephyrin in Transfected Fibroblasts\nDouble immunofluorescence and confocal microscopy of CHO cells\ntransiently transfected with human gephyrin cDNA. Cells were immunostained either with the serum of patient 861 (A) or with a control\nserum (C), and with a monoclonal antibody directed against gephyrin\n(B and D)."
+    },
+    {
+      "block_id": "b0015",
+      "source_offsets": {
+        "start": 9947,
+        "end": 11022
+      },
+      "page_index": 2,
+      "text": "Autoantibodies to Gephyrin\nEvidence of autoimmunity in previous cases of SMS\nprompted the search for autoantibodies against neuronal antigens in this patient. Indirect immunocytochemistry on sections of brain and spinal cord using the serum\nof the patient as the source of primary antibodies revealed the presence of autoantibodies that specifically\nrecognized a subset of synapses (Figure 1, bottom row).\nAn identical immunostaining was obtained when the patient’s CSF was used in place of the serum (Figure 1,\nbottom row, left panel). The staining pattern was clearly\ndistinct from that produced by antibodies directed\nagainst GAD or amphiphysin I but was highly suggestive\nof inhibitory synapses. It was therefore compared with\nthe staining produced by antibodies directed against\ngephyrin, a postsynaptic cytoplasmic protein associated with receptors for the inhibitory neurotransmitters\nglycine and GABA (Prior et al., 1992; Kirsch et al., 1993;\nBetz, 1998) (Figure 1, top row). The two staining patterns\nwere identical, pointing to gephyrin as the putative autoantigen."
+    },
+    {
+      "block_id": "b0016",
+      "source_offsets": {
+        "start": 11024,
+        "end": 11400
+      },
+      "page_index": 2,
+      "text": "Figure 4. The Tumor Tissue of SMS Patient 861 Expresses Gephyrin\nProtein extract from the tumor tissue of patient 861 (100 ␮g, lane\n1), human brain (10 ␮g, lane 2), and rat brain (5 ␮g, lane 3) were\nimmunoblotted with a monoclonal antibody directed against gephyrin. The gephyrin antibody recognizes a band of identical mobility\nin the tumor tissue and in human and rat brain."
+    },
+    {
+      "block_id": "b0017",
+      "source_offsets": {
+        "start": 11402,
+        "end": 11649
+      },
+      "page_index": 2,
+      "text": "Red stars indicate pre- and postsynaptic autoantigens of SMS. Abbreviations: GAD, glutamic acid decarboxylase; GABAT, GABA\ntransporter; GABA-R, GABA receptor; GLYT, glycine transporter;\nGlyR, glycine receptor; VGAT, vesicular GABA/glycine carrier."
+    },
+    {
+      "block_id": "b0018",
+      "source_offsets": {
+        "start": 11651,
+        "end": 13645
+      },
+      "page_index": 2,
+      "text": "When tested against mammalian brain extracts by\nWestern blotting, the autoantibodies of the patient did\nnot react with GAD or amphiphysin I but selectively\nrecognized a protein doublet with an apparent electrophoretic mobility of ⵑ97 kDa, i.e., the same molecular\nweight as gephyrin (Figure 2A). In addition, the ⵑ97\nkDa autoantigen immunoprecipitated by the patient’s\nautoantibodies comigrated with gephyrin and was recognized by an anti-gephyrin antibody (Figure 2B). The\n97 kDa autoantigen was absent in brain extracts from\ngephyrin knockout mice (Feng et al., 1998) (Figure 2C).\nFinally, the patient autoantibodies selectively labeled\nCHO cells transiently transfected with the cDNA of human gephyrin but not the surrounding, untransfected\nCHO cells (Figures 3A and 3B). On the contrary, no\nstaining was present in gephyrin-transfected CHO cells\nincubated with the serum of a control subject (Figures 3C and 3D). Taken together, these results conclusively prove that the serum and the CSF of the patient\ncontained high-titer autoantibodies directed against\ngephyrin.\nNeuronal autoantigens of paraneoplastic disorders\nare often detected in the cancer tissue (Furneaux et al.,\n1990), supporting the autoimmune origin of the neurological symptoms. Western blotting of the patient’s mediastinal tumor with a monoclonal antibody directed\nagainst gephyrin detected a 97 kDa protein with an electrophoretic mobility identical to that of the gephyrin\nband present in human and rat brain (Figure 4). Thus,\ngephyrin was expressed in the patient’s cancer.\nThe detection of autoantibodies against gephyrin in\nthis patient is of considerable interest, considering that\nexaggerated muscle rigidity in response to sensorial or\nemotional stimuli, i.e., a common characteristic of SMS\nand a clinical feature of this patient, is present both\nin gephyrin knockout mice (Feng et al., 1998) and in\nhereditary hyperekplexia (Shiang et al., 1993; Saul et al.,\n1999). Hereditary hyperekplexia is a genetic disorder"
+    },
+    {
+      "block_id": "b0019",
+      "source_offsets": {
+        "start": 13647,
+        "end": 13657
+      },
+      "page_index": 3,
+      "text": "Neuron\n310"
+    },
+    {
+      "block_id": "b0020",
+      "source_offsets": {
+        "start": 13659,
+        "end": 16845
+      },
+      "page_index": 3,
+      "text": "associated with mutations in the glycine receptor, a\nmain binding partner of gephyrin. This disease, also\nknown as stiff-baby syndrome or startle syndrome, is\ncharacterized by the presence at birth of hypertonia,\nexaggerated startle reflex, and pronounced brainstem\nreflexes, including head retraction reflex (Kok and Bruyn,\n1962; Andrew and Owen, 1997). The muscle stiffness\nusually recedes during the first year of life, but marked\nstartle reflex, sometimes accompanied by transient hypertonia, can persist throughout adult life. Similar to\npatients with hyperekplexia, our patient had a pronounced head retraction reflex. Notably, some cases of\nhyperekplexia had originally been reported as congenital forms of SMS (Sander et al., 1980). A close relationship between these two disorders is further suggested\nby the observation that, in addition to GABA, glycine\nneurotransmission may also be affected in SMS (Floeter\net al., 1998).\nDiscussion\nOur data indicate that patients with clinical features of\nSMS can have autoantibodies directed against either\npre- or postsynaptic components of inhibitory synapses\n(Figure 5). Spinal cord interneurons that control motoneuron activity have been shown to cosecrete both\nGABA and glycine (Jonas et al., 1998). We suggest that\nthese mixed GABA/glycine synapses are the primary\ntargets of autoimmunity in SMS. The postsynaptic hyperpolarization associated with the activation of GABAA\nreceptors is slower but more prolonged than the inhibition mediated by glycine receptors (Jonas et al., 1998).\nThus, the relative prevalence of chronic rigidity or startle\nresponses in different SMS patients may be attributed\nto the variable degree of involvement of GABA or glycine\nneurotransmission.\nThe pathogenesis of paraneoplastic neurological syndromes of the CNS is still unclear. Each of these conditions is accompanied by the presence of high-titer autoantibodies directed against one or a few intracellular\nantigens shared by neurons and cancer cells, such as\ngephyrin in the patient described here. The question\nremains as to how autoantibodies arise and whether\nand how these autoantibodies can gain access to the\ncytosolic compartment of neurons and perturb the activity of their target antigens (Vincent et al., 1999; Whitney\nand McNamara, 1999). Alternatively, T cells or other\nassociated antibodies directed against surface antigens\nmay mediate the disease. There is evidence that T cell–\nmediated cytotoxicity, rather than humoral autoimmunity, mediates Purkinje cell death in the paraneoplastic\ncerebellar degeneration associated with anti-cdr2 autoantibodies (Albert et al., 1998). A variety of paraneoplastic syndromes affecting the neuromuscular junction,\nsuch as myasthenia gravis, Lambert-Eaton myasthenic\nsyndrome, and Isaac’s syndrome (Drachman, 1994; Lennon et al., 1995; Newsom-Davis, 1999), are caused by\nautoantibodies against surface antigens. At least two\ndisorders of the CNS, Rasmussen’s encephalitis and\nparaneoplastic cerebellar ataxia, can apparently be mediated by autoantibodies directed against the glutamate\nreceptor 3 or the metabotrobic glutamate receptor 1,\nrespectively (Rogers et al., 1994; Sillevis Smitt et al.,"
+    },
+    {
+      "block_id": "b0021",
+      "source_offsets": {
+        "start": 16847,
+        "end": 20335
+      },
+      "page_index": 3,
+      "text": "2000). Thus, autoantibodies directed against as yet unknown surface antigens may coexist with antibodies to\ndominant cytosolic antigens in the serum of patients\nwith paraneoplastic neurological syndromes of the CNS\nbut not be easily detectable in the assays routinely used\nfor autoantibody screening. These autoantibodies could\nbe generated by the spread of an autoimmune response\nagainst macromolecular complexes, including both surface antigens and associated intracellular proteins (Vincent et al., 1999; Whitney and McNamara, 1999).\nIn conclusion, the precise role of autoantibodies to\ncytosolic neuronal proteins in the pathogenesis of autoimmune neurological diseases deserves further investigation. However, the identification of gephyrin as the\nautoantigen of an autoimmune CNS disorder whose clinical presentation resembles that of humans and mice\nwith genetic alteration of inhibitory synapses adds new\nevidence to the hypothesis that the autoantibodies of\nSMS patients are closely linked to pathogenic mechanisms.\nExperimental Procedures\nAntibodies\nThe serum and CSF of patient 861 and healthy control subjects\nwere collected after informed consent and stored at ⫺20⬚C until\nused. A mouse monoclonal antibody directed against synaptobrevin\nII was kindly provided by Dr. R. Jahn (Goettingen, Germany). A\nmouse monoclonal antibody directed against gephyrin was purchased from Transduction Laboratories (Lexington, KY). Cy3-conjugated goat anti-human IgG (Jackson Immunoresearch, West Grove,\nPA) or Alexa488-conjugated goat anti-mouse IgG (Molecular\nProbes, Eugene, OR) was used for immunocytochemistry at a dilution of 1:50 or 1:100, respectively.\nCell Transfection and Immunocytochemistry\nThe full-length cDNA of human gephyrin (Z. Nikolic, C. Villman, C.-M.\nBecker) was subcloned as a ClaI-PstI insert into the mammalian\nexpression vector pRK5. Transient transfection and immunostaining\nof CHO cells were performed as previously described (Dirkx et al.,\n1995). Indirect immunofluorescence staining on frozen sections of\nparaformaldehyde-fixed rat brain and spinal cord was performed\nas previously described (De Camilli et al., 1983). For the staining of\ngephyrin-transfected CHO cells, the serum of patient 861 and the\ncontrol serum were used at a dilution of 1:100. For the staining of\nrat brain sections, the serum and CSF of patient 861 and control\nhuman sera were used at dilutions of 1:8 and 1:2, respectively. The\nmonoclonal antibodies against gephyrin or synaptobrevin were used\nat a dilution of 1:100. Confocal microscopy was performed using a\nBioRad MRC 1024 (Bio-Rad, Hercules, CA).\nWestern Blotting\nPostnuclear supernatants from rat brain and spinal cord of\ngephyrin⫹/⫺ and gephyrin⫺/⫺ mice were prepared as previously described (Reetz et al., 1991; Feng et al., 1998). Protein (100 ␮g) was\nloaded in each lane, separated by SDS gel electrophoresis, and\nthen transferred onto nitrocellulose. For Western blotting, human\nsera and anti-gephyrin antibody were used at dilutions of 1:1000\nand 1:200, respectively. Mouse and human IgG were detected with\nrabbit anti-mouse or rabbit anti-human IgG followed by 125I-protein\nA (Solimena et al., 1990).\nTumor tissue from SMS patient 861 was pulverized under liquid\nnitrogen and resuspended (4 ␮l/␮g tissue) in 150 mM NaCl, 10 mM\nHEPES (pH 7.5) containing a protease inhibitor cocktail (Complete,\nRoche, Indianapolis, IN). Next, the tissue powder was homogenized\nusing a motorized pellet pestle and centrifuged at 600 ⫻ g. The"
+    },
+    {
+      "block_id": "b0022",
+      "source_offsets": {
+        "start": 20336,
+        "end": 20598
+      },
+      "page_index": 3,
+      "text": "pellet was discarded, and the supernatant was analyzed for protein\ncontent with the BCA assay (Pierce, Rockford, IL). Extracts from\nhuman brain in sample buffer (10 mg/ml) were purchased from Clontech (Palo Alto, CA). Protein from the tumor tissue and from human"
+    },
+    {
+      "block_id": "b0023",
+      "source_offsets": {
+        "start": 20600,
+        "end": 20614
+      },
+      "page_index": 4,
+      "text": "Case Study\n311"
+    },
+    {
+      "block_id": "b0024",
+      "source_offsets": {
+        "start": 20616,
+        "end": 20825
+      },
+      "page_index": 4,
+      "text": "and rat brain was separated by SDS gel electrophoresis and immunoblotted with the anti-gephyrin antibody followed by peroxidaseconjugated goat anti-mouse IgG and Supersignal chemiluminescence reagent (Pierce)."
+    },
+    {
+      "block_id": "b0025",
+      "source_offsets": {
+        "start": 20827,
+        "end": 20901
+      },
+      "page_index": 4,
+      "text": "Drachman, D.B. (1994). Myasthenia gravis. N. Engl. J. Med. 330,\n1797–1810."
+    },
+    {
+      "block_id": "b0026",
+      "source_offsets": {
+        "start": 20903,
+        "end": 21189
+      },
+      "page_index": 4,
+      "text": "Immunoprecipitation\nImmunoprecipitation with human sera from Triton X-100 rat brain\nextracts was performed as previously described (De Camilli et al.,\n1993). Immunoprecipites were separated by SDS gel electrophoresis and immunoblotted with the anti-gephyrin antibody as described\nabove."
+    },
+    {
+      "block_id": "b0027",
+      "source_offsets": {
+        "start": 21191,
+        "end": 21397
+      },
+      "page_index": 4,
+      "text": "Feng, G., Tintrup, H., Kirsch, J., Nichol, M.C., Kuhse, J., Betz, H.,\nand Sanes, J.R. (1998). Dual requirement for gephyrin in glycine\nreceptor clustering and molybdoenzyme activity. Science 282,\n1321–1324."
+    },
+    {
+      "block_id": "b0028",
+      "source_offsets": {
+        "start": 21399,
+        "end": 21414
+      },
+      "page_index": 4,
+      "text": "Acknowledgments"
+    },
+    {
+      "block_id": "b0029",
+      "source_offsets": {
+        "start": 21416,
+        "end": 21616
+      },
+      "page_index": 4,
+      "text": "Floyd, S., Butler, M.H., Cremona, O., David, C., Freyberg, Z., Zhang,\nA., Solimena, M., Tsutsui, K., and De Camilli, P. (1998). Enhanced\nexpression of amphiphysin in breast cancer. Mol. Med. 4, 29–39."
+    },
+    {
+      "block_id": "b0030",
+      "source_offsets": {
+        "start": 21618,
+        "end": 24628
+      },
+      "page_index": 4,
+      "text": "This work was supported by National Institutes of Health grants CA46128 (to P. D. C.), and DK-45735 and DK-53015 (to M. S.). The\nauthors wish to thank Drs. Joshua Sanes and Anne Marie Craig at\nWashington University, St. Louis, for sharing of reagents and Drs.\nYasuo Nemoto and Ronald Dirkx for their generous help.\nReceived September 28, 1999; revised March 14, 2000.\nReferences\nAlbert, M.L., Darnell, J.C., Bender, A., Francisco, L.M., Bhardwaj, N.,\nand Darnell, R.B. (1998). Tumor-specific killer cells in paraneoplastic\ncerebellar degeneration. Nat. Med. 4, 1321–1324.\nAnderson, N.E., Cunningham, J.M., and Posner, J.B. (1987). Autoimmune pathogenesis of paraneoplastic neurological syndromes. Crit.\nRev. Neurobiol. 3, 245–299.\nAndrew, M., and Owen, M.J. (1997). Hyperekplexia: abnormal startle\nresponse due to glycine receptor mutations. Br. J. Psychiatry 170,\n106–108.\nBaekkeskov, S., Aanstoot, H.-J., Christgau, S., Reetz, A., Solimena,\nM., Cascalho, M., Folli, F., Richter-Olesen, H., and De Camilli, P.\n(1990). The 64K autoantigen of insulin-dependent diabetes mellitus\nis the GABA synthesizing enzyme glutamic acid decarboxylase. Nature 347, 151–156.\nBetz, H. (1998). Gephyrin, a major player in GABAergic postsynaptic\nmembrane assembly? Nat. Neurosci. 1, 541–543.\nBlum, P., and Jankovic, J. (1991). Stiff-Person syndrome: an autoimmune disease. Mov. Disord. 6, 12–20.\nDalmau, J.O., and Posner, J.B. (1999). Paraneoplastic syndromes.\nArch. Neurol. 56, 405–408.\nDarnell, R.B. (1999). The importance of defining the paraneoplastic\nneurologic disorders. N. Engl. J. Med. 340, 1831–1833.\nDavid, C., Solimena, M., and De Camilli, P. (1994). Autoimmunity to\nStiff-man syndrome with breast cancer is targeted to the C-terminal\nregion of human amphiphysin, a protein homologous to the yeast\nprotein, Rvs167 and Rvs161. FEBS Lett. 351, 73–79.\nDavid, C., McPherson, P.S., Mundigl, O., and De Camilli, P. (1996).\nA role of amphiphysin in synaptic vesicle endocytosis suggested\nby its binding to dynamin in nerve terminals. Proc. Natl. Acad. Sci.\nUSA 93, 331–335.\nDe Camilli, P., Cameron, R., and Greengard, P. (1983). Synapsin I\n(protein I), a nerve terminal–specific phosphoprotein. I. Its general\ndistribution in synapses of the central and peripheral nervous system demonstrated by immunofluorescence in frozen and plastic\nsections. J. Cell Biol. 96, 1337–1354.\nDe Camilli, P., Thomas, A., Cofiell, R., Folli, F., Lichte, B., Piccolo,\nG., Meinck, H.-M., Austoni, M., Fassetta, G., Bottazzo, G.F., et al.\n(1993). The synaptic vesicle–associated protein amphiphysin is the\n128-kD autoantigen of Stiff-Man syndrome with breast cancer. J.\nExp. Med. 178, 2219–2223.\nDirkx, R., Thomas, A., Li, L., Lernmark, Å., Sherwin, R., De Camilli,\nP., and Solimena, M. (1995). Targeting of the 67 kd isoform of glutamic acid decarboxylase (GAD67) to intracellular organelles is mediated by its interaction with the NH2-terminal region of the 65 kd\nisoform of glutamic acid decarboxylase (GAD65). J. Biol. Chem. 270,\n2241–2246."
+    },
+    {
+      "block_id": "b0031",
+      "source_offsets": {
+        "start": 24630,
+        "end": 24784
+      },
+      "page_index": 4,
+      "text": "Erlander, M.G., and Tobin, A.J. (1991). The structural and functional\nheterogeneity of glutamic acid decarboxylase: a review. Neurochem. Res. 16, 215–226."
+    },
+    {
+      "block_id": "b0032",
+      "source_offsets": {
+        "start": 24786,
+        "end": 24977
+      },
+      "page_index": 4,
+      "text": "Floeter, M.K., Valls-Sole, J., Toro, C., Jacobowitz, D., and Hallett,\nM. (1998). Physiologic studies of spinal inhibitory circuits in patients\nwith stiff-person syndrome. Neurology 51, 85–93."
+    },
+    {
+      "block_id": "b0033",
+      "source_offsets": {
+        "start": 24979,
+        "end": 28090
+      },
+      "page_index": 4,
+      "text": "Folli, F., Solimena, M., Cofiell, R., Austoni, M., Tallini, G., Fassetta,\nG., Bates, D., Cartlidge, N., Bottazzo, G.F., Piccolo, G., and De\nCamilli, P. (1993). Autoimmunity to a 128-kd synaptic protein in three\nwomen with the stiff-man syndrome and breast cancer. N. Engl. J.\nMed. 328, 546–551.\nFurneaux, H.M., Rosenblum, M.K., Dalmau, J., Wong, E., Woodruff,\nP., Graus, F., and Posner, J.B. (1990). Selective expression of Purkinje-cell antigens in tumor tissue from patients with paraneoplastic\ncerebellar degeneration. N. Engl. J. Med. 322, 1844–1851.\nHarada, H., Hayashi, A., Watanabe, M., Tamaoka, A., and Shoij, S.\n(1999). A case of stiff-man syndrome with head retraction like reflex\nand jerky myoclonus of bilateral lower extremities which responded\nwell to removal of mediastinal carcinoma. Rinsho-Shinkeigaku 39,\n1025–1028.\nJonas, P., Bischofberger, J., and Sandkuhler, J. (1998). Corelease\nof two fast neurotransmitters at a central synapse. Science 281,\n419–424.\nKimura, J. (1989). Electrodiagnosis in Diseases of Nerve and Muscle:\nPrinciples and Practice, Second Edition (Philadelphia: F.A. Davis).\nKirsch, J., Wolters, I., Triller, A., and Betz, H. (1993). Gephyrin antisense oligonucleotides prevent glycine receptor clustering in spinal\nneurons. Nature 366, 745–748.\nKok, O., and Bruyn, G.W. (1962). An unidentified hereditary disease.\nLancet 1, 1359.\nLennon, V.A., Kryzer, T.J., Griesmann, G.E., O’Suilleabhain, P.E.,\nWindebank, A.J., Woppmann, A., Miljanich, G.P., and Lambert, E.H.\n(1995). Calcium-channel antibodies in the Lambert-Eaton syndrome\nand other paraneoplastic syndromes. N. Engl. J. Med. 332, 1467–\n1474.\nLichte, B., Veh, R.W., Meyer, H.E., and Kilimann, M.W. (1992). Amphiphysin, a novel protein associated with synaptic vesicles. EMBO J.\n11, 2521–2530.\nLorish, T.R., Thorsteinsson, G., and Howard, F.M., Jr. (1989). Stiffman syndrome updated. Mayo Clin. Proc. 64, 629–636.\nMeinck, H.-M., Ricker, K., and Conrad, B. (1984). The stiff-man syndrome: new pathophysiological aspects from abnormal exteroceptive reflexes and their response to clorimipramine clonidine and\ntizanidine. J. Neurol. Neurosurg. Psychiatry 47, 280–287.\nMitsumoto, H., Schwartzman, M.J., Estes, M.L., Chou, S.M., La Franchise, E.F., De Camilli, P., and Solimena, M. (1991). Sudden death\nand paroxysmal autonomic dysfunction in stiff-man syndrome. J.\nNeurol. 238, 91–96.\nMoersch, F.P., and Woltman, H.W. (1956). Progressive and fluctuating muscular rigidity and spasm (stiff-man syndrome): report of a\ncase and some observation in 13 other cases. Mayo Clin. Proc. 31,\n421–427.\nNewsom-Davis, J. (1999). Paraneoplastic neurological disorders. J.\nR. Coll. Physicians Lond. 33, 225–227.\nPrior, P., Schmitt, B., Grenningloh, G., Pribilla, I., Multhaup, G.,\nBeyreuther, K., Maulet, Y., Werner, P., Langosch, D., Kirsch, J., and\nBetz, H. (1992). Primary structure and alternative splice variants of\ngephyrin, a putative glycine receptor–tubulin linker protein. Neuron\n8, 1161–1170.\nReetz, A., Solimena, M., Matteoli, M., Folli, F., Takei, K., and De\nCamilli, P. (1991). GABA and pancreatic beta-cells: colocalization"
+    },
+    {
+      "block_id": "b0034",
+      "source_offsets": {
+        "start": 28092,
+        "end": 28102
+      },
+      "page_index": 5,
+      "text": "Neuron\n312"
+    },
+    {
+      "block_id": "b0035",
+      "source_offsets": {
+        "start": 28104,
+        "end": 31437
+      },
+      "page_index": 5,
+      "text": "of glutamic acid decarboxylase (GAD) and GABA with synaptic-like\nmicrovesicles suggests their role in GABA storage and secretion.\nEMBO J. 10, 1275–1284.\nRogers, S.W., Andrews, P.I., Gahring, L.C., Whisenand, T., Cauley,\nK., Crain, B., Hughes, T.E., Heinemann, S.F., and McNamara, J.O.\n(1994). Autoantibodies to glutamate receptor GluR3 in Rasmussen’s\nencephalitis. Science 265, 648–651.\nSander, J.E., Layzer, R.B., and Goldsobel, A.B. (1980). Congenital\nstiff-man syndrome. Ann. Neurol. 8, 195–197.\nSaul, B., Kuner, T., Sobetzko, D., Brune, W., Hanefeld, F., Meinck,\nH.-M., and Becker, C.M. (1999). Novel GLRA1 missense mutation\n(P250T) in dominant hyperekplexia defines an intracellular determinant of glycine receptor channel gating. J. Neurosci. 19, 869–877.\nShiang, R., Ryan, S.G., Zhu, Y.-Z., Hahn, A.F., O’Connell, P., and\nWasmuth, J.J. (1993). Point mutations in the gene encoding the\nalpha-1 subunit of the inhibitory glycine receptor cause the dominant\nneurologic disorder hyperekplexia. Nat. Genet. 5, 351–357.\nSillevis Smitt, P., Kinoshita, A., De Leeuw, B., Moll, W., Coesmans,\nM., Jaarsma, D., Henzen-Logmans, S., Vecht, C., De Zeeuw, C.,\nSekiyama, N., et al. (2000). Paraneoplastic cerebellar ataxia due to\nautoantibodies against a glutamate receptor. N. Engl. J. Med. 342,\n21–27.\nSolimena, M., and De Camilli, P. (1991). Autoimmunity to glutamic\nacid decarboxylase (GAD) in stiff-man syndrome and insulin-dependent diabetes mellitus. Trends Neurosci. 14, 452–457.\nSolimena, M., Folli, F., Denis-Donini, S., Comi, G.C., Pozza, G., De\nCamilli, P., and Vicari, A.M. (1988). Autoantibodies to glutamic acid\ndecarboxylase in a patient with stiff-man syndrome, epilepsy, and\ntype I diabetes mellitus. N. Engl. J. Med. 318, 1012–1020.\nSolimena, M., Folli, F., Aparisi, R., Pozza, G., and De Camilli, P.\n(1990). Autoantibodies to GABA-ergic neurons and pancreatic beta\ncells in stiff-man syndrome. N. Engl. J. Med. 322, 1555–1560.\nSolimena, M., Dirkx, R., Butler, M., Hermel, J.-H., Guarnaccia, J.,\nMarek, K., David, C., and De Camilli, P. (1995). Stiff-man syndrome\nand GAD: and updated view. In GABA 95., C. Tanaka, ed. (Basel:\nBirkhäuser), pp. 31–41.\nStayer, C., and Meinck, H.-M. (1998). Stiff-man syndrome: an overview. Neurologia 13, 83–88.\nTakei, K., Slepnev, V.I., Haucke, V., and De Camilli, P. (1999). Functional partnership between amphiphysin and dynamin in clathrinmediated endocytosis. Nat. Cell Biol. 1, 33–99.\nVerge, C.F., Stenger, D., Bonifacio, E., Colman, P.G., Pilcher, C.,\nBingley, P.J., and Eisenbarth, G.S. (1998). Combined use of autoantibodies (IA-2 autoantibody, GAD autoantibody, insulin autoantibody,\ncytoplasmic islet cell antibodies) in type 1 diabetes: Combinatorial\nIslet Autoantibody Workshop. Diabetes 47, 1857–1866.\nVincent, A., Lily, O., and Palace, J. (1999). Pathogenic autoantibodies\nto neuronal proteins in neurological disorders. J. Neuroimmunol.\n100, 169–180.\nWhitney, K.D., and McNamara, J.O. (1999). Autoimmunity and neurological disease: antibody modulation of synaptic transmission.\nAnnu. Rev. Neurosci. 22, 175–195.\nWigge, P., and McMahon, H.T. (1998). The amphiphysin family of\nproteins and their role in endocytosis at the synapse. Trends Neurosci. 21, 339–344.\nEMBL Accession Number\nThe EMBL accession number for the human gephyrin sequence\nreported in this paper is AJ272033."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "A 58-year-old male (patient 861 of our caseload) was\nadmitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia\ndue to muscle stiffness and spasms. There was no past",
+      "source_offsets": {
+        "start": 6198,
+        "end": 6411
+      },
+      "source_block_id": "b0009",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Figure 2. Autoantibodies of SMS Patient 861 Recognize Gephyrin\nin Rodent Tissues\n(A) Postnuclear supernatant of rat brain homogenates immunoblotted with either the serum 861 or a control human serum. Serum 861\nreacts with a ⵑ97 kDa protein doublet.\n(B) Immunoprecipitation from Triton X-100 extracts of rat brain postnuclear supernatants with either serum 861 (lane 2) or a control\nhuman serum (lane 3) followed by Western blotting with an antigephyrin antibody. An aliquot of the starting material for immunoprecipitation was loaded in lane 1. Serum 861, but not the control serum,\nimmunoprecipitates gephyrin. An asterisk indicates an unrelated\nprotein.\n(C) Western blotting on total spinal cord homogenates from heterozygous (⫹/⫺) or homozygous (⫺/⫺) gephyrin null mice with an antigephyrin antibody or serum 861.",
+      "source_offsets": {
+        "start": 6413,
+        "end": 7229
+      },
+      "source_block_id": "b0010",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "history of illness, including diabetes mellitus, and the\nfamily history was unremarkable. On neurological examination, there was muscle stiffness of the neck, trunk,\nshoulders, and legs. Muscle cramps that disappeared\nduring sleep were present on the left half of the face\nand in both legs. Stiffness of the tongue muscles was\nassociated with slow movements of the tongue, as well\nas dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination. Ocular movements were normal,\nand opsoclonus was absent. Spasms occurred spontaneously or were precipitated by active and passive\nmovements, acoustic stimulation, or touch. Presence of\nthe spasms prevented the examination of jaw jerk and\ndeep tendon reflexes in the legs. A reflex myoclonus\nassociated with tonic spasms in the leg was elicited by\ncutaneous stimulation of the foot. Likewise, a startle\nresponse, such as head retraction reflex, was triggered\nby cutaneous stimulation of the face. Sensory functions\nwere normal. Electromyography showed a low-firing frequency of normal units at rest. Renshaw’s recurrent\ninhibition could not be estimated because the ratio between the H and the M waves (Kimura, 1989) was very\nlow on his soleus. Brain, cervical, and lumbar MRIs were\nalso normal. Routine laboratory investigations were normal, with the exception of the presence of anti-nuclear\nantibody (speckled type, 1:160) and of the tumor marker\nNCC-ST 439 (28.9 U/ml; normal range, ⬍4.5 U/ml). No\nabnormalities in cell count, protein, or IgG levels were\nfound in the cerebrospinal fluid (CSF). Gallium scintigraphy and chest CT revealed a mass in the mediastinum,\nwhile additional investigations were negative for the\npresence of metastasis elsewhere. Oral diazepam was\ninitiated before surgery (20 mg/day). Both the stiffness\nand spasms lessened markedly, and the patient was\nable to walk and speak smoothly. After the removal of\nthe mediastinal cancer, his symptoms further improved,\nand the patient was discharged. Histological investigation of the mediastinal tumor demonstrated an undifferentiated carcinoma of undetermined origin. A detailed\nclinical report of this patient has been reported elsewhere (Harada et al., 1999).",
+      "source_offsets": {
+        "start": 7231,
+        "end": 9470
+      },
+      "source_block_id": "b0011",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Case Study\n309",
+      "source_offsets": {
+        "start": 9472,
+        "end": 9486
+      },
+      "source_block_id": "b0012",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Figure 5. Mixed GABA/Glycine Synapses as the Putative Targets\nof Autoimmunity in SMS",
+      "source_offsets": {
+        "start": 9488,
+        "end": 9572
+      },
+      "source_block_id": "b0013",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Figure 3. Autoantibodies of SMS Patient 861 Recognize Human\nGephyrin in Transfected Fibroblasts\nDouble immunofluorescence and confocal microscopy of CHO cells\ntransiently transfected with human gephyrin cDNA. Cells were immunostained either with the serum of patient 861 (A) or with a control\nserum (C), and with a monoclonal antibody directed against gephyrin\n(B and D).",
+      "source_offsets": {
+        "start": 9574,
+        "end": 9945
+      },
+      "source_block_id": "b0014",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0007",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Autoantibodies to Gephyrin\nEvidence of autoimmunity in previous cases of SMS\nprompted the search for autoantibodies against neuronal antigens in this patient. Indirect immunocytochemistry on sections of brain and spinal cord using the serum\nof the patient as the source of primary antibodies revealed the presence of autoantibodies that specifically\nrecognized a subset of synapses (Figure 1, bottom row).\nAn identical immunostaining was obtained when the patient’s CSF was used in place of the serum (Figure 1,\nbottom row, left panel). The staining pattern was clearly\ndistinct from that produced by antibodies directed\nagainst GAD or amphiphysin I but was highly suggestive\nof inhibitory synapses. It was therefore compared with\nthe staining produced by antibodies directed against\ngephyrin, a postsynaptic cytoplasmic protein associated with receptors for the inhibitory neurotransmitters\nglycine and GABA (Prior et al., 1992; Kirsch et al., 1993;\nBetz, 1998) (Figure 1, top row). The two staining patterns\nwere identical, pointing to gephyrin as the putative autoantigen.",
+      "source_offsets": {
+        "start": 9947,
+        "end": 11022
+      },
+      "source_block_id": "b0015",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0008",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Figure 4. The Tumor Tissue of SMS Patient 861 Expresses Gephyrin\nProtein extract from the tumor tissue of patient 861 (100 ␮g, lane\n1), human brain (10 ␮g, lane 2), and rat brain (5 ␮g, lane 3) were\nimmunoblotted with a monoclonal antibody directed against gephyrin. The gephyrin antibody recognizes a band of identical mobility\nin the tumor tissue and in human and rat brain.",
+      "source_offsets": {
+        "start": 11024,
+        "end": 11400
+      },
+      "source_block_id": "b0016",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0009",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Red stars indicate pre- and postsynaptic autoantigens of SMS. Abbreviations: GAD, glutamic acid decarboxylase; GABAT, GABA\ntransporter; GABA-R, GABA receptor; GLYT, glycine transporter;\nGlyR, glycine receptor; VGAT, vesicular GABA/glycine carrier.",
+      "source_offsets": {
+        "start": 11402,
+        "end": 11649
+      },
+      "source_block_id": "b0017",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0010",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "When tested against mammalian brain extracts by\nWestern blotting, the autoantibodies of the patient did\nnot react with GAD or amphiphysin I but selectively\nrecognized a protein doublet with an apparent electrophoretic mobility of ⵑ97 kDa, i.e., the same molecular\nweight as gephyrin (Figure 2A). In addition, the ⵑ97\nkDa autoantigen immunoprecipitated by the patient’s\nautoantibodies comigrated with gephyrin and was recognized by an anti-gephyrin antibody (Figure 2B). The\n97 kDa autoantigen was absent in brain extracts from\ngephyrin knockout mice (Feng et al., 1998) (Figure 2C).\nFinally, the patient autoantibodies selectively labeled\nCHO cells transiently transfected with the cDNA of human gephyrin but not the surrounding, untransfected\nCHO cells (Figures 3A and 3B). On the contrary, no\nstaining was present in gephyrin-transfected CHO cells\nincubated with the serum of a control subject (Figures 3C and 3D). Taken together, these results conclusively prove that the serum and the CSF of the patient\ncontained high-titer autoantibodies directed against\ngephyrin.\nNeuronal autoantigens of paraneoplastic disorders\nare often detected in the cancer tissue (Furneaux et al.,\n1990), supporting the autoimmune origin of the neurological symptoms. Western blotting of the patient’s mediastinal tumor with a monoclonal antibody directed\nagainst gephyrin detected a 97 kDa protein with an electrophoretic mobility identical to that of the gephyrin\nband present in human and rat brain (Figure 4). Thus,\ngephyrin was expressed in the patient’s cancer.\nThe detection of autoantibodies against gephyrin in\nthis patient is of considerable interest, considering that\nexaggerated muscle rigidity in response to sensorial or\nemotional stimuli, i.e., a common characteristic of SMS\nand a clinical feature of this patient, is present both\nin gephyrin knockout mice (Feng et al., 1998) and in\nhereditary hyperekplexia (Shiang et al., 1993; Saul et al.,\n1999). Hereditary hyperekplexia is a genetic disorder",
+      "source_offsets": {
+        "start": 11651,
+        "end": 13645
+      },
+      "source_block_id": "b0018",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0011",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Neuron\n310",
+      "source_offsets": {
+        "start": 13647,
+        "end": 13657
+      },
+      "source_block_id": "b0019",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0012",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "associated with mutations in the glycine receptor, a\nmain binding partner of gephyrin. This disease, also\nknown as stiff-baby syndrome or startle syndrome, is\ncharacterized by the presence at birth of hypertonia,\nexaggerated startle reflex, and pronounced brainstem\nreflexes, including head retraction reflex (Kok and Bruyn,\n1962; Andrew and Owen, 1997). The muscle stiffness\nusually recedes during the first year of life, but marked\nstartle reflex, sometimes accompanied by transient hypertonia, can persist throughout adult life. Similar to\npatients with hyperekplexia, our patient had a pronounced head retraction reflex. Notably, some cases of\nhyperekplexia had originally been reported as congenital forms of SMS (Sander et al., 1980). A close relationship between these two disorders is further suggested\nby the observation that, in addition to GABA, glycine\nneurotransmission may also be affected in SMS (Floeter\net al., 1998).",
+      "source_offsets": {
+        "start": 13659,
+        "end": 14593
+      },
+      "source_block_id": "b0020",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

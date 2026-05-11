@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "446::p1",
+  "paper_id": "446",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "446::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report\nA 41-year-old female patient was referred because of\nepisodes of spasms and intense painless clonic jerks of the\ntrunk and limbs, of long duration (30 min to 2 h), without\nimpairment of consciousness. The episodic spasms were\nspontaneous or reflex, varied in severity and were pro-\nvoked by unexpected tactile stimuli, sudden noises and\nemotional upset. Generalised myoclonic jerks began with\nan abrupt jerk followed by prolonged tonic–clonic activity\nand were accompanied by profuse sweating and tachycar-\ndia. Their onset was two years before her first visit but in\nthe last 6 months she had experienced an increase in sever-\nity, duration and incidence of these episodes, for which she\nhad to visit an emergency room for IV therapy with\ndiazepam. The patient also complained of lower back stiff-\n\nness and difficulty in walking over the last three years.\nInitial diagnosis was axial dystonia and she had been treat-\ned with botulinum toxin with partial response. As gait dis-\nturbance deteriorated, she developed phobia associated\nwith unaccompanied walking in open space and the ques-\ntion of a psychogenic movement disorder was addressed.\nThe precipitation of the clonic jerks by emotional stimuli\nand their resolution with the administration of diazepam\nstrengthened this belief. Eventually, she could not walk\nunaided in open space, cross a street or descend stairs. She\nunderwent psychiatric evaluation and fulfilled the diagnos-\ntic criteria in the Diagnostic and Statistical Manual (DSM-\nIV) for panic disorder with agoraphobia. Thereafter she\nfollowed a few sessions of cognitive-behavioural therapy,\nwith minimal results.\nCareful neurological examination revealed muscle\nrigidity of the trunk and limbs with lumbar hyperlordosis,\nprotuberant abdomen and stiff-legged gait (Fig. 1).\nClinical evaluation of stiffness was performed using the\ndistribution of stiffness index, which reflects the number\nof stiff areas and of spasms using the heightened sensitiv-\nity score, which reflects the number of factors triggering\nspasms [3]. Stiffness index was 4 (upper and lower trunk,\nboth legs and abdomen) and heightened sensitivity score\nwas 5 (unexpected noises, somatosensory stimuli, volun-\ntary activities, emotional upset and nocturnal spasms).\nSpontaneous involuntary normal motor unit potentials\nwere demonstrated on EMG in lumbar paraspinal and\n36\nabdominal muscles and in lower limbs in agonist and\nantagonist muscles simultaneously. The diagnosis of SPS\nwas established by the presence of anti-GAD-65 antibod-\nies in the serum, at high titre (>300 U/ml, normal values\n<50 U/ml). The assay used for anti-GAD antibody detec-\ntion was immunoprecipitation.\nThe patient was accordingly treated with oral diazepam\n45 mg t.i.d. and she responded satisfactorily: clonic jerks\nabated and mobility improved. The number of stiff areas\ndropped to 3 and the heightened sensitivity score to 0.\nImprovement of psychiatric symptoms quickly followed\nthe response of neurological signs to therapy. During the\npatient’s initial psychiatric assessment three Cognitive-\nBehavioural Therapy questionnaires were administered: a\n15-item questionnaire of agoraphobic cognitions, a 13-item\npanic appraisal inventory and a 10-item questionnaire of\navoidance behaviours (for all items the patient had to rate\nfrom 0 to 100 the presence of symptoms or thoughts). The\npatient completed the same inventories for evaluation of\nimprovement of psychiatric symptoms, 6 months after\nremission of spasms. The improvement was confirmed as\nthe inventory results showed a 78% decrease of agorapho-\nbic cognitions, 88% decrease on panic attacks inventory\nand 90% decrease in avoidance behaviours. The percentile\ndifference was estimated as the difference between the total\ninitial and total final scoring of the items of each inventory\ndivided by the total initial scoring multiplied by 100:\n((initial scoring – final scoring)/initial scoring)#100.\nThe response was sustained during the two-year follow-up.\n\nIn conclusion, the presence of phobia in patients with\nfluctuating stiffness should raise suspicion of SPS syndrome\nand response to oral diazepam should not lead to misdiag-\nnosis of a psychogenic movement disorder. Screening for\nhigh titres of anti-GAD antibodies could help to confirm\ndiagnosis, although their absence does not exclude it.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1095,
+        "end": 1905
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 810
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3178,
+        "end": 6358
+      },
+      "compiled_offsets": {
+        "start": 812,
+        "end": 3992
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8410,
+        "end": 8751
+      },
+      "compiled_offsets": {
+        "start": 3994,
+        "end": 4335
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

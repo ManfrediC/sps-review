@@ -1,0 +1,56 @@
+{
+  "paper_id": "5094",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text_trimmed\\5094.json",
+    "source_text_sha256": "1bd669c7c9baed6403c406bbc138ae5e21851a9238b4ac79132a9e5e85afc591",
+    "prepared_source_sha256": "4b04e37e984aeddcbdef43b511cc1646cc03af04546b6939d160a222c4085854",
+    "prepared_source_character_count": 1627
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 1627
+      },
+      "page_index": 20,
+      "text": "P80. Stiff-Man Syndrome and Encephalomyelitis May\nCoexist: Clinical Pathological Correlations\nC. Armon, J. W. Swanson,J. M. Illclean, P. R. Westbrook,\nH. Qkazaki, P. J. Kurtin, U. P. Kaylan-Raman, and\nM. R. Rodriguez, Lorna Linda, CA, Rochester, MN,\nand Peoria, IL\nStiff-man syndrome (SMS) developed in a 60-year-old\nwoman. Treatment with diazepam controlled her painful\nspasms initially. Two and one-half years after the onset of\nSMS, she developed new spells of paroxysmal leg jerking\nand apnea. A spell was recorded with simultaneous video and\npolygraphic techniques that revealed simultaneous firing of\nmotor unit potentials in several muscles (paraspinals, internal\nhamstring, and abdominal muscles). Apnea was associated\nwith arterial oxygen desaturation. An increase in the dose of\ndiazepam decreased the number and severity of these latter\nepisodes. Seventeen months later, the patient began to taper\nthe diazepam. Shortly thereafter, she suffered a cardiorespira-\ntory arrest and subsequently died. Autopsy showed small\nchronic inflammatory foci in the pancreas (some associated\nwith islets) and findings of diffuse encephalomyelitis charac-\nterized by perivascular cuffing in the spinal cord, brainstem,\nthalamus, hippocampus, and amygdala, and a dense mononu-\nclear infiltrate in the anterior horns of the lumbar and cervical\ncord with relative preservation of axons and myelin. Cell\ntyping showed this infiltrate to be polyclonal and reactive.\nThere have been rare cases of SMS associated with encepha-\nlomyelitis reported previously. We conclude that our patient\nis an example of coexistence of these 2 conditions."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "Stiff-man syndrome (SMS) developed in a 60-year-old\nwoman. Treatment with diazepam controlled her painful\nspasms initially. Two and one-half years after the onset of\nSMS, she developed new spells of paroxysmal leg jerking\nand apnea. A spell was recorded with simultaneous video and\npolygraphic techniques that revealed simultaneous firing of\nmotor unit potentials in several muscles (paraspinals, internal\nhamstring, and abdominal muscles). Apnea was associated\nwith arterial oxygen desaturation. An increase in the dose of\ndiazepam decreased the number and severity of these latter\nepisodes. Seventeen months later, the patient began to taper\nthe diazepam. Shortly thereafter, she suffered a cardiorespira-\ntory arrest and subsequently died. Autopsy showed small\nchronic inflammatory foci in the pancreas (some associated\nwith islets) and findings of diffuse encephalomyelitis charac-\nterized by perivascular cuffing in the spinal cord, brainstem,\nthalamus, hippocampus, and amygdala, and a dense mononu-\nclear infiltrate in the anterior horns of the lumbar and cervical\ncord with relative preservation of axons and myelin. Cell\ntyping showed this infiltrate to be polyclonal and reactive.\nThere have been rare cases of SMS associated with encepha-\nlomyelitis reported previously. We conclude that our patient\nis an example of coexistence of these 2 conditions.",
+      "source_offsets": {
+        "start": 265,
+        "end": 1627
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "paper_id": "5647",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text_trimmed\\5647.json",
+    "source_text_sha256": "912f99144947f5f1201e90693e75521b3764a0ac5687dfcf591f4ea93d7baac2",
+    "prepared_source_sha256": "e8f8bf8cfdf5f243c8d4745e35029ad757d4f1ec08187f813c53af3ec2c5b9e9",
+    "prepared_source_character_count": 953
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 416
+      },
+      "page_index": 45,
+      "text": "T178. Stiff-Person Syndrome and Ophthalmoplegia\nAssociated with Thymoma\nEugene C. Lai, I. Linfante, and A. G. Lee; Houston, TX\nWe report the clinical presentation, antibody production,\nand symptom improvement after treatment of a unique case\nof paraneoplastic syndrome associated with thymoma. We\nfollowed the clinical course of a previously healthy 44-year-\nold Caucasian woman for 6 months. She presented with sub-"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 418,
+        "end": 953
+      },
+      "page_index": 46,
+      "text": "acute onset of double vision and leg spasm for 4 weeks until\nshe was unable to move her eyes or walk. Ophthalmological\nexamination revealed complete ophthalmoplegia but normal\nvisual acuity and optic disc. Neurological examination dem-\nonstrated severe spasticity and hyperreflexia in her legs, spar-\ning her arms. She could not walk because of pain and stiff-\nness. The rest of her examination was unremarkable. Her\nworkup revealed a mediastinal mass and a markedly elevated\nanti-glutamic acid decarboxylase (anti-GAD) antibody titer."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "followed the clinical course of a previously healthy 44-year-\nold Caucasian woman for 6 months. She presented with sub-",
+      "source_offsets": {
+        "start": 297,
+        "end": 416
+      },
+      "source_block_id": "b0001",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    },
+    {
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "acute onset of double vision and leg spasm for 4 weeks until\nshe was unable to move her eyes or walk. Ophthalmological\nexamination revealed complete ophthalmoplegia but normal\nvisual acuity and optic disc. Neurological examination dem-\nonstrated severe spasticity and hyperreflexia in her legs, spar-\ning her arms. She could not walk because of pain and stiff-\nness. The rest of her examination was unremarkable. Her\nworkup revealed a mediastinal mass and a markedly elevated\nanti-glutamic acid decarboxylase (anti-GAD) antibody titer.",
+      "source_offsets": {
+        "start": 418,
+        "end": 953
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "952::p1",
+  "paper_id": "952",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "952::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "ABSTRACT\nWe present a case of a 65-year-old African American male, immunosuppressed on Tacrolimus, who initially presented with cerebellar ataxia and rapidly developed\nProgressive Encephalomyelitis with Rigidity and Myoclonus (PERM) with positive anti-glutamic acid decarboxylase (GAD65) antibodies, no underlying malignancy,\nand normal neuroimaging. PERM is a rare spectrum of Sti ﬀ Person Syndrome (SPS), which is strongly associated with anti-GAD antibodies and characterized by ﬂare-\nups and remissions of encephalopathy, myelopathy and rigidity with myoclonus. PERM is diagnosed clinically and has been successfully treated with both\nIntravenous Immunoglobulin (IVIg) and plasmapheresis. Our patient was successfully treated with IVIg. On day 14 after starting IVIg treatment, his neurological\nsymptoms started to improve and ultimately returned to baseline.\n\n3.1. Case report\nA 65 year old African-American male with past medical history of\nhypertension, atrial ﬁbrillation, end stage renal disease (secondary to\n\nhypertension), status post two kidney transplants and chronic subdural\nhematoma who was initially admitted for dehydration and diarrhea,\ncomplicated with Acute Kidney Insu ﬃ ciency (AKI). Relevant medica-\ntions included Apixaban and Tacrolimus. Upon admission, patient's\n\nT\n\nmental status was at baseline. He was alert and oriented to person,\nplace, date and situation and is able to perform his ADLs, with mild\nshort memory de ﬁcit. Neurology service evaluated the patient for two-\nweek history of hand tremor, abnormal movements, slowed mentation,\nweakness and poor balance. Within three days of admission, patient had\nacute change in mental status with cerebellar ataxia, infrequent non-\nrhythmic multifocal myoclonic appendicular and facial jerks, coarse\nintention tremor, unsteady standing and posture and increased muscle\ntone with rigidity. Pertinent negatives included intact deep tendon re-\nﬂexes, ﬂexor plantar response and intact cranial nerve and sensory\nexam. Within one week of admission, patient developed both sponta-\nneous and provoked myoclonus with tactile stimulation. The toxic and\nmetabolic work up was only signi ﬁcant for pre-renal pattern Acute\nKidney Insuﬃ ciency (AKI), treated with hemodialysis. Patient remained\nwith persistent encephalopathy after complete resolution of metabolic\ndisarrangements.\nPatient initially received plasmapheresis (day 10 after admission)\nfor 5 days. Patient remained with encephalopathy, severe axial and\nappendicular rigidity and stiﬀ ness. Because of no initial improvement,\non week 5 after admission, patient was begun on a course of in-\ntravenous immunoglobulin (IVIg) at 0.4 g/kg/dose. On day 14 after\ncompleting the ﬁrst course IVIg treatment, patient showed marked\nimprovement in mental status, stiﬀ ness, spasticity and respiratory drive\ntwo weeks after. Pertinent laboratory ﬁndings included positive serum\nanti-GAD antibodies beginning on day 5 of hospitalization (titer:\n1:250), negative cerebrospinal ﬂuid (CSF) and plasma paraneoplastic\npanel (including anti-amphiphysin antibodies), negative anti-NDMA\nantibodies, negative anti-ganglioside antibodies, as well as absent oli-\ngoclonal band and normal IgG index. Anti Glycine Antibody (Ab) could\nnot be obtained. Lumbar Puncture showed CSF values within normal\nrange (Protein: 42 mg/L, Glucose: 82 mmol/L, White Blood Cells: 2 per\nmm\n3), negative CSF cultures and a negative meningitis/encephalitis\npanel. Meningitis/Encephalitis Panel included Escherichia coli K1,\nHaemophilus in ﬂuenza, Listeria monocytogenes , Neisseria meningitis\n(encapsulated), Streptococcus agalactiae , Streptococcus pneumoniae ,\nCytomegalovirus, Enterovirus, Herpes simplex virus 1 and 2, Human\nherpesvirus 6, Human parechovirus, Varicella zoster virus, and\nCryptococcus neoformans/gattii. The patient had CT scans of the ab-\ndomen, head and thorax which all came back negative. Three brain\nMRIs during his hospital stay showed stable subacute subdural hema-\ntoma and no acute abnormalities. Complete work up excluded the\npresence of malignancy. Pertinent metabolic ﬁndings included\nCreatinine: 4.86 mg/dL, Urea Nitrogen: 436 mg/dL, TSH: 1.29 mIU/L,\nT4, and Vitamin B12: 888 pg/mL. Multiple Electroencephalograms\n(EEG) showed mild di ﬀuse slowing, excess fast activity suggestive of\nmedication e ﬀect and irregular heart and rhythm. No triphasic waves\nwere seen. Patient also had consistently low Tacrolimus titers.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 538,
+        "end": 1401
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 863
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3340,
+        "end": 3493
+      },
+      "compiled_offsets": {
+        "start": 865,
+        "end": 1018
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3494,
+        "end": 3764
+      },
+      "compiled_offsets": {
+        "start": 1020,
+        "end": 1290
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4218,
+        "end": 4219
+      },
+      "compiled_offsets": {
+        "start": 1292,
+        "end": 1293
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4221,
+        "end": 7356
+      },
+      "compiled_offsets": {
+        "start": 1295,
+        "end": 4430
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

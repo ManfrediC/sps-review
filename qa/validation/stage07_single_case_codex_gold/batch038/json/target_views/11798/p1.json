@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11798::p1",
+  "paper_id": "11798",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11798::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 21-year-old right-handed cisgender female, two\nmonths prior to presentation, noted stiffness and difficulty with\nambulation. One-month prior to admission, she experienced\nrecurrent depression with myriad vegetative and nonvegetative\nsymptoms of depression. On admission her chief complaint was I\nam a tree, standing motionless and minimally responding to\nquery. After treatment with quetiapine, mirtazapine and\nhydroxyzine for a one-week period, her perception of being a\ntree fully resolved.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1876,
+        "end": 2370
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 494
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

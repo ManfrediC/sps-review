@@ -1,0 +1,67 @@
+{
+  "paper_id": "7716",
+  "stage07_segments_schema_version": "stage07_xml_segments_v1",
+  "source": {
+    "source_text_json_path": "data\\extraction_json\\text\\7716.json",
+    "source_text_sha256": "f429fd8e601a3b3b8ca51331d5ea558c12e62d416962a98039bd095c8f3a532a",
+    "prepared_source_sha256": "ecc7c9cd742c9465f71fe99b7f596269b96538ecd7b8a7330afa03346f3e7c92",
+    "prepared_source_character_count": 2724
+  },
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "patient",
+      "label": "Patient 1",
+      "source": "stage06_single_patient_prior"
+    }
+  ],
+  "source_blocks": [
+    {
+      "block_id": "b0001",
+      "source_offsets": {
+        "start": 0,
+        "end": 255
+      },
+      "page_index": 0,
+      "text": "Clinical and immunological studies in a 3-generation family with \nvery high titers of anti-GAD antibodies (S21.007) \nPopianna Tsiortou, Harry Alexopoulos, Sofia Akrivou, Chrysanthi Barba, Michail \nKosmidis, Marinos Dalakas \nFirst published April 16, 2019,"
+    },
+    {
+      "block_id": "b0002",
+      "source_offsets": {
+        "start": 259,
+        "end": 2724
+      },
+      "page_index": 0,
+      "text": "Abstract \nObjective: To study clinicopathological parameters in a 3-generation family with high-titer anti-\nglutamic acid decarboxylase (GAD) antibodies. \nBackground: High-titer anti-GAD autoantibodies are a hallmark of neurological syndromes \nincluding Stiff Person Syndrome (SPS) and autoimmune epilepsy. Low-GAD titers are typically \nseen in type 1 Diabetes (DM1). \nDesign/Methods: Sera from three family members (female index patient, her father and her \npaternal grandmother) were serially tested for anti-GAD antibodies using ELISA, Western Blot \n(WB) and immunohistochemistry (IHC) on mouse brain and primary hippocampal neurons. \nPatients were examined and their medical histories assessed. \nResults: All patients had high-titer anti-GAD antibodies (>20,000 IU/ml-ELISA). The index \npatient, a 25-year-old woman, presented in 2012 with autoimmune epilepsy treated successfully \nwith steroids and low-doses levetiracetam. Her serum immunoreacted strongly to cultured \nhippocampal neurons and brain cerebellum, cortex, hippocampus and striatum. By 2017, she \ndeveloped typical SPS, without DM1. Her anti-GAD titers remained persistently high (2,5–4,6 × \n106 IU/ml) but the immunostaining intensity to hippocampal neurons, cerebellum and striatum \ndiminished. Her father and grandmother have DM1 with very high-GAD titers (1,8 × 106 and 0,7 \n× 106 IU/ml respectively), never observed in DM1 patients alone without neurological \nmanifestations, up to a-5-year follow-up. Their sera did not immunostain hippocampal neurons \nbut bound to cerebellum, similarly to the index case. Preliminary WB data on brain extracts \nshowed the same immunoreactivity pattern, presumably recognizing linear epitopes, in all 3 \npatients. \nConclusions: This is the first family with very high anti-GAD titers in 3 generations. Whereas \nthe index patient presented with autoimmune epilepsy that evolved into SPS without DM1, her \nfamily members had only DM1 and very high anti-GAD antibodies without neurological disease, \neven though their serum recognized neuronal epitopes similar to the index case. Whether patients \nwith very high-GAD titers can develop neurological disease over a longer observational period, \nremains to be determined. \nDisclosure: Dr. Tsiortou has nothing to disclose. Dr. Alexopoulos has nothing to disclose. Dr. \nAkrivou has nothing to disclose. Dr. Barba has nothing to disclose. Dr. KOSMIDIS has nothing \nto disclose. Dr. Dalakas has nothing to disclose."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "targets": [
+        "p1"
+      ],
+      "role": "patient_specific",
+      "text": "patient, a 25-year-old woman, presented in 2012 with autoimmune epilepsy treated successfully \nwith steroids and low-doses levetiracetam. Her serum immunoreacted strongly to cultured \nhippocampal neurons and brain cerebellum, cortex, hippocampus and striatum. By 2017, she \ndeveloped typical SPS, without DM1. Her anti-GAD titers remained persistently high (2,5–4,6 × \n106 IU/ml) but the immunostaining intensity to hippocampal neurons, cerebellum and striatum \ndiminished. Her father and grandmother have DM1 with very high-GAD titers (1,8 × 106 and 0,7 \n× 106 IU/ml respectively), never observed in DM1 patients alone without neurological \nmanifestations, up to a-5-year follow-up. Their sera did not immunostain hippocampal neurons \nbut bound to cerebellum, similarly to the index case. Preliminary WB data on brain extracts \nshowed the same immunoreactivity pattern, presumably recognizing linear epitopes, in all 3 \npatients. \nConclusions: This is the first family with very high anti-GAD titers in 3 generations. Whereas \nthe index patient presented with autoimmune epilepsy that evolved into SPS without DM1, her \nfamily members had only DM1 and very high anti-GAD antibodies without neurological disease, \neven though their serum recognized neuronal epitopes similar to the index case. Whether patients \nwith very high-GAD titers can develop neurological disease over a longer observational period, \nremains to be determined. \nDisclosure: Dr. Tsiortou has nothing to disclose. Dr. Alexopoulos has nothing to disclose. Dr. \nAkrivou has nothing to disclose. Dr. Barba has nothing to disclose. Dr. KOSMIDIS has nothing \nto disclose. Dr. Dalakas has nothing to disclose.",
+      "source_offsets": {
+        "start": 1050,
+        "end": 2724
+      },
+      "source_block_id": "b0002",
+      "confidence": "high",
+      "evidence": "Deterministic clinical-window selection for Stage 07 single-case v1."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "roundtrip_status": "passed",
+    "errors": [],
+    "warnings": [],
+    "manual_review_reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ],
+    "span_adjustments": [],
+    "rejected_spans": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "901::p1",
+  "paper_id": "901",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "901::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 56-year-old woman experienced progressive stiffness and painful spasms in the right arm leading to a frozen\narm within 2 years. She had previously developed cerebellar ataxia (anti –glutamic acid decarboxylase [GAD]\nantibodies, 1,550 nmol/L; age 52 years). Examination showed marked rigidity and decreased movement range\nof the right arm with generalized hyperreflexia (figure and video). There were no antiamphiphysin or other\nparaneoplastic antibodies. Search for malignancies was negative. Diabetes was ruled out. The patient benefited\nfrom diazepam and IV immunoglobulin. Stiff-person syndrome (SPS) affects predominantly the trunk and\nlower limbs.\n1 This case illustrates that the cerebellar ataxia-SPS spectrum of anti-GAD autoimmunity may\noccur sequentially rather than concurrently, and a stiff arm, a variant of paraneoplastic SPS, 2 may rarely be a\nfocal form of anti-GAD-mediated (nonparaneoplastic) SPS.\n\nFigure Limited range of right arm movements\nThe patient demonstrates the extent of her range of movements when asked to abduct and extend the arm. The posture of\nshoulder adduction and elbow flexion was minimally overcome by passive manipulation.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 54,
+        "end": 971
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 917
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2792,
+        "end": 3038
+      },
+      "compiled_offsets": {
+        "start": 919,
+        "end": 1165
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

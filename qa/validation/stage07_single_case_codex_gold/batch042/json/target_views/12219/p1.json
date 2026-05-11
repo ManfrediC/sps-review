@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12219::p1",
+  "paper_id": "12219",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12219::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Patient et observation \nInformations du patient: un patient âgé de 46 ans, \nsans antécédents pathologiques notables, avait \nconsulté dans notre formation pour bilan de rigidité \naxiale majeure, d´installation rapidement \nprogressive. Il se plaignait il y´a 8 mois d´une \nraideur articulaire et de contracture musculaire \ndouloureuse avec rigidité, associée à des lésions \nvésiculeuses cutanées prurigineuses. Ce tableau \nclinique s´est aggravé il y´a 3 mois par une dyspnée \nstade II de New York Heart Association (NYHA) avec \ndysphagie au solide et dysphonie sans altération \nd´état général ni fièvre. \nRésultats cliniques:  l´examen clinique a objectivé \ndes muscles hypertrophiés et rigides aux quatre \nmembres avec signe de gowers positif, diminu tion \nde la protraction de la langue, les réflexes ostéo -\ntendineuses abolis aux membres inférieurs. \nL´examen ostéo-articulaire a montré une douleur à \nla mobilisation active et passive des grosses et \npetites articulations avec raideur au niveau des \ndeux poig nets, des pouces, des épaules et des \nchevilles, douleur à la palpation des épineuses \nlombaires avec lordose lombaire et raideur du \nrachis cervical. L´examen cutané  a trouvé des \nlésions cutanées vésiculo -bulleuses à contenu \nhémorragique de taille millimétri que à 1cm, de \nregroupement herpétiforme, localisé es au niveau \ndes faces postéro -latérales des deux cuisses avec \ndes lésions cicatricielles et des croutes au niveau du \ndos et de la partie supérieure du thorax associés à \ndes lésions de grattage (Figure 1, Figure 2, Figure 3, \nFigure 4 ). Le reste de l´exa men somatique a été \nsans particularités.\n\nArticle\n\nLoubna Tayebi et al. PAMJ - 40(27). 09 Sep 2021.  -  Page numbers not for citation purposes. 3 \nDémarche diagnostique:  les examens \nparacliniques ont objectivé des anticorps anti-acide \nglutamique décarboxylase (anti -GAD ) positif, les \nanticorps anti -amphiphysine, anticorps anti -\nnucléaires, anticorps anti -dna na tif et anticorps \nanti-peptides cycliques citrullinés (anti-CCP) ont été \nnégatifs. Les marqueurs tumoraux notamment le \ndosage de l´antigène prostatique spécifique (PSA) \net l´alpha feotoprotéine ont été négatifs. Le \nscanner thoraco -abdo-pelvien a été normal.  \nL´endoscopie digestive haute avec biopsie a montré \nun aspect de pangastrite chronique érythémateuse \nd´activité modérée, non atrophique, sans \nmétaplasie intestinale ni dyspl asie associée à la \nprésence d´Helicobacter pylori, les plis duodénaux \nont été légèr ement effacés, avec une duodénite \nsubaiguë et chronique non spécifique. Ainsi qu´une \neosophagite subaiguë et chronique non spécifique, \navec absence de signes de malignité. La naso -\nfibroscopie n´a pas révélé d´anomalie. La biopsie \ncutanée a objectivé une dermatite d´interface avec \nprésence d´une fibrose dermique et excoriation, \ndépôts de C1q et faible Immunoglobulin G (IgG) en \ngains épais le long de la membrane basale. \nL´électromyoneurographie a objectivé une activité \nmusculaire au repos avec une décharge ré pétitive \ncontinue aux muscles paravertébraux, associée à \nun canal carpien bilatéral. Cet aspect est en faveur \nd´un syndrome de la personne raide (Figure 5). \nIntervention thérapeutique et suivi:  vu la positivé \nde l´antiGAD65 chez notre patient, on a opté pour \nune benzodiazepine (valium) et le Baclofene \nassociés à une rééducation motrice. La réponse \nthérapeutique était médiocre sur le plan clinique, \nensuite on a mis le patient sous rituximab.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4235,
+        "end": 5867
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1632
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5869,
+        "end": 5876
+      },
+      "compiled_offsets": {
+        "start": 1634,
+        "end": 1641
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5883,
+        "end": 7709
+      },
+      "compiled_offsets": {
+        "start": 1643,
+        "end": 3469
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

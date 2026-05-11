@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12484::p1",
+  "paper_id": "12484",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12484::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: A 40-year-old woman presented to our clinic with stiffness\nand involuntary spasms in the lower extremities. These symptoms\nappeared 13 months ago, at the same time she was diagnosed with a low-\ngrade ovarian carcinoma with metastases to the peritoneum and lymph\nnodes. After the full cytoreduction and chemotherapy (paclitaxel +car-\nboplatin) cancer remission was achieved, however neurological symptoms\nkept progressing.\nOn admission her neurological examination revealed no abnormalities\nwith her mental status, cranial nerves. She demonstrated severe stiffness in\nthe lower extremities, axial rigidity, painful spasms triggered by position\nchanging or tactile stimulus. Her legs, knees and toes were in extension.\nNo signs of ataxia were noted. She was ambulating with walker\nassistance.\nBrain and spinal MRI, EEG didn ’t ﬁnd any abnormalities. EMG\nshowed discharging motor unit potential in m. paravertebralis Th12,\nm. vastus lateralis and m. tibialis [ ﬁgure1]. Serum was positive for anti-\nYo1-IgG and negative for other antineuronal antibodies (include anti-\namphiphysin-IgG, anti-GAD65-IgG). CSF exams showed no pleocytosis,\nno oligoclonal bands, no anti-GAD65-IgG. Indirect immuno ﬂuorescence\nassay of antineuronal antibodies in CSF was positive (1:4, Purkinje cell\nluminescence). There were no signs of cancer relapse on serum CA-125,\n18F-FDG PET-CT, pelvic MRI.\nShe was treated with a PLEX, IVMP, diazepam 50 mg/day with the fol-\nlowing symptoms improvement. Even though painful spasms completely\nresolved, muscle stiffness and axial rigidity persisted, so IVIG (2 g/kg at\nmonth) was planned.\nConclusions: This case of paraneoplastic SPS is unusual due to\nneurological symptoms deterioration after the cancer treatment. More-\nover, the association of SPS with anti-Yo1 isn ’t typical. The absence\nof ataxia in anti-Yo-1 disorder is also unusual (although subclinical\ncerebellar dysfunction cannot be excluded). However, our patient ’s\ndisease corresponded to the clinical and EMG diagnostic criteria\nof SPS.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 459,
+        "end": 2486
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2027
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

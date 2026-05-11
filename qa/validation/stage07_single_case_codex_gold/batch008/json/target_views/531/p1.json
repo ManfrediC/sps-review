@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "531::p1",
+  "paper_id": "531",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "531::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nStiff person syndrome (SPS) is a rare disorder characterized by severe axial and/or limb rigidity, spasms and\ncontinuous motor unit activity on EMG. Symptomatically these patients are usually treated with GABAergic\nmedications. We present a 45-year-old woman with SPS, who failed high dose of GABAergic medication. With\nintrathecal baclofen by intrathecal baclofen pump she had a significant improvement in her symptoms and quality\nof life.\n\nCase Report\nA 45-year-old woman presented with pains in both legs and difficulty in walking of four years duration. Her\ndominant symptoms were stiffness and pain in both legs and lower back. She had a history of occasional falls\nrelated to sudden spasms in the legs precipitated by loud sound. She sustained a recent left patellar fracture after\na fall. She was admitted with an acute exacerbation of stiffness and pain. For the past three years she had\nrequired assistance for all activities of daily living. She had diabetes for which she was on insulin.\nOn examination, she had hyper lumbar lordosis with rock hard lumbar paraspinal muscles and deep lumbar\nfurrowing [Figure 1]. Both legs were stiff (left more than right) and there was clawing of the left toes [Ashworth\nscale 5]. Motor and sensory examination was normal. Her gait was slow, cautious and 'tin soldier’ like. Anti GAD\nantibodies were negative and MRI of the spine was normal. Nerve conduction studies were normal. EMG studies\nshowed continuous motor unit activity from the lumbar paraspinal muscles. A paraneoplastic work up was\nnegative. She was diagnosed as SMS variant of SPS.\nShe was treated for two weeks with high dose of oral diazepam (90 mg/day), oral baclofen (90 mg/day) and\ncontinuous IV infusion of diazepam (50 mg/ day). Methylprednisolone was deferred because of brittle diabetic\nstate and the patient was unwilling for plasma exchange. She had little improvement in stiffness but was\nextremely sedated. After two weeks, the option of ITB pump was offered for which she agreed. A test dose of ITB\n(50 mcg) dramatically reduced her stiffness, following which she opted for ITB pump implantation. Accordingly a\nMedtronic Synchromed II ITB pump was implanted with the intrathecal catheter tip placement at T8 level with an\ninitial ITB dose of 50 mcg/day. Postoperatively, she showed good improvement in stiffness and pain. After 10\ndays, her doses of oral medications could be reduced to 10 mg of diazepam bedtime. At the last follow-up, two\nmonths, her ITB dose was readjusted to 200 mcg/day and a diazepam dose of 10 mg/day. Her gait and stiffness\nimproved subjectively by 70-80% [Ashworth scale 2] and spasms disappeared. She became independent for all\nactivities of daily living.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 451,
+        "end": 900
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 449
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3175,
+        "end": 5439
+      },
+      "compiled_offsets": {
+        "start": 451,
+        "end": 2715
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

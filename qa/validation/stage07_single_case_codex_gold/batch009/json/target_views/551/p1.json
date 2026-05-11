@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "551::p1",
+  "paper_id": "551",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "551::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 51-year-old white man came to\nthe hospital after suffering a fall\nfrom his wheelchair to the concrete\nwalkway at his home. He was\ncomplaining of weakness on his\nright side and numbness in his\nright foot.\nDuring the hospitalization, a psy-\nchiatric consultation was requested\nby the primary team for assistance\nwith intractable seizure-like epi-\nsodes. In our initial consultation,\nthe patient experienced one tonic-\nclonic seizure episode (mainly in\nthe lower left extremities) which\nlasted 6 minutes. His vital signs\nwere stable during the episode,\nand he was in a postictal confu-\nsional state for 1–2 minutes. He\nreported feeling very sore all over\nhis body as though he had run a\nmarathon. He denied ever having\nhad any red urine, bowel/bladder\nincontinence, or auras. Notes and\nconversations with the physicians\non the service revealed concerns\nthat the patient may be experienc-\ning psychogenic seizure episodes\nwith the patient going into spells,\nkicking his legs on the bed boards\nand demanding his wheelchair.\nThe EEG, CT myelogram, and head\nCT were all found to be within\nnormal limits.\nThe patient had no prior psychi-\natric history. History revealed an\nonset of leg pain and falls over the\nlast 6 months; he used a cane ini-\ntially, then a wheelchair, while out-\nside his home. He reported this to\nbe preceded by symptoms of slight\ntremors in his legs while sleeping\nwith occasional daytime twitching\nin his face. He also reportedly got\nsymptomatic relief with a beer at\nnight. He had seen other physi-\ncians in the past for diagnoses of\nhistoplasmosis, causing blindness\nin his left eye, and for a similar\nbrief episode of weakness and pain\n4 –5 years ago. He reported that\nrheumatologists at the time attrib-\nuted that episode to a viral spon-\ndyloarthropathy. Of note, he\nunderwent pacemaker placement\nafter a diagnosed arrhythmia led to\nsyncopal episodes. His current neu-\nrologist had diagnosed stiff-man\nsyndrome and tried to support him\nwith regularly scheduled appoint-\nments.\nOn examination, the patient had\na cooperative attitude with a soft\ntone of speech, restricted affect,\nand euthymic mood; he reportedly\nfelt well about leaving the hospital\nas soon as it was opening day for\nturkey season. He tended to mini-\nmize his symptoms and denied any\nneurovegetative symptoms of\ndepression. However, on the Fol-\n\nstein Mini-Mental Status Examina-\ntion, he faltered on recall, concen-\ntration, and attention with explicit\nshort-term memory losses. While in\nthe hospital, his supportive wife\nreported that noises (beeps of the\ncardiac monitor and loud visitors)\ntended to set off his spells. The\nsteadily increasing doses of diaze-\npam (now at 15 mg every 6 hours),\nbaclofen (5 mg t.i.d.), and physical\ntherapy consults had proven help-\nful in the course of his hospitaliza-\ntion.\nOn a follow-up neuropsychiatric\nevaluation, the patient experienced\nseveral episodes of blank stares\nand twitching during various parts\nof the comprehensive testing.\nDespite the patient’s subjective\ncomplaints, no problems were\nfound with his memory. The\nrepeated transient episodes under-\nestimated his cognitive perfor-\nmance, leading the examiner to\nconclude that the deﬁcits did not\nreﬂect a neurodegenerative process,\nbut rather one consistent with con-\nversion disorder.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1144,
+        "end": 3488
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2344
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3489,
+        "end": 4431
+      },
+      "compiled_offsets": {
+        "start": 2346,
+        "end": 3288
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

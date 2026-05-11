@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11849::p1",
+  "paper_id": "11849",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11849::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report; In this report, we present a rare case of a 79-year-old woman who\npresented with bilateral lower extremity weakness who was ultimately diagnosed with\n\nStiff-limb syndrome, a rare variant of SPS. Extensive laboratory and CSF studies were\nunrevealing. Electromyography showed significant peroneal motor neuropathy and\ncomplex repetitive discharges in the left tibialis anterior muscle. Antibodies to glutamic\nacid decarboxylase were significantly elevated at 124 units/mL. She was subsequently\nStarted on oral diazepam with significant improvement in her symptoms.\nConclusion: The presentation of SPS can vary based on epidemiologic factors, clinical\nsymptoms, and associated disorders. These forms can have overlapping features\nwhich may make the categorization of patients into one of these forms challenging.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1196,
+        "end": 1358
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 162
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1360,
+        "end": 2018
+      },
+      "compiled_offsets": {
+        "start": 164,
+        "end": 822
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

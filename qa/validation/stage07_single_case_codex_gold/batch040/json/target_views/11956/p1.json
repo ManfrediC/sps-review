@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11956::p1",
+  "paper_id": "11956",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11956::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 45-year-old woman developed an intermittent gait disorder and agoraphobia that was initially diagnosed as a functional\nmovement disorder (FMD). Examination revealed fluctuating left leg stiffness with a hung-up reflex (Video 1). Neuroimaging\nand laboratory testing were normal (including thyroid function). EMG showed continuous motor unit activity in the left leg\nmuscles. Elevated serum (>2,000 U/mL) and CSF (21.09 U/mL) GAD65 antibodies were found consistent with stiff limb\nsyndrome, a rare variant of stiff-person syndrome (SPS). Symptoms responded to diazepam. The hung-up reflex has been\nclassically described in hypothyroidism and Huntington disease,?and this case suggests that it may also be a feature of SPS. #\nThis clinical finding should be kept in mind when assessing patients with FMD.\nVideo 1 Hung-up knee jerk (segment 1) is a rare sign caused by delayed relaxation of the quadriceps femoris muscle during deep tendon reflex assessment. In\nthis patient, no pyramidal signs were found. EMG (segment 2) shows characteristic continuous motor unit potentials at rest in the left iliopsoas muscle while\nsupine, without hip flexion.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 524,
+        "end": 1670
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1146
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

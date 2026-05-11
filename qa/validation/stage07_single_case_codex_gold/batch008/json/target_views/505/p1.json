@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "505::p1",
+  "paper_id": "505",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "505::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Stiff-Three Limbs Syndrome\nVideo\nStiff-Person syndrome (SPS), is a rare and disabling disor-\nder characterized by rigidity and painful episodic spasms that\n\ninvolve axial and limb musculature with continuous, involun-\ntary motor-unit activity (CMUA) at rest in electrophysiologi-\ncal studies.\n1 SPS can be subdivided into stiff-trunk syndrome,\nstiff-limb syndrome (SLS), and progressive encephalomyelitis\nwith rigidity. 1 The cause of this disorder is unknown; how-\never, an autoimmune pathogenesis is suspected. 1\nWe report a patient diagnosed with stiff-three limbs syn-\ndrome (STLS), without CMUA, successfully treated with in-\ntravenous immunoglobulin.\nAn 11-year-old girl was admitted to the Movement Disor-\nders Unit of the Hospital de Clı ´nicas of the Federal Univer-\nsity of Parana´ (Brazil) with a 2-year history of limb ‘ ‘paraly-\nsis’ ’ and dysarthria. Symptoms started 1 week after an upper\nrespiratory tract viral infection in the form of progressive,\nﬂuctuating, and painful rigidity in the right upper and both\nlower limbs. Initially she complained of frequent falls and\nlater rigidity in the affected limbs became ﬁxed, with dis-\nabling gait disturbance and associated with severe dysarthria\n(video 1). Previous personal and family medical histories\nwere unremarkable.\nNeurological examination showed severe dysarthria with\nno other abnormalities in cranial nerves assessment. Lower\nlimbs and right upper limbs showed diffuse livedo reticularis\nwith skin coldness in comparison with the nonaffected left\nupper limb. Limbs were normotrophic with moderate to\nsevere rigidity in the lower limbs and right upper limb, with\nproportionate proximal and distal distribution. The left upper\n\nlimb showed no signs of abnormal tone strength, despite the\nsubjective complaint of paralysis. Deep tendon reﬂexes were\nbrisk, symmetric, and plantar reﬂexes were ﬂexor. Laboratory\ntests included normal leukocytes, red cells, and platelet\ncounts; normal plasma glucose, creatinine, electrolytes, anti-\ncardiolipin, antinuclear antibodies, TSH and CK levels; nor-\nmal erythrocyte sedimentation rate; negative syphilis, hepati-\ntis B/C, and HIV serologies; cerebral spinal ﬂuid analysis\nwas unremarkable as well as brain and spinal chord MRI and\nelectromyography with nerve conduction studies of the upper\nand lower limbs and paraspinal muscles. Plasma autoantibod-\nies to glutamic acid decarboxylase (anti-GAD) were positive\n(2.6 U/mL).\nThe symptoms remained unchanged during treatment with\nbaclofen (up to 40 mg/day, for 1 month) or diazepam (30\nmg/day for 20 days). After 3 months, intravenous immuno-\nglobulin was started and repeated for 1 year (initial dose:\n0.4 g/kg/day for ﬁve consecutive days, followed by monthly\ndoses of 0.4 g/kg administered for 1 day). During this pe-\nriod, the patient showed signiﬁcant improvement of rigidity\nand gait performance with mild improvement in dysarthria\n(video 2: after 1 year of follow-up and video 3: after 3\nyears of follow-up).\nThe case reported here describ es a patient with a distinct\nclinical presentation of SPS, namely painful stiffness in\nthree limbs and dysarthria, with no features such as sphinc-\nter disturbances, truncal rigid ity, exaggerated lumbar lordo-\nsis, or CMUA.\n\nWe designated the case presented here as STLS (asymmet-\nrical rigidity in three limbs, associated with dysarthria, with-\nout continuous motor unit activity), successfully treated with\nintravenous immunoglobulin.\nLegends to the Video\nSegment 1. Baseline evaluation showing the patient with\nlower limbs and right upper limb rigidity, with proportionate\nproximal and distal distribution.\nSegment 2. After 1 year of treatment with intravenous im-\nmunoglobulin, the patient showed signiﬁcant improvement of\nrigidity and gait performance.\nSegment 3. After 3 years, the patient persists with signiﬁ-\ncant symptom improvement.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 50343,
+        "end": 50498
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 155
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 50499,
+        "end": 52040
+      },
+      "compiled_offsets": {
+        "start": 157,
+        "end": 1698
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 52723,
+        "end": 54254
+      },
+      "compiled_offsets": {
+        "start": 1700,
+        "end": 3231
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 55227,
+        "end": 55845
+      },
+      "compiled_offsets": {
+        "start": 3233,
+        "end": 3851
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

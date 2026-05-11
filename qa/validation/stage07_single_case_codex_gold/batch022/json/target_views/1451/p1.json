@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1451::p1",
+  "paper_id": "1451",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1451::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case/Program Description: A 46-year-old woman with a history of left\nbreast invasive ductal carcinoma s/p neoadjuvant chemotherapy and\nmastectomy. Fourteen months later, she presented with progressive\nstiffening of the bilateral lower extremities causing her to become\nbedbound over a 2-month period. She underwent an extensive\nneurologic work-up including imaging of the brain and thoracic/lumbar\nspine, EMG, rheumatologic tests, infectious disease tests (including\ntropical paraparesis) and paraneoplastic antibody panel. The patient\nwas found to be GAD65 positive and diagnosed with paraneoplastic\nstiff person syndrome (PSPS). The patient was treated with several\nrounds of IVIG with partial response. Due to poorly controlled lower\nextremity muscle spasms she eventually suffered bilateral hip\nfractures.\nSetting: Tertiary care hospital.\nResults: The patient underwent left hip hemiarthroplasty due to\nfemoral neck fracture. Two weeks later she complained of worsening\npain of the right hip. She was found to have an acute right hip fracture\nand underwent right hip hemiarthroplasty. The etiology of her bilat-\neral hip fractures is believed to be secondary to severe spasms as there\nwas no history of trauma and pathology was negative for metastatic\ndisease. The patient was subsequently transferred to the acute inpa-\ntient rehabilitation unit and achieved improvements in her Functional\nIndependence Measure scores.\nDiscussion: PSPS is a rare disease process that can lead to signiﬁcant\nphysical impairment. In this case, uncontrolled spasms likely contributed\nto her bilateral hip fractures. Musculoskeletal pain in PSPS patients should\nbe investigated radiographically to rule out metastases and fractures.\nConclusions: PSPS is an uncommon manifestation of cancer. Severe\nmuscle spasms may lead to complications including fractures. Reha-\nbilitation interventions improved patient function and should be\nconsidered an integral part of the management of this condition.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 322,
+        "end": 2300
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1978
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

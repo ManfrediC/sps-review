@@ -1,0 +1,110 @@
+{
+  "schema_version": "stage07_single_case_codex_gold_v1",
+  "batch_id": "batch045",
+  "reviewer": "codex_gpt5_5_xhigh_source_unit_exception",
+  "created_at_utc": "2026-05-06T22:56:02.168805+00:00",
+  "stage07_root": "C:\\Projects\\_worktrees\\sps-review-stage07-singlecase\\data\\extraction_json\\stage07_xml",
+  "registry_path": "C:\\Projects\\_worktrees\\sps-review-stage07-singlecase\\data\\references\\stage07_xml_registry.csv",
+  "paper_ids": [
+    "12700",
+    "12762",
+    "12767",
+    "12785",
+    "12798",
+    "12807",
+    "12894",
+    "12940",
+    "13027",
+    "13042"
+  ],
+  "files": [
+    {
+      "paper_id": "12700",
+      "xml": "xml\\12700.annotated.xml",
+      "paper_json": "json\\papers\\12700.json",
+      "segments_json": "json\\segments\\12700.segments.json",
+      "target_view_json": "json\\target_views\\12700\\p1.json",
+      "validation_json": "json\\validation\\12700.validation.json"
+    },
+    {
+      "paper_id": "12762",
+      "xml": "xml\\12762.annotated.xml",
+      "paper_json": "json\\papers\\12762.json",
+      "segments_json": "json\\segments\\12762.segments.json",
+      "target_view_json": "json\\target_views\\12762\\p1.json",
+      "validation_json": "json\\validation\\12762.validation.json"
+    },
+    {
+      "paper_id": "12767",
+      "xml": "xml\\12767.annotated.xml",
+      "paper_json": "json\\papers\\12767.json",
+      "segments_json": "json\\segments\\12767.segments.json",
+      "target_view_json": "json\\target_views\\12767\\p1.json",
+      "validation_json": "json\\validation\\12767.validation.json"
+    },
+    {
+      "paper_id": "12785",
+      "xml": "xml\\12785.annotated.xml",
+      "paper_json": "json\\papers\\12785.json",
+      "segments_json": "json\\segments\\12785.segments.json",
+      "target_view_json": "json\\target_views\\12785\\p1.json",
+      "validation_json": "json\\validation\\12785.validation.json"
+    },
+    {
+      "paper_id": "12798",
+      "xml": "xml\\12798.annotated.xml",
+      "paper_json": "json\\papers\\12798.json",
+      "segments_json": "json\\segments\\12798.segments.json",
+      "target_view_json": "json\\target_views\\12798\\p1.json",
+      "validation_json": "json\\validation\\12798.validation.json"
+    },
+    {
+      "paper_id": "12807",
+      "xml": "xml\\12807.annotated.xml",
+      "paper_json": "json\\papers\\12807.json",
+      "segments_json": "json\\segments\\12807.segments.json",
+      "target_view_json": "json\\target_views\\12807\\p1.json",
+      "validation_json": "json\\validation\\12807.validation.json"
+    },
+    {
+      "paper_id": "12894",
+      "xml": "xml\\12894.annotated.xml",
+      "paper_json": "json\\papers\\12894.json",
+      "segments_json": "json\\segments\\12894.segments.json",
+      "target_view_json": "json\\target_views\\12894\\p1.json",
+      "validation_json": "json\\validation\\12894.validation.json"
+    },
+    {
+      "paper_id": "12940",
+      "xml": "xml\\12940.annotated.xml",
+      "paper_json": "json\\papers\\12940.json",
+      "segments_json": "json\\segments\\12940.segments.json",
+      "target_view_json": "json\\target_views\\12940\\p1.json",
+      "validation_json": "json\\validation\\12940.validation.json"
+    },
+    {
+      "paper_id": "13027",
+      "xml": "xml\\13027.annotated.xml",
+      "paper_json": "json\\papers\\13027.json",
+      "segments_json": "json\\segments\\13027.segments.json",
+      "target_view_json": "json\\target_views\\13027\\p1.json",
+      "validation_json": "json\\validation\\13027.validation.json"
+    },
+    {
+      "paper_id": "13042",
+      "xml": "xml\\13042.annotated.xml",
+      "paper_json": "json\\papers\\13042.json",
+      "segments_json": "json\\segments\\13042.segments.json",
+      "target_view_json": "json\\target_views\\13042\\p1.json",
+      "validation_json": "json\\validation\\13042.validation.json"
+    }
+  ],
+  "amendments": [
+    {
+      "paper_id": "12807",
+      "source": "retired stage07_source_unit_ids hard10 pilot",
+      "decision": "promoted source-backed case abstract over previous title-only deferral",
+      "adjudication": "unit_better"
+    }
+  ]
+}

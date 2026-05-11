@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8097::p1",
+  "paper_id": "8097",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8097::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Poster 278\nRehabilitation of Stiff Person Syndrome Presenting\nAfter Laminectomy: A Case Report.\nRajat Mathur (National Rehabilitation Hospital, Wash-\nington, DC, United States); Robert D. Bunning, MD,\nCynthia G. Pineda, MD, Nina Rajaei, MD.\nDisclosures: R. Mathur, none.\nPatients or Programs: A 39-year-old woman with worsening\nspasticity after laminectomy.\nProgram Description: The patient had a history of insulin-\ndependent diabetes mellitus and progressive low back pain with\nincreased tone in lower extremities for 3 years. Spine imaging\n(computed tomography, serial magnetic resonance imaging) re-\nvealed L5-S1 mild disk herniation with mild foraminal narrowing.\nThe patient underwent a L5-S1 laminectomy, and, after surgery, her\nspasticity and neuropathic pain in the lower extremities increased.\nAnti-GAD75 antibody titer was elevated (77.6, n /H110211.5), and simul-\ntaneous ﬁring of agonist-antagonist muscles of lower extremities in\nelectromyography conﬁrmed the diagnosis of stiff person syn-\ndrome. The patient received intravenous immunoglobulin over 5\ndays and oral baclofen. She was transferred to acute inpatient\nrehabilitation with lower extremity pain, increased tone, and ﬂexion\ncontracture at the hips with difﬁcult ambulation.\nS267PM&R Vol. 3, Iss. 10S1, 2011\n\nSetting: Acute inpatient rehabilitation hospital.\nResults: After 2 weeks of acute inpatient rehabilitation, which\nincluded daily repetitive passive range of motion, stretching, moist\nheat, hydrotherapy, and use of a stretcher chair, the patient’s axial\nand limb stiffness and functional mobility improved. She was able to\nambulate with a rolling walker from 20-150 ft and stair climbing\nimproved.\nDiscussion: Stiff person syndrome is a rare neurologic condition\ncharacterized by symptoms of muscle stiffness and spasms usually\nstarting axially. The involuntary contractions of agonist and antag-\nonist muscles caused by motor unit activity are the key clinical and\nelectrophysiological markers. Anti-GAD75 antibodies are positive\nin 65% of cases and are associated with other autoimmune condi-\ntions. The chronic, progressive, and variable nature of the disease\nindicates the need for life-long management and an individualized\nrehabilitation program.\nConclusions: Awareness of this rare condition in addition to a\ncomprehensive history and physical examination could avoid un-\nnecessary invasive procedures. This case illustrates that intensive\nrehabilitation with physical therapy and occupational therapy can\nimprove the functional outcome and quality of life of individuals\nwith stiff person syndrome.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4984,
+        "end": 6265
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1281
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 6267,
+        "end": 7572
+      },
+      "compiled_offsets": {
+        "start": 1283,
+        "end": 2588
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

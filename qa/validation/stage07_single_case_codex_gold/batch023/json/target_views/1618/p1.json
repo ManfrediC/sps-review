@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1618::p1",
+  "paper_id": "1618",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1618::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: We report a 58-year-old woman with SPSD with elevated anti-glutamic acid \ndecarboxylase antibody titers in both serum and CSF. Over the course a decade-long disease, the \npatient suffered from significant disability with axial spasms, stimulus induced spasms and \nrecurrent episodes of vertigo. She failed multiple immunotherapies including plasmapheresis, \nIVIG, mycophenolate mofetil and rituximab. Given the refractory nature, we chose to use \nbortezomib as an off-label therapy. Our patient received 5 cycles of subcutaneous bortezomib on \ndays 1, 4, 8, and 11 per cycle followed by a 10-day treatment-free interval. CBC, BMP and LFTs \nwere followed. She developed mild neutropenia after cycle 3 requiring 2-week delay of cycle 4. \nAfter treatment completion, she reported improvement with more ability to ambulate and less use \nof anti-spasmodics.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1284,
+        "end": 2145
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 861
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

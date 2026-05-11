@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8202::p1",
+  "paper_id": "8202",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8202::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "116. Stiff person syndrome improvement with chemotherapy\nin a patient with cutaneous T cell lymphoma—G. Rakocevic,\nA. Hussain (Philadelphia, PA, USA)\nIntroduction: Stiff person syndrome (SPS) is usually idiopathic,\nbut it can be a paraneoplastic manifestation of certain tumors, most\ncommonly secondary to breast adenocarcinoma and small cell lung\ncancer and associated with anti-amphiphysin antibodies. In both\ncases there is impaired synaptic gamma-aminobutyric acid\n(GABA)-ergic neurotransmission resulting from autoantibodies tar-\ngeting various presynaptic and synaptic proteins in the inhibitory\nneurons of the brain and spinal cord.\nObjectives: The authors describe a patient with glutamic acid\ndecarboxylase antibodies (anti-GAD) positive and amphiphysin neg-\native antibody SPS and long-standing cutaneous T cell lymphoma\ntreated successfully with multiple courses of T cell- and B cell-\ndepleting monoclonal antibodies with near-resolution of her SPS\nsymptoms.\nMethods: The patient is a 57-year-old woman diagnosed with T\ncell lymphoma at age 40 years, who underwent initial cytoxan treat-\nments followed by intermittent rituximab infusions. She was diag-\nnosed with GAD-positive SPS at age 46 years and treated with oral\nsteroids and intermittent plasma exchanges without beneﬁt.\nResults: The patient’s lymphoma exacerbations have been associ-\nated with worsening of SPS in general. In addition to intermittent rit-\nuximab infusions for lymphoma relapses and as a maintenance\ntherapy over years, she has also received alemtuzumab, bexarotene,\ntacrolimus, and azathioprine on separate occasions with a dramatic\nimprovement of truncal stiffness and gait stability. Intravenous\nimmunoglobulin (IVIg) was given for chemotherapy-induced hypo-\ngammaglobulinemia and frequent sinusitis and respiratory infec-\ntions, with near-resolution of SPS-related painful muscle spasms.\nConclusion: SPS symptoms beneﬁt from T and B cell-targeted\ntherapies. Early detection and the treatment of primary cancer asso-\nciated with sporadic or paraneoplastic SPS are crucial for a patient’s\n\nsurvival and neurological outcome.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1405,
+        "end": 3482
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2077
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3483,
+        "end": 3517
+      },
+      "compiled_offsets": {
+        "start": 2079,
+        "end": 2113
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

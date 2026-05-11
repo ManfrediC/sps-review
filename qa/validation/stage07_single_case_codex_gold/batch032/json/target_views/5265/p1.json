@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "5265::p1",
+  "paper_id": "5265",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "5265::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "P738\nBrainstem involvement as onset of stiff limb syndrome: A case report\nF. Ceriani, N. Massetto, C. Rosci, M. Pietrogrande (Milan, Italy)\nBackground: The stiff limb syndrome seems distinct from the stiff man\nsyndrome or progressive encephalomyelitis with rigidity. Patients have\nrigidity, painful spasm with abnormal postures of the distal limb and may\nfollow sphincter (50%) or brainstem (40% of cases) involvement with\nrelapsing and remitting course; most patients have no evidence of autoim-\nmune disease.\nCase Report: We describe the case of a 66-year-old woman who 5\nyears ago, after recovery from peripheral right facial nerve palsy,\ndeveloped subacute onset of dysarthria, rhinolalia and severe dysphagia\nwith lips, tongue and velum palatinum paresis. Brain MRI, CFS and\nEMG repetitive stimulation were normal, Ach-R antibodies were ab-\nsent. Three months later, while improving, she began to complain\npainful lower limbs spasms with dif ﬁculty in walking and frequent falls.\nThe EMG study revealed the presence of continuous motor unit activity\nin lower limbs muscles at rest and diazepam therapy was successfully\nprescribed. Eight month later, in combination with a worsening of the\nlegs rigidity, she began to complain about diplopia with signs of\nbilateral ophthalmoplegia. A series of examinations (thyroid function-\nality, autoantibodies, neoplastic markers, abdomen and pelvic echogra-\nphy, chest CT, mammography) did not show signi ﬁcant results in\nfavour of a paraneoplastic or autoimmune disorder; moreover Borrelia\nB. Ig and serum anti-GAD antibodies were absent, angiotensin conver-\ntase was normal. In few days the prednisone administration led to a\nprompt improvement of both ocular and legs symptoms. After 18\nmonths the symptoms reappeared following the reduction of pred-\nnisone, from 50 to 25 mg/day, and were initiated cycles of immuno-\nglobuline every 3 months with good results. However 14 months later,\nthe patient a morning didn ’ts u c c e e di no p e n i n gt h ee y e l i d sf o rc o m p l e t e\nbilateral ptosis and despite the steroid administration, the symptoms\nhave disappeared only after 4 months. At present the patient has been\nbeing asymptomatic for 8 months with the combined therapy of pred-\nnisone (10 mg/day) and immunoglobuline.\nConclusions: The interest of our case of stiff limb case lies in the onset\nwith brainstem involvement, usually delayed by several years, before any\nevidence of leg spasm; besides relapses in the cranial district were com-\nbined to the worsening of the rigidity that however has remained exclu-\nsively located for 5 years to the lower limbs.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 370,
+        "end": 2988
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2618
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

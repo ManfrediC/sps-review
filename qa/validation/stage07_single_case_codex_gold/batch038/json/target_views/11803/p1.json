@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "11803::p1",
+  "paper_id": "11803",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "11803::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "115. PERM Syndrome: a Potential Mimic of Glycine Antagonist\nPoisoning\nMatthew P Scanlon, Carin K Malley, Rachael C Westover, Andrew F\nMicciche, Michael G Abesamis, Joshua A Shulman\nUniversity of Pittsburgh Medical Center, Pittsburgh, PA, USA\nBackground: Progressive encephalomyelitis with rigidity and myoclo-\nnus (PERM) syndrome is an uncommon neurologic condition character-\nized by autonomic instability and severe, spastic muscular contractions.\nThe condition is typically linked to anti-glycine receptor (anti-GlyR)\nautoantibodies that develop in the context of underlying autoimmunity\nor paraneoplastic disease.\nHypothesis: De novo diagnoses of PERM syndrome may be clinically\nindistinguishable from glycine antagonist poisoning.\nMethods: This is a single-patient case report. A six-year-old fully immu-\nnized girl with a history of sexual abuse was transferred to a tertiary care\ndedicated pediatric facility for evaluation of“spells” typified by general-\nized shaking and rigidity. The patient was reportedly awake and in obvi-\nous distress during these episodes, which were characterized by pro-\nnounced muscle contractions of the extremities and arching of the back.\nThe patient’s laboratory assessment demonstrated sequelae of rhabdomy-\nolysis with a creatine phosphokinase (CPK) of 38,000 IU/L. Medical\ntoxicology was consulted with concern for possible glycine antagonist\npoisoning.\nResults: On examination, the patient had findings consistent with\nopisthotonos. The patient had no clear exposure to rodenticidal agents\nor penetrating injuries prior to her presentation. Pending completion of\nher diagnostic workup, the patient was treated empirically with tetanus\nimmunoglobulin, metronidazole, and benzodiazepines with minimal im-\nprovement in her symptoms. Subsequent MRI of the brain and tetanus\nantibodies returned within normal limits. Liquid chromatography-mass\nspectrometry showed no evidence of strychnine exposure. Given concern\nfor possible autoimmune disease, the patient was started on IVIg therapy\nwith a notable decrease in both the frequency and severity of her spasms.\nPrior to discharge, autoimmune titers confirmed the presence of anti-\nGlyR autoantibodies.\nConclusion: PERM syndrome represents a rare glycinopathy that may\nmimic glycine antagonist toxicity and should be considered in the differ-\nential of patients presenting with opisthotonos, neuromuscular spasticity,\nand rhabdomyolysis.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 0,
+        "end": 2424
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2424
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

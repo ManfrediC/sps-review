@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12940::p1",
+  "paper_id": "12940",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12940::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract: Anti-GAD ataxia is one of the most common forms of immune-mediated cerebellar ataxias.\nMany neurological syndromes have been reported in association with anti-GAD. Ophthalmoparesis\nhas been described in stiff person syndrome. We report a case of anti-GAD ataxia presenting initially\nwith isolated ophthalmoplegia and showing complete resolution after immunotherapy. A 26-year-old\nmale patient presented with ophthalmoparesis characterized by tonic upwards deviation of the right\neye. In the following month, he developed progressive ataxia with anti-GAD titers of 1972 UI/mL.\nAfter treatment with methylprednisolone and immunoglobulin, there was complete resolution of\nsymptoms and anti-GAD titers decreased. This is the ﬁrst report of isolated ophthalmoparesis due to\ntonic eye deviation associated with anti-GAD antibodies without stiff-person syndrome. Tonic eye\ndeviation has been reported in SPS, possibly secondary to continuous discharge in gaze holding\nneurons in the brainstem (similar to what occurs in spinal motor neurons). With growing evidence\nfor ocular abnormalitites in SPS, anti-GAD associated neurological syndromes should be included in\n\nthe differential diagnosis of isolated ophthalmoplegia.\n\nCase Report\nA 26-year-old male patient initially presented with double vision. Symptoms wors-\nened with upward gaze, or when walking, and he noticed intermittent involuntary upward\ndeviation of the right eye. He also reported mild gait imbalance, which improved after\nclosing one eye. He had a previous history of ankylosing spondylitis and type I diabetes\nmellitus. No previous neurologic symptoms or family history of ataxia were reported.\nUpon neurological examination, there was vertical misalignment in the primary gaze,\nwith hypertropia of the right eye (which worsened with upward gaze), along with upbeat\nnystagmus, which was not gravity-dependent and persisted in the sitting and standing\npositions (Video S1.—Supplementary materials). Upon isolated examination of each eye,\nthere was only very mild limitation of elevation of the left eye and persistent involuntary\nelevation of the right eye, which led us to conclude that a tonic deviation of the right eye\nwas the most likely cause of the primary gaze misalignment. Other ocular movements\nincluding adduction, abduction, and depression were normal in both eyes. There was no\nataxia on initial examination. Visual acuity, fundoscopy, and campimetry were normal in\nboth eyes. Muscle strength, tonus and reﬂexes were normal.\nAfter one month, he reported worsening with progressive imbalance, and neurological\nexamination revealed persistent tonic upward deviation of the right eye, gaze-evoked and\nupbeat nystagmus, and global ataxia, with a Scale for the Assessment and Rating of Ataxia\n(SARA) score of 11.\nA brain MRI revealed no cerebellar atrophy and no other abnormalities (Figure 1).\nCerebrospinal Fluid (CSF) analysis was normal (cells 2/mm3, glucose 72 mg/dL, protein\n30 mg/dL, and no oligoclonal bands). Complete blood counts, serum vitamin B12, thyroid\nand liver function tests, urea, electrolytes, glucose, and serum protein electrophoresis\nwere normal. Antinuclear and anti-neutrophil cytoplasmic antibodies were negative.\nAnti-GAD65 antibody titers were 1972 UI/mL (Anti-GAD ELISA (IgG) Test, Euroimunn,\nnormal range < 10 UI/mL). CT scans of the chest, abdomen and pelvis were negative\nfor neoplasms. Antibodies against Hu/antineuronal nuclear antigen type 1 (ANNA-1),\nRi (ANNA-2), Yo (PCA-1), Ma2, CV2/collapsin response mediator protein 5 (CRMP5), and\namphiphysin were negative.\nBrain Sci. 2021, 11, x FOR PEER REVIEW 3 of 5\n\nFigure 1. Magnetic Resonance Imaging of the brain sh owing no significant abnormalities and no \ncerebellar atrophy. (A) Axial Flair weighted image. (B) Sagittal T2 weighted image. \nA diagnosis of anti-GAD associated ataxia and ophthalmoparesis was made. The \npatient was treated with methylprednisolone (1  g/day) for five days with only partial \nimprovement. After one month, the symp toms persisted and another course of \nmethylprednisolone was prescribed, this ti me associated with intravenous immuno-\nglobulin 400 mg/kg/day for five days.  \nThere was substantial improvement of opht halmoparesis and resolution of ataxia \nwithin one week, and the patient was discha rged with continuous azathioprine treat-\nment. Six months after the initial immunoglobulin course, he remained asymptomatic \nand had complete resolution of ophthalmop aresis (Video S2.—Supplementary materi-\nals). Anti-GAD titers were 20.69 (normal range < 10 UI/mL) six months after immuno-\ntherapy and decreased to 7.78 after four year s of follow-up. The patient is still asymp-\ntomatic with very mild horizontal gaze-evoked nystagmus upon examination.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2326,
+        "end": 3492
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1166
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3493,
+        "end": 3548
+      },
+      "compiled_offsets": {
+        "start": 1168,
+        "end": 1223
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5254,
+        "end": 7653
+      },
+      "compiled_offsets": {
+        "start": 1225,
+        "end": 3624
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7659,
+        "end": 8784
+      },
+      "compiled_offsets": {
+        "start": 3626,
+        "end": 4751
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1597::p1",
+  "paper_id": "1597",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1597::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We present a male patient 28 y/o with a\nhistory of weight loss, abdominal pain, ortostathic hypotension, pto-\nsis and babinski sign, whith stiffness and painful spasms in both\ncuadriceps, tibialis anterior, gastronemius, rectus abdominis, tho-\nracic and lumbar paraspinal muscles.\nResults: EMG showed continuous, involuntary activity of normal\nmotor unit potentials. Painful spasms of involuntary muscle activity,\nwere also detected. No other abnormal spontaneus activity such as\nﬁbrilations, positive waves, miokimias, high frequency nor myotonic\nor neuromyotonic discharges were recorded. The SSR was absent en\nboth hands. The Silent period was normal. ENG and SFEMG were\nnormal. Antibodies to glycinereceptors were positive. After treat-\nment with IvIg and plasma exchange the patient had moderate\nimprovement and at present he is on baclofen, diazepam, methyl-\nprednisone and levetirazetam, with persistence of ﬂuctuating stiff-\nness and spas.\nConclusions: The neurophysiological studies play an important\nrole in the differential diagnosis of the diseases associated with\nexcess motor unit activity, leading in this patient to the diagnosis\nof encephalomyelitis with rigidity, variant of SPS.\ndoi:10.1016/j.clinph.2019.04.351",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 828,
+        "end": 2058
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1230
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

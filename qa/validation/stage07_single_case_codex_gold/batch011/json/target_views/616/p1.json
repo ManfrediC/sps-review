@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "616::p1",
+  "paper_id": "616",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "616::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report. A 39-year-old woman presented with an 8-year\nhistory of progressive stiffness and spasm of lower extremities,\nabdomen, and spine. Stiffness of the neck and spine first occurred\nwith a febrile episode; subsequently she experienced progressive\nstiffness. Episodes of painful spasm occurred several times a\nmonth. The symptoms became more disabling and 3 years before\nadmission she discontinued work. Diazepam was effective but re-\nquired gradually increasing doses. Carbamazepine lessened her\npain but not the stiffness, baclofen was transiently effective in\nreducing severe stiffness, and lorazepam and clonazepam were\nless effective than diazepam. Immunomodulating therapies had\nnot been tried.\nOn initial examination the patient was awake and able to\nprovide a detailed history. She was lying in bed with legs in stiff\nextensor posture, arms in modified flexor posture, spine hyperlor-\ndotic, and muscles of the abdomen hard. The plantar response was\nextensor; sensation and coordination were intact. Sudden noise\nprovoked spasm and increased stiffness. Administration of IV di-\nazepam produced drowsiness and relief of stiffness such that the\npatient attained a seated posture and propelled a wheelchair.\nEMG showed involuntary continuous motor unit activity of\nagonist–antagonist muscle groups consistent with SPS. The se-\nrum was negative for antibodies to glutamic acid decarboxylase,\namphiphysin, and gephyrin. MRI of the brain and spinal cord\n\nshowed increased lumbar lordosis but were otherwise normal.\nCSF, mammogram, and thoracic CT were unremarkable.\nDaily administration of tiagabine 4 mg was introduced during\nhospitalization. Initially the diazepam dose was 60 mg daily and\nclonazepam was 4.5 mg daily. Seven days after initiation of tiaga-\nbine, diazepam was tapered by 10 mg every 3 days to a dose of 10\nmg daily. Over the subsequent 3 months tiagabine was titrated to\n6 mg daily; diazepam ranged from 5 to 15 mg daily. At her first\nfollow-up visit the patient demonstrated markedly reduced tone\nincluding face, arms, and legs. The patient had difficulty standing\nbecause she was used to locking her knees to ambulate and could\nnot do so; strength in the lower extremities was mildly decreased.\nAfter 2 months of rehabilitation she was able to walk with bilat-\neral cane support.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1993,
+        "end": 3455
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1462
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3456,
+        "end": 4300
+      },
+      "compiled_offsets": {
+        "start": 1464,
+        "end": 2308
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

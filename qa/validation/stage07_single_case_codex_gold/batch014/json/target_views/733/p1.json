@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "733::p1",
+  "paper_id": "733",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "733::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case report \nThe 69 years old female was transferred to our\ndepartment because of elevated blood sugar. She\nwas diagnosed with epilepsy with typical grand mal\n(GM) seizures and temporal spikes on her EEG at\nage 19: she was treated by phenytoin for years. She\nwas 36 when she first noticed a clumsiness of her\nleft leg. Neurological investigations suggested cere-\nbellar atrophy due to phenytoin toxicity as a possi-\nble cause of the progressive limb ataxia. The drug\nwas withdrawn, and replaced by carbamazepine to\ntreat the recurrent seizures.\nShortly thereafter a periodic painful stiffness\nmanifested in the left leg, then the trunk muscles,\nand her speech became scanning. Stiff person’s syn-\ndrome was hypothetized based on severe muscle\nspasticity and exertional tachycardia. This assump-\ntion was supported by the EMG finding and serum\nglutaminic acid decarboxylase (GAD) antibodies.\nSince the age of 53 she has been unable to walk and\nshe had to use wheelchair. Since the menopause –\nappearing at age 54 – she had not seizures any more,\neven without any antiepileptic medication.\nThe patient’s diabetes was revealed at age 59 in\nan other institute. Because the GAD antibody result\nwas unknown there, type 2 diabetes was assumed\nand treated with diet and combined oral antidiabet-\nic therapy, buformin and gliclazide. The patient was\nseen in our department 4 years later, at the age 63,\nand because of bad glycaemic control she was\nswitched to insulin. Based on the relatively rapidly\ndeveloping secondary sulfanylurea resistance, the\nnutritional status (BMI: 17.8 kg/m\n2) and the now\npresented GAD antibody finding (163 IU/ml,\nELISA kit, Euroimmun AG), the type of diabetes\nwas reclassified and LADA was diagnosed.\nAwkwardness of her both legs and truncal ataxia\nwere already present wih scanning speech and spas-\ntic paraparesis. Abdominal complaints (diarrhoea,\nflatulence, distension) were negligible so in the past\nas in the present. The emaciation and the evaluation\n\nof the case history raised the possibility of CD. The\nassumption was confirmed by a positive endomysi-\num antibody (EMA) finding (EMA IgG>1:64,\nselective IgA deficiency). Subsequent duo-\ndenoscopy and biopsy also justified the diagnosis:\nmild-moderate villous atrophy could be detected\n(Figure 1.) . The cranial CT showed frontal and\ncerebellar atrophy. The confirmation of CD and\nLADA raised the possibility that the uncommon\nsequence of her neurological deficits might also be\nassociated with gluten sensitivity. A gluten-free diet\nwas introduced and an outpatient follow up of the\npatient was decided. Although she seemed to be\ncooperative at the beginning, in fact she was lost for\nseveral years.\nShe was admitted to our department at the age\n69 again, because her elevated blood sugar levels\ncould not be satisfactorily managed at home. The\nHbA\n1c value was 9.9%, therefore the insulin dose\nwas modified. Laboratory tests showed serum C-\n\npeptide levels below the normal (>0.1 ng/mL), folic\nacid (18.3 nmol/L) and B12 (332 pmol/L) levels\nwere within normal range. In addition to selective\nIgA deficiency, IgG type anti-transglutaminase lev-\nels of >400 mikromol/ml were detected indicating\nthat the patient has not kept a strict gluten-free diet,\npossibly explaining her progressive neurological\nsymptoms.\nA neurological assessment was performed again\nshowing dysarthria, scanning speech, severe spastic\nparaparesis. Not only truncal and limb ataxia were\npresent but the clumsiness of her arms, too. The\nEEG detected moderate, diffuse cortical dysfunc-\ntion without epileptiform signs. Investigations for\nperipheral sensory neuropathy revealed a mild\nsmall fiber damage. HLA determination was per-\nformed, the presence of DQ2.2 allel was found by\nthe patient (DQA1*02:01, DQB1*0202), which in\nnot typical in CD. The presence of one allel of the\nDQ2 heterodimer (DQ2.x) is seen very rarely\n6, but\nnot unknown. Nevertheless she was carrying\nHLAB1*07, too, which also corralates to CD.\nWith the modified insulin treatment, keeping a\nstrict gluten-free diet the patient became free from\ncomplaints. At outpatient control one month later\nher medical check-up showed stable state corres-\nponding the underlying disease.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5858,
+        "end": 7837
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1979
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7838,
+        "end": 8780
+      },
+      "compiled_offsets": {
+        "start": 1981,
+        "end": 2923
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 9483,
+        "end": 10757
+      },
+      "compiled_offsets": {
+        "start": 2925,
+        "end": 4199
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1836::p1",
+  "paper_id": "1836",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1836::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Report\nA 59-year-old woman with a history of restless leg syndrome \nwas admitted to our department with stiffness and involuntary \nspasms in the lower extremities. She had lower extremity and back \npain caused by the spasms and stiffness. She was also experiencing \ninvoluntary jerks in the lower extremities. Her symptoms started \nthree weeks prior to presentation and showed a progressive course. \nShe was nonambulatory because of the stiffness and jerks. The \nspasms were triggered when she flexed her knees. In a neurologic \nexamination, she was cooperative and oriented. The cranial nerve \nexamination was normal. She had no upper extremity weakness. \nLower extremity and axial rigidity were revealed. Her legs and \nknees were in extension, her ankles were inverted, and her toes were \nextended (Figure 1). Her blood chemistry and hemogram were \nunremarkable. Her electroencephalogram was normal. Her cranial \nand spinal magnetic resonance imaging were normal. She was \ntreated with oral baclofen and diazepam. She partially responded \nto diazepam, there was a mild improvement in the stiffness. Lower\n\nextremity electromyography (EMG) showed sensorial and motor \npolyneuropathy . The patient was investigated for SPS because of \nthe progressive stiffness in the lower extremities, even though there \nwas no EMG evidence. In blood tests, anti-GAD antibody was \nnegative, anti-amphiphysin was antibody positive. The diagnosis \nAd dress for Cor res pon den ce/Ya z›ﬂ ma Ad re si: Hüseyin Nezih Özdemir MD, Ege University Faculty of Medicine, Department of Neurology , Izmir, Turkey\nPhone: +90 538 859 91 38 E-mail: huseyinnezihozdemir@gmail.com ORCID: orcid.org/0000-0002-0651-7276\nRe cei ved/Ge liﬂ Ta ri hi: 07.07.2019 Ac cep ted/Ka bul Ta ri hi: 04.10.2019\n©Copyright 2020 by Turkish Neurological Society\nTurkish Journal of Neurology published by Galenos Publishing House.\n\nTurk J Neurol 2020;26:39-41 Özdemir et al.; Stiff Person Syndrome\n40\nof SPS was made. The patient was treated with 2 g/kg intravenous \nimmunoglobulin (IVIG), and the symptoms mildly improved. \nShe had no painful cramps but she had muscle stiffness, inversion \nposture of the ankles, and axial rigidity . She was investigated for \nparaneoplastic etiology . Breast ultrasound showed a lesion in the \nright breast. She was referred to general surgery . A tru-cut biopsy \nwas performed. The pathologic findings were compatible with \ninvasive ductal carcinoma. Surgery was performed and the tumor \nwas resected. Three months after the surgery , although she had \nno jerks and sudden spasms she still had stiffness and was treated \nwith IVIG for a second time. After surgery , she was treated with \npaclitaxel chemotherapy for a year. At the one-year follow-up after \ncancer therapy , her symptoms had improved. She had no muscle \nstiffness and axial rigidity . She could easily flex her knees but the \ninversion posture of the feet persisted (Figure 2).\n\nThe patient could easily flex her knees; however, the inversion \nposture of the feet persisted\n\nTurk J Neurol 2020;26:39-41Özdemir et al.; Stiff Person Syndrome\n41",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2387,
+        "end": 3498
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1111
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3500,
+        "end": 4270
+      },
+      "compiled_offsets": {
+        "start": 1113,
+        "end": 1883
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4272,
+        "end": 5320
+      },
+      "compiled_offsets": {
+        "start": 1885,
+        "end": 2933
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8236,
+        "end": 8330
+      },
+      "compiled_offsets": {
+        "start": 2935,
+        "end": 3029
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 8332,
+        "end": 8399
+      },
+      "compiled_offsets": {
+        "start": 3031,
+        "end": 3098
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

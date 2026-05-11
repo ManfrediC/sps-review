@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1068::p1",
+  "paper_id": "1068",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1068::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "CASE DESCRIPTION\nA 40-year-old man recently diagnosed with GlyR anti-\nbody-mediated PERM presented for resection of a perianal \ntumor. His initial presentation included brainstem dys-\nfunction manifesting as respiratory distress with stridor \nrequiring prolonged respiratory support in our intensive \ncare unit. At this stage, limb rigidity became apparent with \nthe lower limbs being affected more than the upper limbs. \nThis was accompanied by stimulus-sensitive myoclonus. \nGlyR antibodies were measured in serum and cerebro-\nspinal fluid by binding of the patient’s antibodies to the \nsurface of live human embryonic kidney cells expressing \nthe GlyR α 1 subunits, as described by Hutchinson et al.\n1 \nShortly after presentation, the serum GlyR antibody titer \nmeasured was 1:600, and the cerebrospinal fluid GlyR anti-\nbody titer was 1:40. Thirty days before this operation and \n2 days postoperatively, the serum antibody titer was 1:200. \nImmediately before the operation, the patient experienced \ndysarthria, ophthalmoplegia with diplopia, and intermit-\ntent stridor. Muscle tone was clinically increased, and \nthere were fixed contractures of long finger flexor muscles \nbilaterally. Treatment included a course of IV immuno-\nglobulins, plasma exchange, systemic steroids, and intra-\nthecal baclofen after insertion of an intrathecal pump. To \navoid damage to or compromise the function of the intra-\nthecal device, we opted to administer general anesthesia \nto accommodate resection of the perianal tumor. Due to \nresidual vocal cord dysfunction and previous difficulty \nachieving separation from mechanical ventilation, anes-\nthesia was induced by inhalation of sevoflurane in oxygen \n(Dräger Primus, Hemel Hempstead, United Kingdom). \nMuscle rigidity was repeatedly assessed by passive flex-\nion-extension of the patient’s forearm both before and \nduring induction of anesthesia. The rigidity observed \nclinically before induction became markedly reduced \n(approaching “normality”) at an end-tidal sevoflurane \nconcentration of 1.6%, although at this concentration the \npatient still responded to verbal commands. When the \nend-tidal sevoflurane concentration was increased further, \nthe patient became progressively less responsive, and at \nan exhaled concentration of 2% sevoflurane, there was no \nresponse to painful stimulus. After breathing sevoflurane \nat 1 minimum alveolar concentration for 10 minutes, suc-\n\ncessful laryngeal mask insertion was achieved. Anesthesia \nwas maintained with sevoflurane (recorded end-tidal \nsevoflurane concentration 2.2%) and 30% nitrous oxide \n(N\n2O). This corresponded to a minimum alveolar concen-\ntration value of 1.3 that was calculated by the anesthetic \nmachine’s internal software program using the variables \nof age and the respective concentrations of sevoflurane \nand N\n2O. Surgery concluded after 2 hours. Muscle rigid-\nity recurred approximately 10 minutes after discontinuing \nanesthesia, and the patient regained consciousness appro-\npriately after 20 minutes with no recollection of awareness \nassociated with the surgery.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1047,
+        "end": 3473
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2426
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3474,
+        "end": 4134
+      },
+      "compiled_offsets": {
+        "start": 2428,
+        "end": 3088
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

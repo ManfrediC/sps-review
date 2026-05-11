@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "848::p1",
+  "paper_id": "848",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "848::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nRationale: stiff limb syndrome (SLS) is a variant of stiff-man syndrome, primarily affecting a speci ﬁc limb. Its diagnosis has always\nbeen challenging due to the lack of a speci ﬁc conﬁrmation test. We present a rare case of a patient with lower limb myoclonus and\nrigidity.\nPatient concerns: A 53-year-old male presented with a sudden onset of progressive left lower extremity myoclonus and muscle\nrigidity for 3 days. He rapidly showed signs of right lower limb involvement with severe joint stiffness and inability to walk.\nDiagnosis: The symptoms nature, physical examination, careful elimination of differential diagnosis suggested a diagnosis of stiff\nlimb syndrome.\nInterventions: Intravenous infusion of gamma globulin 0.4 mg/kg coupled with baclofen and clonazepam were given after\nadmission. He also received an injection of botulinum toxin A to relieve his muscle stiffness.\nOutcomes: The patients’ condition improved after the initial treatment with complete disappearance of muscle twitching. Further\nimprovements were seen later on after the local administration of botulinum toxin A.\nLessons: Stiff limb syndrome shares the same complex symptoms with many other conditions. Its diagnosis relies heavily on\nclinical presentations and on ruling out other conditions. However, unusual symptoms such as myoclonus can occur in few cases\nand together with the rarity of the condition, the prevalence of misdiagnosis is high. Therefore, being aware and recognizing the signs\nand symptoms is crucial for proper management. Additionally, EMG is a very important test if the present condition is suspected.\nHowever, a negative EMG result or a negative anti-glutamic acid decarboxylase antibody test should not exclude SLS diagnosis.\nAbbreviations: CT = computed tomography, EMG = electromyogram, GAD-Ab = anti-glutamic acid decarboxylase antibody,\nMRI = magnetic resonance imaging, PERM = progressive encephalomyelitis with rigidity and myoclonus, PET-CT = positron\nemission tomography - computed tomography, SLS = stiff limb syndrome.\n\n2. Case report\nA 53-year-old male patient presented with symptoms of\nprogressive left lower extremity myoclonus and muscle rigidity\nthat started 3 days ago. The left lower extremity myoclonus and\nstiffness started suddenly without any apparent cause with a\nfrequency of once every few minutes. They signiﬁcantly worsened\non the second day with an increase in frequency of once every few\n\nseconds and persisted even during sleep. After admission and on\nthe fourth day, similar symptoms started to appear on the\npatient’s right lower limb. Those symptoms were accompanied\nby a severe joint stiffness and the inability to straighten it, to stand\nor walk. The Patient denied any prior history of chronic\nconditions such as diabetes mellitus, Grave disease or similar\n\nsymptoms among his family members. He also denied any prior\nsurgery.\nThe physical examination indicated a bilateral muscle\ntwitching of lower extremities, an elevated muscle tone, a\npositive knee re ﬂex (++++) and positive bilateral Babinski sign.\nThe electromyography results displayed signs of motor unit\ndischarge. Meanwhile, the brain, cervical, thoracic, and lumbar\nspine MRI scans were all negative. Paraneoplastic antibodies,\nGAD-65, GAD-67 antibody, and glycine receptor antibody were\nall tested and reported negative. Additionally, the chest CT and\nPET-CT scans were also negative.\nThe patient was given an intravenous infusion of gamma\nglobulin 0.4 mg/kg with additional symptomatic treatments such\nas baclofen and clonazepam on the fourth day after admission.\nNo obvious adverse reaction was observed after the initial\ntreatment. He showed signs of remission after 5 days of treatment\nwith total disappearance of his muscle twitching. However, no\nsigniﬁcant changes in muscle stiffness were seen after the initial\ntreatment and the patient was still unable to walk or stand.\nTwo months after the onset of the condition and after a\nthorough discussion with the patient, he received injections of\nbotulinum toxin A in both lower limbs partially alleviation his\nmuscle stiffness. Additionally, he was able to stand and walk but\nwith a spastic gait.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 132,
+        "end": 2182
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 2050
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3082,
+        "end": 3468
+      },
+      "compiled_offsets": {
+        "start": 2052,
+        "end": 2438
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3469,
+        "end": 3843
+      },
+      "compiled_offsets": {
+        "start": 2440,
+        "end": 2814
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5110,
+        "end": 6466
+      },
+      "compiled_offsets": {
+        "start": 2816,
+        "end": 4172
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "754::p1",
+  "paper_id": "754",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "754::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract\nStiff person syndrome (SPS) is a rare neurologic disorder of unknown etiology characterized by increased resting muscle tone,\nprogressive rigidity, and stiffness of the axial musculature. We present a case of a 48-year-old male patient with SPS who\nexperienced facial and neck muscle spasms that were uncontrolled with oral medications and the use of an intrathecal baclofen\npump. Botulinum toxin A injections into the bilateral masseter and neck paraspinal muscles provided pain relief and spasm\ncontrol, illustrating the use of botulinum toxin A injections in the small muscles of face and neck in patients with SPS.\n\nCase Presentation\nA 48-year-old white man with a history of SPS\npresented to the outpatient rehabilitation clinic with\ngeneralized stiffness. This patient was diagnosed with\nSPS 17 years ago after multiple consultations with a\nneurologist. A review of the patient’s medical history\nand physical examination, including extensive labora-\ntory work up, noted negative anti-GAD, and the results\nof a muscle biopsy revealed nonspeciﬁc myositis with no\nconclusive diagnosis. The diagnosis of SPS was based on\nclinical presentation of episodic spasms that were\npartially ameliorated with benzodiazepines. The patient\nwas managed on oral daily doses of valium of 10 mg and\nbaclofen 20 mg, each prescribed 4 times daily. Despite\nhigh doses, the patient continued to experience poor\ncontrol of symptoms.\nWhen medical management with oral medication\nfailed to control the patient’s symptoms, an intrathecal\nbaclofen pump was implanted with a catheter tip at C7.\nAfter implantation of the intrathecal baclofen pump,\nthe patient experienced relief of symptoms in both the\nbilateral upper and lower extremities. On follow-up\nvisit, it was noted that the patient’s overall stiffness\nwas reduced in his limbs and axial muscles, and he\nshowed improvement in his activities of daily living.\nHowever, he continued to have bruxism and neck stiff-\nness. Following further discussion with and consent from\nthe patient, he underwent botulinum toxin A injections\nto the facial and neck muscles.\nBotulinum toxin A (onabotulinumtoxin A), commer-\ncially available in 100- and 200-unit vials, was used, and\nstandard storage techniques and safety protocols were\nfollowed per the manufacturer’s recommendations.\nEach vial of 100 units was reconstituted with 1 mL of\npreservative-free 0.9% sodium chloride before use. Each\narea was prepped, and under sterile conditions with\nelectromyography guidance, the botulinum toxin A was\ninjected into the identiﬁed muscles (Figure 1 ). Care was\ntaken to avoid injection into blood vessels by gentle\naspiration of the needle. The patient received a total of\n300 units approximately every 3 months with subjective\nimprovement in spasms and pain in both the facial and\nneck musculature.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 209,
+        "end": 836
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 627
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 5066,
+        "end": 7259
+      },
+      "compiled_offsets": {
+        "start": 629,
+        "end": 2822
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

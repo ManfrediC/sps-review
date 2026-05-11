@@ -1,0 +1,69 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "807::p1",
+  "paper_id": "807",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "807::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: A 26-year-old woman with several autoimmune conditions\nwas referred because of ﬁlamentary keratitis. Conservative manage-\nment using lubrication, mucolytics, and bandage contact lenses\nfailed to adequately relieve symptoms. Despite the addition of oral\nprednisone, cyclosporine, and azathioprine, the patient ’s condition\npersisted with numerous ﬁlaments and severe dry eye. One month\nlater, the patient had an episode of sudden muscle cramps in her\nback, for which she was hospitalized. Investigations revealed\na diagnosis of stiff person syndrome, positive for glutamic acid\ndecarboxylase autoantibodies. Plasmapheresis and high-dose intra-\nvenous steroids were provided as initial therapy. On follow-up, her\nﬁlamentary keratitis resolved and at the last visit, her ocular\nsymptoms had completely resolved.\n\nCASE REPORT\nA 26-year-old woman was referred with a diagnosis of\nﬁlamentary keratitis. She had several diagnosed autoimmune\nconditions including ulcerative colitis, alopecia totalis, Graves\ndisease, and minimal change disease. She used no oral medi-\ncations. At the initial visit, she was asymptomatic and her\nuncorrected visual acuity was 20/20 in both eyes. Her cornea\nwas clear, and her lacrimal lake appeared suf ﬁcient. Her lashes\nwere noted to be sparse. She was advised to use preservative-free\nt e a r sa sn e e d e d .\nTwo weeks later, the patient presented with a 5-day history of\npainful eyes and foreign-body sensation. Slit-lamp examination\nrevealed bilateral corneal ﬁlaments. The anterior chamber was deep\nand quiet, and her uncorrected visual acuity was 20/25 in both eyes.\nShe had no ptosis or lagophthalmos, and her blinking was normal.\nInitial management included bandage contact lenses, acetylcysteine\ndrops 4 times daily, cyclosporine 0.05% drops twice daily, and\nprophylactic antibiotic drops twice daily.\nFour weeks later, her ﬁlaments persisted bilaterally. She had\nsevere dry eye with the Schirmer test value without anesthesia\nmeasuring 0 mm. On suspicion that her autoimmune conditions were\nﬂaring up, she was administered prednisone 5 mg daily, azathioprine\n\ndrops 100 mg daily, and cyclosporine 100 mg twice daily by her\nrheumatologist. Her ophthalmic drops were unchanged. New\nbandage contact lenses were placed, and she was referred to\nrheumatology to rule out Sjogren syndrome; however, antibody\ntesting was not performed. The patient ’s ﬁlaments resolved at\nfollow-up 4 weeks later but recurred in just 3 days despite the\nmodiﬁcation to her systemic medications.\nOne month later, the patient experienced sudden muscle\nweakness and back spasms. She was admitted to the hospital and\nwas diagnosed with SPS positive for glutamic acid decarboxylase\nautoantibodies. She received high-dose intravenous corticosteroids\nand underwent 5 rounds of plasmapheresis, with plans to receive\nrituximab once insurance coverage was obtained. She remained on\noral prednisone, cyclosporine, and azathioprine, with the addition of\nbaclofen and diazepam for continued symptomatic relief.\nTwo months later, the patient reported dramatic improvement\nof her ﬁlamentary keratitis. Her uncorrected visual acuity was 20/25\nin both eyes. Her brows and eyelashes had regrown. Her cornea was\nclear, and her tear lake appeared robust. The patient reported rare use\nof lubricant drops. She was advised to complete what remained of\nher cyclosporine 0.05% drops and follow-up as needed with her\noptometrist. She remained on her systemic medications with\nintentions for slow tapering.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 294,
+        "end": 1111
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 817
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2209,
+        "end": 3494
+      },
+      "compiled_offsets": {
+        "start": 819,
+        "end": 2104
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3495,
+        "end": 4889
+      },
+      "compiled_offsets": {
+        "start": 2106,
+        "end": 3500
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

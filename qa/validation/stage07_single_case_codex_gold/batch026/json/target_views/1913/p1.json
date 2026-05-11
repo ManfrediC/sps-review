@@ -1,0 +1,53 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "1913::p1",
+  "paper_id": "1913",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "1913::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Results: A 23-year-old G1P0 woman presented for evaluation of severe, intermittent spasms and \nstiff gait triggered by startle, bright lights, and temperature extremes. Prior to pregnancy, she was \nhospitalized for encephalopathy and intractable spasms. Serum GAD65-Ab obtained during \nhospitalization was positive at 1017 U/mL. One year later, spasms were controlled with 90 mg \ndiazepam and 80 mg baclofen daily. Subsequently, she became pregnant and was able to wean \nantispasmodics given improvement in spasms and ambulation. Repeat serum GAD65-Ab was \n>256,000 U/mL. Throughout pregnancy, the patient reduced antispasmodics to 20 mg baclofen \nand 10 mg diazepam daily. She reported continued improvement in her SPS symptoms.\n\nConclusions: We present a case of anti-GAD65-associated SPS in a woman who \nsymptomatically improved with pregnancy.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 795,
+        "end": 1524
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 729
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1526,
+        "end": 1642
+      },
+      "compiled_offsets": {
+        "start": 731,
+        "end": 847
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "8335::p1",
+  "paper_id": "8335",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "8335::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": false,
+  "input_text": "A case series of central and\nperipheral nervous system\ninvolvement in paraneoplastic\nsyndromes\nS. Richelli , E. Greco, GM. Fabrizi,\nT. Cavallaro, S. Monaco and\nS. Ferrari\nDepartment of Neurological,\nNeuropsychological, Morphological\nand Movement Sciences, University\nof Verona, Verona, Italy\nIntroduction: Paraneoplastic syn-\ndromes are remote effect of cancer\ninvolving central and peripheral\nnervous system. The pathogenetic\nmechanism of tissue damage consists\nin immune attack mediated by cir -\nculating antibodies recognizing both\nneoplastic antigens and nervous tis-\nsue epitopes. Material and methods:\nWe reviewed the clinical and labora-\ntory data of definite paraneoplastic\nsyndrome studied in our department\nduring the period 2002 – 2011. De-\ntection of onconeuronal antibodies\nwas obtained by western blot analy-\nsis (recognizing anti-Hu, Yo, Ri,\nCV2, Ma1, Ma2, amphiphysin), and\nconfirmed by indirect immunocyto-\nchemistry. Results: We identified 68\npatients with definite diagnosis of\nparaneoplastic syndrome. 29 cases\ndeveloped a neuropathy, 21 cases\npresented cerebellar degeneration,\n2 cases limbic encephalitis, 2 cases\ncognitive impairment, and 1 case\nstiff person syndrome, brainstem\nencephalitis and choreic syndrome.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 0,
+        "end": 1236
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1236
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": true,
+    "reasons": [
+      "not_single_case_for_stage07_singlecase"
+    ]
+  }
+}

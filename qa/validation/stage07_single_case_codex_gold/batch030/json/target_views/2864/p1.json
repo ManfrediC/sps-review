@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "2864::p1",
+  "paper_id": "2864",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "2864::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Abstract \nStiff-person syndrome (SPS) is a rare disorder of the nervous system, characterized by muscle stiffness, rigidity, \nand painful spasms involving truncal and limb musculature that may severely limit mobility.  \nOur case documents a 53 -year-old patient with SPS and endometrial cancer who was pos itive for anti-GAD \nand paraneoplastic antibodies, who presented to our institution for robotic surgery. These patients are at high \nrisk for prolonged hypotonia and mechanical ventilation. Our patient underwent general anesthesia without \ncomplications despite multiple comorbidities.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1509,
+        "end": 2100
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 591
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

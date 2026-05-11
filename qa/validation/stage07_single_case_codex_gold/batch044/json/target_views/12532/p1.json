@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "12532::p1",
+  "paper_id": "12532",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "12532::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "We present a 54-year-old caucasian man with a history of SPS and CVID. Other\npertinent medical history includes COPD with a 20-pack-year history of tobacco smoking,\noccupational exposure to epoxy and fumes, and sleep apnea. He reported dyspnea when lying\ndown sleeping and at rest. The patient reported difficulty sleeping, walking around his block, and\nlifting objects, including his newborn child, due to muscle stiffness. He had decreased\nimmunoglobulin levels in his blood and has had recurrent respiratory infections, sinusitis, and\npneumonia. On physical examination, he had coarse breath sounds, finger clubbing, and an oxygen\nsaturation of 90%. Pulmonary function testing, with spirometry and impulse oscillometry,\ndemonstrated a moderate obstructive ventilatory defect, airways hyperresponsiveness, and distal\nairways narrowing. Our patient has been treated with high doses of IgG concurrently with rituximab\nfor the past 2 years, resulting in decreasing muscle stiffness. However, the patient recently reported\nincreased dyspnea and has continued using supplemental oxygen following a motor vehicle\naccident, which required spinal surgery. We have initiated a subcutaneous IgG infusion 10%\n(Human) with rHuPH20 to maintain consistent levels. This case highlights obstacles and unique\nsolutions necessitated by patients with multiple rare conditions.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 849,
+        "end": 2208
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1359
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

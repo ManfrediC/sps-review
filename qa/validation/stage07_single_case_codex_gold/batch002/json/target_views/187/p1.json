@@ -1,0 +1,85 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "187::p1",
+  "paper_id": "187",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "187::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "REPORT OF A CASE\nA 43-year-old man presented in 1997 with a 9-year history\nof frequent spasms affecting both legs and neck. He had on\n1 occasion been prescribed diazepam, which he did not\ntake. He noticed that sudden auditory (such as telephone\nrings) or emotional stimuli (such as anger, fear) exagger­\nated these spasms. These episodes were absent during\nsleep. Several other visits to multiple physicians did not\nalleviate his symptoms despite prescriptions of drugs such\nas aspirin, ibuprofen, and quinine. Continuous back rigidity\nand stiffness, progressive development of back deformity,\nand difficulty in ambulation secondary to the rigidity and\nintermittent severe spasms of his thighs prompted this\nmedical visit.\n\nFindings on his physical examination were normal ex­\ncept for an exaggerated lordosis with tense contracture of\nhis prominent paraspinal muscles. Magnetic resonance im­\naging of the head and spinal cord was normal. His complete\nblood cell count, erythrocyte sedimentation rate, and serum\nglucose, triiodothyronine, thyroxine, thyroid-stimulating\nhormone, and cortisol levels were within normal limits. An\nelectromyogram revealed the presence of persistent motor\nunit potentials in both agonist and antagonist muscles de­\nspite the patient's intention to relax, consistent with the\ndiagnosis of SMS.6 Furthermore, a serum anti-GAD anti­\nbody assay was positive. The patient was started on\ndiazepam with gradual increment up to 40 mg/d but had\nonly mild improvement of the symptoms. Baclofen, 10 mg\n3 times a day, was added to the regimen without clinical\nbenefit. Four months later with persistent symptoms and\nlack of response to diazepam and baclofen, the patient was\nhospitalized and was treated with 0.4 g/kg of IVIg for 5\ndays, followed by 2 additional injections at a l-week inter-\n,\n© 1999 Mayo Foundation for Medical Education and Research\nFor personal use. Mass reproduce only with permission from Mayo Clinic Proceedings.\n\n1232 StitT-Man Syndrome and IVIg\nval. One week after the first course of IVIg, the patient no\nlonger complained of muscle spasms or stiffness. Complete\nresolution of rigidity and spasms followed the second and\nthird doses of IVIg. He remains free of such symptoms\nafter 2 years of follow-up.\n\nThis case gives further evidence that IVIg is a safe and\nefficient regimen in the treatment of refractory SMS.\nTherefore, it seems reasonable to propose IVIg treatment to\npatients diagnosed as having SMS who fail to respond to\nthe conventional therapy of benzodiazepines or baclo­\nfen.'?\" However, IVIg does not constitute the ultimate\nMayo Clin Proc, December 1999, Vol 74\ncurative therapy for SMS, as relapses may occur. Further\nstudies are warranted to define the exact indication and the\ncost-effectiveness of IVIg in the treatment of this rare\nentity.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2742,
+        "end": 3464
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 722
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 3465,
+        "end": 4695
+      },
+      "compiled_offsets": {
+        "start": 724,
+        "end": 1954
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 4697,
+        "end": 4988
+      },
+      "compiled_offsets": {
+        "start": 1956,
+        "end": 2247
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 7106,
+        "end": 7662
+      },
+      "compiled_offsets": {
+        "start": 2249,
+        "end": 2805
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

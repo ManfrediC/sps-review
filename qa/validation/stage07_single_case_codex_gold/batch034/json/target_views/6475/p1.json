@@ -1,0 +1,133 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6475::p1",
+  "paper_id": "6475",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6475::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "Case Description\n65 year old female presented with\n18 months of worsening lower\nextremity\nspasms,\nwhich\npredominantly\ninvolved\nthe\nthighs and caused her to rely on\ncrutches and a walker to\nambulate. These spasms were\nprecipitated by touch, stress and\nvoluntary activity. She also had\nassociated weight loss and a very\nanxious demeanor.\n\nShe had an extensive workup and\nresponded well to a trial of\nvalium. However she was readmitted\n3 times over the next 4 months for the\nsame symptoms and had additional\ntesting done. Abnormalities included\nincreased rheumatoid factor at 46,\nmildly elevated CPK 364 and CRP\n5. 7.\nOther tests were negative\nincluding HIV antibody, lyme titer, antiGAD antibodies and a heavy metal\nscreen. Her CSF studies were also\nnegative for oligoclonal bands, myelin\nbasic protein and VDRL. Her MRI\nbrain was unremarkable and MRI\ncervical and lumbar spine did not\nshow any cord compression. She had\nan EMG that revealed continuously\nfiring motor unit action potentials in\nthe lower extremities that were not\nreadily inhibited by the activation of\nthe antagonistic muscles. The needle\nEMG examination showed findings\nconsistent with stiff person syndrome.\n\nEMG\nshowing\ncontinuous\n(low\nfrequency)\nmotor\nunit\nactivity\nsimultaneously occurring in agonist\nand antagonist muscles even in\nrelaxation, suggestive of Stiff Person\nsyndrome\n\nd\n\nResults\nThe protracted course of her disease\nis testament that there are no clear\nguidelines for diagnosis of Stiff Limb\nSyndrome. The initial concern was\nfor HTLV-1 versus primary lateral\nsclerosis\nversus\ncervical\nmyelopathy, however stiff limb\nsyndrome was the diagnosis by\nexclusion. On review of prior and\nthis current case, the diagnostic\ncriteria can be based on features of\nincreased tone mostly in lower\nextremities (proximal or distal) with\nsparing of axial muscles and good\nresponse\nto\nvalium,\nwith\ncharacteristic\nEMG\nfindings.\n\nOn exam she had increased tone\nin her lower extremities, proximal\nmore than distal, but intact\nstrength and retained reflexes in\nupper extremities but she was\nunable to relax the lower\nextremities.\nShe\nhad\nhyperesthesia most notable over\nthe soles of her feet.\n\nThe patient however had focal\nsymptoms involving mainly the lower\nextremities\nwithout\ntruncal\nor\nupper\nb\na\nc\nd\nextremity involvement.\nShe was\ntreated with gabapentin, oxycontin,\nvalium and baclofen. However her\ndisease still progressed despite\npolypharmacy, physical therapy and 3\ng\ne\ni\nh\nf\nrounds of IVIG.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 240,
+        "end": 575
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 335
+      }
+    },
+    {
+      "block_id": "tb0002",
+      "segment_id": "s0002",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 577,
+        "end": 1414
+      },
+      "compiled_offsets": {
+        "start": 337,
+        "end": 1174
+      }
+    },
+    {
+      "block_id": "tb0003",
+      "segment_id": "s0003",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1416,
+        "end": 1589
+      },
+      "compiled_offsets": {
+        "start": 1176,
+        "end": 1349
+      }
+    },
+    {
+      "block_id": "tb0004",
+      "segment_id": "s0004",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1591,
+        "end": 1592
+      },
+      "compiled_offsets": {
+        "start": 1351,
+        "end": 1352
+      }
+    },
+    {
+      "block_id": "tb0005",
+      "segment_id": "s0005",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 1594,
+        "end": 2131
+      },
+      "compiled_offsets": {
+        "start": 1354,
+        "end": 1891
+      }
+    },
+    {
+      "block_id": "tb0006",
+      "segment_id": "s0006",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2609,
+        "end": 2869
+      },
+      "compiled_offsets": {
+        "start": 1893,
+        "end": 2153
+      }
+    },
+    {
+      "block_id": "tb0007",
+      "segment_id": "s0007",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 2871,
+        "end": 3177
+      },
+      "compiled_offsets": {
+        "start": 2155,
+        "end": 2461
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}

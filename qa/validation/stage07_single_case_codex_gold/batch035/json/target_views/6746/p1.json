@@ -1,0 +1,37 @@
+{
+  "stage07_target_view_schema_version": "stage07_xml_target_view_v1",
+  "document_id": "6746::p1",
+  "paper_id": "6746",
+  "target_id": "p1",
+  "target_kind": "patient",
+  "target_label": "Patient 1",
+  "unit_id": "6746::p1",
+  "unit_type": "individual_patient",
+  "unit_source": "single_case_passthrough",
+  "unit_index": 1,
+  "unit_count_within_paper": 1,
+  "ready_for_langextract": true,
+  "input_text": "A 19 year old woman with SPS supported by GADab (501 nmol/L; normal <0.02) presented with increasing\nstiffness, tremors, binocular diplopia, and ptosis. Evolution of eye movements over several days is presented\nand discussed in the context of prior reported cases and the pathophysiologic basis by which GADab may\ndirectly impair ocular motility.\nResults:\nExam revealed diffuse ophthalmoplegia (downgaze greater than upgaze and leftgaze greater than rightgaze)\nwith motility reduced to < 30% of normal in all directions. Saccades were slow and were affected to the same\nextent as smooth pursuit. Deficits were slightly improved with vestibulo-ocular reflexes. Bilateral ptosis and\ngeneralized weakness, stiffness, and tremors were present. EMG with repetitive stimulation, myasthenia\nserologies, tensilon test, and chest CT were negative. Five days later, eye movements were stable with\nexception of interval development of DBN.\nConclusion:\nEye movements initially suggested a brainstem supranuclear gaze palsy, rather than a neuromuscular junction\ndeficit. GADab are increasingly associated with DBN in the absence of SPS and evolution to DBN over several\ndays in this patient provides support of direct GADab mediated injury. This case adds support to mounting\nevidence from 2 prior reports without DBN of direct GADab impairment of GABAergic transmission in\nsupranuclear brainstem and cerebellar motility pathways.",
+  "source_blocks": [
+    {
+      "block_id": "tb0001",
+      "segment_id": "s0001",
+      "logical_segment_id": "l0001",
+      "relation_to_target": "direct",
+      "role": "patient_specific",
+      "shared_with": [],
+      "source_offsets": {
+        "start": 660,
+        "end": 2077
+      },
+      "compiled_offsets": {
+        "start": 0,
+        "end": 1417
+      }
+    }
+  ],
+  "manual_review": {
+    "manual_review_required": false,
+    "reasons": []
+  }
+}
