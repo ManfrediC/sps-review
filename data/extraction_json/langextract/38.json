@@ -1,0 +1,851 @@
+{
+  "paper_id": "38",
+  "source_filename": "38_38.pdf",
+  "source_sha256": "cd83ee2232f5b4814a3b1065f2d75d3d6b43377c992a2ed2a943f6a6eb0e7550",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\38.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "38",
+    "manual_override_present": "false",
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_source_confidence": "high",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "individual",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-04T21:32:21.338546+00:00",
+  "extraction_modes": {
+    "individual": {
+      "extraction_count": 51,
+      "extractions": [
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "difficulty in walking, progressive weakness of the lower extremities, left facial weakness, and an unsteady gait",
+          "char_interval": {
+            "start_pos": 12570,
+            "end_pos": 12583
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2586,
+            "end_index": 2588
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Three months earlier, she was diagnosed as having CMML",
+          "char_interval": {
+            "start_pos": 12721,
+            "end_pos": 12750
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2613,
+            "end_index": 2619
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "unable to stand without assistance; mild facial asymmetry; severe weakness of the lower extremities; deep tendon reflexes absent; vibration perception impaired at toes and ankles; position sense absent at toes and reduced at finger, joints, wrists, and ankles; developed bifacial paresis",
+          "char_interval": {
+            "start_pos": 12839,
+            "end_pos": 13202
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2636,
+            "end_index": 2706
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Serum protein immunoelectrophoresis revealed increased IgG protein and two monoclonal bands IgGK and IgGX; IgC did not react with CM1 or CD1a gangliosides; cerebrospinal fluid analysis revealed seven cells and protein of 142 mg/dL; nerve conduction studies showed absent sensory response in right median and peroneal nerves and both facial nerves; all distal latencies prolonged; needle EMG showed reduced interference pattern in orbicularis oris bilaterally",
+          "char_interval": {
+            "start_pos": 13267,
+            "end_pos": 13311
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2716,
+            "end_index": 2720
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "responded dramatically to high doses of corticosteroids",
+          "char_interval": {
+            "start_pos": 13208,
+            "end_pos": 13264
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2708,
+            "end_index": 2715
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "malignant blood disease with paraproteinemia and demyelinating neuropathy",
+          "char_interval": {
+            "start_pos": 14163,
+            "end_pos": 14238
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2871,
+            "end_index": 2879
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Sural nerve biopsy interpreted as segmental demyelination without inflammatory infiltrates but with reduction of large myelinated fibers; teased fiber preparations and immunofluorescent studies revealed positive IgG binding; immunohistochemistry revealed positive staining to IgG; absence of inflammatory cells in nerve biopsy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "started therapy with 80 mg prednisolone IM",
+          "char_interval": {
+            "start_pos": 13861,
+            "end_pos": 13903
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2824,
+            "end_index": 2831
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "absence of inflammatory cells obliges to call the condition a “GB-like” syndrome with paraproteinemia; the accurate mechanism for pathogenesis of polyneuropathy in patients with paraproteinemia has not been established; this may be due to treatment with corticosteroids",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "left homonymous hemianopia sustained during an otherwise typical migraine attack; 19-year history of infrequent stereotyped migrainous headaches without aura or other sequelae; progressive sensorineural deafness; 10 kg weight loss over 8 years; intractable diarrhea for past 3 years; short-statured (150 cm) and asthenic",
+          "char_interval": {
+            "start_pos": 17702,
+            "end_pos": 17783
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3579,
+            "end_index": 3589
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "spontaneous fibrillation potentials were the sole electrophysiological feature at presentation",
+          "char_interval": {
+            "start_pos": 17441,
+            "end_pos": 17529
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3534,
+            "end_index": 3544
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No further diagnostic details or treatment and outcome information provided",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Fibrillation potentials recorded with concentric needle from abductor pollicis brevis; the potentials are biphasic with an initial positive phase and fire at a constant rate",
+          "char_interval": {
+            "start_pos": 18718,
+            "end_pos": 18766
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3788,
+            "end_index": 3793
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "macular sparing and bilateral sensorineural deafness was confirmed",
+          "char_interval": {
+            "start_pos": 18898,
+            "end_pos": 18965
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3817,
+            "end_index": 3825
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Resting serum lactate and pyruvate levels were raised: 32.2 mg/dL (normal 7-22 mg/dL) and 0.9 mg/dL (normal 0.36-0.59 mg/dL), respectively",
+          "char_interval": {
+            "start_pos": 18968,
+            "end_pos": 19108
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3826,
+            "end_index": 3872
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Other laboratory investigations including serum muscle enzymes, immunological screening, blood film, electrocardiography, and echocardiography were normal",
+          "char_interval": {
+            "start_pos": 19110,
+            "end_pos": 19165
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3873,
+            "end_index": 3879
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Brain computed tomography and magnetic resonance imaging revealed a right temporo-parieto-occipital ischemic lesion",
+          "char_interval": {
+            "start_pos": 19273,
+            "end_pos": 19322
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3898,
+            "end_index": 3904
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Four-vessel cerebral digital angiography was normal",
+          "char_interval": {
+            "start_pos": 19395,
+            "end_pos": 19447
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3918,
+            "end_index": 3926
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Concentric needle EMG was performed on the right deltoid muscle and biceps brachii, extensor digitorum communis (EDC), abductor pollicis brevis, and abductor digiti minimi muscles bilaterally. Insertional activity was normal",
+          "char_interval": {
+            "start_pos": 19450,
+            "end_pos": 19543
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 7,
+          "group_index": 6,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3927,
+            "end_index": 3942
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Fibrillation potentials were recorded at four separate sites in both right deltoid and right abductor pollicis brevis. Voluntarily recruited motor unit potential waveforms were of normal duration, amplitude, and form and the interference patterns were full in all muscles. No other spontaneous activity was recorded. Single fiber EMG performed on right EDC revealed normal jitter (40 ps MCD) and fiber density (1.7). Motor and sensory nerve conduction studies, including those of the right median nerve, were normal.",
+          "char_interval": {
+            "start_pos": 19686,
+            "end_pos": 19709
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3970,
+            "end_index": 3972
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Muscle biopsy of the left deltoid showed ragged-red fibers and abnormal accumulation of mitochondria (hematoxylin-eosin, modified Gomori trichome, and NAD reduced-tetrazolium reductase stains).",
+          "char_interval": {
+            "start_pos": 20229,
+            "end_pos": 20332
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4073,
+            "end_index": 4090
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "The clinical and laboratory features are typical of MELAS.",
+          "char_interval": {
+            "start_pos": 20430,
+            "end_pos": 20488
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4110,
+            "end_index": 4119
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "no specific symptom of muscle disease",
+          "char_interval": {
+            "start_pos": 20617,
+            "end_pos": 20655
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4142,
+            "end_index": 4148
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "continuous progressive rigidity with superimposed painful, intermittent muscle spasms; axial and lower extremity muscles most involved; limbs held in distorted postures during severe spasms; spasms provoked by sensory stimuli; spasms disappear during sleep, general anesthesia, and following neuromuscular blockade",
+          "char_interval": {
+            "start_pos": 27000,
+            "end_pos": 27049
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5421,
+            "end_index": 5426
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "EMG demonstrates a sustained interference pattern reflecting continuous motor unit activity; spasms are not due to cramps, contractures, or myokymia",
+          "char_interval": {
+            "start_pos": 27407,
+            "end_pos": 27425
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5493,
+            "end_index": 5496
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "The etiology of this disorder is unknown",
+          "char_interval": {
+            "start_pos": 27572,
+            "end_pos": 27612
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5525,
+            "end_index": 5532
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "progressive low back and bilateral leg stiffness with superimposed episodes of painful and disabling spasms",
+          "char_interval": {
+            "start_pos": 28297,
+            "end_pos": 28345
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5666,
+            "end_index": 5673
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "spasms of both legs and lower paravertebral muscles with opisthotonus; hips and knees extended and ankles inverted and plantar-flexed in a forceful, fixed posture",
+          "char_interval": {
+            "start_pos": 29088,
+            "end_pos": 29158
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5824,
+            "end_index": 5834
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "EMG showed continuous activity of normal motor units",
+          "char_interval": {
+            "start_pos": 29340,
+            "end_pos": 29392
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5868,
+            "end_index": 5876
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "treated with 150 mg of intravenous diazepam in 2 days, and 60 mg of oral baclofen daily with minimal effect; one gram of methocarbamol administered intravenously over 1 hour resulted in immediate resolution of spasms; maintained on oral baclofen, diazepam, and methocarbamol",
+          "char_interval": {
+            "start_pos": 29402,
+            "end_pos": 29511
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5879,
+            "end_index": 5900
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "immediate resolution of spasms with significant improvement of muscle rigidity lasting a few hours; mild headache and lethargy following methocarbamol infusion",
+          "char_interval": {
+            "start_pos": 29619,
+            "end_pos": 29773
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5920,
+            "end_index": 5946
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "paraspinal and lower extremity muscle rigidity, marked hyperlordosis, and difficulty walking due to severe stiffness",
+          "char_interval": {
+            "start_pos": 29913,
+            "end_pos": 30013
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5969,
+            "end_index": 5984
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "MRI of the thoracic and lumbar spine normal; serum calcium, magnesium, potassium, and sodium normal; creatine kinase normal; glucose tolerance test normal; urine myoglobin normal; antinuclear and antimicrosomal antibodies normal; antibodies to gastric parietal cells, islet cells, and thyroglobulin normal; ischemic forearm exercise test normal; immunostaining of the patient’s serum did not detect antibodies against rat cerebellar neurons; fulfilled the criteria of stiff-man syndrome",
+          "char_interval": {
+            "start_pos": 30102,
+            "end_pos": 30139
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6003,
+            "end_index": 6010
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "Methocarbamol, a centrally acting skeletal muscle relaxant",
+          "char_interval": {
+            "start_pos": 30570,
+            "end_pos": 30584
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6092,
+            "end_index": 6094
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "double vision, muscle weakness, and blephaloptosis",
+          "char_interval": {
+            "start_pos": 33302,
+            "end_pos": 33337
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6660,
+            "end_index": 6667
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "retinal degeneration and cardiac conduction defect, but did not have cerebellar syndrome",
+          "char_interval": {
+            "start_pos": 33375,
+            "end_pos": 33465
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6674,
+            "end_index": 6687
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "elevation of plasma CPK and blood lactate at rest; normal level of cerebrospinal fluid protein; muscle biopsy showed ragged red fibers in Gomori trichrome stain and increased numbers of abnormal mitochondria on electron microscopic examination; enzymatic activities of the mitochondrial transport system were within the normal range; many cytochrome c oxidase-negative fibers together with cytochrome c oxidase-positive fibers; Southern blotting of mitochondrial DNA revealed a 5-kb deletion of DNA",
+          "char_interval": {
+            "start_pos": 33501,
+            "end_pos": 33551
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6693,
+            "end_index": 6702
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "semi-ischemic forearm exercise test and bicycle ergometer study carried out; blood lactate, plasma, and urinary hypoxanthine were measured",
+          "char_interval": {
+            "start_pos": 34124,
+            "end_pos": 34163
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6800,
+            "end_index": 6807
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "blood lactate and plasma hypoxanthine after ergometer exercise increased in the KSS patient",
+          "char_interval": {
+            "start_pos": 35692,
+            "end_pos": 35785
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7175,
+            "end_index": 7188
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "treatment with CoQ,, remarkably depressed these increases in lactate and hypoxanthine",
+          "char_interval": {
+            "start_pos": 35791,
+            "end_pos": 35811
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7190,
+            "end_index": 7194
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "increase in urinary excretion of hypoxanthine in KSS after ergometer exercise was significantly higher than that in control subjects",
+          "char_interval": {
+            "start_pos": 35902,
+            "end_pos": 35980
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7212,
+            "end_index": 7223
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "administration of CoQ,, remarkably depressed the increase in urinary hypoxanthine",
+          "char_interval": {
+            "start_pos": 36123,
+            "end_pos": 36146
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7256,
+            "end_index": 7260
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "symptoms during exercise improved after treatment with CoQ,,,",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Two other cases of cytochrome c oxidase deficiency (cases 1 and 2) showed a persistent elevation of hypoxanthine after the forearm test",
+          "char_interval": {
+            "start_pos": 36303,
+            "end_pos": 36441
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7291,
+            "end_index": 7315
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "diagnosed as having CMML three months earlier",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No further diagnostic details or treatment information provided",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Sural nerve biopsy, 1 week after she started therapy with 80 mg prednisolone IM, was interpreted as segmental demyelination without inflammatory infiltrates but with reduction of large myelinated fibers. Teased fiber preparations and immunofluorescent studies revealed positive IgG binding",
+          "char_interval": {
+            "start_pos": 13821,
+            "end_pos": 13847
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2814,
+            "end_index": 2820
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "absence of inflammatory cells obliges us to call the condition a “GB-like” syndrome with paraproteinemia; The accurate mechanism for the pathogenesis of polyneuropathy in patients with paraproteinemia has not been established",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No treatment or outcome details provided in the excerpt",
+          "char_interval": {
+            "start_pos": 18159,
+            "end_pos": 18161
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": null,
+          "_token_interval": {
+            "start_index": 3660,
+            "end_index": 3661
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "symptoms during exercise improved after treatment with CoQ10",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "in the case of MG, the increase in urinary hypoxanthine was within normal range",
+          "char_interval": {
+            "start_pos": 36157,
+            "end_pos": 36237
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7265,
+            "end_index": 7280
+          }
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 51
+}

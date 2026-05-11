@@ -1,0 +1,525 @@
+{
+  "paper_id": "85",
+  "source_filename": "85_85.pdf",
+  "source_sha256": "88f0a69ff2ddfda94f58bd1bd49d8ac5ecb36d6b9b54a2be3ae6e1b45e2317af",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\85.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "85",
+    "manual_override_present": "false",
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_source_confidence": "high",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | case_markers=report of a case | interventional_markers=trial | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "individual",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-04T21:34:40.431280+00:00",
+  "extraction_modes": {
+    "individual": {
+      "extraction_count": 41,
+      "extractions": [
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "progressive stiffness and pain in the lower back with intermittent cramps over a 3-year period; cramps were extremely painful; sensitivity to any sudden movement or external stimulation; lower back stiffness causing great difficulty performing daily activities and walking with a rigid and straight back; stiffness of the muscles subsided during normal sleep; left L5 radiculopathy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Electromyography showed spontaneous continuous muscle fiber activity which was markedly suppressed after a trial with 20 mg intravenous diazepam",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "progressive stiffness and pain in the lower back of 3 years' duration",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "electromyograms showed continuous muscle fiber activity that responded dramatically to diazepam and fulfilled the diagnosis of SMS",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "treatment with oral diazepam 80 mg daily, tapered to 15 mg daily",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "muscular stiffness disappeared during treatment with oral diazepam without any recurrence of spasm for 20 months",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "rigidity and pain in the lower back persisted and even progressed to the upper back and neck; limbs gradually affected with more severe symptoms proximally located; intermittent cramps easily induced by sudden movements or unexpected noise; walked slowly with a stiff spine and limbs; inability to bend waist; great difficulty performing daily activities, particularly putting on shoes and trousers; unable to drive a car due to limited neck mobility; muscular stiffness and pain subsided during normal sleep; speech was normal",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "myelography and computed tomography of the whole spine showed a laterally protruding disc in the L5-S1 intervertebral space with compression of the left S1 root",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "received discectomy with subsequent medical and rehabilitation treatment; previous drug treatment included indomethacin, mefenamic acid, tolmetin, acetaminophen, baclofen, and fludiazepam",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No history of trauma or infection was noted, and no family members had neurologic disorders",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "extremestiffness and intermittent cramps in the paraspinal muscles of the whole back and in the proximal limbs with profuse sweating; severe cramp induced by unexpected tap or sudden stretch of the limbs; able to walk a few steps slowly then required support; neck and back flexion limited",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {
+            "muscle_power": "full",
+            "cranial_nerves": "intact",
+            "tendon_reflexes": "normal except absence of ankle jerk on the left side",
+            "muscle_atrophy": "mild atrophy of the left calf muscle",
+            "sensory": "mildly decreased pin-prick sensation in the posterior surface of the left lower leg and plantar area due to S1 root compression",
+            "cerebellar_function": "normal",
+            "sphincter_function": "intact"
+          },
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "S1 root compression causing sensory deficit",
+          "char_interval": {
+            "start_pos": 5573,
+            "end_pos": 5574
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 716,
+            "end_index": 717
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Electromyographic studies from thoracic spinal muscles showed spontaneous muscle fiber activity at rest; continued muscle fiber activity for 20 minutes after 200 mg of intravenous phenytoin; dramatic suppression of muscle fiber activity 20 minutes after 20 mg of intravenous diazepam; abolition of muscle fiber activity 5 minutes after secobarbital-induced sleep",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Laboratory examination included hemogram, fasting glucose, liver and renal function tests, electrolytes, creatine phosphokinase, antinuclear antibody, LE cell, rheumatoid factor, complement (3 and 4), HLA B27, immunoglobulins, protein electrophoresis, immunoelectrophoresis, anti-DNA antibody, antimitochondrial antibody, antimicrosomal antibody, thyroid function tests, cortisol, carcinoembryonic antigen, and cerebrospinal fluid studies; all results were within normal limits",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Nerve conduction velocities, evoked potentials and electroencephalography were also normal",
+          "char_interval": {
+            "start_pos": 6697,
+            "end_pos": 6702
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 876,
+            "end_index": 877
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "axial and proximal stiffness starting from the lower back with progressive involvement of the neck and limbs; stiffness very sensitive to external stimulation, particularly sudden movement, frequently inducing painful cramp",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "EMG investigation revealed continuous muscle activity dramatically suppressed in response to high-dose diazepam",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "oral diazepam therapy (initial dose 15 mg/day; maintenance dose 80 mg/day for 6 months); dosage tapered to 15 mg daily in the following 20-month period",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "muscular stiffness and cramps disappeared within one month; no drowsiness, weakness or respiratory suppression during diazepam therapy; patient was well and went back to work 6 months later; stiffness and pain did not recur",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "The pathogenesis in the present patient appear to be idiopathic, as there was no association with diabetes mellitus, other autoimmune diseases or malignancy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "This patient had a dramatic response to high-dose diazepam, 80mg daily",
+          "char_interval": {
+            "start_pos": 11015,
+            "end_pos": 11019
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1401,
+            "end_index": 1402
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "The therapeutic response to diazepam ... is so effective and characteristic",
+          "char_interval": {
+            "start_pos": 11085,
+            "end_pos": 11088
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1416,
+            "end_index": 1417
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "progressive stiffness and pain in the lower back with intermittent cramps over a 3-year period; cramps were extremely painful; sensitivity to any sudden movement or external stimulation; lower back stiffness causing great difficulty performing daily activities and walking with a rigid and straight back; stiffness of the muscles subsided during normal sleep; left S1 radiculopathy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Electromyography showed spontaneous continuous muscle fiber activity which was markedly suppressed after a trial with 20 mg intravenous diazepam",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "progressive stiffness and pain in the lower back of 3 years' duration",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "electromyograms showed continuous muscle fiber activity that responded dramatically to diazepam and fulfilled the diagnosis of SMS",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "treatment with oral diazepam 80 mg daily, tapered to 15 mg daily",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "muscular stiffness disappeared during treatment with oral diazepam, without any recurrence of spasm for 20 months",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "rigidity and pain in the lower back persisted and even progressed to the upper back and neck; limbs gradually affected with more severe symptoms proximally located; intermittent cramps easily induced by sudden movements or unexpected noise; walked slowly with a stiff spine and limbs; inability to bend waist; could not get up without assistance if fell; great difficulty performing daily activities, particularly putting on shoes and trousers; unable to drive a car due to limited neck mobility; muscular stiffness and pain subsided during normal sleep; speech was normal",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "myelography and computed tomography of the whole spine showed a laterally protruding disc in the L5-S1 intervertebral space with compression of the left S1 root",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "discectomy with subsequent medical and rehabilitation treatment; previous drug treatment included indomethacin, mefenamic acid, tolmetin, acetaminophen, baclofen, and fludiazepam",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No history of trauma or infection was noted, and no family members had neurologic disorders",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "extremestiffness and intermittent cramps in the paraspinal muscles of the whole back and in the proximal limbs with profuse sweating; severe cramps induced by unexpected tap or sudden stretch of the limbs; able to walk a few steps slowly then required support; neck and back flexion limited",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {
+            "muscle_power": "full",
+            "cranial_nerves": "intact",
+            "tendon_reflexes": "normal except absence of ankle jerk on the left side",
+            "muscle_atrophy": "mild atrophy of the left calf muscle",
+            "sensory": "mildly decreased pin-prick sensation in the posterior surface of the left lower leg and plantar area due to S1 root compression",
+            "cerebellar_function": "normal",
+            "sphincter_function": "intact",
+            "neck_flexion": "limited to about 35°",
+            "hip_flexion": "limited to about 30°"
+          },
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Electromyographic studies from thoracic spinal muscles showed spontaneous muscle fiber activity at rest; continued muscle fiber activity for 20 minutes after 200 mg of intravenous phenytoin; dramatic suppression of muscle fiber activity 20 minutes after 20 mg of intravenous diazepam; abolition of muscle fiber activity 5 minutes after secobarbital-induced sleep",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Laboratory examination included hemogram, fasting glucose, liver and renal function tests, electrolytes, creatine phosphokinase, antinuclear antibody, LE cell, rheumatoid factor, complement (3 and 4), HLA B27, immunoglobulins, protein electrophoresis, immunoelectrophoresis, anti-DNA antibody, antimitochondrial antibody, antimicrosomal antibody, thyroid function tests, cortisol, carcinoembryonic antigen, and cerebrospinal fluid studies; all results were within normal limits",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No symptoms, signs, treatment, or outcome details were provided in the text",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "axial and proximal stiffness starting from the lower back with progressive involvement of the neck and limbs; stiffness very sensitive to external stimulation, particularly sudden movement, frequently inducing painful cramp",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "EMG investigation revealed continuous muscle activity that was dramatically suppressed in response to high-dose diazepam",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "oral diazepam therapy (initial dose 15 mg/day; maintenance dose 80 mg/day for 6 months); dosage tapered to 15 mg daily in the following 20-month period",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "muscular stiffness and cramps disappeared within one month; no drowsiness, weakness or respiratory suppression during diazepam therapy; patient was well and went back to work 6 months later; stiffness and pain did not recur",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "The pathogenesis in the present patient appear to be idiopathic, as there was no association with diabetes mellitus, other autoimmune diseases or malignancy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 41
+}

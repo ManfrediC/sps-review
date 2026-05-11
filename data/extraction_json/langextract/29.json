@@ -1,0 +1,553 @@
+{
+  "paper_id": "29",
+  "source_filename": "29_davis1993.pdf",
+  "source_sha256": "30499d54d7243304f06c2eb601cd590da23983616079932a262f100503ca2258",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\29.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "29",
+    "manual_override_present": "false",
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_source_confidence": "high",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "individual",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-04T21:31:17.866920+00:00",
+  "extraction_modes": {
+    "individual": {
+      "extraction_count": 31,
+      "extractions": [
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "several months of low back pain, progressive stiffness of the abdominal, low back, and thigh muscles, increased lumbar lordosis, focal hyperhidrosis at different sites",
+          "char_interval": {
+            "start_pos": 494,
+            "end_pos": 526
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 95,
+            "end_index": 102
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Electromyography showed continuous activity of the paraspinal and thigh muscles, serum and cerebrospinal fluid antibodies to glutamic acid decarboxylase (GAD) were markedly elevated",
+          "char_interval": {
+            "start_pos": 853,
+            "end_pos": 934
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 156,
+            "end_index": 167
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "Diazepam and Lioresal offered partial pain relief",
+          "char_interval": {
+            "start_pos": 1044,
+            "end_pos": 1065
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 186,
+            "end_index": 189
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "episodic pain and stiffness of his lumbar musculature",
+          "char_interval": {
+            "start_pos": 4279,
+            "end_pos": 4296
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 802,
+            "end_index": 805
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "initially diagnosed as having degenerative arthritis",
+          "char_interval": {
+            "start_pos": 4386,
+            "end_pos": 4395
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 827,
+            "end_index": 828
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "marked stiffness of the lower back and abdominal muscles as well as the proximal muscles of the lower extremities; severe episodic spasms especially in lumbar area triggered by physical activity; 20-lb weight gain; progressive curvature of lumbar spine; hyperhidrosis; muscular with hypertrophied lumbar, thigh, and calf musculature; hyperlordosis of the lumbar spine",
+          "char_interval": {
+            "start_pos": 4568,
+            "end_pos": 4616
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 854,
+            "end_index": 862
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "no abnormalities in cranial nerves and cerebellar and sensory systems; no involuntary movements noted",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "tone was markedly increased in all muscles below the rib cage, most notably in the paraspinal and abdominal regions where they felt “wooden” on palpation; proximal muscles in the lower limbs were more severely involved; unable to proceed unassisted from supine to standing due to muscle pain and stiffness; gait was awkward, hesitant, and antalgic; deep tendon reflexes were normal and symmetric with flexor plantar responses; markedly decreased range of motion in the lumbar spine and hip joints",
+          "char_interval": {
+            "start_pos": 5569,
+            "end_pos": 5724
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1034,
+            "end_index": 1062
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "CSF analysis demonstrated a protein of 25 mg/dl, glucose of 76 mg/dl, cell count of 2 WBC and no RBC, and a differential of 100% mononuclear cells; laboratory studies including hemogram, electrolytes, liver enzymes, urinalysis, thyroid function panel, coagulation studies, glucose tolerance test, ANA, ACTH stimulation test, and erythrocyte sedimentation tests were all normal; tests for HLA-B27, VDRL, HIV and Lyme titer were negative; pulmonary function tests showed FVC of 3.93 L (86%), FEV1 of 3.12 L (83%), and a ratio of 79%",
+          "char_interval": {
+            "start_pos": 6404,
+            "end_pos": 6553
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1185,
+            "end_index": 1220
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Electrocardiogram and electroencephalogram (EEG) were normal; concurrent EEG and surface EMG showed continuous motor unit activity in agonist and antagonist thigh muscles, which diminished during stage I sleep and returned with awakening; Needle EMG of lumbar paraspinal muscles showed continuous muscle activity in awake state; Nerve conduction velocities were normal in upper and lower extremities; Spine roentgenograms, bone scan, and MRI of head and spine were normal except increased lumbar lordosis; Biopsy of right rectus femoris muscle including histochemistry evaluation was normal; Patient serum and CSF assayed for GAD antibodies with very high values (serum 11122,000, normal <1/120; CSF 11128, normal <1/2)",
+          "char_interval": {
+            "start_pos": 6746,
+            "end_pos": 6807
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1277,
+            "end_index": 1285
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "Combination of diazepam and Lioresal, at a dosage of 15 mg of each daily",
+          "char_interval": {
+            "start_pos": 7727,
+            "end_pos": 7800
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1462,
+            "end_index": 1477
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "produced some symptomatic pain relief",
+          "char_interval": {
+            "start_pos": 7802,
+            "end_pos": 7840
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1478,
+            "end_index": 1483
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "injected a total of 560 U of botulinum toxin type A into the lumbar paraspinal muscles over a period of 3 weeks at three different injecting sessions (160, 200, and 200 U)",
+          "char_interval": {
+            "start_pos": 7850,
+            "end_pos": 8024
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1486,
+            "end_index": 1522
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "A week after the last injection, the patient reported almost total relief from exertional pain and complete cessation of spontaneous painful spasms",
+          "char_interval": {
+            "start_pos": 8116,
+            "end_pos": 8266
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1546,
+            "end_index": 1569
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "markedly decreased tone in paraspinal, abdominal wall, and thigh musculature and ambulated much more comfortably",
+          "char_interval": {
+            "start_pos": 8303,
+            "end_pos": 8417
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1577,
+            "end_index": 1594
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "A repeat EMG showed decreased firing of all muscles",
+          "char_interval": {
+            "start_pos": 8495,
+            "end_pos": 8546
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1606,
+            "end_index": 1615
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "The patient sustained this degree of clinical improvement over a month of follow-up",
+          "char_interval": {
+            "start_pos": 8549,
+            "end_pos": 8633
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1616,
+            "end_index": 1631
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "Four months later he reported gradual return of muscle stiffness and painful spasms",
+          "char_interval": {
+            "start_pos": 8661,
+            "end_pos": 8745
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1637,
+            "end_index": 1650
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "difficult ambulation and complained of much pain",
+          "char_interval": {
+            "start_pos": 8972,
+            "end_pos": 9023
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 7,
+          "group_index": 6,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1698,
+            "end_index": 1707
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "at the fifth month required diazepam in excess of 30 mg daily; readmitted 6 months after the last injection following 2 weeks of slow diazepam taper to 10 mg daily",
+          "char_interval": {
+            "start_pos": 8747,
+            "end_pos": 8765
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 8,
+          "group_index": 7,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1651,
+            "end_index": 1655
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "Abdominal and lumbar paraspinal muscle tone was markedly increased but less than the first time",
+          "char_interval": {
+            "start_pos": 9025,
+            "end_pos": 9122
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1708,
+            "end_index": 1723
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "injected a total of 200 U of botulinum toxin in the lumbar paraspinal region (100 U on each side)",
+          "char_interval": {
+            "start_pos": 9127,
+            "end_pos": 9225
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1725,
+            "end_index": 1746
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "Within a few days, he reported significant pain relief and showed improvement of ambulation. He was happy with the results and did not wish more injections at this time",
+          "char_interval": {
+            "start_pos": 9228,
+            "end_pos": 9398
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1747,
+            "end_index": 1778
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "A total dose of 560 U (injected into the lumbar paraspinal muscles at three different sessions)",
+          "char_interval": {
+            "start_pos": 10647,
+            "end_pos": 10743
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2010,
+            "end_index": 2028
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "resulted in cessation of pain, significant improvement of stiffness and function, and a decrease in lumbar lordosis documented by examination and serial spinal radiographs; effect wore off in approximately 4 months; repeat injection of a smaller dose at 6 months produced similar results",
+          "char_interval": {
+            "start_pos": 10756,
+            "end_pos": 11143
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2031,
+            "end_index": 2107
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "initial dose of 560 U exceeds the total dose recommended for dystonia (400-450 U for torticollis), and repeated injection of such a dose may produce antibodies to botulinum toxin",
+          "char_interval": {
+            "start_pos": 11173,
+            "end_pos": 11246
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2114,
+            "end_index": 2127
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "lumbar paraspinal administration of botulinum toxin type A",
+          "char_interval": {
+            "start_pos": 12265,
+            "end_pos": 12300
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2308,
+            "end_index": 2312
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "resulted in marked functional improvement of a patient with typical stiff-person syndrome and reduced the need for systemic agents",
+          "char_interval": {
+            "start_pos": 12327,
+            "end_pos": 12356
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2318,
+            "end_index": 2322
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "clinical diagnosis of stiff-person syndrome; electromyography showed continuous activity of the paraspinal and thigh muscles; serum and cerebrospinal fluid antibodies to glutamic acid decarboxylase (GAD) were markedly elevated",
+          "char_interval": {
+            "start_pos": 707,
+            "end_pos": 751
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 134,
+            "end_index": 141
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "treated with nonsteroidal anti-inflammatory medications without relief",
+          "char_interval": {
+            "start_pos": 4455,
+            "end_pos": 4526
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 839,
+            "end_index": 848
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "On examination, he demonstrated markedly decreased tone in paraspinal, abdominal wall, and thigh musculature and ambulated much more comfortably",
+          "char_interval": {
+            "start_pos": 8268,
+            "end_pos": 8286
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1570,
+            "end_index": 1574
+          }
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 31
+}

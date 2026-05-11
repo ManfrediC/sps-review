@@ -1,0 +1,168 @@
+{
+  "paper_id": "49",
+  "source_filename": "49_Pugliese 1994.pdf",
+  "source_sha256": "bb64839cf311357258492b83dc214c067e9bc0173c99becf7d4a6fe1b885a44b",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\49.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "49",
+    "manual_override_present": "false",
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_source_confidence": "medium",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | observational_markers=cross sectional | interventional_markers=double blind; placebo; trial | review_markers=review of the literature | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "individual",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-04T21:32:41.581540+00:00",
+  "extraction_modes": {
+    "individual": {
+      "extraction_count": 8,
+      "extractions": [
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "3 patients with severe oligozoospermia and 1 with azoospermia",
+          "char_interval": {
+            "start_pos": 463,
+            "end_pos": 524
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 95,
+            "end_index": 104
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "normal follicle-stimulating hormone (FSH), luteinising hormone, and testosterone plasma concentrations",
+          "char_interval": {
+            "start_pos": 799,
+            "end_pos": 901
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 148,
+            "end_index": 164
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "interferon alfa at the daily dose of 3 MU, 5 days per week for two months",
+          "char_interval": {
+            "start_pos": 359,
+            "end_pos": 610
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 72,
+            "end_index": 117
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "recorded substantial improvements in sperm density and motility after two months’ treatment; 2 patients’ wives became pregnant",
+          "char_interval": {
+            "start_pos": 530,
+            "end_pos": 694
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 106,
+            "end_index": 132
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "All patients presented with diarrhoea, with or without blood loss per rectum",
+          "char_interval": {
+            "start_pos": 10002,
+            "end_pos": 10078
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1989,
+            "end_index": 2002
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "The diagnosis was established by colonoscopy within 7 days of presentation; all had negative stool cultures",
+          "char_interval": {
+            "start_pos": 9171,
+            "end_pos": 9174
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1827,
+            "end_index": 1828
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "None of the 23 patients had pre-existing inflammatory bowel disease that could have been exacerbated by NSAID ingestion",
+          "char_interval": {
+            "start_pos": 9881,
+            "end_pos": 10000
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1968,
+            "end_index": 1988
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "diagnosis was established by colonoscopy within 7 days of presentation; all had negative stool cultures",
+          "char_interval": {
+            "start_pos": 10121,
+            "end_pos": 10191
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2011,
+            "end_index": 2021
+          }
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 8
+}

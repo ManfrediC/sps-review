@@ -1,0 +1,445 @@
+{
+  "paper_id": "75",
+  "source_filename": "75_Kuhn-1995-Stiff-man syndrome_ case report.pdf",
+  "source_sha256": "cce393350df8ca53b400e2adbf485ef17a9abaf4b8d9ba969fa2c9362ff10a8c",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\75.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "75",
+    "manual_override_present": "false",
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_source_confidence": "high",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | case_markers=case report | interventional_markers=placebo | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "individual",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-04T21:34:16.945655+00:00",
+  "extraction_modes": {
+    "individual": {
+      "extraction_count": 25,
+      "extractions": [
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "two-year history of right leg spasms and low back pain; slowly progressive stiffness of the axial muscles and proximal limb muscles, making ambulation difficult; hyperlordosis of the lumbar spine; episodic spasms precipitated by jarring or sudden movement; normal intellectual, sensory, and motor examination when not in spasm",
+          "char_interval": {
+            "start_pos": 1290,
+            "end_pos": 1345
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 247,
+            "end_index": 259
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "diagnostic criteria for stiff-man syndrome: presence of slowly progressive stiffness of axial and proximal limb muscles; marked amelioration of symptoms with IV administration of diazepam",
+          "char_interval": {
+            "start_pos": 1493,
+            "end_pos": 1911
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 289,
+            "end_index": 358
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "IV administration of diazepam; high-dose oral diazepam as maintenance drug",
+          "char_interval": {
+            "start_pos": 1882,
+            "end_pos": 1963
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 354,
+            "end_index": 370
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "back pain",
+          "char_interval": {
+            "start_pos": 3387,
+            "end_pos": 3396
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 723,
+            "end_index": 725
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "severe, intermittent back spasms over the preceding week; similar but less intense low back pains and severe right leg spasms over the preceding year; history of low back pain with spasms and right lower-extremity spasms for about three years",
+          "char_interval": {
+            "start_pos": 3469,
+            "end_pos": 3476
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 740,
+            "end_index": 742
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Magnetic resonance imaging of the cervical spine three years previously had been unremarkable; MRI of the lumbosacral spine one year earlier had been inconclusive; Electromyography (EMG) performed at that time had been inconclusive",
+          "char_interval": {
+            "start_pos": 4199,
+            "end_pos": 4207
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 891,
+            "end_index": 892
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "treated with diazepam, 5 mg bid, and chlorzoxazone, 500 mg qid by an orthopedist",
+          "char_interval": {
+            "start_pos": 3577,
+            "end_pos": 3652
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 761,
+            "end_index": 778
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "EMG and MRI results were inconclusive; severity of back spasms prevented patient from exiting car at neurologist’s office",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "alert, oriented, and anxious, with tachycardia during spasms; intermittent spasms of the trunk with arching posture, lasting 2 to 5 minutes; episodes of opisthotonos triggered by external stimuli (opening the door, speaking, tactile stimuli, but not loud noises); neurologic examination was unremarkable between episodes",
+          "char_interval": {
+            "start_pos": 5156,
+            "end_pos": 5162
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1058,
+            "end_index": 1060
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "no history of psychiatric disorder; tetanus immunization was not current",
+          "char_interval": {
+            "start_pos": 4840,
+            "end_pos": 5091
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1007,
+            "end_index": 1049
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "cranial nerves intact and symmetrical; reflexes +2 and equal bilaterally; normal tone and strength in all extremities; sensation normal for pain and light touch; straight leg test negative bilaterally; moderate to severe paraspinal spasm; mild-moderate hyperlordosis during spasms; opisthotonic and rigid during spasms; abdominal musculature board-like to palpation; remained alert and cried out in pain",
+          "char_interval": {
+            "start_pos": 5619,
+            "end_pos": 5633
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1153,
+            "end_index": 1155
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Initial laboratory data showed mild anemia and serum bicarbonate of 15 mmoVL; electrolytes, WBCs, urinalysis, creatine kinase, and calcium within normal limits",
+          "char_interval": {
+            "start_pos": 6230,
+            "end_pos": 6261
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1265,
+            "end_index": 1269
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "given diazepam, 5 mg IV, with control of symptoms for approximately 30 minutes",
+          "char_interval": {
+            "start_pos": 6514,
+            "end_pos": 6543
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1316,
+            "end_index": 1324
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "working diagnosis of stiff-man syndrome",
+          "char_interval": {
+            "start_pos": 6649,
+            "end_pos": 6689
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1343,
+            "end_index": 1350
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Needle EMG showed increased volitional activity and poor relaxation, particularly in the right tibialis anterior and lumbosacral paraspinal muscles in association with severe spasm. A lumbar puncture for anti-glutamic acid decarboxylase (anti-GAD) antibodies was done. (Several months after discharge, a positive result was obtained.)",
+          "char_interval": {
+            "start_pos": 6691,
+            "end_pos": 6760
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1351,
+            "end_index": 1361
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "The patient was treated with increasing doses of diazepam and her symptoms were finally controlled on a 10-mg qid dose",
+          "char_interval": {
+            "start_pos": 7094,
+            "end_pos": 7215
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1421,
+            "end_index": 1443
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "chronic, recurrent nature of her complaints; severe spasm of muscle in contrast with an otherwise normal neurologic examination",
+          "char_interval": {
+            "start_pos": 7409,
+            "end_pos": 7639
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1482,
+            "end_index": 1524
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "She was discharged after four days in the hospital with the diagnosis of probable stiff-man syndrome",
+          "char_interval": {
+            "start_pos": 7217,
+            "end_pos": 7309
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1444,
+            "end_index": 1461
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "The patient had been seen on several prior occasions and had undergone multiple diagnostic tests before this visit without being properly diagnosed",
+          "char_interval": {
+            "start_pos": 7345,
+            "end_pos": 7348
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1469,
+            "end_index": 1470
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "spasms of increased muscle stiffness and rigidity lasting up to several minutes, precipitated by sudden movement, noises, touch, or emotional upset; spasms may cause profuse sweating and a rise in blood pressure; persistent rigidity of the back, abdomen, and limbs between spasms; distal musculature and facial musculature usually spared; symptoms may progress over months to years",
+          "char_interval": {
+            "start_pos": 8970,
+            "end_pos": 9010
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1775,
+            "end_index": 1781
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "fixed lumbar hyperlordosis and a “permanent ‘shrug’ of the shoulders with the neck drawn down into the shoulder girdle”; hypertrophy of the paraspinal musculature in long-standing cases; affected muscles reveal a tight, board-like quality, most often in the paravertebral and abdominal areas; deep tendon reflexes may be symmetrically increased",
+          "char_interval": {
+            "start_pos": 10099,
+            "end_pos": 10219
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2013,
+            "end_index": 2035
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Neurophysiologic studies demonstrated continuous discharge of motor-unit potentials resembling a normal voluntary contraction with superimposed generalized paroxysmal muscle contractions comprised of simultaneous contraction of agonistic and antagonistic muscles; motor-unit discharges may be extinguished with IV diazepam, myoneural block, motor nerve block, or general anesthesia; EEG is normal; sleep studies often show long latencies between wakefulness and stage 1 sleep due to muscle spasm; in stage 2, muscle spasms disappear and sleep proceeds normally",
+          "char_interval": {
+            "start_pos": 10593,
+            "end_pos": 10617
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2108,
+            "end_index": 2110
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "Several patients who had stiff-man syndrome have been tested and found to have anti-GAD antibodies, although other patients have not shown this antibody",
+          "char_interval": {
+            "start_pos": 13430,
+            "end_pos": 13585
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2704,
+            "end_index": 2732
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "EMG and MRI results were inconclusive; severity of back spasms prevented patient from exiting car at neurologist’s office",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "patient had been seen on several prior occasions and had undergone multiple diagnostic tests before this visit without being properly diagnosed",
+          "char_interval": {
+            "start_pos": 7701,
+            "end_pos": 7777
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1537,
+            "end_index": 1549
+          }
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 25
+}

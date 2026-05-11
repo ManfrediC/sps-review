@@ -1,0 +1,96 @@
+{
+  "paper_id": "1421",
+  "source_filename": "1421_edrv0001.pdf",
+  "source_sha256": "bd8fcedd0f38726b39b784d457cee1a06f5798ee0b445fb5839ab95dfe667b5c",
+  "extractor": "pypdf",
+  "extracted_at_utc": "2026-03-01T20:13:53.342023+00:00",
+  "n_pages": 1,
+  "needs_ocr_before_ocr": false,
+  "ocr_trigger_reasons": [],
+  "page_char_counts": [
+    3211
+  ],
+  "suspicious_control_chars": 0,
+  "needs_ocr": false,
+  "remaining_text_quality_flags": [],
+  "ocr_applied": false,
+  "ocr_mode": "",
+  "ocr_error": null,
+  "pages": [
+    {
+      "page_index": 186,
+      "text": "Mohammad Saud Khan, University of Toledo Medical Center, Toledo, OH z\nJennifer B Hao, University of Toledo, College of Medicine and Life Sciences, Toledo, OH a\nFoiqa Chaudhry, University of Toledo Medical Center, Sylvania, OH 8\nAbhinav Tiwari, University of Toledo Medical Center, Toledo 8\nHimani Sharma, University of Toledo Medical Center, Toledo 2\nJuan Carlos Jaume, University of Toledo, College of Medicine and Life Sciences, Toledo, OH s\n3\nIntroduction: Stiff-person syndrome (SPS) is a rare neurological disorder characterized by progressive g\nmuscle rigidity and stiffness superimposed on painful muscle spasms predominantly affecting the muscles of 5\ntrunk and proximal limbs. GAD 65 Ab are found in high titers in these patients and have been linked to its S\npathogenesis. GAD65 Ab are also elevated in other neurological conditions such as cerebellar ataxia, &\nepilepsy, palatal tremor, and autoimmune limbic encephalitis (LE). 2\nCase presentation: A 48 year old right handed Caucasian female presented with a 2 month history of 3\nrecurrent severe headaches, cognitive impairment with decreased memory, behavioral symptoms in the form &\nof agitation, hallucinations and paranoia with episodes of disorientation, confusion and visual blurring. She &\ncomplained of stiffness and rigidity involving neck and back muscles with muscle spasms and difficulty s\nambulating with frequent falls. Motor system examination revealed generalized rigidity, muscle strength was >\n5/5 in all four limbs, deep tendon reflexes were normal, and down going planters bilaterally. Sensory S\nexamination was normal with intact cerebellar signs. Neuropsychological testing showed cognitive decline in 3\nthe form of impairment of short-term memory. MRI of the brain with contrast did not show any significant 2\nabnormality. Lumbar puncture and CSF analysis done revealed lymphocytic pleocytosis, with elevated white &\ncell count and lymphocytes. EEG monitoring showed background slowing. Given the patient’s clinical &\npresentation and investigational workup, a diagnosis of LE was considered. Patient received treatment with\nintravenous immunoglobulin (IVIG) 60 gm x 1 infusion and unexpectedly had improvement of her muscle 3\nstiffness, which raised a suspicion for SPS. Prior to IVIG, GAD65 Ab initially measured 6. 7 IU/ml (0-5 8\nTU/ml), and two months later 148 IU/ml (0-5IU/ml). +\nTSH was 0. 98 micro IU/ml (0. 1-5 micro [U/ml) and free T4 was low at 0. 66 ng/dl (0. 71-1. 85 ng/dl). TPO Ab\nwere elevated at 45 IU/ml (0-35 IU/ml), as well as thyroglobulin Ab at 42. 4 IU/ml (0-40 IU/ml). &\nLevothyroxine 125 mcg/day was started for her autoimmune hypothyroidism. A1C was normal at 5. 3% =\nwithout evidence for diabetes. Diazepam 5 mg four times a day was initiated and increased to 10 mg four =\ntimes per day. At follow up, she reported improvement in muscle stiffness/spasms, cognitive, and behavioral ©\nsymptoms. 3\nConclusion: Although GAD65 Ab are implicated in the pathogenesis of both SPS and LE, their association 5\nis quite rare. Here we present a case of LE with inadvertent diagnosis of GAD65-positive SPS determined\nafter successful treatment with IVIG therapy. 8\nNothing to Disclose: MSK, JBH, FC, AT, HS, JCJ"
+    }
+  ],
+  "cleanup_stage2_applied": true,
+  "cleanup_stage2_profile": "combined_basic",
+  "cleanup_stage2_rules_applied": [
+    "insert_punctuation_spaces"
+  ],
+  "cleanup_stage2_applied_at_utc": "2026-04-02T19:58:24.318006+00:00",
+  "cleanup_stage2_source_json_path": "data\\extraction_json\\text_preclean_stage2\\1421.json",
+  "cleanup_stage2_source_json_sha256": "5d792f21430d659cd178db58ef473a6bbbdf3b56100e72b477566645b3d55ce2",
+  "cleanup_stage2_source_strategy": "ocr_cleanup",
+  "cleanup_stage2_source_pdf_path": "data\\pdf_original\\1421_edrv0001.pdf",
+  "cleanup_stage2_source_pdf_sha256": "bd8fcedd0f38726b39b784d457cee1a06f5798ee0b445fb5839ab95dfe667b5c",
+  "cleanup_stage2_source_page_start": "187",
+  "cleanup_stage2_source_page_end": "187",
+  "cleanup_stage2_ocr_dpi": "220",
+  "cleanup_stage2_ocr_psm": "6",
+  "cleanup_stage2_ocr_grayscale": "true",
+  "cleanup_stage2_changed_page_count": 1,
+  "cleanup_stage2_artifact_counts_before": {
+    "nbsp_like_spaces": 0,
+    "soft_hyphen": 0,
+    "linebreak_hyphenation": 0,
+    "punctuation_space_repairs": 8,
+    "camel_case_boundaries": 0,
+    "boilerplate_lines": 0,
+    "mojibake_tokens": 0,
+    "ligature_tokens": 0
+  },
+  "cleanup_stage2_artifact_counts_after": {
+    "nbsp_like_spaces": 0,
+    "soft_hyphen": 0,
+    "linebreak_hyphenation": 0,
+    "punctuation_space_repairs": 0,
+    "camel_case_boundaries": 0,
+    "boilerplate_lines": 0,
+    "mojibake_tokens": 0,
+    "ligature_tokens": 0
+  },
+  "cleanup_stage2_reason": "Localize the ENDO supplement abstract page via OCR",
+  "cleanup_stage2_notes": "OCR search identified the target stiff-person abstract on supplement page 187",
+  "cleanup_stage2_substitutions_applied": [
+    {
+      "match_type": "regex",
+      "match": "(?s)\\A.*?(Mohammad Saud Khan)",
+      "replacement": "\\1",
+      "page_index": null,
+      "count": 1,
+      "changed_pages": [
+        186
+      ],
+      "notes": "Drop spillover from the preceding proceedings abstract before the target author block"
+    },
+    {
+      "match_type": "regex",
+      "match": "(?s)(Nothing to Disclose: MSK, JBH, FC, AT, HS, JCJ).*",
+      "replacement": "\\1",
+      "page_index": null,
+      "count": 1,
+      "changed_pages": [
+        186
+      ],
+      "notes": "Trim the following abstract after the target proceedings abstract ends"
+    }
+  ],
+  "source_text_json_path": "data\\extraction_json\\text\\1421.json",
+  "proceedings_ready_source_kind": "source_text_passthrough",
+  "proceedings_ready_text_mode": "full_text_passthrough",
+  "proceedings_ready_source_detail": "single_abstract_passthrough",
+  "proceedings_ready_reason": "Resolved conference abstract did not require proceedings trimming; published the source abstract text as-is.",
+  "proceedings_ready_start_line_global_index": 0,
+  "proceedings_ready_end_line_global_index_exclusive": 36,
+  "proceedings_ready_built_at_utc": "2026-04-13T08:42:37.899829+00:00"
+}

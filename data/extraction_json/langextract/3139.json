@@ -1,0 +1,2583 @@
+{
+  "paper_id": "3139",
+  "source_filename": "3139_Budhram et al. - 2021 - Clinical spectrum of high-titre GAD65 antibodies..pdf",
+  "source_sha256": "db4a4a235d50358cf8fa78aa8bf38a7d54e21e2f188521271d8cf6d57c59cf43",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\3139.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "3139",
+    "manual_override_present": "false",
+    "resolved_source_category": "observational_group_study",
+    "resolved_source_subtype": "retrospective_or_cohort_group_study",
+    "resolved_source_confidence": "high",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | multi_case_markers=patients with | observational_markers=retrospective; cohort | conference_markers=supplement | structured_abstract_markers=methods; results | likely_case_count=323 | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "group",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-03T20:48:58.198498+00:00",
+  "extraction_modes": {
+    "group": {
+      "extraction_count": 159,
+      "extractions": [
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "retrospective cohort study of patients identified from Mayo Clinic anti-GAD65 samples submitted between 2003 and 2018",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {
+            "sample_source": "Mayo Clinic anti-GAD65 samples",
+            "time_frame": "2003–2018"
+          },
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "323 patients with high-titre (>20 nmol/L in serum) GAD65 antibodies identified from 380,514 submitted samples; after chart review, 108 patients were classified as not having GAD65 neurological autoimmunity and 3 had atypical presentations",
+          "char_interval": {
+            "start_pos": 1785,
+            "end_pos": 1788
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {
+            "high_titre_threshold": ">20 nmol/L",
+            "total_samples": 380514,
+            "patients_identified": 323,
+            "patients_excluded": 108,
+            "atypical_presentations": 3
+          },
+          "_token_interval": {
+            "start_index": 361,
+            "end_index": 362
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "study of 212 patients with GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 2371,
+            "end_pos": 2435
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 463,
+            "end_index": 472
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients; median age at symptom onset 46 years (range 5–83); 77% female; SPSD (N=71), cerebellar ataxia (N=55), epilepsy (N=35), limbic encephalitis (N=7), overlap syndrome (N=44); cognitive impairment (N=38), myelopathy (N=23), brainstem dysfunction (N=22)",
+          "char_interval": {
+            "start_pos": 2385,
+            "end_pos": 2849
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 465,
+            "end_index": 582
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "SPSD, cerebellar ataxia, epilepsy, and limbic encephalitis designated core manifestations; cognitive impairment, myelopathy, and brainstem dysfunction designated secondary manifestations; cerebellar ataxia and serum GAD65 antibody titre >500 nmol/L predicted poor outcome",
+          "char_interval": {
+            "start_pos": 2563,
+            "end_pos": 3196
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 506,
+            "end_index": 659
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Sustained response to immunotherapy ranged from 5/20 (25%) in epilepsy to 32/44 (73%) in SPSD (p=0.002); complete immunotherapy response occurred in 2/142 (1%)",
+          "char_interval": {
+            "start_pos": 2947,
+            "end_pos": 3052
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 597,
+            "end_index": 629
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "None explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": null,
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "evaluation of a large patient cohort with high-titre GAD65 antibodies systematically determined to have GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 5232,
+            "end_pos": 5372
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1022,
+            "end_index": 1046
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Previous reports are limited by small sample sizes or restriction to individual phenotypes, precluding complete disease characterisation",
+          "char_interval": {
+            "start_pos": 4993,
+            "end_pos": 5132
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 983,
+            "end_index": 1003
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "retrospective identification of patients with high-titre GAD65 antibodies (>20 nmol/L) detected in the Mayo Clinic Neuroimmunology Laboratory from January 2003 to May 2018 using radioimmunoassay",
+          "char_interval": {
+            "start_pos": 5558,
+            "end_pos": 5912
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {
+            "setting": "Mayo Clinic Neuroimmunology Laboratory",
+            "timeframe": "January 2003 to May 2018",
+            "method": "radioimmunoassay (RIA)"
+          },
+          "_token_interval": {
+            "start_index": 1073,
+            "end_index": 1141
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "323 patients with high-titre GAD65 antibodies identified from 380,514 samples submitted for anti-GAD65 testing",
+          "char_interval": {
+            "start_pos": 5554,
+            "end_pos": 5602
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {
+            "sample_size": 323,
+            "total_samples": 380514
+          },
+          "_token_interval": {
+            "start_index": 1072,
+            "end_index": 1081
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Patients with non-neurological presentations or more likely alternative diagnoses were excluded from study analysis and summarized separately",
+          "char_interval": {
+            "start_pos": 6129,
+            "end_pos": 6161
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1181,
+            "end_index": 1186
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Patients with non-neurological presentations or alternative diagnoses were excluded, potentially limiting generalizability",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "Patients with no more likely alternative diagnosis but an atypical presentation for GAD65 neurological autoimmunity were excluded from study analysis but described separately; remaining patients classified as having GAD65 neurological autoimmunity; data extracted from EMRs for analysis",
+          "char_interval": {
+            "start_pos": 6839,
+            "end_pos": 6960
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {
+            "diagnosis_basis": "clinical assessment by Mayo Clinic physician with expertise and EMR review",
+            "data_sources": "clinical presentation, neuroimaging, electrophysiological testing, laboratory findings, immunotherapy responses, and outcomes measured by modified Rankin score (mRS)"
+          },
+          "_token_interval": {
+            "start_index": 1333,
+            "end_index": 1350
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "Patients with SPSD were classified as classical SPSD, partial SPSD, or SPSD with prominent exaggerated startle; LE was defined as medial temporal lobe T2-hyperintensity with subacute disease onset of less than 3 months; cognitive impairment was diagnosed by the treating physician based on the Kokmen short test of mental status and/or formal neuropsychometric testing",
+          "char_interval": {
+            "start_pos": 8085,
+            "end_pos": 8524
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1524,
+            "end_index": 1603
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Electroencephalography for epilepsy was frequently gathered, but an abnormal electrophysiological study was not required for diagnosis given imperfect test clinical specificity",
+          "char_interval": {
+            "start_pos": 7896,
+            "end_pos": 7931
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1498,
+            "end_index": 1501
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Response to immunotherapy (corticosteroids, intravenous IG, plasma exchange, rituximab, cyclophosphamide and/or autologous stem cell transplantation) was classified as no response, partial response, near-complete response, or complete response, as well as sustained (benefit persisting >3 months) or non-sustained, based on review of treating physician’s documentation",
+          "char_interval": {
+            "start_pos": 8543,
+            "end_pos": 8619
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1606,
+            "end_index": 1617
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "Statistical analyses were performed using JMP Pro V .14.1.0; continuous and categorical variables were reported as median (range) and number (percentage), respectively; differences across multiple groups were assessed by Kruskal-Wallis, Pearson’s χ2 or Fisher’s exact test; associations with poor outcome explored by univariate and multivariate logistic regression; two-sided p<0.05 considered significant; no adjustment for multiple comparisons",
+          "char_interval": {
+            "start_pos": 9170,
+            "end_pos": 9229
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1727,
+            "end_index": 1741
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "One in three patients with high-titre GAD65 antibodies were classified as not having GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 9994,
+            "end_pos": 10111
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1869,
+            "end_index": 1889
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "study analysis of 323 patients with high-titre GAD65 antibodies",
+          "char_interval": {
+            "start_pos": 10112,
+            "end_pos": 10166
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1889,
+            "end_index": 1901
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "323 patients with high-titre GAD65 antibodies; 37 (11%) had non-neurological presentations and were excluded; 71 (22%) had more likely alternative diagnoses and were excluded; 3 (1%) had atypical presentations and were excluded; 212 (66%) classified as having GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 10115,
+            "end_pos": 10937
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1890,
+            "end_index": 2041
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Median serum anti-GAD65 titre was significantly lower in patients with more likely alternative diagnoses compared with those with GAD65 neurological autoimmunity (149 nmol/L vs 534 nmol/L, p<0.0001); titre was not significantly different compared with patients with non-neurological presentations",
+          "char_interval": {
+            "start_pos": 10962,
+            "end_pos": 10994
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2046,
+            "end_index": 2053
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "SPSD, cerebellar ataxia, epilepsy without LE, and LE could all occur in isolation and were designated core manifestations of GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 11588,
+            "end_pos": 11633
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2168,
+            "end_index": 2176
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Patients with two or more core disease manifestations were designated overlap syndromes, except for LE and epilepsy (all patients with LE had seizures)",
+          "char_interval": {
+            "start_pos": 11827,
+            "end_pos": 11916
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2207,
+            "end_index": 2220
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "No patient had cognitive impairment, myelopathy or brainstem dysfunction reported in isolation; these were designated secondary manifestations of GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 11994,
+            "end_pos": 12089
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2236,
+            "end_index": 2249
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "study of 212 patients with GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 12461,
+            "end_pos": 12519
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2309,
+            "end_index": 2320
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients; median age of symptom onset 46 years (range 5–83); 77% female; 59% had concurrent systemic autoimmunity including thyroid disease (34%), T1DM (30%), and pernicious anaemia (19%); 4% had cancer within 5 years of symptom onset",
+          "char_interval": {
+            "start_pos": 12468,
+            "end_pos": 12927
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2311,
+            "end_index": 2426
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "SPSD was the most common core manifestation, reported in 107/212 (50%); among SPSD cases, 68% had classical SPSD, 28% partial SPSD, and 4% SPSD with exaggerated startle response; electrophysiological findings supportive of SPSD were reported in 52/70 (74%)",
+          "char_interval": {
+            "start_pos": 13113,
+            "end_pos": 13156
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2462,
+            "end_index": 2469
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "spasms (93/107, 87%), gait dysfunction attributed to SPSD (85/107, 79%), and hyperlordosis (49/107, 46%)",
+          "char_interval": {
+            "start_pos": 13619,
+            "end_pos": 13691
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2567,
+            "end_index": 2590
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Cerebellar ataxia was reported in 91/212 (43%) and often affected gait",
+          "char_interval": {
+            "start_pos": 14596,
+            "end_pos": 14642
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2805,
+            "end_index": 2817
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Gait ataxia was most frequently documented (76/91, 84%), followed by limb ataxia (63/91, 69%) and ataxic dysarthria (47/91, 52%)",
+          "char_interval": {
+            "start_pos": 14644,
+            "end_pos": 14774
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2818,
+            "end_index": 2856
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "On brain MRI, cerebellar atrophy was observed in 24/91 (26%); no patient had cerebellar T2-hyperintensity or gadolinium enhancement indicative of cerebellitis",
+          "char_interval": {
+            "start_pos": 14776,
+            "end_pos": 14869
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2857,
+            "end_index": 2881
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "A diagnosis of cancer within 5 years of symptom onset was reported in 9/212 (4%), ranging from 0/71 (0%) in SPSD to 6/55 (11%) in cerebellar ataxia",
+          "char_interval": {
+            "start_pos": 15009,
+            "end_pos": 15079
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2900,
+            "end_index": 2913
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Epilepsy with or without limbic encephalitis was reported in 62/212 (29%)",
+          "char_interval": {
+            "start_pos": 15364,
+            "end_pos": 15388
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2983,
+            "end_index": 2987
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Seizures were focal-onset in 56/62 (90%) and unknown-onset in 6/62 (10%)",
+          "char_interval": {
+            "start_pos": 15423,
+            "end_pos": 15501
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2999,
+            "end_index": 3024
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Seizures most often localized to the medial temporal lobe (35/56, 63%)",
+          "char_interval": {
+            "start_pos": 15503,
+            "end_pos": 15523
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3025,
+            "end_index": 3028
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Seizures were medically refractory in the majority (42/57, 74%)",
+          "char_interval": {
+            "start_pos": 16080,
+            "end_pos": 16143
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3165,
+            "end_index": 3180
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Medically refractory epilepsy was significantly more frequent among patients with epilepsy in isolation evaluated for seizure management (34/39, 87%) compared with patients with epilepsy as part of an overlap syndrome (8/18, 44%) (p=0.0007)",
+          "char_interval": {
+            "start_pos": 16155,
+            "end_pos": 16259
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3183,
+            "end_index": 3196
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "The most common neuroimaging finding prompting consideration of epilepsy surgery was mesial temporal sclerosis (9/62, 15%)",
+          "char_interval": {
+            "start_pos": 16591,
+            "end_pos": 16637
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3265,
+            "end_index": 3271
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Eight of 62 patients (13%) underwent epilepsy surgery (unilateral anterior temporal lobectomy, 7 patients; unilateral anterolateral temporal/frontal lobe resections, 1 patient)",
+          "char_interval": {
+            "start_pos": 16727,
+            "end_pos": 16906
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3293,
+            "end_index": 3324
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Epilepsy surgery uniformly revealed gliosis and did not usually result in seizure freedom",
+          "char_interval": {
+            "start_pos": 16500,
+            "end_pos": 16590
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3252,
+            "end_index": 3265
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Neuropathological data was available for 5/8 patients, all had gliosis; 2 of 5 had pathological evidence of chronic inflammation (mild leptomeningeal, focal superficial cortical and perivascular chronic inflammation in 1 patient; 'patchy chronic inflammation' in 1 patient); no alternative aetiology for seizures was reported",
+          "char_interval": {
+            "start_pos": 16908,
+            "end_pos": 16967
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3325,
+            "end_index": 3336
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "At last follow-up after surgery, 2 of 8 (25%) obtained seizure freedom; one patient had focal seizures with preserved awareness up to 9 months after surgery that ceased with intravenous IG over two further years of follow-up; one patient had focal seizures with impaired awareness up to ten years after surgery that ceased with addition of clobazam over two further years",
+          "char_interval": {
+            "start_pos": 17412,
+            "end_pos": 17447
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3409,
+            "end_index": 3417
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Characteristics of 212 patients with GAD65 neurological autoimmunity: 212 total; 71 with stiff-person spectrum disorders (SPSD); 55 with cerebellar ataxia; 35 with epilepsy; 7 with limbic encephalitis (LE); 44 with overlap syndromes",
+          "char_interval": {
+            "start_pos": 17805,
+            "end_pos": 17860
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3485,
+            "end_index": 3493
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Median age at symptom onset 46 years (range 5–83); Female 163/212 (77%); Caucasian 157/196 (80%)",
+          "char_interval": {
+            "start_pos": 18081,
+            "end_pos": 18108
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3553,
+            "end_index": 3558
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Median total symptom duration 76 months (range 3–636)",
+          "char_interval": {
+            "start_pos": 18366,
+            "end_pos": 18395
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3689,
+            "end_index": 3693
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Systemic autoimmunity 125/212 (59%); T1DM 63/212 (30%); Thyroid disease 72/212 (34%); Pernicious anaemia 40/212 (19%); Other 21/212 (10%)",
+          "char_interval": {
+            "start_pos": 18502,
+            "end_pos": 18523
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3741,
+            "end_index": 3743
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Cancer diagnosed within 5 years of symptom onset 9/212 (4%)",
+          "char_interval": {
+            "start_pos": 18915,
+            "end_pos": 18964
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3951,
+            "end_index": 3959
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Median serum anti-GAD65 titre 534 nmol/L (range 20.1–7558)",
+          "char_interval": {
+            "start_pos": 19031,
+            "end_pos": 19062
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4002,
+            "end_index": 4009
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Median CSF anti-GAD65 titre 10 nmol/L (range 0.1–274)",
+          "char_interval": {
+            "start_pos": 19183,
+            "end_pos": 19212
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4067,
+            "end_index": 4074
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "CSF pleocytosis in 15/127 (12%) patients; CSF-specific OCB in 46/114 (40%) patients; elevated CSF protein in 78/122 (64%) patients; elevated CSF IgG index in 10/108 (9%) patients",
+          "char_interval": {
+            "start_pos": 19324,
+            "end_pos": 19339
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4143,
+            "end_index": 4145
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "3 patients had glycine receptor α1 subunit-specific antibodies (two SPSD, 1 overlap of SPSD, cerebellar ataxia and epilepsy); 1 patient with epilepsy had collapsin response-mediator protein 5 antibodies (diagnosed with thymoma, not classified as LE); 1 patient with epilepsy had a clinicoradiographic presentation concerning for GABA type A antibodies but confirmatory testing was not performed",
+          "char_interval": {
+            "start_pos": 19789,
+            "end_pos": 19915
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4339,
+            "end_index": 4364
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Confirmatory testing for GABA type A antibodies was not performed in one patient",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Of patients with overlap syndromes, SPSD was reported in 36/44, cerebellar ataxia in 36/44, epilepsy without LE in 17/44, and LE in 3/44",
+          "char_interval": {
+            "start_pos": 20448,
+            "end_pos": 20584
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4460,
+            "end_index": 4495
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Other systemic autoimmunity includes adrenal insufficiency, vitiligo and coeliac disease",
+          "char_interval": {
+            "start_pos": 20587,
+            "end_pos": 20675
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4497,
+            "end_index": 4508
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Cancers diagnosed included thyroid cancer (4: 2 papillary thyroid cancer, 2 not otherwise specified), breast cancer (3: 1 ductal carcinoma, 2 not otherwise specified), lung cancer (3: 1 large cell neuroendocrine carcinoma, 1 small cell lung cancer, 1 bronchioalveolar carcinoma), and thymoma (1). Two patients had both breast and thyroid cancer diagnosed",
+          "char_interval": {
+            "start_pos": 20678,
+            "end_pos": 21033
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4510,
+            "end_index": 4581
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Seven of 9 patients had a cancer diagnosed within 2 years of symptom onset, while the remaining two patients had cancer diagnosed 2–5 years from symptom onset (one thyroid cancer not otherwise specified, 1 breast cancer not otherwise specified)",
+          "char_interval": {
+            "start_pos": 21035,
+            "end_pos": 21280
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4582,
+            "end_index": 4627
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Testing for anti-GAD65 in CSF was performed in 93/212 patients",
+          "char_interval": {
+            "start_pos": 21284,
+            "end_pos": 21315
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4629,
+            "end_index": 4637
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "Not explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Patients stratified by core disease manifestation including epilepsy, cerebellar ataxia, and SPSD; age at symptom onset ranged from 5 to 83 years across groups",
+          "char_interval": {
+            "start_pos": 21834,
+            "end_pos": 21842
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4767,
+            "end_index": 4768
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Median age at symptom onset ranged from 24 years (range 5–56) in epilepsy to 59 years (range 14–83) in cerebellar ataxia (p<0.0001); in overlap syndromes, median age ranged from 33 years (range 11–60) for epilepsy onset to 53 years for cerebellar ataxia (range 26–69) and SPSD onset (range 19–70) (p<0.0001); median total symptom duration ranged from 42 months (range 3–171) in cerebellar ataxia to 137 months (range 3–552) in epilepsy (p<0.0001)",
+          "char_interval": {
+            "start_pos": 22125,
+            "end_pos": 22182
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4817,
+            "end_index": 4828
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Six patients continued to have disabling seizures after surgery",
+          "char_interval": {
+            "start_pos": 21830,
+            "end_pos": 21997
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4766,
+            "end_index": 4794
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Not explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Median serum and cerebrospinal fluid (CSF) anti-GAD65 titre did not differ significantly across core manifestations of GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 22899,
+            "end_pos": 22976
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 4998,
+            "end_index": 5014
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Patients with epilepsy had the lowest median CSF anti-GAD65 titre (2.5 nmol/L) and the lowest frequency of elevated CSF IgG index (0/22, 0%) among core disease manifestations, but differences were not statistically significant (p=0.10 and p=0.17)",
+          "char_interval": {
+            "start_pos": 23059,
+            "end_pos": 23223
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5028,
+            "end_index": 5069
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "On MRI, medial temporal lobe T2-hyperintensity compatible with limbic encephalitis (LE) was seen in 10/62 (16%) patients",
+          "char_interval": {
+            "start_pos": 23426,
+            "end_pos": 23491
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5108,
+            "end_index": 5120
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "62 patients assessed by MRI for limbic encephalitis",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Among LE patients, only 1/10 (10%) were assessed within 3 months of disease onset, and 3/10 (30%) were assessed more than 1 year after disease onset for management of LE sequelae",
+          "char_interval": {
+            "start_pos": 23492,
+            "end_pos": 23820
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5120,
+            "end_index": 5195
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients with GAD65 neurological autoimmunity",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Cognitive impairment was reported in 38/212 (18%), predominantly short-term memory in 29/38 (76%), working memory/attention in 6/38 (16%), and verbal fluency/expressive language in 3/38 (8%)",
+          "char_interval": {
+            "start_pos": 24047,
+            "end_pos": 24072
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5227,
+            "end_index": 5230
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Myelopathy was reported in 23/212 (11%), with upper motor neuron signs in 19/23 (83%), pyramidal weakness in 14/23 (61%), and bowel/bladder dysfunction in 4/23 (17%)",
+          "char_interval": {
+            "start_pos": 24314,
+            "end_pos": 24354
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5294,
+            "end_index": 5306
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "No patient had spinal cord T2-hyperintensity or gadolinium enhancement indicative of myelitis",
+          "char_interval": {
+            "start_pos": 24585,
+            "end_pos": 24683
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5364,
+            "end_index": 5379
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Brainstem dysfunction was reported in 22/212 (10%) based on oculomotor findings: vertical misalignment in 11/22 (50%), horizontal misalignment in 7/22 (32%), and conjugate ophthalmoparesis in 4/22 (18%)",
+          "char_interval": {
+            "start_pos": 24697,
+            "end_pos": 24748
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5382,
+            "end_index": 5394
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "No patient had brainstem T2-hyperintensity or gadolinium enhancement indicative of brainstem encephalitis",
+          "char_interval": {
+            "start_pos": 24930,
+            "end_pos": 25039
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5439,
+            "end_index": 5454
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Secondary disease manifestations clustered with specific core disease manifestations: cognitive impairment with epilepsy/LE (N=30/38, 79%), myelopathy with SPSD (N=18/23, 78%), and brainstem dysfunction with cerebellar ataxia (N=20/22, 91%)",
+          "char_interval": {
+            "start_pos": 25146,
+            "end_pos": 25389
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5467,
+            "end_index": 5524
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Three patients had high-titre GAD65 antibodies but atypical presentations for GAD65 neurological autoimmunity; all had unilateral hyperkinetic movement disorders (dystonia, 2 patients; chorea, 1 patient)",
+          "char_interval": {
+            "start_pos": 25599,
+            "end_pos": 25712
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5557,
+            "end_index": 5574
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "One patient with right lower extremity dystonia received intravenous IG and reported 90% improvement confirmed by the treating physician; dystonia recurred seven to 8 weeks after intravenous IG was discontinued due to intolerability",
+          "char_interval": {
+            "start_pos": 25928,
+            "end_pos": 26029
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5616,
+            "end_index": 5631
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Immunotherapy usage (corticosteroids, intravenous IG, PLEX, rituximab and cyclophosphamide) was not significantly different across core disease manifestations",
+          "char_interval": {
+            "start_pos": 26366,
+            "end_pos": 26491
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5682,
+            "end_index": 5700
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Significant overlap of core manifestations (stiff-person spectrum disorder, cerebellar ataxia, epilepsy, limbic encephalitis) and secondary manifestations (myelopathy, brainstem dysfunction, cognitive impairment) of GAD65 neurological autoimmunity was shown in a chord diagram",
+          "char_interval": {
+            "start_pos": 26574,
+            "end_pos": 27076
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5711,
+            "end_index": 5790
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Corticosteroid usage was infrequent in SPSD (7/44, 16%), the majority received intravenous IG (38/44, 86%)",
+          "char_interval": {
+            "start_pos": 27631,
+            "end_pos": 27651
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5912,
+            "end_index": 5914
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Median time from symptom onset to first immunotherapy ranged from 5 months (range: 1–22 months) in LE to 50.5 months (range: 1–324 months) in epilepsy",
+          "char_interval": {
+            "start_pos": 27894,
+            "end_pos": 28046
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5968,
+            "end_index": 6005
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Number of patients with sustained response to immunotherapy ranged from 5/20 (25%) in epilepsy to 32/44 (73%) in SPSD",
+          "char_interval": {
+            "start_pos": 28064,
+            "end_pos": 28182
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6014,
+            "end_index": 6043
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Complete response to immunotherapy was rare; reported in only 2/142 (1%) patients",
+          "char_interval": {
+            "start_pos": 28195,
+            "end_pos": 28238
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6051,
+            "end_index": 6057
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients with GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 29091,
+            "end_pos": 29416
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6252,
+            "end_index": 6319
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "mRS at last follow-up: 0 in 2/212 (1%), 1 in 28/212 (13%), 2 in 61/212 (29%), 3 in 65/212 (31%), 4 in 49/212 (23%), 5 in 3/212 (1%), 6 in 4/212 (2%)",
+          "char_interval": {
+            "start_pos": 28945,
+            "end_pos": 29099
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6178,
+            "end_index": 6257
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Presence of cerebellar ataxia and serum GAD65 antibody titre >500 nmol/L predicted poor outcome",
+          "char_interval": {
+            "start_pos": 28791,
+            "end_pos": 28887
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6152,
+            "end_index": 6170
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Logistic regression analysis revealed that mRS >2 at first Mayo Clinic evaluation, cerebellar ataxia and serum GAD65 antibody titre >500 nmol/L were independent predictors of poor outcome (mRS >2) at last clinical follow-up",
+          "char_interval": {
+            "start_pos": 29101,
+            "end_pos": 29251
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6258,
+            "end_index": 6286
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "systematic review of all Mayo Clinic patients with high-titre GAD65 antibodies identified in Neuroimmunology Laboratory over a 15-year period",
+          "char_interval": {
+            "start_pos": 29482,
+            "end_pos": 29578
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6328,
+            "end_index": 6344
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "SPSD, cerebellar ataxia, epilepsy, and LE were core disease manifestations",
+          "char_interval": {
+            "start_pos": 29651,
+            "end_pos": 29727
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6359,
+            "end_index": 6372
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "SPSD was usually classical in presentation; cerebellar ataxia most often impacted gait, with limb and speech ataxia also commonly reported; seizures in epilepsy typically originated from the temporal lobe; three patients had musicogenic epilepsy",
+          "char_interval": {
+            "start_pos": 29747,
+            "end_pos": 29789
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6377,
+            "end_index": 6383
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Immunotherapy responsiveness differed significantly across core disease manifestations; SPSD was most likely to respond, epilepsy was least responsive",
+          "char_interval": {
+            "start_pos": 30206,
+            "end_pos": 30219
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6454,
+            "end_index": 6455
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Serum GAD65 antibody titre >500 nmol/L and cerebellar ataxia independently predicted poor outcome; mRS >2 at first Mayo Clinic evaluation also independently predicted poor outcome",
+          "char_interval": {
+            "start_pos": 30435,
+            "end_pos": 30473
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6488,
+            "end_index": 6498
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "The external validity of the mRS >2 finding to other centres requires further study",
+          "char_interval": {
+            "start_pos": 30638,
+            "end_pos": 30662
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6524,
+            "end_index": 6528
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "primarily outpatient tertiary care setting study",
+          "char_interval": {
+            "start_pos": 33835,
+            "end_pos": 33892
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7142,
+            "end_index": 7150
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients with GAD65 epilepsy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "LE was least-represented in the cohort; cancer diagnosed within 5 years of symptom onset occurred in 9 of 212 patients (4%)",
+          "char_interval": {
+            "start_pos": 33721,
+            "end_pos": 34188
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7121,
+            "end_index": 7204
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Referral bias may skew toward more severe epilepsy; patients with severe LE presentations might have been less likely to travel to the facility",
+          "char_interval": {
+            "start_pos": 33537,
+            "end_pos": 33588
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7090,
+            "end_index": 7098
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "142 patients with GAD65 neurological autoimmunity; SPSD (n=44), Cerebellar ataxia (n=38), Epilepsy (n=20), Limbic encephalitis (n=7), Overlap syndromes (n=33)",
+          "char_interval": {
+            "start_pos": 35065,
+            "end_pos": 35256
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7347,
+            "end_index": 7396
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Highest rates of cancer in patients with cerebellar ataxia (6/55, 11%) and limbic encephalitis (1/7, 14%); cognitive impairment, brainstem dysfunction, and myelopathy were frequent but did not occur in isolation",
+          "char_interval": {
+            "start_pos": 34274,
+            "end_pos": 34349
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7217,
+            "end_index": 7235
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Corticosteroids administered in SPSD 7/44 (16%), Cerebellar ataxia 30/38 (79%), Epilepsy 15/20 (75%), Limbic encephalitis 6/7 (86%), Overlap syndromes 20/33 (61%); P value <0.0001",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Intravenous IG used in 38/44 (86%), 20/38 (53%), 13/20 (65%), 6/7 (86%), 26/33 (79%) of patients; PLEX used in 7/44 (16%), 9/38 (24%), 3/20 (15%), 1/7 (14%), 8/33 (24%); Rituximab used in 5/44 (11%), 4/38 (11%), 3/20 (15%), 3/7 (43%), 3/33 (9%); Cyclophosphamide used in 1/44 (2%), 3/38 (8%), 0/20 (0%), 1/7 (14%), 2/33 (6%)",
+          "char_interval": {
+            "start_pos": 35389,
+            "end_pos": 35403
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7442,
+            "end_index": 7444
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Median time from symptom onset to first immunotherapy ranged from 5 to 50.5 months across groups",
+          "char_interval": {
+            "start_pos": 35679,
+            "end_pos": 35732
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7591,
+            "end_index": 7599
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Response to immunotherapy was 34/44 (77%), 22/38 (58%), 10/20 (50%), 5/7 (71%), 23/33 (70%) across groups",
+          "char_interval": {
+            "start_pos": 35813,
+            "end_pos": 35838
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7640,
+            "end_index": 7643
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Partial response rates were 24/44 (55%), 17/38 (45%), 7/20 (35%), 4/7 (57%), 19/33 (58%)",
+          "char_interval": {
+            "start_pos": 35902,
+            "end_pos": 35918
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7680,
+            "end_index": 7682
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Near-complete response rates were 10/44 (23%), 4/38 (11%), 2/20 (10%), 1/7 (14%), 4/33 (12%)",
+          "char_interval": {
+            "start_pos": 35977,
+            "end_pos": 36001
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7716,
+            "end_index": 7720
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Complete response rates were 0/44 (0%), 1/38 (3%), 1/20 (5%), 0/7 (0%), 0/33 (0%)",
+          "char_interval": {
+            "start_pos": 36058,
+            "end_pos": 36075
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7754,
+            "end_index": 7756
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Sustained response among initial responders was 32/34 (94%), 16/22 (73%), 5/10 (50%), 3/5 (60%), 13/23 (57%)",
+          "char_interval": {
+            "start_pos": 36067,
+            "end_pos": 36329
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 7,
+          "group_index": 6,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 7755,
+            "end_index": 7848
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Sustained response among all treated patients was 32/44 (73%), 16/38 (42%), 5/20 (25%), 3/7 (43%), 13/33 (39%)",
+          "char_interval": {
+            "start_pos": 36159,
+            "end_pos": 36381
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 8,
+          "group_index": 7,
+          "description": null,
+          "attributes": null,
+          "_token_interval": {
+            "start_index": 7796,
+            "end_index": 7878
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients with GAD65 neurological autoimmunity; 49 of 212 (23%) were male; age at symptom onset median 46 years, range 5 to 83",
+          "char_interval": {
+            "start_pos": 37453,
+            "end_pos": 37503
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8069,
+            "end_index": 8076
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "151 of 212 patients (71%) received acute immunotherapy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients; 107/212 (50%) had stiff-person spectrum disorder; 44/212 (21%) had overlap syndrome; 87/212 (41%) had diabetes mellitus",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Epilepsy (with or without LE) in 62/212 (29%); Cerebellar ataxia in 91/212 (43%); Serum GAD65 titre median 534 nmol/L (range 20.1–7558); 110/212 (52%) had serum GAD65 titre >500 nmol/L",
+          "char_interval": {
+            "start_pos": 38008,
+            "end_pos": 38037
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8259,
+            "end_index": 8266
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Second-line acute immunotherapy given to 23/152 (15%); Maintenance immunotherapy given to 90/212 (42%); mRS at first Mayo Clinic evaluation median 3 (range 0–6); mRS >2 at last follow-up in 121/212 (57%)",
+          "char_interval": {
+            "start_pos": 37772,
+            "end_pos": 38717
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8175,
+            "end_index": 8545
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Time from symptom onset to first immunotherapy median 21 months (range 1–540); Total symptom duration median 74 months (range 3–636)",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Acute immunotherapies used included corticosteroids, intravenous immunoglobulin, plasma exchange, rituximab, cyclophosphamide and/or autologous stem cell transplantation; frequency stratified by core disease manifestation is reported in table 3",
+          "char_interval": {
+            "start_pos": 38725,
+            "end_pos": 38751
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8549,
+            "end_index": 8552
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Second-line acute immunotherapy refers to use of rituximab and/or cyclophosphamide among patients who received acute immunotherapy",
+          "char_interval": {
+            "start_pos": 39022,
+            "end_pos": 39154
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8592,
+            "end_index": 8612
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Maintenance immunotherapies used for chronic immunomodulation included mycophenolate mofetil (n=37), azathioprine (n=27), intravenous IG (n=27), rituximab (n=19), corticosteroids (n=7), methotrexate (n=2), tacrolimus (n=1) and sirolimus (n=1)",
+          "char_interval": {
+            "start_pos": 39157,
+            "end_pos": 39401
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8614,
+            "end_index": 8678
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Cognitive impairment was typically amnestic in keeping with medial temporal lobe dysfunction, given the high rate of co-occurrence with temporal lobe epilepsy and LE",
+          "char_interval": {
+            "start_pos": 39914,
+            "end_pos": 40008
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8801,
+            "end_index": 8814
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Myelopathic findings were most often reported in SPSD and usually manifested as UMN findings (brisk reflexes, extensor plantar responses, mild UMN pattern of weakness)",
+          "char_interval": {
+            "start_pos": 40114,
+            "end_pos": 40284
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8835,
+            "end_index": 8863
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Frequent coexistence of brainstem dysfunction with cerebellar ataxia on the basis of oculomotor findings could reflect more diffuse posterior fossa inflammation (‘rhombencephalitis’) in some patients",
+          "char_interval": {
+            "start_pos": 40327,
+            "end_pos": 40529
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8872,
+            "end_index": 8901
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "Three patients had hyperkinetic movement disorders, suggesting this phenotype may be part of the spectrum of GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 40650,
+            "end_pos": 40793
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8922,
+            "end_index": 8943
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Given the paucity of cases, thorough evaluation for other causes of a hyperkinetic movement disorder in a patient with high-titre GAD65 antibodies is recommended",
+          "char_interval": {
+            "start_pos": 40807,
+            "end_pos": 40972
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8947,
+            "end_index": 8975
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "On review of immunotherapy usage across core disease manifestations, only corticosteroid usage differed significantly",
+          "char_interval": {
+            "start_pos": 40974,
+            "end_pos": 41027
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 8976,
+            "end_index": 8984
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Rates of sustained response to immunotherapy ranged from 73% in SPSD to only 25% in epilepsy",
+          "char_interval": {
+            "start_pos": 42022,
+            "end_pos": 42115
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": null,
+          "_token_interval": {
+            "start_index": 9152,
+            "end_index": 9170
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Due to the retrospective nature of this study we were not able to implement standardised measures of disease severity when monitoring responses to immunotherapy; classification of response was based on the Mayo Clinic treating physician’s documentation, which has an element of subjectivity",
+          "char_interval": {
+            "start_pos": 41362,
+            "end_pos": 41770
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": null,
+          "_token_interval": {
+            "start_index": 9037,
+            "end_index": 9107
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "Not explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "Patients with epilepsy and high-titre GAD65 antibodies; median time from symptom onset to first immunotherapy was 50.5 months; median symptom duration for epilepsy was 137 months; younger age of onset",
+          "char_interval": {
+            "start_pos": 42228,
+            "end_pos": 42285
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9187,
+            "end_index": 9197
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "High prevalence of epilepsy among patients with high-titre GAD65 antibodies; inflammation reported neuropathologically in 2 of 5 patients who underwent epilepsy surgery; trend toward lower median CSF anti-GAD65 titre and less frequent elevated CSF IgG index compared with other core disease manifestations",
+          "char_interval": {
+            "start_pos": 42390,
+            "end_pos": 43348
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9217,
+            "end_index": 9377
+          }
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Poor response to immunotherapy in patients with epilepsy and high-titre GAD65 antibodies; delay to immunotherapy likely contributes to lack of immunotherapy-responsiveness",
+          "char_interval": {
+            "start_pos": 42193,
+            "end_pos": 42676
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9182,
+            "end_index": 9265
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Not explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "serum GAD65 antibody titre >500 nmol/L and cerebellar ataxia were independent predictors of poor outcome (mRS >2)",
+          "char_interval": {
+            "start_pos": 43687,
+            "end_pos": 43753
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9435,
+            "end_index": 9449
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Clinical reporting of GAD65 antibodies in the Mayo Clinic Neuroimmunology Laboratory is based only on RIA, and so confirmation of high-titre GAD65 antibodies by a second assay was not performed",
+          "char_interval": {
+            "start_pos": 44320,
+            "end_pos": 44499
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9549,
+            "end_index": 9581
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Reporting of anti-GAD65 by TIIF is not routinely done, and serum positivity for anti-GAD65 by TIIF may occur in patients without GAD65 neurological autoimmunity, highlighting the challenge in determining what test methodology or cut-off best defines a clinically relevant high-titre GAD65 antibody result.",
+          "char_interval": {
+            "start_pos": 44613,
+            "end_pos": 44675
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9602,
+            "end_index": 9616
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Implementation of other test methodologies such as ELISA, immunoblot or cell-based assay to detect high-titre GAD65 antibodies in some laboratories has created the need for assay comparison studies, which is an area of active investigation.",
+          "char_interval": {
+            "start_pos": 45031,
+            "end_pos": 45284
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9676,
+            "end_index": 9724
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "High-titre GAD65 antibodies in serum are best viewed as necessary, but not sufficient for a diagnosis of GAD65 neurological autoimmunity.",
+          "char_interval": {
+            "start_pos": 45345,
+            "end_pos": 45402
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9735,
+            "end_index": 9747
+          }
+        },
+        {
+          "extraction_class": "group_findings",
+          "extraction_text": "The presence of anti-GAD65 in CSF supports an autoimmune aetiology in the appropriate clinical context.",
+          "char_interval": {
+            "start_pos": 45492,
+            "end_pos": 45523
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9764,
+            "end_index": 9772
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Calculation of intrathecal anti-GAD65 synthesis is not performed in our testing laboratory and was not required for study inclusion; it is not yet in widespread use and systematic evaluation of its diagnostic utility in clinical practice is required",
+          "char_interval": {
+            "start_pos": 45752,
+            "end_pos": 45801
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9813,
+            "end_index": 9821
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Lack of a diagnostic gold standard for GAD65 neurological autoimmunity independent of GAD65 antibody testing",
+          "char_interval": {
+            "start_pos": 46343,
+            "end_pos": 46414
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9914,
+            "end_index": 9925
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "One-third of patients with high-titre GAD65 antibodies were excluded prior to study analysis because they were classified as not having GAD65 neurological autoimmunity due to non-neurological presentations",
+          "char_interval": {
+            "start_pos": 46583,
+            "end_pos": 46788
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9951,
+            "end_index": 9986
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Rigorous clinical evaluation to rule out alternative diagnoses in patients with atypical features remains prudent",
+          "char_interval": {
+            "start_pos": 46466,
+            "end_pos": 46581
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 9935,
+            "end_index": 9950
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "High number of excluded patients could reflect referral bias at specialised tertiary care centre enriched with atypical presentations for GAD65 neurological autoimmunity and alternative diagnoses; possible contributory GAD65 autoimmunity in patients with more likely alternative neurological diagnoses",
+          "char_interval": {
+            "start_pos": 46877,
+            "end_pos": 46916
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": null,
+          "_token_interval": {
+            "start_index": 10003,
+            "end_index": 10009
+          }
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "retrospective cohort study of patients identified from Mayo Clinic anti-GAD65 samples submitted between 2003 and 2018",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {
+            "sample_source": "Mayo Clinic anti-GAD65 samples",
+            "time_frame": "2003–2018"
+          },
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "High-titre GAD65 antibodies were suggestive but not pathognomonic for GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 3214,
+            "end_pos": 3260
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 661,
+            "end_index": 669
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Confirmatory testing for GABA type A antibodies was not performed in one patient",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "Not explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Not explicitly stated",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "corticosteroid usage in SPSD was infrequent (7/44, 16%), majority received intravenous IG (38/44, 86%)",
+          "char_interval": {
+            "start_pos": 27695,
+            "end_pos": 27723
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 5927,
+            "end_index": 5931
+          }
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Confirmatory testing for gamma-aminobutyric acid type A receptor encephalitis antibody was not performed",
+          "char_interval": {
+            "start_pos": 28664,
+            "end_pos": 28789
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 6131,
+            "end_index": 6151
+          }
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients with GAD65 epilepsy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "Corticosteroids administered in 16% of SPSD (7/44), 79% of cerebellar ataxia (30/38), 75% of epilepsy (15/20), 86% of limbic encephalitis (6/7), and 61% of overlap syndromes (20/33); P value <0.0001",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_treatment_outcomes",
+          "extraction_text": "151 of 212 patients (71%) received acute immunotherapy",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_characteristics",
+          "extraction_text": "212 patients",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_design",
+          "extraction_text": "",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "group_limitations",
+          "extraction_text": "Some patients considered to have more likely alternative neurological diagnoses may have contributory GAD65 neurological autoimmunity",
+          "char_interval": {
+            "start_pos": 47206,
+            "end_pos": 47381
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 10057,
+            "end_index": 10083
+          }
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 159
+}

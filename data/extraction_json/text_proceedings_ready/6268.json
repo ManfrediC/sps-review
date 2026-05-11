@@ -1,0 +1,98 @@
+{
+  "paper_id": "6268",
+  "source_filename": "6268_Muscle and Nerve - 2004 - - AAEM news and comments.pdf",
+  "source_sha256": "e31fe4ace57d3e4e7d25df7a91ff205b202337db639428a419db83d763ac7bf9",
+  "extractor": "pypdf",
+  "extracted_at_utc": "2026-03-01T20:56:37.923893+00:00",
+  "n_pages": 1,
+  "needs_ocr_before_ocr": false,
+  "ocr_trigger_reasons": [],
+  "page_char_counts": [
+    1744
+  ],
+  "suspicious_control_chars": 0,
+  "needs_ocr": false,
+  "remaining_text_quality_flags": [],
+  "ocr_applied": false,
+  "ocr_mode": "",
+  "ocr_error": null,
+  "pages": [
+    {
+      "page_index": 17,
+      "text": "QUANTITATIVE ANALYSIS OF THE SILENT\nPERIOD IN THE STIFF-PERSON SYNDROME\nA. J. Shatzel; G. Fenton; R. A. Maselli\n(Sacramento, CA)\nIntroduction: The electrodiagnostic features of the stiffperson syndrome are incompletely characterized.\nObjective: To define the electrodiagnostic features of the\nstiff-person syndrome.\nMethods: Electrodiagnostic study with measurement of the\nonset of electromyographic (EMG) activity following the H\nreflex in the tibial and femoral nerves.\nResults: The authors studied a 68-year-old man who had a\n14-year history of intermittent painful muscle contractions,\nwhich started in his neck and progressed to involve his\nextremities and trunk. In recent years, the muscle stiffness\nhas caused him to have recurrent falls. He was recently\ndiagnosed with type II diabetes. His neurologic examination\nwas essentially normal except for mild hypertrophy of\nmuscles of the lower extremities, diminished ankle jerk\nreflexes, and the presence of painful muscle contractions\ntriggered by movements of the limbs and trunk. His\nglutamic acid decarboxylase (GAD) antibodies were\nmarkedly elevated at 219 nmol/L. The electrodiagnostic\nstudy showed normal motor and sensory conduction\nvelocities and normal needle EMG. However, during muscle\nactivation, the onset of EMG activity after the tibial H reflex\nwas markedly shortened in comparison with that of five\ncontrols (10. 8+6. 5 ms, n=8 vs. 66. 8430 ms, n=22; p<0. 001).\nThe patient’s silent period following the femoral nerve H\nreflex was also partially obliterated.\nConclusions: Quantitative analysis of the silent period\nfollowing the H reflex provides a simple methodology to\nconfirm the impairment of recurrent GABA-dependent\ninhibitory pathways in the stiff-person syndrome."
+    }
+  ],
+  "cleanup_stage2_applied": true,
+  "cleanup_stage2_profile": "combined_basic",
+  "cleanup_stage2_rules_applied": [
+    "insert_punctuation_spaces",
+    "repair_linebreak_hyphenation",
+    "split_camel_case"
+  ],
+  "cleanup_stage2_applied_at_utc": "2026-04-02T19:58:28.269702+00:00",
+  "cleanup_stage2_source_json_path": "data\\extraction_json\\text_preclean_stage2\\6268.json",
+  "cleanup_stage2_source_json_sha256": "38543b464a2764117ad6590c3439d57ce62c452e1788b77a49bc544f6ef819f8",
+  "cleanup_stage2_source_strategy": "ocr_cleanup",
+  "cleanup_stage2_source_pdf_path": "data\\pdf_original\\6268_Muscle and Nerve - 2004 - - AAEM news and comments.pdf",
+  "cleanup_stage2_source_pdf_sha256": "e31fe4ace57d3e4e7d25df7a91ff205b202337db639428a419db83d763ac7bf9",
+  "cleanup_stage2_source_page_start": "18",
+  "cleanup_stage2_source_page_end": "18",
+  "cleanup_stage2_ocr_dpi": "220",
+  "cleanup_stage2_ocr_psm": "3",
+  "cleanup_stage2_ocr_grayscale": "true",
+  "cleanup_stage2_changed_page_count": 1,
+  "cleanup_stage2_artifact_counts_before": {
+    "nbsp_like_spaces": 0,
+    "soft_hyphen": 0,
+    "linebreak_hyphenation": 1,
+    "punctuation_space_repairs": 10,
+    "camel_case_boundaries": 8,
+    "boilerplate_lines": 0,
+    "mojibake_tokens": 0,
+    "ligature_tokens": 0
+  },
+  "cleanup_stage2_artifact_counts_after": {
+    "nbsp_like_spaces": 0,
+    "soft_hyphen": 0,
+    "linebreak_hyphenation": 0,
+    "punctuation_space_repairs": 0,
+    "camel_case_boundaries": 0,
+    "boilerplate_lines": 0,
+    "mojibake_tokens": 0,
+    "ligature_tokens": 0
+  },
+  "cleanup_stage2_reason": "Localize the AAEM proceedings abstract page via OCR",
+  "cleanup_stage2_notes": "Manual PDF review confirmed the target abstract on proceedings page 18 and OCR works best with page segmentation mode 3",
+  "cleanup_stage2_substitutions_applied": [
+    {
+      "match_type": "regex",
+      "match": "(?s)\\A.*?(QUANTITATIVE ANALYSIS OF THE SILENT\\s+PERIOD IN THE STIFF-PERSON SYNDROME)",
+      "replacement": "\\1",
+      "page_index": null,
+      "count": 1,
+      "changed_pages": [
+        17
+      ],
+      "notes": "Drop preceding proceedings spillover before the target abstract title"
+    },
+    {
+      "match_type": "regex",
+      "match": "(?s)(inhibitory pathways in the stiff-person syndrome\\.)\\s+MULTIFREQUENCY ELECTRICAL IMPEDANCE.*",
+      "replacement": "\\1",
+      "page_index": null,
+      "count": 1,
+      "changed_pages": [
+        17
+      ],
+      "notes": "Trim the following proceedings abstract after the target conclusion"
+    }
+  ],
+  "source_text_json_path": "data\\extraction_json\\text\\6268.json",
+  "proceedings_ready_source_kind": "source_text_passthrough",
+  "proceedings_ready_text_mode": "full_text_passthrough",
+  "proceedings_ready_source_detail": "single_abstract_passthrough",
+  "proceedings_ready_reason": "Resolved conference abstract did not require proceedings trimming; published the source abstract text as-is.",
+  "proceedings_ready_start_line_global_index": 0,
+  "proceedings_ready_end_line_global_index_exclusive": 33,
+  "proceedings_ready_built_at_utc": "2026-04-13T08:42:42.351366+00:00"
+}

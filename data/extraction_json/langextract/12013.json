@@ -1,0 +1,410 @@
+{
+  "paper_id": "12013",
+  "source_filename": "12013_Belgen Kaygisiz et al. - 2021 - The effect of clinical pilates-based physiotherapy.pdf",
+  "source_sha256": "3fd5d93c461d68cd37fdbc88f0c3d6e4280e47d59c648a1e00a22676a445c3bd",
+  "source_text_json_path": "C:\\Projects\\sps-review\\data\\extraction_json\\text\\12013.json",
+  "used_trimmed_text": false,
+  "route": {
+    "paper_id": "12013",
+    "manual_override_present": "false",
+    "resolved_source_category": "single_case_report",
+    "resolved_source_subtype": "case_report",
+    "resolved_source_confidence": "high",
+    "resolved_source_route_source": "heuristic",
+    "resolved_source_notes": "trim_status=not_needed | case_markers=case report | interventional_markers=controlled trial; randomized; trial | review_markers=systematic review; meta analysis | page_span=7 | individual_demographic_signal=true",
+    "resolved_source_alignment_tag": "",
+    "resolved_review_batch": "",
+    "resolved_reviewed_at_utc": "",
+    "resolved_case_series_split_candidate": "false",
+    "resolved_langextract_mode": "individual",
+    "resolved_langextract_eligible": "true"
+  },
+  "model_id": "gpt-4.1-mini",
+  "generated_at_utc": "2026-03-03T20:43:11.987652+00:00",
+  "extraction_modes": {
+    "individual": {
+      "extraction_count": 24,
+      "extractions": [
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "43-year-old female with a 3-year history of SPS",
+          "char_interval": {
+            "start_pos": 700,
+            "end_pos": 747
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 147,
+            "end_index": 161
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "low back pain and gait disturbances associated with SPS",
+          "char_interval": {
+            "start_pos": 7485,
+            "end_pos": 7541
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1459,
+            "end_index": 1468
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "diagnosis had been confirmed by a neurologist at a major state hospital",
+          "char_interval": {
+            "start_pos": 7548,
+            "end_pos": 7620
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1470,
+            "end_index": 1482
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "numbness and tingling in lower and upper extremities, neck and low back pain, fatigue, muscle stiffness increasing gradually until night, increased difficulty in walking, increased muscle spasms, recurrent falls affecting daily activities, stiffness, pain, balance disorder, and functional limitations",
+          "char_interval": {
+            "start_pos": 7885,
+            "end_pos": 7939
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1535,
+            "end_index": 1544
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "high serum level of GAD antibodies confirmed that she has SPS; blood tests, X-ray, magnetic resonance imaging and computed tomography scan were done",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "physiotherapy and rehabilitation; Pilates training for 1 year, 3 sessions per week with a personal trainer",
+          "char_interval": {
+            "start_pos": 8627,
+            "end_pos": 8659
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1675,
+            "end_index": 1678
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "stopped physiotherapy and rehabilitation treatment due to no improvement in mobility and loss of motivation",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "complaints about increased low back pain, balance distributions during the day and frequent spasms toward the end of the day; difficulties in leaning forward and wearing shoes; signs of rigidity in lumbar region as well as in lower and upper extremities; no tremor; trouble lying on bed and turning around in bed",
+          "char_interval": {
+            "start_pos": 9315,
+            "end_pos": 9325
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1790,
+            "end_index": 1791
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "medications at the time of evaluation include gabapentin, benzodiazepine and weekly intravenous immunoglobulin (IVIg)",
+          "char_interval": {
+            "start_pos": 10131,
+            "end_pos": 10250
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1941,
+            "end_index": 1958
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No changes were made in the drugs recommended by the neurologist during the study",
+          "char_interval": {
+            "start_pos": 10438,
+            "end_pos": 10471
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 1992,
+            "end_index": 1999
+          }
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "The case has been evaluated in detail at the beginning and end of the study by the primary investigator (BBK)",
+          "char_interval": {
+            "start_pos": 10523,
+            "end_pos": 10634
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2009,
+            "end_index": 2031
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "Range of motion (ROM) values of the patient’s back extension, all movements of the hip, knee flexion–extension, ankle dorsiplantar flexion, all movements of the shoulder and elbow flexion–extension were evaluated",
+          "char_interval": {
+            "start_pos": 10782,
+            "end_pos": 10901
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2053,
+            "end_index": 2080
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "Flexibility was measured with the method suggested by Karaduman. Trunk hyperextension, trunk lateral flexion, hip abduction movement flexibility and hamstring and quadriceps femoris muscle flexibility were measured",
+          "char_interval": {
+            "start_pos": 11018,
+            "end_pos": 11082
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 5,
+          "group_index": 4,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2102,
+            "end_index": 2111
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "muscle strength testing used manual muscle testing method",
+          "char_interval": {
+            "start_pos": 11263,
+            "end_pos": 11286
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 6,
+          "group_index": 5,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 2141,
+            "end_index": 2144
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "stiffness and painful spasms in the trunk and lower extremities",
+          "char_interval": {
+            "start_pos": 16954,
+            "end_pos": 17018
+          },
+          "alignment_status": "AlignmentStatus.MATCH_FUZZY",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3289,
+            "end_index": 3299
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "The patient stated the spasm score as 9/10 before the treatment, and 5/10 after the treatment; improvement in stinging and burning pain from 9/10 to 6/10",
+          "char_interval": {
+            "start_pos": 16213,
+            "end_pos": 16308
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3148,
+            "end_index": 3169
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "CP training focusing on strengthening deep postural muscles of the spine providing trunk stabilization",
+          "char_interval": {
+            "start_pos": 16567,
+            "end_pos": 16578
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3221,
+            "end_index": 3223
+          }
+        },
+        {
+          "extraction_class": "individual_presentation",
+          "extraction_text": "pain and painful muscle spasm is among the most prominent symptoms of Stiff Person Syndrome",
+          "char_interval": {
+            "start_pos": 17183,
+            "end_pos": 17275
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 1,
+          "group_index": 0,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3327,
+            "end_index": 3342
+          }
+        },
+        {
+          "extraction_class": "individual_treatment",
+          "extraction_text": "physiotherapy and rehabilitation interventions including massage, electrotherapeutic modalities, hydrotherapy, relaxation, and stretching exercises",
+          "char_interval": {
+            "start_pos": 17609,
+            "end_pos": 17641
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3408,
+            "end_index": 3411
+          }
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "’cramping’ sub-dimension decreased from 9 to 5 points and was the most improved complaint",
+          "char_interval": {
+            "start_pos": 17953,
+            "end_pos": 18043
+          },
+          "alignment_status": "AlignmentStatus.MATCH_EXACT",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3464,
+            "end_index": 3482
+          }
+        },
+        {
+          "extraction_class": "individual_diagnostics",
+          "extraction_text": "diagnosed as Parkinson’s Disease (PD) initially; high serum level of GAD antibodies confirmed that she has SPS; blood tests, X-ray, magnetic resonance imaging and computed tomography scan performed",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "stopped physiotherapy and rehabilitation treatment due to no improvement in mobility and loss of motivation",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 4,
+          "group_index": 3,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_limitations",
+          "extraction_text": "No explicit diagnostic, treatment, or outcome details provided in the snippet",
+          "char_interval": null,
+          "alignment_status": null,
+          "extraction_index": 2,
+          "group_index": 1,
+          "description": null,
+          "attributes": {},
+          "_token_interval": null
+        },
+        {
+          "extraction_class": "individual_outcome",
+          "extraction_text": "total score of the scale decreased from 120 to 89; improvement in pain intensity, stinging pain, burning, crushing sensation, striking-type pain, numbness, tingling, spasm, spreading and feeling of heaviness; spasm score improved from 9/10 to 5/10; stinging and burning pain improved from 9/10 to 6/10",
+          "char_interval": {
+            "start_pos": 15892,
+            "end_pos": 15942
+          },
+          "alignment_status": "AlignmentStatus.MATCH_LESSER",
+          "extraction_index": 3,
+          "group_index": 2,
+          "description": null,
+          "attributes": {},
+          "_token_interval": {
+            "start_index": 3085,
+            "end_index": 3095
+          }
+        }
+      ]
+    }
+  },
+  "total_extraction_count": 24
+}

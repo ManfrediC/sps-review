@@ -1,0 +1,101 @@
+{
+  "paper_id": "1598",
+  "source_filename": "1598_Thuringer A.J. and Jassam Y.N. - 2019 - Coexistence of neuromyelitis optica and stiff pers.pdf",
+  "source_sha256": "9671d3f00944c3bc70bcd0dd84e4e96c2a82d1c78e1bbecf35a167fd8ed7628d",
+  "extractor": "pypdf",
+  "extracted_at_utc": "2026-03-01T20:14:44.782058+00:00",
+  "n_pages": 2,
+  "needs_ocr_before_ocr": false,
+  "ocr_trigger_reasons": [],
+  "page_char_counts": [
+    630,
+    1677
+  ],
+  "suspicious_control_chars": 0,
+  "needs_ocr": false,
+  "remaining_text_quality_flags": [],
+  "ocr_applied": false,
+  "ocr_mode": "",
+  "ocr_error": null,
+  "pages": [
+    {
+      "page_index": 0,
+      "text": "Coexistence of neuromyelitis optica and\nstiff person syndrome in a single patient: a\ncase report\nAmanda Thuringer and Yasir Jassam\nAbstract\nObjective:\nTo report a case of seropositive neuromyelitis optica (NMO) and\ncoexistent glutamic acid decarboxylase (GAD) associated stiff person\nsyndrome (SPS).\nBackground:\nEpidemiological studies highlight potential shared pathophysiology,\nenvironmental and genetic risk factors for autoimmune disease.\nPolyautoimmunity is defined as the presence of more than one\nautoimmune disease in a particular patient and can be found in up to 30%\nof those with autoimmune diseases.\nDesign/Methods:\nNA"
+    },
+    {
+      "page_index": 1,
+      "text": "Results:\nA 47-year old Caucasian female with pernicious anemia presented with\nprogressive, episodic muscle spasms and low back pain, exacerbated by\nphysical activity and emotional stress with normal neuroimaging. A serum\nglutamic acid decarboxylase (GAD) antibody was positive at greater than\n250 IU/mL (normal <5 IU/mL). She was diagnosed with stiff person\nsyndrome. One and one half years later, developed ascending numbness to\nthe umbilicus with asymmetric leg weakness, left greater than right, over 2\nweeks. She was treated with a course of IV methylprednisolone. Her\nfollow up neurologic exam revealed Ashworth grade 1 spasticity in lower\nextremities, symmetric hyperreflexia with positive Hoffman’s sign\nbilaterally, and decreased pinprick sensation in left lower extremity.\nNeuroimaging showed a T2 hyperintense expansile cord lesion from C2–\nC4 and T1–T9 with patchy post-contrast enhancement. MRI brain was\nunremarkable. CSF testing at the time of transverse myelitis revealed\nlymphocyte-predominant pleocytosis with normal glucose, protein, IgG\nindex and oligoclonal bands. Serum aquaporin-4 (AQP-4) IgG antibody by\ncell-based assay was positive with titer 1: 10, 000. ANA was positive at\n1: 640. Extensive infectious, autoimmune, and malignancy screening was\nunremarkable. She was treated with rituximab with stabilization of NMO\nand resolution of SPS symptoms. Her follow up MRIs showed resolution\nof contrast enhancement.\nConclusions:\nThis is the first case report to our knowledge of a patient with AQP-4 and\nGAD antibody positivity and related clinical syndromes. Recognition of\ncomplex presentations to guide appropriate evaluation and management is\nessential."
+    }
+  ],
+  "cleanup_stage2_applied": true,
+  "cleanup_stage2_profile": "combined_basic",
+  "cleanup_stage2_rules_applied": [
+    "insert_punctuation_spaces"
+  ],
+  "cleanup_stage2_applied_at_utc": "2026-04-02T23:30:47.618253+00:00",
+  "cleanup_stage2_source_json_path": "data\\extraction_json\\text_preclean_stage2\\1598.json",
+  "cleanup_stage2_source_json_sha256": "5d08f955dc8f2b5a3797fdbb06f4ec2971447928baa40eb1df01537302dca2a8",
+  "cleanup_stage2_source_strategy": "pdftotext_cleanup",
+  "cleanup_stage2_source_pdf_path": "data\\pdf_original\\12627_Coexistence of neuromyelitis optica and stiff person syndrome in a single patient.pdf",
+  "cleanup_stage2_source_pdf_sha256": "519d550b603c2bd3069c5e9d83b5dcd0f1e835466fab91dcd7a5f9046ee840b2",
+  "cleanup_stage2_source_page_start": "",
+  "cleanup_stage2_source_page_end": "",
+  "cleanup_stage2_ocr_dpi": "",
+  "cleanup_stage2_ocr_psm": "",
+  "cleanup_stage2_ocr_grayscale": "",
+  "cleanup_stage2_changed_page_count": 2,
+  "cleanup_stage2_artifact_counts_before": {
+    "nbsp_like_spaces": 0,
+    "soft_hyphen": 0,
+    "linebreak_hyphenation": 0,
+    "punctuation_space_repairs": 9,
+    "camel_case_boundaries": 0,
+    "boilerplate_lines": 0,
+    "mojibake_tokens": 0,
+    "ligature_tokens": 0
+  },
+  "cleanup_stage2_artifact_counts_after": {
+    "nbsp_like_spaces": 0,
+    "soft_hyphen": 0,
+    "linebreak_hyphenation": 0,
+    "punctuation_space_repairs": 0,
+    "camel_case_boundaries": 0,
+    "boilerplate_lines": 0,
+    "mojibake_tokens": 0,
+    "ligature_tokens": 0
+  },
+  "cleanup_stage2_reason": "Reuse the reviewed duplicate PDF already in the corpus",
+  "cleanup_stage2_notes": "The attached 1598 PDF is the wrong ACTRIMS supplement; 12627 is the exact same paper with the correct source PDF",
+  "cleanup_stage2_substitutions_applied": [
+    {
+      "match_type": "regex",
+      "match": "(?s)\\(P2\\.\\s*2-032\\)\\s*Amanda Thuringer and Yasir JassamAUTHORS INFO.*?Abstract",
+      "replacement": "\\nAmanda Thuringer and Yasir Jassam\\nAbstract",
+      "page_index": null,
+      "count": 1,
+      "changed_pages": [
+        0
+      ],
+      "notes": "Drop webpage chrome between the poster title and abstract body"
+    },
+    {
+      "match_type": "regex",
+      "match": "(?s)Abstract\\s+Publication History.*?Share\\s+Abstract\\s+Objective:",
+      "replacement": "Abstract\\nObjective:",
+      "page_index": null,
+      "count": 1,
+      "changed_pages": [
+        0
+      ],
+      "notes": "Drop webpage navigation chrome that remains between the abstract heading and the first objective sentence"
+    }
+  ],
+  "source_text_json_path": "data\\extraction_json\\text\\1598.json",
+  "proceedings_ready_source_kind": "source_text_passthrough",
+  "proceedings_ready_text_mode": "full_text_passthrough",
+  "proceedings_ready_source_detail": "candidate_not_needed",
+  "proceedings_ready_reason": "Document does not look like a proceedings source.",
+  "proceedings_ready_start_line_global_index": 0,
+  "proceedings_ready_end_line_global_index_exclusive": 44,
+  "proceedings_ready_built_at_utc": "2026-04-13T08:42:38.043353+00:00"
+}
