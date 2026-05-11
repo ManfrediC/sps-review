@@ -22,13 +22,20 @@ TEXT_PRECLEAN_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean"
 TEXT_PRECLEAN_STAGE2_DIR = REPO_ROOT / "data" / "extraction_json" / "text_preclean_stage2"
 TEXT_TRIMMED_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed"
 TEXT_PROCEEDINGS_READY_DIR = PROCEEDINGS_READY_DIR
-CASE_SERIES_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_units"
+TEXT_TRIMMED_LLM_CANDIDATE_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed_llm_candidates"
+TEXT_TRIMMED_LLM_DIR = REPO_ROOT / "data" / "extraction_json" / "text_trimmed_llm"
+CASE_SERIES_SPLIT_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_split"
+CASE_SERIES_UNITS_DIR = REPO_ROOT / "data" / "extraction_json" / "text_case_series_units"
 LANGEXTRACT_DIR = REPO_ROOT / "data" / "extraction_json" / "langextract"
 SUMMARY_DIR = REPO_ROOT / "data" / "extraction_json" / "summary"
 QUALITY_RAW_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "raw"
 QUALITY_RECORD_DIR = REPO_ROOT / "data" / "extraction_json" / "quality" / "records"
 COVIENCE_MANIFEST_PATH = REPO_ROOT / "data" / "extraction_json" / "covidence" / "download_manifest.jsonl"
 TEXT_TRIM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_registry.csv"
+TEXT_TRIM_LLM_CANDIDATE_REGISTRY_PATH = (
+    REPO_ROOT / "data" / "references" / "text_trim_llm_candidate_registry.csv"
+)
+TEXT_TRIM_LLM_REGISTRY_PATH = REPO_ROOT / "data" / "references" / "text_trim_llm_registry.csv"
 TEXT_PROCEEDINGS_READY_REGISTRY_PATH = PROCEEDINGS_READY_REGISTRY_PATH
 SOURCE_CATEGORISATION_PATH = REPO_ROOT / "data" / "references" / "source_categorisation_registry.csv"
 SOURCE_CASE_COUNT_PATH = REPO_ROOT / "data" / "references" / "source_sps_case_count_registry.csv"
@@ -154,6 +161,17 @@ def load_json_paths(path: Path) -> dict[str, Path]:
     return {file_path.stem: file_path for file_path in sorted(path.glob("*.json"))}
 
 
+# Convert a repository-relative registry value to a path.
+def path_from_registry_value(value: str) -> Path | None:
+    stripped = value.strip()
+    if not stripped:
+        return None
+    path = Path(stripped.replace("\\", "/"))
+    if path.is_absolute():
+        return path
+    return REPO_ROOT / path
+
+
 # Load JSON record.
 def load_json_record(path: Path | None) -> dict[str, Any]:
     if path is None or not path.exists():
@@ -171,6 +189,8 @@ def artifact_types_present(row: dict[str, str]) -> str:
         "text_preclean": row["text_preclean_json_present"] == "true",
         "text_preclean_stage2": row["text_preclean_stage2_json_present"] == "true",
         "text_trimmed": row["text_trimmed_present"] == "true",
+        "text_trim_llm_candidate": row["text_trim_llm_candidate_present"] == "true",
+        "text_trim_llm": row["text_trim_llm_present"] == "true",
         "text_proceedings_ready": row["text_proceedings_ready_present"] == "true",
         "source_categorisation": row["source_categorisation_present"] == "true",
         "source_sps_case_count": row["source_case_count_present"] == "true",
@@ -208,6 +228,12 @@ def build_row(
     text_trim_record: dict[str, Any],
     text_trim_path: Path | None,
     text_trim_registry_row: dict[str, str],
+    text_trim_llm_candidate_record: dict[str, Any],
+    text_trim_llm_candidate_path: Path | None,
+    text_trim_llm_candidate_registry_row: dict[str, str],
+    text_trim_llm_record: dict[str, Any],
+    text_trim_llm_path: Path | None,
+    text_trim_llm_registry_row: dict[str, str],
     text_proceedings_ready_path: Path | None,
     text_proceedings_ready_row: dict[str, str],
     source_categorisation_row: dict[str, str],
@@ -335,6 +361,75 @@ def build_row(
         "text_trim_source_text_json_path": str(
             text_trim_record.get("source_text_json_path") or text_trim_registry_row.get("source_text_json_path") or ""
         ),
+        "text_trim_llm_candidate_present": bool_text(bool(text_trim_llm_candidate_path)),
+        "text_trim_llm_candidate_path": (
+            relative_to_repo(text_trim_llm_candidate_path) if text_trim_llm_candidate_path else ""
+        ),
+        "text_trim_llm_candidate_status": str(
+            text_trim_llm_candidate_registry_row.get("trim_status")
+            or text_trim_llm_candidate_record.get("trim_status")
+            or ""
+        ),
+        "text_trim_llm_candidate_reason": str(
+            text_trim_llm_candidate_registry_row.get("trim_reason")
+            or text_trim_llm_candidate_record.get("trim_reason")
+            or ""
+        ),
+        "text_trim_llm_candidate_count": str(
+            text_trim_llm_candidate_registry_row.get("candidate_count")
+            or text_trim_llm_candidate_record.get("candidate_count")
+            or ""
+        ),
+        "text_trim_llm_routing_recommended": str(
+            text_trim_llm_candidate_registry_row.get("llm_routing_recommended")
+            or text_trim_llm_candidate_record.get("llm_routing_recommended")
+            or ""
+        ),
+        "text_trim_llm_routing_reason": str(
+            text_trim_llm_candidate_registry_row.get("llm_routing_reason")
+            or text_trim_llm_candidate_record.get("llm_routing_reason")
+            or ""
+        ),
+        "text_trim_llm_present": bool_text(bool(text_trim_llm_path)),
+        "text_trim_llm_path": relative_to_repo(text_trim_llm_path) if text_trim_llm_path else "",
+        "text_trim_llm_status": str(
+            text_trim_llm_registry_row.get("trim_status") or text_trim_llm_record.get("trim_status") or ""
+        ),
+        "text_trim_llm_reason": str(
+            text_trim_llm_registry_row.get("trim_reason") or text_trim_llm_record.get("trim_reason") or ""
+        ),
+        "text_trim_llm_method": str(
+            text_trim_llm_registry_row.get("trim_method") or text_trim_llm_record.get("trim_method") or ""
+        ),
+        "text_trim_llm_used": str(
+            text_trim_llm_registry_row.get("llm_used") or text_trim_llm_record.get("llm_used") or ""
+        ),
+        "text_trim_llm_model": str(
+            text_trim_llm_registry_row.get("llm_model") or text_trim_llm_record.get("llm_model") or ""
+        ),
+        "text_trim_llm_decision_type": str(
+            text_trim_llm_registry_row.get("llm_decision_type")
+            or text_trim_llm_record.get("llm_decision_type")
+            or ""
+        ),
+        "text_trim_llm_validation_passed": str(
+            text_trim_llm_registry_row.get("llm_validation_passed")
+            or text_trim_llm_record.get("llm_validation_passed")
+            or ""
+        ),
+        "text_trim_llm_validation_reason": str(
+            text_trim_llm_registry_row.get("llm_validation_reason")
+            or text_trim_llm_record.get("llm_validation_reason")
+            or ""
+        ),
+        "text_trim_llm_heuristic_fallback_used": str(
+            text_trim_llm_registry_row.get("heuristic_fallback_used")
+            or text_trim_llm_record.get("heuristic_fallback_used")
+            or ""
+        ),
+        "text_trim_llm_trimmed_at_utc": str(
+            text_trim_llm_registry_row.get("trimmed_at_utc") or text_trim_llm_record.get("trimmed_at_utc") or ""
+        ),
         "source_categorisation_present": bool_text(bool(source_categorisation_row)),
         "source_category": str(source_categorisation_row.get("source_category") or ""),
         "source_subtype": str(source_categorisation_row.get("source_subtype") or ""),
@@ -428,9 +523,16 @@ def build_registry_rows() -> list[dict[str, str]]:
     text_preclean_paths = load_json_paths(TEXT_PRECLEAN_DIR)
     text_preclean_stage2_paths = load_json_paths(TEXT_PRECLEAN_STAGE2_DIR)
     text_trimmed_paths = load_json_paths(TEXT_TRIMMED_DIR)
+    text_trimmed_llm_candidate_paths = load_json_paths(TEXT_TRIMMED_LLM_CANDIDATE_DIR)
+    text_trimmed_llm_paths = load_json_paths(TEXT_TRIMMED_LLM_DIR)
     text_proceedings_ready_paths = load_json_paths(TEXT_PROCEEDINGS_READY_DIR)
-    case_series_split_paths = load_json_paths(CASE_SERIES_SPLIT_DIR)
+    case_series_split_paths = {
+        **load_json_paths(CASE_SERIES_SPLIT_DIR),
+        **load_json_paths(CASE_SERIES_UNITS_DIR),
+    }
     text_trim_registry_rows = load_csv_rows_by_id(TEXT_TRIM_REGISTRY_PATH, "paper_id")
+    text_trim_llm_candidate_rows = load_csv_rows_by_id(TEXT_TRIM_LLM_CANDIDATE_REGISTRY_PATH, "paper_id")
+    text_trim_llm_rows = load_csv_rows_by_id(TEXT_TRIM_LLM_REGISTRY_PATH, "paper_id")
     text_proceedings_ready_rows = load_csv_rows_by_id(TEXT_PROCEEDINGS_READY_REGISTRY_PATH, "paper_id")
     source_categorisation_rows = load_csv_rows_by_id(SOURCE_CATEGORISATION_PATH, "paper_id")
     source_case_count_rows = load_csv_rows_by_id(SOURCE_CASE_COUNT_PATH, "paper_id")
@@ -450,9 +552,13 @@ def build_registry_rows() -> list[dict[str, str]]:
         | set(text_preclean_paths)
         | set(text_preclean_stage2_paths)
         | set(text_trimmed_paths)
+        | set(text_trimmed_llm_candidate_paths)
+        | set(text_trimmed_llm_paths)
         | set(text_proceedings_ready_paths)
         | set(case_series_split_paths)
         | set(text_trim_registry_rows)
+        | set(text_trim_llm_candidate_rows)
+        | set(text_trim_llm_rows)
         | set(text_proceedings_ready_rows)
         | set(source_categorisation_rows)
         | set(source_case_count_rows)
@@ -471,7 +577,15 @@ def build_registry_rows() -> list[dict[str, str]]:
         text_preclean_path = text_preclean_paths.get(paper_id)
         text_preclean_stage2_path = text_preclean_stage2_paths.get(paper_id)
         text_trim_path = text_trimmed_paths.get(paper_id)
+        text_trim_llm_candidate_path = text_trimmed_llm_candidate_paths.get(paper_id)
+        text_trim_llm_path = text_trimmed_llm_paths.get(paper_id)
         text_proceedings_ready_path = text_proceedings_ready_paths.get(paper_id)
+        case_series_split_row = case_series_split_rows.get(paper_id, {})
+        case_series_split_path = path_from_registry_value(
+            case_series_split_row.get("split_text_json_path") or ""
+        ) or case_series_split_paths.get(paper_id)
+        if case_series_split_path is not None and not case_series_split_path.exists():
+            case_series_split_path = None
         langextract_path = langextract_paths.get(paper_id)
         summary_path = summary_paths.get(paper_id)
         quality_raw_path = quality_raw_paths.get(paper_id)
@@ -489,14 +603,20 @@ def build_registry_rows() -> list[dict[str, str]]:
                 text_trim_record=load_json_record(text_trim_path),
                 text_trim_path=text_trim_path,
                 text_trim_registry_row=text_trim_registry_rows.get(paper_id, {}),
+                text_trim_llm_candidate_record=load_json_record(text_trim_llm_candidate_path),
+                text_trim_llm_candidate_path=text_trim_llm_candidate_path,
+                text_trim_llm_candidate_registry_row=text_trim_llm_candidate_rows.get(paper_id, {}),
+                text_trim_llm_record=load_json_record(text_trim_llm_path),
+                text_trim_llm_path=text_trim_llm_path,
+                text_trim_llm_registry_row=text_trim_llm_rows.get(paper_id, {}),
                 text_proceedings_ready_path=text_proceedings_ready_path,
                 text_proceedings_ready_row=text_proceedings_ready_rows.get(paper_id, {}),
                 source_categorisation_row=source_categorisation_rows.get(paper_id, {}),
                 source_case_count_row=source_case_count_rows.get(paper_id, {}),
                 source_manual_review_row=source_manual_review_rows.get(paper_id, {}),
                 proceedings_qc_row=proceedings_qc_rows.get(paper_id, {}),
-                case_series_split_row=case_series_split_rows.get(paper_id, {}),
-                case_series_split_path=case_series_split_paths.get(paper_id),
+                case_series_split_row=case_series_split_row,
+                case_series_split_path=case_series_split_path,
                 langextract_record=load_json_record(langextract_path),
                 langextract_path=langextract_path,
                 summary_record=load_json_record(summary_path),
@@ -599,6 +719,25 @@ def write_registry(rows: list[dict[str, str]], output_path: Path) -> None:
         "text_trim_start_page",
         "text_trim_end_page",
         "text_trim_source_text_json_path",
+        "text_trim_llm_candidate_present",
+        "text_trim_llm_candidate_path",
+        "text_trim_llm_candidate_status",
+        "text_trim_llm_candidate_reason",
+        "text_trim_llm_candidate_count",
+        "text_trim_llm_routing_recommended",
+        "text_trim_llm_routing_reason",
+        "text_trim_llm_present",
+        "text_trim_llm_path",
+        "text_trim_llm_status",
+        "text_trim_llm_reason",
+        "text_trim_llm_method",
+        "text_trim_llm_used",
+        "text_trim_llm_model",
+        "text_trim_llm_decision_type",
+        "text_trim_llm_validation_passed",
+        "text_trim_llm_validation_reason",
+        "text_trim_llm_heuristic_fallback_used",
+        "text_trim_llm_trimmed_at_utc",
         "source_categorisation_present",
         "source_category",
         "source_subtype",

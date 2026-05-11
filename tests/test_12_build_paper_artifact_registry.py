@@ -41,12 +41,18 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         text_path = self.tmp_path / "text" / "114.json"
         preclean_path = self.tmp_path / "text_preclean" / "114.json"
         preclean_stage2_path = self.tmp_path / "text_preclean_stage2" / "114.json"
+        llm_candidate_path = self.tmp_path / "text_trimmed_llm_candidates" / "114.json"
+        llm_trim_path = self.tmp_path / "text_trimmed_llm" / "114.json"
         text_path.parent.mkdir()
         preclean_path.parent.mkdir()
         preclean_stage2_path.parent.mkdir()
+        llm_candidate_path.parent.mkdir()
+        llm_trim_path.parent.mkdir()
         text_path.write_text("{}", encoding="utf-8")
         preclean_path.write_text("{}", encoding="utf-8")
         preclean_stage2_path.write_text("{}", encoding="utf-8")
+        llm_candidate_path.write_text("{}", encoding="utf-8")
+        llm_trim_path.write_text("{}", encoding="utf-8")
 
         row = module.build_row(
             paper_id="114",
@@ -98,6 +104,29 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
             text_trim_record={},
             text_trim_path=None,
             text_trim_registry_row={},
+            text_trim_llm_candidate_record={},
+            text_trim_llm_candidate_path=llm_candidate_path,
+            text_trim_llm_candidate_registry_row={
+                "trim_status": "candidate_package_created",
+                "trim_reason": "candidate pack created",
+                "candidate_count": "2",
+                "llm_routing_recommended": "true",
+                "llm_routing_reason": "route_all_to_llm_v1",
+            },
+            text_trim_llm_record={},
+            text_trim_llm_path=llm_trim_path,
+            text_trim_llm_registry_row={
+                "trim_status": "trimmed_auto_llm_candidate_exact",
+                "trim_reason": "LLM selected an existing boundary candidate.",
+                "trim_method": "fuzzy_title_author_block_match",
+                "llm_used": "true",
+                "llm_model": "gpt-5-mini",
+                "llm_decision_type": "candidate_exact",
+                "llm_validation_passed": "true",
+                "llm_validation_reason": "ok",
+                "heuristic_fallback_used": "false",
+                "trimmed_at_utc": "2026-04-12T09:15:12.972545+00:00",
+            },
             source_categorisation_row={},
             source_case_count_row={
                 "count_eligible": "true",
@@ -145,7 +174,14 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertEqual(row["source_count_confidence"], "medium")
         self.assertIn("text_preclean", row["artifact_types_present"])
         self.assertIn("text_preclean_stage2", row["artifact_types_present"])
+        self.assertIn("text_trim_llm_candidate", row["artifact_types_present"])
+        self.assertIn("text_trim_llm", row["artifact_types_present"])
         self.assertIn("source_sps_case_count", row["artifact_types_present"])
+        self.assertEqual(row["text_trim_llm_candidate_status"], "candidate_package_created")
+        self.assertEqual(row["text_trim_llm_candidate_count"], "2")
+        self.assertEqual(row["text_trim_llm_status"], "trimmed_auto_llm_candidate_exact")
+        self.assertEqual(row["text_trim_llm_model"], "gpt-5-mini")
+        self.assertEqual(row["text_trim_llm_validation_passed"], "true")
 
         module.write_registry([row], self.output_path)
 
@@ -160,10 +196,16 @@ class TestBuildPaperArtifactRegistry(unittest.TestCase):
         self.assertIn("text_cleanup_applied", reader.fieldnames or [])
         self.assertIn("text_cleanup_stage2_applied", reader.fieldnames or [])
         self.assertIn("text_cleanup_source_strategy", reader.fieldnames or [])
+        self.assertIn("text_trim_llm_candidate_present", reader.fieldnames or [])
+        self.assertIn("text_trim_llm_candidate_status", reader.fieldnames or [])
+        self.assertIn("text_trim_llm_present", reader.fieldnames or [])
+        self.assertIn("text_trim_llm_validation_passed", reader.fieldnames or [])
         self.assertIn("source_case_count_present", reader.fieldnames or [])
         self.assertIn("source_likely_sps_case_count", reader.fieldnames or [])
         self.assertEqual(written_row["text_cleanup_profile"], "basic_spacing")
         self.assertEqual(written_row["text_cleanup_stage2_profile"], "combined_basic")
+        self.assertEqual(written_row["text_trim_llm_candidate_status"], "candidate_package_created")
+        self.assertEqual(written_row["text_trim_llm_status"], "trimmed_auto_llm_candidate_exact")
         self.assertEqual(written_row["source_count_basis"], "abstract_count_signal")
 
 
