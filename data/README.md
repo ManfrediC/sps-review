@@ -1,32 +1,43 @@
 # data
 
-## Purpose
-Canonical research artifacts and generated data products used by the pipeline.
+Canonical research artefacts and generated data products used by the pipeline.
 
-## Key canonical outputs
+Bulk source files and generated JSONs are intentionally ignored by git by
+default, while selected registries under `data/references/` are tracked.
 
-- `extraction_json/text/`
-  Full extracted and reviewed source text JSONs.
-- `extraction_json/text_trimmed/`
-  Legacy deterministic proceedings trims retained for provenance and fallback use. They are no longer the canonical downstream stage-05 source.
-- `extraction_json/text_trimmed_llm_candidates/`
-  Stage-05 LLM candidate packages for proceedings end-boundary review.
-- `extraction_json/text_trimmed_llm/`
-  Final LLM-reviewed proceedings trims.
-- `extraction_json/text_proceedings_ready/`
-  Canonical proceedings-ready text JSONs used by downstream stages. This is the tidy stage-05 publication layer, combining audited manual gold outputs, validated or rebuilt LLM trims, and safe passthrough abstracts.
-- `references/text_trim_llm_candidate_registry.csv`
-  Registry for the LLM candidate-generation pass.
-- `references/text_trim_llm_registry.csv`
-  Registry for the final LLM validation pass.
-- `references/text_proceedings_ready_registry.csv`
-  Registry for the canonical proceedings-ready publication layer and the source kind used for each published proceedings-ready JSON.
-- `references/paper_artifact_registry.csv`
-  Cross-pipeline provenance table linking the reference, source text, proceedings artefacts, and downstream outputs.
+## Main Subdirectories
 
-The older deterministic stage-05 outputs in `extraction_json/text_trimmed/` are retained only as archived provenance. The live downstream contract is now `extraction_json/text_proceedings_ready/` plus `references/text_proceedings_ready_registry.csv`.
+- `pdf_original/`: original local PDFs, named with the Covidence `paper_id`
+  prefix where available.
+- `pdf_annotated/`: future reviewer-facing annotated PDFs with evidence
+  highlights.
+- `excel/`: reviewer workbooks and tabular extraction outputs.
+- `extraction_json/`: machine-readable JSON artefacts from extraction,
+  proceedings preparation, case-series splitting, and preliminary downstream
+  extraction stages.
+- `references/`: canonical CSV/JSON registries and reviewed manual ledgers.
 
-## Directory Contents Snapshot
-- Last updated: `2026-04-13`
-- Immediate subdirectories (5): `excel`, `extraction_json`, `pdf_annotated`, `pdf_original`, `references`
-- Immediate files (0, excluding `README.md`): _None_
+## Key Canonical Artefacts
+
+- `extraction_json/text/{paper_id}.json`: full extracted and cleaned source
+  text.
+- `extraction_json/text_preclean/`: preserved backups before reviewed cleanup.
+- `extraction_json/text_preclean_stage2/`: preserved backups before residual
+  stage-2 cleanup.
+- `extraction_json/text_trimmed_llm_candidates/`: stage-05 proceedings
+  candidate packages.
+- `extraction_json/text_trimmed_llm/`: validated stage-05 LLM trim outputs.
+- `extraction_json/text_proceedings_ready/`: canonical stage-05 downstream text
+  layer for proceedings and safe passthrough abstracts.
+- `extraction_json/text_case_series_units/`: current stage-07 per-paper unit
+  packages for selected multi-case sources.
+- `references/paper_artifact_registry.csv`: cross-stage index of reference,
+  PDF, text, proceedings, routing, count, split, and preliminary downstream
+  artefacts.
+- `references/paper_revisit_registry.csv`: cross-stage list of unresolved
+  paper/stage issues.
+
+The older deterministic `extraction_json/text_trimmed/` and historical
+`text_case_series_split/` paths may still exist for provenance or fallback
+compatibility. The live stage-05 and stage-07 contracts are
+`text_proceedings_ready/` and `text_case_series_units/`.

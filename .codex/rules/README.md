@@ -1,9 +1,7 @@
 # .codex / rules
 
-## Purpose
-Rule files that define Codex guardrails and repository-specific automation behavior.
+Codex rule files that support repository-specific automation behaviour.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (1, excluding `README.md`): `sps_overnight.rules`
+These files are not pipeline inputs or generated research artefacts. Keep
+project workflow rules in `doc/repo_rules.md` when they should be visible to all
+collaborators.

@@ -1,9 +1,7 @@
 # .github
 
-## Purpose
 GitHub repository metadata and automation entry points.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (1): `workflows`
-- Immediate files (0, excluding `README.md`): _None_
+Use this folder for repository-hosting configuration only. Pipeline logic lives
+under `src/`, data and registries under `data/`, and validation material under
+`qa/validation/`.

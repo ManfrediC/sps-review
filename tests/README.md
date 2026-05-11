@@ -1,30 +1,47 @@
 # tests
 
-## Purpose
-Automated tests and test fixtures for pipeline and utility validation.
+Automated tests and small fixtures for pipeline and validation behaviour.
 
-## Running tests
-Use `pytest` from the project virtual environment.
-
-Example:
+Run tests from the repository root with the project virtual environment:
 
 ```bash
 .\.venv\Scripts\python.exe -m pytest tests -q
 ```
 
-Focused cleanup-stage suite:
+## Focused Suites
+
+Registry maintenance:
 
 ```bash
-.\.venv\Scripts\python.exe -m pytest tests/test_text_cleanup.py tests/test_03b_clean_text.py tests/test_12_build_paper_artifact_registry.py -q
+.\.venv\Scripts\python.exe -m pytest tests/test_12_build_paper_artifact_registry.py tests/test_13_build_paper_revisit_registry.py -q
 ```
 
-Routing and downstream exclusion checks:
+Text extraction and cleanup:
 
 ```bash
-.\.venv\Scripts\python.exe -m pytest tests/test_source_routing.py tests/test_10_langextract.py tests/test_11_quality_assessment.py -q
+.\.venv\Scripts\python.exe -m pytest tests/test_02_build_pdf_source_registry.py tests/test_03_extract_text.py tests/test_03b_clean_text.py tests/test_text_cleanup.py -q
 ```
 
-## Directory Contents Snapshot
-- Last updated: `2026-04-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (13, excluding `README.md`): `covidence_example_html.txt`, `test_02_build_pdf_source_registry.py`, `test_03_extract_text.py`, `test_03b_clean_text.py`, `test_05_proceedings_text_llm.py`, `test_10_langextract.py`, `test_11_quality_assessment.py`, `test_12_build_paper_artifact_registry.py`, `test_apply_trimming_manual_overrides.py`, `test_export_text_json_to_txt.py`, `test_manage_trimming_batches.py`, `test_source_routing.py`, ... (+1 more)
+Stage 04 and stage 05:
+
+```bash
+.\.venv\Scripts\python.exe -m pytest tests/test_04_source_categorisation_LLM.py tests/test_05_proceedings_text_llm.py tests/test_05c_publish_proceedings_ready.py -q
+```
+
+Stage 06:
+
+```bash
+.\.venv\Scripts\python.exe -m pytest tests/test_06_extract_sps_case_counts_hybrid.py tests/test_06c_publish_sps_case_count_registry.py tests/test_stage06_review_workflow.py -q
+```
+
+Stage 07:
+
+```bash
+.\.venv\Scripts\python.exe -m pytest tests/test_07_split_case_series.py tests/test_run_stage07_smoke.py tests/test_stage07_review_workflow.py -q
+```
+
+Downstream preliminary stages:
+
+```bash
+.\.venv\Scripts\python.exe -m pytest tests/test_10_langextract.py tests/test_11_quality_assessment.py -q
+```

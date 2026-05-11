@@ -1,9 +1,8 @@
 # doc / methods
 
-## Purpose
-Methodology documentation supporting extraction and validation decisions.
+Methodology documentation supporting extraction, validation, and review
+decisions.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (0, excluding `README.md`): _None_
+Keep method notes here when they explain the review workflow or analytical
+rationale. Generated registries and QA packs belong under `data/`,
+`qa/validation/`, or `results/` instead.

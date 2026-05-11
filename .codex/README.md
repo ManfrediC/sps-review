@@ -1,9 +1,7 @@
 # .codex
 
-## Purpose
-Local Codex workspace metadata used to guide automated coding and review behavior in this repository.
+Local Codex workspace metadata and repo-specific automation support.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (1): `rules`
-- Immediate files (1, excluding `README.md`): `config.toml`
+The durable project rules for all agents live in `AGENTS.md` and
+`doc/repo_rules.md`. Treat this folder as Codex-specific support material rather
+than pipeline state.

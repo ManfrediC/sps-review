@@ -1,9 +1,17 @@
 # examples
 
-## Purpose
-Curated examples used to build few-shot prompt assets and validate extraction behavior.
+Curated example rows used to build few-shot prompt assets and validate
+extraction behaviour.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (5, excluding `README.md`): `datasheet_examples_MC.xlsx`, `datasheet_examples_MC_Case_Report_Form.csv`, `datasheet_examples_MC_Case_Series_Reports.csv`, `datasheet_examples_MC_Cohorts.csv`, `datasheet_examples_MC_Observ_Cohort_Cross_sect.csv`
+Current use:
+
+- stage-09 example generation reads these files to rebuild
+  `config/prompts/examples/*.json`.
+- stage-04 and stage-06 validation workflows may exclude or compare against
+  curated example papers.
+
+Regenerate prompt examples with:
+
+```bash
+python src/pipelines/09_build_langextract_examples.py
+```

@@ -1,9 +1,8 @@
 # qa / validation / spotchecks
 
-## Purpose
-Manual spot-check artifacts used to audit intermediate pipeline outputs.
+Manual spot-check artefacts used to audit intermediate pipeline outputs.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (1): `proceedings`
-- Immediate files (0, excluding `README.md`): _None_
+These packs are non-canonical provenance. Current live follow-up should be
+tracked through `data/references/paper_revisit_registry.csv` and current QA
+workspaces such as `qa/trimming/`, `qa/validation/stage06_llm/`, and
+`qa/validation/stage07_smoke/`.

@@ -1,9 +1,6 @@
 # .github / workflows
 
-## Purpose
-GitHub Actions workflow definitions for CI/CD and repository checks.
+GitHub Actions workflow definitions for repository checks.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (0, excluding `README.md`): _None_
+Keep workflow files focused on CI and repository automation. They should not
+store secrets, generated research data, or local run artefacts.

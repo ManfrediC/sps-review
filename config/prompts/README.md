@@ -1,13 +1,14 @@
-# Prompt Files
+# config / prompts
 
-This directory stores editable prompts and few-shot examples for LangExtract pipelines.
+Prompt templates and few-shot examples for preliminary downstream extraction
+and quality-assessment stages.
 
-## Files
+## Templates
 
-- `02_individual_prompt.md`: prompt for individual-level extraction in `src/pipelines/10_langextract.py`
-- `02_group_prompt.md`: prompt for group-level extraction in `src/pipelines/10_langextract.py`
-- `03_publication_type_prompt.md`: publication-type prompt template for `src/pipelines/11_quality_assessment.py`
-- `03_quality_prompt.md`: quality-extraction prompt template for `src/pipelines/11_quality_assessment.py`
+- `02_individual_prompt.md`: individual-level LangExtract prompt.
+- `02_group_prompt.md`: group-level LangExtract prompt.
+- `03_publication_type_prompt.md`: publication-type prompt template.
+- `03_quality_prompt.md`: quality-extraction prompt template.
 
 ## Examples
 
@@ -15,12 +16,11 @@ This directory stores editable prompts and few-shot examples for LangExtract pip
 - `examples/02_group_examples.json`
 - `examples/03_publication_type_examples.json`
 
-## Template Placeholders
+Rebuild example JSONs from curated rows with:
 
-- `03_publication_type_prompt.md` uses `{options}`.
-- `03_quality_prompt.md` uses `{publication_type}` and `{field_block}`.
+```bash
+python src/pipelines/09_build_langextract_examples.py
+```
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (1): `examples`
-- Immediate files (4, excluding `README.md`): `02_group_prompt.md`, `02_individual_prompt.md`, `03_publication_type_prompt.md`, `03_quality_prompt.md`
+Stages 10 and 11 are preliminary, so prompt changes should be paired with
+focused tests and review before relying on the outputs.

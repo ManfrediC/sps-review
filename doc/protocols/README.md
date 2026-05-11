@@ -1,9 +1,7 @@
 # doc / protocols
 
-## Purpose
 Protocol documents defining workflow, governance, and process expectations.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (0, excluding `README.md`): _None_
+Use this folder for durable protocol-level notes. Day-to-day pipeline state is
+tracked in registries under `data/references/` and in the collaborator overview
+at `doc/notes/repo_overview_to_stage07.md`.

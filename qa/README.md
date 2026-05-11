@@ -1,22 +1,29 @@
 # qa
 
-## Purpose
 Non-canonical quality-assurance and review material.
 
-This folder is for validation packs, spot checks, manual review sheets, and other audit outputs that help assess pipeline artefacts but are not themselves canonical research outputs.
+This folder is for validation packs, spot checks, manual review sheets, smoke
+runs, and audit outputs that help assess pipeline artefacts. It is not the home
+for canonical research outputs.
 
-## Structure
-- `validation/`
-  - machine-readable validation reports
-  - CSV review sheets
-  - spot-check folders, text-cleanup audits, and ad hoc audit summaries
-- `trimming/`
-  - structured proceedings-trimming QA batches
-  - stored human feedback, frozen regression fixtures, and per-batch reports
+## Main Areas
 
-Human-readable `.txt` exports under `qa/validation/text_exports/` are generated from canonical JSONs for review convenience and are ignored in git.
+- `validation/`: validation reports, review CSVs, smoke runs, text exports, and
+  focused audit packs.
+- `trimming/`: live stage-05 proceedings-trimming review batches, feedback,
+  regression packs, and reports.
+
+## Current Conventions
+
+- Human-readable TXT exports under `qa/validation/text_exports/` are generated
+  from canonical JSONs for review convenience and are ignored in git.
+- Stage-07 smoke runs live under `qa/validation/stage07_smoke/{run_id}/` and
+  are ignored by default unless a curated pack is explicitly force-added.
+- Stage-06 calibration and backfill QA material lives under
+  `qa/validation/stage06_llm/`.
 
 ## Policy
-- Do not store canonical pipeline artefacts here.
-- Canonical intermediate and final artefacts belong under `data/`.
-- Canonical pipeline-produced exports and runtime logs belong under `results/`.
+
+- Canonical data and registries belong under `data/`.
+- Pipeline-produced run traces and manifests belong under `results/`.
+- Ad hoc validation, review, smoke, and audit material belongs here.

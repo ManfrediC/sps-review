@@ -1,9 +1,7 @@
 # resources
 
-## Purpose
 Static reference resources and auxiliary project materials.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (0): _None_
-- Immediate files (0, excluding `README.md`): _None_
+This folder is reserved for small, reusable source materials that are not
+pipeline outputs. Generated data belongs under `data/`, run traces under
+`results/`, and validation material under `qa/validation/`.

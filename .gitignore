@@ -35,6 +35,7 @@ runs/
 data/pdf_original/*
 data/pdf_annotated/*
 data/extraction_json/*
+data/extraction_json.zip
 data/excel/*
 results/*
 
@@ -46,13 +47,22 @@ env/covidence*.env
 # Non-canonical QA text exports and spot-check notes
 qa/**/*.txt
 
+# Local Stage 07 smoke-run scratch outputs; force-add curated packs when needed.
+qa/validation/stage07_smoke/*_stage07_smoke/
+
 # Allow placeholder files so folders exist in git
 !data/pdf_original/.gitkeep
+!data/pdf_original/README.md
 !data/pdf_annotated/.gitkeep
+!data/pdf_annotated/README.md
 !data/extraction_json/.gitkeep
+!data/extraction_json/README.md
 !data/extraction_json/covidence/.gitkeep
 !data/excel/.gitkeep
+!data/excel/README.md
 !results/.gitkeep
+!results/README.md
 
 # Local scratch plans and manuscript drafts
 /plans/
+/doc/notes/

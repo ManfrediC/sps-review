@@ -1,40 +1,28 @@
-# config/
+# config
 
-This directory contains **version-controlled configuration files** used across the SPS extraction and QC pipeline.  
-Everything here is treated as *pipeline definition* (inputs to code), not run output.
+Version-controlled configuration files used across the SPSD extraction and QA
+pipeline. Files here are pipeline definitions, not generated run outputs.
 
-## Structure
+## Subdirectories
 
-- `extraction/`
-  - Small, explicit pipeline override tables for known corpus-specific extraction edge cases.
-  - Current file:
-    - `text_extraction_overrides.csv`
-    - `text_cleanup_overrides.csv`
-    - `text_cleanup_stage2_overrides.csv`
-    - `text_cleanup_stage2_substitutions.csv`
-  - `text_cleanup_overrides.csv` is the reviewed target list for `src/pipelines/03b_clean_text.py` and records the paper ID, whether cleanup is enabled, the reviewed `source_strategy`, the cleanup profile, and short provenance notes.
-  - `text_cleanup_stage2_overrides.csv` and `text_cleanup_stage2_substitutions.csv` are the reviewed control tables for the `--stage2` residual-cleanup path in `src/pipelines/03b_clean_text.py`.
-  - Stage-2 overrides can also nominate an alternate in-repo PDF filename when the attached PDF for one Covidence ID is wrong but the correct duplicate source already exists elsewhere in `data/pdf_original/`.
-
-- `schema/`
-  - JSON Schemas used to **constrain LLM outputs** (where supported) and to **validate extracted records** during automated QC.
-  - Files:
-    - `sps_case_extraction.schema.json`
-    - `sps_quality_assessment.schema.json`
-
-- `dictionaries/`
-  - Human-readable “source of truth” dictionaries (CSV) describing each column (meaning, accepted values, data type).
-  - These dictionaries are used to generate/update the JSON Schemas and to keep extraction guidance consistent.
-  - Typical files:
-    - `SPS_column_dictionary.csv`
-    - `SPS_quality_dictionary.csv`
+- `extraction/`: reviewed per-paper controls for text extraction and cleanup.
+  Important files include:
+  - `text_extraction_overrides.csv`
+  - `text_cleanup_overrides.csv`
+  - `text_cleanup_stage2_overrides.csv`
+  - `text_cleanup_stage2_substitutions.csv`
+- `schema/`: JSON Schemas used to constrain and validate structured extraction
+  and quality-assessment outputs.
+- `dictionaries/`: CSV data dictionaries that define extraction fields, coding
+  rules, and accepted value semantics.
+- `prompts/`: prompt templates and generated few-shot example JSONs for
+  preliminary LangExtract and quality-assessment stages.
 
 ## Conventions
 
-- Schemas use `additionalProperties: false` to catch unexpected fields early.
-- Missingness codes are standardised where possible (commonly `NR`, `NA`, `CD`) to keep downstream analysis consistent.
-
-## Directory Contents Snapshot
-- Last updated: `2026-04-05`
-- Immediate subdirectories (4): `dictionaries`, `extraction`, `prompts`, `schema`
-- Immediate files (0, excluding `README.md`): _None_
+- Schemas use `additionalProperties: false` where practical to catch unexpected
+  fields early.
+- Missingness codes are standardised where possible, commonly `NR`, `NA`, and
+  `CD`.
+- Do not store secrets here. Runtime credentials belong in environment variables
+  or ignored local `env/*.env` files.

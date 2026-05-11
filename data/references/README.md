@@ -1,40 +1,65 @@
 # data / references
 
-## Purpose
-Source metadata exports and generated canonical cross-stage registries keyed by reference or paper ID.
+Live reference metadata, canonical cross-stage registries, and reviewed
+manual-review ledgers keyed by `paper_id`.
 
-This directory should contain live reference exports, live registries, and current manual-review ledgers only.
+Historical trial runs, spot checks, and ad hoc QA snapshots belong under
+`qa/validation/`, not here.
 
-Historical trial runs, spot checks, and ad hoc QA snapshots belong under `qa/validation/`, not here.
+## Core Metadata
 
-## Directory Contents Snapshot
-- Last updated: `2026-04-27`
-- Immediate subdirectories (0): _None_
-- Immediate files include canonical pipeline registries and ledgers such as `source_categorisation_registry.csv`, `source_categorisation_manual_review.csv`, `source_sps_case_count_registry.csv`, `source_sps_case_count_manual_review.csv`, `paper_artifact_registry.csv`, `pdf_source_registry.csv`, and proceedings/text-trim registries.
+- `sps_references_export.csv`: upstream Covidence reference export.
+- `sps_references_export.ris`: upstream RIS export when present.
+- `pdf_source_registry.csv`: reference-to-PDF linkage built by stage 02.
+- `pdf_acquisition_queue.csv`: unresolved local PDF acquisition backlog.
 
-## Stage-06 count registries
+## Source Text And Proceedings
 
-- `source_sps_case_count_registry.csv`
-  - Canonical stage-`06` SPS-spectrum case-count registry.
-  - Current publication is produced by `src/pipelines/06c_publish_sps_case_count_registry.py` from reviewed gold, tracked manual count overrides, hybrid backfill QA rows, and flagged reference-only fallbacks where no run artefact is available.
-  - Rows with unresolved provenance or reference-only fallback evidence remain marked with `count_manual_review_required=true`.
-- `source_sps_case_count_manual_review.csv`
-  - Reviewed count override ledger used by stage `06b` and the stage `06c` publish step.
+- `text_screening_registry.csv`: optional stage-90 text-quality screening
+  output.
+- `text_trim_llm_candidate_registry.csv`: stage-05 candidate-generation
+  registry for proceedings end-boundary options.
+- `text_trim_llm_registry.csv`: stage-05b validated LLM trim registry.
+- `text_proceedings_ready_registry.csv`: stage-05c publication registry for the
+  canonical proceedings-ready text layer.
+- `text_trim_registry.csv` and `proceedings_text_qc_registry.csv`: legacy
+  deterministic proceedings-trim/QC registries retained for provenance and
+  compatibility.
 
-## Cross-stage revisit registry
+## Routing And Counts
 
-- `paper_revisit_registry.csv`
-  - Canonical cross-stage list of paper/stage issues that need source, QC, or processing follow-up.
-  - Built by `src/pipelines/13_build_paper_revisit_registry.py` from acquisition queues, proceedings trim/QC ledgers, source-categorisation review state, stage-06 count review state, and case-series split status.
-  - Contains one row per paper/stage issue, so a paper may appear more than once when multiple stages need attention.
-- `paper_revisit_registry.summary.json`
-  - Machine-readable count summary by stage and severity for the current revisit registry.
+- `source_categorisation_registry.csv`: canonical stage-04 routing registry.
+- `source_categorisation_manual_review.csv`: reviewed routing overrides and
+  source-linkage flags such as `incorrect_reference`.
+- `source_sps_case_count_registry.csv`: canonical stage-06 SPSD case-count
+  registry.
+- `source_sps_case_count_manual_review.csv`: reviewed stage-06 count override
+  ledger used by stage 06b/06c.
 
-## Proceedings registries
+## Stage 07
 
-- `text_trim_registry.csv`
-  - Canonical stage-`05` proceedings trimming ledger.
-  - Records proceedings detection, chosen trim mode, matched title/code, and start/end page and line anchors for the selected span.
-- `proceedings_text_qc_registry.csv`
-  - Canonical stage-`05b` proceedings QC ledger.
-  - Records whether the preferred proceedings text is safe to use downstream, including boundary-aware statuses such as `confirmed_full`, `partial_truncated`, `header_only_source`, `spillover_detected`, `mismatch`, and `untrimmed_localised`.
+- `case_series_split_registry.csv`: stage-07 split status, publication decision,
+  and output pointers for reviewed multi-case papers.
+
+## Cross-Stage Indexes
+
+- `paper_artifact_registry.csv`: one row per paper, with paths and status fields
+  for reference metadata, PDF, extracted text, proceedings-ready text, stage-04
+  routing, stage-06 count, stage-07 split, and preliminary downstream outputs.
+  Rebuild with:
+
+```bash
+python src/pipelines/12_build_paper_artifact_registry.py
+```
+
+- `paper_revisit_registry.csv`: one row per unresolved paper/stage issue, built
+  from acquisition queues, proceedings review state, source-linkage problems,
+  count review state, and stage-07 split status.
+- `paper_revisit_registry.summary.json`: machine-readable summary of the revisit
+  queue.
+
+Refresh after registry, QC, or manual-ledger changes:
+
+```bash
+python src/pipelines/13_build_paper_revisit_registry.py
+```

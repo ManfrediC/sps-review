@@ -1,9 +1,18 @@
 # doc
 
-## Purpose
-Project documentation, operating notes, and methodological references.
+Project documentation, operating notes, plans, and methodology material.
 
-## Directory Contents Snapshot
-- Last updated: `2026-03-05`
-- Immediate subdirectories (3): `codex_plans`, `methods`, `protocols`
-- Immediate files (8, excluding `README.md`): `COVIDENCE_DOWNLOAD_AGENT.md`, `HIGH_YIELD_COVIDENCE_REFERENCES.csv`, `HIGH_YIELD_COVIDENCE_REFERENCES.md`, `HIGH_YIELD_COVIDENCE_REFERENCES.ris`, `HIGH_YIELD_COVIDENCE_REFERENCES_RIS_MATCHES.csv`, `HIGH_YIELD_COVIDENCE_REFERENCES_RIS_MATCHES.md`, `JOURNAL.md`, `LANGEXTRACT_EXAMPLE_PLAN.md`
+## Key Files
+
+- `repo_rules.md`: repo-specific workflow rules, canonical output locations,
+  pipeline order, and stopping conditions.
+- `notes/repo_overview_to_stage07.md`: concise collaborator overview of the
+  pipeline through stage 07, including input and output paths.
+- `codex_plans/`: planning artefacts and execution notes from Codex-assisted
+  work.
+- `methods/`: method notes that support extraction and validation decisions.
+- `protocols/`: protocol and governance documents.
+
+Do not use this folder for generated registries, validation packs, or pipeline
+outputs. Those belong under `data/`, `qa/validation/`, or `results/` according
+to `repo_rules.md`.
