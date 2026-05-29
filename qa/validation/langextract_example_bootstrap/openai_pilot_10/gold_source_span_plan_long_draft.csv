@@ -1,0 +1,698 @@
+paper_id,case_id,field_name,spreadsheet_value,span_index,span_role,char_start,char_end,span_text,span_text_display,selection_source,match_mode,coverage_quality,langextract_recommendation,target_view_json_path
+524,,age_description,67,1,model_candidate,37,53,67-year-old male,67-year-old male,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sex,M,1,model_candidate,37,53,67-year-old male,67-year-old male,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,age_onset,67,1,model_candidate,16,139,"A previously healthy 67-year-old male presented with rapidly
+evolving and painful ﬂexor cramps of the toes on his left foot",A previously healthy 67-year-old male presented with rapidly evolving and painful ﬂexor cramps of the toes on his left foot,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,age_onset,67,2,model_candidate,3414,3467,He died from pneumonia 18 months after symptom onset.,He died from pneumonia 18 months after symptom onset.,model_supporting_snippet_2,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,FU_duration,18,1,model_candidate,3414,3467,He died from pneumonia 18 months after symptom onset.,He died from pneumonia 18 months after symptom onset.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,first_manifestation,multiple,1,model_candidate,54,204,"presented with rapidly
+evolving and painful ﬂexor cramps of the toes on his left foot, fol-
+lowed by fasciculations and muscle atrophy in the left leg","presented with rapidly evolving and painful ﬂexor cramps of the toes on his left foot, fol- lowed by fasciculations and muscle atrophy in the left leg",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,first_manifestation,multiple,2,model_candidate,206,301,"The
+condition progressed rapidly with marked muscular rigidity and
+painful superimposed spasms.",The condition progressed rapidly with marked muscular rigidity and painful superimposed spasms.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,first_manifestation_multiple,cramps;fasciculation;atrophy;stiffness;spasms,1,model_candidate,54,204,"presented with rapidly
+evolving and painful ﬂexor cramps of the toes on his left foot, fol-
+lowed by fasciculations and muscle atrophy in the left leg","presented with rapidly evolving and painful ﬂexor cramps of the toes on his left foot, fol- lowed by fasciculations and muscle atrophy in the left leg",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,first_manifestation_multiple,cramps;fasciculation;atrophy;stiffness;spasms,2,model_candidate,206,301,"The
+condition progressed rapidly with marked muscular rigidity and
+painful superimposed spasms.",The condition progressed rapidly with marked muscular rigidity and painful superimposed spasms.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,included_diagnosis,SPS with lower motor neuron disease,1,model_candidate,682,784,"corresponding to a stiffness score of ﬁve out of six possible points at
+the SPS stiffness extent scale",corresponding to a stiffness score of ﬁve out of six possible points at the SPS stiffness extent scale,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,included_diagnosis,SPS with lower motor neuron disease,2,model_candidate,1193,1355,"Electromyography of the left leg 10, 13, 14 and 16 months after
+symptom onset showed continuous motor activity and signs of
+denervation with positive sharp waves.","Electromyography of the left leg 10, 13, 14 and 16 months after symptom onset showed continuous motor activity and signs of denervation with positive sharp waves.",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,early_symptoms,stiffness;spasms,1,model_candidate,244,300,"marked muscular rigidity and
+painful superimposed spasms",marked muscular rigidity and painful superimposed spasms,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,stiffness_distribution_onset,multiple,1,model_candidate,244,400,"marked muscular rigidity and
+painful superimposed spasms. This was most prominent in the left
+leg, but subsequently also involved the right limb and truncus","marked muscular rigidity and painful superimposed spasms. This was most prominent in the left leg, but subsequently also involved the right limb and truncus",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,1,model_candidate,302,400,"This was most prominent in the left
+leg, but subsequently also involved the right limb and truncus","This was most prominent in the left leg, but subsequently also involved the right limb and truncus",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,2,model_candidate,582,680,"Muscle stiffness was promi-
+nent in the left leg but was also found in the right leg and the trunk",Muscle stiffness was promi- nent in the left leg but was also found in the right leg and the trunk,model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,other_symptoms_onset,fasciculation;muscle_atrophy,1,model_candidate,141,204,"fol-
+lowed by fasciculations and muscle atrophy in the left leg",fol- lowed by fasciculations and muscle atrophy in the left leg,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,timecourse_subsequent,monophasic,1,model_candidate,206,238,"The
+condition progressed rapidly",The condition progressed rapidly,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,timecourse_subsequent,monophasic,2,model_candidate,2627,2680,"The
+patient deteriorated rapidly and became bedridden",The patient deteriorated rapidly and became bedridden,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,timecourse_subsequent,monophasic,3,model_candidate,3414,3467,He died from pneumonia 18 months after symptom onset.,He died from pneumonia 18 months after symptom onset.,model_supporting_snippet_3,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,onset_to_established,7,1,model_candidate,449,502,"Neurological examination
+7 months after symptom debut",Neurological examination 7 months after symptom debut,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,overview_established,stiffness;spasms,1,model_candidate,582,680,"Muscle stiffness was promi-
+nent in the left leg but was also found in the right leg and the trunk",Muscle stiffness was promi- nent in the left leg but was also found in the right leg and the trunk,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,overview_established,stiffness;spasms,2,model_candidate,891,922,triggered painful muscle cramps,triggered painful muscle cramps,model_supporting_snippet_1,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,stiffness_distribution_established,multiple,1,model_candidate,582,680,"Muscle stiffness was promi-
+nent in the left leg but was also found in the right leg and the trunk",Muscle stiffness was promi- nent in the left leg but was also found in the right leg and the trunk,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,stiffness_distribution_established_multiple,lumb_prox_LE;distal_LE;axial,1,model_candidate,582,680,"Muscle stiffness was promi-
+nent in the left leg but was also found in the right leg and the trunk",Muscle stiffness was promi- nent in the left leg but was also found in the right leg and the trunk,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,stiffness_distribution_established_other,5/6 points in SPS stiffness extent scale,1,model_candidate,699,784,"a stiffness score of ﬁve out of six possible points at
+the SPS stiffness extent scale",a stiffness score of ﬁve out of six possible points at the SPS stiffness extent scale,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,spasms_distribution_established,unspecified,1,model_candidate,801,922,"auditory, somatosen-
+sory, emotional and visual stimuli and attempts to move the left leg
+triggered painful muscle cramps","auditory, somatosen- sory, emotional and visual stimuli and attempts to move the left leg triggered painful muscle cramps",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,spasms_distribution_established,unspecified,2,model_candidate,2664,2734,"became bedridden with almost
+continuous painful spasms in the left leg",became bedridden with almost continuous painful spasms in the left leg,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,excessive_startle_established,multiple,1,model_candidate,801,922,"auditory, somatosen-
+sory, emotional and visual stimuli and attempts to move the left leg
+triggered painful muscle cramps","auditory, somatosen- sory, emotional and visual stimuli and attempts to move the left leg triggered painful muscle cramps",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,excessive_startle_established_multipleother,auditory;somatosensory;emotional;visual;movement;6/7 points on SPS heightened sensitivity scale,1,model_candidate,801,1014,"auditory, somatosen-
+sory, emotional and visual stimuli and attempts to move the left leg
+triggered painful muscle cramps, corresponding to six out of seven
+
+possible points at the SPS heightened sensitivity scale","auditory, somatosen- sory, emotional and visual stimuli and attempts to move the left leg triggered painful muscle cramps, corresponding to six out of seven possible points at the SPS heightened sensitivity scale",model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,other_symptoms_established,hyporeflexia,1,model_candidate,1020,1116,"The ten-
+don reﬂexes were absent in the left leg, weak in the right leg, and
+normal in both arms","The ten- don reﬂexes were absent in the left leg, weak in the right leg, and normal in both arms",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,antibody_status,GAD65,1,model_candidate,1986,2059,"Anti-GAD65 antibodies were markedly and persis-
+tently increased in serum",Anti-GAD65 antibodies were markedly and persis- tently increased in serum,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,antibody_titre,1.57,1,model_candidate,2061,2115,"0.96–1.57 units at month 10 and 14 after
+symptom onset",0.96–1.57 units at month 10 and 14 after symptom onset,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,antibody_units,"""units""",1,model_candidate,2061,2076,0.96–1.57 units,0.96–1.57 units,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,antibody_tests,gangliosides;VGKC;islet_cells;gephyrin;amphiphysin;dsDNA;TPO,1,model_candidate,1520,1669,"antibodies against gangliosides, voltage gated potassium
+channels, pancreas islets, gephyrin, ampiphysin, DNA and thyroxin
+peroxidase were all normal","antibodies against gangliosides, voltage gated potassium channels, pancreas islets, gephyrin, ampiphysin, DNA and thyroxin peroxidase were all normal",model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,CSF_status,antibody_present;OCB,1,model_candidate,2149,2220,"were also detected
+in CSF (0.84 units at month 10 after symptom onset).",were also detected in CSF (0.84 units at month 10 after symptom onset).,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,CSF_status,antibody_present;OCB,2,model_candidate,2302,2394,"isoelectric focusing-immunoblot displayed several GAD65 speciﬁc
+oligoclonal IgG bands in CSF",isoelectric focusing-immunoblot displayed several GAD65 speciﬁc oligoclonal IgG bands in CSF,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,CSF_antibody,GAD65,1,model_candidate,1986,2059,"Anti-GAD65 antibodies were markedly and persis-
+tently increased in serum",Anti-GAD65 antibodies were markedly and persis- tently increased in serum,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,CSF_antibody,GAD65,2,model_candidate,2149,2174,"were also detected
+in CSF",were also detected in CSF,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,CMUA,1,1,model_candidate,1193,1303,"Electromyography of the left leg 10, 13, 14 and 16 months after
+symptom onset showed continuous motor activity","Electromyography of the left leg 10, 13, 14 and 16 months after symptom onset showed continuous motor activity",model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immunotherapy,IVIG;PLEX,1,model_candidate,2598,2625,intravenous immunoglobulins,intravenous immunoglobulins,model_supporting_snippet_1,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immunotherapy,IVIG;PLEX,2,model_candidate,2736,2805,"Plasma exchange was
+therefore performed 14 months after symptom onset",Plasma exchange was therefore performed 14 months after symptom onset,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immuntherapy_detail,5x PLEX: no response. IVIG: 2g/kg,1,model_candidate,2736,2859,"Plasma exchange was
+therefore performed 14 months after symptom onset with removal
+of 3 l of plasma at ﬁve subsequent days.",Plasma exchange was therefore performed 14 months after symptom onset with removal of 3 l of plasma at ﬁve subsequent days.,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immuntherapy_detail,5x PLEX: no response. IVIG: 2g/kg,2,model_candidate,3121,3168,"The patient did not respond
+to plasma exchange.",The patient did not respond to plasma exchange.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immuntherapy_detail,5x PLEX: no response. IVIG: 2g/kg,3,model_candidate,3277,3342,"Two g/kg intravenous immunoglobulin was given after another
+month",Two g/kg intravenous immunoglobulin was given after another month,model_supporting_snippet_3,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immunotherapy_effect,none,1,model_candidate,2519,2626,"there was no persistent response to these drugs
+or to baclofene, phenytoin and intravenous immunoglobulins.","there was no persistent response to these drugs or to baclofene, phenytoin and intravenous immunoglobulins.",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immunotherapy_effect,none,2,model_candidate,3121,3168,"The patient did not respond
+to plasma exchange.",The patient did not respond to plasma exchange.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,immunotherapy_effect,none,3,model_candidate,3277,3413,"Two g/kg intravenous immunoglobulin was given after another
+month, but did not affect the increasing rigidity and painful muscle
+spasms.","Two g/kg intravenous immunoglobulin was given after another month, but did not affect the increasing rigidity and painful muscle spasms.",model_supporting_snippet_3,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sympt_treatment,benzo;clonazepam;baclofen;phenytoin,1,model_candidate,2448,2513,"Intravenuos diazepam and clonazepam induced transient
+improvement",Intravenuos diazepam and clonazepam induced transient improvement,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sympt_treatment,benzo;clonazepam;baclofen;phenytoin,2,model_candidate,2529,2593,"no persistent response to these drugs
+or to baclofene, phenytoin","no persistent response to these drugs or to baclofene, phenytoin",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sympt_treatment_detail,"iv diazepam and clonazepam with transient improvement. Baclofen, phenytoin: no improvement",1,model_candidate,2448,2513,"Intravenuos diazepam and clonazepam induced transient
+improvement",Intravenuos diazepam and clonazepam induced transient improvement,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sympt_treatment_detail,"iv diazepam and clonazepam with transient improvement. Baclofen, phenytoin: no improvement",2,model_candidate,2519,2593,"there was no persistent response to these drugs
+or to baclofene, phenytoin","there was no persistent response to these drugs or to baclofene, phenytoin",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sympt_treatment_effect,minimal improvement,1,model_candidate,2448,2513,"Intravenuos diazepam and clonazepam induced transient
+improvement",Intravenuos diazepam and clonazepam induced transient improvement,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+524,,sympt_treatment_effect,minimal improvement,2,model_candidate,2519,2593,"there was no persistent response to these drugs
+or to baclofene, phenytoin","there was no persistent response to these drugs or to baclofene, phenytoin",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch008\json\target_views\524\p1.json
+537,,age_description,29,1,model_candidate,821,884,"A 29-year-old previously healthy African-
+American male patient",A 29-year-old previously healthy African- American male patient,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,sex,M,1,model_candidate,854,884,"African-
+American male patient",African- American male patient,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,ethnicity,africa,1,model_candidate,854,884,"African-
+American male patient",African- American male patient,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,age_onset,29,1,model_candidate,821,916,"A 29-year-old previously healthy African-
+American male patient complained of
+four-week history",A 29-year-old previously healthy African- American male patient complained of four-week history,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,first_manifestation,other,1,model_candidate,885,1000,"complained of
+four-week history of progressive shortness
+of breath, non-productive cough and left-
+sided chest pain","complained of four-week history of progressive shortness of breath, non-productive cough and left- sided chest pain",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,first_manifestation_multiple,dyspnoea,1,model_candidate,920,951,"progressive shortness
+of breath",progressive shortness of breath,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,included_diagnosis,paraneoplastic_SPS,1,model_candidate,418,493,"His
+clinical picture was suggestive of SPS sec-
+ondary to invasive thymoma.",His clinical picture was suggestive of SPS sec- ondary to invasive thymoma.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,included_diagnosis,paraneoplastic_SPS,2,model_candidate,3435,3464,"the
+diagnosis of SPS was made",the diagnosis of SPS was made,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,included_diagnosis,paraneoplastic_SPS,3,model_candidate,1990,2080,"pathology specimen being
+consistent with lymphocytic pre-
+dominant epithelial type thymoma",pathology specimen being consistent with lymphocytic pre- dominant epithelial type thymoma,model_supporting_snippet_3,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,other_symptoms_onset,dyspnoea,1,model_candidate,920,951,"progressive shortness
+of breath",progressive shortness of breath,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,timecourse_subsequent,monophasic,1,model_candidate,3511,3584,"at five-month follow up he did-
+n’t have any recurrence of his symp-
+toms",at five-month follow up he did- n’t have any recurrence of his symp- toms,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,overview_established,stiffness;spasms,1,model_candidate,149,172,"muscle spasms, rigidity","muscle spasms, rigidity",model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,stiffness_distribution_established,multiple,1,model_candidate,322,360,"truncal, lower ex-
+tremities stiffness","truncal, lower ex- tremities stiffness",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,stiffness_distribution_established,multiple,2,model_candidate,2762,2853,"diffuse mus-
+cular stiffness in both lower extrem-
+ities along with diffuse lower back
+pain",diffuse mus- cular stiffness in both lower extrem- ities along with diffuse lower back pain,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,stiffness_distribution_established_multiple,distal_LE;lumb_prox_LE;axial,1,model_candidate,322,360,"truncal, lower ex-
+tremities stiffness","truncal, lower ex- tremities stiffness",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,stiffness_distribution_established_multiple,distal_LE;lumb_prox_LE;axial,2,model_candidate,2762,2853,"diffuse mus-
+cular stiffness in both lower extrem-
+ities along with diffuse lower back
+pain",diffuse mus- cular stiffness in both lower extrem- ities along with diffuse lower back pain,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,spasms_distribution_established,multiple,1,model_candidate,322,379,"truncal, lower ex-
+tremities stiffness and painful cramps","truncal, lower ex- tremities stiffness and painful cramps",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,spasms_distribution_established,multiple,2,model_candidate,2453,2533,"severe bi-
+lateral lower extremity pain, muscle
+cramps and weakness in both legs","severe bi- lateral lower extremity pain, muscle cramps and weakness in both legs",model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,spasms_distribution_established_multiple,distal_LE;lumb_prox_LE,1,model_candidate,2453,2533,"severe bi-
+lateral lower extremity pain, muscle
+cramps and weakness in both legs","severe bi- lateral lower extremity pain, muscle cramps and weakness in both legs",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,spasms_distribution_established_multiple,distal_LE;lumb_prox_LE,2,model_candidate,322,379,"truncal, lower ex-
+tremities stiffness and painful cramps","truncal, lower ex- tremities stiffness and painful cramps",model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,other_symptoms_established,pain;weakness,1,model_candidate,2453,2533,"severe bi-
+lateral lower extremity pain, muscle
+cramps and weakness in both legs","severe bi- lateral lower extremity pain, muscle cramps and weakness in both legs",model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,antibody_tests,GAD;AChR,1,model_candidate,3160,3315,"anti-GAD antibodies; the result was
+negative. Myasthenia gravis was
+ruled out by a normal pulmonary
+function test and a negative anti-
+AChR antibodies test",anti-GAD antibodies; the result was negative. Myasthenia gravis was ruled out by a normal pulmonary function test and a negative anti- AChR antibodies test,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,tu_screening,1,1,model_candidate,1131,1254,"Computed tomog-
+raphy of the chest demonstrated a large
+left-sided pleural effusion and a large an-
+terior mediastinal mass",Computed tomog- raphy of the chest demonstrated a large left-sided pleural effusion and a large an- terior mediastinal mass,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,tu_screening,1,2,model_candidate,1758,1799,"PET scan
+showed anterior mediastinal mass",PET scan showed anterior mediastinal mass,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,tu_screening_abnormal,thymoma invasive lymphocytic predominant epithelial type,1,model_candidate,1990,2080,"pathology specimen being
+consistent with lymphocytic pre-
+dominant epithelial type thymoma",pathology specimen being consistent with lymphocytic pre- dominant epithelial type thymoma,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,tu_screening_abnormal,thymoma invasive lymphocytic predominant epithelial type,2,model_candidate,2082,2127,"Due to the invasive behavior of this
+neoplasm",Due to the invasive behavior of this neoplasm,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,sympt_treatment,benzo;morphine,1,model_candidate,2926,2985,"diazepam 5 mg intravenously
+along with intravenous morphine",diazepam 5 mg intravenously along with intravenous morphine,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,sympt_treatment_detail,diazepam 5mg iv and morphine with complete resolution of neurological symptoms,1,model_candidate,2908,3027,"Patient was
+given diazepam 5 mg intravenously
+along with intravenous morphine
+with complete resolution of his
+symptoms.",Patient was given diazepam 5 mg intravenously along with intravenous morphine with complete resolution of his symptoms.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+537,,sympt_treatment_effect,improvement,1,model_candidate,2991,3026,"complete resolution of his
+symptoms",complete resolution of his symptoms,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\537\p1.json
+551,,age_description,51,1,model_candidate,12,35,A 51-year-old white man,A 51-year-old white man,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,sex,M,1,model_candidate,26,35,white man,white man,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,ethnicity,white,1,model_candidate,26,35,white man,white man,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,age_onset,51,1,model_candidate,12,35,A 51-year-old white man,A 51-year-old white man,model_supporting_snippet_1,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,age_onset,51,2,model_candidate,1159,1229,"History revealed an
+onset of leg pain and falls over the
+last 6 months",History revealed an onset of leg pain and falls over the last 6 months,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,time_to_diagnosis,0.5,1,model_candidate,1159,1229,"History revealed an
+onset of leg pain and falls over the
+last 6 months",History revealed an onset of leg pain and falls over the last 6 months,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,time_to_diagnosis,0.5,2,model_candidate,1886,1944,"His current neu-
+rologist had diagnosed stiff-man
+syndrome",His current neu- rologist had diagnosed stiff-man syndrome,model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,first_manifestation,multiple,1,model_candidate,1159,1229,"History revealed an
+onset of leg pain and falls over the
+last 6 months",History revealed an onset of leg pain and falls over the last 6 months,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,first_manifestation_multiple,pain;weakness,1,model_candidate,1159,1229,"History revealed an
+onset of leg pain and falls over the
+last 6 months",History revealed an onset of leg pain and falls over the last 6 months,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,first_manifestation_multiple,pain;weakness,2,model_candidate,137,217,"He was
+complaining of weakness on his
+right side and numbness in his
+right foot.",He was complaining of weakness on his right side and numbness in his right foot.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,included_diagnosis,Stiff_Person,1,model_candidate,1886,1944,"His current neu-
+rologist had diagnosed stiff-man
+syndrome",His current neu- rologist had diagnosed stiff-man syndrome,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,early_symptoms,spasms,1,model_candidate,1351,1438,"slight
+tremors in his legs while sleeping
+with occasional daytime twitching
+in his face",slight tremors in his legs while sleeping with occasional daytime twitching in his face,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,early_symptoms,spasms,2,model_candidate,968,1002,kicking his legs on the bed boards,kicking his legs on the bed boards,model_supporting_snippet_2,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,spasms_distribution_onset,multiple,1,model_candidate,1351,1438,"slight
+tremors in his legs while sleeping
+with occasional daytime twitching
+in his face",slight tremors in his legs while sleeping with occasional daytime twitching in his face,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_symptoms_onset,gait_disorder,1,model_candidate,1159,1302,"History revealed an
+onset of leg pain and falls over the
+last 6 months; he used a cane ini-
+tially, then a wheelchair, while out-
+side his home","History revealed an onset of leg pain and falls over the last 6 months; he used a cane ini- tially, then a wheelchair, while out- side his home",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,onset_mRS,3,1,model_candidate,1231,1302,"he used a cane ini-
+tially, then a wheelchair, while out-
+side his home","he used a cane ini- tially, then a wheelchair, while out- side his home",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,onset_to_established,6,1,model_candidate,1179,1229,"onset of leg pain and falls over the
+last 6 months",onset of leg pain and falls over the last 6 months,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,overview_established,spasms,1,model_candidate,341,364,"seizure-like epi-
+sodes",seizure-like epi- sodes,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,overview_established,spasms,2,model_candidate,419,490,"one tonic-
+clonic seizure episode (mainly in
+the lower left extremities",one tonic- clonic seizure episode (mainly in the lower left extremities,model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,overview_established,spasms,3,model_candidate,968,1002,kicking his legs on the bed boards,kicking his legs on the bed boards,model_supporting_snippet_3,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,spasms_distribution_established,multiple,1,model_candidate,419,490,"one tonic-
+clonic seizure episode (mainly in
+the lower left extremities",one tonic- clonic seizure episode (mainly in the lower left extremities,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,spasms_distribution_established,multiple,2,model_candidate,144,216,"complaining of weakness on his
+right side and numbness in his
+right foot",complaining of weakness on his right side and numbness in his right foot,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,spasms_distribution_established,multiple,3,model_candidate,968,1002,kicking his legs on the bed boards,kicking his legs on the bed boards,model_supporting_snippet_3,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,excessive_startle_established,noise,1,model_candidate,2537,2621,"noises (beeps of the
+cardiac monitor and loud visitors)
+tended to set off his spells",noises (beeps of the cardiac monitor and loud visitors) tended to set off his spells,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_symptoms_established,gait_disorder;seizures,1,model_candidate,329,364,"intractable seizure-like epi-
+sodes",intractable seizure-like epi- sodes,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_symptoms_established,gait_disorder;seizures,2,model_candidate,63,99,"suffering a fall
+from his wheelchair",suffering a fall from his wheelchair,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_symptoms_established_seizures,functional seizure (EEG normal),1,model_candidate,855,931,"concerns
+that the patient may be experienc-
+ing psychogenic seizure episodes",concerns that the patient may be experienc- ing psychogenic seizure episodes,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_symptoms_established_seizures,functional seizure (EEG normal),2,model_candidate,1033,1110,"The EEG, CT myelogram, and head
+CT were all found to be within
+normal limits.","The EEG, CT myelogram, and head CT were all found to be within normal limits.",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_symptoms_established_seizures,functional seizure (EEG normal),3,model_candidate,3246,3287,"one consistent with con-
+version disorder",one consistent with con- version disorder,model_supporting_snippet_3,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,established_mRS,4,1,model_candidate,63,99,"suffering a fall
+from his wheelchair",suffering a fall from his wheelchair,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,established_mRS,4,2,model_candidate,1231,1302,"he used a cane ini-
+tially, then a wheelchair, while out-
+side his home","he used a cane ini- tially, then a wheelchair, while out- side his home",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,sympt_treatment,benzo;baclofen,1,model_candidate,2656,2717,"diaze-
+pam (now at 15 mg every 6 hours),
+baclofen (5 mg t.i.d","diaze- pam (now at 15 mg every 6 hours), baclofen (5 mg t.i.d",model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,sympt_treatment_detail,"diazepam 15mg every 6h, baclofen 5mg tid",1,model_candidate,2656,2717,"diaze-
+pam (now at 15 mg every 6 hours),
+baclofen (5 mg t.i.d","diaze- pam (now at 15 mg every 6 hours), baclofen (5 mg t.i.d",model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+551,,other_treatment,physical therapy with benefit,1,model_candidate,2725,2771,"physical
+therapy consults had proven help-
+ful",physical therapy consults had proven help- ful,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\551\p1.json
+552,,age_description,49,1,model_candidate,0,18,A 49-year-old male,A 49-year-old male,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,sex,M,1,model_candidate,0,18,A 49-year-old male,A 49-year-old male,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,time_to_diagnosis,0.5,1,model_candidate,34,143,"progressively 
+worsening muscle rigidity and spasms of his upper and 
+lower extremities of 6 months’ duration",progressively worsening muscle rigidity and spasms of his upper and lower extremities of 6 months’ duration,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,time_to_diagnosis,0.5,2,model_candidate,1211,1236,He was diagnosed with SPS,He was diagnosed with SPS,model_supporting_snippet_2,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,first_manifestation,multiple,1,model_candidate,19,143,"presented with progressively 
+worsening muscle rigidity and spasms of his upper and 
+lower extremities of 6 months’ duration",presented with progressively worsening muscle rigidity and spasms of his upper and lower extremities of 6 months’ duration,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,first_manifestation,multiple,2,model_candidate,145,178,"He experienced 
+constant hip pain",He experienced constant hip pain,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,first_manifestation_multiple,stiffness;spasms;pain,1,model_candidate,34,85,"progressively 
+worsening muscle rigidity and spasms",progressively worsening muscle rigidity and spasms,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,first_manifestation_multiple,stiffness;spasms;pain,2,model_candidate,145,178,"He experienced 
+constant hip pain",He experienced constant hip pain,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,included_diagnosis,Stiff_Person,1,model_candidate,1211,1236,He was diagnosed with SPS,He was diagnosed with SPS,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,early_symptoms,"stiffness,spasms",1,model_candidate,19,143,"presented with progressively 
+worsening muscle rigidity and spasms of his upper and 
+lower extremities of 6 months’ duration",presented with progressively worsening muscle rigidity and spasms of his upper and lower extremities of 6 months’ duration,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,stiffness_distribution_onset,multiple,1,model_candidate,59,121,"muscle rigidity and spasms of his upper and 
+lower extremities",muscle rigidity and spasms of his upper and lower extremities,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,stiffness_distribution_onset,multiple,2,model_candidate,161,178,constant hip pain,constant hip pain,model_supporting_snippet_2,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;UE,1,model_candidate,59,121,"muscle rigidity and spasms of his upper and 
+lower extremities",muscle rigidity and spasms of his upper and lower extremities,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;UE,2,model_candidate,161,178,constant hip pain,constant hip pain,model_supporting_snippet_2,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,spasms_distribution_onset,multiple,1,model_candidate,79,121,"spasms of his upper and 
+lower extremities",spasms of his upper and lower extremities,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,spasms_distribution_onset_multiple,lumb_prox_LE;distal_LE;UE,1,model_candidate,59,121,"muscle rigidity and spasms of his upper and 
+lower extremities",muscle rigidity and spasms of his upper and lower extremities,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,spasms_distribution_onset_multiple,lumb_prox_LE;distal_LE;UE,2,model_candidate,161,178,constant hip pain,constant hip pain,model_supporting_snippet_2,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,stiffness_distribution_established,generalised,1,model_candidate,373,425,"Physical exami-
+nation revealed generalized rigidity",Physical exami- nation revealed generalized rigidity,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,antibody_status,GAD,1,model_candidate,1042,1103,"Anti– glu-
+tamic acid decarboxylase  65 antibody was elevated",Anti– glu- tamic acid decarboxylase 65 antibody was elevated,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,antibody_titre,609,1,model_candidate,1108,1118,609 nmol/L,609 nmol/L,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,antibody_units,nmol/L,1,model_candidate,1108,1118,609 nmol/L,609 nmol/L,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,antibody_tests,GAD,1,model_candidate,1042,1090,"Anti– glu-
+tamic acid decarboxylase  65 antibody",Anti– glu- tamic acid decarboxylase 65 antibody,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,CMUA,1,1,model_candidate,1120,1175,"Electromyography showed continuous 
+motor unit activity",Electromyography showed continuous motor unit activity,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,immunotherapy,IVIG,1,model_candidate,1348,1374,intravenous immunoglobulin,intravenous immunoglobulin,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,immuntherapy_detail,"IVIG: 2g/kg for 2d. He has required repeated intravenous infusions
+of immunoglobulin over the years, and his clinical
+course has remained stable.",1,model_candidate,1348,1396,"intravenous immunoglobulin 
+at 2 g/kg for 2 days",intravenous immunoglobulin at 2 g/kg for 2 days,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,immuntherapy_detail,"IVIG: 2g/kg for 2d. He has required repeated intravenous infusions
+of immunoglobulin over the years, and his clinical
+course has remained stable.",2,model_candidate,1557,1684,"He has required repeated intravenous infu-
+sions of immunoglobulin over the years, and his clinical 
+course has remained stable","He has required repeated intravenous infu- sions of immunoglobulin over the years, and his clinical course has remained stable",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,immunotherapy_effect,improvement,1,model_candidate,1468,1509,"gradual improvement in 
+functional status",gradual improvement in functional status,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,sympt_treatment,benzo;baclofen,1,model_candidate,1242,1342,"treatment was initi-
+ated with 10 mg twice daily oral diazepam, oral baclofen 
+at 10 mg thrice daily","treatment was initi- ated with 10 mg twice daily oral diazepam, oral baclofen at 10 mg thrice daily",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,sympt_treatment_detail,"10 mg twice daily oral diazepam, oral baclofen at 10 mg thrice daily",1,model_candidate,1273,1342,"10 mg twice daily oral diazepam, oral baclofen 
+at 10 mg thrice daily","10 mg twice daily oral diazepam, oral baclofen at 10 mg thrice daily",model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,other_treatment,vitamin B12 replacement,1,model_candidate,1398,1439,"He also received vitamin B 12  ther -
+apy",He also received vitamin B 12 ther - apy,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,autoimmunity,diabetes;gastric,1,model_candidate,235,327,"Past medical history was significant for 
+previous hospitalization for diabetic ketoacidosis",Past medical history was significant for previous hospitalization for diabetic ketoacidosis,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+552,,autoimmunity,diabetes;gastric,2,model_candidate,860,954,"Antibody to intrinsic 
+factor was positive, consistent with a diagnosis of perni-
+cious anemia","Antibody to intrinsic factor was positive, consistent with a diagnosis of perni- cious anemia",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\552\p1.json
+554,,sex,F,1,model_candidate,32,46,female patient,female patient,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,antibody_status,GAD,1,model_candidate,732,822,"anti-glutamic acid decarboxylase (GAD)
+antibodies were performed showing a positive result",anti-glutamic acid decarboxylase (GAD) antibodies were performed showing a positive result,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,antibody_tests,GAD,1,model_candidate,722,781,"tests for anti-glutamic acid decarboxylase (GAD)
+antibodies",tests for anti-glutamic acid decarboxylase (GAD) antibodies,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,CMUA,1,1,model_candidate,856,906,"electromyography showing
+continuous motor activity",electromyography showing continuous motor activity,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,sympt_treatment_detail,diazepam,1,model_candidate,1187,1207,intravenous diazepam,intravenous diazepam,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,sympt_treatment_effect,partial improvement,1,model_candidate,1144,1303,"response to the symptomatic treatment
+with intravenous diazepam and application of botulinum
+toxin type A was moderate requiring high doses of benzo-
+diazepine",response to the symptomatic treatment with intravenous diazepam and application of botulinum toxin type A was moderate requiring high doses of benzo- diazepine,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,sympt_treatment_effect,partial improvement,2,model_candidate,1305,1388,"she also did not tolerate our attempts to change
+the intravenous to oral medication",she also did not tolerate our attempts to change the intravenous to oral medication,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,notes,anti-GAD did not fall after Rituximab,1,model_candidate,4381,4467,"even
+though the patient had clinical improvement, the antibody
+titres continued rising","even though the patient had clinical improvement, the antibody titres continued rising",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+554,,notes,anti-GAD did not fall after Rituximab,2,model_candidate,4213,4375,"According to the available literature, a lowering in anti-
+GAD titres is associated with clinical improvement; how-
+ever, these data were not observed in our case","According to the available literature, a lowering in anti- GAD titres is associated with clinical improvement; how- ever, these data were not observed in our case",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch009\json\target_views\554\p1.json
+566,,age_description,58,1,model_candidate,20,37,a 58-year-old man,a 58-year-old man,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,sex,M,1,model_candidate,20,37,a 58-year-old man,a 58-year-old man,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,age_onset,58,1,model_candidate,0,112,"Over several months a 58-year-old man developed muscle
+stiffness, myoclonus and experienced several sudden falls","Over several months a 58-year-old man developed muscle stiffness, myoclonus and experienced several sudden falls",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,first_manifestation,multiple,1,model_candidate,0,152,"Over several months a 58-year-old man developed muscle
+stiffness, myoclonus and experienced several sudden falls
+caused by sensory and acoustic stimuli.","Over several months a 58-year-old man developed muscle stiffness, myoclonus and experienced several sudden falls caused by sensory and acoustic stimuli.",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,first_manifestation_multiple,stiffness;spasms;startle;falls,1,model_candidate,38,151,"developed muscle
+stiffness, myoclonus and experienced several sudden falls
+caused by sensory and acoustic stimuli","developed muscle stiffness, myoclonus and experienced several sudden falls caused by sensory and acoustic stimuli",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,first_manifestation_multiple,stiffness;spasms;startle;falls,2,model_candidate,182,247,"a severe startle reaction could be triggered by
+unexpected noises",a severe startle reaction could be triggered by unexpected noises,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,included_diagnosis,PERM,1,model_candidate,6086,6105,In our PERM patient,In our PERM patient,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,early_symptoms,stiffness;spasms;startle,1,model_candidate,38,75,"developed muscle
+stiffness, myoclonus","developed muscle stiffness, myoclonus",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,early_symptoms,stiffness;spasms;startle,2,model_candidate,182,247,"a severe startle reaction could be triggered by
+unexpected noises",a severe startle reaction could be triggered by unexpected noises,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,stiffness_distribution_onset,multiple,1,model_candidate,252,318,"there was stiffness, especially of the
+back and lower limb muscles","there was stiffness, especially of the back and lower limb muscles",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,1,model_candidate,252,318,"there was stiffness, especially of the
+back and lower limb muscles","there was stiffness, especially of the back and lower limb muscles",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,2,model_candidate,3364,3442,"rigidity and muscle stiffness, particularly of axial and
+proximal limb muscles","rigidity and muscle stiffness, particularly of axial and proximal limb muscles",model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,excessive_startle_onset,noise,1,model_candidate,182,247,"a severe startle reaction could be triggered by
+unexpected noises",a severe startle reaction could be triggered by unexpected noises,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,other_symptoms_established,hyperreflexia;oculomotor,1,model_candidate,380,404,increased tendon reﬂexes,increased tendon reﬂexes,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,other_symptoms_established,hyperreflexia;oculomotor,2,model_candidate,523,576,"disturbed smooth pursuit eye movements and diplo-
+pia",disturbed smooth pursuit eye movements and diplo- pia,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,other_symptoms_established_oculo,diplopia;disturbed_smooth_pursuit,1,model_candidate,523,576,"disturbed smooth pursuit eye movements and diplo-
+pia",disturbed smooth pursuit eye movements and diplo- pia,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,established_mRS,4,1,model_candidate,438,475,"He was not able to walk
+without help.",He was not able to walk without help.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,antibody_status,GlyR,1,model_candidate,1136,1192,"serum glycine receptor (GlyR) anti-
+bodies were detected",serum glycine receptor (GlyR) anti- bodies were detected,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,antibody_testsystem,GlyR: cell-based assay,1,model_candidate,1136,1214,"serum glycine receptor (GlyR) anti-
+bodies were detected by a cell-based assay",serum glycine receptor (GlyR) anti- bodies were detected by a cell-based assay,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,CSF_status,inflammatory,1,model_candidate,1229,1362,"Initial lumbar puncture revealed oligoclonal IgG bands and
+45 lymphocytes/ ll (normal: \4 cells/ ll) in the
+cerebrospinal ﬂuid (CSF).",Initial lumbar puncture revealed oligoclonal IgG bands and 45 lymphocytes/ ll (normal: \4 cells/ ll) in the cerebrospinal ﬂuid (CSF).,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,CMUA,1,1,model_candidate,649,679,continuous motor unit activity,continuous motor unit activity,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,immunotherapy,PLEX;steroids;AZA,1,model_candidate,2331,2395,"therapy of six plasmaphereses followed by oral cortico-
+steroids",therapy of six plasmaphereses followed by oral cortico- steroids,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,immunotherapy,PLEX;steroids;AZA,2,model_candidate,3018,3133,"Steroids were therefore increased to 0.5 mg/kg and a steroid-
+sparing drug, azathioprine (2 mg/kg), was introduced.","Steroids were therefore increased to 0.5 mg/kg and a steroid- sparing drug, azathioprine (2 mg/kg), was introduced.",model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,immunotherapy_effect,improvement,1,model_candidate,2276,2313,The neurological symptoms ameliorated,The neurological symptoms ameliorated,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+566,,sympt_treatment,clonazepam,1,model_candidate,2447,2457,clonazepam,clonazepam,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\566\p1.json
+573,,age_description,27,1,model_candidate,5,24,A 27-year-old woman,A 27-year-old woman,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,sex,F,1,model_candidate,5,24,A 27-year-old woman,A 27-year-old woman,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,age_onset,27,1,model_candidate,5,155,"A 27-year-old woman, G2A2, with no significant medical
+history presented to the emergency department at an out-
+side facility with respiratory failure","A 27-year-old woman, G2A2, with no significant medical history presented to the emergency department at an out- side facility with respiratory failure",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,age_onset,27,2,model_candidate,3767,3855,"Our patient had life-threatening
+diaphragmatic spasms 2 months before becoming
+pregnant.",Our patient had life-threatening diaphragmatic spasms 2 months before becoming pregnant.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,included_diagnosis,Stiff_Person,1,model_candidate,478,522,She was diagnosed with stiff person syndrome,She was diagnosed with stiff person syndrome,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,spasms_distribution_established,diaphragm,1,model_candidate,262,282,diaphragmatic spasms,diaphragmatic spasms,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,antibody_status,GAD,1,model_candidate,421,476,"positive for antiglutamic acid decarboxylase
+antibodies",positive for antiglutamic acid decarboxylase antibodies,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,immunotherapy,IVIG;steroids,1,model_candidate,524,592,"treated with intravenous immunoglobulin, and her symp-
+toms improved","treated with intravenous immunoglobulin, and her symp- toms improved",model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,immunotherapy,IVIG;steroids,2,model_candidate,674,786,"discharged home on
+900 mg gabapentin three times daily, 10 mg diazepam
+three times daily, and a prednisone taper","discharged home on 900 mg gabapentin three times daily, 10 mg diazepam three times daily, and a prednisone taper",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,immunotherapy,IVIG;steroids,3,model_candidate,2181,2228,"Currently she is taking prednisone
+and diazepam",Currently she is taking prednisone and diazepam,model_supporting_snippet_3,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,immuntherapy_detail,prednisone taper,1,model_candidate,768,786,a prednisone taper,a prednisone taper,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,immunotherapy_effect,improvement,1,model_candidate,569,592,"her symp-
+toms improved",her symp- toms improved,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,sympt_treatment,benzo;gabapentin,1,model_candidate,674,762,"discharged home on
+900 mg gabapentin three times daily, 10 mg diazepam
+three times daily","discharged home on 900 mg gabapentin three times daily, 10 mg diazepam three times daily",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,sympt_treatment,benzo;gabapentin,2,model_candidate,1884,1977,"On postpartum day 1, the patient’s neurologist re-
+
+started her on diazepam three times daily","On postpartum day 1, the patient’s neurologist re- started her on diazepam three times daily",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,sympt_treatment_detail,"diazepam 3 x 10mg / day. Gabapentin 3x 900 mg/d. Baclofen 10mg / d later (during pregnancy, after discontinuation of diazepam)",1,model_candidate,693,762,"900 mg gabapentin three times daily, 10 mg diazepam
+three times daily","900 mg gabapentin three times daily, 10 mg diazepam three times daily",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,sympt_treatment_detail,"diazepam 3 x 10mg / day. Gabapentin 3x 900 mg/d. Baclofen 10mg / d later (during pregnancy, after discontinuation of diazepam)",2,model_candidate,1057,1194,"her diazepam was discontinued. Her muscle
+spasms increased without the diazepam, and she was started
+on 10 mg baclofen three times daily.","her diazepam was discontinued. Her muscle spasms increased without the diazepam, and she was started on 10 mg baclofen three times daily.",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,notes,Pregnancy during SPS. No evidence of disease in the infant (under steroid therapy at conception).,1,model_candidate,788,858,"Two months later,
+the patient reported a positive urine pregnancy test","Two months later, the patient reported a positive urine pregnancy test",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,notes,Pregnancy during SPS. No evidence of disease in the infant (under steroid therapy at conception).,2,model_candidate,2181,2266,"Currently she is taking prednisone
+and diazepam, with moderate control of her disease","Currently she is taking prednisone and diazepam, with moderate control of her disease",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+573,,notes,Pregnancy during SPS. No evidence of disease in the infant (under steroid therapy at conception).,3,model_candidate,2301,2362,"The infant never was tested for
+antibodies and is doing well.",The infant never was tested for antibodies and is doing well.,model_supporting_snippet_3,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch010\json\target_views\573\p1.json
+615,,age_description,85,1,model_candidate,18,36,"85-year-
+old woman",85-year- old woman,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,sex,F,1,model_candidate,18,36,"85-year-
+old woman",85-year- old woman,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,first_manifestation,stiffness;spasms,1,model_candidate,37,156,"complained of sustained involuntary muscle contractions
+leading to permanent stiffness of both thighs and the right arm",complained of sustained involuntary muscle contractions leading to permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,included_diagnosis,Stiff_Person,1,model_candidate,2568,2571,SPS,SPS,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,early_symptoms,stiffness;spasms,1,model_candidate,37,156,"complained of sustained involuntary muscle contractions
+leading to permanent stiffness of both thighs and the right arm",complained of sustained involuntary muscle contractions leading to permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,stiffness_distribution_onset,multiple,1,model_candidate,104,156,permanent stiffness of both thighs and the right arm,permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,stiffness_distribution_onset_multiple,distal_LE;UE,1,model_candidate,104,156,permanent stiffness of both thighs and the right arm,permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,spasms_distribution_onset,multiple,1,model_candidate,51,156,"sustained involuntary muscle contractions
+leading to permanent stiffness of both thighs and the right arm",sustained involuntary muscle contractions leading to permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,spasms_distribution_onset_multiple,distal_LE;UE,1,model_candidate,51,156,"sustained involuntary muscle contractions
+leading to permanent stiffness of both thighs and the right arm",sustained involuntary muscle contractions leading to permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,other_symptoms_onset,gait_disorder,1,model_candidate,249,275,Gait was greatly impaired.,Gait was greatly impaired.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,overview_established,stiffness;spasms,1,model_candidate,637,715,"There was increased muscle tone in the right arm and in the
+lower extremities.",There was increased muscle tone in the right arm and in the lower extremities.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,overview_established,stiffness;spasms,2,model_candidate,716,826,"Palpation of the hamstrings and quadriceps mus-
+cles revealed permanent cocontraction with inability to relax.",Palpation of the hamstrings and quadriceps mus- cles revealed permanent cocontraction with inability to relax.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,stiffness_distribution_established,multiple,1,model_candidate,637,715,"There was increased muscle tone in the right arm and in the
+lower extremities.",There was increased muscle tone in the right arm and in the lower extremities.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,stiffness_distribution_established_multiple,distal_LE;UE,1,model_candidate,637,715,"There was increased muscle tone in the right arm and in the
+lower extremities.",There was increased muscle tone in the right arm and in the lower extremities.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,spasms_distribution_established,multiple,1,model_candidate,716,826,"Palpation of the hamstrings and quadriceps mus-
+cles revealed permanent cocontraction with inability to relax.",Palpation of the hamstrings and quadriceps mus- cles revealed permanent cocontraction with inability to relax.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,spasms_distribution_established,multiple,2,model_candidate,969,1074,"Electrical stimulation of the median nerve provoked
+marked and sustained contractions of both quadriceps.",Electrical stimulation of the median nerve provoked marked and sustained contractions of both quadriceps.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,spasms_distribution_established_multiple,distal_LE;UE,1,model_candidate,37,156,"complained of sustained involuntary muscle contractions
+leading to permanent stiffness of both thighs and the right arm",complained of sustained involuntary muscle contractions leading to permanent stiffness of both thighs and the right arm,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,spasms_distribution_established_multiple,distal_LE;UE,2,model_candidate,716,826,"Palpation of the hamstrings and quadriceps mus-
+cles revealed permanent cocontraction with inability to relax.",Palpation of the hamstrings and quadriceps mus- cles revealed permanent cocontraction with inability to relax.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,other_symptoms_established,gait_disorder,1,model_candidate,249,275,Gait was greatly impaired.,Gait was greatly impaired.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,course_treatment,both,1,model_candidate,2073,2149,"Baclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff-
+ness.",Baclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff- ness.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,course_treatment,both,2,model_candidate,2178,2247,"Plasmapheresis and IVIG treat-
+ment were only of short-lived benefit.",Plasmapheresis and IVIG treat- ment were only of short-lived benefit.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,course_treatment,both,3,model_candidate,2248,2356,"High-dose steroid therapy
+(methylprednisone 500mg i.v. per day for 5 days) brought substan-
+tial improvement",High-dose steroid therapy (methylprednisone 500mg i.v. per day for 5 days) brought substan- tial improvement,model_supporting_snippet_3,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_status,GAD;other,1,model_candidate,1459,1542,"anti-glutamic acid decar-
+boxylase (GAD) antibodies (250,060 mGAD U/ml, normal !70)","anti-glutamic acid decar- boxylase (GAD) antibodies (250,060 mGAD U/ml, normal !70)",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_status,GAD;other,2,model_candidate,1075,1145,"Serum was
+positive for antithyroglobulin and antimicrosomal antibodies",Serum was positive for antithyroglobulin and antimicrosomal antibodies,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_status,GAD;other,3,model_candidate,1189,1264,"M2-type antimitochondrial
+and anti-21-ß-hydroxylase antibodies were present",M2-type antimitochondrial and anti-21-ß-hydroxylase antibodies were present,model_supporting_snippet_3,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_status_other,TG;microsomal;mitochondrial;21betahydroxylase;islet,1,model_candidate,1085,1145,positive for antithyroglobulin and antimicrosomal antibodies,positive for antithyroglobulin and antimicrosomal antibodies,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_status_other,TG;microsomal;mitochondrial;21betahydroxylase;islet,2,model_candidate,1189,1264,"M2-type antimitochondrial
+and anti-21-ß-hydroxylase antibodies were present",M2-type antimitochondrial and anti-21-ß-hydroxylase antibodies were present,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_status_other,TG;microsomal;mitochondrial;21betahydroxylase;islet,3,model_candidate,1357,1409,Anti-islet antibodies were markedly elevated (1/640),Anti-islet antibodies were markedly elevated (1/640),model_supporting_snippet_3,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_titre,250060,1,model_candidate,1512,1529,"250,060 mGAD U/ml","250,060 mGAD U/ml",model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_units,u/mL,1,model_candidate,1520,1529,mGAD U/ml,mGAD U/ml,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_tests,Hu;Yo;Ri;GAD;amphiphysin,1,model_candidate,1357,1510,"Anti-islet antibodies were markedly elevated (1/640) as deter-
+mined by immunohistochemistry, as were anti-glutamic acid decar-
+boxylase (GAD) antibodies","Anti-islet antibodies were markedly elevated (1/640) as deter- mined by immunohistochemistry, as were anti-glutamic acid decar- boxylase (GAD) antibodies",model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_tests,Hu;Yo;Ri;GAD;amphiphysin,2,model_candidate,1922,2020,"Antiamphiphysin autoanti-
+bodies were negative, as were anti-Hu, anti-Yo and anti-Ri anti-
+bodies.","Antiamphiphysin autoanti- bodies were negative, as were anti-Hu, anti-Yo and anti-Ri anti- bodies.",model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,antibody_testsystem,radioimmunoassay,1,model_candidate,1543,1573,determined by radioimmunoassay,determined by radioimmunoassay,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,CSF_status,OCB;antibody_present,1,model_candidate,1575,1674,"CSF contained elevated IgG lev-
+els with oligoclonal bands and was positive for anti-GAD antibodies",CSF contained elevated IgG lev- els with oligoclonal bands and was positive for anti-GAD antibodies,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,CSF_antibody,GAD,1,model_candidate,1642,1674,positive for anti-GAD antibodies,positive for anti-GAD antibodies,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,CMUA,1,1,model_candidate,827,893,"Elec-
+tromyographic examination revealed continuous motor activity",Elec- tromyographic examination revealed continuous motor activity,model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,exteroceptive_refl,1,1,model_candidate,969,1074,"Electrical stimulation of the median nerve provoked
+marked and sustained contractions of both quadriceps.",Electrical stimulation of the median nerve provoked marked and sustained contractions of both quadriceps.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,tu_screening,1,1,model_candidate,395,509,"In July 1998 a ductal carcinoma of
+the breast was treated surgically followed by antihormonal therapy
+(tamoxifen).",In July 1998 a ductal carcinoma of the breast was treated surgically followed by antihormonal therapy (tamoxifen).,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,tu_screening_abnormal,invasive ductal breast carcinoma,1,model_candidate,395,463,"In July 1998 a ductal carcinoma of
+the breast was treated surgically",In July 1998 a ductal carcinoma of the breast was treated surgically,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,immunotherapy,PLEX;IVIG;steroids,1,model_candidate,2178,2247,"Plasmapheresis and IVIG treat-
+ment were only of short-lived benefit.",Plasmapheresis and IVIG treat- ment were only of short-lived benefit.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,immunotherapy,PLEX;IVIG;steroids,2,model_candidate,2248,2356,"High-dose steroid therapy
+(methylprednisone 500mg i.v. per day for 5 days) brought substan-
+tial improvement",High-dose steroid therapy (methylprednisone 500mg i.v. per day for 5 days) brought substan- tial improvement,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,immuntherapy_detail,"Plasmapheresis and IVIG treatment were only of short-lived benefit. High-dose steroid therapy
+(methylprednisone 500 mg i.v. per day for 5 days) brought substantial improvement allowing the patient to walk freely without support. Treatment was continued successfully with low-dose prednisone orally (0.4 mg/kg every other day) and the patient remained symptom free since.",1,model_candidate,2178,2552,"Plasmapheresis and IVIG treat-
+ment were only of short-lived benefit. High-dose steroid therapy
+(methylprednisone 500mg i.v. per day for 5 days) brought substan-
+tial improvement allowing the patient to walk freely without support.
+Treatment was continued successfully with low-dose prednisone
+orally (0.4mg/kg every other day) and the patient remained symp-
+tom free since.",Plasmapheresis and IVIG treat- ment were only of short-lived benefit. High-dose steroid therapy (methylprednisone 500mg i.v. per day for 5 days) brought substan- tial improvement allowing the patient to walk freely without support. Treatment was continued successfully with low-dose prednisone orally (0.4mg/kg every other day) and the patient remained symp- tom free since.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,immunotherapy_effect,improvement,1,model_candidate,2331,2356,"substan-
+tial improvement",substan- tial improvement,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,sympt_treatment,benzo:baclofen,1,model_candidate,2073,2149,"Baclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff-
+ness.",Baclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff- ness.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,sympt_treatment,benzo:baclofen,2,model_candidate,2150,2177,Diazepam was not tolerated.,Diazepam was not tolerated.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,sympt_treatment_detail,"Baclofen treatment (25 mg t.i.d.) slighty improved the patient’s stiffness.
+Diazepam was not tolerated",1,model_candidate,2073,2177,"Baclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff-
+ness. Diazepam was not tolerated.",Baclofen treatment (25mg t.i.d.) slighty improved the patient’s stiff- ness. Diazepam was not tolerated.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,other_treatment,"resection of cancer, tamoxifen",1,model_candidate,408,508,"a ductal carcinoma of
+the breast was treated surgically followed by antihormonal therapy
+(tamoxifen)",a ductal carcinoma of the breast was treated surgically followed by antihormonal therapy (tamoxifen),model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,autoimmunity,thyroid;uveitis,1,model_candidate,276,338,"Since 1977 she
+was suffering from recurrent bilateral uveitis.",Since 1977 she was suffering from recurrent bilateral uveitis.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,autoimmunity,thyroid;uveitis,2,model_candidate,339,394,"In spring 1998 Hashi-
+moto’s thyroiditis was diagnosed.",In spring 1998 Hashi- moto’s thyroiditis was diagnosed.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,autoimmunity_specify,"Hashimoto, recurrent bilateral uveitis, no diabetes",1,model_candidate,276,338,"Since 1977 she
+was suffering from recurrent bilateral uveitis.",Since 1977 she was suffering from recurrent bilateral uveitis.,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,autoimmunity_specify,"Hashimoto, recurrent bilateral uveitis, no diabetes",2,model_candidate,339,394,"In spring 1998 Hashi-
+moto’s thyroiditis was diagnosed.",In spring 1998 Hashi- moto’s thyroiditis was diagnosed.,model_supporting_snippet_2,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,autoimmunity_specify,"Hashimoto, recurrent bilateral uveitis, no diabetes",3,model_candidate,1794,1828,"no diabetes melli-
+tus was present",no diabetes melli- tus was present,model_supporting_snippet_3,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+615,,notes,"In our patient the SPS appears to be unrelated to the cancer. First, the patient’s symptoms continued to worsen after removal of the neoplasm without signs of cancer progression. Second, the patient
+improved markedly on immunomodulatory treatment and is doing well ever since. Third, prior to the development of breast cancer the
+patient presented multiple autoantibodies, some of which leading to overt endocrinopathy. These arguments, in the absence of antiamphiphysin antibodies, considered specific for paraneoplastic neurological disorders [10], favor a nonparaneoplastic origin for the neurological symptoms, despite incidental cooccurrence of breast cancer, a common malignancy in elderly women.",1,model_candidate,3597,4308,"In our
+patient the SPS appears to be unrelated to the cancer. First, the
+patient’s symptoms continued to worsen after removal of the neo-
+plasm, without signs of cancer progression. Second, the patient
+improved markedly on immunomodulatory treatment and is doing
+well ever since. Third, prior to the development of breast cancer the
+patient presented multiple autoantibodies, some of which leading to
+overt endocrinopathy. These arguments, in the absence of antiam-
+phiphysin antibodies, considered specific for paraneoplastic neuro-
+logical disorders [10], favor a nonparaneoplastic origin for the neuro-
+logical symptoms, despite incidental cooccurrence of breast cancer, a
+common malignancy in elderly women.","In our patient the SPS appears to be unrelated to the cancer. First, the patient’s symptoms continued to worsen after removal of the neo- plasm, without signs of cancer progression. Second, the patient improved markedly on immunomodulatory treatment and is doing well ever since. Third, prior to the development of breast cancer the patient presented multiple autoantibodies, some of which leading to overt endocrinopathy. These arguments, in the absence of antiam- phiphysin antibodies, considered specific for paraneoplastic neuro- logical disorders [10], favor a nonparaneoplastic origin for the neuro- logical symptoms, despite incidental cooccurrence of breast cancer, a common malignancy in elderly women.",model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\615\p1.json
+621,,sex,F,1,model_candidate,27,41,Japanese woman,Japanese woman,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,ethnicity,E_asia,1,model_candidate,13,41,A 46-year-old Japanese woman,A 46-year-old Japanese woman,model_supporting_snippet_1,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,age_onset,46,1,model_candidate,13,96,"A 46-year-old Japanese womanexperienced clumsiness of
+the right hand in August 1988",A 46-year-old Japanese womanexperienced clumsiness of the right hand in August 1988,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,time_to_diagnosis,10,1,model_candidate,3004,3050,ten years after the onset of cerebellar ataxia,ten years after the onset of cerebellar ataxia,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,first_manifestation,other,1,model_candidate,41,138,"experienced clumsiness of
+the right hand in August 1988 and two months later developed
+dysarthria",experienced clumsiness of the right hand in August 1988 and two months later developed dysarthria,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,first_manifestation,other,2,model_candidate,198,293,"Cerebellar ataxia was diagnosed because of her right
+upper extremity ataxia and slurred speech.",Cerebellar ataxia was diagnosed because of her right upper extremity ataxia and slurred speech.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,first_manifestation_multiple,ataxia,1,model_candidate,41,96,"experienced clumsiness of
+the right hand in August 1988",experienced clumsiness of the right hand in August 1988,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,first_manifestation_multiple,ataxia,2,model_candidate,198,293,"Cerebellar ataxia was diagnosed because of her right
+upper extremity ataxia and slurred speech.",Cerebellar ataxia was diagnosed because of her right upper extremity ataxia and slurred speech.,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,stiffness_distribution_onset,none,1,model_candidate,41,138,"experienced clumsiness of
+the right hand in August 1988 and two months later developed
+dysarthria",experienced clumsiness of the right hand in August 1988 and two months later developed dysarthria,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,stiffness_distribution_onset,none,2,model_candidate,369,418,"In
+1998, she complained of severe trunk stiffness","In 1998, she complained of severe trunk stiffness",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,spasms_distribution_onset,none,1,model_candidate,41,138,"experienced clumsiness of
+the right hand in August 1988 and two months later developed
+dysarthria",experienced clumsiness of the right hand in August 1988 and two months later developed dysarthria,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,spasms_distribution_onset,none,2,model_candidate,369,484,"In
+1998, she complained of severe trunk stiffness with board-like
+rigidity of the abdomen and painful muscle spasms","In 1998, she complained of severe trunk stiffness with board-like rigidity of the abdomen and painful muscle spasms",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,other_symptoms_onset,ataxia;dysarthria,1,model_candidate,245,292,"right
+upper extremity ataxia and slurred speech",right upper extremity ataxia and slurred speech,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,diagnosis_onset,other,1,model_candidate,198,293,"Cerebellar ataxia was diagnosed because of her right
+upper extremity ataxia and slurred speech.",Cerebellar ataxia was diagnosed because of her right upper extremity ataxia and slurred speech.,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,onset_to_established,120,1,model_candidate,140,197,"Her condition gradually worsened over the next ten
+years.",Her condition gradually worsened over the next ten years.,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,onset_to_established,120,2,model_candidate,369,484,"In
+1998, she complained of severe trunk stiffness with board-like
+rigidity of the abdomen and painful muscle spasms","In 1998, she complained of severe trunk stiffness with board-like rigidity of the abdomen and painful muscle spasms",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,onset_to_established,120,3,model_candidate,3004,3050,ten years after the onset of cerebellar ataxia,ten years after the onset of cerebellar ataxia,model_supporting_snippet_3,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,overview_established,stiffness;spasms,1,model_candidate,396,484,"severe trunk stiffness with board-like
+rigidity of the abdomen and painful muscle spasms",severe trunk stiffness with board-like rigidity of the abdomen and painful muscle spasms,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,stiffness_distribution_established,axial,1,model_candidate,396,458,"severe trunk stiffness with board-like
+rigidity of the abdomen",severe trunk stiffness with board-like rigidity of the abdomen,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,stiffness_distribution_established,axial,2,model_candidate,490,530,"there
+was no rigidity of the extremities",there was no rigidity of the extremities,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,spasms_distribution_established,axial,1,model_candidate,396,484,"severe trunk stiffness with board-like
+rigidity of the abdomen and painful muscle spasms",severe trunk stiffness with board-like rigidity of the abdomen and painful muscle spasms,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,spasms_distribution_established,axial,2,model_candidate,2889,2951,"continuous contraction of the abdominal and paraspinal
+muscles",continuous contraction of the abdominal and paraspinal muscles,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,other_symptoms_established,oculomotor,1,model_candidate,861,899,The saccadic eye movementswere slowed.,The saccadic eye movementswere slowed.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,other_symptoms_established_oculo,slowed_saccades,1,model_candidate,861,899,The saccadic eye movementswere slowed.,The saccadic eye movementswere slowed.,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_status,GAD;islet_cell;parietal_cell,1,model_candidate,1243,1278,"anti-GAD-Abstiter of 192, 900
+
+U/ml","anti-GAD-Abstiter of 192, 900 U/ml",model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_status,GAD;islet_cell;parietal_cell,2,model_candidate,1298,1371,"Islet-cell autoantibody and gastric
+parietal-cell antibody were detected.",Islet-cell autoantibody and gastric parietal-cell antibody were detected.,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_titre,192900,1,model_candidate,1264,1272,"192, 900","192, 900",model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_units,U/mL,1,model_candidate,1274,1278,U/ml,U/ml,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_tests,GAD;islet_cell;parietal_cell;Yo;Hu,1,model_candidate,1298,1371,"Islet-cell autoantibody and gastric
+parietal-cell antibody were detected.",Islet-cell autoantibody and gastric parietal-cell antibody were detected.,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_tests,GAD;islet_cell;parietal_cell;Yo;Hu,2,model_candidate,1217,1278,"Serological test showedan anti-GAD-Abstiter of 192, 900
+
+U/ml","Serological test showedan anti-GAD-Abstiter of 192, 900 U/ml",model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,antibody_testsystem,western_blot,1,model_candidate,4204,4248,Western blot analysis of the patient's serum,Western blot analysis of the patient's serum,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,MRI_abnormalities,"mild asymmetric cerebellar atrophy, more in right hemisphere",1,model_candidate,322,357,MRI) showed mild cerebellar atrophy,MRI) showed mild cerebellar atrophy,model_supporting_snippet_1,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,autoimmunity,diabetes,1,model_candidate,578,593,DMwas diagnosed,DMwas diagnosed,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+621,,family_history,none,1,model_candidate,682,739,"There was no family history of cerebellar ataxia or
+IDDM.",There was no family history of cerebellar ataxia or IDDM.,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\621\p1.json
+623,,sex,F,1,model_candidate,31,49,40-year-old female,40-year-old female,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,age_onset,40,1,model_candidate,29,108,a 40-year-old female with continuous muscle stiffness and painful muscle spasms,a 40-year-old female with continuous muscle stiffness and painful muscle spasms,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,first_manifestation_multiple,stiffness;gait_disorder;other,1,model_candidate,1196,1278,"complaining of stiffness in the bilateral lower
+extremities and a gait disturbance",complaining of stiffness in the bilateral lower extremities and a gait disturbance,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,first_manifestation_multiple,stiffness;gait_disorder;other,2,model_candidate,1523,1598,"the patient
+experienced vertigo, pharyngeal pain, dysphagia, and
+dysarthria","the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,first_manifestation_multiple,stiffness;gait_disorder;other,3,model_candidate,1611,1710,"she began to fall backward or
+forward repeatedly due to a sudden stiffness of the lower
+extremities",she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities,model_supporting_snippet_3,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,first_manifestation_mother,vertigo;pharyngeal pain;dysphagia;dysarthria,1,model_candidate,1523,1598,"the patient
+experienced vertigo, pharyngeal pain, dysphagia, and
+dysarthria","the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria",model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,included_diagnosis,Stiff_Person,1,model_candidate,4888,4923,"Stiff-person syndrome was
+diagnosed",Stiff-person syndrome was diagnosed,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,early_symptoms,stiffness,1,model_candidate,1669,1710,"sudden stiffness of the lower
+extremities",sudden stiffness of the lower extremities,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,1,model_candidate,1211,1255,"stiffness in the bilateral lower
+extremities",stiffness in the bilateral lower extremities,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,2,model_candidate,1669,1710,"sudden stiffness of the lower
+extremities",sudden stiffness of the lower extremities,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,stiffness_distribution_onset_multiple,lumb_prox_LE;distal_LE;axial,3,model_candidate,1766,1797,sudden stiffness of the abdomen,sudden stiffness of the abdomen,model_supporting_snippet_3,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,spasms_distribution_onset,lumb_prox_LE;distal_LE,1,model_candidate,87,108,painful muscle spasms,painful muscle spasms,model_supporting_snippet_1,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,spasms_distribution_onset,lumb_prox_LE;distal_LE,2,model_candidate,2545,2654,"Painful tonic spasms, dominant
+on the right, and myoclonus of the bilateral lower extremi-
+ties were observed","Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremi- ties were observed",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,other_symptoms_onset,autonomic;myoclonus;babinski,1,model_candidate,1894,1919,urinary urgency developed,urinary urgency developed,model_supporting_snippet_1,exact,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,other_symptoms_onset,autonomic;myoclonus;babinski,2,model_candidate,2594,2654,"myoclonus of the bilateral lower extremi-
+ties were observed",myoclonus of the bilateral lower extremi- ties were observed,model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,other_symptoms_onset,autonomic;myoclonus;babinski,3,model_candidate,2815,2886,"Babinski sign was present bilaterally and urinary
+urgency was observed.",Babinski sign was present bilaterally and urinary urgency was observed.,model_supporting_snippet_3,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,other_symptoms_onset_auto,urinary_urgency,1,model_candidate,1894,1919,urinary urgency developed,urinary urgency developed,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,antibody_tests,AChR;GAD;ssDNA;dsDNA;pancreatic_islet;TG;mitochondrial;amphiphysin,1,model_candidate,3728,3878,"Anti-pancreatic islet cell antibodies,
+anti-thyroid microsomal antibody, anti-thyroglobuline anti-
+bodies, anti-mitochondrial antibodies were negative","Anti-pancreatic islet cell antibodies, anti-thyroid microsomal antibody, anti-thyroglobuline anti- bodies, anti-mitochondrial antibodies were negative",model_supporting_snippet_3,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,antibody_tests,AChR;GAD;ssDNA;dsDNA;pancreatic_islet;TG;mitochondrial;amphiphysin,2,model_candidate,3880,4048,"West-
+ern blot analysis, using a serum sample from the patient
+and a human brain homogenate revealed no bands near
+128 kDa, which is considered to represent amphiphysin","West- ern blot analysis, using a serum sample from the patient and a human brain homogenate revealed no bands near 128 kDa, which is considered to represent amphiphysin",model_supporting_snippet_4,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,CSF_status,antibody_present,1,model_candidate,312,426,"High levels of anti-glutamic acid decarboxylase GAD antibodies were detected in both serum
+and cerebrospinal fluid",High levels of anti-glutamic acid decarboxylase GAD antibodies were detected in both serum and cerebrospinal fluid,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,CMUA,1,1,model_candidate,4546,4648,"The surface electromyography
+detected a continuous muscle discharge in the bilateral
+lower extremities",The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,tu_screening,1,1,model_candidate,5376,5428,"The chest CT, taken to search for malignant tu-
+mors","The chest CT, taken to search for malignant tu- mors",model_extraction_text,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,tu_screening_abnormal,invasive thymoma,1,model_candidate,5657,5688,an invasive thymoma was present,an invasive thymoma was present,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,immunotherapy,steroids;PLEX,1,model_candidate,493,619,"Steroid pulse therapy and immunoadsorption
+therapy alleviated the clinical symptoms and decreased the anti-GAD antibody titer.",Steroid pulse therapy and immunoadsorption therapy alleviated the clinical symptoms and decreased the anti-GAD antibody titer.,model_supporting_snippet_1,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,immunotherapy,steroids;PLEX,2,model_candidate,5003,5163,"The patient was treated with
+two courses of a three-day pulse therapy, using 1000 mg
+methylprednisolone per day, and three courses of im-
+munoadsorption therapy","The patient was treated with two courses of a three-day pulse therapy, using 1000 mg methylprednisolone per day, and three courses of im- munoadsorption therapy",model_supporting_snippet_2,folded_alnum_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,sympt_treatment,benzo,1,model_candidate,4693,4746,"with the administration of 10-mg intravenous
+diazepam",with the administration of 10-mg intravenous diazepam,model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,sympt_treatment_detail,diazepam,1,model_candidate,302,310,diazepam,diazepam,model_extraction_text,exact,direct_exact_span_ready,candidate_for_promotion_after_spot_check,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,sympt_treatment_effect,improvement,1,model_candidate,4546,4747,"The surface electromyography
+detected a continuous muscle discharge in the bilateral
+lower extremities, which was markedly reduced during
+sleep or with the administration of 10-mg intravenous
+diazepam.","The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam.",model_supporting_snippet_2,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json
+623,,notes,"The thymectomy and postoperative
+radiotherapy further alleviated the clinical symptoms of
+muscle stiffness and myoclonus.",1,model_candidate,6118,6239,"The thymectomy and postoperative
+radiotherapy further alleviated the clinical symptoms of
+muscle stiffness and myoclonus.",The thymectomy and postoperative radiotherapy further alleviated the clinical symptoms of muscle stiffness and myoclonus.,model_extraction_text,normalised_to_exact_source,covered_by_repaired_exact_source_text,candidate_after_span_review,qa\validation\stage07_single_case_codex_gold\batch011\json\target_views\623\p1.json

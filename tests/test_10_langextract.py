@@ -51,6 +51,32 @@ class TestLangExtractRouting(unittest.TestCase):
     def tearDown(self) -> None:
         self.temp_dir.cleanup()
 
+    def test_to_example_data_preserves_langextract_attributes(self) -> None:
+        examples = self.module.to_example_data(
+            [
+                {
+                    "text": "A 39-year-old woman had spasms.",
+                    "extractions": [
+                        {
+                            "extraction_class": "age_description",
+                            "extraction_text": "39-year-old",
+                            "attributes": {
+                                "value": 39,
+                                "case_id": "",
+                                "field_flags": ["gold", "exact"],
+                            },
+                        }
+                    ],
+                }
+            ]
+        )
+
+        self.assertEqual(len(examples), 1)
+        self.assertEqual(
+            examples[0].extractions[0].attributes,
+            {"value": "39", "case_id": "", "field_flags": ["gold", "exact"]},
+        )
+
     def test_process_file_skips_incorrect_reference_without_writing_outputs(self) -> None:
         module = self.module
         input_path = self.input_dir / "1841.json"

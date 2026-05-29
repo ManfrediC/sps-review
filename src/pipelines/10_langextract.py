@@ -161,6 +161,20 @@ def default_group_examples_payload() -> list[dict[str, Any]]:
 
 # Convert example payload dictionaries into LangExtract ExampleData objects.
 def to_example_data(payload: list[dict[str, Any]]) -> list[Any]:
+    def coerce_attributes(value: Any) -> dict[str, str | list[str]] | None:
+        if not isinstance(value, dict):
+            return None
+        attributes: dict[str, str | list[str]] = {}
+        for key, item in value.items():
+            clean_key = str(key).strip()
+            if not clean_key:
+                continue
+            if isinstance(item, list):
+                attributes[clean_key] = [str(part) for part in item]
+            else:
+                attributes[clean_key] = str(item)
+        return attributes or None
+
     examples: list[Any] = []
     for item in payload:
         text = (item.get("text") or "").strip()
@@ -176,6 +190,7 @@ def to_example_data(payload: list[dict[str, Any]]) -> list[Any]:
                     lx.data.Extraction(
                         extraction_class=extraction_class,
                         extraction_text=extraction_text,
+                        attributes=coerce_attributes(row.get("attributes")),
                     )
                 )
         if extractions:

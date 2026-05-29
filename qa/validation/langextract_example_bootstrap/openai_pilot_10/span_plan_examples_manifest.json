@@ -1,0 +1,37 @@
+{
+  "generated_at_utc": "2026-05-29T18:06:35.010534+00:00",
+  "span_plan_path": "qa\\validation\\langextract_example_bootstrap\\openai_pilot_10\\gold_source_span_plan.csv",
+  "examples_path": "examples\\langextract_bootstrap\\draft_langextract_examples_openai_pilot10_all_gold.json",
+  "example_count": 50,
+  "source_document_count": 10,
+  "extraction_count": 387,
+  "langextract_compatibility": {
+    "example_count": 50,
+    "extraction_count": 387,
+    "alignment_issue_count": 0,
+    "attribute_error_count": 0,
+    "alignment_policy": {
+      "enable_fuzzy_alignment": false,
+      "accept_match_lesser": false
+    },
+    "alignment_issues": [],
+    "attribute_errors": []
+  },
+  "field_row_count": 263,
+  "support_span_count": 387,
+  "coverage_error_count": 0,
+  "coverage_errors": [],
+  "coverage_quality_counts": {
+    "context_or_absence_only_not_direct_extraction": 5,
+    "covered_by_repaired_exact_source_text": 127,
+    "direct_exact_span_ready": 112,
+    "gold_source_conflict_or_partial_support": 12,
+    "needs_human_adjudication": 7
+  },
+  "recommendation_counts": {
+    "candidate_after_span_review": 127,
+    "candidate_for_promotion_after_spot_check": 112,
+    "do_not_promote_as_standard_langextract_example": 17,
+    "review_before_promoting": 7
+  }
+}

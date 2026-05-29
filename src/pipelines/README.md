@@ -248,8 +248,13 @@ python src/pipelines/07_split_case_series.py
 
 ### `09_build_langextract_examples.py`
 
-Rebuilds few-shot JSON assets in `config/prompts/examples/` from curated rows
-under `examples/`.
+Bootstraps reviewable LangExtract example candidates from manually reviewed MC
+single-case rows and Stage 07 gold target-view text. Dry runs and Gemini
+candidate outputs stay under `qa/validation/langextract_example_bootstrap/`;
+accepted pilot examples are compiled under `examples/langextract_bootstrap/`
+before any later promotion into `config/prompts/examples/`. The span-plan build
+path validates exact Stage 07 offsets and runs strict LangExtract prompt
+alignment before writing the all-gold draft examples.
 
 ### `10_langextract.py`
 

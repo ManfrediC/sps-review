@@ -1,0 +1,38 @@
+{
+  "generated_at_utc": "2026-05-29T17:12:57.428940+00:00",
+  "span_plan_path": "qa\\validation\\langextract_example_bootstrap\\pilot_10\\gold_source_span_plan.csv",
+  "examples_path": "examples\\langextract_bootstrap\\draft_langextract_examples_all_gold.json",
+  "example_count": 77,
+  "source_document_count": 10,
+  "extraction_count": 432,
+  "langextract_compatibility": {
+    "example_count": 77,
+    "extraction_count": 432,
+    "alignment_issue_count": 0,
+    "attribute_error_count": 0,
+    "alignment_policy": {
+      "enable_fuzzy_alignment": false,
+      "accept_match_lesser": false
+    },
+    "alignment_issues": [],
+    "attribute_errors": []
+  },
+  "field_row_count": 269,
+  "support_span_count": 432,
+  "coverage_error_count": 0,
+  "coverage_errors": [],
+  "coverage_quality_counts": {
+    "context_or_absence_only_not_direct_extraction": 4,
+    "covered_by_repaired_exact_source_text": 209,
+    "derived_value_needs_coding_rule": 3,
+    "direct_exact_span_ready": 45,
+    "needs_human_adjudication": 8
+  },
+  "recommendation_counts": {
+    "candidate_after_span_review": 209,
+    "candidate_for_promotion_after_spot_check": 45,
+    "do_not_promote_as_standard_langextract_example": 4,
+    "review_before_promoting": 8,
+    "review_before_promoting_derived_value": 3
+  }
+}
