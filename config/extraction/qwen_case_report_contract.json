@@ -1,0 +1,2013 @@
+{
+  "schema_version": "qwen_single_case_contract_v1",
+  "generated_at_utc": "2026-06-04T10:02:31.101651+00:00",
+  "source_workbook": "C:\\NOS\\Stiff Person Review\\data extraction forms\\Stiff Person risk of Bias and Data Extraction Forms_shermyn_2024_09_18.xlsx",
+  "source_sheet": "Case Reports",
+  "model_default": "qwen3.5:397b-cloud",
+  "fixed_worksheet_fields": [
+    "Reference",
+    "extractor"
+  ],
+  "notes": [
+    "Legacy FU_duration columns are collapsed into Followup_Duration_Months.",
+    "first_manifestation_mother is corrected to first_manifestation_other.",
+    "immuntherapy_detail is corrected to immunotherapy_detail.",
+    "Missing values use NA; N/A is not accepted in this workflow.",
+    "Allowed values include compact option-like tokens observed in the manual CSV plus reviewed symptom tokens surfaced during Qwen pilot review."
+  ],
+  "fields": [
+    {
+      "name": "extractor",
+      "section": "1.section: Identifier and case vignette",
+      "instruction": "Initials of extractor",
+      "source_columns": [
+        "A"
+      ],
+      "source_labels": [
+        "Initials of extractor"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "Reference",
+      "section": "1.section: Identifier and case vignette",
+      "instruction": "ID",
+      "source_columns": [
+        "B"
+      ],
+      "source_labels": [
+        "ID"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "case_ID",
+      "section": "1.section: Identifier and case vignette",
+      "instruction": "Case reference within the article (case#)",
+      "source_columns": [
+        "C"
+      ],
+      "source_labels": [
+        "Case reference within the article (case#)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "age_description",
+      "section": "1.section: Identifier and case vignette",
+      "instruction": "Age at description",
+      "source_columns": [
+        "D"
+      ],
+      "source_labels": [
+        "Age at description"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "sex",
+      "section": "1.section: Identifier and case vignette",
+      "instruction": "Sex: M or F",
+      "source_columns": [
+        "E"
+      ],
+      "source_labels": [
+        "Sex: M or F"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "ethnicity",
+      "section": "section: basic demographic data",
+      "instruction": "Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column)",
+      "source_columns": [
+        "F"
+      ],
+      "source_labels": [
+        "Ethnicity (select one)\n- white = White/Caucasian\n- africa = African/ Afro-Caribbean\n- E_asia = East Asia (Japan, Korea, China)\n- S_asia = South Asia (India, Pakistan, Bangladesh, Sri Lanka)\n- SE_asia = South East Asian (everything East of India and South of China which will cover Thailand, Malaysia, Singapore)\n- latin = Latin American (non-African origin; central and S America, without Caribbean)\n- other = other (specify in next column)"
+      ],
+      "allowed_values": [
+        "white",
+        "africa",
+        "E_asia",
+        "S_asia",
+        "SE_asia",
+        "latin",
+        "other",
+        "turkish",
+        "african"
+      ]
+    },
+    {
+      "name": "age_onset",
+      "section": "section: basic demographic data",
+      "instruction": "Age at onset",
+      "source_columns": [
+        "G"
+      ],
+      "source_labels": [
+        "Age at onset"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "Followup_Duration_Months",
+      "section": "section: basic demographic data",
+      "instruction": "Total reported follow-up duration in months. If the paper reports follow-up in years, convert to months. If no follow-up duration is reported, use NA. This is the only permitted numeric conversion; ratios, titres, doses, units, and all other reported measurements stay verbatim.",
+      "source_columns": [
+        "H",
+        "AJ"
+      ],
+      "source_labels": [
+        "Follow Up (years)",
+        "Duration of follow up (months)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "time_to_diagnosis",
+      "section": "section: basic demographic data",
+      "instruction": "Time to diagnosis (years)",
+      "source_columns": [
+        "I"
+      ],
+      "source_labels": [
+        "Time to diagnosis (years)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "first_manifestation",
+      "section": "section: basic demographic data",
+      "instruction": "First manifestation (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next cols\n- other = other, specify in next cols",
+      "source_columns": [
+        "J"
+      ],
+      "source_labels": [
+        "First manifestation (select)\n- stiffness\n- spasms\n- startle = excessive startle\n- multiple = multiple, specify in next cols\n- other = other, specify in next cols"
+      ],
+      "allowed_values": [
+        "stiffness",
+        "spasms",
+        "startle",
+        "multiple",
+        "other",
+        "pain",
+        "focal_seizures",
+        "seizures",
+        "shaking"
+      ]
+    },
+    {
+      "name": "first_manifestation_multiple",
+      "section": "section: basic demographic data",
+      "instruction": "First manifestation (multiple)",
+      "source_columns": [
+        "K"
+      ],
+      "source_labels": [
+        "First manifestation (multiple)"
+      ],
+      "allowed_values": [
+        "fatigue",
+        "tingling",
+        "stiffness",
+        "spasms",
+        "pain",
+        "falls",
+        "startle",
+        "agoraphobia",
+        "weakness",
+        "X",
+        "dysphagia",
+        "myokymia",
+        "cramps",
+        "itching",
+        "foot_oedema",
+        "gait_disorder",
+        "vertigo",
+        "imbalance",
+        "ataxia",
+        "other",
+        "lordosis",
+        "thyroiditis",
+        "diabetes_mellitus",
+        "paraesthesia",
+        "numbness",
+        "dysarthria",
+        "unresponsiveness",
+        "oculomotor",
+        "decreased_sleep_requirement",
+        "disorganised_behaviour",
+        "myoclonus",
+        "weight_loss",
+        "mood_disorder",
+        "diarrhoea",
+        "headache",
+        "anxiety",
+        "memory_disorder",
+        "confusion",
+        "insomnia",
+        "depression",
+        "OCD",
+        "apathy",
+        "impaired_consciousness",
+        "urinary_incontinence",
+        "fever",
+        "tachycardia",
+        "hypotension",
+        "rhabdomyolysis",
+        "renal_injury",
+        "myocloni",
+        "cramp",
+        "paraethesia",
+        "contractures",
+        "swollen_tongue",
+        "dizziness",
+        "fasciculation",
+        "atrophy",
+        "ptosis",
+        "diplopia",
+        "facial_weakness",
+        "sensory",
+        "tremor",
+        "vomiting",
+        "dyspnoea",
+        "psychiatric",
+        "trismus",
+        "dystonia-like",
+        "autonomic",
+        "brainstem",
+        "brainstem_dysfunction",
+        "cognitive_deficit",
+        "tongue_paraesthesia",
+        "burning",
+        "seizure",
+        "behavioural",
+        "memory_loss"
+      ]
+    },
+    {
+      "name": "first_manifestation_other",
+      "section": "section: basic demographic data",
+      "instruction": "First manifestation (other)",
+      "source_columns": [
+        "L"
+      ],
+      "source_labels": [
+        "First manifestation (other)"
+      ],
+      "allowed_values": [
+        "sensory",
+        "pain",
+        "fatigue",
+        "fasciculations",
+        "clonus",
+        "numbness",
+        "spasticity",
+        "startle",
+        "agoraphobia",
+        "ataxia",
+        "nystagmus",
+        "dysarthria",
+        "dysphagia",
+        "vertigo"
+      ]
+    },
+    {
+      "name": "diagnostic_criteria",
+      "section": "section: basic demographic data",
+      "instruction": "Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed",
+      "source_columns": [
+        "M"
+      ],
+      "source_labels": [
+        "Diagnostic Criteria Used : Provide below the details of the criteria used to make the diagnosis - copy and paste from text if needed"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "early_symptoms",
+      "section": "section: basic demographic data",
+      "instruction": "Overview_SPSD symptoms / early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle",
+      "source_columns": [
+        "N"
+      ],
+      "source_labels": [
+        "Overview_SPSD symptoms / early disease (select)\n- stiffness\n- spasms\n- startle = excessive startle"
+      ],
+      "allowed_values": [
+        "stiffness",
+        "spasms",
+        "startle",
+        "fatigue",
+        "tingling",
+        "falls",
+        "pain",
+        "ataxia",
+        "dysarthria",
+        "dyspnoea",
+        "dysphagia",
+        "psychiatric",
+        "dysaesthesia"
+      ]
+    },
+    {
+      "name": "stiffness_distribution_onset",
+      "section": "section: basic demographic data",
+      "instruction": "Stiffness distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col",
+      "source_columns": [
+        "O"
+      ],
+      "source_labels": [
+        "Stiffness distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised (specify in next col)\n- generalised = generalised\n- other = other, specify in next col"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "UE",
+        "axial",
+        "trismus",
+        "multiple",
+        "generalised",
+        "other",
+        "none",
+        "left_leg",
+        "unspecified",
+        "right_leg",
+        "spasms"
+      ]
+    },
+    {
+      "name": "stiffness_distribution_onset_multiple",
+      "section": "section: basic demographic data",
+      "instruction": "Stiffness distribution: multiple (text)",
+      "source_columns": [
+        "P"
+      ],
+      "source_labels": [
+        "Stiffness distribution: multiple (text)"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "UE",
+        "axial",
+        "lumb_proximal_LE",
+        "trismus",
+        "unspecified"
+      ]
+    },
+    {
+      "name": "stiffness_distribution_onset_other",
+      "section": "section: basic demographic data",
+      "instruction": "Stiffness distribution: other (text)",
+      "source_columns": [
+        "Q"
+      ],
+      "source_labels": [
+        "Stiffness distribution: other (text)"
+      ],
+      "allowed_values": [
+        "neck"
+      ]
+    },
+    {
+      "name": "spasms_distribution_onset",
+      "section": "section: basic demographic data",
+      "instruction": "Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col",
+      "source_columns": [
+        "R"
+      ],
+      "source_labels": [
+        "Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "UE",
+        "axial",
+        "generalised",
+        "multiple",
+        "other",
+        "abdominal",
+        "jaw",
+        "diaphragm",
+        "esophageal",
+        "none",
+        "undefined",
+        "left_leg",
+        "unspecified",
+        "right_leg",
+        "stiffness",
+        "spasms"
+      ]
+    },
+    {
+      "name": "spasms_distribution_onset_multiple",
+      "section": "section: basic demographic data",
+      "instruction": "Spasms distribution: multiple (text)",
+      "source_columns": [
+        "S"
+      ],
+      "source_labels": [
+        "Spasms distribution: multiple (text)"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "face",
+        "back",
+        "leg",
+        "UE",
+        "axial",
+        "bulbar",
+        "neck",
+        "right_leg",
+        "masseter"
+      ]
+    },
+    {
+      "name": "spasms_distribution_onset_other",
+      "section": "section: basic demographic data",
+      "instruction": "Spasms distribution: other (text)",
+      "source_columns": [
+        "T"
+      ],
+      "source_labels": [
+        "Spasms distribution: other (text)"
+      ],
+      "allowed_values": [
+        "neck"
+      ]
+    },
+    {
+      "name": "excessive_startle_onset",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli\n- multiple (specify in next col)\n- other (specify in next col)",
+      "source_columns": [
+        "U"
+      ],
+      "source_labels": [
+        "Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli\n- multiple (specify in next col)\n- other (specify in next col)"
+      ],
+      "allowed_values": [
+        "touch",
+        "noise",
+        "visual",
+        "multiple",
+        "other",
+        "unspecified",
+        "startle"
+      ]
+    },
+    {
+      "name": "excessive_startle_onset_multiple",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Excessive startle: multiple (text)",
+      "source_columns": [
+        "V"
+      ],
+      "source_labels": [
+        "Excessive startle: multiple (text)"
+      ],
+      "allowed_values": [
+        "touch",
+        "noise",
+        "movement",
+        "visual",
+        "somatosensory",
+        "emotional",
+        "emotion"
+      ]
+    },
+    {
+      "name": "excessive_startle_onset_other",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Excessive startle: other (text)",
+      "source_columns": [
+        "W"
+      ],
+      "source_labels": [
+        "Excessive startle: other (text)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "anxiety_onset",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Anxiety (select)\n- walking = anxiety related to walking unaided\n- generalised = specify in next col",
+      "source_columns": [
+        "X"
+      ],
+      "source_labels": [
+        "Anxiety (select)\n- walking = anxiety related to walking unaided\n- generalised = specify in next col"
+      ],
+      "allowed_values": [
+        "walking",
+        "generalised"
+      ]
+    },
+    {
+      "name": "anxiety_onset_generalised",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Anxiety: generalised (text)",
+      "source_columns": [
+        "Y"
+      ],
+      "source_labels": [
+        "Anxiety: generalised (text)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "other_symptoms_onset",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Other symptoms: list all that apply within 1 cell, separated by semicolons \n(example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next col)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type\n- oculomotor = specify type\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- other = specify in next col",
+      "source_columns": [
+        "Z"
+      ],
+      "source_labels": [
+        "Other symptoms: list all that apply within 1 cell, separated by semicolons \n(example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next col)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type\n- oculomotor = specify type\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- other = specify in next col"
+      ],
+      "allowed_values": [
+        "hyperhidrosis",
+        "autonomic",
+        "hyperreflexia",
+        "babinski",
+        "weakness",
+        "lower_motor_neuron",
+        "encephalopathy",
+        "seizures",
+        "oculomotor",
+        "ptosis",
+        "dysphagia",
+        "dysgeusia",
+        "sensory",
+        "allodynia",
+        "freezing",
+        "other",
+        "fatigue",
+        "tingling",
+        "clonus",
+        "hemidystonia",
+        "ataxia",
+        "LPR",
+        "numbness",
+        "cognitive",
+        "myoclonus",
+        "paraesthesia",
+        "seizure",
+        "polyneuropathy",
+        "paraethesia",
+        "lumbar_pain",
+        "hypoglossal_palsy",
+        "diplopia",
+        "facial_nerve_palsy",
+        "vomiting",
+        "cerebellar_ataxia",
+        "zoster_lesion_buttock",
+        "hypaesthesia",
+        "gait_disorder",
+        "hyporeflexia",
+        "abdominal_pain",
+        "dysphoria",
+        "fasciculation",
+        "muscle_atrophy",
+        "dysarthria",
+        "facial_weakness",
+        "facial_dysaethesia",
+        "limited_joint_motion",
+        "hearing_loss",
+        "asthenia",
+        "severe_pain",
+        "pain",
+        "dyspnoea",
+        "panic_attacks",
+        "visual_hallucinations",
+        "foot_drop",
+        "headache",
+        "confusion",
+        "agitation",
+        "hallucinations",
+        "anorexia",
+        "hiccups",
+        "irritability",
+        "stridor",
+        "respiratory_distress",
+        "cognitive_deficit",
+        "myocloni",
+        "cramp",
+        "tongue_paraesthesia",
+        "generalised_pruritus",
+        "posturing",
+        "jerky_movements_in_sleep",
+        "tachycardia",
+        "memory_loss",
+        "behavioural_changes"
+      ]
+    },
+    {
+      "name": "other_symptoms_onset_auto",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Other symptoms: autonomic (text)",
+      "source_columns": [
+        "AA"
+      ],
+      "source_labels": [
+        "Other symptoms: autonomic (text)"
+      ],
+      "allowed_values": [
+        "vomiting",
+        "tachycardia",
+        "urinary_urgency",
+        "fever",
+        "diarrhoea",
+        "urinary_retention"
+      ]
+    },
+    {
+      "name": "other_symptoms_onset_oculo",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Other symptoms: oculomotor (text)",
+      "source_columns": [
+        "AB"
+      ],
+      "source_labels": [
+        "Other symptoms: oculomotor (text)"
+      ],
+      "allowed_values": [
+        "nystagmus",
+        "diplopia",
+        "esotropia",
+        "ptosis",
+        "anisocoria",
+        "spontaneous_downbeat_nystagmus",
+        "gaze_evoked_nystagmus",
+        "rebound_nystagmus",
+        "VOR_suppression_impairment",
+        "downbeat_nystagmus",
+        "bilateral_ptosis",
+        "left_lateral_gaze_palsy",
+        "ophthalmoplegia",
+        "unspecified"
+      ]
+    },
+    {
+      "name": "other_symptoms_onset_seizures",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Other symptoms: seizures (text)",
+      "source_columns": [
+        "AC"
+      ],
+      "source_labels": [
+        "Other symptoms: seizures (text)"
+      ],
+      "allowed_values": [
+        "focal",
+        "bilateral_focal_secondary_generalisation",
+        "cacosmia",
+        "tonic-clonic"
+      ]
+    },
+    {
+      "name": "onset_mRS",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Disability at onset - SPSD symptoms established; mRS\n0 - No symptoms.\n1 - No significant disability. Able to carry out all usual activities, despite some symptoms.\n2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.\n3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).\n4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.\n5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.\n6 - Dead",
+      "source_columns": [
+        "AD"
+      ],
+      "source_labels": [
+        "Disability at onset - SPSD symptoms established; mRS\n0 - No symptoms.\n1 - No significant disability. Able to carry out all usual activities, despite some symptoms.\n2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.\n3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).\n4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.\n5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.\n6 - Dead"
+      ],
+      "allowed_values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "name": "timecourse_onset",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Time course of onset (select)\n- insidious = insidious/subacute\n- RR = relapsing-remitting\n- fulminant = fulimant/peracute",
+      "source_columns": [
+        "AE"
+      ],
+      "source_labels": [
+        "Time course of onset (select)\n- insidious = insidious/subacute\n- RR = relapsing-remitting\n- fulminant = fulimant/peracute"
+      ],
+      "allowed_values": [
+        "insidious",
+        "RR",
+        "fulminant",
+        "subacute",
+        "insidous"
+      ]
+    },
+    {
+      "name": "diagnosis_onset",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Diagnosis at onset (select)\n- SPSD\n- functional\n- orthopaedic\n- stroke\n- other = specify in next col",
+      "source_columns": [
+        "AF"
+      ],
+      "source_labels": [
+        "Diagnosis at onset (select)\n- SPSD\n- functional\n- orthopaedic\n- stroke\n- other = specify in next col"
+      ],
+      "allowed_values": [
+        "SPSD",
+        "functional",
+        "orthopaedic",
+        "stroke",
+        "other",
+        "seizure",
+        "SPS",
+        "pancreatitis",
+        "epileptic"
+      ]
+    },
+    {
+      "name": "diagnosis_onset_other",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Diagnosis at onset - other (text)",
+      "source_columns": [
+        "AG"
+      ],
+      "source_labels": [
+        "Diagnosis at onset - other (text)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "timecourse_subsequent",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Subsequent disease course (select)\n- monophasic\n- RR = relapsing-remitting\n- chronic_stable\n- chronic-progressive\n- rapidly-progressive",
+      "source_columns": [
+        "AH"
+      ],
+      "source_labels": [
+        "Subsequent disease course (select)\n- monophasic\n- RR = relapsing-remitting\n- chronic_stable\n- chronic-progressive\n- rapidly-progressive"
+      ],
+      "allowed_values": [
+        "monophasic",
+        "RR",
+        "chronic_stable",
+        "chronic",
+        "rapidly",
+        "chronic-progressive",
+        "chronic-stable",
+        "chronic_progressive"
+      ]
+    },
+    {
+      "name": "onset_to_established",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Time from onset to fully established disease (months)",
+      "source_columns": [
+        "AI"
+      ],
+      "source_labels": [
+        "Time from onset to fully established disease (months)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "overview_established",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Overview_SPSD symptoms / established disease\n- stiffness\n- spasms\n- startle = excessive startle",
+      "source_columns": [
+        "AK"
+      ],
+      "source_labels": [
+        "Overview_SPSD symptoms / established disease\n- stiffness\n- spasms\n- startle = excessive startle"
+      ],
+      "allowed_values": [
+        "stiffness",
+        "spasms",
+        "startle",
+        "fatigue",
+        "tingling",
+        "gait_disorder",
+        "pain",
+        "dyspnoea",
+        "weakness",
+        "dysphagia",
+        "myoclonus",
+        "ataxia",
+        "respiratory_failure",
+        "falls"
+      ]
+    },
+    {
+      "name": "stiffness_distribution_established",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Stiffness distribution in established disease (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col",
+      "source_columns": [
+        "AL"
+      ],
+      "source_labels": [
+        "Stiffness distribution in established disease (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- trismus\n- multiple = multiple, but not generalised\n- generalised = generalised\n- other = other, specify in next col"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "UE",
+        "axial",
+        "trismus",
+        "multiple",
+        "generalised",
+        "other",
+        "unspecified",
+        "left_leg",
+        "neck",
+        "stiffness",
+        "spasms",
+        "right_leg"
+      ]
+    },
+    {
+      "name": "stiffness_distribution_established_multiple",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Stiffness distribution in established disease: multiple (text)",
+      "source_columns": [
+        "AM"
+      ],
+      "source_labels": [
+        "Stiffness distribution in established disease: multiple (text)"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "UE",
+        "axial",
+        "trismus",
+        "diaphragm",
+        "left_leg",
+        "neck",
+        "generalised",
+        "facial",
+        "1",
+        "2",
+        "5",
+        "6",
+        "axia"
+      ]
+    },
+    {
+      "name": "stiffness_distribution_established_other",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Stiffness distribution in established disease: other (text)",
+      "source_columns": [
+        "AN"
+      ],
+      "source_labels": [
+        "Stiffness distribution in established disease: other (text)"
+      ],
+      "allowed_values": [
+        "3",
+        "4",
+        "1",
+        "2",
+        "generalised",
+        "tongue",
+        "esophagus",
+        "risus_sardonicus",
+        "distal_LE",
+        "lumb_prox_LE"
+      ]
+    },
+    {
+      "name": "spasms_distribution_established",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col",
+      "source_columns": [
+        "AO"
+      ],
+      "source_labels": [
+        "Spasms distribution (select)\n- lumb_prox_LE = lumbar/proximal legs\n- distal_LE = distal leg(s)\n- UE = arm(s) / upper extremity\n- axial = axial(thoracic,neck)\n- generalised\n- multiple = multiple, but not generalised (specify in next col)\n- other = other, specify in next col"
+      ],
+      "allowed_values": [
+        "lumb_prox_LE",
+        "distal_LE",
+        "UE",
+        "axial",
+        "generalised",
+        "multiple",
+        "other",
+        "abdominal",
+        "jaw",
+        "diaphragm",
+        "esophageal",
+        "gerneralised",
+        "abdomen",
+        "unspecified",
+        "right_leg",
+        "left_leg",
+        "face",
+        "chronic_stable"
+      ]
+    },
+    {
+      "name": "spasms_distribution_established_multiple",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Spasms distribution: multiple (text)",
+      "source_columns": [
+        "AP"
+      ],
+      "source_labels": [
+        "Spasms distribution: multiple (text)"
+      ],
+      "allowed_values": [
+        "axial",
+        "lumb_prox_LE",
+        "distal_LE",
+        "face",
+        "back",
+        "leg",
+        "UE",
+        "laryngospasm",
+        "neck",
+        "shoulder",
+        "masseter",
+        "right_leg",
+        "facial",
+        "axia"
+      ]
+    },
+    {
+      "name": "spasms_distribution_established_other",
+      "section": "3. section: disease onset, signs and symptoms",
+      "instruction": "Spasms distribution: other (text)",
+      "source_columns": [
+        "AQ"
+      ],
+      "source_labels": [
+        "Spasms distribution: other (text)"
+      ],
+      "allowed_values": [
+        "unspecified"
+      ]
+    },
+    {
+      "name": "excessive_startle_established",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli\n- multiple (specify in next col)",
+      "source_columns": [
+        "AR"
+      ],
+      "source_labels": [
+        "Excessive startle (select)\n- touch = to touch\n- noise = to noise\n- visual = to visual stimuli\n- multiple (specify in next col)"
+      ],
+      "allowed_values": [
+        "touch",
+        "noise",
+        "visual",
+        "multiple",
+        "unspecified",
+        "movement",
+        "none",
+        "somatosensory",
+        "emotional"
+      ]
+    },
+    {
+      "name": "excessive_startle_established_multipleother",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Excessive startle: multiple or other (text)",
+      "source_columns": [
+        "AS"
+      ],
+      "source_labels": [
+        "Excessive startle: multiple or other (text)"
+      ],
+      "allowed_values": [
+        "1",
+        "3",
+        "0",
+        "2",
+        "4",
+        "touch",
+        "noise",
+        "emotional",
+        "auditory",
+        "somatosensory",
+        "visual",
+        "movement",
+        "tactile",
+        "speaking",
+        "environmental",
+        "cold",
+        "temperature",
+        "6"
+      ]
+    },
+    {
+      "name": "anxiety_established",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Anxiety (select)\n- walking = anxiety related to walking unaided\n- generalised = specify in next col",
+      "source_columns": [
+        "AT"
+      ],
+      "source_labels": [
+        "Anxiety (select)\n- walking = anxiety related to walking unaided\n- generalised = specify in next col"
+      ],
+      "allowed_values": [
+        "walking",
+        "generalised",
+        "agoraphobia"
+      ]
+    },
+    {
+      "name": "anxiety_established_generalised",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Anxiety: generalised (text)",
+      "source_columns": [
+        "AU"
+      ],
+      "source_labels": [
+        "Anxiety: generalised (text)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "other_symptoms_established",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Other symptoms: list all that apply within 1 cell, separated by semicolons \n(example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next cols)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type in next cols\n- oculomotor = specify type in next cols\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- other = specify in next cols",
+      "source_columns": [
+        "AV"
+      ],
+      "source_labels": [
+        "Other symptoms: list all that apply within 1 cell, separated by semicolons \n(example: hyperhidrosis; babinski; sensory)\n- hyperhidrosis\n- autonomic = other autonomic symptoms (see legend and specify in next cols)\n- hyperreflexia\n- babinski\n- weakness\n- lower_motor_neuron\n- encephalopathy\n- seizures = specify type in next cols\n- oculomotor = specify type in next cols\n- ptosis\n- dysphagia\n- dysgeusia\n- sensory = hyp/paraesthesia\n- allodynia\n- freezing = freezing episodes\n- other = specify in next cols"
+      ],
+      "allowed_values": [
+        "hyperhidrosis",
+        "autonomic",
+        "hyperreflexia",
+        "babinski",
+        "weakness",
+        "lower_motor_neuron",
+        "encephalopathy",
+        "seizures",
+        "oculomotor",
+        "ptosis",
+        "dysphagia",
+        "dysgeusia",
+        "sensory",
+        "allodynia",
+        "freezing",
+        "other",
+        "fatigue",
+        "tingling",
+        "clonus",
+        "hemidystonia",
+        "ataxia",
+        "LPR",
+        "depression",
+        "lordosis",
+        "tetraparesis",
+        "paraethesia",
+        "numbness",
+        "apnoea",
+        "neuropathic_pain",
+        "myoclonus",
+        "cognitive",
+        "paranoia",
+        "frontal_syndrome",
+        "delirium",
+        "delusions",
+        "agitation",
+        "tremor",
+        "hyperekplexia",
+        "dysarthria",
+        "RBD",
+        "delusion",
+        "hypersomnia",
+        "hyperesthesia",
+        "confabulation",
+        "Confusion",
+        "hallucination",
+        "nystagmus",
+        "pruritus",
+        "anxiety",
+        "irritability",
+        "gait_disorder",
+        "balance_disorder",
+        "memory_disorder",
+        "central_sleep_apnoea",
+        "facial_weakness",
+        "diabetes_insipidus",
+        "hypaesthesia",
+        "dystonia",
+        "dispnoea",
+        "cynanosis_of_affected_arm",
+        "respiratory_insufficiency",
+        "opisthotonus",
+        "vocal_cord_paralysis",
+        "parkinsonism",
+        "cerebellar_ataxia",
+        "tremors",
+        "dysphonia",
+        "hyperCKaemia",
+        "amnesia",
+        "psychomotor_slowing",
+        "decreased_esophageal_motility",
+        "hyporeflexia",
+        "dyspnoea",
+        "auditory_hallucinations",
+        "areflexia",
+        "facial_dysaethesia",
+        "hyponatraemia",
+        "dysmetria",
+        "pain",
+        "hearing_loss",
+        "paralysis_upper_limbs",
+        "myocloni",
+        "fasciculations",
+        "long_tract_findings",
+        "headache",
+        "confusion",
+        "hallucinations",
+        "agoraphobia",
+        "pyrexia",
+        "jerks",
+        "cognitive_disorder",
+        "spasticity",
+        "atrophy_leg_muscles",
+        "UMN_facial_weakness",
+        "cramping",
+        "visual_disortion",
+        "dystonia-like_posturing",
+        "scanning_speech",
+        "tongue_paraesthesia",
+        "facial",
+        "dysaesthesia",
+        "hyponatriaemia",
+        "akinetic_rigid_parkinsonism",
+        "immobility",
+        "generalised_weakness",
+        "weight_loss",
+        "respiratory_failure",
+        "posturing",
+        "respiratory_arrest",
+        "posturing_foot",
+        "distal_amyotrophy",
+        "tachypnoea",
+        "dementia",
+        "tongue_paresis",
+        "hyperaesthesia",
+        "tachycardia",
+        "intention_tremor",
+        "titubation",
+        "progressive_scoliosis"
+      ]
+    },
+    {
+      "name": "other_symptoms_established_auto",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Other symptoms: autonomic (text)",
+      "source_columns": [
+        "AW"
+      ],
+      "source_labels": [
+        "Other symptoms: autonomic (text)"
+      ],
+      "allowed_values": [
+        "tachycardia",
+        "urinary_retention",
+        "sympathetic_storming",
+        "pallor",
+        "fever",
+        "hypertension",
+        "bladder_incontinence",
+        "nausea",
+        "hyperpyrexia",
+        "constipation",
+        "flushing",
+        "blood_pressure_instability",
+        "palpitations",
+        "urine_retention",
+        "stool_retention",
+        "pupillary_dilation",
+        "urinary_urgency",
+        "tachypnoea",
+        "cardiac_arrhythmia",
+        "cardiac_arrest",
+        "oculomotor",
+        "severe_autonomic_failure",
+        "vomiting",
+        "diarrhoea",
+        "urinary_disorder",
+        "orthostatic_hypotension",
+        "respiratory_arrest",
+        "pulseless_electrical_activity"
+      ]
+    },
+    {
+      "name": "other_symptoms_established_oculo",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Other symptoms: oculomotor (text)",
+      "source_columns": [
+        "AX"
+      ],
+      "source_labels": [
+        "Other symptoms: oculomotor (text)"
+      ],
+      "allowed_values": [
+        "diplopia",
+        "disturbed_smooth_pursuit",
+        "ophthalmoplegia",
+        "blepharospasm",
+        "nystagmus",
+        "saccadic_pursuit",
+        "end-gaze_nystagmus",
+        "palsy",
+        "gaze-evoked_nystagmus",
+        "ptosis",
+        "bilateral_ptosis",
+        "partial_horizontal_gaze_palsies",
+        "horizontal_nystagmus",
+        "myoclonus",
+        "cerebellar_oculomotor_disorder",
+        "saccadic_intrusions",
+        "abducens_nerve_palsy",
+        "abduction_weakness_left_eye",
+        "ocular_flutter",
+        "slowed_saccades",
+        "complete_horizontal_gaze_palsy",
+        "6th_CN_paresis",
+        "multidirectional_nystagmus",
+        "slow_saccades",
+        "downbeat_nystagmus"
+      ]
+    },
+    {
+      "name": "other_symptoms_established_seizures",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Other symptoms: seizures (text)",
+      "source_columns": [
+        "AY"
+      ],
+      "source_labels": [
+        "Other symptoms: seizures (text)"
+      ],
+      "allowed_values": [
+        "seizures",
+        "generalised_tonic_clonic",
+        "generalised",
+        "unspecified"
+      ]
+    },
+    {
+      "name": "established_mRS",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Disability when disease fully established                                  (SPSD symptoms established; mRS\n0 - No symptoms.\n1 - No significant disability. Able to carry out all usual activities, despite some symptoms.\n2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.\n3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).\n4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.\n5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.\n6 - Dead",
+      "source_columns": [
+        "AZ"
+      ],
+      "source_labels": [
+        "Disability when disease fully established                                  (SPSD symptoms established; mRS\n0 - No symptoms.\n1 - No significant disability. Able to carry out all usual activities, despite some symptoms.\n2 - Slight disability. Able to look after own affairs without assistance, but unable to carry out all previous activities.\n3 - Moderate disability. Requires some help, but able to walk unassisted (i.e., without another person).\n4 - Moderately severe disability. Unable to attend to own bodily needs without assistance, and unable to walk unassisted.\n5 - Severe disability. Requires constant nursing care and attention, bedridden, incontinent.\n6 - Dead"
+      ],
+      "allowed_values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "3.5"
+      ]
+    },
+    {
+      "name": "course_treatment",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Course / symptoms potentially influenced by treatment (select)\n- none = no treatment\n- sympt = benzodiazepine or similar\n- immunotherapy\n- both = both symptomatic and immunotherapy",
+      "source_columns": [
+        "BA"
+      ],
+      "source_labels": [
+        "Course / symptoms potentially influenced by treatment (select)\n- none = no treatment\n- sympt = benzodiazepine or similar\n- immunotherapy\n- both = both symptomatic and immunotherapy"
+      ],
+      "allowed_values": [
+        "none",
+        "sympt",
+        "immunotherapy",
+        "both"
+      ]
+    },
+    {
+      "name": "antibody_status",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibody status (select)\n- GAD\n- GlyR\n- amphiphysin\n- DPPX\n- seronegative\n- multiple = multiple, specify in next col\n- other = other, specify in next col\n- not_tested = no test performed\n- NA = not available, not reported, unclear if tested",
+      "source_columns": [
+        "BB"
+      ],
+      "source_labels": [
+        "Antibody status (select)\n- GAD\n- GlyR\n- amphiphysin\n- DPPX\n- seronegative\n- multiple = multiple, specify in next col\n- other = other, specify in next col\n- not_tested = no test performed\n- NA = not available, not reported, unclear if tested"
+      ],
+      "allowed_values": [
+        "GAD",
+        "GlyR",
+        "amphiphysin",
+        "DPPX",
+        "seronegative",
+        "multiple",
+        "other",
+        "not_tested",
+        "NA",
+        "ANA",
+        "anti-Smith",
+        "GAD65",
+        "pm-scl",
+        "titin",
+        "AQP4",
+        "Ro",
+        "islet_cell",
+        "dsDNA",
+        "thyroglobulin",
+        "TPO",
+        "microsomal",
+        "Ri",
+        "gAChRa3",
+        "parietal_cell"
+      ]
+    },
+    {
+      "name": "antibody_status_other",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibody status (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank.",
+      "source_columns": [
+        "BC"
+      ],
+      "source_labels": [
+        "Antibody status (other)\nIf \"other\" was selected, list as text. Otherwise, leave blank."
+      ],
+      "allowed_values": [
+        "GlyR",
+        "GAD",
+        "AChR",
+        "ANA",
+        "gephyrin",
+        "Ri",
+        "GAD65",
+        "IA2",
+        "GM1",
+        "sulfatide",
+        "intrinsic_factor",
+        "dsDNA",
+        "RP",
+        "Scl-70",
+        "cardiolipin",
+        "thyroglobulin",
+        "TPO",
+        "NMDAR",
+        "VGKC",
+        "gastric_parietal_cell",
+        "pancreatic_islet",
+        "TG",
+        "microsomal",
+        "mitochondrial",
+        "21betahydroxylase",
+        "islet",
+        "CV2"
+      ]
+    },
+    {
+      "name": "antibody_titre",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibody titre",
+      "source_columns": [
+        "BD"
+      ],
+      "source_labels": [
+        "Antibody titre"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "antibody_units",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibody units",
+      "source_columns": [
+        "BE"
+      ],
+      "source_labels": [
+        "Antibody units"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "antibody_tests",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibodies tested \nlist all antibodies that were tested, separated by semicolons",
+      "source_columns": [
+        "BF"
+      ],
+      "source_labels": [
+        "Antibodies tested \nlist all antibodies that were tested, separated by semicolons"
+      ],
+      "allowed_values": [
+        "GAD",
+        "amphiphysin",
+        "GlyR",
+        "VGKC",
+        "NMDAR",
+        "AQP4",
+        "Thyroid",
+        "ANA",
+        "SS-A/B",
+        "Amphiphysin",
+        "Hu",
+        "Ri",
+        "Yo",
+        "CV2",
+        "Ma1",
+        "Ma2",
+        "SOX",
+        "Zic",
+        "Gad65",
+        "Tr",
+        "ANNA3",
+        "PCA",
+        "AMPAR",
+        "CASPR2",
+        "DPPX",
+        "GABAbR",
+        "mGluR1",
+        "mGluR5",
+        "LGI1",
+        "AChR",
+        "CYFRA21-1",
+        "CEA",
+        "MA1",
+        "MA2",
+        "CRMP5",
+        "ssDNA",
+        "dsDNA",
+        "pancreatic_islet",
+        "TG",
+        "mitochondrial",
+        "CRMP5/Cv2",
+        "recoverine",
+        "ANCA",
+        "paraneoplastic_panel",
+        "GABAAR",
+        "GABABR",
+        "IgLON5",
+        "neurexin3a",
+        "pm-scl",
+        "GAD65",
+        "DRD2",
+        "Neu3a",
+        "AMPA1",
+        "AMPA2",
+        "Ro",
+        "MAG",
+        "GM1",
+        "GQ1B",
+        "TPO",
+        "ganglioside",
+        "polymyositis",
+        "CV2.1",
+        "AchR",
+        "VGCC",
+        "titin",
+        "parietal_cell",
+        "RF",
+        "anti-smooth_muscle",
+        "thyroid_microsomal",
+        "antineuronal",
+        "islet_cell",
+        "recoverin",
+        "SOX1",
+        "Zic4",
+        "paraneoplastic",
+        "cytoplasm",
+        "transglutaminase",
+        "gliadin",
+        "paretal_cell",
+        "insulin",
+        "IA-2",
+        "Ma1/2",
+        "insulin_receptor",
+        "cardiolipin",
+        "gangliosides",
+        "islet_cells",
+        "gephyrin",
+        "neuronal_surface_antibodies",
+        "thyroglobulin",
+        "FANA",
+        "lupus_anticoagulant",
+        "platelet",
+        "SSA/B",
+        "GQ1b",
+        "GABARB",
+        "NAE",
+        "gAChRa3",
+        "gAChRb4",
+        "R",
+        "ANNA-3",
+        "neuronal",
+        "thyroid",
+        "AGNA",
+        "intrinsic_factor",
+        "RP",
+        "Scl-70",
+        "Cv2/CRMP5",
+        "Sox1",
+        "GABARAP",
+        "MUSK",
+        "Purkinje",
+        "Ma",
+        "PCA2",
+        "PCA-Tr",
+        "coeliac",
+        "gastric_parietal_cell"
+      ]
+    },
+    {
+      "name": "antibody_testsystem",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibody test system",
+      "source_columns": [
+        "BG"
+      ],
+      "source_labels": [
+        "Antibody test system"
+      ],
+      "allowed_values": [
+        "IHC",
+        "radioimmunoprecipitation",
+        "immunoblot",
+        "western_blot",
+        "tissue_assay",
+        "immunofluorescence",
+        "LIPS",
+        "radioimmunoassay",
+        "ELISA",
+        "RIA",
+        "immunocytochemistry",
+        "immunoprecipitation"
+      ]
+    },
+    {
+      "name": "antibody_notes",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "Antibody notes\nIf not covered by columns to the left, give as text note. Otherwise, leave blank.",
+      "source_columns": [
+        "BH"
+      ],
+      "source_labels": [
+        "Antibody notes\nIf not covered by columns to the left, give as text note. Otherwise, leave blank."
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "CSF_status",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "CSF (select)\n - normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available / NR",
+      "source_columns": [
+        "BI"
+      ],
+      "source_labels": [
+        "CSF (select)\n - normal\n- inflammatory\n- isolated protein elevation\n- not_done = no CSF analysis performed\n- antibody_present = antibody present in CSF (specify Ab and titre in next cols)\n- NA = not available / NR"
+      ],
+      "allowed_values": [
+        "normal",
+        "inflammatory",
+        "isolated",
+        "not_done",
+        "antibody_present",
+        "NA",
+        "OCB",
+        "pleocytosis",
+        "isolated_protein_elevation",
+        "high_cell_count",
+        "high_protein"
+      ]
+    },
+    {
+      "name": "CSF_antibody",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "CSF antibody (specify)",
+      "source_columns": [
+        "BJ"
+      ],
+      "source_labels": [
+        "CSF antibody (specify)"
+      ],
+      "allowed_values": [
+        "GAD",
+        "GlyR",
+        "Amphiphysin",
+        "gephyrin",
+        "Ri",
+        "DPPX",
+        "seronegative",
+        "amphiphysin",
+        "GAD65",
+        "NMDAR",
+        "not_tested"
+      ]
+    },
+    {
+      "name": "CSF_antibody_titre",
+      "section": "4. section: established disease, signs and symptoms",
+      "instruction": "CSF antibody titre (numeric)",
+      "source_columns": [
+        "BK"
+      ],
+      "source_labels": [
+        "CSF antibody titre (numeric)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "CMUA",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG, NR, unknown",
+      "source_columns": [
+        "BL"
+      ],
+      "source_labels": [
+        "continuous motor unit activity (CMUA)\n0 = not detected\n1 = present\nNA = no EMG, NR, unknown"
+      ],
+      "allowed_values": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "name": "exteroceptive_refl",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown",
+      "source_columns": [
+        "BM"
+      ],
+      "source_labels": [
+        "enhanced exteroceptive reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown"
+      ],
+      "allowed_values": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "name": "brainstem_refl",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "brainstem reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown",
+      "source_columns": [
+        "BN"
+      ],
+      "source_labels": [
+        "brainstem reflexes\n0 = not detected\n1 = present\nNA = not done, NR, unknown"
+      ],
+      "allowed_values": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "name": "MRI_normal",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "MRI\n0 = normal\n1 = abnormal (specify in next col)\nNA = no MRI performed, not reported, unclear",
+      "source_columns": [
+        "BO"
+      ],
+      "source_labels": [
+        "MRI\n0 = normal\n1 = abnormal (specify in next col)\nNA = no MRI performed, not reported, unclear"
+      ],
+      "allowed_values": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "name": "MRI_abnormalities",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "MRI abnormalities (text)",
+      "source_columns": [
+        "BP"
+      ],
+      "source_labels": [
+        "MRI abnormalities (text)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "tu_screening",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed, NR",
+      "source_columns": [
+        "BQ"
+      ],
+      "source_labels": [
+        "Tumour screening\n0 = normal / no tumour detected\n1 = abnormal (specify in next col)\nNA = not performed, NR"
+      ],
+      "allowed_values": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "name": "tu_screening_abnormal",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "Tumour screening abnormal\nspecify tumour entity with text",
+      "source_columns": [
+        "BR"
+      ],
+      "source_labels": [
+        "Tumour screening abnormal\nspecify tumour entity with text"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "immunotherapy",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophopsphamide\n- Aza = Azathioprine\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown, NR",
+      "source_columns": [
+        "BS"
+      ],
+      "source_labels": [
+        "Immunotherapy (specify)\n- none = not done\n- steroids\n- IVIG\n- PLEX\n- RXB = Rituximab\n- CP = Cyclophopsphamide\n- Aza = Azathioprine\n- multiple = specify in next col\n- other = specify in next col\n- NA = unknown, NR"
+      ],
+      "allowed_values": [
+        "none",
+        "steroids",
+        "IVIG",
+        "PLEX",
+        "RXB",
+        "CP",
+        "Aza",
+        "multiple",
+        "other",
+        "NA",
+        "HSCT",
+        "tacrolimus",
+        "MMF",
+        "CySp",
+        "unspecified",
+        "AZA",
+        "efgartigimod",
+        "VIG",
+        "SCIG",
+        "steorids",
+        "vincristine",
+        "prednisolone",
+        "mycophenolate",
+        "methylprednisolone",
+        "steroid",
+        "cyclosporin"
+      ]
+    },
+    {
+      "name": "immunotherapy_detail",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "Immunotherapy in detail (please describe dose, how many cycles, intervals)",
+      "source_columns": [
+        "BT"
+      ],
+      "source_labels": [
+        "Immunotherapy in detail (please describe dose, how many cycles, intervals)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "immunotherapy_effect",
+      "section": "5. section: investigations (antibodies, electrophysiology, other)",
+      "instruction": "Effect of immunotherapy (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known",
+      "source_columns": [
+        "BU"
+      ],
+      "source_labels": [
+        "Effect of immunotherapy (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known"
+      ],
+      "allowed_values": [
+        "none",
+        "worsening",
+        "improvement",
+        "stabilisation",
+        "NA",
+        "responder",
+        "poor",
+        "moderate",
+        "partial",
+        "insufficient"
+      ]
+    },
+    {
+      "name": "sympt_treatment",
+      "section": "6. section: treatment",
+      "instruction": "Symptomatic treatment (select)\n- none\n- clonazepam\n- benzo = other benzodiazepines\n- baclofen\n- gabapentin\n- pregabalin\n- tizanidine\n- valproate\n- other (specify)",
+      "source_columns": [
+        "BV"
+      ],
+      "source_labels": [
+        "Symptomatic treatment (select)\n- none\n- clonazepam\n- benzo = other benzodiazepines\n- baclofen\n- gabapentin\n- pregabalin\n- tizanidine\n- valproate\n- other (specify)"
+      ],
+      "allowed_values": [
+        "none",
+        "clonazepam",
+        "benzo",
+        "baclofen",
+        "gabapentin",
+        "pregabalin",
+        "tizanidine",
+        "valproate",
+        "other",
+        "propofol",
+        "carbamazepine",
+        "botulinum_toxin",
+        "morphine",
+        "escitalopram",
+        "amitriptylin",
+        "diazepam",
+        "levetiracetam",
+        "oxcarbazepine",
+        "botulinumtoxin",
+        "olanzapine",
+        "dexmetomidine",
+        "methocarbamol",
+        "cyclobenzaprine",
+        "oxycodone/paracetamol",
+        "pancuronium",
+        "ventilatory_support",
+        "sedation",
+        "botox",
+        "rehab",
+        "fentanyl",
+        "physical_therapy",
+        "ethanol",
+        "oxycodone",
+        "nortriptyline",
+        "unspecified",
+        "phenytoin",
+        "dantrolene",
+        "clonidine",
+        "amitriptyline",
+        "trihexyphenidyl",
+        "levodopa",
+        "vigabatrin",
+        "lacosamide"
+      ]
+    },
+    {
+      "name": "sympt_treatment_detail",
+      "section": "6. section: treatment",
+      "instruction": "symptomatic treatment in detail (please describe route of administration and dose)",
+      "source_columns": [
+        "BW"
+      ],
+      "source_labels": [
+        "symptomatic treatment in detail (please describe route of administration and dose)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "sympt_treatment_effect",
+      "section": "6. section: treatment",
+      "instruction": "Effect of symptomatic treatment (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known",
+      "source_columns": [
+        "BX"
+      ],
+      "source_labels": [
+        "Effect of symptomatic treatment (select)\n- none\n- worsening\n- improvement\n- stabilisation\n- NA = not known"
+      ],
+      "allowed_values": [
+        "none",
+        "worsening",
+        "improvement",
+        "stabilisation",
+        "NA",
+        "minimal"
+      ]
+    },
+    {
+      "name": "other_treatment",
+      "section": "6. section: treatment",
+      "instruction": "Other treatment (text)\n(e.g. tumour therapy)",
+      "source_columns": [
+        "BY"
+      ],
+      "source_labels": [
+        "Other treatment (text)\n(e.g. tumour therapy)"
+      ],
+      "allowed_values": [
+        "physiotherapy",
+        "Died",
+        "Thymectomy",
+        "RXB",
+        "CP",
+        "steroids",
+        "Aza",
+        "steroids/Aza",
+        "MMF",
+        "CySp",
+        "chemotherapy",
+        "radiotherapy",
+        "tizanidine",
+        "R-CHOP",
+        "GPi-DBS",
+        "tamoxifen",
+        "mastectomy",
+        "cyclophosphamide",
+        "vinblastine",
+        "doxorubicin",
+        "anti-estrogenics",
+        "botulinumtoxin",
+        "auto-HSCT"
+      ]
+    },
+    {
+      "name": "autoimmunity",
+      "section": "6. section: treatment",
+      "instruction": "Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col",
+      "source_columns": [
+        "BZ"
+      ],
+      "source_labels": [
+        "Concomitant autoimmunity (select)\n- none\n- thyroid = thyroid disease/thyroid antibodies\n- diabetes\n- vitiligo\n- gastric = pernicious anaemia/parietal cell antibodies\n- other= other, specify in next col"
+      ],
+      "allowed_values": [
+        "none",
+        "thyroid",
+        "diabetes",
+        "vitiligo",
+        "gastric",
+        "other",
+        "coeliac",
+        "PA",
+        "asthma",
+        "arthritis",
+        "myasthenia_gravis",
+        "pemphigus",
+        "thyoid",
+        "SLE",
+        "alopecia_totalis",
+        "APS2",
+        "rheumatoid_arthritis",
+        "coeliac_disease",
+        "dermatitis_herpetiformis",
+        "uveitis"
+      ]
+    },
+    {
+      "name": "autoimmunity_specify",
+      "section": "7. section: concomittant disease and family history",
+      "instruction": "Concomitant autoimmunity (specify with text)",
+      "source_columns": [
+        "CA"
+      ],
+      "source_labels": [
+        "Concomitant autoimmunity (specify with text)"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "family_history",
+      "section": "7. section: concomittant disease and family history",
+      "instruction": "Family history (select)\n- none = no fhx for SPSD or autoimmunity\n- autoimmune = fhx for autoimmunity (specify in next col)\n- SPSD = fhx for SPSD (specify in next col)\n- NA = unknown, not reported",
+      "source_columns": [
+        "CB"
+      ],
+      "source_labels": [
+        "Family history (select)\n- none = no fhx for SPSD or autoimmunity\n- autoimmune = fhx for autoimmunity (specify in next col)\n- SPSD = fhx for SPSD (specify in next col)\n- NA = unknown, not reported"
+      ],
+      "allowed_values": [
+        "none",
+        "autoimmune",
+        "SPSD",
+        "NA",
+        "autoimmunity"
+      ]
+    },
+    {
+      "name": "family_history_abnormal",
+      "section": "7. section: concomittant disease and family history",
+      "instruction": "Family history (text)\nif autoimmune diseases and/or SPSD are present, specify with text",
+      "source_columns": [
+        "CC"
+      ],
+      "source_labels": [
+        "Family history (text)\nif autoimmune diseases and/or SPSD are present, specify with text"
+      ],
+      "allowed_values": []
+    },
+    {
+      "name": "notes",
+      "section": "8.section: comments",
+      "instruction": "Any observations or aspects not covered but worth mentioning",
+      "source_columns": [
+        "CD"
+      ],
+      "source_labels": [
+        "Any observations or aspects not covered but worth mentioning"
+      ],
+      "allowed_values": []
+    }
+  ]
+}

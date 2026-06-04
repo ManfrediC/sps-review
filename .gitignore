@@ -47,6 +47,12 @@ env/covidence*.env
 # Non-canonical QA text exports and spot-check notes
 qa/**/*.txt
 
+# Local Qwen/Ollama pilot run payloads can contain source text or raw model
+# responses; force-add only curated summaries when needed.
+qa/validation/ollama_single_case_extraction/**
+!qa/validation/ollama_single_case_extraction/
+!qa/validation/ollama_single_case_extraction/README.md
+
 # Local Stage 07 smoke-run scratch outputs; force-add curated packs when needed.
 qa/validation/stage07_smoke/*_stage07_smoke/
 
