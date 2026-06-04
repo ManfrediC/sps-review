@@ -20,12 +20,15 @@ Generated reference for the Qwen/Ollama single-case extraction pilot.
 - Extract only what the source text states.
 - Use `NA` when a value is not reported; do not use `N/A`.
 - Preserve ratios, titres, doses, units, and reported measurements verbatim.
-- Every non-missing value must carry a short verbatim source quote.
-- If a quote uses ellipsis, post-processing searches the source for its beginning and end and saves the full recovered source span.
-- Hard constraint: ellipsis quote fragments must appear in the same source order and refer to the same clinical phase as the field.
+- Every non-missing value must carry a short verbatim source quote or per-value evidence quote.
+- If a quote uses ellipsis, post-processing searches the source for its fragments and saves the full recovered source span when available.
+- Prefer source-order quotes for human review. Out-of-order fragments are a warning if every fragment is found in the source, not a hard failure.
 - Use worksheet value formats: numeric age/duration/mRS fields are numbers only; binary fields are `0`, `1`, or `NA`.
+- Allowed-value strings are machine tokens; preserve underscores exactly, such as `back_pain`.
+- `age_description` requires an exact numeric age; approximate descriptions such as `in her 20s` use `NA`.
 - Deterministic arithmetic derivations are allowed only for: Followup_Duration_Months, age_onset, onset_to_established, time_to_diagnosis.
 - `Followup_Duration_Months` should be normalised to months when a duration is reported in years.
+- `CSF_antibody` records antibody names found in CSF; use `none` when CSF antibody testing found none, and `NA` when CSF antibody testing is not reported.
 - `case_ID` should use the exact identifier the article gives, whether that is `Case 1`, `Patient 2`, patient initials, etc.
 - Separate multiple values inside one cell with semicolons when the field instruction asks for it.
 
@@ -65,7 +68,7 @@ Case reference within the article (case#)
 - Source label(s):
   - Age at description
 
-Age at description
+Age at description. Use a numeric value only when an exact age is stated. Approximate descriptions such as 'in her 20s' are too imprecise; use NA.
 
 ### 5. `sex`
 
@@ -142,7 +145,7 @@ First manifestation (select)
 - Source column(s): K
 - Source label(s):
   - First manifestation (multiple)
-- Allowed values parsed from instruction: fatigue, tingling, stiffness, spasms, pain, falls, startle, agoraphobia, weakness, X, dysphagia, myokymia, cramps, itching, foot_oedema, gait_disorder, vertigo, imbalance, ataxia, other, lordosis, thyroiditis, diabetes_mellitus, paraesthesia, numbness, dysarthria, unresponsiveness, oculomotor, decreased_sleep_requirement, disorganised_behaviour, myoclonus, weight_loss, mood_disorder, diarrhoea, headache, anxiety, memory_disorder, confusion, insomnia, depression, OCD, apathy, impaired_consciousness, urinary_incontinence, fever, tachycardia, hypotension, rhabdomyolysis, renal_injury, myocloni, cramp, paraethesia, contractures, swollen_tongue, dizziness, fasciculation, atrophy, ptosis, diplopia, facial_weakness, sensory, tremor, vomiting, dyspnoea, psychiatric, trismus, dystonia-like, autonomic, brainstem, brainstem_dysfunction, cognitive_deficit, tongue_paraesthesia, burning, seizure, behavioural, memory_loss
+- Allowed values parsed from instruction: fatigue, tingling, falls, back_pain, nystagmus, nausea, stiffness, spasms, pain, startle, agoraphobia, weakness, X, dysphagia, myokymia, cramps, itching, foot_oedema, gait_disorder, vertigo, imbalance, ataxia, other, lordosis, thyroiditis, diabetes_mellitus, paraesthesia, numbness, dysarthria, unresponsiveness, oculomotor, decreased_sleep_requirement, disorganised_behaviour, myoclonus, weight_loss, mood_disorder, diarrhoea, headache, anxiety, memory_disorder, confusion, insomnia, depression, OCD, apathy, impaired_consciousness, urinary_incontinence, fever, tachycardia, hypotension, rhabdomyolysis, renal_injury, myocloni, cramp, paraethesia, contractures, swollen_tongue, dizziness, fasciculation, atrophy, ptosis, diplopia, facial_weakness, sensory, tremor, vomiting, dyspnoea, psychiatric, trismus, dystonia-like, autonomic, brainstem, brainstem_dysfunction, cognitive_deficit, tongue_paraesthesia, burning, seizure, behavioural, memory_loss
 
 First manifestation (multiple)
 
@@ -171,7 +174,7 @@ Diagnostic Criteria Used : Provide below the details of the criteria used to mak
 - Source column(s): N
 - Source label(s):
   - Overview_SPSD symptoms / early disease (select) / - stiffness / - spasms / - startle = excessive startle
-- Allowed values parsed from instruction: stiffness, spasms, startle, fatigue, tingling, falls, pain, ataxia, dysarthria, dyspnoea, dysphagia, psychiatric, dysaesthesia
+- Allowed values parsed from instruction: stiffness, spasms, startle, fatigue, tingling, falls, back_pain, nystagmus, nausea, pain, ataxia, dysarthria, dyspnoea, dysphagia, psychiatric, dysaesthesia
 
 Overview_SPSD symptoms / early disease (select)
 - stiffness
@@ -314,7 +317,7 @@ Anxiety: generalised (text)
 - Source column(s): Z
 - Source label(s):
   - Other symptoms: list all that apply within 1 cell, separated by semicolons  / (example: hyperhidrosis; babinski; sensory) / - hyperhidrosis / - autonomic = other autonomic symptoms (see legend and specify in next col) / - hyperreflexia / - babinski / - weakness / - lower_motor_neuron / - encephalopathy / - seizures = specify type / - oculomotor = specify type / - ptosis / - dysphagia / - dysgeusia / - sensory = hyp/paraesthesia / - allodynia / - freezing = freezing episodes / - other = specify in next col
-- Allowed values parsed from instruction: hyperhidrosis, autonomic, hyperreflexia, babinski, weakness, lower_motor_neuron, encephalopathy, seizures, oculomotor, ptosis, dysphagia, dysgeusia, sensory, allodynia, freezing, other, fatigue, tingling, clonus, hemidystonia, ataxia, LPR, numbness, cognitive, myoclonus, paraesthesia, seizure, polyneuropathy, paraethesia, lumbar_pain, hypoglossal_palsy, diplopia, facial_nerve_palsy, vomiting, cerebellar_ataxia, zoster_lesion_buttock, hypaesthesia, gait_disorder, hyporeflexia, abdominal_pain, dysphoria, fasciculation, muscle_atrophy, dysarthria, facial_weakness, facial_dysaethesia, limited_joint_motion, hearing_loss, asthenia, severe_pain, pain, dyspnoea, panic_attacks, visual_hallucinations, foot_drop, headache, confusion, agitation, hallucinations, anorexia, hiccups, irritability, stridor, respiratory_distress, cognitive_deficit, myocloni, cramp, tongue_paraesthesia, generalised_pruritus, posturing, jerky_movements_in_sleep, tachycardia, memory_loss, behavioural_changes
+- Allowed values parsed from instruction: hyperhidrosis, autonomic, hyperreflexia, babinski, weakness, lower_motor_neuron, encephalopathy, seizures, oculomotor, ptosis, dysphagia, dysgeusia, sensory, allodynia, freezing, other, fatigue, tingling, falls, back_pain, nystagmus, nausea, foot_oedema, clonus, hemidystonia, ataxia, LPR, numbness, cognitive, myoclonus, paraesthesia, seizure, polyneuropathy, paraethesia, lumbar_pain, hypoglossal_palsy, diplopia, facial_nerve_palsy, vomiting, cerebellar_ataxia, zoster_lesion_buttock, hypaesthesia, gait_disorder, hyporeflexia, abdominal_pain, dysphoria, fasciculation, muscle_atrophy, dysarthria, facial_weakness, facial_dysaethesia, limited_joint_motion, hearing_loss, asthenia, severe_pain, pain, dyspnoea, panic_attacks, visual_hallucinations, foot_drop, headache, confusion, agitation, hallucinations, anorexia, hiccups, irritability, stridor, respiratory_distress, cognitive_deficit, myocloni, cramp, tongue_paraesthesia, generalised_pruritus, posturing, jerky_movements_in_sleep, tachycardia, memory_loss, behavioural_changes
 
 Other symptoms: list all that apply within 1 cell, separated by semicolons
 (example: hyperhidrosis; babinski; sensory)
@@ -449,7 +452,7 @@ Time from onset to fully established disease (months)
 - Source column(s): AK
 - Source label(s):
   - Overview_SPSD symptoms / established disease / - stiffness / - spasms / - startle = excessive startle
-- Allowed values parsed from instruction: stiffness, spasms, startle, fatigue, tingling, gait_disorder, pain, dyspnoea, weakness, dysphagia, myoclonus, ataxia, respiratory_failure, falls
+- Allowed values parsed from instruction: stiffness, spasms, startle, fatigue, tingling, falls, back_pain, nystagmus, nausea, gait_disorder, pain, dyspnoea, weakness, dysphagia, myoclonus, ataxia, respiratory_failure
 
 Overview_SPSD symptoms / established disease
 - stiffness
@@ -582,7 +585,7 @@ Anxiety: generalised (text)
 - Source column(s): AV
 - Source label(s):
   - Other symptoms: list all that apply within 1 cell, separated by semicolons  / (example: hyperhidrosis; babinski; sensory) / - hyperhidrosis / - autonomic = other autonomic symptoms (see legend and specify in next cols) / - hyperreflexia / - babinski / - weakness / - lower_motor_neuron / - encephalopathy / - seizures = specify type in next cols / - oculomotor = specify type in next cols / - ptosis / - dysphagia / - dysgeusia / - sensory = hyp/paraesthesia / - allodynia / - freezing = freezing episodes / - other = specify in next cols
-- Allowed values parsed from instruction: hyperhidrosis, autonomic, hyperreflexia, babinski, weakness, lower_motor_neuron, encephalopathy, seizures, oculomotor, ptosis, dysphagia, dysgeusia, sensory, allodynia, freezing, other, fatigue, tingling, clonus, hemidystonia, ataxia, LPR, depression, lordosis, tetraparesis, paraethesia, numbness, apnoea, neuropathic_pain, myoclonus, cognitive, paranoia, frontal_syndrome, delirium, delusions, agitation, tremor, hyperekplexia, dysarthria, RBD, delusion, hypersomnia, hyperesthesia, confabulation, Confusion, hallucination, nystagmus, pruritus, anxiety, irritability, gait_disorder, balance_disorder, memory_disorder, central_sleep_apnoea, facial_weakness, diabetes_insipidus, hypaesthesia, dystonia, dispnoea, cynanosis_of_affected_arm, respiratory_insufficiency, opisthotonus, vocal_cord_paralysis, parkinsonism, cerebellar_ataxia, tremors, dysphonia, hyperCKaemia, amnesia, psychomotor_slowing, decreased_esophageal_motility, hyporeflexia, dyspnoea, auditory_hallucinations, areflexia, facial_dysaethesia, hyponatraemia, dysmetria, pain, hearing_loss, paralysis_upper_limbs, myocloni, fasciculations, long_tract_findings, headache, confusion, hallucinations, agoraphobia, pyrexia, jerks, cognitive_disorder, spasticity, atrophy_leg_muscles, UMN_facial_weakness, cramping, visual_disortion, dystonia-like_posturing, scanning_speech, tongue_paraesthesia, facial, dysaesthesia, hyponatriaemia, akinetic_rigid_parkinsonism, immobility, generalised_weakness, weight_loss, respiratory_failure, posturing, respiratory_arrest, posturing_foot, distal_amyotrophy, tachypnoea, dementia, tongue_paresis, hyperaesthesia, tachycardia, intention_tremor, titubation, progressive_scoliosis
+- Allowed values parsed from instruction: hyperhidrosis, autonomic, hyperreflexia, babinski, weakness, lower_motor_neuron, encephalopathy, seizures, oculomotor, ptosis, dysphagia, dysgeusia, sensory, allodynia, freezing, other, fatigue, tingling, falls, back_pain, nystagmus, nausea, foot_oedema, clonus, hemidystonia, ataxia, LPR, depression, lordosis, tetraparesis, paraethesia, numbness, apnoea, neuropathic_pain, myoclonus, cognitive, paranoia, frontal_syndrome, delirium, delusions, agitation, tremor, hyperekplexia, dysarthria, RBD, delusion, hypersomnia, hyperesthesia, confabulation, Confusion, hallucination, pruritus, anxiety, irritability, gait_disorder, balance_disorder, memory_disorder, central_sleep_apnoea, facial_weakness, diabetes_insipidus, hypaesthesia, dystonia, dispnoea, cynanosis_of_affected_arm, respiratory_insufficiency, opisthotonus, vocal_cord_paralysis, parkinsonism, cerebellar_ataxia, tremors, dysphonia, hyperCKaemia, amnesia, psychomotor_slowing, decreased_esophageal_motility, hyporeflexia, dyspnoea, auditory_hallucinations, areflexia, facial_dysaethesia, hyponatraemia, dysmetria, pain, hearing_loss, paralysis_upper_limbs, myocloni, fasciculations, long_tract_findings, headache, confusion, hallucinations, agoraphobia, pyrexia, jerks, cognitive_disorder, spasticity, atrophy_leg_muscles, UMN_facial_weakness, cramping, visual_disortion, dystonia-like_posturing, scanning_speech, tongue_paraesthesia, facial, dysaesthesia, hyponatriaemia, akinetic_rigid_parkinsonism, immobility, generalised_weakness, weight_loss, respiratory_failure, posturing, respiratory_arrest, posturing_foot, distal_amyotrophy, tachypnoea, dementia, tongue_paresis, hyperaesthesia, tachycardia, intention_tremor, titubation, progressive_scoliosis
 
 Other symptoms: list all that apply within 1 cell, separated by semicolons
 (example: hyperhidrosis; babinski; sensory)
@@ -765,9 +768,9 @@ CSF (select)
 - Source column(s): BJ
 - Source label(s):
   - CSF antibody (specify)
-- Allowed values parsed from instruction: GAD, GlyR, Amphiphysin, gephyrin, Ri, DPPX, seronegative, amphiphysin, GAD65, NMDAR, not_tested
+- Allowed values parsed from instruction: none, GAD, GlyR, Amphiphysin, gephyrin, Ri, DPPX, seronegative, amphiphysin, GAD65, NMDAR
 
-CSF antibody (specify)
+CSF antibody identity. Return antibody names detected in CSF. Use none if CSF antibody testing was reported and no antibodies were found. Use NA if CSF antibody testing is not reported. Do not use not_tested.
 
 ### 62. `CSF_antibody_titre`
 

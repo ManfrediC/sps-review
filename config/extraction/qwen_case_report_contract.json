@@ -55,7 +55,7 @@
     {
       "name": "age_description",
       "section": "1.section: Identifier and case vignette",
-      "instruction": "Age at description",
+      "instruction": "Age at description. Use a numeric value only when an exact age is stated. Approximate descriptions such as 'in her 20s' are too imprecise; use NA.",
       "source_columns": [
         "D"
       ],
@@ -171,10 +171,13 @@
       "allowed_values": [
         "fatigue",
         "tingling",
+        "falls",
+        "back_pain",
+        "nystagmus",
+        "nausea",
         "stiffness",
         "spasms",
         "pain",
-        "falls",
         "startle",
         "agoraphobia",
         "weakness",
@@ -303,6 +306,9 @@
         "fatigue",
         "tingling",
         "falls",
+        "back_pain",
+        "nystagmus",
+        "nausea",
         "pain",
         "ataxia",
         "dysarthria",
@@ -549,6 +555,11 @@
         "other",
         "fatigue",
         "tingling",
+        "falls",
+        "back_pain",
+        "nystagmus",
+        "nausea",
+        "foot_oedema",
         "clonus",
         "hemidystonia",
         "ataxia",
@@ -791,6 +802,10 @@
         "startle",
         "fatigue",
         "tingling",
+        "falls",
+        "back_pain",
+        "nystagmus",
+        "nausea",
         "gait_disorder",
         "pain",
         "dyspnoea",
@@ -798,8 +813,7 @@
         "dysphagia",
         "myoclonus",
         "ataxia",
-        "respiratory_failure",
-        "falls"
+        "respiratory_failure"
       ]
     },
     {
@@ -1062,6 +1076,11 @@
         "other",
         "fatigue",
         "tingling",
+        "falls",
+        "back_pain",
+        "nystagmus",
+        "nausea",
+        "foot_oedema",
         "clonus",
         "hemidystonia",
         "ataxia",
@@ -1090,7 +1109,6 @@
         "confabulation",
         "Confusion",
         "hallucination",
-        "nystagmus",
         "pruritus",
         "anxiety",
         "irritability",
@@ -1593,7 +1611,7 @@
     {
       "name": "CSF_antibody",
       "section": "4. section: established disease, signs and symptoms",
-      "instruction": "CSF antibody (specify)",
+      "instruction": "CSF antibody identity. Return antibody names detected in CSF. Use none if CSF antibody testing was reported and no antibodies were found. Use NA if CSF antibody testing is not reported. Do not use not_tested.",
       "source_columns": [
         "BJ"
       ],
@@ -1601,6 +1619,7 @@
         "CSF antibody (specify)"
       ],
       "allowed_values": [
+        "none",
         "GAD",
         "GlyR",
         "Amphiphysin",
@@ -1610,8 +1629,7 @@
         "seronegative",
         "amphiphysin",
         "GAD65",
-        "NMDAR",
-        "not_tested"
+        "NMDAR"
       ]
     },
     {

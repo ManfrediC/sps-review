@@ -42,6 +42,7 @@ FIXED_WORKSHEET_FIELDS = {"extractor", "Reference"}
 MISSING_VALUE = "NA"
 VERBATIM_QUOTE_FIELD = "verbatim_quote"
 ALLOWED_EVIDENCE_TYPES = {"verbatim_quote", "deterministic_derivation", "not_reported"}
+ALLOWED_CONFIDENCE_VALUES = {"high", "medium", "low"}
 DETERMINISTIC_DERIVATION_FIELDS = {
     "age_onset",
     FOLLOWUP_FIELD,
@@ -105,11 +106,27 @@ REVIEWED_SYMPTOM_OPTION_FIELDS = {
     "overview_established",
     "other_symptoms_established",
 }
-USER_APPROVED_SYMPTOM_TOKENS = ["fatigue", "tingling"]
+USER_APPROVED_COMMON_SYMPTOM_TOKENS = ["fatigue", "tingling", "falls", "back_pain", "nystagmus", "nausea"]
 USER_APPROVED_ALLOWED_VALUE_OVERRIDES = {
-    field_name: USER_APPROVED_SYMPTOM_TOKENS
+    field_name: list(USER_APPROVED_COMMON_SYMPTOM_TOKENS)
     for field_name in REVIEWED_SYMPTOM_OPTION_FIELDS
 }
+for _field_name in ("other_symptoms_onset", "other_symptoms_established"):
+    USER_APPROVED_ALLOWED_VALUE_OVERRIDES[_field_name].append("foot_oedema")
+
+FIELD_INSTRUCTION_OVERRIDES = {
+    "age_description": (
+        "Age at description. Use a numeric value only when an exact age is stated. "
+        f"Approximate descriptions such as 'in her 20s' are too imprecise; use {MISSING_VALUE}."
+    ),
+    "CSF_antibody": (
+        "CSF antibody identity. Return antibody names detected in CSF. Use none if CSF antibody "
+        f"testing was reported and no antibodies were found. Use {MISSING_VALUE} if CSF antibody "
+        "testing is not reported. Do not use not_tested."
+    ),
+}
+FIELD_ALLOWED_VALUE_ADDITIONS = {"CSF_antibody": ["none"]}
+FIELD_ALLOWED_VALUE_REMOVALS = {"CSF_antibody": ["not_tested"]}
 
 FIELD_RENAMES = {
     "first_manifestation_mother": "first_manifestation_other",
@@ -128,12 +145,11 @@ SYSTEM_PROMPT = (
     "3. Copy numbers, ratios, titres, doses and units VERBATIM - keep "
     '"1:122,000", "250 U/mL", "1/128" exactly; never convert, round, '
     "reformat or split them unless the user prompt explicitly allows arithmetic conversion.\n"
-    "4. For categorical fields, return EXACTLY one of the allowed values; if none apply "
-    f'or it is not reported, return "{MISSING_VALUE}".\n'
+    "4. For categorical fields, return EXACTLY one of the allowed values; preserve "
+    f'underscores in machine tokens such as back_pain. If none apply, return "{MISSING_VALUE}".\n'
     f"5. Every non-{MISSING_VALUE} value must be supported by a short verbatim quote from the text.\n"
-    "6. Hard quote constraint: quote text and any ellipsis fragments must appear in source order. "
-    "If you cannot support a value with in-order quoted evidence, use a narrower supported value or "
-    f'{MISSING_VALUE}.\n'
+    "6. Quote constraint: quote text and any ellipsis fragments must actually appear in the source. "
+    "Prefer source order quotes for human review, but never fabricate or paraphrase evidence.\n"
     "7. Output strict JSON only - no commentary, no markdown, no extra fields."
 )
 
@@ -307,6 +323,32 @@ def field_with_allowed_values(field: FieldSpec, allowed_values: list[str]) -> Fi
     )
 
 
+def field_with_policy_overrides(field: FieldSpec) -> FieldSpec:
+    instruction = FIELD_INSTRUCTION_OVERRIDES.get(field.name, field.instruction)
+    allowed_values = [
+        value
+        for value in field.allowed_values
+        if value not in set(FIELD_ALLOWED_VALUE_REMOVALS.get(field.name, []))
+    ]
+    for value in FIELD_ALLOWED_VALUE_ADDITIONS.get(field.name, []):
+        if value not in allowed_values:
+            allowed_values.append(value)
+    if instruction == field.instruction and allowed_values == field.allowed_values:
+        return field
+    return FieldSpec(
+        name=field.name,
+        section=field.section,
+        instruction=instruction,
+        source_columns=field.source_columns,
+        source_labels=field.source_labels,
+        allowed_values=allowed_values,
+    )
+
+
+def apply_field_policy_overrides(fields: list[FieldSpec]) -> list[FieldSpec]:
+    return [field_with_policy_overrides(field) for field in fields]
+
+
 def augment_allowed_values_from_manual(fields: list[FieldSpec], manual_csv_path: Path) -> list[FieldSpec]:
     """Add compact option-like manual values without making prose notes categorical."""
     if not manual_csv_path.exists():
@@ -391,7 +433,7 @@ def build_contract_from_workbook(workbook_path: Path) -> list[FieldSpec]:
             )
         )
 
-    return fields
+    return apply_field_policy_overrides(fields)
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -399,10 +441,21 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def existing_generated_at(path: Path) -> str | None:
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    value = data.get("generated_at_utc")
+    return str(value) if value else None
+
+
 def write_contract(path: Path, fields: list[FieldSpec], workbook_path: Path) -> None:
     payload = {
         "schema_version": CONTRACT_VERSION,
-        "generated_at_utc": now_utc_iso(),
+        "generated_at_utc": existing_generated_at(path) or now_utc_iso(),
         "source_workbook": str(workbook_path),
         "source_sheet": SHEET_NAME,
         "model_default": DEFAULT_MODEL_ID,
@@ -412,8 +465,8 @@ def write_contract(path: Path, fields: list[FieldSpec], workbook_path: Path) -> 
             "first_manifestation_mother is corrected to first_manifestation_other.",
             "immuntherapy_detail is corrected to immunotherapy_detail.",
             f"Missing values use {MISSING_VALUE}; N/A is not accepted in this workflow.",
-        "Allowed values include compact option-like tokens observed in the manual CSV "
-        "plus reviewed symptom tokens surfaced during Qwen pilot review.",
+            "Allowed values include compact option-like tokens observed in the manual CSV "
+            "plus reviewed symptom tokens surfaced during Qwen pilot review.",
         ],
         "fields": [field.to_dict() for field in fields],
     }
@@ -422,7 +475,7 @@ def write_contract(path: Path, fields: list[FieldSpec], workbook_path: Path) -> 
 
 def load_contract(path: Path) -> list[FieldSpec]:
     data = json.loads(path.read_text(encoding="utf-8"))
-    return [FieldSpec.from_dict(item) for item in data["fields"]]
+    return apply_field_policy_overrides([FieldSpec.from_dict(item) for item in data["fields"]])
 
 
 def write_instruction_doc(path: Path, fields: list[FieldSpec], workbook_path: Path) -> None:
@@ -449,12 +502,15 @@ def write_instruction_doc(path: Path, fields: list[FieldSpec], workbook_path: Pa
         "- Extract only what the source text states.",
         f"- Use `{MISSING_VALUE}` when a value is not reported; do not use `N/A`.",
         "- Preserve ratios, titres, doses, units, and reported measurements verbatim.",
-        "- Every non-missing value must carry a short verbatim source quote.",
-        "- If a quote uses ellipsis, post-processing searches the source for its beginning and end and saves the full recovered source span.",
-        "- Hard constraint: ellipsis quote fragments must appear in the same source order and refer to the same clinical phase as the field.",
+        "- Every non-missing value must carry a short verbatim source quote or per-value evidence quote.",
+        "- If a quote uses ellipsis, post-processing searches the source for its fragments and saves the full recovered source span when available.",
+        "- Prefer source-order quotes for human review. Out-of-order fragments are a warning if every fragment is found in the source, not a hard failure.",
         "- Use worksheet value formats: numeric age/duration/mRS fields are numbers only; binary fields are `0`, `1`, or `NA`.",
+        "- Allowed-value strings are machine tokens; preserve underscores exactly, such as `back_pain`.",
+        "- `age_description` requires an exact numeric age; approximate descriptions such as `in her 20s` use `NA`.",
         f"- Deterministic arithmetic derivations are allowed only for: {', '.join(sorted(DETERMINISTIC_DERIVATION_FIELDS))}.",
         f"- `{FOLLOWUP_FIELD}` should be normalised to months when a duration is reported in years.",
+        "- `CSF_antibody` records antibody names found in CSF; use `none` when CSF antibody testing found none, and `NA` when CSF antibody testing is not reported.",
         "- `case_ID` should use the exact identifier the article gives, whether that is `Case 1`, `Patient 2`, patient initials, etc.",
         "- Separate multiple values inside one cell with semicolons when the field instruction asks for it.",
         "",
@@ -641,7 +697,9 @@ def build_user_prompt(
         "",
         f"Return one JSON entry per requested field, in this exact order. Use {MISSING_VALUE} "
         f"when a field is not reported; never use N/A. Use worksheet value formats: numeric "
-        "age, duration, and mRS fields are numbers only; binary fields are 0, 1, or NA.",
+        "age, duration, and mRS fields are numbers only; binary fields are 0, 1, or NA. "
+        "If age_description is approximate, such as 'in her 20s', use NA. Allowed-value "
+        "strings are machine tokens: preserve underscores exactly, such as back_pain.",
         "",
         "For case_ID, use the exact identifier the article gives, whether that is Case 1, "
         "Patient 2, patient initials, etc. If the paper gives no case identifier, use NA; "
@@ -653,12 +711,16 @@ def build_user_prompt(
         "convert years to months. The quote must contain the source numbers and derivation "
         "must state the arithmetic. Do not convert any other measurements.",
         "",
-        "Hard quote constraint: every quote must be recoverable from the source text in "
-        "source order. If you use ellipsis, each fragment must appear after the previous "
-        "fragment and must refer to the same clinical phase as the field, such as onset "
-        "versus established disease. Do not stitch onset-history evidence into "
-        "established-disease fields. If you cannot support a value with in-order quoted "
-        "evidence, use a narrower supported value or NA.",
+        "CSF_antibody means antibody identity in cerebrospinal fluid. Return antibody names "
+        "found in CSF, none if CSF antibody testing is reported and found none, or NA if CSF "
+        "antibody testing is not reported. Do not use not_tested.",
+        "",
+        "Quote constraint: every quote must be recoverable from the source text. Prefer "
+        "source order quotes because humans will review them, but the critical rule is that "
+        "each quoted phrase must actually appear in the paper and must refer to the same "
+        "clinical phase as the field, such as onset versus established disease. Do not stitch "
+        "onset-history evidence into established-disease fields. If you cannot support a "
+        "value with quoted evidence, use a narrower supported value or NA.",
         "",
         "Fields:",
     ]
@@ -676,15 +738,17 @@ def build_user_prompt(
                 '    {"field_name": "...", "value": "...", "verbatim_quote": "...", '
                 '"evidence_type": "verbatim_quote|deterministic_derivation|not_reported", '
                 '"derivation": "NA or arithmetic expression using quoted source values", '
-                '"confidence": "high|medium|low"}'
+                '"confidence": "high|medium|low", '
+                '"value_evidence": [{"value_token": "...", "quote": "..."}]}'
             ),
             "  ]",
             "}",
             "",
             "For value NA, set verbatim_quote to NA, evidence_type to not_reported, and "
-            "derivation to NA. For every other value, verbatim_quote must be a contiguous "
-            "verbatim quote from the paper text or an ellipsis quote whose fragments appear "
-            "in source order.",
+            "derivation to NA, with value_evidence as an empty list. For every other value, "
+            "verbatim_quote must be a contiguous verbatim quote from the paper text or an "
+            "ellipsis quote whose fragments appear in the text. For semicolon-separated "
+            "values, value_evidence must contain one quote per value token when possible.",
             "",
             "Step 06 metadata:",
             json.dumps(
@@ -1359,6 +1423,141 @@ def quote_source_span_record(quote: str, source_text: str) -> dict[str, Any]:
     return span
 
 
+def source_ordered_fragments(fragments: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    found = [
+        fragment
+        for fragment in fragments
+        if fragment.get("matched_in_source") and isinstance(fragment.get("char_start"), int)
+    ]
+    return sorted(found, key=lambda fragment: int(fragment["char_start"]))
+
+
+def source_ordered_quote(fragments: list[dict[str, Any]]) -> str:
+    ordered = source_ordered_fragments(fragments)
+    if not ordered:
+        return MISSING_VALUE
+    return " ... ".join(str(fragment.get("source_text") or fragment.get("text") or "") for fragment in ordered)
+
+
+def quote_support_record(quote: str, source_text: str) -> dict[str, Any]:
+    record = {
+        "missing": False,
+        "supported": False,
+        "not_in_source": False,
+        "fragmented": False,
+        "unordered": False,
+        "salvaged": False,
+    }
+    if not quote.strip() or is_missing_value(quote):
+        record["missing"] = True
+        return record
+    if quote_in_source(quote, source_text):
+        record["supported"] = True
+        return record
+
+    fragments = quote_fragment_records(quote, source_text)
+    fragments_all_matched = bool(fragments) and all(fragment["matched_in_source"] for fragment in fragments)
+    fragments_unordered = any(
+        fragment["matched_in_source"] and not fragment.get("in_source_order", True)
+        for fragment in fragments
+    )
+    if fragments_all_matched:
+        record["supported"] = True
+        record["fragmented"] = has_ellipsis(quote) or len(fragments) > 1
+        record["unordered"] = fragments_unordered
+        span = quote_source_span_record(quote, source_text)
+        record["salvaged"] = span["status"] == "salvaged"
+        return record
+
+    span = quote_source_span_record(quote, source_text)
+    if span["status"] in {"exact", "salvaged"}:
+        record["supported"] = True
+        record["fragmented"] = has_ellipsis(quote)
+        record["salvaged"] = span["status"] == "salvaged"
+        return record
+
+    record["not_in_source"] = True
+    record["fragmented"] = bool(fragments) and all(fragment["matched_in_source"] for fragment in fragments)
+    record["unordered"] = fragments_unordered
+    return record
+
+
+def value_tokens_for_evidence(value: str) -> list[str]:
+    if is_missing_value(value):
+        return []
+    tokens = allowed_value_tokens(value)
+    return tokens or [value]
+
+
+def quote_metadata(quote: str, source_text: str) -> dict[str, Any]:
+    fragments = quote_fragment_records(quote, source_text)
+    return {
+        "quote_exact": bool(quote and not is_missing_value(quote) and quote_in_source(quote, source_text)),
+        "quote_fragments": fragments,
+        "quote_source_span": quote_source_span_record(quote, source_text),
+        "quote_source_ordered_fragments": source_ordered_fragments(fragments),
+        "quote_source_ordered": source_ordered_quote(fragments),
+    }
+
+
+def normalise_value_evidence(item: dict[str, Any], source_text: str) -> list[dict[str, Any]]:
+    value = str(item.get("value", "")).strip()
+    field_quote = str(item.get(VERBATIM_QUOTE_FIELD, "")).strip()
+    raw_evidence = item.get("value_evidence")
+    records: list[dict[str, Any]] = []
+    if isinstance(raw_evidence, list):
+        for raw_record in raw_evidence:
+            if not isinstance(raw_record, dict):
+                continue
+            token = str(raw_record.get("value_token", "")).strip()
+            quote = str(raw_record.get("quote", "")).strip()
+            if not token or not quote:
+                continue
+            records.append(
+                {
+                    "value_token": token,
+                    "quote": quote,
+                    "evidence_source": "model_value_evidence",
+                    **quote_metadata(quote, source_text),
+                }
+            )
+    if records or is_missing_value(value):
+        return records
+
+    return [
+        {
+            "value_token": token,
+            "quote": field_quote,
+            "evidence_source": "field_quote_fallback",
+            **quote_metadata(field_quote, source_text),
+        }
+        for token in value_tokens_for_evidence(value)
+    ]
+
+
+def model_value_evidence_supports_value(item: dict[str, Any], source_text: str) -> bool:
+    value = str(item.get("value", "")).strip()
+    expected_tokens = value_tokens_for_evidence(value)
+    if not expected_tokens:
+        return False
+    evidence = item.get("value_evidence")
+    if not isinstance(evidence, list):
+        return False
+    model_records = [
+        record
+        for record in evidence
+        if isinstance(record, dict) and record.get("evidence_source") == "model_value_evidence"
+    ]
+    if not model_records:
+        return False
+    supported_tokens = {
+        str(record.get("value_token", "")).strip()
+        for record in model_records
+        if quote_support_record(str(record.get("quote", "")).strip(), source_text)["supported"]
+    }
+    return all(token in supported_tokens for token in expected_tokens)
+
+
 def attach_quote_fragments(data: dict[str, Any] | None, source_text: str) -> None:
     if not data or not isinstance(data.get("extractions"), list):
         return
@@ -1367,8 +1566,12 @@ def attach_quote_fragments(data: dict[str, Any] | None, source_text: str) -> Non
             continue
         quote = str(item.get(VERBATIM_QUOTE_FIELD, "")).strip()
         item["verbatim_quote_exact"] = bool(quote and not is_missing_value(quote) and quote_in_source(quote, source_text))
-        item["verbatim_quote_fragments"] = quote_fragment_records(quote, source_text)
+        fragments = quote_fragment_records(quote, source_text)
+        item["verbatim_quote_fragments"] = fragments
         item["verbatim_quote_source_span"] = quote_source_span_record(quote, source_text)
+        item["verbatim_quote_source_ordered_fragments"] = source_ordered_fragments(fragments)
+        item["verbatim_quote_source_ordered"] = source_ordered_quote(fragments)
+        item["value_evidence"] = normalise_value_evidence(item, source_text)
 
 
 def validate_model_output(
@@ -1426,6 +1629,7 @@ def validate_model_output(
         quote = str(item.get(VERBATIM_QUOTE_FIELD, "")).strip()
         evidence_type = str(item.get("evidence_type", "")).strip()
         derivation = str(item.get("derivation", "")).strip()
+        confidence = str(item.get("confidence", "")).strip()
 
         if is_forbidden_missing_variant(value) or is_forbidden_missing_variant(quote):
             invalid_values.append(field_name or "<missing_field_name>")
@@ -1433,35 +1637,36 @@ def validate_model_output(
             malformed_items.append(field_name or "<missing_field_name>")
         if evidence_type not in ALLOWED_EVIDENCE_TYPES:
             invalid_values.append(field_name or "<missing_field_name>")
+        if confidence and confidence not in ALLOWED_CONFIDENCE_VALUES:
+            invalid_values.append(field_name or "<missing_field_name>")
+        if "value_evidence" in item and not isinstance(item["value_evidence"], list):
+            malformed_items.append(field_name or "<missing_field_name>")
         if is_missing_value(value):
             if not is_missing_value(quote) or evidence_type != "not_reported":
                 invalid_values.append(field_name or "<missing_field_name>")
             continue
 
-        if quote == "" or is_missing_value(quote):
-            quote_missing.append(field_name)
-        elif source_text is not None and not quote_in_source(quote, source_text):
-            fragments = quote_fragment_records(quote, source_text)
-            fragments_all_matched = bool(fragments) and all(fragment["matched_in_source"] for fragment in fragments)
-            fragments_unordered = any(
-                fragment["matched_in_source"] and not fragment.get("in_source_order", True)
-                for fragment in fragments
-            )
-            if fragments_unordered:
-                if fragments_all_matched:
-                    quote_fragmented.append(field_name)
-                quote_unordered_fragments.append(field_name)
-                quote_not_in_source.append(field_name)
-            else:
-                span = quote_source_span_record(quote, source_text)
-                if span["status"] == "salvaged":
-                    quote_salvaged.append(field_name)
-                    if has_ellipsis(quote):
-                        quote_fragmented.append(field_name)
+        if source_text is not None:
+            quote_support = quote_support_record(quote, source_text)
+            evidence_support = model_value_evidence_supports_value(item, source_text)
+            if quote_support["missing"]:
+                if evidence_support:
+                    warnings.append("value_evidence_used_for_quote_support")
                 else:
-                    if fragments_all_matched:
-                        quote_fragmented.append(field_name)
+                    quote_missing.append(field_name)
+            else:
+                if quote_support["not_in_source"] and evidence_support:
+                    warnings.append("value_evidence_used_for_quote_support")
+                elif quote_support["not_in_source"]:
                     quote_not_in_source.append(field_name)
+                if quote_support["fragmented"]:
+                    quote_fragmented.append(field_name)
+                if quote_support["unordered"]:
+                    quote_unordered_fragments.append(field_name)
+                if quote_support["salvaged"]:
+                    quote_salvaged.append(field_name)
+        elif quote == "" or is_missing_value(quote):
+            quote_missing.append(field_name)
 
         if evidence_type == "deterministic_derivation":
             if field_name not in DETERMINISTIC_DERIVATION_FIELDS or is_missing_value(derivation):
@@ -1498,7 +1703,7 @@ def validate_model_output(
     if quote_not_in_source:
         errors.append("quote_not_in_source")
     if quote_unordered_fragments:
-        errors.append("quote_fragments_out_of_order")
+        warnings.append("quote_fragments_found_out_of_order")
     if quote_fragmented:
         warnings.append("quote_fragmented_but_fragments_found")
     if quote_salvaged:
@@ -1537,6 +1742,256 @@ def extraction_values(data: dict[str, Any] | None) -> dict[str, str]:
     return values
 
 
+REPAIR_FIELD_LIST_KEYS = (
+    "missing_fields",
+    "quote_missing_fields",
+    "quote_not_in_source_fields",
+    "invalid_value_fields",
+    "malformed_item_fields",
+)
+
+
+def validation_repair_field_names(validation: dict[str, Any], expected_fields: list[str]) -> list[str]:
+    if any(error in validation.get("errors", []) for error in ("extractions_not_list", "paper_id_mismatch")):
+        return expected_fields
+    names: set[str] = set()
+    for key in REPAIR_FIELD_LIST_KEYS:
+        names.update(str(name) for name in validation.get(key, []) if name)
+    return [field_name for field_name in expected_fields if field_name in names]
+
+
+def validation_score(validation: dict[str, Any]) -> int:
+    score = 1000 * len(validation.get("errors", []))
+    for key in (
+        "missing_fields",
+        "extra_fields",
+        "duplicate_fields",
+        "quote_missing_fields",
+        "quote_not_in_source_fields",
+        "invalid_value_fields",
+        "malformed_item_fields",
+    ):
+        score += len(validation.get(key, []))
+    return score
+
+
+def field_specs_for_names(fields: list[FieldSpec], names: list[str]) -> list[FieldSpec]:
+    wanted = set(names)
+    return [field for field in fields if field.name in wanted]
+
+
+def current_extractions_for_fields(data: dict[str, Any] | None, names: list[str]) -> list[dict[str, Any]]:
+    wanted = set(names)
+    if not data or not isinstance(data.get("extractions"), list):
+        return []
+    return [
+        item
+        for item in data["extractions"]
+        if isinstance(item, dict) and str(item.get("field_name", "")).strip() in wanted
+    ]
+
+
+def build_validation_repair_prompt(
+    *,
+    fields: list[FieldSpec],
+    manifest_record: dict[str, Any],
+    source_text: str,
+    parsed: dict[str, Any] | None,
+    validation: dict[str, Any],
+    repair_fields: list[str],
+) -> str:
+    paper_id = manifest_record["paper_id"]
+    current_items = current_extractions_for_fields(parsed, repair_fields)
+    lines = [
+        f"Repair the failed Qwen extraction fields for paper {paper_id}.",
+        "",
+        "Return strict JSON only with exactly these repair fields, no markdown and no commentary.",
+        "Do not return fields that are not listed here. Keep the original paper_id.",
+        "",
+        "Rules to enforce:",
+        f"- Missing values are exactly {MISSING_VALUE}; never use N/A.",
+        "- age_description is numeric only; approximate ages such as 'in her 20s' become NA.",
+        "- CSF_antibody is antibody identity in CSF; use none when tested and none found, and NA when not reported.",
+        "- Allowed-value strings are machine tokens: preserve underscores exactly, such as back_pain.",
+        "- Every non-NA value must have source-grounded verbatim_quote or value_evidence.",
+        "- Quote fragments must actually appear in the paper text.",
+        "- Replace summary labels such as multiple with the actual allowed tokens.",
+        "",
+        "Failed validation:",
+        json.dumps(validation, ensure_ascii=False, indent=2),
+        "",
+        "Current failed items:",
+        json.dumps(current_items, ensure_ascii=False, indent=2),
+        "",
+        "Fields to repair:",
+    ]
+    for field in field_specs_for_names(fields, repair_fields):
+        lines.extend(field_block(field))
+    lines.extend(
+        [
+            "",
+            "Return this shape:",
+            "{",
+            f'  "paper_id": "{paper_id}",',
+            '  "extractions": [',
+            (
+                '    {"field_name": "...", "value": "...", "verbatim_quote": "...", '
+                '"evidence_type": "verbatim_quote|deterministic_derivation|not_reported", '
+                '"derivation": "NA or arithmetic expression using quoted source values", '
+                '"confidence": "high|medium|low", '
+                '"value_evidence": [{"value_token": "...", "quote": "..."}]}'
+            ),
+            "  ]",
+            "}",
+            "",
+            "Paper text:",
+            source_text,
+        ]
+    )
+    return "\n".join(lines)
+
+
+def merge_repaired_fields(
+    original: dict[str, Any] | None,
+    repaired: dict[str, Any] | None,
+    *,
+    repair_fields: list[str],
+    expected_fields: list[str],
+    paper_id: str,
+) -> dict[str, Any] | None:
+    if not repaired or not isinstance(repaired.get("extractions"), list):
+        return original
+    repair_set = set(repair_fields)
+    repaired_by_name = {
+        str(item.get("field_name", "")).strip(): item
+        for item in repaired["extractions"]
+        if isinstance(item, dict) and str(item.get("field_name", "")).strip() in repair_set
+    }
+    if not repaired_by_name:
+        return original
+
+    merged: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    original_items = original.get("extractions", []) if original and isinstance(original.get("extractions"), list) else []
+    for item in original_items:
+        if not isinstance(item, dict):
+            continue
+        field_name = str(item.get("field_name", "")).strip()
+        if field_name in repair_set:
+            if field_name in repaired_by_name and field_name not in seen:
+                merged.append(repaired_by_name[field_name])
+                seen.add(field_name)
+            continue
+        merged.append(item)
+        if field_name:
+            seen.add(field_name)
+
+    for field_name in expected_fields:
+        if field_name in repaired_by_name and field_name not in seen:
+            merged.append(repaired_by_name[field_name])
+            seen.add(field_name)
+
+    return {"paper_id": paper_id, "extractions": merged}
+
+
+def repair_model_output(
+    *,
+    api_key: str,
+    base_url: str,
+    model_id: str,
+    fields: list[FieldSpec],
+    manifest_record: dict[str, Any],
+    source_text: str,
+    expected_fields: list[str],
+    parsed: dict[str, Any] | None,
+    validation: dict[str, Any],
+    raw_payload: dict[str, Any],
+    raw_path: Path,
+    timeout_seconds: int,
+    max_retries: int,
+    validation_repair_retries: int,
+) -> tuple[dict[str, Any] | None, dict[str, Any]]:
+    current_parsed = parsed
+    current_validation = validation
+    raw_payload.setdefault("repair_attempts", [])
+    for attempt in range(1, validation_repair_retries + 1):
+        if current_validation.get("status") == "passed":
+            break
+        repair_fields = validation_repair_field_names(current_validation, expected_fields)
+        if not repair_fields:
+            break
+        repair_prompt = build_validation_repair_prompt(
+            fields=fields,
+            manifest_record=manifest_record,
+            source_text=source_text,
+            parsed=current_parsed,
+            validation=current_validation,
+            repair_fields=repair_fields,
+        )
+        attempt_record: dict[str, Any] = {
+            "attempt": attempt,
+            "requested_at_utc": now_utc_iso(),
+            "repair_fields": repair_fields,
+            "repair_prompt_sha256": sha256_text(repair_prompt),
+        }
+        raw_payload["repair_attempts"].append(attempt_record)
+        try:
+            repair_raw = call_ollama_cloud(
+                api_key=api_key,
+                base_url=base_url,
+                model_id=model_id,
+                user_prompt=repair_prompt,
+                timeout_seconds=timeout_seconds,
+                max_retries=max_retries,
+            )
+        except Exception as exc:
+            attempt_record["error"] = f"{type(exc).__name__}: {exc}"
+            attempt_record["received_at_utc"] = now_utc_iso()
+            write_json(raw_path, raw_payload)
+            break
+        attempt_record["raw_response"] = repair_raw
+        attempt_record["received_at_utc"] = now_utc_iso()
+        write_json(raw_path, raw_payload)
+
+        repaired, repair_parse_error = parse_model_json(repair_raw)
+        attach_quote_fragments(repaired, source_text)
+        repair_validation = validate_model_output(
+            repaired,
+            paper_id=str(manifest_record["paper_id"]),
+            expected_fields=repair_fields,
+            parse_error=repair_parse_error,
+            field_specs=field_specs_for_names(fields, repair_fields),
+            source_text=source_text,
+        )
+        attempt_record["repair_validation"] = repair_validation
+        candidate = merge_repaired_fields(
+            current_parsed,
+            repaired,
+            repair_fields=repair_fields,
+            expected_fields=expected_fields,
+            paper_id=str(manifest_record["paper_id"]),
+        )
+        attach_quote_fragments(candidate, source_text)
+        candidate_validation = validate_model_output(
+            candidate,
+            paper_id=str(manifest_record["paper_id"]),
+            expected_fields=expected_fields,
+            parse_error=None,
+            field_specs=fields,
+            source_text=source_text,
+        )
+        attempt_record["candidate_validation"] = candidate_validation
+        if validation_score(candidate_validation) < validation_score(current_validation):
+            attempt_record["accepted"] = True
+            current_parsed = candidate
+            current_validation = candidate_validation
+        else:
+            attempt_record["accepted"] = False
+            break
+        write_json(raw_path, raw_payload)
+    return current_parsed, current_validation
+
+
 def write_extractions_csv(
     *,
     run_dir: Path,
@@ -1559,6 +2014,53 @@ def write_extractions_csv(
             writer.writerow(row)
 
 
+def actual_status_counts(actual_records: list[dict[str, Any]]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for record in actual_records:
+        status = str(record.get("status") or "unknown")
+        counts[status] = counts.get(status, 0) + 1
+    return counts
+
+
+def actual_record_summary(record: dict[str, Any]) -> dict[str, Any]:
+    validation = record.get("validation", {})
+    return {
+        "paper_id": record.get("paper_id"),
+        "status": record.get("status"),
+        "errors": validation.get("errors", []),
+        "warnings": validation.get("warnings", []),
+        "missing_fields": validation.get("missing_fields", []),
+        "extra_fields": validation.get("extra_fields", []),
+    }
+
+
+def write_run_checkpoint(
+    *,
+    run_dir: Path,
+    fields: list[FieldSpec],
+    manifest_records: list[dict[str, Any]],
+    actual_records: list[dict[str, Any]],
+    model_id: str,
+) -> None:
+    """Persist completed-paper state so a stalled later call does not hide progress."""
+    write_extractions_csv(run_dir=run_dir, fields=fields, actual_records=actual_records, model_id=model_id)
+    completed_ids = {str(record.get("paper_id")) for record in actual_records}
+    checkpoint = {
+        "generated_at_utc": now_utc_iso(),
+        "completed_count": len(actual_records),
+        "remaining_count": max(0, len(manifest_records) - len(actual_records)),
+        "completed_paper_ids": [str(record.get("paper_id")) for record in actual_records],
+        "pending_paper_ids": [
+            str(record["paper_id"])
+            for record in manifest_records
+            if str(record["paper_id"]) not in completed_ids
+        ],
+        "actual_status_counts": actual_status_counts(actual_records),
+        "actual_records": [actual_record_summary(record) for record in actual_records],
+    }
+    write_json(run_dir / "checkpoint_summary.json", checkpoint)
+
+
 def run_ollama_batch(
     *,
     run_dir: Path,
@@ -1569,6 +2071,7 @@ def run_ollama_batch(
     model_id: str,
     timeout_seconds: int,
     max_retries: int,
+    validation_repair_retries: int = 0,
 ) -> list[dict[str, Any]]:
     api_key = load_ollama_api_key(env_path)
     raw_dir = run_dir / "raw"
@@ -1601,6 +2104,7 @@ def run_ollama_batch(
             )
             raw_payload["raw_response"] = raw_response
             raw_payload["received_at_utc"] = now_utc_iso()
+            write_json(raw_dir / f"{paper_id}.json", raw_payload)
             parsed, parse_error = parse_model_json(raw_response)
             attach_quote_fragments(parsed, source_text)
             validation = validate_model_output(
@@ -1611,6 +2115,23 @@ def run_ollama_batch(
                 field_specs=fields,
                 source_text=source_text,
             )
+            if validation_repair_retries > 0:
+                parsed, validation = repair_model_output(
+                    api_key=api_key,
+                    base_url=base_url,
+                    model_id=model_id,
+                    fields=fields,
+                    manifest_record=manifest_record,
+                    source_text=source_text,
+                    expected_fields=expected_fields,
+                    parsed=parsed,
+                    validation=validation,
+                    raw_payload=raw_payload,
+                    raw_path=raw_dir / f"{paper_id}.json",
+                    timeout_seconds=timeout_seconds,
+                    max_retries=max_retries,
+                    validation_repair_retries=validation_repair_retries,
+                )
             status = validation["status"]
         except Exception as exc:  # The raw file is the audit trail for failed calls.
             raw_payload["error"] = f"{type(exc).__name__}: {exc}"
@@ -1634,6 +2155,13 @@ def run_ollama_batch(
         }
         write_json(parsed_dir / f"{paper_id}.json", parsed_payload)
         actual_records.append(parsed_payload)
+        write_run_checkpoint(
+            run_dir=run_dir,
+            fields=fields,
+            manifest_records=manifest_records,
+            actual_records=actual_records,
+            model_id=model_id,
+        )
 
     write_extractions_csv(run_dir=run_dir, fields=fields, actual_records=actual_records, model_id=model_id)
     return actual_records
@@ -1653,10 +2181,7 @@ def write_summary(
     actual_records: list[dict[str, Any]] | None = None,
 ) -> None:
     actual_records = actual_records or []
-    actual_status_counts: dict[str, int] = {}
-    for record in actual_records:
-        status = str(record.get("status") or "unknown")
-        actual_status_counts[status] = actual_status_counts.get(status, 0) + 1
+    status_counts = actual_status_counts(actual_records)
 
     summary = {
         "run_id": run_id,
@@ -1670,18 +2195,8 @@ def write_summary(
         "contract_path": path_for_record(contract_path),
         "instruction_doc_path": path_for_record(instruction_doc_path),
         "prompt_records": prompt_records,
-        "actual_status_counts": actual_status_counts,
-        "actual_records": [
-            {
-                "paper_id": record.get("paper_id"),
-                "status": record.get("status"),
-                "errors": record.get("validation", {}).get("errors", []),
-                "warnings": record.get("validation", {}).get("warnings", []),
-                "missing_fields": record.get("validation", {}).get("missing_fields", []),
-                "extra_fields": record.get("validation", {}).get("extra_fields", []),
-            }
-            for record in actual_records
-        ],
+        "actual_status_counts": status_counts,
+        "actual_records": [actual_record_summary(record) for record in actual_records],
         "skipped": skipped,
     }
     write_json(run_dir / "validation_summary.json", summary)
@@ -1701,7 +2216,7 @@ def write_summary(
         f"- Instruction document: `{summary['instruction_doc_path']}`",
     ]
     if actual_records:
-        lines.append(f"- Actual status counts: `{actual_status_counts}`")
+        lines.append(f"- Actual status counts: `{status_counts}`")
     lines.extend(["", "## Paper IDs", ""])
     lines.extend(f"- `{record['paper_id']}`" for record in manifest_records)
     if actual_records:
@@ -1725,6 +2240,7 @@ def build_dry_run(args: argparse.Namespace) -> Path:
     else:
         fields = build_contract_from_workbook(args.workbook_path)
         fields = augment_allowed_values_from_manual(fields, args.manual_csv_path)
+        fields = apply_field_policy_overrides(fields)
         write_contract(args.contract_path, fields, args.workbook_path)
         write_instruction_doc(args.instruction_doc_path, fields, args.workbook_path)
 
@@ -1753,6 +2269,7 @@ def build_dry_run(args: argparse.Namespace) -> Path:
             model_id=args.model,
             timeout_seconds=args.timeout_seconds,
             max_retries=args.max_retries,
+            validation_repair_retries=args.validation_repair_retries,
         )
     write_summary(
         run_dir=run_dir,
@@ -1785,6 +2302,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--env-path", type=Path, default=DEFAULT_ENV_PATH)
     parser.add_argument("--timeout-seconds", type=int, default=600)
     parser.add_argument("--max-retries", type=int, default=2)
+    parser.add_argument(
+        "--validation-repair-retries",
+        type=int,
+        default=0,
+        help=(
+            "Optional targeted validation-repair calls per paper. Default 0 avoids "
+            "additional paid API calls beyond the primary extraction."
+        ),
+    )
     parser.add_argument(
         "--run-ollama",
         action="store_true",

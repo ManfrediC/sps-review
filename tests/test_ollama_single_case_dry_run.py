@@ -241,9 +241,12 @@ class TestOllamaSingleCaseDryRun(unittest.TestCase):
         self.assertIn("Use NA", prompt)
         self.assertIn("never use N/A", prompt)
         self.assertIn("verbatim_quote", prompt)
+        self.assertIn("value_evidence", prompt)
         self.assertIn("deterministic_derivation", prompt)
         self.assertIn("patient initials", prompt)
-        self.assertIn("Hard quote constraint", prompt)
+        self.assertIn("Quote constraint", prompt)
+        self.assertIn("in her 20s", prompt)
+        self.assertIn("Do not use not_tested", prompt)
         self.assertIn("source order", prompt)
         self.assertIn("Do not stitch onset-history evidence into established-disease fields", prompt)
         self.assertNotIn("\n- white = White/Caucasian", prompt)
@@ -297,14 +300,217 @@ class TestOllamaSingleCaseDryRun(unittest.TestCase):
 
         self.assertIn("fatigue", augmented[0].allowed_values)
         self.assertIn("tingling", augmented[0].allowed_values)
+        self.assertIn("falls", augmented[0].allowed_values)
+        self.assertIn("back_pain", augmented[0].allowed_values)
+        self.assertIn("foot_oedema", augmented[0].allowed_values)
         self.assertIn("fatigue", augmented[1].allowed_values)
         self.assertIn("tingling", augmented[1].allowed_values)
+        self.assertIn("nausea", augmented[1].allowed_values)
+
+    def test_field_policy_overrides_csf_antibody_and_exact_age_instruction(self) -> None:
+        fields = [
+            self.module.FieldSpec("age_description", "section", "Age at description", ["D"], ["Age"], []),
+            self.module.FieldSpec(
+                "CSF_antibody",
+                "section",
+                "CSF antibody (specify)",
+                ["BJ"],
+                ["CSF antibody"],
+                ["GAD", "not_tested"],
+            ),
+        ]
+
+        updated = {field.name: field for field in self.module.apply_field_policy_overrides(fields)}
+
+        self.assertIn("in her 20s", updated["age_description"].instruction)
+        self.assertIn("none", updated["CSF_antibody"].allowed_values)
+        self.assertNotIn("not_tested", updated["CSF_antibody"].allowed_values)
+        self.assertIn("Use NA if CSF antibody testing is not reported", updated["CSF_antibody"].instruction)
 
     def test_load_ollama_api_key_reads_only_named_value(self) -> None:
         env_path = self.tmp_path / "ollama.env"
         env_path.write_text("OTHER=value\nOLLAMA_API_KEY=abc123TOKEN\n", encoding="utf-8")
 
         self.assertEqual("abc123TOKEN", self.module.load_ollama_api_key(env_path))
+
+    def test_run_ollama_batch_checkpoints_each_completed_paper(self) -> None:
+        run_dir = self.tmp_path / "run"
+        env_path = self.tmp_path / "ollama.env"
+        env_path.write_text("OLLAMA_API_KEY=abc123TOKEN\n", encoding="utf-8")
+        manifest_records = []
+        for paper_id in ["1", "2"]:
+            text_path = self.tmp_path / f"{paper_id}.json"
+            text_path.write_text(
+                json.dumps(
+                    {
+                        "paper_id": paper_id,
+                        "pages": [{"page_index": 0, "text": "A 43-year-old woman was reported."}],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            manifest_records.append(
+                {
+                    "paper_id": paper_id,
+                    "title": "Example",
+                    "authors": "A",
+                    "source_category": "single_case_report",
+                    "source_subtype": "case_report",
+                    "likely_sps_case_count": "1",
+                    "count_confidence": "high",
+                    "preferred_text_json_path": str(text_path),
+                }
+            )
+        fields = [
+            self.module.FieldSpec("extractor", "metadata", "Extractor", ["A"], ["Extractor"], []),
+            self.module.FieldSpec("Reference", "metadata", "Reference", ["B"], ["Reference"], []),
+            self.module.FieldSpec("age_description", "demographics", "Age", ["C"], ["Age"], []),
+        ]
+
+        calls: list[str] = []
+        original_call = self.module.call_ollama_cloud
+        original_parse = self.module.parse_model_json
+
+        def fake_call(**kwargs):
+            calls.append(kwargs["user_prompt"])
+            if len(calls) == 2:
+                checkpoint = json.loads((run_dir / "checkpoint_summary.json").read_text(encoding="utf-8"))
+                self.assertEqual(1, checkpoint["completed_count"])
+                self.assertTrue((run_dir / "raw" / "1.json").exists())
+                self.assertTrue((run_dir / "parsed" / "1.json").exists())
+            paper_id = str(len(calls))
+            return json.dumps(
+                {
+                    "paper_id": paper_id,
+                    "extractions": [
+                        {
+                            "field_name": "age_description",
+                            "value": "43",
+                            "verbatim_quote": "43-year-old",
+                            "evidence_type": "verbatim_quote",
+                            "derivation": "NA",
+                            "confidence": "high",
+                        }
+                    ],
+                }
+            )
+
+        def parse_after_raw_checkpoint(raw_text: str):
+            paper_id = json.loads(raw_text)["paper_id"]
+            self.assertTrue((run_dir / "raw" / f"{paper_id}.json").exists())
+            return original_parse(raw_text)
+
+        try:
+            self.module.call_ollama_cloud = fake_call
+            self.module.parse_model_json = parse_after_raw_checkpoint
+            records = self.module.run_ollama_batch(
+                run_dir=run_dir,
+                fields=fields,
+                manifest_records=manifest_records,
+                env_path=env_path,
+                base_url="https://ollama.example/v1",
+                model_id="qwen-test",
+                timeout_seconds=1,
+                max_retries=0,
+            )
+        finally:
+            self.module.call_ollama_cloud = original_call
+            self.module.parse_model_json = original_parse
+
+        checkpoint = json.loads((run_dir / "checkpoint_summary.json").read_text(encoding="utf-8"))
+        self.assertEqual(["passed", "passed"], [record["status"] for record in records])
+        self.assertEqual(2, checkpoint["completed_count"])
+        self.assertEqual([], checkpoint["pending_paper_ids"])
+        self.assertEqual({"passed": 2}, checkpoint["actual_status_counts"])
+        self.assertEqual(3, len((run_dir / "qwen_extractions.csv").read_text(encoding="utf-8").splitlines()))
+
+    def test_run_ollama_batch_can_repair_validation_failures_when_enabled(self) -> None:
+        run_dir = self.tmp_path / "run"
+        env_path = self.tmp_path / "ollama.env"
+        env_path.write_text("OLLAMA_API_KEY=abc123TOKEN\n", encoding="utf-8")
+        text_path = self.tmp_path / "1.json"
+        text_path.write_text(
+            json.dumps({"paper_id": "1", "pages": [{"page_index": 0, "text": "A female in her 20s was reported."}]}),
+            encoding="utf-8",
+        )
+        manifest_records = [
+            {
+                "paper_id": "1",
+                "title": "Example",
+                "authors": "A",
+                "source_category": "single_case_report",
+                "source_subtype": "case_report",
+                "likely_sps_case_count": "1",
+                "count_confidence": "high",
+                "preferred_text_json_path": str(text_path),
+            }
+        ]
+        fields = [
+            self.module.FieldSpec("extractor", "metadata", "Extractor", ["A"], ["Extractor"], []),
+            self.module.FieldSpec("Reference", "metadata", "Reference", ["B"], ["Reference"], []),
+            self.module.FieldSpec("age_description", "demographics", "Age", ["C"], ["Age"], []),
+        ]
+        calls: list[str] = []
+        original_call = self.module.call_ollama_cloud
+
+        def fake_call(**kwargs):
+            calls.append(kwargs["user_prompt"])
+            if len(calls) == 1:
+                return json.dumps(
+                    {
+                        "paper_id": "1",
+                        "extractions": [
+                            {
+                                "field_name": "age_description",
+                                "value": "20s",
+                                "verbatim_quote": "in her 20s",
+                                "evidence_type": "verbatim_quote",
+                                "derivation": "NA",
+                                "confidence": "high",
+                            }
+                        ],
+                    }
+                )
+            self.assertIn("Repair the failed Qwen extraction fields", kwargs["user_prompt"])
+            return json.dumps(
+                {
+                    "paper_id": "1",
+                    "extractions": [
+                        {
+                            "field_name": "age_description",
+                            "value": "NA",
+                            "verbatim_quote": "NA",
+                            "evidence_type": "not_reported",
+                            "derivation": "NA",
+                            "confidence": "high",
+                            "value_evidence": [],
+                        }
+                    ],
+                }
+            )
+
+        try:
+            self.module.call_ollama_cloud = fake_call
+            records = self.module.run_ollama_batch(
+                run_dir=run_dir,
+                fields=fields,
+                manifest_records=manifest_records,
+                env_path=env_path,
+                base_url="https://ollama.example/v1",
+                model_id="qwen-test",
+                timeout_seconds=1,
+                max_retries=1,
+                validation_repair_retries=1,
+            )
+        finally:
+            self.module.call_ollama_cloud = original_call
+
+        raw_payload = json.loads((run_dir / "raw" / "1.json").read_text(encoding="utf-8"))
+        values = self.module.extraction_values(records[0]["parsed_response"])
+        self.assertEqual(2, len(calls))
+        self.assertEqual("passed", records[0]["status"])
+        self.assertEqual("NA", values["age_description"])
+        self.assertTrue(raw_payload["repair_attempts"][0]["accepted"])
 
     def test_validate_model_output_reports_missing_and_extra_fields(self) -> None:
         parsed = {
@@ -477,7 +683,7 @@ class TestOllamaSingleCaseDryRun(unittest.TestCase):
         self.assertIn("diagnosed as Parkinsons Disease", source_span["source_text"])
         self.assertIn("high serum level", source_span["source_text"])
 
-    def test_reversed_ellipsis_fragments_are_saved_but_not_salvaged_as_span(self) -> None:
+    def test_reversed_ellipsis_fragments_are_saved_as_review_warning(self) -> None:
         quote = "complaints of stiffness, pain, balance disorder ... increased muscle spasms"
         source_text = (
             "The patient reported increased muscle spasms in 2016. Later examination recorded "
@@ -510,13 +716,13 @@ class TestOllamaSingleCaseDryRun(unittest.TestCase):
         self.assertTrue(all(fragment["matched_in_source"] for fragment in fragments))
         self.assertFalse(fragments[1]["in_source_order"])
         self.assertEqual("failed", parsed["extractions"][0]["verbatim_quote_source_span"]["status"])
-        self.assertEqual("failed", validation["status"])
-        self.assertIn("quote_not_in_source", validation["errors"])
-        self.assertIn("quote_fragments_out_of_order", validation["errors"])
-        self.assertNotIn("quote_fragments_found_out_of_order", validation["warnings"])
+        self.assertEqual("increased muscle spasms ... complaints of stiffness, pain, balance disorder", parsed["extractions"][0]["verbatim_quote_source_ordered"])
+        self.assertEqual("passed", validation["status"])
+        self.assertNotIn("quote_not_in_source", validation["errors"])
+        self.assertIn("quote_fragments_found_out_of_order", validation["warnings"])
         self.assertEqual(["overview_established"], validation["quote_unordered_fragment_fields"])
 
-    def test_out_of_order_middle_fragment_is_hard_error_even_when_span_salvages(self) -> None:
+    def test_out_of_order_middle_fragment_is_review_warning_when_span_salvages(self) -> None:
         quote = "numbness and tingling... recurrent falls... difficulty in walking"
         source_text = (
             "The patient reported numbness and tingling in 2016. She later had difficulty in walking. "
@@ -546,10 +752,145 @@ class TestOllamaSingleCaseDryRun(unittest.TestCase):
         )
 
         self.assertEqual("salvaged", parsed["extractions"][0]["verbatim_quote_source_span"]["status"])
-        self.assertEqual("failed", validation["status"])
-        self.assertIn("quote_fragments_out_of_order", validation["errors"])
+        self.assertEqual("passed", validation["status"])
+        self.assertNotIn("quote_fragments_out_of_order", validation["errors"])
+        self.assertIn("quote_fragments_found_out_of_order", validation["warnings"])
         self.assertEqual(["other_symptoms_onset"], validation["quote_unordered_fragment_fields"])
-        self.assertNotIn("other_symptoms_onset", validation["quote_salvaged_fields"])
+        self.assertIn("other_symptoms_onset", validation["quote_salvaged_fields"])
+
+    def test_missing_quote_fragment_remains_hard_error(self) -> None:
+        parsed = {
+            "paper_id": "1",
+            "extractions": [
+                {
+                    "field_name": "other_symptoms_onset",
+                    "value": "falls; nausea",
+                    "verbatim_quote": "recurrent falls... persistent nausea",
+                    "evidence_type": "verbatim_quote",
+                    "derivation": "NA",
+                    "confidence": "medium",
+                }
+            ],
+        }
+        source_text = "The patient had recurrent falls."
+
+        self.module.attach_quote_fragments(parsed, source_text)
+        validation = self.module.validate_model_output(
+            parsed,
+            paper_id="1",
+            expected_fields=["other_symptoms_onset"],
+            parse_error=None,
+            source_text=source_text,
+        )
+
+        self.assertEqual("failed", validation["status"])
+        self.assertIn("quote_not_in_source", validation["errors"])
+        self.assertEqual(["other_symptoms_onset"], validation["quote_not_in_source_fields"])
+
+    def test_exact_case_insensitive_quote_is_valid_support(self) -> None:
+        parsed = {
+            "paper_id": "1",
+            "extractions": [
+                {
+                    "field_name": "antibody_tests",
+                    "value": "GAD",
+                    "verbatim_quote": "Investigation for SPS confirmed elevated GAD antibodies",
+                    "evidence_type": "verbatim_quote",
+                    "derivation": "NA",
+                    "confidence": "high",
+                }
+            ],
+        }
+        source_text = "Investigation for SPS Confirmed Elevated GAD Antibodies in serum."
+
+        self.module.attach_quote_fragments(parsed, source_text)
+        validation = self.module.validate_model_output(
+            parsed,
+            paper_id="1",
+            expected_fields=["antibody_tests"],
+            parse_error=None,
+            source_text=source_text,
+        )
+
+        self.assertEqual("passed", validation["status"])
+        self.assertEqual("exact", parsed["extractions"][0]["verbatim_quote_source_span"]["status"])
+        self.assertEqual([], validation["quote_not_in_source_fields"])
+
+    def test_model_value_evidence_can_support_each_value_token(self) -> None:
+        parsed = {
+            "paper_id": "1",
+            "extractions": [
+                {
+                    "field_name": "sympt_treatment",
+                    "value": "diazepam; baclofen",
+                    "verbatim_quote": "NA",
+                    "evidence_type": "verbatim_quote",
+                    "derivation": "NA",
+                    "confidence": "medium",
+                    "value_evidence": [
+                        {"value_token": "diazepam", "quote": "oral diazepam"},
+                        {"value_token": "baclofen", "quote": "oral baclofen"},
+                    ],
+                }
+            ],
+        }
+        source_text = "The patient received oral diazepam. Treatment later included oral baclofen."
+
+        self.module.attach_quote_fragments(parsed, source_text)
+        validation = self.module.validate_model_output(
+            parsed,
+            paper_id="1",
+            expected_fields=["sympt_treatment"],
+            parse_error=None,
+            source_text=source_text,
+        )
+
+        self.assertEqual("passed", validation["status"])
+        self.assertIn("value_evidence_used_for_quote_support", validation["warnings"])
+        self.assertEqual("model_value_evidence", parsed["extractions"][0]["value_evidence"][0]["evidence_source"])
+
+    def test_csf_antibody_rejects_not_tested_but_accepts_none(self) -> None:
+        fields = [
+            self.module.FieldSpec("CSF_antibody", "section", "CSF antibody", ["BJ"], ["CSF antibody"], ["GAD", "none"])
+        ]
+        base_item = {
+            "field_name": "CSF_antibody",
+            "verbatim_quote": "No CSF antibodies were detected",
+            "evidence_type": "verbatim_quote",
+            "derivation": "NA",
+            "confidence": "high",
+        }
+
+        invalid = {
+            "paper_id": "1",
+            "extractions": [{**base_item, "value": "not_tested"}],
+        }
+        valid = {
+            "paper_id": "1",
+            "extractions": [{**base_item, "value": "none"}],
+        }
+        source_text = "No CSF antibodies were detected."
+
+        invalid_result = self.module.validate_model_output(
+            invalid,
+            paper_id="1",
+            expected_fields=["CSF_antibody"],
+            parse_error=None,
+            field_specs=fields,
+            source_text=source_text,
+        )
+        valid_result = self.module.validate_model_output(
+            valid,
+            paper_id="1",
+            expected_fields=["CSF_antibody"],
+            parse_error=None,
+            field_specs=fields,
+            source_text=source_text,
+        )
+
+        self.assertEqual("failed", invalid_result["status"])
+        self.assertIn("CSF_antibody", invalid_result["invalid_value_fields"])
+        self.assertEqual("passed", valid_result["status"])
 
     def test_ellipsis_fragment_split_by_page_header_prefers_ordered_match(self) -> None:
         quote = "lumbar region... lower and upper extremities"
