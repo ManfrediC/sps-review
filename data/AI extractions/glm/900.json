@@ -1,0 +1,980 @@
+{
+  "paper_id": "900",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "900",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2015",
+      "quote": "Pediatr Neurol 2015; 53: 448-451",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Article History: Received May 12, 2015; Accepted in final form June 21, 2015",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "3-year, 5-month-old girl",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Seoul, Korea",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "3",
+      "quote": "3-year, 5-month-old girl",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "3",
+      "quote": "generalized stiffness that had developed 2 months previously",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "22",
+      "quote": "22-month follow-up visit",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "2",
+      "quote": "symptoms were paradoxically aggravated... With her diagnosis of paraneoplastic stiff person syndrome",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "gradually worsening postural tremor, painful spasms, and generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, spasms, other",
+      "quote": "gradually worsening postural tremor, painful spasms, and generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "postural tremor",
+      "quote": "gradually worsening postural tremor",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "stiff person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "painful spasms, and generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "tightness in the upper limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Her symptoms began as tightness in the upper limbs and deteriorated into muscle stiffness of the trunk that was reduced during sleep.",
+      "quote": "Her symptoms began as tightness in the upper limbs and deteriorated into muscle stiffness of the trunk that was reduced during sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful spasms of both the hands and lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "painful spasms of both the hands and lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "UE, distal_LE",
+      "quote": "painful spasms of both the hands and lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "cerebellar function test... were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "postural tremor; uncontrolled falls",
+      "quote": "gradually worsening postural tremor... uncontrolled falls without loss of consciousness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "Because of severe leg stiffness, she was completely unable to walk.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "gradually worsening",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "her tremor and spasticity were attributed to a paraneoplastic syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "paraneoplastic syndrome",
+      "quote": "her tremor and spasticity were attributed to a paraneoplastic syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "symptoms were paradoxically aggravated... She gradually improved",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "2",
+      "quote": "symptoms were paradoxically aggravated... two months following the onset of her neurological symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; brainstem_autonomic",
+      "quote": "generalized stiffness with swallowing difficulties and dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "she experienced generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "she experienced generalized stiffness with swallowing difficulties and dysarthria. At that time, she could not sit or change her position by herself and could only control her facial muscles and fingertips.",
+      "quote": "she experienced generalized stiffness with swallowing difficulties and dysarthria.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "generalized stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Her symptoms gradually resolved, her spasms and falling attacks disappeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "generalized stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "swallowing difficulties and dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysphagia; dysarthria",
+      "quote": "swallowing difficulties and dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "she could not sit or change her position by herself and could only control her facial muscles and fingertips.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness, spasms), continuous motor unit potential at rest on EMG, paraneoplastic context (pleuropulmonary blastoma).",
+      "quote": "The electromyography showed prominent, continuous motor unit potential at rest... findings typical of stiff person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "based on her clinical features and medical history",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "not_used",
+      "quote": "Serologic tests for autoimmune disease, including anti-GAD antibodies and paraneoplastic or other autoimmune disease-related antibodies... were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "continuous motor unit potential at rest on electromyography, which occurs in stiff person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Brain magnetic resonance imaging... were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Brain magnetic resonance imaging and electroencephalography, performed to evaluate for seizures, were unremarkable.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Serologic tests for autoimmune disease, including anti-GAD antibodies and paraneoplastic or other autoimmune disease-related antibodies... were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "anti-GAD; anti-Hu; anti-Yo; anti-Ri; anti-Tg; anti-thyroid peroxidase; thyroid-stimulating hormone receptor; neuromyelitis optica antibody",
+      "quote": "anti-GAD antibodies and paraneoplastic or other autoimmune disease-related antibodies, such as anti-Hu, anti-Yo, anti-Ri, anti-Tg, anti-thyroid peroxidase, thyroid-stimulating hormone receptor, and neuromyelitis optica antibody",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Serologic test for antiamphiphysin antibody or antiglycin receptor antibody was not done. Cerebrospinal fluid did not contain autoimmune antibodies, including anti-GAD antibodies.",
+      "quote": "Serologic test for antiamphiphysin antibody or antiglycin receptor antibody was not done.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Serologic tests... were unremarkable. Cerebrospinal fluid did not contain autoimmune antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Serologic tests for autoimmune disease... were unremarkable",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "anti-GAD antibodies... were unremarkable",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "Serologic test for... antiglycin receptor antibody was not done.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "not_tested",
+      "quote": "Serologic test for antiamphiphysin antibody... was not done.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "anti-Hu, anti-Yo, anti-Ri, anti-Tg, anti-thyroid peroxidase, thyroid-stimulating hormone receptor, and neuromyelitis optica antibody, were unremarkable",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-Hu; anti-Yo; anti-Ri; anti-Tg; anti-thyroid peroxidase; thyroid-stimulating hormone receptor; neuromyelitis optica antibody",
+      "quote": "anti-Hu, anti-Yo, anti-Ri, anti-Tg, anti-thyroid peroxidase, thyroid-stimulating hormone receptor, and neuromyelitis optica antibody",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "Cerebrospinal fluid did not contain autoimmune antibodies, including anti-GAD antibodies.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "continuous motor unit potential at rest on electromyography",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "right gastrocnemius, right tibialis anterior, left trapezius, left biceps brachii",
+      "quote": "right gastrocnemius, right tibialis anterior, left trapezius, and left biceps brachii",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Brain magnetic resonance imaging... were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "diagnosed with pleuropulmonary blastoma",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "pleuropulmonary blastoma",
+      "quote": "diagnosed with pleuropulmonary blastoma in her left hemithorax",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "she had recovered completely without any motor or cognitive deficits.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "dantrolene, baclofen, and diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; steroids",
+      "quote": "intravenous immunoglobulins (400 mg/kg for 5 days) and methylprednisolone (30 mg/kg for 4 days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "intravenous immunoglobulins (400 mg/kg for 5 days) and methylprednisolone (30 mg/kg for 4 days)",
+      "quote": "intravenous immunoglobulins (400 mg/kg for 5 days) and methylprednisolone (30 mg/kg for 4 days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "She gradually improved during the postadjuvant chemotherapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "dantrolene, baclofen, and diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "dantrolene, baclofen, and diazepam",
+      "quote": "dantrolene, baclofen, and diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Her symptoms gradually resolved, her spasms and falling attacks disappeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Her symptoms gradually resolved, her spasms and falling attacks disappeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "chemotherapy for pleuropulmonary blastoma; pulmonary lobectomy",
+      "quote": "pleuropulmonary blastoma treatment was continued... she underwent pulmonary lobectomy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "Serologic tests for autoimmune disease... were unremarkable",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "her family's medical history were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Symptoms paradoxically aggravated following pulmonary lobectomy. First documented child with stiff person syndrome associated with pleuropulmonary blastoma.",
+      "quote": "following the planned pulmonary lobectomy, her symptoms were paradoxically aggravated",
+      "confidence": "high"
+    }
+  ]
+}

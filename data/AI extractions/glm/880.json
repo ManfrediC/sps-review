@@ -1,0 +1,980 @@
+{
+  "paper_id": "880",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "880",
+      "quote": "Paper ID: 880",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2015",
+      "quote": "Intern Med 54: 219-221, 2015",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT Successful Immune Moderation Treatment for Progressive Encephalomyelitis with Rigidity and Myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "a 48-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Department of Neurology, Juntendo University Urayasu Hospital, Japan",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "48",
+      "quote": "a 48-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "48",
+      "quote": "A 48-year-old woman experienced occasional lower limb numbness and low back pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "12",
+      "quote": "A 48-year-old woman experienced occasional lower limb numbness and low back pain. ... In October 2013 ... These observations led to a diagnosis of PERM",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "experienced occasional lower limb numbness and low back pain. The following month, she experienced difficulty walking and developed lower limb spasticity.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "pain, gait_dysfunction, stiffness",
+      "quote": "experienced occasional lower limb numbness and low back pain. The following month, she experienced difficulty walking and developed lower limb spasticity.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "These observations led to a diagnosis of PERM",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "severe stiffness in all limbs ... rigo-spasticity of all limbs ... sudden episodes of axial hyperextension after loud sounds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "she experienced difficulty walking and developed lower limb spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "developed lower limb spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "developed lower limb spasticity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "she experienced difficulty walking and developed lower limb spasticity.",
+      "quote": "she experienced difficulty walking and developed lower limb spasticity.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "developed lower limb spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "low back pain; lower limb numbness",
+      "quote": "experienced occasional lower limb numbness and low back pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "dysuria",
+      "quote": "dysuria, rigo-spasticity of all limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "she experienced difficulty walking and developed lower limb spasticity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "experienced occasional lower limb numbness and low back pain. The following month, she experienced difficulty walking",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "A provisional diagnosis of spastic paraplegia was made",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "spastic paraplegia",
+      "quote": "A provisional diagnosis of spastic paraplegia was made",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "she progressively developed anxiety and restlessness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "12",
+      "quote": "A 48-year-old woman experienced occasional lower limb numbness and low back pain. ... In October 2013, she became unable to stand or walk due to stiffness of the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "severe stiffness in all limbs ... sudden episodes of axial hyperextension after loud sounds ... generalized myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "severe stiffness in all limbs, with particularly marked findings in the lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs, with particularly marked findings in the lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs, with particularly marked findings in the lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "severe stiffness in all limbs, with particularly marked findings in the lower limbs. On a physical examination, dysuria, rigo-spasticity of all limbs, particularly in the lower limbs (the rigo-spasticity improved while sleeping), and generalized hyperreflexia in both feet with extensor plantar responses were observed.",
+      "quote": "severe stiffness in all limbs, with particularly marked findings in the lower limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "thigh flexor and extensor muscles",
+      "quote": "co-contractions in the thigh flexor and extensor muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "severe stiffness in all limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "sudden episodes of axial hyperextension after loud sounds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "more frequent and prolonged generalized hyperextension with limb rigidity and myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "thigh flexor and extensor muscles",
+      "quote": "co-contractions in the thigh flexor and extensor muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "sudden episodes of axial hyperextension after loud sounds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise",
+      "quote": "sudden episodes of axial hyperextension after loud sounds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction; regional_cocontraction",
+      "quote": "more frequent and prolonged generalized hyperextension with limb rigidity and myoclonus ... co-contractions in the thigh flexor and extensor muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "she became unable to stand or walk due to stiffness of the lower extremities and experienced repeated falls at home",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "prolonged",
+      "quote": "more frequent and prolonged generalized hyperextension",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "prolonged generalized hyperextension",
+      "quote": "more frequent and prolonged generalized hyperextension",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "she developed rigo-spasticity and generalized myoclonus without impairment of consciousness and experienced sudden episodes of axial hyperextension after loud sounds.",
+      "quote": "sudden episodes of axial hyperextension after loud sounds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "she progressively developed anxiety and restlessness. Her mental status gradually worsened, and she experienced suicidal ideation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "progressively developed anxiety and restlessness. Her mental status gradually worsened, and she experienced suicidal ideation.",
+      "quote": "she progressively developed anxiety and restlessness. Her mental status gradually worsened, and she experienced suicidal ideation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "A neurological examination demonstrated dysphagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysphagia; perioral myoclonus; generalized hyperreflexia; extensor plantar responses; dysuria; encephalopathy; respiratory arrest; cardiac arrest",
+      "quote": "dysuria, rigo-spasticity of all limbs ... generalized hyperreflexia in both feet with extensor plantar responses ... perioral myoclonus ... life-threatening perioral cyanosis and peripheral oxygen desaturation, resulting in cardiac and respiratory arrest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "dysuria; life-threatening perioral cyanosis and peripheral oxygen desaturation, resulting in cardiac and respiratory arrest",
+      "quote": "dysuria ... life-threatening perioral cyanosis and peripheral oxygen desaturation, resulting in cardiac and respiratory arrest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "she became unable to stand or walk due to stiffness of the lower extremities and experienced repeated falls at home ... life-threatening perioral cyanosis and peripheral oxygen desaturation, resulting in cardiac and respiratory arrest",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "The diagnosis of SPS is usually made after excluding other known pathologies, primarily based on the clinical criteria of stiffness with co-contractions of agonist and antagonist muscles and paroxysmal spasms. These features are supported by the findings of various investigations, including neurophysiological examinations, which demonstrate spontaneous motor unit activity at rest simultaneously from both agonist and antagonist muscles. ... These observations led to a diagnosis of PERM",
+      "quote": "The diagnosis of SPS is usually made after excluding other known pathologies, primarily based on the clinical criteria of stiffness with co-contractions of agonist and antagonist muscles and paroxysmal spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "primarily based on the clinical criteria of stiffness with co-contractions of agonist and antagonist muscles and paroxysmal spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "both antibody-involved autoimmune diseases and onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "surface electromyography was performed following extubation, which showed co-contractions in the thigh flexor and extensor muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "the stiffness and rigidity dramatically improved with intravenous diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "MRI of the brain/pelvis ... cerebral and cervical MRI and enhanced CT examinations",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "The diagnosis of SPS is usually made after excluding other known pathologies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "both antibody-involved autoimmune diseases and onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); Hu; Yo; Ri; Tr; CV2; Ma2; amphiphysin",
+      "quote": "onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Glycine receptor antibody was not assessed in this case.",
+      "quote": "the titer of this antibody was not assessed in this case",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "The findings of blood and CSF analyses were normal ... onconeural antibodies ... were negative",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "the titer of this antibody was not assessed in this case",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "Hu; Yo; Ri; Tr; CV2; Ma2",
+      "quote": "onconeural antibodies (GAD, Hu, Yo, Ri, Tr, CV2, Ma2 and amphiphysin) were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "The findings of blood and CSF analyses were normal (CSF: cell 2/mm3, protein =45 mg/dL, IgG index =0.45)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "2",
+      "quote": "CSF: cell 2/mm3",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "The examination of the CSF for myelin basic protein and oligoclonal bands was negative. ... IgG index =0.45",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "45 mg/dL",
+      "quote": "protein =45 mg/dL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "surface electromyography was performed following extubation, which showed co-contractions in the thigh flexor and extensor muscles, even when she was lying down",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "thigh flexor and extensor muscles",
+      "quote": "co-contractions in the thigh flexor and extensor muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "surface electromyography performed following extubation, showing co-contractions in the thigh flexor and extensor muscles, even when she was lying down. After treatment with 10 mg of diazepam IV, the co-contractions dramatically improved.",
+      "quote": "surface electromyography was performed following extubation, which showed co-contractions in the thigh flexor and extensor muscles, even when she was lying down",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "the findings of the following examinations were normal: nerve conduction study, MRI of the brain/pelvis, abdominal ultrasonography",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "abdominal ultrasonography ... were normal",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "resulted in a drastic and sustained improvement of these symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, antiepileptic",
+      "quote": "levetiracetam, diazepam and azathioprine",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; steroids; Aza",
+      "quote": "IV immunoglobulin (400 mg/kg/d for 5 days), azathioprine (50 mg/day) ... IV methylprednisolone (1,000 mg/day for two days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IV methylprednisolone (1,000 mg/day for two days); IV immunoglobulin (400 mg/kg/d for 5 days), repeated once; azathioprine (50 mg/day)",
+      "quote": "IV methylprednisolone (1,000 mg/day for two days) ... IV immunoglobulin (400 mg/kg/d for 5 days) ... azathioprine (50 mg/day) ... repeat treatment with IV immunoglobulin (400 mg/kg/day for 5 days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "resulted in further improvements in the limb rigidity and myoclonus within one week after the start of therapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "clonazepam was administered",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "clonazepam; diazepam 10 mg IV; midazolam; levetiracetam (1,000 mg/day); mirtazapine as a mood stabilizer",
+      "quote": "clonazepam was administered ... intravenous diazepam ... She showed significant tolerance to midazolam ... levetiracetam (1,000 mg/day) ... mirtazapine as a mood stabilizer",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "the stiffness and rigidity dramatically improved with intravenous diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "the stiffness and rigidity dramatically improved with intravenous diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "therapeutic hypothermia; intubation and ventilation",
+      "quote": "She was then transferred to the intensive care unit, where she received therapeutic hypothermia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "routine blood analyses of vitamin B12, the thyroid function, creatinine kinase, serum antibody-involved autoimmune disease ... were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient experienced cardiac and respiratory arrest due to dysautonomia at peak of disease, successfully resuscitated after 4 minutes. Glycine receptor antibody titer was not assessed.",
+      "quote": "she experienced life-threatening perioral cyanosis and peripheral oxygen desaturation, resulting in cardiac and respiratory arrest. Four minutes later, she was quickly and successfully intubated and ventilated. ... the titer of this antibody was not assessed in this case",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "paper_id": "608",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "608",
+      "quote": "Paper ID: 608",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2012",
+      "quote": "N Engl J Med 2012;367:851-61.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "N Engl J Med 2012;367:851-61.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 60-year-old woman was admitted to this hospital",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "60",
+      "quote": "A 60-year-old woman was admitted to this hospital",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "59",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "24",
+      "quote": "Almost 2 years after her initial admission, she continues taking prednisone (5 mg daily), her mental status is normal, and she lives independently and performs all activities of daily living.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "4",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, spasms, pain",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person_Plus",
+      "quote": "Paraneoplastic stiff person syndrome and limbic encephalitis with anti-amphiphysin antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "stiffness and cramping developed in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "stiffness and cramping developed in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "stiffness and cramping developed in both legs, associated with pain in the back.",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "explicitly_absent",
+      "quote": "stiffness and cramping developed in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "stiffness and cramping developed in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "prox_LE",
+      "quote": "The cramps were more severe proximally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "occurred after movement or pressure on the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "movement; touch",
+      "quote": "occurred after movement or pressure on the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "muscle cramps in the legs progressively worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "occurred after movement or pressure on the legs, and awakened the patient from sleep.",
+      "quote": "The cramps were more severe proximally, occurred after movement or pressure on the legs, and awakened the patient from sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "hyperreflexia",
+      "quote": "A 60-Year-Old Woman with Painful Muscle Spasms and Hyperreflexia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "diaphoresis",
+      "quote": "diaphoresis was associated with the episodes of pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "She was unable to arise from a supine or sitting position or walk without assistance.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "The patient had been well until approximately 4 months before admission, when stiffness and cramping developed in both legs, associated with pain in the back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "a diagnosis of fibromyalgia was made",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "fibromyalgia",
+      "quote": "a diagnosis of fibromyalgia was made, and gabapentin was administered, without improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "muscle cramps in the legs progressively worsened. The cramps were more severe proximally, occurred after movement or pressure on the legs, and awakened the patient from sleep. In the days before admission, spasms and stiffness led to multiple falls and required use of a walker.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "By the time the diagnosis was established, the patient could not walk, and she had profound amnesia and psychosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "extreme rigidity of the flexor and extensor muscles bilaterally; the patient was unable to flex her right leg at the knee or fully extend her left leg. She was unable to flex her left hip against gravity and could not flex the right hip.",
+      "quote": "On examination, the patient was anxious and in pain. ... Extreme rigidity of the flexor and extensor muscles bilaterally; the patient was unable to flex her right leg at the knee or fully extend her left leg. She was unable to flex her left hip against gravity and could not flex the right hip.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "explicitly_absent",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally; the patient was unable to flex her right leg at the knee or fully extend her left leg. She was unable to flex her left hip against gravity and could not flex the right hip.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "prox_LE",
+      "quote": "The cramps were more severe proximally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "occurred after movement or pressure on the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "movement; touch",
+      "quote": "occurred after movement or pressure on the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "muscle cramps in the legs progressively worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "occurred after movement or pressure on the legs, and awakened the patient from sleep.",
+      "quote": "The cramps were more severe proximally, occurred after movement or pressure on the legs, and awakened the patient from sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "walking",
+      "quote": "She was unable to arise from a supine or sitting position or walk without assistance.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperreflexia",
+      "quote": "Reflexes were 3+ at the biceps, triceps, brachioradialis, and knees and 4+ at the Achilles’ tendons, with three or four beats of clonus at both ankles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "diaphoresis",
+      "quote": "diaphoresis was associated with the episodes of pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "By the time the diagnosis was established, the patient could not walk, and she had profound amnesia and psychosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features such as stiffness/spasms/hyperlordosis, positive antibodies such as anti-GAD, EMG showing continuous motor-unit activity, response to benzodiazepines",
+      "quote": "Approaches to the treatment of paraneoplastic syndromes include symptomatic therapy, which was done in this case with diazepam and baclofen, which are GABA agonists; treatment of the underlying cancer, which was also done in this case; and immunosuppression, which may include the administration of glucocorticoids, other immunosuppressant agents such as cyclophosphamide and rituximab, intravenous immune globulin, and plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "extreme rigidity of the flexor and extensor muscles bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "atorvastatin was discontinued, and morphine and diazepam were administered, followed by lorazepam and cyclobenzaprine hydrochloride, with improvement in the spasms and rigidity and decreased pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Magnetic resonance imaging (MRI) of the brain, performed without the administration of gadolinium, revealed a few nonspecific foci of hyperintensity in the frontal subcortical white matter, seen on T2-weighted and fluid-attenuated inversion recovery (FLAIR) images. MRI of the cervical, thoracic, and lumbar spine, performed without the administration of gadolinium and limited by patient discomfort, showed degenerative changes of the cervical and lumbar spine, without cord or nerve-root compression.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "With the exclusion of a compressive lesion or an obvious intraparenchymal abnormality, consideration was given to the diagnosis of the stiff person syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "amphiphysin",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); amphiphysin",
+      "quote": "To confirm the diagnosis, blood was sent for testing for anti-GAD and anti-amphiphysin antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_positive",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "A specimen of CSF from a lumbar puncture showed a lymphocytic pleocytosis, with 13 white cells and 749 red cells. The CSF glucose level was normal, but the protein level was slightly elevated and the IgG level was elevated, with oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-amphiphysin",
+      "quote": "The results of antibody testing revealed no anti-GAD antibodies but confirmed the presence of anti-amphiphysin antibodies in the blood.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "13",
+      "quote": "A specimen of CSF from a lumbar puncture showed a lymphocytic pleocytosis, with 13 white cells and 749 red cells.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "the IgG level was elevated, with oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Magnetic resonance imaging (MRI) of the brain, performed without the administration of gadolinium, revealed a few nonspecific foci of hyperintensity in the frontal subcortical white matter, seen on T2-weighted and fluid-attenuated inversion recovery (FLAIR) images.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "CT of the chest after the administration of contrast material ( Fig. 1 ) shows a mildly enhancing left axillary lymph node, 9 mm in greatest dimension.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "metastatic adenocarcinoma",
+      "quote": "Additional immunohistochemical staining showed that the tumor was negative for progesterone receptor (PR) and HER2. The diagnosis was metastatic adenocarcinoma, which is consistent with a primary origin in the breast.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "stabilisation",
+      "quote": "Almost 2 years after her initial admission, she continues taking prednisone (5 mg daily), her mental status is normal, and she lives independently and performs all activities of daily living.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen",
+      "quote": "atorvastatin was discontinued, and morphine and diazepam were administered, followed by lorazepam and cyclobenzaprine hydrochloride, with improvement in the spasms and rigidity and decreased pain. ... the administration of baclofen was begun for treatment of spasticity.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; steroids",
+      "quote": "She was treated with 5 days of intravenous immune globulin and high-dose glucocorticoids, followed by a gradual taper.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "After the mastectomy, a planned course of adjuvant dose-dense chemotherapy with cyclophosphamide and doxorubicin, followed by paclitaxel, was begun; the patient was discharged after a 1-month hospitalization. She initially made a miraculous recovery, and at follow-up 2 months after discharge, she was virtually back to baseline, with only minimal confusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "atorvastatin was discontinued, and morphine and diazepam were administered, followed by lorazepam and cyclobenzaprine hydrochloride, with improvement in the spasms and rigidity and decreased pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "atorvastatin was discontinued, and morphine and diazepam were administered, followed by lorazepam and cyclobenzaprine hydrochloride, with improvement in the spasms and rigidity and decreased pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "atorvastatin was discontinued, and morphine and diazepam were administered, followed by lorazepam and cyclobenzaprine hydrochloride, with improvement in the spasms and rigidity and decreased pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

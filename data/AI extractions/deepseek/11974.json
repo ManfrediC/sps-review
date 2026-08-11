@@ -1,0 +1,980 @@
+{
+  "paper_id": "11974",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "11974",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2022",
+      "quote": "Yao et al. BMC Neurology (2022) 22: 42",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT ... Case presentation: ... Discussion and conclusions: ...",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 52-year-old man was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Department of Neurology, The First Affiliated Hospital of Shenzhen University, 3002 Sungang West Road, Futian District, Shenzhen 518000, China",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "52",
+      "quote": "A 52-year-old man was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "52",
+      "quote": "A 52-year-old man was admitted in November 2020, reporting a tension headache for 20 days.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "1",
+      "quote": "a follow-up at 5 weeks showed consistent clinical improvement",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "2",
+      "quote": "On day 45, we performed cerebrospinal fluid (CSF) analysis and detected an anti-glycine receptor (anti GlyR) antibody (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "reporting a tension headache for 20 days. ... He had a history of chronic pharyngitis and had felt pharyngeal discomfort 1 week before admission. ... Physical examination at admission showed clear consciousness and mild dysarthria but no other abnormal neurological signs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "pain, brainstem_autonomic, other",
+      "quote": "reporting a tension headache for 20 days. ... He had a history of chronic pharyngitis and had felt pharyngeal discomfort 1 week before admission. ... Physical examination at admission showed clear consciousness and mild dysarthria but no other abnormal neurological signs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "tension headache, pharyngeal discomfort, mild dysarthria",
+      "quote": "reporting a tension headache for 20 days. ... He had a history of chronic pharyngitis and had felt pharyngeal discomfort 1 week before admission. ... Physical examination at admission showed clear consciousness and mild dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "We suspected anti-GlyR antibody-associated PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "Physical examination at admission showed clear consciousness and mild dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "tension headache; pharyngeal discomfort; mild dysarthria; unsteady gait; distortion of the commissure; mild panic; profuse sweating; dizziness; paroxysmal muscle spasms; brisk tendon reflexes; loss of consciousness; clonic seizures; panic attacks; severe anxiety; paroxysmal inspiratory laryngeal stridor; cyanosis of the lips; intractable epilepsy",
+      "quote": "reporting a tension headache for 20 days. ... He had a history of chronic pharyngitis and had felt pharyngeal discomfort 1 week before admission. ... Physical examination at admission showed clear consciousness and mild dysarthria ... On Day 2, the patient had an unsteady gait, distortion of the commissure, and mild panic. ... On Day 4, he had developed profuse sweating, dizziness, paroxysmal muscle spasms, and brisk tendon reflexes ... On Day 11, the patient had a subarachnoid hemorrhage ... caused by a fall, which could have occurred due to a tonic seizure. Physical examination at that time revealed drowsiness and a stiff neck. The patient repeatedly experienced loss of consciousness, clonic seizures, panic attacks unresponsive to olanzapine, and severe anxiety. Paroxysmal inspiratory laryngeal stridor ... and cyanosis of the lips ... were also observed. ... Multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure were detected on electromyography.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "profuse sweating",
+      "quote": "On Day 4, he had developed profuse sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "clonic seizures, generalized tonic-clonic seizure, generalized tonic seizure, myoclonic seizures",
+      "quote": "The patient repeatedly experienced loss of consciousness, clonic seizures ... Multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure were detected on electromyography.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "5",
+      "quote": "The patient repeatedly experienced loss of consciousness, clonic seizures, panic attacks unresponsive to olanzapine, and severe anxiety. Paroxysmal inspiratory laryngeal stridor ... and cyanosis of the lips requiring occasional ventilation in status epilepticus were also observed.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "The patient's condition steadily deteriorated. ... The disease progresses rapidly",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "stroke",
+      "quote": "We initially diagnosed a suspected stroke.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "rapidly-progressive",
+      "quote": "The patient's condition steadily deteriorated. ... The disease progresses rapidly",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle; brainstem_autonomic; seizures; anxiety; myoclonus",
+      "quote": "He repeatedly presented with rigidity, panic attacks, severe anxiety, paroxysmal inspiratory laryngeal stridor, cyanosis of the lips, and intractable epilepsy. Electromyography showed multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "He repeatedly presented with rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "Physical examination at that time revealed drowsiness and a stiff neck.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "He repeatedly presented with rigidity ... Physical examination at that time revealed drowsiness and a stiff neck.",
+      "quote": "He repeatedly presented with rigidity ... Physical examination at that time revealed drowsiness and a stiff neck.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "paroxysmal muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "stimulus-evoked startle",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "stimulus-evoked startle",
+      "quote": "stimulus-evoked startle",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "severe anxiety",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "severe anxiety",
+      "quote": "severe anxiety",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "paroxysmal inspiratory laryngeal stridor",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "panic attacks; severe anxiety; paroxysmal inspiratory laryngeal stridor; cyanosis of the lips; intractable epilepsy; myoclonic seizures; generalized tonic-clonic seizure; generalized tonic seizure; profuse sweating; palpitations; dysarthria; dizziness; unsteady gait; distortion of the commissure; drowsiness; stiff neck; brisk tendon reflexes",
+      "quote": "He repeatedly presented with rigidity, panic attacks, severe anxiety, paroxysmal inspiratory laryngeal stridor, cyanosis of the lips, and intractable epilepsy. Electromyography showed multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure. ... Our patient had cyanosis, anxiety, brain stem dysfunction, profuse sweating, and palpitations.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "profuse sweating, palpitations",
+      "quote": "Our patient had cyanosis, anxiety, brain stem dysfunction, profuse sweating, and palpitations.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "multiple myoclonic seizures, a single generalized tonic-clonic seizure, a single generalized tonic seizure, intractable epilepsy",
+      "quote": "Electromyography showed multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure. ... intractable epilepsy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "The patient repeatedly experienced loss of consciousness, clonic seizures, panic attacks unresponsive to olanzapine, and severe anxiety. Paroxysmal inspiratory laryngeal stridor ... and cyanosis of the lips requiring occasional ventilation in status epilepticus were also observed.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (rigidity, panic attacks, severe anxiety, paroxysmal inspiratory laryngeal stridor, cyanosis of the lips, intractable epilepsy, myoclonic seizures, generalized tonic-clonic seizure, generalized tonic seizure, brainstem dysfunction, autonomic dysfunction); anti-GlyR antibody in CSF; response to immunotherapy",
+      "quote": "We suspected anti-GlyR antibody-associated PERM. ... Immunomodulatory pulse therapy with steroids and immunoglobulin resulted in expeditious improvement of the symptoms within 2 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "He repeatedly presented with rigidity, panic attacks, severe anxiety, paroxysmal inspiratory laryngeal stridor, cyanosis of the lips, and intractable epilepsy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electromyography showed multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Immunomodulatory pulse therapy with steroids and immunoglobulin resulted in expeditious improvement of the symptoms within 2 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Brain magnetic resonance imaging and cerebrospinal fluid analysis were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Antibodies for demyelination disease ... autoimmune encephalitis ... and paraneoplastic syndrome ... in CSF were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GlyR",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "anti-glycine receptor (anti-GlyR); anti-aquaporin-4; anti-myelin basic protein; anti-myelin oligodendrocyte glycoprotein; anti-glial fibrillary acidic protein; anti-GAD; anti-NMDA; anti-IgLON5; anti-LGI1; anti-CASPR2; anti-DPPX; anti-GABA; anti-Hu; anti-Ri; anti-Ma 1 and 2; anti-CV2; anti-Yo; anti-Tr; anti-SOX1",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid. ... Antibodies for demyelination disease (including anti-aquaporin-4, anti-myelin basic protein, anti-myelin oligodendrocyte glycoprotein, anti-glial fibrillary acidic protein), autoimmune encephalitis (including anti-GAD, anti-NMDA, anti-IgLON5, anti-LGI1, anti-CASPR2, anti-DPPX, and anti- GABA), and paraneoplastic syndrome (including anti-Hu, anti-Ri, anti-Ma 1 and 2, anti-CV2, anti-Yo, anti Tr, and anti-SOX1) in CSF were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "CSF",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "autoimmune encephalitis (including anti-GAD ...) ... in CSF were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_positive",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "autoimmune encephalitis (including ... anti-DPPX ...) ... in CSF were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "tested_negative",
+      "quote": "autoimmune encephalitis (including ... anti- GABA ...) ... in CSF were negative.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "Antibodies for demyelination disease (including anti-aquaporin-4, anti-myelin basic protein, anti-myelin oligodendrocyte glycoprotein, anti-glial fibrillary acidic protein), autoimmune encephalitis (including ... anti-NMDA, anti-IgLON5, anti-LGI1, anti-CASPR2 ...), and paraneoplastic syndrome (including anti-Hu, anti-Ri, anti-Ma 1 and 2, anti-CV2, anti-Yo, anti Tr, and anti-SOX1) in CSF were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-aquaporin-4; anti-myelin basic protein; anti-myelin oligodendrocyte glycoprotein; anti-glial fibrillary acidic protein; anti-NMDA; anti-IgLON5; anti-LGI1; anti-CASPR2; anti-Hu; anti-Ri; anti-Ma 1 and 2; anti-CV2; anti-Yo; anti-Tr; anti-SOX1",
+      "quote": "Antibodies for demyelination disease (including anti-aquaporin-4, anti-myelin basic protein, anti-myelin oligodendrocyte glycoprotein, anti-glial fibrillary acidic protein), autoimmune encephalitis (including ... anti-NMDA, anti-IgLON5, anti-LGI1, anti-CASPR2 ...), and paraneoplastic syndrome (including anti-Hu, anti-Ri, anti-Ma 1 and 2, anti-CV2, anti-Yo, anti Tr, and anti-SOX1) in CSF were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-glycine receptor (anti-GlyR) antibody",
+      "quote": "Screening for autoimmune encephalitis antibodies revealed anti-GlyR antibodies in his cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Electromyography showed multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure.",
+      "quote": "Electromyography showed multiple myoclonic seizures, a single generalized tonic-clonic seizure, and a single generalized tonic seizure.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Brain magnetic resonance imaging and cerebrospinal fluid analysis were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Electronic colonoscopy and biopsy showed a colon tubular adenoma with low-grade intraepithelial neoplasia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "colon tubular adenoma with low-grade intraepithelial neoplasia",
+      "quote": "Electronic colonoscopy and biopsy showed a colon tubular adenoma with low-grade intraepithelial neoplasia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "Immunomodulatory pulse therapy with steroids and immunoglobulin resulted in expeditious improvement of the symptoms within 2 weeks, and a follow-up at 5 weeks showed consistent clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, antiepileptic",
+      "quote": "We administered antiepileptic drugs (e.g., continuously pumped sodium valproate, intravenous diazepam, and oral levetiracetam)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG",
+      "quote": "We began treatment with intravenous methylprednisolone (500 mg/d for 3 days, 240 mg/d for 3 days, 120 mg/d for 3 days, 80 mg/d for 3 days, which was switched to oral prednisone 60 mg/d for 1 month) and intravenous immunoglobulin 22.5 g/d for 5 days.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "intravenous methylprednisolone (500 mg/d for 3 days, 240 mg/d for 3 days, 120 mg/d for 3 days, 80 mg/d for 3 days, which was switched to oral prednisone 60 mg/d for 1 month) and intravenous immunoglobulin 22.5 g/d for 5 days",
+      "quote": "We began treatment with intravenous methylprednisolone (500 mg/d for 3 days, 240 mg/d for 3 days, 120 mg/d for 3 days, 80 mg/d for 3 days, which was switched to oral prednisone 60 mg/d for 1 month) and intravenous immunoglobulin 22.5 g/d for 5 days.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Immunomodulatory pulse therapy with steroids and immunoglobulin resulted in expeditious improvement of the symptoms within 2 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "We administered antiepileptic drugs (e.g., continuously pumped sodium valproate, intravenous diazepam, and oral levetiracetam)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "continuously pumped sodium valproate, intravenous diazepam, and oral levetiracetam",
+      "quote": "We administered antiepileptic drugs (e.g., continuously pumped sodium valproate, intravenous diazepam, and oral levetiracetam)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "none",
+      "quote": "However, his epilepsy was not well controlled.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "no",
+      "quote": "However, his epilepsy was not well controlled.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "treatments to improve cerebral circulation, antiplatelets, lower lipids, and to releve his symptoms; fluid rehydration, hemostasis, and symptomatic treatment",
+      "quote": "We started treatments to improve cerebral circulation, antiplatelets, lower lipids, and to releve his symptoms. ... We administered ... fluid rehydration, hemostasis, and symptomatic treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Inspiratory laryngeal stridor is highlighted as an important symptom of PERM. The patient had a subarachnoid hemorrhage caused by a fall, likely due to a tonic seizure. CA 199 and CA125 levels were increased. A colon tubular adenoma with low-grade intraepithelial neoplasia was found. The patient had no history of major trauma, toxic exposure, or hereditary disease.",
+      "quote": "Our case highlights that inspiratory laryngeal stridor is an important symptom of PERM. ... On Day 11, the patient had a subarachnoid hemorrhage (Fig. 1F) caused by a fall, which could have occurred due to a tonic seizure. ... CA 199 (107 U/mL, reference range: 0–37 U/mL) and CA125 (36.9 U/mL, reference range: 0–35 U/mL) levels were increased. ... Electronic colonoscopy and biopsy showed a colon tubular adenoma with low-grade intraepithelial neoplasia. ... He had no history of major trauma, toxic exposure, or hereditary disease.",
+      "confidence": "high"
+    }
+  ]
+}

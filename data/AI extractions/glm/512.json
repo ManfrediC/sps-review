@@ -1,0 +1,980 @@
+{
+  "paper_id": "512",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "512",
+      "quote": "Paper ID: 512",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2009",
+      "quote": "Clinical Neurology and Neurosurgery 1 1 1 (2009) 384–386",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 41-year-old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "41",
+      "quote": "A 41-year-old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "41",
+      "quote": "A 41-year-old man presented to the accident and emergency department following a fall and a 4-week history of progressive lower back stiffness and bilateral leg weakness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "1",
+      "quote": "4-week history of progressive lower back stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "presented to the accident and emergency department following a fall and a 4-week history of progressive lower back stiffness and bilateral leg weakness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, gait_dysfunction",
+      "quote": "presented to the accident and emergency department following a fall and a 4-week history of progressive lower back stiffness and bilateral leg weakness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "A clinical diagnosis of SPS was made",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "progressive lower back stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "progressive lower back stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "progressive lower back stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "progressive lower back stiffness and bilateral leg weakness",
+      "quote": "progressive lower back stiffness and bilateral leg weakness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "progressive lower back stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful muscular spasms leading to generalised muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "generalised",
+      "quote": "painful muscular spasms leading to generalised muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "generalised muscle stiffness that was exacerbated by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "movement",
+      "quote": "exacerbated by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "painful muscular spasms leading to generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "yes",
+      "quote": "presented to the accident and emergency department following a fall",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "Neurological examination was limited by the painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement.",
+      "quote": "Neurological examination was limited by the painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "explicitly_present",
+      "quote": "the posture was hyperlordotic",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "mentioned_absent",
+      "quote": "our patient had no ocular, bulbar or pyramidal tract signs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "mentioned_absent",
+      "quote": "our patient had no ocular, bulbar or pyramidal tract signs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "presented to the accident and emergency department following a fall and a 4-week history of progressive lower back stiffness and bilateral leg weakness",
+      "confidence": "low"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "4-week history of progressive lower back stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "SPSD",
+      "quote": "A clinical diagnosis of SPS was made",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic_stable",
+      "quote": "His symptoms have improved greatly and he has been able to return to work.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement. When the spasms were most intense, the posture was hyperlordotic and there was proximal muscle stiffness in the upper and lower limbs, manifested by hyperextension.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "proximal muscle stiffness in the upper and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "proximal muscle stiffness in the upper and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Neurological examination was limited by the painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement. When the spasms were most intense, the posture was hyperlordotic and there was proximal muscle stiffness in the upper and lower limbs, manifested by hyperextension.",
+      "quote": "Neurological examination was limited by the painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement. When the spasms were most intense, the posture was hyperlordotic and there was proximal muscle stiffness in the upper and lower limbs, manifested by hyperextension.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "generalised muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "painful muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "painful muscular spasms leading to generalised muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "exacerbated by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "movement",
+      "quote": "exacerbated by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "painful muscular spasms leading to generalised muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Neurological examination was limited by the painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement.",
+      "quote": "Neurological examination was limited by the painful muscular spasms leading to generalised muscle stiffness that was exacerbated by movement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "the posture was hyperlordotic",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "our patient had no ocular, bulbar or pyramidal tract signs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "mentioned_absent",
+      "quote": "our patient had no ocular, bulbar or pyramidal tract signs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "His symptoms have improved greatly and he has been able to return to work.",
+      "confidence": "low"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "The majority of the seven proposed clinical criteria of Lorish et al. were satisfied in our patient, rendering the diagnosis of SPS likely despite the lesser degree of antibody elevation than might be expected.",
+      "quote": "The majority of the seven proposed clinical criteria of Lorish et al. [13] were satisfied in our patient, rendering the diagnosis of SPS likely despite the lesser degree of antibody elevation than might be expected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "SPS is essentially a clinical diagnosis, supported by the finding of anti-GAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "supported by the finding of anti-GAD antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "A clinical diagnosis of SPS was made and the patient was commenced on a diazepam infusion, followed by plasmapheresis, and later intravenous immunoglobulin (IV Ig) to good clinical effect.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "MRI scans of the brain and spinal cord were normal, with no evidence of a demyelinating disorder or a space occupying lesion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Tumour markers including synaptophysin, a CT scan of the thorax, abdomen and pelvis were performed to exclude a paraneoplastic phenomenon and all were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "anti-GAD antibodies were strongly positive at 61 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "105",
+      "quote": "positive, at a titre of 105 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/ml",
+      "quote": "105 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (anti-GAD)",
+      "quote": "Antibodies to glutamic acid decarboxylase (anti-GAD) antibodies were sent for analysis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "The degree of elevation of anti-GAD antibodies in our patient was not as high as appears to be typical for patients with SPS. Following 48 h of IV Ig, serum anti-GAD antibodies fell to 4 U/ml.",
+      "quote": "the degree of elevation of anti-GAD antibodies in our patient was not as high as appears to be typical for patients with SPS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "anti-GAD antibodies were strongly positive at 61 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "low_moderate",
+      "quote": "The cut-off for this assay is <1 U/ml, with positive results being from 1 to 300 U/ml.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "<1 U/ml",
+      "quote": "The cut-off for this assay is <1 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "returned positive, at a titre of 105 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Antibodies to glutamic acid decarboxylase (anti-GAD) antibodies were sent for analysis in the immunology laboratory in the John Radcliffe Hospital in Oxford, United Kingdom (performed on July 2005) and returned positive, at a titre of 105 U/ml.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "anti-GAD antibodies were strongly positive at 61 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-GAD",
+      "quote": "anti-GAD antibodies were strongly positive at 61 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "61",
+      "quote": "anti-GAD antibodies were strongly positive at 61 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "CSF analysis was acellular",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "46 mg/dl",
+      "quote": "a normal protein concentration (46 mg/dl; normal range 15–45 mg/dl)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI scans of the brain and spinal cord were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Tumour markers including synaptophysin, a CT scan of the thorax, abdomen and pelvis were performed to exclude a paraneoplastic phenomenon and all were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "His symptoms have improved greatly and he has been able to return to work.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "The patient is currently treated with diazepam and baclofen for his painful muscular spasms, and mycophenylate as an immunomodulatory agent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX; IVIG; other",
+      "quote": "plasmapheresis, and later intravenous immunoglobulin (IV Ig) to good clinical effect. ... mycophenylate as an immunomodulatory agent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "plasmapheresis, and later intravenous immunoglobulin (IV Ig) to good clinical effect. Following 48 h of IV Ig, serum anti-GAD antibodies fell to 4 U/ml. The patient is currently treated with ... mycophenylate as an immunomodulatory agent.",
+      "quote": "plasmapheresis, and later intravenous immunoglobulin (IV Ig) to good clinical effect. Following 48 h of IV Ig, serum anti-GAD antibodies fell to 4 U/ml.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "to good clinical effect",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "The patient is currently treated with diazepam and baclofen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam and baclofen",
+      "quote": "The patient is currently treated with diazepam and baclofen for his painful muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "His symptoms have improved greatly and he has been able to return to work.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "His symptoms have improved greatly and he has been able to return to work.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "basal bolus insulin replacement regime of novorapid and levemir",
+      "quote": "The patient was commenced on a basal bolus insulin replacement regime of novorapid and levemir to treat his hyperglycaemia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "biopsy proven CD and dermatitis herpetiformis ... subclinical hypothyroidism ... type 1 diabetes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "Type 1 diabetes; Celiac disease; Dermatitis herpetiformis; Subclinical hypothyroidism",
+      "quote": "biopsy proven CD and dermatitis herpetiformis ... subclinical hypothyroidism ... type 1 diabetes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "HLA typing revealed our patient to be HLA-DRβ1 0301/0305 and HLA-DQβ1 02 positive.",
+      "quote": "HLA typing revealed our patient to be HLA-DR/H92521 0301/0305 and HLA-DQ/H92521 02 positive.",
+      "confidence": "high"
+    }
+  ]
+}

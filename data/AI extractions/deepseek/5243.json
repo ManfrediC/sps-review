@@ -1,0 +1,980 @@
+{
+  "paper_id": "5243",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "5243",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1996",
+      "quote": "European Journal of Neurology (1996), 3, 98-101",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "The text includes a structured abstract, introduction, clinical history, methods, results, discussion, and references, consistent with a full published case report.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 59-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "African/Afro-Caribbean",
+      "quote": "A 59-year-old black woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "59",
+      "quote": "A 59-year-old black woman presented in March 1993",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "58",
+      "quote": "A 59-year-old black woman presented in March 1993 with a 5 months progression of gait disturbance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "5",
+      "quote": "A 59-year-old black woman presented in March 1993 with a 5 months progression of gait disturbance... These findings were observed in our case, but additional involvement of pyramidal tract and cerebellar ataxia were indicative of PEWR rather than SMS.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "gait disturbance with repetitive falls and painful muscle spasms in the four limbs that reached the axial musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "gait_dysfunction, spasms",
+      "quote": "gait disturbance with repetitive falls and painful muscle spasms in the four limbs that reached the axial musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "developed progressive encephalomyelitis with rigidity (PEWR) characterized clinically by cerebellar ataxia, pyramidal signs and stiffness with painful muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis. sparing only the face. The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "absent",
+      "quote": "sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "quote": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "present",
+      "quote": "diffised permanent stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful muscle spasms in the four limbs that reached the axial musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "generalised",
+      "quote": "painful muscle spasms in the four limbs that reached the axial musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; spontaneous",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "explicitly_present",
+      "quote": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "explicitly_present",
+      "quote": "The patient was unable to walk because of stiffness and marked cerebellar ataxia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "cerebellar ataxia; hyperreflexia; Babinski sign; pyramidal signs",
+      "quote": "marked cerebellar ataxia. There were diffise hyperreflexia with bilateral Babinski sign.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "The patient was unable to walk because of stiffness and marked cerebellar ataxia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "5 months progression of gait disturbance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "ataxia and visual condition continued to worsen... In October 1993, the patient was confined to a wheelchair, visual acuity had severely deteriorated leading to blindness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle; cerebellar ataxia; pyramidal signs",
+      "quote": "characterized clinically by cerebellar ataxia, pyramidal signs and stiffness with painful muscle spasms... The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness ... sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "absent",
+      "quote": "sparing only the face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "quote": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis. sparing only the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "diffised permanent stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "painful muscle spasms in the four limbs that reached the axial musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "painful muscle spasms in the four limbs that reached the axial musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; spontaneous",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "quote": "The superimposed spasms appeared spontaneously or were triggered by unexpected noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "Neurological examination showed a diffised permanent stiffness with lumber hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "explicitly_present",
+      "quote": "The patient was unable to walk because of stiffness and marked cerebellar ataxia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "cerebellar ataxia; hyperreflexia; Babinski sign; pyramidal signs; blindness",
+      "quote": "marked cerebellar ataxia. There were diffise hyperreflexia with bilateral Babinski sign... visual acuity had severely deteriorated leading to blindness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "In October 1993, the patient was confined to a wheelchair, visual acuity had severely deteriorated leading to blindness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features: permanent muscle rigidity, painful spasms, cerebellar ataxia, pyramidal signs. Electromyography: continuous motor unit activity. Antibody: anti-GAD antibodies in serum. Response to treatment: improvement with diazepam and IV immunoglobulin.",
+      "quote": "These findings were observed in our case, but additional involvement of pyramidal tract and cerebellar ataxia were indicative of PEWR rather than SMS... Electromyography reveals continuous motorunit activity in the affected muscles... Her serum contained antibodies against glutamic acid decarboxylase (GAD)... Under diazepam (40 mg daily), painful muscle jerks and diffuse stiffness completely disappeared... Following the first cure, a dramatic improvement was observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "These findings were observed in our case, but additional involvement of pyramidal tract and cerebellar ataxia were indicative of PEWR rather than SMS.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Her serum contained antibodies against glutamic acid decarboxylase (GAD).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electromyography reveals continuous motorunit activity in the affected muscles (Thompson, 1993). These findings were observed in our case",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Under diazepam (40 mg daily), painful muscle jerks and diffuse stiffness completely disappeared... Following the first cure, a dramatic improvement was observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "CT scan of the head was normal as well as MRI of brain and spinal cord.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "A thorough survey of malignant markers (ACE, AFP, CA 15. 3, CA 19. 9, CT scan of the chest, intra-venous urogram, anti-HU, anti-Yo, antiCAR antibodies) was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Her serum contained antibodies against glutamic acid decarboxylase (GAD).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD) 65; glutamic acid decarboxylase (GAD) 67",
+      "quote": "Anti-GAD antibodies were detected in serum by ELISA using as antigens human recombinant GAD 65 and GAD 67",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "ELISA; Western Blot; immunofluorescence",
+      "quote": "Anti-GAD antibodies were detected in serum by ELISA... Western Blot using the same recombinant antigens was also performed. Immunofluorescence was carried out on cryostat sections of human pancreas and monkey cerebellum.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-GAD 67 (GAD I) patient serum: 200 U/ml (normal sera, n = 460: 1. 6 U/ml f 4. 7), anti-GAD 65 (GAD 11) patient serum: 7000 U/ml (normal sera, n = 1592: 490 U/ml f 1171). In Western Blot, only GAD 65 was recognized by the patient serum.",
+      "quote": "anti-GAD 67 (GAD I) patient serum: 200 U/ml (normal sera, n = 460: 1. 6 U/ml f 4. 7), anti-GAD 65 (GAD 11) patient serum: 7000 U/ml (normal sera, n = 1592: 490 U/ml f 1171). In Western Blot, only GAD 65 was recognized by the patient serum.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Her serum contained antibodies against glutamic acid decarboxylase (GAD).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "anti-GAD 65 (GAD 11) patient serum: 7000 U/ml (normal sera, n = 1592: 490 U/ml f 1171)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Her serum contained antibodies against glutamic acid decarboxylase (GAD).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "anti-GAD 65 (GAD 11) patient serum: 7000 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "anti-HU, anti-Yo, antiCAR antibodies... was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-HU; anti-Yo; anti-CAR",
+      "quote": "anti-HU, anti-Yo, antiCAR antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "isolated protein elevation",
+      "quote": "Cerebrospinal fluid (CSF) examination was normal for cell count, glucose and albumin, but Ig G level was increased by 22% without oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "normal",
+      "quote": "Cerebrospinal fluid (CSF) examination was normal for cell count",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "Ig G level was increased by 22% without oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Concentric needle electromyography showed continuous muscle activity in the right biceps brachialis and extensor carpi radialis longus and paraspinal cervical muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "right biceps brachialis, extensor carpi radialis longus, paraspinal cervical muscles",
+      "quote": "Concentric needle electromyography showed continuous muscle activity in the right biceps brachialis and extensor carpi radialis longus and paraspinal cervical muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Concentric needle electromyography",
+      "quote": "Concentric needle electromyography showed continuous muscle activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI of brain and spinal cord was normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "A thorough survey of malignant markers (ACE, AFP, CA 15. 3, CA 19. 9, CT scan of the chest, intra-venous urogram, anti-HU, anti-Yo, antiCAR antibodies) was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "Following the first cure, a dramatic improvement was observed. After the fourth cure of i.v. Ig, she was able to walk unaided and following the sixth i.v. Ig, she reduced diazepam dosage by 30 mg without recurrence of rigidity.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, other",
+      "quote": "Under diazepam (40 mg daily)... Successive trials of corticotherapy, which induced diabetes mellitus, cyclophosphamide and azathioprine were unsuccessful... the patient was given monthly intravenous immunoglobulin (i.v. Ig) therapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; CP; Aza; IVIG",
+      "quote": "Successive trials of corticotherapy, which induced diabetes mellitus, cyclophosphamide and azathioprine were unsuccessful... the patient was given monthly intravenous immunoglobulin (i.v. Ig) therapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "corticotherapy (induced diabetes mellitus); cyclophosphamide; azathioprine; monthly intravenous immunoglobulin (i.v. Ig) therapy (0.4 g/kg/day for 5 consecutive days)",
+      "quote": "Successive trials of corticotherapy, which induced diabetes mellitus, cyclophosphamide and azathioprine were unsuccessful... the patient was given monthly intravenous immunoglobulin (i.v. Ig) therapy (0.4 g/kg/day for 5 consecutive days).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Following the first cure, a dramatic improvement was observed. After the fourth cure of i.v. Ig, she was able to walk unaided",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "Under diazepam (40 mg daily), painful muscle jerks and diffuse stiffness completely disappeared.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam 40 mg daily",
+      "quote": "Under diazepam (40 mg daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Under diazepam (40 mg daily), painful muscle jerks and diffuse stiffness completely disappeared.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Under diazepam (40 mg daily), painful muscle jerks and diffuse stiffness completely disappeared.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "diabetes",
+      "quote": "She developed diabetes mellitus under corticotherapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had pigmentary retinopathy/retinitis pigmentosa that worsened in parallel with neurological symptoms. HLA typing: Aw 19, A3, B44, Bw 41. CPK elevated to 408 U/L. Anti-smooth muscle antibodies present at 1/640. Anti-cardiolipin antibodies at 70 U/L.",
+      "quote": "She had a recent history of hemeralopia due to a proved retinitis pigmentosa... retinopathy strikingly worsened... HLA typing was as follows: Aw 19, A3, B44, Bw 41. Creatine phospho kinase (CPK) was increased to 408 U/L... anti-smooth muscle at 1/640 and anti-cardiolipines at 70 U/L",
+      "confidence": "high"
+    }
+  ]
+}

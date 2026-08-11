@@ -1,0 +1,980 @@
+{
+  "paper_id": "232",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "232",
+      "quote": "Paper ID: 232",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2003",
+      "quote": "NEUROLOGY 2003; 61: 195–198",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "NEUROLOGY 2003; 61: 195–198",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "71-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "71",
+      "quote": "71-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "71",
+      "quote": "A 71-year-old woman developed stiffness in the right arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "8",
+      "quote": "death from pneumonia 8 months after disease onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "10",
+      "quote": "Plasma exchange treatment (PE) was initiated 10 weeks after the first symptoms had started",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "developed stiffness in the right arm, stiff and unsteady gait, and increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, gait_dysfunction, other",
+      "quote": "developed stiffness in the right arm, stiff and unsteady gait, and increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "increased sweating",
+      "quote": "increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person_Plus",
+      "quote": "amphiphysin-associated paraneoplastic stiff-person syndrome, opsoclonus, and encephalopathy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "stiffness in the right arm, stiff and unsteady gait... Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "developed stiffness in the right arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "stiffness in the right arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "A 71-year-old woman developed stiffness in the right arm, stiff and unsteady gait, and increased sweating. Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli.",
+      "quote": "A 71-year-old woman developed stiffness in the right arm, stiff and unsteady gait, and increased sweating. Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "trunk erectors",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "stiffness in the right arm, stiff and unsteady gait",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_right",
+      "quote": "stiffness in the right arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "UE, axial_thoracic",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "trunk erectors",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "not_mentioned",
+      "quote": "further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli.",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "hyperhidrosis; encephalopathy",
+      "quote": "increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "increased sweating",
+      "quote": "increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "opsoclonus",
+      "quote": "opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "stiff and unsteady gait",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "the patient deteriorated within 4 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "SPSD",
+      "quote": "stiff-person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "rapidly-progressive",
+      "quote": "the patient's condition progressed until death from pneumonia 8 months after disease onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "1",
+      "quote": "the patient deteriorated within 4 weeks with increased tone in the left arm and in the legs, inability to walk or stand, memory impairment, disorientation, and opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle; encephalopathy; oculomotor",
+      "quote": "increased tone in the left arm and in the legs, inability to walk or stand, memory impairment, disorientation, and opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "increased tone in the left arm and in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "increased tone in the left arm and in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "increased tone in the left arm and in the legs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "increased tone in the left arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "the patient deteriorated within 4 weeks with increased tone in the left arm and in the legs, inability to walk or stand, memory impairment, disorientation, and opsoclonus.",
+      "quote": "the patient deteriorated within 4 weeks with increased tone in the left arm and in the legs, inability to walk or stand, memory impairment, disorientation, and opsoclonus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "increased tone in the left arm and in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "stiffness in the right arm... increased tone in the left arm and in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "increased tone in the left arm and in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "UE, prox_LE, distal_LE",
+      "quote": "increased tone in the left arm and in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "not_mentioned",
+      "quote": "further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "inability to walk or stand",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli.",
+      "quote": "Muscle tone in the right arm and trunk erectors was markedly increased and further enhanced by sensory stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperhidrosis; encephalopathy; oculomotor",
+      "quote": "increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "increased sweating",
+      "quote": "increased sweating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "opsoclonus",
+      "quote": "opsoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "inability to walk or stand, memory impairment, disorientation",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness, increased muscle tone, unsteady gait); positive anti-amphiphysin antibodies; CSF findings; MRI abnormalities; response to plasmapheresis",
+      "quote": "high titer anti-amphiphysin antibodies were detected in the patient's serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "stiffness in the right arm, stiff and unsteady gait",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "high titer anti-amphiphysin antibodies were detected in the patient's serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "The patient's symptoms temporarily responded to plasmapheresis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Cranial T2-weighted MRI showed slight hyperintensity in the mediobasal temporal lobes and in the hypothalamus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Anti-GAD, anti Yo, and anti-Hu antibodies were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "amphiphysin",
+      "quote": "high titer anti-amphiphysin antibodies were detected in the patient's serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "1: 3, 280, 000",
+      "quote": "1: 3, 280, 000 to 1: 205, 000",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "titer",
+      "quote": "1: 3, 280, 000 to 1: 205, 000",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "anti-amphiphysin; anti-GAD; anti-Yo; anti-Hu",
+      "quote": "Anti-GAD, anti Yo, and anti-Hu antibodies were negative, but high titer anti-amphiphysin antibodies were detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "commercial enzyme immuno-dot blot assay",
+      "quote": "Anti-amphiphysin antibody titers detected by a commercial enzyme immuno-dot blot assay",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Antibody titers dropped 16-fold from 1: 3,280,000 to 1: 205,000 during plasma exchange, then further to 1: 12,800 with cyclophosphamide, then rose again to 1: 205,000 with disease recurrence.",
+      "quote": "associated with a 16-fold drop of the serum anti-amphiphysin antibody titers (1: 3, 280, 000 to 1: 205, 000)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "high titer anti-amphiphysin antibodies were detected in the patient's serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "high titer anti-amphiphysin antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "high titer anti-amphiphysin antibodies were detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Anti-GAD... antibodies were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_positive",
+      "quote": "high titer anti-amphiphysin antibodies were detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "anti Yo, and anti-Hu antibodies were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-Yo; anti-Hu",
+      "quote": "anti Yo, and anti-Hu antibodies were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "inflammatory",
+      "quote": "CSF showed 6 cells/μL, increased protein (117 mg/dL), and identical oligoclonal bands to serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-amphiphysin",
+      "quote": "high titer anti-amphiphysin antibodies were detected in the patient's serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "6",
+      "quote": "CSF showed 6 cells/μL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "identical oligoclonal bands to serum",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "117 mg/dL",
+      "quote": "increased protein (117 mg/dL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "Cranial T2-weighted MRI showed slight hyperintensity in the mediobasal temporal lobes and in the hypothalamus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "slight hyperintensity in the mediobasal temporal lobes and in the hypothalamus; later marked hyperintense lesions in the pons",
+      "quote": "Cranial T2-weighted MRI showed slight hyperintensity in the mediobasal temporal lobes and in the hypothalamus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Mammography showed microcalcifications in the right breast",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "invasive-ductal carcinoma with axillary lymph node metastases",
+      "quote": "an invasive-ductal carcinoma with axillary lymph node metastases was diagnosed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "death",
+      "quote": "the patient's condition progressed until death from pneumonia 8 months after disease onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen",
+      "quote": "Diazepam treatment... additional treatment with baclofen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX; steroids; CP",
+      "quote": "Plasma exchange treatment (PE)... high-dose steroids... cyclophosphamide",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Plasma exchange: series of 11 PE; Steroids: high-dose; Cyclophosphamide: 3 × 350 mg/m², monthly doses of 600 mg/m² IV",
+      "quote": "During a series of 11 PE... high-dose steroids... cyclophosphamide (3 × 350 mg/m², monthly doses of 600 mg/m² IV)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "the increased muscle tone was normalized, and the patient was able to walk again with help",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "Diazepam treatment",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "Diazepam; baclofen",
+      "quote": "Diazepam treatment induced a marked but short-lasting improvement. Despite additional treatment with baclofen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Diazepam treatment induced a marked but short-lasting improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Diazepam treatment induced a marked but short-lasting improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "tumour resection (breast and lymph nodes removed)",
+      "quote": "The breast and lymph nodes were removed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "breast cancer",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "breast cancer (paraneoplastic)",
+      "quote": "a 71-year-old woman with breast cancer",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had anti-amphiphysin-associated paraneoplastic stiff-person syndrome with opsoclonus and encephalopathy. Binding studies demonstrated patient's IgG binding to CNS structures identical to anti-amphiphysin antiserum pattern. Death from pneumonia 8 months after disease onset.",
+      "quote": "amphiphysin-associated paraneoplastic stiff-person syndrome, opsoclonus, and encephalopathy",
+      "confidence": "high"
+    }
+  ]
+}

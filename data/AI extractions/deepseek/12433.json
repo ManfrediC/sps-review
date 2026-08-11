@@ -1,0 +1,980 @@
+{
+  "paper_id": "12433",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "12433",
+      "quote": "Paper ID: 12433",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1991",
+      "quote": "NEUROLOGY 1991; 41: 1588-1592",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Article abstract... Case report... Methods... Results... Discussion... References",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 37-year-old woman noted persistent low back pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "37",
+      "quote": "A 37-year-old woman noted persistent low back pain following a minor motor vehicle accident in 1982.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "28",
+      "quote": "A 37-year-old woman noted persistent low back pain following a minor motor vehicle accident in 1982. ... In March 1989, she was taking 120 mg diazepam and 140 mg baclofen per day. She suffered a prolonged episode of severe lordotic spasms and was referred to the hospital.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "84",
+      "quote": "A 37-year-old woman noted persistent low back pain following a minor motor vehicle accident in 1982. ... In March 1989 ... We considered the diagnosis of stiff-man syndrome.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "pain",
+      "quote": "A 37-year-old woman noted persistent low back pain following a minor motor vehicle accident in 1982.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "We considered the diagnosis of stiff-man syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "Stiffness of gait and low back muscle spasms progressively worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "Stiffness of gait and low back muscle spasms progressively worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "persistent low back pain ... Stiffness of gait and low back muscle spasms progressively worsened",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Stiffness of gait and low back muscle spasms progressively worsened, leading to several falls.",
+      "quote": "Stiffness of gait and low back muscle spasms progressively worsened, leading to several falls.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "low back muscle spasms progressively worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "axial_lumbar",
+      "quote": "low back muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "low back muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "Stiffness of gait and low back muscle spasms progressively worsened, leading to several falls.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "Muscle stiffness begins insidiously and progressively affects axial and proximal musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "psychiatric",
+      "quote": "She was felt to have post-traumatic stress syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "As symptoms worsened, numerous other medications were tried.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "There was pronounced rigidity and tenderness of axial muscles, with marked lordosis. ... Her movements were often interrupted by painful spasms of paraspinal and limb girdle muscles. ... Exaggerated exteroceptive reflex responses were elicited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "There was pronounced rigidity and tenderness of axial muscles, with marked lordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "Neck extension and rotation were severely limited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "pronounced rigidity and tenderness of axial muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "pronounced rigidity and tenderness of axial muscles, with marked lordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "pronounced rigidity and tenderness of axial muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "painful spasms of paraspinal and limb girdle muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "There was pronounced rigidity and tenderness of axial muscles, with marked lordosis. She could walk with assistance, but the gait was rigid and slow. Her movements were often interrupted by painful spasms of paraspinal and limb girdle muscles. Neck extension and rotation were severely limited.",
+      "quote": "There was pronounced rigidity and tenderness of axial muscles, with marked lordosis. She could walk with assistance, but the gait was rigid and slow. Her movements were often interrupted by painful spasms of paraspinal and limb girdle muscles. Neck extension and rotation were severely limited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "paraspinal",
+      "quote": "painful spasms of paraspinal and limb girdle muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "pronounced rigidity and tenderness of axial muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Her movements were often interrupted by painful spasms of paraspinal and limb girdle muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "painful spasms of paraspinal and limb girdle muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_lumbar, prox_LE",
+      "quote": "painful spasms of paraspinal and limb girdle muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "paraspinal",
+      "quote": "painful spasms of paraspinal and limb girdle muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "paraspinal, limb girdle",
+      "quote": "painful spasms of paraspinal and limb girdle muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Exaggerated exteroceptive reflex responses were elicited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "touch; emotional",
+      "quote": "Painful muscle spasms may dominate the clinical presentation and are often exacerbated by emotional and external stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "Exaggerated exteroceptive reflex responses were elicited. ... Reflex discharges, referred to as 'exteroceptive' for their resemblance to the flexion reflex response to noxious stimulation, occur in muscles throughout the body after short trains of nonpainful stimuli.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "Painful muscle spasms may dominate the clinical presentation and are often exacerbated by emotional and external stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Painful muscle spasms may dominate the clinical presentation and are often exacerbated by emotional and external stimuli. ... Exaggerated exteroceptive reflex responses were elicited.",
+      "quote": "Painful muscle spasms may dominate the clinical presentation and are often exacerbated by emotional and external stimuli. ... Exaggerated exteroceptive reflex responses were elicited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "There was pronounced rigidity and tenderness of axial muscles, with marked lordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "Strength, coordination, sensation, and deep tendon reflexes were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "Mental status and cranial nerve examinations were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "mentioned_absent",
+      "quote": "Mental status and cranial nerve examinations were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "She could walk with assistance, but the gait was rigid and slow. Her movements were often interrupted by painful spasms of paraspinal and limb girdle muscles.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (progressive rigidity, spasms, hyperlordosis, abnormal gait), EMG (continuous motor unit activity, exaggerated exteroceptive reflexes), response to diazepam, and antibody testing (high titers of GAD-like immunoreactivity in serum).",
+      "quote": "We considered the diagnosis of stiff-man syndrome. EMG studies were normal except for continuous motor unit activity, mainly in the paraspinous muscles. Exaggerated exteroceptive reflex responses were elicited. Both exteroceptive reflexes and continuous motor unit activity were abolished or markedly reduced following intravenous infusion of 10 mg diazepam... Indirect immunofluorescent screening of serum revealed autoantibody reactive with normal human cerebellum in a pattern consistent with GABAergic terminals.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "We considered the diagnosis of stiff-man syndrome. ... There was pronounced rigidity and tenderness of axial muscles, with marked lordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Indirect immunofluorescent screening of serum revealed autoantibody reactive with normal human cerebellum in a pattern consistent with GABAergic terminals.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "EMG studies were normal except for continuous motor unit activity, mainly in the paraspinous muscles. Exaggerated exteroceptive reflex responses were elicited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Both exteroceptive reflexes and continuous motor unit activity were abolished or markedly reduced following intravenous infusion of 10 mg diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Radiographs of the spine showed marked lumbar lordosis, and MRI was otherwise unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Samples from two patients in whom the diagnosis of stiff-man syndrome was initially suspected but who had other causes of rigidity produced no staining.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "high titers of GAD-like immunoreactivity in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "1280",
+      "quote": "Serum titers of GAD-like immunoreactivity fell from 1:1,280 to 1:80 during plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "1:1280",
+      "quote": "Serum titers of GAD-like immunoreactivity fell from 1:1,280 to 1:80 during plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD)",
+      "quote": "autoantibodies reactive with glutamic acid decarboxylase (GAD)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "indirect immunofluorescence; immunoperoxidase staining",
+      "quote": "Indirect immunofluorescent screening of serum revealed autoantibody reactive with normal human cerebellum... Immunoperoxidase staining was carried out on sections of fixed rat or guinea pig brain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Antibody was of IgG class. CSF did not produce staining. The pattern of immunostaining was consistent with GABAergic terminals and cell bodies, matching anti-GAD antibody staining.",
+      "quote": "Antibody was of IgG class... CSF did not produce staining... Staining produced by patient serum matched not only anti-GAD labeling of terminals in adjacent sections, but also of GABAergic cell bodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Aliquots of serum and CSF from routine laboratory studies were assayed against human, rat, and guinea pig tissue.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "high titers of GAD-like immunoreactivity in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "high titers of GAD-like immunoreactivity in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "high titers of GAD-like immunoreactivity in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "CSF analysis was normal (protein, 28 mg/dl; IgG, 1.8 mg/dl; R value, 0.56; and no oligoclonal bands).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "no oligoclonal bands",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "28 mg/dl",
+      "quote": "protein, 28 mg/dl",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "EMG studies were normal except for continuous motor unit activity, mainly in the paraspinous muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "paraspinous muscles, abductor pollicis brevis, biceps brachii, lumbar paraspinal, biceps femoris, tibialis anterior",
+      "quote": "continuous motor unit activity, mainly in the paraspinous muscles. ... Surface recordings were made simultaneously from five muscle groups (abductor pollicis brevis, biceps brachii, lumbar paraspinal, biceps femoris, and tibialis anterior)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Exteroceptive reflexes were recorded using a modification of the technique described by Meinck et al. Surface recordings were made simultaneously from five muscle groups (abductor pollicis brevis, biceps brachii, lumbar paraspinal, biceps femoris, and tibialis anterior) using a TECA Mystro EMG. The recording gain was adjusted to obtain a well-defined signal from each channel. A frequency window of 20 Hz to 2,000 Hz was used in all recordings. The responses were full-wave-rectified and four responses were signal-averaged. Each response was obtained by delivering a train of five stimuli to the median nerve at the wrist at a rate of 200 Hz. The stimulus was delivered at the threshold for motor activation of the thenar muscles.",
+      "quote": "Exteroceptive reflexes were recorded using a modification of the technique described by Meinck et al. Surface recordings were made simultaneously from five muscle groups (abductor pollicis brevis, biceps brachii, lumbar paraspinal, biceps femoris, and tibialis anterior) using a TECA Mystro EMG. The recording gain was adjusted to obtain a well-defined signal from each channel. A frequency window of 20 Hz to 2,000 Hz was used in all recordings. The responses were full-wave-rectified and four responses were signal-averaged. Each response was obtained by delivering a train of five stimuli to the median nerve at the wrist at a rate of 200 Hz. The stimulus was delivered at the threshold for motor activation of the thenar muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "1",
+      "quote": "Exaggerated exteroceptive reflex responses were elicited.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI was otherwise unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "There was marked incremental improvement in EMG studies at each point tested. ... Observed clinical response was equally striking: after two exchanges, rigidity had decreased, paraspinal muscles were palpably less stiff, and the patient was able to sit up unassisted. ... Two weeks after discharge, she reported improvement to nearly normal functioning",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "Diazepam resulted in the greatest improvement and was slowly increased to 110 mg daily by 1986. In March 1989, she was taking 120 mg diazepam and 140 mg baclofen per day. ... A trial of clonidine was initiated on the patient's discharge from the hospital, but was discontinued when she did not improve.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX",
+      "quote": "The patient underwent a course of five plasma exchanges of 2 liters each over 12 days.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "five plasma exchanges of 2 liters each over 12 days",
+      "quote": "The patient underwent a course of five plasma exchanges of 2 liters each over 12 days.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Plasmapheresis resulted in lowered antibody titers, decreased exteroceptive reflex responses, reduced motor unit activity, and marked clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "Diazepam resulted in the greatest improvement and was slowly increased to 110 mg daily by 1986. In March 1989, she was taking 120 mg diazepam and 140 mg baclofen per day.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "Diazepam 120 mg daily, baclofen 140 mg daily, clonidine trial (discontinued)",
+      "quote": "she was taking 120 mg diazepam and 140 mg baclofen per day. ... A trial of clonidine was initiated on the patient's discharge from the hospital, but was discontinued when she did not improve.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Diazepam resulted in the greatest improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Diazepam resulted in the greatest improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "vitiligo",
+      "quote": "Examination revealed extensive vitiligo.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient's serum antibody labeled GABAergic terminals and cell bodies in a pattern matching anti-GAD. CSF was negative for antibody. The patient did not have seizures. Metabolic screening including blood glucose was normal. The patient had vitiligo. The paper provides strong evidence for an autoimmune mechanism and response to plasmapheresis.",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

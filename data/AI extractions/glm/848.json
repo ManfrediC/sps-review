@@ -1,0 +1,980 @@
+{
+  "paper_id": "848",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "848",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2019",
+      "quote": "Medicine. 2019;98(49):e18160",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Stiff limb syndrome with lower limb myoclonus: A case report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 53-year-old male patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "The Third People's Hospital of Huzhou, Zhejiang Province, China",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "53",
+      "quote": "A 53-year-old male patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "53",
+      "quote": "A 53-year-old male patient presented with symptoms of progressive left lower extremity myoclonus and muscle rigidity that started 3 days ago",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "2",
+      "quote": "Two months after the onset of the condition",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "progressive left lower extremity myoclonus and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "myoclonus, stiffness",
+      "quote": "progressive left lower extremity myoclonus and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Limb",
+      "quote": "The patient was finally diagnosed with immune SLS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "progressive left lower extremity myoclonus and muscle rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "left lower extremity myoclonus and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "left lower extremity myoclonus and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "The left lower extremity myoclonus and stiffness started suddenly without any apparent cause with a frequency of once every few minutes.",
+      "quote": "The left lower extremity myoclonus and stiffness started suddenly without any apparent cause with a frequency of once every few minutes.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "symptoms were localized to the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_left",
+      "quote": "progressive left lower extremity myoclonus and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "The stiffness and painful spasms were localized to the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "The stiffness and painful spasms were localized to the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "prox_LE, distal_LE",
+      "quote": "The stiffness and painful spasms were localized to the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "the patient did not show additional symptoms such as ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "mentioned_absent",
+      "quote": "the patient did not show additional symptoms such as ataxia, eye movement abnormalities, and dizziness indicating brain stem involvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "mentioned_absent",
+      "quote": "the patient did not show additional symptoms such as ataxia, eye movement abnormalities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "myoclonus; hyperreflexia; babinski",
+      "quote": "progressive left lower extremity myoclonus; a positive knee reflex (++++) and positive bilateral Babinski sign",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "inability to straighten it, to stand or walk",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "sudden onset of progressive left lower extremity myoclonus and muscle rigidity for 3 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "rapidly-progressive",
+      "quote": "rapidly showed signs of right lower limb involvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "bilateral muscle twitching of lower extremities, an elevated muscle tone",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "an elevated muscle tone",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "bilateral muscle twitching of lower extremities, an elevated muscle tone",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "bilateral muscle twitching of lower extremities, an elevated muscle tone",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "The physical examination indicated a bilateral muscle twitching of lower extremities, an elevated muscle tone, a positive knee reflex (++++) and positive bilateral Babinski sign.",
+      "quote": "The physical examination indicated a bilateral muscle twitching of lower extremities, an elevated muscle tone, a positive knee reflex (++++) and positive bilateral Babinski sign.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "symptoms were localized to the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "bilateral muscle twitching of lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "The stiffness and painful spasms were localized to the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "The stiffness and painful spasms were localized to the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "prox_LE, distal_LE",
+      "quote": "The stiffness and painful spasms were localized to the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "the patient did not show additional symptoms such as ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "the patient did not show additional symptoms such as ataxia, eye movement abnormalities, and dizziness indicating brain stem involvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "mentioned_absent",
+      "quote": "the patient did not show additional symptoms such as ataxia, eye movement abnormalities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "myoclonus; hyperreflexia; babinski",
+      "quote": "bilateral muscle twitching of lower extremities, an elevated muscle tone, a positive knee reflex (++++) and positive bilateral Babinski sign",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "the patient was still unable to walk or stand",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "The symptoms nature, physical examination, careful elimination of differential diagnosis suggested a diagnosis of stiff limb syndrome.",
+      "quote": "The symptoms nature, physical examination, careful elimination of differential diagnosis suggested a diagnosis of stiff limb syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The symptoms nature, physical examination",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Paraneoplastic antibodies, GAD-65, GAD-67 antibody, and glycine receptor antibody were all tested and reported negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "The electromyography results displayed signs of motor unit discharge",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "the patients' responsiveness to the initially given therapeutic combination are supportive of SLS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "the brain, cervical, thoracic, and lumbar spine MRI scans were all negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "careful elimination of differential diagnosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Paraneoplastic antibodies, GAD-65, GAD-67 antibody, and glycine receptor antibody were all tested and reported negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "paraneoplastic antibodies; glutamic acid decarboxylase (GAD65); glutamic acid decarboxylase (GAD67); glycine receptor (GlyR); VCKC antibody",
+      "quote": "Paraneoplastic antibodies, GAD-65, GAD-67 antibody, and glycine receptor antibody were all tested and reported negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "All tested antibodies (paraneoplastic, GAD-65, GAD-67, glycine receptor, VCKC) were negative in both serum and CSF.",
+      "quote": "all tests related to commonly screened antibodies such as serum and cerebrospinal fluid paraneoplastic antibodies, and anti-glycine receptor antibodies were found to be negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "serum and cerebrospinal fluid paraneoplastic antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "all tests related to commonly screened antibodies such as serum and cerebrospinal fluid paraneoplastic antibodies, and anti-glycine receptor antibodies were found to be negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "GAD-65 ... were all tested and reported negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_negative",
+      "quote": "glycine receptor antibody were all tested and reported negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "the VCKC antibody test came negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "VCKC antibody",
+      "quote": "the VCKC antibody test came negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "serum and cerebrospinal fluid paraneoplastic antibodies, and anti-glycine receptor antibodies were found to be negative",
+      "confidence": "low"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "The electromyography results displayed signs of motor unit discharge",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "the brain, cervical, thoracic, and lumbar spine MRI scans were all negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "the chest CT and PET-CT scans were also negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "The patients' condition improved after the initial treatment with complete disappearance of muscle twitching. Further improvements were seen later on after the local administration of botulinum toxin A.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, botulinum_toxin",
+      "quote": "baclofen and clonazepam; injections of botulinum toxin A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG",
+      "quote": "Intravenous infusion of gamma globulin 0. 4 mg/kg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Intravenous infusion of gamma globulin 0. 4 mg/kg",
+      "quote": "Intravenous infusion of gamma globulin 0. 4 mg/kg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "He showed signs of remission after 5 days of treatment with total disappearance of his muscle twitching",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "baclofen and clonazepam",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "baclofen and clonazepam; injections of botulinum toxin A in both lower limbs",
+      "quote": "baclofen and clonazepam; he received injections of botulinum toxin A in both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Further improvements were seen later on after the local administration of botulinum toxin A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Further improvements were seen later on after the local administration of botulinum toxin A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "The Patient denied any prior history of chronic conditions such as diabetes mellitus, Grave disease or similar symptoms among his family members",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "The Patient denied any prior history of chronic conditions such as diabetes mellitus, Grave disease or similar symptoms among his family members",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient presented with myoclonus in addition to stiffness, which is unusual for SLS. The authors note that a negative EMG or negative anti-GAD test should not exclude SLS diagnosis.",
+      "quote": "unusual symptoms such as myoclonus can occur in few cases; a negative EMG result or a negative anti-glutamic acid decarboxylase antibody test should not exclude SLS diagnosis",
+      "confidence": "high"
+    }
+  ]
+}

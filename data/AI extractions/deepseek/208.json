@@ -1,0 +1,980 @@
+{
+  "paper_id": "208",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "208",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2000",
+      "quote": "Acta Neurol Scand 2000: 102: 403–405",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case report ... A 51-year-old woman was referred for investigation ...",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 51-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "51",
+      "quote": "A 51-year-old woman was referred for investigation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "50",
+      "quote": "Sixteen months prior to admission, the patient began to experience intermittent cramping pains of thigh muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "6",
+      "quote": "over the next 6 months, the patient’s stiffness, pain and hypertonus completely disappeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "16",
+      "quote": "Sixteen months prior to admission, the patient began to experience intermittent cramping pains ...",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "pain",
+      "quote": "the patient began to experience intermittent cramping pains of thigh muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "other",
+      "quote": "Stiff-person like syndrome in a patient with multiple pituitary hormone deficiencies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "Stiff-person like syndrome",
+      "quote": "Stiff-person like syndrome in a patient with multiple pituitary hormone deficiencies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "the patient began to experience intermittent cramping pains of thigh muscles, which gradually became more frequent and finally permanent, involving also abdominal and lower back muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "the patient began to experience intermittent cramping pains of thigh muscles, which gradually became more frequent and finally permanent, involving also abdominal and lower back muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "involving also abdominal and lower back muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "involving also abdominal and lower back muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "the patient began to experience intermittent cramping pains of thigh muscles, which gradually became more frequent and finally permanent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Sixteen months prior to admission, the patient began to experience intermittent cramping pains of thigh muscles, which gradually became more frequent and finally permanent, involving also abdominal and lower back muscles.",
+      "quote": "Sixteen months prior to admission, the patient began to experience intermittent cramping pains of thigh muscles, which gradually became more frequent and finally permanent, involving also abdominal and lower back muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "involving also abdominal and lower back muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "the patient began to experience intermittent cramping pains of thigh muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "prox_LE",
+      "quote": "the patient began to experience intermittent cramping pains of thigh muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "Walking presented great difficulty, since in the upright position her knees were permanently flexed to 90–100 degrees and hip up to 40–60 degrees.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "which gradually became more frequent and finally permanent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "which gradually became more frequent and finally permanent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "painful muscle stiffness in lower spine and both legs ... triggered painful flexor spasms ... brief bursts of synchronous motor unit discharges were elicited in antagonist muscle pairs by unexpected sound, tap or voluntary action",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "Muscle tone was markedly increased in the proximal parts of the lower limbs (especially adductors and flexors), moderately increased in the abdominal and lower paraspinal area",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "moderately increased in the abdominal and lower paraspinal area",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "moderately increased in the abdominal and lower paraspinal area",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "Muscle tone was markedly increased in the proximal parts of the lower limbs (especially adductors and flexors)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "absent",
+      "quote": "EMG exam of muscles in the upper limbs, upper trunk and distal parts of the lower limbs showed normal silent period at rest.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "absent",
+      "quote": "EMG exam of muscles in the upper limbs, upper trunk and distal parts of the lower limbs showed normal silent period at rest.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Muscle tone was markedly increased in the proximal parts of the lower limbs (especially adductors and flexors), moderately increased in the abdominal and lower paraspinal area and normal elsewhere.",
+      "quote": "Muscle tone was markedly increased in the proximal parts of the lower limbs (especially adductors and flexors), moderately increased in the abdominal and lower paraspinal area and normal elsewhere.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "adductors, flexors",
+      "quote": "Muscle tone was markedly increased in the proximal parts of the lower limbs (especially adductors and flexors)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "Muscle tone was markedly increased in the proximal parts of the lower limbs (especially adductors and flexors), moderately increased in the abdominal and lower paraspinal area and normal elsewhere.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Passive movements of hip or knee joints showed marked, stable resistance throughout the entire range of motion and triggered painful flexor spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "prox_LE",
+      "quote": "Passive movements of hip or knee joints ... triggered painful flexor spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "brief bursts of synchronous motor unit discharges were elicited in antagonist muscle pairs by unexpected sound, tap or voluntary action.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch; movement",
+      "quote": "brief bursts of synchronous motor unit discharges were elicited in antagonist muscle pairs by unexpected sound, tap or voluntary action.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "brief_jerk; regional_cocontraction",
+      "quote": "brief bursts of synchronous motor unit discharges were elicited in antagonist muscle pairs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "brief",
+      "quote": "brief bursts of synchronous motor unit discharges",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "brief bursts of synchronous motor unit discharges were elicited in antagonist muscle pairs by unexpected sound, tap or voluntary action.",
+      "quote": "brief bursts of synchronous motor unit discharges were elicited in antagonist muscle pairs by unexpected sound, tap or voluntary action.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "due to fixed lumbar hyperlordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "Cranial nerves, sensory and cerebellar systems were intact.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "Encephalomyelitis of inflammatory or paraneoplastic nature and local lesions of CNS, known to cause similar motor disturbances (1, 3), were also excluded by the absence of signs of brainstem or long tracks dysfunction",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "Walking presented great difficulty, since in the upright position her knees were permanently flexed to 90–100 degrees and hip up to 40–60 degrees.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features (progressive, lower trunk, proximal leg muscle stiffness and superimposed paroxysms of stimulus induced painful spasms, characteristic lumbar lordosis), EMG findings (continuous activity of normal motor units and exaggerated cutaneo-muscular reflexes), exclusion of mimics (myotonia, neuromyotonia, encephalomyelitis, local CNS lesions), and response to hormone replacement therapy.",
+      "quote": "This case bears close similarity to SPS, including the characteristic lumbar lordosis (1, 6), except that, unlike the classical syndrome, the symptoms persisted during sleep and the upper trunk musculature was spared. The EMG findings, i.e. continuous activity of normal motor units and exaggerated cutaneo-muscular reflexes, not seen in other common causes of muscle tightness such as dystonia or spasticity (7), advocated in favour of SPS. Myotonia and neuromyotonia were excluded by the EMG results. Encephalomyelitis of inflammatory or paraneoplastic nature and local lesions of CNS, known to cause similar motor disturbances (1, 3), were also excluded by the absence of signs of brainstem or long tracks dysfunction and supportive laboratory results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "This case bears close similarity to SPS, including the characteristic lumbar lordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD), pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "The EMG findings, i.e. continuous activity of normal motor units and exaggerated cutaneo-muscular reflexes, not seen in other common causes of muscle tightness such as dystonia or spasticity (7), advocated in favour of SPS.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Complete cessation of muscle stiffness and cramps in response to hormone replacement therapy, while standard treatments for SPS had failed, suggested that the neuromuscular symptoms were closely related to the endocrine disturbance.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Brain-CT scan disclosed extremely narrow sella turcica with an atrophic and displaced pituitary gland.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Myotonia and neuromyotonia were excluded by the EMG results. Encephalomyelitis of inflammatory or paraneoplastic nature and local lesions of CNS, known to cause similar motor disturbances (1, 3), were also excluded by the absence of signs of brainstem or long tracks dysfunction and supportive laboratory results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD), pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); pancreatic islet cell; thyroid; adrenal; AchR; cell nuclei",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD), pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "neither_specified",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD), pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD), pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD) ... was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against ... pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "pancreatic islet cell; thyroid; adrenal; AchR; cell nuclei",
+      "quote": "Organ and non-organ specific autoantibody screening, including antibodies against glutamic acid decarboxylase (GAD), pancreatic islet cell, thyroid, adrenal, AchR and cell nuclei, was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "CSF analysis were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Needle electromyography (EMG) of thigh, lower paraspinal and abdominal muscles bilaterally revealed continuous firing of normal motor unit potentials, which could not be suppressed volitionally.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "thigh, lower paraspinal, abdominal, upper limbs, upper trunk, distal parts of the lower limbs",
+      "quote": "Needle electromyography (EMG) of thigh, lower paraspinal and abdominal muscles bilaterally ... EMG exam of muscles in the upper limbs, upper trunk and distal parts of the lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle electromyography (EMG) of thigh, lower paraspinal and abdominal muscles bilaterally; EMG exam of muscles in the upper limbs, upper trunk and distal parts of the lower limbs; study of cutaneo-muscular reflexes in the legs using the technique described by Meinck et al. (5)",
+      "quote": "Needle electromyography (EMG) of thigh, lower paraspinal and abdominal muscles bilaterally ... EMG exam of muscles in the upper limbs, upper trunk and distal parts of the lower limbs ... Study of cutaneo-muscular reflexes in the legs using the technique described by Meinck et al. (5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "1",
+      "quote": "Study of cutaneo-muscular reflexes in the legs using the technique described by Meinck et al. (5), disclosed enhanced widespread responses (especially from quadriceps bilaterally) with abnormally low stimulus threshold.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Encephalomyelitis of inflammatory or paraneoplastic nature and local lesions of CNS, known to cause similar motor disturbances (1, 3), were also excluded by the absence of signs of brainstem or long tracks dysfunction and supportive laboratory results.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "over the next 6 months, the patient’s stiffness, pain and hypertonus completely disappeared, while her stance and gait became normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, antiepileptic, botulinum_toxin",
+      "quote": "Therapeutic trials with phenytoin, diazepam at a dosage of 40 mg/day ... and injections of botulin toxin type A at a total dose of 5600 units over 3 weeks time were only partially beneficial.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "none",
+      "quote": "Cortisol was more likely to act through correction of hormone deficiencies rather than as immunosuppressive since there were no evidences to support an immune mediated process.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "Therapeutic trials with phenytoin, diazepam at a dosage of 40 mg/day (further increase of the dose was restricted by the patient’s intolerance) and injections of botulin toxin type A at a total dose of 5600 units over 3 weeks time were only partially beneficial.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "phenytoin; diazepam 40 mg/day; botulin toxin type A 5600 units over 3 weeks",
+      "quote": "Therapeutic trials with phenytoin, diazepam at a dosage of 40 mg/day (further increase of the dose was restricted by the patient’s intolerance) and injections of botulin toxin type A at a total dose of 5600 units over 3 weeks time were only partially beneficial.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Therapeutic trials with phenytoin, diazepam ... and injections of botulin toxin type A ... were only partially beneficial.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Therapeutic trials with phenytoin, diazepam ... and injections of botulin toxin type A ... were only partially beneficial.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "hydrocortisone 30 mg/d and thyroxine in gradually increasing doses up to 100 mg daily",
+      "quote": "the patient was started on hydrocortisone 30 mg/d and thyroxine in gradually increasing doses up to 100 mg daily.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient had multiple pituitary hormone deficiencies due to postpartum pituitary necrosis (Sheehan syndrome). The stiff-person like syndrome resolved completely with hormone replacement therapy (hydrocortisone and thyroxine), suggesting an endocrine rather than autoimmune etiology.",
+      "quote": "Incidental, dynamic endocrine testing in our patient led to the diagnosis of multiple pituitary deficiency, which preceded muscle stiffness by many years and was probably due to postpartum pituitary necrosis. ... Complete cessation of muscle stiffness and cramps in response to hormone replacement therapy, while standard treatments for SPS had failed, suggested that the neuromuscular symptoms were closely related to the endocrine disturbance.",
+      "confidence": "high"
+    }
+  ]
+}

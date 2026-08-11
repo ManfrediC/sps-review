@@ -1,0 +1,980 @@
+{
+  "paper_id": "11960",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "11960",
+      "quote": "11960",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2022",
+      "quote": "BMJ Case Rep 2022; 15:e250639.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A young woman in her 20s",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "20",
+      "quote": "A young woman in her 20s",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "20",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "low"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "seizures",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "She also reported 14 kg weight loss, palpitations, cough, anxiety, mood swings, nausea, vomiting, diarrhoea and muscle weakness.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "spasms",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "axial_thoracic",
+      "quote": "painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "emotional",
+      "quote": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines.",
+      "quote": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "generalised",
+      "quote": "She also reported 14 kg weight loss, palpitations, cough, anxiety, mood swings, nausea, vomiting, diarrhoea and muscle weakness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "anxiety",
+      "quote": "She also reported 14 kg weight loss, palpitations, cough, anxiety, mood swings, nausea, vomiting, diarrhoea and muscle weakness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "However, our patient’s mental status was intact and there was no myoclonus, hence effectively ruling out PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "seizures; weight loss; palpitations; cough; anxiety; mood swings; nausea; vomiting; diarrhoea; muscle weakness",
+      "quote": "She also reported 14 kg weight loss, palpitations, cough, anxiety, mood swings, nausea, vomiting, diarrhoea and muscle weakness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "seizures",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "Her symptoms progressively worsened and started interfering with her ambulation.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities. Her symptoms progressively worsened and started interfering with her ambulation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "seizure disorder",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-stable",
+      "quote": "The patient’s neurological symptoms significantly improved after surgery and PLEX. Seizures were well controlled on levetiracetam and diazepam. The GAD antibody titres were not rechecked during followup as there is no clinical correlation with severity of SPS. Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "The patient’s neurological symptoms significantly improved after surgery and PLEX. Seizures were well controlled on levetiracetam and diazepam. The GAD antibody titres were not rechecked during followup as there is no clinical correlation with severity of SPS. Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "low"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "axial_thoracic",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "emotional",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "anxiety",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "However, our patient’s mental status was intact and there was no myoclonus, hence effectively ruling out PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "residual ataxia",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "1",
+      "quote": "Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features such as stiffness/spasms/hyperlordosis, positive antibodies such as anti-GAD, response to benzodiazepines",
+      "quote": "The key symptoms of classic SPS include spasms and rigidity primarily affecting the truncal muscles, resulting in lumbar hyperlordosis and postural instability. Also, there is heightened sensitivity to various external or emotional stimuli. [...] Although GAD autoantibodies are seen in majority of classic SPS cases, there is no convincing evidence that GAD antibodies are directly pathogenic as there is no correlation between antibody titre and disease activity. [...] Benzodiazepines are considered first line in controlling muscle spasms.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The key symptoms of classic SPS include spasms and rigidity primarily affecting the truncal muscles, resulting in lumbar hyperlordosis and postural instability. Also, there is heightened sensitivity to various external or emotional stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Serological work revealed glutamic acid decarboxylase (GAD) antibodies and imaging showed a large mediastinal mass.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Benzodiazepines are considered first line in controlling muscle spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Serological work revealed glutamic acid decarboxylase (GAD) antibodies and imaging showed a large mediastinal mass.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Progressive encephalopathy with rigidity and myoclonus (PERM) syndrome should also be considered in the differential diagnosis of SPS. However, our patient’s mental status was intact and there was no myoclonus, hence effectively ruling out PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "The antiGAD65 antibody test done in the serum was positive at the time of initial diagnosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": ">1: 4800",
+      "quote": "The antibody titre based on the enzymelinked immunosorbent assay (ELISA) method was >1: 4800 (reference range: negative <1: 600, borderline 1: 600–1: 1200, positive >1: 1200).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD65); glycine receptor (GlyR); dipeptidyl-peptidase-like protein 6 (DPPX); amphiphysin; anti-N-methyl-D-aspartate receptor antibody; AMPAR (α-amino3hydroxy5methyl4isoxazolepropionic acid receptor) antibody; gamma amino butyric acid (GABA) B receptor antibody; anti-Hu; anti-Yo; anti-Ri; anti-CV2/collapsin response mediator protein(CRMP)5 antibody; anti-ampiphysin antibody; anti-Neuronal Nuclear Antibody (ANNA); anti-SOX1 (antiglia nuclear) antibody",
+      "quote": "Other paraneoplastic antibody tests, such as anti-N-methyl-D-aspartate receptor antibody, AMPAR (α-amino3hydroxy5methyl4isoxazolepropionic acid receptor) antibody, gamma amino butyric acid (GABA) B receptor antibody, anti-Hu, anti-Yo, anti-Ri, antiCV2/collapsin response mediator protein(CRMP)5 antibody, antiamphiphysin antibody, anti-Neuronal Nuclear Antibody (ANNA) and anti-SOX1 (antiglia nuclear) antibody, were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "ELISA (enzyme-linked immunosorbent assay)",
+      "quote": "The antibody titre based on the enzymelinked immunosorbent assay (ELISA) method was >1: 4800 (reference range: negative <1: 600, borderline 1: 600–1: 1200, positive >1: 1200).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "The antiGAD65 antibody test done in the serum was positive at the time of initial diagnosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "The antibody titre based on the enzymelinked immunosorbent assay (ELISA) method was >1: 4800 (reference range: negative <1: 600, borderline 1: 600–1: 1200, positive >1: 1200).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": ">1: 1200",
+      "quote": "The antibody titre based on the enzymelinked immunosorbent assay (ELISA) method was >1: 4800 (reference range: negative <1: 600, borderline 1: 600–1: 1200, positive >1: 1200).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "The antiGAD65 antibody test done in the serum was positive at the time of initial diagnosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "The antiGAD65 antibody test done in the serum was positive at the time of initial diagnosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_negative",
+      "quote": "Other paraneoplastic antibody tests, such as anti-N-methyl-D-aspartate receptor antibody, AMPAR (α-amino3hydroxy5methyl4isoxazolepropionic acid receptor) antibody, gamma amino butyric acid (GABA) B receptor antibody, anti-Hu, anti-Yo, anti-Ri, antiCV2/collapsin response mediator protein(CRMP)5 antibody, antiamphiphysin antibody, anti-Neuronal Nuclear Antibody (ANNA) and anti-SOX1 (antiglia nuclear) antibody, were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "Other paraneoplastic antibody tests, such as anti-N-methyl-D-aspartate receptor antibody, AMPAR (α-amino3hydroxy5methyl4isoxazolepropionic acid receptor) antibody, gamma amino butyric acid (GABA) B receptor antibody, anti-Hu, anti-Yo, anti-Ri, antiCV2/collapsin response mediator protein(CRMP)5 antibody, antiamphiphysin antibody, anti-Neuronal Nuclear Antibody (ANNA) and anti-SOX1 (antiglia nuclear) antibody, were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "Other paraneoplastic antibody tests, such as anti-N-methyl-D-aspartate receptor antibody, AMPAR (α-amino3hydroxy5methyl4isoxazolepropionic acid receptor) antibody, gamma amino butyric acid (GABA) B receptor antibody, anti-Hu, anti-Yo, anti-Ri, antiCV2/collapsin response mediator protein(CRMP)5 antibody, antiamphiphysin antibody, anti-Neuronal Nuclear Antibody (ANNA) and anti-SOX1 (antiglia nuclear) antibody, were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "tested_negative",
+      "quote": "Other paraneoplastic antibody tests, such as anti-N-methyl-D-aspartate receptor antibody, AMPAR (α-amino3hydroxy5methyl4isoxazolepropionic acid receptor) antibody, gamma amino butyric acid (GABA) B receptor antibody, anti-Hu, anti-Yo, anti-Ri, antiCV2/collapsin response mediator protein(CRMP)5 antibody, antiamphiphysin antibody, anti-Neuronal Nuclear Antibody (ANNA) and anti-SOX1 (antiglia nuclear) antibody, were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "Cerebrospinal fluid (CSF) analysis revealed normal glucose and protein. CSF protein electrophoresis did not show any evidence of oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "Thoracic spine MRI revealed a large mass occupying the majority of the left hemithorax measuring 20 cm in craniocaudal dimension.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "large mass occupying the majority of the left hemithorax measuring 20 cm in craniocaudal dimension",
+      "quote": "Thoracic spine MRI revealed a large mass occupying the majority of the left hemithorax measuring 20 cm in craniocaudal dimension.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "The patient underwent excision of the mediastinal mass, and surgical pathology revealed a 19.5×18.5×11 cm fully encapsulated, fluctuant mass with adherent thin membranous adipose tissue.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "well-differentiated mediastinal liposarcoma",
+      "quote": "The patient underwent excision of the mediastinal mass, and surgical pathology revealed a 19.5×18.5×11 cm fully encapsulated, fluctuant mass with adherent thin membranous adipose tissue. The outer surface of the tumour was grey-pink and smooth, with prominent vasculature and punctate haemorrhage. The cut surface of the specimen revealed white-yellow fibrofatty material (80%) centrally intermixed with pink-tan, firm and granular substance (20%) (please refer to figure 2 for pathology). Immunohistochemistry analysis of the primary tumour showed expression of Murine Double Minute Clone 2 (MDM2) and cyclin-dependent kinase 4 (CDK4). Subsequent Fluorescence In Situ Hybridization (FISH) results showed amplification of MDM2 and CDK4 consistent with well-differentiated liposarcoma.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "The patient’s neurological symptoms significantly improved after surgery and PLEX. Seizures were well controlled on levetiracetam and diazepam. The GAD antibody titres were not rechecked during followup as there is no clinical correlation with severity of SPS. Her overall performance status improved with outpatient physical and occupational therapy, and she is now independent with her activities of daily living; however, she does have some residual ataxia and remains on diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines. [...] Seizures were well controlled on levetiracetam and diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX",
+      "quote": "She also received five sessions of plasma exchange (PLEX).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "five sessions",
+      "quote": "She also received five sessions of plasma exchange (PLEX).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "The patient’s neurological symptoms significantly improved after surgery and PLEX.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "The spasms were primarily triggered by stress and laughter and relieved by rest and benzodiazepines. [...] Seizures were well controlled on levetiracetam and diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam",
+      "quote": "Seizures were well controlled on levetiracetam and diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Seizures were well controlled on levetiracetam and diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Seizures were well controlled on levetiracetam and diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "surgical resection of the mediastinal mass",
+      "quote": "The patient underwent excision of the mediastinal mass, and surgical pathology revealed a 19.5×18.5×11 cm fully encapsulated, fluctuant mass with adherent thin membranous adipose tissue.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "vitiligo",
+      "quote": "A young woman in her 20s with a history of vitiligo presented with a 2month history of seizure and painful muscle spasms predominantly affecting the back and axial muscles but sparing the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

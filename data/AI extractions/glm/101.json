@@ -1,0 +1,980 @@
+{
+  "paper_id": "101",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "101",
+      "quote": "Paper ID: 101",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1996",
+      "quote": "Ann Neurol 1996; 40: 45 1-453",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "BRIEF COMMUNICATIONS Progressive En; D halo mveli t is with / Rigidity Responsive to Pl&mapheresis and Immunosuppression",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "The stiff-man syndrome is reported in a 55-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "55",
+      "quote": "A 55-year-old woman with severe rheumatoid arthritis (RA) was admitted to the hospital",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "55",
+      "quote": "A 55-year-old woman with severe rheumatoid arthritis (RA) was admitted to the hospital in late February 1989 for dehydration secondary to 3 weeks of dysphagia and continuous diplopia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "60",
+      "quote": "she was still asymptomatic when seen 5 years later",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "brainstem_autonomic",
+      "quote": "Our patient was first seen for fluctuating severe hypercontraction of cranial nerve-innervated musculature 3 months before the limbs and trunk became rigid. Total ophthalmoplegia developed, and she required gastrostomy feedings.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "These clinical features correspond to the progressive encephalomyelitis with rigidity syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "marked limb and truncal rigidity, severe spasms provoked by sensory or emotional stimuli",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "focal hypertonia with intermittent spasms of the right leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "focal hypertonia with intermittent spasms of the right leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "focal hypertonia with intermittent spasms of the right leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "focal hypertonia with intermittent spasms of the right leg exacerbated by passive and active manipulation",
+      "quote": "focal hypertonia with intermittent spasms of the right leg exacerbated by passive and active manipulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "focal hypertonia with intermittent spasms of the right leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_right",
+      "quote": "focal hypertonia with intermittent spasms of the right leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "intermittent spasms of the right leg exacerbated by passive and active manipulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "prox_LE",
+      "quote": "intermittent spasms of the right leg",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "intermittent spasms of the right leg exacerbated by passive and active manipulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "touch; movement",
+      "quote": "exacerbated by passive and active manipulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "intermittent spasms of the right leg",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful right leg rigidity that was highly touch and movement stimulus sensitive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "yes",
+      "quote": "right leg spasms of 1-week duration caused gait problems and falling episodes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "intermittent spasms of the right leg exacerbated by passive and active manipulation",
+      "quote": "intermittent spasms of the right leg exacerbated by passive and active manipulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Sensory and cerebellar test results were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "fluctuating severe hypercontraction of cranial nerve-innervated musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "continuous Diplopia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysphagia; ophthalmoplegia; ptosis; hyperactive gag reflex; hyperhidrosis; urinary retention",
+      "quote": "3 weeks of dysphagia and continuous Diplopia; mild ptosis in the right eye; hyperactive gag reflex; Beads of sweat appeared on the left foreleg; urinary catheter was necessary",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "hyperhidrosis; urinary retention",
+      "quote": "Beads of sweat appeared on the left foreleg; urinary catheter was necessary, even though a cystometrogram was normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "multiaxial diplopia with mild ptosis; total ophthalmoplegia",
+      "quote": "multiaxial diplopia with mild ptosis in the right eye; Total ophthalmoplegia developed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "she was unable to swallow saliva; required gastrostomy feedings",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "fluctuating severe hypercontraction",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "Intravenous edrophonium chloride resulted in no change.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "myasthenia gravis (suspected and ruled out)",
+      "quote": "Intravenous edrophonium chloride resulted in no change. Results of tests for anti-striational muscle antibody, anti-acetylcholine receptor antibody, and anti-nuclear antibodies were negative.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "Our patient's clinical course of waxing and waning rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "3",
+      "quote": "Our patient was first seen for fluctuating severe hypercontraction of cranial nerve-innervated musculature 3 months before the limbs and trunk became rigid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "marked limb and truncal rigidity, severe spasms provoked by sensory or emotional stimuli",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "severe trunk rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "severe trunk rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "severe trunk rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "severe trunk rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "painful right leg rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "painful right leg rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "trismus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "severe trunk rigidity, urinary retention, near total ophthalmoplegia, trismus, and inability to swallow",
+      "quote": "severe trunk rigidity, urinary retention, near total ophthalmoplegia, trismus, and inability to swallow",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "painful right leg rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "painful right leg extensor spasms persisted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "severe spasms provoked by sensory or emotional stimuli",
+      "confidence": "low"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_lumbar, prox_LE, distal_LE",
+      "quote": "painful right leg extensor spasms; severe trunk rigidity",
+      "confidence": "low"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "severe trunk rigidity",
+      "confidence": "low"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "painful right leg rigidity that was highly touch and movement stimulus sensitive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "touch; movement; emotional",
+      "quote": "highly touch and movement stimulus sensitive; severe spasms provoked by sensory or emotional stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "painful right leg extensor spasms persisted",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful right leg extensor spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "right leg spasms of 1-week duration caused gait problems and falling episodes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "painful right leg rigidity that was highly touch and movement stimulus sensitive",
+      "quote": "painful right leg rigidity that was highly touch and movement stimulus sensitive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "Sensory and cerebellar test results were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "near total ophthalmoplegia, trismus, and inability to swallow",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "near total ophthalmoplegia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperhidrosis; urinary retention; ophthalmoplegia; dysphagia; trismus; hyperreflexia; clonus",
+      "quote": "Beads of sweat appeared on the left foreleg; urinary catheter was necessary; near total ophthalmoplegia; inability to swallow; trismus; generalized hyperactive deep tendon reflexes and right knee clonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "hyperhidrosis; urinary retention",
+      "quote": "Beads of sweat appeared on the left foreleg; urinary catheter was necessary",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "near total ophthalmoplegia; intermittent multiaxial diplopia",
+      "quote": "near total ophthalmoplegia; intermittent multiaxial diplopia had returned",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "pulmonary arrest necessitated ventilator-dependent intubation, later requiring tracheotomy",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features of marked limb and truncal rigidity, severe spasms provoked by sensory or emotional stimuli, EMG showing continuous motor unit discharges at rest, and exclusion of neuromyotonia and myasthenia gravis.",
+      "quote": "marked limb and truncal rigidity, severe spasms provoked by sensory or emotional stimuli; EMG results revealed continuous motor unit discharges at rest; Neuromyotonia and myokymia were therefore excluded from the diagnosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "marked limb and truncal rigidity, severe spasms provoked by sensory or emotional stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Serum antibodies against GABAergic synapses were not detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electromyography (EMG) results revealed continuous motor unit discharges at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Head CT, neck MRI, neck x-ray, and complete myelography results were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Neuromyotonia and myokymia were therefore excluded from the diagnosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Serum antibodies against GABAergic synapses were not detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "anti-striational muscle antibody; anti-acetylcholine receptor antibody; anti-nuclear antibodies; GABAergic synapse antibodies",
+      "quote": "Results of tests for anti-striational muscle antibody, anti-acetylcholine receptor antibody, and anti-nuclear antibodies were negative. Serum antibodies against GABAergic synapses were not detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "immunocytochemical assay (brain tissue)",
+      "quote": "utilizing brain tissue in an immunocytochemical assay",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Serum antibodies against GABAergic synapses were not detected in pre- and postplasmapheresis sera.",
+      "quote": "Serum antibodies against GABAergic synapses were not detected in pre- and postplasmapheresis sera",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Serum antibodies against GABAergic synapses were not detected in pre- and postplasmapheresis sera",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Serum antibodies against GABAergic synapses were not detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Serum antibodies against GABAergic synapses were not detected",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "Results of tests for anti-striational muscle antibody, anti-acetylcholine receptor antibody, and anti-nuclear antibodies were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-striational muscle antibody; anti-acetylcholine receptor antibody; anti-nuclear antibodies",
+      "quote": "Results of tests for anti-striational muscle antibody, anti-acetylcholine receptor antibody, and anti-nuclear antibodies were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "CSF fluid was normal, including IgG synthesis and myelin basic prorein, and no oligoclonal bands were present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "CSF fluid was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "no oligoclonal bands were present",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "CSF fluid was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Electromyography (EMG) results revealed continuous motor unit discharges at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "right leg flexors and extensors (gastrocnemius and tibialis anterior), left leg, right arm, left arm",
+      "quote": "continuous motor unit discharges at rest simultaneously from the right leg flexors and extensors (eg, gastrocnemius and tibialis anterior); Fewer of these same abnormalities were observed in the left leg, even fewer in the right arm, and only minimal such changes in the left arm.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle EMG at rest; light touch to the leg consistently exaggerated this response and increased both the number of motor units present and their intensity.",
+      "quote": "continuous motor unit discharges at rest simultaneously from the right leg flexors and extensors; light touch to the leg consistently exaggerated this response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "1",
+      "quote": "light touch to the leg consistently exaggerated this response and increased both the number of motor units present and their intensity.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Computed tomography (CT) and magnetic resonance imaging (MRI) scans of the head without contrast were normal. Head CT, neck MRI, neck x-ray, and complete myelography results were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "she was still asymptomatic when seen 5 years later",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, antiepileptic, other",
+      "quote": "Diazepam; Dantrolene sodium, carbamazepine, carbidopa-levodopa, and phenytoin",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX; steroids; Aza",
+      "quote": "plasmapheresis and corticosteroids; azathioprine, 75 mg daily",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Plasmapheresis: six treatments during 2 weeks. Prednisone: increased from 7.5 mg daily to 60 mg daily, later decreased to 20 mg twice daily, then 15 mg daily, then 5 mg daily. Azathioprine: 75 mg daily, then 50 mg daily.",
+      "quote": "six treatments during 2 weeks produced gradual improvement; prednisone was increased from 7. 5 mg daily to 60 mg daily; azathioprine, 75 mg daily",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "six treatments during 2 weeks produced gradual improvement in stiffness, ophthalmoplegia, and dysphagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "Diazepam, 15 mg orally four times daily, markedly diminished extensor spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "Diazepam 15 mg orally four times daily, then 15 mg three times daily, then 5 mg twice daily, then 20 mg daily. Dantrolene sodium, carbamazepine, carbidopa-levodopa, and phenytoin were ineffective. Up to 80 mg diazepam daily had no effect during severe exacerbation.",
+      "quote": "Diazepam, 15 mg orally four times daily, markedly diminished extensor spasms; Dantrolene sodium, carbamazepine, carbidopa-levodopa, and phenytoin were ineffective; Hypercontraction did not respond to up to 80 mg diazepam daily.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Diazepam, 15 mg orally four times daily, markedly diminished extensor spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Diazepam, 15 mg orally four times daily, markedly diminished extensor spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "tracheotomy; ventilator support; gastrostomy tube feedings",
+      "quote": "gastrostomy tube was placed; ventilator-dependent intubation, later requiring tracheotomy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "A 55-year-old woman with severe rheumatoid arthritis (RA)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "severe rheumatoid arthritis (RA)",
+      "quote": "A 55-year-old woman with severe rheumatoid arthritis (RA)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had been on penicillamine for a decade prior, which can provoke autoimmune disorders. A left quadriceps muscle biopsy demonstrated angular and fascicular atrophy suggesting denervation. A hyperosmolar, nonketotic state developed during high-dose prednisone, treated with insulin, but she was no longer diabetic by 1990.",
+      "quote": "this patient had been on penicillamine for the previous decade, a drug that can provoke autoimmune disorders; A hyperosmolar, nonketotic sate developed, which was treated with insulin; She was no longer diabetic.",
+      "confidence": "high"
+    }
+  ]
+}

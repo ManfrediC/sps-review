@@ -1,0 +1,980 @@
+{
+  "paper_id": "1476",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "1476",
+      "quote": "Paper ID: 1476",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2017",
+      "quote": "published: 10 August 2017",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Front. Neurol. 8: 401",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 60-year-old previously healthy man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "60",
+      "quote": "A 60-year-old previously healthy man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "59",
+      "quote": "Symptoms appeared 5 months before with lumbar and left leg pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "12",
+      "quote": "Over a 12-month follow-up period",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "pain",
+      "quote": "Symptoms appeared 5 months before with lumbar and left leg pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "Progressive encephalomyelitis with rigidity and myoclonus associated With anti-GlyR antibodies and Hodgkin’s Lymphoma: a Case Report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "lumbar and left leg pain",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "progressive rigidity of the trunk and lower limbs",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "progressive rigidity of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful muscular spasms of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "painful muscular spasms of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial, prox_LE",
+      "quote": "painful muscular spasms of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "spontaneous; not_mentioned",
+      "quote": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "quote": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "No muscular weakness, cerebellar signs, nor sensory defects were detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "progressive dysphonia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Ocular movements were unaffected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "hyperhidrosis; urinary retention; constipation; pruritus; dysphagia; dysphonia; hyperreflexia; clonus",
+      "quote": "diffuse hyperhydrosis, constipation, and urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "hyperhydrosis; constipation; urinary retention",
+      "quote": "diffuse hyperhydrosis, constipation, and urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "Ocular movements were unaffected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "The absence of seizures, psychiatric symptoms, and signs of hippocampal involvement in our patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "incapacity to sit and stand unassisted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "subacute onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "orthopaedic",
+      "quote": "positive Lasègue sign on the right side; 75 mg of oral prednisone was prescribed",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "severe and progressive gait disturbance",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "3",
+      "quote": "Three months after symptoms, onset spontaneous and stimulus sensitive muscular spasms appeared",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "Marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "Marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "Marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "Marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "Marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Marked truncal and proximal lower limb rigidity, with incapacity to sit and stand unassisted, was noticed.",
+      "quote": "Marked truncal and proximal lower limb rigidity, with incapacity to sit and stand unassisted, was noticed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "Marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "painful muscular spasms of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "painful muscular spasms of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial, prox_LE",
+      "quote": "painful muscular spasms of the trunk and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "stimulus sensitive muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "spontaneous; not_mentioned",
+      "quote": "spontaneous and stimulus sensitive muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "spontaneous and stimulus sensitive muscular spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "quote": "spontaneous and stimulus sensitive muscular spasms appeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "No muscular weakness, cerebellar signs, nor sensory defects were detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "he also developed severe dysphagia, requiring a feeding tube",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "mentioned_absent",
+      "quote": "Ocular movements were unaffected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperhidrosis; urinary retention; constipation; pruritus; dysphagia; dysphonia; hyperreflexia; clonus; weakness",
+      "quote": "diffuse hyperhydrosis, constipation, and urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "hyperhydrosis; constipation; urinary retention",
+      "quote": "diffuse hyperhydrosis, constipation, and urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "Ocular movements were unaffected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "The absence of seizures, psychiatric symptoms, and signs of hippocampal involvement in our patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "incapacity to sit and stand unassisted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (rigidity, spasms, brainstem/autonomic signs), positive anti-GlyR antibodies, EMG showing continuous motor unit activity, exclusion of mimics, and response to plasmapheresis/tumor removal.",
+      "quote": "anti–GlyR (antiglycine receptor) antibodies were found to be positive on both serum and CSF samples",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "marked truncal and proximal lower limb rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "anti–GlyR (antiglycine receptor) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "EMG confirmed involuntary continuous motor unit activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Partial clinical improvement was observed 10 days after plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "brain and spinal MRI showed no abnormality",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "autoantibodies [ANA, ENA, anti Hu-Y o-Ri Amphiphysin-CV2-Ma2/Ta, and antiglutamic acid decarboxylase (anti-GAD)] were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GlyR",
+      "quote": "anti–GlyR (antiglycine receptor) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "antiglutamic acid decarboxylase (anti-GAD); anti Hu; anti-Yo; anti-Ri; amphiphysin; anti-CV2; anti-Ma2/Ta; ANA; ENA; voltage-gated potassium channel complex; dipeptidyl peptidase-like protein 6 (DPPX); antiglycine receptor (anti-GlyR)",
+      "quote": "autoantibodies [ANA, ENA, anti Hu-Y o-Ri Amphiphysin-CV2-Ma2/Ta, and antiglutamic acid decarboxylase (anti-GAD)] were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-GlyR antibodies positive on both serum and CSF. All other tested antibodies (anti-GAD, anti-Hu, anti-Yo, anti-Ri, amphiphysin, anti-CV2, anti-Ma2/Ta, ANA, ENA, VGKC, DPPX) were negative.",
+      "quote": "anti–GlyR (antiglycine receptor) antibodies were found to be positive on both serum and CSF samples",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "positive on both serum and CSF samples",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "anti–GlyR (antiglycine receptor) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "GAD antibodies were still negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_positive",
+      "quote": "anti–GlyR (antiglycine receptor) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "Amphiphysin-CV2-Ma2/Ta, and antiglutamic acid decarboxylase (anti-GAD)] were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "dipeptidyl peptidase-like protein 6 (DPPX) antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "anti Hu-Y o-Ri Amphiphysin-CV2-Ma2/Ta",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-Hu; anti-Yo; anti-Ri; anti-CV2; anti-Ma2/Ta; ANA; ENA; voltage-gated potassium channel complex",
+      "quote": "anti Hu-Y o-Ri Amphiphysin-CV2-Ma2/Ta",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "Cerebrospinal fluid examination was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "Cerebrospinal fluid examination was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "CSF examination, including protein level, IgG, and OGB",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "Cerebrospinal fluid examination was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "EMG confirmed involuntary continuous motor unit activity of all examined muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "all examined muscles, paravertebral muscles",
+      "quote": "continuous motor unit activity of all examined muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "T2 abdominal MRI revealing left psoas and bilateral paravertebral muscles edema and fatty substitution",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "left psoas and bilateral paravertebral muscles edema and fatty substitution; diffuse swelling and edema of left psoas, iliacus, pectineus, obturator externus, and quadratus lumborum",
+      "quote": "T2 abdominal MRI revealing left psoas and bilateral paravertebral muscles edema and fatty substitution",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "histological examination was consistent with a classic type Hodgkin’s lymphoma",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "classic type Hodgkin’s lymphoma",
+      "quote": "histological examination was consistent with a classic type Hodgkin’s lymphoma",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "a constant clinical improvement was observed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, gabapentinoid, baclofen",
+      "quote": "baclofen, gabapentin, and clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX; steroids",
+      "quote": "intravenous methylprednisolone followed by 1 mg/kg of oral prednisone",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "intravenous methylprednisolone followed by 1 mg/kg of oral prednisone; plasmapheresis treatment, five cycles, 3,000 mL/cycle; steroid dosage increase up to 50 mg",
+      "quote": "intravenous methylprednisolone followed by 1 mg/kg of oral prednisone",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Partial clinical improvement was observed 10 days after plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "clonazepam (up to 2.5 mg/day)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "clonazepam up to 2.5 mg/day; gabapentin up to 1,200 mg/day; baclofen (dose not specified)",
+      "quote": "clonazepam (up to 2.5 mg/day) and gabapentin (up to 1.200 mg/day)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Symptoms markedly improved with clonazepam (up to 2.5 mg/day) and gabapentin (up to 1.200 mg/day)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Symptoms markedly improved with clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "polychemotherapy with ABVD protocol (doxorubicin, bleomycin, vinblastine, and dacarbazine); surgical excision of axillary lymph node",
+      "quote": "polychemotherapy with ABVD protocol (doxorubicin, bleomycin, vinblastine, and dacarbazine)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "A 60-year-old previously healthy man",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "At 12-month follow-up, mRS score was 1. Patient had inconstant self-resolving stiffness in the morning but was able to walk unassisted and work full time. PET scan became negative. Initial CT scan missed the lymphoma (described as reactive lymph node). Initial EMG showed CMUA, but repeat EMG at admission was unremarkable, even in paravertebral muscles.",
+      "quote": "12 months mRS score was 1",
+      "confidence": "high"
+    }
+  ]
+}

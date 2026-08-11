@@ -1,0 +1,980 @@
+{
+  "paper_id": "11931",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "11931",
+      "quote": "Paper ID: 11931",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2023",
+      "quote": "Ali et al. Journal of Medical Case Reports (2023) 17: 330",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT Open Access",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 72-years-old Caucasian male was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "White/Caucasian",
+      "quote": "A 72-years-old Caucasian male was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "72",
+      "quote": "A 72-years-old Caucasian male was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "69",
+      "quote": "A 72-years-old Caucasian male was admitted with acute onset of dysarthria, dysphagia and trismus three years after initial surgical treatment for bladder cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "12",
+      "quote": "He died about one year after diagnosis of PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "36",
+      "quote": "Cytostatic treatment was initiated after the second course of immunoglobulin therapy which was three months after onset of neurological symptoms.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "A diagnosis of PERM associated with anti-GlyR antibody was made.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "lockjaw",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "present",
+      "quote": "lockjaw",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "other",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "face",
+      "quote": "The patient developed increasing dysphagia, dysarthria, lockjaw and painful face spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; touch",
+      "quote": "increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful face spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "prolonged",
+      "quote": "increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "quote": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "Clinical examination at the first presentation to department of neurology revealed moderate dysarthria, dysphagia, dysconjugated eye movements and inverted plantar reflex on the left side.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "Clinical examination at the first presentation to department of neurology revealed moderate dysarthria, dysphagia, dysconjugated eye movements and inverted plantar reflex on the left side.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysarthria; dysphagia; dysconjugated eye movements; inverted plantar reflex; hallucinations; delusion; myoclonic jerks; pes equinus",
+      "quote": "Clinical examination at the first presentation to department of neurology revealed moderate dysarthria, dysphagia, dysconjugated eye movements and inverted plantar reflex on the left side. [...] He also described hallucinations and delusion. Neurological examination showed myoclonic jerks, painful spasms triggered by passive movements of the extremities and bilateral pes equinus (Fig. 2).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "dysconjugated eye movements",
+      "quote": "Clinical examination at the first presentation to department of neurology revealed moderate dysarthria, dysphagia, dysconjugated eye movements and inverted plantar reflex on the left side.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "Clinical examination at the first presentation to department of neurology revealed moderate dysarthria, dysphagia, dysconjugated eye movements and inverted plantar reflex on the left side.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "subacute onset of pain - ful tongue weakness and dysphagia starting three days before admission.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "Based on clinical presentation dominated by lockjaw and stimulus sensitive painful spasms, tetanus was suspected, and the patient was treated with intravenous Penicillin, tetanus immunoglobulin and symptomatic treatment with diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "tetanus",
+      "quote": "Based on clinical presentation dominated by lockjaw and stimulus sensitive painful spasms, tetanus was suspected, and the patient was treated with intravenous Penicillin, tetanus immunoglobulin and symptomatic treatment with diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "The patient experienced significant improvement regarding painful spasms and daily function, and became able to sit in wheelchair and perform many daily activities with some help. [...] In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "lockjaw",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "lockjaw",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "other",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "extremities",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "In parallel with the worsening of the oncological condition, the patient experienced worsening of symptoms relating to PERM, especially rigidity and spasms in the extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch",
+      "quote": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "prolonged",
+      "quote": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "quote": "one month later the patient was re-admitted because of deterioration of his general medical condition and ambulation, with increasing painful spasms in the extremities aggravated by noises and tactile stimulation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "He also described hallucinations and delusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "He also described hallucinations and delusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hallucinations; delusion; myoclonic jerks; pes equinus",
+      "quote": "He also described hallucinations and delusion. Neurological examination showed myoclonic jerks, painful spasms triggered by passive movements of the extremities and bilateral pes equinus (Fig. 2).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "hallucinations; delusion",
+      "quote": "He also described hallucinations and delusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "The patient experienced significant improvement regarding painful spasms and daily function, and became able to sit in wheelchair and perform many daily activities with some help.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical presentation dominated by lockjaw and stimulus sensitive painful spasms, anti-GlyR antibody positivity in serum and CSF, exclusion of other antibodies, MRI showing mild central atrophy but otherwise normal, CSF showing mild pleocytosis with 8 mononuclear cells per μL, EMG showing simultaneous activation of motor units in agonist and antagonist muscles both in the upper and lower extremities",
+      "quote": "Based on clinical presentation dominated by lockjaw and stimulus sensitive painful spasms, tetanus was suspected, and the patient was treated with intravenous Penicillin, tetanus immunoglobulin and symptomatic treatment with diazepam. [...] Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100). Routine examination of CSF including isoelectric focusing of IgG, and also immunofluorescence assays for IgG antibodies against amphiphysin, GAD 65, titin, NMDAR, AMPAR1/2, DPPX, GABRB1, CASPR2 and LGI1, were negative. [...] Electromyography showed simultaneous activation of motor units in agonist and antagonist muscles both in the upper and lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Based on clinical presentation dominated by lockjaw and stimulus sensitive painful spasms, tetanus was suspected, and the patient was treated with intravenous Penicillin, tetanus immunoglobulin and symptomatic treatment with diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electromyography showed simultaneous activation of motor units in agonist and antagonist muscles both in the upper and lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "The patient showed improvement and stabilization after treatment with intravenous immunoglobulin and chemotherapy against metastatic bladder cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Magnetic resonance imaging (MRI) of the brain showed mild central atrophy, but was otherwise normal (Fig. 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Routine examination of CSF including isoelectric focusing of IgG, and also immunofluorescence assays for IgG antibodies against amphiphysin, GAD 65, titin, NMDAR, AMPAR1/2, DPPX, GABRB1, CASPR2 and LGI1, were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GlyR",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "1: 3200",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "anti-NMDA; anti-AMPA receptors 1 and 2; GABA B receptors 1 and 2; anti-LGI1; anti-CASPR2; anti-DPPX; Anti-GAD 65; anti-amphipyhsin",
+      "quote": "Analyses of cerebrospinal fluid was unremark - able except for mild pleocytosis with 8 mononuclear cells per μL. Anti-NMDA, anti-AMPA receptors 1 and 2, GABA B receptors 1 and 2, anti-LGI1, anti-CASPR2 and anti-DPPX IgG in CSF were all negative. Paraneoplastic antibodies in serum including Anti-GAD 65 and antiamphipyhsin were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "immunofluorescence assay",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Paraneoplastic antibodies in serum including Anti-GAD 65 and antiamphipyhsin were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_positive",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "Paraneoplastic antibodies in serum including Anti-GAD 65 and antiamphipyhsin were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "Anti-NMDA, anti-AMPA receptors 1 and 2, GABA B receptors 1 and 2, anti-LGI1, anti-CASPR2 and anti-DPPX IgG in CSF were all negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "tested_negative",
+      "quote": "GABA B receptors 1 and 2",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-GlyR",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "1: 100",
+      "quote": "Immunofluorescence assay for paraneoplastic antibodies analyzed at the Clinical immunology laboratory in Groß Grönau, Germany, was strongly positive for anti-GlyR IgG both in serum (1: 3200) and CSF (1: 100).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "8",
+      "quote": "Analyses of cerebrospinal fluid was unremark - able except for mild pleocytosis with 8 mononuclear cells per μL.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Electromyography showed simultaneous activation of motor units in agonist and antagonist muscles both in the upper and lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "upper and lower extremities",
+      "quote": "Electromyography showed simultaneous activation of motor units in agonist and antagonist muscles both in the upper and lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Magnetic resonance imaging (MRI) of the brain showed mild central atrophy, but was otherwise normal (Fig. 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "mild central atrophy",
+      "quote": "Magnetic resonance imaging (MRI) of the brain showed mild central atrophy, but was otherwise normal (Fig. 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Biopsy from the lung lesion was consistent with metastases from urothelial carcinoma.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "metastases from urothelial carcinoma",
+      "quote": "Biopsy from the lung lesion was consistent with metastases from urothelial carcinoma.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "stabilisation",
+      "quote": "Treatment with intravenous immunoglobulin was discontinued after 6 months due to stabilization of neurological function though retaining significant neurological disability.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, botulinum_toxin",
+      "quote": "the patient was treated with diazepam, baclofen and onabotulinum toxin along with intensive physiotherapy at the department of neurological rehabilitation for about one month but did not improve.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG",
+      "quote": "The patient was initiated on intravenous immunoglobulin 25 g given daily for 5 consecutive days every fourth week, and at the same time referred to oncologist for further oncological treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "25 g given daily for 5 consecutive days every fourth week",
+      "quote": "The patient was initiated on intravenous immunoglobulin 25 g given daily for 5 consecutive days every fourth week, and at the same time referred to oncologist for further oncological treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "The patient experienced significant improvement regarding painful spasms and daily function, and became able to sit in wheelchair and perform many daily activities with some help.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "the patient was treated with diazepam, baclofen and onabotulinum toxin along with intensive physiotherapy at the department of neurological rehabilitation for about one month but did not improve.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam",
+      "quote": "the patient was treated with diazepam, baclofen and onabotulinum toxin along with intensive physiotherapy at the department of neurological rehabilitation for about one month but did not improve.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "The patient experienced significant improvement regarding painful spasms and daily function, and became able to sit in wheelchair and perform many daily activities with some help.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "The patient experienced significant improvement regarding painful spasms and daily function, and became able to sit in wheelchair and perform many daily activities with some help.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "chemotherapy against metastatic bladder cancer",
+      "quote": "The patient showed improvement and stabilization after treatment with intravenous immunoglobulin and chemotherapy against metastatic bladder cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "He was otherwise healthy, and no family history of neurological diseases was noted.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

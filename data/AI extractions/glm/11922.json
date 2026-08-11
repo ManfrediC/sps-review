@@ -1,0 +1,980 @@
+{
+  "paper_id": "11922",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "11922",
+      "quote": "Paper ID: 11922",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2023",
+      "quote": "PUBLISHED 04 January 2023",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "TYPE Case Report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 54-year-old male",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "West China Hospital, Sichuan University, Chengdu, Sichuan, China",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "54",
+      "quote": "A 54-year-old male",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "54",
+      "quote": "A 54-year-old male presented with disturbance of consciousness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "10",
+      "quote": "There was no improvement or deterioration of the neurological symptoms 3 months later",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "1",
+      "quote": "presented with disturbance of consciousness... for 11 days. The day before his first symptom, a resection of his right colon was performed",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "encephalopathy",
+      "quote": "presented with disturbance of consciousness, psychiatric symptoms and behavioral change, cognitive impairment, seizure and hypotension for 11 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "other",
+      "quote": "amphiphysin-positive LE associated with aGCC",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "amphiphysin-positive limbic encephalitis (LE) associated with appendiceal goblet cell carcinoma",
+      "quote": "amphiphysin-positive LE associated with aGCC",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "not_mentioned",
+      "quote": "presented with disturbance of consciousness, psychiatric symptoms and behavioral change, cognitive impairment, seizure and hypotension",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "encephalopathy; seizures; psychiatric symptoms; cognitive impairment; hypotension",
+      "quote": "presented with disturbance of consciousness, psychiatric symptoms and behavioral change, cognitive impairment, seizure and hypotension for 11 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "hypotension",
+      "quote": "hypotension for 11 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "seizure",
+      "quote": "seizure and hypotension for 11 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "disturbance of consciousness, psychiatric symptoms and behavioral change, cognitive impairment, seizure and hypotension for 11 days",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "acute disturbance of consciousness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "SPSD",
+      "quote": "The diagnosis of amphiphysin-positive LE associated with aGCC was made",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "he experienced recurrence 6 months later, manifesting as paraneoplastic cerebellar dysfunction",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "7",
+      "quote": "seven months later, the patient was readmitted to the hospital with progressive head and trunk tremors, dysarthria and gait instability",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "cerebellar ataxia; tremors; dysarthria; gait_dysfunction; cognitive impairment",
+      "quote": "progressive head and trunk tremors, dysarthria and gait instability... bilateral gaze-evoked nystagmus and cerebellar ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "explicitly_present",
+      "quote": "bilateral gaze-evoked nystagmus and cerebellar ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "dysarthria",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "bilateral gaze-evoked nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "tremors; dysarthria; cognitive impairment; oculomotor",
+      "quote": "progressive head and trunk tremors, dysarthria and gait instability... cognitive dysfunctions, bilateral gaze-evoked nystagmus and cerebellar ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "bilateral gaze-evoked nystagmus",
+      "quote": "bilateral gaze-evoked nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "gait instability... no improvement or deterioration of the neurological symptoms 3 months later",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "According to the clinical manifestations, tumor, positive anti-amphiphysin antibody in CSF and serum, and well response to immunotherapy, aGCC associated amphiphysin IgG autoimmunity was considered in this patient.",
+      "quote": "According to the clinical manifestations, tumor, positive anti-amphiphysin antibody in CSF and serum, and well response to immunotherapy, aGCC associated amphiphysin IgG autoimmunity was considered in this patient.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "According to the clinical manifestations",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "positive anti-amphiphysin antibody in CSF and serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "Electromyogram Normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "well response to immunotherapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Brain MRI showed mild cerebellar atrophy",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "amphiphysin",
+      "quote": "The anti-amphiphysin antibody tested by immunoblotting (EUROIMMUN, Lübeck, Germany) was positive in both CSF and serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "anti-amphiphysin; anti-GAD; anti-Hu; anti-Ri; anti-Yo; anti-PCA2; anti-Ma1; anti-Ma2; anti-CV2/CRMP5; anti-SOX1; anti-N-methyl-D-aspartate receptor; anti-gamma-aminobutyric acid-B receptor; anti-leucine-rich glioma-inactivated protein 1 receptor; anti-contactin-associated protein-like 2 receptor; anti-AMPAR; anti-metabotropic glutamate receptor 5 receptor; anti-dipeptidyl peptidase-like protein-6 receptor; anti-Dopamine-2 receptor; anti-IgLON5; anti-alpha-amino-3-hydroxy-5-methyl-4-iso-xazolepropionic acid receptors",
+      "quote": "Anti-Amphiphysin (Positive/Positive); Anti-GAD (Negative/Negative)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "immunoblotting; tissue-based indirect immunofluorescence assay; cell base assay",
+      "quote": "immunoblotting (EUROIMMUN, Lübeck, Germany); tissue-based indirect immunofluorescence assay (TBA); cell base assay and tissue-based indirect immunofluorescence assay (EUROIMMUN, Germany)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Amphiphysin-IgG was detected in both serum and CSF. Tissue-based indirect immunofluorescence assay (TBA) of the patient's serum revealed IgG antibody to Purkinje cells of the monkey cerebellum and dentate gyrus glia cells of the monkey hippocampus.",
+      "quote": "Amphiphysin-IgG was detected in the patient's serum and CSF by immunoblotting and tissue-based indirect immunofluorescence assay",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "positive in both CSF and serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Anti- Amphiphysin (Positive/Positive)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Anti-GAD (Negative/Negative)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_positive",
+      "quote": "Anti- Amphiphysin (Positive/Positive)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "Anti-dipeptidyl peptidase-like protein-6 receptor (Negative/Negative)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "Anti-Hu (Negative/Negative); Anti-Ri (Negative/Negative); Anti-Yo (Negative/Negative); Anti-SOX1 (Negative/Negative); Anti-CV2/CRMP5 (Negative/Negative)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-Hu; anti-Ri; anti-Yo; anti-PCA2; anti-Ma1; anti-Ma2; anti-CV2/CRMP5; anti-SOX1; anti-N-methyl-D-aspartate receptor; anti-gamma-aminobutyric acid-B receptor; anti-leucine-rich glioma-inactivated protein 1 receptor; anti-contactin-associated protein-like 2 receptor; anti-AMPAR; anti-metabotropic glutamate receptor 5 receptor; anti-Dopamine-2 receptor; anti-IgLON5; anti-alpha-amino-3-hydroxy-5-methyl-4-iso-xazolepropionic acid receptors",
+      "quote": "Anti-Hu (Negative/Negative); Anti-Ri (Negative/Negative)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "The anti-amphiphysin antibody... was positive in both CSF and serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-amphiphysin",
+      "quote": "The anti-amphiphysin antibody... was positive in both CSF and serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "Normal",
+      "quote": "Pleocytosis Normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "Intrathecal IgG synthesis Normal; IgG Index Normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "Normal",
+      "quote": "Protein Normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "0",
+      "quote": "Electromyogram Normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "Electromyogram Normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Brain MRI showed mild cerebellar atrophy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "mild cerebellar atrophy",
+      "quote": "Brain MRI showed mild cerebellar atrophy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "aGCC was diagnosed by the pathologist",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "appendiceal goblet cell carcinoma (aGCC)",
+      "quote": "aGCC was diagnosed by the pathologist",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "fluctuating",
+      "quote": "symptoms resolved after high-dose corticosteroid therapy, he experienced recurrence 6 months later... no improvement was noted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; CP; other",
+      "quote": "high-dose corticosteroid therapy... IV cyclophosphamide (200 mg/d) and oral mycophenolate mofetil (500 mg/d)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "methylprednisolone (1000 mg/d for 5 days) followed by a tapered course of prednisone; IV cyclophosphamide (200 mg/d); oral mycophenolate mofetil (500 mg/d)",
+      "quote": "methylprednisolone (1000 mg/d for 5 days)... IV cyclophosphamide (200 mg/d) and oral mycophenolate mofetil (500 mg/d)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "stabilisation",
+      "quote": "no improvement or deterioration of the neurological symptoms 3 months later. Only stabilization of the clinical symptoms was achieved",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "tumour resection (right colon resection for aGCC)",
+      "quote": "a resection of his right colon was performed in a local hospital, and aGCC was diagnosed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "Triiodothyronine Abnormal (0.82 nmol/L; normal range: 1.3-3.1 nmol/L); Free triiodothyronine Abnormal (2.6 pmol/L; normal range: 3.6-7.5 pmol/L); Free thyroxine Abnormal (11.5 pmol/L; normal range: 12.0-22.0 pmol/L); Thyroxine Abnormal (57.8 pmol/L; normal range: 62-164 pmol/L)",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "abnormal thyroid function tests (low triiodothyronine, free triiodothyronine, free thyroxine, and thyroxine; repeat thyroid function test after 1 month was normal)",
+      "quote": "Repeat thyroid function test after 1 month was normal",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "His family history was unremarkable",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient presented with paraneoplastic limbic encephalitis (LE) as the first manifestation of amphiphysin-IgG autoimmunity, later relapsing as paraneoplastic cerebellar dysfunction (PCD). No classic SPSD features (stiffness, spasms, startle) were described at any point in the disease course. EMG was normal.",
+      "quote": "amphiphysin-positive LE associated with aGCC... relapse characterized by cerebellar dysfunction",
+      "confidence": "high"
+    }
+  ]
+}

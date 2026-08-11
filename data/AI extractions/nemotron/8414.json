@@ -1,0 +1,980 @@
+{
+  "paper_id": "8414",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "8414",
+      "quote": "Paper ID: 8414",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2010",
+      "quote": "J Cancer Sci Ther  Volume 2(1) : 001-002 (2010) - 001",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Report of a Patient\nA 68 year old Caucasian male with hypertension, COPD, and a 40 pack-year smoking history presented with progressive shortness of breath, dyspnea on exertion, and lower extremity dysfunction for approximately one month.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 68 year old Caucasian male",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "White/Caucasian",
+      "quote": "Caucasian",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "68",
+      "quote": "A 68 year old Caucasian male",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "12",
+      "quote": "at one year follow-up",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "patient noted 4 weeks of slowly progressive, severe lower extremity stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "The clinical picture was most consistent with Stiff-Person-Syndrome (SPS).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness",
+      "quote": "patient noted 4 weeks of slowly progressive, severe lower extremity stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "patient noted 4 weeks of slowly progressive, severe lower extremity stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "significantly increased muscle tone, especially in the lower extremities bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "significantly increased muscle tone, especially in the lower extremities bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "patient noted 4 weeks of slowly progressive, severe lower extremity stiffness, an inability to stand secondary to his “feet and toes curling underneath” him, shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle.",
+      "quote": "patient noted 4 weeks of slowly progressive, severe lower extremity stiffness, an inability to stand secondary to his “feet and toes curling underneath” him, shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "significantly increased muscle tone, especially in the lower extremities bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "explicitly_absent",
+      "quote": "especially in the lower extremities bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "shooting pains distal to the knee brought on by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "distal_LE",
+      "quote": "shooting pains distal to the knee brought on by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "shooting pains distal to the knee brought on by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "movement",
+      "quote": "shooting pains distal to the knee brought on by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "shooting pains distal to the knee brought on by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "shooting pains distal to the knee brought on by movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle.",
+      "quote": "shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Unusual for SPS, our patient did not possess spinal involvement with an abnormal lumbar lordosis, hypertonic abdominal muscles, nor did he display clinical exacerbation to emotional triggers.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "shooting pains; very mild parasthesias distal to the ankle",
+      "quote": "shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "patient noted 4 weeks of slowly progressive, severe lower extremity stiffness, an inability to stand secondary to his “feet and toes curling underneath” him, shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle. On admission, the patient noted 4 weeks of slowly progressive, severe lower extremity stiffness, an inability to stand secondary to his “feet and toes curling underneath” him, shooting pains distal to the knee brought on by movement, and very mild parasthesias distal to the ankle. Physical examination revealed a thin, cognitively intact male with significantly increased muscle tone, especially in the lower extremities bilaterally , such that voluntary or passive dorsiflexion of the ankle was impossible. Persistence of tone was noted even while the patient was asleep. The patient also suffered from decreased muscle bulk of the arms and legs bilaterally . His muscle strength in the upper extremities was normal. In the lower extremities, his hip flexors were 4 out of 5 and knee flexors and extensors were normal power. Biceps, triceps, and brachioradialis stretch reflexes were 2 out of 4; patellar stretch reflexes were 3 out of 4 bilaterally . Plantar responses were extensor bilaterally . The patient’s light touch, vibration, and pinprick sensation was mildly diminished distal to the ankles bilaterally . Peri-anal sensation was intact.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "slowly progressive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "progressive shortness of breath, dyspnea on exertion, and lower extremity dysfunction",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "lower extremity dysfunction secondary to tonically active muscles",
+      "quote": "novel presentation of a small cell lung cancer ANNA-3 positive paraneoplastic syndrome consisting of lower extremity dysfunction secondary to tonically active muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "monophasic",
+      "quote": "Over the ensuing months, the patient was treated with cisplatin and etoposide for his lung cancer; concomitantly, he was treated symptomatically with oral diazepam which ameliorated some of his increased tone. With this combined therapy, the patient experienced a progressive improvement in his neurological symptoms such that at one year follow-up, his neurological examination was unremarkable and he was able to ambulate normally.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "mentioned_absent",
+      "quote": "at one year follow-up, his neurological examination was unremarkable and he was able to ambulate normally. Repeat imaging found no evidence of malignancy. Benzodiazepines were slowly weaned off without ill effect and the patient has remained symptom free.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "mentioned_absent",
+      "quote": "at one year follow-up, his neurological examination was unremarkable and he was able to ambulate normally. Repeat imaging found no evidence of malignancy. Benzodiazepines were slowly weaned off without ill effect and the patient has remained symptom free.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "mentioned_absent",
+      "quote": "Unusual for SPS, our patient did not possess spinal involvement with an abnormal lumbar lordosis, hypertonic abdominal muscles, nor did he display clinical exacerbation to emotional triggers.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "0",
+      "quote": "at one year follow-up, his neurological examination was unremarkable and he was able to ambulate normally. Repeat imaging found no evidence of malignancy. Benzodiazepines were slowly weaned off without ill effect and the patient has remained symptom free.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features such as stiffness/spasms/hyperlordosis, positive antibodies such as anti-GAD, EMG showing continuous motor-unit activity, response to benzodiazepines",
+      "quote": "The clinical picture was most consistent with Stiff-Person-Syndrome (SPS). EMG revealed no radiculopathies and no abnormalities localized to the peripheral motor or sensory nerves; however, EMG did reveal continuous motor unit activity of both agonist and antagonist muscles. A paraneoplastic panel of antibodies was obtained (Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected. Over the ensuing months, the patient was treated with cisplatin and etoposide for his lung cancer; concomitantly, he was treated symptomatically with oral diazepam which ameliorated some of his increased tone.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The clinical picture was most consistent with Stiff-Person-Syndrome (SPS).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "A paraneoplastic panel of antibodies was obtained (Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "EMG did reveal continuous motor unit activity of both agonist and antagonist muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "he was treated symptomatically with oral diazepam which ameliorated some of his increased tone. With this combined therapy, the patient experienced a progressive improvement in his neurological symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "MRI of the brain revealed evidence of previous ischemic strokes involving the anteromedial left frontal lobe and the posterolateral left frontal lobe as well as a pattern of white matter change consistent with microvascular ischemia. MRI of the cervical, thoracic, and lumbar spine revealed mild multilevel disc degeneration, but no gross evidence of cord inflammation, compression, or prominent disk protrusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Laboratory analysis revealed normal Vitamin B12, homocysteine, ESR, HgA1C, TSH, and T4 values. CSF analysis revealed a normal protein, glucose, and cell count. Lyme serology was negative and RPR was nonreactive.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "A paraneoplastic panel of antibodies was obtained (Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "amphiphysin; anti-GAD65",
+      "quote": "A paraneoplastic panel of antibodies was obtained (Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "Mayo clinic amphiphysin and anti-GAD65 antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "CSF analysis revealed a normal protein, glucose, and cell count.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "EMG did reveal continuous motor unit activity of both agonist and antagonist muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI of the brain revealed evidence of previous ischemic strokes involving the anteromedial left frontal lobe and the posterolateral left frontal lobe as well as a pattern of white matter change consistent with microvascular ischemia. MRI of the cervical, thoracic, and lumbar spine revealed mild multilevel disc degeneration, but no gross evidence of cord inflammation, compression, or prominent disk protrusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "evidence of previous ischemic strokes involving the anteromedial left frontal lobe and the posterolateral left frontal lobe as well as a pattern of white matter change consistent with microvascular ischemia. MRI of the cervical, thoracic, and lumbar spine revealed mild multilevel disc degeneration, but no gross evidence of cord inflammation, compression, or prominent disk protrusion.",
+      "quote": "MRI of the brain revealed evidence of previous ischemic strokes involving the anteromedial left frontal lobe and the posterolateral left frontal lobe as well as a pattern of white matter change consistent with microvascular ischemia. MRI of the cervical, thoracic, and lumbar spine revealed mild multilevel disc degeneration, but no gross evidence of cord inflammation, compression, or prominent disk protrusion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "An extensive cancer work up revealed enlarged and metabolically active mediastinal lymph nodes. One of these lymph nodes was biopsied and was diagnostic for small cell lung cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "small cell lung cancer",
+      "quote": "One of these lymph nodes was biopsied and was diagnostic for small cell lung cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "With this combined therapy, the patient experienced a progressive improvement in his neurological symptoms such that at one year follow-up, his neurological examination was unremarkable and he was able to ambulate normally. Repeat imaging found no evidence of malignancy. Benzodiazepines were slowly weaned off without ill effect and the patient has remained symptom free.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "he was treated symptomatically with oral diazepam which ameliorated some of his increased tone.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "oral diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "oral diazepam which ameliorated some of his increased tone. With this combined therapy, the patient experienced a progressive improvement in his neurological symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "oral diazepam which ameliorated some of his increased tone. With this combined therapy, the patient experienced a progressive improvement in his neurological symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "cisplatin and etoposide",
+      "quote": "Over the ensuing months, the patient was treated with cisplatin and etoposide for his lung cancer",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

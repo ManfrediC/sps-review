@@ -1,0 +1,980 @@
+{
+  "paper_id": "2615",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "2615",
+      "quote": "Paper ID: 2615",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2017",
+      "quote": "Received 1 July 2017; Revised 17 September 2017; Accepted 12 October 2017; Published 25 October 2017",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case Report\nDifficult to Treat Focal, Stiff Person Syndrome of\nthe Left Upper Extremity\nNathan E. Esplin, 1 John W. Stelzer, 1 Timothy B. Legare, 1 and Sayed K. Ali2\n1Universityof Central Florida Collegeof Medicine, 6850Lake Nona Boulevard, Orlando, FL32827, USA\n2Department of Internal Medicine, Orlando VA Medical Center, 13800 Veterans Way, Orlando, FL 32827, USA\nCorrespondenceshouldbeaddressedto NathanE. Esplin;nesplin@gmail.com\nReceived 1 July 2017; Revised 17 September 2017; Accepted 12 October 2017; Published 25 October 2017\nAc\ndemic Editor: Pablo Mir\nCopyright © 2017 NathanE. Esplinetal. This is an open access article distributed under the Creative Commons Attribution\nLicense, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly\ncited.\nBackground. Stiff person syndrome (SPS) is a rare neurologic disorder characterized by muscle rigidity. It is a disorder of reduced\nGABAactivityleadingtoincreasedmuscletoneandoftenpainfulspasms. Itgenerallypresentsintheaxialmusculaturebutrarely\ncaninvolveonlyonelimb,typicallyalowerextremity. Inrarecasesitcanbeparaneoplasticwhichgenerallyresolvesontreatment\nof the underlying neoplasm. Case Report. A46-year-oldmalewithahistoryof Hodgkin’s Lymphomainremissionpresentedwith\nleft upper extremity pain secondary to a diagnosis of Stiff Person Syndrome limited to his left upper extremity. He had previously\nbenefittedfromplasmapheresisandwasondiazepamandbaclofenathomewithrelativelygoodcontrolofhissymptoms. SPShad\npreviously been diagnosed with EMG and anti-GAD-65 antibody titers and was confirmed by an elevated anti-GAD-65 antibody\ntiter. Hewastreatedwithplasmapheresisandmaximumdosesofmedicaltreatmentincludingbotulinumtoxinwithonlytransient\nmild improvement in his symptoms. Conclusion. This case represents a case of a rare disease that was refractory to all known\ntherapies. It outlines the need for further understanding of this disorder in order to provide better symptomatic treatment or\npotentiallymoredefinitivecare.\n1. Introduction\nStiffpersonsyndrome(SPS)wasfirstdescribedinan“index”\npatient and 13 others in 1956 by Moersch and Woltman [1, 2]. SPS is a rare syndrome with an estimated incidence\nof one in one million, without racial preference, which\nfollows the traditional pattern seen in autoimmune disease,\naffecting females in a 2: 1 ratio to males [3, 4]. The clinical\nmanifestations of SPS include features of both axial and\nappendicular muscular rigidity caused by involuntary motor\nunit activation and sensitivity [5]. The resultant rigidity\nmost commonly evolves from the thoracolumbar paraspinal\nmuscles and gradually extends to include proximal leg,\nand abdominal wall musculature, which leaves the patient\nwith a stiff, hyperlordotic gait thereby giving the disease\nits namesake [6]. Additionally, patients are afflicted with\nepisodic muscle spasms that are often preceded by external\nstimulisuchastouchandloudsounds[6].\nTheprimarypathophysiologyinSPSisthoughttobeantibodies to the glutamic acid decarboxylase (GAD) inhibiting\nthe rate-limiting step ofγ-aminobutyric acid (GABA) [4, 7].\nDecreased inhibitory GABA is considered to be the cause of\nthe stiffness and spasms. Treatment centers on the two primaryproposedpathophysiologicalmechanisms:adecreased\nGABA inhibitory response and autoimmunity. The first-line\ntherapy has been to use GABA-A agonists, benzodiazepines,\nforthesymptomaticreliefofrigidityandspasms[6, 8]. Additionally, GABA-B agonists such as baclofen have been used\nto reduce muscle spasms, given either orally or intrathecally.\nBaclofen has relatively low CSF penetration given orally, but\nintrathecaladministrationiscautionedagainstbecauseofthe\nhigh risk of catheter infection and death due to autonomic\ninstability [9]. Intravenous immunoglobulin (IVIG) and\nsteroids have been relatively effective in reducing the symptomsaswell,withbetterresponseinpatientswithanti-GAD\nspecific SPS [9]. In a few cases in the literature botulinum\nHindawi\nCase Reports in Neurological Medicine\nVolume 2017, Article ID 2580620, 3 pages\nhttps://doi.org/10. 1155/2017/2580620\n\n--- page ? ---\n2 Case Reportsin Neurological Medicine\ntoxin has been used in SPS or the focal variant, Stiff Limb\nSyndrome (SLS). It appears to have a relatively good effect\nwithanimprovementinsymptomatologyreportedinthefirst\nfewdaysaftertreatment,butitneedstoberedosedeveryfew\nmonths[6, 10, 11]. Finally,anewemergingtreatmentistheuse\nofCD-20inhibitor,rituximab. Arandomized,controlledtrial\nrecentlyshowedthatrituximabbenefittedsomeSPSpatients,\nbutonly26patientswererecruitedforthestudy[12].\nHere we present a case of anti-GAD-65 positive, treatment resistant, focal, stiff person syndrome confined to the\nleft upper extremity in a patient with a medical history of\nHodgkin’s Lymphoma.\n2. Case Presentation\nOurpatientisa46-year-oldmalewithahistoryof Hodgkin’s\nLymphoma diagnosed approximately 8 years before admissioninremissionstatusafterrituximabtherapy. Hepresented\nwithsubsequentleftupperextremityfocalSLSdiagnosedtwo\nyears before this admission by anti-GAD antibody elevation\nand electromyography (EMG) findings. He was recently\non a maintenance regimen of rituximab therapy every 8\nweeks but this had been discontinued approximately three\nmonthspriortothisadmission. He presentedwithleftupper\nextremity pain, stiffness, and firm muscles. He was being\nmanaged by neurology with diazepam, hydrocodone, and\ntizanidineandreportedtwoprioradmissionsinthelastyear\nfor exacerbations of his SPS, once complicated by left upper\nextremity deep venous thrombosis. On both admissions, he\nwas treated with plasmapheresis with little to no appreciable\nimprovementofhissymptomsbutwithsignificantreductions\ninanti-GAD-65antibodytiters.\nOn admission, the patient was found to have a limited\nrange of motion in his left upper extremity with rigidity\nand apparent contracture with swelling secondary to a deep\nvenousthrombosis. Hewasabletoflexandextendhissecond\nand third digit, but was unable to move the fourth and fifth.\nSensationwasintactinallextremities,andhisphysicalexam\nwasotherwiseunremarkable.\nLab workup was notable for an anti-GAD-65 antibody\nlevel of 64IU/mL (reference range<5IU/mL) by ELISA,\na TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L),\nand a C-PEPTIDE of 5. 19ng/mL (reference range\n0. 80–3. 85ng/mL). Previous EMG studies had demonstrated\ncontinuous motor unit activation of the left upper extremity\nconsistent with a diagnosis of SLS, but the patient refused\nEMG and nerve conduction studies on this admission. He\nalso refused further lab work to include anti-amphiphysin\ntestingandlumbarpunctureforCSFanalysis.\nA “mediport” catheter was placed and plasmapheresis\nwas initiated on hospital day two with repeat plasmapheresis\neveryotherdayforfivetotalrounds. Onhospitaldayone,he\nwasstartedat20mgofdiazepamfourtimesperday, 12mgof\ntizanidineeveryeighthours,andacetaminophen/hydrocodone\nthree times per day as needed. By hospital day five he had\nhad his second round of plasmapheresis, and his medicine\nregimen had been increased to 30mg of diazepam every six\nhours, 10mg of baclofen twice per day, 500mg of divalproex\ntwice per day, 9mg of tizanidine every six hours, topical\ndiclofenac gel twice per day, and 500mg of methocarbamol\nevery eighthours,stillwithpoorcontrolofhissymptoms.\nNeurology recommended the addition of botulinum\ntoxin therapy, and on hospital day seven he was treated with\n300unitsofbotulinumtoxintypeA(Xeomin),with130units\ninjectedintheleftbiceps, 70unitsintheleftbrachioradialis,\nand50unitsinjectedintobothflexordigitorumsuperficialis\nand profundus. On the following day, the patient reported\ns o m em i l dr e l i e fo fh i sp a i n ,b u tn or e l i e fo fh i sr i g i t y ,a n d\non hospital day nine the patient stated both the pain and\nrigidityhadbothreturnedcompletely. Medicalcannabiswas\nconsidered,butwasnotanoptionperhospitalpolicy.\nThis patient was discharged on hospital day ten with\nno further relief of his symptoms on maximal medical\ntherapy and after his fifth round of plasmapheresis. He\nwas discharged on 9mg of tizanidine four times per day\na n d3 0m go fd i a z e p a mf o u rt i m e sp e rd a y . H ew a sg i v e n\ninstructions to follow up with neurology outpatient for\nassessment of his symptoms after botulinum injection and\nforrepeatinjectionsinthreemonths. Approximately14days\nand again at 30 days after discharge contact was made with\nthis patient by phone, and he advised on both occasions\nthat he had no improvement in his symptoms. He declined\nfurtherbotulinuminjectiontherapy,butoptedtoreestablish\nrituximab therapy with his oncologist. He refused follow-up\nEMG, NCS,andanti-GADlaboratorystudies.\n3. Discussion\nSPS is a rare autoimmune, paraneoplastic, or cryptogenic\ndisorder characterized by stiffness of either proximal trunk\nmuscles or a specific limb or set of limbs and often by the\npresence of anti-GAD antibodies. GAD is the rate-limiting\nenzymeinthesynthesisofGABA. Therearetwoisoformsof\nGAD: GAD-65andGAD-67. GAD-65isfoundinthecentral\nnervous system, while GAD-67 is also found in other body\nsystems. GAD-67 appears to be responsible for creating a\nbasallevelofGABA,whileGAD-65appearstoberesponsible\nforcreatinghigherlevelsofGABAinresponsetostressors[2].\nAnti-GAD-65 antibodies are found in around 80% of SPS,\nwhile anti-GAD-67 antibodies are found in around 60%. It\nis not clear if these antibodies are directly responsible for\nthe disease, and other antibodies are associated with SPS\nand its variants. It is worth noting that the level of antiGADantibodydoesnotcorrelatewithclinicalsymptomsand\ndoesnotreliablydecreaseinresponsetotreatment,makingit\nunreliabletoassesseffectivenessoftherapy[2, 13].\nThe classic form of SPS involves increasing stiffness of\nthetrunkandproximalmuscleswithpainfulmusclespasms.\nThere are no other neurological symptoms other than the\ni n c r e a s e dm u s c l et o n ea n ds p a s m s ,a n dt h es p a m s c a nb e\nsevere enough to fracture bone [9]. It is an autoimmune\ndisorder often associated with diabetes mellitus (DM) type\nI, and a variety of other autoimmune disorders. Like many\nautoimmune disorders, it is more common in women than\nmen [13]. The focal, formerly called partial, form, Stiff Limb\nSyndrome(SLS)isalsosometimesassociatedwithanti-GAD\nantibodies, and usually involves one lower extremity [14].\nThisvariantmayeventuallyspreadtothetrunk. Theetiology\n\n--- page ? ---\nCase Reportsin Neurological Medicine 3\ninmostSPS(andSLS)casesisanautoimmuneprocess,butin\nrare cases (approximately 5%) it is paraneoplastic, and fewer\ncases still are cryptogenic. Paraneoplastic SPS and SLS can\nalso be associated with anti-GAD antibodies, but a majority\nofparaneoplasticcasesareanti-GADantibodynegative[2, 9,\n14, 15].\nThe prognosis of SPS and SLS is guarded, but most\npatients respond relatively well to treatment. All forms are\ngenerally responsive to benzodiazepines, while some cases\nrequire the addition of baclofen, IVIG, or plasmapheresis.\nTherehavebeenafewcasesintheliteraturethatrequiredthe\n\nu s eo fm e t h o c a r b a m o l ,v a l p r o a t e ,o re v e n t u a l l yb o t u l i n u m\ntoxin to achieve good symptom control and even remission\n[10].\n4. Conclusion\nOur case demonstrates a case of anti-GAD-65 antibody\npositive, focal SLS of an upper extremity that has been\nresistanttobenzodiazepines,baclofen,tizanidine,divalproex,\nrituximab,methocarbamol,multipleroundsofplasmapheresis,andbotulinumtoxininjection.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "Our patient is a 46-year-old male with a history of Hodgkin’s Lymphoma diagnosed approximately 8 years before admission in remission status after rituximab therapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "46",
+      "quote": "Our patient is a 46-year-old male with a history of Hodgkin’s Lymphoma diagnosed approximately 8 years before admission in remission status after rituximab therapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "44",
+      "quote": "He presented with subsequent left upper extremity focal SLS diagnosed two years before this admission by anti-GAD antibody elevation and electromyography (EMG) findings.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "pain",
+      "quote": "He presented with left upper extremity pain, stiffness, and firm muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Limb",
+      "quote": "Our patient is a 46-year-old male with a history of Hodgkin’s Lymphoma diagnosed approximately 8 years before admission in remission status after rituximab therapy. He presented with subsequent left upper extremity focal SLS diagnosed two years before this admission by anti-GAD antibody elevation and electromyography (EMG) findings.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "He presented with left upper extremity pain, stiffness, and firm muscles. [...] On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_left",
+      "quote": "On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely. [...] Neurology recommended the addition of botulinum toxin therapy, and on hospital day seven he was treated with 300 units of botulinum toxin type A (Xeomin), with 130 units injected in the left biceps, 70 units in the left brachioradialis, and 50 units injected in both flexor digitorum superficialis and profundus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "UE",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely. [...] Neurology recommended the addition of botulinum toxin therapy, and on hospital day seven he was treated with 300 units of botulinum toxin type A (Xeomin), with 130 units injected in the left biceps, 70 units in the left brachioradialis, and 50 units injected in both flexor digitorum superficialis and profundus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis. He was able to flex and extend his second and third digit, but was unable to move the fourth and fifth. Sensation was intact in all extremities, and his physical exam was otherwise unremarkable.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "He presented with subsequent left upper extremity focal SLS diagnosed two years before this admission by anti-GAD antibody elevation and electromyography (EMG) findings.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "focal SLS",
+      "quote": "He presented with subsequent left upper extremity focal SLS diagnosed two years before this admission by anti-GAD antibody elevation and electromyography (EMG) findings.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "focal_left",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "UE",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "2",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "On admission, the patient was found to have a limited range of motion in his left upper extremity with rigidity and apparent contracture with swelling secondary to a deep venous thrombosis. He was able to flex and extend his second and third digit, but was unable to move the fourth and fifth. Sensation was intact in all extremities, and his physical exam was otherwise unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "He presented with subsequent left upper extremity focal SLS diagnosed two years before this admission by anti-GAD antibody elevation and electromyography (EMG) findings. Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "He presented with subsequent left upper extremity focal SLS diagnosed two years before this admission by anti-GAD antibody elevation and electromyography (EMG) findings. Previous EMG studies had demonstrated continuous motor unit activation of the left upper extremity consistent with a diagnosis of SLS, but the patient refused EMG and nerve conduction studies on this admission.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "64",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "IU/mL",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD65)",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "ELISA",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "low_moderate",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Lab workup was notable for an anti-GAD-65 antibody level of 64IU/mL (reference range<5IU/mL) by ELISA, a TSH of 0. 240mIU/L (reference range 0. 35–4. 94mIU/L), and a C-PEPTIDE of 5. 19ng/mL (reference range 0. 80–3. 85ng/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "not_tested",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "not_done",
+      "quote": "He also refused further lab work to include anti-amphiphysin testing and lumbar puncture for CSF analysis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Previous EMG studies had demonstrated continuous motor unit activation of the left upper extremity consistent with a diagnosis of SLS, but the patient refused EMG and nerve conduction studies on this admission.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "left upper extremity",
+      "quote": "Previous EMG studies had demonstrated continuous motor unit activation of the left upper extremity consistent with a diagnosis of SLS, but the patient refused EMG and nerve conduction studies on this admission.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "worsening",
+      "quote": "This patient was discharged on hospital day ten with no further relief of his symptoms on maximal medical therapy and after his fifth round of plasmapheresis. He was discharged on 9mg of tizanidine four times per day and 30mg of diazepam four times per day. He was given instructions to follow up with neurology outpatient for assessment of his symptoms after botulinum injection and for repeat injections in three months. Approximately 14 days and again at 30 days after discharge contact was made with this patient by phone, and he advised on both occasions that he had no improvement in his symptoms. He declined further botulinum injection therapy, but opted to re-establish rituximab therapy with his oncologist. He refused follow-up EMG, NCS, and anti-GAD laboratory studies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, tizanidine, botulinum_toxin",
+      "quote": "On hospital day one, he was started at 20mg of diazepam four times per day, 12mg of tizanidine every eighthours, and acetaminophen/hydrocodone three times per day as needed. By hospital day five he had had his second round of plasmapheresis, and his medicine regimen had been increased to 30mg of diazepam every six hours, 10mg of baclofen twice per day, 500mg of divalproex twice per day, 9mg of tizanidine every six hours, topical diclofenac gel twice per day, and 500mg of methocarbamol every eighthours, still with poor control of his symptoms. Neurology recommended the addition of botulinum toxin therapy, and on hospital day seven he was treated with 300 units of botulinum toxin type A (Xeomin), with 130 units injected in the left biceps, 70 units in the left brachioradialis, and 50 units injected in both flexor digitorum superficialis and profundus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX",
+      "quote": "A “mediport” catheter was placed and plasmapheresis was initiated on hospital day two with repeat plasmapheresis every other day for five total rounds.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "none",
+      "quote": "On both admissions, he was treated with plasmapheresis with little to no appreciable improvement of his symptoms but with significant reductions in anti-GAD-65 antibody titers.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "On hospital day one, he was started at 20mg of diazepam four times per day, 12mg of tizanidine every eighthours, and acetaminophen/hydrocodone three times per day as needed. By hospital day five he had had his second round of plasmapheresis, and his medicine regimen had been increased to 30mg of diazepam every six hours, 10mg of baclofen twice per day, 500mg of divalproex twice per day, 9mg of tizanidine every six hours, topical diclofenac gel twice per day, and 500mg of methocarbamol every eighthours, still with poor control of his symptoms. Neurology recommended the addition of botulinum toxin therapy, and on hospital day seven he was treated with 300 units of botulinum toxin type A (Xeomin), with 130 units injected in the left biceps, 70 units in the left brachioradialis, and 50 units injected in both flexor digitorum superficialis and profundus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam, tizanidine, baclofen, divalproex, methocarbamol",
+      "quote": "On hospital day one, he was started at 20mg of diazepam four times per day, 12mg of tizanidine every eighthours, and acetaminophen/hydrocodone three times per day as needed. By hospital day five he had had his second round of plasmapheresis, and his medicine regimen had been increased to 30mg of diazepam every six hours, 10mg of baclofen twice per day, 500mg of divalproex twice per day, 9mg of tizanidine every six hours, topical diclofenac gel twice per day, and 500mg of methocarbamol every eighthours, still with poor control of his symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "none",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely. [...] This patient was discharged on hospital day ten with no further relief of his symptoms on maximal medical therapy and after his fifth round of plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "no",
+      "quote": "On hospital day nine the patient stated both the pain and rigidity had both returned completely. [...] This patient was discharged on hospital day ten with no further relief of his symptoms on maximal medical therapy and after his fifth round of plasmapheresis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "rituximab",
+      "quote": "He declined further botulinum injection therapy, but opted to re-establish rituximab therapy with his oncologist.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

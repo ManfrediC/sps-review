@@ -1,0 +1,980 @@
+{
+  "paper_id": "3135",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "3135",
+      "quote": "Paper ID: 3135",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2021",
+      "quote": "Intern Med 60: 2307-2313, 2021",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "j CASE REPORT r",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 59-year-old Japanese woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "A 59-year-old Japanese woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "59",
+      "quote": "A 59-year-old Japanese woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "59",
+      "quote": "A 59-year-old Japanese woman developed a problem with writing due to tremors in her fingers on the first day of symptom onset (day 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "24",
+      "quote": "there was no recurrence for 2 years",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "1",
+      "quote": "the patient was diagnosed with autoimmune encephalomyelitis with PERM-like symptoms (4).",
+      "confidence": "low"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "other",
+      "quote": "developed a problem with writing due to tremors in her fingers on the first day of symptom onset (day 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "tremors in her fingers causing a problem with writing",
+      "quote": "developed a problem with writing due to tremors in her fingers on the first day of symptom onset (day 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "The final diagnosis was PERM-like autoimmune encephalomyelitis associated with anti-gAChR antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "Walking difficulties related to stiffness and bradykinesia appeared on day 12.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "Walking difficulties related to stiffness and bradykinesia appeared on day 12.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "rigidity in the right limb",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "rigidity in the right limb",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Walking difficulties related to stiffness and bradykinesia appeared on day 12. At the time, she presented with disorientation, nystagmus, a limitation of abduction of the left eye, rigidity in the right limb, dysuria, and paralysis of both upper limbs.",
+      "quote": "Walking difficulties related to stiffness and bradykinesia appeared on day 12. At the time, she presented with disorientation, nystagmus, a limitation of abduction of the left eye, rigidity in the right limb, dysuria, and paralysis of both upper limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "rigidity in the right limb",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_right",
+      "quote": "rigidity in the right limb",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "she suffered from dysphagia and had difficulty eating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "she presented with disorientation, nystagmus, a limitation of abduction of the left eye",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "tremors in fingers; hearing loss; fever; vomiting; diarrhea; dysphagia; disorientation; nystagmus; limitation of abduction of left eye; dysuria; paralysis of both upper limbs; bradykinesia",
+      "quote": "developed a problem with writing due to tremors in her fingers on the first day of symptom onset (day 1). She presented with hearing loss and enteritis-like symptoms such as fever, vomiting, and diarrhea on day 5. In addition, since she suffered from dysphagia and had difficulty eating, she was admitted to the previous hospital on day 10. Walking difficulties related to stiffness and bradykinesia appeared on day 12. At the time, she presented with disorientation, nystagmus, a limitation of abduction of the left eye, rigidity in the right limb, dysuria, and paralysis of both upper limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "dysuria",
+      "quote": "dysuria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "nystagmus; limitation of abduction of the left eye",
+      "quote": "nystagmus, a limitation of abduction of the left eye",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "she presented with disorientation, nystagmus, a limitation of abduction of the left eye, rigidity in the right limb, dysuria, and paralysis of both upper limbs.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "One hour after hospitalization, she developed persistent generalized tonic-clonic seizures, resulting in emergent intubation and mechanical ventilation in the intensive care unit.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "she was suspected to have encephalitis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "encephalitis",
+      "quote": "she was suspected to have encephalitis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic_stable",
+      "quote": "there was no recurrence for 2 years, even without post-immunotherapy treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "1",
+      "quote": "N/A",
+      "confidence": "low"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "Spasms/stiffness/rigidity/myoclonus 80% (24/30) +",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "muscle stiffness and rigidity of limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "myoclonus around the mouth and abdomen",
+      "confidence": "low"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "muscle stiffness and rigidity of limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "muscle stiffness and rigidity of limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "muscle stiffness and rigidity of limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "She presented with ocular flutter, muscle stiffness and rigidity of limbs, myoclonus around the mouth and abdomen, dysuria, and brisk tendon reflexes with no pathological reflex.",
+      "quote": "She presented with ocular flutter, muscle stiffness and rigidity of limbs, myoclonus around the mouth and abdomen, dysuria, and brisk tendon reflexes with no pathological reflex.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "muscle stiffness and rigidity of limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "she developed persistent generalized tonic-clonic seizures",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "she developed persistent generalized tonic-clonic seizures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "absent",
+      "quote": "There was no suggestion of hyperekplexia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "There was no suggestion of hyperekplexia.",
+      "quote": "There was no suggestion of hyperekplexia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "The present case showed symptoms of brainstem involvement such as ocular flutter, hearing loss, and dysphagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "She presented with ocular flutter",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "myoclonus; seizures; autonomic failure; encephalopathy; weakness; hyperreflexia",
+      "quote": "She presented with ocular flutter, muscle stiffness and rigidity of limbs, myoclonus around the mouth and abdomen, dysuria, and brisk tendon reflexes with no pathological reflex. One hour after hospitalization, she developed persistent generalized tonic-clonic seizures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "orthostatic hypotension; sinus bradycardia; dysuria with bladder retention; prolonged constipation",
+      "quote": "persistent severe autonomic failure characterized by orthostatic hypotension (systolic blood pressure dropped to 70 mm Hg without compensatory tachycardia during the Schellong test), sinus bradycardia (minimum heart rate: 40 beats per minute), dysuria with bladder retention (post-voiding residual urine volume >150 mL), and prolonged constipation was also observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "ocular flutter",
+      "quote": "She presented with ocular flutter",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "persistent generalized tonic-clonic seizures",
+      "quote": "she developed persistent generalized tonic-clonic seizures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "Glasgow Coma Scale was E2V1M4. She presented with ocular flutter, muscle stiffness and rigidity of limbs, myoclonus around the mouth and abdomen, dysuria, and brisk tendon reflexes with no pathological reflex. One hour after hospitalization, she developed persistent generalized tonic-clonic seizures, resulting in emergent intubation and mechanical ventilation in the intensive care unit.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Based on the clinical symptoms and features, such as encephalitis with rigidity and myoclonus, and MRI findings showing scattered lesions in brain and spine, the patient was diagnosed with autoimmune encephalomyelitis with PERM-like symptoms (4).",
+      "quote": "Based on the clinical symptoms and features, such as encephalitis with rigidity and myoclonus, and MRI findings showing scattered lesions in brain and spine, the patient was diagnosed with autoimmune encephalomyelitis with PERM-like symptoms (4).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Based on the clinical symptoms and features, such as encephalitis with rigidity and myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Immunological studies of the pre-treatment serum (collected on day 17) revealed positive anti-gAChR α3 subunit antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "we did not evaluate our case for these features because of her emergent intubation and dramatic symptom improvement after immunotherapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "The patient's neurological symptoms improved after immunotherapy",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "MRI findings showing scattered lesions in brain and spine",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Therefore, we excluded both diseases and diagnosed this case to have PERM-like autoimmune encephalomyelitis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "other",
+      "quote": "positive anti-gAChR α3 subunit antibodies [1.18 antibody index (A.I.); normal, <1]",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "anti-ganglionic acetylcholine receptor (gAChR) α3 subunit antibodies",
+      "quote": "positive anti-gAChR α3 subunit antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "1.18",
+      "quote": "positive anti-gAChR α3 subunit antibodies [1.18 antibody index (A.I.); normal, <1]",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "antibody index (A.I.)",
+      "quote": "1.18 antibody index (A.I.); normal, <1",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); glycine receptors (GlyR); N-methyl-D-aspartate receptors (NMDAR); dipeptidyl-peptidase-like protein 6 (DPPX); alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid receptor (AMPAR); leucine-rich glioma-inactivated 1 (LGI1); gamma-aminobutyric acid B receptor (GABABR); contactin-associated protein-like 2 (Caspr2); metabotropic glutamate receptor (mGluR) 1 and 5; NH2-terminal of α-enolase (NAE); anti-ganglionic acetylcholine receptor (gAChR) α3 subunit; gAChR β4 subunit",
+      "quote": "Screening for PERM- or autoimmune encephalitis-associated antibodies including GAD, GlyR, NMDAR, DPPX, alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid receptor (AMPAR), leucine-rich glioma-inactivated 1 (LGI1), gamma-aminobutyric acid B receptor (GABABR), contactin-associated protein-like 2 (Caspr2), metabotropic glutamate receptor (mGluR) 1 and 5, and NH2-terminal of α-enolase (NAE) yielded negative results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "luciferase immune-precipitation systems (LIPS)",
+      "quote": "as assessed by luciferase immune-precipitation systems (LIPS) (8).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-TPO antibodies and anti-Tg antibodies were both positive at titers of 1,777.5 IU/mL and 71.8 IU/mL, respectively. In the serum collected after continuous immunotherapy (on day 27), a negative conversion of anti-gAChR α3 subunit antibodies was confirmed (0.38 A.I.).",
+      "quote": "Anti-thyroid peroxidase (TPO) antibodies and anti-thyroglobulin (Tg) antibodies were both positive when assessed by electrochemiluminescence immunoassay at titers of 1,777.5 IU/mL and 71.8 IU/mL, respectively.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Immunological studies of the pre-treatment serum (collected on day 17) revealed positive anti-gAChR α3 subunit antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "low_moderate",
+      "quote": "1.18 antibody index (A.I.); normal, <1",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "A.I. <1 (LIPS)",
+      "quote": "1.18 antibody index (A.I.); normal, <1",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "positive anti-gAChR α3 subunit antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Screening for PERM- or autoimmune encephalitis-associated antibodies including GAD, GlyR, NMDAR, DPPX, alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid receptor (AMPAR), leucine-rich glioma-inactivated 1 (LGI1), gamma-aminobutyric acid B receptor (GABABR), contactin-associated protein-like 2 (Caspr2), metabotropic glutamate receptor (mGluR) 1 and 5, and NH2-terminal of α-enolase (NAE) yielded negative results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_negative",
+      "quote": "Screening for PERM- or autoimmune encephalitis-associated antibodies including GAD, GlyR, NMDAR, DPPX, alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid receptor (AMPAR), leucine-rich glioma-inactivated 1 (LGI1), gamma-aminobutyric acid B receptor (GABABR), contactin-associated protein-like 2 (Caspr2), metabotropic glutamate receptor (mGluR) 1 and 5, and NH2-terminal of α-enolase (NAE) yielded negative results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "Screening for PERM- or autoimmune encephalitis-associated antibodies including GAD, GlyR, NMDAR, DPPX, alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid receptor (AMPAR), leucine-rich glioma-inactivated 1 (LGI1), gamma-aminobutyric acid B receptor (GABABR), contactin-associated protein-like 2 (Caspr2), metabotropic glutamate receptor (mGluR) 1 and 5, and NH2-terminal of α-enolase (NAE) yielded negative results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_positive",
+      "quote": "positive anti-gAChR α3 subunit antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-ganglionic acetylcholine receptor (gAChR) α3 subunit antibodies",
+      "quote": "positive anti-gAChR α3 subunit antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "inflammatory",
+      "quote": "CSF analysis revealed elevated cell count (73 cells/μL, 90% monocytes), high protein (112.4 mg/dL), and normal levels of glucose (92 mg/dL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "73",
+      "quote": "CSF analysis revealed elevated cell count (73 cells/μL, 90% monocytes)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "CSF-IgG index was elevated (0.91). The test results for myelin basic protein and oligoclonal bands were both negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "112.4 mg/dL",
+      "quote": "high protein (112.4 mg/dL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "we did not evaluate our case for these features because of her emergent intubation and dramatic symptom improvement after immunotherapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "A nerve conduction study (NCS) demonstrated normal compound muscle action potential (CMAP) amplitudes and nerve conduction velocities (NCV), but F-wave disappearance was observed in the right median and ulnar nerves.",
+      "quote": "A nerve conduction study (NCS) demonstrated normal compound muscle action potential (CMAP) amplitudes and nerve conduction velocities (NCV), but F-wave disappearance was observed in the right median and ulnar nerves.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Brain MRI without contrast depicted scattered lesions on DWI and FLAIR images in the cerebral white matter and brainstem on day 31",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "Scattered lesions on DWI and FLAIR images in the cerebral white matter and brainstem; scattered lesions on T2-weighted short T1 inversion recovery images in the cervical and thoracic spinal cords; small meningeal enhancement of the right parietal lobe",
+      "quote": "Brain MRI without contrast depicted scattered lesions on DWI and FLAIR images in the cerebral white matter and brainstem on day 31",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Truncal computed tomography (CT) showed no evidence of cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "The patient's neurological symptoms improved after immunotherapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "antiepileptic",
+      "quote": "Levetiracetam (1,000 mg/day) was administered because of persistent generalized tonic-clonic seizures and myoclonus on day 18.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG",
+      "quote": "The patient was clinically suspected to have autoimmune encephalitis including PERM and was treated with parenteral methylprednisolone (1 g/day for 3 days, 2 cycles) and intravenous immunoglobulin (0.4 mg/kg/day for 5 days), followed by oral corticosteroid (40 mg/day).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "parenteral methylprednisolone (1 g/day for 3 days, 2 cycles) and intravenous immunoglobulin (0.4 mg/kg/day for 5 days), followed by oral corticosteroid (40 mg/day).",
+      "quote": "parenteral methylprednisolone (1 g/day for 3 days, 2 cycles) and intravenous immunoglobulin (0.4 mg/kg/day for 5 days), followed by oral corticosteroid (40 mg/day).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "The patient's neurological symptoms improved after immunotherapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "Levetiracetam (1,000 mg/day) was administered because of persistent generalized tonic-clonic seizures and myoclonus on day 18.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "Levetiracetam (1,000 mg/day) was administered because of persistent generalized tonic-clonic seizures and myoclonus on day 18.",
+      "quote": "Levetiracetam (1,000 mg/day) was administered because of persistent generalized tonic-clonic seizures and myoclonus on day 18.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "The patient's neurological symptoms improved after immunotherapy",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "The patient's neurological symptoms improved after immunotherapy",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "meropenem (3 g/day), acyclovir (1,500 mg/day), and dexamethasone (19.8 mg/day) as she was suspected to have encephalitis; emergent intubation and mechanical ventilation",
+      "quote": "She was treated with meropenem (3 g/day), acyclovir (1,500 mg/day), and dexamethasone (19.8 mg/day) as she was suspected to have encephalitis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "thyroid",
+      "quote": "Anti-thyroid peroxidase (TPO) antibodies and anti-thyroglobulin (Tg) antibodies were both positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "had no particular family history",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had congenital hip dysplasia after bilateral hip replacement. Anti-gAChR α3 subunit antibodies are not standard SPSD antibodies but were detected in this PERM-like case. The patient tested negative for GlyR antibodies, which is unusual for PERM. The case showed persistent dysautonomia that improved with 3 months of continuous immunotherapy.",
+      "quote": "had a past medical history of congenital hip dysplasia after bilateral hip replacement",
+      "confidence": "high"
+    }
+  ]
+}

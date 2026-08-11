@@ -1,0 +1,980 @@
+{
+  "paper_id": "585",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "585",
+      "quote": "Paper ID: 585",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2012",
+      "quote": "J Neurol (2012) 259: 180–181",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "LETTER TO THE EDITORS ... A 56-year-old male presented with a 21-year history ...",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 56-year-old male presented",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "56",
+      "quote": "A 56-year-old male presented",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "50",
+      "quote": "a 6-year history of SPS ... He had a 5-year history of progressive stiffness and painful spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "12",
+      "quote": "he remains clinically well 1 year after admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "12",
+      "quote": "a 6-year history of SPS ... He had a 5-year history of progressive stiffness and painful spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "the clinical phenotype most closely represents stiff man syndrome with spasms; there is really no support for additional brainstem disease",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "painful spasms of his limbs and axial region",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "prox_LE, distal_LE, UE, axial",
+      "quote": "painful spasms of his limbs and axial region",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms of his limbs and axial region.",
+      "confidence": "low"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "He had a 5-year history of progressive stiffness and painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "In the weeks prior to this admission, there was a gradual worsening of axial muscular spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms",
+      "quote": "axial rigidity, progressive stiffness, and spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles associated with a lumbar hyperlordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "axial rigidity, progressive stiffness ... of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "axial rigidity, progressive stiffness ... of the paraspinal ... muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "axial rigidity, progressive stiffness ... of the paraspinal ... muscles associated with a lumbar hyperlordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "axial rigidity, progressive stiffness ... of the ... abdominal ... muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "axial rigidity, progressive stiffness ... of the ... occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "axial rigidity, progressive stiffness, and spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles associated with a lumbar hyperlordosis.",
+      "quote": "axial rigidity, progressive stiffness, and spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles associated with a lumbar hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "paraspinal, abdominal, proximal leg",
+      "quote": "axial rigidity, progressive stiffness, and spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_thoracic, axial_lumbar, axial_abdominal, prox_LE",
+      "quote": "spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "paraspinal",
+      "quote": "spontaneous reflex- or action-induced painful spasms of the paraspinal ... muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "paraspinal, abdominal, proximal leg",
+      "quote": "spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "spontaneous reflex- or action-induced painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "movement; spontaneous",
+      "quote": "spontaneous reflex- or action-induced painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "spontaneous reflex- or action-induced painful spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "spontaneous reflex- or action-induced painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "quote": "spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "anxiety attacks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "anxiety attacks",
+      "quote": "anxiety attacks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "associated with a lumbar hyperlordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "there is really no support for additional brainstem disease",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "weakness; dysarthria",
+      "quote": "generalized weakness ... slurred speech",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "intubated because of type II respiratory failure ... tracheostomy tube was inserted for long-term ventilation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features (axial rigidity, progressive stiffness, painful spasms, lumbar hyperlordosis), positive anti-GAD antibodies in serum, CSF oligoclonal bands, exclusion of paraneoplastic antibodies",
+      "quote": "SPS is characterized by axial rigidity, progressive stiffness, and spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles associated with a lumbar hyperlordosis. ... Anti-GAD antibodies were positive with high titres ... Paraneoplastic antibody screening ... was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "SPS is characterized by axial rigidity, progressive stiffness, and spontaneous reflex- or action-induced painful spasms of the paraspinal, abdominal and occasionally proximal leg muscles associated with a lumbar hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Anti-GAD antibodies were positive with high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "Electromyography was not available secondary to equipment malfunction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "MRI brain and C spine were all normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Paraneoplastic antibody screening ... was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Anti-GAD antibodies were positive with high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "1000",
+      "quote": "Anti-GAD antibodies were positive with high titres [1, 000",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/ml",
+      "quote": "his anti-GAD antibody titres were 400 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); muscle-specific kinase (MUSK); acetylcholine receptor (AchR); Hu; Yo; Ri; voltage-gated potassium channel (VGKC); Purkinje; voltage-gated calcium channel (VGCC); Ma; amphiphysin; N-methyl-D-aspartate receptor (NMDAR)",
+      "quote": "Anti-GAD antibodies were positive ... anti-MUSK antibodies and anti-Ach receptor antibodies were negative. Paraneoplastic antibody screening (anti-Hu, anti Yo, anti-Ri, VGKC, anti-Purkinje, VGCC, anti-Ma, amphiphycin, NMDAR) was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Anti-GAD antibodies were positive with high titres [1, 000",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "Anti-GAD antibodies were positive with high titres [1, 000",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Anti-GAD antibodies were positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Anti-GAD antibodies were positive with high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "amphiphycin ... was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "anti-MUSK antibodies and anti-Ach receptor antibodies were negative. Paraneoplastic antibody screening (anti-Hu, anti Yo, anti-Ri, VGKC, anti-Purkinje, VGCC, anti-Ma, amphiphycin, NMDAR) was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "muscle-specific kinase (MUSK); acetylcholine receptor (AchR); Hu; Yo; Ri; voltage-gated potassium channel (VGKC); Purkinje; voltage-gated calcium channel (VGCC); Ma; N-methyl-D-aspartate receptor (NMDAR)",
+      "quote": "anti-MUSK antibodies and anti-Ach receptor antibodies were negative. Paraneoplastic antibody screening (anti-Hu, anti Yo, anti-Ri, VGKC, anti-Purkinje, VGCC, anti-Ma, amphiphycin, NMDAR) was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "inflammatory",
+      "quote": "CSF analysis contained oligoclonal bands only in CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "CSF analysis contained oligoclonal bands only in CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "N/A",
+      "quote": "Electromyography was not available secondary to equipment malfunction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "Electromyography was not available secondary to equipment malfunction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "Electromyography was not available secondary to equipment malfunction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "N/A",
+      "quote": "Electromyography was not available secondary to equipment malfunction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI brain and C spine were all normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Paraneoplastic antibody screening ... was negative.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "complete sustained remission 1-year post-therapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, gabapentinoid, antiepileptic",
+      "quote": "Levetracetam 500 mg bd, Gabapentin 1, 200 mg tds and Diazepam 10 mg tds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; PLEX; steroids; RXB",
+      "quote": "treated with intravenous immunoglobulin ... treated with plasmapheresis and oral steroids ... rituximab was introduced",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IVIG without significant improvement; plasmapheresis and oral steroids with no improvement; rituximab four doses over 3 months (375 mg/m2 per treatment)",
+      "quote": "treated with intravenous immunoglobulin without significant improvement. He was then treated with plasmapheresis and oral steroids with no improvement. Finally, rituximab was introduced, and he received four doses over 3 months’ time (375 mg/m2 per treatment).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "His physical state improved rapidly with a decrease in limb and abdominal muscle stiffness and improvement of dysarthria.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "Levetracetam 500 mg bd, Gabapentin 1, 200 mg tds and Diazepam 10 mg tds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "Levetracetam 500 mg bd, Gabapentin 1,200 mg tds, Diazepam 10 mg tds",
+      "quote": "Levetracetam 500 mg bd, Gabapentin 1, 200 mg tds and Diazepam 10 mg tds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "diabetes",
+      "quote": "type 1 diabetes mellitus and hyperthyroidism",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Respiratory failure requiring mechanical ventilation; tracheostomy; ventilator-associated pneumonia; anti-GAD titre fell to 400 U/ml after rituximab.",
+      "quote": "Respiratory failure has not been reported with SPS previously ... After 1 year of treatment, his anti-GAD antibody titres were 400 U/ml",
+      "confidence": "high"
+    }
+  ]
+}

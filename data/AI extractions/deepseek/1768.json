@@ -1,0 +1,980 @@
+{
+  "paper_id": "1768",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "1768",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2020",
+      "quote": "Published 8 February 2020",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case Report; Hindawi Case Reports in Immunology Volume 2020, Article ID 8454532, 4 pages; includes Introduction, Case Report, Discussion, and references.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "a young woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "36",
+      "quote": "A 36-year-old woman was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "35",
+      "quote": "One year prior to admission, she was noted to have an unusual \"stiff\" upright posture, a wide-based ataxic gait, and experienced frequent \"jerking\" movements in her sleep.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "60",
+      "quote": "Five years after her initial presentation with significant unexplained weight loss, the patient developed muscle cramps and spasms...",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "12",
+      "quote": "One year prior to admission, she was noted to have an unusual \"stiff\" upright posture... Several months leading up to the admission, she started to experience general fatigue... Examination on admission confirmed prominent multidirectional nystagmus, dysarthria, and cerebellar ataxia. Serum anti-GAD 65 antibodies were significantly elevated...",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "One year prior to admission, she was noted to have an unusual \"stiff\" upright posture, a wide-based ataxic gait, and experienced frequent \"jerking\" movements in her sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, gait_dysfunction, cerebellar_ataxia, myoclonus",
+      "quote": "unusual \"stiff\" upright posture, a wide-based ataxic gait, and experienced frequent \"jerking\" movements in her sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person_Plus",
+      "quote": "cerebellar ataxia followed by stiff person syndrome three and a half years later; Having both cerebellar ataxia and stiff person syndrome is a rare occurrence in anti-GAD antibody syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "unusual \"stiff\" upright posture; experienced frequent \"jerking\" movements in her sleep; heightened startle response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "unusual \"stiff\" upright posture",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "One year prior to admission, she was noted to have an unusual \"stiff\" upright posture",
+      "quote": "One year prior to admission, she was noted to have an unusual \"stiff\" upright posture",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "experienced frequent \"jerking\" movements in her sleep",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "explicitly_present",
+      "quote": "a wide-based ataxic gait",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "cerebellar ataxia; myoclonus; weight loss; fatigue; dizziness; memory difficulties; nystagmus; dysarthria",
+      "quote": "unusual \"stiff\" upright posture, a wide-based ataxic gait, and experienced frequent \"jerking\" movements in her sleep. Several months leading up to the admission, she started to experience general fatigue, \"dizziness,\" and self-reported difficulties with her memory. Several weeks prior to her admission, the patient reported \"jerky eye movements\", slurred speech, and unsteadiness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "nystagmus",
+      "quote": "prominent multidirectional nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "unusual \"stiff\" upright posture, a wide-based ataxic gait, and experienced frequent \"jerking\" movements in her sleep. Several months leading up to the admission, she started to experience general fatigue, \"dizziness,\" and self-reported difficulties with her memory. Several weeks prior to her admission, the patient reported \"jerky eye movements\", slurred speech, and unsteadiness.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "One year prior to admission, she was noted to have an unusual \"stiff\" upright posture... Several months leading up to the admission, she started to experience general fatigue... Several weeks prior to her admission, the patient reported \"jerky eye movements\", slurred speech, and unsteadiness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "Five years after her initial presentation with significant unexplained weight loss, the patient developed muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "stiff person syndrome is characterised by painful muscle spasms, intermittent muscle contractions, and heightened startle response; the patient developed muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "stiff person syndrome is characterised by painful muscle spasms, intermittent muscle contractions, and heightened startle response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "muscle cramps and spasms particularly affecting the paraspinal musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "muscle cramps and spasms particularly affecting the paraspinal musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "reflex EMG activity initially seen at rectus abdominis",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "also involving the neck and jaw",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "the patient developed muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw.",
+      "quote": "the patient developed muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "paraspinal musculature, rectus abdominis, sternocleidomastoid",
+      "quote": "paraspinal musculature; rectus abdominis; sternocleidomastoid (SCM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "the patient developed muscle cramps and spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_neck, axial_thoracic, axial_lumbar, axial_abdominal",
+      "quote": "paraspinal musculature, also involving the neck and jaw; rectus abdominis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "paraspinal musculature",
+      "quote": "paraspinal musculature",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "paraspinal musculature, rectus abdominis, sternocleidomastoid",
+      "quote": "paraspinal musculature; rectus abdominis; sternocleidomastoid (SCM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "heightened startle response; exteroceptive reflex testing... evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus supporting the diagnosis of anti-GAD antibody-associated stiff person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "touch",
+      "quote": "Following the right medial nerve stimulation, there was evidence of positive exteroceptive reflexes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction; regional_cocontraction",
+      "quote": "reflex EMG activity initially seen at rectus abdominis at a latency of 50.52–63.54ms. Following this, there was rostral to caudal recruitment of the paraspinals (PSP) and sternocleidomastoid (SCM) with latencies of 49.48–91.15ms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Following the right medial nerve stimulation, there was evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus supporting the diagnosis of anti-GAD antibody-associated stiff person syndrome (Table 1). Table 1 shows evidence of exteroceptive reflexes following the right median nerve stimulation typical of reflex myoclonus as characterized in stiff person syndrome. When the median nerve was stimulated, there was a reflex EMG activity initially seen at rectus abdominis at a latency of 50.52–63.54ms. Following this, there was rostral to caudal recruitment of the paraspinals (PSP) and sternocleidomastoid (SCM) with latencies of 49.48–91.15ms.",
+      "quote": "Following the right medial nerve stimulation, there was evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus supporting the diagnosis of anti-GAD antibody-associated stiff person syndrome (Table 1). Table 1 shows evidence of exteroceptive reflexes following the right median nerve stimulation typical of reflex myoclonus as characterized in stiff person syndrome. When the median nerve was stimulated, there was a reflex EMG activity initially seen at rectus abdominis at a latency of 50.52–63.54ms. Following this, there was rostral to caudal recruitment of the paraspinals (PSP) and sternocleidomastoid (SCM) with latencies of 49.48–91.15ms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "explicitly_present",
+      "quote": "the patient continued to demonstrate cerebellar ataxia with prominent, nystagmus, dysarthria, and limb dysmetria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "prominent multidirectional nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "cerebellar ataxia; nystagmus; dysarthria; limb dysmetria; myoclonus; weight loss; fatigue; dizziness; memory difficulties",
+      "quote": "the patient continued to demonstrate cerebellar ataxia with prominent, nystagmus, dysarthria, and limb dysmetria; unexplained weight loss; general fatigue, \"dizziness,\" and self-reported difficulties with her memory.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "nystagmus",
+      "quote": "prominent multidirectional nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "the patient continued to demonstrate cerebellar ataxia with prominent, nystagmus, dysarthria, and limb dysmetria; the patient developed muscle cramps and spasms particularly affecting the paraspinal musculature, also involving the neck and jaw; Due to ongoing disabling symptoms, 4 months later, the patient received five alternate day sessions of plasma exchange resulting in symptom stabilization.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (cerebellar ataxia, stiff person syndrome with muscle cramps/spasms, heightened startle response), positive anti-GAD65 antibodies in serum and CSF, exteroceptive reflex testing showing positive exteroceptive reflexes typical of spinal reflex myoclonus.",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated... Anti-GAD antibodies were detected in the CSF as well... evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus supporting the diagnosis of anti-GAD antibody-associated stiff person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "stiff person syndrome is characterised by painful muscle spasms, intermittent muscle contractions, and heightened startle response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated... Anti-GAD antibodies were detected in the CSF as well.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus supporting the diagnosis of anti-GAD antibody-associated stiff person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Various immunological investigations including anti-Hu, anti-Ri, anti-Yo, anti-PCA-2, anti-CRMP5, anti-PCA-Tr, anti-Ma/Ta, anti-Amphiphysin, anti-thyroid antibodies, anti-neutrophil cytoplasmic antibodies, and celiac antibody screen were negative. Whipple's PCR was negative in CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "1091",
+      "quote": "1091U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/mL",
+      "quote": "1091U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase 65 (GAD65); Hu; Ri; Yo; PCA-2; CRMP5; PCA-Tr; Ma/Ta; Amphiphysin; thyroid antibodies; anti-neutrophil cytoplasmic antibodies; celiac antibody",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated... Various immunological investigations including anti-Hu, anti-Ri, anti-Yo, anti-PCA-2, anti-CRMP5, anti-PCA-Tr, anti-Ma/Ta, anti-Amphiphysin, anti-thyroid antibodies, anti-neutrophil cytoplasmic antibodies, and celiac antibody screen were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "ELISA",
+      "quote": "using the RSR ELISA method",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Two years later, after receiving immunotherapy including rituximab, the titre was still elevated at 1134U/mL.",
+      "quote": "Two years later, after receiving immunotherapy including rituximab, the titre was still elevated at 1134U/mL.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated... Anti-GAD antibodies were detected in the CSF as well.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "low_moderate",
+      "quote": "1091U/mL (normal being <5U/mL); radioimmunoassay values ≥2000U/mL is considered the threshold for indicating positivity in patients with neurological syndromes",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "≥2000U/mL (RIA); 1091U/mL by ELISA",
+      "quote": "radioimmunoassay values ≥2000U/mL is considered the threshold for indicating positivity in patients with neurological syndromes; 1091U/mL (using the RSR ELISA method)",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Serum anti-GAD 65 antibodies were significantly elevated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "anti-Amphiphysin... were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "anti-Hu, anti-Ri, anti-Yo, anti-PCA-2, anti-CRMP5, anti-PCA-Tr, anti-Ma/Ta... were negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "Hu; Ri; Yo; PCA-2; CRMP5; PCA-Tr; Ma/Ta",
+      "quote": "anti-Hu, anti-Ri, anti-Yo, anti-PCA-2, anti-CRMP5, anti-PCA-Tr, anti-Ma/Ta",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "Anti-GAD antibodies were detected in the CSF as well.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-GAD antibodies",
+      "quote": "Anti-GAD antibodies were detected in the CSF as well.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "normal",
+      "quote": "white cell count within the normal range",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "rectus abdominis, paraspinals (PSP), sternocleidomastoid (SCM), deltoid",
+      "quote": "reflex EMG activity initially seen at rectus abdominis... rostral to caudal recruitment of the paraspinals (PSP) and sternocleidomastoid (SCM)... R deltoid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "hyperexcitability neurophysiology study (exteroceptive reflex testing). Following the right median nerve stimulation, there was evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus.",
+      "quote": "The patient underwent a hyperexcitability neurophysiology study (exteroceptive reflex testing). Following the right medial nerve stimulation, there was evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus supporting the diagnosis of anti-GAD antibody-associated stiff person syndrome (Table 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "1",
+      "quote": "evidence of positive exteroceptive reflexes typical of spinal reflex myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "All scans were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "the patient underwent a whole-body PET scan which was normal. A bone marrow aspirate and trephine were similarly unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "worsening",
+      "quote": "Five years later, while being treated with steroids (10mg daily) and mycophenolate mofetil (500mg twice a day), she developed signs and symptoms consistent with stiff person syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG; PLEX; RXB; other",
+      "quote": "three days of intravenous (IV) 1g methylprednisolone and three days of IV immunoglobulins (IVIG; 2g/Kg), followed by monthly IVIG treatment and a tapering dose of oral prednisolone... five alternate day sessions of plasma exchange... Rituximab (375mg/m2 weekly for 4 weeks)... Mycophenolate mofetil was subsequently introduced as a maintenance immunosuppressive treatment",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IV methylprednisolone 1g daily for 3 days; IVIG 2g/Kg over 3 days, then monthly; oral prednisolone tapering dose, maintained at 10mg daily; plasma exchange 5 alternate day sessions; Rituximab 375mg/m2 weekly for 4 weeks, repeated 1g IV; Mycophenolate mofetil 500mg bd",
+      "quote": "three days of intravenous (IV) 1g methylprednisolone and three days of IV immunoglobulins (IVIG; 2g/Kg), followed by monthly IVIG treatment and a tapering dose of oral prednisolone... five alternate day sessions of plasma exchange... Rituximab (375mg/m2 weekly for 4 weeks)... repeat the Rituximab treatment (1g IV). Mycophenolate mofetil was subsequently introduced as a maintenance immunosuppressive treatment (initially 500mg bd) together with prednisolone 10mg daily.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "stabilisation",
+      "quote": "five alternate day sessions of plasma exchange resulting in symptom stabilization; Two months after the rituximab induction course was completed, the patient reported subjective improvement in her mobility and balance despite ongoing signs of cerebellar dysfunction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "diabetes",
+      "quote": "the patient was diagnosed with insulin-dependent diabetes mellitus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient had unexplained weight loss (16kg over 18 months) as a prominent early feature. No EEG was performed. The paper discusses that patients with both SPS and cerebellar ataxia have higher intrathecal synthesis of GAD antibody.",
+      "quote": "unexplained weight loss (16kg over 18 months); The patient did not have an EEG; Those patients who develop stiff person syndrome and cerebellar ataxia have a higher intrathecal synthesis of the GAD antibody compared with patients who present with isolated stiff person syndrome",
+      "confidence": "high"
+    }
+  ]
+}

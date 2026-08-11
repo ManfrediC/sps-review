@@ -1,0 +1,980 @@
+{
+  "paper_id": "554",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "554",
+      "quote": "Paper ID: 554",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2010",
+      "quote": "Stiff-person syndrome treated with rituximab. BMJ case reports. 2010;2010(101526291).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Stiff-person syndrome treated with rituximab. BMJ case reports. 2010;2010(101526291).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "41",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "34",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "12",
+      "quote": "The effect of the treatment has lasted for about 1 year",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "SPS was proposed as a possible diagnosis and tests for anti-glutamic acid decarboxylase (GAD) antibodies were performed showing a positive result in high titres. Together with an electromyography showing continuous motor activity with normal morphology both on paravertebral and abdominal muscles, the evidences allowed us to make the diagnosis of SPS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "axial_lumbar",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "explicitly_present",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission. Three months before seeking our service, she experienced worsening in the frequency and intensity of the spasms, with severe functional limitation, inability to get out of bed and having lost approximately 20 kg (44 lb) during the period.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission with a progressive course.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "The patient underwent a thorough investigation for occult neoplasm, which was negative. SPS was proposed as a possible diagnosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "occult neoplasm",
+      "quote": "The patient underwent a thorough investigation for occult neoplasm, which was negative. SPS was proposed as a possible diagnosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine. The second infusion occurred 15 days after the first one and the next day she tolerated oral diazepam without spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "axial_lumbar",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine. The second infusion occurred 15 days after the first one and the next day she tolerated oral diazepam without spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "A 41-year-old female patient presented with a history of rigidity to the abdominal wall and paravertebral muscles associated with painful spasms in the lower back region, increased tonus on the shoulder and paravertebral region, and an exaggerated lumbar lordosis beginning 7 years prior to admission",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "2",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine. The second infusion occurred 15 days after the first one and the next day she tolerated oral diazepam without spasms. She did not show any side effects to the medication and was dismissed 8 days after the second infusion to outpatient follow-up. The effect of the treatment has lasted for about 1 year and, so far, monotherapy with rituximab seems to be a good choice for the treatment; however it may not be enough for maintaining remission because our patient still needs to use benzodiazepines as symptomatic drugs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features, neurophysiological exams and serological testing for antiGAD antibodies",
+      "quote": "Our patient was diagnosed based on clinical features, neurophysiological exams and serological testing for antiGAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Our patient was diagnosed based on clinical features, neurophysiological exams and serological testing for antiGAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Our patient was diagnosed based on clinical features, neurophysiological exams and serological testing for antiGAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Together with an electromyography showing continuous motor activity with normal morphology both on paravertebral and abdominal muscles, the evidences allowed us to make the diagnosis of SPS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "The patient underwent a thorough investigation for occult neoplasm, which was negative. SPS was proposed as a possible diagnosis and tests for anti-glutamic acid decarboxylase (GAD) antibodies were performed showing a positive result in high titres.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "tests for anti-glutamic acid decarboxylase (GAD) antibodies were performed showing a positive result in high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "tests for anti-glutamic acid decarboxylase (GAD) antibodies were performed showing a positive result in high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "not_tested",
+      "quote": "SPS is also associated with anti-pancreatic islet cell antibodies and anti-amphiphysin antibodies. The first one is associated with diabetes, which was ruled out in our patient, and the second one is associated with paraneoplastic syndromes. Since the investigation was negative and the financial resources of our service are limited, we did not investigate these antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Together with an electromyography showing continuous motor activity with normal morphology both on paravertebral and abdominal muscles, the evidences allowed us to make the diagnosis of SPS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "paravertebral and abdominal muscles",
+      "quote": "Together with an electromyography showing continuous motor activity with normal morphology both on paravertebral and abdominal muscles, the evidences allowed us to make the diagnosis of SPS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "The patient underwent a thorough investigation for occult neoplasm, which was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine. The second infusion occurred 15 days after the first one and the next day she tolerated oral diazepam without spasms. She did not show any side effects to the medication and was dismissed 8 days after the second infusion to outpatient follow-up. The effect of the treatment has lasted for about 1 year and, so far, monotherapy with rituximab seems to be a good choice for the treatment; however it may not be enough for maintaining remission because our patient still needs to use benzodiazepines as symptomatic drugs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, botulinum_toxin",
+      "quote": "The patient’s response to the symptomatic treatment with intravenous diazepam and application of botulinum toxin type A was moderate requiring high doses of benzodiazepine; she also did not tolerate our attempts to change the intravenous to oral medication.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "RXB",
+      "quote": "we decided to try rituximab for the treatment of SPS based on recent papers showing evidence of a good and safe response.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "dose 375 mg/m 2",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine. The second infusion occurred 15 days after the first one and the next day she tolerated oral diazepam without spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Two days after the infusion of rituximab (dose 375 mg/m 2) she started showing decrease in the muscular tonus and required a progressively smaller dose of intravenous benzodiazepine. The second infusion occurred 15 days after the first one and the next day she tolerated oral diazepam without spasms. She did not show any side effects to the medication and was dismissed 8 days after the second infusion to outpatient follow-up. The effect of the treatment has lasted for about 1 year and, so far, monotherapy with rituximab seems to be a good choice for the treatment; however it may not be enough for maintaining remission because our patient still needs to use benzodiazepines as symptomatic drugs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "The patient’s response to the symptomatic treatment with intravenous diazepam and application of botulinum toxin type A was moderate requiring high doses of benzodiazepine; she also did not tolerate our attempts to change the intravenous to oral medication.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "intravenous diazepam",
+      "quote": "The patient’s response to the symptomatic treatment with intravenous diazepam and application of botulinum toxin type A was moderate requiring high doses of benzodiazepine; she also did not tolerate our attempts to change the intravenous to oral medication.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "The patient’s response to the symptomatic treatment with intravenous diazepam and application of botulinum toxin type A was moderate requiring high doses of benzodiazepine; she also did not tolerate our attempts to change the intravenous to oral medication.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "The patient’s response to the symptomatic treatment with intravenous diazepam and application of botulinum toxin type A was moderate requiring high doses of benzodiazepine; she also did not tolerate our attempts to change the intravenous to oral medication.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

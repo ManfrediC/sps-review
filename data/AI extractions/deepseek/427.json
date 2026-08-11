@@ -1,0 +1,980 @@
+{
+  "paper_id": "427",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "427",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2006",
+      "quote": "Clin Ter 2006; 157 (3): 237-239",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case report Clin Ter 2006; 157 (3): 237-239",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "a 49-year-old housewife",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "49",
+      "quote": "a 49-year-old housewife",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "49",
+      "quote": "a 49-year-old housewife, S. P., who came to our observation in September 2002. The patient had complained, already for two months, of weakness in the dorsi-flexion of the left foot and reported a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "2",
+      "quote": "The patient had complained, already for two months, of weakness in the dorsi-flexion of the left foot and reported a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb. ... S. P. was discharged with a diagnosis of 'stiff person syndrome and dysimmune mononeuropathy of the left peroneal nerve'.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "The patient had complained, already for two months, of weakness in the dorsi-flexion of the left foot and reported a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, spasms, gait_dysfunction",
+      "quote": "The patient had complained, already for two months, of weakness in the dorsi-flexion of the left foot and reported a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "S. P. was discharged with a diagnosis of 'stiff person syndrome and dysimmune mononeuropathy of the left peroneal nerve'.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "The patient had complained, already for two months, of weakness in the dorsi-flexion of the left foot and reported a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb. ... the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side - and of the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side - and of the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "the stiffness affecting ... the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "the stiffness affecting ... the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "the stiffness affecting ... the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side - and of the abdominal and para-vertebral muscles.",
+      "quote": "the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side - and of the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side - and of the abdominal and para-vertebral muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "asymmetrical_involvement",
+      "quote": "the stiffness affecting the extensor and flexor area of lower limbs - mainly on the left side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_abdominal, axial_lumbar, prox_LE",
+      "quote": "a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "para-vertebral muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "weakness",
+      "quote": "weakness in the dorsi-flexion of the left foot",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "The patient was also reported to have an awkward walking style due to the stiffness ... a slapping gait caused by a left foot drop.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "The patient had complained, already for two months, of weakness in the dorsi-flexion of the left foot and reported a persistent painful contraction",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "There occurred instead an initial relapsing chronic development of muscle manifestations with spasmodic painful contractures so resistant to different - even combined - therapeutic approaches ... to cause repeated hospitalizations.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "the hyperalgic-hypertonic symptomatology got worse, frequently triggered by even moderate environmental and emotional stimuli. ... spastic-painful events worsened by external stimuli ... spasmodic painful contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "the hyperalgic-hypertonic symptomatology got worse ... SPS typical muscle stiffness and pains",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "SPS typical muscle stiffness and pains",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "improvement of the painful lumbar and abdominal muscle contractures",
+      "quote": "improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "spasmodic painful contractures so resistant to different - even combined - therapeutic approaches",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_lumbar, axial_abdominal",
+      "quote": "improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "painful lumbar ... muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "the hyperalgic-hypertonic symptomatology got worse, frequently triggered by even moderate environmental and emotional stimuli. ... spastic-painful events worsened by external stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch; emotional",
+      "quote": "frequently triggered by even moderate environmental and emotional stimuli. ... spastic-painful events worsened by external stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "spastic-painful events worsened by external stimuli",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "spastic-painful events worsened by external stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "the hyperalgic-hypertonic symptomatology got worse, frequently triggered by even moderate environmental and emotional stimuli. ... spastic-painful events worsened by external stimuli",
+      "quote": "the hyperalgic-hypertonic symptomatology got worse, frequently triggered by even moderate environmental and emotional stimuli. ... spastic-painful events worsened by external stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "weakness",
+      "quote": "a progressively greater weakness in the left-foot dorsi-flexion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "the patient can ambulate independently – however slowly and awkwardly – and is able to perform her daily activity, though requiring assistance by relatives.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness, painful muscle contractions), anti-GAD antibodies in serum and CSF, EMG findings (persistent muscle activity, lack of mutual inhibition, temporary interruption with diazepam), response to benzodiazepines.",
+      "quote": "Laboratory tests reported the significant presence of anti-GAD antibodies in the serum ... a persistent muscle activity despite patient's attempt to reach complete relaxation; the temporary interruption of muscle activity upon the infusion of intravenous diazepam boles; the lack of mutual inhibition of certain couples of agonist/antagonist muscles ... S. P. was discharged with a diagnosis of 'stiff person syndrome and dysimmune mononeuropathy of the left peroneal nerve'.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The patient had complained ... of a persistent painful contraction involving the abdominal and para-vertebral muscles as well as the proximal muscles of the left lower limb. ... the stiffness affecting the extensor and flexor area of lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Laboratory tests reported the significant presence of anti-GAD antibodies in the serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "The EMG of the most affected regions reported: – a persistent muscle activity despite patient's attempt to reach complete relaxation; – the temporary interruption of muscle activity upon the infusion of intravenous diazepam boles; – the lack of mutual inhibition of certain couples of agonist/antagonist muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "the temporary interruption of muscle activity upon the infusion of intravenous diazepam boles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "The MRI of the head was unremarkable and MRI of the spine revealed slight lumbar spondylartrhosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Laboratory tests reported the significant presence of anti-GAD antibodies in the serum (EIA: 2. 000 U. GAD; positive value>1. 050) ... Laboratory examinations confirmed the anti-GAD (65 and 67 KD variants) antibodies in the serum (RIA: 179 U/ml; normal value<1 U/ml)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "179",
+      "quote": "RIA: 179 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/ml",
+      "quote": "RIA: 179 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); GM1; sulfatide; islet cell autoantibodies (ICA); tyrosin phosphatase IA2; anti-thyroid; anti-pancreatic islet; anti-neural",
+      "quote": "anti-GAD antibodies in the serum (EIA: 2. 000 U. GAD) ... anti-GAD (65 and 67 KD variants) antibodies in the serum (RIA: 179 U/ml) ... islet cell autoantibodies (ICA-IgG: 40 UJDF) ... tyrosin phosphatase IA2 antibodies (16, 8 U/ml) ... serum antibodies of IgM class, anti GM1 (1/640) and anti-sulfatide antibodies (1/16000) ... research for anti-thyroid/anti-pancreatic islet antibodies, anti-neural antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "EIA; RIA",
+      "quote": "EIA: 2. 000 U. GAD ... RIA: 179 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-GAD antibodies also present in CSF (44 units/ml, RIA). IgM anti-GM1 and anti-sulfatide antibodies also detected.",
+      "quote": "a CSF control reported anti-GAD antibodies in the fluid at a dosage of 44 units/ml (RIA normal value<1). ... serum antibodies of IgM class, anti GM1 (1/640; normal value<1/640) and anti-sulfatide antibodies (1/16000; normal value<1/16000)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "anti-GAD antibodies in the serum ... a CSF control reported anti-GAD antibodies in the fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "RIA: 179 U/ml; normal value<1 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": ">= 20 nmol/L (RIA)",
+      "quote": "RIA: 179 U/ml; normal value<1 U/ml",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Laboratory tests reported the significant presence of anti-GAD antibodies in the serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "anti-GAD (65 and 67 KD variants) antibodies in the serum (RIA: 179 U/ml; normal value<1 U/ml)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_positive",
+      "quote": "serum antibodies of IgM class, anti GM1 (1/640; normal value<1/640) and anti-sulfatide antibodies (1/16000; normal value<1/16000)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "anti-GM1; anti-sulfatide",
+      "quote": "serum antibodies of IgM class, anti GM1 (1/640; normal value<1/640) and anti-sulfatide antibodies (1/16000; normal value<1/16000)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "a CSF control reported anti-GAD antibodies in the fluid at a dosage of 44 units/ml (RIA normal value<1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-GAD",
+      "quote": "a CSF control reported anti-GAD antibodies in the fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "44",
+      "quote": "a dosage of 44 units/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "an increase in the cerebrospinal fluid (CSF) proteins (51 mg/dl; normal value 0-45) with regular alkaline fractions upon CSF isoelectrofocusing.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "51 mg/dl",
+      "quote": "an increase in the cerebrospinal fluid (CSF) proteins (51 mg/dl; normal value 0-45)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "a persistent muscle activity despite patient's attempt to reach complete relaxation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "left vastus medialis, thigh left biceps, left peroneal nerve, right peroneal nerve, right and left median nerves, right and left ulnar nerves, right and left posterior tibial nerves",
+      "quote": "left vastus medialis/ thigh left biceps ... a motor neuropathy of the left peroneal nerve ... the nervous conduction of the right peroneal nerve, right and left median nerves, right and left ulnar nerves and right and left posterior tibial nerves was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle EMG of most affected regions; nerve conduction studies of peroneal, median, ulnar, and posterior tibial nerves; assessment of persistent muscle activity at rest, mutual inhibition of agonist/antagonist muscles, and response to intravenous diazepam bolus.",
+      "quote": "The EMG of the most affected regions reported: – a persistent muscle activity despite patient's attempt to reach complete relaxation; – the temporary interruption of muscle activity upon the infusion of intravenous diazepam boles; – the lack of mutual inhibition of certain couples of agonist/antagonist muscles (left vastus medialis/ thigh left biceps); – a motor neuropathy of the left peroneal nerve with motor conduction block ... with normal sensory conduction and absence of F-wave. – the nervous conduction of the right peroneal nerve, right and left median nerves, right and left ulnar nerves and right and left posterior tibial nerves was normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "The MRI of the head was unremarkable and MRI of the spine revealed slight lumbar spondylartrhosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "X-ray examinations (chest, left knee and coxo-femoral joint), abdominal ultrasound scan ... neoplastic markers) performed during her hospitalization were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "The treatment led to improvement of the painful lumbar and abdominal muscle contractures so that the patient can ambulate independently – however slowly and awkwardly – and is able to perform her daily activity, though requiring assistance by relatives.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, antiepileptic, other",
+      "quote": "oral diazepam (30 mg/day), sodium valproate (300 mg/twice a day), cyclosporine (150 mg/day, divided into two doses) and baclofen (25 mg/three times a day), monthly IVIG booster doses (1g/kg/day for two days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; PLEX; Aza; other",
+      "quote": "A total dose of 2 g/kg IVIG was administered over five days. ... the patient received 4 plasmapheresis treatments. ... she began to be treated with immunosuppressants: namely with azathioprine, suspended because of liver damage, and then with cyclosporine.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IVIG: initial 2 g/kg over 5 days, then monthly boosters increased from 1 g/kg to 2 g/kg, eventually 1g/kg/day for two days monthly. Plasmapheresis: 4 sessions in January 2003, 2 more in February 2003. Azathioprine: started, suspended due to liver damage. Cyclosporine: 150 mg/day.",
+      "quote": "A total dose of 2 g/kg IVIG was administered over five days. ... the patient received 4 plasmapheresis treatments. ... two more plasmapheresis sessions performed in February 2003 ... she began to be treated with immunosuppressants: namely with azathioprine, suspended because of liver damage, and then with cyclosporine. ... the IVIG monthly booster posology increase (from 1 g/kg to 2 g/kg) ... monthly IVIG booster doses (1g/kg/day for two days) ... cyclosporine (150 mg/day, divided into two doses)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Fifteen days later, the dorsi-flexion of the left foot had remarkably improved with the resolution of the conduction block ... spastic-painful events worsened by external stimuli, occurring also during previous plasma exchanges, had practically disappeared.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "Current treatment includes oral diazepam (30 mg/day), sodium valproate (300 mg/twice a day), cyclosporine (150 mg/day, divided into two doses) and baclofen (25 mg/three times a day)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "Diazepam 10 mg three times a day initially, increased to 15 mg three times a day, then 30 mg/day. Baclofen 25 mg three times a day. Tiagabine 5 mg three times a day, increased to 10 mg three times a day. Sodium valproate 300 mg twice a day. Vigabatrin also tried.",
+      "quote": "10 mg oral diazepam three times a day ... Baclofen (25 mg per os three times a day), tiagabine (5 mg per os three times a day) ... a further increase in the doses of administered tiagabine (10mg/three times a day) and diazepam (15 mg/three times a day) ... oral diazepam (30 mg/day), sodium valproate (300 mg/twice a day) ... baclofen (25 mg/three times a day) ... anti-epileptic drugs, in the attempt to increase the inhibitory processes in motor activity control (sodium valproate and vigabatrin).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "The treatment led to improvement of the painful lumbar and abdominal muscle contractures so that the patient can ambulate independently",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "The treatment led to improvement of the painful lumbar and abdominal muscle contractures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "insulin therapy, substitutive thyroid therapy",
+      "quote": "insulin therapy ... associated with substitutive insulin and thyroid therapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "multiple",
+      "quote": "she was diagnosed Diabetes Mellitus, Type 1. ... she was diagnosed a Hashimoto's thyroiditis in subclinical hypothyroidism.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "Diabetes Mellitus Type 1; Hashimoto's thyroiditis",
+      "quote": "she was diagnosed Diabetes Mellitus, Type 1. ... she was diagnosed a Hashimoto's thyroiditis in subclinical hypothyroidism.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Associated with left peroneal motor mononeuropathy with conduction block, positive for IgM anti-GM1 and anti-sulfatide antibodies, which resolved with IVIG. Patient also developed diabetes mellitus type 1 and Hashimoto's thyroiditis during follow-up.",
+      "quote": "an unusual case of autoimmune SPS associated with an exclusively motor left peroneal nerve neuropathy, with conduction block ... the existence of IgM class anti-GM1 and anti-sulfatide antibodies ... she was diagnosed Diabetes Mellitus, Type 1 ... she was diagnosed a Hashimoto's thyroiditis",
+      "confidence": "high"
+    }
+  ]
+}

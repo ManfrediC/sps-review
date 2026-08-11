@@ -1,0 +1,980 @@
+{
+  "paper_id": "1861",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "1861",
+      "quote": "Paper ID: 1861",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2020",
+      "quote": "Case Rep Neurol 2020; 12: 24–26",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case Report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 64 -year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "64",
+      "quote": "A 64 -year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "60",
+      "quote": "reported having had rigidity while walking 4 years before her consultation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "36",
+      "quote": "She consulted with us for the first time in 2017",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "36",
+      "quote": "She consulted with us for the first time in 2017",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "reported having had rigidity while walking 4 years before her consultation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "Based on the complete clinical presentation and complementary studies, the diagnosis of stiff person syndrome (SPS) was considered.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "reported having had rigidity while walking 4 years before her consultation, involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "reported having had rigidity while walking 4 years before her consultation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.” ... complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "reported having had rigidity while walking 4 years before her consultation, involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "present",
+      "quote": "she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as a “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "generalised",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "involuntary tongue movements; biting of the oral mucosa; postural tremor",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen. ... complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "reported having had rigidity while walking 4 years before her consultation",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "reported having had rigidity while walking 4 years before her consultation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "A diagnosis of tardive dyskinesia was done",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "tardive dyskinesia",
+      "quote": "A diagnosis of tardive dyskinesia was done",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "Knowing that rigidity had not improved within a 2-year time lapse",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "GENERALISED RULE: if the paper states generalised, whole-body or diffuse stiffness, code present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as a “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "involuntary tongue movements, biting of the oral mucosa, as well as a “jumping” sensation of her abdomen.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "involuntary tongue movements; biting of the oral mucosa; postural tremor",
+      "quote": "complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "complaining of jerky movements, with stiff sensation of her neck and trunk with hyperextension ; moreover, she mentioned a stiff abdomen, postural tremor, trunk and limb action, as well as “robotic gait.”",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features such as stiffness/spasms/ hyperlordosis, positive antibodies such as anti-GAD, EMG showing continuous motor-unit activity, response to benzodiazepines",
+      "quote": "Based on the complete clinical presentation and complementary studies, the diagnosis of stiff person syndrome (SPS) was considered.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Based on the complete clinical presentation and complementary studies, the diagnosis of stiff person syndrome (SPS) was considered.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "the glutamic acid decarboxylase 65 (GAD65) Ab were 2. 5 (<0. 02)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "We requested an electromyography that revealed the presence of intermittent contractions of the phasic type at rest, at a frequency of 6 Hz in virtually all the evaluated muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "She was started on diazepam 10 mg t.i.d . and baclofen 20 mg t.i.d., without improvement in the following 2 weeks; after that we initiated clonazepam 2 mg b.i.d., also without any clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "A diagnosis of tardive dyskinesia was done, and she was started on tetrabenazine 25 mg t.i.d. without any improvement, quitting after 1 year of treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "multiple",
+      "quote": "New immunological and paraneoplastic laboratories requested concluded positivity for AChRGN Ab 0. 06 (<0. 02) and GAD65 Ab 9 (<5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "AChRGN Ab; GAD65 Ab",
+      "quote": "positivity for AChRGN Ab 0. 06 (<0. 02) and GAD65 Ab 9 (<5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD65); acetylcholine receptor ganglionic neuronal (AChRGN); antineuronal nuclear Ab (ANNA)-1; ANNA-2; ANNA-3; antiglial nuclear Ab (AGNA)-1; Purkinje cell Ab (PCA)-1; PCA-2; PCA-Tr; amphiphysin Ab; CRMP-5-IgG; striational muscle Ab; P/Q type calcium channel; N-type calcium channel; Ach receptor Ab; neuronal K+ channel Ab",
+      "quote": "New immunological and paraneoplastic laboratories requested concluded positivity for AChRGN Ab 0. 06 (<0. 02) and GAD65 Ab 9 (<5), with the rest being negative, emphasizing antineuronal nuclear Ab (ANNA)-1, ANNA-2, ANNA-3, antiglial nuclear Ab (AGNA)-1, Purkinje cell Ab (PCA)-1, PCA-2, PCA-Tr, amphiphysin Ab, CRMP-5-IgG, striational muscle Ab, P/Q type calcium channel, N-type calcium channel, Ach receptor Ab, and neuronal K+ channel Ab.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "GAD65 Ab 9 (<5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "with the rest being negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "antineuronal nuclear Ab (ANNA)-1; ANNA-2; ANNA-3; antiglial nuclear Ab (AGNA)-1; Purkinje cell Ab (PCA)-1; PCA-2; PCA-Tr; amphiphysin Ab; CRMP-5-IgG; striational muscle Ab; P/Q type calcium channel; N-type calcium channel; Ach receptor Ab; neuronal K+ channel Ab",
+      "quote": "with the rest being negative, emphasizing antineuronal nuclear Ab (ANNA)-1, ANNA-2, ANNA-3, antiglial nuclear Ab (AGNA)-1, Purkinje cell Ab (PCA)-1, PCA-2, PCA-Tr, amphiphysin Ab, CRMP-5-IgG, striational muscle Ab, P/Q type calcium channel, N-type calcium channel, Ach receptor Ab, and neuronal K+ channel Ab.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "intermittent contractions of the phasic type at rest, at a frequency of 6 Hz in virtually all the evaluated muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "A full-body positron emission tomography was performed in 2019, which showed a small right mammary zone which was biopsied, resulting in a benign lesion.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "with partial improvement, mostly on her gait.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "She was started on diazepam 10 mg t.i.d . and baclofen 20 mg t.i.d., without improvement in the following 2 weeks; after that we initiated clonazepam 2 mg b.i.d., also without any clinical improvement. Knowing that rigidity had not improved within a 2-year time lapse, we decided to give her intravenous immunoglobulin 0. 4 g/kg for 5 days, a 5 -day treatment with plasmapheresis and 2 sessions of rituximab and cyclophosphamide, 500 mg/each in a 4-day frame",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; PLEX; RXB; CP",
+      "quote": "intravenous immunoglobulin 0. 4 g/kg for 5 days, a 5 -day treatment with plasmapheresis and 2 sessions of rituximab and cyclophosphamide, 500 mg/each in a 4-day frame",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "intravenous immunoglobulin 0. 4 g/kg for 5 days, a 5 -day treatment with plasmapheresis and 2 sessions of rituximab and cyclophosphamide, 500 mg/each in a 4-day frame",
+      "quote": "intravenous immunoglobulin 0. 4 g/kg for 5 days, a 5 -day treatment with plasmapheresis and 2 sessions of rituximab and cyclophosphamide, 500 mg/each in a 4-day frame",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "with partial improvement, mostly on her gait.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "after that we initiated clonazepam 2 mg b.i.d., also without any clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "clonazepam 2 mg b.i.d.",
+      "quote": "after that we initiated clonazepam 2 mg b.i.d., also without any clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "none",
+      "quote": "after that we initiated clonazepam 2 mg b.i.d., also without any clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "no",
+      "quote": "after that we initiated clonazepam 2 mg b.i.d., also without any clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "without a relevant family history",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "paper_id": "782",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "782",
+      "quote": "Paper ID: 782",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2017",
+      "quote": "Neurology. 2017;88(5):e38-e41.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "The text is a multi-section clinical reasoning article with a detailed case description, discussion, and references, published in a journal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 35-year-old woman presented",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "35",
+      "quote": "A 35-year-old woman presented",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "14",
+      "quote": "history of accidental falls since age 14",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "4",
+      "quote": "At 2 and 4 months after the diagnosis, the patient reported notable improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "252",
+      "quote": "age at onset 14, age at diagnosis 35 -> (35-14)*12 = 252 months",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "The attacks were heralded by stiffness in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "other",
+      "quote": "A diagnosis of sporadic hyperekplexia was established",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "sporadic hyperekplexia",
+      "quote": "A diagnosis of sporadic hyperekplexia was established",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; startle",
+      "quote": "The attacks were heralded by stiffness in both legs... A sudden and loud clap evoked the exaggerated startle response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "The attacks were heralded by stiffness in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "stiffness in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "stiffness in both legs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "The attacks were heralded by stiffness in both legs",
+      "quote": "The attacks were heralded by stiffness in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "These typically occurred in response to unexpected and sudden stimuli (e.g., noises, unexpected encounters at turnarounds).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; touch; visual",
+      "quote": "unexpected and sudden stimuli (e.g., noises, unexpected encounters at turnarounds)... sudden and vigorous head retraction because of eyedrop administration",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "The attacks were heralded by stiffness in both legs... sudden and vigorous head retraction",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "yes",
+      "quote": "These typically occurred in response to unexpected and sudden stimuli... accidental falls",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "These typically occurred in response to unexpected and sudden stimuli (e.g., noises, unexpected encounters at turnarounds). The attacks were heralded by stiffness in both legs, with the patient fully conscious. On one occasion, she had a sudden and vigorous head retraction because of eyedrop administration at an eye clinic, resulting in head trauma.",
+      "quote": "These typically occurred in response to unexpected and sudden stimuli (e.g., noises, unexpected encounters at turnarounds). The attacks were heralded by stiffness in both legs, with the patient fully conscious. On one occasion, she had a sudden and vigorous head retraction because of eyedrop administration at an eye clinic, resulting in head trauma.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "walking",
+      "quote": "she adopted a toddling gait, walking near walls to curtail falls",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "generalized transient hypertonia during the first years of life; mild delay in motor developmental milestones; left patellar dislocation at age 8",
+      "quote": "The patient's medical history was notable for reports of generalized transient hypertonia during the first years of life, mild delay in motor developmental milestones, and left patellar dislocation at age 8.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "She works in business and the accidents were interfering with her professional life and the need for frequent travel.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "history of accidental falls since age 14",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic_stable",
+      "quote": "history of accidental falls since age 14... symptoms were worse in cold weather and disappeared during sleep",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; startle",
+      "quote": "A neurologic examination showed mild hypertonia in all 4 extremities... A sudden and loud clap evoked the exaggerated startle response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "A neurologic examination showed mild hypertonia in all 4 extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities... positive head retraction reflex",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "A neurologic examination showed mild hypertonia in all 4 extremities, mostly on the left side, and a positive head retraction reflex.",
+      "quote": "A neurologic examination showed mild hypertonia in all 4 extremities, mostly on the left side, and a positive head retraction reflex.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "mild hypertonia in all 4 extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "mild hypertonia in all 4 extremities, mostly on the left side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "A sudden and loud clap evoked the exaggerated startle response, namely forceful contraction of the orbicularis oculi and generalized flexion and stiffening of upper and lower limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch",
+      "quote": "A sudden and loud clap evoked the exaggerated startle response... positive head retraction reflex. This is a sudden and violent backward jerking of the head after tapping on the root of the nose.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "brief_jerk; generalised_startle_pattern; sustained_contraction",
+      "quote": "forceful contraction of the orbicularis oculi and generalized flexion and stiffening of upper and lower limbs... sudden and violent backward jerking of the head",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "This abnormal response will often cause the patient to fall forward, without any loss of consciousness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "A sudden and loud clap evoked the exaggerated startle response, namely forceful contraction of the orbicularis oculi and generalized flexion and stiffening of upper and lower limbs. ... a positive head retraction reflex. This is a sudden and violent backward jerking of the head after tapping on the root of the nose.",
+      "quote": "A sudden and loud clap evoked the exaggerated startle response, namely forceful contraction of the orbicularis oculi and generalized flexion and stiffening of upper and lower limbs. ... a positive head retraction reflex. This is a sudden and violent backward jerking of the head after tapping on the root of the nose.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "walking",
+      "quote": "she adopted a toddling gait, walking near walls to curtail falls",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "wide-based gait; toddling quality; brisk deep tendon reflexes",
+      "quote": "The patient had a wide-based gait, with a toddling quality. Deep tendon reflexes were brisk on all 4 limbs, except the left knee (1/4), where surgery had been performed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "2",
+      "quote": "She works in business and the accidents were interfering with her professional life and the need for frequent travel.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical presentation of hyperstartling, stiffness, accidental falls, exaggerated startle response, positive head retraction reflex, wide-based gait, and genetic testing confirming Arg271Gln mutation in GLRA1.",
+      "quote": "Amplification and direct sequencing of genomic coding DNA and splicing regions, using DNA from the patient's peripheral blood, confirmed the presence of the Arg271Gln mutation in heterozygosity. A diagnosis of sporadic hyperekplexia was established",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "A neurologic examination showed mild hypertonia in all 4 extremities... A sudden and loud clap evoked the exaggerated startle response... positive head retraction reflex... wide-based gait",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "not_used",
+      "quote": "routine laboratory tests, including AntiGADAb, were all normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "EMG can help in the differential diagnosis with SPS and PERM, as constant muscle activity will be detected in these 2 conditions.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Contrast-enhanced MRI of the brain and spinal cord showed congenital, low-lying cerebellar tonsils, without full criteria for Arnold-Chiari malformation, and was otherwise unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Startle-induced epilepsy can be excluded by preserved consciousness during attacks as well as lack of major developmental delays.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "routine laboratory tests, including AntiGADAb, were all normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD)",
+      "quote": "routine laboratory tests, including AntiGADAb, were all normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "neither_specified",
+      "quote": "routine laboratory tests, including AntiGADAb, were all normal",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "routine laboratory tests, including AntiGADAb, were all normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "routine laboratory tests, including AntiGADAb, were all normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "Contrast-enhanced MRI of the brain and spinal cord showed congenital, low-lying cerebellar tonsils, without full criteria for Arnold-Chiari malformation, and was otherwise unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "congenital, low-lying cerebellar tonsils, without full criteria for Arnold-Chiari malformation",
+      "quote": "Contrast-enhanced MRI of the brain and spinal cord showed congenital, low-lying cerebellar tonsils, without full criteria for Arnold-Chiari malformation, and was otherwise unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "At 2 and 4 months after the diagnosis, the patient reported notable improvement... The patient's quality of life has notably improved and she has been able to return to her highly demanding job.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "The patient was started on clonazepam, 0.625 mg per day, slowly increased to 1.25 mg per day.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "The patient was started on clonazepam, 0.625 mg per day, slowly increased to 1.25 mg per day.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "clonazepam, 0.625 mg per day, slowly increased to 1.25 mg per day",
+      "quote": "The patient was started on clonazepam, 0.625 mg per day, slowly increased to 1.25 mg per day.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "At 2 and 4 months after the diagnosis, the patient reported notable improvement... The patient's quality of life has notably improved",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "At 2 and 4 months after the diagnosis, the patient reported notable improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "Physical therapy",
+      "quote": "Physical therapy was also initiated, to improve stability of the torso and limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "SPSD",
+      "quote": "Her 3-year-old son... has been confirmed to be heterozygous for the same maternal mutation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "Her 3-year-old son has a congenital wedging of T12 and L1 vertebrae, surgically corrected inguinal hernia, and had mild hypertonia at birth. He has been confirmed to be heterozygous for the same maternal mutation.",
+      "quote": "Her 3-year-old son has a congenital wedging of T12 and L1 vertebrae, surgically corrected inguinal hernia, and had mild hypertonia at birth. He has been confirmed to be heterozygous for the same maternal mutation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient was diagnosed with sporadic hyperekplexia due to a de novo Arg271Gln mutation in the GLRA1 gene, not stiff-person syndrome. The paper discusses the differential diagnosis between hyperekplexia and SPS/PERM.",
+      "quote": "A diagnosis of sporadic hyperekplexia was established... EMG can help in the differential diagnosis with SPS and PERM",
+      "confidence": "high"
+    }
+  ]
+}

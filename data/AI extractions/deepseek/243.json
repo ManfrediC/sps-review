@@ -1,0 +1,980 @@
+{
+  "paper_id": "243",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "243",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2004",
+      "quote": "Annals of neurology. 2004;55(2):286-90.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Full text with structured sections (Patients and Methods, Results, Discussion), references, and detailed case description.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 62-year-old woman was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "62",
+      "quote": "A 62-year-old woman was admitted",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "62",
+      "quote": "Three weeks before admission, the patient noticed progressive rigidity and stiffness of the right proximal leg and lower back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "Three weeks before admission, the patient noticed progressive rigidity and stiffness of the right proximal leg and lower back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "paraneoplastic SMS was diagnosed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks... She also had episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "progressive rigidity and stiffness of the right proximal leg and lower back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "stiffness of the ... lower back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "stiffness of the right proximal leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "spread to the right foot and to the left leg within 2 weeks, resulting in bilateral fixed plantar flexion and inversion of feet and toes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Three weeks before admission, the patient noticed progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks, resulting in bilateral fixed plantar flexion and inversion of feet and toes.",
+      "quote": "Three weeks before admission, the patient noticed progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks, resulting in bilateral fixed plantar flexion and inversion of feet and toes.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "asymmetrical_involvement",
+      "quote": "stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "She also had episodes of painful spasms in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "prox_LE",
+      "quote": "painful spasms in both legs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; emotional",
+      "quote": "aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful spasms in both legs, which were aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "She also had episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset that disappeared during sleep.",
+      "quote": "She also had episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset that disappeared during sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "rhabdomyolysis",
+      "quote": "A 62-year-old woman was admitted for fever, malaise, generalized myalgia, and dark-colored urine. Laboratory tests showed hyperkalemia, myoglobinuria, and elevated serum levels of creatine kinase and myoglobin... A diagnosis of rhabdomyolysis of unknown cause was made.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks, resulting in bilateral fixed plantar flexion and inversion of feet and toes... The patient remained wheelchair-bound",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "progressive rigidity and stiffness... spread to the right foot and to the left leg within 2 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "A diagnosis of rhabdomyolysis of unknown cause was made.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "rhabdomyolysis of unknown cause",
+      "quote": "A diagnosis of rhabdomyolysis of unknown cause was made.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "The patient remained wheelchair-bound despite the oral medication... she unexpectedly deteriorated with signs of an acute systemic infection... and died 2 days later of septic shock.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg... episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "The patient remained wheelchair-bound despite the oral medication... profound improvement of her rigidity, allowing her to walk with assistance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "stiffness of the ... lower back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "stiffness of the right proximal leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "spread to the right foot and to the left leg... resulting in bilateral fixed plantar flexion and inversion of feet and toes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Three weeks before admission, the patient noticed progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks, resulting in bilateral fixed plantar flexion and inversion of feet and toes.",
+      "quote": "Three weeks before admission, the patient noticed progressive rigidity and stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks, resulting in bilateral fixed plantar flexion and inversion of feet and toes.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "stiffness of the right proximal leg and lower back that spread to the right foot and to the left leg within 2 weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "episodes of painful spasms in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "prox_LE",
+      "quote": "painful spasms in both legs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; emotional",
+      "quote": "aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful spasms in both legs, which were aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "She also had episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset that disappeared during sleep.",
+      "quote": "She also had episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset that disappeared during sleep.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "rhabdomyolysis",
+      "quote": "six severe episodes of rhabdomyolysis occurred intermittently",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "The patient remained wheelchair-bound despite the oral medication... profound improvement of her rigidity, allowing her to walk with assistance",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features (rigidity, stiffness, painful spasms aggravated by sudden noise or emotional upset), EMG (continuous motor unit activity at rest), antibody testing (positive for antiamphiphysin 1 antibodies in serum and CSF), exclusion of mimics (normal MRI, normal nerve conduction), and response to treatment (spasms alleviated by clonazepam and prednisolone; improvement with IVIG).",
+      "quote": "Based on these findings, paraneoplastic SMS was diagnosed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "progressive rigidity and stiffness... episodes of painful spasms in both legs, which were aggravated by sudden noise or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "serum and cerebrospinal fluid were positive for antiamphiphysin 1 antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electromyography of paraspinal and lower limb muscles showed continuous motor unit activity at rest.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "The painful spasms were alleviated by oral treatment with clonazepam and prednisolone... profound improvement of her rigidity, allowing her to walk with assistance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Magnetic resonance imaging of the brain and spinal cord was normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Magnetic resonance imaging of the brain and spinal cord was normal. Peripheral and central nervous sensory and motor conduction was normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "amphiphysin",
+      "quote": "serum and cerebrospinal fluid were positive for antiamphiphysin 1 antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); amphiphysin 1; amphiphysin 2",
+      "quote": "Antibodies against GAD were not detected, but serum and cerebrospinal fluid were positive for antiamphiphysin 1 antibodies... the presence of antibodies against both amphiphysin 1 and 2 in the serum of Patient 1",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "Western blot; immunofluorescence",
+      "quote": "Western blotting of rat tissues, cell transfection, and immunofluorescence of transfected cells were performed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Antibodies against amphiphysin 2 were of lower titer and, in the case of m-amphiphysin 2, recognized only native epitopes.",
+      "quote": "Antibodies against amphiphysin 2 were of lower titer and, in the case of m-amphiphysin 2, recognized only native epitopes.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "serum and cerebrospinal fluid were positive for antiamphiphysin 1 antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "serum and cerebrospinal fluid were positive for antiamphiphysin 1 antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Antibodies against GAD were not detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_positive",
+      "quote": "serum and cerebrospinal fluid were positive for antiamphiphysin 1 antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "inflammatory",
+      "quote": "Cerebrospinal fluid examination showed lymphocytic pleocytosis, an increased IgG index, oligoclonal bands, and a protein content of 0. 6 gm L-1.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "increased IgG index, oligoclonal bands",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "0.6 gm L-1",
+      "quote": "protein content of 0. 6 gm L-1",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Electromyography of paraspinal and lower limb muscles showed continuous motor unit activity at rest.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "paraspinal, lower limb muscles",
+      "quote": "Electromyography of paraspinal and lower limb muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Magnetic resonance imaging of the brain and spinal cord was normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "A breast nodule was identified by mammography and surgically removed. Histopathology showed poorly differentiated invasive ductal adenocarcinoma with regional lymph node metastasis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "poorly differentiated invasive ductal adenocarcinoma of the breast with regional lymph node metastasis",
+      "quote": "Histopathology showed poorly differentiated invasive ductal adenocarcinoma with regional lymph node metastasis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "This resulted in a profound improvement of her rigidity, allowing her to walk with assistance. Furthermore, rhabdomyolysis ceased to occur.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "The painful spasms were alleviated by oral treatment with clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG",
+      "quote": "high-dose methylprednisolone... high-dose intravenous methylprednisolone... intravenous human immunoglobulin (400mg kg-1 for 5 days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "high-dose methylprednisolone over several days; high-dose intravenous methylprednisolone for rhabdomyolysis episodes; intravenous human immunoglobulin 400mg kg-1 for 5 days",
+      "quote": "high-dose methylprednisolone over several days... high-dose intravenous methylprednisolone... intravenous human immunoglobulin (400mg kg-1 for 5 days)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "This resulted in a profound improvement of her rigidity, allowing her to walk with assistance. Furthermore, rhabdomyolysis ceased to occur.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "The painful spasms were alleviated by oral treatment with clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "oral clonazepam",
+      "quote": "oral treatment with clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "The painful spasms were alleviated by oral treatment with clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "The painful spasms were alleviated by oral treatment with clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "surgical removal of breast nodule",
+      "quote": "A breast nodule was identified by mammography and surgically removed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "Family history was unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had recurrent rhabdomyolysis as a paraneoplastic manifestation. Autopsy showed motor neuron loss in anterior horn of lumbar spinal cord with T-lymphocyte infiltration, and muscle fiber atrophy/necrosis with macrophage infiltration. Antibodies recognized native epitopes of muscle amphiphysin 2.",
+      "quote": "Pathological examination showed a moderately reduced number of motor neurons in the anterior horn of the lumbar spinal cord... Scattered CD3- and CD8-positive T-lymphocytes were present... In skeletal muscle, many muscle fibers appeared severely atrophic... or were infiltrated by CD68-positive macrophages, indicating phagocytosis and necrosis... the two patient sera recognize only native epitopes in m-amphiphysin 2",
+      "confidence": "high"
+    }
+  ]
+}

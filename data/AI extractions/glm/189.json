@@ -1,0 +1,980 @@
+{
+  "paper_id": "189",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "189",
+      "quote": "Paper ID: 189",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1999",
+      "quote": "The Journal of the Association of Physicians of India. 1999;47(8):836.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Stiff-man syndrome--diagnostic criteria and pitfalls. The Journal of the Association of Physicians of India. 1999;47(8):836.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "We describe a man who presented with features of the syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "South_Asian",
+      "quote": "Dept. of Medicine, Seth GS Medical College and KEM Hospital, Mumbai, India",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "40",
+      "quote": "A 40 years old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "40",
+      "quote": "A 40 years old man with normal family and personal history developed a low grade fever associated with a feeling of tightness of the anterior abdominal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "developed a low grade fever associated with a feeling of tightness of the anterior abdominal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "The above patient had most of the classical features of the stiff-man syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "feeling of tightness of the anterior abdominal muscles... exertion and stress would cause painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "feeling of tightness of the anterior abdominal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "over the following days also involved the thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "over the following days also involved the thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "feeling of tightness of the anterior abdominal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "developed a low grade fever associated with a feeling of tightness of the anterior abdominal muscles. The fever subsided after a few days but the stiffness of the muscles persisted and over the following days also involved the thoracolumbar paraspinal muscles.",
+      "quote": "developed a low grade fever associated with a feeling of tightness of the anterior abdominal muscles. The fever subsided after a few days but the stiffness of the muscles persisted and over the following days also involved the thoracolumbar paraspinal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "anterior abdominal muscles, thoracolumbar paraspinal muscles",
+      "quote": "tightness of the anterior abdominal muscles... involved the thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "initial involvement of the abdominal and lumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "exertion and stress would cause painful spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "painful spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_abdominal, axial_lumbar, axial_thoracic",
+      "quote": "painful spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "thoracolumbar paraspinal muscles",
+      "quote": "painful spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "anterior abdominal and thoracolumbar paraspinal muscles",
+      "quote": "painful spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "exertion and stress would cause painful spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "movement; emotional",
+      "quote": "exertion and stress would cause painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "exertion and stress would cause painful spasms of the same muscle groups",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "The stiffness was continuous but exertion and stress would cause painful spasms of the same muscle groups.",
+      "quote": "The stiffness was continuous but exertion and stress would cause painful spasms of the same muscle groups.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Neurological examination was otherwise normal.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Neurological examination was otherwise normal.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Neurological examination was otherwise normal.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "low grade fever",
+      "quote": "developed a low grade fever",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "The stiffness was continuous but exertion and stress would cause painful spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "Symptoms gradually progressed over the next few weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "The persistent rigidity of the abdominal muscles with a prior history of fever raised the possibility of an underlying peritonitis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "peritonitis",
+      "quote": "raised the possibility of an underlying peritonitis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "Symptoms gradually progressed over the next few weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; hyperlordosis",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles with an exaggerated lumbar lordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "On examination, there was marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles with an exaggerated lumbar lordosis with scoliosis which persisted at rest.",
+      "quote": "On examination, there was marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles with an exaggerated lumbar lordosis with scoliosis which persisted at rest.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "anterior abdominal and thoracolumbar paraspinal muscles",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "marked hypertonia in the anterior abdominal and thoracolumbar paraspinal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "superimposed painful spasms precipitated by stress and exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "spasms precipitated by stress and exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_abdominal, axial_thoracic, axial_lumbar",
+      "quote": "spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "thoracolumbar paraspinal muscles",
+      "quote": "spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "anterior abdominal and thoracolumbar paraspinal muscles",
+      "quote": "spasms of the same muscle groups",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "superimposed painful spasms precipitated by stress and exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "movement; emotional",
+      "quote": "precipitated by stress and exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "superimposed painful spasms precipitated by stress and exertion",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "superimposed painful spasms precipitated by stress and exertion",
+      "quote": "superimposed painful spasms precipitated by stress and exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "an exaggerated lumbar lordosis with scoliosis which persisted at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "otherwise normal neurological examination with normal higher functions, motor power, sensations and reflexes",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "otherwise normal neurological examination",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "mentioned_absent",
+      "quote": "otherwise normal neurological examination",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "scoliosis",
+      "quote": "an exaggerated lumbar lordosis with scoliosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "Forward flexion was markedly restricted.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "onset in middle age; stiffness initially involving the trunk muscles with persistence of rigidity even at rest; superimposed painful spasms precipitated by stress and exertion; hyperlordosis of lumbar spine with restricted forward flexion; gradual progression over months; otherwise normal neurological examination with normal higher functions, motor power, sensations and reflexes; characteristic EMG changes of continuous normal motor unit activity at rest in affected muscles with no signs of denervation or primary muscle disease and normal nerve conduction studies. The presence of GAD and islet-cell antibodies",
+      "quote": "The above patient had most of the classical features of the stiff-man syndrome: onset in middle age; stiffness initially involving the trunk muscles with persistence of rigidity even at rest; superimposed painful spasms precipitated by stress and exertion; hyperlordosis of lumbar spine with restricted forward flexion; gradual progression over months; otherwise normal neurological examination with normal higher functions, motor power, sensations and reflexes; characteristic EMG changes of continuous normal motor unit activity at rest in affected muscles with no signs of denervation or primary muscle disease and normal nerve conduction studies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "stiffness initially involving the trunk muscles with persistence of rigidity even at rest; superimposed painful spasms precipitated by stress and exertion; hyperlordosis of lumbar spine with restricted forward flexion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "The presence of GAD and islet-cell antibodies in our patient supports the hypothesis of an autoimmune basis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "characteristic EMG changes of continuous normal motor unit activity at rest in affected muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "decreased after intravenous administration of diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Extrapyramidal syndromes like torsion dystonias, progressive encephalomyelitis, spinal cord lesions, localized tetanus, Issac's syndrome and myotonia can closely mimic the stiff-man syndrome. These and other local pathologies like peritonitis can be differentiated by the classical features of the disease together with electrophysiological studies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive in both serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); islet cell antibodies",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive in both serum and CSF and islet cell antibodies were present in serum at high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Islet cell antibodies were present in serum at high titres (> 80 Juvenile Diabetes Foundation Units - normal < 10).",
+      "quote": "islet cell antibodies were present in serum at high titres (> 80 Juvenile Diabetes Foundation Units - normal < 10)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive in both serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "strongly positive in both serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive in both serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_positive",
+      "quote": "islet cell antibodies were present in serum at high titres",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "islet cell antibodies",
+      "quote": "islet cell antibodies were present in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive in both serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "Glutamic acid decarboxylase (GAD)",
+      "quote": "Glutamic acid decarboxylase (GAD) antibodies were strongly positive in both serum and CSF",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "spontaneous normal motor unit potentials over the abdominal and paraspinal muscles even at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "abdominal and paraspinal muscles",
+      "quote": "spontaneous normal motor unit potentials over the abdominal and paraspinal muscles even at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "spontaneous normal motor unit potentials over the abdominal and paraspinal muscles even at rest which decreased after intravenous administration of diazepam. The silent period and nerve conduction studies were normal.",
+      "quote": "spontaneous normal motor unit potentials over the abdominal and paraspinal muscles even at rest which decreased after intravenous administration of diazepam. The silent period and nerve conduction studies were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "there was a significant decrease in the muscle rigidity and spasm, the lumbar lordosis decreased and the scoliosis disappeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen",
+      "quote": "started on diazepam and baclofen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "started on diazepam and baclofen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam and baclofen, the doses of which were progressively increased to 30 and 60 mg per day respectively",
+      "quote": "diazepam and baclofen, the doses of which were progressively increased to 30 and 60 mg per day respectively",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "there was a significant decrease in the muscle rigidity and spasm, the lumbar lordosis decreased and the scoliosis disappeared",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "there was a significant decrease in the muscle rigidity and spasm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "Many affected patients develop diabetes mellitus and other autoimmune disorders but these were not found in our patient.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "normal family and personal history",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient was initially misdiagnosed with peritonitis due to persistent abdominal rigidity and prior fever. The possibility of tetanus was also considered. Islet cell antibodies were present in serum at high titres (> 80 Juvenile Diabetes Foundation Units - normal < 10).",
+      "quote": "The persistent rigidity of the abdominal muscles with a prior history of fever raised the possibility of an underlying peritonitis. Hospitalization and parenteral antibiotics did not relieve the symptoms. The possibility of tetanus was also considered",
+      "confidence": "high"
+    }
+  ]
+}

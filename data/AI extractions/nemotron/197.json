@@ -1,0 +1,980 @@
+{
+  "paper_id": "197",
+  "model_id": "nemotron-3-super:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "197",
+      "quote": "Paper ID: 197",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2000",
+      "quote": "Butler, M H, Hayashi, A, Ohkoshi, N et al. Autoimmunity to gephyrin in Stiff-Man syndrome. Neuron. 2000;26(2):307-12.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Results\nClinical Findings\nA 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "58",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "58",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "gait_dysfunction",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person_Plus",
+      "quote": "Stiff-Man syndrome (SMS) is a rare disease of the central nervous system (CNS) characterized by chronic rigidity, spasms, and autoimmunity directed against synaptic antigens, most often the GABA-synthesizing enzyme glutamic acid decarboxylase (GAD). In a subset of cases, SMS has an autoimmune paraneoplastic origin. We report here the identification of high-titer autoantibodies directed against gephyrin in a patient with clinical features of SMS and mediastinal cancer.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs. Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. [...] Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "present",
+      "quote": "Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs. Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "tongue muscles",
+      "quote": "Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. [...] Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_face, prox_LE, distal_LE",
+      "quote": "Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "movement; acoustic; touch",
+      "quote": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction; regional_cocontraction; brief_jerk",
+      "quote": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysarthria; dysphagia",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms. On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs. Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination. Ocular movements were normal, and opsoclonus was absent. Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. Presence of the spasms prevented the examination of jaw jerk and deep tendon reflexes in the legs. A reflex myoclonus associated with tonic spasms in the leg was elicited by cutaneous stimulation of the foot. Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face. Sensory functions were normal.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "low"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "low"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs. Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination. Ocular movements were normal, and opsoclonus was absent. Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. Presence of the spasms prevented the examination of jaw jerk and deep tendon reflexes in the legs. A reflex myoclonus associated with tonic spasms in the leg was elicited by cutaneous stimulation of the foot. Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face. Sensory functions were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs. Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "tongue muscles",
+      "quote": "Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. [...] Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "movement; acoustic; touch",
+      "quote": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction; regional_cocontraction; brief_jerk",
+      "quote": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. [...] Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysarthria; dysphagia",
+      "quote": "A 58-year-old male (patient 861 of our caseload) was admitted in June of 1998 with a 2 month history of progressive gait disturbance, dysarthria, and dysphagia due to muscle stiffness and spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "2",
+      "quote": "On neurological examination, there was muscle stiffness of the neck, trunk, shoulders, and legs. Muscle cramps that disappeared during sleep were present on the left half of the face and in both legs. Stiffness of the tongue muscles was associated with slow movements of the tongue, as well as dysarthria and dysphagia with no abnormal pharyngeal reflex, and alterations of the esophagus by endoscopic examination. Ocular movements were normal, and opsoclonus was absent. Spasms occurred spontaneously or were precipitated by active and passive movements, acoustic stimulation, or touch. Presence of the spasms prevented the examination of jaw jerk and deep tendon reflexes in the legs. A reflex myoclonus associated with tonic spasms in the leg was elicited by cutaneous stimulation of the foot. Likewise, a startle response, such as head retraction reflex, was triggered by cutaneous stimulation of the face. Sensory functions were normal.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features such as stiffness/spasms/ hyperlordosis, positive antibodies such as anti-GAD, EMG showing continuous motor-unit activity, response to benzodiazepines",
+      "quote": "Clinical and pharmacological evidence suggests that SMS results from an impairment of inhibitory pathways that control the activity of motoneurons in the brainstem and spinal cord (Meinck et al., 1984; Floeter et al., 1998). Electromyography shows a persistent motoneuron activity that is indistinguishable from voluntary muscle activity, except that the patients are not able to relax. Most patients respond to high doses of drugs that enhance the action of GABA, such as benzodiazepines, baclofen, or sodium valproate.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Clinical and pharmacological evidence suggests that SMS results from an impairment of inhibitory pathways that control the activity of motoneurons in the brainstem and spinal cord (Meinck et al., 1984; Floeter et al., 1998).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "More than 60% of patients with SMS have high titer autoantibodies directed against glutamic acid decarboxylase (GAD) (Solimena et al., 1988, 1990), the cytosolic enzyme that synthesizes the inhibitory neurotransmitter GABA in the nerve endings of GABA-secreting neurons (Erlander and Tobin, 1991). This finding supports the hypothesis that SMS results from an impairment of GABAergic transmission.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electromyography shows a persistent motoneuron activity that is indistinguishable from voluntary muscle activity, except that the patients are not able to relax.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Most patients respond to high doses of drugs that enhance the action of GABA, such as benzodiazepines, baclofen, or sodium valproate.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Brain, cervical, and lumbar MRIs were also normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Paraneoplastic neurological syndromes include a variety of disorders of the peripheral (PNS) or the central (CNS) nervous system that occur in association with cancer but are not the result of metastasis or tumor compression (Dalmau and Posner, 1999; Darnell, 1999).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "other",
+      "quote": "When tested against mammalian brain extracts by Western blotting, the autoantibodies of the patient did not react with GAD or amphiphysin I but selectively recognized a protein doublet with an apparent electrophoretic mobility of z97 kDa, i.e., the same molecular weight as gephyrin (Figure 2A).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "anti-gephyrin",
+      "quote": "When tested against mammalian brain extracts by Western blotting, the autoantibodies of the patient did not react with GAD or amphiphysin I but selectively recognized a protein doublet with an apparent electrophoretic mobility of z97 kDa, i.e., the same molecular weight as gephyrin (Figure 2A).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); amphiphysin I",
+      "quote": "When tested against mammalian brain extracts by Western blotting, the autoantibodies of the patient did not react with GAD or amphiphysin I but selectively recognized a protein doublet with an apparent electrophoretic mobility of z97 kDa, i.e., the same molecular weight as gephyrin (Figure 2A).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "Western blotting",
+      "quote": "When tested against mammalian brain extracts by Western blotting, the autoantibodies of the patient did not react with GAD or amphiphysin I but selectively recognized a protein doublet with an apparent electrophoretic mobility of z97 kDa, i.e., the same molecular weight as gephyrin (Figure 2A).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Indirect immunocytochemistry on sections of brain and spinal cord using the serum of the patient as the source of primary antibodies revealed the presence of autoantibodies that specifically recognized a subset of synapses (Figure 1, bottom row). An identical immunostaining was obtained when the patient's CSF was used in place of the serum (Figure 1, bottom row, left panel).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "Taken together, these results conclusively prove that the serum and the CSF of the patient contained high-titer autoantibodies directed against gephyrin.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "When tested against mammalian brain extracts by Western blotting, the autoantibodies of the patient did not react with GAD or amphiphysin I but selectively recognized a protein doublet with an apparent electrophoretic mobility of z97 kDa, i.e., the same molecular weight as gephyrin (Figure 2A).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "When tested against mammalian brain extracts by Western blotting, the autoantibodies of the patient did not react with GAD or amphiphysin I but selectively recognized a protein doublet with an apparent electrophoretic mobility of z97 kDa, i.e., the same molecular weight as gephyrin (Figure 2A).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "tested_positive",
+      "quote": "Taken together, these results conclusively prove that the serum and the CSF of the patient contained high-titer autoantibodies directed against gephyrin.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "An identical immunostaining was obtained when the patient's CSF was used in place of the serum (Figure 1, bottom row, left panel).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-gephyrin",
+      "quote": "An identical immunostaining was obtained when the patient's CSF was used in place of the serum (Figure 1, bottom row, left panel).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "No abnormalities in cell count, protein, or IgG levels were found in the cerebrospinal fluid (CSF).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "No abnormalities in cell count, protein, or IgG levels were found in the cerebrospinal fluid (CSF).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "0",
+      "quote": "Electromyography showed a low-firing frequency of normal units at rest.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "soleus",
+      "quote": "Renshaw's recurrent inhibition could not be estimated because the ratio between the H and the M waves (Kimura, 1989) was very low on his soleus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Brain, cervical, and lumbar MRIs were also normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Gallium scintigraphy and chest CT revealed a mass in the mediastinum, while additional investigations were negative for the presence of metastasis elsewhere.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "mediastinal cancer",
+      "quote": "Gallium scintigraphy and chest CT revealed a mass in the mediastinum, while additional investigations were negative for the presence of metastasis elsewhere.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "Oral diazepam was initiated before surgery (20 mg/day). Both the stiffness and spasms lessened markedly, and the patient was able to walk and speak smoothly. After the removal of the mediastinal cancer, his symptoms further improved, and the patient was discharged.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "Oral diazepam was initiated before surgery (20 mg/day). Both the stiffness and spasms lessened markedly, and the patient was able to walk and speak smoothly.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "Oral diazepam was initiated before surgery (20 mg/day). Both the stiffness and spasms lessened markedly, and the patient was able to walk and speak smoothly.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "oral diazepam 20 mg/day",
+      "quote": "Oral diazepam was initiated before surgery (20 mg/day). Both the stiffness and spasms lessened markedly, and the patient was able to walk and speak smoothly.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Oral diazepam was initiated before surgery (20 mg/day). Both the stiffness and spasms lessened markedly, and the patient was able to walk and speak smoothly.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Oral diazepam was initiated before surgery (20 mg/day). Both the stiffness and spasms lessened markedly, and the patient was able to walk and speak smoothly.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "There was no past history of illness, including diabetes mellitus, and the family history was unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    }
+  ]
+}

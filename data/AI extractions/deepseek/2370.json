@@ -1,0 +1,980 @@
+{
+  "paper_id": "2370",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "2370",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2001",
+      "quote": "Copyright © 2001 Lippincott Williams & Wilkins, Inc.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "34",
+      "quote": "We describe a 34-year-old patient with insulin-dependent diabetes mellitus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "32",
+      "quote": "first noticed pain and stiffness in the neck 2 years earlier",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "3",
+      "quote": "3 months later a clinical and electrophysiological examination revealed an improvement",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "first noticed pain and stiffness in the neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, pain",
+      "quote": "first noticed pain and stiffness in the neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Limb",
+      "quote": "We consider that our patient has a“focal stiff-person syndrome.”",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "first noticed pain and stiffness in the neck 2 years earlier. This was followed later by painful spasms and rigidity of the right thigh. Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "first noticed pain and stiffness in the neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "first noticed pain and stiffness in the neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "This was followed later by painful spasms and rigidity of the right thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "first noticed pain and stiffness in the neck 2 years earlier. This was followed later by painful spasms and rigidity of the right thigh. Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_right",
+      "quote": "painful spasms and rigidity of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "This was followed later by painful spasms and rigidity of the right thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "prox_LE",
+      "quote": "painful spasms and rigidity of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; movement; emotional",
+      "quote": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "pain",
+      "quote": "first noticed pain and stiffness in the neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "first noticed pain and stiffness in the neck 2 years earlier. This was followed later by painful spasms and rigidity of the right thigh.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "first noticed pain and stiffness in the neck 2 years earlier. This was followed later by painful spasms and rigidity of the right thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "a chronic progressive disorder",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "painful spasms and rigidity of the right thigh. Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "rigidity of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "stiffness of the neck muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "rigidity of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "stiffness of the neck muscles. Thoracolumbar, paraspinal, and abdominal muscles were not involved. rigidity of the right thigh.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "Thoracolumbar, paraspinal, and abdominal muscles were not involved.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "focal_right",
+      "quote": "rigidity of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "painful spasms of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "prox_LE",
+      "quote": "painful spasms of the right thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "quadriceps, hamstring",
+      "quote": "co-contracting EMG activity in antagonistic muscle pairs (quadriceps and hamstring)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; movement; emotional",
+      "quote": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction; regional_cocontraction",
+      "quote": "The spasms were induced in tight muscles after TMS and consisted of co-contracting EMG activity in antagonistic muscle pairs (quadriceps and hamstring), in the right lower limb, and lasted several seconds.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "prolonged",
+      "quote": "lasted several seconds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "lasted several seconds",
+      "quote": "lasted several seconds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Voluntary movements, unexpected noises, or sudden emotions induced the spasms. The spasms were induced in tight muscles after TMS and consisted of co-contracting EMG activity in antagonistic muscle pairs (quadriceps and hamstring), in the right lower limb, and lasted several seconds.",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "pain; hyperreflexia; sensory",
+      "quote": "decrease of the deep tendon reflexes in the lower limb and an impairment of vibration sense below the knee.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "painful spasms and rigidity of the right thigh. Voluntary movements, unexpected noises, or sudden emotions induced the spasms.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features (painful spasms, rigidity, stimulus-sensitivity), anti-GAD antibodies in serum, oligoclonal bands in CSF, CMUA on EMG, exclusion of mimics (dystonia, spasticity, encephalomyelitis)",
+      "quote": "The most striking clinical feature of our patient was the presence of painful spasms of the right thigh which occurred spontaneously or were induced by voluntary action or unexpected noises. These spasms were also associated with stiffness of the neck muscles. Limb dystonia is unlikely, because dystonic spasms are generally less painful and not stimulus-sensitive. Spasticity can be excluded, because there were no upper motor neuron signs and central motor conduction time was normal. The association of stimulus-sensitive spasms and CMUA in leg muscles is seen in several diseases involving the spinal cord. Its long tract involvement, abnormal cerebrospinal fluid, and catastrophic course can easily differentiate idiopathic encephalomyelitis with rigidity. The stiff-person syndrome bears the closest similarity to the patient presented here. ... our patient had anti-GAD antibodies in serum (109 U/mL; radioimmunoassay) and oligoclonal bands in the cerebrospinal fluid that, even if not pathognomonic, are widely reported in stiff-person syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The most striking clinical feature of our patient was the presence of painful spasms of the right thigh which occurred spontaneously or were induced by voluntary action or unexpected noises. These spasms were also associated with stiffness of the neck muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "our patient had anti-GAD antibodies in serum (109 U/mL; radioimmunoassay) and oligoclonal bands in the cerebrospinal fluid that, even if not pathognomonic, are widely reported in stiff-person syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Continuous motor unit activity at rest was recorded by surface electrodes and then confirmed by needle EMG in the paraspinal cervical and thigh muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Extensive investigation, including the imaging of the whole neuraxis, failed to disclose any abnormality.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Limb dystonia is unlikely, because dystonic spasms are generally less painful and not stimulus-sensitive. Spasticity can be excluded, because there were no upper motor neuron signs and central motor conduction time was normal. ... Its long tract involvement, abnormal cerebrospinal fluid, and catastrophic course can easily differentiate idiopathic encephalomyelitis with rigidity.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "anti-GAD antibodies in serum (109 U/mL; radioimmunoassay)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "109",
+      "quote": "109 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/mL",
+      "quote": "109 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD)",
+      "quote": "antibodies directed against glutamic acid decarboxylase in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "radioimmunoassay",
+      "quote": "radioimmunoassay",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "anti-GAD antibodies in serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "anti-GAD antibodies in serum (109 U/mL; radioimmunoassay)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "anti-GAD antibodies in serum (109 U/mL; radioimmunoassay)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "An oligoclonal pattern of immunoglobulin G was detected in cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "oligoclonal bands",
+      "quote": "An oligoclonal pattern of immunoglobulin G was detected in cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "An oligoclonal pattern of immunoglobulin G was detected in cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Continuous motor unit activity at rest was recorded by surface electrodes and then confirmed by needle EMG in the paraspinal cervical and thigh muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "brachial biceps, first dorsal interosseous, quadriceps, tibialis anterior, biceps femoris, triceps surae, thoracolumbar paraspinal, cervical paraspinal",
+      "quote": "Needle electromyography (EMG) was performed in the brachial biceps, first dorsal interosseous, quadriceps, and tibialis anterior muscles on the right side. ... We recorded from the quadriceps, biceps femoris, tibialis anterior, triceps surae, thoracolumbar, and cervical paraspinal muscles on both sides.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle EMG of motor unit potentials; routine nerve conduction studies (ulnar, peroneal, sural); surface EMG recordings of spontaneous and induced spasms using bipolar silver chloride electrodes placed 2 to 4 cm apart longitudinally over muscle bellies, confirmed by needle EMG; cutaneomuscular/exteroceptive reflexes elicited by single shock to tibial nerve at ankle; somatosensory and motor evoked potentials; transcranial magnetic stimulation of motor cortex.",
+      "quote": "Needle electromyography (EMG) was performed in the brachial biceps, first dorsal interosseous, quadriceps, and tibialis anterior muscles on the right side. The analysis of motor unit potentials demonstrated polyphasic and large motor unit potentials. A decreased recruitment was also found. Routine nerve conduction studies were performed in ulnar, peroneal, and sural nerves on the right side. ... Surface EMG recordings were obtained using bipolar silver chloride electrodes placed 2 to 4 cm apart longitudinally over the muscle bellies. We recorded from the quadriceps, biceps femoris, tibialis anterior, triceps surae, thoracolumbar, and cervical paraspinal muscles on both sides. The results were confirmed by needle EMG. ... Cutaneomuscular/exteroceptive reflexes were elicited after a single shock delivered to the tibial nerve at the ankle according to the technique described by Meinck et al. ... Somatosensory evoked potentials and motor evoked potentials did not detect any sign of long tract involvement. ... the spasms could be induced by electrical shocks delivered at the ankle or by transcranial magnetic stimulation (TMS) of the motor cortex.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "1",
+      "quote": "Cutaneomuscular/exteroceptive reflexes were of an abnormally low threshold. Stimulus at three times the sensory threshold gave consistent short and long latency responses in tibialis anterior, gastrocnemius, vastus lateralis, biceps femoris (Fig. 1).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Extensive investigation, including the imaging of the whole neuraxis, failed to disclose any abnormality.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "3 months later a clinical and electrophysiological examination revealed an improvement of clinical symptoms with reduced frequency and intensity of painful spasms of the right thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen",
+      "quote": "this patient received 10 mg clonazepam and 50 mg baclofen per day",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG",
+      "quote": "0. 4 mg/kg intravenous immunoglobulin per day for 5 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "0.4 mg/kg intravenous immunoglobulin per day for 5 days",
+      "quote": "0. 4 mg/kg intravenous immunoglobulin per day for 5 days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "only a mild improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "clonazepam",
+      "quote": "this patient received 10 mg clonazepam and 50 mg baclofen per day",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "10 mg clonazepam and 50 mg baclofen per day",
+      "quote": "10 mg clonazepam and 50 mg baclofen per day",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "3 months later a clinical and electrophysiological examination revealed an improvement of clinical symptoms with reduced frequency and intensity of painful spasms of the right thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "3 months later a clinical and electrophysiological examination revealed an improvement of clinical symptoms with reduced frequency and intensity of painful spasms of the right thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "diabetes",
+      "quote": "insulin-dependent diabetes mellitus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient also had mild polyneuropathy (absent sural sensory response, slowed peroneal conduction velocity, decreased deep tendon reflexes, impaired vibration sense).",
+      "quote": "The sural sensory response was absent and the peroneal motor study showed slowed conduction velocity ... All these findings were the result of mild polyneuropathy.",
+      "confidence": "high"
+    }
+  ]
+}

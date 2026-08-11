@@ -1,0 +1,980 @@
+{
+  "paper_id": "429",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "429",
+      "quote": "Paper ID: 429",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2006",
+      "quote": "Nature clinical practice. Neurology. 2006;2(8):455-460.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE STUDY ... THE CASE ... DISCUSSION OF DIAGNOSIS ... TREATMENT ... CONCLUSION ... References",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 28-year-old woman presented to a hospital emergency room",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "28",
+      "quote": "A 28-year-old woman presented to a hospital emergency room",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "22",
+      "quote": "the patient had experienced progressive lower back problems for the past 6 years",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "6",
+      "quote": "At a follow-up visit 6 months after her initial presentation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "72",
+      "quote": "the patient had experienced progressive lower back problems for the past 6 years ... A week after the patient was discharged, the results of her glutamic acid decarboxylase (GAD)-65 antibody level test arrived ... supporting a diagnosis of GAD-antibody-associated stiff-person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "she had gradually developed lumbar stiffness which prevented her from playing golf, touching her toes, or sitting on the floor with her legs crossed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "supporting a diagnosis of GAD-antibody-associated stiff-person syndrome (GAD+ SPS)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "she had gradually developed lumbar stiffness ... intense lower back spasms ... The first noticeable symptoms of GAD+ SPS are typically painful muscle spasms in response to emotional stress or loud noises, and lumbar lordosis may develop at this early stage.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "she had gradually developed lumbar stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "she had gradually developed lumbar stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "she had gradually developed lumbar stiffness which prevented her from playing golf, touching her toes, or sitting on the floor with her legs crossed.",
+      "quote": "she had gradually developed lumbar stiffness which prevented her from playing golf, touching her toes, or sitting on the floor with her legs crossed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "she had gradually developed lumbar stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "intense lower back spasms in the context of coughing during an upper respiratory illness. The back spasms had become progressively more painful over a period of 2 months",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "axial_lumbar",
+      "quote": "intense lower back spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "intense lower back spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "exacerbation during stressful situations ... The first noticeable symptoms of GAD+ SPS are typically painful muscle spasms in response to emotional stress or loud noises",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "emotional; noise",
+      "quote": "exacerbation during stressful situations ... The first noticeable symptoms of GAD+ SPS are typically painful muscle spasms in response to emotional stress or loud noises",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "intense lower back spasms ... The back spasms had become progressively more painful over a period of 2 months, and were associated with leg clonus, episodic lumbar hyperlordosis, preserved consciousness, and exacerbation during stressful situations.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "The back spasms had become progressively more painful",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "The back spasms had become progressively more painful over a period of 2 months, and were associated with leg clonus, episodic lumbar hyperlordosis, preserved consciousness, and exacerbation during stressful situations.",
+      "quote": "The back spasms had become progressively more painful over a period of 2 months, and were associated with leg clonus, episodic lumbar hyperlordosis, preserved consciousness, and exacerbation during stressful situations.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "walking",
+      "quote": "she had been experiencing generalized anxiety exacerbated by crowds, in addition to low back pain and difficulty in walking ... The patient will also often experience stimulus-triggered falls and, as in the present case, overwhelming anxiety. These symptoms contribute to a difficulty in crossing streets and a fear of open spaces",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "explicitly_present",
+      "quote": "episodic lumbar hyperlordosis ... The first noticeable symptoms of GAD+ SPS are typically painful muscle spasms in response to emotional stress or loud noises, and lumbar lordosis may develop at this early stage.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "anxiety; leg clonus",
+      "quote": "she had been experiencing generalized anxiety exacerbated by crowds, in addition to low back pain and difficulty in walking ... leg clonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "she had gradually developed lumbar stiffness which prevented her from playing golf, touching her toes, or sitting on the floor with her legs crossed ... she had been experiencing generalized anxiety exacerbated by crowds, in addition to low back pain and difficulty in walking",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "she had gradually developed lumbar stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "the patient had experienced progressive lower back problems for the past 6 years ... The back spasms had become progressively more painful over a period of 2 months",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "Her muscle tone was mildly increased in the upper extremities and significantly increased in the proximal lower extremities and paraspinal muscles ... loud noises and stressful situations still induced abrupt muscle spasms, primarily involving her lower back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "Her muscle tone was mildly increased in the upper extremities and significantly increased in the proximal lower extremities and paraspinal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "significantly increased in the ... paraspinal muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "significantly increased in the ... paraspinal muscles ... marked lumbar lordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "significantly increased in the proximal lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "Her muscle tone was mildly increased in the upper extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Her muscle tone was mildly increased in the upper extremities and significantly increased in the proximal lower extremities and paraspinal muscles.",
+      "quote": "Her muscle tone was mildly increased in the upper extremities and significantly increased in the proximal lower extremities and paraspinal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "Her muscle tone was mildly increased in the upper extremities and significantly increased in the proximal lower extremities and paraspinal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms, primarily involving her lower back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "axial_lumbar",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms, primarily involving her lower back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms, primarily involving her lower back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; emotional",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "loud noises and stressful situations still induced abrupt muscle spasms, primarily involving her lower back.",
+      "quote": "loud noises and stressful situations still induced abrupt muscle spasms, primarily involving her lower back.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "walking",
+      "quote": "She had noticed a general decrease in her anxiety level, but loud noises and stressful situations still induced abrupt muscle spasms ... These symptoms contribute to a difficulty in crossing streets and a fear of open spaces",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "she demonstrated ... marked lumbar lordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "anxiety; difficulty walking",
+      "quote": "She had noticed a general decrease in her anxiety level ... she demonstrated difficulty in bending at the waist ... Her gait was stiff",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "2",
+      "quote": "She had resumed work and vigorous exercise, but reported continued difficulty in flexing at the waist and tying her shoes.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical criteria (Box 1): 1 Prodrome of episodic aching stiffness involving axial muscles; 2 Progression to include stiffness of proximal limbs; 3 Painful spasm elicited by triggers; 4 Increased lumbar lordosis; 5 Normal sensation, motor function and intellect; 6 Response to benzodiazepines; 7 High levels of GAD antibodies",
+      "quote": "a diagnosis of SPS is based on clinical criteria, rather than the results of immunological testing (Box 1). ... Box 1 Criteria for glutamic acid decarboxylase (GAD)-antibody-associated stiff-person syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "a diagnosis of SPS is based on clinical criteria, rather than the results of immunological testing (Box 1)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "the results of her glutamic acid decarboxylase (GAD)-65 antibody level test arrived ... supporting a diagnosis of GAD-antibody-associated stiff-person syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "An electromyogram (EMG) of the paraspinal muscles at T6 and the right iliacus performed after diazepam administration was also found to be normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Response to benzodiazepines (Box 1, criterion 6)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "A lumbar spine MRI scan had been undertaken 2 years previously, and this had demonstrated an increase in her lordosis but no other abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "DIFFERENTIAL DIAGNOSIS ... the long progressive history and the exclusive involvement of the lumbar paraspinal and lower limbs indicated that tetanus was unlikely to be the cause ... normal cerebrospinal fluid and normal spinal imaging ... can help to eliminate these etiologies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "markedly positive at 71,300 U/ml (normal value <1.0 U/ml), supporting a diagnosis of GAD-antibody-associated stiff-person syndrome (GAD+ SPS)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "71300",
+      "quote": "71,300 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/ml",
+      "quote": "71,300 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD)-65",
+      "quote": "the results of her glutamic acid decarboxylase (GAD)-65 antibody level test arrived",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "At follow-up 6 months later, GAD antibody level had increased to 95,000 U/ml.",
+      "quote": "her GAD antibody level had increased to 95,000 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Serum testing revealed ... the results of her glutamic acid decarboxylase (GAD)-65 antibody level test arrived",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "markedly positive at 71,300 U/ml (normal value <1.0 U/ml)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "markedly positive at 71,300 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "markedly positive at 71,300 U/ml",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "Cerebrospinal fluid analysis revealed two white blood cells, one red blood cell, normal glucose and protein levels, no oligoclonal bands and no myelin basic protein antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "2",
+      "quote": "Cerebrospinal fluid analysis revealed two white blood cells",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "no oligoclonal bands",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "0",
+      "quote": "An electromyogram (EMG) of the paraspinal muscles at T6 and the right iliacus performed after diazepam administration was also found to be normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "paraspinal muscles at T6, right iliacus",
+      "quote": "An electromyogram (EMG) of the paraspinal muscles at T6 and the right iliacus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI scans of the brain, and cervical, thoracic, and lumbar spine with and without gadolinium showed lumbar lordosis (Figure 1). ... A lumbar spine MRI scan had been undertaken 2 years previously, and this had demonstrated an increase in her lordosis but no other abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "At a follow-up visit 6 months after her initial presentation, she had developed no evidence of an underlying neoplasm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "She had achieved excellent symptomatic control ... She had resumed work and vigorous exercise, but reported continued difficulty in flexing at the waist and tying her shoes.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "oral diazepam 5 mg every 6 h ... oral clonazepam 0.5 mg every 12 h",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG",
+      "quote": "Intravenous immunoglobulin infusion was recommended in order to improve her symptoms further, but her insurance carrier has been reluctant to cover the cost of this treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "oral diazepam 5 mg every 6 h ... oral clonazepam 0.5 mg every 12 h",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam 2.5 mg at 7:00 h and 19:00 h, clonazepam 0.5 mg at 10:30 h, and an occasional extra dose of diazepam 2.5 mg as required. Also cyclobenzaprine 10 mg every 8 h and ibuprofen 600 mg every 6 h if required.",
+      "quote": "diazepam 2.5 mg at 7:00 h and 19:00 h, clonazepam 0.5 mg at 10:30 h, and an occasional extra dose of diazepam 2.5 mg as required. She was also prescribed ... cyclobenzaprine 10 mg every 8 h and ibuprofen 600 mg every 6 h if required.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "She had achieved excellent symptomatic control with the use of diazepam ... clonazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "She had achieved excellent symptomatic control",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "thyroid",
+      "quote": "Anti-thyroglobulin antibodies were positive at 1:160.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "autoimmune",
+      "quote": "her maternal grandmother had had breast cancer and arthritis.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "maternal grandmother: breast cancer, arthritis",
+      "quote": "her maternal grandmother had had breast cancer and arthritis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had a tattoo in Southeast Asia 2 months before presentation. Cyclobenzaprine (a muscle relaxant) and ibuprofen were also used. The EMG was normal, but performed after diazepam administration, which the paper notes can abolish CMUA. The patient's GAD antibody level increased from 71,300 to 95,000 U/ml over 6 months.",
+      "quote": "She had obtained a tattoo in Southeast Asia 2 months before her presentation. ... An electromyogram (EMG) ... performed after diazepam administration was also found to be normal. ... her GAD antibody level had increased to 95,000 U/ml.",
+      "confidence": "high"
+    }
+  ]
+}
