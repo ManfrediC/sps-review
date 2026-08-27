@@ -1,0 +1,980 @@
+{
+  "paper_id": "3136",
+  "model_id": "qwen3.5:397b-cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "ID",
+      "value": "3136",
+      "quote": "Paper ID: 3136",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2021",
+      "quote": "Intern Med 60: 2475-2477, 2021",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 63-year-old Japanese man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Japanese man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "63",
+      "quote": "A 63-year-old Japanese man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "62",
+      "quote": "presented with a 7-month history... Eight months after disease onset",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "8",
+      "quote": "Eight months after disease onset, he was transferred to our hospital... A diagnosis of PERM was considered",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "bilateral painful lower limb muscle stiffness, difficulty in walking and dysphagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, gait_dysfunction, brainstem_autonomic",
+      "quote": "bilateral painful lower limb muscle stiffness, difficulty in walking and dysphagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "Progressive encephalomyelitis with rigidity and myoclonus (PERM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "bilateral painful lower limb muscle stiffness... paroxysmal myoclonic jerks... easily provoked by sudden noise, bright light, and tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "bilateral painful lower limb muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "bilateral painful lower limb muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "bilateral painful lower limb muscle stiffness",
+      "quote": "bilateral painful lower limb muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_lumbar, prox_LE",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "paroxysmal myoclonic jerks in his back",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "easily provoked by sudden noise, bright light, and tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; visual; touch",
+      "quote": "sudden noise, bright light, and tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "brief_jerk",
+      "quote": "paroxysmal myoclonic jerks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "paroxysmal myoclonic jerks in his back and lower limbs, which were easily provoked by sudden noise, bright light, and tactile stimuli.",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs, which were easily provoked by sudden noise, bright light, and tactile stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "dysphagia... bulbar palsy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysphagia; bulbar palsy; nystagmus; myoclonus",
+      "quote": "dysphagia... persistent horizontal gaze-evoked nystagmus, downbeat nystagmus... bulbar palsy... paroxysmal myoclonic jerks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus",
+      "quote": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "difficulty in walking... dysphagia",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "gradually worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "iliopsoas hematoma",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "iliopsoas hematoma",
+      "quote": "The diagnosis of iliopsoas hematoma was made",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "gradually worsened",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "8",
+      "quote": "Eight months after disease onset",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "rigidity of the limb and truncal muscles... myoclonic jerk... hyperekplexia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "His extremities were rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "His extremities were rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "simultaneous continuous motor unit activity in the tibialis anterior and gastrocnemius",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "His extremities were rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "lock jaw due sustained muscle contraction",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "lower hemifacial stiffness on the right side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "His extremities were rigid, and it was difficult to bend his knee joints even passively. lower hemifacial stiffness on the right side... lock jaw due sustained muscle contraction",
+      "quote": "His extremities were rigid, and it was difficult to bend his knee joints even passively. A neurological examination revealed... lower hemifacial stiffness on the right side... lock jaw due sustained muscle contraction",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "tibialis anterior, gastrocnemius",
+      "quote": "simultaneous continuous motor unit activity in the tibialis anterior and gastrocnemius",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "lower hemifacial stiffness on the right side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "paroxysmal myoclonic jerks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_lumbar, prox_LE, distal_LE",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs... tibialis anterior and gastrocnemius",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "paroxysmal myoclonic jerks in his back",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "tibialis anterior, gastrocnemius",
+      "quote": "simultaneous continuous motor unit activity in the tibialis anterior and gastrocnemius",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "easily provoked by sudden noise, bright light, and tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; visual; touch",
+      "quote": "sudden noise, bright light, and tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "brief_jerk",
+      "quote": "paroxysmal myoclonic jerks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "paroxysmal myoclonic jerks in his back and lower limbs, which were easily provoked by sudden noise, bright light, and tactile stimuli.",
+      "quote": "paroxysmal myoclonic jerks in his back and lower limbs, which were easily provoked by sudden noise, bright light, and tactile stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "bulbar palsy, a limitation of tongue movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "nystagmus; bulbar palsy; myoclonus; dysphagia",
+      "quote": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus, lower hemifacial stiffness on the right side, bulbar palsy, a limitation of tongue movement, and lock jaw... intermittent hiccups and paroxysmal myoclonic jerks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus",
+      "quote": "persistent horizontal gaze-evoked nystagmus, downbeat nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "difficult to bend his knee joints even passively... slightly somnolent",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "clinical features (rigidity, myoclonus, brainstem signs), positive GlyR antibodies, EMG showing continuous motor unit activity",
+      "quote": "A diagnosis of PERM was considered, and glycine receptor (GlyR) antibodies were found to be positive... surface electromyogram examination showed simultaneous continuous motor unit activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "rigidity of the limb and truncal muscles, brainstem sign, myoclonic jerk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "glycine receptor (GlyR) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "surface electromyogram examination showed simultaneous continuous motor unit activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "He tested negative for anti-glutamic acid decarboxylase... A malignancy survey showed no remarkable findings",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GlyR",
+      "quote": "glycine receptor (GlyR) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); glycine receptor (GlyR)",
+      "quote": "He tested negative for anti-glutamic acid decarboxylase... glycine receptor (GlyR) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "positive in his serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "glycine receptor (GlyR) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "He tested negative for anti-glutamic acid decarboxylase",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_positive",
+      "quote": "glycine receptor (GlyR) antibodies were found to be positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "glycine receptor (GlyR) antibodies were found to be positive in his serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "glycine receptor (GlyR)",
+      "quote": "glycine receptor (GlyR) antibodies were found to be positive in his serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "simultaneous continuous motor unit activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "tibialis anterior, gastrocnemius",
+      "quote": "simultaneous continuous motor unit activity in the tibialis anterior and gastrocnemius",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "surface electromyogram",
+      "quote": "A surface electromyogram examination showed simultaneous continuous motor unit activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "MRI showed bilateral iliopsoas hematomas",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "bilateral iliopsoas hematomas",
+      "quote": "MRI showed bilateral iliopsoas hematomas",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "A malignancy survey showed no remarkable findings",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "hyperekplexia, myoclonic jerks, and stiffness of extremities were alleviated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, other",
+      "quote": "intravenous immunoglobulin therapy... intravenous methylprednisolone... oral intake of prednisolone",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "multiple",
+      "quote": "2 cycles of intravenous immunoglobulin therapy... and 2 cycles of intravenous methylprednisolone... followed by the oral intake of prednisolone",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IVIG 400 mg/kg/day for 5 days (2 cycles); IV methylprednisolone 1000 mg/day for 3 days (2 cycles); oral prednisolone 60 mg/day",
+      "quote": "2 cycles of intravenous immunoglobulin therapy (400 mg/kg/day for 5 days) and 2 cycles of intravenous methylprednisolone (1, 000 mg per day for three days), followed by the oral intake of prednisolone (60 mg/day",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "hyperekplexia, myoclonic jerks, and stiffness of extremities were alleviated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "none",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had bilateral iliopsoas hematomas and reduced Factor XIII activity (16%), likely due to consumption from muscle spasms/hematomas.",
+      "quote": "low FXIII activity in our patient reflected an excessive consumption of FXIII due to iliopsoas hematomas",
+      "confidence": "high"
+    }
+  ]
+}

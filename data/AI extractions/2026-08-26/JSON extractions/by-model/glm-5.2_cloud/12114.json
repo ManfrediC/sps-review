@@ -1,0 +1,980 @@
+{
+  "paper_id": "12114",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "12114",
+      "quote": "Paper ID: 12114",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2021",
+      "quote": "Frontiers in Neurology 2021;12:735895",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case Report, published 28 October 2021",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "83-year-old white female",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "White/Caucasian",
+      "quote": "83-year-old white female",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "83",
+      "quote": "An 83-year-old white female",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "83",
+      "quote": "she developed asymmetrical stiff-leg syndrome (distal more than proximal) with coexisting myelopathy in her 80's",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "6",
+      "quote": "passed away within 6 months from symptom onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "3",
+      "quote": "presented with bilateral lower-extremity weakness and painful spasms for 3 months",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "presented with bilateral lower-extremity weakness and painful spasms for 3 months",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "spasms, gait_dysfunction, pain",
+      "quote": "presented with bilateral lower-extremity weakness and painful spasms for 3 months",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Limb",
+      "quote": "anti-amphiphysin antibody (Ab)-associated paraneoplastic SLS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "She presented with stiffness, painful spasms of the distal legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "She presented with stiffness, painful spasms of the distal legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "asymmetrical stiff-leg syndrome (distal more than proximal)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "stiffness, painful spasms of the distal legs, and asymmetrical fixed posturing of the foot",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "She presented with stiffness, painful spasms of the distal legs, and asymmetrical fixed posturing of the foot.",
+      "quote": "She presented with stiffness, painful spasms of the distal legs, and asymmetrical fixed posturing of the foot.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "asymmetrical stiff-leg syndrome (distal more than proximal)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "asymmetrical_involvement",
+      "quote": "asymmetrical fixed posturing of the foot",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful spasms of the distal legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "distal_LE",
+      "quote": "painful spasms of the distal legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "triggered by mild tactile stimuli and causing significant pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "touch",
+      "quote": "triggered by mild tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "multiple intermittent spasms in both lower limbs distally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "causing significant pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "She had multiple intermittent spasms in both lower limbs distally, triggered by mild tactile stimuli and causing significant pain.",
+      "quote": "She had multiple intermittent spasms in both lower limbs distally, triggered by mild tactile stimuli and causing significant pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "Cranial nerves were intact",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "weakness; sensory disturbance; babinski",
+      "quote": "bilateral lower-extremity weakness; numbness, primarily on the left foot; Babinski signs were present bilaterally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "She initially used a cane for ambulation when her symptoms started but later used a wheelchair.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "rapid progressive paraneoplastic SLS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "orthopaedic",
+      "quote": "prescribed steroids for a presumed gout flare",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "rapidly-progressive",
+      "quote": "The patient was bedridden within 3 months and passed away within 6 months from symptom onset.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "3",
+      "quote": "requiring the use of a wheelchair within 3 months from symptom onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "stiffness, painful spasms of the distal legs, and asymmetrical fixed posturing of the foot",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "asymmetrical stiff-leg syndrome (distal more than proximal)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "distal more than proximal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "asymmetrical stiff-leg syndrome (distal more than proximal) with coexisting myelopathy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "she developed asymmetrical stiff-leg syndrome (distal more than proximal) with coexisting myelopathy in her 80's",
+      "quote": "she developed asymmetrical stiff-leg syndrome (distal more than proximal) with coexisting myelopathy in her 80's",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "asymmetrical stiff-leg syndrome (distal more than proximal)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "asymmetrical fixed posturing of the foot",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "multiple intermittent spasms in both lower limbs distally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "distal_LE",
+      "quote": "multiple intermittent spasms in both lower limbs distally",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "tibialis anterior, gastrocnemius",
+      "quote": "two-channel recording from (A) tibialis anterior and (B) gastrocnemius muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "triggered by mild tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "touch",
+      "quote": "triggered by mild tactile stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction; regional_cocontraction",
+      "quote": "multiple intermittent spasms; co-activation of agonists and antagonist muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "causing significant pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "She had multiple intermittent spasms in both lower limbs distally, triggered by mild tactile stimuli and causing significant pain.",
+      "quote": "She had multiple intermittent spasms in both lower limbs distally, triggered by mild tactile stimuli and causing significant pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "Cranial nerves were intact",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "weakness; sensory; babinski",
+      "quote": "bilateral lower-extremity weakness; Babinski signs were present bilaterally; Pinprick sensation, proprioception, and vibration were diminished in the left lower extremity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "She was bedridden upon discharge",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Based on the diagnostic criteria by Dalakas (6), which include (1) muscular rigidity in the limbs and axial muscles; (2) continuous co-contraction of agonist and antagonist muscles, confirmed clinically and electrophysiologically; (3) episodic spasms; (4) absence of any other neurological diseases that could explain the symptoms; (5) and positive serology for GAD 65 (or amphiphysin) autoantibodies in the serum",
+      "quote": "Based on the diagnostic criteria by Dalakas (6), which include (1) muscular rigidity in the limbs and axial muscles; (2) continuous co-contraction of agonist and antagonist muscles, confirmed clinically and electrophysiologically; (3) episodic spasms; (4) absence of any other neurological diseases that could explain the symptoms; (5) and positive serology for GAD 65 (or amphiphysin) autoantibodies in the serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "muscular rigidity in the limbs and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "positive serology for GAD 65 (or amphiphysin) autoantibodies in the serum",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "continuous co-contraction of agonist and antagonist muscles, confirmed clinically and electrophysiologically",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Brain and whole-spine magnetic resonance imaging (MRI) were unremarkable",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "absence of any other neurological diseases that could explain the symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "amphiphysin",
+      "quote": "Serum amphiphysin Ab was identified as positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "the titer was not available",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "the titer was not available",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "amphiphysin; glutamic acid decarboxylase antibody 65 (GAD 65); Purkinje cell/neuronal nuclear IgG; Striated muscle antibodies; NMDA receptor antibody; CV2.1 antibody; Acetylcholine binding antibody; Voltage-gated calcium channel (VGCC) antibody; Aquaporin-4 receptor antibody; Voltage-gated potassium channel antibody; Titin antibody; Gastric parietal cell antibody; Ganglioside panel; Thyroid peroxidase antibody (TPO); Thyroglobulin antibody",
+      "quote": "Amphiphysin; Glutamic acid decarboxylase antibody 65 (GAD 65); Purkinje cell/neuronal nuclear IgG; Striated muscle antibodies; NMDA receptor antibody; CV2.1 antibody; Acetylcholine binding antibody; Voltage-gated calcium channel (VGCC) antibody; Aquaporin-4 receptor antibody; Voltage-gated potassium channel antibody; Titin antibody; Gastric parietal cell antibody; Ganglioside panel; Thyroid peroxidase antibody (TPO); Thyroglobulin antibody",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Amphiphysin Ab was positive but titer was not available. GAD 65 Ab was negative (<5.0 IU/ml).",
+      "quote": "Serum amphiphysin Ab was identified as positive... but the titer was not available. The GAD 65 Ab result was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Serum amphiphysin Ab was identified as positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "the titer was not available",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Serum amphiphysin Ab was identified as positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "The GAD 65 Ab result was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_positive",
+      "quote": "Serum amphiphysin Ab was identified as positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "Purkinje cell/neuronal nuclear IgG None detected; NMDA receptor antibody <1:10; CV2.1 antibody <1:10",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "Purkinje cell/neuronal nuclear IgG; NMDA receptor antibody; CV2.1 antibody; Acetylcholine binding antibody; Voltage-gated calcium channel (VGCC) antibody; Aquaporin-4 receptor antibody; Voltage-gated potassium channel antibody; Titin antibody; Gastric parietal cell antibody; Ganglioside panel; Thyroid peroxidase antibody (TPO); Thyroglobulin antibody",
+      "quote": "Purkinje cell/neuronal nuclear IgG; NMDA receptor antibody; CV2.1 antibody",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "inflammatory",
+      "quote": "CSF showed mild lymphocytic pleocytosis, elevated protein level (white blood cell [WBC] 6, red blood cell [RBC] 53, protein 66, and glucose 52), and oligoclonal bands (CSF-restricted)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "6",
+      "quote": "white blood cell [WBC] 6",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "oligoclonal bands (CSF-restricted)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "66",
+      "quote": "protein 66",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "continuous motor unit activity and co-activation of agonists and antagonist muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "tibialis anterior, gastrocnemius",
+      "quote": "two-channel recording from (A) tibialis anterior and (B) gastrocnemius muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle EMG recording of simultaneous co-activation of agonist–antagonist muscle pair using a concentric needle electrode",
+      "quote": "Needle EMG recording of simultaneous co-activation of agonist–antagonist muscle pair using a concentric needle electrode",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Brain and whole-spine magnetic resonance imaging (MRI) were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "Brain and whole-spine magnetic resonance imaging (MRI) were unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Left-breast mass and the left infraclavicular lymph node biopsy revealed invasive ductal carcinoma with metastatic breast carcinoma cells",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "invasive ductal carcinoma of the breast with metastatic breast carcinoma cells in the lymphoid tissue, Stage IIIC",
+      "quote": "invasive ductal carcinoma with metastatic breast carcinoma cells in the lymphoid tissue (Figure 4), Stage IIIC",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "death",
+      "quote": "passed away within 6 months from symptom onset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "methocarbamol, cyclobenzaprine, and baclofen; prescribed diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX; steroids",
+      "quote": "prescribed steroids for a presumed gout flare; treated with five sessions of plasma exchange (PLEX)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Five sessions of plasma exchange (PLEX). Oral glucocorticoids for presumed gout flare before hospitalization (exact dose and duration unclear). Methylprednisolone was not initiated.",
+      "quote": "treated with five sessions of plasma exchange (PLEX); prescribed steroids for a presumed gout flare; methylprednisolone was not initiated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "none",
+      "quote": "PLEX) did not lead to significant clinical improvement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "prescribed diazepam, which relieved the painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam; methocarbamol, cyclobenzaprine, and baclofen with minimal response",
+      "quote": "prescribed diazepam; started on multiple muscle relaxants including methocarbamol, cyclobenzaprine, and baclofen with minimal response",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "diazepam, which relieved the painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "responded to symptomatic management with diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "Anastrozole recommended for breast cancer, but patient declined aggressive treatment.",
+      "quote": "Oncology recommended anastrozole and outpatient follow-up visits. However, the patient and her family were hesitant with surgery, radiation, or chemotherapy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "medical history of hypertension, celiac disease, and gout; newly diagnosed diabetes (HbA1C 7.2)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "celiac disease; newly diagnosed diabetes",
+      "quote": "celiac disease; newly diagnosed diabetes (HbA1C 7.2)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "autoimmune",
+      "quote": "her two sisters were both diagnosed with breast cancer in their 60's",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "Two sisters diagnosed with breast cancer in their 60's",
+      "quote": "her two sisters were both diagnosed with breast cancer in their 60's",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had coexisting paraneoplastic myelopathy with long-tract disturbance and lower-extremity weakness. Sensorimotor axonal polyneuropathy was also found on EMG.",
+      "quote": "coexisting long-tract disturbance and lower-extremity weakness; sensorimotor axonal polyneuropathy in lower extremities",
+      "confidence": "high"
+    }
+  ]
+}

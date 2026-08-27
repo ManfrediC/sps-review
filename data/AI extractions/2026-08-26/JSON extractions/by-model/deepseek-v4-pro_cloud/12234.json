@@ -1,0 +1,980 @@
+{
+  "paper_id": "12234",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "12234",
+      "quote": "Paper ID: 12234",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2022",
+      "quote": "PUBLISHED 26 October 2022",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "TYPE Case Report",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 71-year-old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Kurume University School of Medicine, Kurume, Japan",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "71",
+      "quote": "A 71-year-old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "71",
+      "quote": "A 71-year-old man whose past medical history was unremarkable experienced sudden trismus and left facial stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "3",
+      "quote": "By the 90th day, his score on the modified Rankin Scale had improved from 5 to 3",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "stiffness",
+      "quote": "experienced sudden trismus and left facial stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "we diagnosed PERM based on positive anti-GlyR antibody in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "experienced sudden trismus and left facial stiffness ... left-dominant muscle rigidity, pain, and intermittent myoclonus appeared in both lower limbs ... hyperekplexia with left lower limb predominance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "experienced sudden trismus and left facial stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "left-dominant muscle rigidity ... appeared in both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "left-dominant muscle rigidity ... appeared in both lower limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "present",
+      "quote": "experienced sudden trismus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "present",
+      "quote": "left facial stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "experienced sudden trismus and left facial stiffness ... left-dominant muscle rigidity, pain, and intermittent myoclonus appeared in both lower limbs",
+      "quote": "experienced sudden trismus and left facial stiffness ... left-dominant muscle rigidity, pain, and intermittent myoclonus appeared in both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "left facial stiffness ... left-dominant muscle rigidity ... in both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_left",
+      "quote": "left facial stiffness ... left-dominant muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "intermittent myoclonus appeared in both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "distal_LE",
+      "quote": "intermittent myoclonus appeared in both lower limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "hyperekplexia with left lower limb predominance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "hyperekplexia with left lower limb predominance",
+      "quote": "hyperekplexia with left lower limb predominance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "trismus, hoarseness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysautonomia; hyperreflexia; sensory disturbance",
+      "quote": "dysautonomia appeared, including dysuria, constipation, and excessive sweating of the trunk and extremities ... enhanced deep tendon reflexes in his extremities ... decreased pain and temperature sensation in the mandibular nerve area",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "dysuria, constipation, and excessive sweating of the trunk and extremities",
+      "quote": "dysautonomia appeared, including dysuria, constipation, and excessive sweating of the trunk and extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "left-dominant muscle rigidity, pain, and intermittent myoclonus appeared in both lower limbs ... dysautonomia appeared",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "experienced sudden trismus and left facial stiffness ... On the third day of the patient's hospitalization, left-dominant muscle rigidity, pain, and intermittent myoclonus appeared in both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "muscle rigidity followed 3 days later ... dysautonomia appeared ... gradually improved after these therapies",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "muscle rigidity of the whole body and the myoclonus of both lower limbs ... hyperekplexia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "trismus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "muscle rigidity of the left face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "muscle rigidity of the whole body and the myoclonus of both lower limbs gradually improved",
+      "quote": "muscle rigidity of the whole body and the myoclonus of both lower limbs gradually improved",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "muscle rigidity of the whole body",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "asymmetrical_involvement",
+      "quote": "left-dominant muscle rigidity ... muscle rigidity of the left face ... left lower limb",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "myoclonus of both lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "distal_LE",
+      "quote": "myoclonus of both lower limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "hyperekplexia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "hyperekplexia with left lower limb predominance",
+      "quote": "hyperekplexia with left lower limb predominance",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "trismus, hoarseness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysautonomia; hyperreflexia; sensory disturbance",
+      "quote": "dysautonomia ... enhanced deep tendon reflexes ... decreased pain and temperature sensation in the mandibular nerve area",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "dysuria, constipation, and excessive sweating of the trunk and extremities",
+      "quote": "dysautonomia appeared, including dysuria, constipation, and excessive sweating of the trunk and extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "5",
+      "quote": "his score on the modified Rankin Scale had improved from 5 to 3",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "his score on the modified Rankin Scale had improved from 5 to 3",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "positive anti-GlyR antibody in serum and cerebrospinal fluid; clinical features of muscle rigidity, myoclonus, hyperekplexia, brainstem symptoms; electrophysiological findings of continuous simultaneous co-contraction and blink reflex hyperexcitability",
+      "quote": "we diagnosed PERM based on positive anti-GlyR antibody in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "muscle rigidity, myoclonus, hyperekplexia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "we diagnosed PERM based on positive anti-GlyR antibody in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Surface electromyogram ... revealed continuous, simultaneous co-contraction ... suggestive of rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Head magnetic resonance imaging showed no structural abnormalities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "the absence of fasiobrachial dystonic seizure, myotonia, and myokymia ruled out anti-voltage-gated potassium channels complex antibody-related disease",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GlyR",
+      "quote": "only anti-GlyR antibody yielded positive reactions in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "amphiphysin; CV2/collapsin response mediator protein 5; Ma2/Ta; Ri; Yo; Hu; Recoverin; SRY-Box transcription factor 1; titin; Zic; glutamic acid decarboxylase65; Tr; glycine receptor (GlyR)",
+      "quote": "We tested for the presence of the following serum anti-neuronal antibodies: amphiphysin, CV2/collapsin response mediator protein 5, Ma2/Ta, Ri, Yo, Hu, Recoverin, SRY-Box transcription factor 1, titin, Zic, glutamic acid decarboxylase65, Tr, and GlyR",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-GlyR antibody positive in both serum and cerebrospinal fluid. Leucine-rich glioma-inactivated 1 and contactin-associated protein-like 2 were not measured.",
+      "quote": "only anti-GlyR antibody yielded positive reactions in serum and cerebrospinal fluid ... leucine-rich glioma-inactivated 1 and contactin-associated protein-like 2 was not measured",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "only anti-GlyR antibody yielded positive reactions in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "only anti-GlyR antibody yielded positive reactions",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "the antibody was negative for amphiphysin and GAD antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_positive",
+      "quote": "only anti-GlyR antibody yielded positive reactions in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "the antibody was negative for amphiphysin",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "not_tested",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "amphiphysin, CV2/collapsin response mediator protein 5, Ma2/Ta, Ri, Yo, Hu, Recoverin, SRY-Box transcription factor 1, titin, Zic, glutamic acid decarboxylase65, Tr ... only anti-GlyR antibody yielded positive reactions",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "CV2/collapsin response mediator protein 5; Ma2/Ta; Ri; Yo; Hu; Recoverin; SRY-Box transcription factor 1; titin; Zic; Tr",
+      "quote": "CV2/collapsin response mediator protein 5, Ma2/Ta, Ri, Yo, Hu, Recoverin, SRY-Box transcription factor 1, titin, Zic, Tr",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "only anti-GlyR antibody yielded positive reactions in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-glycine receptor (anti-GlyR) antibody",
+      "quote": "only anti-GlyR antibody yielded positive reactions in serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "3",
+      "quote": "a normal cell count of 3/ μL (100% mononuclear cells)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "No oligoclonal band was detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "30 mg/dL",
+      "quote": "a normal protein level (30 mg/dL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Surface electromyogram of the left tibialis anterior and left gastrocnemius muscles revealed continuous, simultaneous co-contraction of both muscles on tapping the Achilles tendon",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "left tibialis anterior, left gastrocnemius",
+      "quote": "Surface electromyogram of the left tibialis anterior and left gastrocnemius muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Surface electromyogram; Achilles tendon reflex evoked by tapping with a reflex hammer; blink reflex with stimulation of left and right sides recording R1 and R2 components",
+      "quote": "Surface electromyogram of the left tibialis anterior and left gastrocnemius muscles revealed continuous, simultaneous co-contraction of both muscles on tapping the Achilles tendon with a reflex hammer ... Both the R1 and R2 components of the blink reflex showed higher amplitude on the left compared with the right after stimulation of either side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "1",
+      "quote": "Both the R1 and R2 components of the blink reflex showed higher amplitude on the left compared with the right after stimulation of either side, indicating hyper-excitability on the left side",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Head magnetic resonance imaging showed no structural abnormalities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "A whole body computed tomography showed a gastric submucosal tumor, which was diagnosed as a hyperplastic polyp by gastrointestinal endoscopy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "gastric submucosal tumor (hyperplastic polyp)",
+      "quote": "A whole body computed tomography showed a gastric submucosal tumor, which was diagnosed as a hyperplastic polyp by gastrointestinal endoscopy",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "He gradually improved after these therapies and became able to walk using a walker",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, other",
+      "quote": "diazepam (20 mg/day, oral) and dantrium (75 mg/day, oral)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG",
+      "quote": "three courses of steroid pulse therapy with methylprednisolone ... high-dose immunoglobulin",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Three courses of steroid pulse therapy with methylprednisolone (1,000 mg/day; duration 3 days) on the 1st, 8th, and 15th day after admission; high-dose immunoglobulin (400 mg/kg/day; duration 5 days) on the 4th day; prednisolone (40 mg/day) tapered after third steroid pulse",
+      "quote": "three courses of steroid pulse therapy with methylprednisolone (1, 000 mg/day; duration 3 days) on the 1st, 8th, and 15th day after admission, as well as high-dose immunoglobulin (400 mg/kg/day; duration 5 days) on the 4th day. Following the third administration of steroid pulse therapy, we administered prednisolone (40 mg/day) and tapered",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "After those steroid therapies, the muscle rigidity of the whole body and the myoclonus of both lower limbs gradually improved",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "diazepam (20 mg/day, oral)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam (20 mg/day, oral) and dantrium (75 mg/day, oral)",
+      "quote": "diazepam (20 mg/day, oral) and dantrium (75 mg/day, oral)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "the muscle rigidity of the whole body and the myoclonus of both lower limbs gradually improved",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "the muscle rigidity of the whole body and the myoclonus of both lower limbs gradually improved",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Initial presentation was one-sided stiff face (left facial stiffness and trismus), an unusual onset for PERM. The case showed unilateral brainstem symptoms followed by same-side lower limb involvement, suggesting both spinal cord and brainstem lesions confined to one side. Blink reflex showed higher R1 and R2 amplitude on the left after stimulation of either side.",
+      "quote": "This case presented with symptoms of unilateral brainstem dysfunction, which were followed by symptoms affecting the lower limb on the same side. This suggests that both spinal cord and brainstem lesions are confined to one side.",
+      "confidence": "high"
+    }
+  ]
+}

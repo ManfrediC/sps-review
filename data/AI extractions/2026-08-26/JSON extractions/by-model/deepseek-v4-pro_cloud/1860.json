@@ -1,0 +1,980 @@
+{
+  "paper_id": "1860",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "1860",
+      "quote": "Paper ID: 1860",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2020",
+      "quote": "Published: 02 September 2020",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT published: 02 September 2020 doi: 10.3389/fendo.2020.00594",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 43-year-old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "43",
+      "quote": "A 43-year-old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "Two months after the initiation of insulin therapy, he presented with abdominal stiffness, painful spasms extending to lower limbs, and impaired walking ability.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, spasms, gait_dysfunction",
+      "quote": "he presented with abdominal stiffness, painful spasms extending to lower limbs, and impaired walking ability",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "These features were highly indicative of SPS.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "he presented with abdominal stiffness, painful spasms extending to lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "he presented with abdominal stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "he presented with abdominal stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Two months after the initiation of insulin therapy, he presented with abdominal stiffness, painful spasms extending to lower limbs, and impaired walking ability.",
+      "quote": "Two months after the initiation of insulin therapy, he presented with abdominal stiffness, painful spasms extending to lower limbs, and impaired walking ability.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful spasms extending to lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "painful spasms extending to lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_abdominal, distal_LE",
+      "quote": "abdominal stiffness, painful spasms extending to lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; emotional; other",
+      "quote": "were exacerbated by sound, anxiety, and subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "subcutaneous insulin injections",
+      "quote": "subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction; other",
+      "quote": "jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "jerky myoclonus-like movement",
+      "quote": "jerky myoclonus-like movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections, regardless of the treatment regimen (Insulatard or regular insulin).",
+      "quote": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections, regardless of the treatment regimen (Insulatard or regular insulin).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "generalised",
+      "quote": "His fear and anxiety of reexperiencing muscle stiffness resulted in poor compliance with the prescribed therapeutic regimens.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "fear and anxiety of reexperiencing muscle stiffness",
+      "quote": "His fear and anxiety of reexperiencing muscle stiffness resulted in poor compliance with the prescribed therapeutic regimens.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "myoclonus",
+      "quote": "jerky myoclonus-like movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "impaired walking ability",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "Insidious onset of symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "SPSD",
+      "quote": "These features were highly indicative of SPS.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "he refused insulin therapy, resulting in poor glycemic control for 10 years",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "muscle rigidity persisted after insulin injections every time",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "abdominal stiffness with painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections, regardless of the treatment regimen (Insulatard or regular insulin).",
+      "quote": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections, regardless of the treatment regimen (Insulatard or regular insulin).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "abdominal stiffness with painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "abdominal stiffness with painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_abdominal, distal_LE",
+      "quote": "abdominal stiffness with painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; emotional; other",
+      "quote": "were exacerbated by sound, anxiety, and subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "subcutaneous insulin injections",
+      "quote": "subcutaneous insulin injections",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction; other",
+      "quote": "jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "jerky myoclonus-like movement",
+      "quote": "jerky myoclonus-like movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections, regardless of the treatment regimen (Insulatard or regular insulin).",
+      "quote": "The patient's symptoms of jerky myoclonus-like movement, abdominal stiffness with painful spasms, and muscle rigidity were exacerbated by sound, anxiety, and subcutaneous insulin injections, regardless of the treatment regimen (Insulatard or regular insulin).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "His fear and anxiety of reexperiencing muscle stiffness resulted in poor compliance with the prescribed therapeutic regimens.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "fear and anxiety of reexperiencing muscle stiffness",
+      "quote": "His fear and anxiety of reexperiencing muscle stiffness resulted in poor compliance with the prescribed therapeutic regimens.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "myoclonus",
+      "quote": "jerky myoclonus-like movement",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "3",
+      "quote": "impaired walking ability",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (abdominal stiffness, painful spasms, impaired walking), GAD antibody positivity, EMG/nerve conduction velocity findings, response to diazepam",
+      "quote": "The diagnosis of SPS is based on the detection of typical clinical findings, GAD antibody positivity, and suggestive ancillary investigations.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The diagnosis of SPS is based on the detection of typical clinical findings",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "GAD antibody positivity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "electromyography/nerve conduction velocity revealed slightly asymmetrical motor and sensory polyneuropathy with demyelination",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Response to diazepam treatment",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Absence of other neurological disorder that could lead to rigidity and stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Serum GAD antibody test was positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "110",
+      "quote": "GAD65-Ab, U/mL 110",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/mL",
+      "quote": "GAD65-Ab, U/mL 110",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase-65 antibody (GAD65-Ab); islet antigen-2 antibody (IA2-Ab); insulin antibody (IA); anti-thyroid peroxidase antibody (Anti-TPO Ab)",
+      "quote": "GAD65-Ab, U/mL 110; IA2-Ab, U/mL 0.65; Insulin antibody (%) 13.7; Anti-TPO Ab, IU/mL 18.81",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "GAD65-Ab positive at 110 U/mL (reference <1); IA2-Ab within normal range; insulin antibodies positive at 13.7% (reference <10%); anti-TPO Ab positive at 18.81 IU/mL (reference <5.6)",
+      "quote": "GAD65-Ab, U/mL 110; IA2-Ab, U/mL 0.65; Insulin antibody (%) 13.7; Anti-TPO Ab, IU/mL 18.81",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Serum GAD antibody test was positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "GAD65-Ab, U/mL 110",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Serum GAD antibody test was positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "GAD65-Ab, U/mL 110",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_positive",
+      "quote": "Insulin antibody (%) 13.7",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "insulin antibody (IA); anti-thyroid peroxidase antibody (Anti-TPO Ab)",
+      "quote": "Insulin antibody (%) 13.7; Anti-TPO Ab, IU/mL 18.81",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "three courses of plasmapheresis improved the patient's clinical symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, antiepileptic",
+      "quote": "diazepam (10 mg/day in two divided oral doses), clonazepam (2 mg orally four times daily), baclofen (10 mg two times daily), and phenobarbital (30 mg two times daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; PLEX",
+      "quote": "Intravenous immunoglobulin (IVIG, 0.4 g/kg/day) led to a poor response, but three courses of plasmapheresis improved the patient's clinical symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IVIG 0.4 g/kg/day; three courses of plasmapheresis",
+      "quote": "Intravenous immunoglobulin (IVIG, 0.4 g/kg/day) led to a poor response, but three courses of plasmapheresis improved the patient's clinical symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "three courses of plasmapheresis improved the patient's clinical symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "diazepam (10 mg/day in two divided oral doses), clonazepam (2 mg orally four times daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam 10 mg/day in two divided oral doses; clonazepam 2 mg orally four times daily; baclofen 10 mg two times daily; phenobarbital 30 mg two times daily",
+      "quote": "diazepam (10 mg/day in two divided oral doses), clonazepam (2 mg orally four times daily), baclofen (10 mg two times daily), and phenobarbital (30 mg two times daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Tolerable muscle rigidity was achieved when the dosage of basal insulin was split into two separate daily injections",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Tolerable muscle rigidity was achieved",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "insulin therapy (basal insulin, premixed insulin, basal-bolus regimen); oral anti-diabetic agents",
+      "quote": "basal insulin (insulin glargine, 0.43 IU/Kg/day) with oral anti-diabetic agents",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "antithyroid peroxidase Abs were positive (18.81 IU/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "autoimmune thyroid disease (positive anti-thyroid peroxidase antibodies); latent autoimmune diabetes in adults (LADA)",
+      "quote": "antithyroid peroxidase Abs were positive (18.81 IU/mL); compatible with a diagnosis of LADA",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "family history of T2D (parents, one uncle, and one sibling)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "First report of SPS described shortly after initiation of insulin therapy; patient required split basal insulin dosing to achieve tolerable muscle symptoms; HLA genotyping revealed HLA-DRB1*08, HLA-DRB1*13, HLA-DQB1*06; two episodes of diabetic ketoacidosis in 2017",
+      "quote": "This is the first case of SPS described shortly after the initiation of insulin therapy",
+      "confidence": "high"
+    }
+  ]
+}

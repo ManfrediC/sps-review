@@ -1,0 +1,980 @@
+{
+  "paper_id": "829",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "829",
+      "quote": "Paper ID: 829",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2018",
+      "quote": "Intern Med 57: 3451-3458, 2018",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 75-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Tokyo Medical and Dental University, Japan",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "75",
+      "quote": "A 75-year-old woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "75",
+      "quote": "A 75-year-old woman [mistakenly reported as male; Table 4, fifth patient (8)] presented with subacute progressive difficulty in walking and rigidity of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "16",
+      "quote": "She ultimately succumbed to pneumonia and cardiac failure 10 months after developing fluid retention.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "presented with subacute progressive difficulty in walking and rigidity of the lower extremities. She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "gait_dysfunction, stiffness, myoclonus",
+      "quote": "subacute progressive difficulty in walking and rigidity of the lower extremities. She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "The constellation of subacute progressive rigidity, myoclonus, brainstem dysfunction, autonomic symptoms, and presence of GlyR-Abs suggested a diagnosis of PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "subacute progressive difficulty in walking and rigidity of the lower extremities. She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "rigidity of the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "rigidity of the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "rigidity of the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "presented with subacute progressive difficulty in walking and rigidity of the lower extremities.",
+      "quote": "presented with subacute progressive difficulty in walking and rigidity of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "rigidity of the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "axial_neck",
+      "quote": "Jerky movements of the neck and trunk, sometimes triggered by touching of the patient's face, were observed and considered consistent with myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "touch",
+      "quote": "elicited by the touching of her face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "brief_jerk",
+      "quote": "occasional jerky movements, elicited by the touching of her face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "quote": "She demonstrated occasional jerky movements, elicited by the touching of her face.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "She subsequently developed dysarthria, dysphagia, and autonomic dysfunction with urinary retention, constipation, hyperhidrosis, hypersalivation, and sinus tachycardia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "she had bilateral horizontal and upward gaze nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysarthria; dysphagia; autonomic dysfunction; urinary retention; constipation; hyperhidrosis; hypersalivation; sinus tachycardia; upper respiratory tract obstruction; nystagmus; hyperreflexia; Babinski sign; vocal cord paralysis",
+      "quote": "She subsequently developed dysarthria, dysphagia, and autonomic dysfunction with urinary retention, constipation, hyperhidrosis, hypersalivation, and sinus tachycardia. Upper respiratory tract obstruction developed acutely, requiring tracheostomy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "urinary retention, constipation, hyperhidrosis, hypersalivation, sinus tachycardia",
+      "quote": "autonomic dysfunction with urinary retention, constipation, hyperhidrosis, hypersalivation, and sinus tachycardia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "bilateral horizontal and upward gaze nystagmus",
+      "quote": "she had bilateral horizontal and upward gaze nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "Upper respiratory tract obstruction developed acutely, requiring tracheostomy. She was then transferred to our hospital for the further evaluation and management.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "subacute progressive difficulty in walking and rigidity of the lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "subacute progressive difficulty in walking and rigidity of the lower extremities",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle; brainstem dysfunction; autonomic dysfunction",
+      "quote": "The constellation of subacute progressive rigidity, myoclonus, brainstem dysfunction, autonomic symptoms, and presence of GlyR-Abs suggested a diagnosis of PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "mild rigidity and spasticity in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "mild rigidity and spasticity in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "mild rigidity and spasticity in both legs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "present",
+      "quote": "difficulty opening her mouth",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "mild rigidity and spasticity in both legs",
+      "quote": "mild rigidity and spasticity in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "mild rigidity and spasticity in both legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Jerky movements of the neck and trunk, sometimes triggered by touching of the patient's face, were observed and considered consistent with myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "Jerky movements of the neck and trunk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_neck, axial_thoracic",
+      "quote": "Jerky movements of the neck and trunk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Jerky movements of the neck and trunk, sometimes triggered by touching of the patient's face, were observed and considered consistent with myoclonus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "touch",
+      "quote": "sometimes triggered by touching of the patient's face",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "brief_jerk",
+      "quote": "Jerky movements of the neck and trunk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Jerky movements of the neck and trunk, sometimes triggered by touching of the patient's face, were observed and considered consistent with myoclonus, although they were too rare to be recorded electrophysiologically.",
+      "quote": "Jerky movements of the neck and trunk, sometimes triggered by touching of the patient's face, were observed and considered consistent with myoclonus, although they were too rare to be recorded electrophysiologically.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "Bulbar signs included bilaterally impaired movement of the soft palate and laryngeal muscles and weakness and a severely limited range of tongue movement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "she had bilateral horizontal and upward gaze nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysphagia; dysarthria; nystagmus; hyperreflexia; Babinski sign; vocal cord paralysis; autonomic dysfunction; urinary retention; constipation; hyperhidrosis; hypersalivation; sinus tachycardia",
+      "quote": "she had bilateral horizontal and upward gaze nystagmus, dysphagia, dysarthria, difficulty opening her mouth, hyperactive deep tendon reflexes of the jaw and upper extremities, mild rigidity and spasticity in both legs, and a positive Babinski sign on the right.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "urinary retention, constipation, hyperhidrosis, hypersalivation, sinus tachycardia",
+      "quote": "autonomic dysfunction with urinary retention, constipation, hyperhidrosis, hypersalivation, and sinus tachycardia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "bilateral horizontal and upward gaze nystagmus",
+      "quote": "she had bilateral horizontal and upward gaze nystagmus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "Upper respiratory tract obstruction developed acutely, requiring tracheostomy.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "The constellation of subacute progressive rigidity, myoclonus, brainstem dysfunction, autonomic symptoms, and presence of GlyR-Abs suggested a diagnosis of PERM.",
+      "quote": "The constellation of subacute progressive rigidity, myoclonus, brainstem dysfunction, autonomic symptoms, and presence of GlyR-Abs suggested a diagnosis of PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "The constellation of subacute progressive rigidity, myoclonus, brainstem dysfunction, autonomic symptoms, and presence of GlyR-Abs suggested a diagnosis of PERM.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "presence of GlyR-Abs suggested a diagnosis of PERM",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "the transient response to treatment was consistent with an immunologic etiology",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Repeat brain MRI including gadolinium enhancement and MR angiography revealed no abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "tests for anti-Hu, Yo, Ri, Tr, amphiphysin, CRMP-5 IgG, P/Q- and N-type calcium channels, AQP4, and ganglioside antibodies were all negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "multiple",
+      "quote": "Serologic testing revealed positive results for GlyR-Abs (1:350), GAD-Abs (45,000 U/mL), and thyroid peroxidase antibodies (TPO-Abs) (306 U/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "GlyR-Abs; GAD-Abs; TPO-Abs",
+      "quote": "positive results for GlyR-Abs (1:350), GAD-Abs (45,000 U/mL), and thyroid peroxidase antibodies (TPO-Abs) (306 U/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glycine receptor (GlyR); glutamic acid decarboxylase (GAD); thyroid peroxidase (TPO); anti-Hu; anti-Yo; anti-Ri; anti-Tr; amphiphysin; CRMP-5 IgG; P/Q-type calcium channel; N-type calcium channel; AQP4; ganglioside",
+      "quote": "Serologic testing revealed positive results for GlyR-Abs (1:350), GAD-Abs (45,000 U/mL), and thyroid peroxidase antibodies (TPO-Abs) (306 U/mL). However, tests for anti-Hu, Yo, Ri, Tr, amphiphysin, CRMP-5 IgG, P/Q- and N-type calcium channels, AQP4, and ganglioside antibodies were all negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-gephyrin antibodies were not examined. GlyR-Ab titer was markedly reduced in the CSF (from 1:40 before treatment to 1:5 at 6 months after thymectomy) and slightly reduced in the serum (from 1:400 to 1:300). GAD-Ab and TPO-Ab titers remained high after thymectomy in both the CSF and serum.",
+      "quote": "Anti-gephyrin antibodies were not examined.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Serologic testing revealed positive results for GlyR-Abs (1:350), GAD-Abs (45,000 U/mL)... There was no pleocytosis or an elevated protein level in the cerebrospinal fluid (CSF), but GlyR-Abs (1:40) and GAD-Abs (350 U/mL) were present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "GAD-Abs (45,000 U/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Serologic testing revealed positive results for GlyR-Abs (1:350), GAD-Abs (45,000 U/mL), and thyroid peroxidase antibodies (TPO-Abs) (306 U/mL).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "GAD-Abs (45,000 U/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "tested_positive",
+      "quote": "GlyR-Abs (1:350)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "tests for anti-Hu, Yo, Ri, Tr, amphiphysin, CRMP-5 IgG, P/Q- and N-type calcium channels, AQP4, and ganglioside antibodies were all negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "not_tested",
+      "quote": "Anti-gephyrin antibodies were not examined.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_positive",
+      "quote": "thyroid peroxidase antibodies (TPO-Abs) (306 U/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "thyroid peroxidase (TPO); anti-Hu; anti-Yo; anti-Ri; anti-Tr; CRMP-5 IgG; P/Q-type calcium channel; N-type calcium channel; AQP4; ganglioside",
+      "quote": "thyroid peroxidase antibodies (TPO-Abs) (306 U/mL). However, tests for anti-Hu, Yo, Ri, Tr, amphiphysin, CRMP-5 IgG, P/Q- and N-type calcium channels, AQP4, and ganglioside antibodies were all negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "There was no pleocytosis or an elevated protein level in the cerebrospinal fluid (CSF), but GlyR-Abs (1:40) and GAD-Abs (350 U/mL) were present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "GlyR-Abs; GAD-Abs",
+      "quote": "GlyR-Abs (1:40) and GAD-Abs (350 U/mL) were present",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Blink reflex, brainstem auditory evoked potential, and electroencephalography were all unremarkable.",
+      "quote": "Blink reflex, brainstem auditory evoked potential, and electroencephalography were all unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "0",
+      "quote": "Blink reflex, brainstem auditory evoked potential, and electroencephalography were all unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Repeat brain MRI including gadolinium enhancement and MR angiography revealed no abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Enhanced computed tomography (CT) revealed a 6-cm mediastinal mass, suggestive of a thymoma",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "type B1 thymoma",
+      "quote": "the resected tumor was diagnosed as a type B1 thymoma",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "All of the patient's neurologic symptoms markedly improved over the subsequent four months. She was able to walk and eat without assistance and was discharged from rehabilitation six months after the onset of her symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX",
+      "quote": "A course of plasma exchange resulted in partial improvement of the leg rigidity and spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "A course of plasma exchange",
+      "quote": "A course of plasma exchange resulted in partial improvement of the leg rigidity and spasticity, but that rigidity and spasticity worsened again a few days later.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "A course of plasma exchange resulted in partial improvement of the leg rigidity and spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "thymectomy; tracheostomy; pleurodesis",
+      "quote": "we resected our patient's thymoma... requiring tracheostomy... Bilateral pleurodesis was performed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "multiple",
+      "quote": "Her history notably included diabetes, chronic thyroiditis, and hypertension.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "diabetes; chronic thyroiditis",
+      "quote": "Her history notably included diabetes, chronic thyroiditis, and hypertension.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient was mistakenly reported as male in a previous publication (Table 4, fifth patient). Patient developed anasarca with massive pleural effusions and hypoalbuminemia after thymectomy, of unknown cause. Autopsy showed no neuropathological findings typical of PERM. A 1-cm submucosal gastric GIST was found at autopsy.",
+      "quote": "A 75-year-old woman [mistakenly reported as male; Table 4, fifth patient (8)]",
+      "confidence": "high"
+    }
+  ]
+}

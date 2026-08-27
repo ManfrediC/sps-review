@@ -1,0 +1,980 @@
+{
+  "paper_id": "1094",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "1094",
+      "quote": "Paper ID: 1094",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2014",
+      "quote": "Cesk Slov Ne urol N 2014; 77/ 110(1): 104– 108",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT KAZUISTIKA",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "46-year- old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "46",
+      "quote": "46-year- old man",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "45",
+      "quote": "A 45-year- old man was admitted to a neurology clinic due to a 2-month history of progressive muscle stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs, followed by urinary retention. Gradually, he developed spasmodic attacks and his gait worsened. Subsequently, he developed sw eating and diplopia of the left eye.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, gait_dysfunction, other",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs, followed by urinary retention. Gradually, he developed spasmodic attacks and his gait worsened. Subsequently, he developed sw eating and diplopia of the left eye.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "urinary retention, diplopia of the left eye",
+      "quote": "followed by urinary retention... Subsequently, he developed sw eating and diplopia of the left eye.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "Stiff- person syndrome (SPS)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs... Gradually, he developed spasmodic attacks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "First, he developed slight stiffness of the abdominal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "First, he developed slight stiffness of the abdominal muscles and lower limbs, followed by urinary retention.",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs, followed by urinary retention.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "First, he developed slight stiffness of the abdominal muscles and lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "Gradually, he developed spasmodic attacks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "Subsequently, he developed sw eating and diplopia of the left eye.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "urinary retention; diplopia; sweating",
+      "quote": "followed by urinary retention... Subsequently, he developed sw eating and diplopia of the left eye.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "sweating",
+      "quote": "Subsequently, he developed sw eating",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "diplopia of the left eye",
+      "quote": "Subsequently, he developed sw eating and diplopia of the left eye.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "He was unable to walk for the last three weeks, and he was unable to sit in a wheelchair because of the spasms during the week preceding admission.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "gradual development of severe SPS",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "However, after two months, he developed muscle stiffness, spasmodic attacks, and urinary retention that required catheterization. He was readmitted... Subsequently, he was given 30 g of intravenous immunoglobulins, leading to a complete remission of the signs and symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms",
+      "quote": "On admission, he had marked hypertonia in the muscles of the lower limbs and trunk, b oard-like abdomen, and lumbar hyperlordosis with pain... During the examination, he exhibited attacks of muscular hypertonia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "On admission, he had marked hypertonia in the muscles of the lower limbs and trunk, b oard-like abdomen, and lumbar hyperlordosis with pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "As the rigidity spread to the bulbar area and the neck muscles, the patient developed dys phagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "marked hypertonia in the muscles of the lower limbs and trunk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "lumbar hyperlordosis with pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "b oard-like abdomen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "marked hypertonia in the muscles of the lower limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "the tongue was poorly mobile and markedly stiff",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "On admission, he had marked hypertonia in the muscles of the lower limbs and trunk, b oard-like abdomen, and lumbar hyperlordosis with pain, and he was unable to move the left eyeball fully to the left without developing diplopia. The tongue was poorly mobile and markedly stiff.",
+      "quote": "On admission, he had marked hypertonia in the muscles of the lower limbs and trunk, b oard-like abdomen, and lumbar hyperlordosis with pain, and he was unable to move the left eyeball fully to the left without developing diplopia. The tongue was poorly mobile and markedly stiff.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "rectus abdominis, vastus lateralis, paravertebral",
+      "quote": "continuous motor unit activity in the paravertebral, rectus abdominis, and vastus lateralis muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "marked hypertonia in the muscles of the lower limbs and trunk, b oard-like abdomen, and lumbar hyperlordosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "During the examination, he exhibited attacks of muscular hypertonia, accompanied by anxiety, sweating, tachycardia, and mydriasis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Auditory stimulation (in the form of clicking sou nds) used to elicit brainstem auditory evoked potent ials (BAEP) had to be interrupted after a few seconds, and repeated attempts to resume the study failed to make the patient tolerate the stimulation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise",
+      "quote": "Auditory stimulation (in the form of clicking sou nds) used to elicit brainstem auditory evoked potent ials (BAEP) had to be interrupted after a few seconds",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "not_mentioned",
+      "quote": "Auditory stimulation (in the form of clicking sou nds) used to elicit brainstem auditory evoked potent ials (BAEP) had to be interrupted after a few seconds, and repeated attempts to resume the study failed to make the patient tolerate the stimulation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Auditory stimulation (in the form of clicking sou nds) used to elicit brainstem auditory evoked potent ials (BAEP) had to be interrupted after a few seconds, and repeated attempts to resume the study failed to make the patient tolerate the stimulation.",
+      "quote": "Auditory stimulation (in the form of clicking sou nds) used to elicit brainstem auditory evoked potent ials (BAEP) had to be interrupted after a few seconds, and repeated attempts to resume the study failed to make the patient tolerate the stimulation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "During the examination, he exhibited attacks of muscular hypertonia, accompanied by anxiety, sweating, tachycardia, and mydriasis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "attacks of muscular hypertonia accompanied by anxiety",
+      "quote": "During the examination, he exhibited attacks of muscular hypertonia, accompanied by anxiety, sweating, tachycardia, and mydriasis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "lumbar hyperlordosis with pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "As the rigidity spread to the bulbar area and the neck muscles, the patient developed dys phagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "he was unable to move the left eyeball fully to the left without developing diplopia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "oculomotor; dysphagia; autonomic; urinary bladder dysfunction",
+      "quote": "he was unable to move the left eyeball fully to the left without developing diplopia... Dysphagia was confirmed... urinary retention associated with urinary bladder dysfunction",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "sweating, tachycardia, mydriasis",
+      "quote": "attacks of muscular hypertonia, accompanied by anxiety, sweating, tachycardia, and mydriasis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "unable to move the left eyeball fully to the left without developing diplopia; convergent strabismus",
+      "quote": "he was unable to move the left eyeball fully to the left without developing diplopia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "He was unable to walk for the last three weeks, and he was unable to sit in a wheelchair because of the spasms during the week preceding admission.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness, spasms, hyperlordosis), EMG continuous motor unit activity, negative anti-GAD65, normal CSF, response to treatment",
+      "quote": "Our patient fulfilled all the core positive and negative criteria... Diagnosis of SPS was based on the presence of clinical and EMG findings that are characteristic of the disease.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Diagnosis of SPS was based on the presence of clinical and EMG findings that are characteristic of the disease.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL; amphiphysin antibod ies were not found.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "An examination using a concentric needle electrode revealed continuous motor unit activity in the paravertebral, rectus abdominis, and vastus lateralis muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Treatment with baclofen (100 mg) and tetrazepam (75 mg) resulted in part ial alleviation of spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Computed tomography scan of the chest, ultras ound of the abdomen, and magnetic resonance imaging of the brain and cervical spine were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "He did not have any signs and symptoms of an extrapyramidal or pyramidal disor der.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL; amphiphysin antibod ies were not found.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/mL",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (anti-GAD65); amphiphysin",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL; amphiphysin antibod ies were not found.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Anti-GAD65 level below 5 U/mL; amphiphysin antibodies not found; CSF normal without evidence of anti-GAD antibodies.",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL; amphiphysin antibod ies were not found. The patient's cerebrospinal fluid was normal without any evidence of anti-GAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL... The patient's cerebrospinal fluid was normal without any evidence of anti-GAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL; amphiphysin antibod ies were not found.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Serum anti-GAD65 level was below 5 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "amphiphysin antibod ies were not found",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "The patient's cerebrospinal fluid was normal without any evidence of anti-GAD antibodies.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "An examination using a concentric needle electrode revealed continuous motor unit activity in the paravertebral, rectus abdominis, and vastus lateralis muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "paravertebral, rectus abdominis, vastus lateralis, first dorsal interosseus, anterior tibial",
+      "quote": "continuous motor unit activity in the paravertebral, rectus abdominis, and vastus lateralis muscles... myotonic discharges were detected in the first dorsal interosseus and anterior tibial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Concentric needle electrode; motor and sensitive neurography; MultiMUP programme analysis of motor unit potentials",
+      "quote": "An examination using a concentric needle electrode revealed continuous motor unit activity... An analysis of the motor unit potentials (using MultiMUP programme) disclosed motor unit potentials that were mildly lower and shorter than normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "magnetic resonance imaging of the brain and cervical spine were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Computed tomography scan of the chest, ultras ound of the abdomen... were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "Subsequently, he was given 30 g of intravenous immunoglobulins, leading to a complete remission of the signs and symptoms. At the present time, the patient is stable on prednisone (20 mg) and baclofen (1010- 25 mg).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen",
+      "quote": "Treatment with baclofen (100 mg) and tetrazepam (75 mg)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG; Aza",
+      "quote": "we administered 4.5 g of intravenous methylprednisolone... He was started on azathioprine (50 mg twice daily)... he was given 30 g of intravenous immunoglobulins",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "4.5 g IV methylprednisolone initially; azathioprine 50 mg twice daily; prednisone 10 mg daily then 20 mg; 5 g IV methylprednisolone on relapse; 30 g IVIG per session every six weeks",
+      "quote": "we administered 4.5 g of intravenous methylprednisolone... He was started on azathioprine (50 mg twice daily) and was discharged home with prednisone (10 mg daily)... he was given 5 g of intravenous methylprednisolone... he was given 30 g of intravenous immunoglobulins... 30 g of intravenous immunoglobulins every six weeks",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Subsequently, he was given 30 g of intravenous immunoglobulins, leading to a complete remission of the signs and symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "baclofen",
+      "quote": "Treatment with baclofen (100 mg) and tetrazepam (75 mg)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "baclofen 100 mg orally; tetrazepam 75 mg; later baclofen 45 mg",
+      "quote": "Treatment with baclofen (100 mg) and tetrazepam (75 mg)... 45 mg of baclofen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Treatment with baclofen (100 mg) and tetrazepam (75 mg) resulted in part ial alleviation of spasms and only a small reduction of board-like rigidity of the trunk muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Treatment with baclofen (100 mg) and tetrazepam (75 mg) resulted in part ial alleviation of spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "The patient was followed for mild bronchial asthma and allergies (to pollen, mites and plastic) from 10 years of age.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "mild bronchial asthma and allergies (to pollen, mites and plastic)",
+      "quote": "The patient was followed for mild bronchial asthma and allergies (to pollen, mites and plastic) from 10 years of age.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "family_history",
+      "value": "other",
+      "quote": "his father; he had muscle stiffness and experienced difficulty walking after the age of 50",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "Father had muscle stiffness and difficulty walking after age 50; genetic testing not conducted",
+      "quote": "his father; he had muscle stiffness and experienced difficulty walking after the age of 50. Genetic testing was not conducted.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient also diagnosed with myotonic dystrophy type 2 (DM2) confirmed by genetic testing (zinc finger protein 9 gene expansion on chromosome 3). Muscle biopsy of right vastus lateralis showed minimal morphological changes compatible with DM2. Elevated creatine kinase 6.6 μkat/L and lactate dehydrogenase 5.69 μkat/L. Cardiac examination showed insignificant atrial septum aneurysm.",
+      "quote": "genetic testing was performed; it revealed expansion in the zinc finger protein 9 gene on the 3rd chromosome, thus providing evidence of myotonic dystrophy type 2.",
+      "confidence": "high"
+    }
+  ]
+}

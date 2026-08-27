@@ -1,0 +1,980 @@
+{
+  "paper_id": "623",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "623",
+      "quote": "Paper ID: 623",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2001",
+      "quote": "Journal of the Neurological Sciences 193 2001 59–62",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Short communication ... We report a case of a 40-year-old female with continuous muscle stiffness and painful muscle spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 40-year-old female clerical worker was admitted to our hospital",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "Department of Neurology, Division of Neuroscience, Graduate School of Medicine, University of Tokyo, Hongo 7-3-1, Bunkyo, Tokyo, 113-8655, Japan",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "40",
+      "quote": "A 40-year-old female clerical worker was admitted to our hospital",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "40",
+      "quote": "A 40-year-old female clerical worker was admitted to our hospital complaining of stiffness in the bilateral lower extremities and a gait disturbance. ... On May 22, 1999, the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "On May 22, 1999, the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria. On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "brainstem_autonomic, stiffness, gait_dysfunction",
+      "quote": "On May 22, 1999, the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria. On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "Stiff-person syndrome was diagnosed from the clinical course, neurological findings and other examination results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "continuous muscle stiffness and painful muscle spasms ... precipitated by sudden movement, sound, tactile stimulation, or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "On June 2, the patient began to fall forward due to a sudden stiffness of the abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "the bilateral lower extremities were observed to be rigid and extended in an equinovarus position",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities. On June 2, the patient began to fall forward due to a sudden stiffness of the abdomen.",
+      "quote": "On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities. On June 2, the patient began to fall forward due to a sudden stiffness of the abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "distal_LE",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; touch; spontaneous",
+      "quote": "These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "yes",
+      "quote": "On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed. These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed. These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "On May 22, 1999, the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysphagia; dysarthria; vertigo; pharyngeal pain; myoclonus; urinary urgency; Babinski sign; hyperreflexia",
+      "quote": "On May 22, 1999, the patient experienced vertigo, pharyngeal pain, dysphagia, and dysarthria. ... Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed. ... Deep tendon reflexes were increased in the bilateral lower extremities. Babinski sign was present bilaterally and urinary urgency was observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "urinary urgency",
+      "quote": "Around June 4, urinary urgency developed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "The patient became unable to maintain a standing or sitting position. Stiffness of the lower extremities was observed even in a decubitus position, and was accompanied by pain.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "fulminant",
+      "quote": "The symptoms worsened over a two-week period after onset.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "The symptoms worsened over a two-week period after onset.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "continuous muscle stiffness and painful muscle spasms ... precipitated by sudden movement, sound, tactile stimulation, or emotional upset",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "continuous muscle stiffness and painful muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "On June 2, the patient began to fall forward due to a sudden stiffness of the abdomen.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "stiffness in the bilateral lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "the bilateral lower extremities were observed to be rigid and extended in an equinovarus position",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "the bilateral lower extremities were observed to be rigid and extended in an equinovarus position",
+      "quote": "the bilateral lower extremities were observed to be rigid and extended in an equinovarus position",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "distal_LE",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch; spontaneous",
+      "quote": "These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "On May 30, she began to fall backward or forward repeatedly due to a sudden stiffness of the lower extremities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed. These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "quote": "Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed. These events occurred spontaneously, or were induced by sensory or acoustic stimuli.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "dysphagia and glossal motor deficits were observed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysphagia; dysarthria; vertigo; pharyngeal pain; myoclonus; urinary urgency; Babinski sign; hyperreflexia",
+      "quote": "dysphagia and glossal motor deficits were observed ... Painful tonic spasms, dominant on the right, and myoclonus of the bilateral lower extremities were observed. ... Deep tendon reflexes were increased in the bilateral lower extremities. Babinski sign was present bilaterally and urinary urgency was observed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "urinary urgency",
+      "quote": "urinary urgency was observed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "The patient became unable to maintain a standing or sitting position. Stiffness of the lower extremities was observed even in a decubitus position, and was accompanied by pain.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "On the basis of the above clinical, electrophysiological and laboratory findings, stiff-person syndrome was diagnosed according to the criteria established by Gordon et al. and Lorish et al.",
+      "quote": "On the basis of the above clinical, electrophysiological and laboratory findings, stiff-person syndrome was diagnosed according to the criteria established by Gordon et al. and Lorish et al.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Stiff-person syndrome was diagnosed from the clinical course, neurological findings and other examination results.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "High levels of anti-glutamic acid decarboxylase (GAD) antibodies were detected in both serum and cerebrospinal fluid, suggesting that the patient suffered from stiff-person syndrome.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Electrophysiological examinations revealed continuous muscle discharge, which was markedly reduced by intravenous administration of diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "MRI of the head, thoracic and cervical levels of the spinal cord revealed no abnormality.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "As a differential diagnosis, progressive encephalomyelitis with rigidity (PER) may be considered. However, in this case, higher-cortical functions were maintained, the cerebrospinal fluid was normal, and the brainstem symptoms were temporary while typical PER is progressive. Neuromyotonia was also ruled out because the symptoms were not localized in more distal areas and diazepam should not be as effective as in this case.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "High levels of anti-glutamic acid decarboxylase (GAD) antibodies were detected in both serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "190000",
+      "quote": "Anti-GAD antibodies ... were 190,000 U/ml (normal <0.5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/ml",
+      "quote": "190,000 U/ml (normal <0.5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); acetylcholine receptor (AChR); amphiphysin; gastric parietal cell; ssDNA; dsDNA; pancreatic islet cell; thyroid microsomal; thyroglobulin; mitochondrial",
+      "quote": "Anti-GAD antibodies, anti-gastric parietal cell antibodies, anti-ssDNA antibody and anti-dsDNA antibody were 190,000 U/ml (normal <0.5), 20 (normal <10), 23.8 (normal <20) and 15.7 (normal <10), respectively. Anti-pancreatic islet cell antibodies, anti-thyroid microsomal antibody, anti-thyroglobuline antibodies, anti-mitochondrial antibodies were negative. Western blot analysis, using a serum sample from the patient and a human brain homogenate revealed no bands near 128 kDa, which is considered to represent amphiphysin.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "Western blot",
+      "quote": "Western blot analysis, using a serum sample from the patient and a human brain homogenate revealed no bands near 128 kDa, which is considered to represent amphiphysin.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "The anti-GAD antibody level was 239 U/ml (normal <0.5) in the cerebrospinal fluid. After treatment, the anti-GAD antibody level decreased to 26,900 U/ml in the serum and 91.1 U/ml in the cerebrospinal fluid. Western blot confirmed the antibodies reacted with the 65-kDa isoform of GAD.",
+      "quote": "The anti-GAD antibody level was 239 U/ml (normal <0.5). ... decreased the anti-GAD antibody level (26,900 U/ml in the serum, 91.1 U/ml in the cerebrospinal fluid, respectively). ... We carried out Western blot and found that the antibodies reacted with 65-kDa isoform of GAD (data not shown).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "High levels of anti-glutamic acid decarboxylase (GAD) antibodies were detected in both serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "Anti-GAD antibodies ... were 190,000 U/ml (normal <0.5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "High levels of anti-glutamic acid decarboxylase (GAD) antibodies were detected in both serum and cerebrospinal fluid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Anti-GAD antibodies ... were 190,000 U/ml (normal <0.5)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "Western blot analysis, using a serum sample from the patient and a human brain homogenate revealed no bands near 128 kDa, which is considered to represent amphiphysin.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "No binding or blocking anti-acetylcholine receptor (AChR) antibodies were present. Anti-pancreatic islet cell antibodies, anti-thyroid microsomal antibody, anti-thyroglobuline antibodies, anti-mitochondrial antibodies were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "acetylcholine receptor (AChR); pancreatic islet cell; thyroid microsomal; thyroglobulin; mitochondrial",
+      "quote": "No binding or blocking anti-acetylcholine receptor (AChR) antibodies were present. Anti-pancreatic islet cell antibodies, anti-thyroid microsomal antibody, anti-thyroglobuline antibodies, anti-mitochondrial antibodies were negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "antibody_present",
+      "quote": "The anti-GAD antibody level was 239 U/ml (normal <0.5).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "anti-GAD antibody",
+      "quote": "The anti-GAD antibody level was 239 U/ml (normal <0.5).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "239",
+      "quote": "The anti-GAD antibody level was 239 U/ml (normal <0.5).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "0.3",
+      "quote": "the cell count, the levels of protein and sugar and the IgG index were 0.3 /ml, 19 mg/dl, 72 mg/dl and 0.63, respectively",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "No oligoclonal band or myelin basic protein was detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "19 mg/dl",
+      "quote": "the cell count, the levels of protein and sugar and the IgG index were 0.3 /ml, 19 mg/dl, 72 mg/dl and 0.63, respectively",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "bilateral lower extremities",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Surface electromyography; motor and sensory nerve conduction studies",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam. The motor and sensory nerve conductions were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "MRI of the head, thoracic and cervical levels of the spinal cord revealed no abnormality.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "The CT revealed the presence of a 3 x 2 cm mass with a muscle-like density in the anterior mediastinum, slightly to the right.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "invasive thymoma",
+      "quote": "Thus, we concluded that an invasive thymoma was present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "These treatments relieved the clinical symptoms of muscle stiffness and myoclonus ... The thymectomy and postoperative radiotherapy further alleviated the clinical symptoms of muscle stiffness and myoclonus. The patient was able to discontinue muscle relaxants.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; PLEX",
+      "quote": "The patient was treated with two courses of a three-day pulse therapy, using 1000 mg methylprednisolone per day, and three courses of immunoadsorption therapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Two courses of a three-day pulse therapy, using 1000 mg methylprednisolone per day, and three courses of immunoadsorption therapy.",
+      "quote": "The patient was treated with two courses of a three-day pulse therapy, using 1000 mg methylprednisolone per day, and three courses of immunoadsorption therapy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "These treatments relieved the clinical symptoms of muscle stiffness and myoclonus, and decreased the anti-GAD antibody level",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "10-mg intravenous diazepam",
+      "quote": "the administration of 10-mg intravenous diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "The surface electromyography detected a continuous muscle discharge in the bilateral lower extremities, which was markedly reduced during sleep or with the administration of 10-mg intravenous diazepam.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "Extended thymectomy and postoperative radiotherapy",
+      "quote": "An extended thymectomy was performed on July 26. ... The thymectomy and postoperative radiotherapy further alleviated the clinical symptoms of muscle stiffness and myoclonus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "gastric",
+      "quote": "Anti-gastric parietal cell antibodies ... were 20 (normal <10)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "Her mother has a history of dialysis, but details are unknown.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient had no history of diabetes, injuries or epilepsy. The thymoma was stage III according to TNM staging. The thymoma was classified as predominantly lymphocytic type. The patient was able to discontinue muscle relaxants after thymectomy and radiotherapy. No ptosis or muscle weakness in the four extremities has been observed from the onset of the disease to the present.",
+      "quote": "She has no history of diabetes, injuries or epilepsy. ... The tumor was in stage III according to the TNM staging. ... the pathological findings are predominantly lymphocytic type and are not accompanied by MG. ... The patient was able to discontinue muscle relaxants. No ptosis or muscle weakness in the four extremities has been observed from the onset of the disease to the present.",
+      "confidence": "high"
+    }
+  ]
+}

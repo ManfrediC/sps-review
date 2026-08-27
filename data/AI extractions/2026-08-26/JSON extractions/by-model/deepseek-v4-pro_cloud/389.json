@@ -1,0 +1,980 @@
+{
+  "paper_id": "389",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "389",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1990",
+      "quote": "J Neurol (1990) 237: 51-54",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Journal of Neurology © Springer-Verlag 1990",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "a 33-year-old male patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "33",
+      "quote": "A healthy man aged 33 years",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "33",
+      "quote": "A healthy man aged 33 years had a tick bite... One week later he began to suffer from nocturnal pain in the left leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "5",
+      "quote": "Three months later, the patient had no further difficulty in walking.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "2",
+      "quote": "Eight weeks after a tick bite, a 33-year-old male patient presented with stiffness of one leg together with spasmodic painful jerks resembling stiff man syndrome.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "pain",
+      "quote": "One week later he began to suffer from nocturnal pain in the left leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Limb",
+      "quote": "Clinically, his disease may be characterized as a partial stiff man syndrome with muscle rigidity and painful myoclonic jerks confined to the left lower leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "From the 3rd week following the tick bite he experienced gradually increasing stiffness of the left calf and later also the thigh... The week prior to admission he developed severe painful cramps of the leg muscles which occurred spontaneously and could be elicited by loud noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "From the 3rd week following the tick bite he experienced gradually increasing stiffness of the left calf and later also the thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "absent",
+      "quote": "Cranial nerve deficits, neck stiffness and back pain were absent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "gradually increasing stiffness of the left calf and later also the thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "gradually increasing stiffness of the left calf",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "From the 3rd week following the tick bite he experienced gradually increasing stiffness of the left calf and later also the thigh.",
+      "quote": "From the 3rd week following the tick bite he experienced gradually increasing stiffness of the left calf and later also the thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "gradually increasing stiffness of the left calf and later also the thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_left",
+      "quote": "stiffness of the left calf and later also the thigh",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "The week prior to admission he developed severe painful cramps of the leg muscles which occurred spontaneously and could be elicited by loud noises.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "prox_LE",
+      "quote": "severe painful cramps of the leg muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "severe painful cramps of the leg muscles which occurred spontaneously and could be elicited by loud noises",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; spontaneous",
+      "quote": "occurred spontaneously and could be elicited by loud noises",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "severe painful cramps of the leg muscles",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "severe painful cramps of the leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "yes",
+      "quote": "He occasionally completely lost control of his left leg and fell twice and hurt himself.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "The week prior to admission he developed severe painful cramps of the leg muscles which occurred spontaneously and could be elicited by loud noises. He occasionally completely lost control of his left leg and fell twice and hurt himself.",
+      "quote": "The week prior to admission he developed severe painful cramps of the leg muscles which occurred spontaneously and could be elicited by loud noises. He occasionally completely lost control of his left leg and fell twice and hurt himself.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Coordination and sensation were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Cranial nerve deficits, neck stiffness and back pain were absent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "nocturnal pain in the left leg",
+      "quote": "One week later he began to suffer from nocturnal pain in the left leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "On admission, the patient was unable to walk without support because of painful cramps and stiffness of the left leg extensor muscles.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "From the 3rd week following the tick bite he experienced gradually increasing stiffness of the left calf and later also the thigh.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "Local tetanus was initially considered",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "Local tetanus",
+      "quote": "Local tetanus was initially considered, but unlikely with normal silent periods in the affected leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "monophasic",
+      "quote": "Three months later, the patient had no further difficulty in walking. No jerks had been noted during the previous 4 weeks.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "muscle rigidity and painful myoclonic jerks confined to the left lower leg. The spasmodic jerks could even be elicited by noises or touch",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "muscle rigidity and painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "absent",
+      "quote": "Cranial nerve deficits, neck stiffness and back pain were absent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "muscle rigidity and painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "muscle rigidity and painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Clinically, his disease may be characterized as a partial stiff man syndrome with muscle rigidity and painful myoclonic jerks confined to the left lower leg.",
+      "quote": "Clinically, his disease may be characterized as a partial stiff man syndrome with muscle rigidity and painful myoclonic jerks confined to the left lower leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "muscle rigidity and painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "focal_left",
+      "quote": "muscle rigidity and painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "prox_LE",
+      "quote": "painful myoclonic jerks confined to the left lower leg",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "The spasmodic jerks could even be elicited by noises or touch",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch; movement; spontaneous",
+      "quote": "spasmodic jerks in the left leg appeared either spontaneously or following voluntary movements, touch of either leg or even noises like shutting the door",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "brief_jerk; sustained_contraction",
+      "quote": "Reflex myoclonus consisted of a synchronized burst response and a long-lasting (up to 1.5 s) decrescendo activity in all muscles recorded from",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "painful myoclonic jerks confined to the left lower leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "He occasionally completely lost control of his left leg and fell twice and hurt himself.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "prolonged",
+      "quote": "a long-lasting (up to 1.5 s) decrescendo activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "up to 1.5 s",
+      "quote": "a long-lasting (up to 1.5 s) decrescendo activity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "During examination, spasmodic jerks in the left leg appeared either spontaneously or following voluntary movements, touch of either leg or even noises like shutting the door.",
+      "quote": "During examination, spasmodic jerks in the left leg appeared either spontaneously or following voluntary movements, touch of either leg or even noises like shutting the door.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "Coordination and sensation were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "Cranial nerve deficits, neck stiffness and back pain were absent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperreflexia; babinski",
+      "quote": "Tendon reflexes of both legs were brisk with a predominance in the left leg. Babinski's sign was now positive on both sides, more prominent on the left.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "On admission, the patient was unable to walk without support because of painful cramps and stiffness of the left leg extensor muscles.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness and spasmodic jerks confined to one leg), CSF findings (elevated cell counts and protein, intrathecal synthesis of Borrelia burgdorferi-specific IgG), positive serology for B. burgdorferi, EMG findings (tonic firing of normal motor units, reflex myoclonus with spinal localization), and exclusion of local tetanus.",
+      "quote": "The clinical picture of this patient showed some resemblance to the stiff man syndrome. However, it was confined to one leg and its infectious origin was confirmed by CSF findings, positive serology and the demonstration of intrathecally produced, oligoclonal, B. burgdorferi-specific IgG bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Clinically, his disease may be characterized as a partial stiff man syndrome with muscle rigidity and painful myoclonic jerks confined to the left lower leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "its infectious origin was confirmed by CSF findings, positive serology and the demonstration of intrathecally produced, oligoclonal, B. burgdorferi-specific IgG bands",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "EMG analysis of reflex jerks after tibial nerve stimulation revealed onset latencies compatible with a probably disinhibited segmental oligosynaptic reflex path",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "not_used",
+      "quote": "N/A",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "A magnetic resonance scan showed no abnormalities of brain or spinal cord either with or without gadolinium enhancement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Local tetanus was initially considered, but unlikely with normal silent periods in the affected leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "other",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "Borrelia burgdorferi",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "Borrelia burgdorferi",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "Immunofluorescence assay (IFA); ELISA",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "No B. burgdorferi-specific IgM antibodies could be found. Oligoclonal B. burgdorferi-specific IgG bands were demonstrated using affinity-mediated transfer of isoelectrically focused CSF and serum onto antigen-coated filters.",
+      "quote": "No B. burgdorferi-specific IgM antibodies could be found. Oligoclonal B. burgdorferi-specific IgG bands were demonstrated using affinity-mediated transfer of isoelectrically focused CSF and serum onto antigen-coated filters.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_positive",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "Borrelia burgdorferi",
+      "quote": "B. burgdorferi-specific antibodies detected by immunofluorescence assay (IFA) or ELISA were positive in the serum and the CSF.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "inflammatory",
+      "quote": "Routine CSF studies revealed elevated protein and immunoglobulin values and a lymphocytic pleocytosis with 240 leucocytes/μl",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "240",
+      "quote": "a lymphocytic pleocytosis with 240 leucocytes/μl",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "yes",
+      "quote": "The raised quotients for albumin and IgG indicated both a disruption of the blood-brain barrier and intrathecal synthesis of IgG at the first lumbar puncture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "209.0 mg/dl",
+      "quote": "Total protein (mg/dl) 209.0",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Several electromyographic (EMG) examinations revealed a tonic firing of normal motor units in the left leg muscles which could not be suppressed voluntarily",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "left vastus medialis, posterior biceps, gastrocnemius medius, tibialis anterior, left rectus femoris, gastrocnemius",
+      "quote": "Electromyographic recording of reflex myoclonus in the left vastus medialis (VM), posterior biceps (PB), gastrocnemius medius (GM) and tibialis anterior (TA) muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Simultaneous EMG recordings from various leg muscles after supramaximal electrical stimulation (single shock, pulse width 0.2 ms) to the median or tibial nerves at the wrist or ankle, respectively. Nerve conduction velocities and sensory evoked potentials were also assessed.",
+      "quote": "EMG analysis of reflex myoclonus was performed by means of simultaneous EMG recordings from various leg muscles after supramaximal electrical stimulation (single shock, pulse width 0.2 ms) to the median or tibial nerves at the wrist or ankle, respectively.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "1",
+      "quote": "Reflex myoclonus consisted of a synchronized burst response and a long-lasting (up to 1.5 s) decrescendo activity in all muscles recorded from",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "A magnetic resonance scan showed no abnormalities of brain or spinal cord either with or without gadolinium enhancement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "Three months later, the patient had no further difficulty in walking. No jerks had been noted during the previous 4 weeks. The only impairment left was slight difficulty in taking more than two steps on a staircase.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, tizanidine",
+      "quote": "Therapeutic trials with antispastic drugs showed moderate amelioration of cramps and ability to walk with tizanidine 3×6mg/day and baclofen 3×5mg/day, but diazepam 3×5 mg/day was much more effective.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "none",
+      "quote": "Therapy with 20 × 106 units/day penicillin G i.v. for 14 days was initiated.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "diazepam 3×5 mg/day was much more effective",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "tizanidine 3×6mg/day; baclofen 3×5mg/day; diazepam 3×5 mg/day",
+      "quote": "Therapeutic trials with antispastic drugs showed moderate amelioration of cramps and ability to walk with tizanidine 3×6mg/day and baclofen 3×5mg/day, but diazepam 3×5 mg/day was much more effective.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Therapeutic trials with antispastic drugs showed moderate amelioration of cramps and ability to walk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Therapeutic trials with antispastic drugs showed moderate amelioration of cramps and ability to walk",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "Penicillin G 20 × 106 units/day i.v. for 14 days; 500 units of polyvalent human anti-tetanus antibodies i.m.",
+      "quote": "Therapy with 20 × 106 units/day penicillin G i.v. for 14 days was initiated. The patient also received 500 units of polyvalent human anti-tetanus antibodies i.m.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "The patient had a tick bite in the left lower quadrant of the abdomen 9 weeks before admission. Creatine kinase levels were elevated at 878 units/l, dropping to normal (77 units/l) 1 week after initiation of therapy. The case is presented as Borrelia burgdorferi myelitis presenting as a partial stiff man syndrome.",
+      "quote": "A healthy man aged 33 years had a tick bite in the left lower quadrant of the abdomen with no erythema 9 weeks before admission to our hospital.",
+      "confidence": "high"
+    }
+  ]
+}

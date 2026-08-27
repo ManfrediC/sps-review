@@ -1,0 +1,980 @@
+{
+  "paper_id": "1962",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "1962",
+      "quote": "Paper ID: 1962",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2020",
+      "quote": "published: 10 November 2020",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT published: 10 November 2020 doi: 10.3389/fneur.2020.529985",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "Reported is a 41-year-old male",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "48",
+      "quote": "Today, the patient is 48 years old",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "16",
+      "quote": "Since age 16, the patient was seen for possible Cystic Fibrosis (CF) workup, intermittent headaches, muscle strains and spasms following light exercise",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "Since age 16, the patient was seen for possible Cystic Fibrosis (CF) workup, intermittent headaches, muscle strains and spasms following light exercise, acute episodes of respiratory failure, and depression.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, spasms, other",
+      "quote": "muscle strains and spasms following light exercise",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "intermittent headaches, acute episodes of respiratory failure, depression",
+      "quote": "intermittent headaches, muscle strains and spasms following light exercise, acute episodes of respiratory failure, and depression",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "a positive repeat GAD65-Ab test, the diagnosis was changed to Stiff Person Syndrome",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "he complained of muscle weakness and stiffness of his legs, back, and neck following any physical exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "he complained of muscle weakness and stiffness of his legs, back, and neck following any physical exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "he complained of muscle weakness and stiffness of his legs, back, and neck following any physical exertion",
+      "quote": "he complained of muscle weakness and stiffness of his legs, back, and neck following any physical exertion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "muscle strains and spasms following light exercise",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "muscle strains and spasms following light exercise",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "movement",
+      "quote": "muscle strains and spasms following light exercise",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "muscle strains and spasms following light exercise",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "muscle strains and spasms following light exercise",
+      "quote": "muscle strains and spasms following light exercise",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "headaches; respiratory failure; depression; muscle weakness",
+      "quote": "intermittent headaches, muscle strains and spasms following light exercise, acute episodes of respiratory failure, and depression",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "he complained of muscle weakness and stiffness of his legs, back, and neck following any physical exertion",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "insidiously causing posturing of his trunk and limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "his differential diagnosis included muscle strain and muscle spasm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "muscle strain and muscle spasm",
+      "quote": "his differential diagnosis included muscle strain and muscle spasm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "For the next 2 years, the patient suffered recurrent falls with increasing frequency of visits to the emergency department for muscle cramps and spasms, insidiously causing posturing of his trunk and limbs.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms",
+      "quote": "Progressive visits gradually transitioned from complaints of muscle pain and fatigue to cramps with spasms and stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "cramps with spasms and stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Progressive visits gradually transitioned from complaints of muscle pain and fatigue to cramps with spasms and stiffness",
+      "quote": "Progressive visits gradually transitioned from complaints of muscle pain and fatigue to cramps with spasms and stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "stiffness of his legs, back, and neck",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "cramps with spasms and stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "he suffered recurrent falls with increasing frequency of visits to the emergency department for muscle cramps and spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "muscle cramps and spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "yes",
+      "quote": "the patient suffered recurrent falls with increasing frequency of visits to the emergency department for muscle cramps and spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "the patient suffered recurrent falls with increasing frequency of visits to the emergency department for muscle cramps and spasms, insidiously causing posturing of his trunk and limbs",
+      "quote": "the patient suffered recurrent falls with increasing frequency of visits to the emergency department for muscle cramps and spasms, insidiously causing posturing of his trunk and limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "the patient was developing urinary hesitancy, cognitive slowing, insomnia, irritability, frequent headaches, and difficulty swallowing solids",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysphagia; urinary hesitancy; cognitive slowing; insomnia; irritability; headaches",
+      "quote": "the patient was developing urinary hesitancy, cognitive slowing, insomnia, irritability, frequent headaches, and difficulty swallowing solids",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "urinary hesitancy",
+      "quote": "the patient was developing urinary hesitancy",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "The patient has been hospitalized twice every month for the past 4 months.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "symptomatic history and a positive GAD-antibody test; EMG testing and therapeutic diazepam trial",
+      "quote": "In addition to symptomatic history and a positive GAD-antibody test, diagnosis may involve electromyographic (EMG) testing and therapeutic diazepam trial",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "symptomatic history",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "a positive GAD-antibody test",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "diagnosis may involve electromyographic (EMG) testing",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "therapeutic diazepam trial",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "The patient's non-contributory paraneoplastic panel was administered to rule out this subtype.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "a positive repeat GAD65-Ab test",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "76.0",
+      "quote": "elevated level at 76.0 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "nmol/L",
+      "quote": "76.0 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD65); ANNA-1; ANNA-2; ANNA-3; AGNA-1; ACh; AChR; VGKC; PCA-1; PCA-2; PCA-Tr; CRMP-5; Amphiphysin",
+      "quote": "a serum paraneoplastic antibody evaluation (ANNA-1, ANNA-2, ANNA-3, AGNA-1, ACh, AChR, VGKC, PCA-1, PCA-2, PCA-Tr, CRMP-5, and Amphiphysin) was performed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Initial GAD65 antibody level was undetectable; repeat testing approximately 1 year later yielded elevated level at 76.0 nmol/L; subsequent repeated tests have been negative, presumably due to initiated treatment.",
+      "quote": "a GAD65 antibody level, which was undetectable... the patient was tested again for GAD65 antibodies which yielded an elevated level at 76.0 nmol/L... Subsequent repeated tests have also been negative, presumably due to initiated treatment.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "a serum paraneoplastic antibody evaluation",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "elevated level at 76.0 nmol/L (nl≤0.02 nmol/L)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "nl≤0.02 nmol/L",
+      "quote": "76.0 nmol/L (nl≤0.02 nmol/L)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "a positive repeat GAD65-Ab test",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "a positive repeat GAD65-Ab test",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "a serum paraneoplastic antibody evaluation (ANNA-1, ANNA-2, ANNA-3, AGNA-1, ACh, AChR, VGKC, PCA-1, PCA-2, PCA-Tr, CRMP-5, and Amphiphysin) was performed, and no abnormalities were detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "a serum paraneoplastic antibody evaluation (ANNA-1, ANNA-2, ANNA-3, AGNA-1, ACh, AChR, VGKC, PCA-1, PCA-2, PCA-Tr, CRMP-5, and Amphiphysin) was performed, and no abnormalities were detected",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "ANNA-1; ANNA-2; ANNA-3; AGNA-1; ACh; AChR; VGKC; PCA-1; PCA-2; PCA-Tr; CRMP-5",
+      "quote": "ANNA-1, ANNA-2, ANNA-3, AGNA-1, ACh, AChR, VGKC, PCA-1, PCA-2, PCA-Tr, CRMP-5",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "Electromyographic testing was suggestive of a chronic myopathic process without evidence of myonecrosis or vasculitis.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "a serum paraneoplastic antibody evaluation... was performed, and no abnormalities were detected",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "fluctuating",
+      "quote": "his current treatment for the diagnosis of Stiff-Person Syndrome has demonstrated episodic improvement in his stiffness and laboratory improvement of his antibody levels",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "high doses of benzodiazepines... a baclofen pump, hydromorphone, and various other intravenous narcotics",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; PLEX; IVIG; RXB; other",
+      "quote": "mycophenolate 500 mg twice a day and prednisone 10 mg every other day. Prior regimens included two sessions of port-administered plasmapheresis every 2–3 weeks... A trial of intravenous immunoglobulin daily for 2 days every 3 weeks... Rituximab was tried several years ago",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "mycophenolate 500 mg twice a day; prednisone 10 mg every other day; two sessions of port-administered plasmapheresis every 2–3 weeks; intravenous immunoglobulin daily for 2 days every 3 weeks; Rituximab on a 4–6 months interval",
+      "quote": "mycophenolate 500 mg twice a day and prednisone 10 mg every other day. Prior regimens included two sessions of port-administered plasmapheresis every 2–3 weeks... A trial of intravenous immunoglobulin daily for 2 days every 3 weeks... Rituximab was tried several years ago on a 4–6 months interval",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "his current treatment for the diagnosis of Stiff-Person Syndrome has demonstrated episodic improvement in his stiffness and laboratory improvement of his antibody levels",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "The patient is currently using an implanted baclofen pump and diazepam to help control his spasms. He has a hydromorphone implanted pump for pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "implanted baclofen pump; diazepam; hydromorphone implanted pump",
+      "quote": "The patient is currently using an implanted baclofen pump and diazepam to help control his spasms. He has a hydromorphone implanted pump for pain.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Benzodiazepines were frequently used for partial symptomatic relief during hospitalizations",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Benzodiazepines were frequently used for partial symptomatic relief during hospitalizations",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "diabetes",
+      "quote": "A 41-year-old man with a history of hypertension and type 2 diabetes mellitus",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "A review of his family history was negative for any members with similar symptoms at any age.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient initially misdiagnosed with McArdle disease based on misinterpreted muscle biopsy; genetic testing showed no PYGM mutation. Initial GAD65 antibody test was negative, later positive, then negative again after treatment. Patient has history of childhood trauma and psychiatric difficulty; some physicians considered a functional neurological/psychiatric disorder. Authors note neither McArdle disease nor SPS has been an ideal diagnostic fit, and the correct diagnosis may yet be unidentified.",
+      "quote": "While these two distinct and rare disease processes have been the main diagnoses in this patient's case, neither has been an ideal diagnostic fit, and it is possible that the correct diagnosis has yet to be identified.",
+      "confidence": "high"
+    }
+  ]
+}

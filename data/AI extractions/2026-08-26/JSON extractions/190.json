@@ -1,0 +1,980 @@
+{
+  "paper_id": "190",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "190",
+      "quote": "Paper ID: 190",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1999",
+      "quote": "Journal of medicine. 1999;30(05-Jun):321-7.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case Report A 57-year-old man developed symptoms of painful stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 57-year-old man developed symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "East_Asian",
+      "quote": "University of Tsukuba, Tsukuba-city, Ibaraki-ken, 305-8575, Japan",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "age_description",
+      "value": "57",
+      "quote": "A 57-year-old man developed symptoms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "42",
+      "quote": "A 57-year-old man developed symptoms of painful stiffness of his back and limbs, muscle cramps, and difficulty in walking in 1984.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "126",
+      "quote": "developed symptoms... in 1984... admitted to our hospital in December 1994",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "A 57-year-old man developed symptoms of painful stiffness of his back and limbs, muscle cramps, and difficulty in walking in 1984.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, spasms, gait_dysfunction",
+      "quote": "painful stiffness of his back and limbs, muscle cramps, and difficulty in walking",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "Our patient met the criteria for stiff-man syndrome established by Gordon, Januszko et al. (1967) and Lorish, Thorsteinsson et al. (1989).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "painful stiffness of his back and limbs, muscle cramps",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "A 57-year-old man developed symptoms of painful stiffness of his back and limbs, muscle cramps, and difficulty in walking in 1984.",
+      "quote": "A 57-year-old man developed symptoms of painful stiffness of his back and limbs, muscle cramps, and difficulty in walking in 1984.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "painful stiffness of his back and limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "muscle cramps",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "generalised",
+      "quote": "Painful generalized muscle cramps were easily elicited",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "touch; movement",
+      "quote": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "At the attack of muscle cramping, his upper limbs were fixed in flexion posture and lower limbs in extension posture. His trunk was as stiff as wood",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "Painful generalized muscle cramps were easily elicited",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs. At the attack of muscle cramping, his upper limbs were fixed in flexion posture and lower limbs in extension posture. His trunk was as stiff as wood and his face was grimaced under the unbearable pain.",
+      "quote": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "cerebellar functions were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Ocular movements and swallowing were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Ocular movements and swallowing were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "hyperhidrosis; weakness; sensory disturbance",
+      "quote": "hyperhidrosis... slight right hemiparesis with hemisensory disturbance due to left cerebral thrombosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "hyperhidrosis",
+      "quote": "hyperhidrosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "Ocular movements and swallowing were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "He had difficulty in walking and standing. Limb movements were severely disturbed by muscle stiffness",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "his symptoms gradually began to worsen",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "diagnosed as progressive dermatosclerosis with muscle cramps",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "progressive dermatosclerosis with muscle cramps",
+      "quote": "diagnosed as progressive dermatosclerosis with muscle cramps",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "his condition declined again about ten months after plasma exchange",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "continuous stiffness in his four limbs and truncal muscles... Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "There was continuous stiffness in his four limbs and truncal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs and truncal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs and truncal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs and truncal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs and truncal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "There was continuous stiffness in his four limbs and truncal muscles. The stiffness or increased muscle tone was influenced by his momentary emotional state: it increased when he was under stress, decreased when he was relaxed or drowsy, and disappeared during sleep.",
+      "quote": "There was continuous stiffness in his four limbs and truncal muscles.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "continuous stiffness in his four limbs and truncal muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "Painful generalized muscle cramps were easily elicited",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "Painful generalized muscle cramps",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "touch; movement; emotional",
+      "quote": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs... it increased when he was under stress",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "At the attack of muscle cramping, his upper limbs were fixed in flexion posture and lower limbs in extension posture. His trunk was as stiff as wood",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "Painful generalized muscle cramps",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs. At the attack of muscle cramping, his upper limbs were fixed in flexion posture and lower limbs in extension posture. His trunk was as stiff as wood and his face was grimaced under the unbearable pain.",
+      "quote": "Painful generalized muscle cramps were easily elicited by noxious cutaneous stimuli as well as relatively fast voluntary or passive movements of limbs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "cerebellar functions were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "mentioned_absent",
+      "quote": "Ocular movements and swallowing were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "mentioned_absent",
+      "quote": "Ocular movements and swallowing were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperhidrosis; weakness; sensory disturbance",
+      "quote": "hyperhidrosis... slight right hemiparesis with hemisensory disturbance due to left cerebral thrombosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "hyperhidrosis",
+      "quote": "hyperhidrosis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "Ocular movements and swallowing were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "He had difficulty in walking and standing. Limb movements were severely disturbed by muscle stiffness and finger movement was clumsy.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Our patient met the criteria for stiff-man syndrome established by Gordon, Januszko et al. (1967) and Lorish, Thorsteinsson et al. (1989).",
+      "quote": "Our patient met the criteria for stiff-man syndrome established by Gordon, Januszko et al. (1967) and Lorish, Thorsteinsson et al. (1989).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Our patient was diagnosed as stiff-man syndrome from his characteristic features: i.e., muscular stiffness and cramps.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Immunocytochemical study of antineuronal autoantibodies, including antibodies against GAD and pancreatic islet cells, was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Surface EMG revealed continuous muscle activities on muscle cramping which disappeared five minutes after intravenous injection of diazepam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "which disappeared five minutes after intravenous injection of diazepam (total 30 mg)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "Brain MRI revealed only the patient's old left cerebral infarction. Cervical and lumbar MRI were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Needle EMG showed no myokymia, myotonic discharges, or other neuropathic changes, and nerve conduction velocity was found to be normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Immunocytochemical study of antineuronal autoantibodies, including antibodies against GAD and pancreatic islet cells, was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); pancreatic islet cells",
+      "quote": "antibodies against GAD and pancreatic islet cells, was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "immunocytochemical study",
+      "quote": "Immunocytochemical study of antineuronal autoantibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "anti-DNA antibody, antinuclear antibody, and anti-smooth-muscle antibody were positive",
+      "quote": "anti-DNA antibody, antinuclear antibody, and anti-smooth-muscle antibody were positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Antimitochondrial antibody, thyroglobulin antibody, thyroid-microsomal antibody, and anti-scleroderma-70 antibody were all negative in the serum.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Immunocytochemical study of antineuronal autoantibodies, including antibodies against GAD and pancreatic islet cells, was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "antibodies against GAD... was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "antibodies against... pancreatic islet cells, was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "pancreatic islet cells",
+      "quote": "antibodies against GAD and pancreatic islet cells",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "No oligoclonal bands of IgG were detected in the cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "No oligoclonal bands of IgG were detected in the cerebrospinal fluid.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Surface EMG revealed continuous muscle activities on muscle cramping",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "Surface EMG revealed continuous muscle activities on muscle cramping",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Surface EMG revealed continuous muscle activities on muscle cramping which disappeared five minutes after intravenous injection of diazepam (total 30 mg). Needle EMG showed no myokymia, myotonic discharges, or other neuropathic changes, and nerve conduction velocity was found to be normal. The latency of F wave and Renshaw's recurrent inhibition by H reflex were normal.",
+      "quote": "Surface EMG revealed continuous muscle activities on muscle cramping",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "Brain MRI revealed only the patient's old left cerebral infarction. Cervical and lumbar MRI were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "old left cerebral infarction",
+      "quote": "Brain MRI revealed only the patient's old left cerebral infarction.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Chest computed tomography and abdominal ultrasonography showed no malignancy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "Chest computed tomography and abdominal ultrasonography showed no malignancy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "The patient showed marked clinical improvement by the treatments.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine",
+      "quote": "diazepam (30 mg daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "PLEX",
+      "quote": "Double filtration plasma exchange was performed... Immunoadsorption therapy was then performed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Double filtration plasma exchange was performed with PVA (Plasmacure, Kuraray, Japan) as the first filter and Evaflux 2A (Kuraray, Japan) as the second. Plasma exchange was carried out four times on an alternate-day schedule. The total amount of plasma processed was about 12 liters... He was treated with an immunoadsorption therapy with a tryptophan-linked PVA (TR-350, Asahi Medical, Japan) by batchwise adsorption method. Plasmapheresis was carried out five times on an alternate-day schedule. The total amount of plasmapheresis processed was about 10 liters.",
+      "quote": "Double filtration plasma exchange was performed",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "The patient showed marked clinical improvement by the treatments.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "diazepam (30 mg daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam (30 mg daily)... oral administration of diazepam (4 mg daily) was restarted",
+      "quote": "diazepam (30 mg daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "which reduced symptoms to some extent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "which reduced symptoms to some extent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "prednisolone (25 mg daily)",
+      "quote": "He was treated with prednisolone (25 mg daily) and diazepam (30 mg daily)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "anti-DNA antibody, antinuclear antibody, and anti-smooth-muscle antibody were positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "anti-DNA antibody, antinuclear antibody, and anti-smooth-muscle antibody",
+      "quote": "anti-DNA antibody, antinuclear antibody, and anti-smooth-muscle antibody were positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "There was no family history of neuromuscular disease or diabetes mellitus.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had prior early-stage lung cancer (adenocarcinoma) at age 51 and left cerebral thrombosis at age 53. Initially misdiagnosed with progressive dermatosclerosis. It appears likely that our case had an unknown antibody, and that stiff-man syndrome is heterogenous.",
+      "quote": "It appears likely that our case had an unknown antibody, and that stiff-man syndrome is heterogenous.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "paper_id": "792",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "792",
+      "quote": "Paper ID: 792",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2017",
+      "quote": "(J Immunother 2017;40:286–288)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE DESCRIPTION ... DISCUSSION ... CASE REPORT",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "An 18-year-old male patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "18",
+      "quote": "An 18-year-old male patient",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "18",
+      "quote": "An 18-year-old male patient ... Two weeks after receiving the last dose of nivolumab, the patient presented with new onset urinary retention.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "3",
+      "quote": "He was weaned-oﬀ of diazepam and baclofen over the following 2 months with no recurrence of symptoms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "1",
+      "quote": "About 4 weeks after initial presentation ... he was empirically started on steroids",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "brainstem_autonomic",
+      "quote": "Two weeks after receiving the last dose of nivolumab, the patient presented with new onset urinary retention.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "PERM",
+      "quote": "clinically consistent with a diagnosis of progressive encephalopathy with rigidity and myoclonus, a stiﬀ-person-syndrome spectrum disorder",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "his symptoms of axial/appendicular rigidity with paroxysmal spasms, urinary retention, encephalopathy, and dysphagia were suggestive of progressive encephalomyelitis with rigidity and myoclonus (PERM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "significantly increased tone in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "significantly increased tone in the legs",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "significantly increased tone in the legs",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "Motor examination showed full strength throughout but significantly increased tone in the legs.",
+      "quote": "Motor examination showed full strength throughout but significantly increased tone in the legs.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "No dysmetria or ataxia was appreciated on finger-nose-finger and heel to shin examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "the patient presented with new onset urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "urinary retention; hyperreflexia; clonus",
+      "quote": "new onset urinary retention ... hyperreflexia in the legs with 3+ reflexes in the patellars and Achilles and persistent clonus with dorsiflexion of both feet",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "urinary retention",
+      "quote": "the patient presented with new onset urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "he developed progressive difficulty walking and several falls, which prompted readmission to the hospital",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "Over the subsequent 2 weeks, he developed progressive difficulty walking and several falls",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "With concern for possible new metastatic disease, a magnetic resonance imaging (MRI) of the lumbar and sacral spine, and computerized tomography of the abdomen and pelvis were performed.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "possible new metastatic disease",
+      "quote": "With concern for possible new metastatic disease",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "rapidly-progressive",
+      "quote": "Over the following week, in addition to the leg spasticity, the patient developed increasing truncal spasticity affecting lower abdomen/back and progressive dysphagia ... he also became progressively more encephalopathic",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; encephalopathy; dysphagia; urinary retention",
+      "quote": "his symptoms of axial/appendicular rigidity with paroxysmal spasms, urinary retention, encephalopathy, and dysphagia were suggestive of progressive encephalomyelitis with rigidity and myoclonus (PERM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "increasing truncal spasticity affecting lower abdomen/back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "increasing truncal spasticity affecting lower abdomen/back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "increasing truncal spasticity affecting lower abdomen/back",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "leg spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "leg spasticity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "Over the following week, in addition to the leg spasticity, the patient developed increasing truncal spasticity affecting lower abdomen/back and progressive dysphagia.",
+      "quote": "Over the following week, in addition to the leg spasticity, the patient developed increasing truncal spasticity affecting lower abdomen/back and progressive dysphagia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "paroxysmal spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "No dysmetria or ataxia was appreciated on finger-nose-finger and heel to shin examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "progressive dysphagia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "encephalopathy; dysphagia; urinary retention; hyperreflexia; clonus; seizures",
+      "quote": "he also became progressively more encephalopathic, with difficulty waking up and following commands ... progressive dysphagia ... urinary retention ... hyperreflexia in the legs ... persistent clonus ... 2 generalized tonic-clonic seizures",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "urinary retention",
+      "quote": "urinary retention",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "2 generalized tonic-clonic seizures",
+      "quote": "the patient had 2 generalized tonic-clonic seizures requiring a dose of lorazepam and initiation of antiepileptic drug therapy with levetiracetam",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "he also became progressively more encephalopathic, with difficulty waking up and following commands",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (axial/appendicular rigidity with paroxysmal spasms, urinary retention, encephalopathy, dysphagia) suggestive of PERM; negative anti-GAD antibody; negative antiacetylcholine and antimusk antibodies; MRI negative for myelopathy; CSF normal",
+      "quote": "his symptoms of axial/appendicular rigidity with paroxysmal spasms, urinary retention, encephalopathy, and dysphagia were suggestive of progressive encephalomyelitis with rigidity and myoclonus (PERM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "his symptoms of axial/appendicular rigidity with paroxysmal spasms, urinary retention, encephalopathy, and dysphagia were suggestive of progressive encephalomyelitis with rigidity and myoclonus (PERM)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Serum testing for antiglutamic acid decarboxylase (GAD) antibody as well as antiacetylcholine and antimusk antibodies was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "not_used",
+      "quote": "Electromyography can be helpful in diagnosing both SPS and PERM but was unfortunately not done in our case.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "One week following initiation of immune-suppressive therapy with steroids, IVIG, and plasmapheresis, the patient's mental status normalized and he showed dramatic improvements in his leg and truncal spasticity as well as dysphagia.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "A brain and total spinal MRI done at this time was negative for evidence of myelopathy or other abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "Both were negative for relapse or other new pathology, including no cord compression or cauda equina enhancement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Serum testing for antiglutamic acid decarboxylase (GAD) antibody as well as antiacetylcholine and antimusk antibodies was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); acetylcholine receptor (AChR); muscle-specific kinase (MuSK)",
+      "quote": "Serum testing for antiglutamic acid decarboxylase (GAD) antibody as well as antiacetylcholine and antimusk antibodies was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Glycine receptor antibody testing was not performed; the paper notes it is not widely available outside the research setting.",
+      "quote": "the syndrome is thought to be caused by antibodies targeting the glycine receptor alpha 1 subunit, the testing of which is not widely available outside the research setting",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Serum testing for antiglutamic acid decarboxylase (GAD) antibody",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Serum testing for antiglutamic acid decarboxylase (GAD) antibody as well as antiacetylcholine and antimusk antibodies was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "Serum testing for antiglutamic acid decarboxylase (GAD) antibody ... was negative.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "not_tested",
+      "quote": "the testing of which is not widely available outside the research setting",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "antiacetylcholine and antimusk antibodies was negative",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "acetylcholine receptor (AChR); muscle-specific kinase (MuSK)",
+      "quote": "antiacetylcholine and antimusk antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "normal",
+      "quote": "A lumbar puncture was performed which showed a normal protein, glucose, and cell count.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "normal",
+      "quote": "A lumbar puncture was performed which showed a normal protein, glucose, and cell count.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "Cerebrospinal fluid and serum testing for autoantibodies, herpes simplex virus, oligoclonal bands, adenovirus, and angiotensin converting enzyme were also unremarkable.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "normal",
+      "quote": "A lumbar puncture was performed which showed a normal protein, glucose, and cell count.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "NA",
+      "quote": "Electromyography can be helpful in diagnosing both SPS and PERM but was unfortunately not done in our case.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "a repeat brain MRI showed multiple diffuse supratentorial bilateral T2 hyperintensities consistent with posterior reversible encephalopathy syndrome (PRES)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "multiple diffuse supratentorial bilateral T2 hyperintensities consistent with posterior reversible encephalopathy syndrome (PRES)",
+      "quote": "a repeat brain MRI showed multiple diffuse supratentorial bilateral T2 hyperintensities consistent with posterior reversible encephalopathy syndrome (PRES)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "Both were negative for relapse or other new pathology",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "remission",
+      "quote": "He showed response and ultimately full recovery to a combination of intravenous steroids, intravenous immunoglobulin, and plasma exchange.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "baclofen, gabapentinoid, benzodiazepine",
+      "quote": "He was initiated on therapy with baclofen, gabapentin, and diazepam for the spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "steroids; IVIG; PLEX",
+      "quote": "he was empirically started on steroids with high dose IV methylprednisolone (1 g daily for 5 d). As symptoms continued despite steroids, he then received a total of 2 g/kg of intravenous immunoglobulin (IVIG) and 5 cycles of plasma exchange.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "IV methylprednisolone 1 g daily for 5 days; IVIG total 2 g/kg; 5 cycles of plasma exchange",
+      "quote": "high dose IV methylprednisolone (1 g daily for 5 d) ... a total of 2 g/kg of intravenous immunoglobulin (IVIG) and 5 cycles of plasma exchange",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "One week following initiation of immune-suppressive therapy with steroids, IVIG, and plasmapheresis, the patient's mental status normalized and he showed dramatic improvements in his leg and truncal spasticity as well as dysphagia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "He was initiated on therapy with baclofen, gabapentin, and diazepam for the spasticity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "baclofen, gabapentin, and diazepam (doses not specified)",
+      "quote": "He was initiated on therapy with baclofen, gabapentin, and diazepam for the spasticity with minimal improvement in symptoms over the following week.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "none",
+      "quote": "with minimal improvement in symptoms over the following week",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "no",
+      "quote": "He was initiated on therapy with baclofen, gabapentin, and diazepam for the spasticity with minimal improvement in symptoms over the following week.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "nivolumab for Hodgkin lymphoma; IV synthroid for hypothyroidism; antihypertensive medications; levetiracetam for seizures; lorazepam for seizures; curative bone marrow transplantation",
+      "quote": "The patient was initiated on intravenous (IV) synthroid for the newly diagnosed hypothyroidism ... initiation of antiepileptic drug therapy with levetiracetam ... The patient was started on antihypertensive medications ... he successfully underwent curative bone marrow transplantation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "thyroid",
+      "quote": "new onset hypothyroidism ... positive antimicrosomal and antithyroglobulin antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had primary refractory stage IVB Hodgkin lymphoma treated with nivolumab (PD1 inhibitor). Developed Hashimoto thyroiditis, PRES causing seizures, urinary retention, truncal/appendicular spasticity, dysphagia, and progressive encephalopathy. Glycine receptor antibody testing not performed. EMG not performed. Anti-GAD negative.",
+      "quote": "An 18-year-old male patient with primary refractory stage IVB Hodgkin lymphoma was initiated on therapy with nivolumab",
+      "confidence": "high"
+    }
+  ]
+}

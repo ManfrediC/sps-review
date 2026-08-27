@@ -1,0 +1,980 @@
+{
+  "paper_id": "118",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "118",
+      "quote": "Paper ID: 118",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "1997",
+      "quote": "Muscle Nerve, 20, 493–498, 1997.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT A 55-year-old man began to experience cramping pains in his legs in August, 1993.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "M",
+      "quote": "A 55-year-old man began to experience cramping pains",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "55",
+      "quote": "A 55-year-old man began to experience cramping pains in his legs in August, 1993.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "55",
+      "quote": "A 55-year-old man began to experience cramping pains in his legs in August, 1993.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "29",
+      "quote": "Twenty-nine months after thymectomy, the patient again had a recurrence of symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "pain",
+      "quote": "A 55-year-old man began to experience cramping pains in his legs in August, 1993.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "We report the first documented case of SPS associated with histologically proven thymoma.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "diffuse axial and lower limb stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "absent",
+      "quote": "Trismus or risus sardonicus were not present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "absent",
+      "quote": "He had no nystagmus or involuntary tongue or facial muscle movements.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "NA",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "his painful muscle contractions and spasms had worsened, involving limb (legs > arms) and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "his painful muscle contractions and spasms had worsened, involving limb (legs > arms) and axial muscles, the latter producing hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_lumbar, prox_LE, distal_LE, UE",
+      "quote": "involving limb (legs > arms) and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "involving limb (legs > arms) and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "With the slightest tapping to elicit a jaw jerk reflex, he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; touch; movement; emotional",
+      "quote": "Auditory, emotional, and tactile stimuli also produced similar painful spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "With the slightest tapping to elicit a jaw jerk reflex, he had painful extensor spasms of his entire body assuming an opistotonic posture. It also was difficult for him to take medications, since even bringing his hand to his mouth elicited this response. Auditory, emotional, and tactile stimuli also produced similar painful spasms.",
+      "quote": "With the slightest tapping to elicit a jaw jerk reflex, he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "explicitly_present",
+      "quote": "the latter producing hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "hyperhidrosis; clinical myokymia; brisk reflexes; equivocal plantar responses",
+      "quote": "He had diffuse hyperhydrosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "hyperhidrosis",
+      "quote": "He had diffuse hyperhydrosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "4",
+      "quote": "he continued to have difficulty getting to the bathroom from his bed in the hospital room.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "A 55-year-old man began to experience cramping pains in his legs in August, 1993. Since he worked as a roofer, he was initially treated with four courses of antitetanus toxoid immune globulin with no relief of symptoms. By November of 1993, his painful muscle contractions and spasms had worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "he was initially treated with four courses of antitetanus toxoid immune globulin with no relief of symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "tetanus",
+      "quote": "he was initially treated with four courses of antitetanus toxoid immune globulin with no relief of symptoms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "relapsing-remitting",
+      "quote": "the patient again had a recurrence of symptoms. At that time, a 3-day course of intravenous IgG (400 mg/kg/day) was administered, which produced marked clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "3",
+      "quote": "A 55-year-old man began to experience cramping pains in his legs in August, 1993. ... By November of 1993, his painful muscle contractions and spasms had worsened",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle",
+      "quote": "diffuse axial and lower limb stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "absent",
+      "quote": "Trismus or risus sardonicus were not present.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "absent",
+      "quote": "He had no nystagmus or involuntary tongue or facial muscle movements.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "He had diffuse axial and lower limb stiffness without spasticity or cogwheeling.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "his painful muscle contractions and spasms had worsened, involving limb (legs > arms) and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "multiple",
+      "quote": "his painful muscle contractions and spasms had worsened, involving limb (legs > arms) and axial muscles, the latter producing hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "axial_lumbar, prox_LE, distal_LE, UE",
+      "quote": "involving limb (legs > arms) and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "involving limb (legs > arms) and axial muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "With the slightest tapping to elicit a jaw jerk reflex, he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; touch; movement; emotional",
+      "quote": "Auditory, emotional, and tactile stimuli also produced similar painful spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "yes",
+      "quote": "he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "With the slightest tapping to elicit a jaw jerk reflex, he had painful extensor spasms of his entire body assuming an opistotonic posture. It also was difficult for him to take medications, since even bringing his hand to his mouth elicited this response. Auditory, emotional, and tactile stimuli also produced similar painful spasms.",
+      "quote": "With the slightest tapping to elicit a jaw jerk reflex, he had painful extensor spasms of his entire body assuming an opistotonic posture.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "explicitly_present",
+      "quote": "the latter producing hyperlordosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "hyperhidrosis; clinical myokymia; brisk reflexes; equivocal plantar responses",
+      "quote": "He had diffuse hyperhydrosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "hyperhidrosis",
+      "quote": "He had diffuse hyperhydrosis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "4",
+      "quote": "he continued to have difficulty getting to the bathroom from his bed in the hospital room.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness, spasms, hyperlordosis, stimulus sensitivity); EMG showing continuous motor unit potentials; Abolition of muscular hyperactivity under general anesthesia; Absence of neuromyotonia features on EMG.",
+      "quote": "In our opinion, the abolition of muscular hyperactivity under general anesthesia confirmed the diagnosis of SPS in this case, and certainly ruled out the possibility of neuromyotonia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "In our opinion, the abolition of muscular hyperactivity under general anesthesia confirmed the diagnosis of SPS in this case",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Since no anti-GAD antibodies were seen in our case",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Needle electromyography showed continuous motor unit potentials (MUPs) in numerous leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "In our opinion, the abolition of muscular hyperactivity under general anesthesia confirmed the diagnosis of SPS in this case",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Magnetic resonance imaging and angiography of the brain and spinal cord showed no abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "certainly ruled out the possibility of neuromyotonia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "seronegative",
+      "quote": "Antimyelin associated glycoprotein, antiGM1, anti-GAD, antiacetylcholine receptor, and anti Purkinje cell cytoplasmic antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "antimyelin associated glycoprotein; antiGM1; glutamic acid decarboxylase (GAD); antiacetylcholine receptor; anti Purkinje cell cytoplasmic antibodies",
+      "quote": "Antimyelin associated glycoprotein, antiGM1, anti-GAD, antiacetylcholine receptor, and anti Purkinje cell cytoplasmic antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "Antinuclear antibodies were present at a titer of 1: 40 and demonstrated a nucleolar pattern.",
+      "quote": "Antinuclear antibodies were present at a titer of 1: 40 and demonstrated a nucleolar pattern.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "serum",
+      "quote": "Antimyelin associated glycoprotein, antiGM1, anti-GAD, antiacetylcholine receptor, and anti Purkinje cell cytoplasmic antibodies were not detected.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "yes",
+      "quote": "Antimyelin associated glycoprotein, antiGM1, anti-GAD, antiacetylcholine receptor, and anti Purkinje cell cytoplasmic antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_negative",
+      "quote": "anti-GAD ... antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "Antimyelin associated glycoprotein, antiGM1, antiacetylcholine receptor, and anti Purkinje cell cytoplasmic antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "antimyelin associated glycoprotein; antiGM1; antiacetylcholine receptor; anti Purkinje cell cytoplasmic antibodies",
+      "quote": "Antimyelin associated glycoprotein, antiGM1, anti-GAD, antiacetylcholine receptor, and anti Purkinje cell cytoplasmic antibodies were not detected.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "isolated protein elevation",
+      "quote": "Cerebrospinal fluid analysis showed no white blood cells, a protein of 54 mg/dL, glucose of 72 mg/dL, no growth on cultures, and a normal immunoglobulin G (IgG) index without oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "0",
+      "quote": "Cerebrospinal fluid analysis showed no white blood cells",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "no",
+      "quote": "a normal immunoglobulin G (IgG) index without oligoclonal bands.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "54 mg/dL",
+      "quote": "a protein of 54 mg/dL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "Needle electromyography showed continuous motor unit potentials (MUPs) in numerous leg muscles",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "leg muscles, gastrocnemius muscle",
+      "quote": "Needle electromyography showed continuous motor unit potentials (MUPs) in numerous leg muscles, some of which increased with effort and tapping of muscle. The continuous MUPs at rest in the gastrocnemius muscle were abolished under general anesthesia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle electromyography at rest; continuous MUPs at rest in the gastrocnemius muscle abolished under general anesthesia; motor, sensory, and mixed nerve conduction studies; H-reflex, F-wave, T-reflex testing; masseter reflex testing (silent period).",
+      "quote": "Needle electromyography showed continuous motor unit potentials (MUPs) in numerous leg muscles, some of which increased with effort and tapping of muscle. The continuous MUPs at rest in the gastrocnemius muscle were abolished under general anesthesia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "1",
+      "quote": "An absent silent period was observed in masseter reflex testing.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "0",
+      "quote": "Magnetic resonance imaging and angiography of the brain and spinal cord showed no abnormalities.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "Computer tomography of the chest demonstrated a mediastinal mass that was subsequently diagnosed as thymoma by needle biopsy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "thymoma",
+      "quote": "Computer tomography of the chest demonstrated a mediastinal mass that was subsequently diagnosed as thymoma by needle biopsy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "The patient is presently well controlled on diazepam (10 mg three times daily) and baclofen (10 mg three times daily). He ambulates by himself without any stiffness of his legs or trunk.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen",
+      "quote": "The patient is presently well controlled on diazepam (10 mg three times daily) and baclofen (10 mg three times daily).",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG",
+      "quote": "the patient received a 5-day course of intravenous IgG (400 mg/kg/day)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "5-day course of intravenous IgG (400 mg/kg/day) in January 1994; 5-day course of intravenous IgG (400 mg/kg/day) 14 months after thymectomy; 3-day course of intravenous IgG (400 mg/kg/day) 29 months after thymectomy.",
+      "quote": "a 5-day course of intravenous IgG (400 mg/kg/day) without noticeable benefit.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "this produced marked clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "benzo",
+      "quote": "The patient was treated with diazepam 40 mg/day and baclofen 80 mg/day in divided doses.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "diazepam 40 mg/day and baclofen 80 mg/day in divided doses initially; later well controlled on diazepam (10 mg three times daily) and baclofen (10 mg three times daily).",
+      "quote": "The patient was treated with diazepam 40 mg/day and baclofen 80 mg/day in divided doses.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Despite some improvement in his stiffness, he continued to have difficulty getting to the bathroom from his bed in the hospital room.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Despite some improvement in his stiffness",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "thymectomy",
+      "quote": "One day after the last dose of intravenous IgG, the patient had a thymectomy, which was followed by clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "After thymectomy, the patient developed ocular myasthenia gravis which later resolved spontaneously.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "ocular myasthenia gravis",
+      "quote": "After thymectomy, the patient developed ocular myasthenia gravis which later resolved spontaneously.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient developed ocular myasthenia gravis 2 months after thymectomy, which resolved spontaneously within 12 months. Acetylcholine receptor antibodies remained undetectable.",
+      "quote": "After thymectomy, the patient developed ocular myasthenia gravis which later resolved spontaneously.",
+      "confidence": "high"
+    }
+  ]
+}

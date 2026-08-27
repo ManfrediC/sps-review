@@ -1,0 +1,980 @@
+{
+  "paper_id": "489",
+  "model_id": "glm-5.2:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "489",
+      "quote": "Paper ID: 489",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2008",
+      "quote": "Neurology. 2008;71(5):378-80",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "Case report. A 45-year-old former fighter pilot presented with an 18-month history of stiffness and gait problems",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "she noted stiffness of the left arm and leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "45",
+      "quote": "A 45-year-old former fighter pilot",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "44",
+      "quote": "A 45-year-old former fighter pilot presented with an 18-month history of stiffness and gait problems",
+      "confidence": "high"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "28",
+      "quote": "over the following 12 months. After resumption of monthly IVIg treatment for 4 months",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "presented with an 18-month history of stiffness and gait problems that began with several falls backwards while training for a marathon",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "gait_dysfunction, stiffness",
+      "quote": "an 18-month history of stiffness and gait problems that began with several falls backwards",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person_Plus",
+      "quote": "stiff-person syndrome (SPS) ... with a prominent supranuclear gaze palsy and bradykinesia mimicking progressive supranuclear palsy (PSP)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms; startle",
+      "quote": "an 18-month history of stiffness and gait problems ... painful back and limb spasms when startled by touch",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "an 18-month history of stiffness and gait problems",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "present",
+      "quote": "stiffness of the left arm and leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "present",
+      "quote": "stiffness of the left arm and leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "stiffness of the left arm and leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "an 18-month history of stiffness and gait problems that began with several falls backwards while training for a marathon. Six months later, she noted stiffness of the left arm and leg.",
+      "quote": "an 18-month history of stiffness and gait problems that began with several falls backwards while training for a marathon. Six months later, she noted stiffness of the left arm and leg.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "stiffness of the left arm and leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_left",
+      "quote": "stiffness of the left arm and leg",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "She reported painful back and limb spasms when startled by touch",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "multiple",
+      "quote": "painful back and limb spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "axial_lumbar, prox_LE, UE",
+      "quote": "painful back and limb spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "lumbar - not specified",
+      "quote": "painful back and limb spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "painful back and limb spasms when startled by touch",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "touch",
+      "quote": "spasms when startled by touch",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "painful back and limb spasms when startled by touch",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "yes",
+      "quote": "painful back and limb spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "She reported painful back and limb spasms when startled by touch.",
+      "quote": "She reported painful back and limb spasms when startled by touch.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "mentioned_absent",
+      "quote": "Our patient had parkinsonism rather than ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "supranuclear vertical gaze palsy and vertical greater than horizontal saccade hypometria with prolonged saccade latency",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "explicitly_present",
+      "quote": "supranuclear vertical gaze palsy and vertical greater than horizontal saccade hypometria with prolonged saccade latency",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "bradykinesia; masked facies; gait problems; falls backwards",
+      "quote": "bradykinetic gait and limb movements ... mildly masked facies ... several falls backwards while training for a marathon",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "supranuclear vertical gaze palsy; vertical greater than horizontal saccade hypometria with prolonged saccade latency; saccadic vertical pursuits; impaired convergence",
+      "quote": "supranuclear vertical gaze palsy and vertical greater than horizontal saccade hypometria with prolonged saccade latency. Vertical pursuits were saccadic, but horizontal pursuits were normal. Convergence was impaired.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "3",
+      "quote": "asymmetrically increased axial and limb tone, bradykinetic gait and limb movements, and no arm swing while walking",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "an 18-month history of stiffness and gait problems",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "mimicking progressive supranuclear palsy (PSP)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "progressive supranuclear palsy (PSP)",
+      "quote": "mimicking progressive supranuclear palsy (PSP)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "rapidly-progressive",
+      "quote": "during this time her symptoms progressed significantly. She became wheelchair bound due to profound rigidity and bradykinesia. She developed severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence, and a violent head, trunk, and arm tremor over the following 12 months.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "30",
+      "quote": "an 18-month history of stiffness and gait problems ... over the following 12 months",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms; startle; oculomotor; brainstem_autonomic",
+      "quote": "profound rigidity and bradykinesia. She developed severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence, and a violent head, trunk, and arm tremor",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "wheelchair bound due to profound rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "present",
+      "quote": "violent head, trunk, and arm tremor",
+      "confidence": "low"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "present",
+      "quote": "mildly masked facies",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "She became wheelchair bound due to profound rigidity and bradykinesia. She developed severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence, and a violent head, trunk, and arm tremor over the following 12 months.",
+      "quote": "She became wheelchair bound due to profound rigidity and bradykinesia. She developed severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence, and a violent head, trunk, and arm tremor over the following 12 months.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "present",
+      "quote": "profound rigidity",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "spasms induced by startle",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "generalised",
+      "quote": "violent head, trunk, and arm tremor",
+      "confidence": "low"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "spasms induced by startle",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "not_mentioned",
+      "quote": "spasms induced by startle",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "spasms induced by startle",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "spasms induced by startle",
+      "quote": "spasms induced by startle",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "mentioned_absent",
+      "quote": "Our patient had parkinsonism rather than ataxia",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "explicitly_present",
+      "quote": "severe horizontal and vertical supranuclear gaze ophthalmoparesis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "bradykinesia; tremor; dysphagia; incontinence; weakness",
+      "quote": "profound rigidity and bradykinesia. She developed severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence, and a violent head, trunk, and arm tremor",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "incontinence",
+      "quote": "incontinence",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "severe horizontal and vertical supranuclear gaze ophthalmoparesis",
+      "quote": "severe horizontal and vertical supranuclear gaze ophthalmoparesis",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "5",
+      "quote": "She became wheelchair bound due to profound rigidity and bradykinesia. She developed severe horizontal and vertical supranuclear gaze ophthalmoparesis, dysphagia, incontinence",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness, spasms, hyperlordosis), positive anti-GAD antibodies, EMG showing continuous motor unit activity, response to IVIg",
+      "quote": "The identification of the antiGAD-Abs enabled the patient to be effectively treated with immunomodulation. ... EMG showed continuous motor activity at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "stiffness and gait problems ... painful back and limb spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Serum antiGAD-Abs were abnormally elevated at 71. 6 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "EMG showed continuous motor activity at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "The identification of the antiGAD-Abs enabled the patient to be effectively treated with immunomodulation.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "not_used",
+      "quote": "Brain and spinal cord MRI scans showed mild cortical atrophy.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "The most salient clinical findings that suggested a diagnosis other than PSP in this patient were delayed saccade initiation with repetitive saccades, spasms induced by startle, and prominent early upgaze palsy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "Serum antiGAD-Abs were abnormally elevated at 71. 6 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "71.6",
+      "quote": "Serum antiGAD-Abs were abnormally elevated at 71. 6 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "U/mL",
+      "quote": "71. 6 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD); amphiphysin; paraneoplastic antibodies; antigliadin; intrinsic factor",
+      "quote": "An extensive evaluation including paraneoplastic, amphiphysin, antigliadin, and intrinsic factor antibodies ... Serum antiGAD-Abs were abnormally elevated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "During the course of the next year, serum antiGAD-Abs were measured several times and were markedly elevated on all occasions. CSF analysis was acellular with protein of 48 mg/dL, and antiGAD-Abs were absent.",
+      "quote": "During the course of the next year, serum antiGAD-Abs were measured several times and were markedly elevated on all occasions. CSF analysis was acellular with protein of 48 mg/dL, and antiGAD-Abs were absent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "both",
+      "quote": "Serum antiGAD-Abs were abnormally elevated ... CSF analysis was acellular ... and antiGAD-Abs were absent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "Serum antiGAD-Abs were abnormally elevated at 71. 6 U/mL (/H110211. 45 U/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "1.45 U/mL",
+      "quote": "(/H110211. 45 U/mL)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "Serum antiGAD-Abs were abnormally elevated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "Serum antiGAD-Abs were abnormally elevated at 71. 6 U/mL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "tested_negative",
+      "quote": "An extensive evaluation including paraneoplastic, amphiphysin, antigliadin, and intrinsic factor antibodies, rheumatologic markers, hemoglobin A1c, and fasting glucose were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "An extensive evaluation including paraneoplastic, antigliadin, and intrinsic factor antibodies ... were normal",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "paraneoplastic antibodies; antigliadin; intrinsic factor",
+      "quote": "An extensive evaluation including paraneoplastic, amphiphysin, antigliadin, and intrinsic factor antibodies",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "isolated protein elevation",
+      "quote": "CSF analysis was acellular with protein of 48 mg/dL (/H1102145 mg/dL), and antiGAD-Abs were absent.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "antiGAD-Abs were absent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "antiGAD-Abs were absent",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "0",
+      "quote": "CSF analysis was acellular",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "48 mg/dL",
+      "quote": "protein of 48 mg/dL",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "EMG showed continuous motor activity at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "N/A",
+      "quote": "EMG showed continuous motor activity at rest",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "continuous motor activity at rest, normal 3-Hz repetitive stimulation",
+      "quote": "EMG showed continuous motor activity at rest, normal 3-Hz repetitive stimulation, and a mild sensory neuropathy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "Brain and spinal cord MRI scans showed mild cortical atrophy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "mild cortical atrophy",
+      "quote": "Brain and spinal cord MRI scans showed mild cortical atrophy.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "0",
+      "quote": "CT of the chest, abdomen, and pelvis were normal.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "After resumption of monthly IVIg treatment for 4 months, there was significant improvement in ophthalmoparesis, tremor, and ability to ambulate, but extremity stiffness remained.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG",
+      "quote": "Treatment with monthly IV immunoglobulin (IVIg) was initiated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "monthly IV immunoglobulin (IVIg)",
+      "quote": "Treatment with monthly IV immunoglobulin (IVIg) was initiated",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "the patient experienced prompt improvement of her bradykinesia and rigidity",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "placebo-controlled SPS treatment trial at another institution",
+      "quote": "The patient chose to participate in a placebocontrolled SPS treatment trial at another institution",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "gastric",
+      "quote": "Her history was notable for pernicious anemia.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Patient had prominent supranuclear gaze palsy and bradykinesia mimicking progressive supranuclear palsy (PSP). Videonystagmography (VNG) revealed progressively delayed saccade latency, a unique finding. She also had a mild sensory neuropathy on EMG.",
+      "quote": "Videonystagmography ... initially revealed normal saccade latencies to horizontal and vertical targets, lengthening with repetition to exceed 7 s. ... The VNG finding of progressively delayed saccade latency in our patient is unique.",
+      "confidence": "high"
+    }
+  ]
+}

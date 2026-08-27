@@ -1,0 +1,980 @@
+{
+  "paper_id": "2383",
+  "model_id": "deepseek-v4-pro:cloud",
+  "provider": "ollama_cloud",
+  "schema_version": "2.0",
+  "extractions": [
+    {
+      "field_name": "Reference",
+      "value": "2383",
+      "quote": "Paper ID: 2383",
+      "confidence": "high"
+    },
+    {
+      "field_name": "year_of_publication",
+      "value": "2010",
+      "quote": "Goodson et al. Journal of Medical Case Reports 2010, 4: 118",
+      "confidence": "high"
+    },
+    {
+      "field_name": "publication_type",
+      "value": "full_case_report",
+      "quote": "CASE REPORT",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sex",
+      "value": "F",
+      "quote": "A 27-year-old Hispanic woman presented",
+      "confidence": "high"
+    },
+    {
+      "field_name": "ethnicity",
+      "value": "Latin_American",
+      "quote": "A 27-year-old Hispanic woman",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_description",
+      "value": "27",
+      "quote": "A 27-year-old Hispanic woman presented",
+      "confidence": "high"
+    },
+    {
+      "field_name": "age_onset",
+      "value": "27",
+      "quote": "for the past two months her arm weakness was characterized as having limited strength and range of motion",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "Followup_Duration_Months",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "time_to_diagnosis",
+      "value": "2",
+      "quote": "Our patient had been evaluated in the same emergency department two months prior to this presentation for right-arm weakness and dysphasia.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation",
+      "value": "multiple",
+      "quote": "sudden onset of shortness of breath and increased difficulty in moving her right arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "first_manifestation_multiple",
+      "value": "stiffness, gait_dysfunction, other",
+      "quote": "sudden onset of shortness of breath and increased difficulty in moving her right arm",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "first_manifestation_other",
+      "value": "shortness of breath",
+      "quote": "sudden onset of shortness of breath",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis",
+      "value": "Stiff_Person",
+      "quote": "Stiff person syndrome presenting with sudden onset of shortness of breath and difficulty moving the right arm",
+      "confidence": "high"
+    },
+    {
+      "field_name": "included_diagnosis_specify",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "early_symptoms",
+      "value": "stiffness; spasms",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_onset",
+      "value": "explicitly_present",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_onset",
+      "value": "present",
+      "quote": "her abdomen was firm to palpation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_onset",
+      "value": "present",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_onset",
+      "value": "her abdomen was firm to palpation and her right upper extremity was rigid on passive and active ranges of motion. Her right fingers were clenched in a fist",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid on passive and active ranges of motion. Her right fingers were clenched in a fist",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_onset",
+      "value": "absent",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_onset",
+      "value": "focal_right",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_onset",
+      "value": "explicitly_present",
+      "quote": "A key feature of our patient's diagnosis was the occurrence of muscle spasms that were preceded by sudden movement, loud noise or emotional stress",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset",
+      "value": "UE",
+      "quote": "her right upper extremity was rigid",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_onset_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_onset_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_onset",
+      "value": "present",
+      "quote": "muscle spasms that were preceded by sudden movement, loud noise or emotional stress",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset",
+      "value": "noise; movement; emotional",
+      "quote": "muscle spasms that were preceded by sudden movement, loud noise or emotional stress",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_onset",
+      "value": "sustained_contraction",
+      "quote": "muscle spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_onset_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_onset",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_onset",
+      "value": "A key feature of our patient's diagnosis was the occurrence of muscle spasms that were preceded by sudden movement, loud noise or emotional stress, as described in the literature [3].",
+      "quote": "A key feature of our patient's diagnosis was the occurrence of muscle spasms that were preceded by sudden movement, loud noise or emotional stress, as described in the literature [3].",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_onset",
+      "value": "generalised",
+      "quote": "She appeared anxious during her physical examination.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_onset_generalised",
+      "value": "She appeared anxious during her physical examination.",
+      "quote": "She appeared anxious during her physical examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_onset",
+      "value": "explicitly_present",
+      "quote": "she exhibited some dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_onset",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset",
+      "value": "dysarthria; weakness; shortness of breath; chest pain; nausea; palpitations; lightheadedness",
+      "quote": "she exhibited some dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_auto",
+      "value": "palpitations; lightheadedness",
+      "quote": "Pertinent positive findings included nausea, palpitations and lightheadedness.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_onset_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "onset_mRS_inferred",
+      "value": "2",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "timecourse_onset",
+      "value": "insidious",
+      "quote": "for the past two months her arm weakness was characterized as having limited strength and range of motion",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnosis_onset",
+      "value": "other",
+      "quote": "she was diagnosed with hemiplegic migraine headache",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnosis_onset_other",
+      "value": "hemiplegic migraine headache",
+      "quote": "she was diagnosed with hemiplegic migraine headache",
+      "confidence": "high"
+    },
+    {
+      "field_name": "timecourse_subsequent",
+      "value": "chronic-progressive",
+      "quote": "There is a gradual worsening and progression of the condition over time",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "onset_to_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "overview_established",
+      "value": "stiffness; spasms",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_status_established",
+      "value": "explicitly_present",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_neck_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_thoracic_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_lumbar_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_abdominal_established",
+      "value": "present",
+      "quote": "her abdomen was firm to palpation",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_prox_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_distal_LE_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_UE_established",
+      "value": "present",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_trismus_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_face_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_quote_established",
+      "value": "her abdomen was firm to palpation and her right upper extremity was rigid on passive and active ranges of motion. Her right fingers were clenched in a fist",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid on passive and active ranges of motion. Her right fingers were clenched in a fist",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_muscles_named_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_generalised_stated_established",
+      "value": "absent",
+      "quote": "her abdomen was firm to palpation and her right upper extremity was rigid",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stiffness_laterality_established",
+      "value": "focal_right",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_status_established",
+      "value": "explicitly_present",
+      "quote": "A key feature of our patient's diagnosis was the occurrence of muscle spasms",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established",
+      "value": "UE",
+      "quote": "her right upper extremity was rigid",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "spasms_distribution_established_multiple",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_lumbar_muscles",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "spasms_distribution_established_muscles_named",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_established",
+      "value": "present",
+      "quote": "muscle spasms that were preceded by sudden movement, loud noise or emotional stress",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established",
+      "value": "noise; movement; emotional",
+      "quote": "muscle spasms that were preceded by sudden movement, loud noise or emotional stress",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_triggers_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_character_established",
+      "value": "sustained_contraction",
+      "quote": "muscle spasms",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "response_character_established_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_painful_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_fall_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "response_duration_detail_established",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "stimulus_sensitivity_quote_established",
+      "value": "A key feature of our patient's diagnosis was the occurrence of muscle spasms that were preceded by sudden movement, loud noise or emotional stress, as described in the literature [3].",
+      "quote": "A key feature of our patient's diagnosis was the occurrence of muscle spasms that were preceded by sudden movement, loud noise or emotional stress, as described in the literature [3].",
+      "confidence": "high"
+    },
+    {
+      "field_name": "anxiety_established",
+      "value": "generalised",
+      "quote": "She appeared anxious during her physical examination.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "anxiety_established_generalised",
+      "value": "She appeared anxious during her physical examination.",
+      "quote": "She appeared anxious during her physical examination.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "hyperlordosis_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "cerebellar_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_status_established",
+      "value": "explicitly_present",
+      "quote": "she exhibited some dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "oculomotor_status_established",
+      "value": "not_mentioned",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established",
+      "value": "dysarthria; weakness; dysphagia",
+      "quote": "she exhibited some dysarthria",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_auto",
+      "value": "difficulty swallowing, which may have been related to esophageal dysmotility or laryngeal and pharyngeal spasms",
+      "quote": "Our patient exhibited some features of this when she had difficulty swallowing, which may have been related to esophageal dysmotility or laryngeal and pharyngeal spasms.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_oculo",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_symptoms_established_seizures",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "established_mRS_inferred",
+      "value": "2",
+      "quote": "her right upper extremity was rigid on passive and active ranges of motion",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_criteria",
+      "value": "Clinical features (stiffness/rigidity, spasms), positive anti-GAD antibody, EMG showing continuous motor unit activity",
+      "quote": "Her electromyography findings were consistent with stiff person syndrome in the right clinical setting. Stiff person syndrome is confirmed by testing for the anti-glutamic acid decarboxylase antibody. Her test for this was positive.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_clinical",
+      "value": "used",
+      "quote": "Her electromyography findings were consistent with stiff person syndrome in the right clinical setting.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_antibody",
+      "value": "used",
+      "quote": "Stiff person syndrome is confirmed by testing for the anti-glutamic acid decarboxylase antibody. Her test for this was positive.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_emg",
+      "value": "used",
+      "quote": "Her electromyography findings were consistent with stiff person syndrome in the right clinical setting.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "diagnostic_basis_treatment_response",
+      "value": "used",
+      "quote": "Over the next five days she began to show clinical improvement.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_imaging",
+      "value": "used",
+      "quote": "The results of the imaging studies found no cause for her spastic right upper extremity.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "diagnostic_basis_exclusion_of_mimics",
+      "value": "used",
+      "quote": "a psychiatric consult was also ordered to rule out a factitious disorder, a conversion disorder or malingering",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status",
+      "value": "GAD",
+      "quote": "her anti-GAD antibody examination, which was positive with a value of 3145 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_status_other",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre",
+      "value": "3145",
+      "quote": "positive with a value of 3145 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_units",
+      "value": "nmol/L",
+      "quote": "3145 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_tests",
+      "value": "glutamic acid decarboxylase (GAD)",
+      "quote": "anti-glutamic acid decarboxylase (GAD) antibody",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_testsystem",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_notes",
+      "value": "GAD antibody level is not useful as a marker of disease severity or activity, or even as a prognostic indicator.",
+      "quote": "It is important to point out that the GAD antibody level is not useful as a marker of disease severity or activity, or even as a prognostic indicator.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_specimen_tested",
+      "value": "neither_specified",
+      "quote": "her anti-GAD antibody examination, which was positive",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_titre_high",
+      "value": "high",
+      "quote": "positive with a value of 3145 nmol/L (normal range is ≤ 0.02 nmol/L)",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_titre_cutoff",
+      "value": "normal range is ≤ 0.02 nmol/L",
+      "quote": "normal range is ≤ 0.02 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_negative",
+      "value": "no",
+      "quote": "her anti-GAD antibody examination, which was positive",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gad65_result",
+      "value": "tested_positive",
+      "quote": "her anti-GAD antibody examination, which was positive with a value of 3145 nmol/L",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_glyr_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_amphiphysin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_dppx_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabaa_receptor_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gephyrin_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_gabarap_result",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "antibody_other_result",
+      "value": "tested_negative",
+      "quote": "the appropriate laboratory investigations for paraneoplastic syndrome were completed, for which our patient's results were all negative.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "antibody_other_result_specify",
+      "value": "paraneoplastic syndrome antibodies",
+      "quote": "the appropriate laboratory investigations for paraneoplastic syndrome were completed, for which our patient's results were all negative.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "CSF_status",
+      "value": "not_done",
+      "quote": "the lumbar puncture was unsuccessful because she was unable to keep still during the procedure.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_antibody_titre",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_cell_count",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_intrathecal_ig_synthesis",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CSF_total_protein",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "CMUA",
+      "value": "1",
+      "quote": "In all the muscles tested, frequent involuntary runs of motor units (continuous motor unit activity) were identified.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_muscles_examined",
+      "value": "dorsal interosseous, pronator teres, pectoral radialis, biceps, triceps, deltoid, opponens pollicis",
+      "quote": "EMG testing was performed in her right upper extremity muscles, including the dorsal interosseous, pronator teres, pectoral radialis, biceps, triceps, deltoid and opponens pollicis.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "EMG_protocol",
+      "value": "Needle EMG of right upper extremity muscles; resting activity studied through limb repositioning; assessment of fibrillations, positive waves, motor unit morphology, recruitment, myokymic/neuromyotonic discharges",
+      "quote": "EMG testing was performed in her right upper extremity muscles... Through limb repositioning, her resting activity was studied, revealing absent fibrillations or positive waves. EMG testing of all the muscles involved resulted in normal motor unit morphology and normal recruitment. There was no evidence of myokymic or neuromyotonic discharges.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "exteroceptive_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "brainstem_refl",
+      "value": "NA",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_normal",
+      "value": "1",
+      "quote": "incidental findings included a germ cell tumor in her pineal region, a narrowing of her left internal carotid artery, and a 9 mm slightly enhancing macroadenoma of the pituitary.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "MRI_abnormalities",
+      "value": "germ cell tumor in pineal region; narrowing of left internal carotid artery; 9 mm slightly enhancing macroadenoma of the pituitary",
+      "quote": "incidental findings included a germ cell tumor in her pineal region, a narrowing of her left internal carotid artery, and a 9 mm slightly enhancing macroadenoma of the pituitary.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening",
+      "value": "1",
+      "quote": "incidental findings included a germ cell tumor in her pineal region",
+      "confidence": "high"
+    },
+    {
+      "field_name": "tu_screening_abnormal",
+      "value": "germ cell tumor in pineal region",
+      "quote": "incidental findings included a germ cell tumor in her pineal region",
+      "confidence": "high"
+    },
+    {
+      "field_name": "course_treatment",
+      "value": "improvement",
+      "quote": "Over the next five days she began to show clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "treatment_families_used",
+      "value": "benzodiazepine, baclofen, other",
+      "quote": "baclofen 10 mg orally three times per day... Klonopin (clonazepam)... 5/325 oxycodone/acetaminophen for pain",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy",
+      "value": "IVIG; steroids",
+      "quote": "one gram Solu-Medrol (methylprednisolone sodium succinate) infused over 24 hours for five consecutive days... intravenous immunoglobulin (IVIG) for five days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_detail",
+      "value": "Solu-Medrol (methylprednisolone sodium succinate) 1 gram infused over 24 hours for five consecutive days; IVIG for five days",
+      "quote": "one gram Solu-Medrol (methylprednisolone sodium succinate) infused over 24 hours for five consecutive days... intravenous immunoglobulin (IVIG) for five days",
+      "confidence": "high"
+    },
+    {
+      "field_name": "immunotherapy_effect",
+      "value": "improvement",
+      "quote": "Over the next five days she began to show clinical improvement.",
+      "confidence": "medium"
+    },
+    {
+      "field_name": "sympt_treatment",
+      "value": "other",
+      "quote": "baclofen 10 mg orally three times per day... Klonopin (clonazepam)... 5/325 oxycodone/acetaminophen",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_detail",
+      "value": "baclofen 10 mg orally three times per day; clonazepam for anxiety; 5/325 oxycodone/acetaminophen for pain; later oral diazepam 7.5 mg twice daily and oral baclofen 20 mg every six hours",
+      "quote": "baclofen 10 mg orally three times per day... Klonopin (clonazepam)... 5/325 oxycodone/acetaminophen for pain... oral diazepam 7.5 mg twice daily and oral baclofen 20 mg every six hours",
+      "confidence": "high"
+    },
+    {
+      "field_name": "sympt_treatment_effect",
+      "value": "improvement",
+      "quote": "Over the next five days she began to show clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "symptomatic_improvement",
+      "value": "yes",
+      "quote": "Over the next five days she began to show clinical improvement.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "other_treatment",
+      "value": "physical rehabilitation / physical therapy",
+      "quote": "She also received physical rehabilitation while in our hospital.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity",
+      "value": "other",
+      "quote": "her anti-double-stranded DNA was above the normal limit with a value of 5. Her anti-nuclear antibody (ANA) was positive, and the ANA titer was 1:320 and speckled.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "autoimmunity_specify",
+      "value": "positive ANA (1:320, speckled); elevated anti-double-stranded DNA (value 5)",
+      "quote": "her anti-double-stranded DNA was above the normal limit with a value of 5. Her anti-nuclear antibody (ANA) was positive, and the ANA titer was 1:320 and speckled.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history",
+      "value": "none",
+      "quote": "our patient had no family history of autoimmune disorders.",
+      "confidence": "high"
+    },
+    {
+      "field_name": "family_history_abnormal",
+      "value": "N/A",
+      "quote": "N/A",
+      "confidence": "high"
+    },
+    {
+      "field_name": "notes",
+      "value": "Atypical presentation with sudden onset of shortness of breath and right-arm rigidity; incidental pineal germ cell tumor, left internal carotid narrowing, and pituitary macroadenoma found on imaging; paraneoplastic panel negative; lumbar puncture unsuccessful.",
+      "quote": "incidental findings included a germ cell tumor in her pineal region, a narrowing of her left internal carotid artery, and a 9 mm slightly enhancing macroadenoma of the pituitary.",
+      "confidence": "high"
+    }
+  ]
+}
